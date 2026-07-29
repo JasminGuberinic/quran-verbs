@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Generated pipeline output (derived from data/verbs.yaml — never committed)
+build/
+
+# macOS
+.DS_Store
+
+# Xcode / iOS (added when the app lands)
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# QAC raw corpus (large, GPL, re-downloadable)
+data/qac/

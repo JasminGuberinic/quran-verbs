@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fil"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "libqutrub==1.2.4.1",
+    "PyYAML==6.0.3",
+    "mcp==2.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+# The second, independent generator for the consensus tier. Heavy (loads a ~40 MB
+# morphology DB into memory), so it is opt-in. After install, fetch the DB once:
+#   camel_data -i morphology-db-msa-r13
+consensus = ["camel-tools==1.6.0"]
+
+[project.scripts]
+fil = "fil.cli:main"
+fil-mcp = "fil.mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fil"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

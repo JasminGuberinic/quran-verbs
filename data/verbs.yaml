@@ -1,0 +1,36 @@
+# The hand-authored verb source. THIS IS THE SYSTEM'S INPUT.
+#
+# To add a verb to the entire app: append one block here and run `python build.py`.
+# Everything downstream (conjugation, audio, cards, database) is regenerated.
+#
+# Fields:
+#   id            stable key "<root-letters>_<form>" (names all derived assets)
+#   root          space-separated root letters
+#   past3ms       vocalized past 3rd-masc-sing (the dictionary form) — WITH tashkīl
+#   present_vowel present-tense stem vowel: a | i | u
+#   transitive    true if it takes a direct object
+#   form          Arabic verb form I–X as an integer (1..10)
+#   glosses       meanings per UI language (en, bs, …) — you learn Arabic FROM these
+#   ayat          leave empty — filled automatically from the Quranic Arabic Corpus
+
+- id: k-t-b_I
+  root: "ك ت ب"
+  past3ms: "كَتَبَ"
+  present_vowel: u        # yaktubu
+  transitive: true
+  form: 1
+  glosses:
+    en: "to write"
+    bs: "pisati"
+  ayat: []
+
+- id: n-s-r_I
+  root: "ن ص ر"
+  past3ms: "نَصَرَ"
+  present_vowel: u        # yanṣuru
+  transitive: true
+  form: 1
+  glosses:
+    en: "to help"
+    bs: "pomoći"
+  ayat: []

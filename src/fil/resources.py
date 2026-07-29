@@ -1,0 +1,9 @@
+"""Filesystem locations, resolved once, relative to the repo root."""
+from pathlib import Path
+
+_ROOT = Path(__file__).resolve().parents[2]   # src/fil/resources.py -> repo root
+DATA_DIR = _ROOT / "data"
+BUILD_DIR = _ROOT / "build"
+QAC_MORPHOLOGY = DATA_DIR / "qac" / "quran-morphology.txt"
+VERBS_YAML = DATA_DIR / "verbs.yaml"
+AUDIO_DIR = BUILD_DIR / "audio"

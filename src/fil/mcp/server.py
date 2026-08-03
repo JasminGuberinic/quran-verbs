@@ -12,6 +12,7 @@ from dataclasses import asdict
 from mcp.server.mcpserver import MCPServer
 
 from fil import service
+from fil.examples import Example, ExampleWord
 
 mcp = MCPServer(name="fil")
 
@@ -52,6 +53,36 @@ def review_queue(limit: int | None = None) -> list[dict]:
         limit: optionally cap how many conflicts are returned.
     """
     return [asdict(conflict) for conflict in service.review_queue(limit)]
+
+
+@mcp.tool()
+def add_examples(root: str, form: int, examples: list[dict]) -> list[dict]:
+    """Store practice sentences for a verb, each verified against the verb's root.
+
+    Practice sentences are composed (not Quranic); each is checked so the emphasised
+    word really is this verb. Returns each stored example with its `verified` flag.
+
+    Args:
+        root: the Arabic root of the verb.
+        form: the verb form, 1–10.
+        examples: list of {arabic, en, bs, words: [{arabic, en, bs, is_target}],
+            tense?, pronoun?} — exactly one word per sentence should have
+            is_target=true (the verb). Give tense (past|present|imperative) and
+            pronoun (e.g. huwa) so the gate can also check the verb's FORM.
+    """
+    drafts = [_to_example(example) for example in examples]
+    return [asdict(stored) for stored in service.add_examples(root, form, drafts)]
+
+
+def _to_example(data: dict) -> Example:
+    return Example(
+        arabic=data["arabic"],
+        words=tuple(ExampleWord(**word) for word in data["words"]),
+        en=data["en"],
+        bs=data["bs"],
+        tense=data.get("tense"),
+        pronoun=data.get("pronoun"),
+    )
 
 
 @mcp.tool()

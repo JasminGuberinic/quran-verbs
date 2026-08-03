@@ -15,13 +15,15 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from functools import lru_cache
 
+from fil import example_store
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
 from fil.corpus.oracle import AttestedCells, build_oracle
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
+from fil.examples import Analyze, Example, checked
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
-from fil.resources import QAC_MORPHOLOGY
+from fil.resources import EXAMPLES_JSON, QAC_MORPHOLOGY
 
 # The default generator set: light and always available. Callers opt into consensus
 # by passing a richer list (see fil.camel.CamelConjugator).
@@ -60,6 +62,7 @@ class VerbDetail:
     tier_counts: dict[str, int]
     cells: tuple[Cell, ...]
     ayat: tuple[str, ...]
+    examples: tuple[Example, ...]
 
 
 @dataclass(frozen=True)
@@ -128,7 +131,47 @@ def get_verb(root: str, form: int, conjugators: list[Conjugator] | None = None) 
         tier_counts=counts,
         cells=cells,
         ayat=entry.ayat,
+        examples=tuple(example_store.load(root, form)),
     )
+
+
+def add_examples(
+    root: str, form: int, drafts: list[Example],
+    analyze: Analyze | None = None, features_for=None, path=EXAMPLES_JSON,
+) -> list[Example]:
+    """Run drafted practice sentences through the correctness gate and store them.
+
+    Each draft's `checks` are filled in (verb root, verb form for its declared
+    tense/pronoun, and every-word-valid), then all are persisted. Raises KeyError
+    if the verb is not in the catalogue.
+    """
+    _find(root, form)
+    analyzer = analyze or _camel_analyze()
+    resolve = features_for or _camel_features
+    results = [
+        checked(draft, root, _features_of(draft, resolve), analyzer)
+        for draft in drafts
+    ]
+    example_store.save(root, form, results, path)
+    return results
+
+
+def _features_of(draft: Example, resolve) -> dict | None:
+    if not (draft.tense and draft.pronoun):
+        return None
+    return resolve(draft.tense, draft.pronoun)
+
+
+def _camel_analyze() -> Analyze:
+    from fil import camel
+
+    return camel.analyze
+
+
+def _camel_features(tense: str, pronoun: str) -> dict | None:
+    from fil import camel
+
+    return camel.features_for(tense, pronoun)
 
 
 def review_queue(limit: int | None = None, conjugators: list[Conjugator] | None = None) -> list[Conflict]:

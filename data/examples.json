@@ -1,0 +1,188 @@
+{
+  "قول_1": [
+    {
+      "arabic": "قَالَ الرَّجُلُ الحَقَّ",
+      "words": [
+        {
+          "arabic": "قَالَ",
+          "en": "said",
+          "bs": "rekao je",
+          "is_target": true
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false
+        },
+        {
+          "arabic": "الحَقَّ",
+          "en": "the truth",
+          "bs": "istinu",
+          "is_target": false
+        }
+      ],
+      "en": "The man said the truth.",
+      "bs": "Čovjek je rekao istinu.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true
+      }
+    },
+    {
+      "arabic": "أَقُولُ الصِّدْقَ",
+      "words": [
+        {
+          "arabic": "أَقُولُ",
+          "en": "I say",
+          "bs": "govorim",
+          "is_target": true
+        },
+        {
+          "arabic": "الصِّدْقَ",
+          "en": "the truth",
+          "bs": "istinu",
+          "is_target": false
+        }
+      ],
+      "en": "I say the truth.",
+      "bs": "Govorim istinu.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true
+      }
+    }
+  ],
+  "كون_1": [
+    {
+      "arabic": "كَانَ الطَّقْسُ جَمِيلًا",
+      "words": [
+        {
+          "arabic": "كَانَ",
+          "en": "was",
+          "bs": "bilo je",
+          "is_target": true
+        },
+        {
+          "arabic": "الطَّقْسُ",
+          "en": "the weather",
+          "bs": "vrijeme",
+          "is_target": false
+        },
+        {
+          "arabic": "جَمِيلًا",
+          "en": "beautiful",
+          "bs": "lijepo",
+          "is_target": false
+        }
+      ],
+      "en": "The weather was beautiful.",
+      "bs": "Vrijeme je bilo lijepo.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true
+      }
+    },
+    {
+      "arabic": "أَكُونُ سَعِيدًا",
+      "words": [
+        {
+          "arabic": "أَكُونُ",
+          "en": "I am",
+          "bs": "budem",
+          "is_target": true
+        },
+        {
+          "arabic": "سَعِيدًا",
+          "en": "happy",
+          "bs": "sretan",
+          "is_target": false
+        }
+      ],
+      "en": "I am happy.",
+      "bs": "Sretan sam.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true
+      }
+    }
+  ],
+  "علم_1": [
+    {
+      "arabic": "عَلِمَ الطَّالِبُ الجَوَابَ",
+      "words": [
+        {
+          "arabic": "عَلِمَ",
+          "en": "knew",
+          "bs": "znao je",
+          "is_target": true
+        },
+        {
+          "arabic": "الطَّالِبُ",
+          "en": "the student",
+          "bs": "student",
+          "is_target": false
+        },
+        {
+          "arabic": "الجَوَابَ",
+          "en": "the answer",
+          "bs": "odgovor",
+          "is_target": false
+        }
+      ],
+      "en": "The student knew the answer.",
+      "bs": "Student je znao odgovor.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true
+      }
+    },
+    {
+      "arabic": "أَعْلَمُ الحَقِيقَةَ",
+      "words": [
+        {
+          "arabic": "أَعْلَمُ",
+          "en": "I know",
+          "bs": "znam",
+          "is_target": true
+        },
+        {
+          "arabic": "الحَقِيقَةَ",
+          "en": "the truth",
+          "bs": "istinu",
+          "is_target": false
+        }
+      ],
+      "en": "I know the truth.",
+      "bs": "Znam istinu.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true
+      }
+    }
+  ]
+}

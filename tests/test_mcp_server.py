@@ -4,7 +4,7 @@ import asyncio
 
 from fil.mcp import server
 
-_EXPECTED_TOOLS = {"list_verbs", "get_verb", "review_queue", "coverage_report"}
+_EXPECTED_TOOLS = {"list_verbs", "get_verb", "review_queue", "coverage_report", "add_examples"}
 
 
 def test_all_tools_are_registered():

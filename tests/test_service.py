@@ -6,10 +6,12 @@ the consensus tally logic is tested purely on synthetic cells.
 
 import pytest
 
+from fil.examples import Example, ExampleWord
 from fil.reconciliation import ReconciledCell
 from fil.service import (
     CoverageReport,
     VerbDetail,
+    add_examples,
     coverage,
     get_verb,
     list_verbs,
@@ -59,6 +61,22 @@ def test_coverage_numbers_are_internally_consistent():
     assert report.verbs_generated + report.verbs_skipped == report.verbs_total
     assert report.attested_agree + report.attested_conflicts == report.attested_checked
     assert 0.0 <= report.agreement_rate <= 100.0
+
+
+def test_add_examples_verifies_against_the_root_and_stores(tmp_path):
+    verb = list_verbs(limit=1)[0]  # a real catalogue verb
+    draft = Example(
+        arabic="جملة",
+        words=(ExampleWord("فِعْل", "verb", "glagol", is_target=True),),
+        en="sentence", bs="rečenica",
+    )
+    dotted = ".".join(verb.root)  # CAMeL returns dotted roots, e.g. "ك.ت.ب"
+    analyze = lambda word: [{"pos": "verb", "root": dotted}]  # noqa: E731 - fake gate
+
+    stored = add_examples(verb.root, verb.form, [draft], analyze=analyze, path=tmp_path / "ex.json")
+
+    assert stored[0].checks is not None and stored[0].checks.passed
+    assert get_verb(verb.root, verb.form).root == verb.root  # unrelated read still works
 
 
 def test_tally_classifies_every_tier():

@@ -12,6 +12,7 @@ import argparse
 
 from fil.stages import (
     audio_build,
+    bundle,
     coverage,
     dataset,
     full,
@@ -25,7 +26,8 @@ _STAGES = {
     "ingest": (ingest.main, "parse the Quranic Arabic Corpus → verb catalogue"),
     "dataset": (dataset.main, "authored verbs.yaml → conjugations (build/verbs.json)"),
     "audio": (audio_build.main, "generate + QA the per-form audio clips"),
-    "package": (package.main, "package the read-only content.sqlite (+ integrity gate)"),
+    "package": (package.main, "package the audio-gated content.sqlite (legacy audio path)"),
+    "bundle": (bundle.main, "package content.sqlite from the service (conjugations + examples + ayāt)"),
     "all": (full.main, "dataset → audio → package (the full bundle)"),
     "coverage": (coverage.main, "reconcile every Quranic verb; print agreement rate"),
     "review": (review.main, "export the review queue of generator↔Quran conflicts"),

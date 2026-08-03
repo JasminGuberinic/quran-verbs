@@ -13,13 +13,38 @@ reconciliation, so this remains a genuine independent vote.
 
 from __future__ import annotations
 
-from functools import cached_property
+from functools import cached_property, lru_cache
 
 from fil.conjugation import ConjugationTable
 from fil.models import Verb
 from fil.reconciliation import forms_match
 
 _DB = "calima-msa-r13"
+
+
+@lru_cache(maxsize=1)
+def _shared_analyzer():
+    """The CAMeL analyzer, loaded once per process (its DB is ~40 MB in RAM)."""
+    from camel_tools.morphology.analyzer import Analyzer
+    from camel_tools.morphology.database import MorphologyDB
+
+    return Analyzer(MorphologyDB.builtin_db(_DB, "a"))
+
+
+def analyze(word: str) -> list[dict]:
+    """Morphological analyses of one Arabic word (for the example-sentence gate)."""
+    return _shared_analyzer().analyze(word)
+
+
+def features_for(tense: str, pronoun: str) -> dict | None:
+    """CAMeL features (aspect + person/gender/number) for a conjugation cell.
+
+    Used to check a practice sentence's verb is in the intended form. Returns None
+    for an unknown cell (the form check is then skipped).
+    """
+    if tense not in _TENSE_FEATS or pronoun not in _PGN:
+        return None
+    return {"asp": _TENSE_FEATS[tense]["asp"], **_PGN[pronoun]}
 
 # our tense key → CAMeL aspect/mood features
 _TENSE_FEATS = {
@@ -52,10 +77,7 @@ class CamelConjugator:
 
     @cached_property
     def _analyzer(self):
-        from camel_tools.morphology.analyzer import Analyzer
-        from camel_tools.morphology.database import MorphologyDB
-
-        return Analyzer(MorphologyDB.builtin_db(_DB, "a"))
+        return _shared_analyzer()
 
     @cached_property
     def _generator(self):

@@ -24,6 +24,7 @@ from fil.driver import build_verb
 from fil.examples import Analyze, Critique, Example, checked
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
 from fil.resources import EXAMPLES_JSON, QAC_MORPHOLOGY
+from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
 # by passing a richer list (see fil.camel.CamelConjugator).
@@ -63,6 +64,22 @@ class VerbDetail:
     cells: tuple[Cell, ...]
     ayat: tuple[str, ...]
     examples: tuple[Example, ...]
+
+
+@dataclass(frozen=True)
+class WordLookup:
+    """What the analyzer knows about one word — read this BEFORE drafting with it.
+
+    It answers the two questions a draft can fail on: will the sentence gate recognise
+    this word at all, and what does it actually mean? Glossing a word from `glosses`
+    instead of from memory is what keeps the translation honest by construction.
+    """
+
+    arabic: str
+    is_analyzable: bool
+    glosses: tuple[str, ...]           # the lexicon's own English — gloss FROM these
+    roots: tuple[str, ...]
+    parts_of_speech: tuple[str, ...]
 
 
 @dataclass(frozen=True)
@@ -164,6 +181,37 @@ def add_examples(
     ]
     example_store.save(root, form, results, path)
     return results
+
+
+def vocabulary(limit: int | None = None, word_class: str | None = None) -> list[VocabularyEntry]:
+    """The Quran's own nouns and adjectives, most frequent first — the words to build from.
+
+    Args:
+        limit: optionally cap how many words are returned.
+        word_class: keep only "noun", "adjective" or "proper_noun".
+    """
+    entries = [
+        entry for entry in _vocabulary()
+        if word_class is None or entry.word_class == word_class
+    ]
+    return entries[:limit] if limit else entries
+
+
+def lookup_word(arabic: str, analyze: Analyze | None = None) -> WordLookup:
+    """Everything the analyzer can say about one word, before it goes into a sentence."""
+    analyses = (analyze or _camel_analyze())(arabic)
+    return WordLookup(
+        arabic=arabic,
+        is_analyzable=bool(analyses),
+        glosses=_distinct(analysis.get("gloss") for analysis in analyses),
+        roots=_distinct(analysis.get("root") for analysis in analyses),
+        parts_of_speech=_distinct(analysis.get("pos") for analysis in analyses),
+    )
+
+
+def _distinct(values) -> tuple[str, ...]:
+    """The given values, without blanks or repeats, in the order first seen."""
+    return tuple(dict.fromkeys(value for value in values if value))
 
 
 def examples_to_critique(limit: int | None = None, path=EXAMPLES_JSON) -> list[ExampleReview]:
@@ -273,6 +321,16 @@ def _corpus() -> _Corpus:
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         occurrences = list(iter_verb_occurrences(iter_segments(lines)))
     return _Corpus(tuple(build_catalog(occurrences)), build_oracle(occurrences))
+
+
+@lru_cache(maxsize=1)
+def _vocabulary() -> tuple[VocabularyEntry, ...]:
+    """The word bank, built once per process — a second, cheap pass over the corpus.
+
+    Kept apart from `_corpus()` so the verb paths never carry the vocabulary in memory.
+    """
+    with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
+        return tuple(build_vocabulary(iter_segments(lines)))
 
 
 def _find(root: str, form: int) -> VerbEntry:

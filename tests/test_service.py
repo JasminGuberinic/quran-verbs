@@ -16,9 +16,11 @@ from fil.service import (
     examples_to_critique,
     get_verb,
     list_verbs,
+    lookup_word,
     record_critique,
     review_queue,
     tally,
+    vocabulary,
 )
 
 _TIERS = {"attested", "consensus", "generated", "quarantined"}
@@ -102,6 +104,38 @@ def test_a_verdict_cannot_land_on_a_sentence_that_does_not_exist(tmp_path):
 
     with pytest.raises(IndexError):
         record_critique(verb.root, verb.form, 7, _approval(), path=path)
+
+
+def test_the_word_bank_holds_real_quranic_vocabulary_only():
+    bank = vocabulary(limit=50)
+    assert bank, "the corpus must yield vocabulary"
+
+    counts = [entry.occurrence_count for entry in bank]
+    assert counts == sorted(counts, reverse=True)
+    assert all(entry.root for entry in bank)  # rootless function words are excluded
+    assert all(entry.word_class in {"noun", "adjective", "proper_noun"} for entry in bank)
+    assert "رَبّ" in {entry.lemma for entry in bank}  # the Quran's most frequent noun
+
+
+def test_the_word_bank_can_be_narrowed_to_one_class():
+    assert {entry.word_class for entry in vocabulary(limit=20, word_class="adjective")} == {
+        "adjective"
+    }
+
+
+def test_lookup_word_reports_what_the_analyzer_knows():
+    analyses = [{"pos": "noun", "root": "ح.ق.ق", "gloss": "the+truth;right"}]
+
+    found = lookup_word("الحَقَّ", analyze=lambda word: analyses)
+
+    assert found.is_analyzable and found.glosses == ("the+truth;right",)
+    assert found.roots == ("ح.ق.ق",) and found.parts_of_speech == ("noun",)
+
+
+def test_lookup_word_flags_a_word_the_analyzer_cannot_read():
+    unknown = lookup_word("زقظ", analyze=lambda word: [])
+
+    assert not unknown.is_analyzable and unknown.glosses == ()
 
 
 def _draft() -> Example:

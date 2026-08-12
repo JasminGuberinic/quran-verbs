@@ -7,6 +7,7 @@ from fil.mcp import server
 _EXPECTED_TOOLS = {
     "list_verbs", "get_verb", "review_queue", "coverage_report",
     "add_examples", "examples_to_critique", "critique_example",
+    "vocabulary", "lookup_word",
 }
 
 

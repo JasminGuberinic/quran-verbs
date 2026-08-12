@@ -126,25 +126,25 @@
       }
     },
     {
-      "arabic": "أَكُونُ سَعِيدًا",
+      "arabic": "كَانُوا صَادِقِينَ",
       "words": [
         {
-          "arabic": "أَكُونُ",
-          "en": "I am",
-          "bs": "budem",
+          "arabic": "كَانُوا",
+          "en": "they were",
+          "bs": "bili su",
           "is_target": true
         },
         {
-          "arabic": "سَعِيدًا",
-          "en": "happy",
-          "bs": "sretan",
+          "arabic": "صَادِقِينَ",
+          "en": "truthful",
+          "bs": "iskreni",
           "is_target": false
         }
       ],
-      "en": "I am happy.",
-      "bs": "Sretan sam.",
-      "tense": "present",
-      "pronoun": "ana",
+      "en": "They were truthful.",
+      "bs": "Bili su iskreni.",
+      "tense": "past",
+      "pronoun": "hum",
       "source": "generated",
       "checks": {
         "verb_root": true,
@@ -154,12 +154,12 @@
         "gloss_conflicts": []
       },
       "critique": {
-        "approved": false,
+        "approved": true,
         "grammar_ok": true,
         "translation_ok": true,
-        "verb_usage_ok": false,
+        "verb_usage_ok": true,
         "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Morphologically flawless but not idiomatic MSA: the present copula is dropped (أَنَا سَعِيدٌ = 'I am happy'). أَكُونُ needs a context that licenses it — سَأَكُونُ سَعِيدًا, أُرِيدُ أَنْ أَكُونَ سَعِيدًا. As it stands it teaches a wrong habit."
+        "note": "خبر كان in the accusative plural — the pattern the Quran itself uses (إِن كُنتُمْ صَادِقِينَ). Vocabulary taken from the Quranic bank."
       }
     }
   ],

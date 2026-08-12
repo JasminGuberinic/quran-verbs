@@ -56,6 +56,39 @@ def review_queue(limit: int | None = None) -> list[dict]:
 
 
 @mcp.tool()
+def vocabulary(limit: int | None = None, word_class: str | None = None) -> list[dict]:
+    """The Quran's own nouns and adjectives — the words to build practice sentences FROM.
+
+    Composing a sentence out of these means its building blocks are real, correctly
+    spelled Quranic words by construction, and the learner meets vocabulary they will
+    actually see in the Quran. Each entry gives the lemma, its root, how often it occurs,
+    and the spellings attested in the corpus (Uthmani — check one with lookup_word before
+    putting it in a sentence, since the gate analyses standard orthography).
+
+    Args:
+        limit: optionally cap how many words are returned (most frequent first).
+        word_class: keep only "noun", "adjective" or "proper_noun".
+    """
+    return [asdict(entry) for entry in service.vocabulary(limit, word_class)]
+
+
+@mcp.tool()
+def lookup_word(arabic: str) -> dict:
+    """What the analyzer knows about one word — call this BEFORE drafting with it.
+
+    Returns whether the word is analyzable at all (a sentence containing an unanalyzable
+    word is rejected), the lexicon's own English glosses, its roots and parts of speech.
+    Write the word's gloss FROM these glosses rather than from memory: the gate checks
+    your gloss against them, and a classical Quranic sense may differ from the modern
+    lexicon's (حَكِيم is glossed "physician" there, not "wise").
+
+    Args:
+        arabic: the word exactly as it would appear in the sentence, with its vowels.
+    """
+    return asdict(service.lookup_word(arabic))
+
+
+@mcp.tool()
 def add_examples(root: str, form: int, examples: list[dict]) -> list[dict]:
     """Store practice sentences for a verb, each run through the mechanical gate.
 

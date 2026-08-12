@@ -30,11 +30,21 @@
       "checks": {
         "verb_root": true,
         "verb_form": true,
-        "all_words_valid": true
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Correct VSO with nominative subject, accusative object. English would more idiomatically be 'told the truth', but nothing is wrong."
       }
     },
     {
-      "arabic": "أَقُولُ الصِّدْقَ",
+      "arabic": "أَقُولُ الحَقَّ",
       "words": [
         {
           "arabic": "أَقُولُ",
@@ -43,7 +53,7 @@
           "is_target": true
         },
         {
-          "arabic": "الصِّدْقَ",
+          "arabic": "الحَقَّ",
           "en": "the truth",
           "bs": "istinu",
           "is_target": false
@@ -57,7 +67,17 @@
       "checks": {
         "verb_root": true,
         "verb_form": true,
-        "all_words_valid": true
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "قول الحق is the attested collocation; the imperfect stands alone correctly."
       }
     }
   ],
@@ -92,7 +112,17 @@
       "checks": {
         "verb_root": true,
         "verb_form": true,
-        "all_words_valid": true
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Textbook kāna: nominative subject, accusative predicate (خبر كان)."
       }
     },
     {
@@ -119,7 +149,17 @@
       "checks": {
         "verb_root": true,
         "verb_form": true,
-        "all_words_valid": true
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": false,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Morphologically flawless but not idiomatic MSA: the present copula is dropped (أَنَا سَعِيدٌ = 'I am happy'). أَكُونُ needs a context that licenses it — سَأَكُونُ سَعِيدًا, أُرِيدُ أَنْ أَكُونَ سَعِيدًا. As it stands it teaches a wrong habit."
       }
     }
   ],
@@ -154,7 +194,17 @@
       "checks": {
         "verb_root": true,
         "verb_form": true,
-        "all_words_valid": true
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Natural and unambiguous; علم + object is the core use of the verb."
       }
     },
     {
@@ -181,7 +231,17 @@
       "checks": {
         "verb_root": true,
         "verb_form": true,
-        "all_words_valid": true
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "أَعْلَمُ الحَقِيقَةَ is ordinary MSA for 'I know the truth'."
       }
     }
   ]

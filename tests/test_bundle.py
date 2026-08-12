@@ -56,3 +56,16 @@ def test_write_bundle_populates_every_table(tmp_path):
         ).fetchone()[0] == 1
     finally:
         connection.close()
+
+
+def test_every_example_ships_with_its_trust_tier(tmp_path):
+    # The app must be able to show an approved sentence differently from one that
+    # only the analyzer has seen, so the tier travels with the row.
+    db = tmp_path / "content.sqlite"
+    write_bundle([_detail()], db)
+
+    connection = sqlite3.connect(db)
+    try:
+        assert connection.execute("SELECT tier FROM examples").fetchone()[0] == "checked"
+    finally:
+        connection.close()

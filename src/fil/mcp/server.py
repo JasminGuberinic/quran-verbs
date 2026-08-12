@@ -12,7 +12,7 @@ from dataclasses import asdict
 from mcp.server.mcpserver import MCPServer
 
 from fil import service
-from fil.examples import Example, ExampleWord
+from fil.examples import Critique, Example, ExampleWord
 
 mcp = MCPServer(name="fil")
 
@@ -57,10 +57,16 @@ def review_queue(limit: int | None = None) -> list[dict]:
 
 @mcp.tool()
 def add_examples(root: str, form: int, examples: list[dict]) -> list[dict]:
-    """Store practice sentences for a verb, each verified against the verb's root.
+    """Store practice sentences for a verb, each run through the mechanical gate.
 
-    Practice sentences are composed (not Quranic); each is checked so the emphasised
-    word really is this verb. Returns each stored example with its `verified` flag.
+    Practice sentences are composed (not Quranic). Each is checked four ways: the
+    emphasised word is a verb of this root, it stands in the declared tense+pronoun,
+    every word in the sentence is analyzable, and every declared meaning is one the
+    lexicon also gives that word. Returns each stored example with its `checks` and
+    its `tier` — "checked" (mechanics passed, awaiting a reader) or "rejected".
+
+    Read `checks.gloss_conflicts` when a sentence is rejected: those words do not mean
+    what the gloss claims, so fix the gloss or choose a different word.
 
     Args:
         root: the Arabic root of the verb.
@@ -71,7 +77,55 @@ def add_examples(root: str, form: int, examples: list[dict]) -> list[dict]:
             pronoun (e.g. huwa) so the gate can also check the verb's FORM.
     """
     drafts = [_to_example(example) for example in examples]
-    return [asdict(stored) for stored in service.add_examples(root, form, drafts)]
+    return [_from_example(stored) for stored in service.add_examples(root, form, drafts)]
+
+
+@mcp.tool()
+def examples_to_critique(limit: int | None = None) -> list[dict]:
+    """Sentences that passed the mechanical gate and need a reviewer's judgement.
+
+    The analyzer cannot tell whether a sentence is natural, whether the grammar beyond
+    the verb holds, or whether the translation really says what the Arabic says. Read
+    each sentence here on its own terms and record the verdict with critique_example.
+    A verdict is worth most when the reader had no part in drafting the sentence.
+
+    Args:
+        limit: optionally cap how many sentences are returned.
+    """
+    return [
+        {"root": review.root, "form": review.form, "index": review.index,
+         "example": _from_example(review.example)}
+        for review in service.examples_to_critique(limit)
+    ]
+
+
+@mcp.tool()
+def critique_example(
+    root: str, form: int, index: int, approved: bool, grammar_ok: bool,
+    translation_ok: bool, verb_usage_ok: bool, by: str, note: str = "",
+) -> dict:
+    """Record a reviewer's verdict on one stored sentence, lifting it to "reviewed".
+
+    Only an approved sentence becomes `reviewed`; a refused one becomes `rejected` and
+    will not ship. Judge the sentence as written — do not silently repair it.
+
+    Args:
+        root: the Arabic root of the verb.
+        form: the verb form, 1–10.
+        index: the sentence's index, exactly as examples_to_critique reported it.
+        approved: whether the sentence is fit for a learner as it stands.
+        grammar_ok: is the WHOLE sentence correct MSA, not just the verb?
+        translation_ok: do the en/bs renderings say what the Arabic says?
+        verb_usage_ok: is the verb used the way the language really uses it?
+        by: who judged — the model or person, so the record shows how independent
+            the verdict was (e.g. "claude-opus-5, independent pass").
+        note: what to fix, when refused.
+    """
+    critique = Critique(
+        approved=approved, grammar_ok=grammar_ok, translation_ok=translation_ok,
+        verb_usage_ok=verb_usage_ok, by=by, note=note,
+    )
+    return _from_example(service.record_critique(root, form, index, critique))
 
 
 def _to_example(data: dict) -> Example:
@@ -83,6 +137,11 @@ def _to_example(data: dict) -> Example:
         tense=data.get("tense"),
         pronoun=data.get("pronoun"),
     )
+
+
+def _from_example(example: Example) -> dict:
+    """The example as JSON, with the trust tier spelled out (it is a derived property)."""
+    return {**asdict(example), "tier": example.tier}
 
 
 @mcp.tool()

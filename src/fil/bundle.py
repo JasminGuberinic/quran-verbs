@@ -4,7 +4,9 @@ The service is the single source of truth; this only shapes its output into tabl
 and writes them — the app reads, it never computes. Text content for now; audio
 columns are added when the audio phase lands. Every conjugation cell carries its
 `source` + `confidence` so the app can present attested/consensus forms as trusted
-and hide or mark the rest; examples carry whether they passed the correctness gate.
+and hide or mark the rest; every example carries its trust `tier` (see fil.examples),
+so a sentence a reviewer approved can be shown differently from one only the analyzer
+has seen.
 """
 
 from __future__ import annotations
@@ -67,7 +69,7 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             bs TEXT NOT NULL,
             tense TEXT,
             pronoun TEXT,
-            passed INTEGER NOT NULL
+            tier TEXT NOT NULL
         );
         CREATE TABLE example_words (
             example_id INTEGER NOT NULL REFERENCES examples(example_id),
@@ -121,11 +123,10 @@ def _insert_ayat(connection: sqlite3.Connection, vid: str, detail: VerbDetail) -
 
 
 def _insert_example(connection: sqlite3.Connection, example_id: int, vid: str, example) -> None:
-    passed = 1 if (example.checks and example.checks.passed) else 0
     connection.execute(
         "INSERT INTO examples VALUES (?,?,?,?,?,?,?,?)",
         (example_id, vid, example.arabic, example.en, example.bs,
-         example.tense, example.pronoun, passed),
+         example.tense, example.pronoun, example.tier),
     )
     word_rows = [
         (example_id, position, word.arabic, word.en, word.bs, int(word.is_target))

@@ -11,7 +11,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
-from fil.examples import Example, ExampleChecks, ExampleWord
+from fil.examples import Critique, Example, ExampleChecks, ExampleWord
 from fil.resources import EXAMPLES_JSON
 
 
@@ -48,7 +48,6 @@ def _read(path: Path) -> dict:
 
 
 def _from_dict(data: dict) -> Example:
-    checks = data.get("checks")
     return Example(
         arabic=data["arabic"],
         words=tuple(ExampleWord(**word) for word in data["words"]),
@@ -57,5 +56,14 @@ def _from_dict(data: dict) -> Example:
         tense=data.get("tense"),
         pronoun=data.get("pronoun"),
         source=data.get("source", "generated"),
-        checks=ExampleChecks(**checks) if checks else None,
+        checks=_checks_from(data.get("checks")),
+        critique=Critique(**data["critique"]) if data.get("critique") else None,
     )
+
+
+def _checks_from(data: dict | None) -> ExampleChecks | None:
+    """Rebuild the checks, tolerating files written before a check existed."""
+    if not data:
+        return None
+    conflicts = tuple(data.get("gloss_conflicts", ()))  # JSON has no tuples
+    return ExampleChecks(**{**data, "gloss_conflicts": conflicts})

@@ -1,7 +1,9 @@
 """Tests for the practice-example JSON store (round-trip on a temp file)."""
 
+from dataclasses import replace
+
 from fil import example_store
-from fil.examples import Example, ExampleChecks, ExampleWord
+from fil.examples import Critique, Example, ExampleChecks, ExampleWord
 
 
 def _example() -> Example:
@@ -31,3 +33,38 @@ def test_save_then_load_round_trips(tmp_path):
 
 def test_load_unknown_verb_is_empty(tmp_path):
     assert example_store.load("xyz", 1, tmp_path / "missing.json") == []
+
+
+def test_a_reviewers_verdict_and_gloss_conflicts_survive_the_round_trip(tmp_path):
+    path = tmp_path / "examples.json"
+    reviewed = replace(
+        _example(),
+        checks=ExampleChecks(
+            verb_root=True, verb_form=True, all_words_valid=True,
+            gloss_agreement=False, gloss_conflicts=("الدَّرْسَ",),
+        ),
+        critique=Critique(
+            approved=False, grammar_ok=True, translation_ok=False, verb_usage_ok=True,
+            by="reviewer-under-test", note="the object does not mean that",
+        ),
+    )
+    example_store.save("كتب", 1, [reviewed], path)
+
+    loaded = example_store.load("كتب", 1, path)[0]
+    assert loaded.checks.gloss_conflicts == ("الدَّرْسَ",)  # a JSON list, back as a tuple
+    assert loaded.critique is not None and loaded.critique.by == "reviewer-under-test"
+    assert loaded.tier == "rejected"
+
+
+def test_examples_written_before_the_gloss_check_still_load(tmp_path):
+    path = tmp_path / "examples.json"
+    path.write_text(
+        '{"كتب_1": [{"arabic": "كَتَبَ", "en": "wrote", "bs": "napisao", '
+        '"words": [{"arabic": "كَتَبَ", "en": "wrote", "bs": "napisao", "is_target": true}], '
+        '"checks": {"verb_root": true, "verb_form": null, "all_words_valid": true}}]}',
+        encoding="utf-8",
+    )
+
+    loaded = example_store.load("كتب", 1, path)[0]
+
+    assert loaded.checks.gloss_agreement is None and loaded.tier == "checked"

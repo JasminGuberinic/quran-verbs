@@ -12,7 +12,7 @@ unlock the consensus tier. Everything returned is an immutable, JSON-friendly va
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from functools import lru_cache
 
 from fil import example_store
@@ -21,7 +21,7 @@ from fil.corpus.catalog import VerbEntry, build_catalog
 from fil.corpus.oracle import AttestedCells, build_oracle
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
-from fil.examples import Analyze, Example, checked
+from fil.examples import Analyze, Critique, Example, checked
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
 from fil.resources import EXAMPLES_JSON, QAC_MORPHOLOGY
 
@@ -63,6 +63,16 @@ class VerbDetail:
     cells: tuple[Cell, ...]
     ayat: tuple[str, ...]
     examples: tuple[Example, ...]
+
+
+@dataclass(frozen=True)
+class ExampleReview:
+    """A sentence awaiting an independent read, with the handle to record the verdict."""
+
+    root: str
+    form: int
+    index: int          # its position in this verb's stored examples — pass it back
+    example: Example
 
 
 @dataclass(frozen=True)
@@ -154,6 +164,38 @@ def add_examples(
     ]
     example_store.save(root, form, results, path)
     return results
+
+
+def examples_to_critique(limit: int | None = None, path=EXAMPLES_JSON) -> list[ExampleReview]:
+    """Sentences that passed the mechanical gate and still await a reviewer's verdict.
+
+    The queue holds only `checked` sentences: a rejected one needs fixing, not reading,
+    and a reviewed one already has its verdict.
+    """
+    queue = [
+        ExampleReview(root=root, form=form, index=index, example=example)
+        for root, form in example_store.stored_verbs(path)
+        for index, example in enumerate(example_store.load(root, form, path))
+        if example.tier == "checked"
+    ]
+    return queue[:limit] if limit else queue
+
+
+def record_critique(
+    root: str, form: int, index: int, critique: Critique, path=EXAMPLES_JSON
+) -> Example:
+    """Write a reviewer's verdict onto one stored sentence and return it.
+
+    Raises IndexError if that sentence does not exist — a verdict must never land on
+    a different sentence than the one that was read.
+    """
+    stored = example_store.load(root, form, path)
+    if not 0 <= index < len(stored):
+        raise IndexError(f"{root} form {form} has {len(stored)} example(s); no index {index}")
+
+    reviewed = replace(stored[index], critique=critique)
+    example_store.save(root, form, [*stored[:index], reviewed, *stored[index + 1 :]], path)
+    return reviewed
 
 
 def _features_of(draft: Example, resolve) -> dict | None:

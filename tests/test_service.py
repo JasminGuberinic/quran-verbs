@@ -6,15 +6,17 @@ the consensus tally logic is tested purely on synthetic cells.
 
 import pytest
 
-from fil.examples import Example, ExampleWord
+from fil.examples import Critique, Example, ExampleWord
 from fil.reconciliation import ReconciledCell
 from fil.service import (
     CoverageReport,
     VerbDetail,
     add_examples,
     coverage,
+    examples_to_critique,
     get_verb,
     list_verbs,
+    record_critique,
     review_queue,
     tally,
 )
@@ -77,6 +79,49 @@ def test_add_examples_verifies_against_the_root_and_stores(tmp_path):
 
     assert stored[0].checks is not None and stored[0].checks.passed
     assert get_verb(verb.root, verb.form).root == verb.root  # unrelated read still works
+
+
+def test_a_verdict_lifts_a_checked_sentence_to_reviewed_and_clears_the_queue(tmp_path):
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    add_examples(verb.root, verb.form, [_draft()], analyze=_fake_gate(verb.root), path=path)
+
+    waiting = examples_to_critique(path=path)
+    assert [(review.root, review.index) for review in waiting] == [(verb.root, 0)]
+
+    reviewed = record_critique(verb.root, verb.form, 0, _approval(), path=path)
+
+    assert reviewed.tier == "reviewed"
+    assert examples_to_critique(path=path) == []  # judged, so no longer waiting
+
+
+def test_a_verdict_cannot_land_on_a_sentence_that_does_not_exist(tmp_path):
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    add_examples(verb.root, verb.form, [_draft()], analyze=_fake_gate(verb.root), path=path)
+
+    with pytest.raises(IndexError):
+        record_critique(verb.root, verb.form, 7, _approval(), path=path)
+
+
+def _draft() -> Example:
+    return Example(
+        arabic="جملة",
+        words=(ExampleWord("فِعْل", "verb", "glagol", is_target=True),),
+        en="sentence", bs="rečenica",
+    )
+
+
+def _fake_gate(root: str):
+    dotted = ".".join(root)  # CAMeL returns dotted roots, e.g. "ك.ت.ب"
+    return lambda word: [{"pos": "verb", "root": dotted}]
+
+
+def _approval() -> Critique:
+    return Critique(
+        approved=True, grammar_ok=True, translation_ok=True, verb_usage_ok=True,
+        by="reviewer-under-test",
+    )
 
 
 def test_tally_classifies_every_tier():

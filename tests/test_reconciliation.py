@@ -16,6 +16,19 @@ def test_still_flags_a_real_letter_difference():
     assert not forms_match("كَتَبَ", "كَتَنَ")
 
 
+def test_superscript_alef_over_a_long_vowel_is_only_a_reading_aid():
+    # يَرَىٰ (Uthmani) is the SAME form as يَرَى — the mark says "read this long", it is
+    # not an extra letter. Treating it as one kept رأي out of the generator entirely.
+    assert forms_match("يَرَىٰ", "يَرَى")
+    assert forms_match("عَلَىٰ", "عَلَى")
+
+
+def test_superscript_alef_over_a_consonant_stands_for_an_omitted_letter():
+    # Here the mark replaces an alef that simply is not written, so it must count.
+    assert forms_match("سَمَٰوَات", "سَمَاوَات")
+    assert not forms_match("رَحْمَٰن", "رَحْمن")
+
+
 def test_attested_cell_uses_truth_and_records_agreement():
     generated = {"past": {"hum": "كَتَبُوا", "huwa": "كَتَبَ"}}
     attested = {("past", "hum"): "كَتَبُوا"}  # Quran attests only 'hum'

@@ -166,13 +166,32 @@ def _fold_orthography(decomposed: str) -> str:
         code = ord(char)
         if code in _DROP or code == 0x0621:      # marks + standalone hamza
             continue
-        if code in (0x0670, 0x0671):             # dagger alef, alef waṣl → alef
+        if code == 0x0670:                       # dagger alef — a letter, or a reading aid
+            folded.extend(_dagger_alef(folded))
+        elif code == 0x0671:                     # alef waṣl → alef
             folded.append(_ALEF)
         elif code == 0x0649:                     # alef maqṣūra → yāʾ
             folded.append(_YAA)
         else:
             folded.append(char)
     return "".join(folded)
+
+
+def _dagger_alef(folded: list[str]) -> str:
+    """What the superscript alef stands for, which depends on what precedes it.
+
+    Uthmani uses the same mark for two different things. Over a consonant it stands in
+    for an alef that is simply not written (سَمَٰوَات = سماوات), so it folds to one. But
+    over a long vowel — an alef, or the alef maqṣūra we have just folded to yāʾ — it is
+    only a reading aid saying "pronounce this long" (يَرَىٰ = يرى); adding a letter there
+    invents one, and the form then fails to match the same form spelled plainly.
+    """
+    return "" if _last_letter(folded) in (_ALEF, _YAA) else _ALEF
+
+
+def _last_letter(folded: list[str]) -> str | None:
+    """The most recent actual letter, looking past any vowel marks sitting on it."""
+    return next((char for char in reversed(folded) if ord(char) not in _HARAKAT), None)
 
 
 def _strip_leading_harakat(text: str) -> str:

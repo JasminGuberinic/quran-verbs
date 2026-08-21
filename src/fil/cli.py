@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 
 from fil.stages import (
+    agenda,
     audio_build,
     bundle,
     coverage,
@@ -24,6 +25,7 @@ from fil.stages import (
 # stage name -> (function, one-line description)
 _STAGES = {
     "ingest": (ingest.main, "parse the Quranic Arabic Corpus → verb catalogue"),
+    "agenda": (agenda.main, "plan the sentences the factory owes; report every job's state"),
     "dataset": (dataset.main, "authored verbs.yaml → conjugations (build/verbs.json)"),
     "audio": (audio_build.main, "generate + QA the per-form audio clips"),
     "package": (package.main, "package the audio-gated content.sqlite (legacy audio path)"),

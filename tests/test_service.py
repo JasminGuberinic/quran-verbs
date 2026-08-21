@@ -6,18 +6,24 @@ the consensus tally logic is tested purely on synthetic cells.
 
 import pytest
 
+from fil.agenda import TransitionError
 from fil.examples import Critique, Example, ExampleWord
 from fil.reconciliation import ReconciledCell
 from fil.service import (
     CoverageReport,
     VerbDetail,
     add_examples,
+    agenda_status,
+    brief_for,
     coverage,
     examples_to_critique,
     get_verb,
     list_verbs,
     lookup_word,
+    next_job,
+    plan_verb,
     record_critique,
+    record_outcome,
     review_queue,
     tally,
     vocabulary,
@@ -104,6 +110,78 @@ def test_a_verdict_cannot_land_on_a_sentence_that_does_not_exist(tmp_path):
 
     with pytest.raises(IndexError):
         record_critique(verb.root, verb.form, 7, _approval(), path=path)
+
+
+def test_planning_a_verb_queues_attested_teaching_cells_and_is_repeatable(tmp_path):
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "agenda.json"
+
+    planned = plan_verb(verb.root, verb.form, path=path, examples_path=tmp_path / "none.json")
+
+    assert planned, "the top verb must owe at least one sentence"
+    assert all(job.state == "todo" and job.root == verb.root for job in planned)
+    attested = {(c.tense, c.pronoun) for c in get_verb(verb.root, verb.form).cells
+                if c.source == "attested"}
+    assert all((job.tense, job.pronoun) in attested for job in planned)
+    assert plan_verb(verb.root, verb.form, path=path,
+                     examples_path=tmp_path / "none.json") == []  # nothing new the second time
+
+
+def test_the_next_job_comes_with_a_brief_that_needs_no_recall(tmp_path):
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "agenda.json"
+    plan_verb(verb.root, verb.form, path=path, examples_path=tmp_path / "none.json")
+
+    job = next_job(path=path)
+    brief = brief_for(job, word_limit=4, analyze=lambda word: [
+        {"pos": "noun", "root": "x.y.z", "gloss": "the+thing"}
+    ])
+
+    assert brief.job == job.key and brief.root == verb.root
+    assert brief.target_form, "the brief must name the form the sentence has to use"
+    assert brief.target_source in _TIERS
+    assert len(brief.candidate_words) == 4
+    assert all(word.glosses for word in brief.candidate_words), "a word with no gloss is useless"
+
+
+def test_recording_an_outcome_survives_and_refuses_illegal_moves(tmp_path):
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "agenda.json"
+    key = plan_verb(verb.root, verb.form, path=path, examples_path=tmp_path / "none.json")[0].key
+
+    record_outcome(key, "drafted", failure="", path=path)
+    record_outcome(key, "checked", path=path)
+    assert agenda_status(path=path)["checked"] == 1
+
+    record_outcome(key, "reviewed", path=path)
+    with pytest.raises(TransitionError):
+        record_outcome(key, "drafted", path=path)  # a reviewed sentence is closed
+
+
+def test_a_brief_offers_a_spelling_the_gate_can_actually_read(tmp_path):
+    # The Quran is Uthmani and the analyzer cannot always read it (ءَامَنَ defeats it,
+    # آمَنَ does not), so a brief that offered only the attested spelling would hand the
+    # drafter a word its own gate then rejects.
+    path = tmp_path / "agenda.json"
+    plan_verb("أمن", 4, cells=[("past", "huwa")], path=path,
+              examples_path=tmp_path / "none.json")
+    job = next_job(path=path)
+    cell = next(c for c in get_verb("أمن", 4).cells if (c.tense, c.pronoun) == ("past", "huwa"))
+    assert cell.arabic != cell.generated_form, "this verb is spelled differently in each script"
+    unreadable_uthmani = lambda word: [] if word == cell.arabic else [  # noqa: E731
+        {"pos": "verb", "root": "x.y.z", "gloss": "the+thing"}
+    ]
+
+    brief = brief_for(job, word_limit=1, analyze=unreadable_uthmani)
+
+    assert brief.target_form == cell.arabic              # the truth is still reported …
+    assert brief.writable_form == cell.generated_form    # … but a readable spelling is offered
+    assert "Uthmani" in brief.writable_note
+
+
+def test_recording_against_an_unknown_job_fails_loudly(tmp_path):
+    with pytest.raises(KeyError):
+        record_outcome("zzz_1:past:huwa", "drafted", path=tmp_path / "agenda.json")
 
 
 def test_the_word_bank_holds_real_quranic_vocabulary_only():

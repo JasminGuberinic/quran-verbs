@@ -7,4 +7,5 @@ BUILD_DIR = _ROOT / "build"
 QAC_MORPHOLOGY = DATA_DIR / "qac" / "quran-morphology.txt"
 VERBS_YAML = DATA_DIR / "verbs.yaml"
 EXAMPLES_JSON = DATA_DIR / "examples.json"  # authored practice sentences, kept in the repo
+AGENDA_JSON = DATA_DIR / "agenda.json"      # what the factory still owes (see fil.agenda)
 AUDIO_DIR = BUILD_DIR / "audio"

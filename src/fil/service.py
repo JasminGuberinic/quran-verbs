@@ -15,7 +15,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field, replace
 from functools import lru_cache
 
-from fil import example_store
+from fil import agenda, agenda_store, example_store
+from fil.agenda import Job
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
 from fil.corpus.oracle import AttestedCells, build_oracle
@@ -23,7 +24,7 @@ from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
 from fil.examples import Analyze, Critique, Example, checked
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
-from fil.resources import EXAMPLES_JSON, QAC_MORPHOLOGY
+from fil.resources import AGENDA_JSON, EXAMPLES_JSON, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
@@ -51,6 +52,7 @@ class Cell:
     confidence: float
     generator_agrees: bool | None
     alternatives: tuple[str, ...] = field(default_factory=tuple)
+    generated_form: str = ""   # the generator's own spelling — imlāʾī, which the drill ships
 
 
 @dataclass(frozen=True)
@@ -64,6 +66,42 @@ class VerbDetail:
     cells: tuple[Cell, ...]
     ayat: tuple[str, ...]
     examples: tuple[Example, ...]
+
+
+@dataclass(frozen=True)
+class Brief:
+    """Everything needed to draft one sentence, so nothing is recalled from memory.
+
+    The agent's only job is composition — the part that needs taste. Every fact it would
+    otherwise have to remember is handed over here: the exact form to demonstrate, words
+    the Quran actually uses, and each word's meaning according to a lexicon we did not
+    write. A word offered here is one the gate will accept, so the draft should pass on
+    the first attempt rather than be caught afterwards.
+    """
+
+    job: str                                  # the job key this brief answers
+    root: str
+    form: int
+    lemma: str
+    tense: str
+    pronoun: str
+    target_form: str                          # the form as the Quran/generators give it
+    target_source: str                        # "attested" (Quran-confirmed) | "consensus" | …
+    writable_form: str | None                 # the spelling to actually put in the sentence
+    writable_note: str                        # why it differs from target_form, if it does
+    already_illustrated: tuple[str, ...]      # cells this verb already has, to avoid repeats
+    candidate_words: tuple[WordCandidate, ...]
+
+
+@dataclass(frozen=True)
+class WordCandidate:
+    """A word from the Quranic bank, with the lexicon's own English to gloss from."""
+
+    arabic: str                # the spelling to put in the sentence
+    lemma: str
+    word_class: str
+    occurrence_count: int
+    glosses: tuple[str, ...]   # gloss FROM these — the gate checks your gloss against them
 
 
 @dataclass(frozen=True)
@@ -181,6 +219,168 @@ def add_examples(
     ]
     example_store.save(root, form, results, path)
     return results
+
+
+# The cells worth illustrating with a sentence, in teaching order. A verb rarely needs
+# all 29 — these carry the tenses a learner meets first.
+_TEACHING_CELLS = (
+    ("past", "huwa"), ("present", "huwa"), ("present", "ana"),
+    ("past", "hum"), ("imperative", "anta"),
+)
+
+
+def plan_verb(root: str, form: int, cells=None, path=AGENDA_JSON,
+              examples_path=EXAMPLES_JSON) -> list[Job]:
+    """Put the sentences a verb still owes on the agenda, and return the new jobs.
+
+    By default it plans the teaching cells the Quran actually attests for this verb, so a
+    sentence always demonstrates a form we know to be real. Re-planning is safe: cells
+    already on the agenda are left exactly as they are.
+    """
+    detail = get_verb(root, form)
+    wanted = cells if cells is not None else _attested_teaching_cells(detail)
+    written = example_store.load(root, form, examples_path)
+    fresh = [
+        _recognising_existing_work(job, written)
+        for job in agenda.plan_for(root, form, wanted, agenda_store.load(path))
+    ]
+    if fresh:
+        agenda_store.upsert(fresh, path)
+    return fresh
+
+
+def sync_agenda(path=AGENDA_JSON, examples_path=EXAMPLES_JSON) -> dict[str, int]:
+    """Bring the agenda in line with the sentences that actually exist, and report it.
+
+    The example store is the truth about what has been written; the agenda is only a record
+    of intent. If they disagree — because sentences predate the agenda, or another session
+    added some — the store wins, otherwise we would ask for work already done.
+    """
+    updated = []
+    for job in agenda_store.load(path):
+        recognised = _recognising_existing_work(job, example_store.load(job.root, job.form, examples_path))
+        if recognised != job:
+            updated.append(recognised)
+    if updated:
+        agenda_store.upsert(updated, path)
+    return agenda_status(path)
+
+
+def _recognising_existing_work(job: Job, written: list[Example]) -> Job:
+    """The job in the state the stored sentences imply — untouched if none exists yet."""
+    illustrating = [
+        example for example in written
+        if example.tense == job.tense and example.pronoun == job.pronoun
+    ]
+    if not illustrating:
+        return job
+    best = max(illustrating, key=lambda example: _TIER_ORDER.get(example.tier, 0))
+    if best.tier in (agenda.REVIEWED, agenda.CHECKED):
+        return agenda.recognise(job, best.tier, note="from an existing sentence")
+    return job
+
+
+_TIER_ORDER = {"rejected": 0, "unchecked": 1, "checked": 2, "reviewed": 3}
+
+
+def next_job(path=AGENDA_JSON) -> Job | None:
+    """The next sentence the factory owes — fewest attempts first, so nothing starves."""
+    return next(iter(agenda.open_jobs(agenda_store.load(path))), None)
+
+
+def record_outcome(
+    job_key: str, state: str, failure: str = "", reason: str = "", path=AGENDA_JSON
+) -> Job:
+    """Move one job along its lifecycle and persist the result.
+
+    Raises KeyError if the job is unknown and agenda.TransitionError if the move is not
+    allowed — a wrong outcome must fail loudly, not silently rewrite the agenda.
+    """
+    job = agenda_store.find(job_key, path)
+    if job is None:
+        raise KeyError(f"no job {job_key!r} on the agenda")
+
+    moved = agenda.advance(job, state, failure=failure, reason=reason)
+    agenda_store.upsert([moved], path)
+    return moved
+
+
+def agenda_status(path=AGENDA_JSON) -> dict[str, int]:
+    """How many jobs sit in each state."""
+    return agenda.tally(agenda_store.load(path))
+
+
+def brief_for(job: Job, word_limit: int = 12, analyze: Analyze | None = None) -> Brief:
+    """Assemble everything needed to draft this job's sentence in one call."""
+    detail = get_verb(job.root, job.form)
+    cell = next(
+        (c for c in detail.cells if c.tense == job.tense and c.pronoun == job.pronoun), None
+    )
+    if cell is None:
+        raise KeyError(f"{job.key}: the verb has no {job.tense}/{job.pronoun} cell")
+
+    writable, note = _writable_spelling(cell, analyze)
+    return Brief(
+        job=job.key,
+        root=detail.root, form=detail.form, lemma=detail.lemma,
+        tense=job.tense, pronoun=job.pronoun,
+        target_form=cell.arabic,
+        target_source=cell.source,
+        writable_form=writable,
+        writable_note=note,
+        already_illustrated=tuple(
+            f"{example.tense}/{example.pronoun}"
+            for example in detail.examples
+            if example.tense and example.pronoun
+        ),
+        candidate_words=_vetted_words(word_limit, analyze),
+    )
+
+
+def _writable_spelling(cell: Cell, analyze: Analyze | None) -> tuple[str | None, str]:
+    """A spelling of this cell the sentence gate can actually read.
+
+    The Quran is written in Uthmani orthography, which the analyzer cannot always parse
+    (ءَامَنَ defeats it, آمَنَ does not). A brief that offered only the attested spelling
+    would hand the drafter a word its own gate then rejects, so we look through the cell's
+    equivalent spellings for one that analyses, and say plainly when it is not the Quran's.
+    """
+    for candidate in (cell.arabic, cell.generated_form, *cell.alternatives):
+        if lookup_word(candidate, analyze).is_analyzable:
+            if candidate == cell.arabic:
+                return candidate, ""
+            return candidate, "the attested spelling is Uthmani; write this equivalent instead"
+    return None, "no spelling of this form is analyzable — park the job rather than guess"
+
+
+def _attested_teaching_cells(detail: VerbDetail) -> list[tuple[str, str]]:
+    """The teaching cells this verb attests in the Quran (all of them if none is attested)."""
+    attested = {(cell.tense, cell.pronoun) for cell in detail.cells if cell.source == "attested"}
+    confirmed = [cell for cell in _TEACHING_CELLS if cell in attested]
+    return confirmed or [
+        cell for cell in _TEACHING_CELLS
+        if any(c.tense == cell[0] and c.pronoun == cell[1] for c in detail.cells)
+    ]
+
+
+@lru_cache(maxsize=8)
+def _vetted_words(limit: int, analyze: Analyze | None = None) -> tuple[WordCandidate, ...]:
+    """The most frequent Quranic words the analyzer can read AND gloss.
+
+    A candidate the analyzer cannot read would fail the gate, and one it cannot gloss
+    gives the drafter nothing to translate from — neither belongs in a brief.
+    """
+    candidates = []
+    for entry in vocabulary(word_class="noun") + vocabulary(word_class="adjective"):
+        if len(candidates) >= limit:
+            break
+        found = lookup_word(entry.lemma, analyze)
+        if found.is_analyzable and found.glosses:
+            candidates.append(WordCandidate(
+                arabic=entry.lemma, lemma=entry.lemma, word_class=entry.word_class,
+                occurrence_count=entry.occurrence_count, glosses=found.glosses[:6],
+            ))
+    return tuple(candidates)
 
 
 def vocabulary(limit: int | None = None, word_class: str | None = None) -> list[VocabularyEntry]:
@@ -417,7 +617,7 @@ def _summary(entry: VerbEntry) -> VerbSummary:
 
 def _view(cell: ReconciledCell) -> Cell:
     return Cell(cell.tense, cell.pronoun, cell.arabic, cell.source,
-               cell.confidence, cell.generator_agrees, cell.alternatives)
+               cell.confidence, cell.generator_agrees, cell.alternatives, cell.primary_form)
 
 
 def _count_sources(cells: tuple[Cell, ...]) -> dict[str, int]:

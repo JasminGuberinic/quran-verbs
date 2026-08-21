@@ -56,6 +56,58 @@ def review_queue(limit: int | None = None) -> list[dict]:
 
 
 @mcp.tool()
+def plan_verb(root: str, form: int) -> list[dict]:
+    """Put the sentences a verb still owes onto the agenda; returns only the NEW jobs.
+
+    Plans the teaching cells the Quran actually attests for this verb, so every sentence
+    demonstrates a form we know is real. Safe to call twice — existing jobs are untouched.
+
+    Args:
+        root: the Arabic root of the verb.
+        form: the verb form, 1–10.
+    """
+    return [asdict(job) for job in service.plan_verb(root, form)]
+
+
+@mcp.tool()
+def next_sentence_job() -> dict | None:
+    """The next sentence the factory owes, WITH everything needed to draft it.
+
+    Returns the job plus its brief: the exact conjugated form the sentence must use (and
+    whether the Quran attests it), which cells this verb already illustrates, and candidate
+    words from the Quranic bank each carrying the lexicon's own English glosses. Compose
+    from these and gloss FROM those glosses — do not translate from memory, since the gate
+    checks your gloss against the same lexicon.
+
+    Then call add_examples, and report what happened with record_job_outcome.
+    """
+    job = service.next_job()
+    if job is None:
+        return None
+    return {"job": asdict(job), "brief": asdict(service.brief_for(job))}
+
+
+@mcp.tool()
+def record_job_outcome(job: str, state: str, failure: str = "", reason: str = "") -> dict:
+    """Record what became of one job, so the next session does not repeat it.
+
+    Args:
+        job: the job key, exactly as next_sentence_job reported it.
+        state: "drafted" (an attempt was made), "checked" (the mechanical gate passed),
+            "reviewed" (a reader approved it), or "parked" (needs a human, or we gave up).
+        failure: why the attempt did not stick — required in spirit when repairing.
+        reason: why it is parked, when parking it.
+    """
+    return asdict(service.record_outcome(job, state, failure=failure, reason=reason))
+
+
+@mcp.tool()
+def agenda_status() -> dict[str, int]:
+    """How many sentence jobs sit in each state (todo/drafted/checked/reviewed/parked)."""
+    return service.agenda_status()
+
+
+@mcp.tool()
 def vocabulary(limit: int | None = None, word_class: str | None = None) -> list[dict]:
     """The Quran's own nouns and adjectives — the words to build practice sentences FROM.
 

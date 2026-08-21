@@ -244,5 +244,427 @@
         "note": "أَعْلَمُ الحَقِيقَةَ is ordinary MSA for 'I know the truth'."
       }
     }
+  ],
+  "أمن_4": [
+    {
+      "arabic": "آمَنَ الْقَوْمُ",
+      "words": [
+        {
+          "arabic": "آمَنَ",
+          "en": "believed",
+          "bs": "vjerovao je",
+          "is_target": true
+        },
+        {
+          "arabic": "الْقَوْمُ",
+          "en": "the people",
+          "bs": "narod",
+          "is_target": false
+        }
+      ],
+      "en": "The people believed.",
+      "bs": "Narod je vjerovao.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Verb before a collective subject stays singular — standard agreement."
+      }
+    },
+    {
+      "arabic": "آمَنُوا بِالْحَقِّ",
+      "words": [
+        {
+          "arabic": "آمَنُوا",
+          "en": "they believed",
+          "bs": "vjerovali su",
+          "is_target": true
+        },
+        {
+          "arabic": "بِالْحَقِّ",
+          "en": "in the truth",
+          "bs": "u istinu",
+          "is_target": false
+        }
+      ],
+      "en": "They believed in the truth.",
+      "bs": "Vjerovali su u istinu.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "آمن بـ is the canonical collocation for believing IN something."
+      }
+    }
+  ],
+  "خلق_1": [
+    {
+      "arabic": "خَلَقَ اللَّهُ السَّمَاءَ",
+      "words": [
+        {
+          "arabic": "خَلَقَ",
+          "en": "created",
+          "bs": "stvorio je",
+          "is_target": true
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Bog",
+          "is_target": false
+        },
+        {
+          "arabic": "السَّمَاءَ",
+          "en": "the sky",
+          "bs": "nebo",
+          "is_target": false
+        }
+      ],
+      "en": "God created the sky.",
+      "bs": "Bog je stvorio nebo.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Ordinary VSO; the Quran more often has the plural السماوات, but the singular is equally correct Arabic."
+      }
+    },
+    {
+      "arabic": "يَخْلُقُ اللَّهُ كُلَّ شَيْءٍ",
+      "words": [
+        {
+          "arabic": "يَخْلُقُ",
+          "en": "he creates",
+          "bs": "stvara",
+          "is_target": true
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Bog",
+          "is_target": false
+        },
+        {
+          "arabic": "كُلَّ",
+          "en": "every",
+          "bs": "svaku",
+          "is_target": false
+        },
+        {
+          "arabic": "شَيْءٍ",
+          "en": "something",
+          "bs": "stvar",
+          "is_target": false
+        }
+      ],
+      "en": "God creates everything.",
+      "bs": "Bog stvara svaku stvar.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "كل + genitive is right. Note the word-level gloss of شَيْء follows the lexicon ('something'); the sentence reads 'everything' as كل شيء does."
+      }
+    }
+  ],
+  "عمل_1": [
+    {
+      "arabic": "عَمِلَ الرَّجُلُ",
+      "words": [
+        {
+          "arabic": "عَمِلَ",
+          "en": "worked",
+          "bs": "radio je",
+          "is_target": true
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false
+        }
+      ],
+      "en": "The man worked.",
+      "bs": "Čovjek je radio.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Intransitive use, which is how the verb most naturally stands alone."
+      }
+    },
+    {
+      "arabic": "عَمِلُوا فِي الْأَرْضِ",
+      "words": [
+        {
+          "arabic": "عَمِلُوا",
+          "en": "they worked",
+          "bs": "radili su",
+          "is_target": true
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "na",
+          "is_target": false
+        },
+        {
+          "arabic": "الْأَرْضِ",
+          "en": "the earth",
+          "bs": "zemlji",
+          "is_target": false
+        }
+      ],
+      "en": "They worked on the earth.",
+      "bs": "Radili su na zemlji.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "عمل في is ordinary MSA; فِي is glossed as a function word, so the gloss check skips it by design."
+      }
+    }
+  ],
+  "رأي_1": [
+    {
+      "arabic": "رَأَى الرَّجُلُ الْآيَةَ",
+      "words": [
+        {
+          "arabic": "رَأَى",
+          "en": "saw",
+          "bs": "vidio je",
+          "is_target": true
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false
+        },
+        {
+          "arabic": "الْآيَةَ",
+          "en": "the sign",
+          "bs": "znak",
+          "is_target": false
+        }
+      ],
+      "en": "The man saw the sign.",
+      "bs": "Čovjek je vidio znak.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Natural and unambiguous; آية in its plain sense of 'sign'."
+      }
+    },
+    {
+      "arabic": "يَرَى الرَّسُولُ النُّورَ",
+      "words": [
+        {
+          "arabic": "يَرَى",
+          "en": "he sees",
+          "bs": "vidi",
+          "is_target": true
+        },
+        {
+          "arabic": "الرَّسُولُ",
+          "en": "the messenger",
+          "bs": "poslanik",
+          "is_target": false
+        },
+        {
+          "arabic": "النُّورَ",
+          "en": "the light",
+          "bs": "svjetlo",
+          "is_target": false
+        }
+      ],
+      "en": "The messenger sees the light.",
+      "bs": "Poslanik vidi svjetlo.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Imperfect with an explicit subject — no copula problem here."
+      }
+    }
+  ],
+  "جيأ_1": [
+    {
+      "arabic": "جَاءَ الرَّسُولُ بِالْحَقِّ",
+      "words": [
+        {
+          "arabic": "جَاءَ",
+          "en": "came",
+          "bs": "došao je",
+          "is_target": true
+        },
+        {
+          "arabic": "الرَّسُولُ",
+          "en": "the messenger",
+          "bs": "poslanik",
+          "is_target": false
+        },
+        {
+          "arabic": "بِالْحَقِّ",
+          "en": "with the truth",
+          "bs": "s istinom",
+          "is_target": false
+        }
+      ],
+      "en": "The messenger came with the truth.",
+      "bs": "Poslanik je došao s istinom.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "جاء بـ ('came bringing') is a Quranic idiom, used correctly."
+      }
+    },
+    {
+      "arabic": "جَاءُوا بِالْكِتَابِ",
+      "words": [
+        {
+          "arabic": "جَاءُوا",
+          "en": "they came",
+          "bs": "došli su",
+          "is_target": true
+        },
+        {
+          "arabic": "بِالْكِتَابِ",
+          "en": "with the book",
+          "bs": "s knjigom",
+          "is_target": false
+        }
+      ],
+      "en": "They came with the book.",
+      "bs": "Došli su s knjigom.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
+        "note": "Same idiom in the plural; both words carry their lexicon meaning."
+      }
+    }
   ]
 }

@@ -4,6 +4,7 @@ import pytest
 
 from fil.agenda import (
     CHECKED,
+    MAX_ATTEMPTS,
     DRAFTED,
     PARKED,
     REVIEWED,
@@ -11,6 +12,8 @@ from fil.agenda import (
     Job,
     TransitionError,
     advance,
+    after_failure,
+    needs_human,
     open_jobs,
     plan_for,
     tally,
@@ -101,3 +104,29 @@ def test_tally_counts_every_state():
     counts = tally([_job(), _job(tense="present", state=CHECKED)])
 
     assert counts[TODO] == 1 and counts[CHECKED] == 1 and counts[REVIEWED] == 0
+
+
+def test_a_failure_sends_the_job_back_while_it_still_has_budget():
+    job = advance(_job(), DRAFTED)  # one attempt spent
+
+    again = after_failure(job, "the lexicon refused the gloss of الصدق")
+
+    assert again.state == DRAFTED and again.attempts == 2
+    assert again.last_failure == "the lexicon refused the gloss of الصدق"
+
+
+def test_a_failure_parks_the_job_once_the_budget_is_spent():
+    job = _job(attempts=MAX_ATTEMPTS, state=DRAFTED)
+
+    given_up = after_failure(job, "still not idiomatic")
+
+    assert given_up.state == PARKED
+    assert "gave up after" in given_up.reason and "still not idiomatic" in given_up.reason
+
+
+def test_a_job_parked_for_a_person_is_told_apart_from_one_we_gave_up_on():
+    for_person = advance(_job(), PARKED, reason="needs a human: read this aloud")
+    abandoned = advance(_job(), PARKED, reason="gave up after 3 attempt(s)")
+
+    assert needs_human(for_person)
+    assert not needs_human(abandoned)

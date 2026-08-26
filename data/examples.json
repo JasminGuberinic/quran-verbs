@@ -22,7 +22,7 @@
           "is_target": false
         }
       ],
-      "en": "The man said the truth.",
+      "en": "The man spoke the truth.",
       "bs": "Čovjek je rekao istinu.",
       "tense": "past",
       "pronoun": "huwa",
@@ -39,8 +39,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Correct VSO with nominative subject, accusative object. English would more idiomatically be 'told the truth', but nothing is wrong."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "VSO with correct cases; قال الحق is idiomatic. Nit: the article's lām is unpointed (الْحَقَّ).",
+        "independent": true
       }
     },
     {
@@ -59,7 +60,7 @@
           "is_target": false
         }
       ],
-      "en": "I say the truth.",
+      "en": "I speak the truth.",
       "bs": "Govorim istinu.",
       "tense": "present",
       "pronoun": "ana",
@@ -76,8 +77,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "قول الحق is the attested collocation; the imperfect stands alone correctly."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correct indicative present 1sg with accusative object; both renderings match the gloss.",
+        "independent": true
       }
     }
   ],
@@ -121,8 +123,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Textbook kāna: nominative subject, accusative predicate (خبر كان)."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "kāna + nominative subject + accusative predicate; الطَّقْس is MSA, not Quranic, but standard.",
+        "independent": true
       }
     },
     {
@@ -158,8 +161,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "خبر كان in the accusative plural — the pattern the Quran itself uses (إِن كُنتُمْ صَادِقِينَ). Vocabulary taken from the Quranic bank."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correct 3mp past with accusative sound-plural predicate.",
+        "independent": true
       }
     }
   ],
@@ -203,12 +207,13 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Natural and unambiguous; علم + object is the core use of the verb."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Perfective علم + object reads as 'came to know'; all case endings right.",
+        "independent": true
       }
     },
     {
-      "arabic": "أَعْلَمُ الحَقِيقَةَ",
+      "arabic": "أَعْلَمُ أَنَّهُ صَادِقٌ",
       "words": [
         {
           "arabic": "أَعْلَمُ",
@@ -217,14 +222,20 @@
           "is_target": true
         },
         {
-          "arabic": "الحَقِيقَةَ",
-          "en": "the truth",
-          "bs": "istinu",
+          "arabic": "أَنَّهُ",
+          "en": "that he",
+          "bs": "da je",
+          "is_target": false
+        },
+        {
+          "arabic": "صَادِقٌ",
+          "en": "truthful",
+          "bs": "iskren",
           "is_target": false
         }
       ],
-      "en": "I know the truth.",
-      "bs": "Znam istinu.",
+      "en": "I know that he is truthful.",
+      "bs": "Znam da je iskren.",
       "tense": "present",
       "pronoun": "ana",
       "source": "generated",
@@ -240,8 +251,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "أَعْلَمُ الحَقِيقَةَ is ordinary MSA for 'I know the truth'."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Form I present 1sg; أنّ + suffix with nominative predicate is the standard complement.",
+        "independent": true
       }
     }
   ],
@@ -279,8 +291,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Verb before a collective subject stays singular — standard agreement."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Form IV 3ms; absolute intransitive use is the standard Quranic pattern.",
+        "independent": true
       }
     },
     {
@@ -316,8 +329,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "آمن بـ is the canonical collocation for believing IN something."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "آمَنَ بِـ is the canonical collocation, بِالْحَقِّ correctly genitive.",
+        "independent": true
       }
     }
   ],
@@ -361,8 +375,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Ordinary VSO; the Quran more often has the plural السماوات, but the singular is equally correct Arabic."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correct VSO, nominative اللَّهُ, accusative السَّمَاءَ.",
+        "independent": true
       }
     },
     {
@@ -388,7 +403,7 @@
         },
         {
           "arabic": "شَيْءٍ",
-          "en": "something",
+          "en": "thing; something",
           "bs": "stvar",
           "is_target": false
         }
@@ -410,8 +425,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "كل + genitive is right. Note the word-level gloss of شَيْء follows the lexicon ('something'); the sentence reads 'everything' as كل شيء does."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correct present/huwa; كُلَّ شَيْءٍ accusative-plus-genitive; 'everything' is faithful.",
+        "independent": true
       }
     }
   ],
@@ -449,12 +465,13 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Intransitive use, which is how the verb most naturally stands alone."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Intransitive عَمِلَ with nominative subject; translations match.",
+        "independent": true
       }
     },
     {
-      "arabic": "عَمِلُوا فِي الْأَرْضِ",
+      "arabic": "عَمِلُوا فِي الْبَيْتِ",
       "words": [
         {
           "arabic": "عَمِلُوا",
@@ -465,18 +482,18 @@
         {
           "arabic": "فِي",
           "en": "in",
-          "bs": "na",
+          "bs": "u",
           "is_target": false
         },
         {
-          "arabic": "الْأَرْضِ",
-          "en": "the earth",
-          "bs": "zemlji",
+          "arabic": "الْبَيْتِ",
+          "en": "the house",
+          "bs": "kući",
           "is_target": false
         }
       ],
-      "en": "They worked on the earth.",
-      "bs": "Radili su na zemlji.",
+      "en": "They worked in the house.",
+      "bs": "Radili su u kući.",
       "tense": "past",
       "pronoun": "hum",
       "source": "generated",
@@ -492,8 +509,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "عمل في is ordinary MSA; فِي is glossed as a function word, so the gloss check skips it by design."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correct 3mp past; عمل في + place is idiomatic; genitive after فِي correct.",
+        "independent": true
       }
     }
   ],
@@ -537,8 +555,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Natural and unambiguous; آية in its plain sense of 'sign'."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Defective root 3ms past with accusative object; 'sign' is the right sense of آية.",
+        "independent": true
       }
     },
     {
@@ -580,8 +599,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Imperfect with an explicit subject — no copula problem here."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correct 3ms imperfect; النُّورَ properly accusative; transitive use natural.",
+        "independent": true
       }
     }
   ],
@@ -625,8 +645,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "جاء بـ ('came bringing') is a Quranic idiom, used correctly."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "جاء بـ is the standard 'came with/brought' idiom, genitive correct.",
+        "independent": true
       }
     },
     {
@@ -662,8 +683,9 @@
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude-opus-5 (same session that drafted — NOT an independent pass)",
-        "note": "Same idiom in the plural; both words carry their lexicon meaning."
+        "by": "claude-opus-5, separate pass with no drafting context (independent)",
+        "note": "Correctly spelled 3mp past; جاء بـ idiomatic; translations match.",
+        "independent": true
       }
     }
   ]

@@ -27,7 +27,15 @@ ConjugationTable = dict[str, dict[str, str]]
 
 
 class Conjugator(Protocol):
-    """A strategy that produces a verb's teachable conjugation table."""
+    """A strategy that produces a verb's teachable conjugation table.
+
+    A generator declares its own cost through `is_heavy`, so a caller planning a large run
+    can be refused before it starts rather than after it has eaten the machine's memory
+    (see fil.governor). Cheap is the default; only a generator that loads a database says
+    otherwise.
+    """
+
+    is_heavy: bool
 
     def conjugate(self, verb: Verb) -> ConjugationTable: ...
 
@@ -62,6 +70,8 @@ _PRONOUNS = [
 
 class QutrubConjugator:
     """Conjugator backed by libqutrub — a mature rule-based Arabic conjugator."""
+
+    is_heavy = False  # pure rules, no database to load
 
     def conjugate(self, verb: Verb) -> ConjugationTable:
         """Return {tense: {pronoun_key: vocalized_form}} for the teachable cells.

@@ -9,6 +9,7 @@ _EXPECTED_TOOLS = {
     "add_examples", "examples_to_critique", "critique_example",
     "vocabulary", "lookup_word",
     "plan_verb", "next_sentence_job", "record_job_outcome", "agenda_status",
+    "sentences_to_review_blind", "report_failure", "hand_to_human", "handoff_queue", "metrics",
 }
 
 

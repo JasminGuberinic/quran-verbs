@@ -1,0 +1,95 @@
+[
+  {
+    "root": "قول",
+    "form": 1,
+    "expect_gate_passes": true,
+    "because": "Correct throughout: VSO, accusative object, and every gloss is one the lexicon gives.",
+    "arabic": "قَالَ الرَّجُلُ الحَقَّ",
+    "en": "The man said the truth.",
+    "bs": "Čovjek je rekao istinu.",
+    "tense": "past",
+    "pronoun": "huwa",
+    "words": [
+      {"arabic": "قَالَ", "en": "said", "bs": "rekao je", "is_target": true},
+      {"arabic": "الرَّجُلُ", "en": "the man", "bs": "čovjek"},
+      {"arabic": "الحَقَّ", "en": "the truth", "bs": "istinu"}
+    ]
+  },
+  {
+    "root": "قول",
+    "form": 1,
+    "expect_gate_passes": false,
+    "because": "REAL DEFECT the gloss layer caught: الصِّدْق is sincerity/candor in the lexicon, so calling it 'the truth' is a claim nothing supports. If this ever passes, layer 3 has been broken.",
+    "arabic": "أَقُولُ الصِّدْقَ",
+    "en": "I say the truth.",
+    "bs": "Govorim istinu.",
+    "tense": "present",
+    "pronoun": "ana",
+    "words": [
+      {"arabic": "أَقُولُ", "en": "I say", "bs": "govorim", "is_target": true},
+      {"arabic": "الصِّدْقَ", "en": "the truth", "bs": "istinu"}
+    ]
+  },
+  {
+    "root": "كون",
+    "form": 1,
+    "expect_gate_passes": true,
+    "because": "REAL DEFECT a reader caught, NOT the mechanics: flawless morphology, but MSA drops the present copula (أَنَا سَعِيدٌ). It must keep PASSING the gate — that is the honest boundary of what an analyzer can judge, and the reason layer 4 exists.",
+    "arabic": "أَكُونُ سَعِيدًا",
+    "en": "I am happy.",
+    "bs": "Sretan sam.",
+    "tense": "present",
+    "pronoun": "ana",
+    "words": [
+      {"arabic": "أَكُونُ", "en": "I am", "bs": "ja sam", "is_target": true},
+      {"arabic": "سَعِيدًا", "en": "happy", "bs": "sretan"}
+    ]
+  },
+  {
+    "root": "كتب",
+    "form": 1,
+    "expect_gate_passes": false,
+    "because": "The emphasised verb is ذهب, not كتب — the root check must refuse a sentence that does not demonstrate the verb it claims.",
+    "arabic": "ذَهَبَ الرَّجُلُ",
+    "en": "The man wrote.",
+    "bs": "Čovjek je napisao.",
+    "tense": "past",
+    "pronoun": "huwa",
+    "words": [
+      {"arabic": "ذَهَبَ", "en": "wrote", "bs": "napisao je", "is_target": true},
+      {"arabic": "الرَّجُلُ", "en": "the man", "bs": "čovjek"}
+    ]
+  },
+  {
+    "root": "علم",
+    "form": 1,
+    "expect_gate_passes": false,
+    "because": "زقظ is not a word. Layer 1 exists to catch a typo anywhere in the sentence, not only in the verb.",
+    "arabic": "عَلِمَ الطَّالِبُ زقظ",
+    "en": "The student knew nonsense.",
+    "bs": "Student je znao besmislicu.",
+    "tense": "past",
+    "pronoun": "huwa",
+    "words": [
+      {"arabic": "عَلِمَ", "en": "knew", "bs": "znao je", "is_target": true},
+      {"arabic": "الطَّالِبُ", "en": "the student", "bs": "student"},
+      {"arabic": "زقظ", "en": "nonsense", "bs": "besmislica"}
+    ]
+  },
+  {
+    "root": "علم",
+    "form": 1,
+    "expect_gate_passes": false,
+    "because": "The sentence is in the past, but it is offered as the PRESENT/ana cell. Layer 2 must refuse a sentence that demonstrates a different form than it claims.",
+    "arabic": "عَلِمَ الطَّالِبُ الجَوَابَ",
+    "en": "I know the answer.",
+    "bs": "Znam odgovor.",
+    "tense": "present",
+    "pronoun": "ana",
+    "words": [
+      {"arabic": "عَلِمَ", "en": "knew", "bs": "znao je", "is_target": true},
+      {"arabic": "الطَّالِبُ", "en": "the student", "bs": "student"},
+      {"arabic": "الجَوَابَ", "en": "the answer", "bs": "odgovor"}
+    ]
+  }
+]

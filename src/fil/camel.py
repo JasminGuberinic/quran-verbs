@@ -75,6 +75,8 @@ _PERF_3MS = {"asp": "p", "per": "3", "gen": "m", "num": "s", "mod": "i"}
 class CamelConjugator:
     """Conjugator backed by CAMeL Tools' MSA morphology database."""
 
+    is_heavy = True  # ~40 MB database, close to a gigabyte resident while it works
+
     @cached_property
     def _analyzer(self):
         return _shared_analyzer()

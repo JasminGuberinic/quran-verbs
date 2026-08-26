@@ -138,12 +138,33 @@ they belong in the agenda with a `needs_human` reason, not in someone's head.
    vowel's provenance recorded on `Verb` and honoured in `service._reconcile_entry`.
    Deferred deliberately: it only pays off under the opt-in CAMeL path, so it changes
    nothing in the default bundle.
-1. **Agenda** (#1) — jobs, states, CLI, MCP `next_job` / `record_result`.
-2. **Brief** (#2) — grounded context in one call.
-3. **Independent critic** (#3) — the subagent invocation and the blind brief.
-4. **Repair loop** (#4) — bounded, recorded.
-5. **Evals** (#5) — the golden set and the five numbers.
-6. **Governor** (#6) and **human handoff** (#7).
+1. **Agenda** (#1) — `fil/agenda.py`, `agenda_store.py`, `fil agenda`, MCP `next_sentence_job`
+   / `record_job_outcome`. **Built.**
+2. **Brief** (#2) — `service.brief_for`, including the readable-spelling resolution the
+   Uthmani orthography forces. **Built.**
+3. **Independent critic** (#3) — `service.blind_reviews` withholds the check results, the
+   drafter's reasoning and the tier; `Critique.independent` records whether the reader was
+   actually separate, and a sentence stays queued until one has spoken. **Built, and it
+   earned its place immediately: a blind pass refused 5 of the first 16 sentences.**
+4. **Repair loop** (#4) — `agenda.after_failure`, bounded by `MAX_ATTEMPTS`. **Built.**
+5. **Evals** (#5) — `fil/evals.py` + `fil evals`, with the golden set in
+   `data/golden_sentences.json`. **Built.**
+6. **Governor** (#6) — `fil/governor.py`; a generator declares its own cost via `is_heavy`
+   and a whole-catalogue run with a heavy one is refused. **Built.**
+7. **Human handoff** (#7) — `service.hand_to_human` / `handoff_queue`, told apart from a job
+   we gave up on. **Built; nothing in it yet, which is the honest state.**
+
+**What the first full turn of the loop taught us.** The blind reader refused 5 of 16 — two
+English collocations that were not English, one imperfective verb that is not idiomatic with
+a bare object, one gloss that was right in the dictionary and wrong in the sentence, and one
+translation that contradicted its own gloss. None of those are things an analyzer can see,
+which is the whole argument for the layer. All five were repaired and then approved by a
+second blind pass. **Reader rejection rate: 23.8%** — that is how much the mechanical gate
+misses, and it is now measured rather than assumed.
+
+One consequence worth keeping: the gloss layer and the reader can disagree in good faith.
+The lexicon glosses شَيْء as "something", while inside كُلَّ شَيْءٍ the reader is right that it
+means "thing". The fix was to gloss both, not to weaken either check.
 
 Then, and only then, mass content: the loop makes 300 verbs a batch job instead of 300
 conversations.

@@ -93,6 +93,7 @@ class Critique:
     verb_usage_ok: bool      # is the verb used the way the language really uses it?
     by: str                  # who judged (model or person) — honesty about independence
     note: str = ""           # what to fix, when refused
+    independent: bool = False  # did the reader have NO part in drafting this sentence?
 
 
 @dataclass(frozen=True)
@@ -119,6 +120,15 @@ class Example:
         if self.critique is None:
             return "checked"
         return "reviewed" if self.critique.approved else "rejected"
+
+    @property
+    def independently_reviewed(self) -> bool:
+        """Approved by a reader who had no hand in writing it — the verdict that counts.
+
+        A sentence can be `reviewed` and still be waiting for this: the pass that drafted
+        it may have judged it, which is worth something but is not a second opinion.
+        """
+        return bool(self.critique and self.critique.approved and self.critique.independent)
 
     @property
     def is_shippable(self) -> bool:

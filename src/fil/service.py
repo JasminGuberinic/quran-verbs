@@ -22,7 +22,9 @@ from fil.corpus.catalog import VerbEntry, build_catalog
 from fil.corpus.oracle import AttestedCells, build_oracle
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
+from fil import evals
 from fil.examples import Analyze, Critique, Example, checked
+from fil.governor import permit
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
 from fil.resources import AGENDA_JSON, EXAMPLES_JSON, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
@@ -118,6 +120,26 @@ class WordLookup:
     glosses: tuple[str, ...]           # the lexicon's own English — gloss FROM these
     roots: tuple[str, ...]
     parts_of_speech: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class BlindReview:
+    """A sentence as an independent reader must meet it: the text and the claim, alone.
+
+    Everything that could anchor the reader is deliberately absent — no mechanical check
+    results, no note from whoever drafted it, no tier saying the machine already approved.
+    A reader who knows the gate passed it is no longer an independent witness, and the
+    whole point of this layer is a verdict that owes nothing to the pass that wrote it.
+    """
+
+    root: str
+    form: int
+    index: int                       # pass this back with the verdict
+    arabic: str
+    words: tuple[dict, ...]          # arabic + en + bs + is_target, nothing more
+    en: str
+    bs: str
+    claim: str                       # what the sentence is being offered as proof of
 
 
 @dataclass(frozen=True)
@@ -277,7 +299,17 @@ def _recognising_existing_work(job: Job, written: list[Example]) -> Job:
     best = max(illustrating, key=lambda example: _TIER_ORDER.get(example.tier, 0))
     if best.tier in (agenda.REVIEWED, agenda.CHECKED):
         return agenda.recognise(job, best.tier, note="from an existing sentence")
+    if best.tier == "rejected":
+        # A verdict can arrive after the job was closed — a reader refusing a sentence the
+        # machine had passed. The agenda follows the truth, so the cell is owed again.
+        return agenda.reopened_after_refusal(job, _why_rejected(best))
     return job
+
+
+def _why_rejected(example: Example) -> str:
+    if example.critique and not example.critique.approved:
+        return f"refused by {example.critique.by}: {example.critique.note}"
+    return "failed the mechanical gate"
 
 
 _TIER_ORDER = {"rejected": 0, "unchecked": 1, "checked": 2, "reviewed": 3}
@@ -303,6 +335,16 @@ def record_outcome(
     moved = agenda.advance(job, state, failure=failure, reason=reason)
     agenda_store.upsert([moved], path)
     return moved
+
+
+def metrics(path=AGENDA_JSON, examples_path=EXAMPLES_JSON):
+    """The factory's headline numbers, over the agenda and every stored sentence."""
+    sentences = [
+        example
+        for root, form in example_store.stored_verbs(examples_path)
+        for example in example_store.load(root, form, examples_path)
+    ]
+    return evals.measure(agenda_store.load(path), sentences)
 
 
 def agenda_status(path=AGENDA_JSON) -> dict[str, int]:
@@ -429,6 +471,86 @@ def examples_to_critique(limit: int | None = None, path=EXAMPLES_JSON) -> list[E
     return queue[:limit] if limit else queue
 
 
+def blind_reviews(limit: int | None = None, path=EXAMPLES_JSON) -> list[BlindReview]:
+    """Sentences awaiting judgement, stripped of everything that could anchor a reader."""
+    return [
+        BlindReview(
+            root=review.root, form=review.form, index=review.index,
+            arabic=review.example.arabic,
+            words=tuple(
+                {"arabic": word.arabic, "en": word.en, "bs": word.bs,
+                 "is_target": word.is_target}
+                for word in review.example.words
+            ),
+            en=review.example.en, bs=review.example.bs,
+            claim=_claim_of(review.example, review.root),
+        )
+        for review in _awaiting_independent_read(limit, path)
+    ]
+
+
+def _awaiting_independent_read(limit: int | None, path) -> list[ExampleReview]:
+    """Mechanically sound sentences with no independent verdict yet.
+
+    A sentence the drafting pass approved is NOT done: that verdict is recorded, but it is
+    not a second opinion, so the sentence stays in this queue until a reader who had no
+    hand in it has spoken.
+    """
+    waiting = [
+        ExampleReview(root=root, form=form, index=index, example=example)
+        for root, form in example_store.stored_verbs(path)
+        for index, example in enumerate(example_store.load(root, form, path))
+        if example.checks and example.checks.passed and not example.independently_reviewed
+    ]
+    return waiting[:limit] if limit else waiting
+
+
+def _claim_of(example: Example, root: str) -> str:
+    """What this sentence is offered as proof of — the reader judges against this."""
+    cell = f"{example.tense}/{example.pronoun}" if example.tense and example.pronoun else "unstated"
+    return (
+        f"the emphasised word is a verb of the root {root} in {cell}, "
+        "the sentence is correct Modern Standard Arabic, and the translations say what "
+        "the Arabic says"
+    )
+
+
+def hand_to_human(job_key: str, task: str, path=AGENDA_JSON) -> Job:
+    """Park a job as something only a person can settle, and say what is being asked.
+
+    Hearing whether audio is clean, seeing whether the Arabic renders correctly, and giving
+    the language a qualified reading are not weaknesses in the pipeline — they are jobs with
+    a different worker. Recording them here means they are tracked rather than remembered.
+    """
+    job = agenda_store.find(job_key, path)
+    if job is None:
+        raise KeyError(f"no job {job_key!r} on the agenda")
+
+    parked = agenda.advance(job, agenda.PARKED, reason=f"{agenda.NEEDS_HUMAN}: {task}")
+    agenda_store.upsert([parked], path)
+    return parked
+
+
+def handoff_queue(path=AGENDA_JSON) -> list[Job]:
+    """Everything waiting on a person — what to ask for when one is available."""
+    return [job for job in agenda_store.load(path) if agenda.needs_human(job)]
+
+
+def report_failure(job_key: str, failure: str, path=AGENDA_JSON) -> Job:
+    """Record that an attempt failed: back for a repair, or parked if the budget is spent.
+
+    This is the bounded half of the repair loop — the engine decides when to stop trying,
+    so the agent cannot keep spending on a cell that will not come right.
+    """
+    job = agenda_store.find(job_key, path)
+    if job is None:
+        raise KeyError(f"no job {job_key!r} on the agenda")
+
+    moved = agenda.after_failure(job, failure)
+    agenda_store.upsert([moved], path)
+    return moved
+
+
 def record_critique(
     root: str, form: int, index: int, critique: Critique, path=EXAMPLES_JSON
 ) -> Example:
@@ -466,8 +588,10 @@ def _camel_features(tense: str, pronoun: str) -> dict | None:
 
 def review_queue(limit: int | None = None, conjugators: list[Conjugator] | None = None) -> list[Conflict]:
     """Every cell to review (generator↔Quran or generator↔generator disagreement)."""
+    catalog = _corpus().catalog
+    permit(len(catalog), conjugators or _DEFAULT_CONJUGATORS)
     conflicts: list[Conflict] = []
-    for entry in _corpus().catalog:
+    for entry in catalog:
         conflicts.extend(_conflicts_of(entry, _reconcile_entry(entry, conjugators)))
         if limit and len(conflicts) >= limit:
             return conflicts[:limit]
@@ -476,7 +600,9 @@ def review_queue(limit: int | None = None, conjugators: list[Conjugator] | None 
 
 def coverage(conjugators: list[Conjugator] | None = None) -> CoverageReport:
     """Reconcile every verb and summarize what the Quran + generators confirm."""
-    results = [_reconcile_entry(entry, conjugators) for entry in _corpus().catalog]
+    catalog = _corpus().catalog
+    permit(len(catalog), conjugators or _DEFAULT_CONJUGATORS)
+    results = [_reconcile_entry(entry, conjugators) for entry in catalog]
     return tally(results)
 
 

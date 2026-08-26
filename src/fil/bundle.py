@@ -69,7 +69,8 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             bs TEXT NOT NULL,
             tense TEXT,
             pronoun TEXT,
-            tier TEXT NOT NULL
+            tier TEXT NOT NULL,
+            independently_reviewed INTEGER NOT NULL
         );
         CREATE TABLE example_words (
             example_id INTEGER NOT NULL REFERENCES examples(example_id),
@@ -124,9 +125,10 @@ def _insert_ayat(connection: sqlite3.Connection, vid: str, detail: VerbDetail) -
 
 def _insert_example(connection: sqlite3.Connection, example_id: int, vid: str, example) -> None:
     connection.execute(
-        "INSERT INTO examples VALUES (?,?,?,?,?,?,?,?)",
+        "INSERT INTO examples VALUES (?,?,?,?,?,?,?,?,?)",
         (example_id, vid, example.arabic, example.en, example.bs,
-         example.tense, example.pronoun, example.tier),
+         example.tense, example.pronoun, example.tier,
+         int(example.independently_reviewed)),
     )
     word_rows = [
         (example_id, position, word.arabic, word.en, word.bs, int(word.is_target))

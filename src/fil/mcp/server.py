@@ -185,9 +185,73 @@ def examples_to_critique(limit: int | None = None) -> list[dict]:
 
 
 @mcp.tool()
+def sentences_to_review_blind(limit: int | None = None) -> list[dict]:
+    """Sentences to judge with NOTHING that could anchor you — the independent read.
+
+    You get the Arabic, its word-by-word gloss, and the claim being made. You do NOT get
+    the mechanical check results, the drafter's reasoning, or whether anything already
+    approved it — because a reader who knows the machine passed it is no longer an
+    independent witness, and that independence is the only thing this layer adds.
+
+    Judge each on its own terms and record the verdict with critique_example. Say who you
+    are in `by`, including whether you had any part in drafting it.
+
+    Args:
+        limit: optionally cap how many sentences are returned.
+    """
+    return [asdict(review) for review in service.blind_reviews(limit)]
+
+
+@mcp.tool()
+def report_failure(job: str, failure: str) -> dict:
+    """Record that an attempt on a job failed; the engine decides whether to try again.
+
+    A repair is bounded: after a few attempts the job is parked with what went wrong
+    instead of being retried forever. The returned state says which happened.
+
+    Args:
+        job: the job key, exactly as next_sentence_job reported it.
+        failure: what went wrong, concretely (e.g. which word's gloss the lexicon refused).
+    """
+    return asdict(service.report_failure(job, failure))
+
+
+@mcp.tool()
+def hand_to_human(job: str, task: str) -> dict:
+    """Park a job as something only a person can settle, and say what is being asked.
+
+    Use this for what no analyzer can do: hearing whether audio is clean, seeing whether
+    the Arabic renders correctly, or a qualified reading of the language itself.
+
+    Args:
+        job: the job key.
+        task: what the person needs to do, in one sentence.
+    """
+    return asdict(service.hand_to_human(job, task))
+
+
+@mcp.tool()
+def handoff_queue() -> list[dict]:
+    """Everything waiting on a person — what to ask for when one is available."""
+    return [asdict(job) for job in service.handoff_queue()]
+
+
+@mcp.tool()
+def metrics() -> dict:
+    """How the factory is doing: are drafts landing first time, and what do readers catch?
+
+    The number that matters most is the reader rejection rate — what gets past the
+    mechanical gate and is only caught by a human reading it. A gate that never lets
+    anything through to be rejected is either perfect or untested.
+    """
+    return asdict(service.metrics())
+
+
+@mcp.tool()
 def critique_example(
     root: str, form: int, index: int, approved: bool, grammar_ok: bool,
     translation_ok: bool, verb_usage_ok: bool, by: str, note: str = "",
+    independent: bool = False,
 ) -> dict:
     """Record a reviewer's verdict on one stored sentence, lifting it to "reviewed".
 
@@ -205,10 +269,13 @@ def critique_example(
         by: who judged — the model or person, so the record shows how independent
             the verdict was (e.g. "claude-opus-5, independent pass").
         note: what to fix, when refused.
+        independent: true ONLY if you had no part in drafting this sentence. A sentence
+            keeps appearing in the blind queue until an independent verdict exists, so
+            claiming this falsely is how the whole layer becomes decoration.
     """
     critique = Critique(
         approved=approved, grammar_ok=grammar_ok, translation_ok=translation_ok,
-        verb_usage_ok=verb_usage_ok, by=by, note=note,
+        verb_usage_ok=verb_usage_ok, by=by, note=note, independent=independent,
     )
     return _from_example(service.record_critique(root, form, index, critique))
 

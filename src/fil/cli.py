@@ -16,6 +16,7 @@ from fil.stages import (
     bundle,
     coverage,
     dataset,
+    evals,
     full,
     ingest,
     package,
@@ -33,6 +34,7 @@ _STAGES = {
     "all": (full.main, "dataset → audio → package (the full bundle)"),
     "coverage": (coverage.main, "reconcile every Quranic verb; print agreement rate"),
     "review": (review.main, "export the review queue of generator↔Quran conflicts"),
+    "evals": (evals.main, "report the factory's metrics; re-run the gate over the golden set"),
 }
 
 

@@ -60,6 +60,7 @@ class Job:
     attempts: int = 0            # how many drafts this job has consumed
     last_failure: str = ""       # why the most recent attempt did not stick
     reason: str = ""             # why it is parked, when it is
+    refusals: int = 0            # how many times a reader has refused a sentence for this cell
 
     @property
     def key(self) -> str:
@@ -98,7 +99,47 @@ def advance(job: Job, state: str, failure: str = "", reason: str = "") -> Job:
     )
 
 
-def recognise(job: Job, state: str, note: str = "") -> Job:
+# How many drafts one cell may consume before we stop spending on it. Bounded on
+# purpose: an unbounded repair loop is how an agent burns a budget and then converges
+# on something plausible but wrong. Three tries, then a person decides.
+MAX_ATTEMPTS = 3
+
+# A parked job whose reason begins with this is not a dead end — it is queued for the one
+# worker the pipeline cannot replace.
+NEEDS_HUMAN = "needs a human"
+
+
+def needs_human(job: Job) -> bool:
+    """Whether this job is parked waiting on a person rather than on us."""
+    return job.state == PARKED and job.reason.startswith(NEEDS_HUMAN)
+
+
+def after_failure(job: Job, failure: str, max_attempts: int = MAX_ATTEMPTS) -> Job:
+    """Send a failed job back for another draft, or park it once its budget is spent.
+
+    The failure is recorded either way, so the next attempt starts from what went wrong
+    rather than from nothing — and a parked job says how many tries it cost.
+    """
+    if job.attempts >= max_attempts:
+        return advance(
+            job, PARKED, failure=failure,
+            reason=f"gave up after {job.attempts} attempt(s): {failure}",
+        )
+    return advance(job, DRAFTED, failure=failure)
+
+
+def reopened_after_refusal(job: Job, failure: str) -> Job:
+    """Reopen a cell because a reader refused its sentence, and remember that it happened.
+
+    The count is kept here because nowhere else can keep it: repairing a sentence replaces
+    it in the store, so the refusal that prompted the repair would otherwise vanish and the
+    pipeline would look as though nothing had ever been caught.
+    """
+    reopened = recognise(job, DRAFTED, failure=failure)
+    return replace(reopened, refusals=job.refusals + 1)
+
+
+def recognise(job: Job, state: str, note: str = "", failure: str = "") -> Job:
     """Set a job's state from evidence outside the agenda, bypassing the lifecycle.
 
     Work done before the agenda existed — or by someone else — is not a transition we can
@@ -108,7 +149,7 @@ def recognise(job: Job, state: str, note: str = "") -> Job:
     """
     if state not in _STATES:
         raise TransitionError(f"unknown state {state!r}")
-    return replace(job, state=state, attempts=max(job.attempts, 1), last_failure="", reason=note)
+    return replace(job, state=state, attempts=max(job.attempts, 1), last_failure=failure, reason=note)
 
 
 def open_jobs(jobs: Iterable[Job]) -> list[Job]:

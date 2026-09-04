@@ -2,6 +2,7 @@
 
 from fil.agenda import CHECKED, PARKED, REVIEWED, TODO, Job
 from fil.evals import GoldenCase, check_golden, measure
+from fil.journal import JUDGED, Event
 from fil.examples import Critique, Example, ExampleChecks, ExampleWord
 
 
@@ -16,7 +17,7 @@ def _sentence(*, passed: bool = True, approved: bool | None = None, pronoun: str
     if approved is not None:
         critique = Critique(approved=approved, grammar_ok=approved, translation_ok=approved,
                             verb_usage_ok=approved, by="reader-under-test",
-                            independent=independent)
+                            note="" if approved else "not idiomatic", independent=independent)
     return Example(
         arabic="كَتَبَ", words=(ExampleWord("كَتَبَ", "wrote", "napisao", is_target=True),),
         en="wrote", bs="napisao", tense="past", pronoun=pronoun,
@@ -37,17 +38,22 @@ def test_first_try_rate_counts_only_jobs_that_reached_the_gate():
 
 
 def test_reader_rejection_rate_survives_the_repair_that_erases_the_evidence():
-    # The refusal is counted on the job, because repairing the sentence replaces it in the
-    # store — the only standing sentence is the good one, yet the catch must still show.
+    # The refused sentence has been REPLACED by its repair, so the store holds only good
+    # ones. The catch must still show, which is exactly why history lives in the journal.
     metrics = measure(
-        [_job(REVIEWED, refusals=1), _job(REVIEWED, pronoun="hum")],
-        [_sentence(approved=True, independent=True),
-         _sentence(approved=True, independent=True, pronoun="hum"),
-         _sentence(approved=True, pronoun="ana")],  # approved by the drafter — does not count
+        [_job(REVIEWED), _job(REVIEWED, pronoun="hum")],
+        [_sentence(approved=True, independent=True)],
+        [_verdict(approved=False), _verdict(approved=True), _verdict(approved=True)],
     )
 
     assert metrics.reader_refusals == 1
-    assert metrics.critic_rejection_rate == 33.3  # one refusal against two standing verdicts
+    assert metrics.critic_rejection_rate == 33.3  # one refusal in three verdicts ever given
+
+
+def _verdict(*, approved: bool) -> Event:
+    return Event(at="2026-01-01T00:00:00+00:00", kind=JUDGED, subject="كتب_1:#0",
+                 detail="approved" if approved else "not idiomatic",
+                 by="reader-under-test", outcome=approved, independent=True)
 
 
 def test_a_rate_with_no_data_is_none_not_zero():

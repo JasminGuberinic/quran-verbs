@@ -9,4 +9,5 @@ VERBS_YAML = DATA_DIR / "verbs.yaml"
 EXAMPLES_JSON = DATA_DIR / "examples.json"  # authored practice sentences, kept in the repo
 AGENDA_JSON = DATA_DIR / "agenda.json"      # what the factory still owes (see fil.agenda)
 GOLDEN_JSON = DATA_DIR / "golden_sentences.json"  # sentences whose verdict we already know
+JOURNAL_JSONL = DATA_DIR / "journal.jsonl"   # append-only record of what happened (fil.journal)
 AUDIO_DIR = BUILD_DIR / "audio"

@@ -15,6 +15,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field, replace
 from functools import lru_cache
 
+from datetime import datetime, timedelta, timezone
+
 from fil import agenda, agenda_store, example_store
 from fil.agenda import Job
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
@@ -25,8 +27,10 @@ from fil.driver import build_verb
 from fil import evals
 from fil.examples import Analyze, Critique, Example, checked
 from fil.governor import permit
+from fil.journal import Event
+from fil import journal, journal_store
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
-from fil.resources import AGENDA_JSON, EXAMPLES_JSON, QAC_MORPHOLOGY
+from fil.resources import AGENDA_JSON, EXAMPLES_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
@@ -321,7 +325,8 @@ def next_job(path=AGENDA_JSON) -> Job | None:
 
 
 def record_outcome(
-    job_key: str, state: str, failure: str = "", reason: str = "", path=AGENDA_JSON
+    job_key: str, state: str, failure: str = "", reason: str = "", path=AGENDA_JSON,
+    journal_path=JOURNAL_JSONL,
 ) -> Job:
     """Move one job along its lifecycle and persist the result.
 
@@ -334,17 +339,21 @@ def record_outcome(
 
     moved = agenda.advance(job, state, failure=failure, reason=reason)
     agenda_store.upsert([moved], path)
+    _remember(_EVENT_FOR.get(state, journal.DRAFTED), job_key,
+              failure or reason or f"moved to {state}",
+              outcome=None if state != agenda.CHECKED else True, path=journal_path)
     return moved
 
 
-def metrics(path=AGENDA_JSON, examples_path=EXAMPLES_JSON):
-    """The factory's headline numbers, over the agenda and every stored sentence."""
+def metrics(path=AGENDA_JSON, examples_path=EXAMPLES_JSON, journal_path=None):
+    """The factory's headline numbers: current state from the agenda, history from the journal."""
     sentences = [
         example
         for root, form in example_store.stored_verbs(examples_path)
         for example in example_store.load(root, form, examples_path)
     ]
-    return evals.measure(agenda_store.load(path), sentences)
+    events = journal_store.read(journal_path) if journal_path else journal_store.read()
+    return evals.measure(agenda_store.load(path), sentences, events)
 
 
 def agenda_status(path=AGENDA_JSON) -> dict[str, int]:
@@ -515,7 +524,8 @@ def _claim_of(example: Example, root: str) -> str:
     )
 
 
-def hand_to_human(job_key: str, task: str, path=AGENDA_JSON) -> Job:
+def hand_to_human(job_key: str, task: str, path=AGENDA_JSON,
+                  journal_path=JOURNAL_JSONL) -> Job:
     """Park a job as something only a person can settle, and say what is being asked.
 
     Hearing whether audio is clean, seeing whether the Arabic renders correctly, and giving
@@ -528,6 +538,7 @@ def hand_to_human(job_key: str, task: str, path=AGENDA_JSON) -> Job:
 
     parked = agenda.advance(job, agenda.PARKED, reason=f"{agenda.NEEDS_HUMAN}: {task}")
     agenda_store.upsert([parked], path)
+    _remember(journal.HANDED_OVER, job_key, task, path=journal_path)
     return parked
 
 
@@ -536,7 +547,8 @@ def handoff_queue(path=AGENDA_JSON) -> list[Job]:
     return [job for job in agenda_store.load(path) if agenda.needs_human(job)]
 
 
-def report_failure(job_key: str, failure: str, path=AGENDA_JSON) -> Job:
+def report_failure(job_key: str, failure: str, path=AGENDA_JSON,
+                   journal_path=JOURNAL_JSONL) -> Job:
     """Record that an attempt failed: back for a repair, or parked if the budget is spent.
 
     This is the bounded half of the repair loop — the engine decides when to stop trying,
@@ -548,11 +560,15 @@ def report_failure(job_key: str, failure: str, path=AGENDA_JSON) -> Job:
 
     moved = agenda.after_failure(job, failure)
     agenda_store.upsert([moved], path)
+    _remember(journal.GATED, job_key, failure, outcome=False, path=journal_path)
+    if moved.state == agenda.PARKED:
+        _remember(journal.PARKED, job_key, moved.reason, path=journal_path)
     return moved
 
 
 def record_critique(
-    root: str, form: int, index: int, critique: Critique, path=EXAMPLES_JSON
+    root: str, form: int, index: int, critique: Critique, path=EXAMPLES_JSON,
+    journal_path=JOURNAL_JSONL,
 ) -> Example:
     """Write a reviewer's verdict onto one stored sentence and return it.
 
@@ -563,9 +579,51 @@ def record_critique(
     if not 0 <= index < len(stored):
         raise IndexError(f"{root} form {form} has {len(stored)} example(s); no index {index}")
 
-    reviewed = replace(stored[index], critique=critique)
+    subject = stored[index]
+    if critique.independent and critique.by and critique.by == subject.drafted_by:
+        raise SelfReviewError(
+            f"{critique.by} drafted this sentence, so their verdict is not independent"
+        )
+
+    reviewed = replace(subject, critique=critique)
     example_store.save(root, form, [*stored[:index], reviewed, *stored[index + 1 :]], path)
+    _remember(journal.JUDGED, f"{root}_{form}:#{index}", critique.note or "approved",
+              by=critique.by, outcome=critique.approved, independent=critique.independent,
+              path=journal_path)
     return reviewed
+
+
+class SelfReviewError(PermissionError):
+    """Someone tried to sign off on their own sentence while claiming independence."""
+
+
+_EVENT_FOR = {
+    agenda.DRAFTED: journal.DRAFTED,
+    agenda.CHECKED: journal.GATED,
+    agenda.REVIEWED: journal.JUDGED,
+    agenda.PARKED: journal.PARKED,
+}
+
+
+def _remember(kind: str, subject: str, detail: str, by: str = "",
+              outcome: bool | None = None, independent: bool | None = None,
+              path=JOURNAL_JSONL) -> None:
+    """Append one line to the record. The clock lives here, at the edge, not in the domain.
+
+    `path` is threaded from every caller rather than defaulted at the write: a test that
+    redirects the sentence store but not the journal is not isolated, it only looks it, and
+    it will quietly write its fixtures into the real history.
+    """
+    journal_store.append(Event(
+        at=datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        kind=kind, subject=subject, detail=detail, by=by,
+        outcome=outcome, independent=independent,
+    ), path)
+
+
+def lease_until(seconds: int = agenda.LEASE_SECONDS) -> str:
+    """When a claim taken now should expire — the one place that reads a clock for leases."""
+    return (datetime.now(timezone.utc) + timedelta(seconds=seconds)).isoformat(timespec="seconds")
 
 
 def _features_of(draft: Example, resolve) -> dict | None:

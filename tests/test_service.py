@@ -4,6 +4,8 @@ The corpus-backed tests use the default (Qutrub-only) generator, so they stay li
 the consensus tally logic is tested purely on synthetic cells.
 """
 
+from dataclasses import replace
+
 import pytest
 
 from fil.agenda import TransitionError
@@ -25,6 +27,7 @@ from fil.service import (
     record_critique,
     record_outcome,
     review_queue,
+    SelfReviewError,
     tally,
     vocabulary,
 )
@@ -97,7 +100,8 @@ def test_a_verdict_lifts_a_checked_sentence_to_reviewed_and_clears_the_queue(tmp
     waiting = examples_to_critique(path=path)
     assert [(review.root, review.index) for review in waiting] == [(verb.root, 0)]
 
-    reviewed = record_critique(verb.root, verb.form, 0, _approval(), path=path)
+    reviewed = record_critique(verb.root, verb.form, 0, _approval(), path=path,
+                              journal_path=tmp_path / "journal.jsonl")
 
     assert reviewed.tier == "reviewed"
     assert examples_to_critique(path=path) == []  # judged, so no longer waiting
@@ -109,7 +113,8 @@ def test_a_verdict_cannot_land_on_a_sentence_that_does_not_exist(tmp_path):
     add_examples(verb.root, verb.form, [_draft()], analyze=_fake_gate(verb.root), path=path)
 
     with pytest.raises(IndexError):
-        record_critique(verb.root, verb.form, 7, _approval(), path=path)
+        record_critique(verb.root, verb.form, 7, _approval(), path=path,
+                        journal_path=tmp_path / "journal.jsonl")
 
 
 def test_planning_a_verb_queues_attested_teaching_cells_and_is_repeatable(tmp_path):
@@ -148,14 +153,15 @@ def test_recording_an_outcome_survives_and_refuses_illegal_moves(tmp_path):
     verb = list_verbs(limit=1)[0]
     path = tmp_path / "agenda.json"
     key = plan_verb(verb.root, verb.form, path=path, examples_path=tmp_path / "none.json")[0].key
+    journal = tmp_path / "journal.jsonl"
 
-    record_outcome(key, "drafted", failure="", path=path)
-    record_outcome(key, "checked", path=path)
+    record_outcome(key, "drafted", failure="", path=path, journal_path=journal)
+    record_outcome(key, "checked", path=path, journal_path=journal)
     assert agenda_status(path=path)["checked"] == 1
 
-    record_outcome(key, "reviewed", path=path)
+    record_outcome(key, "reviewed", path=path, journal_path=journal)
     with pytest.raises(TransitionError):
-        record_outcome(key, "drafted", path=path)  # a reviewed sentence is closed
+        record_outcome(key, "drafted", path=path, journal_path=journal)  # reviewed = closed
 
 
 def test_a_brief_offers_a_spelling_the_gate_can_actually_read(tmp_path):
@@ -179,9 +185,40 @@ def test_a_brief_offers_a_spelling_the_gate_can_actually_read(tmp_path):
     assert "Uthmani" in brief.writable_note
 
 
+def test_a_reader_cannot_secretly_sign_off_on_their_own_sentence(tmp_path):
+    # Separation of duties as a mechanism, not a convention: the engine knows who drafted it.
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    author = "drafting-pass"
+    add_examples(verb.root, verb.form, [replace(_draft(), drafted_by=author)],
+                 analyze=_fake_gate(verb.root), path=path)
+
+    with pytest.raises(SelfReviewError):
+        record_critique(verb.root, verb.form, 0, Critique(
+            approved=True, grammar_ok=True, translation_ok=True, verb_usage_ok=True,
+            by=author, independent=True,   # the lie this refuses
+        ), path=path, journal_path=tmp_path / "journal.jsonl")
+
+
+def test_the_same_reader_may_comment_as_long_as_they_do_not_claim_independence(tmp_path):
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    author = "drafting-pass"
+    add_examples(verb.root, verb.form, [replace(_draft(), drafted_by=author)],
+                 analyze=_fake_gate(verb.root), path=path)
+
+    honest = record_critique(verb.root, verb.form, 0, Critique(
+        approved=True, grammar_ok=True, translation_ok=True, verb_usage_ok=True,
+        by=author, independent=False,
+    ), path=path, journal_path=tmp_path / "journal.jsonl")
+
+    assert honest.tier == "reviewed" and not honest.independently_reviewed
+
+
 def test_recording_against_an_unknown_job_fails_loudly(tmp_path):
     with pytest.raises(KeyError):
-        record_outcome("zzz_1:past:huwa", "drafted", path=tmp_path / "agenda.json")
+        record_outcome("zzz_1:past:huwa", "drafted", path=tmp_path / "agenda.json",
+                       journal_path=tmp_path / "journal.jsonl")
 
 
 def test_the_word_bank_holds_real_quranic_vocabulary_only():

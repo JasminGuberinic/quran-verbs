@@ -34,6 +34,27 @@ def permit(verb_count: int, conjugators: Iterable, cap: int = MAX_HEAVY_VERBS) -
     )
 
 
+# How many failures in a row mean the problem is systemic rather than local.
+STOP_LOSS = 3
+
+
+def stop_loss(recent_outcomes: Iterable[bool], limit: int = STOP_LOSS) -> str | None:
+    """Say why a batch should stop, or None if it may continue.
+
+    A repair loop bounded per job still lets an agent grind through a hundred cells failing
+    the same way — the per-job budget never trips, because each job only fails once. When
+    the last few attempts ALL failed, the fault is upstream (a broken analyzer, a bad
+    assumption), and continuing just multiplies the damage before anyone looks.
+    """
+    latest = list(recent_outcomes)[-limit:]
+    if len(latest) < limit or any(latest):
+        return None
+    return (
+        f"the last {limit} attempts all failed — this looks systemic, not local; "
+        "stop and read the failures before drafting more"
+    )
+
+
 def is_heavy(conjugator) -> bool:
     """Whether a generator declares itself expensive to run (it defaults to cheap)."""
     return bool(getattr(conjugator, "is_heavy", False))

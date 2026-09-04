@@ -11,7 +11,7 @@ run over a handful of sentences — never over the catalogue.
 
 from __future__ import annotations
 
-from fil import agenda_store, evals, example_store, golden_store, service
+from fil import agenda_store, evals, example_store, golden_store, journal_store, service
 from fil.examples import check_example
 
 
@@ -27,7 +27,7 @@ def _report_metrics() -> None:
         for root, form in example_store.stored_verbs()
         for example in example_store.load(root, form)
     ]
-    metrics = evals.measure(jobs, sentences)
+    metrics = evals.measure(jobs, sentences, journal_store.read())
 
     print("Metrics")
     print(f"  jobs with a draft            {metrics.drafted_jobs}")

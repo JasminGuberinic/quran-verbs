@@ -13,9 +13,12 @@ from fil.agenda import (
     TransitionError,
     advance,
     after_failure,
+    claim,
+    is_claimed,
     needs_human,
     open_jobs,
     plan_for,
+    released,
     tally,
 )
 
@@ -130,3 +133,33 @@ def test_a_job_parked_for_a_person_is_told_apart_from_one_we_gave_up_on():
 
     assert needs_human(for_person)
     assert not needs_human(abandoned)
+
+
+def test_a_claim_keeps_a_second_worker_off_the_same_job():
+    # Two agents against the same repo otherwise both take the "next" job and one of the two
+    # sentences is silently thrown away.
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00")
+
+    assert is_claimed(held, now="2026-01-01T00:30:00+00:00")
+    assert open_jobs([held], now="2026-01-01T00:30:00+00:00") == []
+
+
+def test_a_stale_claim_expires_instead_of_needing_a_human():
+    # Nothing here can tell whether a worker died, so the lease simply runs out.
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00")
+
+    assert not is_claimed(held, now="2026-01-01T02:00:00+00:00")
+    assert open_jobs([held], now="2026-01-01T02:00:00+00:00") == [held]
+
+
+def test_claiming_a_job_someone_else_holds_is_refused():
+    held = claim(_job(), "worker-a", until="2026-01-01T02:00:00+00:00")
+
+    with pytest.raises(TransitionError):
+        claim(held, "worker-b", until="2026-01-01T01:00:00+00:00")
+
+
+def test_releasing_a_job_puts_it_back_in_the_queue():
+    freed = released(claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00"))
+
+    assert not is_claimed(freed, now="2026-01-01T00:30:00+00:00")

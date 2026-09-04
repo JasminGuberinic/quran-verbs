@@ -56,7 +56,8 @@ def _from_dict(data: dict) -> Example:
         tense=data.get("tense"),
         pronoun=data.get("pronoun"),
         source=data.get("source", "generated"),
-        checks=_checks_from(data.get("checks")),
+        drafted_by=data.get("drafted_by", ""),  # who wrote it must survive a reload, or the
+        checks=_checks_from(data.get("checks")),  # self-review check has nothing to compare
         critique=Critique(**data["critique"]) if data.get("critique") else None,
     )
 

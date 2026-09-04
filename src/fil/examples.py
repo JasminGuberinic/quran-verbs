@@ -95,6 +95,20 @@ class Critique:
     note: str = ""           # what to fix, when refused
     independent: bool = False  # did the reader have NO part in drafting this sentence?
 
+    def __post_init__(self) -> None:
+        """Refuse a verdict that approves something it has just found fault with.
+
+        "approved with reservations" is how a review becomes decoration: the summary says
+        yes, the detail says no, and only the summary is ever read downstream. Making the
+        combination unconstructible is stronger than remembering not to write it.
+        """
+        if self.approved and not (self.grammar_ok and self.translation_ok and self.verb_usage_ok):
+            raise ValueError(
+                "a verdict cannot be approved while grammar, translation or verb usage fails"
+            )
+        if not self.approved and not self.note:
+            raise ValueError("a refusal must say what is wrong — the repair is drafted from it")
+
 
 @dataclass(frozen=True)
 class Example:
@@ -107,6 +121,7 @@ class Example:
     tense: str | None = None      # the conjugation cell it demonstrates …
     pronoun: str | None = None    # … so we can check the verb is in that form
     source: str = "generated"     # composed for practice — NOT from the Quran
+    drafted_by: str = ""          # who wrote it — so a reader cannot secretly be its author
     checks: ExampleChecks | None = field(default=None)
     critique: Critique | None = field(default=None)
 

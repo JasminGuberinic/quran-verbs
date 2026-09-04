@@ -60,7 +60,8 @@ class Job:
     attempts: int = 0            # how many drafts this job has consumed
     last_failure: str = ""       # why the most recent attempt did not stick
     reason: str = ""             # why it is parked, when it is
-    refusals: int = 0            # how many times a reader has refused a sentence for this cell
+    claimed_by: str = ""         # which worker is on it right now …
+    claimed_until: str = ""      # … and when that claim goes stale (ISO-8601, UTC)
 
     @property
     def key(self) -> str:
@@ -129,14 +130,40 @@ def after_failure(job: Job, failure: str, max_attempts: int = MAX_ATTEMPTS) -> J
 
 
 def reopened_after_refusal(job: Job, failure: str) -> Job:
-    """Reopen a cell because a reader refused its sentence, and remember that it happened.
+    """Reopen a cell because a reader refused its sentence.
 
-    The count is kept here because nowhere else can keep it: repairing a sentence replaces
-    it in the store, so the refusal that prompted the repair would otherwise vanish and the
-    pipeline would look as though nothing had ever been caught.
+    That the refusal HAPPENED is recorded in the journal, not here — this row will be
+    overwritten many times, and history must outlive it (see fil.journal).
     """
-    reopened = recognise(job, DRAFTED, failure=failure)
-    return replace(reopened, refusals=job.refusals + 1)
+    return recognise(job, DRAFTED, failure=failure)
+
+
+# How long a worker may hold a job before another may take it. Long enough for a slow
+# drafting pass, short enough that a session which died does not freeze a cell forever.
+LEASE_SECONDS = 900
+
+
+def claim(job: Job, worker: str, until: str) -> Job:
+    """Mark a job as being worked on until `until`, so a second worker skips it.
+
+    Two agents running against the same repo will otherwise pick the same "next" job and
+    each write a sentence for it — one of which is silently discarded. The claim is a lease
+    rather than a lock on purpose: nothing here can tell whether a worker died, so a stale
+    claim simply expires instead of needing a human to release it.
+    """
+    if job.claimed_by and job.claimed_until > until:
+        raise TransitionError(f"{job.key} is already claimed by {job.claimed_by}")
+    return replace(job, claimed_by=worker, claimed_until=until)
+
+
+def released(job: Job) -> Job:
+    """Drop the claim — the work is done, or the worker is walking away from it."""
+    return replace(job, claimed_by="", claimed_until="")
+
+
+def is_claimed(job: Job, now: str) -> bool:
+    """Whether someone else is on it right now (an expired claim counts as free)."""
+    return bool(job.claimed_by) and job.claimed_until > now
 
 
 def recognise(job: Job, state: str, note: str = "", failure: str = "") -> Job:
@@ -152,9 +179,14 @@ def recognise(job: Job, state: str, note: str = "", failure: str = "") -> Job:
     return replace(job, state=state, attempts=max(job.attempts, 1), last_failure=failure, reason=note)
 
 
-def open_jobs(jobs: Iterable[Job]) -> list[Job]:
-    """The jobs still owing work, neediest first — fewest attempts before most."""
-    return sorted((job for job in jobs if job.is_open), key=lambda job: (job.attempts, job.key))
+def open_jobs(jobs: Iterable[Job], now: str = "") -> list[Job]:
+    """The jobs still owing work and free to take, neediest first.
+
+    `now` lets the caller exclude jobs another worker holds a live claim on; passing nothing
+    ignores claims entirely, which is what a single-worker run wants.
+    """
+    available = (job for job in jobs if job.is_open and not (now and is_claimed(job, now)))
+    return sorted(available, key=lambda job: (job.attempts, job.key))
 
 
 def plan_for(root: str, form: int, cells: Iterable[tuple[str, str]], existing: Iterable[Job]) -> list[Job]:

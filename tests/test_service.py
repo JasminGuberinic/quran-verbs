@@ -339,3 +339,23 @@ def test_word_translations_must_match_the_words(tmp_path):
 
     with pytest.raises(ValueError):
         translate_example(verb.root, verb.form, 0, {"tr": "cümle"}, [], path=path)
+
+
+def test_syncing_never_takes_a_job_back_from_the_person_it_was_handed_to(tmp_path):
+    from fil.service import hand_to_human, sync_agenda
+    from fil import agenda_store as store
+    verb = list_verbs(limit=1)[0]
+    examples, agenda_path = tmp_path / "ex.json", tmp_path / "agenda.json"
+    journal = tmp_path / "j.jsonl"
+    plan_verb(verb.root, verb.form, cells=[("past", "huwa")], path=agenda_path, examples_path=examples)
+    add_examples(verb.root, verb.form, [replace(_draft(), tense="past", pronoun="huwa")],
+                 analyze=_fake_gate(verb.root), features_for=lambda t, p: None, path=examples)
+    refusal = Critique(approved=False, grammar_ok=True, translation_ok=True, verb_usage_ok=False,
+                       by="reader", note="theologically delicate", independent=True)
+    record_critique(verb.root, verb.form, 0, refusal, path=examples, journal_path=journal)
+    key = f"{verb.root}_{verb.form}:past:huwa"
+    hand_to_human(key, "decide whether this cell gets a sentence", path=agenda_path, journal_path=journal)
+
+    sync_agenda(path=agenda_path, examples_path=examples)
+
+    assert store.find(key, agenda_path).state == "parked"

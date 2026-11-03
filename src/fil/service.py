@@ -326,7 +326,13 @@ def sync_agenda(path=AGENDA_JSON, examples_path=EXAMPLES_JSON) -> dict[str, int]
 
 
 def _recognising_existing_work(job: Job, written: list[Example]) -> Job:
-    """The job in the state the stored sentences imply — untouched if none exists yet."""
+    """The job in the state the stored sentences imply — untouched if none exists yet.
+
+    A job handed to a person stays with that person: a refused sentence must not quietly
+    put it back in the drafting queue, or the question asked of them is lost.
+    """
+    if agenda.needs_human(job):
+        return job
     illustrating = [
         example for example in written
         if example.tense == job.tense and example.pronoun == job.pronoun

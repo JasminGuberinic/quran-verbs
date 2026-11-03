@@ -37,7 +37,9 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
       "critique": {
         "approved": true,
@@ -79,7 +81,9 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
       "critique": {
         "approved": true,
@@ -128,9 +132,19 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "قَالُوا سَلَامًا",
@@ -162,9 +176,19 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "قُلْ خَيْرًا",
@@ -196,9 +220,19 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "كون_1": [
@@ -239,7 +273,9 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
       "critique": {
         "approved": true,
@@ -281,7 +317,9 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
       "critique": {
         "approved": true,
@@ -330,9 +368,19 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Standalone يَكُونُ does not express a plain present 'is' in MSA; it reads as habitual/future ('patience will be / tends to be beautiful'). Use a context that needs يكون (e.g. after أن/لن, or a habitual frame) or translate accordingly; the Bosnian gloss 'bude' also conflicts with the sentence 'je'.",
+        "independent": true
+      }
     },
     {
       "arabic": "كُنْ صَادِقًا",
@@ -364,9 +412,19 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "كَانَتْ رَحْمَةً",
@@ -398,9 +456,70 @@
         "verb_form": true,
         "all_words_valid": true,
         "gloss_agreement": true,
-        "gloss_conflicts": []
+        "gloss_conflicts": [],
+        "verb_form_by": "",
+        "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "غَدًا يَكُونُ الْعِيدُ",
+      "words": [
+        {
+          "arabic": "غَدًا",
+          "en": "tomorrow",
+          "bs": "sutra",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَكُونُ",
+          "en": "will be",
+          "bs": "bit će",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْعِيدُ",
+          "en": "the feast, Eid",
+          "bs": "Bajram",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Tomorrow will be Eid.",
+      "bs": "Sutra će biti Bajram.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "علم_1": [
@@ -540,7 +659,15 @@
         "verb_form_by": "",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَعْلَمُ اللَّهُ كُلَّ شَيْءٍ",
@@ -590,7 +717,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اعْلَمْ ذَلِكَ",
@@ -626,7 +761,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "أمن_4": [
@@ -752,7 +895,15 @@
         "verb_form_by": "",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُؤْمِنُ الْمُؤْمِنُ بِالْغَيْبِ",
@@ -795,7 +946,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "آمِنْ بِاللَّهِ",
@@ -831,7 +990,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "خلق_1": [
@@ -985,7 +1152,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "هَلْ خَلَقُوا شَيْئًا",
@@ -1028,7 +1203,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "خَلَقْتُ شَكْلًا مِنَ الطِّينِ",
@@ -1078,7 +1261,73 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Using خَلَقْتُ for a person shaping clay is theologically delicate (the Quran reserves this usage for Isa by God's permission) and should be avoided for a learner; the Bosnian 'Oblikovao sam oblik' is a clumsy tautology and the English 'figure' differs from the gloss 'shape'. Replace with a sentence where the agent is God or a negated human claim.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "النَّاسُ لَا يَخْلُقُونَ شَيْئًا",
+      "words": [
+        {
+          "arabic": "النَّاسُ",
+          "en": "people",
+          "bs": "ljudi",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "ne",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَخْلُقُونَ",
+          "en": "they create",
+          "bs": "stvaraju",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "شَيْئًا",
+          "en": "something, anything",
+          "bs": "ništa",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "People do not create anything.",
+      "bs": "Ljudi ništa ne stvaraju.",
+      "tense": "present",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "عمل_1": [
@@ -1218,7 +1467,15 @@
         "verb_form_by": "",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَعْمَلُ الْفَلَّاحُ فِي الْأَرْضِ",
@@ -1268,7 +1525,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اعْمَلْ خَيْرًا",
@@ -1304,7 +1569,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "رأي_1": [
@@ -1444,7 +1717,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "رَأَوْا نُورًا",
@@ -1480,7 +1761,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "رَأَيْتُ الْبَحْرَ",
@@ -1516,7 +1805,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَرَوْنَ النُّجُومَ",
@@ -1552,7 +1849,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "جيأ_1": [
@@ -1685,7 +1990,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "جِئْنَا مُبَكِّرِينَ",
@@ -1721,7 +2034,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "جِئْتَ مُتَأَخِّرًا",
@@ -1757,7 +2078,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "جعل_1": [
@@ -1802,7 +2131,15 @@
         "verb_form_by": "",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "جَعَلْتُ الْكِتَابَ صَدِيقِي",
@@ -1845,7 +2182,15 @@
         "verb_form_by": "",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "جَعَلَ اللَّهُ الْأَرْضَ فِرَاشًا",
@@ -1895,7 +2240,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَجْعَلُ اللَّهُ بَعْدَ عُسْرٍ يُسْرًا",
@@ -1952,7 +2305,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اجْعَلْ عَمَلَكَ خَالِصًا",
@@ -1995,7 +2356,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "كفر_1": [
@@ -2035,7 +2404,15 @@
           "كَفَرَ"
         ]
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "لَا يَكْفُرُ الْمُؤْمِنُ",
@@ -2080,7 +2457,15 @@
           "يَكْفُرُ"
         ]
       },
-      "critique": null
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "The Bosnian 'Vjernik ne poriče' is unnatural without an object and does not convey kufr; render e.g. 'Vjernik ne niječe (vjeru)' / 'Vjernik ne postaje nevjernik', and align the gloss.",
+        "independent": true
+      }
     },
     {
       "arabic": "لَا أَكْفُرُ بِاللَّهِ",
@@ -2125,7 +2510,15 @@
           "أَكْفُرُ"
         ]
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "كَفَرُوا بِالْآيَاتِ",
@@ -2163,7 +2556,15 @@
           "كَفَرُوا"
         ]
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "قَالَ الشَّيْطَانُ اكْفُرْ",
@@ -2208,7 +2609,75 @@
           "اكْفُرْ"
         ]
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "لَا يَكْفُرُ الْمُؤْمِنُ بِاللَّهِ",
+      "words": [
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "ne",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَكْفُرُ",
+          "en": "disbelieves",
+          "bs": "poriče",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤْمِنُ",
+          "en": "the believer",
+          "bs": "vjernik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِاللَّهِ",
+          "en": "in God",
+          "bs": "Allaha",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The believer does not disbelieve in God.",
+      "bs": "Vjernik ne poriče Allaha.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "يَكْفُرُ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "أتي_4": [
@@ -2260,7 +2729,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُؤْتِي الْغَنِيُّ الزَّكَاةَ",
@@ -2303,7 +2780,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "آتِ الْفَقِيرَ مَالًا",
@@ -2348,7 +2833,15 @@
           "آتِ"
         ]
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "آتَتْ أُمِّي الْفَقِيرَ طَعَامًا",
@@ -2398,7 +2891,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُؤْتُونَ الزَّكَاةَ",
@@ -2434,7 +2935,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "أتي_1": [
@@ -2472,7 +2981,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَأْتِي الصَّيْفُ بَعْدَ الرَّبِيعِ",
@@ -2522,7 +3039,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَتَوْا مُبَكِّرِينَ",
@@ -2558,7 +3083,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَتَتْ صَدِيقَتِي",
@@ -2594,7 +3127,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَأْتُونَ كُلَّ يَوْمٍ",
@@ -2637,7 +3178,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "شيأ_1": [
@@ -2682,7 +3231,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَفْعَلُ اللَّهُ مَا يَشَاءُ",
@@ -2732,7 +3289,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَقْرَأُ مَا أَشَاءُ",
@@ -2775,7 +3340,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "فَعَلْنَا مَا شِئْنَا",
@@ -2818,7 +3391,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "نَقْرَأُ مَا نَشَاءُ",
@@ -2861,7 +3442,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "نزل_4": [
@@ -2906,7 +3495,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أُنْزِلُ الْحَقِيبَةَ",
@@ -2942,7 +3539,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "رَبِّ أَنْزِلْ عَلَيْنَا رَحْمَةً",
@@ -2992,7 +3597,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَنْزَلْتُ الْحَقِيبَةَ",
@@ -3028,7 +3641,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَنْزَلْنَا الْعَلَمَ",
@@ -3064,7 +3685,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "كذب_2": [
@@ -3109,7 +3738,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "كَذَّبَ الرَّسُولَ means called the messenger a liar; Bosnian 'je poricao poslanika' is unnatural (and imperfective for a single act). Use e.g. 'Nevjernik je poslanika u laž utjerao' / 'proglasio lažljivcem'.",
+        "independent": true
+      }
     },
     {
       "arabic": "لَا يُكَذِّبُ الْمُؤْمِنُ الْحَقَّ",
@@ -3159,7 +3796,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "كَذَّبُوا بِالْآيَاتِ",
@@ -3195,7 +3840,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "كَذَّبَتْ زَوْجَتُهُ الْخَبَرَ",
@@ -3238,7 +3891,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُكَذِّبُونَ الْأَخْبَارَ",
@@ -3274,7 +3935,66 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "كَذَّبَ الْكَافِرُ الرَّسُولَ",
+      "words": [
+        {
+          "arabic": "كَذَّبَ",
+          "en": "denied, called a liar",
+          "bs": "proglasio je lažljivcem",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكَافِرُ",
+          "en": "the disbeliever, infidel",
+          "bs": "nevjernik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّسُولَ",
+          "en": "the messenger",
+          "bs": "poslanika",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The disbeliever called the messenger a liar.",
+      "bs": "Nevjernik je poslanika proglasio lažljivcem.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "دعو_1": [
@@ -3319,7 +4039,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَدْعُو الْمُسْلِمُ رَبَّهُ",
@@ -3362,7 +4090,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَدْعُو اللَّهَ",
@@ -3398,7 +4134,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "دَعَوْا رَبَّهُمْ",
@@ -3434,7 +4178,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "ادْعُ رَبَّكَ",
@@ -3470,7 +4222,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "وقي_8": [
@@ -3515,7 +4275,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَتَّقِي الْمُؤْمِنُ اللَّهَ",
@@ -3558,7 +4326,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اتَّقَوْا رَبَّهُمْ",
@@ -3594,7 +4370,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اتَّقِ اللَّهَ",
@@ -3630,7 +4414,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَتَّقُونَ اللَّهَ",
@@ -3666,7 +4458,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "هدي_1": [
@@ -3711,7 +4511,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَهْدِي الْقُرْآنُ النَّاسَ",
@@ -3754,7 +4562,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَهْدُونَ النَّاسَ",
@@ -3790,7 +4606,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "هَدَيْنَا الضَّيْفَ إِلَى الطَّرِيقِ",
@@ -3840,7 +4664,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "تَهْدِي صَدِيقَكَ",
@@ -3876,7 +4708,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "رود_4": [
@@ -3921,7 +4761,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُرِيدُ اللَّهُ الْيُسْرَ",
@@ -3964,7 +4812,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أُرِيدُ الْخَيْرَ",
@@ -4000,7 +4856,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَرَادُوا السَّلَامَ",
@@ -4036,7 +4900,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُرِيدُونَ الْخَيْرَ",
@@ -4072,7 +4944,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "تبع_8": [
@@ -4117,7 +4997,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَتَّبِعُ الْمُسْلِمُ الْهُدَى",
@@ -4160,7 +5048,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَتَّبِعُ الْحَقَّ",
@@ -4196,7 +5092,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اتَّبَعُوا الرَّسُولَ",
@@ -4232,7 +5136,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اتَّبِعْ طَرِيقَ الْخَيْرِ",
@@ -4275,7 +5187,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "رسل_4": [
@@ -4320,7 +5240,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يُرْسِلُ اللَّهُ الرِّيَاحَ",
@@ -4363,7 +5291,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَرْسَلُوا رِسَالَةً",
@@ -4399,7 +5335,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَرْسِلْ رِسَالَةً",
@@ -4435,7 +5379,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَرْسَلَتْ أُمِّي رِسَالَةً",
@@ -4478,7 +5430,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "أخذ_1": [
@@ -4523,7 +5483,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَأْخُذُ الطَّالِبُ الْكِتَابَ",
@@ -4566,7 +5534,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "خُذْ هَذَا",
@@ -4602,7 +5578,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَخَذْتُ الْقَلَمَ",
@@ -4638,7 +5622,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَأْخُذُونَ الْكُتُبَ",
@@ -4674,7 +5666,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "أخذ_8": [
@@ -4719,7 +5719,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "اتَّخَذَ with a single object means 'took/made for oneself'; 'The man took a friend' / 'Čovjek je uzeo prijatelja' is unnatural and misleading. Translate as 'The man made (took) a friend for himself' / 'Čovjek je stekao prijatelja', or use the two-object pattern.",
+        "independent": true
+      }
     },
     {
       "arabic": "يَتَّخِذُ الْمُؤْمِنُ الْقُرْآنَ إِمَامًا",
@@ -4769,7 +5777,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَتَّخِذُ الْكِتَابَ صَدِيقًا",
@@ -4812,7 +5828,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اتَّخَذُوا بَيْتًا",
@@ -4848,7 +5872,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "'They took a house' / 'Uzeli su kuću' does not convey اتَّخَذُوا بَيْتًا ('they made/took for themselves a house'); translate as 'They made themselves a house' / 'Napravili su sebi kuću' or use the two-object pattern.",
+        "independent": true
+      }
     },
     {
       "arabic": "اتَّخَذَتْ صَدِيقَةً",
@@ -4872,6 +5904,196 @@
       "bs": "Uzela je prijateljicu.",
       "tense": "past",
       "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "'She took a friend' / 'Uzela je prijateljicu' is unnatural for اتَّخَذَتْ صَدِيقَةً; translate as 'She made a friend (for herself)' / 'Stekla je prijateljicu', or use the two-object pattern.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اتَّخَذَ الرَّجُلُ صَدِيقًا",
+      "words": [
+        {
+          "arabic": "اتَّخَذَ",
+          "en": "took for himself, adopted",
+          "bs": "stekao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقًا",
+          "en": "a friend",
+          "bs": "prijatelja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The man made himself a friend.",
+      "bs": "Čovjek je stekao prijatelja.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "English \"The man made himself a friend\" is unidiomatic and can read as \"built a friend\"; use \"The man took a friend\" or \"The man made a friend\" (matching the Bosnian \"stekao je prijatelja\").",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اتَّخَذُوا بَيْتًا",
+      "words": [
+        {
+          "arabic": "اتَّخَذُوا",
+          "en": "they took for themselves, adopted",
+          "bs": "napravili su sebi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "بَيْتًا",
+          "en": "a house",
+          "bs": "kuću",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They made themselves a house.",
+      "bs": "Napravili su sebi kuću.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اتَّخَذَتْ صَدِيقَةً",
+      "words": [
+        {
+          "arabic": "اتَّخَذَتْ",
+          "en": "she took for herself, adopted",
+          "bs": "stekla je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقَةً",
+          "en": "a friend",
+          "bs": "prijateljicu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "She made a friend.",
+      "bs": "Stekla je prijateljicu.",
+      "tense": "past",
+      "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #2 (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اتَّخَذَ الرَّجُلُ صَدِيقًا",
+      "words": [
+        {
+          "arabic": "اتَّخَذَ",
+          "en": "took (for himself), adopted",
+          "bs": "stekao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقًا",
+          "en": "a friend",
+          "bs": "prijatelja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The man made a friend.",
+      "bs": "Čovjek je stekao prijatelja.",
+      "tense": "past",
+      "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
       "translations": {},
@@ -4929,7 +6151,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَعْبُدُ الْمُؤْمِنُ اللَّهَ",
@@ -4972,7 +6202,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "أَعْبُدُ اللَّهَ",
@@ -5008,7 +6246,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "اعْبُدْ رَبَّكَ",
@@ -5044,7 +6290,15 @@
         "verb_form_by": "corpus table",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "يَعْبُدُونَ اللَّهَ",
@@ -5080,7 +6334,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "ظلم_1": [
@@ -5125,7 +6387,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "لَا يَظْلِمُ اللَّهُ أَحَدًا",
@@ -5175,7 +6445,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "ظَلَمُوا أَنْفُسَهُمْ",
@@ -5211,7 +6489,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "ظَلَمَتْ نَفْسَهَا",
@@ -5247,7 +6533,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     },
     {
       "arabic": "ظَلَمْتُ نَفْسِي",
@@ -5283,7 +6577,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ]
 }

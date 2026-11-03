@@ -85,6 +85,8 @@ _IRREGULAR = {
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")
+# Only after these does "-es" come off whole ("teaches" → "teach"); elsewhere it is "-s".
+_SIBILANT_ES = ("ses", "xes", "zes", "ches", "shes")
 
 
 def _base_form(word: str) -> str:
@@ -93,6 +95,8 @@ def _base_form(word: str) -> str:
 
 
 def _stem(word: str) -> str:
+    if word.endswith("es") and not word.endswith(_SIBILANT_ES) and len(word) - 1 >= 3:
+        return _without_silent_e(word[:-1])         # "makes" → "make", not "mak"
     for suffix in _SUFFIXES:
         if word.endswith(suffix) and len(word) - len(suffix) >= 3:
             return _without_silent_e(word[: -len(suffix)])

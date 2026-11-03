@@ -143,15 +143,19 @@ def reopened_after_refusal(job: Job, failure: str) -> Job:
 LEASE_SECONDS = 900
 
 
-def claim(job: Job, worker: str, until: str) -> Job:
+def claim(job: Job, worker: str, until: str, now: str) -> Job:
     """Mark a job as being worked on until `until`, so a second worker skips it.
 
     Two agents running against the same repo will otherwise pick the same "next" job and
     each write a sentence for it — one of which is silently discarded. The claim is a lease
     rather than a lock on purpose: nothing here can tell whether a worker died, so a stale
     claim simply expires instead of needing a human to release it.
+
+    Whether a claim is still live is a question about `now`, never about the new lease's
+    end: a later `until` must not let a second worker take a job that is still held. The
+    holder itself may renew.
     """
-    if job.claimed_by and job.claimed_until > until:
+    if is_claimed(job, now) and job.claimed_by != worker:
         raise TransitionError(f"{job.key} is already claimed by {job.claimed_by}")
     return replace(job, claimed_by=worker, claimed_until=until)
 

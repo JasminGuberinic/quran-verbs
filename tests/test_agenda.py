@@ -23,6 +23,9 @@ from fil.agenda import (
 )
 
 
+_START = "2026-01-01T00:00:00+00:00"
+
+
 def _job(**overrides) -> Job:
     return Job(**{"root": "كتب", "form": 1, "tense": "past", "pronoun": "huwa", **overrides})
 
@@ -138,7 +141,7 @@ def test_a_job_parked_for_a_person_is_told_apart_from_one_we_gave_up_on():
 def test_a_claim_keeps_a_second_worker_off_the_same_job():
     # Two agents against the same repo otherwise both take the "next" job and one of the two
     # sentences is silently thrown away.
-    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00")
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00", now=_START)
 
     assert is_claimed(held, now="2026-01-01T00:30:00+00:00")
     assert open_jobs([held], now="2026-01-01T00:30:00+00:00") == []
@@ -146,20 +149,45 @@ def test_a_claim_keeps_a_second_worker_off_the_same_job():
 
 def test_a_stale_claim_expires_instead_of_needing_a_human():
     # Nothing here can tell whether a worker died, so the lease simply runs out.
-    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00")
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00", now=_START)
 
     assert not is_claimed(held, now="2026-01-01T02:00:00+00:00")
     assert open_jobs([held], now="2026-01-01T02:00:00+00:00") == [held]
 
 
 def test_claiming_a_job_someone_else_holds_is_refused():
-    held = claim(_job(), "worker-a", until="2026-01-01T02:00:00+00:00")
+    held = claim(_job(), "worker-a", until="2026-01-01T02:00:00+00:00", now=_START)
 
     with pytest.raises(TransitionError):
-        claim(held, "worker-b", until="2026-01-01T01:00:00+00:00")
+        claim(held, "worker-b", until="2026-01-01T01:00:00+00:00", now=_START)
+
+
+def test_a_longer_lease_does_not_let_a_second_worker_take_a_held_job():
+    # The bug this guards: comparing the held lease with the NEW lease's end let anyone
+    # asking for a longer lease steal a job that was still being worked on.
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00", now=_START)
+
+    with pytest.raises(TransitionError):
+        claim(held, "worker-b", until="2026-01-01T03:00:00+00:00", now="2026-01-01T00:30:00+00:00")
+
+
+def test_an_expired_claim_can_be_taken_over():
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00", now=_START)
+
+    taken = claim(held, "worker-b", until="2026-01-01T03:00:00+00:00", now="2026-01-01T02:00:00+00:00")
+
+    assert taken.claimed_by == "worker-b"
+
+
+def test_the_holder_may_renew_its_own_claim():
+    held = claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00", now=_START)
+
+    renewed = claim(held, "worker-a", until="2026-01-01T02:00:00+00:00", now="2026-01-01T00:30:00+00:00")
+
+    assert renewed.claimed_until == "2026-01-01T02:00:00+00:00"
 
 
 def test_releasing_a_job_puts_it_back_in_the_queue():
-    freed = released(claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00"))
+    freed = released(claim(_job(), "worker-a", until="2026-01-01T01:00:00+00:00", now=_START))
 
     assert not is_claimed(freed, now="2026-01-01T00:30:00+00:00")

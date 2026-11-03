@@ -233,8 +233,10 @@ def add_examples(
     """Run drafted practice sentences through the correctness gate and store them.
 
     Each draft's `checks` are filled in (verb root, verb form for its declared
-    tense/pronoun, and every-word-valid), then all are persisted. Raises KeyError
-    if the verb is not in the catalogue.
+    tense/pronoun, and every-word-valid), then appended after the verb's stored
+    sentences. Appending matters twice over: a draft must never erase a reviewed
+    sentence, and a verdict is addressed by index, so existing indices must not move.
+    Raises KeyError if the verb is not in the catalogue.
     """
     _find(root, form)
     analyzer = analyze or _camel_analyze()
@@ -243,7 +245,7 @@ def add_examples(
         checked(draft, root, _features_of(draft, resolve), analyzer)
         for draft in drafts
     ]
-    example_store.save(root, form, results, path)
+    example_store.save(root, form, [*example_store.load(root, form, path), *results], path)
     return results
 
 

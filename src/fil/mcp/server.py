@@ -141,7 +141,7 @@ def lookup_word(arabic: str) -> dict:
 
 
 @mcp.tool()
-def add_examples(root: str, form: int, examples: list[dict]) -> list[dict]:
+def add_examples(root: str, form: int, examples: list[dict], drafted_by: str) -> list[dict]:
     """Store practice sentences for a verb, each run through the mechanical gate.
 
     Practice sentences are composed (not Quranic). Each is checked four ways: the
@@ -160,8 +160,11 @@ def add_examples(root: str, form: int, examples: list[dict]) -> list[dict]:
             tense?, pronoun?} — exactly one word per sentence should have
             is_target=true (the verb). Give tense (past|present|imperative) and
             pronoun (e.g. huwa) so the gate can also check the verb's FORM.
+        drafted_by: who wrote these sentences (e.g. "claude-opus-5-5, drafting pass").
+            Recorded on each one so that the same writer cannot later approve them
+            as an independent reviewer.
     """
-    drafts = [_to_example(example) for example in examples]
+    drafts = [_to_example(example, drafted_by) for example in examples]
     return [_from_example(stored) for stored in service.add_examples(root, form, drafts)]
 
 
@@ -280,7 +283,14 @@ def critique_example(
     return _from_example(service.record_critique(root, form, index, critique))
 
 
-def _to_example(data: dict) -> Example:
+def _to_example(data: dict, drafted_by: str) -> Example:
+    """Build a draft from tool input, refusing one that does not say who wrote it.
+
+    Without an author the self-review guard has nothing to compare against, and a writer
+    could approve their own sentence while claiming independence.
+    """
+    if not drafted_by.strip():
+        raise ValueError("drafted_by is required: say who wrote these sentences")
     return Example(
         arabic=data["arabic"],
         words=tuple(ExampleWord(**word) for word in data["words"]),
@@ -288,6 +298,7 @@ def _to_example(data: dict) -> Example:
         bs=data["bs"],
         tense=data.get("tense"),
         pronoun=data.get("pronoun"),
+        drafted_by=drafted_by,
     )
 
 

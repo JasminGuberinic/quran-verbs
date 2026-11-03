@@ -25,8 +25,10 @@ the engine decides whether what you composed is acceptable.
      differs from the modern one (حَكِيم is "physician" in that lexicon, not "wise").
    - Keep it short and meaningful: a learner's sentence, not a demonstration of range.
 
-3. **`add_examples(root, form, [sentence])`** with `tense` and `pronoun` set, so the gate can
-   check the form and not merely the root.
+3. **`add_examples(root, form, [sentence], drafted_by)`** with `tense` and `pronoun` set, so
+   the gate can check the form and not merely the root. `drafted_by` names you (e.g.
+   "claude-opus-5-5, drafting pass"), so you cannot later approve the sentence as its
+   independent reader.
 
 4. **Report the outcome.**
    - The gate passed → `record_job_outcome(job, "checked")`.

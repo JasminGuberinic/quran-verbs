@@ -8,6 +8,7 @@ from dataclasses import replace
 
 import pytest
 
+from fil import example_store
 from fil.agenda import TransitionError
 from fil.examples import Critique, Example, ExampleWord
 from fil.reconciliation import ReconciledCell
@@ -90,6 +91,23 @@ def test_add_examples_verifies_against_the_root_and_stores(tmp_path):
 
     assert stored[0].checks is not None and stored[0].checks.passed
     assert get_verb(verb.root, verb.form).root == verb.root  # unrelated read still works
+
+
+def test_adding_a_sentence_keeps_the_ones_already_stored(tmp_path):
+    # The drafting loop adds one sentence at a time; replacing would erase reviewed work
+    # and shift the index every verdict is addressed by.
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    add_examples(verb.root, verb.form, [_draft()], analyze=_fake_gate(verb.root), path=path)
+    record_critique(verb.root, verb.form, 0, _approval(), path=path,
+                    journal_path=tmp_path / "journal.jsonl")
+
+    add_examples(verb.root, verb.form, [replace(_draft(), arabic="جملة ثانية")],
+                 analyze=_fake_gate(verb.root), path=path)
+
+    stored = example_store.load(verb.root, verb.form, path)
+    assert [example.arabic for example in stored] == ["جملة", "جملة ثانية"]
+    assert stored[0].tier == "reviewed"
 
 
 def test_a_verdict_lifts_a_checked_sentence_to_reviewed_and_clears_the_queue(tmp_path):

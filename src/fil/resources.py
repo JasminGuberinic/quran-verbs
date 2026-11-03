@@ -11,3 +11,6 @@ AGENDA_JSON = DATA_DIR / "agenda.json"      # what the factory still owes (see f
 GOLDEN_JSON = DATA_DIR / "golden_sentences.json"  # sentences whose verdict we already know
 JOURNAL_JSONL = DATA_DIR / "journal.jsonl"   # append-only record of what happened (fil.journal)
 AUDIO_DIR = BUILD_DIR / "audio"
+MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per language
+SITE_DIR = BUILD_DIR / "site"               # the static study site (fil site)
+RECITATION_CACHE = BUILD_DIR / "recitation-cache"  # downloaded recitation clips, fetched once

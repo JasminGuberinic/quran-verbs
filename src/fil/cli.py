@@ -21,6 +21,7 @@ from fil.stages import (
     ingest,
     package,
     review,
+    site,
 )
 
 # stage name -> (function, one-line description)
@@ -35,6 +36,7 @@ _STAGES = {
     "coverage": (coverage.main, "reconcile every Quranic verb; print agreement rate"),
     "review": (review.main, "export the review queue of generator↔Quran conflicts"),
     "evals": (evals.main, "report the factory's metrics; re-run the gate over the golden set"),
+    "site": (site.main, "build the static study site (build/site) for the verbs in data/meanings.json"),
 }
 
 

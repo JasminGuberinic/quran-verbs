@@ -19,3 +19,53 @@
 {"at": "2026-08-26T01:00:00+00:00", "kind": "judged", "subject": "علم_1:#1", "detail": "approved after repair", "by": "claude-opus-5, separate pass with no drafting context (independent)", "outcome": true, "independent": true}
 {"at": "2026-08-26T01:00:00+00:00", "kind": "judged", "subject": "خلق_1:#1", "detail": "approved after repair", "by": "claude-opus-5, separate pass with no drafting context (independent)", "outcome": true, "independent": true}
 {"at": "2026-08-26T01:00:00+00:00", "kind": "judged", "subject": "عمل_1:#1", "detail": "approved after repair", "by": "claude-opus-5, separate pass with no drafting context (independent)", "outcome": true, "independent": true}
+{"at": "2026-11-03T17:03:42+00:00", "kind": "drafted", "subject": "قول_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "قول_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "قول_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "قول_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "قول_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "قول_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كون_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كون_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كون_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كون_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كون_1:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كون_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "أمن_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "أمن_4:present:huwa", "detail": "lexicon disagrees with gloss of: بِالْغَيْبِ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "أمن_4:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "أمن_4:imperative:anta", "detail": "verb not in the declared tense/pronoun", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "أمن_4:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "أمن_4:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "علم_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "علم_1:present:huwa", "detail": "lexicon disagrees with gloss of: شَيْءٍ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "علم_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "علم_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "علم_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "علم_1:imperative:anta", "detail": "verb not in the declared tense/pronoun", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "جعل_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "جعل_1:past:huwa", "detail": "lexicon disagrees with gloss of: سَكَنًا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "جعل_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "جعل_1:present:huwa", "detail": "lexicon disagrees with gloss of: يَجْعَلُ عُسْرٍ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "جعل_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "جعل_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "جعل_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "جعل_1:imperative:anta", "detail": "verb not in the declared tense/pronoun", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "جعل_1:past:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "جعل_1:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كفر_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كفر_1:past:huwa", "detail": "lexicon disagrees with gloss of: كَفَرَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كفر_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كفر_1:present:huwa", "detail": "lexicon disagrees with gloss of: يَكْفُرُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كفر_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كفر_1:present:ana", "detail": "lexicon disagrees with gloss of: أَكْفُرُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كفر_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كفر_1:past:hum", "detail": "lexicon disagrees with gloss of: كَفَرُوا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "كفر_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "كفر_1:imperative:anta", "detail": "verb not in the declared tense/pronoun; lexicon disagrees with gloss of: اكْفُرْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "عمل_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "عمل_1:present:huwa", "detail": "lexicon disagrees with gloss of: الْأَرْضِ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "عمل_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "عمل_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "drafted", "subject": "عمل_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T17:03:43+00:00", "kind": "gated", "subject": "عمل_1:imperative:anta", "detail": "verb not in the declared tense/pronoun; lexicon disagrees with gloss of: اعْمَلْ", "by": "", "outcome": false, "independent": null}

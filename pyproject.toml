@@ -18,10 +18,16 @@ dev = ["pytest==9.1.1"]
 # morphology DB into memory), so it is opt-in. After install, fetch the DB once:
 #   camel_data -i morphology-db-msa-r13
 consensus = ["camel-tools==1.6.0"]
+# Diacritic-faithful speech for the study site (fil.speech). Not on PyPI; pinned to a commit.
+# Its models (~250 MB) download on first use.
+speech = ["tts_arabic @ git+https://github.com/nipponjo/tts_arabic.git@aa7d62bc02a0ea938f7049fa2ae1c35b97919604"]
 
 [project.scripts]
 fil = "fil.cli:main"
 fil-mcp = "fil.mcp.server:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/fil"]

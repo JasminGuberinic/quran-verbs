@@ -5,6 +5,7 @@ from fil.study import (
     ayat_of,
     derived_nouns,
     example_ayat,
+    recitation_index,
     standalone_locations,
     words_of,
 )
@@ -81,3 +82,20 @@ def test_derived_nouns_come_from_corpus_tags():
 
     assert nouns[_SAY]["participle"].lemma == "قائِل"
     assert (nouns[_SAY]["verbal_noun"].lemma, nouns[_SAY]["verbal_noun"].count) == ("قَوْل", 2)
+
+
+def test_a_form_heard_only_behind_a_clitic_is_offered_as_the_whole_word():
+    words = words_of(_segments(
+        "4:1:1:1\tفَ\tCONJ\tCONJ|PREF|LEM:ف",
+        "4:1:1:2\tٱعْلَمْ\tV\tIMPV|VF:1|ROOT:علم|LEM:عَلِمَ|2MS",
+        "4:2:1:1\tقَالَ\tV\tPERF|VF:1|ROOT:قول|LEM:قالَ|3MS",
+    ))
+
+    index = recitation_index(words)
+
+    assert index["ٱعْلَمْ"].text == "فَٱعْلَمْ"       # what the learner will hear
+    assert index["قَالَ"].location == (4, 2, 1)       # alone, exactly as written
+
+
+def test_a_form_never_recited_has_no_recitation():
+    assert "يَقُلْنَ" not in recitation_index(words_of(_corpus()))

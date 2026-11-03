@@ -138,6 +138,38 @@ def standalone_locations(words: Iterable[QuranWord]) -> dict[str, Location]:
     return located
 
 
+# Clitics that can sit in front of a verb without changing how the verb itself is said:
+# "and", "so", the oath/emphasis lām, the question hamza, the future sīn.
+_PROCLITICS = ("وَ", "فَ", "لَ", "وَلَ", "فَلَ", "أَ", "أَفَ", "أَوَ", "سَ")
+
+
+@dataclass(frozen=True)
+class Recitation:
+    """Where a form can be heard recited, and the exact word the reciter says there."""
+
+    location: Location
+    text: str
+
+
+def recitation_index(words: Iterable[QuranWord]) -> dict[str, Recitation]:
+    """For each form, the first place it is recited — alone if possible, else behind a clitic.
+
+    A form standing alone is heard exactly as written. When the Quran only has it behind
+    "and"/"so" (فَٱعْلَمْ), that whole word is offered instead and shown as such, so the
+    learner always sees what they hear. A form never recited gets no entry: no sound is
+    better than a machine guessing at the vowels.
+    """
+    words = list(words)
+    index: dict[str, Recitation] = {}
+    for word in words:
+        index.setdefault(word.text, Recitation(word.location, word.text))
+    for word in words:
+        for clitic in _PROCLITICS:
+            if word.text.startswith(clitic) and len(word.text) > len(clitic):
+                index.setdefault(word.text[len(clitic):], Recitation(word.location, word.text))
+    return index
+
+
 def derived_nouns(segments: Iterable[Segment]) -> dict[VerbKey, dict[str, DerivedNoun]]:
     """The commonest active participle and verbal noun of each verb, by corpus tag."""
     counts: dict[tuple[VerbKey, str], Counter] = defaultdict(Counter)

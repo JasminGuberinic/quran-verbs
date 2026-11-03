@@ -36,7 +36,7 @@ Only `reviewed` is fully trustworthy; `rejected` must never reach a learner.
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
-from typing import Callable
+from typing import Callable, Mapping
 
 from fil import glosses
 
@@ -78,6 +78,13 @@ class ExampleChecks:
     all_words_valid: bool
     gloss_agreement: bool | None = None  # None when the lexicon glosses nothing
     gloss_conflicts: tuple[str, ...] = ()  # the words whose declared meaning was not attested
+    # Which instrument confirmed the form: "analyzer", or "corpus table" when the analyzer
+    # cannot read the spelling at all (hamzat-wasl imperatives such as ٱعْلَمْ) and the
+    # verb matches the engine's own table for that cell letter for letter.
+    verb_form_by: str = ""
+    # Words whose meaning passed only through a documented exception (data/gloss_exceptions.json),
+    # never silently: the lexicon glosses some Quranic verbs in a modern sense only.
+    glossed_by_exception: tuple[str, ...] = ()
 
     @property
     def passed(self) -> bool:
@@ -168,31 +175,68 @@ class Example:
 _SHIPPABLE_TIERS = frozenset({"checked", "reviewed"})
 
 
+# Further English meanings accepted for a root, by its CAMeL spelling ("ك.ف.ر"), each with
+# the reason it is needed. Documented exceptions, not a way around the check.
+GlossExceptions = Mapping[str, tuple[str, ...]]
+
+
 def check_example(
-    example: Example, expected_root: str, expected_features: dict | None, analyze: Analyze
+    example: Example, expected_root: str, expected_features: dict | None, analyze: Analyze,
+    table_forms: frozenset[str] = frozenset(), gloss_exceptions: GlossExceptions | None = None,
 ) -> ExampleChecks:
-    """Run the mechanical gate: root, (optional) form, every-word-valid, and glosses."""
+    """Run the mechanical gate: root, (optional) form, every-word-valid, and glosses.
+
+    `table_forms` are the spellings (by `spelling_key`) the engine's own conjugation table
+    gives for the declared cell. They decide the form only where the analyzer has no
+    reading of it at all — a second instrument, never a looser one: the verb must match
+    the table letter for letter.
+    """
     target = _target_word(example)
     if target is None:
         return ExampleChecks(verb_root=False, verb_form=None, all_words_valid=False)
 
     analyses = {word: analyze(word.arabic) for word in example.words}
     verb_analyses = [a for a in analyses[target] if a.get("pos") == "verb" and a.get("root")]
-    gloss_agreement, gloss_conflicts = _gloss_check(analyses)
+    gloss_agreement, gloss_conflicts, by_exception = _gloss_check(analyses, gloss_exceptions or {})
+    root_ok = any(_root_matches(expected_root, a["root"]) for a in verb_analyses)
+    form_ok = _form_check(verb_analyses, expected_root, expected_features)
+    form_by = "analyzer" if form_ok else ""
+    if form_ok is False and spelling_key(target.arabic) in table_forms:
+        root_ok, form_ok, form_by = True, True, "corpus table"
     return ExampleChecks(
-        verb_root=any(_root_matches(expected_root, a["root"]) for a in verb_analyses),
-        verb_form=_form_check(verb_analyses, expected_root, expected_features),
+        verb_root=root_ok,
+        verb_form=form_ok,
         all_words_valid=all(analyses.values()),
         gloss_agreement=gloss_agreement,
         gloss_conflicts=gloss_conflicts,
+        verb_form_by=form_by,
+        glossed_by_exception=by_exception,
     )
 
 
 def checked(
-    example: Example, expected_root: str, expected_features: dict | None, analyze: Analyze
+    example: Example, expected_root: str, expected_features: dict | None, analyze: Analyze,
+    table_forms: frozenset[str] = frozenset(), gloss_exceptions: GlossExceptions | None = None,
 ) -> Example:
     """Return the example with its `checks` filled in by the gate."""
-    return replace(example, checks=check_example(example, expected_root, expected_features, analyze))
+    return replace(example, checks=check_example(
+        example, expected_root, expected_features, analyze, table_forms, gloss_exceptions))
+
+
+_SILENT_MARKS = "ۣۜ۟۠ۡۢۤۥۦۧۨ۩۪ۭ۫۬ٓ"
+_WASL_VOWELS = "\u064e\u064f\u0650"
+
+
+def spelling_key(word: str) -> str:
+    """A spelling with Quranic orthography folded to standard: the same word, written once.
+
+    ٱعْلَمْ (Uthmani), اِعْلَمْ and اعْلَمْ are one imperative; the connecting alif's vowel and
+    the Uthmani pause marks are not part of the word's identity.
+    """
+    word = "".join(char for char in word if char not in _SILENT_MARKS).replace("ٱ", "ا")
+    if word.startswith("ا") and len(word) > 1 and word[1] in _WASL_VOWELS:
+        word = "ا" + word[2:]
+    return word
 
 
 def _form_check(verb_analyses: list[dict], expected_root: str, features: dict | None) -> bool | None:
@@ -205,17 +249,31 @@ def _form_check(verb_analyses: list[dict], expected_root: str, features: dict | 
     )
 
 
-def _gloss_check(analyses: dict[ExampleWord, list[dict]]) -> tuple[bool | None, tuple[str, ...]]:
-    """Compare every declared meaning with the lexicon's own, naming the disagreements."""
-    verdicts = [
-        (word, glosses.gloss_agrees(word.en, _lexicon_glosses(word_analyses)))
-        for word, word_analyses in analyses.items()
-    ]
+def _gloss_check(
+    analyses: dict[ExampleWord, list[dict]], exceptions: GlossExceptions
+) -> tuple[bool | None, tuple[str, ...], tuple[str, ...]]:
+    """Compare every declared meaning with the lexicon's own, naming the disagreements.
+
+    A word the lexicon refuses is tried once more against its root's documented
+    exceptions; if it passes there, it is named in the third result so the record shows it.
+    """
+    verdicts = []
+    by_exception = []
+    for word, word_analyses in analyses.items():
+        verdict = glosses.gloss_agrees(word.en, _lexicon_glosses(word_analyses))
+        if verdict is False and glosses.gloss_agrees(word.en, _excepted(word_analyses, exceptions)):
+            verdict = True
+            by_exception.append(word.arabic)
+        verdicts.append((word, verdict))
     judged = [verdict for _word, verdict in verdicts if verdict is not None]
     if not judged:
-        return None, ()  # the lexicon had nothing to say about any word
+        return None, (), ()  # the lexicon had nothing to say about any word
     conflicts = tuple(word.arabic for word, verdict in verdicts if verdict is False)
-    return not conflicts, conflicts
+    return not conflicts, conflicts, tuple(by_exception)
+
+
+def _excepted(word_analyses: list[dict], exceptions: GlossExceptions) -> list[str]:
+    return [gloss for analysis in word_analyses for gloss in exceptions.get(analysis.get("root", ""), ())]
 
 
 def _lexicon_glosses(word_analyses: list[dict]) -> list[str]:

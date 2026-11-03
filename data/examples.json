@@ -7,19 +7,22 @@
           "arabic": "قَالَ",
           "en": "said",
           "bs": "rekao je",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "الرَّجُلُ",
           "en": "the man",
           "bs": "čovjek",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         },
         {
           "arabic": "الحَقَّ",
           "en": "the truth",
           "bs": "istinu",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "The man spoke the truth.",
@@ -27,6 +30,8 @@
       "tense": "past",
       "pronoun": "huwa",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -51,13 +56,15 @@
           "arabic": "أَقُولُ",
           "en": "I say",
           "bs": "govorim",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "الحَقَّ",
           "en": "the truth",
           "bs": "istinu",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "I speak the truth.",
@@ -65,6 +72,8 @@
       "tense": "present",
       "pronoun": "ana",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -81,6 +90,115 @@
         "note": "Correct indicative present 1sg with accusative object; both renderings match the gloss.",
         "independent": true
       }
+    },
+    {
+      "arabic": "يَقُولُ الرَّسُولُ الْحَقَّ",
+      "words": [
+        {
+          "arabic": "يَقُولُ",
+          "en": "says",
+          "bs": "govori",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّسُولُ",
+          "en": "the messenger",
+          "bs": "poslanik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَقَّ",
+          "en": "the truth",
+          "bs": "istinu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The messenger speaks the truth.",
+      "bs": "Poslanik govori istinu.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "قَالُوا سَلَامًا",
+      "words": [
+        {
+          "arabic": "قَالُوا",
+          "en": "they said",
+          "bs": "rekli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "سَلَامًا",
+          "en": "peace",
+          "bs": "mir",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They said: peace.",
+      "bs": "Rekli su: mir.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "قُلْ خَيْرًا",
+      "words": [
+        {
+          "arabic": "قُلْ",
+          "en": "say",
+          "bs": "reci",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "خَيْرًا",
+          "en": "good",
+          "bs": "dobro",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Say something good.",
+      "bs": "Reci nešto dobro.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
     }
   ],
   "كون_1": [
@@ -91,19 +209,22 @@
           "arabic": "كَانَ",
           "en": "was",
           "bs": "bilo je",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "الطَّقْسُ",
           "en": "the weather",
           "bs": "vrijeme",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         },
         {
           "arabic": "جَمِيلًا",
           "en": "beautiful",
           "bs": "lijepo",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "The weather was beautiful.",
@@ -111,6 +232,8 @@
       "tense": "past",
       "pronoun": "huwa",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -135,13 +258,15 @@
           "arabic": "كَانُوا",
           "en": "they were",
           "bs": "bili su",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "صَادِقِينَ",
           "en": "truthful",
           "bs": "iskreni",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "They were truthful.",
@@ -149,6 +274,8 @@
       "tense": "past",
       "pronoun": "hum",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -165,6 +292,115 @@
         "note": "Correct 3mp past with accusative sound-plural predicate.",
         "independent": true
       }
+    },
+    {
+      "arabic": "يَكُونُ الصَّبْرُ جَمِيلًا",
+      "words": [
+        {
+          "arabic": "يَكُونُ",
+          "en": "is",
+          "bs": "bude",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الصَّبْرُ",
+          "en": "patience",
+          "bs": "strpljenje",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "جَمِيلًا",
+          "en": "beautiful",
+          "bs": "lijepo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Patience is beautiful.",
+      "bs": "Strpljenje je lijepo.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "كُنْ صَادِقًا",
+      "words": [
+        {
+          "arabic": "كُنْ",
+          "en": "be",
+          "bs": "budi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "صَادِقًا",
+          "en": "truthful",
+          "bs": "iskren",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Be truthful.",
+      "bs": "Budi iskren.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "كَانَتْ رَحْمَةً",
+      "words": [
+        {
+          "arabic": "كَانَتْ",
+          "en": "it was",
+          "bs": "bila je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رَحْمَةً",
+          "en": "a mercy",
+          "bs": "milost",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "It was a mercy.",
+      "bs": "To je bila milost.",
+      "tense": "past",
+      "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
     }
   ],
   "علم_1": [
@@ -175,19 +411,22 @@
           "arabic": "عَلِمَ",
           "en": "knew",
           "bs": "znao je",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "الطَّالِبُ",
           "en": "the student",
           "bs": "student",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         },
         {
           "arabic": "الجَوَابَ",
           "en": "the answer",
           "bs": "odgovor",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "The student knew the answer.",
@@ -195,6 +434,8 @@
       "tense": "past",
       "pronoun": "huwa",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -219,19 +460,22 @@
           "arabic": "أَعْلَمُ",
           "en": "I know",
           "bs": "znam",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "أَنَّهُ",
           "en": "that he",
           "bs": "da je",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         },
         {
           "arabic": "صَادِقٌ",
           "en": "truthful",
           "bs": "iskren",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "I know that he is truthful.",
@@ -239,6 +483,8 @@
       "tense": "present",
       "pronoun": "ana",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -255,6 +501,40 @@
         "note": "Form I present 1sg; أنّ + suffix with nominative predicate is the standard complement.",
         "independent": true
       }
+    },
+    {
+      "arabic": "عَلِمُوا الْحَقَّ",
+      "words": [
+        {
+          "arabic": "عَلِمُوا",
+          "en": "they knew",
+          "bs": "znali su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَقَّ",
+          "en": "the truth",
+          "bs": "istinu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They knew the truth.",
+      "bs": "Znali su istinu.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
     }
   ],
   "أمن_4": [
@@ -265,13 +545,15 @@
           "arabic": "آمَنَ",
           "en": "believed",
           "bs": "vjerovao je",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "الْقَوْمُ",
           "en": "the people",
           "bs": "narod",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "The people believed.",
@@ -279,6 +561,8 @@
       "tense": "past",
       "pronoun": "huwa",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -303,13 +587,15 @@
           "arabic": "آمَنُوا",
           "en": "they believed",
           "bs": "vjerovali su",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "بِالْحَقِّ",
           "en": "in the truth",
           "bs": "u istinu",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "They believed in the truth.",
@@ -317,6 +603,8 @@
       "tense": "past",
       "pronoun": "hum",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -333,6 +621,40 @@
         "note": "آمَنَ بِـ is the canonical collocation, بِالْحَقِّ correctly genitive.",
         "independent": true
       }
+    },
+    {
+      "arabic": "آمَنَتْ أُمِّي",
+      "words": [
+        {
+          "arabic": "آمَنَتْ",
+          "en": "she believed",
+          "bs": "vjerovala je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "أُمِّي",
+          "en": "my mother",
+          "bs": "moja majka",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "My mother believed.",
+      "bs": "Moja majka je vjerovala.",
+      "tense": "past",
+      "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
     }
   ],
   "خلق_1": [
@@ -439,13 +761,15 @@
           "arabic": "عَمِلَ",
           "en": "worked",
           "bs": "radio je",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "الرَّجُلُ",
           "en": "the man",
           "bs": "čovjek",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "The man worked.",
@@ -453,6 +777,8 @@
       "tense": "past",
       "pronoun": "huwa",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -477,19 +803,22 @@
           "arabic": "عَمِلُوا",
           "en": "they worked",
           "bs": "radili su",
-          "is_target": true
+          "is_target": true,
+          "translations": {}
         },
         {
           "arabic": "فِي",
           "en": "in",
           "bs": "u",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         },
         {
           "arabic": "الْبَيْتِ",
           "en": "the house",
           "bs": "kući",
-          "is_target": false
+          "is_target": false,
+          "translations": {}
         }
       ],
       "en": "They worked in the house.",
@@ -497,6 +826,8 @@
       "tense": "past",
       "pronoun": "hum",
       "source": "generated",
+      "drafted_by": "",
+      "translations": {},
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -513,6 +844,47 @@
         "note": "Correct 3mp past; عمل في + place is idiomatic; genitive after فِي correct.",
         "independent": true
       }
+    },
+    {
+      "arabic": "أَعْمَلُ كُلَّ يَوْمٍ",
+      "words": [
+        {
+          "arabic": "أَعْمَلُ",
+          "en": "I work",
+          "bs": "radim",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "كُلَّ",
+          "en": "every",
+          "bs": "svaki",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَوْمٍ",
+          "en": "day",
+          "bs": "dan",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I work every day.",
+      "bs": "Radim svaki dan.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
     }
   ],
   "رأي_1": [
@@ -687,6 +1059,90 @@
         "note": "Correctly spelled 3mp past; جاء بـ idiomatic; translations match.",
         "independent": true
       }
+    }
+  ],
+  "جعل_1": [
+    {
+      "arabic": "جَعَلُوا الْبَيْتَ نَظِيفًا",
+      "words": [
+        {
+          "arabic": "جَعَلُوا",
+          "en": "they made",
+          "bs": "učinili su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْبَيْتَ",
+          "en": "the house",
+          "bs": "kuću",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "نَظِيفًا",
+          "en": "clean",
+          "bs": "čistom",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They made the house clean.",
+      "bs": "Učinili su kuću čistom.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "جَعَلْتُ الْكِتَابَ صَدِيقِي",
+      "words": [
+        {
+          "arabic": "جَعَلْتُ",
+          "en": "I made",
+          "bs": "učinio sam",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكِتَابَ",
+          "en": "the book",
+          "bs": "knjigu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقِي",
+          "en": "my friend",
+          "bs": "svojim prijateljem",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I made the book my friend.",
+      "bs": "Knjigu sam učinio svojim prijateljem.",
+      "tense": "past",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": []
+      },
+      "critique": null
     }
   ]
 }

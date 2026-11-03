@@ -1,7 +1,7 @@
 """Tests for the study-site stage's pure views."""
 
 from fil.examples import Example, ExampleWord
-from fil.stages.site import _sentence_view, _speakable
+from fil.stages.site import _sentence_view
 
 
 def test_a_sentence_offers_every_language_it_has():
@@ -12,8 +12,3 @@ def test_a_sentence_offers_every_language_it_has():
 
     assert view["translation"] == {"bs": "Rekao je.", "en": "He said.", "tr": "Dedi."}
     assert view["words"][0]["translation"]["tr"] == "dedi"
-
-
-def test_a_browser_voice_gets_standard_spelling():
-    # Uthmani marks (here the small high rounded zero on a silent alif) trip speech engines.
-    assert _speakable("قَالُوا۟ ٱلْحَقَّ") == "قَالُوا الْحَقَّ"

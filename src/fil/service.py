@@ -12,6 +12,7 @@ unlock the consensus tier. Everything returned is an immutable, JSON-friendly va
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field, replace
 from functools import lru_cache
 
@@ -25,12 +26,12 @@ from fil.corpus.oracle import AttestedCells, build_oracle
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
 from fil import evals
-from fil.examples import Analyze, Critique, Example, checked
+from fil.examples import Analyze, Critique, Example, checked, spelling_key
 from fil.governor import permit
 from fil.journal import Event
 from fil import journal, journal_store
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
-from fil.resources import AGENDA_JSON, EXAMPLES_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
+from fil.resources import AGENDA_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
@@ -238,15 +239,45 @@ def add_examples(
     sentence, and a verdict is addressed by index, so existing indices must not move.
     Raises KeyError if the verb is not in the catalogue.
     """
+    results = [gate(root, form, draft, analyze, features_for) for draft in drafts]
+    example_store.save(root, form, [*example_store.load(root, form, path), *results], path)
+    return results
+
+
+def gate(root: str, form: int, draft: Example, analyze: Analyze | None = None,
+         features_for=None) -> Example:
+    """Run one draft through the correctness gate without storing it.
+
+    Besides the analyzer, the gate gets the engine's own table spellings for the draft's
+    cell (for forms the analyzer cannot read) and the documented gloss exceptions.
+    Raises KeyError if the verb is not in the catalogue.
+    """
     _find(root, form)
     analyzer = analyze or _camel_analyze()
     resolve = features_for or _camel_features
-    results = [
-        checked(draft, root, _features_of(draft, resolve), analyzer)
-        for draft in drafts
-    ]
-    example_store.save(root, form, [*example_store.load(root, form, path), *results], path)
-    return results
+    return checked(draft, root, _features_of(draft, resolve), analyzer,
+                   table_forms=_table_forms(root, form, draft),
+                   gloss_exceptions=_gloss_exceptions())
+
+
+def _table_forms(root: str, form: int, draft: Example) -> frozenset[str]:
+    """Every spelling the engine has for the draft's declared cell, folded for comparison."""
+    if not (draft.tense and draft.pronoun):
+        return frozenset()
+    cell = next((c for c in get_verb(root, form).cells
+                 if c.tense == draft.tense and c.pronoun == draft.pronoun), None)
+    if cell is None:
+        return frozenset()
+    return frozenset(spelling_key(spelling) for spelling in (cell.arabic, cell.generated_form, *cell.alternatives) if spelling)
+
+
+@lru_cache(maxsize=1)
+def _gloss_exceptions() -> dict[str, tuple[str, ...]]:
+    """Documented lexicon gaps: {CAMeL root: accepted English glosses}."""
+    if not GLOSS_EXCEPTIONS_JSON.exists():
+        return {}
+    entries = json.loads(GLOSS_EXCEPTIONS_JSON.read_text(encoding="utf-8"))
+    return {root: tuple(entry["glosses"]) for root, entry in entries.items()}
 
 
 # The cells worth illustrating with a sentence, in teaching order. A verb rarely needs

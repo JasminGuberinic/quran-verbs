@@ -147,3 +147,29 @@ def _critique(approved: bool) -> Critique:
         approved=approved, grammar_ok=approved, translation_ok=approved,
         verb_usage_ok=approved, by="test-reviewer", note="" if approved else "unnatural",
     )
+
+
+def test_a_form_the_analyzer_cannot_read_is_confirmed_by_the_corpus_table():
+    # CAMeL reads the imperative ٱعْلَمْ as "I know"; the engine's own table has it exactly.
+    from fil.examples import check_example, spelling_key
+    word = ExampleWord("اعْلَمْ", "know", "znaj", is_target=True)
+    draft = Example("اعْلَمْ", (word,), en="Know.", bs="Znaj.", tense="imperative", pronoun="anta")
+    reads_as_first_person = lambda _w: [{"pos": "verb", "root": "ع.ل.م", "asp": "i", "per": "1"}]  # noqa: E731
+
+    checks = check_example(draft, "علم", {"asp": "c", "per": "2"}, reads_as_first_person,
+                           table_forms=frozenset({spelling_key("ٱعْلَمْ")}))
+
+    assert checks.verb_form is True and checks.verb_form_by == "corpus table"
+
+
+def test_a_documented_exception_passes_a_gloss_and_says_so():
+    from fil.examples import check_example
+    word = ExampleWord("كَفَرَ", "disbelieved", "nije vjerovao", is_target=True)
+    draft = Example("كَفَرَ", (word,), en="He disbelieved.", bs="Nije vjerovao.")
+    modern_only = lambda _w: [{"pos": "verb", "root": "ك.ف.ر", "gloss": "blaspheme;renege_Islam+he;it_<verb>"}]  # noqa: E731
+
+    refused = check_example(draft, "كفر", None, modern_only)
+    excepted = check_example(draft, "كفر", None, modern_only, gloss_exceptions={"ك.ف.ر": ("disbelieve",)})
+
+    assert refused.gloss_agreement is False
+    assert excepted.gloss_agreement is True and excepted.glossed_by_exception == ("كَفَرَ",)

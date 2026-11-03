@@ -87,4 +87,5 @@ def _checks_from(data: dict | None) -> ExampleChecks | None:
     if not data:
         return None
     conflicts = tuple(data.get("gloss_conflicts", ()))  # JSON has no tuples
-    return ExampleChecks(**{**data, "gloss_conflicts": conflicts})
+    excepted = tuple(data.get("glossed_by_exception", ()))
+    return ExampleChecks(**{**data, "gloss_conflicts": conflicts, "glossed_by_exception": excepted})

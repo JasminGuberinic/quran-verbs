@@ -207,12 +207,21 @@ def check_example(
     return ExampleChecks(
         verb_root=root_ok,
         verb_form=form_ok,
-        all_words_valid=all(analyses.values()),
+        all_words_valid=_all_words_valid(analyses, target, confirmed_by_table=form_by == "corpus table"),
         gloss_agreement=gloss_agreement,
         gloss_conflicts=gloss_conflicts,
         verb_form_by=form_by,
         glossed_by_exception=by_exception,
     )
+
+
+def _all_words_valid(analyses: dict[ExampleWord, list[dict]], target: ExampleWord, confirmed_by_table: bool) -> bool:
+    """Every word has a reading — the target's may come from the corpus table instead.
+
+    The table is consulted exactly when the analyzer has no reading of the verb (أَطِيعُوا
+    gets none at all), so demanding an analyzer reading of it too would undo the table's vote.
+    """
+    return all(word_analyses or (word is target and confirmed_by_table) for word, word_analyses in analyses.items())
 
 
 def checked(

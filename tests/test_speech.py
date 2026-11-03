@@ -19,6 +19,7 @@ from fil.speech import expected_phonemes, normalized, prepared, verdict
     ("هَذَا", "h aa * aa"),                        # the long ā print does not write
     ("ذَلِكَ", "* aa l i k a"),
     ("الْغَنِيُّ", "< a l g a n i y y u"),        # a doubled y, not a long ī
+    ("يَسْـَٔلُ", "y a s < a l u"),                # Uthmani hamza seated on a tatweel
 ])
 def test_words_are_read_as_their_vowels_say(text, sounds):
     assert " ".join(expected_phonemes(prepared(text))) == sounds

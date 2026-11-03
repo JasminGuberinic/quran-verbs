@@ -56,10 +56,20 @@ def prepared(text: str) -> str:
     """The text rewritten so the model reads every vowel as written."""
     text = "".join(char for char in text if char not in _SILENT_UTHMANI)
     text = text.replace(FATHA + SUPERSCRIPT_ALIF, FATHA + "ا").replace(SUPERSCRIPT_ALIF, "ا")
+    text = _with_hamza_on_the_line(text)
     words = [_prepared_word(word) for word in text.split()]
     if words:
         words[0] = _opening(words[0])
     return " ".join(words)
+
+
+# Uthmani script seats a hamza with no carrier on a tatweel (يَسْـَٔلُ, from سَأَلَ); the
+# tatweel is only a stroke to hang it on, so the pair is read as a plain hamza.
+_HAMZA_ON_TATWEEL = re.compile(f"\u0640([{FATHA}{DAMMA}{KASRA}{SUKUN}{SHADDA}]*)\u0654")
+
+
+def _with_hamza_on_the_line(text: str) -> str:
+    return _HAMZA_ON_TATWEEL.sub(r"ء\1", text).replace("\u0640", "")
 
 
 # Words standard spelling writes without the long ā they are said with (the Uthmani text

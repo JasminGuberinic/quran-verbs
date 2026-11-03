@@ -179,3 +179,18 @@ def test_a_spelling_is_one_word_whatever_order_its_marks_were_typed_in():
     from fil.examples import spelling_key
     shadda_first, fatha_first = "اتَّقِ", "اتَّقِ"
     assert spelling_key(shadda_first) == spelling_key(fatha_first)
+
+
+def test_a_target_with_no_reading_at_all_is_valid_when_the_table_confirms_it():
+    # CAMeL has no analysis of the Form IV imperative أَطِيعُوا; the engine's table has it exactly.
+    from fil.examples import check_example, spelling_key
+    word = ExampleWord("أَطِيعُوا", "obey", "slušajte", is_target=True)
+    draft = Example("أَطِيعُوا", (word,), en="Obey.", bs="Slušajte.", tense="imperative", pronoun="antum")
+    no_reading = lambda _w: []  # noqa: E731
+
+    confirmed = check_example(draft, "طوع", {"asp": "c", "per": "2"}, no_reading,
+                              table_forms=frozenset({spelling_key("أَطِيعُوا۟")}))
+    unconfirmed = check_example(draft, "طوع", {"asp": "c", "per": "2"}, no_reading)
+
+    assert confirmed.all_words_valid is True and confirmed.verb_form_by == "corpus table"
+    assert unconfirmed.all_words_valid is False

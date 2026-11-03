@@ -82,6 +82,7 @@ _IRREGULAR = {
     "felt": "feel", "fell": "fall", "spoke": "speak", "spoken": "speak", "won": "win",
     "lost": "lose", "sought": "seek", "struck": "strike", "swore": "swear", "threw": "throw",
     "worshipped": "worship", "worshiped": "worship",
+    "forgave": "forgive", "forgiven": "forgive", "spent": "spend",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")
@@ -108,7 +109,8 @@ def _stem(word: str) -> str:
 
 
 def _without_silent_e(word: str) -> str:
-    """So that "write" and "writing" land on the same stem — but "be" survives."""
-    if word.endswith("e") and len(word) >= 5:
+    """So that "write" and "writing" — and "love" and "loved" — land on the same stem,
+    while "be" and "see" survive."""
+    if word.endswith("e") and len(word) >= 4:
         return word[:-1]
     return word

@@ -37,7 +37,7 @@ def test_unjudgeable_sides_return_none_not_false():
 
 def test_content_words_drop_grammar_and_feature_tags():
     assert content_words("the+truth;right+[def.acc.]") == frozenset({"truth", "right"})
-    assert content_words("beautiful;nice+two") == frozenset({"beautiful", "nice"})
+    assert content_words("beautiful;kind+two") == frozenset({"beautiful", "kind"})
 
 
 def test_a_third_person_s_meets_its_base_form():
@@ -53,3 +53,14 @@ def test_an_ied_form_meets_its_y_base():
 
 def test_a_double_s_is_not_a_plural():
     assert gloss_agrees("oppressed", ["be_unjust;oppress+he;it_<verb>"]) is True
+
+
+def test_a_short_silent_e_verb_meets_its_past_tense():
+    # "loved" stems to "lov"; "love" must land there too, or past-tense أَحَبَّ never agrees.
+    assert gloss_agrees("loved", ["love;like+he;it_<verb>"]) is True
+    assert gloss_agrees("liked", ["love;like+they_<verb>"]) is True
+
+
+def test_forgave_and_spent_meet_their_base_forms():
+    assert gloss_agrees("forgave", ["forgive+he;it_<verb>"]) is True
+    assert gloss_agrees("you spent", ["spend;disburse+you_[masc.sg.]_<verb>"]) is True

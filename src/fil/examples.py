@@ -40,6 +40,18 @@ from typing import Callable
 
 from fil import glosses
 
+# Renderings in further languages, as (language code, text) pairs. A tuple rather than a
+# dict so a word stays hashable and immutable. English and Bosnian are first-class fields:
+# English is the language the lexicon checks, Bosnian the one a person reads. Everything
+# here is a machine translation nobody has reviewed, and is presented as such.
+Translations = tuple[tuple[str, str], ...]
+
+
+def translation_in(translations: Translations, language: str) -> str | None:
+    """The rendering in one language, or None when it has not been translated."""
+    return next((text for code, text in translations if code == language), None)
+
+
 # A morphological analyzer: an Arabic word → its candidate analyses (dicts with at
 # least "pos", "root", feature keys like "asp"/"per"/"gen"/"num", and — for the gloss
 # check — "gloss"/"stemgloss"). Injected so this module stays pure and testable.
@@ -54,6 +66,7 @@ class ExampleWord:
     en: str
     bs: str
     is_target: bool = False  # the verb being learned — emphasised in the UI
+    translations: Translations = ()  # further languages, unreviewed machine translation
 
 
 @dataclass(frozen=True)
@@ -122,6 +135,7 @@ class Example:
     pronoun: str | None = None    # … so we can check the verb is in that form
     source: str = "generated"     # composed for practice — NOT from the Quran
     drafted_by: str = ""          # who wrote it — so a reader cannot secretly be its author
+    translations: Translations = ()  # the sentence in further languages, unreviewed
     checks: ExampleChecks | None = field(default=None)
     critique: Critique | None = field(default=None)
 

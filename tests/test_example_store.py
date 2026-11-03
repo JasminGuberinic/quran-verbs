@@ -3,7 +3,8 @@
 from dataclasses import replace
 
 from fil import example_store
-from fil.examples import Critique, Example, ExampleChecks, ExampleWord
+from fil.examples import Critique, Example, ExampleChecks, ExampleWord, translation_in
+from fil.example_store import load, save
 
 
 def _example() -> Example:
@@ -68,3 +69,27 @@ def test_examples_written_before_the_gloss_check_still_load(tmp_path):
     loaded = example_store.load("كتب", 1, path)[0]
 
     assert loaded.checks.gloss_agreement is None and loaded.tier == "checked"
+
+
+def test_translations_survive_a_round_trip(tmp_path):
+    word = ExampleWord("قَالَ", "said", "rekao je", is_target=True,
+                       translations=(("de", "sagte"), ("tr", "dedi")))
+    example = Example(arabic="قَالَ", words=(word,), en="He said.", bs="Rekao je.",
+                      translations=(("de", "Er sagte."), ("tr", "Dedi.")))
+
+    save("قول", 1, [example], tmp_path / "ex.json")
+    (loaded,) = load("قول", 1, tmp_path / "ex.json")
+
+    assert loaded == example
+    assert translation_in(loaded.words[0].translations, "tr") == "dedi"
+
+
+def test_a_file_written_before_translations_existed_still_loads(tmp_path):
+    path = tmp_path / "ex.json"
+    path.write_text('{"قول_1": [{"arabic": "قَالَ", "en": "He said.", "bs": "Rekao je.", '
+                    '"words": [{"arabic": "قَالَ", "en": "said", "bs": "rekao je", "is_target": true}]}]}',
+                    encoding="utf-8")
+
+    (loaded,) = load("قول", 1, path)
+
+    assert loaded.translations == () and loaded.words[0].translations == ()

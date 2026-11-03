@@ -157,9 +157,11 @@ def add_examples(root: str, form: int, examples: list[dict], drafted_by: str) ->
         root: the Arabic root of the verb.
         form: the verb form, 1–10.
         examples: list of {arabic, en, bs, words: [{arabic, en, bs, is_target}],
-            tense?, pronoun?} — exactly one word per sentence should have
+            tense?, pronoun?, translations?} — exactly one word per sentence should have
             is_target=true (the verb). Give tense (past|present|imperative) and
             pronoun (e.g. huwa) so the gate can also check the verb's FORM.
+            `translations` ({"tr": …, "de": …}) is optional on the sentence and on
+            each word: further languages beyond en/bs, stored as unreviewed.
         drafted_by: who wrote these sentences (e.g. "claude-opus-5-5, drafting pass").
             Recorded on each one so that the same writer cannot later approve them
             as an independent reviewer.
@@ -293,13 +295,22 @@ def _to_example(data: dict, drafted_by: str) -> Example:
         raise ValueError("drafted_by is required: say who wrote these sentences")
     return Example(
         arabic=data["arabic"],
-        words=tuple(ExampleWord(**word) for word in data["words"]),
+        words=tuple(_to_word(word) for word in data["words"]),
         en=data["en"],
         bs=data["bs"],
         tense=data.get("tense"),
         pronoun=data.get("pronoun"),
         drafted_by=drafted_by,
+        translations=_translations_of(data),
     )
+
+
+def _to_word(data: dict) -> ExampleWord:
+    return ExampleWord(**{**data, "translations": _translations_of(data)})
+
+
+def _translations_of(data: dict) -> tuple[tuple[str, str], ...]:
+    return tuple(sorted(data.get("translations", {}).items()))
 
 
 def _from_example(example: Example) -> dict:

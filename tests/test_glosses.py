@@ -71,3 +71,8 @@ def test_forgave_and_spent_meet_their_base_forms():
 def test_fought_and_misled_meet_their_base_forms():
     assert gloss_agrees("fought", ["fight+he;it_<verb>"]) is True
     assert gloss_agrees("misled", ["mislead;deceive+they_<verb>"]) is True
+
+
+def test_forgot_meets_its_base_form():
+    assert gloss_agrees("they forgot", ["forget+they_<verb>"]) is True
+    assert gloss_agrees("forgotten", ["forget+he;it_<verb>"]) is True

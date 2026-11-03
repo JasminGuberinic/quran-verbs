@@ -83,7 +83,7 @@ _IRREGULAR = {
     "lost": "lose", "sought": "seek", "struck": "strike", "swore": "swear", "threw": "throw",
     "worshipped": "worship", "worshiped": "worship",
     "forgave": "forgive", "forgiven": "forgive", "spent": "spend",
-    "fought": "fight", "misled": "mislead",
+    "fought": "fight", "misled": "mislead", "forgot": "forget", "forgotten": "forget",
     "forbade": "forbid", "forbidden": "forbid", "began": "begin", "begun": "begin",
 }
 

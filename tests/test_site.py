@@ -1,7 +1,7 @@
 """Tests for the study-site stage's pure views."""
 
 from fil.examples import Example, ExampleWord
-from fil.stages.site import _sentence_view
+from fil.stages.site import _principal, _sentence_view
 
 
 def test_a_sentence_offers_every_language_it_has():
@@ -22,3 +22,17 @@ def test_an_ayah_verb_without_its_translation_fails_the_build():
 
     with pytest.raises(MissingVerbGloss):
         _gloss_of(word, {"7:15:1": {"bs": "rekao je"}})   # other languages missing
+
+
+def _cell(tense: str, pronoun: str, quran: bool = True) -> dict:
+    return {"tense": tense, "pronoun": pronoun, "quran": quran}
+
+
+def test_principal_forms_prefer_the_third_person_singular():
+    cells = [_cell("present", "hum"), _cell("past", "huwa")]
+    assert _principal(cells) == [_cell("past", "huwa")]
+
+
+def test_a_verb_without_principal_cells_is_shown_by_its_quranic_forms():
+    cells = [_cell("present", "hum"), _cell("present", "antum"), _cell("past", "hum", quran=False)]
+    assert _principal(cells) == [_cell("present", "hum"), _cell("present", "antum")]

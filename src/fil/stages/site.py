@@ -182,11 +182,14 @@ def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) ->
 
 
 def _principal(cells: list[dict]) -> list[dict]:
+    """The forms a card is shown by; a verb the Quran never uses in a principal cell
+    (يَحْزَنُونَ, تَحْزَنُونَ only) is shown by the forms it does use, never by none."""
     by_cell = {(cell["tense"], cell["pronoun"]): cell for cell in cells}
-    return [
+    principal = [
         by_cell[key] for key in _PRINCIPAL
         if key in by_cell and (key[0] != "imperative" or by_cell[key]["quran"])
     ]
+    return principal or [cell for cell in cells if cell["quran"]] or cells
 
 
 def _ayah_view(example: AyahExample, verb: study.VerbKey, sound: _Sound) -> dict:

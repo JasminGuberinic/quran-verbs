@@ -33,7 +33,7 @@ from fil import example_store, meanings, service, study
 from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
-from fil.languages import LANGUAGES
+from fil.languages import LANGUAGES, REQUIRED
 from fil.recitation import RecitationLibrary
 from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
 from fil.speech import SpeechLibrary, TtsArabicVoice
@@ -215,7 +215,7 @@ class MissingVerbGloss(ValueError):
 
 def _gloss_of(word: QuranWord, glosses: dict[str, dict[str, str]]) -> dict[str, str]:
     key = f"{word.surah}:{word.ayah}:{word.number}"
-    if key not in glosses or not all(glosses[key].get(code) for code in (lang.code for lang in LANGUAGES)):
+    if key not in glosses or not all(glosses[key].get(code) for code in REQUIRED):
         raise MissingVerbGloss(f"{key} ({word.text}): add its translation to {AYAH_VERB_GLOSSES_JSON.name}")
     return glosses[key]
 

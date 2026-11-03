@@ -13,6 +13,7 @@ import argparse
 from fil.stages import (
     agenda,
     audio_build,
+    batch,
     bundle,
     coverage,
     dataset,
@@ -36,6 +37,7 @@ _STAGES = {
     "coverage": (coverage.main, "reconcile every Quranic verb; print agreement rate"),
     "review": (review.main, "export the review queue of generator↔Quran conflicts"),
     "evals": (evals.main, "report the factory's metrics; re-run the gate over the golden set"),
+    "batch": (batch.main, "add verbs in batches: plan, wordbank, draft, meanings, ayah, review-export/import"),
     "site": (site.main, "build the static study site (build/site) for the verbs in data/meanings.json"),
 }
 
@@ -46,8 +48,13 @@ def main() -> None:
     for name, (_run, description) in _STAGES.items():
         stages.add_parser(name, help=description)
 
-    stage = parser.parse_args().stage
-    _STAGES[stage][0]()
+    known, rest = parser.parse_known_args()
+    if known.stage == "batch":
+        batch.main(rest)
+        return
+    if rest:
+        parser.error(f"unrecognized arguments: {' '.join(rest)}")
+    _STAGES[known.stage][0]()
 
 
 if __name__ == "__main__":

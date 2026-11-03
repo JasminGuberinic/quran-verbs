@@ -15,7 +15,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from fil.languages import CODES
+from fil.languages import CODES, REQUIRED
 from fil.resources import MEANINGS_JSON
 
 
@@ -33,8 +33,11 @@ class MissingMeaning(ValueError):
     """A verb's meaning is missing in a language the site promises."""
 
 
-def load(path: Path = MEANINGS_JSON, languages: tuple[str, ...] = CODES) -> list[VerbMeaning]:
-    """Every authored meaning, in file order, each complete in every language."""
+def load(path: Path = MEANINGS_JSON, languages: tuple[str, ...] = REQUIRED) -> list[VerbMeaning]:
+    """Every authored meaning, in file order, each complete in the required languages.
+
+    Further languages are kept when present; a page falls back to English for the rest.
+    """
     if not path.exists():
         return []
     entries = json.loads(path.read_text(encoding="utf-8"))
@@ -46,4 +49,5 @@ def _meaning(key: str, glosses: dict[str, str], languages: tuple[str, ...]) -> V
     if missing:
         raise MissingMeaning(f"{key}: no meaning in {', '.join(missing)}")
     root, form = key.rsplit("_", 1)
-    return VerbMeaning(root, int(form), tuple((code, glosses[code]) for code in languages))
+    present = [code for code in CODES if glosses.get(code, "").strip()]
+    return VerbMeaning(root, int(form), tuple((code, glosses[code]) for code in present))

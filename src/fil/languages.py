@@ -42,3 +42,7 @@ LANGUAGES: tuple[Language, ...] = (
 )
 
 CODES: tuple[str, ...] = tuple(language.code for language in LANGUAGES)
+
+# Every verb must be complete in these before it ships; the rest are translated later, in
+# bulk, and fall back to English on the page until then (labelled as such).
+REQUIRED: tuple[str, ...] = ("bs", "en")

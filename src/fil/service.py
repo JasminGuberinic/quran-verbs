@@ -626,6 +626,37 @@ def record_critique(
     return reviewed
 
 
+def translate_example(
+    root: str, form: int, index: int, sentence: dict[str, str], words: list[dict[str, str]],
+    path=EXAMPLES_JSON,
+) -> Example:
+    """Add further-language translations to one stored sentence, leaving its verdicts alone.
+
+    Translation does not change the Arabic, so the gate's checks and any reader's verdict
+    still hold. `words` gives one {language: gloss} map per word, in sentence order.
+    Raises IndexError for a missing sentence and ValueError when the word count differs.
+    """
+    stored = example_store.load(root, form, path)
+    if not 0 <= index < len(stored):
+        raise IndexError(f"{root} form {form} has {len(stored)} example(s); no index {index}")
+    subject = stored[index]
+    if len(words) != len(subject.words):
+        raise ValueError(f"{len(words)} word translations for {len(subject.words)} words")
+
+    translated = replace(
+        subject,
+        translations=_merged(subject.translations, sentence),
+        words=tuple(replace(word, translations=_merged(word.translations, glosses))
+                    for word, glosses in zip(subject.words, words)),
+    )
+    example_store.save(root, form, [*stored[:index], translated, *stored[index + 1:]], path)
+    return translated
+
+
+def _merged(existing: tuple[tuple[str, str], ...], added: dict[str, str]) -> tuple[tuple[str, str], ...]:
+    return tuple(sorted({**dict(existing), **added}.items()))
+
+
 class SelfReviewError(PermissionError):
     """Someone tried to sign off on their own sentence while claiming independence."""
 

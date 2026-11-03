@@ -315,3 +315,27 @@ def _cell(source: str, quran_attested: bool) -> ReconciledCell:
         generator_agrees=(source == "attested") if quran_attested else None,
         confidence=1.0, primary_form="x", alternatives=(),
     )
+
+
+def test_translating_a_sentence_keeps_its_checks_and_verdict(tmp_path):
+    from fil.service import translate_example
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    add_examples(verb.root, verb.form, [_draft()], analyze=_fake_gate(verb.root), path=path)
+    record_critique(verb.root, verb.form, 0, _approval(), path=path, journal_path=tmp_path / "j.jsonl")
+
+    translated = translate_example(verb.root, verb.form, 0, {"tr": "cümle"}, [{"tr": "fiil"}], path=path)
+
+    assert translated.tier == "reviewed"
+    assert dict(translated.translations) == {"tr": "cümle"}
+    assert dict(translated.words[0].translations) == {"tr": "fiil"}
+
+
+def test_word_translations_must_match_the_words(tmp_path):
+    from fil.service import translate_example
+    verb = list_verbs(limit=1)[0]
+    path = tmp_path / "ex.json"
+    add_examples(verb.root, verb.form, [_draft()], analyze=_fake_gate(verb.root), path=path)
+
+    with pytest.raises(ValueError):
+        translate_example(verb.root, verb.form, 0, {"tr": "cümle"}, [], path=path)

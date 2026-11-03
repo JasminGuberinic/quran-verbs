@@ -38,7 +38,7 @@ html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
 [hidden] { display: none !important; }
 .wrap {
-  max-width: 660px; margin: 0 auto; display: grid; gap: 16px;
+  max-width: 1180px; margin: 0 auto; display: grid; gap: 16px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 20px 48px;
@@ -188,45 +188,110 @@ footer { font-size: 0.8rem; color: var(--muted); display: grid; gap: 6px; }
 footer p { margin: 0; }
 .loading { text-align: center; color: var(--muted); padding: 40px 0; }
 [dir="rtl"] .meaning, [dir="rtl"] .big-meaning { font-family: var(--font-arabic); }
+/* ---- app shell: sticky top bar, verb list beside the card on wide screens ---- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.topbar-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 16px; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); flex-wrap: wrap; }
+.topbar .brand h1 { font-size: 1.35rem; }
+.topbar nav.tabs { flex: 1 1 420px; min-width: 0; }
+.status { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 20px; align-items: center; }
+.status .notice { grid-column: 1 / -1; margin: 0; }
+.layout { display: grid; gap: 20px; align-items: start; }
+.verb-list { display: none; }
+@media (min-width: 960px) {
+  .layout { grid-template-columns: 260px minmax(0, 1fr); }
+  .verb-list { display: grid; gap: 2px; position: sticky; top: 76px; max-height: calc(100vh - 96px); overflow-y: auto; padding: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+  .chips { display: none; }
+  .layout.no-list { grid-template-columns: minmax(0, 760px); justify-content: center; }
+  .layout.no-list .verb-list { display: none; }
+}
+.verb-item { display: grid; grid-template-columns: 2.2em minmax(0, 1fr) auto; align-items: center; gap: 8px; border: 0; background: transparent; border-radius: 9px; padding: 6px 8px; text-align: start; }
+.verb-item:hover { background: var(--paper); }
+.verb-item[aria-current="true"] { background: var(--accent-soft); }
+.verb-item .rank { font-family: var(--font-data); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.verb-item .gloss-text { font-size: 0.82rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.verb-item .ar { font-size: 1.2rem; }
+.verb-item .names { display: grid; min-width: 0; }
+.verb-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+.verb-item.learned .dot { background: var(--accent); }
+
+/* ---- verb card ---- */
+.verb-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 20px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.hero-nav { display: flex; gap: 6px; }
+.icon-btn { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; font-size: 1rem; }
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+.hero-word { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap-reverse; }
+.hero-word .lemma { font-size: 3.4rem; line-height: 1.2; }
+.stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.stat { background: var(--paper); border-radius: 10px; padding: 8px 12px; display: grid; }
+.stat b { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.74rem; color: var(--muted); }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.section-head .section-title { margin: 0; }
+.section-head .note { margin: 0; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.tile { background: var(--paper); border-radius: 12px; padding: 10px 12px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 10px; align-items: center; }
+.tile .tile-ar { font-size: 1.75rem; line-height: 1.3; text-align: right; }
+.tile .tile-label { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 8px; font-size: 0.76rem; color: var(--muted); }
+.tile .tile-label b { color: var(--ink); font-weight: 500; }
+.conj { width: 100%; border-collapse: separate; border-spacing: 0 4px; min-width: 0; font-size: 0.86rem; }
+.conj th { text-align: start; font-weight: 500; color: var(--muted); padding: 0 8px; white-space: nowrap; }
+.conj thead th { font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; text-align: center; }
+.conj td { padding: 0 3px; text-align: center; }
+.conj-cell { width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid transparent; background: var(--paper); border-radius: 9px; padding: 4px 8px; font-family: var(--font-arabic); font-size: 1.25rem; direction: rtl; min-height: 40px; }
+.conj-cell:hover { border-color: var(--accent); }
+.conj-cell.attested { box-shadow: inset 0 -2px 0 var(--gold); }
+.conj-cell.playing { background: var(--accent-soft); }
+.conj td .quran-tag { margin-top: 2px; display: inline-block; }
+.conj-switch { display: none; }
+.conj-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.76rem; color: var(--muted); margin-top: 8px; }
+.conj-legend i { display: inline-block; width: 14px; height: 3px; background: var(--gold); vertical-align: middle; margin-inline-end: 4px; }
+@media (max-width: 720px) {
+  .conj-switch { display: flex; }
+  .conj.show-past [data-col]:not([data-col="past"]),
+  .conj.show-present [data-col]:not([data-col="present"]),
+  .conj.show-imperative [data-col]:not([data-col="imperative"]) { display: none; }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero-word .lemma { font-size: 2.8rem; }
+}
+.card-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; flex-wrap: wrap; }
 @media (prefers-reduced-motion: reduce) { .bar span { transition: none; } }
 </style>
 </head>
 <body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><h1>Fiʿl <span class="ar">فِعْل</span></h1></div>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <label class="lang"><span class="note" id="lang-label"></span> <select id="language"></select></label>
+  </div>
+</header>
 <div class="wrap">
-  <header>
-    <div class="brand">
-      <div>
-        <h1>Fiʿl <span class="ar">فِعْل</span></h1>
-        <p class="brand-sub" id="subtitle"></p>
-      </div>
-      <label class="lang"><span class="note" id="lang-label"></span> <select id="language"></select></label>
-    </div>
-    <p class="notice" id="notice"></p>
-    <div class="progress">
-      <div class="progress-label">
-        <span id="learned-text"></span>
-        <span id="share-text"></span>
-      </div>
+  <div class="status">
+    <p class="brand-sub" id="subtitle"></p>
+    <div class="progress" style="min-width: min(360px, 100%)">
+      <div class="progress-label"><span id="learned-text"></span><span id="share-text"></span></div>
       <div class="bar" aria-hidden="true"><span id="learned-bar"></span></div>
     </div>
-    <nav class="tabs" role="tablist" id="tabs"></nav>
-  </header>
+    <p class="notice" id="notice"></p>
+  </div>
 
   <p class="loading" id="loading">…</p>
 
-  <main id="view-learn" class="stack" hidden>
-    <div class="chips" id="chips"></div>
-    <article class="card" id="verb-card"></article>
-    <div class="pager">
-      <button class="btn" id="prev"></button>
-      <button class="btn primary" id="next"></button>
+  <div class="layout" id="layout">
+    <aside class="verb-list" id="verb-list" aria-label="Verbs"></aside>
+    <div class="stack" style="min-width:0">
+      <main id="view-learn" class="stack" hidden>
+        <div class="chips" id="chips"></div>
+        <article class="card" id="verb-card"></article>
+      </main>
+      <main id="view-cards" class="stack" hidden><article class="card center flash" id="flash"></article></main>
+      <main id="view-quiz" class="stack" hidden><article class="card" id="quiz"></article></main>
+      <main id="view-forms" class="stack" hidden><article class="card" id="forms-quiz"></article></main>
+      <main id="view-listen" class="stack" hidden><article class="card" id="listen"></article></main>
+      <main id="view-sentences" class="stack" hidden><article class="card" id="cloze"></article></main>
     </div>
-  </main>
-  <main id="view-cards" class="stack" hidden><article class="card center flash" id="flash"></article></main>
-  <main id="view-quiz" class="stack" hidden><article class="card" id="quiz"></article></main>
-  <main id="view-forms" class="stack" hidden><article class="card" id="forms-quiz"></article></main>
-  <main id="view-listen" class="stack" hidden><article class="card" id="listen"></article></main>
-  <main id="view-sentences" class="stack" hidden><article class="card" id="cloze"></article></main>
+  </div>
 
   <footer id="footer"></footer>
 </div>
@@ -249,7 +314,7 @@ footer p { margin: 0; }
       tenses: { past: "prošlo", present: "sadašnje", imperative: "zapovijed" },
       pronouns: { huwa: "on", hiya: "ona", huma: "njih dvoje", hum: "oni", hunna: "one", anta: "ti (m.)", anti: "ti (ž.)", antuma: "vi dvoje", antum: "vi (m.)", antunna: "vi (ž.)", ana: "ja", nahnu: "mi" },
       mainForms: "Glavni oblici", recited: "kako se uči", nouns: "Imenice od ovog glagola", participle: "particip (onaj koji…)", verbalNoun: "glagolska imenica",
-      inQuran: "U Kur'anu", listenAyah: "Klikni označenu riječ da čuješ samo glagol.", noFreeTranslation: "slobodnog bosanskog prijevoda nema, zato engleski", recitedAyah: "Cijeli ajet · Mishary Alafasy", onQuranCom: (s, a) => `Sura ${s}, ajet ${a} · prijevod na quran.com ↗`,
+      inQuran: "U Kur'anu", listenAyah: "Klikni označenu riječ da čuješ samo glagol.", noFreeTranslation: "slobodnog bosanskog prijevoda nema, zato engleski", conjugation: "Konjugacija", statShare: "svih glagola u Kur'anu", statAyat: "ajeta s ovim glagolom", recitedAyah: "Cijeli ajet · Mishary Alafasy", onQuranCom: (s, a) => `Sura ${s}, ajet ${a} · prijevod na quran.com ↗`,
       sentences: "Rečenice za vježbu", sentencesNote: "Sastavljene za vježbu, nisu iz Kur'ana.", noSentences: "Rečenice za ovaj glagol još nisu gotove.",
       fullTable: (a, b) => `Puna konjugacija (${a} od ${b} oblika je u Kur'anu)`, tableNote: "● oblik se pojavljuje u Kur'anu. Klikni oblik da ga čuješ.",
       report: "Prijavi grešku", reportHint: "Opiši grešku. Tekst ispod možeš kopirati i poslati autoru.", copy: "Kopiraj", copied: "Kopirano", close: "Zatvori",
@@ -269,7 +334,7 @@ footer p { margin: 0; }
       tenses: { past: "past", present: "present", imperative: "command" },
       pronouns: { huwa: "he", hiya: "she", huma: "they two", hum: "they (m.)", hunna: "they (f.)", anta: "you (m.)", anti: "you (f.)", antuma: "you two", antum: "you (m. pl.)", antunna: "you (f. pl.)", ana: "I", nahnu: "we" },
       mainForms: "Main forms", recited: "as recited", nouns: "Nouns from this verb", participle: "participle (one who…)", verbalNoun: "verbal noun",
-      inQuran: "In the Quran", listenAyah: "Tap the marked word to hear the verb alone.", noFreeTranslation: "", recitedAyah: "Whole ayah · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayah ${a} · translation on quran.com ↗`,
+      inQuran: "In the Quran", listenAyah: "Tap the marked word to hear the verb alone.", noFreeTranslation: "", conjugation: "Conjugation", statShare: "of all verbs in the Quran", statAyat: "ayat with this verb", recitedAyah: "Whole ayah · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayah ${a} · translation on quran.com ↗`,
       sentences: "Practice sentences", sentencesNote: "Composed for practice, not from the Quran.", noSentences: "Sentences for this verb are not ready yet.",
       fullTable: (a, b) => `Full conjugation (${a} of ${b} forms occur in the Quran)`, tableNote: "● the form occurs in the Quran. Tap a form to hear it.",
       report: "Report a mistake", reportHint: "Describe the mistake. You can copy the text below and send it to the author.", copy: "Copy", copied: "Copied", close: "Close",
@@ -289,7 +354,7 @@ footer p { margin: 0; }
       tenses: { past: "geçmiş", present: "şimdiki", imperative: "emir" },
       pronouns: { huwa: "o (er.)", hiya: "o (dişi)", huma: "o ikisi", hum: "onlar (er.)", hunna: "onlar (dişi)", anta: "sen (er.)", anti: "sen (dişi)", antuma: "siz ikiniz", antum: "siz (er.)", antunna: "siz (dişi)", ana: "ben", nahnu: "biz" },
       mainForms: "Temel biçimler", recited: "okunuşu", nouns: "Bu fiilden isimler", participle: "ism-i fâil", verbalNoun: "mastar",
-      inQuran: "Kur'an'da", listenAyah: "Yalnız fiili duymak için işaretli kelimeye dokunun.", noFreeTranslation: "", recitedAyah: "Ayetin tamamı · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, ayet ${a} · quran.com'da meal ↗`,
+      inQuran: "Kur'an'da", listenAyah: "Yalnız fiili duymak için işaretli kelimeye dokunun.", noFreeTranslation: "", conjugation: "Çekim", statShare: "Kur'an'daki tüm fiillerin", statAyat: "bu fiilin geçtiği ayet", recitedAyah: "Ayetin tamamı · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, ayet ${a} · quran.com'da meal ↗`,
       sentences: "Alıştırma cümleleri", sentencesNote: "Alıştırma için yazıldı, Kur'an'dan değildir.", noSentences: "Bu fiilin cümleleri henüz hazır değil.",
       fullTable: (a, b) => `Tam çekim (${b} biçimin ${a} tanesi Kur'an'da geçer)`, tableNote: "● biçim Kur'an'da geçer. Duymak için dokunun.",
       report: "Hata bildir", reportHint: "Hatayı açıklayın. Aşağıdaki metni kopyalayıp yazara gönderebilirsiniz.", copy: "Kopyala", copied: "Kopyalandı", close: "Kapat",
@@ -309,7 +374,7 @@ footer p { margin: 0; }
       tenses: { past: "Vergangenheit", present: "Gegenwart", imperative: "Befehl" },
       pronouns: { huwa: "er", hiya: "sie", huma: "die beiden", hum: "sie (m.)", hunna: "sie (f.)", anta: "du (m.)", anti: "du (f.)", antuma: "ihr beide", antum: "ihr (m.)", antunna: "ihr (f.)", ana: "ich", nahnu: "wir" },
       mainForms: "Hauptformen", recited: "rezitiert", nouns: "Nomen von diesem Verb", participle: "Partizip (der, der …)", verbalNoun: "Verbalnomen",
-      inQuran: "Im Koran", listenAyah: "Tippe das markierte Wort, um nur das Verb zu hören.", noFreeTranslation: "kein freier deutscher Text verfügbar, daher Englisch", recitedAyah: "Ganzer Vers · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, Vers ${a} · Übersetzung auf quran.com ↗`,
+      inQuran: "Im Koran", listenAyah: "Tippe das markierte Wort, um nur das Verb zu hören.", noFreeTranslation: "kein freier deutscher Text verfügbar, daher Englisch", conjugation: "Konjugation", statShare: "aller Verben im Koran", statAyat: "Verse mit diesem Verb", recitedAyah: "Ganzer Vers · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, Vers ${a} · Übersetzung auf quran.com ↗`,
       sentences: "Übungssätze", sentencesNote: "Für die Übung verfasst, nicht aus dem Koran.", noSentences: "Die Sätze für dieses Verb sind noch nicht fertig.",
       fullTable: (a, b) => `Volle Konjugation (${a} von ${b} Formen kommen im Koran vor)`, tableNote: "● die Form kommt im Koran vor. Tippe eine Form, um sie zu hören.",
       report: "Fehler melden", reportHint: "Beschreibe den Fehler. Den Text unten kannst du kopieren und dem Autor schicken.", copy: "Kopieren", copied: "Kopiert", close: "Schließen",
@@ -329,7 +394,7 @@ footer p { margin: 0; }
       tenses: { past: "e kryer", present: "e tashme", imperative: "urdhërore" },
       pronouns: { huwa: "ai", hiya: "ajo", huma: "ata të dy", hum: "ata", hunna: "ato", anta: "ti (m.)", anti: "ti (f.)", antuma: "ju të dy", antum: "ju (m.)", antunna: "ju (f.)", ana: "unë", nahnu: "ne" },
       mainForms: "Format kryesore", recited: "si lexohet", nouns: "Emra nga kjo folje", participle: "pjesore (ai që…)", verbalNoun: "emër foljor",
-      inQuran: "Në Kuran", listenAyah: "Prekni fjalën e shënuar për të dëgjuar vetëm foljen.", noFreeTranslation: "nuk ka përkthim të lirë shqip, prandaj anglisht", recitedAyah: "I gjithë ajeti · Mishary Alafasy", onQuranCom: (s, a) => `Sureja ${s}, ajeti ${a} · përkthimi në quran.com ↗`,
+      inQuran: "Në Kuran", listenAyah: "Prekni fjalën e shënuar për të dëgjuar vetëm foljen.", noFreeTranslation: "nuk ka përkthim të lirë shqip, prandaj anglisht", conjugation: "Zgjedhimi", statShare: "e të gjitha foljeve në Kuran", statAyat: "ajete me këtë folje", recitedAyah: "I gjithë ajeti · Mishary Alafasy", onQuranCom: (s, a) => `Sureja ${s}, ajeti ${a} · përkthimi në quran.com ↗`,
       sentences: "Fjali për ushtrime", sentencesNote: "Të shkruara për ushtrim, jo nga Kurani.", noSentences: "Fjalitë për këtë folje nuk janë gati ende.",
       fullTable: (a, b) => `Zgjedhimi i plotë (${a} nga ${b} forma janë në Kuran)`, tableNote: "● forma gjendet në Kuran. Prekni një formë për ta dëgjuar.",
       report: "Raporto gabim", reportHint: "Përshkruani gabimin. Tekstin më poshtë mund ta kopjoni dhe t'ia dërgoni autorit.", copy: "Kopjo", copied: "U kopjua", close: "Mbyll",
@@ -349,7 +414,7 @@ footer p { margin: 0; }
       tenses: { past: "passé", present: "présent", imperative: "impératif" },
       pronouns: { huwa: "il", hiya: "elle", huma: "eux deux", hum: "ils", hunna: "elles", anta: "tu (m.)", anti: "tu (f.)", antuma: "vous deux", antum: "vous (m.)", antunna: "vous (f.)", ana: "je", nahnu: "nous" },
       mainForms: "Formes principales", recited: "récité", nouns: "Noms de ce verbe", participle: "participe (celui qui…)", verbalNoun: "nom verbal",
-      inQuran: "Dans le Coran", listenAyah: "Touchez le mot marqué pour n'entendre que le verbe.", noFreeTranslation: "pas de traduction française libre disponible, donc anglais", recitedAyah: "Verset entier · Mishary Alafasy", onQuranCom: (s, a) => `Sourate ${s}, verset ${a} · traduction sur quran.com ↗`,
+      inQuran: "Dans le Coran", listenAyah: "Touchez le mot marqué pour n'entendre que le verbe.", noFreeTranslation: "pas de traduction française libre disponible, donc anglais", conjugation: "Conjugaison", statShare: "de tous les verbes du Coran", statAyat: "versets avec ce verbe", recitedAyah: "Verset entier · Mishary Alafasy", onQuranCom: (s, a) => `Sourate ${s}, verset ${a} · traduction sur quran.com ↗`,
       sentences: "Phrases d'exercice", sentencesNote: "Composées pour l'exercice, pas tirées du Coran.", noSentences: "Les phrases de ce verbe ne sont pas encore prêtes.",
       fullTable: (a, b) => `Conjugaison complète (${a} sur ${b} formes sont dans le Coran)`, tableNote: "● la forme apparaît dans le Coran. Touchez une forme pour l'entendre.",
       report: "Signaler une erreur", reportHint: "Décrivez l'erreur. Vous pouvez copier le texte ci-dessous et l'envoyer à l'auteur.", copy: "Copier", copied: "Copié", close: "Fermer",
@@ -369,7 +434,7 @@ footer p { margin: 0; }
       tenses: { past: "lampau", present: "kini", imperative: "perintah" },
       pronouns: { huwa: "dia (lk)", hiya: "dia (pr)", huma: "mereka berdua", hum: "mereka (lk)", hunna: "mereka (pr)", anta: "kamu (lk)", anti: "kamu (pr)", antuma: "kalian berdua", antum: "kalian (lk)", antunna: "kalian (pr)", ana: "saya", nahnu: "kami" },
       mainForms: "Bentuk utama", recited: "bacaan", nouns: "Kata benda dari kata kerja ini", participle: "isim fa'il", verbalNoun: "masdar",
-      inQuran: "Dalam Al-Qur'an", listenAyah: "Ketuk kata bertanda untuk mendengar kata kerjanya saja.", noFreeTranslation: "", recitedAyah: "Seluruh ayat · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayat ${a} · terjemahan di quran.com ↗`,
+      inQuran: "Dalam Al-Qur'an", listenAyah: "Ketuk kata bertanda untuk mendengar kata kerjanya saja.", noFreeTranslation: "", conjugation: "Tasrif", statShare: "dari semua kata kerja Al-Qur'an", statAyat: "ayat dengan kata kerja ini", recitedAyah: "Seluruh ayat · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayat ${a} · terjemahan di quran.com ↗`,
       sentences: "Kalimat latihan", sentencesNote: "Disusun untuk latihan, bukan dari Al-Qur'an.", noSentences: "Kalimat untuk kata kerja ini belum siap.",
       fullTable: (a, b) => `Tasrif lengkap (${a} dari ${b} bentuk ada dalam Al-Qur'an)`, tableNote: "● bentuk ini ada dalam Al-Qur'an. Ketuk untuk mendengar.",
       report: "Laporkan kesalahan", reportHint: "Jelaskan kesalahannya. Teks di bawah bisa disalin dan dikirim ke penulis.", copy: "Salin", copied: "Tersalin", close: "Tutup",
@@ -389,7 +454,7 @@ footer p { margin: 0; }
       tenses: { past: "ماضی", present: "مضارع", imperative: "امر" },
       pronouns: { huwa: "وہ (مذکر)", hiya: "وہ (مؤنث)", huma: "وہ دونوں", hum: "وہ سب (مذکر)", hunna: "وہ سب (مؤنث)", anta: "تم (مذکر)", anti: "تم (مؤنث)", antuma: "تم دونوں", antum: "تم سب (مذکر)", antunna: "تم سب (مؤنث)", ana: "میں", nahnu: "ہم" },
       mainForms: "بنیادی صیغے", recited: "تلاوت", nouns: "اس فعل سے اسماء", participle: "اسم فاعل", verbalNoun: "مصدر",
-      inQuran: "قرآن میں", listenAyah: "صرف فعل سننے کے لیے نشان زدہ لفظ پر ٹیپ کریں۔", noFreeTranslation: "", recitedAyah: "پوری آیت · مشاری العفاسی", onQuranCom: (s, a) => `سورہ ${s}، آیت ${a} · quran.com پر ترجمہ`,
+      inQuran: "قرآن میں", listenAyah: "صرف فعل سننے کے لیے نشان زدہ لفظ پر ٹیپ کریں۔", noFreeTranslation: "", conjugation: "گردان", statShare: "قرآن کے تمام افعال میں", statAyat: "اس فعل والی آیات", recitedAyah: "پوری آیت · مشاری العفاسی", onQuranCom: (s, a) => `سورہ ${s}، آیت ${a} · quran.com پر ترجمہ`,
       sentences: "مشق کے جملے", sentencesNote: "مشق کے لیے لکھے گئے، قرآن سے نہیں۔", noSentences: "اس فعل کے جملے ابھی تیار نہیں۔",
       fullTable: (a, b) => `مکمل گردان (${b} میں سے ${a} صیغے قرآن میں ہیں)`, tableNote: "● یہ صیغہ قرآن میں آتا ہے۔ سننے کے لیے ٹیپ کریں۔",
       report: "غلطی بتائیں", reportHint: "غلطی بیان کریں۔ نیچے کا متن کاپی کر کے مصنف کو بھیج سکتے ہیں۔", copy: "کاپی", copied: "کاپی ہو گیا", close: "بند کریں",
@@ -471,6 +536,7 @@ footer p { margin: 0; }
     $("share-text").innerHTML = t().share(share.toFixed(0));
     $("learned-bar").style.width = `${full ? share / full * 100 : 0}%`;
     document.querySelectorAll(".chip").forEach((chip, index) => chip.classList.toggle("learned", isLearned(VERBS[index])));
+    document.querySelectorAll(".verb-item").forEach((item, index) => item.classList.toggle("learned", isLearned(VERBS[index])));
   }
 
   // ---------- chrome: language, tabs, notice, footer ----------
@@ -483,8 +549,6 @@ footer p { margin: 0; }
     $("lang-label").textContent = ui.language;
     $("notice").innerHTML = ui.notice;
     $("footer").innerHTML = ui.footer.map((line) => `<p>${line}</p>`).join("");
-    $("prev").textContent = ui.prev;
-    $("next").textContent = ui.next;
     $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");
     renderProgress();
   }
@@ -509,6 +573,7 @@ footer p { margin: 0; }
   });
   function renderActive() {
     TAB_IDS.forEach((id) => { $(`view-${id}`).hidden = id !== activeTab; });
+    $("layout").classList.toggle("no-list", activeTab !== "learn");
     ({ learn: () => showVerb(current), cards: showFlash, quiz: showQuiz, forms: showFormsQuiz, listen: showListen, sentences: showCloze })[activeTab]();
   }
 
@@ -516,33 +581,54 @@ footer p { margin: 0; }
   let current = 0;
   function renderChips() {
     $("chips").innerHTML = VERBS.map((verb, index) => `<button class="chip" data-index="${index}">${verb.lemma}</button>`).join("");
+    $("verb-list").innerHTML = VERBS.map((verb, index) => `<button class="verb-item" data-index="${index}">
+      <span class="rank">${verb.rank}</span>
+      <span class="names"><span class="ar">${verb.lemma}</span><span class="gloss-text">${escapeHtml(meaningOf(verb))}</span></span>
+      <span class="dot" aria-hidden="true"></span></button>`).join("");
   }
-  $("chips").addEventListener("click", (event) => {
-    const chip = event.target.closest(".chip");
-    if (chip) showVerb(Number(chip.dataset.index));
+  for (const list of ["chips", "verb-list"]) {
+    $(list).addEventListener("click", (event) => {
+      const item = event.target.closest("[data-index]");
+      if (item) showVerb(Number(item.dataset.index));
+    });
+  }
+  document.addEventListener("click", (event) => {
+    const step = event.target.closest("[data-step]");
+    if (step) showVerb(current + Number(step.dataset.step));
+    const tense = event.target.closest("[data-show-tense]");
+    if (tense) {
+      const table = document.querySelector(".conj");
+      table.className = `conj show-${tense.dataset.showTense}`;
+      document.querySelectorAll("[data-show-tense]").forEach((b) => b.setAttribute("aria-pressed", String(b === tense)));
+    }
   });
-  $("prev").addEventListener("click", () => showVerb(current - 1));
-  $("next").addEventListener("click", () => showVerb(current + 1));
 
   const formLabel = (cell) => `${t().tenses[cell.tense]} · ${t().pronouns[cell.pronoun]}`;
 
-  function principalRow(cell) {
-    const recited = cell.recited
-      ? `<button class="quran-tag" data-file="${escapeHtml(cell.recited)}">▶ ${escapeHtml(t().recited)}</button>`
-      : (cell.quran ? `<span class="quran-tag">${escapeHtml(t().inQuran)}</span>` : "");
-    return `<div class="form-row">
-      ${playButton({ file: cell.spoken, label: cell.plain })}
-      <span class="form-label"><b>${escapeHtml(t().tenses[cell.tense])}</b>${escapeHtml(t().pronouns[cell.pronoun])}</span>
-      <span class="form-side"><span class="ar form-ar">${cell.plain}</span>${recited}</span>
+  function tile({ arabic, spoken, label, detail, recited, quran }) {
+    const tag = recited
+      ? `<button class="quran-tag" data-file="${recited}">▶ ${escapeHtml(t().recited)}</button>`
+      : (quran ? `<span class="quran-tag">${escapeHtml(t().inQuran)}</span>` : "");
+    return `<div class="tile">
+      ${playButton({ file: spoken, label: arabic })}
+      <span class="ar tile-ar">${arabic}</span>
+      <span class="tile-label"><span><b>${escapeHtml(label)}</b> · ${escapeHtml(detail)}</span>${tag}</span>
     </div>`;
   }
 
-  function nounsBlock(verb) {
-    const entries = [["participle", t().participle], ["verbal_noun", t().verbalNoun]].filter(([kind]) => verb.nouns[kind]);
-    if (!entries.length) return "";
-    return `<section><h3 class="section-title">${escapeHtml(t().nouns)}</h3><div class="nouns">
-      ${entries.map(([kind, label]) => `<div class="noun">${playButton({ file: verb.nouns[kind].spoken, extra: "small" })}<span>${escapeHtml(label)} · ${verb.nouns[kind].count}×</span><span class="ar">${verb.nouns[kind].lemma}</span></div>`).join("")}
-    </div></section>`;
+  function keyFormsBlock(verb) {
+    const forms = verb.principal.map((cell) => tile({
+      arabic: cell.plain, spoken: cell.spoken, label: t().tenses[cell.tense],
+      detail: t().pronouns[cell.pronoun], recited: cell.recited, quran: cell.quran,
+    }));
+    const nouns = [["participle", t().participle], ["verbal_noun", t().verbalNoun]]
+      .filter(([kind]) => verb.nouns[kind])
+      .map(([kind, label]) => tile({
+        arabic: verb.nouns[kind].lemma, spoken: verb.nouns[kind].spoken, label,
+        detail: `${verb.nouns[kind].count}× ${t().inQuran.toLowerCase()}`,
+      }));
+    return `<section><div class="section-head"><h3 class="section-title">${escapeHtml(t().mainForms)}</h3></div>
+      <div class="tiles">${[...forms, ...nouns].join("")}</div></section>`;
   }
 
   function ayatBlock(verb) {
@@ -584,18 +670,22 @@ footer p { margin: 0; }
     return `<section><h3 class="section-title">${escapeHtml(t().sentences)}</h3>${body}</section>`;
   }
 
-  function tableBlock(verb) {
+  function conjugationBlock(verb) {
     const find = (tense, pronoun) => verb.cells.find((cell) => cell.tense === tense && cell.pronoun === pronoun);
     const rows = PRONOUN_ORDER.map((pronoun) => `<tr><th>${escapeHtml(t().pronouns[pronoun])}</th>${TENSE_ORDER.map((tense) => {
       const cell = find(tense, pronoun);
-      if (!cell) return '<td class="empty">–</td>';
-      const recited = cell.recited ? `<button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}">▶</button>` : "";
-      return `<td><button class="cell-btn ${cell.quran ? "attested" : ""}" data-file="${cell.spoken}">${cell.plain}</button>${recited}</td>`;
+      if (!cell) return `<td data-col="${tense}"><span class="note">–</span></td>`;
+      const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}">▶ ${escapeHtml(t().recited)}</button>` : "";
+      return `<td data-col="${tense}"><button class="conj-cell ${cell.quran ? "attested" : ""}" data-file="${cell.spoken}">${cell.plain}</button>${recited}</td>`;
     }).join("")}</tr>`).join("");
     const attested = verb.cells.filter((cell) => cell.quran).length;
-    return `<details><summary>${escapeHtml(t().fullTable(attested, verb.cells.length))}</summary>
-      <div class="table-scroll"><table><thead><tr><th></th>${TENSE_ORDER.map((tense) => `<th>${escapeHtml(t().tenses[tense])}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>
-      <p class="note">${escapeHtml(t().tableNote)}</p></details>`;
+    const switcher = `<div class="segmented conj-switch">${TENSE_ORDER.map((tense, i) => `<button data-show-tense="${tense}" aria-pressed="${i === 0}">${escapeHtml(t().tenses[tense])}</button>`).join("")}</div>`;
+    return `<section>
+      <div class="section-head"><h3 class="section-title">${escapeHtml(t().conjugation)}</h3><span class="note">${escapeHtml(t().fullTable(attested, verb.cells.length))}</span></div>
+      ${switcher}
+      <table class="conj show-past"><thead><tr><th></th>${TENSE_ORDER.map((tense) => `<th data-col="${tense}">${escapeHtml(t().tenses[tense])}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>
+      <p class="conj-legend"><span><i></i>${escapeHtml(t().tableNote)}</span></p>
+    </section>`;
   }
 
   function reportBlock(verb) {
@@ -625,16 +715,23 @@ footer p { margin: 0; }
     const ui = t();
     const english = language === "en" ? "" : `<small>${escapeHtml(verb.meaning.en)}</small>`;
     $("verb-card").innerHTML = `
-      <div class="eyebrow"><span><span>#${verb.rank}</span><span>${escapeHtml(ui.times(verb.count))}</span><span>${escapeHtml(ui.ofAll(verb.share.toFixed(1)))}</span></span></div>
-      <div class="headword"><p class="ar lemma">${verb.lemma}</p><p class="meaning">${escapeHtml(meaningOf(verb))}${english}</p></div>
-      <div class="root-line"><span>${escapeHtml(ui.root)} <span class="root-letters">${verb.root.split("").join(" ")}</span></span><span>${escapeHtml(ui.form)} ${FORM_NAMES[verb.form]}</span><span>${escapeHtml(ui.inAyat(verb.ayahCount))}</span></div>
-      <section><h3 class="section-title">${escapeHtml(ui.mainForms)}</h3><div class="forms">${verb.principal.map(principalRow).join("")}</div></section>
-      ${nounsBlock(verb)}
+      <header class="verb-hero">
+        <div class="eyebrow"><span>#${verb.rank} · ${escapeHtml(ui.root)} <span class="root-letters">${verb.root.split("").join(" ")}</span> · ${escapeHtml(ui.form)} ${FORM_NAMES[verb.form]}</span></div>
+        <div class="hero-nav"><button class="icon-btn" data-step="-1" aria-label="${escapeHtml(ui.prev)}">‹</button><button class="icon-btn" data-step="1" aria-label="${escapeHtml(ui.next)}">›</button></div>
+        <div class="hero-word"><p class="meaning">${escapeHtml(meaningOf(verb))}${english}</p><p class="ar lemma">${verb.lemma}</p></div>
+        <div class="stats">
+          <div class="stat"><b>${verb.count}×</b><span>${escapeHtml(ui.inQuran)}</span></div>
+          <div class="stat"><b>${verb.share.toFixed(1)}%</b><span>${escapeHtml(ui.statShare)}</span></div>
+          <div class="stat"><b>${verb.ayahCount}</b><span>${escapeHtml(ui.statAyat)}</span></div>
+        </div>
+      </header>
+      ${keyFormsBlock(verb)}
+      ${conjugationBlock(verb)}
       ${ayatBlock(verb)}
       ${sentencesBlock(verb)}
-      ${tableBlock(verb)}
-      ${reportBlock(verb)}`;
+      <div class="card-foot">${reportBlock(verb)}<div class="hero-nav"><button class="btn" data-step="-1">${escapeHtml(ui.prev)}</button><button class="btn primary" data-step="1">${escapeHtml(ui.next)}</button></div></div>`;
     document.querySelectorAll(".chip").forEach((chip, i) => chip.setAttribute("aria-current", String(i === current)));
+    document.querySelectorAll(".verb-item").forEach((item, i) => item.setAttribute("aria-current", String(i === current)));
     $("chips").children[current]?.scrollIntoView({ block: "nearest", inline: "center" });
   }
 

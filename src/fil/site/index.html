@@ -211,8 +211,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .verb-item .rank { font-family: var(--font-data); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .verb-item .gloss-text { font-size: 0.86rem; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .verb-item .ar { font-size: 1.3rem; line-height: 1; text-align: right; }
-.verb-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+.verb-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); transition: box-shadow .2s ease; }
 .verb-item.learned .dot { background: var(--accent); }
+.verb-item[aria-current="true"] .dot { background: var(--gold); box-shadow: 0 0 0 3px var(--gold-soft), 0 0 8px var(--gold); }
+.verb-list { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.verb-list::-webkit-scrollbar { width: 6px; }
+.verb-list::-webkit-scrollbar-track { background: transparent; }
+.verb-list::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.verb-list::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 /* ---- verb card ---- */
 .verb-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 20px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid var(--line); }

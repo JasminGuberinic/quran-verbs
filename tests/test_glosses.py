@@ -64,3 +64,8 @@ def test_a_short_silent_e_verb_meets_its_past_tense():
 def test_forgave_and_spent_meet_their_base_forms():
     assert gloss_agrees("forgave", ["forgive+he;it_<verb>"]) is True
     assert gloss_agrees("you spent", ["spend;disburse+you_[masc.sg.]_<verb>"]) is True
+
+
+def test_fought_and_misled_meet_their_base_forms():
+    assert gloss_agrees("fought", ["fight+he;it_<verb>"]) is True
+    assert gloss_agrees("misled", ["mislead;deceive+they_<verb>"]) is True

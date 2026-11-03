@@ -794,3 +794,389 @@
 {"at": "2026-11-03T21:27:45+00:00", "kind": "judged", "subject": "أمر_1:#6", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
 {"at": "2026-11-03T21:27:45+00:00", "kind": "judged", "subject": "أمر_1:#7", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
 {"at": "2026-11-03T21:27:45+00:00", "kind": "judged", "subject": "جزي_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "ضلل_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "ضلل_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "ضلل_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "ضلل_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "ضلل_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "ضلل_4:past:hum", "detail": "lexicon refuses gloss of أَضَلُّوا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "ضلل_4:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "ضلل_4:present:hum", "detail": "lexicon refuses gloss of بِالْكَذِبِ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "ضلل_4:present:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "ضلل_4:present:anta", "detail": "a word is not analyzable", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "توب_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "توب_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "توب_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "توب_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "توب_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "توب_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "توب_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "توب_1:past:hum", "detail": "lexicon refuses gloss of الذُّنُوبِ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "توب_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "توب_1:imperative:anta", "detail": "lexicon refuses gloss of تُبْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "كسب_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "كسب_1:past:huwa", "detail": "lexicon refuses gloss of كَسَبَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "كسب_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "كسب_1:past:hum", "detail": "lexicon refuses gloss of كَسَبُوا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "كسب_1:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "كسب_1:past:hiya", "detail": "lexicon refuses gloss of كَسَبَتْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "كسب_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "كسب_1:present:hum", "detail": "lexicon refuses gloss of يَكْسِبُونَ رِزْقَهُمْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "كسب_1:present:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "كسب_1:present:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "نزل_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "gated", "subject": "نزل_2:past:huwa", "detail": "lexicon refuses gloss of نَزَّلَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:05+00:00", "kind": "drafted", "subject": "نزل_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نزل_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نزل_2:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نزل_2:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نزل_2:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نزل_2:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "تلو_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "تلو_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "تلو_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "تلو_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "تلو_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "تلو_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "تلو_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "تلو_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "تلو_1:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "تلو_1:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "رزق_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "رزق_1:present:huwa", "detail": "lexicon refuses gloss of يَرْزُقُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "رزق_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "رزق_1:imperative:anta", "detail": "verb root not recognised; verb not in the declared cell; a word is not analyzable; lexicon refuses gloss of رِزْقًا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "رزق_1:present:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "رزق_1:present:anta", "detail": "lexicon refuses gloss of يَا تَرْزُقُ تَشَاءُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قضي_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قضي_1:past:huwa", "detail": "lexicon refuses gloss of قَضَى", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قضي_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قضي_1:present:huwa", "detail": "lexicon refuses gloss of يَقْضِي", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قضي_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قضي_1:past:hum", "detail": "lexicon refuses gloss of قَضَوْا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قضي_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قضي_1:imperative:anta", "detail": "lexicon refuses gloss of اقْضِ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قضي_1:past:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قضي_1:past:ana", "detail": "lexicon refuses gloss of قَضَيْتُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نصر_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نصر_1:present:huwa", "detail": "lexicon refuses gloss of يَنْصُرُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نصر_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نصر_1:past:hum", "detail": "lexicon refuses gloss of نَصَرُوا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نصر_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نصر_1:present:hum", "detail": "lexicon refuses gloss of يَنْصُرُونَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نصر_1:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نصر_1:present:nahnu", "detail": "lexicon refuses gloss of نَنْصُرُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "نصر_1:imperative:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "نصر_1:imperative:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "صبر_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "صبر_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "صبر_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "صبر_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "صبر_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "صبر_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "صبر_1:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "صبر_1:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "صبر_1:present:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "صبر_1:present:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "جري_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "جري_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "جري_1:present:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "جري_1:present:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "مسس_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "مسس_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "ضرب_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "ضرب_1:past:huwa", "detail": "lexicon refuses gloss of الْوَلَدُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "ضرب_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "ضرب_1:present:huwa", "detail": "lexicon refuses gloss of يَضْرِبُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "ضرب_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "ضرب_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "ضرب_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "ضرب_1:imperative:anta", "detail": "lexicon refuses gloss of اضْرِبْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "ضرب_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "ضرب_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قتل_3:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قتل_3:past:huwa", "detail": "lexicon refuses gloss of قَاتَلَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قتل_3:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قتل_3:past:hum", "detail": "lexicon refuses gloss of قَاتَلُوا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قتل_3:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قتل_3:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قتل_3:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قتل_3:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قتل_3:present:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قتل_3:present:hiya", "detail": "lexicon refuses gloss of الْأَفْعَى", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قوم_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قوم_4:past:huwa", "detail": "lexicon refuses gloss of أَقَامَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قوم_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "gated", "subject": "قوم_4:past:hum", "detail": "lexicon refuses gloss of أَقَامُوا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:06+00:00", "kind": "drafted", "subject": "قوم_4:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "قوم_4:present:hum", "detail": "lexicon refuses gloss of يُقِيمُونَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "قوم_4:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "قوم_4:present:nahnu", "detail": "lexicon refuses gloss of نُقِيمُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "قوم_4:past:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "قوم_4:past:anta", "detail": "a word is not analyzable; lexicon refuses gloss of أَقَمْتَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "خرج_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "خرج_1:past:huwa", "detail": "lexicon refuses gloss of الْوَلَدُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "خرج_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "خرج_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "خرج_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "خرج_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "خرج_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "خرج_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "خرج_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "خرج_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ضلل_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ضلل_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ضلل_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ضلل_1:present:huwa", "detail": "lexicon refuses gloss of مَنْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ضلل_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ضلل_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ضلل_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ضلل_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ضلل_1:past:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ضلل_1:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "بعث_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "بعث_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "بعث_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "بعث_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "بعث_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "بعث_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "بعث_1:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "بعث_1:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "بعث_1:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "بعث_1:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "حيي_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "حيي_4:past:huwa", "detail": "lexicon refuses gloss of أَحْيَا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "حيي_4:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "حيي_4:past:nahnu", "detail": "lexicon refuses gloss of أَحْيَيْنَا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ذكر_5:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ذكر_5:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ذكر_5:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ذكر_5:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ذكر_5:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ذكر_5:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "ذكر_5:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "ذكر_5:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "هلك_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "هلك_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "هلك_4:past:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "هلك_4:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "هلك_4:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "هلك_4:present:hum", "detail": "lexicon refuses gloss of الزَّرْعَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "هلك_4:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "هلك_4:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "فري_8:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "فري_8:past:huwa", "detail": "lexicon refuses gloss of الْكَافِرُ الْكَذِبَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "فري_8:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "فري_8:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "فري_8:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "فري_8:present:hum", "detail": "lexicon refuses gloss of الْكَذِبَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "فري_8:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "فري_8:past:nahnu", "detail": "lexicon refuses gloss of الْكَذِبَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "فري_8:present:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "فري_8:present:antum", "detail": "a word is not analyzable", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "زيد_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "زيد_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "زيد_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "زيد_1:imperative:anta", "detail": "verb root not recognised; verb not in the declared cell; a word is not analyzable", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "زيد_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "زيد_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "زيد_1:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "زيد_1:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "عقل_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "عقل_1:past:huwa", "detail": "lexicon refuses gloss of عَقَلَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "عقل_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "عقل_1:present:huwa", "detail": "lexicon refuses gloss of يَعْقِلُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "drafted", "subject": "عقل_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:07+00:00", "kind": "gated", "subject": "عقل_1:present:ana", "detail": "lexicon refuses gloss of أَعْقِلُ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "عقل_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "عقل_1:past:hum", "detail": "lexicon refuses gloss of عَقَلُوا الْكَلَامَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "عقل_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "عقل_1:imperative:anta", "detail": "lexicon refuses gloss of اعْقِلْ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "كتب_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "كتب_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "كتب_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "كتب_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "كتب_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "كتب_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "كتب_1:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "كتب_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "كتب_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "كتب_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "ظنن_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "ظنن_1:past:huwa", "detail": "lexicon refuses gloss of صَادِقًا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "ظنن_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "ظنن_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "ظنن_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "ظنن_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "ظنن_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "ظنن_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "drafted", "subject": "ظنن_1:past:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:39:08+00:00", "kind": "gated", "subject": "ظنن_1:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:43+00:00", "kind": "gated", "subject": "ضلل_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:43+00:00", "kind": "gated", "subject": "ضلل_4:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:43+00:00", "kind": "gated", "subject": "ضلل_4:present:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "توب_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "كسب_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "كسب_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "كسب_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "كسب_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "نزل_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "رزق_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "رزق_1:imperative:anta", "detail": "lexicon refuses gloss of عِبَادَكَ", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "رزق_1:present:anta", "detail": "lexicon refuses gloss of يَا", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قضي_1:past:huwa", "detail": "lexicon refuses gloss of قَضَى", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قضي_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قضي_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قضي_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قضي_1:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "نصر_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "نصر_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "نصر_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "نصر_1:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "ضرب_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "ضرب_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "ضرب_1:imperative:anta", "detail": "verb not in the declared cell", "by": "", "outcome": false, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قتل_3:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قتل_3:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قتل_3:present:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قوم_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قوم_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قوم_4:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قوم_4:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "قوم_4:past:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "خرج_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "ضلل_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "حيي_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:44+00:00", "kind": "gated", "subject": "حيي_4:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "هلك_4:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "فري_8:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "فري_8:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "فري_8:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "فري_8:present:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "عقل_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "عقل_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "عقل_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "عقل_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "عقل_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:41:45+00:00", "kind": "gated", "subject": "ظنن_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:42:04+00:00", "kind": "gated", "subject": "رزق_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:42:04+00:00", "kind": "gated", "subject": "رزق_1:present:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:42:04+00:00", "kind": "gated", "subject": "قضي_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:42:04+00:00", "kind": "gated", "subject": "ضرب_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:42:13+00:00", "kind": "handed_over", "subject": "توب_1:imperative:anta", "detail": "CAMeL reads the imperative تُبْ (repent!) only as تَبَّ (perish, root ت.ب.ب), so the gloss gate refuses \"repent\"; a gloss exception would have to be filed under the wrong root ت.ب.ب. Sentence ready if approved: تُبْ إِلَى رَبِّكَ / Repent to your Lord. / Pokaj se svom Gospodaru.", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:42:13+00:00", "kind": "handed_over", "subject": "زيد_1:imperative:anta", "detail": "The engine has no generated form for this cell (plan form \"-\"), and CAMeL analyses neither زِدْ nor زِدْنِي, so nothing can pass the cell check. Quranic model: رَبِّ زِدْنِي عِلْمًا (20:114). Needs the form زِدْ in the table.", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_4:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "توب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "توب_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "توب_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "توب_1:#3", "detail": "Minor: 'Pokajali su se zbog grijeha' is slightly more natural than 'za grijehe'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "كسب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "كسب_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "كسب_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "كسب_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "كسب_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نزل_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نزل_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نزل_2:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نزل_2:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "تلو_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "تلو_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "تلو_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "تلو_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "تلو_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نصر_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نصر_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نصر_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نصر_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "نصر_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "صبر_1:#0", "detail": "Minor: EN more natural as 'The believer bore the illness patiently'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "صبر_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "صبر_1:#2", "detail": "Minor: EN more natural as 'Be patient a little while'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "صبر_1:#3", "detail": "Minor: EN more natural as 'We bore the illness patiently'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "صبر_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "جري_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "جري_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "مسس_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضرب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضرب_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضرب_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضرب_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضرب_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "قتل_3:#0", "detail": "Quranic phrasing (4:84); acceptable, but as a bare command to the learner consider presenting it as a cited verse or preferring narrative forms.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "قتل_3:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "قتل_3:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "قتل_3:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "قتل_3:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "خرج_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "خرج_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "خرج_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "خرج_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "خرج_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_1:#0", "detail": "BS 'zalutao od istine' is not idiomatic; use 'Narod je odlutao od istine' (or 'skrenuo s istine'), and gloss عَنِ as 'od'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ضلل_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "بعث_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "بعث_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "بعث_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "بعث_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "بعث_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ذكر_5:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ذكر_5:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ذكر_5:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:53+00:00", "kind": "judged", "subject": "ذكر_5:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "هلك_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "هلك_4:#1", "detail": "Word gloss for أَهْلَكْتُ says 'I destroyed' while the sentence means squandered; change en gloss to 'I squandered, used up'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "هلك_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "هلك_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "فري_8:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "فري_8:#1", "detail": "Minor: EN more natural as 'The man made up a lie'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "فري_8:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "فري_8:#3", "detail": "Minor: EN more natural as 'We did not make up lies'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "فري_8:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "زيد_1:#0", "detail": "Minor: BS more natural as 'Zimi pada više kiše'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "زيد_1:#1", "detail": "EN 'The students increase every year' is unnatural; use 'The students grow in number every year' (or rephrase Arabic as يَزِيدُ عَدَدُ الطُّلَّابِ كُلَّ سَنَةٍ).", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "زيد_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "كتب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "كتب_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "كتب_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "كتب_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "كتب_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "ظنن_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "ظنن_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "ظنن_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "ظنن_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "ظنن_1:#4", "detail": "Minor: EN 'thought the news was true'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "رزق_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "رزق_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "رزق_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قضي_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قضي_1:#1", "detail": "Minor: the classical vowelling is مَهَمَّتَهُمْ (مُهِمَّة is widespread modern usage).", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قضي_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قضي_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قضي_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قوم_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قوم_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قوم_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قوم_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "قوم_4:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "حيي_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "حيي_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "عقل_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "عقل_1:#1", "detail": "BS 'ne razmišlja razumom' is awkward; use 'Životinja ne rasuđuje' and gloss يَعْقِلُ as 'rasuđuje'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "عقل_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "عقل_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:43:54+00:00", "kind": "judged", "subject": "عقل_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:44:07+00:00", "kind": "gated", "subject": "ضلل_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:44:07+00:00", "kind": "gated", "subject": "هلك_4:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:44:07+00:00", "kind": "gated", "subject": "زيد_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:44:08+00:00", "kind": "gated", "subject": "عقل_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-03T21:44:39+00:00", "kind": "judged", "subject": "ضلل_1:#5", "detail": "Correct and natural; ضَلَّ عَنْ is the standard construction. Past/huwa as claimed.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:44:39+00:00", "kind": "judged", "subject": "هلك_4:#4", "detail": "Correct; أَهْلَكَ مَالًا = squander wealth (cf. Q 90:6 أَهْلَكْتُ مَالًا لُبَدًا). Past/ana as claimed. 'wealth' would be a slightly closer gloss for مَالًا than 'money', but 'money' is acceptable.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:44:39+00:00", "kind": "judged", "subject": "زيد_1:#3", "detail": "Acceptable; intransitive زَادَ with a human plural subject meaning 'grow in number' is attested (cf. Q 37:147 أَوْ يَزِيدُونَ). Present/hum as claimed. The bs gloss 'studenata' (genitive) fits the Bosnian sentence. يَزْدَادُ عَدَدُ الطُّلَّابِ would be more common in MSA, but the sentence is fine as it stands.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-03T21:44:39+00:00", "kind": "judged", "subject": "عقل_1:#5", "detail": "Correct and natural. Present/huwa as claimed.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}

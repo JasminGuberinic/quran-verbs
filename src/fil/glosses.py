@@ -83,6 +83,7 @@ _IRREGULAR = {
     "lost": "lose", "sought": "seek", "struck": "strike", "swore": "swear", "threw": "throw",
     "worshipped": "worship", "worshiped": "worship",
     "forgave": "forgive", "forgiven": "forgive", "spent": "spend",
+    "fought": "fight", "misled": "mislead",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

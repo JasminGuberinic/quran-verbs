@@ -84,6 +84,7 @@ _IRREGULAR = {
     "worshipped": "worship", "worshiped": "worship",
     "forgave": "forgive", "forgiven": "forgive", "spent": "spend",
     "fought": "fight", "misled": "mislead",
+    "forbade": "forbid", "forbidden": "forbid", "began": "begin", "begun": "begin",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

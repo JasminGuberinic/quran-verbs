@@ -12,3 +12,13 @@ def test_a_sentence_offers_every_language_it_has():
 
     assert view["translation"] == {"bs": "Rekao je.", "en": "He said.", "tr": "Dedi."}
     assert view["words"][0]["translation"]["tr"] == "dedi"
+
+
+def test_an_ayah_verb_without_its_translation_fails_the_build():
+    import pytest
+    from fil.stages.site import MissingVerbGloss, _gloss_of
+    from fil.study import QuranWord
+    word = QuranWord(7, 15, 1, "قَالَ")
+
+    with pytest.raises(MissingVerbGloss):
+        _gloss_of(word, {"7:15:1": {"bs": "rekao je"}})   # other languages missing

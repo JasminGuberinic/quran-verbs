@@ -107,9 +107,19 @@ button.quran-tag.playing { background: var(--gold); color: var(--surface); }
 .noun span { font-size: 0.82rem; color: var(--muted); }
 .noun .ar { font-size: 1.4rem; color: var(--ink); }
 
-.ayah { border-inline-start: 3px solid var(--gold); padding: 2px 14px 2px 0; display: grid; gap: 8px; }
-.ayah + .ayah { margin-top: 14px; }
-.ayah-text { font-size: 1.6rem; line-height: 2.1; margin: 0; text-align: right; }
+.ayat { display: grid; gap: 10px; }
+.ayah { background: var(--paper); border-radius: 12px; padding: 12px 14px; display: grid; gap: 6px; border-inline-start: 3px solid var(--gold); }
+.ayah-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 0.8rem; }
+.tense-chip { font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold); background: var(--gold-soft); padding: 2px 8px; border-radius: 999px; }
+.ayah-head a { color: var(--muted); text-decoration: none; font-family: var(--font-data); font-size: 0.75rem; }
+.ayah-head a:hover { color: var(--accent); text-decoration: underline; }
+.ayah-text { font-size: 1.65rem; line-height: 2; margin: 0; text-align: right; }
+.verb-gloss { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; font-size: 0.95rem; font-weight: 500; }
+.verb-gloss .qr { font-size: 1.3rem; color: var(--gold); }
+.ai-tag { font-family: var(--font-data); font-size: 0.62rem; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+.ayah-translation { padding-top: 6px; border-top: 1px dashed var(--line); margin: 0; font-size: 0.92rem; color: var(--ink); }
+.ayah-translation small { display: block; color: var(--muted); font-size: 0.72rem; margin-top: 2px; }
+.ayah-foot { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--muted); }
 .word-play { font: inherit; background: var(--gold-soft); color: inherit; border: 0; border-bottom: 2px solid var(--gold); border-radius: 4px; padding: 0 4px; }
 .word-play.playing { background: var(--gold); color: var(--surface); }
 .listen-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
@@ -239,7 +249,7 @@ footer p { margin: 0; }
       tenses: { past: "prošlo", present: "sadašnje", imperative: "zapovijed" },
       pronouns: { huwa: "on", hiya: "ona", huma: "njih dvoje", hum: "oni", hunna: "one", anta: "ti (m.)", anti: "ti (ž.)", antuma: "vi dvoje", antum: "vi (m.)", antunna: "vi (ž.)", ana: "ja", nahnu: "mi" },
       mainForms: "Glavni oblici", recited: "kako se uči", nouns: "Imenice od ovog glagola", participle: "particip (onaj koji…)", verbalNoun: "glagolska imenica",
-      inQuran: "U Kur'anu", listenAyah: "Cijeli ajet (učač Mishary Alafasy). Klikni označenu riječ da čuješ samo nju.", onQuranCom: (s, a) => `Sura ${s}, ajet ${a} · prijevod na quran.com ↗`,
+      inQuran: "U Kur'anu", listenAyah: "Klikni označenu riječ da čuješ samo glagol.", noFreeTranslation: "slobodnog bosanskog prijevoda nema, zato engleski", recitedAyah: "Cijeli ajet · Mishary Alafasy", onQuranCom: (s, a) => `Sura ${s}, ajet ${a} · prijevod na quran.com ↗`,
       sentences: "Rečenice za vježbu", sentencesNote: "Sastavljene za vježbu, nisu iz Kur'ana.", noSentences: "Rečenice za ovaj glagol još nisu gotove.",
       fullTable: (a, b) => `Puna konjugacija (${a} od ${b} oblika je u Kur'anu)`, tableNote: "● oblik se pojavljuje u Kur'anu. Klikni oblik da ga čuješ.",
       report: "Prijavi grešku", reportHint: "Opiši grešku. Tekst ispod možeš kopirati i poslati autoru.", copy: "Kopiraj", copied: "Kopirano", close: "Zatvori",
@@ -259,7 +269,7 @@ footer p { margin: 0; }
       tenses: { past: "past", present: "present", imperative: "command" },
       pronouns: { huwa: "he", hiya: "she", huma: "they two", hum: "they (m.)", hunna: "they (f.)", anta: "you (m.)", anti: "you (f.)", antuma: "you two", antum: "you (m. pl.)", antunna: "you (f. pl.)", ana: "I", nahnu: "we" },
       mainForms: "Main forms", recited: "as recited", nouns: "Nouns from this verb", participle: "participle (one who…)", verbalNoun: "verbal noun",
-      inQuran: "In the Quran", listenAyah: "The whole ayah (reciter Mishary Alafasy). Tap the marked word to hear it alone.", onQuranCom: (s, a) => `Surah ${s}, ayah ${a} · translation on quran.com ↗`,
+      inQuran: "In the Quran", listenAyah: "Tap the marked word to hear the verb alone.", noFreeTranslation: "", recitedAyah: "Whole ayah · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayah ${a} · translation on quran.com ↗`,
       sentences: "Practice sentences", sentencesNote: "Composed for practice, not from the Quran.", noSentences: "Sentences for this verb are not ready yet.",
       fullTable: (a, b) => `Full conjugation (${a} of ${b} forms occur in the Quran)`, tableNote: "● the form occurs in the Quran. Tap a form to hear it.",
       report: "Report a mistake", reportHint: "Describe the mistake. You can copy the text below and send it to the author.", copy: "Copy", copied: "Copied", close: "Close",
@@ -279,7 +289,7 @@ footer p { margin: 0; }
       tenses: { past: "geçmiş", present: "şimdiki", imperative: "emir" },
       pronouns: { huwa: "o (er.)", hiya: "o (dişi)", huma: "o ikisi", hum: "onlar (er.)", hunna: "onlar (dişi)", anta: "sen (er.)", anti: "sen (dişi)", antuma: "siz ikiniz", antum: "siz (er.)", antunna: "siz (dişi)", ana: "ben", nahnu: "biz" },
       mainForms: "Temel biçimler", recited: "okunuşu", nouns: "Bu fiilden isimler", participle: "ism-i fâil", verbalNoun: "mastar",
-      inQuran: "Kur'an'da", listenAyah: "Ayetin tamamı (kâri Mishary Alafasy). Yalnız onu duymak için işaretli kelimeye dokunun.", onQuranCom: (s, a) => `Sure ${s}, ayet ${a} · quran.com'da meal ↗`,
+      inQuran: "Kur'an'da", listenAyah: "Yalnız fiili duymak için işaretli kelimeye dokunun.", noFreeTranslation: "", recitedAyah: "Ayetin tamamı · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, ayet ${a} · quran.com'da meal ↗`,
       sentences: "Alıştırma cümleleri", sentencesNote: "Alıştırma için yazıldı, Kur'an'dan değildir.", noSentences: "Bu fiilin cümleleri henüz hazır değil.",
       fullTable: (a, b) => `Tam çekim (${b} biçimin ${a} tanesi Kur'an'da geçer)`, tableNote: "● biçim Kur'an'da geçer. Duymak için dokunun.",
       report: "Hata bildir", reportHint: "Hatayı açıklayın. Aşağıdaki metni kopyalayıp yazara gönderebilirsiniz.", copy: "Kopyala", copied: "Kopyalandı", close: "Kapat",
@@ -299,7 +309,7 @@ footer p { margin: 0; }
       tenses: { past: "Vergangenheit", present: "Gegenwart", imperative: "Befehl" },
       pronouns: { huwa: "er", hiya: "sie", huma: "die beiden", hum: "sie (m.)", hunna: "sie (f.)", anta: "du (m.)", anti: "du (f.)", antuma: "ihr beide", antum: "ihr (m.)", antunna: "ihr (f.)", ana: "ich", nahnu: "wir" },
       mainForms: "Hauptformen", recited: "rezitiert", nouns: "Nomen von diesem Verb", participle: "Partizip (der, der …)", verbalNoun: "Verbalnomen",
-      inQuran: "Im Koran", listenAyah: "Der ganze Vers (Rezitator Mishary Alafasy). Tippe das markierte Wort, um nur es zu hören.", onQuranCom: (s, a) => `Sure ${s}, Vers ${a} · Übersetzung auf quran.com ↗`,
+      inQuran: "Im Koran", listenAyah: "Tippe das markierte Wort, um nur das Verb zu hören.", noFreeTranslation: "kein freier deutscher Text verfügbar, daher Englisch", recitedAyah: "Ganzer Vers · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, Vers ${a} · Übersetzung auf quran.com ↗`,
       sentences: "Übungssätze", sentencesNote: "Für die Übung verfasst, nicht aus dem Koran.", noSentences: "Die Sätze für dieses Verb sind noch nicht fertig.",
       fullTable: (a, b) => `Volle Konjugation (${a} von ${b} Formen kommen im Koran vor)`, tableNote: "● die Form kommt im Koran vor. Tippe eine Form, um sie zu hören.",
       report: "Fehler melden", reportHint: "Beschreibe den Fehler. Den Text unten kannst du kopieren und dem Autor schicken.", copy: "Kopieren", copied: "Kopiert", close: "Schließen",
@@ -319,7 +329,7 @@ footer p { margin: 0; }
       tenses: { past: "e kryer", present: "e tashme", imperative: "urdhërore" },
       pronouns: { huwa: "ai", hiya: "ajo", huma: "ata të dy", hum: "ata", hunna: "ato", anta: "ti (m.)", anti: "ti (f.)", antuma: "ju të dy", antum: "ju (m.)", antunna: "ju (f.)", ana: "unë", nahnu: "ne" },
       mainForms: "Format kryesore", recited: "si lexohet", nouns: "Emra nga kjo folje", participle: "pjesore (ai që…)", verbalNoun: "emër foljor",
-      inQuran: "Në Kuran", listenAyah: "I gjithë ajeti (lexues Mishary Alafasy). Prekni fjalën e shënuar për ta dëgjuar vetëm atë.", onQuranCom: (s, a) => `Sureja ${s}, ajeti ${a} · përkthimi në quran.com ↗`,
+      inQuran: "Në Kuran", listenAyah: "Prekni fjalën e shënuar për të dëgjuar vetëm foljen.", noFreeTranslation: "nuk ka përkthim të lirë shqip, prandaj anglisht", recitedAyah: "I gjithë ajeti · Mishary Alafasy", onQuranCom: (s, a) => `Sureja ${s}, ajeti ${a} · përkthimi në quran.com ↗`,
       sentences: "Fjali për ushtrime", sentencesNote: "Të shkruara për ushtrim, jo nga Kurani.", noSentences: "Fjalitë për këtë folje nuk janë gati ende.",
       fullTable: (a, b) => `Zgjedhimi i plotë (${a} nga ${b} forma janë në Kuran)`, tableNote: "● forma gjendet në Kuran. Prekni një formë për ta dëgjuar.",
       report: "Raporto gabim", reportHint: "Përshkruani gabimin. Tekstin më poshtë mund ta kopjoni dhe t'ia dërgoni autorit.", copy: "Kopjo", copied: "U kopjua", close: "Mbyll",
@@ -339,7 +349,7 @@ footer p { margin: 0; }
       tenses: { past: "passé", present: "présent", imperative: "impératif" },
       pronouns: { huwa: "il", hiya: "elle", huma: "eux deux", hum: "ils", hunna: "elles", anta: "tu (m.)", anti: "tu (f.)", antuma: "vous deux", antum: "vous (m.)", antunna: "vous (f.)", ana: "je", nahnu: "nous" },
       mainForms: "Formes principales", recited: "récité", nouns: "Noms de ce verbe", participle: "participe (celui qui…)", verbalNoun: "nom verbal",
-      inQuran: "Dans le Coran", listenAyah: "Le verset entier (récitateur Mishary Alafasy). Touchez le mot marqué pour l'entendre seul.", onQuranCom: (s, a) => `Sourate ${s}, verset ${a} · traduction sur quran.com ↗`,
+      inQuran: "Dans le Coran", listenAyah: "Touchez le mot marqué pour n'entendre que le verbe.", noFreeTranslation: "pas de traduction française libre disponible, donc anglais", recitedAyah: "Verset entier · Mishary Alafasy", onQuranCom: (s, a) => `Sourate ${s}, verset ${a} · traduction sur quran.com ↗`,
       sentences: "Phrases d'exercice", sentencesNote: "Composées pour l'exercice, pas tirées du Coran.", noSentences: "Les phrases de ce verbe ne sont pas encore prêtes.",
       fullTable: (a, b) => `Conjugaison complète (${a} sur ${b} formes sont dans le Coran)`, tableNote: "● la forme apparaît dans le Coran. Touchez une forme pour l'entendre.",
       report: "Signaler une erreur", reportHint: "Décrivez l'erreur. Vous pouvez copier le texte ci-dessous et l'envoyer à l'auteur.", copy: "Copier", copied: "Copié", close: "Fermer",
@@ -359,7 +369,7 @@ footer p { margin: 0; }
       tenses: { past: "lampau", present: "kini", imperative: "perintah" },
       pronouns: { huwa: "dia (lk)", hiya: "dia (pr)", huma: "mereka berdua", hum: "mereka (lk)", hunna: "mereka (pr)", anta: "kamu (lk)", anti: "kamu (pr)", antuma: "kalian berdua", antum: "kalian (lk)", antunna: "kalian (pr)", ana: "saya", nahnu: "kami" },
       mainForms: "Bentuk utama", recited: "bacaan", nouns: "Kata benda dari kata kerja ini", participle: "isim fa'il", verbalNoun: "masdar",
-      inQuran: "Dalam Al-Qur'an", listenAyah: "Seluruh ayat (qari Mishary Alafasy). Ketuk kata bertanda untuk mendengarnya saja.", onQuranCom: (s, a) => `Surah ${s}, ayat ${a} · terjemahan di quran.com ↗`,
+      inQuran: "Dalam Al-Qur'an", listenAyah: "Ketuk kata bertanda untuk mendengar kata kerjanya saja.", noFreeTranslation: "", recitedAyah: "Seluruh ayat · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayat ${a} · terjemahan di quran.com ↗`,
       sentences: "Kalimat latihan", sentencesNote: "Disusun untuk latihan, bukan dari Al-Qur'an.", noSentences: "Kalimat untuk kata kerja ini belum siap.",
       fullTable: (a, b) => `Tasrif lengkap (${a} dari ${b} bentuk ada dalam Al-Qur'an)`, tableNote: "● bentuk ini ada dalam Al-Qur'an. Ketuk untuk mendengar.",
       report: "Laporkan kesalahan", reportHint: "Jelaskan kesalahannya. Teks di bawah bisa disalin dan dikirim ke penulis.", copy: "Salin", copied: "Tersalin", close: "Tutup",
@@ -379,7 +389,7 @@ footer p { margin: 0; }
       tenses: { past: "ماضی", present: "مضارع", imperative: "امر" },
       pronouns: { huwa: "وہ (مذکر)", hiya: "وہ (مؤنث)", huma: "وہ دونوں", hum: "وہ سب (مذکر)", hunna: "وہ سب (مؤنث)", anta: "تم (مذکر)", anti: "تم (مؤنث)", antuma: "تم دونوں", antum: "تم سب (مذکر)", antunna: "تم سب (مؤنث)", ana: "میں", nahnu: "ہم" },
       mainForms: "بنیادی صیغے", recited: "تلاوت", nouns: "اس فعل سے اسماء", participle: "اسم فاعل", verbalNoun: "مصدر",
-      inQuran: "قرآن میں", listenAyah: "پوری آیت (قاری مشاری العفاسی)۔ صرف اسے سننے کے لیے نشان زدہ لفظ پر ٹیپ کریں۔", onQuranCom: (s, a) => `سورہ ${s}، آیت ${a} · quran.com پر ترجمہ`,
+      inQuran: "قرآن میں", listenAyah: "صرف فعل سننے کے لیے نشان زدہ لفظ پر ٹیپ کریں۔", noFreeTranslation: "", recitedAyah: "پوری آیت · مشاری العفاسی", onQuranCom: (s, a) => `سورہ ${s}، آیت ${a} · quran.com پر ترجمہ`,
       sentences: "مشق کے جملے", sentencesNote: "مشق کے لیے لکھے گئے، قرآن سے نہیں۔", noSentences: "اس فعل کے جملے ابھی تیار نہیں۔",
       fullTable: (a, b) => `مکمل گردان (${b} میں سے ${a} صیغے قرآن میں ہیں)`, tableNote: "● یہ صیغہ قرآن میں آتا ہے۔ سننے کے لیے ٹیپ کریں۔",
       report: "غلطی بتائیں", reportHint: "غلطی بیان کریں۔ نیچے کا متن کاپی کر کے مصنف کو بھیج سکتے ہیں۔", copy: "کاپی", copied: "کاپی ہو گیا", close: "بند کریں",
@@ -539,14 +549,22 @@ footer p { margin: 0; }
     if (!verb.ayat.length) return "";
     const items = verb.ayat.map((ayah) => {
       const [surah, number] = ayah.ref.split(":");
-      const text = ayah.words.map((word) => word.hit ? `<button class="word-play" data-file="${escapeHtml(word.audio)}">${word.text}</button>` : word.text).join(" ");
+      const text = ayah.words.map((word) => word.hit ? `<button class="word-play" data-file="${word.audio}">${word.text}</button>` : word.text).join(" ");
+      const own = ayah.translation?.[language];
+      const translation = own || ayah.translation?.en;
+      const fallbackNote = !own && language !== "en" ? ` · ${t().noFreeTranslation}` : "";
+      const translationHtml = translation
+        ? `<p class="ayah-translation" dir="${own && language === "ur" ? "rtl" : "ltr"}">${escapeHtml(translation.text)}<small>${escapeHtml(translation.by)}${escapeHtml(fallbackNote)}</small></p>`
+        : "";
       return `<div class="ayah">
-        <span class="note">${escapeHtml(t().tenses[ayah.tense])}</span>
+        <div class="ayah-head"><span class="tense-chip">${escapeHtml(t().tenses[ayah.tense])}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a></div>
         <p class="qr ayah-text">${text}</p>
-        <div class="listen-row">${playButton({ file: ayah.audio, extra: "small gold" })}<a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${escapeHtml(t().onQuranCom(surah, number))}</a></div>
+        ${ayah.words.filter((word) => word.hit && word.gloss).map((word) => `<p class="verb-gloss"><span class="qr">${word.text}</span><span>= ${escapeHtml(inLanguage(word.gloss))}</span><span class="ai-tag">AI</span></p>`).join("")}
+        ${translationHtml}
+        <div class="ayah-foot">${playButton({ file: ayah.audio, extra: "small gold" })}<span>${escapeHtml(t().recitedAyah)}</span></div>
       </div>`;
     }).join("");
-    return `<section><h3 class="section-title">${escapeHtml(t().inQuran)}</h3><p class="note" style="margin:0 0 10px">${escapeHtml(t().listenAyah)}</p>${items}</section>`;
+    return `<section><h3 class="section-title">${escapeHtml(t().inQuran)}</h3><p class="note" style="margin:0 0 10px">${escapeHtml(t().listenAyah)}</p><div class="ayat">${items}</div></section>`;
   }
 
   function sentenceHtml(sentence) {

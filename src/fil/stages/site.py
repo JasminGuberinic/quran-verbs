@@ -30,11 +30,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from fil import example_store, meanings, service, study
+from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
 from fil.languages import LANGUAGES
 from fil.recitation import RecitationLibrary
-from fil.resources import BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
+from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
 from fil.speech import SpeechLibrary, TtsArabicVoice
 from fil.study import AyahExample, QuranWord
 
@@ -60,6 +61,8 @@ class _Sound:
     def __init__(self) -> None:
         self.recitations = RecitationLibrary(BUILD_DIR / "recitation-stage", cache=RECITATION_CACHE)
         self.speech = SpeechLibrary(TtsArabicVoice(), SPEECH_CACHE)
+        self.translations = AyahTranslations()
+        self.verb_glosses = _verb_glosses()
 
     def ayah(self, surah: int, ayah: int) -> str:
         return self._recited(self.recitations.ayah(surah, ayah))
@@ -190,12 +193,30 @@ def _ayah_view(example: AyahExample, verb: study.VerbKey, sound: _Sound) -> dict
         "ref": example.ref,
         "tense": example.tense,
         "audio": sound.ayah(example.surah, example.ayah),
+        "translation": sound.translations.of(example.surah, example.ayah),
         "words": [
             {"text": word.text, "hit": word.carries(verb),
-             "audio": sound.word(*word.location) if word.carries(verb) else None}
+             "audio": sound.word(*word.location) if word.carries(verb) else None,
+             "gloss": _gloss_of(word, sound.verb_glosses) if word.carries(verb) else None}
             for word in example.words
         ],
     }
+
+
+def _verb_glosses() -> dict[str, dict[str, str]]:
+    entries = json.loads(AYAH_VERB_GLOSSES_JSON.read_text(encoding="utf-8"))
+    return {key: glosses for key, glosses in entries.items() if not key.startswith("_")}
+
+
+class MissingVerbGloss(ValueError):
+    """An example ayah's verb has no in-context translation — the card would be half-empty."""
+
+
+def _gloss_of(word: QuranWord, glosses: dict[str, dict[str, str]]) -> dict[str, str]:
+    key = f"{word.surah}:{word.ayah}:{word.number}"
+    if key not in glosses or not all(glosses[key].get(code) for code in (lang.code for lang in LANGUAGES)):
+        raise MissingVerbGloss(f"{key} ({word.text}): add its translation to {AYAH_VERB_GLOSSES_JSON.name}")
+    return glosses[key]
 
 
 def _sentence_view(example: Example, sound: _Sound | None = None) -> dict:

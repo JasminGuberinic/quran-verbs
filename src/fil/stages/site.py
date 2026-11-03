@@ -123,6 +123,7 @@ def main(site: Path = SITE_DIR) -> None:
     }
     (site / "data.json").write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
     shutil.copyfile(_TEMPLATE, site / "index.html")
+    shutil.copyfile(_TEMPLATE.parent / "practice.js", site / "practice.js")
     _report(site, index, sound.speech)
 
 

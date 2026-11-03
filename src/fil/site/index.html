@@ -254,6 +254,28 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .hero-word .lemma { font-size: 2.8rem; }
 }
 .card-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; flex-wrap: wrap; }
+.practice { gap: 14px; }
+.round-head { display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.76rem; color: var(--muted); letter-spacing: 0.03em; }
+.round-bar { height: 4px; }
+.prompt { margin: 0; font-family: var(--font-display); font-size: 1.15rem; }
+.stage { display: grid; justify-items: center; gap: 8px; padding: 18px 12px; background: var(--paper); border-radius: 12px; text-align: center; }
+.stage p { margin: 0; }
+.stage-word { font-size: 2.8rem; line-height: 1.35; }
+.stage-sentence { font-size: 1.7rem; line-height: 1.8; }
+.play.big { width: 64px; height: 64px; }
+.play.big svg { width: 22px; height: 22px; }
+.ayah-text.find { text-align: center; }
+.feedback:empty { display: none; }
+.feedback { display: grid; gap: 10px; }
+.feedback-line { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.feedback-line .ok { color: var(--accent); }
+.feedback-line .no { color: var(--bad); }
+.next-btn { width: 100%; }
+.summary { display: grid; gap: 14px; justify-items: center; text-align: center; }
+.summary-score { margin: 0; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.mistakes { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.mistakes .ar { font-size: 1.3rem; }
+.summary .btn-row { width: 100%; }
 @media (prefers-reduced-motion: reduce) { .bar span { transition: none; } }
 </style>
 </head>
@@ -285,16 +307,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <article class="card" id="verb-card"></article>
       </main>
       <main id="view-cards" class="stack" hidden><article class="card center flash" id="flash"></article></main>
-      <main id="view-quiz" class="stack" hidden><article class="card" id="quiz"></article></main>
-      <main id="view-forms" class="stack" hidden><article class="card" id="forms-quiz"></article></main>
-      <main id="view-listen" class="stack" hidden><article class="card" id="listen"></article></main>
-      <main id="view-sentences" class="stack" hidden><article class="card" id="cloze"></article></main>
+      <main id="view-practice" class="stack" hidden><article class="card practice" id="practice"></article></main>
     </div>
   </div>
 
   <footer id="footer"></footer>
 </div>
 
+<script src="practice.js"></script>
 <script>
 (() => {
   // Where "report a mistake" sends a learner. Empty until the site is public: the page then
@@ -308,12 +328,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `${n} najčešćih glagola u Kur'anu`, language: "Jezik",
       notice: "<b>Sadržaj je generisala umjetna inteligencija (Claude)</b> iz Quranic Arabic Corpusa. Oblici označeni „u Kur'anu“ su provjereni iz korpusa. Značenja, prijevodi i rečenice nisu pregledali učenjaci. Vidiš li grešku, prijavi je.",
       learned: (a, b) => `Naučeno <strong>${a} / ${b}</strong>`, share: (p) => `pokriva <strong>${p}%</strong> glagola koje sretneš u Kur'anu`,
-      tabs: ["Uči", "Kartice", "Kviz", "Oblici", "Slušanje", "Rečenice"], prev: "← Prethodni", next: "Sljedeći →",
+      tabs: ["Uči", "Kartice", "Značenje", "Oblik", "Slušanje", "Ajet", "Rečenica", "Miks"], prev: "← Prethodni", next: "Sljedeći →",
       times: (n) => `${n}× u Kur'anu`, ofAll: (p) => `${p}% svih glagola`, root: "korijen", form: "oblik", inAyat: (n) => `u ${n} ajeta`,
       tenses: { past: "prošlo", present: "sadašnje", imperative: "zapovijed" },
       pronouns: { huwa: "on", hiya: "ona", huma: "njih dvoje", hum: "oni", hunna: "one", anta: "ti (m.)", anti: "ti (ž.)", antuma: "vi dvoje", antum: "vi (m.)", antunna: "vi (ž.)", ana: "ja", nahnu: "mi" },
       mainForms: "Glavni oblici", recited: "kako se uči", nouns: "Imenice od ovog glagola", participle: "particip (onaj koji…)", verbalNoun: "glagolska imenica",
-      inQuran: "U Kur'anu", listenAyah: "Klikni označenu riječ da čuješ samo glagol.", noFreeTranslation: "slobodnog bosanskog prijevoda nema, zato engleski", conjugation: "Konjugacija", statShare: "svih glagola u Kur'anu", statAyat: "ajeta s ovim glagolom", recitedAyah: "Cijeli ajet · Mishary Alafasy", onQuranCom: (s, a) => `Sura ${s}, ajet ${a} · prijevod na quran.com ↗`,
+      inQuran: "U Kur'anu", listenAyah: "Klikni označenu riječ da čuješ samo glagol.", noFreeTranslation: "slobodnog bosanskog prijevoda nema, zato engleski", conjugation: "Konjugacija", statShare: "svih glagola u Kur'anu", statAyat: "ajeta s ovim glagolom", questionOf: (n, t) => `Pitanje ${n} / ${t}`, sessionDone: "Gotovo!", scoreLine: (a, t) => `${a} od ${t} tačno`, retryMistakes: "Ponovi greške", newSession: "Nova runda", alsoReads: "Ovaj oblik znači i:", mistakesTitle: "Za ponoviti", recitedAyah: "Cijeli ajet · Mishary Alafasy", onQuranCom: (s, a) => `Sura ${s}, ajet ${a} · prijevod na quran.com ↗`,
       sentences: "Rečenice za vježbu", sentencesNote: "Sastavljene za vježbu, nisu iz Kur'ana.", noSentences: "Rečenice za ovaj glagol još nisu gotove.",
       fullTable: (a, b) => `Puna konjugacija (${a} od ${b} oblika je u Kur'anu)`, tableNote: "● oblik se pojavljuje u Kur'anu. Klikni oblik da ga čuješ.",
       report: "Prijavi grešku", reportHint: "Opiši grešku. Tekst ispod možeš kopirati i poslati autoru.", copy: "Kopiraj", copied: "Kopirano", close: "Zatvori",
@@ -328,12 +348,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `The ${n} most frequent verbs of the Quran`, language: "Language",
       notice: "<b>This content was generated by AI (Claude)</b> from the Quranic Arabic Corpus. Forms marked “in the Quran” are verified from the corpus. Meanings, translations and sentences have not been reviewed by scholars. If you spot a mistake, please report it.",
       learned: (a, b) => `Learned <strong>${a} / ${b}</strong>`, share: (p) => `covers <strong>${p}%</strong> of the verbs you meet in the Quran`,
-      tabs: ["Learn", "Cards", "Quiz", "Forms", "Listen", "Sentences"], prev: "← Previous", next: "Next →",
+      tabs: ["Learn", "Cards", "Meaning", "Form", "Listen", "Ayah", "Sentence", "Mix"], prev: "← Previous", next: "Next →",
       times: (n) => `${n}× in the Quran`, ofAll: (p) => `${p}% of all verbs`, root: "root", form: "form", inAyat: (n) => `in ${n} ayat`,
       tenses: { past: "past", present: "present", imperative: "command" },
       pronouns: { huwa: "he", hiya: "she", huma: "they two", hum: "they (m.)", hunna: "they (f.)", anta: "you (m.)", anti: "you (f.)", antuma: "you two", antum: "you (m. pl.)", antunna: "you (f. pl.)", ana: "I", nahnu: "we" },
       mainForms: "Main forms", recited: "as recited", nouns: "Nouns from this verb", participle: "participle (one who…)", verbalNoun: "verbal noun",
-      inQuran: "In the Quran", listenAyah: "Tap the marked word to hear the verb alone.", noFreeTranslation: "", conjugation: "Conjugation", statShare: "of all verbs in the Quran", statAyat: "ayat with this verb", recitedAyah: "Whole ayah · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayah ${a} · translation on quran.com ↗`,
+      inQuran: "In the Quran", listenAyah: "Tap the marked word to hear the verb alone.", noFreeTranslation: "", conjugation: "Conjugation", statShare: "of all verbs in the Quran", statAyat: "ayat with this verb", questionOf: (n, t) => `Question ${n} of ${t}`, sessionDone: "Done!", scoreLine: (a, t) => `${a} of ${t} correct`, retryMistakes: "Retry mistakes", newSession: "New round", alsoReads: "This form also reads:", mistakesTitle: "To review", recitedAyah: "Whole ayah · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayah ${a} · translation on quran.com ↗`,
       sentences: "Practice sentences", sentencesNote: "Composed for practice, not from the Quran.", noSentences: "Sentences for this verb are not ready yet.",
       fullTable: (a, b) => `Full conjugation (${a} of ${b} forms occur in the Quran)`, tableNote: "● the form occurs in the Quran. Tap a form to hear it.",
       report: "Report a mistake", reportHint: "Describe the mistake. You can copy the text below and send it to the author.", copy: "Copy", copied: "Copied", close: "Close",
@@ -348,12 +368,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `Kur'an'ın en sık geçen ${n} fiili`, language: "Dil",
       notice: "<b>Bu içerik yapay zekâ (Claude) tarafından</b> Quranic Arabic Corpus'tan üretilmiştir. “Kur'an'da” işaretli biçimler korpustan doğrulanmıştır. Anlamlar, çeviriler ve cümleler âlimler tarafından incelenmemiştir. Bir hata görürseniz lütfen bildirin.",
       learned: (a, b) => `Öğrenilen <strong>${a} / ${b}</strong>`, share: (p) => `Kur'an'daki fiillerin <strong>%${p}</strong>'i`,
-      tabs: ["Öğren", "Kartlar", "Test", "Biçimler", "Dinle", "Cümleler"], prev: "← Önceki", next: "Sonraki →",
+      tabs: ["Öğren", "Kartlar", "Anlam", "Biçim", "Dinle", "Ayet", "Cümle", "Karışık"], prev: "← Önceki", next: "Sonraki →",
       times: (n) => `Kur'an'da ${n}×`, ofAll: (p) => `tüm fiillerin %${p}'i`, root: "kök", form: "bab", inAyat: (n) => `${n} ayette`,
       tenses: { past: "geçmiş", present: "şimdiki", imperative: "emir" },
       pronouns: { huwa: "o (er.)", hiya: "o (dişi)", huma: "o ikisi", hum: "onlar (er.)", hunna: "onlar (dişi)", anta: "sen (er.)", anti: "sen (dişi)", antuma: "siz ikiniz", antum: "siz (er.)", antunna: "siz (dişi)", ana: "ben", nahnu: "biz" },
       mainForms: "Temel biçimler", recited: "okunuşu", nouns: "Bu fiilden isimler", participle: "ism-i fâil", verbalNoun: "mastar",
-      inQuran: "Kur'an'da", listenAyah: "Yalnız fiili duymak için işaretli kelimeye dokunun.", noFreeTranslation: "", conjugation: "Çekim", statShare: "Kur'an'daki tüm fiillerin", statAyat: "bu fiilin geçtiği ayet", recitedAyah: "Ayetin tamamı · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, ayet ${a} · quran.com'da meal ↗`,
+      inQuran: "Kur'an'da", listenAyah: "Yalnız fiili duymak için işaretli kelimeye dokunun.", noFreeTranslation: "", conjugation: "Çekim", statShare: "Kur'an'daki tüm fiillerin", statAyat: "bu fiilin geçtiği ayet", questionOf: (n, t) => `Soru ${n} / ${t}`, sessionDone: "Bitti!", scoreLine: (a, t) => `${t} sorudan ${a} doğru`, retryMistakes: "Yanlışları tekrarla", newSession: "Yeni tur", alsoReads: "Bu biçim ayrıca:", mistakesTitle: "Tekrar edilecekler", recitedAyah: "Ayetin tamamı · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, ayet ${a} · quran.com'da meal ↗`,
       sentences: "Alıştırma cümleleri", sentencesNote: "Alıştırma için yazıldı, Kur'an'dan değildir.", noSentences: "Bu fiilin cümleleri henüz hazır değil.",
       fullTable: (a, b) => `Tam çekim (${b} biçimin ${a} tanesi Kur'an'da geçer)`, tableNote: "● biçim Kur'an'da geçer. Duymak için dokunun.",
       report: "Hata bildir", reportHint: "Hatayı açıklayın. Aşağıdaki metni kopyalayıp yazara gönderebilirsiniz.", copy: "Kopyala", copied: "Kopyalandı", close: "Kapat",
@@ -368,12 +388,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `Die ${n} häufigsten Verben des Korans`, language: "Sprache",
       notice: "<b>Dieser Inhalt wurde von KI (Claude) erzeugt</b>, aus dem Quranic Arabic Corpus. Als „im Koran“ markierte Formen sind aus dem Korpus belegt. Bedeutungen, Übersetzungen und Sätze wurden nicht von Gelehrten geprüft. Wenn du einen Fehler findest, melde ihn bitte.",
       learned: (a, b) => `Gelernt <strong>${a} / ${b}</strong>`, share: (p) => `deckt <strong>${p}%</strong> der Verben im Koran ab`,
-      tabs: ["Lernen", "Karten", "Quiz", "Formen", "Hören", "Sätze"], prev: "← Zurück", next: "Weiter →",
+      tabs: ["Lernen", "Karten", "Bedeutung", "Form", "Hören", "Vers", "Satz", "Mix"], prev: "← Zurück", next: "Weiter →",
       times: (n) => `${n}× im Koran`, ofAll: (p) => `${p}% aller Verben`, root: "Wurzel", form: "Stamm", inAyat: (n) => `in ${n} Versen`,
       tenses: { past: "Vergangenheit", present: "Gegenwart", imperative: "Befehl" },
       pronouns: { huwa: "er", hiya: "sie", huma: "die beiden", hum: "sie (m.)", hunna: "sie (f.)", anta: "du (m.)", anti: "du (f.)", antuma: "ihr beide", antum: "ihr (m.)", antunna: "ihr (f.)", ana: "ich", nahnu: "wir" },
       mainForms: "Hauptformen", recited: "rezitiert", nouns: "Nomen von diesem Verb", participle: "Partizip (der, der …)", verbalNoun: "Verbalnomen",
-      inQuran: "Im Koran", listenAyah: "Tippe das markierte Wort, um nur das Verb zu hören.", noFreeTranslation: "kein freier deutscher Text verfügbar, daher Englisch", conjugation: "Konjugation", statShare: "aller Verben im Koran", statAyat: "Verse mit diesem Verb", recitedAyah: "Ganzer Vers · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, Vers ${a} · Übersetzung auf quran.com ↗`,
+      inQuran: "Im Koran", listenAyah: "Tippe das markierte Wort, um nur das Verb zu hören.", noFreeTranslation: "kein freier deutscher Text verfügbar, daher Englisch", conjugation: "Konjugation", statShare: "aller Verben im Koran", statAyat: "Verse mit diesem Verb", questionOf: (n, t) => `Frage ${n} von ${t}`, sessionDone: "Fertig!", scoreLine: (a, t) => `${a} von ${t} richtig`, retryMistakes: "Fehler wiederholen", newSession: "Neue Runde", alsoReads: "Diese Form heißt auch:", mistakesTitle: "Zum Wiederholen", recitedAyah: "Ganzer Vers · Mishary Alafasy", onQuranCom: (s, a) => `Sure ${s}, Vers ${a} · Übersetzung auf quran.com ↗`,
       sentences: "Übungssätze", sentencesNote: "Für die Übung verfasst, nicht aus dem Koran.", noSentences: "Die Sätze für dieses Verb sind noch nicht fertig.",
       fullTable: (a, b) => `Volle Konjugation (${a} von ${b} Formen kommen im Koran vor)`, tableNote: "● die Form kommt im Koran vor. Tippe eine Form, um sie zu hören.",
       report: "Fehler melden", reportHint: "Beschreibe den Fehler. Den Text unten kannst du kopieren und dem Autor schicken.", copy: "Kopieren", copied: "Kopiert", close: "Schließen",
@@ -388,12 +408,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `${n} foljet më të shpeshta të Kuranit`, language: "Gjuha",
       notice: "<b>Kjo përmbajtje u krijua nga inteligjenca artificiale (Claude)</b> nga Quranic Arabic Corpus. Format e shënuara „në Kuran“ janë verifikuar nga korpusi. Kuptimet, përkthimet dhe fjalitë nuk janë shqyrtuar nga dijetarë. Nëse shihni një gabim, ju lutemi raportojeni.",
       learned: (a, b) => `Mësuar <strong>${a} / ${b}</strong>`, share: (p) => `mbulon <strong>${p}%</strong> të foljeve në Kuran`,
-      tabs: ["Mëso", "Karta", "Kuiz", "Format", "Dëgjo", "Fjali"], prev: "← Mbrapa", next: "Para →",
+      tabs: ["Mëso", "Karta", "Kuptimi", "Forma", "Dëgjo", "Ajeti", "Fjalia", "Përzier"], prev: "← Mbrapa", next: "Para →",
       times: (n) => `${n}× në Kuran`, ofAll: (p) => `${p}% e të gjitha foljeve`, root: "rrënja", form: "forma", inAyat: (n) => `në ${n} ajete`,
       tenses: { past: "e kryer", present: "e tashme", imperative: "urdhërore" },
       pronouns: { huwa: "ai", hiya: "ajo", huma: "ata të dy", hum: "ata", hunna: "ato", anta: "ti (m.)", anti: "ti (f.)", antuma: "ju të dy", antum: "ju (m.)", antunna: "ju (f.)", ana: "unë", nahnu: "ne" },
       mainForms: "Format kryesore", recited: "si lexohet", nouns: "Emra nga kjo folje", participle: "pjesore (ai që…)", verbalNoun: "emër foljor",
-      inQuran: "Në Kuran", listenAyah: "Prekni fjalën e shënuar për të dëgjuar vetëm foljen.", noFreeTranslation: "nuk ka përkthim të lirë shqip, prandaj anglisht", conjugation: "Zgjedhimi", statShare: "e të gjitha foljeve në Kuran", statAyat: "ajete me këtë folje", recitedAyah: "I gjithë ajeti · Mishary Alafasy", onQuranCom: (s, a) => `Sureja ${s}, ajeti ${a} · përkthimi në quran.com ↗`,
+      inQuran: "Në Kuran", listenAyah: "Prekni fjalën e shënuar për të dëgjuar vetëm foljen.", noFreeTranslation: "nuk ka përkthim të lirë shqip, prandaj anglisht", conjugation: "Zgjedhimi", statShare: "e të gjitha foljeve në Kuran", statAyat: "ajete me këtë folje", questionOf: (n, t) => `Pyetja ${n} / ${t}`, sessionDone: "Mbaroi!", scoreLine: (a, t) => `${a} nga ${t} saktë`, retryMistakes: "Përsërit gabimet", newSession: "Raund i ri", alsoReads: "Kjo formë do të thotë edhe:", mistakesTitle: "Për t'u përsëritur", recitedAyah: "I gjithë ajeti · Mishary Alafasy", onQuranCom: (s, a) => `Sureja ${s}, ajeti ${a} · përkthimi në quran.com ↗`,
       sentences: "Fjali për ushtrime", sentencesNote: "Të shkruara për ushtrim, jo nga Kurani.", noSentences: "Fjalitë për këtë folje nuk janë gati ende.",
       fullTable: (a, b) => `Zgjedhimi i plotë (${a} nga ${b} forma janë në Kuran)`, tableNote: "● forma gjendet në Kuran. Prekni një formë për ta dëgjuar.",
       report: "Raporto gabim", reportHint: "Përshkruani gabimin. Tekstin më poshtë mund ta kopjoni dhe t'ia dërgoni autorit.", copy: "Kopjo", copied: "U kopjua", close: "Mbyll",
@@ -408,12 +428,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `Les ${n} verbes les plus fréquents du Coran`, language: "Langue",
       notice: "<b>Ce contenu a été généré par une IA (Claude)</b> à partir du Quranic Arabic Corpus. Les formes marquées « dans le Coran » sont vérifiées dans le corpus. Les sens, traductions et phrases n'ont pas été revus par des savants. Si vous voyez une erreur, signalez-la.",
       learned: (a, b) => `Appris <strong>${a} / ${b}</strong>`, share: (p) => `couvre <strong>${p} %</strong> des verbes du Coran`,
-      tabs: ["Apprendre", "Cartes", "Quiz", "Formes", "Écoute", "Phrases"], prev: "← Précédent", next: "Suivant →",
+      tabs: ["Apprendre", "Cartes", "Sens", "Forme", "Écoute", "Verset", "Phrase", "Mélange"], prev: "← Précédent", next: "Suivant →",
       times: (n) => `${n}× dans le Coran`, ofAll: (p) => `${p} % de tous les verbes`, root: "racine", form: "forme", inAyat: (n) => `dans ${n} versets`,
       tenses: { past: "passé", present: "présent", imperative: "impératif" },
       pronouns: { huwa: "il", hiya: "elle", huma: "eux deux", hum: "ils", hunna: "elles", anta: "tu (m.)", anti: "tu (f.)", antuma: "vous deux", antum: "vous (m.)", antunna: "vous (f.)", ana: "je", nahnu: "nous" },
       mainForms: "Formes principales", recited: "récité", nouns: "Noms de ce verbe", participle: "participe (celui qui…)", verbalNoun: "nom verbal",
-      inQuran: "Dans le Coran", listenAyah: "Touchez le mot marqué pour n'entendre que le verbe.", noFreeTranslation: "pas de traduction française libre disponible, donc anglais", conjugation: "Conjugaison", statShare: "de tous les verbes du Coran", statAyat: "versets avec ce verbe", recitedAyah: "Verset entier · Mishary Alafasy", onQuranCom: (s, a) => `Sourate ${s}, verset ${a} · traduction sur quran.com ↗`,
+      inQuran: "Dans le Coran", listenAyah: "Touchez le mot marqué pour n'entendre que le verbe.", noFreeTranslation: "pas de traduction française libre disponible, donc anglais", conjugation: "Conjugaison", statShare: "de tous les verbes du Coran", statAyat: "versets avec ce verbe", questionOf: (n, t) => `Question ${n} / ${t}`, sessionDone: "Terminé !", scoreLine: (a, t) => `${a} sur ${t} correctes`, retryMistakes: "Revoir les erreurs", newSession: "Nouvelle série", alsoReads: "Cette forme se lit aussi :", mistakesTitle: "À revoir", recitedAyah: "Verset entier · Mishary Alafasy", onQuranCom: (s, a) => `Sourate ${s}, verset ${a} · traduction sur quran.com ↗`,
       sentences: "Phrases d'exercice", sentencesNote: "Composées pour l'exercice, pas tirées du Coran.", noSentences: "Les phrases de ce verbe ne sont pas encore prêtes.",
       fullTable: (a, b) => `Conjugaison complète (${a} sur ${b} formes sont dans le Coran)`, tableNote: "● la forme apparaît dans le Coran. Touchez une forme pour l'entendre.",
       report: "Signaler une erreur", reportHint: "Décrivez l'erreur. Vous pouvez copier le texte ci-dessous et l'envoyer à l'auteur.", copy: "Copier", copied: "Copié", close: "Fermer",
@@ -428,12 +448,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `${n} kata kerja paling sering dalam Al-Qur'an`, language: "Bahasa",
       notice: "<b>Konten ini dibuat oleh AI (Claude)</b> dari Quranic Arabic Corpus. Bentuk bertanda “dalam Al-Qur'an” sudah diverifikasi dari korpus. Makna, terjemahan, dan kalimat belum ditinjau oleh ulama. Jika menemukan kesalahan, mohon laporkan.",
       learned: (a, b) => `Dipelajari <strong>${a} / ${b}</strong>`, share: (p) => `mencakup <strong>${p}%</strong> kata kerja dalam Al-Qur'an`,
-      tabs: ["Belajar", "Kartu", "Kuis", "Bentuk", "Dengar", "Kalimat"], prev: "← Sebelumnya", next: "Berikutnya →",
+      tabs: ["Belajar", "Kartu", "Makna", "Bentuk", "Dengar", "Ayat", "Kalimat", "Campur"], prev: "← Sebelumnya", next: "Berikutnya →",
       times: (n) => `${n}× dalam Al-Qur'an`, ofAll: (p) => `${p}% dari semua kata kerja`, root: "akar", form: "wazan", inAyat: (n) => `dalam ${n} ayat`,
       tenses: { past: "lampau", present: "kini", imperative: "perintah" },
       pronouns: { huwa: "dia (lk)", hiya: "dia (pr)", huma: "mereka berdua", hum: "mereka (lk)", hunna: "mereka (pr)", anta: "kamu (lk)", anti: "kamu (pr)", antuma: "kalian berdua", antum: "kalian (lk)", antunna: "kalian (pr)", ana: "saya", nahnu: "kami" },
       mainForms: "Bentuk utama", recited: "bacaan", nouns: "Kata benda dari kata kerja ini", participle: "isim fa'il", verbalNoun: "masdar",
-      inQuran: "Dalam Al-Qur'an", listenAyah: "Ketuk kata bertanda untuk mendengar kata kerjanya saja.", noFreeTranslation: "", conjugation: "Tasrif", statShare: "dari semua kata kerja Al-Qur'an", statAyat: "ayat dengan kata kerja ini", recitedAyah: "Seluruh ayat · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayat ${a} · terjemahan di quran.com ↗`,
+      inQuran: "Dalam Al-Qur'an", listenAyah: "Ketuk kata bertanda untuk mendengar kata kerjanya saja.", noFreeTranslation: "", conjugation: "Tasrif", statShare: "dari semua kata kerja Al-Qur'an", statAyat: "ayat dengan kata kerja ini", questionOf: (n, t) => `Soal ${n} / ${t}`, sessionDone: "Selesai!", scoreLine: (a, t) => `${a} dari ${t} benar`, retryMistakes: "Ulangi yang salah", newSession: "Babak baru", alsoReads: "Bentuk ini juga berarti:", mistakesTitle: "Untuk diulang", recitedAyah: "Seluruh ayat · Mishary Alafasy", onQuranCom: (s, a) => `Surah ${s}, ayat ${a} · terjemahan di quran.com ↗`,
       sentences: "Kalimat latihan", sentencesNote: "Disusun untuk latihan, bukan dari Al-Qur'an.", noSentences: "Kalimat untuk kata kerja ini belum siap.",
       fullTable: (a, b) => `Tasrif lengkap (${a} dari ${b} bentuk ada dalam Al-Qur'an)`, tableNote: "● bentuk ini ada dalam Al-Qur'an. Ketuk untuk mendengar.",
       report: "Laporkan kesalahan", reportHint: "Jelaskan kesalahannya. Teks di bawah bisa disalin dan dikirim ke penulis.", copy: "Salin", copied: "Tersalin", close: "Tutup",
@@ -448,12 +468,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       subtitle: (n) => `قرآن کے ${n} سب سے زیادہ آنے والے افعال`, language: "زبان",
       notice: "<b>یہ مواد مصنوعی ذہانت (Claude) نے</b> Quranic Arabic Corpus سے تیار کیا ہے۔ “قرآن میں” نشان والی صورتیں کارپس سے تصدیق شدہ ہیں۔ معانی، تراجم اور جملے علماء نے نہیں دیکھے۔ کوئی غلطی نظر آئے تو براہ کرم بتائیں۔",
       learned: (a, b) => `سیکھے <strong>${a} / ${b}</strong>`, share: (p) => `قرآن کے <strong>${p}%</strong> افعال`,
-      tabs: ["سیکھیں", "کارڈ", "کوئز", "صیغے", "سنیں", "جملے"], prev: "→ پچھلا", next: "اگلا ←",
+      tabs: ["سیکھیں", "کارڈ", "معنی", "صیغہ", "سنیں", "آیت", "جملہ", "ملا جلا"], prev: "→ پچھلا", next: "اگلا ←",
       times: (n) => `قرآن میں ${n} بار`, ofAll: (p) => `تمام افعال کا ${p}%`, root: "مادہ", form: "باب", inAyat: (n) => `${n} آیات میں`,
       tenses: { past: "ماضی", present: "مضارع", imperative: "امر" },
       pronouns: { huwa: "وہ (مذکر)", hiya: "وہ (مؤنث)", huma: "وہ دونوں", hum: "وہ سب (مذکر)", hunna: "وہ سب (مؤنث)", anta: "تم (مذکر)", anti: "تم (مؤنث)", antuma: "تم دونوں", antum: "تم سب (مذکر)", antunna: "تم سب (مؤنث)", ana: "میں", nahnu: "ہم" },
       mainForms: "بنیادی صیغے", recited: "تلاوت", nouns: "اس فعل سے اسماء", participle: "اسم فاعل", verbalNoun: "مصدر",
-      inQuran: "قرآن میں", listenAyah: "صرف فعل سننے کے لیے نشان زدہ لفظ پر ٹیپ کریں۔", noFreeTranslation: "", conjugation: "گردان", statShare: "قرآن کے تمام افعال میں", statAyat: "اس فعل والی آیات", recitedAyah: "پوری آیت · مشاری العفاسی", onQuranCom: (s, a) => `سورہ ${s}، آیت ${a} · quran.com پر ترجمہ`,
+      inQuran: "قرآن میں", listenAyah: "صرف فعل سننے کے لیے نشان زدہ لفظ پر ٹیپ کریں۔", noFreeTranslation: "", conjugation: "گردان", statShare: "قرآن کے تمام افعال میں", statAyat: "اس فعل والی آیات", questionOf: (n, t) => `سوال ${n} / ${t}`, sessionDone: "مکمل!", scoreLine: (a, t) => `${t} میں سے ${a} درست`, retryMistakes: "غلطیاں دہرائیں", newSession: "نیا دور", alsoReads: "یہ صیغہ یہ بھی ہے:", mistakesTitle: "دہرانے کے لیے", recitedAyah: "پوری آیت · مشاری العفاسی", onQuranCom: (s, a) => `سورہ ${s}، آیت ${a} · quran.com پر ترجمہ`,
       sentences: "مشق کے جملے", sentencesNote: "مشق کے لیے لکھے گئے، قرآن سے نہیں۔", noSentences: "اس فعل کے جملے ابھی تیار نہیں۔",
       fullTable: (a, b) => `مکمل گردان (${b} میں سے ${a} صیغے قرآن میں ہیں)`, tableNote: "● یہ صیغہ قرآن میں آتا ہے۔ سننے کے لیے ٹیپ کریں۔",
       report: "غلطی بتائیں", reportHint: "غلطی بیان کریں۔ نیچے کا متن کاپی کر کے مصنف کو بھیج سکتے ہیں۔", copy: "کاپی", copied: "کاپی ہو گیا", close: "بند کریں",
@@ -465,7 +485,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       footer: ["<b>ماخذ:</b> افعال، صیغے، آیات اور اسماء: Quranic Arabic Corpus (GPL)، متن Tanzil۔ تلاوت: مشاری العفاسی (everyayah.com)۔ الفاظ: quran.com۔", "<b>آواز:</b> ہر صیغہ، اسم اور جملہ مصنوعی آواز (tts_arabic) سے پڑھا جاتا ہے، جس کی قراءت حرکت بہ حرکت جانچی گئی ہے۔ “تلاوت” کا بٹن اصل قاری سناتا ہے جہاں یہ صیغہ قرآن میں ہے۔", "<b>تراجم:</b> بوسنیائی ایک انسان پڑھتا ہے، انگریزی لغت سے جانچی گئی، باقی زبانیں غیر جانچے AI تراجم ہیں۔"],
     },
   };
-  const TAB_IDS = ["learn", "cards", "quiz", "forms", "listen", "sentences"];
+  const TAB_IDS = ["learn", "cards", "meaning", "form", "listen", "ayah", "sentence", "mix"];
+  const PRACTICE_TYPES = ["meaning", "form", "listen", "ayah", "sentence", "mix"];
   const PRONOUN_ORDER = ["huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma", "antum", "antunna", "ana", "nahnu"];
   const TENSE_ORDER = ["past", "present", "imperative"];
   const FORM_NAMES = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
@@ -513,13 +534,18 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
   // ---------- cards are loaded per verb, on demand ----------
   const cards = {};
+  const ready = [];
   function loadCard(index) {
-    if (!cards[index]) cards[index] = fetch(VERBS[index].file).then((response) => response.json());
+    if (!cards[index]) {
+      cards[index] = fetch(VERBS[index].file).then((response) => response.json()).then((card) => { ready[index] = card; return card; });
+    }
     return cards[index];
   }
-  async function loadedCards() {
-    const settled = await Promise.all(Object.values(cards));
-    return settled.length ? settled : [await loadCard(0)];
+  /** The cards to practise with now: whatever has loaded, but never fewer than five. */
+  async function practiceCards() {
+    const minimum = Math.min(5, VERBS.length);
+    await Promise.all(Array.from({ length: minimum }, (_, i) => loadCard(i)));
+    return ready.filter(Boolean);
   }
   async function preloadAll() { for (let i = 0; i < VERBS.length; i++) { try { await loadCard(i); } catch {} } }
 
@@ -571,9 +597,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     renderActive();
   });
   function renderActive() {
-    TAB_IDS.forEach((id) => { $(`view-${id}`).hidden = id !== activeTab; });
+    $("view-learn").hidden = activeTab !== "learn";
+    $("view-cards").hidden = activeTab !== "cards";
+    $("view-practice").hidden = !PRACTICE_TYPES.includes(activeTab);
     $("layout").classList.toggle("no-list", activeTab !== "learn");
-    ({ learn: () => showVerb(current), cards: showFlash, quiz: showQuiz, forms: showFormsQuiz, listen: showListen, sentences: showCloze })[activeTab]();
+    if (activeTab === "learn") return showVerb(current);
+    if (activeTab === "cards") return startFlash();
+    return startPractice(activeTab);
   }
 
   // ---------- learn ----------
@@ -735,142 +765,197 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     $("chips").children[current]?.scrollIntoView({ block: "nearest", inline: "center" });
   }
 
-  // ---------- cards (Leitner boxes, both directions) ----------
-  let flashVerb = null, flashDirection = 0;
-  function pickFlashVerb(pool) {
-    const lowest = Math.min(...pool.map(boxOf));
-    const candidates = pool.filter((verb) => boxOf(verb) <= lowest + 1 && keyOf(verb) !== (flashVerb && keyOf(flashVerb))).sort((a, b) => boxOf(a) - boxOf(b) || a.rank - b.rank);
-    return randomOf(candidates.slice(0, 5)) || pool[0];
+  // ---------- practice: every exercise is a round of fair questions (see practice.js) ----------
+  const MAX_BOX = 5;
+  const P = window.FilPractice;
+  let round = null;   // { type, questions, index, right, mistakes, answered }
+
+  function grade(card, correct) {
+    setBox(card, correct ? Math.min(MAX_BOX, boxOf(card) + 1) : Math.max(0, boxOf(card) - 1));
   }
-  async function showFlash() {
-    flashVerb = pickFlashVerb(await loadedCards());
-    const verb = flashVerb, ui = t();
-    const dots = `<div class="box-dots">${[1, 2, 3].map((n) => `<i class="${boxOf(verb) >= n ? "on" : ""}"></i>`).join("")}</div>`;
-    const directions = `<div class="segmented">${ui.direction.map((label, i) => `<button data-direction="${i}" aria-pressed="${i === flashDirection}">${escapeHtml(label)}</button>`).join("")}</div>`;
-    const present = verb.principal.find((cell) => cell.tense === "present");
-    const front = flashDirection === 0
-      ? `<p class="ar lemma">${verb.lemma}</p>${present ? `<p class="ar" style="font-size:1.6rem;color:var(--muted);margin:0">${present.plain}</p>` : ""}${playButton({ file: verb.lemmaSpoken })}`
-      : `<p class="big-meaning">${escapeHtml(meaningOf(verb))}</p>`;
-    $("flash").innerHTML = `${directions}${dots}${front}<button class="btn primary" id="reveal">${escapeHtml(ui.reveal)}</button><p class="note" style="margin:0">${escapeHtml(ui.cardsHint)}</p>`;
-    $("reveal").addEventListener("click", () => revealFlash(verb));
+
+  function roundHeader(ui) {
+    const total = round.questions.length;
+    return `<div class="round-head">
+      <span>${escapeHtml(ui.questionOf(round.index + 1, total))}</span>
+      <span class="score">${escapeHtml(ui.correct(round.right, round.index + (round.answered ? 1 : 0)))}</span>
+    </div>
+    <div class="bar round-bar"><span style="width:${(round.index + (round.answered ? 1 : 0)) / total * 100}%"></span></div>`;
   }
-  function revealFlash(verb) {
+
+  async function startPractice(type, questions = null) {
+    $("practice").innerHTML = `<p class="loading">…</p>`;
+    const pool = await practiceCards();
+    const asked = questions || P.session(type, pool, { language, boxOf });
+    round = { type, questions: asked, index: 0, right: 0, mistakes: [], answered: false };
+    if (!asked.length) { $("practice").innerHTML = `<p class="note">${escapeHtml(t().noSentences)}</p>`; return; }
+    showQuestion();
+  }
+
+  function showQuestion() {
     const ui = t();
-    const back = flashDirection === 0
-      ? `<p class="big-meaning">${escapeHtml(meaningOf(verb))}</p>`
-      : `<p class="ar lemma">${verb.lemma}</p>${playButton({ file: verb.lemmaSpoken })}`;
-    $("reveal").outerHTML = `<div class="stack center">${back}<p class="note" style="margin:0">${escapeHtml(ui.times(verb.count))}</p></div>
-      <div class="btn-row" style="width:100%"><button class="btn bad" id="missed">${escapeHtml(ui.missed)}</button><button class="btn good" id="knew">${escapeHtml(ui.knew)}</button></div>`;
-    $("missed").addEventListener("click", () => { setBox(verb, 0); showFlash(); });
-    $("knew").addEventListener("click", () => { setBox(verb, boxOf(verb) + 1); showFlash(); });
+    const question = round.questions[round.index];
+    round.answered = false;
+    round.missedOnce = false;
+    stopAll();
+    const body = {
+      meaning: () => `<p class="prompt">${escapeHtml(ui.whatMeans)}</p>
+        <div class="stage"><p class="ar stage-word">${question.cell.plain}</p><p class="note">${escapeHtml(formLabel(question.cell))}</p>${playButton({ file: question.cell.spoken })}</div>`,
+      form: () => `<p class="prompt">${escapeHtml(ui.whoWhen)}</p>
+        <div class="stage"><p class="ar stage-word">${question.cell.plain}</p><p class="note">${question.card.lemma} · ${escapeHtml(meaningOf(question.card))}</p>${playButton({ file: question.cell.spoken })}</div>`,
+      listen: () => `<p class="prompt">${escapeHtml(ui.whichHeard)}</p>
+        <div class="stage">${playButton({ file: question.cell.spoken, extra: "big" })}<p class="note">${question.card.lemma} · ${escapeHtml(meaningOf(question.card))}</p></div>`,
+      ayah: () => `<p class="prompt">${escapeHtml(ui.findVerb)}</p>
+        <div class="stage">${playButton({ file: question.ayah.audio, extra: "gold big" })}<p class="note">${question.card.lemma} · ${escapeHtml(meaningOf(question.card))} · ${question.ayah.ref}</p></div>
+        <p class="qr ayah-text find">${question.ayah.words.map((word, i) => `<button class="find-word" data-word="${i}">${word.text}</button>`).join(" ")}</p>`,
+      sentence: () => `<p class="prompt">${escapeHtml(ui.fillIn)}</p>
+        <div class="stage"><p class="ar stage-sentence">${question.sentence.words.map((word) => word.target ? '<span class="blank">&nbsp;</span>' : word.arabic).join(" ")}</p>
+        <p>${escapeHtml(inLanguage(question.sentence.translation))}</p></div>`,
+    }[question.type]();
+    const options = question.type === "ayah" ? "" : `<div class="options">${question.options.map((option, i) => {
+      const label = question.type === "form" ? escapeHtml(formLabel(option.cell)) : (question.type === "meaning" ? escapeHtml(option.label) : option.label);
+      const arabic = ["listen", "sentence"].includes(question.type);
+      return `<button class="${arabic ? "ar" : ""}" data-option="${i}">${label}</button>`;
+    }).join("")}</div>`;
+    $("practice").innerHTML = `${roundHeader(ui)}${body}${options}<div class="feedback" data-after></div>`;
+    // A listening question starts by sounding; it follows a click, so the browser allows it.
+    if (question.type === "listen" || question.type === "ayah") {
+      const button = document.querySelector("#practice .stage [data-file]");
+      if (button) playFile(button.dataset.file, button);
+    }
   }
-  $("flash").addEventListener("click", (event) => {
-    const choice = event.target.closest("[data-direction]");
-    if (choice) { flashDirection = Number(choice.dataset.direction); showFlash(); }
+
+  function feedbackFor(question, correct) {
+    const ui = t();
+    const verdict = `<b class="${correct ? "ok" : "no"}">${escapeHtml(correct ? ui.right : ui.wrong)}</b>`;
+    const detail = {
+      meaning: () => `<span class="ar">${question.card.lemma}</span> = ${escapeHtml(meaningOf(question.card))}`,
+      form: () => {
+        const others = question.readings.filter((reading) => reading !== question.cell);
+        const also = others.length ? ` · ${escapeHtml(ui.alsoReads)} ${others.map((reading) => escapeHtml(formLabel(reading))).join(", ")}` : "";
+        return `<span class="ar">${question.cell.plain}</span> = ${escapeHtml(formLabel(question.cell))}${also}`;
+      },
+      listen: () => `<span class="ar">${question.cell.plain}</span> = ${escapeHtml(formLabel(question.cell))}`,
+      ayah: () => {
+        const word = question.ayah.words.find((w) => w.hit);
+        return `${playButton({ file: word.audio, extra: "small gold" })} <span class="qr">${word.text}</span>${word.gloss ? ` = ${escapeHtml(inLanguage(word.gloss))}` : ""}`;
+      },
+      sentence: () => `${playButton({ file: question.sentence.spoken, extra: "small" })} <span class="ar">${question.sentence.arabic}</span>`,
+    }[question.type]();
+    const last = round.index === round.questions.length - 1;
+    return `<p class="feedback-line">${verdict} ${detail}</p>
+      <button class="btn primary next-btn" data-next>${escapeHtml(last ? ui.sessionDone : ui.nextQ)}</button>`;
+  }
+
+  function answer(correct) {
+    if (round.answered) return;
+    round.answered = true;
+    const question = round.questions[round.index];
+    if (correct) round.right += 1; else round.mistakes.push(question);
+    grade(question.card, correct);
+    const after = document.querySelector("#practice [data-after]");
+    after.innerHTML = feedbackFor(question, correct);
+    document.querySelector("#practice .round-head").outerHTML = "";
+    document.querySelector("#practice .round-bar").outerHTML = "";
+    $("practice").insertAdjacentHTML("afterbegin", roundHeader(t()));
+    after.querySelector("[data-next]").focus();
+  }
+
+  $("practice").addEventListener("click", (event) => {
+    if (!round) return;
+    const question = round.questions[round.index];
+    const option = event.target.closest("[data-option]");
+    if (option && !round.answered) {
+      const chosen = question.options[Number(option.dataset.option)];
+      document.querySelectorAll("#practice [data-option]").forEach((button, i) => {
+        button.disabled = true;
+        if (question.options[i].correct) button.classList.add("right");
+      });
+      if (!chosen.correct) option.classList.add("wrong");
+      return answer(chosen.correct);
+    }
+    const word = event.target.closest("[data-word]");
+    if (word && !round.answered) {
+      const hit = question.ayah.words[Number(word.dataset.word)].hit;
+      if (!hit) { word.classList.add("wrong"); round.missedOnce = true; return; }
+      word.classList.add("right");
+      const firstTry = !round.missedOnce;
+      round.missedOnce = false;
+      return answer(firstTry);
+    }
+    if (event.target.closest("[data-next]")) {
+      if (round.index < round.questions.length - 1) { round.index += 1; return showQuestion(); }
+      return showSummary();
+    }
+    if (event.target.closest("[data-retry]")) return startPractice(round.type, round.mistakes);
+    if (event.target.closest("[data-new-round]")) return startPractice(round.type);
   });
 
-  // ---------- shared multiple choice ----------
-  const scores = {};
-  function multipleChoice(target, { mode, prompt, body, options, isArabic, onAnswered }) {
-    const score = scores[mode] || { right: 0, asked: 0 };
-    target.innerHTML = `
-      <div class="eyebrow"><span>${escapeHtml(prompt)}</span><span class="score">${escapeHtml(t().correct(score.right, score.asked))}</span></div>
-      ${body}
-      <div class="options">${options.map((option, i) => `<button class="${isArabic ? "ar" : ""}" data-option="${i}">${isArabic ? option.label : escapeHtml(option.label)}</button>`).join("")}</div>
-      <div data-after></div>`;
-    target.querySelector(".options").addEventListener("click", (event) => {
-      const button = event.target.closest("[data-option]");
-      if (!button || target.querySelector(".options button:disabled")) return;
-      const chosen = options[Number(button.dataset.option)];
-      target.querySelectorAll(".options button").forEach((b, i) => { b.disabled = true; if (options[i].correct) b.classList.add("right"); });
-      if (!chosen.correct) button.classList.add("wrong");
-      scores[mode] = { right: score.right + (chosen.correct ? 1 : 0), asked: score.asked + 1 };
-      target.querySelector("[data-after]").innerHTML = `<p class="note">${escapeHtml(chosen.correct ? t().right : t().wrong)} ${onAnswered()}</p><button class="btn primary" style="width:100%">${escapeHtml(t().nextQ)}</button>`;
-      target.querySelector("[data-after] button").addEventListener("click", () => renderActive());
-    });
+  function showSummary() {
+    const ui = t();
+    const total = round.questions.length;
+    const mistakes = round.mistakes.map((question) => `<li><span class="ar">${question.card.lemma}</span> · ${escapeHtml(meaningOf(question.card))}</li>`).join("");
+    $("practice").innerHTML = `<div class="summary">
+      <p class="big-meaning">${escapeHtml(ui.sessionDone)}</p>
+      <p class="summary-score">${escapeHtml(ui.scoreLine(round.right, total))}</p>
+      ${mistakes ? `<div><p class="section-title">${escapeHtml(ui.mistakesTitle)}</p><ul class="mistakes">${mistakes}</ul></div>` : ""}
+      <div class="btn-row">${round.mistakes.length ? `<button class="btn" data-retry>${escapeHtml(ui.retryMistakes)}</button>` : "<span></span>"}<button class="btn primary" data-new-round>${escapeHtml(ui.newSession)}</button></div>
+    </div>`;
   }
 
-  // Quiz: what does this verb mean?
-  async function showQuiz() {
-    const pool = await loadedCards();
-    const verb = randomOf(pool);
-    const form = randomOf(verb.principal);
-    const others = shuffle(VERBS.filter((other) => meaningOf(other) !== meaningOf(verb))).slice(0, 3);  // summaries suffice
-    multipleChoice($("quiz"), {
-      mode: "quiz", prompt: t().whatMeans,
-      body: `<div class="stack center"><p class="ar lemma" style="text-align:center;font-size:2.8rem">${form.plain}</p><p class="note" style="margin:0">${escapeHtml(formLabel(form))}</p>${playButton({ file: form.spoken })}</div>`,
-      options: shuffle([{ label: meaningOf(verb), correct: true }, ...others.map((other) => ({ label: meaningOf(other), correct: false }))]),
-      onAnswered: () => `<span class="ar">${verb.lemma}</span> = ${escapeHtml(meaningOf(verb))}`,
-    });
+  // ---------- cards: a round of ten, Arabic → meaning (reverse only where the meaning is unique) ----------
+  let flash = null, flashDirection = 0;
+  async function startFlash() {
+    const pool = await practiceCards();
+    const reversible = flashDirection === 1 ? P.uniquelyMeant(pool, language) : pool;
+    const deck = [];
+    const random = Math.random;
+    const candidates = [...reversible].sort((a, b) => boxOf(a) - boxOf(b) || random() - 0.5);
+    for (const card of candidates) { if (deck.length < P.SESSION_SIZE) deck.push(card); }
+    flash = { deck, index: 0, right: 0, mistakes: [] };
+    showFlash();
   }
-
-  // Forms: who and when?
-  async function showFormsQuiz() {
-    const verb = randomOf(await loadedCards());
-    const attested = verb.cells.filter((cell) => cell.quran);
-    const cell = randomOf(attested.length ? attested : verb.cells);
-    const distinct = verb.cells.filter((other) => other.plain !== cell.plain);
-    const wrong = shuffle(distinct).slice(0, 3);
-    multipleChoice($("forms-quiz"), {
-      mode: "forms", prompt: t().whoWhen,
-      body: `<div class="stack center"><p class="ar lemma" style="text-align:center;font-size:2.8rem">${cell.plain}</p><p class="note" style="margin:0">${verb.lemma} · ${escapeHtml(meaningOf(verb))}</p>${playButton({ file: cell.spoken })}</div>`,
-      options: shuffle([{ label: formLabel(cell), correct: true }, ...wrong.map((other) => ({ label: formLabel(other), correct: false }))]),
-      onAnswered: () => `<span class="ar">${cell.plain}</span> = ${escapeHtml(formLabel(cell))}`,
-    });
+  function showFlash() {
+    const ui = t();
+    const card = flash.deck[flash.index];
+    stopAll();
+    const directions = `<div class="segmented">${ui.direction.map((label, i) => `<button data-direction="${i}" aria-pressed="${i === flashDirection}">${escapeHtml(label)}</button>`).join("")}</div>`;
+    const present = card.principal.find((cell) => cell.tense === "present");
+    const front = flashDirection === 0
+      ? `<p class="ar lemma">${card.lemma}</p>${present ? `<p class="ar" style="font-size:1.6rem;color:var(--muted);margin:0">${present.plain}</p>` : ""}${playButton({ file: card.lemmaSpoken })}`
+      : `<p class="big-meaning">${escapeHtml(meaningOf(card))}</p>`;
+    $("flash").innerHTML = `${directions}
+      <div class="round-head" style="width:100%"><span>${escapeHtml(ui.questionOf(flash.index + 1, flash.deck.length))}</span><span class="score">${escapeHtml(ui.correct(flash.right, flash.index))}</span></div>
+      ${front}<button class="btn primary" data-reveal>${escapeHtml(ui.reveal)}</button><p class="note" style="margin:0">${escapeHtml(ui.cardsHint)}</p>`;
   }
-
-  // Listen: alternate between hearing a form and finding the verb in a recited ayah.
-  let listenTurn = 0;
-  async function showListen() {
-    listenTurn += 1;
-    const pool = await loadedCards();
-    const withAyat = pool.filter((verb) => verb.ayat.length);
-    if (listenTurn % 2 === 0 && withAyat.length) return showFindVerb(randomOf(withAyat));
-    const verb = randomOf(pool);
-    const cell = randomOf(verb.cells);
-    const wrong = shuffle(verb.cells.filter((other) => other.plain !== cell.plain)).slice(0, 3);
-    multipleChoice($("listen"), {
-      mode: "listen", prompt: t().whichHeard, isArabic: true,
-      body: `<div class="stack center">${playButton({ file: cell.spoken })}<p class="note" style="margin:0">${verb.lemma} · ${escapeHtml(meaningOf(verb))}</p></div>`,
-      options: shuffle([{ label: cell.plain, correct: true }, ...wrong.map((other) => ({ label: other.plain, correct: false }))]),
-      onAnswered: () => `<span class="ar">${cell.plain}</span> = ${escapeHtml(formLabel(cell))}`,
-    });
+  function revealFlash() {
+    const ui = t();
+    const card = flash.deck[flash.index];
+    const back = flashDirection === 0
+      ? `<p class="big-meaning">${escapeHtml(meaningOf(card))}</p>`
+      : `<p class="ar lemma">${card.lemma}</p>${playButton({ file: card.lemmaSpoken })}`;
+    document.querySelector("#flash [data-reveal]").outerHTML = `<div class="stack center">${back}<p class="note" style="margin:0">${escapeHtml(ui.times(card.count))}</p></div>
+      <div class="btn-row" style="width:100%"><button class="btn bad" data-knew="0">${escapeHtml(ui.missed)}</button><button class="btn good" data-knew="1">${escapeHtml(ui.knew)}</button></div>`;
   }
-  function showFindVerb(verb) {
-    const ayah = randomOf(verb.ayat);
-    const [surah, number] = ayah.ref.split(":");
-    const words = ayah.words.map((word, i) => `<button class="find-word" data-word="${i}">${word.text}</button>`).join(" ");
-    $("listen").innerHTML = `
-      <div class="eyebrow"><span>${escapeHtml(t().findVerb)}</span><span>${surah}:${number}</span></div>
-      <div class="stack center">${playButton({ file: ayah.audio, extra: "gold" })}<p class="note" style="margin:0">${verb.lemma} · ${escapeHtml(meaningOf(verb))}</p></div>
-      <p class="qr ayah-text">${words}</p><div data-after></div>`;
-    $("listen").querySelector(".ayah-text").addEventListener("click", (event) => {
-      const button = event.target.closest("[data-word]");
-      if (!button || $("listen").querySelector(".find-word.right")) return;
-      const word = ayah.words[Number(button.dataset.word)];
-      if (!word.hit) { button.classList.add("wrong"); return; }
-      button.classList.add("right");
-      $("listen").querySelector("[data-after]").innerHTML = `<div class="listen-row">${playButton({ file: word.audio, extra: "small gold" })}<span class="note">${escapeHtml(t().right)}</span></div><button class="btn primary" style="width:100%;margin-top:10px">${escapeHtml(t().nextQ)}</button>`;
-      $("listen").querySelector("[data-after] .btn").addEventListener("click", showListen);
-    });
-  }
-
-  // Sentences: fill the blank with the right form of the verb.
-  async function showCloze() {
-    const withSentences = (await loadedCards()).filter((verb) => verb.sentences.length);
-    if (!withSentences.length) { $("cloze").innerHTML = `<p class="note">${escapeHtml(t().noSentences)}</p>`; return; }
-    const verb = randomOf(withSentences);
-    const sentence = randomOf(verb.sentences);
-    const target = sentence.words.find((word) => word.target);
-    const wrong = shuffle([...new Set(verb.cells.map((cell) => cell.plain))].filter((form) => form !== target.arabic)).slice(0, 3);
-    const blanked = sentence.words.map((word) => word.target ? '<span class="blank">&nbsp;</span>' : word.arabic).join(" ");
-    multipleChoice($("cloze"), {
-      mode: "cloze", prompt: t().fillIn, isArabic: true,
-      body: `<div class="stack"><p class="ar" style="font-size:1.6rem;text-align:right;margin:0">${blanked}</p><p style="margin:0">${escapeHtml(inLanguage(sentence.translation))}</p></div>`,
-      options: shuffle([{ label: target.arabic, correct: true }, ...wrong.map((form) => ({ label: form, correct: false }))]),
-      onAnswered: () => `${playButton({ file: sentence.spoken, extra: "small" })}`,
-    });
-  }
+  $("flash").addEventListener("click", (event) => {
+    const direction = event.target.closest("[data-direction]");
+    if (direction) { flashDirection = Number(direction.dataset.direction); return startFlash(); }
+    if (event.target.closest("[data-reveal]")) return revealFlash();
+    const knew = event.target.closest("[data-knew]");
+    if (knew) {
+      const card = flash.deck[flash.index];
+      const correct = knew.dataset.knew === "1";
+      if (correct) flash.right += 1; else flash.mistakes.push(card);
+      setBox(card, correct ? Math.min(MAX_BOX, boxOf(card) + 1) : 0);
+      if (flash.index < flash.deck.length - 1) { flash.index += 1; return showFlash(); }
+      const ui = t();
+      $("flash").innerHTML = `<div class="summary"><p class="big-meaning">${escapeHtml(ui.sessionDone)}</p>
+        <p class="summary-score">${escapeHtml(ui.scoreLine(flash.right, flash.deck.length))}</p>
+        ${flash.mistakes.length ? `<ul class="mistakes">${flash.mistakes.map((c) => `<li><span class="ar">${c.lemma}</span> · ${escapeHtml(meaningOf(c))}</li>`).join("")}</ul>` : ""}
+        <button class="btn primary" data-flash-again>${escapeHtml(ui.newSession)}</button></div>`;
+    }
+    if (event.target.closest("[data-flash-again]")) return startFlash();
+  });
 
   // ---------- start ----------
   fetch("data.json").then((response) => response.json()).then((data) => {

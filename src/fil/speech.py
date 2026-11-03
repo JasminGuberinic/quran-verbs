@@ -62,8 +62,25 @@ def prepared(text: str) -> str:
     return " ".join(words)
 
 
+# Words standard spelling writes without the long ā they are said with (the Uthmani text
+# marks it with a small alif, ordinary print leaves it out). Spelled out here so neither
+# reader has to guess.
+_UNWRITTEN_LONG_A = {
+    "هَذَا": "هَاذَا", "هَذِهِ": "هَاذِهِ", "هَذَانِ": "هَاذَانِ", "ذَلِكَ": "ذَالِكَ",
+    "ذَلِكُمْ": "ذَالِكُمْ", "لَكِنْ": "لَاكِنْ", "لَكِنَّ": "لَاكِنَّ", "هَؤُلَاءِ": "هَاؤُلَاءِ",
+    "أُولَئِكَ": "أُلَائِكَ",
+}
+
+# The name of God carries a long ā after its doubled lām (اللَّه → allāh), written only in
+# Uthmani script. Any proclitic in front (بِ, لِ, وَ, فَ …) is kept.
+_GOD = re.compile("لَّه")
+
+
 def _prepared_word(word: str) -> str:
     word = word.replace("ٱ", "ا")
+    word = _UNWRITTEN_LONG_A.get(word, word)
+    if re.search("^(?:[بوفتك]\u064e?\u0650?)?ا?للَّه", word) or word.startswith("لِلَّه"):
+        word = _GOD.sub("لَّا" + "ه", word, count=1)
     word = re.sub(f"{FATHATAN}ا$|ا{FATHATAN}$", FATHATAN, word)        # خَيْرًا → خَيْرً
     word = re.sub(f"و([{SUKUN}{DAMMA}]?)ا$", r"و\1", word)             # قَالُوا → قَالُو
     return _with_implied_vowels(word)
@@ -132,7 +149,10 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
         elif letter.base == "ا" and letter.vowel:
             sounds += ["<", letter.vowel]                       # a voiced (connecting) alif
         elif _is_article_after_proclitic(letters, position):
-            pass                                                # بِالْحَقِّ: the article's alif is silent
+            if _joins_sun_letter(letters, position + 1):
+                position += 1                                   # بِالشَّمْسِ: …and its l joins the sun letter
+        elif letter.base == "ل" and not letter.vowel and not letter.sukun and _joins_sun_letter(letters, position) and position <= 2:
+            pass                                                # لِلَّهِ: the article's l merges into the doubled l
         elif letter.base in "اى" and not letter.vowel:
             if sounds and sounds[-1] == "a":
                 sounds[-1] = "aa"                               # long ā after a fatha
@@ -167,6 +187,13 @@ def _is_article_after_proclitic(letters: list["_Letter"], position: int) -> bool
         return False
     after_l = letters[3] if len(letters) > 3 else None
     return letters[2].sukun or bool(after_l and after_l.shadda)
+
+
+def _joins_sun_letter(letters: list["_Letter"], position: int) -> bool:
+    """An unmarked l of al- followed by a doubled sun letter is not pronounced on its own."""
+    return (position + 1 < len(letters) and letters[position].base == "ل"
+            and not letters[position].vowel and not letters[position].sukun
+            and letters[position + 1].base in _SUN_LETTERS and letters[position + 1].shadda)
 
 
 @dataclass(frozen=True)

@@ -8,21 +8,42 @@
           "en": "said",
           "bs": "rekao je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sagte",
+            "fr": "a dit",
+            "id": "berkata",
+            "sq": "tha",
+            "tr": "dedi",
+            "ur": "کہا"
+          }
         },
         {
           "arabic": "الرَّجُلُ",
           "en": "the man",
           "bs": "čovjek",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Mann",
+            "fr": "l'homme",
+            "id": "laki-laki itu",
+            "sq": "burri",
+            "tr": "adam",
+            "ur": "آدمی"
+          }
         },
         {
           "arabic": "الحَقَّ",
           "en": "the truth",
           "bs": "istinu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Wahrheit",
+            "fr": "la vérité",
+            "id": "kebenaran",
+            "sq": "të vërtetën",
+            "tr": "doğruyu, hakkı",
+            "ur": "سچ، حق"
+          }
         }
       ],
       "en": "The man spoke the truth.",
@@ -31,7 +52,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Der Mann sagte die Wahrheit.",
+        "fr": "L'homme a dit la vérité.",
+        "id": "Laki-laki itu berkata benar.",
+        "sq": "Burri tha të vërtetën.",
+        "tr": "Adam doğruyu söyledi.",
+        "ur": "آدمی نے سچ کہا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -59,14 +87,28 @@
           "en": "I say",
           "bs": "govorim",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "ich sage",
+            "fr": "je dis",
+            "id": "saya mengatakan",
+            "sq": "unë them",
+            "tr": "söylüyorum",
+            "ur": "میں کہتا ہوں"
+          }
         },
         {
           "arabic": "الحَقَّ",
           "en": "the truth",
           "bs": "istinu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Wahrheit",
+            "fr": "la vérité",
+            "id": "kebenaran",
+            "sq": "të vërtetën",
+            "tr": "doğruyu, hakkı",
+            "ur": "سچ، حق"
+          }
         }
       ],
       "en": "I speak the truth.",
@@ -75,7 +117,14 @@
       "pronoun": "ana",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Ich sage die Wahrheit.",
+        "fr": "Je dis la vérité.",
+        "id": "Saya mengatakan kebenaran.",
+        "sq": "Unë them të vërtetën.",
+        "tr": "Doğruyu söylüyorum.",
+        "ur": "میں سچ کہتا ہوں۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -103,21 +152,42 @@
           "en": "says",
           "bs": "govori",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sagt",
+            "fr": "dit",
+            "id": "mengatakan",
+            "sq": "thotë",
+            "tr": "söyler",
+            "ur": "کہتا ہے"
+          }
         },
         {
           "arabic": "الرَّسُولُ",
           "en": "the messenger",
           "bs": "poslanik",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Gesandte",
+            "fr": "le messager",
+            "id": "rasul",
+            "sq": "i dërguari",
+            "tr": "elçi",
+            "ur": "رسول"
+          }
         },
         {
           "arabic": "الْحَقَّ",
           "en": "the truth",
           "bs": "istinu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Wahrheit",
+            "fr": "la vérité",
+            "id": "kebenaran",
+            "sq": "të vërtetën",
+            "tr": "doğruyu, hakkı",
+            "ur": "سچ، حق"
+          }
         }
       ],
       "en": "The messenger speaks the truth.",
@@ -126,7 +196,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Der Gesandte sagt die Wahrheit.",
+        "fr": "Le messager dit la vérité.",
+        "id": "Rasul mengatakan kebenaran.",
+        "sq": "I dërguari thotë të vërtetën.",
+        "tr": "Elçi doğruyu söyler.",
+        "ur": "رسول سچ کہتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -154,14 +231,28 @@
           "en": "they said",
           "bs": "rekli su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie sagten",
+            "fr": "ils ont dit",
+            "id": "mereka berkata",
+            "sq": "ata thanë",
+            "tr": "dediler",
+            "ur": "انہوں نے کہا"
+          }
         },
         {
           "arabic": "سَلَامًا",
           "en": "peace",
           "bs": "mir",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Frieden",
+            "fr": "paix",
+            "id": "salam, damai",
+            "sq": "paqe",
+            "tr": "selam",
+            "ur": "سلام"
+          }
         }
       ],
       "en": "They said: peace.",
@@ -170,7 +261,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sie sagten: Frieden.",
+        "fr": "Ils ont dit : paix.",
+        "id": "Mereka berkata: salam.",
+        "sq": "Ata thanë: paqe.",
+        "tr": "\"Selam\" dediler.",
+        "ur": "انہوں نے کہا: سلام۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -198,14 +296,28 @@
           "en": "say",
           "bs": "reci",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sag",
+            "fr": "dis",
+            "id": "katakanlah",
+            "sq": "thuaj",
+            "tr": "söyle",
+            "ur": "کہو"
+          }
         },
         {
           "arabic": "خَيْرًا",
           "en": "good",
           "bs": "dobro",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gutes",
+            "fr": "du bien",
+            "id": "yang baik",
+            "sq": "diçka të mirë",
+            "tr": "iyi bir şey",
+            "ur": "اچھی بات"
+          }
         }
       ],
       "en": "Say something good.",
@@ -214,7 +326,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sag etwas Gutes.",
+        "fr": "Dis quelque chose de bien.",
+        "id": "Katakanlah yang baik.",
+        "sq": "Thuaj diçka të mirë.",
+        "tr": "Güzel bir şey söyle.",
+        "ur": "اچھی بات کہو۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -244,21 +363,42 @@
           "en": "was",
           "bs": "bilo je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "war",
+            "fr": "était",
+            "id": "(dulu) adalah",
+            "sq": "ishte",
+            "tr": "idi",
+            "ur": "تھا"
+          }
         },
         {
           "arabic": "الطَّقْسُ",
           "en": "the weather",
           "bs": "vrijeme",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Wetter",
+            "fr": "le temps",
+            "id": "cuaca",
+            "sq": "moti",
+            "tr": "hava",
+            "ur": "موسم"
+          }
         },
         {
           "arabic": "جَمِيلًا",
           "en": "beautiful",
           "bs": "lijepo",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "schön",
+            "fr": "beau",
+            "id": "indah",
+            "sq": "i bukur",
+            "tr": "güzel",
+            "ur": "خوبصورت"
+          }
         }
       ],
       "en": "The weather was beautiful.",
@@ -267,7 +407,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Das Wetter war schön.",
+        "fr": "Le temps était beau.",
+        "id": "Cuacanya indah.",
+        "sq": "Moti ishte i bukur.",
+        "tr": "Hava güzeldi.",
+        "ur": "موسم خوبصورت تھا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -295,14 +442,28 @@
           "en": "they were",
           "bs": "bili su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie waren",
+            "fr": "ils étaient",
+            "id": "mereka (dulu)",
+            "sq": "ata ishin",
+            "tr": "idiler",
+            "ur": "وہ تھے"
+          }
         },
         {
           "arabic": "صَادِقِينَ",
           "en": "truthful",
           "bs": "iskreni",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "aufrichtig",
+            "fr": "sincères",
+            "id": "jujur",
+            "sq": "të sinqertë",
+            "tr": "doğru sözlü",
+            "ur": "سچے"
+          }
         }
       ],
       "en": "They were truthful.",
@@ -311,7 +472,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Sie waren aufrichtig.",
+        "fr": "Ils étaient sincères.",
+        "id": "Mereka jujur.",
+        "sq": "Ata ishin të sinqertë.",
+        "tr": "Doğru sözlüydüler.",
+        "ur": "وہ سچے تھے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -390,14 +558,28 @@
           "en": "be",
           "bs": "budi",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sei",
+            "fr": "sois",
+            "id": "jadilah",
+            "sq": "ji",
+            "tr": "ol",
+            "ur": "بنو"
+          }
         },
         {
           "arabic": "صَادِقًا",
           "en": "truthful",
           "bs": "iskren",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "aufrichtig",
+            "fr": "sincère",
+            "id": "jujur",
+            "sq": "i sinqertë",
+            "tr": "doğru sözlü",
+            "ur": "سچا"
+          }
         }
       ],
       "en": "Be truthful.",
@@ -406,7 +588,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sei aufrichtig.",
+        "fr": "Sois sincère.",
+        "id": "Jadilah orang jujur.",
+        "sq": "Ji i sinqertë.",
+        "tr": "Doğru sözlü ol.",
+        "ur": "سچے بنو۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -434,14 +623,28 @@
           "en": "it was",
           "bs": "bila je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "es war",
+            "fr": "c'était",
+            "id": "adalah",
+            "sq": "ishte",
+            "tr": "idi",
+            "ur": "تھی"
+          }
         },
         {
           "arabic": "رَحْمَةً",
           "en": "a mercy",
           "bs": "milost",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Barmherzigkeit",
+            "fr": "miséricorde",
+            "id": "rahmat",
+            "sq": "mëshirë",
+            "tr": "rahmet",
+            "ur": "رحمت"
+          }
         }
       ],
       "en": "It was a mercy.",
@@ -450,7 +653,14 @@
       "pronoun": "hiya",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Es war eine Barmherzigkeit.",
+        "fr": "C'était une miséricorde.",
+        "id": "Itu adalah rahmat.",
+        "sq": "Ishte një mëshirë.",
+        "tr": "Bu bir rahmetti.",
+        "ur": "وہ ایک رحمت تھی۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -531,21 +741,42 @@
           "en": "knew",
           "bs": "znao je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "wusste",
+            "fr": "connaissait",
+            "id": "mengetahui",
+            "sq": "e dinte",
+            "tr": "bildi",
+            "ur": "جانتا تھا"
+          }
         },
         {
           "arabic": "الطَّالِبُ",
           "en": "the student",
           "bs": "student",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Schüler",
+            "fr": "l'étudiant",
+            "id": "murid itu",
+            "sq": "studenti",
+            "tr": "öğrenci",
+            "ur": "طالب علم"
+          }
         },
         {
           "arabic": "الجَوَابَ",
           "en": "the answer",
           "bs": "odgovor",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Antwort",
+            "fr": "la réponse",
+            "id": "jawabannya",
+            "sq": "përgjigjen",
+            "tr": "cevabı",
+            "ur": "جواب"
+          }
         }
       ],
       "en": "The student knew the answer.",
@@ -554,7 +785,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Der Schüler wusste die Antwort.",
+        "fr": "L'étudiant connaissait la réponse.",
+        "id": "Murid itu mengetahui jawabannya.",
+        "sq": "Studenti e dinte përgjigjen.",
+        "tr": "Öğrenci cevabı bildi.",
+        "ur": "طالب علم کو جواب معلوم تھا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -582,21 +820,42 @@
           "en": "I know",
           "bs": "znam",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "ich weiß",
+            "fr": "je sais",
+            "id": "saya tahu",
+            "sq": "e di",
+            "tr": "biliyorum",
+            "ur": "میں جانتا ہوں"
+          }
         },
         {
           "arabic": "أَنَّهُ",
           "en": "that he",
           "bs": "da je",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "dass er",
+            "fr": "qu'il",
+            "id": "bahwa dia",
+            "sq": "që ai",
+            "tr": "onun … olduğunu",
+            "ur": "کہ وہ"
+          }
         },
         {
           "arabic": "صَادِقٌ",
           "en": "truthful",
           "bs": "iskren",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "aufrichtig",
+            "fr": "sincère",
+            "id": "jujur",
+            "sq": "i sinqertë",
+            "tr": "doğru sözlü",
+            "ur": "سچا"
+          }
         }
       ],
       "en": "I know that he is truthful.",
@@ -605,7 +864,14 @@
       "pronoun": "ana",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Ich weiß, dass er aufrichtig ist.",
+        "fr": "Je sais qu'il est sincère.",
+        "id": "Saya tahu bahwa dia jujur.",
+        "sq": "E di që ai është i sinqertë.",
+        "tr": "Onun doğru sözlü olduğunu biliyorum.",
+        "ur": "میں جانتا ہوں کہ وہ سچا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -633,14 +899,28 @@
           "en": "they knew",
           "bs": "znali su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie kannten",
+            "fr": "ils connaissaient",
+            "id": "mereka mengetahui",
+            "sq": "ata e dinin",
+            "tr": "bildiler",
+            "ur": "انہوں نے جانا"
+          }
         },
         {
           "arabic": "الْحَقَّ",
           "en": "the truth",
           "bs": "istinu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Wahrheit",
+            "fr": "la vérité",
+            "id": "kebenaran",
+            "sq": "të vërtetën",
+            "tr": "doğruyu, hakkı",
+            "ur": "سچ، حق"
+          }
         }
       ],
       "en": "They knew the truth.",
@@ -649,7 +929,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sie kannten die Wahrheit.",
+        "fr": "Ils connaissaient la vérité.",
+        "id": "Mereka mengetahui kebenaran.",
+        "sq": "Ata e dinin të vërtetën.",
+        "tr": "Hakikati bildiler.",
+        "ur": "انہوں نے حق جان لیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -677,28 +964,56 @@
           "en": "knows",
           "bs": "zna",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "weiß",
+            "fr": "sait",
+            "id": "mengetahui",
+            "sq": "di",
+            "tr": "bilir",
+            "ur": "جانتا ہے"
+          }
         },
         {
           "arabic": "اللَّهُ",
           "en": "God",
           "bs": "Allah",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gott",
+            "fr": "Dieu",
+            "id": "Allah",
+            "sq": "Allahu",
+            "tr": "Allah",
+            "ur": "اللہ"
+          }
         },
         {
           "arabic": "كُلَّ",
           "en": "every",
           "bs": "svaku",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "jede",
+            "fr": "toute",
+            "id": "segala",
+            "sq": "çdo",
+            "tr": "her",
+            "ur": "ہر"
+          }
         },
         {
           "arabic": "شَيْءٍ",
           "en": "something, thing",
           "bs": "stvar",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Ding",
+            "fr": "chose",
+            "id": "sesuatu",
+            "sq": "gjë",
+            "tr": "şey",
+            "ur": "چیز"
+          }
         }
       ],
       "en": "God knows every thing.",
@@ -707,7 +1022,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Gott weiß alles.",
+        "fr": "Dieu sait toute chose.",
+        "id": "Allah mengetahui segala sesuatu.",
+        "sq": "Allahu i di të gjitha.",
+        "tr": "Allah her şeyi bilir.",
+        "ur": "اللہ ہر چیز جانتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -735,14 +1057,28 @@
           "en": "know",
           "bs": "znaj",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "wisse",
+            "fr": "sache",
+            "id": "ketahuilah",
+            "sq": "dije",
+            "tr": "bil",
+            "ur": "جان لو"
+          }
         },
         {
           "arabic": "ذَلِكَ",
           "en": "that",
           "bs": "to",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das",
+            "fr": "cela",
+            "id": "itu",
+            "sq": "këtë",
+            "tr": "bunu",
+            "ur": "یہ"
+          }
         }
       ],
       "en": "Know that.",
@@ -751,7 +1087,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Wisse das.",
+        "fr": "Sache-le.",
+        "id": "Ketahuilah itu.",
+        "sq": "Dije këtë.",
+        "tr": "Bunu bil.",
+        "ur": "یہ جان لو۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -781,14 +1124,28 @@
           "en": "believed",
           "bs": "vjerovao je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "glaubte",
+            "fr": "a cru",
+            "id": "beriman",
+            "sq": "besoi",
+            "tr": "iman etti",
+            "ur": "ایمان لائی"
+          }
         },
         {
           "arabic": "الْقَوْمُ",
           "en": "the people",
           "bs": "narod",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Volk",
+            "fr": "le peuple",
+            "id": "kaum itu",
+            "sq": "populli",
+            "tr": "kavim",
+            "ur": "قوم"
+          }
         }
       ],
       "en": "The people believed.",
@@ -797,7 +1154,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Das Volk glaubte.",
+        "fr": "Le peuple a cru.",
+        "id": "Kaum itu beriman.",
+        "sq": "Populli besoi.",
+        "tr": "Kavim iman etti.",
+        "ur": "قوم ایمان لائی۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -825,14 +1189,28 @@
           "en": "they believed",
           "bs": "vjerovali su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie glaubten",
+            "fr": "ils ont cru",
+            "id": "mereka beriman",
+            "sq": "ata besuan",
+            "tr": "iman ettiler",
+            "ur": "وہ ایمان لائے"
+          }
         },
         {
           "arabic": "بِالْحَقِّ",
           "en": "in the truth",
           "bs": "u istinu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "an die Wahrheit",
+            "fr": "en la vérité",
+            "id": "kepada kebenaran",
+            "sq": "në të vërtetën",
+            "tr": "hakka",
+            "ur": "حق پر"
+          }
         }
       ],
       "en": "They believed in the truth.",
@@ -841,7 +1219,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Sie glaubten an die Wahrheit.",
+        "fr": "Ils ont cru en la vérité.",
+        "id": "Mereka beriman kepada kebenaran.",
+        "sq": "Ata besuan në të vërtetën.",
+        "tr": "Hakka iman ettiler.",
+        "ur": "وہ حق پر ایمان لائے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -869,14 +1254,28 @@
           "en": "she believed",
           "bs": "vjerovala je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "glaubte",
+            "fr": "a cru",
+            "id": "beriman",
+            "sq": "besoi",
+            "tr": "iman etti",
+            "ur": "ایمان لائی"
+          }
         },
         {
           "arabic": "أُمِّي",
           "en": "my mother",
           "bs": "moja majka",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "meine Mutter",
+            "fr": "ma mère",
+            "id": "ibuku",
+            "sq": "nëna ime",
+            "tr": "annem",
+            "ur": "میری ماں"
+          }
         }
       ],
       "en": "My mother believed.",
@@ -885,7 +1284,14 @@
       "pronoun": "hiya",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Meine Mutter glaubte.",
+        "fr": "Ma mère a cru.",
+        "id": "Ibuku beriman.",
+        "sq": "Nëna ime besoi.",
+        "tr": "Annem iman etti.",
+        "ur": "میری ماں ایمان لائی۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -913,21 +1319,42 @@
           "en": "believes",
           "bs": "vjeruje",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "glaubt",
+            "fr": "croit",
+            "id": "percaya, beriman",
+            "sq": "beson",
+            "tr": "iman eder",
+            "ur": "ایمان رکھتا ہے"
+          }
         },
         {
           "arabic": "الْمُؤْمِنُ",
           "en": "the believer",
           "bs": "vjernik",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Gläubige",
+            "fr": "le croyant",
+            "id": "orang beriman",
+            "sq": "besimtari",
+            "tr": "mümin",
+            "ur": "مومن"
+          }
         },
         {
           "arabic": "بِالْغَيْبِ",
           "en": "in the unseen, hidden",
           "bs": "u nevidljivo",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "an das Verborgene",
+            "fr": "à l'invisible",
+            "id": "kepada yang gaib",
+            "sq": "në të fshehtën",
+            "tr": "gayba",
+            "ur": "غیب پر"
+          }
         }
       ],
       "en": "The believer believes in the unseen.",
@@ -936,7 +1363,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Der Gläubige glaubt an das Verborgene.",
+        "fr": "Le croyant croit à l'invisible.",
+        "id": "Orang beriman percaya kepada yang gaib.",
+        "sq": "Besimtari beson në të fshehtën.",
+        "tr": "Mümin gayba iman eder.",
+        "ur": "مومن غیب پر ایمان رکھتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -964,14 +1398,28 @@
           "en": "believe",
           "bs": "vjeruj",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "glaube",
+            "fr": "crois",
+            "id": "berimanlah",
+            "sq": "beso",
+            "tr": "iman et",
+            "ur": "ایمان لاؤ"
+          }
         },
         {
           "arabic": "بِاللَّهِ",
           "en": "in God",
           "bs": "u Allaha",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "an Gott",
+            "fr": "en Dieu",
+            "id": "kepada Allah",
+            "sq": "në Allahun",
+            "tr": "Allah'a",
+            "ur": "اللہ پر"
+          }
         }
       ],
       "en": "Believe in God.",
@@ -980,7 +1428,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Glaube an Gott.",
+        "fr": "Crois en Dieu.",
+        "id": "Berimanlah kepada Allah.",
+        "sq": "Beso në Allahun.",
+        "tr": "Allah'a iman et.",
+        "ur": "اللہ پر ایمان لاؤ۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1339,14 +1794,28 @@
           "en": "worked",
           "bs": "radio je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "arbeitete",
+            "fr": "a travaillé",
+            "id": "bekerja",
+            "sq": "punoi",
+            "tr": "çalıştı",
+            "ur": "کام کیا"
+          }
         },
         {
           "arabic": "الرَّجُلُ",
           "en": "the man",
           "bs": "čovjek",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Mann",
+            "fr": "l'homme",
+            "id": "laki-laki itu",
+            "sq": "burri",
+            "tr": "adam",
+            "ur": "آدمی"
+          }
         }
       ],
       "en": "The man worked.",
@@ -1355,7 +1824,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Der Mann arbeitete.",
+        "fr": "L'homme a travaillé.",
+        "id": "Laki-laki itu bekerja.",
+        "sq": "Burri punoi.",
+        "tr": "Adam çalıştı.",
+        "ur": "آدمی نے کام کیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1383,21 +1859,42 @@
           "en": "they worked",
           "bs": "radili su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie arbeiteten",
+            "fr": "ils ont travaillé",
+            "id": "mereka bekerja",
+            "sq": "ata punuan",
+            "tr": "çalıştılar",
+            "ur": "انہوں نے کام کیا"
+          }
         },
         {
           "arabic": "فِي",
           "en": "in",
           "bs": "u",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "in",
+            "fr": "dans",
+            "id": "di",
+            "sq": "në",
+            "tr": "-de",
+            "ur": "میں"
+          }
         },
         {
           "arabic": "الْبَيْتِ",
           "en": "the house",
           "bs": "kući",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Haus",
+            "fr": "la maison",
+            "id": "rumah",
+            "sq": "shtëpi",
+            "tr": "ev",
+            "ur": "گھر"
+          }
         }
       ],
       "en": "They worked in the house.",
@@ -1406,7 +1903,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Sie arbeiteten im Haus.",
+        "fr": "Ils ont travaillé dans la maison.",
+        "id": "Mereka bekerja di rumah.",
+        "sq": "Ata punuan në shtëpi.",
+        "tr": "Evde çalıştılar.",
+        "ur": "انہوں نے گھر میں کام کیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1434,21 +1938,42 @@
           "en": "I work",
           "bs": "radim",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "ich arbeite",
+            "fr": "je travaille",
+            "id": "saya bekerja",
+            "sq": "punoj",
+            "tr": "çalışırım",
+            "ur": "میں کام کرتا ہوں"
+          }
         },
         {
           "arabic": "كُلَّ",
           "en": "every",
           "bs": "svaki",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "jeden",
+            "fr": "chaque",
+            "id": "setiap",
+            "sq": "çdo",
+            "tr": "her",
+            "ur": "ہر"
+          }
         },
         {
           "arabic": "يَوْمٍ",
           "en": "day",
           "bs": "dan",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Tag",
+            "fr": "jour",
+            "id": "hari",
+            "sq": "ditë",
+            "tr": "gün",
+            "ur": "روز"
+          }
         }
       ],
       "en": "I work every day.",
@@ -1457,7 +1982,14 @@
       "pronoun": "ana",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Ich arbeite jeden Tag.",
+        "fr": "Je travaille chaque jour.",
+        "id": "Saya bekerja setiap hari.",
+        "sq": "Punoj çdo ditë.",
+        "tr": "Her gün çalışırım.",
+        "ur": "میں ہر روز کام کرتا ہوں۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1485,28 +2017,56 @@
           "en": "works",
           "bs": "radi",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "arbeitet",
+            "fr": "travaille",
+            "id": "bekerja",
+            "sq": "punon",
+            "tr": "çalışır",
+            "ur": "کام کرتا ہے"
+          }
         },
         {
           "arabic": "الْفَلَّاحُ",
           "en": "the farmer",
           "bs": "seljak",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Bauer",
+            "fr": "le paysan",
+            "id": "petani",
+            "sq": "fshatari",
+            "tr": "çiftçi",
+            "ur": "کسان"
+          }
         },
         {
           "arabic": "فِي",
           "en": "in",
           "bs": "na",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "auf",
+            "fr": "(dans)",
+            "id": "di",
+            "sq": "në",
+            "tr": "-de",
+            "ur": "پر"
+          }
         },
         {
           "arabic": "الْأَرْضِ",
           "en": "the earth, land",
           "bs": "zemlji",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Land",
+            "fr": "la terre",
+            "id": "ladang, tanah",
+            "sq": "tokë",
+            "tr": "toprak",
+            "ur": "زمین"
+          }
         }
       ],
       "en": "The farmer works on the land.",
@@ -1515,7 +2075,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Der Bauer arbeitet auf dem Land.",
+        "fr": "Le paysan travaille la terre.",
+        "id": "Petani bekerja di ladang.",
+        "sq": "Fshatari punon në tokë.",
+        "tr": "Çiftçi toprakta çalışır.",
+        "ur": "کسان زمین پر کام کرتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1543,14 +2110,28 @@
           "en": "work, do",
           "bs": "čini",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "tu",
+            "fr": "fais",
+            "id": "berbuatlah",
+            "sq": "bëj",
+            "tr": "yap",
+            "ur": "کرو"
+          }
         },
         {
           "arabic": "خَيْرًا",
           "en": "good",
           "bs": "dobro",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gutes",
+            "fr": "le bien",
+            "id": "kebaikan",
+            "sq": "mirë",
+            "tr": "iyilik",
+            "ur": "نیکی"
+          }
         }
       ],
       "en": "Do good.",
@@ -1559,7 +2140,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Tu Gutes.",
+        "fr": "Fais le bien.",
+        "id": "Berbuatlah kebaikan.",
+        "sq": "Bëj mirë.",
+        "tr": "İyilik yap.",
+        "ur": "نیکی کرو۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1589,21 +2177,42 @@
           "en": "saw",
           "bs": "vidio je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sah",
+            "fr": "a vu",
+            "id": "melihat",
+            "sq": "pa",
+            "tr": "gördü",
+            "ur": "دیکھی"
+          }
         },
         {
           "arabic": "الرَّجُلُ",
           "en": "the man",
           "bs": "čovjek",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Mann",
+            "fr": "l'homme",
+            "id": "laki-laki itu",
+            "sq": "burri",
+            "tr": "adam",
+            "ur": "آدمی"
+          }
         },
         {
           "arabic": "الْآيَةَ",
           "en": "the sign",
           "bs": "znak",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Zeichen",
+            "fr": "le signe",
+            "id": "tanda itu",
+            "sq": "shenjën",
+            "tr": "işareti",
+            "ur": "نشانی"
+          }
         }
       ],
       "en": "The man saw the sign.",
@@ -1612,7 +2221,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Der Mann sah das Zeichen.",
+        "fr": "L'homme a vu le signe.",
+        "id": "Laki-laki itu melihat tanda itu.",
+        "sq": "Burri pa shenjën.",
+        "tr": "Adam işareti gördü.",
+        "ur": "آدمی نے نشانی دیکھی۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1640,21 +2256,42 @@
           "en": "he sees",
           "bs": "vidi",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sieht",
+            "fr": "voit",
+            "id": "melihat",
+            "sq": "sheh",
+            "tr": "görür",
+            "ur": "دیکھتا ہے"
+          }
         },
         {
           "arabic": "الرَّسُولُ",
           "en": "the messenger",
           "bs": "poslanik",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Gesandte",
+            "fr": "le messager",
+            "id": "rasul",
+            "sq": "i dërguari",
+            "tr": "elçi",
+            "ur": "رسول"
+          }
         },
         {
           "arabic": "النُّورَ",
           "en": "the light",
           "bs": "svjetlo",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Licht",
+            "fr": "la lumière",
+            "id": "cahaya",
+            "sq": "dritën",
+            "tr": "ışığı",
+            "ur": "روشنی"
+          }
         }
       ],
       "en": "The messenger sees the light.",
@@ -1663,7 +2300,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Der Gesandte sieht das Licht.",
+        "fr": "Le messager voit la lumière.",
+        "id": "Rasul melihat cahaya.",
+        "sq": "I dërguari e sheh dritën.",
+        "tr": "Elçi ışığı görür.",
+        "ur": "رسول روشنی دیکھتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1869,21 +2513,42 @@
           "en": "came",
           "bs": "došao je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "kam",
+            "fr": "est venu",
+            "id": "datang",
+            "sq": "erdhi",
+            "tr": "geldi",
+            "ur": "آیا"
+          }
         },
         {
           "arabic": "الرَّسُولُ",
           "en": "the messenger",
           "bs": "poslanik",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Gesandte",
+            "fr": "le messager",
+            "id": "rasul",
+            "sq": "i dërguari",
+            "tr": "elçi",
+            "ur": "رسول"
+          }
         },
         {
           "arabic": "بِالْحَقِّ",
           "en": "with the truth",
           "bs": "s istinom",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "mit der Wahrheit",
+            "fr": "avec la vérité",
+            "id": "membawa kebenaran",
+            "sq": "me të vërtetën",
+            "tr": "hakla",
+            "ur": "حق لے کر"
+          }
         }
       ],
       "en": "The messenger came with the truth.",
@@ -1892,7 +2557,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Der Gesandte kam mit der Wahrheit.",
+        "fr": "Le messager est venu avec la vérité.",
+        "id": "Rasul datang membawa kebenaran.",
+        "sq": "I dërguari erdhi me të vërtetën.",
+        "tr": "Elçi hakkı getirdi.",
+        "ur": "رسول حق لے کر آیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1920,14 +2592,28 @@
           "en": "they came",
           "bs": "došli su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie kamen",
+            "fr": "ils sont venus",
+            "id": "mereka datang",
+            "sq": "ata erdhën",
+            "tr": "geldiler",
+            "ur": "وہ آئے"
+          }
         },
         {
           "arabic": "بِالْكِتَابِ",
           "en": "with the book",
           "bs": "s knjigom",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "mit dem Buch",
+            "fr": "avec le livre",
+            "id": "membawa buku",
+            "sq": "me librin",
+            "tr": "kitapla",
+            "ur": "کتاب لے کر"
+          }
         }
       ],
       "en": "They came with the book.",
@@ -1936,7 +2622,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "",
-      "translations": {},
+      "translations": {
+        "de": "Sie kamen mit dem Buch.",
+        "fr": "Ils sont venus avec le livre.",
+        "id": "Mereka datang membawa buku.",
+        "sq": "Ata erdhën me librin.",
+        "tr": "Kitapla geldiler.",
+        "ur": "وہ کتاب لے کر آئے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -1964,14 +2657,28 @@
           "en": "came",
           "bs": "došla je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "kam",
+            "fr": "est venue",
+            "id": "datang",
+            "sq": "erdhi",
+            "tr": "geldi",
+            "ur": "آئی"
+          }
         },
         {
           "arabic": "أُمِّي",
           "en": "my mother",
           "bs": "moja majka",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "meine Mutter",
+            "fr": "ma mère",
+            "id": "ibuku",
+            "sq": "nëna ime",
+            "tr": "annem",
+            "ur": "میری ماں"
+          }
         }
       ],
       "en": "My mother came.",
@@ -1980,7 +2687,14 @@
       "pronoun": "hiya",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Meine Mutter kam.",
+        "fr": "Ma mère est venue.",
+        "id": "Ibuku datang.",
+        "sq": "Erdhi nëna ime.",
+        "tr": "Annem geldi.",
+        "ur": "میری ماں آئی۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2008,14 +2722,28 @@
           "en": "we came",
           "bs": "došli smo",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "wir kamen",
+            "fr": "nous sommes venus",
+            "id": "kami datang",
+            "sq": "erdhëm",
+            "tr": "geldik",
+            "ur": "ہم آئے"
+          }
         },
         {
           "arabic": "مُبَكِّرِينَ",
           "en": "early",
           "bs": "rano",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "früh",
+            "fr": "tôt",
+            "id": "lebih awal",
+            "sq": "herët",
+            "tr": "erken",
+            "ur": "جلدی"
+          }
         }
       ],
       "en": "We came early.",
@@ -2024,7 +2752,14 @@
       "pronoun": "nahnu",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Wir kamen früh.",
+        "fr": "Nous sommes venus tôt.",
+        "id": "Kami datang lebih awal.",
+        "sq": "Erdhëm herët.",
+        "tr": "Erken geldik.",
+        "ur": "ہم جلدی آئے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2052,14 +2787,28 @@
           "en": "you came",
           "bs": "došao si",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "du kamst",
+            "fr": "tu es venu",
+            "id": "kamu datang",
+            "sq": "erdhe",
+            "tr": "geldin",
+            "ur": "تم آئے"
+          }
         },
         {
           "arabic": "مُتَأَخِّرًا",
           "en": "late",
           "bs": "kasno",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "spät",
+            "fr": "tard",
+            "id": "terlambat",
+            "sq": "vonë",
+            "tr": "geç",
+            "ur": "دیر سے"
+          }
         }
       ],
       "en": "You came late.",
@@ -2068,7 +2817,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Du kamst spät.",
+        "fr": "Tu es venu tard.",
+        "id": "Kamu datang terlambat.",
+        "sq": "Erdhe vonë.",
+        "tr": "Geç geldin.",
+        "ur": "تم دیر سے آئے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2098,21 +2854,42 @@
           "en": "they made",
           "bs": "učinili su",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie machten",
+            "fr": "ils ont rendu",
+            "id": "mereka menjadikan",
+            "sq": "ata bënë",
+            "tr": "getirdiler, yaptılar",
+            "ur": "انہوں نے کر دیا"
+          }
         },
         {
           "arabic": "الْبَيْتَ",
           "en": "the house",
           "bs": "kuću",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Haus",
+            "fr": "la maison",
+            "id": "rumah itu",
+            "sq": "shtëpinë",
+            "tr": "evi",
+            "ur": "گھر"
+          }
         },
         {
           "arabic": "نَظِيفًا",
           "en": "clean",
           "bs": "čistom",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "sauber",
+            "fr": "propre",
+            "id": "bersih",
+            "sq": "të pastër",
+            "tr": "temiz",
+            "ur": "صاف"
+          }
         }
       ],
       "en": "They made the house clean.",
@@ -2121,7 +2898,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sie machten das Haus sauber.",
+        "fr": "Ils ont rendu la maison propre.",
+        "id": "Mereka menjadikan rumah itu bersih.",
+        "sq": "Ata e bënë shtëpinë të pastër.",
+        "tr": "Evi temiz hâle getirdiler.",
+        "ur": "انہوں نے گھر کو صاف کر دیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2149,21 +2933,42 @@
           "en": "I made",
           "bs": "učinio sam",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "ich machte",
+            "fr": "j'ai fait",
+            "id": "aku menjadikan",
+            "sq": "e bëra",
+            "tr": "edindim, yaptım",
+            "ur": "میں نے بنایا"
+          }
         },
         {
           "arabic": "الْكِتَابَ",
           "en": "the book",
           "bs": "knjigu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Buch",
+            "fr": "le livre",
+            "id": "buku",
+            "sq": "librin",
+            "tr": "kitabı",
+            "ur": "کتاب"
+          }
         },
         {
           "arabic": "صَدِيقِي",
           "en": "my friend",
           "bs": "svojim prijateljem",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "meinem Freund",
+            "fr": "mon ami",
+            "id": "temanku",
+            "sq": "mikun tim",
+            "tr": "dostum",
+            "ur": "میرا دوست"
+          }
         }
       ],
       "en": "I made the book my friend.",
@@ -2172,7 +2977,14 @@
       "pronoun": "ana",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Ich machte das Buch zu meinem Freund.",
+        "fr": "J'ai fait du livre mon ami.",
+        "id": "Aku menjadikan buku sebagai temanku.",
+        "sq": "E bëra librin mikun tim.",
+        "tr": "Kitabı kendime dost edindim.",
+        "ur": "میں نے کتاب کو اپنا دوست بنایا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2200,28 +3012,56 @@
           "en": "made",
           "bs": "učinio je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "machte",
+            "fr": "a fait",
+            "id": "menjadikan",
+            "sq": "bëri",
+            "tr": "kıldı",
+            "ur": "بنایا"
+          }
         },
         {
           "arabic": "اللَّهُ",
           "en": "God",
           "bs": "Allah",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gott",
+            "fr": "Dieu",
+            "id": "Allah",
+            "sq": "Allahu",
+            "tr": "Allah",
+            "ur": "اللہ"
+          }
         },
         {
           "arabic": "الْأَرْضَ",
           "en": "the earth",
           "bs": "zemlju",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Erde",
+            "fr": "la terre",
+            "id": "bumi",
+            "sq": "tokën",
+            "tr": "yeryüzünü",
+            "ur": "زمین"
+          }
         },
         {
           "arabic": "فِرَاشًا",
           "en": "a bed",
           "bs": "posteljom",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "ein Bett",
+            "fr": "une couche",
+            "id": "hamparan",
+            "sq": "shtrat",
+            "tr": "döşek",
+            "ur": "بچھونا"
+          }
         }
       ],
       "en": "God made the earth a bed.",
@@ -2230,7 +3070,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Gott machte die Erde zu einem Bett.",
+        "fr": "Dieu a fait de la terre une couche.",
+        "id": "Allah menjadikan bumi sebagai hamparan.",
+        "sq": "Allahu e bëri tokën shtrat.",
+        "tr": "Allah yeryüzünü bir döşek kıldı.",
+        "ur": "اللہ نے زمین کو بچھونا بنایا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2258,35 +3105,70 @@
           "en": "makes",
           "bs": "čini",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "schafft, macht",
+            "fr": "fait, donne",
+            "id": "menjadikan",
+            "sq": "bën, sjell",
+            "tr": "kılar, verir",
+            "ur": "کر دیتا ہے"
+          }
         },
         {
           "arabic": "اللَّهُ",
           "en": "God",
           "bs": "Allah",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gott",
+            "fr": "Dieu",
+            "id": "Allah",
+            "sq": "Allahu",
+            "tr": "Allah",
+            "ur": "اللہ"
+          }
         },
         {
           "arabic": "بَعْدَ",
           "en": "after",
           "bs": "nakon",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "nach",
+            "fr": "après",
+            "id": "setelah",
+            "sq": "pas",
+            "tr": "sonra",
+            "ur": "بعد"
+          }
         },
         {
           "arabic": "عُسْرٍ",
           "en": "difficulty, hardship",
           "bs": "teškoće",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Not",
+            "fr": "difficulté",
+            "id": "kesulitan",
+            "sq": "vështirësi",
+            "tr": "zorluk",
+            "ur": "تنگی"
+          }
         },
         {
           "arabic": "يُسْرًا",
           "en": "ease",
           "bs": "olakšanje",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Erleichterung",
+            "fr": "facilité",
+            "id": "kemudahan",
+            "sq": "lehtësim",
+            "tr": "kolaylık",
+            "ur": "آسانی"
+          }
         }
       ],
       "en": "God brings ease after hardship.",
@@ -2295,7 +3177,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Gott schafft nach der Not Erleichterung.",
+        "fr": "Dieu donne la facilité après la difficulté.",
+        "id": "Allah memberikan kemudahan setelah kesulitan.",
+        "sq": "Allahu pas vështirësisë sjell lehtësim.",
+        "tr": "Allah zorluktan sonra kolaylık verir.",
+        "ur": "اللہ تنگی کے بعد آسانی کر دیتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2323,21 +3212,42 @@
           "en": "make",
           "bs": "učini",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "mach",
+            "fr": "rends",
+            "id": "jadikanlah",
+            "sq": "bëje",
+            "tr": "kıl",
+            "ur": "بناؤ"
+          }
         },
         {
           "arabic": "عَمَلَكَ",
           "en": "your work",
           "bs": "svoje djelo",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "dein Werk",
+            "fr": "ton œuvre",
+            "id": "amalmu",
+            "sq": "veprën tënde",
+            "tr": "amelini",
+            "ur": "اپنا عمل"
+          }
         },
         {
           "arabic": "خَالِصًا",
           "en": "pure, sincere",
           "bs": "iskrenim",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "aufrichtig",
+            "fr": "sincère",
+            "id": "ikhlas",
+            "sq": "të sinqertë",
+            "tr": "ihlaslı",
+            "ur": "خالص"
+          }
         }
       ],
       "en": "Make your work sincere.",
@@ -2346,7 +3256,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Mach dein Werk aufrichtig.",
+        "fr": "Rends ton œuvre sincère.",
+        "id": "Jadikanlah amalmu ikhlas.",
+        "sq": "Bëje veprën tënde të sinqertë.",
+        "tr": "Amelini ihlaslı kıl.",
+        "ur": "اپنے عمل کو خالص بناؤ۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2376,14 +3293,28 @@
           "en": "disbelieved",
           "bs": "nije vjerovao",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "war ungläubig",
+            "fr": "a mécru",
+            "id": "ingkar",
+            "sq": "mohoi",
+            "tr": "inkâr etti",
+            "ur": "کفر کیا"
+          }
         },
         {
           "arabic": "فِرْعَوْنُ",
           "en": "Pharaoh",
           "bs": "faraon",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Pharao",
+            "fr": "Pharaon",
+            "id": "Firaun",
+            "sq": "Faraoni",
+            "tr": "Firavun",
+            "ur": "فرعون"
+          }
         }
       ],
       "en": "Pharaoh disbelieved.",
@@ -2392,7 +3323,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Pharao war ungläubig.",
+        "fr": "Pharaon a mécru.",
+        "id": "Firaun ingkar.",
+        "sq": "Faraoni mohoi.",
+        "tr": "Firavun inkâr etti.",
+        "ur": "فرعون نے کفر کیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2475,21 +3413,42 @@
           "en": "not",
           "bs": "ne",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "nicht",
+            "fr": "ne … pas",
+            "id": "tidak",
+            "sq": "nuk",
+            "tr": "değil",
+            "ur": "نہیں"
+          }
         },
         {
           "arabic": "أَكْفُرُ",
           "en": "I disbelieve",
           "bs": "poričem",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "ich leugne",
+            "fr": "je renie",
+            "id": "aku ingkar",
+            "sq": "mohoj",
+            "tr": "inkâr ederim",
+            "ur": "انکار کرتا ہوں"
+          }
         },
         {
           "arabic": "بِاللَّهِ",
           "en": "in God",
           "bs": "Allaha",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gott",
+            "fr": "Dieu",
+            "id": "kepada Allah",
+            "sq": "Allahun",
+            "tr": "Allah'ı",
+            "ur": "اللہ کا"
+          }
         }
       ],
       "en": "I do not disbelieve in God.",
@@ -2498,7 +3457,14 @@
       "pronoun": "ana",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Ich leugne Gott nicht.",
+        "fr": "Je ne renie pas Dieu.",
+        "id": "Aku tidak ingkar kepada Allah.",
+        "sq": "Unë nuk e mohoj Allahun.",
+        "tr": "Allah'ı inkâr etmem.",
+        "ur": "میں اللہ کا انکار نہیں کرتا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2528,14 +3494,28 @@
           "en": "they disbelieved",
           "bs": "nisu vjerovali",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie leugneten",
+            "fr": "ils ont renié",
+            "id": "mereka mengingkari",
+            "sq": "ata mohuan",
+            "tr": "inkâr ettiler",
+            "ur": "انہوں نے انکار کیا"
+          }
         },
         {
           "arabic": "بِالْآيَاتِ",
           "en": "in the signs",
           "bs": "u znakove",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Zeichen",
+            "fr": "les signes",
+            "id": "ayat-ayat",
+            "sq": "shenjat",
+            "tr": "ayetleri",
+            "ur": "نشانیوں کا"
+          }
         }
       ],
       "en": "They disbelieved in the signs.",
@@ -2544,7 +3524,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sie leugneten die Zeichen.",
+        "fr": "Ils ont renié les signes.",
+        "id": "Mereka mengingkari ayat-ayat.",
+        "sq": "Ata i mohuan shenjat.",
+        "tr": "Ayetleri inkâr ettiler.",
+        "ur": "انہوں نے نشانیوں کا انکار کیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2574,21 +3561,42 @@
           "en": "said",
           "bs": "rekao je",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "sagte",
+            "fr": "a dit",
+            "id": "berkata",
+            "sq": "tha",
+            "tr": "dedi",
+            "ur": "کہا"
+          }
         },
         {
           "arabic": "الشَّيْطَانُ",
           "en": "Satan",
           "bs": "šejtan",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Satan",
+            "fr": "Satan",
+            "id": "setan",
+            "sq": "Shejtani",
+            "tr": "Şeytan",
+            "ur": "شیطان"
+          }
         },
         {
           "arabic": "اكْفُرْ",
           "en": "disbelieve",
           "bs": "ne vjeruj",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sei ungläubig",
+            "fr": "mécrois",
+            "id": "kafirlah",
+            "sq": "mohoje",
+            "tr": "inkâr et",
+            "ur": "کفر کر"
+          }
         }
       ],
       "en": "Satan said: disbelieve!",
@@ -2597,7 +3605,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Der Satan sagte: Sei ungläubig!",
+        "fr": "Satan a dit : mécrois !",
+        "id": "Setan berkata: Kafirlah!",
+        "sq": "Shejtani tha: Mohoje!",
+        "tr": "Şeytan \"İnkâr et!\" dedi.",
+        "ur": "شیطان نے کہا: کفر کر!"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2689,28 +3704,56 @@
           "en": "gave",
           "bs": "dao je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "gab",
+            "fr": "a donné",
+            "id": "memberikan",
+            "sq": "dha",
+            "tr": "verdi",
+            "ur": "دی"
+          }
         },
         {
           "arabic": "اللَّهُ",
           "en": "God",
           "bs": "Allah",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Gott",
+            "fr": "Dieu",
+            "id": "Allah",
+            "sq": "Allahu",
+            "tr": "Allah",
+            "ur": "اللہ"
+          }
         },
         {
           "arabic": "مُوسَى",
           "en": "Moses",
           "bs": "Musau",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Mose",
+            "fr": "Moïse",
+            "id": "Musa",
+            "sq": "Musai",
+            "tr": "Musa",
+            "ur": "موسیٰ"
+          }
         },
         {
           "arabic": "الْكِتَابَ",
           "en": "the book",
           "bs": "Knjigu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "das Buch",
+            "fr": "le Livre",
+            "id": "Kitab",
+            "sq": "Librin",
+            "tr": "Kitabı",
+            "ur": "کتاب"
+          }
         }
       ],
       "en": "God gave Moses the Book.",
@@ -2719,7 +3762,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Gott gab Mose das Buch.",
+        "fr": "Dieu a donné le Livre à Moïse.",
+        "id": "Allah memberikan Kitab kepada Musa.",
+        "sq": "Allahu i dha Musait Librin.",
+        "tr": "Allah Musa'ya Kitabı verdi.",
+        "ur": "اللہ نے موسیٰ کو کتاب دی۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2747,21 +3797,42 @@
           "en": "gives",
           "bs": "daje",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "gibt",
+            "fr": "donne",
+            "id": "menunaikan",
+            "sq": "jep",
+            "tr": "verir",
+            "ur": "دیتا ہے"
+          }
         },
         {
           "arabic": "الْغَنِيُّ",
           "en": "the rich",
           "bs": "bogataš",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "der Reiche",
+            "fr": "le riche",
+            "id": "orang kaya",
+            "sq": "i pasuri",
+            "tr": "zengin",
+            "ur": "مالدار"
+          }
         },
         {
           "arabic": "الزَّكَاةَ",
           "en": "the alms",
           "bs": "zekat",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Zakat",
+            "fr": "l'aumône (zakat)",
+            "id": "zakat",
+            "sq": "zekatin",
+            "tr": "zekâtı",
+            "ur": "زکوٰۃ"
+          }
         }
       ],
       "en": "The rich man gives the alms.",
@@ -2770,7 +3841,14 @@
       "pronoun": "huwa",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Der Reiche gibt die Zakat.",
+        "fr": "Le riche donne l'aumône.",
+        "id": "Orang kaya menunaikan zakat.",
+        "sq": "I pasuri jep zekatin.",
+        "tr": "Zengin zekâtı verir.",
+        "ur": "مالدار زکوٰۃ دیتا ہے۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2798,21 +3876,42 @@
           "en": "give",
           "bs": "daj",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "gib",
+            "fr": "donne",
+            "id": "berikan",
+            "sq": "jepi",
+            "tr": "ver",
+            "ur": "دو"
+          }
         },
         {
           "arabic": "الْفَقِيرَ",
           "en": "the poor",
           "bs": "siromahu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "dem Armen",
+            "fr": "au pauvre",
+            "id": "orang miskin",
+            "sq": "të varfrit",
+            "tr": "fakire",
+            "ur": "غریب کو"
+          }
         },
         {
           "arabic": "مَالًا",
           "en": "money",
           "bs": "novac",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Geld",
+            "fr": "de l'argent",
+            "id": "uang",
+            "sq": "para",
+            "tr": "para",
+            "ur": "مال"
+          }
         }
       ],
       "en": "Give the poor some money.",
@@ -2821,7 +3920,14 @@
       "pronoun": "anta",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Gib dem Armen Geld.",
+        "fr": "Donne de l'argent au pauvre.",
+        "id": "Berikan uang kepada orang miskin.",
+        "sq": "Jepi të varfrit para.",
+        "tr": "Fakire para ver.",
+        "ur": "غریب کو مال دو۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2851,28 +3957,56 @@
           "en": "gave",
           "bs": "dala je",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "gab",
+            "fr": "a donné",
+            "id": "memberi",
+            "sq": "dha",
+            "tr": "verdi",
+            "ur": "دیا"
+          }
         },
         {
           "arabic": "أُمِّي",
           "en": "my mother",
           "bs": "moja majka",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "meine Mutter",
+            "fr": "ma mère",
+            "id": "ibuku",
+            "sq": "nëna ime",
+            "tr": "annem",
+            "ur": "میری ماں"
+          }
         },
         {
           "arabic": "الْفَقِيرَ",
           "en": "the poor",
           "bs": "siromahu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "dem Armen",
+            "fr": "au pauvre",
+            "id": "orang miskin",
+            "sq": "të varfrit",
+            "tr": "fakire",
+            "ur": "غریب کو"
+          }
         },
         {
           "arabic": "طَعَامًا",
           "en": "food",
           "bs": "hranu",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "Essen",
+            "fr": "à manger",
+            "id": "makanan",
+            "sq": "ushqim",
+            "tr": "yemek",
+            "ur": "کھانا"
+          }
         }
       ],
       "en": "My mother gave the poor man food.",
@@ -2881,7 +4015,14 @@
       "pronoun": "hiya",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Meine Mutter gab dem Armen Essen.",
+        "fr": "Ma mère a donné à manger au pauvre.",
+        "id": "Ibuku memberi makanan kepada orang miskin.",
+        "sq": "Nëna ime i dha të varfrit ushqim.",
+        "tr": "Annem fakire yemek verdi.",
+        "ur": "میری ماں نے غریب کو کھانا دیا۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -2909,14 +4050,28 @@
           "en": "they give",
           "bs": "daju",
           "is_target": true,
-          "translations": {}
+          "translations": {
+            "de": "sie geben",
+            "fr": "ils donnent",
+            "id": "mereka menunaikan",
+            "sq": "ata japin",
+            "tr": "verirler",
+            "ur": "وہ دیتے ہیں"
+          }
         },
         {
           "arabic": "الزَّكَاةَ",
           "en": "the alms",
           "bs": "zekat",
           "is_target": false,
-          "translations": {}
+          "translations": {
+            "de": "die Zakat",
+            "fr": "l'aumône (zakat)",
+            "id": "zakat",
+            "sq": "zekatin",
+            "tr": "zekâtı",
+            "ur": "زکوٰۃ"
+          }
         }
       ],
       "en": "They give the alms.",
@@ -2925,7 +4080,14 @@
       "pronoun": "hum",
       "source": "generated",
       "drafted_by": "claude-opus-5-5, drafting pass",
-      "translations": {},
+      "translations": {
+        "de": "Sie geben die Zakat.",
+        "fr": "Ils donnent l'aumône.",
+        "id": "Mereka menunaikan zakat.",
+        "sq": "Ata japin zekatin.",
+        "tr": "Zekâtı verirler.",
+        "ur": "وہ زکوٰۃ دیتے ہیں۔"
+      },
       "checks": {
         "verb_root": true,
         "verb_form": true,
@@ -6106,7 +7268,15 @@
         "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
-      "critique": null
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer #3 (separate context)",
+        "note": "اتَّخَذَ الرَّجُلُ صَدِيقًا is correct, fully vowelled MSA: Form VIII past 3ms with a single object, as in Quranic اتَّخَذَ خَلِيلًا. 'Made a friend' / 'stekao je prijatelja' is a natural rendering, though it loses a little of the sense of deliberately choosing someone as a friend. The English gloss 'took (for himself), adopted' and the Bosnian gloss 'stekao je' are both acceptable. Nothing theologically sensitive.",
+        "independent": true
+      }
     }
   ],
   "عبد_1": [

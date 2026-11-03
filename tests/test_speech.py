@@ -16,6 +16,9 @@ from fil.speech import expected_phonemes, normalized, prepared, verdict
     ("ٱتَّبَعَ", "< i t t a b a E a"),            # a connecting alif voiced at the start
     ("ٱدْعُ", "< u d E u"),                        # …with u when the next vowel is u
     ("كافِر", "k aa f i r"),                       # an unwritten fatha before alif
+    ("هَذَا", "h aa * aa"),                        # the long ā print does not write
+    ("ذَلِكَ", "* aa l i k a"),
+    ("الْغَنِيُّ", "< a l g a n i y y u"),        # a doubled y, not a long ī
 ])
 def test_words_are_read_as_their_vowels_say(text, sounds):
     assert " ".join(expected_phonemes(prepared(text))) == sounds
@@ -39,3 +42,13 @@ def test_a_reading_that_differs_from_the_model_is_not_faithful():
     model_says_kana = lambda text: "k a n a"  # noqa: E731 - the model's real bug
     assert not verdict("كَانَ", model_says_kana).is_faithful
     assert verdict("كَانَ", lambda text: "k aa n a").is_faithful
+
+
+@pytest.mark.parametrize("text, sounds", [
+    ("بِاللَّهِ", "b i l l aa h i"),              # bi-llāhi: one doubled l, long ā
+    ("لِلَّهِ", "l i l l aa h i"),
+    ("اللَّهُ", "< a l l aa h u"),
+    ("يَعْلَمُ اللَّهُ", "y a E l a m u + l l aa h u"),
+])
+def test_the_name_of_god_is_read_with_its_long_a(text, sounds):
+    assert " ".join(expected_phonemes(prepared(text))) == sounds

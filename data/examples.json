@@ -13723,6 +13723,50 @@
         "note": "",
         "independent": true
       }
+    },
+    {
+      "arabic": "اِسْأَلْ أُمَّكَ",
+      "words": [
+        {
+          "arabic": "اِسْأَلْ",
+          "en": "ask",
+          "bs": "pitaj",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "أُمَّكَ",
+          "en": "your mother",
+          "bs": "svoju majku",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Ask your mother.",
+      "bs": "Pitaj svoju majku.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Correct form I imperative (anta) with full harakat; natural everyday sentence, not Quranic wording.",
+        "independent": true
+      }
     }
   ],
   "وجد_1": [
@@ -21801,12 +21845,12 @@
         "glossed_by_exception": []
       },
       "critique": {
-        "approved": true,
+        "approved": false,
         "grammar_ok": true,
         "translation_ok": true,
-        "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "Quranic phrasing (4:84); acceptable, but as a bare command to the learner consider presenting it as a cited verse or preferring narrative forms.",
+        "verb_usage_ok": false,
+        "by": "orchestrator policy: no Quranic wording or fighting commands in practice sentences",
+        "note": "Reproduces Quranic wording (4:84 فَقَاتِلْ فِي سَبِيلِ اللَّهِ) while practice sentences are labelled not from the Quran, and as a bare command to the learner a call to fight is inappropriate.",
         "independent": true
       }
     },
@@ -22011,6 +22055,50 @@
         "verb_usage_ok": true,
         "by": "claude subagent, blind reviewer (separate context)",
         "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "قَاتِلْ يَأْسَكَ",
+      "words": [
+        {
+          "arabic": "قَاتِلْ",
+          "en": "fight",
+          "bs": "bori se protiv",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "يَأْسَكَ",
+          "en": "your despair",
+          "bs": "svog očaja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Fight your despair.",
+      "bs": "Bori se protiv svog očaja.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "The imperative of قاتَلَ ('fight, do combat') is a command to fight, which the rules forbid even when used figuratively, and قاتَلَ normally takes a human opponent, so with despair as object حارِبْ would be the natural verb.",
         "independent": true
       }
     }
@@ -23766,6 +23854,50 @@
         "verb_usage_ok": true,
         "by": "claude subagent, blind reviewer (separate context)",
         "note": "Acceptable; intransitive زَادَ with a human plural subject meaning 'grow in number' is attested (cf. Q 37:147 أَوْ يَزِيدُونَ). Present/hum as claimed. The bs gloss 'studenata' (genitive) fits the Bosnian sentence. يَزْدَادُ عَدَدُ الطُّلَّابِ would be more common in MSA, but the sentence is fine as it stands.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "زِدْ مِلْحًا",
+      "words": [
+        {
+          "arabic": "زِدْ",
+          "en": "add",
+          "bs": "dodaj",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "مِلْحًا",
+          "en": "salt",
+          "bs": "soli",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Add some salt.",
+      "bs": "Dodaj soli.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Correct hollow-verb imperative زِدْ with indefinite object; natural kitchen usage, translations accurate.",
         "independent": true
       }
     }

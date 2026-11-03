@@ -22,12 +22,13 @@ clean is a separate question for a human ear.
 
 from __future__ import annotations
 
-import hashlib
 import re
 import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
+
+from fil.audio import SPEECH_BITRATE, compact_aac_command, compact_clip_name
 
 FATHA, DAMMA, KASRA, SUKUN, SHADDA = "َ", "ُ", "ِ", "ْ", "ّ"
 FATHATAN, DAMMATAN, KASRATAN = "ً", "ٌ", "ٍ"
@@ -310,8 +311,8 @@ class TtsArabicVoice:
             tts(vocalized_text, speaker=self._speaker, pace=self._pace,
                 save_to=str(wave), bits_per_sample=16)
             out_path.parent.mkdir(parents=True, exist_ok=True)
-            subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "48000",
-                            str(wave), str(out_path)], check=True, capture_output=True)
+            subprocess.run(compact_aac_command(wave, out_path, SPEECH_BITRATE),
+                           check=True, capture_output=True)
 
 
 class SpeechLibrary:
@@ -326,7 +327,7 @@ class SpeechLibrary:
         """The m4a for this text, rendered on first use and reused after."""
         self.verdicts.setdefault(text, self._voice.check(text))
         reading = " ".join(expected_phonemes(prepared(text)))
-        path = self._cache / f"{hashlib.sha1(reading.encode()).hexdigest()}.m4a"
+        path = self._cache / compact_clip_name(reading, SPEECH_BITRATE)
         if not path.exists():
             self._voice.render(text, path)
         return path

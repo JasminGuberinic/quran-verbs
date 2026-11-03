@@ -18,7 +18,7 @@ from functools import lru_cache
 
 from datetime import datetime, timedelta, timezone
 
-from fil import agenda, agenda_store, example_store
+from fil import agenda, agenda_store, conjugation_overrides, example_store
 from fil.agenda import Job
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
@@ -31,7 +31,7 @@ from fil.governor import permit
 from fil.journal import Event
 from fil import journal, journal_store
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
-from fil.resources import AGENDA_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
+from fil.resources import AGENDA_JSON, CONJUGATION_OVERRIDES_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
@@ -60,6 +60,20 @@ class Cell:
     generator_agrees: bool | None
     alternatives: tuple[str, ...] = field(default_factory=tuple)
     generated_form: str = ""   # the generator's own spelling — imlāʾī, which the drill ships
+    # Standard spellings written down by hand (data/conjugation_overrides.json) where the
+    # generator gives none or the analyzer reads none — see fil.conjugation_overrides.
+    documented: tuple[str, ...] = field(default_factory=tuple)
+
+    @property
+    def plain(self) -> str:
+        """The spelling a learner reads and hears: standard where we have one, else the Quran's."""
+        return self.generated_form or next(iter(self.documented), "") or self.arabic
+
+    @property
+    def spellings(self) -> tuple[str, ...]:
+        """Every spelling of this cell the engine stands behind, attested first."""
+        every = (self.arabic, self.generated_form, *self.alternatives, *self.documented)
+        return tuple(spelling for spelling in every if spelling)
 
 
 @dataclass(frozen=True)
@@ -214,6 +228,7 @@ def get_verb(root: str, form: int, conjugators: list[Conjugator] | None = None) 
     verb = build_verb(entry, _attested(root, form))
     reconciled = _reconcile_entry(entry, conjugators)
     cells, counts = _cells(reconciled, _attested(root, form))
+    cells = tuple(_with_documented_spellings(entry, cell) for cell in cells)
     return VerbDetail(
         root=entry.root,
         form=entry.form,
@@ -268,7 +283,22 @@ def _table_forms(root: str, form: int, draft: Example) -> frozenset[str]:
                  if c.tense == draft.tense and c.pronoun == draft.pronoun), None)
     if cell is None:
         return frozenset()
-    return frozenset(spelling_key(spelling) for spelling in (cell.arabic, cell.generated_form, *cell.alternatives) if spelling)
+    return frozenset(spelling_key(spelling) for spelling in cell.spellings)
+
+
+def _with_documented_spellings(entry: VerbEntry, cell: Cell) -> Cell:
+    documented = conjugation_overrides.documented_spellings(
+        _conjugation_overrides(), entry.root, entry.form, cell.tense, cell.pronoun)
+    return replace(cell, documented=documented) if documented else cell
+
+
+@lru_cache(maxsize=1)
+def _conjugation_overrides() -> conjugation_overrides.Overrides:
+    """Hand-documented standard spellings: {(root, form): {(tense, pronoun): override}}."""
+    if not CONJUGATION_OVERRIDES_JSON.exists():
+        return {}
+    return conjugation_overrides.parse_overrides(
+        json.loads(CONJUGATION_OVERRIDES_JSON.read_text(encoding="utf-8")))
 
 
 @lru_cache(maxsize=1)
@@ -435,7 +465,11 @@ def _writable_spelling(cell: Cell, analyze: Analyze | None) -> tuple[str | None,
     would hand the drafter a word its own gate then rejects, so we look through the cell's
     equivalent spellings for one that analyses, and say plainly when it is not the Quran's.
     """
-    for candidate in (cell.arabic, cell.generated_form, *cell.alternatives):
+    # A documented spelling exists precisely because the others are not writable; the gate
+    # confirms it letter for letter against the table even where the analyzer reads nothing.
+    if cell.documented:
+        return cell.documented[0], "documented override (data/conjugation_overrides.json); the gate confirms it by the table"
+    for candidate in cell.spellings:
         if lookup_word(candidate, analyze).is_analyzable:
             if candidate == cell.arabic:
                 return candidate, ""
@@ -672,6 +706,8 @@ _EVENT_FOR = {
     agenda.CHECKED: journal.GATED,
     agenda.REVIEWED: journal.JUDGED,
     agenda.PARKED: journal.PARKED,
+    # The only way back to todo is a deliberate un-park, which re-plans the cell.
+    agenda.TODO: journal.PLANNED,
 }
 
 

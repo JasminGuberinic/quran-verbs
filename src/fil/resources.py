@@ -12,6 +12,7 @@ GOLDEN_JSON = DATA_DIR / "golden_sentences.json"  # sentences whose verdict we a
 JOURNAL_JSONL = DATA_DIR / "journal.jsonl"   # append-only record of what happened (fil.journal)
 AUDIO_DIR = BUILD_DIR / "audio"
 GLOSS_EXCEPTIONS_JSON = DATA_DIR / "gloss_exceptions.json"  # documented lexicon gaps
+CONJUGATION_OVERRIDES_JSON = DATA_DIR / "conjugation_overrides.json"  # documented standard spellings
 AYAH_TRANSLATIONS_DIR = DATA_DIR / "translations"  # free ayah translations (fetched, git-ignored)
 AYAH_VERB_GLOSSES_JSON = DATA_DIR / "ayah_verb_glosses.json"  # the example verbs, translated in context
 MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per language

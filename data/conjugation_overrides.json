@@ -1,0 +1,14 @@
+{
+ "سأل_1": {
+  "imperative:anta": {
+   "spellings": ["اِسْأَلْ", "سَلْ"],
+   "why": "The generator skips this hamzated verb, so the table holds only the Uthmani سْـَٔلِ (12:82). اِسْأَلْ is the standard full imperative and سَلْ the classical short one (cf. 2:211 سَلْ)."
+  }
+ },
+ "زيد_1": {
+  "imperative:anta": {
+   "spellings": ["زِدْ"],
+   "why": "The hollow imperative زِدْ (20:114 رَبِّ زِدْنِي عِلْمًا) is too short for the analyzer to read, so no analyzable spelling exists; this records it as the documented standard form the gate confirms by the table."
+  }
+ }
+}

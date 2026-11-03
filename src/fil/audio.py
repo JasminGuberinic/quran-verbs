@@ -15,6 +15,7 @@ consistent and free of gaps/clipping.
 
 from __future__ import annotations
 
+import hashlib
 import re
 import subprocess
 import tempfile
@@ -57,6 +58,24 @@ _TRIM_FILTER = f"{_TRIM},areverse,{_TRIM},areverse"
 # construction (a target below 0 dBFS can never clip). This is the right tool for
 # sub-second words, where loudnorm's ~3 s integration window is unreliable.
 _PEAK_TARGET_DB = -3.0
+
+# The site embeds every clip in its pages, and a published version is capped at 256 MB, so
+# clips ship as small mono AAC: speech is 22 kHz synthetic and stays clear at 24 kb/s;
+# recitation carries more (a reciter's voice, the room) and keeps 32 kb/s.
+SPEECH_BITRATE = 24_000
+RECITATION_BITRATE = 32_000
+
+
+def compact_aac_command(source: Path, target: Path, bitrate: int) -> list[str]:
+    """The afconvert call that encodes a clip as mono AAC at this bitrate."""
+    return ["afconvert", "-f", "m4af", "-d", "aac", "-c", "1", "-b", str(bitrate),
+            str(source), str(target)]
+
+
+def compact_clip_name(content_key: str, bitrate: int) -> str:
+    """A cache file name that changes with the bitrate, so a re-encode never reuses an old clip."""
+    return f"{hashlib.sha1(content_key.encode()).hexdigest()}-{bitrate // 1000}k.m4a"
+
 
 # Below this the trimmed clip has effectively no speech — a failed render we
 # refuse, rather than amplifying noise up to the target.

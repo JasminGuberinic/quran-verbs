@@ -20,6 +20,7 @@ from fil.service import (
     brief_for,
     coverage,
     examples_to_critique,
+    gate,
     get_verb,
     list_verbs,
     lookup_word,
@@ -359,3 +360,32 @@ def test_syncing_never_takes_a_job_back_from_the_person_it_was_handed_to(tmp_pat
     sync_agenda(path=agenda_path, examples_path=examples)
 
     assert store.find(key, agenda_path).state == "parked"
+
+
+def _imperative_anta(root: str):
+    return next(c for c in get_verb(root, 1).cells if (c.tense, c.pronoun) == ("imperative", "anta"))
+
+
+def test_a_documented_spelling_gives_an_uthmani_only_cell_a_plain_form():
+    # سَأَلَ is not generated, so without the override the learner would see only سْـَٔلِ.
+    cell = _imperative_anta("سأل")
+
+    assert cell.source == "attested" and cell.arabic != cell.plain   # the Quran's spelling stays the truth
+    assert cell.documented == ("اِسْأَلْ", "سَلْ")
+    assert cell.plain == "اِسْأَلْ"
+
+
+def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp_path):
+    path = tmp_path / "agenda.json"
+    plan_verb("زيد", 1, cells=[("imperative", "anta")], path=path, examples_path=tmp_path / "none.json")
+    reads_nothing = lambda word: []  # noqa: E731 - the analyzer's real view of زِدْ
+    draft = Example(arabic="زِدْ الْمَاءَ", words=(ExampleWord("زِدْ", "add", "dodaj", is_target=True),
+                                                 ExampleWord("الْمَاءَ", "the water", "vode")),
+                    en="Add water.", bs="Dodaj vode.", tense="imperative", pronoun="anta")
+
+    brief = brief_for(next_job(path=path), word_limit=1, analyze=reads_nothing)
+    checks = gate("زيد", 1, draft, analyze=lambda word: [] if word == "زِدْ" else [
+        {"pos": "noun", "root": "م.و.ه", "gloss": "water"}], features_for=lambda *_: {"asp": "c"}).checks
+
+    assert brief.writable_form == "زِدْ" and "documented" in brief.writable_note
+    assert checks.verb_form_by == "corpus table" and checks.passed

@@ -22,7 +22,6 @@ reader (fil.speech). Where the two readers disagree, the build says so.
 from __future__ import annotations
 
 import base64
-import hashlib
 import json
 import shutil
 import subprocess
@@ -30,6 +29,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from fil import example_store, meanings, service, study
+from fil.audio import RECITATION_BITRATE, compact_aac_command, compact_clip_name
 from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
@@ -76,11 +76,11 @@ class _Sound:
     def _recited(self, site_path: str) -> str:
         """Recitations arrive as large MP3s (a single word is 320 kb/s); ship them compact."""
         source = RECITATION_CACHE / site_path
-        compact = _COMPRESSED / f"{hashlib.sha1(site_path.encode()).hexdigest()}.m4a"
+        compact = _COMPRESSED / compact_clip_name(site_path, RECITATION_BITRATE)
         if not compact.exists():
             compact.parent.mkdir(parents=True, exist_ok=True)
-            subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "64000",
-                            str(source), str(compact)], check=True, capture_output=True)
+            subprocess.run(compact_aac_command(source, compact, RECITATION_BITRATE),
+                           check=True, capture_output=True)
         return _data_uri(compact)
 
 
@@ -170,7 +170,7 @@ def _verb_view(meaning, summary, rank: int, total: int, corpus: _Corpus, sound: 
 
 def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) -> dict:
     """One conjugation cell: always spoken, and recited too where the Quran recites it."""
-    plain = cell.generated_form or cell.arabic
+    plain = cell.plain
     recitation = recitations.get(cell.arabic) if cell.source == "attested" else None
     return {
         "tense": cell.tense, "pronoun": cell.pronoun, "arabic": cell.arabic,

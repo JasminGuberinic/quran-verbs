@@ -17,6 +17,18 @@ the compact files and read only what a step needs.
 - Don't make product decisions alone; ask the user (in Bosnian, briefly).
 - Commit when the batch is done; never push.
 
+## Content policy (practice sentences)
+- **First-person forms only God speaks in the Quran** (the I/We of revealing, creating,
+  forbidding, punishing, calling, sending…) get **no** practice sentence. Don't draft them:
+  hand the job to a human right away (`service.hand_to_human(key, "<form> is spoken only by
+  God in the Quran; a practice sentence would put invented words in His mouth")`).
+- **No Quranic wording.** The site labels practice sentences "not from the Quran", so never
+  reproduce an ayah's phrase (e.g. قَاتِلْ فِي سَبِيلِ اللَّهِ, 4:84).
+- **No fighting commands** addressed to the learner.
+- **No "؟"** in practice sentences.
+- A cell with no standard spelling the gate can use gets a documented entry in
+  `data/conjugation_overrides.json` (spellings + why), never a loosened check.
+
 ## Steps
 1. `fil batch plan FROM TO` → `build/batch/plan.tsv` (job, the form to write, cell),
    `todo-meanings.tsv`, `todo-ayah.tsv`. (Already run for 26–50.)

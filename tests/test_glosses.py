@@ -44,3 +44,8 @@ def test_a_third_person_s_meets_its_base_form():
     # "he makes" glosses يَجْعَلُ; the lexicon says "make". "makes" once stemmed to "mak".
     assert gloss_agrees("makes", ["make;bring_about;appoint"]) is True
     assert gloss_agrees("teaches", ["teach;instruct"]) is True
+
+
+def test_an_ied_form_meets_its_y_base():
+    assert gloss_agrees("denied", ["deny;refute;contradict;belie+he;it_<verb>"]) is True
+    assert gloss_agrees("denies", ["he;it+deny;refute"]) is True

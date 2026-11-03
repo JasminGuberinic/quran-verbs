@@ -95,6 +95,8 @@ def _base_form(word: str) -> str:
 
 
 def _stem(word: str) -> str:
+    if word.endswith(("ied", "ies")) and len(word) >= 5:
+        return word[:-3] + "y"                      # "denied", "denies" → "deny"
     if word.endswith("es") and not word.endswith(_SIBILANT_ES) and len(word) - 1 >= 3:
         return _without_silent_e(word[:-1])         # "makes" → "make", not "mak"
     for suffix in _SUFFIXES:

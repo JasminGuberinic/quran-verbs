@@ -2631,5 +2631,1561 @@
       },
       "critique": null
     }
+  ],
+  "دعو_1": [
+    {
+      "arabic": "دَعَا نُوحٌ قَوْمَهُ",
+      "words": [
+        {
+          "arabic": "دَعَا",
+          "en": "called",
+          "bs": "pozvao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "نُوحٌ",
+          "en": "Noah",
+          "bs": "Nuh",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "قَوْمَهُ",
+          "en": "his people",
+          "bs": "svoj narod",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Noah called his people.",
+      "bs": "Nuh je pozvao svoj narod.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَدْعُو الْمُسْلِمُ رَبَّهُ",
+      "words": [
+        {
+          "arabic": "يَدْعُو",
+          "en": "calls",
+          "bs": "doziva",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُسْلِمُ",
+          "en": "the Muslim",
+          "bs": "musliman",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّهُ",
+          "en": "his Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The Muslim calls upon his Lord.",
+      "bs": "Musliman doziva svog Gospodara.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَدْعُو اللَّهَ",
+      "words": [
+        {
+          "arabic": "أَدْعُو",
+          "en": "I call",
+          "bs": "dozivam",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهَ",
+          "en": "God",
+          "bs": "Allaha",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I call upon God.",
+      "bs": "Dozivam Allaha.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "دَعَوْا رَبَّهُمْ",
+      "words": [
+        {
+          "arabic": "دَعَوْا",
+          "en": "they called",
+          "bs": "dozivali su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّهُمْ",
+          "en": "their Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They called upon their Lord.",
+      "bs": "Dozivali su svog Gospodara.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "ادْعُ رَبَّكَ",
+      "words": [
+        {
+          "arabic": "ادْعُ",
+          "en": "call",
+          "bs": "dozivaj",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّكَ",
+          "en": "your Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Call upon your Lord.",
+      "bs": "Dozivaj svog Gospodara.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "وقي_8": [
+    {
+      "arabic": "اتَّقَى الْمُؤْمِنُ رَبَّهُ",
+      "words": [
+        {
+          "arabic": "اتَّقَى",
+          "en": "was mindful, beware",
+          "bs": "bojao se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤْمِنُ",
+          "en": "the believer",
+          "bs": "vjernik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّهُ",
+          "en": "his Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The believer was mindful of his Lord.",
+      "bs": "Vjernik se bojao svog Gospodara.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَتَّقِي الْمُؤْمِنُ اللَّهَ",
+      "words": [
+        {
+          "arabic": "يَتَّقِي",
+          "en": "is mindful, bewares",
+          "bs": "boji se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤْمِنُ",
+          "en": "the believer",
+          "bs": "vjernik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهَ",
+          "en": "God",
+          "bs": "Allaha",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The believer is mindful of God.",
+      "bs": "Vjernik se boji Allaha.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "اتَّقَوْا رَبَّهُمْ",
+      "words": [
+        {
+          "arabic": "اتَّقَوْا",
+          "en": "they were mindful, beware",
+          "bs": "bojali su se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّهُمْ",
+          "en": "their Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They were mindful of their Lord.",
+      "bs": "Bojali su se svog Gospodara.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "اتَّقِ اللَّهَ",
+      "words": [
+        {
+          "arabic": "اتَّقِ",
+          "en": "be mindful, beware",
+          "bs": "boj se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهَ",
+          "en": "God",
+          "bs": "Allaha",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Be mindful of God.",
+      "bs": "Boj se Allaha.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "هدي_1": [
+    {
+      "arabic": "هَدَى اللَّهُ الْمُؤْمِنِينَ",
+      "words": [
+        {
+          "arabic": "هَدَى",
+          "en": "guided",
+          "bs": "uputio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Allah",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤْمِنِينَ",
+          "en": "the believers",
+          "bs": "vjernike",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "God guided the believers.",
+      "bs": "Allah je uputio vjernike.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَهْدِي الْقُرْآنُ النَّاسَ",
+      "words": [
+        {
+          "arabic": "يَهْدِي",
+          "en": "guides",
+          "bs": "upućuje",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْقُرْآنُ",
+          "en": "the Quran",
+          "bs": "Kur'an",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "النَّاسَ",
+          "en": "people",
+          "bs": "ljude",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The Quran guides people.",
+      "bs": "Kur'an upućuje ljude.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "رود_4": [
+    {
+      "arabic": "أَرَادَ الطَّالِبُ الْعِلْمَ",
+      "words": [
+        {
+          "arabic": "أَرَادَ",
+          "en": "wanted",
+          "bs": "htio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّالِبُ",
+          "en": "the student",
+          "bs": "student",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْعِلْمَ",
+          "en": "knowledge, science",
+          "bs": "znanje",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The student wanted knowledge.",
+      "bs": "Student je htio znanje.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يُرِيدُ اللَّهُ الْيُسْرَ",
+      "words": [
+        {
+          "arabic": "يُرِيدُ",
+          "en": "wants",
+          "bs": "želi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Allah",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْيُسْرَ",
+          "en": "ease",
+          "bs": "olakšanje",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "God wants ease.",
+      "bs": "Allah želi olakšanje.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أُرِيدُ الْخَيْرَ",
+      "words": [
+        {
+          "arabic": "أُرِيدُ",
+          "en": "I want",
+          "bs": "želim",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْخَيْرَ",
+          "en": "good, the best",
+          "bs": "dobro",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I want what is good.",
+      "bs": "Želim dobro.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَرَادُوا السَّلَامَ",
+      "words": [
+        {
+          "arabic": "أَرَادُوا",
+          "en": "they wanted",
+          "bs": "htjeli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "السَّلَامَ",
+          "en": "peace",
+          "bs": "mir",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They wanted peace.",
+      "bs": "Htjeli su mir.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "تبع_8": [
+    {
+      "arabic": "اتَّبَعَ الْوَلَدُ أَبَاهُ",
+      "words": [
+        {
+          "arabic": "اتَّبَعَ",
+          "en": "followed",
+          "bs": "slijedio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْوَلَدُ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَبَاهُ",
+          "en": "his father",
+          "bs": "svog oca",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The child followed his father.",
+      "bs": "Dijete je slijedilo svog oca.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَتَّبِعُ الْمُسْلِمُ الْهُدَى",
+      "words": [
+        {
+          "arabic": "يَتَّبِعُ",
+          "en": "follows",
+          "bs": "slijedi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُسْلِمُ",
+          "en": "the Muslim",
+          "bs": "musliman",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْهُدَى",
+          "en": "guidance",
+          "bs": "uputu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The Muslim follows guidance.",
+      "bs": "Musliman slijedi uputu.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَتَّبِعُ الْحَقَّ",
+      "words": [
+        {
+          "arabic": "أَتَّبِعُ",
+          "en": "I follow",
+          "bs": "slijedim",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَقَّ",
+          "en": "the truth",
+          "bs": "istinu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I follow the truth.",
+      "bs": "Slijedim istinu.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "اتَّبَعُوا الرَّسُولَ",
+      "words": [
+        {
+          "arabic": "اتَّبَعُوا",
+          "en": "they followed",
+          "bs": "slijedili su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّسُولَ",
+          "en": "the messenger",
+          "bs": "poslanika",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They followed the messenger.",
+      "bs": "Slijedili su poslanika.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "اتَّبِعْ طَرِيقَ الْخَيْرِ",
+      "words": [
+        {
+          "arabic": "اتَّبِعْ",
+          "en": "follow",
+          "bs": "slijedi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "طَرِيقَ",
+          "en": "path, way",
+          "bs": "put",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْخَيْرِ",
+          "en": "good",
+          "bs": "dobra",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Follow the path of good.",
+      "bs": "Slijedi put dobra.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "رسل_4": [
+    {
+      "arabic": "أَرْسَلَ اللَّهُ رَسُولًا",
+      "words": [
+        {
+          "arabic": "أَرْسَلَ",
+          "en": "sent",
+          "bs": "poslao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Allah",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "رَسُولًا",
+          "en": "a messenger",
+          "bs": "poslanika",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "God sent a messenger.",
+      "bs": "Allah je poslao poslanika.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يُرْسِلُ اللَّهُ الرِّيَاحَ",
+      "words": [
+        {
+          "arabic": "يُرْسِلُ",
+          "en": "sends",
+          "bs": "šalje",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Allah",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الرِّيَاحَ",
+          "en": "the winds",
+          "bs": "vjetrove",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "God sends the winds.",
+      "bs": "Allah šalje vjetrove.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَرْسَلُوا رِسَالَةً",
+      "words": [
+        {
+          "arabic": "أَرْسَلُوا",
+          "en": "they sent",
+          "bs": "poslali su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رِسَالَةً",
+          "en": "a letter",
+          "bs": "pismo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They sent a letter.",
+      "bs": "Poslali su pismo.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَرْسِلْ رِسَالَةً",
+      "words": [
+        {
+          "arabic": "أَرْسِلْ",
+          "en": "send",
+          "bs": "pošalji",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رِسَالَةً",
+          "en": "a letter",
+          "bs": "pismo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Send a letter.",
+      "bs": "Pošalji pismo.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "أخذ_1": [
+    {
+      "arabic": "أَخَذَ الطِّفْلُ الْكِتَابَ",
+      "words": [
+        {
+          "arabic": "أَخَذَ",
+          "en": "took",
+          "bs": "uzeo je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطِّفْلُ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكِتَابَ",
+          "en": "the book",
+          "bs": "knjigu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The child took the book.",
+      "bs": "Dijete je uzelo knjigu.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَأْخُذُ الطَّالِبُ الْكِتَابَ",
+      "words": [
+        {
+          "arabic": "يَأْخُذُ",
+          "en": "takes",
+          "bs": "uzima",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّالِبُ",
+          "en": "the student",
+          "bs": "student",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكِتَابَ",
+          "en": "the book",
+          "bs": "knjigu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The student takes the book.",
+      "bs": "Student uzima knjigu.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "خُذْ هَذَا",
+      "words": [
+        {
+          "arabic": "خُذْ",
+          "en": "take",
+          "bs": "uzmi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "هَذَا",
+          "en": "this",
+          "bs": "ovo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Take this.",
+      "bs": "Uzmi ovo.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "أخذ_8": [
+    {
+      "arabic": "اتَّخَذَ الرَّجُلُ صَدِيقًا",
+      "words": [
+        {
+          "arabic": "اتَّخَذَ",
+          "en": "took, adopted",
+          "bs": "uzeo je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقًا",
+          "en": "a friend",
+          "bs": "prijatelja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The man took a friend.",
+      "bs": "Čovjek je uzeo prijatelja.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَتَّخِذُ الْمُؤْمِنُ الْقُرْآنَ إِمَامًا",
+      "words": [
+        {
+          "arabic": "يَتَّخِذُ",
+          "en": "takes, adopts",
+          "bs": "uzima",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤْمِنُ",
+          "en": "the believer",
+          "bs": "vjernik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْقُرْآنَ",
+          "en": "the Quran",
+          "bs": "Kur'an",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "إِمَامًا",
+          "en": "a leader, imam",
+          "bs": "za vođu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The believer takes the Quran as a guide.",
+      "bs": "Vjernik uzima Kur'an za vođu.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَتَّخِذُ الْكِتَابَ صَدِيقًا",
+      "words": [
+        {
+          "arabic": "أَتَّخِذُ",
+          "en": "I take, adopt",
+          "bs": "uzimam",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكِتَابَ",
+          "en": "the book",
+          "bs": "knjigu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقًا",
+          "en": "a friend",
+          "bs": "za prijatelja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I take the book as a friend.",
+      "bs": "Uzimam knjigu za prijatelja.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "اتَّخَذُوا بَيْتًا",
+      "words": [
+        {
+          "arabic": "اتَّخَذُوا",
+          "en": "they took, adopted",
+          "bs": "uzeli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "بَيْتًا",
+          "en": "a house",
+          "bs": "kuću",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They took a house.",
+      "bs": "Uzeli su kuću.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "عبد_1": [
+    {
+      "arabic": "عَبَدَ النَّبِيُّ رَبَّهُ",
+      "words": [
+        {
+          "arabic": "عَبَدَ",
+          "en": "worshipped",
+          "bs": "obožavao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "النَّبِيُّ",
+          "en": "the Prophet",
+          "bs": "Vjerovjesnik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّهُ",
+          "en": "his Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The Prophet worshipped his Lord.",
+      "bs": "Vjerovjesnik je obožavao svog Gospodara.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "يَعْبُدُ الْمُؤْمِنُ اللَّهَ",
+      "words": [
+        {
+          "arabic": "يَعْبُدُ",
+          "en": "worships",
+          "bs": "obožava",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤْمِنُ",
+          "en": "the believer",
+          "bs": "vjernik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهَ",
+          "en": "God",
+          "bs": "Allaha",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The believer worships God.",
+      "bs": "Vjernik obožava Allaha.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "أَعْبُدُ اللَّهَ",
+      "words": [
+        {
+          "arabic": "أَعْبُدُ",
+          "en": "I worship",
+          "bs": "obožavam",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهَ",
+          "en": "God",
+          "bs": "Allaha",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I worship God.",
+      "bs": "Obožavam Allaha.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "اعْبُدْ رَبَّكَ",
+      "words": [
+        {
+          "arabic": "اعْبُدْ",
+          "en": "worship",
+          "bs": "obožavaj",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "رَبَّكَ",
+          "en": "your Lord",
+          "bs": "svog Gospodara",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Worship your Lord.",
+      "bs": "Obožavaj svog Gospodara.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
+  ],
+  "ظلم_1": [
+    {
+      "arabic": "ظَلَمَ الْمَلِكُ النَّاسَ",
+      "words": [
+        {
+          "arabic": "ظَلَمَ",
+          "en": "wronged, oppressed",
+          "bs": "nepravdu je učinio",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَلِكُ",
+          "en": "the king",
+          "bs": "kralj",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "النَّاسَ",
+          "en": "people",
+          "bs": "ljudima",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The king wronged the people.",
+      "bs": "Kralj je ljudima učinio nepravdu.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "لَا يَظْلِمُ اللَّهُ أَحَدًا",
+      "words": [
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "ne",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَظْلِمُ",
+          "en": "wrongs, oppresses",
+          "bs": "čini nepravdu",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّهُ",
+          "en": "God",
+          "bs": "Allah",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَحَدًا",
+          "en": "anyone, one",
+          "bs": "nikome",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "God wrongs no one.",
+      "bs": "Allah nikome ne čini nepravdu.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    },
+    {
+      "arabic": "ظَلَمُوا أَنْفُسَهُمْ",
+      "words": [
+        {
+          "arabic": "ظَلَمُوا",
+          "en": "they wronged, oppressed",
+          "bs": "učinili su nepravdu",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "أَنْفُسَهُمْ",
+          "en": "themselves, souls",
+          "bs": "sebi",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They wronged themselves.",
+      "bs": "Sami sebi su učinili nepravdu.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude-opus-5-5, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": null
+    }
   ]
 }

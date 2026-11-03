@@ -49,3 +49,7 @@ def test_a_third_person_s_meets_its_base_form():
 def test_an_ied_form_meets_its_y_base():
     assert gloss_agrees("denied", ["deny;refute;contradict;belie+he;it_<verb>"]) is True
     assert gloss_agrees("denies", ["he;it+deny;refute"]) is True
+
+
+def test_a_double_s_is_not_a_plural():
+    assert gloss_agrees("oppressed", ["be_unjust;oppress+he;it_<verb>"]) is True

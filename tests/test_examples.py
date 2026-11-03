@@ -173,3 +173,9 @@ def test_a_documented_exception_passes_a_gloss_and_says_so():
 
     assert refused.gloss_agreement is False
     assert excepted.gloss_agreement is True and excepted.glossed_by_exception == ("كَفَرَ",)
+
+
+def test_a_spelling_is_one_word_whatever_order_its_marks_were_typed_in():
+    from fil.examples import spelling_key
+    shadda_first, fatha_first = "اتَّقِ", "اتَّقِ"
+    assert spelling_key(shadda_first) == spelling_key(fatha_first)

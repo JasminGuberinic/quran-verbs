@@ -35,6 +35,7 @@ Only `reviewed` is fully trustworthy; `rejected` must never reach a learner.
 
 from __future__ import annotations
 
+import unicodedata
 from dataclasses import dataclass, field, replace
 from typing import Callable, Mapping
 
@@ -233,6 +234,8 @@ def spelling_key(word: str) -> str:
     ٱعْلَمْ (Uthmani), اِعْلَمْ and اعْلَمْ are one imperative; the connecting alif's vowel and
     the Uthmani pause marks are not part of the word's identity.
     """
+    # Canonical mark order first: "تَّ" may be typed shadda-then-fatha or fatha-then-shadda.
+    word = unicodedata.normalize("NFD", word)
     word = "".join(char for char in word if char not in _SILENT_MARKS).replace("ٱ", "ا")
     if word.startswith("ا") and len(word) > 1 and word[1] in _WASL_VOWELS:
         word = "ا" + word[2:]

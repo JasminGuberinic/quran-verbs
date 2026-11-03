@@ -100,6 +100,8 @@ def _stem(word: str) -> str:
     if word.endswith("es") and not word.endswith(_SIBILANT_ES) and len(word) - 1 >= 3:
         return _without_silent_e(word[:-1])         # "makes" → "make", not "mak"
     for suffix in _SUFFIXES:
+        if suffix == "s" and word.endswith("ss"):
+            continue                                # "oppress" is a stem, not a plural
         if word.endswith(suffix) and len(word) - len(suffix) >= 3:
             return _without_silent_e(word[: -len(suffix)])
     return _without_silent_e(word)

@@ -15,7 +15,7 @@ the compact files and read only what a step needs.
 - Only **bs + en** in a batch. The other 14 languages fall back to English until a bulk
   translation pass (see "Later" below).
 - Don't make product decisions alone; ask the user (in Bosnian, briefly).
-- Commit when the batch is done; never push.
+- Commit when the batch is done, then `git push` (branch study-site only; never main).
 
 ## Content policy (practice sentences)
 - **First-person forms only God speaks in the Quran** (the I/We of revealing, creating,

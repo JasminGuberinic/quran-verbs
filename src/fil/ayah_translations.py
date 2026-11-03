@@ -32,6 +32,7 @@ SOURCES: tuple[Source, ...] = (
     Source("tr", "tr.yazir", "Elmalılı Hamdi Yazır, via tanzil.net"),
     Source("ur", "ur.kanzuliman", "احمد رضا خان، کنز الایمان · tanzil.net"),
     Source("id", "id.indonesian", "Kementerian Agama RI, via tanzil.net"),
+    Source("ru", "ru.krachkovsky", "И. Ю. Крачковский (1963), via tanzil.net"),
 )
 
 FALLBACK = "en"

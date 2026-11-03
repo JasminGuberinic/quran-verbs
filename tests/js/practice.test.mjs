@@ -6,7 +6,7 @@ import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 const P = require("../../src/fil/site/practice.js");
-const LANGUAGES = ["bs", "en", "tr", "de", "sq", "fr", "id", "ur"];
+const LANGUAGES = ["bs", "en", "tr", "de", "sq", "fr", "id", "ur", "bn", "fa", "ru", "ms", "es", "sw", "so", "hi"];
 const VERBS_DIR = new URL("../../build/site/verbs/", import.meta.url);
 
 function realCards() {

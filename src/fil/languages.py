@@ -31,6 +31,14 @@ LANGUAGES: tuple[Language, ...] = (
     Language("fr", "Français", False, MACHINE),
     Language("id", "Bahasa Indonesia", False, MACHINE),
     Language("ur", "اردو", True, MACHINE),
+    Language("bn", "বাংলা", False, MACHINE),
+    Language("fa", "فارسی", True, MACHINE),
+    Language("ru", "Русский", False, MACHINE),
+    Language("ms", "Bahasa Melayu", False, MACHINE),
+    Language("es", "Español", False, MACHINE),
+    Language("sw", "Kiswahili", False, MACHINE),
+    Language("so", "Soomaali", False, MACHINE),
+    Language("hi", "हिन्दी", False, MACHINE),
 )
 
 CODES: tuple[str, ...] = tuple(language.code for language in LANGUAGES)

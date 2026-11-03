@@ -205,13 +205,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .layout.no-list { grid-template-columns: minmax(0, 760px); justify-content: center; }
   .layout.no-list .verb-list { display: none; }
 }
-.verb-item { display: grid; grid-template-columns: 2.2em minmax(0, 1fr) auto; align-items: center; gap: 8px; border: 0; background: transparent; border-radius: 9px; padding: 6px 8px; text-align: start; }
+.verb-item { display: grid; grid-template-columns: 1.8em minmax(0, 1fr) auto 7px; align-items: center; gap: 10px; border: 0; background: transparent; border-radius: 9px; padding: 7px 10px; text-align: start; min-height: 46px; }
 .verb-item:hover { background: var(--paper); }
 .verb-item[aria-current="true"] { background: var(--accent-soft); }
 .verb-item .rank { font-family: var(--font-data); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-.verb-item .gloss-text { font-size: 0.82rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.verb-item .ar { font-size: 1.2rem; }
-.verb-item .names { display: grid; min-width: 0; }
+.verb-item .gloss-text { font-size: 0.86rem; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.verb-item .ar { font-size: 1.3rem; line-height: 1; text-align: right; }
 .verb-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
 .verb-item.learned .dot { background: var(--accent); }
 
@@ -583,7 +582,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     $("chips").innerHTML = VERBS.map((verb, index) => `<button class="chip" data-index="${index}">${verb.lemma}</button>`).join("");
     $("verb-list").innerHTML = VERBS.map((verb, index) => `<button class="verb-item" data-index="${index}">
       <span class="rank">${verb.rank}</span>
-      <span class="names"><span class="ar">${verb.lemma}</span><span class="gloss-text">${escapeHtml(meaningOf(verb))}</span></span>
+      <span class="gloss-text">${escapeHtml(meaningOf(verb))}</span>
+      <span class="ar">${verb.lemma}</span>
       <span class="dot" aria-hidden="true"></span></button>`).join("");
   }
   for (const list of ["chips", "verb-list"]) {

@@ -26,7 +26,7 @@ from fil.ayah_translations import AyahTranslations
 from fil.languages import CODES
 from fil.pages import interface_text
 from fil.pages.render import grammar_label
-from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, FORM_GLOSSES_JSON
+from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, COMPOSED_FORM_GLOSSES_JSON, FORM_GLOSSES_JSON
 from fil.translation_memory import FormToGloss
 
 OUT = BUILD_DIR / "forms"
@@ -86,8 +86,13 @@ def studied_forms() -> list[tuple[VerbKey, AttestedForm]]:
 
 
 def read_glosses() -> tuple[dict[str, dict[str, str]], dict[str, dict[str, str]]]:
-    """(authored form glosses, example ayah glosses): the two places a form's gloss comes from."""
-    return _read_store(FORM_GLOSSES_JSON), _read_store(AYAH_VERB_GLOSSES_JSON)
+    """(form glosses, example ayah glosses): the two places a form's gloss comes from.
+
+    Form glosses are the authored ones over the composed ones (fil compose). A form is
+    composed only while it has neither an authored nor an in-context gloss, so a composed
+    gloss never stands in front of a written one.
+    """
+    return {**read_store(COMPOSED_FORM_GLOSSES_JSON), **read_store(FORM_GLOSSES_JSON)}, read_store(AYAH_VERB_GLOSSES_JSON)
 
 
 def forms_to_gloss() -> list[FormToGloss]:
@@ -114,7 +119,9 @@ def _first_ayah(form: AttestedForm, translations: AyahTranslations) -> str:
     return f"{surah}:{ayah} {' '.join(english.split())}"
 
 
-def _read_store(path: Path) -> dict[str, dict[str, str]]:
+def read_store(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
     stored: Mapping[str, dict[str, str]] = json.loads(path.read_text(encoding="utf-8"))
     return {key: value for key, value in stored.items() if not key.startswith("_")}
 

@@ -13,6 +13,8 @@ unlock the consensus tier. Everything returned is an immutable, JSON-friendly va
 from __future__ import annotations
 
 import json
+from collections import defaultdict
+from itertools import groupby
 from dataclasses import dataclass, field, replace
 from functools import lru_cache
 
@@ -28,7 +30,7 @@ from fil.corpus.corrections import (
     NO_CORRECTIONS, CorpusCorrections, parse_corrections, apply_corrections,
 )
 from fil.corpus.oracle import AttestedCells, build_oracle
-from fil.corpus.parse import VerbOccurrence, iter_segments, iter_verb_occurrences
+from fil.corpus.parse import Segment, VerbOccurrence, iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
 from fil import evals
 from fil.examples import (
@@ -903,6 +905,21 @@ def form_occurrences() -> dict[tuple[str, int], tuple[FormOccurrence, ...]]:
         segments = list(iter_segments(lines))
     occurrences = apply_corrections(iter_verb_occurrences(iter(segments)), corpus_corrections())
     return attested_forms.form_occurrences(occurrences, attested_forms.word_texts(segments))
+
+
+@lru_cache(maxsize=1)
+def verb_readings() -> dict[tuple[str, int], dict[tuple[int, int, int], tuple[VerbOccurrence, tuple[Segment, ...]]]]:
+    """Every verb's occurrences, corrected, each with the segments of the word it stands in
+    (what fil.composition splits a form into proclitics, verb and objects from)."""
+    with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
+        segments = list(iter_segments(lines))
+    words = {location: tuple(parts) for location, parts in
+             groupby(segments, key=lambda segment: (segment.surah, segment.ayah, segment.word))}
+    readings: dict = defaultdict(dict)
+    for occurrence in apply_corrections(iter_verb_occurrences(iter(segments)), corpus_corrections()):
+        location = (occurrence.surah, occurrence.ayah, occurrence.word)
+        readings[(occurrence.root, occurrence.form)][location] = (occurrence, words[location])
+    return dict(readings)
 
 
 @lru_cache(maxsize=1)

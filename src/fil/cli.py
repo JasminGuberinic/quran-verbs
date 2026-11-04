@@ -15,6 +15,7 @@ from fil.stages import (
     audio_build,
     batch,
     bundle,
+    compose,
     coverage,
     dataset,
     evals,
@@ -44,6 +45,7 @@ _STAGES = {
     "site": (site.main, "build the static study site (build/site) for the verbs in data/meanings.json"),
     "i18n": (i18n.main, "translate into further languages via a translation memory: export, import, status"),
     "forms": (forms.main, "gloss every Quranic form of the studied verbs once per language: status, export, import"),
+    "compose": (compose.main, "gloss the remaining Quranic forms by rule: status, sheets, paradigms, build, sample"),
     "pages": (pages.main, "build the public GitHub Pages site (build/pages); --deploy publishes it"),
 }
 
@@ -63,6 +65,9 @@ def main() -> None:
         return
     if known.stage == "forms":
         forms.main(rest)
+        return
+    if known.stage == "compose":
+        compose.main(rest)
         return
     if known.stage == "pages":
         pages.main(rest)

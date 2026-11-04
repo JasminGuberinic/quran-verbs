@@ -29,3 +29,13 @@ Start promotion **only after**: all target verbs (~400–500) are in, every lang
 
 ## Honest expectations
 Search traffic takes weeks to months to build and is not guaranteed; quality content (we have it) and backlinks (from promotion) matter most.
+
+## Phase 3 — nouns and adjectives (after the verbs, before promotion)
+
+Owner's idea (2026-11-04): teach every Quranic word, not only verbs — nouns, adjectives, objects — in their real forms, with translations and usage together with the verbs.
+- **Data:** the Quranic Arabic Corpus tags every noun/adjective with root, lemma, case (NOM/ACC/GEN), gender, number (incl. broken plurals), definiteness and tanwīn; `src/fil/vocabulary.py` already builds a Quranic word bank.
+- **Noun card:** lemma, meaning, gender; singular / dual / plural; the three cases with audio (recitation where the Quran has the form, checked speech otherwise) and example ayat.
+- **Adjectives:** agreement with the noun (gender, number, case, definiteness).
+- **Practice sentences combining verbs and nouns** — e.g. أَكَلَ الْوَلَدُ التُّفَّاحَ (subject in -u, object in -a), جَلَسَ عَلَى الشَّجَرَةِ (genitive after a preposition) — through the same gate and blind review.
+- **New exercises:** "which case?", "complete the ending", "match the adjective to the noun".
+- Same tooling pattern as verbs (batches by frequency, en + bs first, bulk translation later).

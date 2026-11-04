@@ -125,6 +125,9 @@ button.quran-tag.playing { background: var(--gold); color: var(--surface); }
 .ayah-foot { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--muted); }
 .word-play { font: inherit; background: var(--gold-soft); color: inherit; border: 0; border-bottom: 2px solid var(--gold); border-radius: 4px; padding: 0 4px; }
 .word-play.playing { background: var(--gold); color: var(--surface); }
+.word-play.playing::after, .conj-cell.playing::after { content: "■"; font-size: 0.6em; margin-inline-start: 4px; vertical-align: middle; }
+.play-icon { display: inline-grid; place-items: center; }
+.verb-gloss .grammar { color: var(--muted); font-weight: 400; font-size: 0.88rem; }
 .listen-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .ayah a, .link { color: var(--accent); font-size: 0.86rem; }
 .ayah-text mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
@@ -469,6 +472,7 @@ nav.tabs button { min-height: 32px; }
 <script src="ui.js"></script>
 <script src="practice.js"></script>
 <script src="ayat.js"></script>
+<script src="player.js"></script>
 <script>
 (() => {
   // Where "report a mistake" sends a learner. Empty until the site is public: the page then
@@ -483,7 +487,7 @@ nav.tabs button { min-height: 32px; }
   const PRONOUN_ORDER = ["huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma", "antum", "antunna", "ana", "nahnu"];
   const TENSE_ORDER = ["past", "present", "imperative"];
   const FORM_NAMES = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
-  const PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  const PLAY = '<span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></span>';
 
   let DATA = null, VERBS = [];
   let language = new URLSearchParams(location.search).get("lang") || readStore(STORE.language, "bs");
@@ -507,23 +511,15 @@ nav.tabs button { min-height: 32px; }
   }
 
   // ---------- sound: every clip is a file (embedded); recitation and checked speech ----------
-  let currentAudio = null;
-  function stopAll() { currentAudio?.pause(); document.querySelectorAll(".playing").forEach((el) => el.classList.remove("playing")); }
-  function playFile(path, button) {
-    stopAll();
-    currentAudio = new Audio(path);
-    button?.classList.add("playing");
-    currentAudio.addEventListener("ended", () => button?.classList.remove("playing"));
-    currentAudio.play().catch(() => button?.classList.remove("playing"));
-  }
+  // Every play control toggles (site/player.js): pressed again, or when another starts, it stops.
+  const player = FilPlayer.createPlayer({ makeAudio: (path) => new Audio(path), stopLabel: () => t().stop || UI.en.stop });
+  const stopAll = () => player.stop();
+  const playFile = (path, button) => player.play(button, path);
   function playButton({ file, label, extra = "" }) {
     if (!file) return "";
     return `<button class="play ${extra}" data-file="${file}" aria-label="${escapeHtml(label || t().listen)}">${PLAY}</button>`;
   }
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-file]");
-    if (button && !button.disabled) playFile(button.dataset.file, button);
-  });
+  FilPlayer.attach(document, "data-file", player);
 
   // ---------- cards are loaded per verb, on demand ----------
   const cards = {};
@@ -630,7 +626,7 @@ nav.tabs button { min-height: 32px; }
 
   function tile({ arabic, spoken, label, detail, recited, quran }) {
     const tag = recited
-      ? `<button class="quran-tag" data-file="${recited}">▶ ${escapeHtml(t().recited)}</button>`
+      ? `<button class="quran-tag" data-file="${recited}"><span class="play-icon" aria-hidden="true">▶</span> ${escapeHtml(t().recited)}</button>`
       : (quran ? `<span class="quran-tag">${escapeHtml(t().inQuran)}</span>` : "");
     return `<div class="tile">
       ${playButton({ file: spoken, label: arabic })}
@@ -654,11 +650,19 @@ nav.tabs button { min-height: 32px; }
       <div class="tiles">${[...forms, ...nouns].join("")}</div></section>`;
   }
 
+  // The marked verb's meaning in its ayah — or, until it is glossed, its grammar.
+  function verbGlossHtml(word) {
+    const meaning = word.gloss
+      ? `<span>= ${escapeHtml(inLanguage(word.gloss))}</span><span class="ai-tag">AI</span>`
+      : `<span>= <span class="grammar">${escapeHtml(FilAyat.grammarLabel(word.grammar, t()))}</span></span>`;
+    return `<p class="verb-gloss"><span class="qr">${word.text}</span>${meaning}</p>`;
+  }
+
   function ayatBlock(verb) {
     if (!verb.ayat.length && !verb.forms.length) return "";
     const items = verb.ayat.map((ayah) => {
       const [surah, number] = ayah.ref.split(":");
-      const text = ayah.words.map((word) => word.hit ? `<button class="word-play" data-file="${word.audio}">${word.text}</button>` : word.text).join(" ");
+      const text = ayah.words.map((word) => word.hit ? (word.audio ? `<button class="word-play" data-file="${word.audio}">${word.text}</button>` : `<mark>${word.text}</mark>`) : word.text).join(" ");
       const own = ayah.translation?.[language];
       const translation = own || ayah.translation?.en;
       const fallbackNote = !own && language !== "en" ? ` · ${t().noFreeTranslation}` : "";
@@ -666,9 +670,9 @@ nav.tabs button { min-height: 32px; }
         ? `<p class="ayah-translation" dir="${own && language === "ur" ? "rtl" : "ltr"}">${escapeHtml(translation.text)}<small>${escapeHtml(translation.by)}${escapeHtml(fallbackNote)}</small></p>`
         : "";
       return `<div class="ayah">
-        <div class="ayah-head"><span class="tense-chip">${escapeHtml(t().tenses[ayah.tense])}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a>${FilAyat.ayahLinksHtml(ayah.ref, language, t().forms.links)}</div>
+        <div class="ayah-head"><span class="tense-chip">${escapeHtml(FilAyat.grammarLabel([ayah.category], t()))}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a>${FilAyat.ayahLinksHtml(ayah.ref, language, t().forms.links)}</div>
         <p class="qr ayah-text">${text}</p>
-        ${ayah.words.filter((word) => word.hit && word.gloss).map((word) => `<p class="verb-gloss"><span class="qr">${word.text}</span><span>= ${escapeHtml(inLanguage(word.gloss))}</span><span class="ai-tag">AI</span></p>`).join("")}
+        ${ayah.words.filter((word) => word.hit).map(verbGlossHtml).join("")}
         ${translationHtml}
         <div class="ayah-foot">${playButton({ file: ayah.audio, extra: "small gold" })}<span>${escapeHtml(t().recitedAyah)}</span></div>
       </div>`;
@@ -732,7 +736,7 @@ nav.tabs button { min-height: 32px; }
       const cell = find(tense, pronoun);
       if (!cell) return `<td data-col="${tense}"><span class="note">–</span></td>`;
       if (cell.notUsed) return `<td data-col="${tense}"><span class="conj-cell not-used" title="${escapeHtml(t().notUsedNote)}">${cell.plain}<small>${escapeHtml(t().notUsed)}</small></span></td>`;
-      const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}">▶ ${escapeHtml(t().recited)}</button>` : "";
+      const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}"><span class="play-icon" aria-hidden="true">▶</span> ${escapeHtml(t().recited)}</button>` : "";
       return `<td data-col="${tense}"><button class="conj-cell ${cell.quran ? "attested" : ""}" data-file="${cell.spoken}">${cell.plain}</button>${recited}</td>`;
     }).join("")}</tr>`).join("");
     const attested = verb.cells.filter((cell) => cell.quran).length;

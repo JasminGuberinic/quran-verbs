@@ -72,7 +72,7 @@
       ? `<p class="ayah-translation" lang="${options.translationLanguage}" dir="${options.translationDir}">${escapeHtml(translated)}<small>${escapeHtml(translation.by)}${escapeHtml(options.fallbackNote)}</small></p>`
       : "";
     return `<article class="ayah"><p class="ayah-head"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${ayah.ref} ↗</a>`
-      + `<button type="button" class="play small" ${options.audioAttribute}="${escapeHtml(ayahAudioUrl(options.audioSource, ayah))}" aria-label="${escapeHtml(`${ayah.ref} · ${options.recitedAyah}`)}">▶</button>`
+      + `<button type="button" class="play small" ${options.audioAttribute}="${escapeHtml(ayahAudioUrl(options.audioSource, ayah))}" aria-label="${escapeHtml(`${ayah.ref} · ${options.recitedAyah}`)}"><span class="play-icon" aria-hidden="true">▶</span></button>`
       + `${ayahLinksHtml(ayah.ref, options.language, options.text.links)}</p>`
       + `<p class="qr ayah-text" lang="ar" dir="rtl">${words}</p>${translationHtml}</article>`;
   }

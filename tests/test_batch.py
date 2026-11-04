@@ -61,3 +61,25 @@ def test_check_gates_like_draft_but_records_nothing(tmp_path, monkeypatch, capsy
     printed = capsys.readouterr().out.splitlines()
     assert printed[-1] == "check: 1 would pass, 3 would fail (nothing recorded)"
     assert all(line.startswith("FAIL ") for line in printed[:-1]) and len(printed) == 4
+
+
+def test_only_example_verbs_without_a_gloss_they_may_use_are_left_to_gloss():
+    from fil.attested_forms import form_occurrences, word_texts
+    from fil.corpus.corrections import NO_CORRECTIONS
+    from fil.corpus.parse import iter_verb_occurrences, parse_segment
+    from fil.stages.batch import unglossed_example_verbs
+    from fil.study import ayat_of, words_of
+    noun = "ٱلْحَقَّ\tN\tROOT:حقق|LEM:حَقّ|M|ACC"
+    segments = [parse_segment(line) for line in (
+        "1:1:1:1\tقَالَ\tV\tPERF|VF:1|ROOT:قول|LEM:قالَ|3MS", f"1:1:2:1\t{noun}", f"1:1:3:1\t{noun}",
+        "1:2:1:1\tيَقُولُ\tV\tIMPF|VF:1|ROOT:قول|LEM:قالَ|3MS|MOOD:IND", f"1:2:2:1\t{noun}", f"1:2:3:1\t{noun}",
+        "1:3:1:1\tقُلْ\tV\tIMPV|VF:1|ROOT:قول|LEM:قالَ|2MS", f"1:3:2:1\t{noun}", f"1:3:3:1\t{noun}",
+    )]
+    verb = ("قول", 1)
+    uses = form_occurrences(iter_verb_occurrences(iter(segments)), word_texts(segments))[verb]
+    in_context = {"1:1:1": {"en": "he said", "bs": "rekao je"}, "1:2:1": {"en": "he says"}}   # Bosnian missing
+    authored = {"قول|1|قُلْ": {"en": "say!", "bs": "reci!"}}                                    # borrowed by 1:3:1
+
+    left = unglossed_example_verbs(verb, ayat_of(words_of(segments, NO_CORRECTIONS)), uses, authored, in_context)
+
+    assert [(word.location, readings[0].tense) for _example, word, readings in left] == [((1, 2, 1), "present")]

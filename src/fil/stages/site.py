@@ -34,12 +34,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from fil import attested_forms, example_store, meanings, service, study
-from fil.attested_forms import FormOccurrence, VerbAyah
+from fil.attested_forms import FormOccurrence, Grammar, VerbAyah
 from fil.audio import RECITATION_BITRATE, compact_aac_command, compact_clip_name
 from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
-from fil.languages import LANGUAGES, REQUIRED
+from fil.languages import LANGUAGES
 from fil.quran_numbering import ayah_number
 from fil.recitation import AYAH_STREAM, QuranHiveArchive, RecitationMissing, WordRecitations, ayah_stream
 from fil.resources import (AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, QURANHIVE_WORD_AUDIO, RECITATION_CACHE,
@@ -50,7 +50,7 @@ from fil.stages import forms
 from fil.study import AyahExample, QuranWord
 
 _TEMPLATE = Path(__file__).resolve().parents[1] / "site" / "index.html"
-APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js")
+APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js", "player.js")
 _COMPRESSED = BUILD_DIR / "compressed-cache"
 _REVIEW = BUILD_DIR / "site-review.txt"
 
@@ -217,7 +217,7 @@ def _verb_view(meaning, summary, rank: int, total: int, corpus: _Corpus, sound: 
         "nouns": {kind: {"lemma": noun.lemma, "count": noun.count, "spoken": sound.spoken(noun.lemma)}
                   for kind, noun in corpus.nouns.get(verb, {}).items()},
         "cells": cells,
-        "ayat": [_ayah_view(example, verb, sound) for example in study.example_ayat(corpus.ayat, verb)],
+        "ayat": _example_ayat_view(verb, corpus, sound),
         "forms": _forms_view(verb, corpus.uses[verb], summary.occurrence_count, sound),
         "ayatFile": ayat_file(rank),
         "ayatTranslations": {language: ayat_file(rank, language) for language in sound.translations.languages},
@@ -300,35 +300,47 @@ def _principal(cells: list[dict]) -> list[dict]:
     return principal or [cell for cell in used if cell["quran"]] or used
 
 
-def _ayah_view(example: AyahExample, verb: study.VerbKey, sound: _Sound) -> dict:
+def _example_ayat_view(verb: study.VerbKey, corpus: _Corpus, sound: _Sound) -> list[dict]:
+    uses = corpus.uses[verb]
+    forms = attested_forms.forms_by_location(attested_forms.attested_forms(uses))
+    readings = _readings_by_location(uses)
+    return [_ayah_view(example, verb, forms, readings, sound) for example in study.example_ayat(corpus.ayat, verb, uses)]
+
+
+def _readings_by_location(uses: tuple[FormOccurrence, ...]) -> dict[study.Location, list[dict]]:
+    readings: dict[study.Location, list[dict]] = {}
+    for use in uses:
+        readings.setdefault(use.location, []).append(attested_forms.grammar_view(use.grammar))
+    return readings
+
+
+def _ayah_view(example: AyahExample, verb: study.VerbKey, forms: dict[study.Location, attested_forms.AttestedForm],
+               readings: dict[study.Location, list[dict]], sound: _Sound) -> dict:
+    """An example ayah; its verb shows its gloss, or — until it is glossed — its grammar, which is never wrong."""
     return {
         "ref": example.ref,
         "tense": example.tense,
+        "category": attested_forms.grammar_view(Grammar(example.tense, example.pronoun, is_passive=False, objects=())),
         "audio": sound.ayah(example.surah, example.ayah),
         "translation": sound.translations.of(example.surah, example.ayah),
-        "words": [
-            {"text": word.text, "hit": word.carries(verb),
-             "audio": sound.word(*word.location) if word.carries(verb) else None,
-             "gloss": _gloss_of(word, sound.verb_glosses) if word.carries(verb) else None}
-            for word in example.words
-        ],
+        "words": [_ayah_word_view(word, verb, forms, readings, sound) for word in example.words],
     }
+
+
+def _ayah_word_view(word: QuranWord, verb: study.VerbKey, forms: dict[study.Location, attested_forms.AttestedForm],
+                    readings: dict[study.Location, list[dict]], sound: _Sound) -> dict:
+    if not word.carries(verb):
+        return {"text": word.text, "hit": False, "audio": None, "gloss": None}
+    gloss = attested_forms.example_gloss(verb, word.location, forms, sound.form_glosses, sound.verb_glosses)
+    view = {"text": word.text, "hit": True, "audio": sound.word(*word.location)}
+    if attested_forms.is_complete(gloss):
+        return {**view, "gloss": gloss}
+    return {**view, "gloss": None, "grammar": readings[word.location]}
 
 
 def _verb_glosses() -> dict[str, dict[str, str]]:
     entries = json.loads(AYAH_VERB_GLOSSES_JSON.read_text(encoding="utf-8"))
     return {key: glosses for key, glosses in entries.items() if not key.startswith("_")}
-
-
-class MissingVerbGloss(ValueError):
-    """An example ayah's verb has no in-context translation — the card would be half-empty."""
-
-
-def _gloss_of(word: QuranWord, glosses: dict[str, dict[str, str]]) -> dict[str, str]:
-    key = f"{word.surah}:{word.ayah}:{word.number}"
-    if key not in glosses or not all(glosses[key].get(code) for code in REQUIRED):
-        raise MissingVerbGloss(f"{key} ({word.text}): add its translation to {AYAH_VERB_GLOSSES_JSON.name}")
-    return glosses[key]
 
 
 def _sentence_view(example: Example, sound: _Sound | None = None) -> dict:

@@ -58,6 +58,11 @@ span.tag { cursor: default; }
 .ayah-head { display: flex; justify-content: space-between; margin: 0; font-size: 0.9rem; color: var(--muted); }
 .ayah blockquote { margin: 8px 0; font-size: 1.6rem; line-height: 2.1; }
 .ayah mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
+.ayah mark[data-audio] { cursor: pointer; }
+.ayah mark.playing { background: var(--gold); color: var(--surface); }
+.ayah mark.playing::after { content: "■"; font-size: 0.6em; margin-inline-start: 4px; vertical-align: middle; }
+.play.playing { background: var(--accent); color: var(--accent-soft); }
+.gloss .grammar { color: var(--muted); font-size: 0.9rem; }
 .gloss { margin: 4px 0; }
 .gloss .qr { font-size: 1.3rem; }
 .ai { font-size: 0.7rem; border: 1px solid var(--muted); color: var(--muted); border-radius: 4px; padding: 0 4px; }

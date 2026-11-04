@@ -97,6 +97,31 @@ def test_letters_that_read_two_ways_never_borrow_one_contexts_gloss():
     assert attested_forms.gloss_of(_SAY, two_ways, {}, {"2:7:1": {"en": "you say"}}) == {}
 
 
+def _example_gloss(location, authored, in_context):
+    forms = attested_forms.forms_by_location(attested_forms.attested_forms(_uses()[_SAY]))
+    return attested_forms.example_gloss(_SAY, location, forms, authored, in_context)
+
+
+def test_an_example_verb_shows_its_own_gloss_first():
+    in_context = {"2:10:1": {"en": "and they said", "bs": "i rekoše"}, "2:7:1": {"en": "and they spoke"}}
+    assert _example_gloss((2, 7, 1), {}, in_context) == {"en": "and they spoke"}
+
+
+def test_an_example_verb_borrows_its_forms_gloss_when_the_letters_read_one_way():
+    authored = {"قول|1|وَقَالُوا۟": {"en": "and they said", "bs": "i rekli su"}}
+    assert _example_gloss((2, 10, 1), authored, {}) == {"en": "and they said", "bs": "i rekli su"}
+
+
+def test_an_example_verb_whose_letters_read_two_ways_borrows_nothing():
+    authored = {"قول|1|تَقُولُ": {"en": "you say / she says", "bs": "kažeš / kaže"}}
+    assert _example_gloss((3, 2, 1), authored, {"3:1:1": {"en": "you say", "bs": "kažeš"}}) == {}
+
+
+def test_a_gloss_is_complete_only_in_english_and_bosnian_both():
+    assert attested_forms.is_complete({"en": "he said", "bs": "rekao je"})
+    assert not attested_forms.is_complete({"en": "he said", "tr": "dedi"})
+
+
 def test_a_card_whose_forms_miss_an_occurrence_fails_the_build():
     class Sound:
         form_glosses, verb_glosses = {}, {}

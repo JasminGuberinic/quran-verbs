@@ -29,7 +29,7 @@
       cardsHint: "Kad glagol znaš tri puta zaredom, računa se kao naučen.",
       whatMeans: "Šta znači ovaj glagol?", whoWhen: "Ko i kada? Odredi oblik.", whichHeard: "Koji oblik si čuo?", findVerb: "Poslušaj ajet i klikni glagol.",
       fillIn: "Dopuni rečenicu tačnim oblikom.", right: "Tačno.", wrong: "Netačno.", nextQ: "Sljedeće pitanje", correct: (a, b) => `${a} / ${b} tačno`,
-      noVoice: "Ovaj uređaj nema arapski glas.", listen: "Poslušaj",
+      noVoice: "Ovaj uređaj nema arapski glas.", listen: "Poslušaj", stop: "Zaustavi",
       footer: ["<b>Glas.</b> Svaki oblik, imenicu i rečenicu izgovara sintetički glas (tts_arabic) iz čitanja koje se provjerava harekat po harekat. Dugme „kako se uči“ pušta pravog učača gdje god Kur'an taj oblik sadrži.", "<b>Prijevodi:</b> bosanski čita čovjek, engleski je provjeren rječnikom (CAMeL), ostali jezici su AI prijevod koji niko nije pregledao."],
     },
     en: {
@@ -49,7 +49,7 @@
       cardsHint: "Know a verb three times in a row and it counts as learned.",
       whatMeans: "What does this verb mean?", whoWhen: "Who and when? Identify the form.", whichHeard: "Which form did you hear?", findVerb: "Listen to the ayah and tap the verb.",
       fillIn: "Complete the sentence with the right form.", right: "Correct.", wrong: "Not quite.", nextQ: "Next question", correct: (a, b) => `${a} / ${b} correct`,
-      noVoice: "This device has no Arabic voice.", listen: "Listen",
+      noVoice: "This device has no Arabic voice.", listen: "Listen", stop: "Stop",
       footer: ["<b>Voice.</b> Every form, noun and sentence is spoken by a synthetic voice (tts_arabic) from a reading checked vowel by vowel. The “as recited” button plays a real reciter wherever the Quran contains that form.", "<b>Translations:</b> Bosnian is read by a person, English is checked against a lexicon (CAMeL), other languages are unreviewed AI translations."],
     },
     tr: {
@@ -69,7 +69,7 @@
       cardsHint: "Bir fiili üç kez üst üste bilirseniz öğrenilmiş sayılır.",
       whatMeans: "Bu fiil ne anlama gelir?", whoWhen: "Kim ve ne zaman? Biçimi belirleyin.", whichHeard: "Hangi biçimi duydunuz?", findVerb: "Ayeti dinleyin ve fiile dokunun.",
       fillIn: "Cümleyi doğru biçimle tamamlayın.", right: "Doğru.", wrong: "Yanlış.", nextQ: "Sonraki soru", correct: (a, b) => `${a} / ${b} doğru`,
-      noVoice: "Bu cihazda Arapça ses yok.", listen: "Dinle",
+      noVoice: "Bu cihazda Arapça ses yok.", listen: "Dinle", stop: "Durdur",
       footer: ["<b>Ses.</b> Her biçim, isim ve cümle, harekesi harekesine kontrol edilmiş bir okumadan sentetik sesle (tts_arabic) seslendirilir. “okunuşu” düğmesi, biçim Kur'an'da geçiyorsa gerçek bir kâriyi çalar.", "<b>Çeviriler:</b> Boşnakçayı bir insan okur, İngilizce sözlükle kontrol edilir, diğer diller incelenmemiş yapay zekâ çevirileridir."],
     },
     de: {
@@ -129,7 +129,7 @@
       cardsHint: "Trois bonnes réponses d'affilée et le verbe compte comme appris.",
       whatMeans: "Que signifie ce verbe ?", whoWhen: "Qui et quand ? Identifiez la forme.", whichHeard: "Quelle forme avez-vous entendue ?", findVerb: "Écoutez le verset et touchez le verbe.",
       fillIn: "Complétez la phrase avec la bonne forme.", right: "Correct.", wrong: "Incorrect.", nextQ: "Question suivante", correct: (a, b) => `${a} / ${b} correct`,
-      noVoice: "Cet appareil n'a pas de voix arabe.", listen: "Écouter",
+      noVoice: "Cet appareil n'a pas de voix arabe.", listen: "Écouter", stop: "Arrêter",
       footer: ["<b>Voix.</b> Chaque forme, nom et phrase est prononcé par une voix de synthèse (tts_arabic) à partir d'une lecture vérifiée voyelle par voyelle. « récité » fait entendre un vrai récitateur partout où le Coran contient la forme.", "<b>Traductions :</b> le bosnien est relu par une personne, l'anglais vérifié par un lexique, les autres langues sont des traductions IA non relues."],
     },
     id: {
@@ -149,7 +149,7 @@
       cardsHint: "Tiga kali benar berturut-turut berarti sudah dipelajari.",
       whatMeans: "Apa arti kata kerja ini?", whoWhen: "Siapa dan kapan? Tentukan bentuknya.", whichHeard: "Bentuk mana yang Anda dengar?", findVerb: "Dengarkan ayat lalu ketuk kata kerjanya.",
       fillIn: "Lengkapi kalimat dengan bentuk yang tepat.", right: "Benar.", wrong: "Salah.", nextQ: "Soal berikutnya", correct: (a, b) => `${a} / ${b} benar`,
-      noVoice: "Perangkat ini tidak punya suara bahasa Arab.", listen: "Dengar",
+      noVoice: "Perangkat ini tidak punya suara bahasa Arab.", listen: "Dengar", stop: "Hentikan",
       footer: ["<b>Suara.</b> Setiap bentuk, kata benda, dan kalimat diucapkan suara sintetis (tts_arabic) dari bacaan yang dicek harakat demi harakat. Tombol “bacaan” memutar qari asli bila bentuk itu ada dalam Al-Qur'an.", "<b>Terjemahan:</b> bahasa Bosnia dibaca manusia, bahasa Inggris dicek dengan kamus, bahasa lain adalah terjemahan AI yang belum ditinjau."],
     },
     ur: {
@@ -169,7 +169,7 @@
       cardsHint: "لگاتار تین بار درست ہو تو فعل سیکھا ہوا شمار ہوتا ہے۔",
       whatMeans: "اس فعل کا معنی کیا ہے؟", whoWhen: "کون اور کب؟ صیغہ پہچانیں۔", whichHeard: "آپ نے کون سا صیغہ سنا؟", findVerb: "آیت سنیں اور فعل پر ٹیپ کریں۔",
       fillIn: "درست صیغے سے جملہ مکمل کریں۔", right: "درست۔", wrong: "غلط۔", nextQ: "اگلا سوال", correct: (a, b) => `${a} / ${b} درست`,
-      noVoice: "اس آلے میں عربی آواز نہیں۔", listen: "سنیں",
+      noVoice: "اس آلے میں عربی آواز نہیں۔", listen: "سنیں", stop: "روکیں",
       footer: ["<b>آواز:</b> ہر صیغہ، اسم اور جملہ مصنوعی آواز (tts_arabic) سے پڑھا جاتا ہے، جس کی قراءت حرکت بہ حرکت جانچی گئی ہے۔ “تلاوت” کا بٹن اصل قاری سناتا ہے جہاں یہ صیغہ قرآن میں ہے۔", "<b>تراجم:</b> بوسنیائی ایک انسان پڑھتا ہے، انگریزی لغت سے جانچی گئی، باقی زبانیں غیر جانچے AI تراجم ہیں۔"],
     },
     bn: {
@@ -189,7 +189,7 @@
       cardsHint: "কোনো ক্রিয়া পরপর তিনবার জানলে সেটি শেখা হয়েছে বলে গণ্য হবে।",
       whatMeans: "এই ক্রিয়ার অর্থ কী?", whoWhen: "কে এবং কখন? রূপটি চিহ্নিত করুন।", whichHeard: "আপনি কোন রূপটি শুনলেন?", findVerb: "আয়াতটি শুনুন এবং ক্রিয়াটিতে চাপুন।",
       fillIn: "সঠিক রূপ দিয়ে বাক্যটি পূর্ণ করুন।", right: "সঠিক।", wrong: "পুরোপুরি ঠিক নয়।", nextQ: "পরের প্রশ্ন", correct: (a, b) => `${a} / ${b} সঠিক`,
-      noVoice: "এই ডিভাইসে কোনো আরবি কণ্ঠ নেই।", listen: "শুনুন",
+      noVoice: "এই ডিভাইসে কোনো আরবি কণ্ঠ নেই।", listen: "শুনুন", stop: "থামান",
       footer: ["<b>কণ্ঠ।</b> প্রতিটি রূপ, বিশেষ্য ও বাক্য একটি কৃত্রিম কণ্ঠ (tts_arabic) দ্বারা উচ্চারিত, এমন পাঠ থেকে যা প্রতিটি হরকত ধরে যাচাই করা হয়েছে। “তিলাওয়াতে যেমন” বোতামটি যেখানে কুরআনে সেই রূপটি আছে সেখানে একজন প্রকৃত ক্বারীর তিলাওয়াত বাজায়।", "<b>অনুবাদ:</b> বসনীয় অনুবাদ একজন মানুষ পড়ে দেখেছেন, ইংরেজি অনুবাদ একটি অভিধানের (CAMeL) সাথে মিলিয়ে যাচাই করা হয়েছে, অন্যান্য ভাষা (বাংলাসহ) পর্যালোচনাহীন কৃত্রিম বুদ্ধিমত্তার অনুবাদ।"],
     },
     fa: {
@@ -209,7 +209,7 @@
       cardsHint: "اگر فعلی را سه بار پشت سر هم بدانید، آموخته‌شده به شمار می‌آید.",
       whatMeans: "معنای این فعل چیست؟", whoWhen: "چه کسی و چه زمانی؟ صیغه را تشخیص دهید.", whichHeard: "کدام صیغه را شنیدید؟", findVerb: "به آیه گوش دهید و روی فعل بزنید.",
       fillIn: "جمله را با صیغهٔ درست کامل کنید.", right: "درست است.", wrong: "نه کاملاً.", nextQ: "پرسش بعدی", correct: (a, b) => `${a} / ${b} درست`,
-      noVoice: "این دستگاه صدای عربی ندارد.", listen: "گوش دادن",
+      noVoice: "این دستگاه صدای عربی ندارد.", listen: "گوش دادن", stop: "توقف",
       footer: ["<b>صدا.</b> همهٔ صیغه‌ها، اسم‌ها و جمله‌ها با صدای مصنوعی (tts_arabic) و بر پایهٔ خوانشی که حرکت به حرکت بررسی شده است خوانده می‌شوند. دکمهٔ «با قرائت» هر جا که آن صیغه در قرآن آمده باشد، صدای یک قاری واقعی را پخش می‌کند.", "<b>ترجمه‌ها:</b> بوسنیایی را یک انسان خوانده است، انگلیسی با یک واژه‌نامه (CAMeL) بررسی شده است، و زبان‌های دیگر (از جمله فارسی) ترجمه‌های بررسی‌نشدهٔ هوش مصنوعی‌اند."],
     },
     ru: {

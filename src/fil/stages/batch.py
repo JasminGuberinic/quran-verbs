@@ -2,6 +2,8 @@
 
     fil batch plan FROM TO          put verbs FROM..TO (frequency rank) on the agenda, 5 cells each;
                                     write build/batch/{plan,todo-meanings,todo-ayah}.tsv
+    fil batch todo-ayah-examples    write build/batch/todo-ayah-examples.tsv: every studied verb's
+                                    example-ayah verbs that have no gloss yet
     fil batch wordbank              write build/batch/wordbank.tsv: words the gate already accepted
     fil batch check FILE.tsv        gate each drafted sentence and record nothing: FAIL lines + a summary
     fil batch draft FILE.tsv        gate each drafted sentence; store passes, report failures
@@ -26,11 +28,13 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Iterator
 
-from fil import agenda, agenda_store, example_store, meanings, service, study
+from fil import agenda, agenda_store, attested_forms, example_store, meanings, service, study
 from fil.agenda import Job
 from fil.corpus.parse import iter_segments
 from fil.examples import Critique, Example, ExampleWord
-from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, MEANINGS_JSON, QAC_MORPHOLOGY
+from fil.pages import interface_text
+from fil.pages.render import grammar_label
+from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, FORM_GLOSSES_JSON, MEANINGS_JSON, QAC_MORPHOLOGY
 
 OUT = BUILD_DIR / "batch"
 AUTHOR = "claude, drafting pass"
@@ -125,21 +129,47 @@ def _write_todo_meanings(verbs) -> None:
     (OUT / "todo-meanings.tsv").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def _write_todo_ayah(keys) -> list[str]:
-    glossed = json.loads(AYAH_VERB_GLOSSES_JSON.read_text(encoding="utf-8"))
+def _write_todo_ayah(keys, file_name: str = "todo-ayah.tsv") -> list[str]:
+    """The example ayat's verbs still without an English and Bosnian gloss: `key  word  form  ayah` lines."""
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         words = study.words_of(iter_segments(lines), service.corpus_corrections())
-    ayat = study.ayat_of(words)
-    todo = []
-    for verb in sorted(keys):
-        for example in study.example_ayat(ayat, verb):
-            for word in example.words:
-                key = f"{word.surah}:{word.ayah}:{word.number}"
-                if word.carries(verb) and key not in glossed:
-                    context = " ".join(w.text for w in example.words)
-                    todo.append(f"{key}\t{word.text}\t{example.tense}\t{context}")
-    (OUT / "todo-ayah.tsv").write_text("\n".join(todo) + "\n", encoding="utf-8")
+    ayat, uses = study.ayat_of(words), service.form_occurrences()
+    authored = json.loads(FORM_GLOSSES_JSON.read_text(encoding="utf-8"))
+    in_context = json.loads(AYAH_VERB_GLOSSES_JSON.read_text(encoding="utf-8"))
+    english = interface_text.load()["en"]
+    todo = [
+        f"{attested_forms.location_key(word.location)}\t{word.text}\t"
+        f"{grammar_label([attested_forms.grammar_view(g) for g in readings], english)}\t"
+        f"{' '.join(w.text for w in example.words)}"
+        for verb in sorted(keys)
+        for example, word, readings in unglossed_example_verbs(verb, ayat, uses[verb], authored, in_context)
+    ]
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / file_name).write_text("\n".join(todo) + "\n", encoding="utf-8")
     return todo
+
+
+def unglossed_example_verbs(verb: study.VerbKey, ayat, uses, authored, in_context):
+    """(example, word, its readings) for each verb word an example ayah shows without a complete gloss.
+
+    A word whose form already has a gloss it may borrow (fil.attested_forms.example_gloss) is not listed.
+    """
+    forms = attested_forms.forms_by_location(attested_forms.attested_forms(uses))
+    readings = {use.location: [] for use in uses}
+    for use in uses:
+        readings[use.location].append(use.grammar)
+    return [
+        (example, word, readings[word.location])
+        for example in study.example_ayat(ayat, verb, uses)
+        for word in example.words
+        if word.carries(verb)
+        and not attested_forms.is_complete(attested_forms.example_gloss(verb, word.location, forms, authored, in_context))
+    ]
+
+
+def todo_ayah_examples() -> None:
+    todo = _write_todo_ayah({(m.root, m.form) for m in meanings.load()}, "todo-ayah-examples.tsv")
+    print(f"{len(todo)} example-ayah verbs to gloss → {OUT}/todo-ayah-examples.tsv")
 
 
 def wordbank() -> None:
@@ -308,6 +338,7 @@ def main(argv: list[str] | None = None) -> None:
         "draft": lambda: draft(Path(rest[0])),
         "meanings": lambda: merge_meanings(Path(rest[0])),
         "ayah": lambda: merge_ayah(Path(rest[0])),
+        "todo-ayah-examples": todo_ayah_examples,
         "review-export": review_export,
         "review-import": lambda: review_import(Path(rest[0])),
     }

@@ -149,7 +149,8 @@ def _card() -> dict:
         "rank": 1, "root": "قول", "form": 1, "lemma": "قالَ", "count": 1722, "ayahCount": 1500, "share": 8.04,
         "meaning": {"en": "to say", "bs": "reći"}, "lemmaSpoken": "audio/lemma.m4a", "principal": [cell], "nouns": {},
         "cells": [cell],
-        "ayat": [{"ref": "2:30", "tense": "past", "audio": "https://cdn.islamic.network/quran/audio/64/ar.alafasy/37.mp3",
+        "ayat": [{"ref": "2:30", "tense": "past", "category": {"tense": "past", "pronoun": "huwa", "passive": False, "objects": []},
+                  "audio": "https://cdn.islamic.network/quran/audio/64/ar.alafasy/37.mp3",
                   "translation": {"en": {"text": "And when your Lord said <to the angels>", "by": "Sahih International"}},
                   "words": [{"text": "قالَ", "hit": True, "audio": "audio/word.m4a", "gloss": {"en": "said", "bs": "reče"}},
                             {"text": "رَبُّكَ", "hit": False, "audio": None, "gloss": None}]}],
@@ -179,6 +180,33 @@ def test_a_verb_page_is_complete_readable_html_in_its_language():
     assert "Rekao je." in html and "reče" in html
     assert 'href="../../index.html?lang=bs#verb-1"' in html
     assert 'application/ld+json' in html and 'og:image' in html
+
+
+def test_an_example_verb_not_yet_glossed_shows_its_grammar():
+    card = _card()
+    card["ayat"][0]["words"][0] = {"text": "قالَ", "hit": True, "audio": "audio/word.m4a", "gloss": None,
+                                   "grammar": [{"tense": "past", "pronoun": "hum", "passive": False, "objects": []}]}
+    text = _text()
+    html = render.verb_page(PublishedVerb(card, "qala"), _language("en"), text)
+
+    label = render.grammar_label(card["ayat"][0]["words"][0]["grammar"], text)
+    assert f'= <span class="grammar">{label}</span>' in html
+
+
+def test_an_example_ayah_is_headed_by_the_form_it_shows():
+    text = _text()
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("en"), text)
+
+    assert f'<span class="tense">{render.grammar_label([_card()["ayat"][0]["category"]], text)}</span>' in html
+
+
+def test_every_page_plays_through_the_shared_toggling_player_in_its_language():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), {**_text(), "stop": "Zaustavi"})
+    untranslated = render.verb_page(PublishedVerb(_card(), "qala"), _language("de"), _text())
+
+    assert '<script src="../../player.js" data-attribute="data-audio" data-stop-label="Zaustavi" defer></script>' in html
+    assert 'data-stop-label="Stop"' in untranslated
+    assert '<span class="play-icon" aria-hidden="true">▶</span>' in html
 
 
 def test_a_page_in_a_language_without_a_meaning_falls_back_to_english_and_says_so():

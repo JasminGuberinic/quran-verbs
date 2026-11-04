@@ -15,14 +15,36 @@ def test_a_sentence_offers_every_language_it_has():
     assert view["words"][0]["translation"]["tr"] == "dedi"
 
 
-def test_an_ayah_verb_without_its_translation_fails_the_build():
-    import pytest
-    from fil.stages.site import MissingVerbGloss, _gloss_of
-    from fil.study import QuranWord
-    word = QuranWord(7, 15, 1, "قَالَ")
+class _FakeSound:
+    def __init__(self, verb_glosses: dict) -> None:
+        self.verb_glosses = verb_glosses
+        self.form_glosses: dict = {}
 
-    with pytest.raises(MissingVerbGloss):
-        _gloss_of(word, {"7:15:1": {"bs": "rekao je"}})   # other languages missing
+    @staticmethod
+    def word(surah: int, ayah: int, word: int) -> str:
+        return f"audio/{surah}-{ayah}-{word}.m4a"
+
+
+def _example_word_view(verb_glosses: dict) -> dict:
+    from fil.stages.site import _ayah_word_view
+    from fil.study import QuranWord
+    word = QuranWord(7, 15, 1, "قَالَ", frozenset({("قول", 1, "past")}))
+    readings = {(7, 15, 1): [{"tense": "past", "pronoun": "huwa", "passive": False, "objects": []}]}
+    return _ayah_word_view(word, ("قول", 1), {}, readings, _FakeSound(verb_glosses))
+
+
+def test_an_example_verb_with_its_gloss_shows_it():
+    view = _example_word_view({"7:15:1": {"en": "he said", "bs": "rekao je"}})
+
+    assert view["gloss"] == {"en": "he said", "bs": "rekao je"} and "grammar" not in view
+
+
+def test_an_example_verb_not_yet_glossed_in_every_required_language_shows_its_grammar():
+    view = _example_word_view({"7:15:1": {"bs": "rekao je"}})   # English missing
+
+    assert view["gloss"] is None
+    assert view["grammar"] == [{"tense": "past", "pronoun": "huwa", "passive": False, "objects": []}]
+    assert view["audio"] == "audio/7-15-1.m4a"
 
 
 def _cell(tense: str, pronoun: str, quran: bool = True, not_used: bool = False) -> dict:

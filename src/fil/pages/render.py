@@ -27,6 +27,7 @@ PRONOUN_ORDER = ("huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma
 TENSE_ORDER = ("past", "present", "imperative")
 STYLESHEET = "pages.css"
 _ENGLISH = "en"
+_ENGLISH_STOP = "Stop"   # the label of a playing button in a language that has no word for it yet
 _CURRENT = ' aria-current="page"'
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
@@ -34,10 +35,8 @@ _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
           '&amp;family=Noto+Naskh+Arabic&amp;family=Space+Grotesk:wght@600;700'
           '&amp;family=Inter:wght@400;500;600&amp;display=swap">\n')
 
-# One shared player: a tap on any [data-audio] plays that file, stopping the last one.
-_PLAYER = ('<script>document.addEventListener("click",function(e){var b=e.target.closest("[data-audio]");'
-           'if(!b)return;var a=window.filAudio||(window.filAudio=new Audio());a.pause();a.src=b.dataset.audio;'
-           'a.play().catch(function(){});});</script>')
+# One shared player (site/player.js): a tap on any [data-audio] plays it, or stops it if it is playing.
+_PLAYER_SCRIPT = "player.js"
 
 
 class EmbeddedAudioOnPublicPage(ValueError):
@@ -83,7 +82,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict) -> str:
                  indexed_in=verb.indexed_languages, language=language.code,
                  alternates=lambda languages: seo.verb_alternates(verb.slug, languages),
                  structured=structured, page_type="article")
-    return _document(language, head, body)
+    return _document(language, head, body, root=root, text=text)
 
 
 def meaning_in(card: dict, language: str) -> str:
@@ -261,17 +260,20 @@ def _all_ayat(card: dict, language: Language, text: dict, root: str) -> str:
 def _ayah(ayah: dict, language: Language, text: dict, root: str) -> str:
     surah, number = ayah["ref"].split(":")
     words = " ".join(_ayah_word(word, root) for word in ayah["words"])
-    glosses = "".join(
-        f'<p class="gloss"><span class="qr" lang="ar" dir="rtl">{word["text"]}</span> = '
-        f'{escape(_in_language(word["gloss"], language.code))} <span class="ai">AI</span></p>'
-        for word in ayah["words"] if word["hit"] and word.get("gloss")
-    )
-    return (f'<figure class="ayah"><p class="ayah-head"><span class="tense">{escape(text["tenses"][ayah["tense"]])}</span>'
+    glosses = "".join(_verb_gloss(word, language, text) for word in ayah["words"] if word["hit"])
+    return (f'<figure class="ayah"><p class="ayah-head"><span class="tense">{escape(grammar_label([ayah["category"]], text))}</span>'
             f'<a href="https://quran.com/{surah}/{number}" rel="noopener">{surah}:{number} ↗</a>'
             f'{ayah_links_html(ayah["ref"], language.code, text["forms"]["links"])}</p>'
             f'<blockquote class="qr" lang="ar" dir="rtl">{words}</blockquote>{glosses}'
             f'{_translation(ayah, language, text)}'
             f'<p class="ayah-foot">{_play(ayah["audio"], root, text["recitedAyah"])} {escape(text["recitedAyah"])}</p></figure>')
+
+
+def _verb_gloss(word: dict, language: Language, text: dict) -> str:
+    """The marked verb's meaning in this ayah — or, until it is glossed, its grammar."""
+    meaning = (f'{escape(_in_language(word["gloss"], language.code))} <span class="ai">AI</span>' if word.get("gloss")
+               else f'<span class="grammar">{escape(grammar_label(word["grammar"], text))}</span>')
+    return f'<p class="gloss"><span class="qr" lang="ar" dir="rtl">{word["text"]}</span> = {meaning}</p>'
 
 
 def ayah_links_html(ref: str, language: str, labels: dict[str, str], compact: bool = False) -> str:
@@ -368,7 +370,7 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
                  indexed_in=indexing.indexable_lists([verb.card for verb in verbs]), language=language.code,
                  alternates=seo.index_alternates, structured=seo.index_structured_data(title=text["page"]["indexTitle"], description=description,
                                                       language=language.code), page_type="website")
-    return _document(language, head, body)
+    return _document(language, head, body, root=root, text=text)
 
 
 # ---------- the app's root page and the 404 ----------
@@ -411,10 +413,15 @@ def not_found_page(texts: dict[str, dict], base_path: str) -> str:
 
 # ---------- shared parts ----------
 
-def _document(language: Language, head: str, body: str) -> str:
+def _document(language: Language, head: str, body: str, *, root: str, text: dict) -> str:
     direction = "rtl" if language.is_rtl else "ltr"
     return (f'<!doctype html>\n<html lang="{language.code}" dir="{direction}">\n<head>\n{head}</head>\n'
-            f'<body>\n{body}\n{_PLAYER}\n</body>\n</html>\n')
+            f'<body>\n{body}\n{_player(root, text)}\n</body>\n</html>\n')
+
+
+def _player(root: str, text: dict) -> str:
+    stop = text.get("stop") or _ENGLISH_STOP
+    return f'<script src="{root}{_PLAYER_SCRIPT}" data-attribute="data-audio" data-stop-label="{escape(stop)}" defer></script>'
 
 
 def _head(*, title: str, description: str, path: str, root: str, indexed_in: Sequence[str], language: str,
@@ -466,4 +473,4 @@ def _play(reference: str | None, root: str, label: str) -> str:
     link = audio_link(reference, root)
     if not link:
         return ""
-    return f'<button class="play" type="button" data-audio="{link}" aria-label="{escape(label)}">▶</button>'
+    return f'<button class="play" type="button" data-audio="{link}" aria-label="{escape(label)}"><span class="play-icon" aria-hidden="true">▶</span></button>'

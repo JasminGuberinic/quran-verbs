@@ -26,6 +26,7 @@ from itertools import groupby
 
 from fil.corpus.oracle import pronoun_key
 from fil.corpus.parse import Segment, VerbOccurrence
+from fil.languages import REQUIRED
 
 VerbKey = tuple[str, int]                 # (root, form)
 Location = tuple[int, int, int]           # (surah, ayah, word)
@@ -196,3 +197,29 @@ def gloss_of(verb: VerbKey, form: AttestedForm, authored: Glosses, in_context: G
 
 def _first_in_context(form: AttestedForm, in_context: Glosses) -> Mapping[str, str]:
     return next((in_context[key] for key in map(location_key, form.locations) if key in in_context), {})
+
+
+def forms_by_location(forms: Iterable[AttestedForm]) -> dict[Location, AttestedForm]:
+    """Which form stands at each place the verb is used."""
+    return {location: form for form in forms for location in form.locations}
+
+
+def example_gloss(verb: VerbKey, location: Location, forms: Mapping[Location, AttestedForm],
+                  authored: Glosses, in_context: Glosses) -> dict[str, str]:
+    """{language: gloss} for the verb of an example ayah: its own in-context gloss, else its form's.
+
+    A form's gloss is borrowed only when its letters read one way: تَقُولُ is "you say" in one
+    ayah and "she says" in another, so a gloss written elsewhere would be wrong half the time.
+    """
+    own = in_context.get(location_key(location))
+    if own:
+        return dict(own)
+    form = forms.get(location)
+    if form is None or form.is_ambiguous:
+        return {}
+    return gloss_of(verb, form, authored, in_context)
+
+
+def is_complete(gloss: Mapping[str, str]) -> bool:
+    """A gloss a card may show: written in every language a verb must have (English and Bosnian)."""
+    return all(gloss.get(code) for code in REQUIRED)

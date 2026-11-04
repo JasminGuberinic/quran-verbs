@@ -100,9 +100,10 @@ def _ayah_verbs(studied) -> tuple[memory.AyahVerb, ...]:
     glosses = _read_store(AYAH_VERB_GLOSSES_JSON)
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         ayat = study.ayat_of(study.words_of(iter_segments(lines), service.corpus_corrections()))
+    uses = service.form_occurrences()
     found: dict[str, memory.AyahVerb] = {}
     for verb in ((m.root, m.form) for m in studied):
-        for example in study.example_ayat(ayat, verb):
+        for example in study.example_ayat(ayat, verb, uses[verb]):
             for word in (w for w in example.words if w.carries(verb)):
                 key = f"{word.surah}:{word.ayah}:{word.number}"
                 if all(glosses.get(key, {}).get(code) for code in REQUIRED):

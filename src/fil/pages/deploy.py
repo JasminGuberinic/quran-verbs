@@ -14,6 +14,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 BRANCH = "gh-pages"
+# The whole site goes up in one push (~200 MB of audio); git's default HTTP buffer makes
+# GitHub refuse a push that large with "HTTP 400".
+_PUSH_BUFFER = 1024 * 1024 * 1024
 
 
 @dataclass(frozen=True)
@@ -29,7 +32,7 @@ def publish_commands(site: Path, git_dir: Path, remote: str, author: Identity, m
         [*git, "init", "--quiet", f"--initial-branch={BRANCH}"],
         [*git, "add", "--all"],
         [*git, "commit", "--quiet", "--message", message],
-        [*git, "push", "--force", "--quiet", remote, f"{BRANCH}:{BRANCH}"],
+        [*git, "-c", f"http.postBuffer={_PUSH_BUFFER}", "push", "--force", "--quiet", remote, f"{BRANCH}:{BRANCH}"],
     ]
 
 

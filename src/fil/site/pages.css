@@ -81,10 +81,14 @@ span.tag { cursor: default; }
 .forms-head { font-size: 1rem; margin: 24px 0 2px; }
 .attested { list-style: none; padding: 0; margin: 8px 0 0; }
 .attested li { display: grid; grid-template-columns: minmax(6em, auto) 3.5em 1fr auto; gap: 2px 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
-.attested b { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.attested b, .form-play { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.form-play { color: inherit; background: none; border: 0; border-bottom: 2px dotted color-mix(in srgb, var(--gold) 70%, transparent); border-radius: 4px; padding: 0 4px; line-height: inherit; cursor: pointer; }
+.form-play:hover { background: color-mix(in srgb, var(--gold) 14%, transparent); }
+.form-play.playing { background: var(--gold); color: var(--surface); border-bottom-color: var(--gold); }
+.form-play.playing::after { content: "■"; font-size: 0.45em; margin-inline-start: 4px; vertical-align: middle; }
 .attested small, .attested a { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
-.attested .grammar { color: var(--muted); font-size: 0.9rem; }
-@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+.attested .grammar, .attested .form-translation { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .form-translation, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
 .all-ayat { margin-top: 18px; display: grid; gap: 12px; justify-items: start; }
 .all-ayat-list { width: 100%; }
 button.button { border: 0; font: inherit; cursor: pointer; }
@@ -150,3 +154,6 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .button:hover { transform: translateY(-1px); }
 .verb-list a { border-radius: 12px; border-bottom-color: color-mix(in srgb, var(--line) 60%, transparent); transition: background .2s ease; }
 @media (prefers-reduced-motion: reduce) { .play:hover, .button:hover { transform: none; } }
+/* Contrast themes (forced colours) keep the background pattern but paint a solid backplate behind
+   every text run, so text resting on the bare page reads as black boxes; drop the pattern there. */
+@media (forced-colors: active) { body { background: Canvas; } }

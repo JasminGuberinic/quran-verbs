@@ -154,7 +154,7 @@ def _card() -> dict:
                   "translation": {"en": {"text": "And when your Lord said <to the angels>", "by": "Sahih International"}},
                   "words": [{"text": "قالَ", "hit": True, "audio": "audio/word.m4a", "gloss": {"en": "said", "bs": "reče"}},
                             {"text": "رَبُّكَ", "hit": False, "audio": None, "gloss": None}]}],
-        "forms": [{"arabic": "قَالَ", "count": 412, "first": "2:30", "gloss": {"en": "he said", "bs": "rekao je"},
+        "forms": [{"arabic": "قَالَ", "count": 412, "first": "2:30", "audio": "audio/form.m4a", "gloss": {"en": "he said", "bs": "rekao je"},
                    "grammar": [{"tense": "past", "pronoun": "huwa", "passive": False, "objects": []}]},
                   {"arabic": "قَالُوهَا", "count": 1, "first": "9:74",
                    "grammar": [{"tense": "past", "pronoun": "hum", "passive": False, "objects": ["hiya"]}]}],
@@ -370,7 +370,9 @@ def test_a_page_lists_every_form_with_its_count_gloss_and_first_ayah():
     html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), _text())
 
     assert "Every form (2)" in html
-    assert '<b lang="ar" dir="rtl">قَالَ</b><small>412×</small>' in html
+    assert ('<button class="form-play" type="button" lang="ar" dir="rtl" data-audio="../../audio/form.m4a">قَالَ</button>'
+            '<small>412×</small>') in html
+    assert '<b lang="ar" dir="rtl">قَالُوهَا</b><small>1×</small>' in html   # no recitation: shown, not playable
     assert "rekao je <span class=\"ai\">AI</span>" in html
     assert 'href="https://quran.com/9/74"' in html
 
@@ -380,6 +382,17 @@ def test_a_form_without_a_gloss_shows_its_grammar_and_a_missing_language_falls_b
 
     assert '<span class="grammar">past · hum · object: obj-hiya</span>' in html
     assert '<span class="form-gloss" lang="en">he said' in html
+
+
+def test_a_form_without_our_gloss_shows_its_word_by_word_translation_when_a_source_gives_one():
+    card = _card()
+    card["forms"][1]["wordTranslation"] = {"en": "they said it"}
+    card["forms"][0]["wordTranslation"] = {"bs": "rekao"}
+
+    html = render.verb_page(PublishedVerb(card, "qala"), _language("bs"), _text())
+
+    assert '<span class="form-translation" lang="en">they said it</span>' in html
+    assert "rekao je <span class=\"ai\">AI</span>" in html and ">rekao<" not in html   # our own gloss wins
 
 
 def test_grammar_names_tense_voice_subject_and_objects():

@@ -48,6 +48,7 @@ from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
 from fil.stages import forms
 from fil.study import AyahExample, QuranWord
+from fil.word_translations import NoWordTranslations, WordTranslations
 
 _TEMPLATE = Path(__file__).resolve().parents[1] / "site" / "index.html"
 APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js", "player.js")
@@ -80,7 +81,8 @@ class SiteContent:
 class _Sound:
     """Turns a recitation or a spoken text into a reference the page can play."""
 
-    def __init__(self, sink: AudioSink, recitations: WordRecitations | None = None) -> None:
+    def __init__(self, sink: AudioSink, recitations: WordRecitations | None = None,
+                 word_translations: WordTranslations | None = None) -> None:
         self.sink = sink
         self.recitations = recitations or WordRecitations(QuranHiveArchive(QURANHIVE_WORD_AUDIO),
                                                           RECITATION_CACHE / "quranhive")
@@ -89,6 +91,8 @@ class _Sound:
         self.translations = AyahTranslations()
         self.verb_glosses = _verb_glosses()
         self.form_glosses = forms.read_glosses()[0]
+        # No word-by-word source is wired yet: forms without our own gloss show their grammar.
+        self.word_translations = word_translations or NoWordTranslations()
 
     @staticmethod
     def ayah(surah: int, ayah: int) -> str:
@@ -241,11 +245,17 @@ def _forms_view(verb: study.VerbKey, uses: tuple[FormOccurrence, ...], count: in
 
 
 def _form_view(verb: study.VerbKey, form: attested_forms.AttestedForm, sound: _Sound) -> dict:
+    """A form's row: its word, recited as at its first occurrence, and what it means.
+
+    Optional keys are left out when empty — one row per form on every page adds up.
+    """
     surah, ayah, _word = form.first
     view = {"arabic": form.text, "count": form.count, "first": f"{surah}:{ayah}",
+            "audio": sound.word(*form.first),
             "grammar": [attested_forms.grammar_view(grammar) for grammar in form.grammars]}
-    gloss = attested_forms.gloss_of(verb, form, sound.form_glosses, sound.verb_glosses)
-    return {**view, "gloss": gloss} if gloss else view
+    meanings = {"gloss": attested_forms.gloss_of(verb, form, sound.form_glosses, sound.verb_glosses),
+                "wordTranslation": dict(sound.word_translations.of(form.first))}
+    return {**view, **{key: meaning for key, meaning in meanings.items() if meaning}}
 
 
 def _ayat_lists(card: dict, ayat: list[VerbAyah], corpus: _Corpus, sound: _Sound) -> list[tuple[str, dict]]:

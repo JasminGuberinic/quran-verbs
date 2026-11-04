@@ -189,33 +189,57 @@ def _ayat(card: dict, language: Language, text: dict, root: str) -> str:
     examples = "".join(_ayah(ayah, language, text, root) for ayah in card["ayat"])
     examples_block = f'<div class="ayat">{examples}</div>' if examples else ""
     return (f'<section><h2>{escape(text["inQuran"])}</h2>{examples_block}'
-            f'{_attested_forms(card, language, text)}{_all_ayat(card, language, text, root)}</section>')
+            f'{_attested_forms(card, language, text, root)}{_all_ayat(card, language, text, root)}</section>')
 
 
-def _attested_forms(card: dict, language: Language, text: dict) -> str:
+def _attested_forms(card: dict, language: Language, text: dict, root: str) -> str:
     words = text["forms"]
-    rows = "".join(_attested_form(form, language, text) for form in card["forms"])
+    rows = "".join(_attested_form(form, language, text, root) for form in card["forms"])
     heading = f'forms-{card["rank"]}'
     return (f'<h3 class="forms-head" id="{heading}">{escape(fill(words["allForms"], len(card["forms"])))}</h3>'
             f'<p class="note">{escape(words["formsNote"])}</p><ol class="attested" aria-labelledby="{heading}">{rows}</ol>')
 
 
-def _attested_form(form: dict, language: Language, text: dict) -> str:
+def _attested_form(form: dict, language: Language, text: dict, root: str) -> str:
     surah, number = form["first"].split(":")
     # Kept lean: one row per form on every page in every language adds up (8,000 pages).
-    return (f'<li><b lang="ar" dir="rtl">{form["arabic"]}</b><small>{form["count"]}×</small>'
+    return (f'<li>{_form_word(form, root)}<small>{form["count"]}×</small>'
             f'{_form_meaning(form, language, text)}<span class="first"><a href="https://quran.com/{surah}/{number}">{form["first"]}</a> '
             f'{ayah_links_html(form["first"], language.code, text["forms"]["links"], compact=True)}</span></li>')
 
 
+def _form_word(form: dict, root: str) -> str:
+    """The form itself; tapped, it plays (or stops) its recitation at its first occurrence."""
+    link = audio_link(form.get("audio"), root)
+    if not link:
+        return f'<b lang="ar" dir="rtl">{form["arabic"]}</b>'
+    return f'<button class="form-play" type="button" lang="ar" dir="rtl" data-audio="{link}">{form["arabic"]}</button>'
+
+
 def _form_meaning(form: dict, language: Language, text: dict) -> str:
-    """The form's gloss (in the page's language, else English), or its grammar until it has one."""
-    gloss = form.get("gloss") or {}
-    shown_language = language.code if gloss.get(language.code) else _ENGLISH
-    if not gloss.get(shown_language):
-        return f'<span class="grammar">{escape(grammar_label(form["grammar"], text))}</span>'
-    marked = f' lang="{shown_language}"' if shown_language != language.code else ""
-    return f'<span class="form-gloss"{marked}>{escape(gloss[shown_language])} <span class="ai">AI</span></span>'
+    """Our own gloss first, else a word-by-word translation, else the grammar — which is never wrong.
+
+    site/index.html (attestedFormsBlock) chooses the same way.
+    """
+    gloss = _in_language_or_english(form.get("gloss") or {}, language.code)
+    if gloss:
+        shown_language, meaning = gloss
+        return f'<span class="form-gloss"{_lang_if_other(shown_language, language)}>{escape(meaning)} <span class="ai">AI</span></span>'
+    translation = _in_language_or_english(form.get("wordTranslation") or {}, language.code)
+    if translation:
+        shown_language, meaning = translation
+        return f'<span class="form-translation"{_lang_if_other(shown_language, language)}>{escape(meaning)}</span>'
+    return f'<span class="grammar">{escape(grammar_label(form["grammar"], text))}</span>'
+
+
+def _in_language_or_english(meanings: dict[str, str], language: str) -> tuple[str, str] | None:
+    """(language, meaning) in the reader's language, else English; None when neither exists."""
+    shown_language = language if meanings.get(language) else _ENGLISH
+    return (shown_language, meanings[shown_language]) if meanings.get(shown_language) else None
+
+
+def _lang_if_other(shown_language: str, language: Language) -> str:
+    return f' lang="{shown_language}"' if shown_language != language.code else ""
 
 
 def grammar_label(readings: Sequence[dict], text: dict) -> str:

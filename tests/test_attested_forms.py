@@ -8,6 +8,7 @@ from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.resources import QAC_MORPHOLOGY
 from fil.stages.site import FormsDoNotAddUp, _forms_view, _listed_ayah
 from fil.study import QuranWord
+from fil.word_translations import NoWordTranslations
 
 # 2:6 "a-andharta-hum" (you warned them), 2:7 "and they said", 2:8 "they said", 2:10 "and they said",
 # 3:1 "you say" / 3:2 "she says": the same letters read two ways.
@@ -125,6 +126,11 @@ def test_a_gloss_is_complete_only_in_english_and_bosnian_both():
 def test_a_card_whose_forms_miss_an_occurrence_fails_the_build():
     class Sound:
         form_glosses, verb_glosses = {}, {}
+        word_translations = NoWordTranslations()
+
+        @staticmethod
+        def word(surah: int, ayah: int, word: int) -> None:
+            return None
 
     with pytest.raises(FormsDoNotAddUp):
         _forms_view(_SAY, _uses()[_SAY], 7, Sound())

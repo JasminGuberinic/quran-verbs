@@ -134,10 +134,16 @@ button.quran-tag.playing { background: var(--gold); color: var(--surface); }
 .forms-head { font-size: 1rem; margin: 18px 0 2px; }
 .attested { list-style: none; padding: 0; margin: 8px 0 0; }
 .attested li { display: grid; grid-template-columns: minmax(6em, auto) 3.5em 1fr auto; gap: 2px 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
-.attested b { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.attested b, .form-play { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.form-play { color: inherit; background: none; border: 0; border-bottom: 2px dotted color-mix(in srgb, var(--gold) 70%, transparent); border-radius: 4px; padding: 0 4px; line-height: inherit; cursor: pointer; }
+.form-play:hover { background: color-mix(in srgb, var(--gold) 14%, transparent); }
+.form-play.playing { background: var(--gold); color: var(--surface); border-bottom-color: var(--gold); }
+.form-play.playing::after { content: "■"; font-size: 0.45em; margin-inline-start: 4px; vertical-align: middle; }
 .attested small, .attested a { color: var(--muted); font-family: var(--font-data); font-size: 0.78rem; }
-.attested .grammar { color: var(--muted); font-size: 0.88rem; }
-@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+.attested .grammar, .attested .form-translation { color: var(--muted); font-size: 0.88rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .form-translation, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+/* Contrast themes keep the pattern but paint a backplate behind every text run; drop the pattern. */
+@media (forced-colors: active) { body { background: Canvas; } }
 .all-ayat { margin-top: 16px; display: grid; gap: 12px; }
 .all-ayat-list { display: grid; gap: 10px; }
 .all-ayat-list .ayah-head .play { width: 32px; height: 32px; }
@@ -681,18 +687,26 @@ nav.tabs button { min-height: 32px; }
     return `<section><h3 class="section-title">${escapeHtml(t().inQuran)}</h3>${examples}${attestedFormsBlock(verb)}${allAyatBlock(verb)}</section>`;
   }
 
-  // Every word the Quran uses the verb in: its gloss where it has one, else its grammar.
+  // Every word the Quran uses the verb in, playable as recited at its first occurrence.
   function attestedFormsBlock(verb) {
     const words = t().forms;
     const rows = verb.forms.map((form) => {
-      const gloss = form.gloss?.[language] || form.gloss?.en;
-      const meaning = gloss
-        ? `<span class="form-gloss">${escapeHtml(gloss)} <span class="ai-tag">AI</span></span>`
-        : `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
+      const word = form.audio
+        ? `<button class="form-play" type="button" lang="ar" dir="rtl" data-file="${form.audio}">${form.arabic}</button>`
+        : `<b lang="ar" dir="rtl">${form.arabic}</b>`;
       const [surah, number] = form.first.split(":");
-      return `<li><b lang="ar" dir="rtl">${form.arabic}</b><small>${form.count}×</small>${meaning}<span class="first"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener" title="${escapeHtml(words.firstAyah)} ${form.first}">${form.first}</a> ${FilAyat.ayahLinksHtml(form.first, language, words.links, true)}</span></li>`;
+      return `<li>${word}<small>${form.count}×</small>${formMeaningHtml(form)}<span class="first"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener" title="${escapeHtml(words.firstAyah)} ${form.first}">${form.first}</a> ${FilAyat.ayahLinksHtml(form.first, language, words.links, true)}</span></li>`;
     }).join("");
     return `<h4 class="forms-head">${escapeHtml(words.allForms(verb.forms.length))}</h4><p class="note">${escapeHtml(words.formsNote)}</p><ol class="attested">${rows}</ol>`;
+  }
+
+  // Our own gloss first, else a word-by-word translation, else the grammar (as pages/render.py chooses).
+  function formMeaningHtml(form) {
+    const gloss = form.gloss?.[language] || form.gloss?.en;
+    if (gloss) return `<span class="form-gloss">${escapeHtml(gloss)} <span class="ai-tag">AI</span></span>`;
+    const translation = form.wordTranslation?.[language] || form.wordTranslation?.en;
+    if (translation) return `<span class="form-translation">${escapeHtml(translation)}</span>`;
+    return `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
   }
 
   // The button that fetches every ayah of the verb (ayat.js), in the reader's language or English.

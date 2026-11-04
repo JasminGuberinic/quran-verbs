@@ -3,6 +3,7 @@
 from fil.examples import Example, ExampleWord
 from fil.service import Cell
 from fil.stages.site import _cell_view, _principal, _sentence_view
+from fil.word_translations import NoWordTranslations
 
 
 def test_a_sentence_offers_every_language_it_has():
@@ -19,6 +20,7 @@ class _FakeSound:
     def __init__(self, verb_glosses: dict) -> None:
         self.verb_glosses = verb_glosses
         self.form_glosses: dict = {}
+        self.word_translations = NoWordTranslations()
 
     @staticmethod
     def word(surah: int, ayah: int, word: int) -> str:
@@ -78,3 +80,30 @@ def test_a_cell_not_used_in_arabic_is_shown_marked_but_never_spoken():
 
     assert view["notUsed"] and view["plain"] == "اِنْبَغِ"
     assert view["spoken"] is None and view["recited"] is None
+
+
+class _WordByWord:
+    @staticmethod
+    def of(location: tuple[int, int, int]) -> dict:
+        return {"en": "they went"} if location == (2, 17, 3) else {}
+
+
+def _form_view(translations=None) -> dict:
+    from fil.attested_forms import AttestedForm, Grammar
+    from fil.stages.site import _form_view as form_view
+    grammar = Grammar("past", "hum", is_passive=False, objects=())
+    sound = _FakeSound({})
+    if translations:
+        sound.word_translations = translations
+    return form_view(("ذهب", 1), AttestedForm("ذَهَبَ", ((2, 17, 3), (7, 1, 2)), (grammar,)), sound)
+
+
+def test_a_form_plays_its_recitation_at_its_first_occurrence():
+    view = _form_view()
+
+    assert view["first"] == "2:17" and view["audio"] == "audio/2-17-3.m4a"
+    assert "gloss" not in view and "wordTranslation" not in view   # absent, never empty: rows stay lean
+
+
+def test_a_form_carries_a_word_by_word_translation_when_a_source_gives_one():
+    assert _form_view(_WordByWord())["wordTranslation"] == {"en": "they went"}

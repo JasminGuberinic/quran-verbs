@@ -84,6 +84,7 @@ _IRREGULAR = {
     "worshipped": "worship", "worshiped": "worship",
     "forgave": "forgive", "forgiven": "forgive", "spent": "spend",
     "fought": "fight", "misled": "mislead", "forgot": "forget", "forgotten": "forget",
+    "withdrew": "withdraw", "withdrawn": "withdraw",
     "forbade": "forbid", "forbidden": "forbid", "began": "begin", "begun": "begin",
 }
 
@@ -105,6 +106,8 @@ def _stem(word: str) -> str:
     for suffix in _SUFFIXES:
         if suffix == "s" and word.endswith("ss"):
             continue                                # "oppress" is a stem, not a plural
+        if suffix == "ed" and word.endswith("ceed"):
+            continue                                # "succeed" is a stem, not a past tense
         if word.endswith(suffix) and len(word) - len(suffix) >= 3:
             return _without_silent_e(word[: -len(suffix)])
     return _without_silent_e(word)

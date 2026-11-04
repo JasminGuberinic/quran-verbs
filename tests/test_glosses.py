@@ -76,3 +76,12 @@ def test_fought_and_misled_meet_their_base_forms():
 def test_forgot_meets_its_base_form():
     assert gloss_agrees("they forgot", ["forget+they_<verb>"]) is True
     assert gloss_agrees("forgotten", ["forget+he;it_<verb>"]) is True
+
+
+def test_a_ceed_verb_is_a_stem_not_a_past_tense():
+    assert gloss_agrees("succeeded", ["succeed;prosper;thrive+he;it_<verb>"]) is True
+    assert gloss_agrees("succeeds", ["he;it+succeed;prosper;thrive"]) is True
+
+
+def test_withdrew_meets_its_base_form():
+    assert gloss_agrees("they withdrew", ["be_empty;be_vacant;withdraw+they_<verb>"]) is True

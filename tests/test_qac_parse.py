@@ -78,3 +78,12 @@ def test_catalog_groups_by_root_and_form():
     assert kafara.form == 1
     assert kafara.occurrence_count == 2
     assert kafara.ayat == ("2:6", "3:10")  # unique, in mushaf order
+
+
+def test_catalog_corrects_a_corpus_lemma_that_is_not_the_citation_form():
+    occurrences = [
+        parse_line("4:130:3:1\tيُغْنِ\tV\tIMPF|VF:4|ROOT:غني|LEM:أَغْنَتْ|3MS|MOOD:JUS"),
+    ]
+    (aghna,) = build_catalog(occurrences)
+
+    assert aghna.lemma == "أَغْنَى"

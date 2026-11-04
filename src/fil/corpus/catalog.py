@@ -13,6 +13,14 @@ from typing import Iterable
 
 from fil.corpus.parse import VerbOccurrence
 
+# The corpus tags a few verbs with a lemma that is not their citation form, and the
+# lemma is what the generator conjugates from. For Form IV of غني every occurrence
+# carries أَغْنَتْ (a 3fs past), so the table came out as أَغْنَتَ / أَغْنِتْ; its
+# citation form is أَغْنَى (cf. 69:28 مَا أَغْنَىٰ عَنِّى مَالِيَهْ).
+_LEMMA_CORRECTIONS: dict[tuple[str, int], str] = {
+    ("غني", 4): "أَغْنَى",
+}
+
 
 @dataclass(frozen=True)
 class VerbEntry:
@@ -37,7 +45,7 @@ def build_catalog(occurrences: Iterable[VerbOccurrence]) -> list[VerbEntry]:
 
 def _entry(root: str, form: int, occurrences: list[VerbOccurrence]) -> VerbEntry:
     """Summarize all occurrences of one (root, form) into a catalogue entry."""
-    lemma = Counter(o.lemma for o in occurrences).most_common(1)[0][0]
+    lemma = _LEMMA_CORRECTIONS.get((root, form)) or _most_common_lemma(occurrences)
     ayat = sorted({o.ayah_ref for o in occurrences}, key=_mushaf_order)
     return VerbEntry(
         root=root,
@@ -46,6 +54,10 @@ def _entry(root: str, form: int, occurrences: list[VerbOccurrence]) -> VerbEntry
         occurrence_count=len(occurrences),
         ayat=tuple(ayat),
     )
+
+
+def _most_common_lemma(occurrences: list[VerbOccurrence]) -> str:
+    return Counter(o.lemma for o in occurrences).most_common(1)[0][0]
 
 
 def _mushaf_order(ayah_ref: str) -> tuple[int, int]:

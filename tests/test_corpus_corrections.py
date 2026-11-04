@@ -121,6 +121,16 @@ def test_come_is_the_imperative_of_the_form_vi_to_be_exalted():
     assert spelling_key("تَعَالَيْنَ") in spellings[("imperative", "antunna")]
 
 
+def test_to_show_the_way_no_longer_claims_lowering_by_deception():
+    # فَدَلَّىٰهُمَا (7:22) is دَلَّى "to let down" (root دلو); without it, دَلَّ يَدُلُّ is
+    # generated from its documented present vowel.
+    guide = service.get_verb("دلل", 1)
+    table = {(cell.tense, cell.pronoun): spelling_key(cell.arabic) for cell in guide.cells}
+
+    assert "7:22" not in guide.ayat
+    assert (table[("past", "huwa")], table[("present", "huwa")]) == (spelling_key("دَلَّ"), spelling_key("يَدُلُّ"))
+
+
 def test_he_strives_in_79_22_counts_as_a_present_not_a_past():
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         (striving,) = (o for o in service.verb_occurrences(lines) if (o.surah, o.ayah, o.word) == (79, 22, 3))

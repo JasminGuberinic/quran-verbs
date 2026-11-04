@@ -465,5 +465,30 @@
    ],
    "why": "يَئِسَ يَيْأَسُ: after the sukūn of yāʾ the hamza is fatḥa-voweled and sits on alif, so the standard spelling is اِيأَسْنَ; the generator seats it on yāʾ (ئ), and the Quran's form is Uthmani (يَا۟يْـَٔسُ, 12:87)."
   }
+ },
+ "حيي_1": {
+  "past:huwa": {
+   "spellings": [
+    "حَيِيَ",
+    "حَيَّ"
+   ],
+   "why": "حَيِيَ and its contracted form حَيَّ are both standard for 'he lived'; Hafs reads حَيَّ in 8:42 (مَنْ حَىَّ عَنۢ بَيِّنَةٍ, Uthmani ى), which the generator's حَيِيَ disagreed with, so the cell was quarantined. Both spellings are recorded so the table shows the full form and the Quran's."
+  }
+ },
+ "طلع_8": {
+  "past:huwa": {
+   "spellings": [
+    "اِطَّلَعَ"
+   ],
+   "why": "In 19:78 (أَطَّلَعَ ٱلْغَيْبَ) the question hamza replaces the hamzat al-wasl of اِطَّلَعَ, so the corpus records the verb as طَّلَعَ, a spelling that cannot stand on its own. اِطَّلَعَ (cf. 37:55 فَٱطَّلَعَ) is the full past."
+  }
+ },
+ "سوق_1": {
+  "imperative:anta": {
+   "spellings": [
+    "سُقْ"
+   ],
+   "why": "The hollow imperative سُقْ (سَاقَ يَسُوقُ, 'drive!') is too short for the analyzer to read, so no analyzable spelling exists; this records the standard form so the gate confirms the verb by the table."
+  }
  }
 }

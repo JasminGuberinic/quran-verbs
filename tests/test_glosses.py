@@ -98,5 +98,10 @@ def test_withdrew_meets_its_base_form():
     assert gloss_agrees("they withdrew", ["be_empty;be_vacant;withdraw+they_<verb>"]) is True
 
 
+def test_drove_meets_its_base_form():
+    assert gloss_agrees("drove", ["drive;lead;direct+he;it_<verb>"]) is True
+    assert gloss_agrees("they drove", ["drive;lead;direct+they_<verb>"]) is True
+
+
 def test_strove_meets_its_base_form():
     assert gloss_agrees("they strove", ["strive;pursue+they_<verb>"]) is True

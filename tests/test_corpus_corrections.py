@@ -14,6 +14,7 @@ from fil.corpus.corrections import (
 )
 from fil.corpus.oracle import build_oracle
 from fil.corpus.parse import iter_segments, iter_verb_occurrences, parse_line
+from fil.examples import spelling_key
 from fil.resources import AYAH_VERB_GLOSSES_JSON, QAC_MORPHOLOGY
 from fil.study import ayat_of, example_ayat, words_of
 
@@ -105,6 +106,19 @@ def test_to_dwell_no_longer_carries_the_form_iv_to_avail():
 
     assert dwell.lemma == "غَنِيَ" and "69:28" not in dwell.ayat
     assert "69:28" in avail.ayat and "9:74" not in dwell.ayat
+
+
+def test_come_is_the_imperative_of_the_form_vi_to_be_exalted():
+    # The corpus tags every تَعَالَ / تَعَالَوْا / تَعَالَيْنَ "come!" VF:4; refiled, the one
+    # Form VI card carries both senses and there is no Form IV card left.
+    exalted = service.get_verb("علو", 6)
+    spellings = {(cell.tense, cell.pronoun): set(map(spelling_key, cell.spellings)) for cell in exalted.cells}
+
+    assert ("علو", 4) not in {(verb.root, verb.form) for verb in service.list_verbs()}
+    assert exalted.lemma == "تَعالَى" and {"3:61", "33:28", "6:100"} <= set(exalted.ayat)
+    assert spelling_key("تَعَالَ") in spellings[("imperative", "anta")]
+    assert spelling_key("تَعَالَوْا") in spellings[("imperative", "antum")]
+    assert spelling_key("تَعَالَيْنَ") in spellings[("imperative", "antunna")]
 
 
 def test_he_strives_in_79_22_counts_as_a_present_not_a_past():

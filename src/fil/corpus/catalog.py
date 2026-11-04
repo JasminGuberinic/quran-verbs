@@ -138,10 +138,6 @@ _LEMMA_CORRECTIONS: dict[tuple[str, int], str] = {
     ("كيد", 1): "كَادَ",
     ("نظر", 8): "انْتَظَرَ",
     ("هبط", 1): "هَبَطَ",
-    # The imperative تَعَالَ "come!" (تَعَالَوْا, تَعَالَيْنَ): the corpus files it as Form IV
-    # with the imperative as lemma, and conjugating that gave تَعِلْ / يُتَعِيلُ. It is the
-    # imperative of تَعَالَى, so the table is conjugated from that past.
-    ("علو", 4): "تَعَالَى",
     ("بشر", 10): "اسْتَبْشَرَ",
 }
 

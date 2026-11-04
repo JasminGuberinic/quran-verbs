@@ -524,8 +524,6 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("نظر", 8, "انْتَظَرَ", {("past", "ana"): "اِنْتَظَرْتُ", ("present", "huwa"): "يَنتَظِرُ"}),
     ("هبط", 1, "هَبَطَ", {("past", "ana"): "هَبَطْتُ", ("present", "huwa"): "يَهْبِطُ"}),
     ("بشر", 10, "اسْتَبْشَرَ", {("past", "ana"): "اِسْتَبْشَرْتُ", ("present", "huwa"): "يَسْتَبْشِرُ"}),
-    # The imperative تَعَالَ is conjugated from its past تَعَالَى, not as a Form IV.
-    ("علو", 4, "تَعَالَى", {("imperative", "anta"): "تَعَالَ", ("present", "huwa"): "يَتَعَالَى"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -536,15 +534,8 @@ def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, 
     assert {key: table[key] for key in cells} == {key: normalize("NFC", form) for key, form in cells.items()}
 
 
-# Verbs the corpus files under a form they do not have: the citation form is checked
-# against the form it really is. تَعَالَ "come!" is the imperative of the Form VI
-# تَعَالَى, but every occurrence is tagged VF:4.
-_FORM_THE_CORPUS_MISTAGS = {("علو", 4): 6}
-
-
 def _citation_form_faults(root: str, form: int, lemma: str) -> list[str]:
     """Why a lemma does not look like a 3rd-masc-singular active past (empty if it does)."""
-    form = _FORM_THE_CORPUS_MISTAGS.get((root, form), form)
     letters = [index for index, char in enumerate(lemma) if not combining(char)]
     last = letters[-1]
     faults = []

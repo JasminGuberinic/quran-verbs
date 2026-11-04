@@ -87990,6 +87990,260 @@
         "note": "",
         "independent": true
       }
+    },
+    {
+      "arabic": "يَتَعَالَى عَلَى زُمَلَائِهِ",
+      "words": [
+        {
+          "arabic": "يَتَعَالَى",
+          "en": "acts superior",
+          "bs": "uzdiže se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "iznad",
+          "is_target": false,
+          "translations": {
+            "bn": "-কে",
+            "fa": "بر",
+            "fr": "de",
+            "id": "untuk",
+            "tr": "-meyi",
+            "ur": "کو"
+          }
+        },
+        {
+          "arabic": "زُمَلَائِهِ",
+          "en": "his colleagues",
+          "bs": "svojih kolega",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "He acts superior to his colleagues.",
+      "bs": "Uzdiže se iznad svojih kolega.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "يَتَعَالَى"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "يتعالى على = acts arrogantly toward, correct government and vowelling; translations fine (Bosnian 'uzdiže se nad kolegama' would be slightly clearer than 'iznad', which can suggest 'surpasses'). Data flag: Form VI, not Form 4.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "لَا أَتَعَالَى عَلَى أَحَدٍ",
+      "words": [
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "ne",
+          "is_target": false,
+          "translations": {
+            "bn": "না",
+            "fa": "نه",
+            "fr": "ne ... pas",
+            "id": "tidak",
+            "tr": "değil",
+            "ur": "نہیں"
+          }
+        },
+        {
+          "arabic": "أَتَعَالَى",
+          "en": "act superior",
+          "bs": "uzdižem se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "nad",
+          "is_target": false,
+          "translations": {
+            "bn": "-কে",
+            "fa": "بر",
+            "fr": "de",
+            "id": "untuk",
+            "tr": "-meyi",
+            "ur": "کو"
+          }
+        },
+        {
+          "arabic": "أَحَدٍ",
+          "en": "one",
+          "bs": "ni kim",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I do not act superior to anyone.",
+      "bs": "Ne uzdižem se ni nad kim.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "أَتَعَالَى"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Correct present/ana with natural على government and genitive أحدٍ; en and bs ('Ne uzdižem se ni nad kim') accurate and natural. Data flag: Form VI, not Form 4.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "تَعَالَوْا عَلَى خِلَافَاتِهِمْ",
+      "words": [
+        {
+          "arabic": "تَعَالَوْا",
+          "en": "rose",
+          "bs": "uzdigli su se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "above",
+          "bs": "iznad",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "خِلَافَاتِهِمْ",
+          "en": "their disputes",
+          "bs": "svojih nesuglasica",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They rose above their disputes.",
+      "bs": "Uzdigli su se iznad svojih nesuglasica.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "تَعَالَوْا"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "تَعَالَوْا عَلَى (rise above, cf. التعالي على الخلافات) is idiomatic modern MSA; past/hum vowelling correct and على disambiguates it from the identical imperative. Translations accurate. Data flag: Form VI, not Form 4.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "تَعَالَ إِلَى الْمَطْبَخِ",
+      "words": [
+        {
+          "arabic": "تَعَالَ",
+          "en": "come",
+          "bs": "dođi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "إِلَى",
+          "en": "to",
+          "bs": "u",
+          "is_target": false,
+          "translations": {
+            "bn": "প্রতি",
+            "fa": "به",
+            "fr": "à",
+            "id": "ke",
+            "tr": "-e",
+            "ur": "کی طرف"
+          }
+        },
+        {
+          "arabic": "الْمَطْبَخِ",
+          "en": "the kitchen",
+          "bs": "kuhinju",
+          "is_target": false,
+          "translations": {
+            "bn": "রান্নাঘর",
+            "fa": "آشپزخانه",
+            "fr": "de la cuisine",
+            "id": "dapur",
+            "tr": "mutfak",
+            "ur": "باورچی خانہ"
+          }
+        }
+      ],
+      "en": "Come to the kitchen.",
+      "bs": "Dođi u kuhinju.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": [
+          "تَعَالَ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "تَعَالَ (imperative/anta, 'come') with إلى is correct and natural; en/bs accurate. Data flag: Form VI, not Form 4.",
+        "independent": true
+      }
     }
   ],
   "كشف_1": [
@@ -122451,329 +122705,6 @@
         "verb_usage_ok": true,
         "by": "claude subagent, blind reviewer (separate context)",
         "note": "",
-        "independent": true
-      }
-    }
-  ],
-  "علو_4": [
-    {
-      "arabic": "تَعَالَى الضَّجِيجُ فِي الشَّارِعِ",
-      "words": [
-        {
-          "arabic": "تَعَالَى",
-          "en": "rose",
-          "bs": "podigla se",
-          "is_target": true,
-          "translations": {}
-        },
-        {
-          "arabic": "الضَّجِيجُ",
-          "en": "the noise",
-          "bs": "buka",
-          "is_target": false,
-          "translations": {}
-        },
-        {
-          "arabic": "فِي",
-          "en": "in",
-          "bs": "na",
-          "is_target": false,
-          "translations": {
-            "bn": "মধ্যে",
-            "fa": "در",
-            "fr": "dans",
-            "id": "di",
-            "tr": "içinde",
-            "ur": "میں"
-          }
-        },
-        {
-          "arabic": "الشَّارِعِ",
-          "en": "the street",
-          "bs": "ulici",
-          "is_target": false,
-          "translations": {}
-        }
-      ],
-      "en": "The noise rose in the street.",
-      "bs": "Buka se podigla na ulici.",
-      "tense": "past",
-      "pronoun": "huwa",
-      "source": "generated",
-      "drafted_by": "claude, drafting pass",
-      "translations": {},
-      "checks": {
-        "verb_root": true,
-        "verb_form": true,
-        "all_words_valid": true,
-        "gloss_agreement": true,
-        "gloss_conflicts": [],
-        "verb_form_by": "analyzer",
-        "glossed_by_exception": [
-          "تَعَالَى"
-        ]
-      },
-      "critique": {
-        "approved": true,
-        "grammar_ok": true,
-        "translation_ok": true,
-        "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "Natural MSA (تعالى for sounds rising, cf. تعالت الأصوات), correct masculine agreement with الضجيج; en/bs accurate. Data flag: تَعَالَى is Form VI (تَفَاعَلَ), not Form 4 as the item's form field says.",
-        "independent": true
-      }
-    },
-    {
-      "arabic": "يَتَعَالَى عَلَى زُمَلَائِهِ",
-      "words": [
-        {
-          "arabic": "يَتَعَالَى",
-          "en": "acts superior",
-          "bs": "uzdiže se",
-          "is_target": true,
-          "translations": {}
-        },
-        {
-          "arabic": "عَلَى",
-          "en": "to",
-          "bs": "iznad",
-          "is_target": false,
-          "translations": {
-            "bn": "-কে",
-            "fa": "بر",
-            "fr": "de",
-            "id": "untuk",
-            "tr": "-meyi",
-            "ur": "کو"
-          }
-        },
-        {
-          "arabic": "زُمَلَائِهِ",
-          "en": "his colleagues",
-          "bs": "svojih kolega",
-          "is_target": false,
-          "translations": {}
-        }
-      ],
-      "en": "He acts superior to his colleagues.",
-      "bs": "Uzdiže se iznad svojih kolega.",
-      "tense": "present",
-      "pronoun": "huwa",
-      "source": "generated",
-      "drafted_by": "claude, drafting pass",
-      "translations": {},
-      "checks": {
-        "verb_root": true,
-        "verb_form": true,
-        "all_words_valid": true,
-        "gloss_agreement": true,
-        "gloss_conflicts": [],
-        "verb_form_by": "analyzer",
-        "glossed_by_exception": [
-          "يَتَعَالَى"
-        ]
-      },
-      "critique": {
-        "approved": true,
-        "grammar_ok": true,
-        "translation_ok": true,
-        "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "يتعالى على = acts arrogantly toward, correct government and vowelling; translations fine (Bosnian 'uzdiže se nad kolegama' would be slightly clearer than 'iznad', which can suggest 'surpasses'). Data flag: Form VI, not Form 4.",
-        "independent": true
-      }
-    },
-    {
-      "arabic": "لَا أَتَعَالَى عَلَى أَحَدٍ",
-      "words": [
-        {
-          "arabic": "لَا",
-          "en": "not",
-          "bs": "ne",
-          "is_target": false,
-          "translations": {
-            "bn": "না",
-            "fa": "نه",
-            "fr": "ne ... pas",
-            "id": "tidak",
-            "tr": "değil",
-            "ur": "نہیں"
-          }
-        },
-        {
-          "arabic": "أَتَعَالَى",
-          "en": "act superior",
-          "bs": "uzdižem se",
-          "is_target": true,
-          "translations": {}
-        },
-        {
-          "arabic": "عَلَى",
-          "en": "to",
-          "bs": "nad",
-          "is_target": false,
-          "translations": {
-            "bn": "-কে",
-            "fa": "بر",
-            "fr": "de",
-            "id": "untuk",
-            "tr": "-meyi",
-            "ur": "کو"
-          }
-        },
-        {
-          "arabic": "أَحَدٍ",
-          "en": "one",
-          "bs": "ni kim",
-          "is_target": false,
-          "translations": {}
-        }
-      ],
-      "en": "I do not act superior to anyone.",
-      "bs": "Ne uzdižem se ni nad kim.",
-      "tense": "present",
-      "pronoun": "ana",
-      "source": "generated",
-      "drafted_by": "claude, drafting pass",
-      "translations": {},
-      "checks": {
-        "verb_root": true,
-        "verb_form": true,
-        "all_words_valid": true,
-        "gloss_agreement": true,
-        "gloss_conflicts": [],
-        "verb_form_by": "analyzer",
-        "glossed_by_exception": [
-          "أَتَعَالَى"
-        ]
-      },
-      "critique": {
-        "approved": true,
-        "grammar_ok": true,
-        "translation_ok": true,
-        "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "Correct present/ana with natural على government and genitive أحدٍ; en and bs ('Ne uzdižem se ni nad kim') accurate and natural. Data flag: Form VI, not Form 4.",
-        "independent": true
-      }
-    },
-    {
-      "arabic": "تَعَالَوْا عَلَى خِلَافَاتِهِمْ",
-      "words": [
-        {
-          "arabic": "تَعَالَوْا",
-          "en": "rose",
-          "bs": "uzdigli su se",
-          "is_target": true,
-          "translations": {}
-        },
-        {
-          "arabic": "عَلَى",
-          "en": "above",
-          "bs": "iznad",
-          "is_target": false,
-          "translations": {}
-        },
-        {
-          "arabic": "خِلَافَاتِهِمْ",
-          "en": "their disputes",
-          "bs": "svojih nesuglasica",
-          "is_target": false,
-          "translations": {}
-        }
-      ],
-      "en": "They rose above their disputes.",
-      "bs": "Uzdigli su se iznad svojih nesuglasica.",
-      "tense": "past",
-      "pronoun": "hum",
-      "source": "generated",
-      "drafted_by": "claude, drafting pass",
-      "translations": {},
-      "checks": {
-        "verb_root": true,
-        "verb_form": true,
-        "all_words_valid": true,
-        "gloss_agreement": true,
-        "gloss_conflicts": [],
-        "verb_form_by": "analyzer",
-        "glossed_by_exception": [
-          "تَعَالَوْا"
-        ]
-      },
-      "critique": {
-        "approved": true,
-        "grammar_ok": true,
-        "translation_ok": true,
-        "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "تَعَالَوْا عَلَى (rise above, cf. التعالي على الخلافات) is idiomatic modern MSA; past/hum vowelling correct and على disambiguates it from the identical imperative. Translations accurate. Data flag: Form VI, not Form 4.",
-        "independent": true
-      }
-    },
-    {
-      "arabic": "تَعَالَ إِلَى الْمَطْبَخِ",
-      "words": [
-        {
-          "arabic": "تَعَالَ",
-          "en": "come",
-          "bs": "dođi",
-          "is_target": true,
-          "translations": {}
-        },
-        {
-          "arabic": "إِلَى",
-          "en": "to",
-          "bs": "u",
-          "is_target": false,
-          "translations": {
-            "bn": "প্রতি",
-            "fa": "به",
-            "fr": "à",
-            "id": "ke",
-            "tr": "-e",
-            "ur": "کی طرف"
-          }
-        },
-        {
-          "arabic": "الْمَطْبَخِ",
-          "en": "the kitchen",
-          "bs": "kuhinju",
-          "is_target": false,
-          "translations": {
-            "bn": "রান্নাঘর",
-            "fa": "آشپزخانه",
-            "fr": "de la cuisine",
-            "id": "dapur",
-            "tr": "mutfak",
-            "ur": "باورچی خانہ"
-          }
-        }
-      ],
-      "en": "Come to the kitchen.",
-      "bs": "Dođi u kuhinju.",
-      "tense": "imperative",
-      "pronoun": "anta",
-      "source": "generated",
-      "drafted_by": "claude, drafting pass",
-      "translations": {},
-      "checks": {
-        "verb_root": true,
-        "verb_form": true,
-        "all_words_valid": true,
-        "gloss_agreement": true,
-        "gloss_conflicts": [],
-        "verb_form_by": "corpus table",
-        "glossed_by_exception": [
-          "تَعَالَ"
-        ]
-      },
-      "critique": {
-        "approved": true,
-        "grammar_ok": true,
-        "translation_ok": true,
-        "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "تَعَالَ (imperative/anta, 'come') with إلى is correct and natural; en/bs accurate. Data flag: Form VI, not Form 4.",
         "independent": true
       }
     }

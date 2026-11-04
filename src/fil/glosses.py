@@ -86,6 +86,7 @@ _IRREGULAR = {
     "fought": "fight", "misled": "mislead", "forgot": "forget", "forgotten": "forget",
     "withdrew": "withdraw", "withdrawn": "withdraw",
     "forbade": "forbid", "forbidden": "forbid", "began": "begin", "begun": "begin",
+    "strove": "strive", "striven": "strive",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

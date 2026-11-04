@@ -85,3 +85,7 @@ def test_a_ceed_verb_is_a_stem_not_a_past_tense():
 
 def test_withdrew_meets_its_base_form():
     assert gloss_agrees("they withdrew", ["be_empty;be_vacant;withdraw+they_<verb>"]) is True
+
+
+def test_strove_meets_its_base_form():
+    assert gloss_agrees("they strove", ["strive;pursue+they_<verb>"]) is True

@@ -21,6 +21,7 @@ from fil.stages import (
     full,
     ingest,
     package,
+    pages,
     review,
     site,
 )
@@ -39,6 +40,7 @@ _STAGES = {
     "evals": (evals.main, "report the factory's metrics; re-run the gate over the golden set"),
     "batch": (batch.main, "add verbs in batches: plan, wordbank, draft, meanings, ayah, review-export/import"),
     "site": (site.main, "build the static study site (build/site) for the verbs in data/meanings.json"),
+    "pages": (pages.main, "build the public GitHub Pages site (build/pages); --deploy publishes it"),
 }
 
 
@@ -51,6 +53,9 @@ def main() -> None:
     known, rest = parser.parse_known_args()
     if known.stage == "batch":
         batch.main(rest)
+        return
+    if known.stage == "pages":
+        pages.main(rest)
         return
     if rest:
         parser.error(f"unrecognized arguments: {' '.join(rest)}")

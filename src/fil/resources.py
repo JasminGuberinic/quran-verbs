@@ -19,5 +19,7 @@ AYAH_TRANSLATIONS_DIR = DATA_DIR / "translations"  # free ayah translations (fet
 AYAH_VERB_GLOSSES_JSON = DATA_DIR / "ayah_verb_glosses.json"  # the example verbs, translated in context
 MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per language
 SITE_DIR = BUILD_DIR / "site"               # the static study site (fil site)
+PAGES_DIR = BUILD_DIR / "pages"             # the public GitHub Pages site (fil pages)
+REPOSITORY_DIR = _ROOT
 RECITATION_CACHE = BUILD_DIR / "recitation-cache"  # downloaded recitation clips, fetched once
 SPEECH_CACHE = BUILD_DIR / "speech-cache"   # synthesized clips, keyed by what they say

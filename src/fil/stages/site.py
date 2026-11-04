@@ -5,6 +5,8 @@
 The site is a folder of plain files, so it opens locally and can be hosted anywhere for
 free. data.json is a light index; each verb's card, with its sound embedded, is its own
 file, loaded when the learner reaches it — one file per verb, not hundreds of clips.
+Where the sound goes is a strategy (fil.site_audio): embedded here, separate shared files
+for the public site (fil pages), which assembles the very same cards through `assemble`.
 
 What a learner sees is decided by the service, fil.study and fil.speech; this stage gathers
 it and refuses to ship what must not ship:
@@ -21,7 +23,6 @@ reader (fil.speech). Where the two readers disagree, the build says so.
 
 from __future__ import annotations
 
-import base64
 import json
 import shutil
 import subprocess
@@ -36,10 +37,12 @@ from fil.examples import Example
 from fil.languages import LANGUAGES, REQUIRED
 from fil.recitation import RecitationLibrary
 from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
+from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
 from fil.study import AyahExample, QuranWord
 
 _TEMPLATE = Path(__file__).resolve().parents[1] / "site" / "index.html"
+APP_FILES = ("index.html", "ui.js", "practice.js")
 _COMPRESSED = BUILD_DIR / "compressed-cache"
 _REVIEW = BUILD_DIR / "site-review.txt"
 
@@ -55,10 +58,19 @@ class _Corpus:
     nouns: dict[study.VerbKey, dict[str, study.DerivedNoun]]
 
 
-class _Sound:
-    """Turns a recitation or a spoken text into an embeddable data URI."""
+@dataclass(frozen=True)
+class SiteContent:
+    """Everything the app shows: the index (data.json) and one card per studied verb."""
+    payload: dict
+    cards: tuple[dict, ...]
+    speech: SpeechLibrary
 
-    def __init__(self) -> None:
+
+class _Sound:
+    """Turns a recitation or a spoken text into a reference the page can play."""
+
+    def __init__(self, sink: AudioSink) -> None:
+        self.sink = sink
         self.recitations = RecitationLibrary(BUILD_DIR / "recitation-stage", cache=RECITATION_CACHE)
         self.speech = SpeechLibrary(TtsArabicVoice(), SPEECH_CACHE)
         self.translations = AyahTranslations()
@@ -71,7 +83,7 @@ class _Sound:
         return self._recited(self.recitations.word(surah, ayah, word))
 
     def spoken(self, text: str) -> str:
-        return _data_uri(self.speech.clip(text))
+        return self.sink.reference(self.speech.clip(text))
 
     def _recited(self, site_path: str) -> str:
         """Recitations arrive as large MP3s (a single word is 320 kb/s); ship them compact."""
@@ -81,34 +93,37 @@ class _Sound:
             compact.parent.mkdir(parents=True, exist_ok=True)
             subprocess.run(compact_aac_command(source, compact, RECITATION_BITRATE),
                            check=True, capture_output=True)
-        return _data_uri(compact)
-
-
-def _data_uri(clip: Path) -> str:
-    return "data:audio/mp4;base64," + base64.b64encode(clip.read_bytes()).decode()
+        return self.sink.reference(compact)
 
 
 def main(site: Path = SITE_DIR) -> None:
+    content = assemble(EmbeddedAudio())
+    if content is None:
+        return
+    reset(site)
+    write_app(site, content)
+    report(site, content)
+
+
+def assemble(sink: AudioSink) -> SiteContent | None:
+    """Every studied verb's card, its sound handed to `sink`; None when nothing is studied."""
     studied = meanings.load()
     if not studied:
         print("data/meanings.json lists no verbs — nothing to build.")
-        return
+        return None
 
     corpus = _read_corpus()
-    sound = _Sound()
-    _reset(site)
+    sound = _Sound(sink)
     catalogue = service.list_verbs()
     total = sum(verb.occurrence_count for verb in catalogue)
     ranks = {(verb.root, verb.form): rank for rank, verb in enumerate(catalogue, 1)}
     summaries = {(verb.root, verb.form): verb for verb in catalogue}
 
-    index = []
+    cards = []
     for meaning in studied:
         key = (meaning.root, meaning.form)
         card = _verb_view(meaning, summaries[key], ranks[key], total, corpus, sound)
-        name = f"verbs/{ranks[key]:04d}.json"
-        (site / name).write_text(json.dumps(card, ensure_ascii=False), encoding="utf-8")
-        index.append({**_summary_of(card), "file": name})
+        cards.append(card)
         print(f"  {card['rank']:>4} {card['lemma']}", flush=True)
 
     payload = {
@@ -119,12 +134,22 @@ def main(site: Path = SITE_DIR) -> None:
              "trust": language.trust}
             for language in LANGUAGES
         ],
-        "verbs": index,
+        "verbs": [{**_summary_of(card), "file": card_file(card)} for card in cards],
     }
-    (site / "data.json").write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-    shutil.copyfile(_TEMPLATE, site / "index.html")
-    shutil.copyfile(_TEMPLATE.parent / "practice.js", site / "practice.js")
-    _report(site, index, sound.speech)
+    return SiteContent(payload, tuple(cards), sound.speech)
+
+
+def card_file(card: dict) -> str:
+    return f"verbs/{card['rank']:04d}.json"
+
+
+def write_app(site: Path, content: SiteContent) -> None:
+    """The app itself: its index, one card file per verb, and the page with its scripts."""
+    for card in content.cards:
+        (site / card_file(card)).write_text(json.dumps(card, ensure_ascii=False), encoding="utf-8")
+    (site / "data.json").write_text(json.dumps(content.payload, ensure_ascii=False), encoding="utf-8")
+    for name in APP_FILES:
+        shutil.copyfile(_TEMPLATE.parent / name, site / name)
 
 
 def _read_corpus() -> _Corpus:
@@ -134,7 +159,7 @@ def _read_corpus() -> _Corpus:
     return _Corpus(study.ayat_of(words), study.recitation_index(words), study.derived_nouns(segments))
 
 
-def _reset(site: Path) -> None:
+def reset(site: Path) -> None:
     """Start from an empty folder, so a verb dropped from the data is dropped from the site."""
     shutil.rmtree(site, ignore_errors=True)
     (site / "verbs").mkdir(parents=True)
@@ -238,8 +263,8 @@ def _sentence_view(example: Example, sound: _Sound | None = None) -> dict:
     }
 
 
-def _report(site: Path, index: list[dict], speech: SpeechLibrary) -> None:
-    cards = [json.loads((site / entry["file"]).read_text(encoding="utf-8")) for entry in index]
+def report(site: Path, content: SiteContent) -> None:
+    cards, speech = content.cards, content.speech
     sentences = sum(len(card["sentences"]) for card in cards)
     size = sum(path.stat().st_size for path in site.rglob("*") if path.is_file()) / 1e6
     disagreements = speech.disagreements

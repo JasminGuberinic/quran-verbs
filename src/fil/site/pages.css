@@ -1,0 +1,75 @@
+/* The static verb pages (fil pages): the app's colours and type, for reading without script. */
+:root {
+  --paper: #f2f5f3; --surface: #ffffff; --ink: #15241f; --muted: #5b6b65; --line: #d5ddd9;
+  --accent: #0f6b5c; --accent-soft: #e1efeb; --gold: #a7781f; --gold-soft: #f6ecd6;
+  --font-arabic: "Noto Naskh Arabic", "Geeza Pro", "Arial", serif;
+  --font-quran: "Amiri Quran", "Amiri", "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1714; --surface: #15211d; --ink: #e5ede9; --muted: #95a8a0; --line: #2a3a34;
+    --accent: #52c2a6; --accent-soft: #183630; --gold: #d9b064; --gold-soft: #3a2f19; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1714; --surface: #15211d; --ink: #e5ede9; --muted: #95a8a0; --line: #2a3a34;
+  --accent: #52c2a6; --accent-soft: #183630; --gold: #d9b064; --gold-soft: #3a2f19; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+a { color: var(--accent); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; max-width: 760px; margin: 0 auto; padding: 14px 16px; }
+.brand { font-weight: 650; font-size: 1.2rem; color: var(--ink); text-decoration: none; margin-inline-end: auto; }
+.languages { position: relative; }
+.languages summary { cursor: pointer; color: var(--muted); }
+.languages[open] > a { display: inline-block; margin: 4px 10px 0 0; }
+.notice { background: var(--gold-soft); border-radius: 10px; padding: 10px 14px; font-size: 0.9rem; }
+.lead { color: var(--muted); }
+h1 { font-size: 1.6rem; margin: 18px 0 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+h2 { font-size: 1.15rem; margin: 32px 0 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.ar { font-family: var(--font-arabic); font-weight: 400; }
+.qr { font-family: var(--font-quran); }
+.lemma { font-size: 2.6rem; line-height: 1.3; }
+.meaning-en { color: var(--muted); font-size: 1rem; font-weight: 400; }
+.eyebrow, .stats, .note { color: var(--muted); font-size: 0.9rem; margin: 4px 0; }
+.root { font-size: 1.2rem; letter-spacing: 0.2em; }
+.forms, .sentences, .verb-list, .language-list { list-style: none; padding: 0; margin: 0; }
+.forms li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.forms .ar { font-size: 1.6rem; }
+.label { color: var(--muted); font-size: 0.9rem; }
+.play { border: 0; background: var(--accent-soft); color: var(--accent); border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: 0.85rem; flex: none; }
+.tag { border: 1px solid var(--gold); background: transparent; color: var(--gold); border-radius: 999px; padding: 1px 9px; font-size: 0.8rem; cursor: pointer; }
+span.tag { cursor: default; }
+.table-scroll { overflow-x: auto; }
+.conj { border-collapse: collapse; width: 100%; background: var(--surface); }
+.conj th, .conj td { border: 1px solid var(--line); padding: 4px 8px; text-align: center; }
+.conj th[scope="row"] { text-align: start; color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+.cell { border: 0; background: none; color: var(--ink); font-size: 1.25rem; cursor: pointer; padding: 2px 4px; }
+.conj td.attested { background: var(--accent-soft); }
+.conj td.attested .cell::after { content: " ●"; color: var(--accent); font-size: 0.6rem; vertical-align: middle; }
+.none { color: var(--muted); }
+.ayah { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 14px; padding: 12px 16px; }
+.ayah-head { display: flex; justify-content: space-between; margin: 0; font-size: 0.9rem; color: var(--muted); }
+.ayah blockquote { margin: 8px 0; font-size: 1.6rem; line-height: 2.1; }
+.ayah mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
+.gloss { margin: 4px 0; }
+.gloss .qr { font-size: 1.3rem; }
+.ai { font-size: 0.7rem; border: 1px solid var(--muted); color: var(--muted); border-radius: 4px; padding: 0 4px; }
+.translation { margin: 8px 0; }
+.translation small { display: block; color: var(--muted); }
+.ayah-foot { display: flex; align-items: center; gap: 10px; margin: 6px 0 0; color: var(--muted); font-size: 0.9rem; }
+.sentences li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.sentences p { margin: 2px 0; }
+.sentence { display: flex; align-items: center; gap: 10px; }
+.sentence .ar { font-size: 1.4rem; }
+.cta { margin: 28px 0; }
+.button { display: inline-block; background: var(--accent); color: var(--paper); padding: 10px 18px; border-radius: 10px; text-decoration: none; font-weight: 500; }
+.verb-list a { display: grid; grid-template-columns: 3em 1fr 2fr auto; gap: 12px; align-items: center; padding: 8px 4px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.verb-list a:hover { background: var(--accent-soft); }
+.verb-list .ar { font-size: 1.4rem; }
+.rank, .count { color: var(--muted); font-size: 0.85rem; }
+@media (max-width: 520px) { .verb-list a { grid-template-columns: 2.5em 1fr 1.6fr; } .verb-list .count { display: none; } .lemma { font-size: 2.2rem; } }
+footer { color: var(--muted); font-size: 0.85rem; margin-top: 40px; padding-bottom: 40px; border-top: 1px solid var(--line); }

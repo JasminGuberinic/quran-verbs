@@ -116,3 +116,11 @@ def test_bore_and_caught_meet_their_base_forms():
 def test_incurred_meets_its_base_form():
     # The doubled final r defeats the suffix stemmer ("incurr").
     assert gloss_agrees("incurred", ["return;incur+he;it_<verb>"]) is True
+
+
+def test_lent_meets_its_base_form():
+    assert gloss_agrees("they lent", ["lend+they_<verb>"]) is True
+
+
+def test_excelled_meets_its_base_form():
+    assert gloss_agrees("they excelled", ["surpass;excel+they_<verb>"]) is True

@@ -555,6 +555,20 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("شدد", 1, "شَدَّ", {("past", "ana"): "شَدَدْتُ", ("present", "huwa"): "يَشُدُّ"}),
     ("صفح", 1, "صَفَحَ", {("past", "ana"): "صَفَحْتُ", ("present", "huwa"): "يَصْفَحُ"}),
     ("ظهر", 3, "ظَاهَرَ", {("past", "ana"): "ظَاهَرْتُ", ("present", "huwa"): "يُظَاهِرُ"}),
+    # Presents يَسْتَفْتُ / يَتَمَنَّ / يُؤَدِّ / يَبْخَسْ, passives فُجِّرَتْ / مُلِئَتْ, 3fs pasts فَرَّتْ /
+    # نَقَضَتْ, cut stems أَقْرَضُ / قَلَّبُ / انتَقَمْ, أَوْصا.
+    ("فتي", 10, "اسْتَفْتَى", {("past", "ana"): "اِسْتَفْتَيْتُ", ("present", "huwa"): "يَسْتَفْتِي"}),
+    ("فجر", 2, "فَجَّرَ", {("past", "ana"): "فَجَّرْتُ", ("present", "huwa"): "يُفَجِّرُ"}),
+    ("فرر", 1, "فَرَّ", {("past", "ana"): "فَرَرْتُ", ("present", "ana"): "أَفِرُّ"}),
+    ("قرض", 4, "أَقْرَضَ", {("past", "ana"): "أَقْرَضْتُ", ("present", "ana"): "أُقْرِضُ"}),
+    ("قلب", 2, "قَلَّبَ", {("past", "ana"): "قَلَّبْتُ", ("present", "ana"): "أُقَلِّبُ"}),
+    ("ملأ", 1, "مَلَأَ", {("past", "ana"): "مَلَأْتُ", ("present", "ana"): "أَمْلَأُ"}),
+    ("مني", 5, "تَمَنَّى", {("past", "ana"): "تَمَنَّيْتُ", ("present", "huwa"): "يَتَمَنَّى"}),
+    ("نقض", 1, "نَقَضَ", {("past", "ana"): "نَقَضْتُ", ("present", "huwa"): "يَنْقُضُ"}),
+    ("نقم", 8, "انْتَقَمَ", {("past", "ana"): "اِنْتَقَمْتُ", ("present", "ana"): "أَنْتَقِمُ"}),
+    ("وصي", 4, "أَوْصَى", {("past", "ana"): "أَوْصَيْتُ", ("present", "ana"): "أُوصِي"}),
+    ("أدي", 2, "أَدَّى", {("past", "ana"): "أَدَّيْتُ", ("present", "huwa"): "يُؤَدِّي"}),
+    ("بخس", 1, "بَخَسَ", {("past", "ana"): "بَخَسْتُ", ("present", "ana"): "أَبْخَسُ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -701,6 +715,12 @@ def _cell_of(detail, tense: str, pronoun: str):
     ("صفح", {("present", "huwa"): "يَصْفَحُ", ("past", "ana"): "صَفَحْتُ"}),
     ("علو", {("present", "huwa"): "يَعْلُو", ("past", "ana"): "عَلَوْتُ"}),
     ("بوأ", {("present", "huwa"): "يَبُوءُ", ("past", "ana"): "بُؤْتُ"}),
+    ("غضب", {("present", "huwa"): "يَغْضَبُ", ("past", "ana"): "غَضِبْتُ"}),
+    ("وسع", {("present", "huwa"): "يَسَعُ", ("past", "ana"): "وَسِعْتُ"}),
+    ("برز", {("present", "huwa"): "يَبْرُزُ", ("past", "ana"): "بَرَزْتُ"}),
+    ("ملأ", {("present", "huwa"): "يَمْلَأُ", ("past", "ana"): "مَلَأْتُ"}),
+    ("بخس", {("present", "huwa"): "يَبْخَسُ", ("past", "ana"): "بَخَسْتُ"}),
+    ("أوي", {("present", "huwa"): "يَأْوِي", ("past", "ana"): "أَوَيْتُ"}),
     # The faʿila past the lemma مَسَّ hides is documented cell by cell.
     ("مسس", {("present", "huwa"): "يَمَسُّ", ("past", "ana"): "مَسِسْتُ", ("past", "huwa"): "مَسَّ"}),
     # Fitted from the corpus once the Uthmani silent alef (يَدْعُوا۟) stopped hiding the present.

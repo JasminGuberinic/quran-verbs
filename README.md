@@ -47,6 +47,7 @@ tashkīl rendering and audio quality — the parts that matter most here.
 - **Audio:** MVP uses a free voice provider + strict QA; upgrade to a human
   reciter (full buyout) for release quality. Tashkīl authored by hand, never auto.
 - **Data:** open-source app → free to use the Quranic Arabic Corpus (GPL).
+  Every source, its licence or terms, and how we comply: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 - **Images:** typographic/calligraphic cards (not illustrations of abstract verbs).
 - **No ads.** Free to users; App Store publishing needs Apple's $99/yr (only for
   public release — building & on-device testing is free).

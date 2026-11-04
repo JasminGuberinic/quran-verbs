@@ -27,7 +27,7 @@ Start promotion **only after**: all target verbs (~400–500) are in, every lang
 - `fil video`: generates vertical (9:16) 20–30 s videos per verb, fully automatically and locally with free tools (ffmpeg, free fonts): the verb with its pronunciation and meaning, three main forms with audio, an ayah recited by Alafasy with the verb highlighted, and an ending "learn all verbs free → link". Any language; a caption and hashtags per video.
 - First 3 sample videos for the owner to approve, then all.
 - Publishing: YouTube Shorts fully automatic via the free YouTube Data API (one-time OAuth by the owner); Facebook / Instagram via Meta Business Suite scheduling and TikTok via TikTok Studio — the owner schedules a week at a time (~15 min).
-- Recitation audio (everyayah) is fine for free, non-commercial use; a monetized channel would need permission.
+- Recitation audio: ayat stream from alquran.cloud (personal and educational use; recitations stay the reciters' copyright), single words are QuranHive (CC BY 4.0, credit required). A monetized channel would need to re-check both terms (see THIRD_PARTY_NOTICES.md).
 
 ## Honest expectations
 Search traffic takes weeks to months to build and is not guaranteed; quality content (we have it) and backlinks (from promotion) matter most.

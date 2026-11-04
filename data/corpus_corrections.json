@@ -60,5 +60,13 @@
   "9:74:20": {
    "why": "أَغْنَىٰهُمُ in إِلَّآ أَنْ أَغْنَىٰهُمُ ٱللَّهُ (9:74) is the Form IV past أَغْنَى (3ms, 'God enriched them'), but the corpus tags it a Form I imperfect 1st-person singular, which would count it as أَغْنَى 'I flourish'. Its person is wrong too, so it is dropped rather than refiled."
   }
+ },
+ "فطر_1": {
+  "19:90:3": {
+   "why": "يَتَفَطَّرْنَ in تَكَادُ السَّمَاوَاتُ يَتَفَطَّرْنَ مِنْهُ (19:90) is Form V تَفَطَّرَ 'to split apart' (doubled ط, prefix تَ), not Form I فَطَرَ. The corpus tags it VF:1, which counted it as a Form I present hunna spelling and made the generator's يَفْطُرْنَ look wrong."
+  },
+  "42:5:3": {
+   "why": "يَتَفَطَّرْنَ in تَكَادُ السَّمَاوَاتُ يَتَفَطَّرْنَ مِن فَوْقِهِنَّ (42:5) is Form V تَفَطَّرَ 'to split apart' (doubled ط, prefix تَ), not Form I فَطَرَ. The corpus tags it VF:1, which counted it as a Form I present hunna spelling and made the generator's يَفْطُرْنَ look wrong."
+  }
  }
 }

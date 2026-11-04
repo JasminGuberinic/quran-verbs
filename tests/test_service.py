@@ -445,6 +445,18 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("نيل", 1, "نالَ", {("past", "ana"): "نِلْتُ", ("present", "huwa"): "يَنَالُ"}),
     ("ثبت", 2, "ثَبَّتَ", {("present", "huwa"): "يُثَبِّتُ", ("imperative", "anta"): "ثَبِّتْ"}),
     ("صرف", 2, "صَرَّفَ", {("past", "ana"): "صَرَّفْتُ", ("present", "huwa"): "يُصَرِّفُ"}),
+    # Presents يَصِلُ / يُولِجُ / يُؤاخِذُ / يَسْتَحْىِۦ / يَتَساءَلُ, the imperative عُذْ, cut stems
+    # أَضاعُ / اسْتَقامُ / اجْتَنَبُ / خاضُ.
+    ("ضيع", 4, "أَضَاعَ", {("past", "ana"): "أَضَعْتُ", ("present", "huwa"): "يُضِيعُ"}),
+    ("عوذ", 1, "عَاذَ", {("present", "ana"): "أَعُوذُ", ("imperative", "anta"): "عُذْ"}),
+    ("قوم", 10, "اسْتَقَامَ", {("past", "ana"): "اِسْتَقَمْتُ", ("present", "huwa"): "يَسْتَقِيمُ"}),
+    ("وصل", 1, "وَصَلَ", {("past", "ana"): "وَصَلْتُ", ("present", "huwa"): "يَصِلُ",
+                          ("imperative", "anta"): "صِلْ"}),
+    ("ولج", 4, "أَوْلَجَ", {("past", "ana"): "أَوْلَجْتُ", ("present", "huwa"): "يُولِجُ"}),
+    ("جنب", 8, "اجْتَنَبَ", {("past", "ana"): "اِجْتَنَبْتُ", ("present", "huwa"): "يَجْتَنِبُ"}),
+    ("حيي", 10, "اسْتَحْيَا", {("past", "ana"): "اِسْتَحْيَيْتُ", ("imperative", "anta"): "اِسْتَحْيِ"}),
+    ("خوض", 1, "خَاضَ", {("past", "ana"): "خُضْتُ", ("present", "huwa"): "يَخُوضُ"}),
+    ("سأل", 6, "تَسَاءَلَ", {("past", "huwa"): "تَسَاءَلَ", ("present", "hum"): "يَتَسَآءَلُونَ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -527,6 +539,9 @@ def _cell_of(detail, tense: str, pronoun: str):
     ("وقع", {("present", "huwa"): "يَقَعُ", ("imperative", "anta"): "قَعْ"}),
     ("سوأ", {("present", "huwa"): "يَسُوءُ", ("past", "ana"): "سُؤْتُ"}),
     ("هود", {("present", "huwa"): "يَهُودُ", ("past", "nahnu"): "هُدْنَا"}),
+    ("فطر", {("present", "huwa"): "يَفْطُرُ", ("past", "ana"): "فَطَرْتُ"}),
+    ("نبذ", {("present", "huwa"): "يَنْبِذُ"}),
+    ("تبع", {("present", "huwa"): "يَتْبَعُ", ("past", "ana"): "تَبِعْتُ"}),
     # The faʿila past the lemma مَسَّ hides is documented cell by cell.
     ("مسس", {("present", "huwa"): "يَمَسُّ", ("past", "ana"): "مَسِسْتُ", ("past", "huwa"): "مَسَّ"}),
     # Fitted from the corpus once the Uthmani silent alef (يَدْعُوا۟) stopped hiding the present.
@@ -548,3 +563,13 @@ def test_every_recorded_present_vowel_is_one_the_corpus_cannot_show():
     fittable = [root for (root, form) in _present_vowels()
                 if _infer_present_vowel(_find(root, form).lemma, _attested(root, form))]
     assert fittable == []
+
+
+def test_a_form_three_the_generator_reads_as_form_one_is_documented():
+    # آخَذَ looks like Form I أَخَذَ to the generator (يَأْخُذُ, خُذْ); the Form III present
+    # and imperative are written down (data/conjugation_overrides.json).
+    table = {(cell.tense, cell.pronoun): normalize("NFC", cell.plain) for cell in get_verb("أخذ", 3).cells}
+
+    assert table[("past", "ana")] == normalize("NFC", "آخَذْتُ")
+    assert table[("present", "huwa")] == normalize("NFC", "يُؤَاخِذُ")
+    assert table[("imperative", "anta")] == normalize("NFC", "آخِذْ")

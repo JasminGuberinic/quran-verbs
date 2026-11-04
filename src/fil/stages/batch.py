@@ -3,6 +3,7 @@
     fil batch plan FROM TO          put verbs FROM..TO (frequency rank) on the agenda, 5 cells each;
                                     write build/batch/{plan,todo-meanings,todo-ayah}.tsv
     fil batch wordbank              write build/batch/wordbank.tsv: words the gate already accepted
+    fil batch check FILE.tsv        gate each drafted sentence and record nothing: FAIL lines + a summary
     fil batch draft FILE.tsv        gate each drafted sentence; store passes, report failures
     fil batch meanings FILE.tsv     merge verb meanings          (key  en  bs)
     fil batch ayah FILE.tsv         merge in-context ayah verbs  (key  en  bs)
@@ -23,8 +24,10 @@ import json
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
+from typing import Iterator
 
 from fil import agenda, agenda_store, example_store, meanings, service, study
+from fil.agenda import Job
 from fil.corpus.parse import iter_segments
 from fil.examples import Critique, Example, ExampleWord
 from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, MEANINGS_JSON, QAC_MORPHOLOGY
@@ -154,23 +157,41 @@ def wordbank() -> None:
     print(f"wordbank: {len(bank)} accepted words → {OUT}/wordbank.tsv")
 
 
-def draft(path: Path) -> None:
+def check(path: Path) -> None:
+    """Gate every drafted sentence exactly as `draft` does, but record nothing.
+
+    A failed `draft` spends one of a job's few attempts; checking first means only
+    sentences that already pass are ever drafted.
+    """
     passed = failed = 0
-    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-        if not line.strip() or line.startswith("#"):
-            continue
-        try:
-            parsed = parse_draft_line(line)
-        except DraftLineError as error:
-            print(f"LINE {number}: {error}")
+    for number, parsed in _drafts_in(path):
+        problem = _problem_with(number, parsed)
+        if problem:
+            print(f"FAIL {problem}")
             failed += 1
             continue
         job = agenda_store.find(parsed.job)
-        if job is None or not job.is_open or job.state == agenda.CHECKED:
-            print(f"SKIP {parsed.job}: {'unknown' if job is None else job.state}")
+        result = service.gate(job.root, job.form, _example_for(parsed, job))
+        if result.checks.passed:
+            passed += 1
             continue
-        example = Example(arabic=" ".join(w.arabic for w in parsed.words), words=parsed.words,
-                          en=parsed.en, bs=parsed.bs, tense=job.tense, pronoun=job.pronoun, drafted_by=AUTHOR)
+        failed += 1
+        print(f"FAIL {job.key} {result.arabic} | {_why(result.checks)}")
+    print(f"check: {passed} would pass, {failed} would fail (nothing recorded)")
+
+
+def draft(path: Path) -> None:
+    passed = failed = 0
+    for number, parsed in _drafts_in(path):
+        if isinstance(parsed, DraftLineError):
+            print(f"LINE {number}: {parsed}")
+            failed += 1
+            continue
+        job = agenda_store.find(parsed.job)
+        if not _is_draftable(job):
+            print(f"SKIP {parsed.job}: {_job_state(job)}")
+            continue
+        example = _example_for(parsed, job)
         result = service.gate(job.root, job.form, example)
         if job.state == agenda.TODO:
             service.record_outcome(job.key, agenda.DRAFTED)
@@ -183,6 +204,38 @@ def draft(path: Path) -> None:
         failed += 1
         print(f"FAIL {job.key} {example.arabic} | {_why(result.checks)} | {moved.state}")
     print(f"draft: {passed} passed, {failed} failed")
+
+
+def _drafts_in(path: Path) -> Iterator[tuple[int, Draft | DraftLineError]]:
+    """Every non-blank, non-comment line of a draft file, parsed — or the reason it cannot be."""
+    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip() or line.startswith("#"):
+            continue
+        try:
+            yield number, parse_draft_line(line)
+        except DraftLineError as error:
+            yield number, error
+
+
+def _problem_with(number: int, parsed: Draft | DraftLineError) -> str:
+    """Why a line could not be drafted at all (malformed, or no open job), or "" if it can."""
+    if isinstance(parsed, DraftLineError):
+        return f"line {number}: {parsed}"
+    job = agenda_store.find(parsed.job)
+    return "" if _is_draftable(job) else f"{parsed.job}: {_job_state(job)}"
+
+
+def _is_draftable(job: Job | None) -> bool:
+    return job is not None and job.is_open and job.state != agenda.CHECKED
+
+
+def _job_state(job: Job | None) -> str:
+    return "unknown" if job is None else job.state
+
+
+def _example_for(parsed: Draft, job: Job) -> Example:
+    return Example(arabic=" ".join(w.arabic for w in parsed.words), words=parsed.words,
+                   en=parsed.en, bs=parsed.bs, tense=job.tense, pronoun=job.pronoun, drafted_by=AUTHOR)
 
 
 def _why(checks) -> str:
@@ -251,6 +304,7 @@ def main(argv: list[str] | None = None) -> None:
     commands = {
         "plan": lambda: plan(int(rest[0]), int(rest[1])),
         "wordbank": wordbank,
+        "check": lambda: check(Path(rest[0])),
         "draft": lambda: draft(Path(rest[0])),
         "meanings": lambda: merge_meanings(Path(rest[0])),
         "ayah": lambda: merge_ayah(Path(rest[0])),

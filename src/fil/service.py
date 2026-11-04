@@ -26,7 +26,9 @@ from fil.corpus.oracle import AttestedCells, build_oracle
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
 from fil import evals
-from fil.examples import Analyze, Critique, Example, checked, spelling_key
+from fil.examples import (
+    SPELLING_EXCEPTION_PREFIX, Analyze, Critique, Example, checked, spelling_exception_key, spelling_key,
+)
 from fil.governor import permit
 from fil.journal import Event
 from fil import journal, journal_store
@@ -66,8 +68,12 @@ class Cell:
 
     @property
     def plain(self) -> str:
-        """The spelling a learner reads and hears: standard where we have one, else the Quran's."""
-        return self.generated_form or next(iter(self.documented), "") or self.arabic
+        """The spelling a learner reads and hears: standard where we have one, else the Quran's.
+
+        A hand-documented spelling outranks the generator's: it is written down precisely
+        where the generator is silent or wrong (it gives the impossible اُؤْرُ for أَرِ).
+        """
+        return next(iter(self.documented), "") or self.generated_form or self.arabic
 
     @property
     def spellings(self) -> tuple[str, ...]:
@@ -303,11 +309,18 @@ def _conjugation_overrides() -> conjugation_overrides.Overrides:
 
 @lru_cache(maxsize=1)
 def _gloss_exceptions() -> dict[str, tuple[str, ...]]:
-    """Documented lexicon gaps: {CAMeL root: accepted English glosses}."""
+    """Documented lexicon gaps: {CAMeL root, or "spelling:<word>": accepted English glosses}."""
     if not GLOSS_EXCEPTIONS_JSON.exists():
         return {}
     entries = json.loads(GLOSS_EXCEPTIONS_JSON.read_text(encoding="utf-8"))
-    return {root: tuple(entry["glosses"]) for root, entry in entries.items()}
+    return {_exception_key(key): tuple(entry["glosses"]) for key, entry in entries.items()}
+
+
+def _exception_key(key: str) -> str:
+    """A spelling key is folded like the words it is compared with; a root key is kept as written."""
+    if not key.startswith(SPELLING_EXCEPTION_PREFIX):
+        return key
+    return spelling_exception_key(key.removeprefix(SPELLING_EXCEPTION_PREFIX))
 
 
 # The cells worth illustrating with a sentence, in teaching order. A verb rarely needs
@@ -358,10 +371,11 @@ def sync_agenda(path=AGENDA_JSON, examples_path=EXAMPLES_JSON) -> dict[str, int]
 def _recognising_existing_work(job: Job, written: list[Example]) -> Job:
     """The job in the state the stored sentences imply — untouched if none exists yet.
 
-    A job handed to a person stays with that person: a refused sentence must not quietly
-    put it back in the drafting queue, or the question asked of them is lost.
+    A parked job stays parked — handed to a person, skipped by policy, or out of attempts:
+    a refused sentence must not quietly put it back in the drafting queue, or the decision
+    behind the parking is lost. Only a deliberate un-park revives it.
     """
-    if agenda.needs_human(job):
+    if job.state == agenda.PARKED:
         return job
     illustrating = [
         example for example in written

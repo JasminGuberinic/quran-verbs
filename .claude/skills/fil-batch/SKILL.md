@@ -18,16 +18,27 @@ the compact files and read only what a step needs.
 - Commit when the batch is done, then `git push` (branch study-site only; never main).
 
 ## Content policy (practice sentences)
+There is **no human reviewer**: the strict blind reviewer agent (step 6) stands in for one,
+and the site says reviews are by AI. Never park a job "for a human".
 - **First-person forms only God speaks in the Quran** (the I/We of revealing, creating,
-  forbidding, punishing, calling, sending…) get **no** practice sentence. Don't draft them:
-  hand the job to a human right away (`service.hand_to_human(key, "<form> is spoken only by
-  God in the Quran; a practice sentence would put invented words in His mouth")`).
+  forbidding, saving, gathering…) get a practice sentence in an **ordinary human sense** of
+  the verb — never attributed to God, never Quranic wording: نَجَّيْنَا الطِّفْلَ مِنَ الْغَرَقِ,
+  حَرَّمْنَا التَّدْخِينَ فِي الْبَيْتِ, رَضِيتُ بِالنَّتِيجَةِ, خَلَقْتُ جَوًّا هَادِئًا.
+- A form that **truly cannot be used sensibly** (e.g. the command قَاتِلْ "fight!") is parked
+  with reason `skipped by policy: <why>`
+  (`service.record_outcome(key, agenda.PARKED, reason="skipped by policy: …")`). It keeps its
+  table, audio and ayat, just no sentence.
 - **No Quranic wording.** The site labels practice sentences "not from the Quran", so never
   reproduce an ayah's phrase (e.g. قَاتِلْ فِي سَبِيلِ اللَّهِ, 4:84).
 - **No fighting commands** addressed to the learner.
 - **No "؟"** in practice sentences.
-- A cell with no standard spelling the gate can use gets a documented entry in
-  `data/conjugation_overrides.json` (spellings + why), never a loosened check.
+- **Analyzer/lexicon gaps** get documented entries, never a loosened check:
+  a cell with no spelling the gate can use (or a wrong generated one) → `data/conjugation_overrides.json`
+  (spellings + why; a documented spelling is also what the table shows);
+  a refused gloss → `data/gloss_exceptions.json` under the correct CAMeL root, or — when the
+  analyzer reads the word only under a wrong root — under `"spelling:<word>"` (e.g. `spelling:تُبْ`),
+  with `root` and `why`.
+- To revive a parked job: `service.record_outcome(key, agenda.TODO, reason="un-parked: <why>")`.
 
 ## Steps
 1. `fil batch plan FROM TO` → `build/batch/plan.tsv` (job, the form to write, cell),
@@ -41,9 +52,11 @@ the compact files and read only what a step needs.
 5. Sentences: write `build/batch/draft-N.tsv`, one per line:
    `job<TAB>arabic words, target marked *<TAB>en<TAB>bs<TAB>en glosses|…<TAB>bs glosses|…`
    Short (2–4 words), natural MSA, full harakat, standard spelling (not Uthmani). Use the
-   plan's form for the verb. Never put invented words in God's mouth; avoid first-person
-   speech that only God says in the Quran (hand such a job to a human instead).
-   `fil batch draft build/batch/draft-N.tsv` → fix only the FAIL lines and rerun them.
+   plan's form for the verb. Never put invented words in God's mouth; God-only first-person
+   forms get an ordinary human sense (see Content policy).
+   **Check first, then draft:** `fil batch check build/batch/draft-N.tsv` runs the same gate
+   but records nothing (FAIL lines + a summary); fix until it is clean, then
+   `fil batch draft build/batch/draft-N.tsv` — a failed draft spends one of the job's 3 attempts.
 6. Blind review: `fil batch review-export`, then one general-purpose agent (strong model)
    reads `build/batch/blind.json` and writes verdicts JSON (same prompt shape as before:
    grammar_ok, translation_ok, verb_usage_ok, approved, note; judge en + bs only; no code).

@@ -342,8 +342,9 @@ def test_word_translations_must_match_the_words(tmp_path):
         translate_example(verb.root, verb.form, 0, {"tr": "cümle"}, [], path=path)
 
 
-def test_syncing_never_takes_a_job_back_from_the_person_it_was_handed_to(tmp_path):
-    from fil.service import hand_to_human, sync_agenda
+@pytest.mark.parametrize("park", ["hand to a person", "skip by policy"])
+def test_syncing_never_reopens_a_parked_job_because_its_sentence_was_refused(tmp_path, park):
+    from fil.service import hand_to_human, record_outcome, sync_agenda
     from fil import agenda_store as store
     verb = list_verbs(limit=1)[0]
     examples, agenda_path = tmp_path / "ex.json", tmp_path / "agenda.json"
@@ -355,7 +356,11 @@ def test_syncing_never_takes_a_job_back_from_the_person_it_was_handed_to(tmp_pat
                        by="reader", note="theologically delicate", independent=True)
     record_critique(verb.root, verb.form, 0, refusal, path=examples, journal_path=journal)
     key = f"{verb.root}_{verb.form}:past:huwa"
-    hand_to_human(key, "decide whether this cell gets a sentence", path=agenda_path, journal_path=journal)
+    if park == "hand to a person":
+        hand_to_human(key, "decide whether this cell gets a sentence", path=agenda_path, journal_path=journal)
+    else:
+        record_outcome(key, "parked", reason="skipped by policy: no sensible sentence",
+                       path=agenda_path, journal_path=journal)
 
     sync_agenda(path=agenda_path, examples_path=examples)
 
@@ -373,6 +378,14 @@ def test_a_documented_spelling_gives_an_uthmani_only_cell_a_plain_form():
     assert cell.source == "attested" and cell.arabic != cell.plain   # the Quran's spelling stays the truth
     assert cell.documented == ("اِسْأَلْ", "سَلْ")
     assert cell.plain == "اِسْأَلْ"
+
+
+def test_a_documented_spelling_replaces_a_wrong_generated_one():
+    # The generator gives the impossible اُؤْرُ for the imperative of أَرَى (show!).
+    cell = next(c for c in get_verb("رأي", 4).cells if (c.tense, c.pronoun) == ("imperative", "anta"))
+
+    assert cell.generated_form == "اُؤْرُ"
+    assert cell.plain == "أَرِ"
 
 
 def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp_path):

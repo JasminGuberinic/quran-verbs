@@ -175,6 +175,23 @@ def test_a_documented_exception_passes_a_gloss_and_says_so():
     assert excepted.gloss_agreement is True and excepted.glossed_by_exception == ("كَفَرَ",)
 
 
+def test_a_spelling_exception_passes_only_that_spelling_whatever_root_the_analyzer_guesses():
+    # CAMeL reads تُبْ (repent!) only as تَبَّ (perish); excepting the wrong root would
+    # let "repent" through for every word of ت.ب.ب, so the exception names the spelling.
+    from fil.examples import check_example, spelling_exception_key
+    wrong_root = lambda _w: [{"pos": "verb", "root": "ت.ب.ب", "gloss": "perish"}]  # noqa: E731
+    exceptions = {spelling_exception_key("تُبْ"): ("repent",)}
+
+    def gloss_check(arabic: str):
+        word = ExampleWord(arabic, "repent", "pokaj se", is_target=True)
+        return check_example(Example(arabic, (word,), en="Repent.", bs="Pokaj se."), "توب", None,
+                             wrong_root, gloss_exceptions=exceptions)
+
+    assert gloss_check("تُبْ").gloss_agreement is True
+    assert gloss_check("تُبْ").glossed_by_exception == ("تُبْ",)
+    assert gloss_check("تَبَّ").gloss_agreement is False
+
+
 def test_a_spelling_is_one_word_whatever_order_its_marks_were_typed_in():
     from fil.examples import spelling_key
     shadda_first, fatha_first = "اتَّقِ", "اتَّقِ"

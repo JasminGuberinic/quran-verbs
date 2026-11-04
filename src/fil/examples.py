@@ -178,7 +178,17 @@ _SHIPPABLE_TIERS = frozenset({"checked", "reviewed"})
 
 # Further English meanings accepted for a root, by its CAMeL spelling ("ك.ف.ر"), each with
 # the reason it is needed. Documented exceptions, not a way around the check.
+# Where the analyzer reads a word only under the wrong root (تُبْ "repent!" only as تَبَّ
+# "perish"), a root-level exception would be filed under that wrong root; such a word is
+# excepted by its own spelling instead, keyed by `spelling_exception_key`.
 GlossExceptions = Mapping[str, tuple[str, ...]]
+
+SPELLING_EXCEPTION_PREFIX = "spelling:"
+
+
+def spelling_exception_key(word: str) -> str:
+    """The GlossExceptions key that excepts exactly this spelling, under no root."""
+    return SPELLING_EXCEPTION_PREFIX + spelling_key(word)
 
 
 def check_example(
@@ -273,7 +283,7 @@ def _gloss_check(
     by_exception = []
     for word, word_analyses in analyses.items():
         verdict = glosses.gloss_agrees(word.en, _lexicon_glosses(word_analyses))
-        if verdict is False and glosses.gloss_agrees(word.en, _excepted(word_analyses, exceptions)):
+        if verdict is False and glosses.gloss_agrees(word.en, _excepted(word, word_analyses, exceptions)):
             verdict = True
             by_exception.append(word.arabic)
         verdicts.append((word, verdict))
@@ -284,8 +294,9 @@ def _gloss_check(
     return not conflicts, conflicts, tuple(by_exception)
 
 
-def _excepted(word_analyses: list[dict], exceptions: GlossExceptions) -> list[str]:
-    return [gloss for analysis in word_analyses for gloss in exceptions.get(analysis.get("root", ""), ())]
+def _excepted(word: ExampleWord, word_analyses: list[dict], exceptions: GlossExceptions) -> list[str]:
+    by_root = [gloss for analysis in word_analyses for gloss in exceptions.get(analysis.get("root", ""), ())]
+    return [*by_root, *exceptions.get(spelling_exception_key(word.arabic), ())]
 
 
 def _lexicon_glosses(word_analyses: list[dict]) -> list[str]:

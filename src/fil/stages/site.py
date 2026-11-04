@@ -35,7 +35,7 @@ from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
 from fil.languages import LANGUAGES, REQUIRED
-from fil.recitation import RecitationLibrary
+from fil.recitation import RecitationLibrary, RecitationMissing
 from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
 from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
@@ -64,14 +64,16 @@ class SiteContent:
     payload: dict
     cards: tuple[dict, ...]
     speech: SpeechLibrary
+    missing_recitations: tuple[str, ...] = ()    # word locations the reciter's source lacks
 
 
 class _Sound:
     """Turns a recitation or a spoken text into a reference the page can play."""
 
-    def __init__(self, sink: AudioSink) -> None:
+    def __init__(self, sink: AudioSink, recitations: RecitationLibrary | None = None) -> None:
         self.sink = sink
-        self.recitations = RecitationLibrary(BUILD_DIR / "recitation-stage", cache=RECITATION_CACHE)
+        self.recitations = recitations or RecitationLibrary(BUILD_DIR / "recitation-stage", cache=RECITATION_CACHE)
+        self.missing_words: list[str] = []
         self.speech = SpeechLibrary(TtsArabicVoice(), SPEECH_CACHE)
         self.translations = AyahTranslations()
         self.verb_glosses = _verb_glosses()
@@ -79,8 +81,14 @@ class _Sound:
     def ayah(self, surah: int, ayah: int) -> str:
         return self._recited(self.recitations.ayah(surah, ayah))
 
-    def word(self, surah: int, ayah: int, word: int) -> str:
-        return self._recited(self.recitations.word(surah, ayah, word))
+    def word(self, surah: int, ayah: int, word: int) -> str | None:
+        """A word's recitation, or None (noted for the report) when the source has no clip for it."""
+        try:
+            site_path = self.recitations.word(surah, ayah, word)
+        except RecitationMissing:
+            self.missing_words.append(f"{surah}:{ayah}:{word}")
+            return None
+        return self._recited(site_path)
 
     def spoken(self, text: str) -> str:
         return self.sink.reference(self.speech.clip(text))
@@ -136,7 +144,7 @@ def assemble(sink: AudioSink) -> SiteContent | None:
         ],
         "verbs": [{**_summary_of(card), "file": card_file(card)} for card in cards],
     }
-    return SiteContent(payload, tuple(cards), sound.speech)
+    return SiteContent(payload, tuple(cards), sound.speech, tuple(sound.missing_words))
 
 
 def card_file(card: dict) -> str:
@@ -197,12 +205,13 @@ def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) ->
     """One conjugation cell: always spoken, and recited too where the Quran recites it."""
     plain = cell.plain
     recitation = recitations.get(cell.arabic) if cell.source == "attested" else None
+    recited = sound.word(*recitation.location) if recitation else None
     return {
         "tense": cell.tense, "pronoun": cell.pronoun, "arabic": cell.arabic,
         "plain": plain, "quran": cell.source == "attested",
         "spoken": sound.spoken(plain),
-        "recited": sound.word(*recitation.location) if recitation else None,
-        "recitedText": recitation.text if recitation else None,
+        "recited": recited,
+        "recitedText": recitation.text if recited else None,
     }
 
 
@@ -277,6 +286,8 @@ def report(site: Path, content: SiteContent) -> None:
         f"{verdict.text}\n  ours:  {' '.join(verdict.expected)}\n  model: {' '.join(verdict.produced)}\n"
         for verdict in disagreements
     ), encoding="utf-8")
+    if content.missing_recitations:
+        print(f"  no recited clip at the source (shown without one): {' '.join(content.missing_recitations)}")
     thin = [card["lemma"] for card in cards if len(card["sentences"]) < 5]
     if thin:
         print(f"  fewer than 5 sentences: {' '.join(thin)}")

@@ -7,10 +7,13 @@ machine-voiced is ever shipped as if it were recitation.
 
 Clips are fetched once into a cache, and each is checked to really be audio before it
 is used — a host that answers with an error page must fail the build, not ship silence.
+A clip the host plainly does not have (HTTP 404) is a different case: it is reported as
+RecitationMissing so the caller can show that word without a recited clip.
 """
 
 from __future__ import annotations
 
+import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Callable
@@ -26,6 +29,10 @@ WORD_SOURCE = "https://audio.qurancdn.com/wbw/{surah:03d}_{ayah:03d}_{word:03d}.
 
 class NotAudio(ValueError):
     """A source answered with something that is not an MP3."""
+
+
+class RecitationMissing(LookupError):
+    """The source has no clip at this address (HTTP 404)."""
 
 
 def ayah_path(surah: int, ayah: int) -> str:
@@ -73,5 +80,10 @@ def is_mp3(clip: bytes) -> bool:
 
 def _download(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": "fil-study-site/0.1"})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read()
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return response.read()
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            raise RecitationMissing(url) from error
+        raise

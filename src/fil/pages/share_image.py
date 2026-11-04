@@ -12,6 +12,8 @@ import subprocess
 import tempfile
 from pathlib import Path
 
+from fil.languages import LANGUAGES
+
 SHARE_PNG = Path(__file__).resolve().parents[1] / "site" / "share.png"
 _CHROME_CANDIDATES = (
     Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"),
@@ -34,7 +36,7 @@ small {{ display: block; font-size: 24px; color: #95a8a0; margin-top: 28px; }}
   font-size: 92px; line-height: 1.9; color: #d9b064; }}
 </style></head><body>
 <div class="text"><h1>Fiʿl</h1><p>Verbs of the Quran<br>Glagoli Kur'ana</p>
-<small>Conjugation · ayat · audio · 16 languages · free</small></div>
+<small>Conjugation · ayat · audio · {language_count} languages · free</small></div>
 <div class="arabic">قَالَ · كَانَ<br>آمَنَ · عَلِمَ</div>
 </body></html>"""
 
@@ -49,7 +51,7 @@ def draw(target: Path = SHARE_PNG) -> Path:
         raise NoBrowser("install Google Chrome or Chromium to draw the share image")
     with tempfile.TemporaryDirectory() as folder:
         page = Path(folder) / "share.html"
-        page.write_text(_CARD.format(width=WIDTH, height=HEIGHT), encoding="utf-8")
+        page.write_text(_CARD.format(width=WIDTH, height=HEIGHT, language_count=len(LANGUAGES)), encoding="utf-8")
         subprocess.run([str(chrome), "--headless=new", "--hide-scrollbars", "--disable-gpu",
                         f"--window-size={WIDTH},{HEIGHT}", "--virtual-time-budget=5000",
                         f"--screenshot={target}", page.as_uri()],

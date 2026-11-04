@@ -202,7 +202,7 @@ def test_an_example_ayah_is_headed_by_the_form_it_shows():
 
 def test_every_page_plays_through_the_shared_toggling_player_in_its_language():
     html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), {**_text(), "stop": "Zaustavi"})
-    untranslated = render.verb_page(PublishedVerb(_card(), "qala"), _language("de"), _text())
+    untranslated = render.verb_page(PublishedVerb(_card(), "qala"), _language("tr"), _text())
 
     assert '<script src="../../player.js" data-attribute="data-audio" data-stop-label="Zaustavi" defer></script>' in html
     assert 'data-stop-label="Stop"' in untranslated
@@ -489,11 +489,7 @@ def test_the_app_and_the_pages_label_grammar_link_and_stream_audio_alike():
                                         for code, text in texts.items()}
     assert from_javascript["compact"] == {code: render.ayah_links_html("9:74", code, text["forms"]["links"], compact=True)
                                           for code, text in texts.items()}
-    assert texts["en"]["forms"]["objects"]["huwa"] == "him/it"                 # translated where active…
-    assert texts["de"]["forms"] == texts["en"]["forms"]                        # …English elsewhere
-
-
-_ACTIVE = ("bs", "en", "tr", "fr", "id", "ur", "bn", "fa")
+    assert texts["en"]["forms"]["objects"]["huwa"] == "him/it"
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
@@ -513,7 +509,7 @@ def test_every_page_credits_every_source_as_its_terms_ask():
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_every_active_language_names_the_moods_and_the_links_in_its_own_words():
     texts = interface_text.load()
-    for code in _ACTIVE:
+    for code in CODES:
         forms = texts[code]["forms"]
         assert set(forms["moods"]) == {"indicative", "subjunctive", "jussive"}, code
         assert len(set(forms["moods"].values())) == 3, code
@@ -521,3 +517,8 @@ def test_every_active_language_names_the_moods_and_the_links_in_its_own_words():
         if code != "en":
             assert forms["moods"] != texts["en"]["forms"]["moods"], code
             assert forms["links"] != texts["en"]["forms"]["links"], code
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_the_interface_speaks_exactly_the_offered_languages():
+    assert set(interface_text.load()) == set(CODES)

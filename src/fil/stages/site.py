@@ -39,7 +39,7 @@ from fil.audio import RECITATION_BITRATE, compact_aac_command, compact_clip_name
 from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
-from fil.languages import LANGUAGES
+from fil.languages import CODES, LANGUAGES, only_active
 from fil.quran_numbering import ayah_number
 from fil.recitation import AYAH_STREAM, QuranHiveArchive, RecitationMissing, WordRecitations, ayah_stream
 from fil.resources import (AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, QURANHIVE_WORD_AUDIO, RECITATION_CACHE,
@@ -224,7 +224,8 @@ def _verb_view(meaning, summary, rank: int, total: int, corpus: _Corpus, sound: 
         "ayat": _example_ayat_view(verb, corpus, sound),
         "forms": _forms_view(verb, corpus.uses[verb], summary.occurrence_count, sound),
         "ayatFile": ayat_file(rank),
-        "ayatTranslations": {language: ayat_file(rank, language) for language in sound.translations.languages},
+        "ayatTranslations": {language: ayat_file(rank, language) for language in sound.translations.languages
+                             if language in CODES},
         "sentences": [
             _sentence_view(example, sound)
             for example in example_store.load(meaning.root, meaning.form) if example.is_shippable
@@ -253,8 +254,8 @@ def _form_view(verb: study.VerbKey, form: attested_forms.AttestedForm, sound: _S
     view = {"arabic": form.text, "count": form.count, "first": f"{surah}:{ayah}",
             "audio": sound.word(*form.first),
             "grammar": [attested_forms.grammar_view(grammar) for grammar in form.grammars]}
-    meanings = {"gloss": attested_forms.gloss_of(verb, form, sound.form_glosses, sound.verb_glosses),
-                "wordTranslation": dict(sound.word_translations.of(form.first))}
+    meanings = {"gloss": only_active(attested_forms.gloss_of(verb, form, sound.form_glosses, sound.verb_glosses)),
+                "wordTranslation": only_active(sound.word_translations.of(form.first))}
     return {**view, **{key: meaning for key, meaning in meanings.items() if meaning}}
 
 
@@ -332,7 +333,7 @@ def _ayah_view(example: AyahExample, verb: study.VerbKey, forms: dict[study.Loca
         "tense": example.tense,
         "category": attested_forms.grammar_view(Grammar(example.tense, example.pronoun, is_passive=False, objects=())),
         "audio": sound.ayah(example.surah, example.ayah),
-        "translation": sound.translations.of(example.surah, example.ayah),
+        "translation": only_active(sound.translations.of(example.surah, example.ayah)),
         "words": [_ayah_word_view(word, verb, forms, readings, sound) for word in example.words],
     }
 
@@ -344,7 +345,7 @@ def _ayah_word_view(word: QuranWord, verb: study.VerbKey, forms: dict[study.Loca
     gloss = attested_forms.example_gloss(verb, word.location, forms, sound.form_glosses, sound.verb_glosses)
     view = {"text": word.text, "hit": True, "audio": sound.word(*word.location)}
     if attested_forms.is_complete(gloss):
-        return {**view, "gloss": gloss}
+        return {**view, "gloss": only_active(gloss)}
     return {**view, "gloss": None, "grammar": readings[word.location]}
 
 
@@ -358,11 +359,11 @@ def _sentence_view(example: Example, sound: _Sound | None = None) -> dict:
         "arabic": example.arabic,
         "spoken": sound.spoken(example.arabic) if sound else None,
         "tense": example.tense, "pronoun": example.pronoun,
-        "translation": {"bs": example.bs, "en": example.en, **dict(example.translations)},
+        "translation": only_active({"bs": example.bs, "en": example.en, **dict(example.translations)}),
         "independentlyReviewed": example.independently_reviewed,
         "words": [
             {"arabic": word.arabic, "target": word.is_target,
-             "translation": {"bs": word.bs, "en": word.en, **dict(word.translations)}}
+             "translation": only_active({"bs": word.bs, "en": word.en, **dict(word.translations)})}
             for word in example.words
         ],
     }

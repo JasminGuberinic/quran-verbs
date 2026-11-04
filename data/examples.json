@@ -124488,6 +124488,59 @@
         "note": "",
         "independent": true
       }
+    },
+    {
+      "arabic": "يَحْفَظُ الطِّفْلُ السُّورَةَ",
+      "words": [
+        {
+          "arabic": "يَحْفَظُ",
+          "en": "memorizes",
+          "bs": "uči napamet",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطِّفْلُ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "السُّورَةَ",
+          "en": "the surah",
+          "bs": "suru",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The child memorizes the surah.",
+      "bs": "Dijete uči suru napamet.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "يَحْفَظُ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
     }
   ],
   "حيي_1": [
@@ -131743,6 +131796,4312 @@
         "gloss_agreement": true,
         "gloss_conflicts": [],
         "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "وزر_1": [
+    {
+      "arabic": "وَزَرَ الظَّالِمُ إِثْمًا كَبِيرًا",
+      "words": [
+        {
+          "arabic": "وَزَرَ",
+          "en": "bore",
+          "bs": "ponio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الظَّالِمُ",
+          "en": "the oppressor",
+          "bs": "nasilnik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "إِثْمًا",
+          "en": "a sin",
+          "bs": "grijeh",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "كَبِيرًا",
+          "en": "great",
+          "bs": "veliki",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The oppressor bore a great sin.",
+      "bs": "Nasilnik je ponio veliki grijeh.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "وَزَرَ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يَزِرُ الْكَاذِبُ إِثْمَ كَذِبِهِ",
+      "words": [
+        {
+          "arabic": "يَزِرُ",
+          "en": "bears",
+          "bs": "nosi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكَاذِبُ",
+          "en": "the liar",
+          "bs": "lažov",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "إِثْمَ",
+          "en": "the sin of",
+          "bs": "grijeh",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "كَذِبِهِ",
+          "en": "his lie",
+          "bs": "svoje laži",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The liar bears the sin of his lie.",
+      "bs": "Lažov nosi grijeh svoje laži.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "يَزِرُ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَزِرُ إِثْمِي وَحْدِي",
+      "words": [
+        {
+          "arabic": "أَزِرُ",
+          "en": "bear",
+          "bs": "nosim",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "إِثْمِي",
+          "en": "my sin",
+          "bs": "svoj grijeh",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "وَحْدِي",
+          "en": "alone",
+          "bs": "sam",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I bear my sin alone.",
+      "bs": "Ja sam nosim svoj grijeh.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "أَزِرُ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "وَزَرُوا آثَامًا كَثِيرَةً",
+      "words": [
+        {
+          "arabic": "وَزَرُوا",
+          "en": "bore",
+          "bs": "ponijeli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "آثَامًا",
+          "en": "sins",
+          "bs": "grijehe",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "كَثِيرَةً",
+          "en": "many",
+          "bs": "mnoge",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They bore many sins.",
+      "bs": "Ponijeli su mnoge grijehe.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "وَزَرُوا"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "أخر_10": [
+    {
+      "arabic": "اِسْتَأْخَرَ الْقِطَارُ سَاعَةً",
+      "words": [
+        {
+          "arabic": "اِسْتَأْخَرَ",
+          "en": "was late",
+          "bs": "kasnio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْقِطَارُ",
+          "en": "the train",
+          "bs": "voz",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "سَاعَةً",
+          "en": "an hour",
+          "bs": "sat vremena",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The train was an hour late.",
+      "bs": "Voz je kasnio sat vremena.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يَسْتَأْخِرُ الطِّفْلُ عَنْ أَصْحَابِهِ",
+      "words": [
+        {
+          "arabic": "يَسْتَأْخِرُ",
+          "en": "lags behind",
+          "bs": "zaostaje",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطِّفْلُ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنْ",
+          "en": "from",
+          "bs": "za",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَصْحَابِهِ",
+          "en": "his friends",
+          "bs": "svojim drugovima",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The child lags behind his friends.",
+      "bs": "Dijete zaostaje za svojim drugovima.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "لَا أَسْتَأْخِرُ عَنِ الدَّرْسِ",
+      "words": [
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "ne",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَسْتَأْخِرُ",
+          "en": "am late",
+          "bs": "kasnim",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "for",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الدَّرْسِ",
+          "en": "the lesson",
+          "bs": "čas",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I am not late for the lesson.",
+      "bs": "Ne kasnim na čas.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اِسْتَأْخَرُوا عَنِ الْقَافِلَةِ",
+      "words": [
+        {
+          "arabic": "اِسْتَأْخَرُوا",
+          "en": "stayed behind",
+          "bs": "zaostali su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "from",
+          "bs": "za",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْقَافِلَةِ",
+          "en": "the convoy",
+          "bs": "konvojem",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They stayed behind the convoy.",
+      "bs": "Zaostali su za konvojem.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اِسْتَأْخِرْ قَلِيلًا",
+      "words": [
+        {
+          "arabic": "اِسْتَأْخِرْ",
+          "en": "stay behind",
+          "bs": "ostani pozadi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "قَلِيلًا",
+          "en": "a little",
+          "bs": "malo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Stay behind a little.",
+      "bs": "Ostani malo pozadi.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "بغي_7": [
+    {
+      "arabic": "يَنْبَغِي لِلطَّالِبِ أَنْ يَجْتَهِدَ",
+      "words": [
+        {
+          "arabic": "يَنْبَغِي",
+          "en": "it is necessary",
+          "bs": "priliči",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "لِلطَّالِبِ",
+          "en": "for the student",
+          "bs": "učeniku",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَنْ",
+          "en": "to",
+          "bs": "da",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَجْتَهِدَ",
+          "en": "work hard",
+          "bs": "se trudi",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The student ought to work hard.",
+      "bs": "Učeniku priliči da se trudi.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "بلغ_2": [
+    {
+      "arabic": "بَلِّغْ أَبَاكَ سَلَامِي",
+      "words": [
+        {
+          "arabic": "بَلِّغْ",
+          "en": "convey",
+          "bs": "prenesi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "أَبَاكَ",
+          "en": "your father",
+          "bs": "svom ocu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "سَلَامِي",
+          "en": "my greeting",
+          "bs": "moj selam",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Convey my greeting to your father.",
+      "bs": "Prenesi svom ocu moj selam.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يُبَلِّغُونَ الْأَخْبَارَ بِسُرْعَةٍ",
+      "words": [
+        {
+          "arabic": "يُبَلِّغُونَ",
+          "en": "convey",
+          "bs": "prenose",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْأَخْبَارَ",
+          "en": "the news",
+          "bs": "vijesti",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِسُرْعَةٍ",
+          "en": "with speed",
+          "bs": "brzo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They convey the news quickly.",
+      "bs": "Oni brzo prenose vijesti.",
+      "tense": "present",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَلَّغْتَ الْمُدِيرَ الْخَبَرَ",
+      "words": [
+        {
+          "arabic": "بَلَّغْتَ",
+          "en": "conveyed",
+          "bs": "prenio si",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُدِيرَ",
+          "en": "the manager",
+          "bs": "direktoru",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْخَبَرَ",
+          "en": "the news",
+          "bs": "vijest",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "You conveyed the news to the manager.",
+      "bs": "Prenio si direktoru vijest.",
+      "tense": "past",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "بوأ_1": [
+    {
+      "arabic": "بَاءَ التَّاجِرُ بِالْخَسَارَةِ",
+      "words": [
+        {
+          "arabic": "بَاءَ",
+          "en": "returned",
+          "bs": "vratio se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "التَّاجِرُ",
+          "en": "the merchant",
+          "bs": "trgovac",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْخَسَارَةِ",
+          "en": "with the loss",
+          "bs": "s gubitkom",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The merchant returned with a loss.",
+      "bs": "Trgovac se vratio s gubitkom.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Translation: باء بالخسارة is the idiom 'incurred / ended up with a loss', not a physical return. 'The merchant returned with a loss' misleads learners. Fix en: 'The merchant ended up with a loss.' and bs: 'Trgovac je završio s gubitkom.', and gloss بَاءَ as 'incurred / ended up with' ('snosio je / završio je').",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَاءُوا بِالْفَشَلِ",
+      "words": [
+        {
+          "arabic": "بَاءُوا",
+          "en": "returned",
+          "bs": "vratili su se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْفَشَلِ",
+          "en": "with failure",
+          "bs": "s neuspjehom",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They returned with failure.",
+      "bs": "Vratili su se s neuspjehom.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Translation: باءوا بالفشل is the idiom 'they met with failure / ended in failure'. 'They returned with failure' is a calque and is unidiomatic in English. Fix en: 'They met with failure.' and bs: 'Doživjeli su neuspjeh.', and gloss بَاءُوا as 'met with / incurred'.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَاءَ التَّاجِرُ بِالْخَسَارَةِ",
+      "words": [
+        {
+          "arabic": "بَاءَ",
+          "en": "incurred",
+          "bs": "pretrpio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "التَّاجِرُ",
+          "en": "the merchant",
+          "bs": "trgovac",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْخَسَارَةِ",
+          "en": "with the loss",
+          "bs": "gubitak",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The merchant incurred a loss.",
+      "bs": "Trgovac je pretrpio gubitak.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَاءُوا بِالْفَشَلِ",
+      "words": [
+        {
+          "arabic": "بَاءُوا",
+          "en": "incurred",
+          "bs": "doživjeli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْفَشَلِ",
+          "en": "with failure",
+          "bs": "neuspjeh",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They met with failure.",
+      "bs": "Doživjeli su neuspjeh.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "بوأ_2": [
+    {
+      "arabic": "بَوَّأَ الْأَبُ ابْنَهُ بَيْتًا",
+      "words": [
+        {
+          "arabic": "بَوَّأَ",
+          "en": "accommodated",
+          "bs": "smjestio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْأَبُ",
+          "en": "the father",
+          "bs": "otac",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "ابْنَهُ",
+          "en": "his son",
+          "bs": "sina",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بَيْتًا",
+          "en": "a house",
+          "bs": "u kuću",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The father accommodated his son in a house.",
+      "bs": "Otac je smjestio sina u kuću.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يُبَوِّئُ الْمُضِيفُ الضُّيُوفَ غُرَفَهُمْ",
+      "words": [
+        {
+          "arabic": "يُبَوِّئُ",
+          "en": "accommodates",
+          "bs": "smješta",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُضِيفُ",
+          "en": "the host",
+          "bs": "domaćin",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الضُّيُوفَ",
+          "en": "the guests",
+          "bs": "goste",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "غُرَفَهُمْ",
+          "en": "their rooms",
+          "bs": "u njihove sobe",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The host accommodates the guests in their rooms.",
+      "bs": "Domaćin smješta goste u njihove sobe.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أُبَوِّئُ الضَّيْفَ مَكَانًا مُرِيحًا",
+      "words": [
+        {
+          "arabic": "أُبَوِّئُ",
+          "en": "accommodate",
+          "bs": "smještam",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الضَّيْفَ",
+          "en": "the guest",
+          "bs": "gosta",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "مَكَانًا",
+          "en": "a place",
+          "bs": "mjesto",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "مُرِيحًا",
+          "en": "comfortable",
+          "bs": "udobno",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I accommodate the guest in a comfortable place.",
+      "bs": "Smještam gosta na udobno mjesto.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَوَّؤُوا اللَّاجِئِينَ بُيُوتًا",
+      "words": [
+        {
+          "arabic": "بَوَّؤُوا",
+          "en": "accommodated",
+          "bs": "smjestili su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللَّاجِئِينَ",
+          "en": "the refugees",
+          "bs": "izbjeglice",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بُيُوتًا",
+          "en": "houses",
+          "bs": "u kuće",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They accommodated the refugees in houses.",
+      "bs": "Smjestili su izbjeglice u kuće.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَوِّئْ ضَيْفَكَ غُرْفَةً",
+      "words": [
+        {
+          "arabic": "بَوِّئْ",
+          "en": "accommodate",
+          "bs": "smjesti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "ضَيْفَكَ",
+          "en": "your guest",
+          "bs": "svog gosta",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "غُرْفَةً",
+          "en": "a room",
+          "bs": "u sobu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Accommodate your guest in a room.",
+      "bs": "Smjesti svog gosta u sobu.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "بيع_3": [
+    {
+      "arabic": "بَايَعَ الْوَزِيرُ الْمَلِكَ الْجَدِيدَ",
+      "words": [
+        {
+          "arabic": "بَايَعَ",
+          "en": "pledged allegiance to",
+          "bs": "dao je prisegu vjernosti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْوَزِيرُ",
+          "en": "the minister",
+          "bs": "ministar",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَلِكَ",
+          "en": "the king",
+          "bs": "kralju",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْجَدِيدَ",
+          "en": "new",
+          "bs": "novom",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The minister pledged allegiance to the new king.",
+      "bs": "Ministar je dao prisegu vjernosti novom kralju.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يُبَايِعُ الشَّعْبُ الْحَاكِمَ",
+      "words": [
+        {
+          "arabic": "يُبَايِعُ",
+          "en": "pledges allegiance to",
+          "bs": "daje prisegu vjernosti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الشَّعْبُ",
+          "en": "the people",
+          "bs": "narod",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَاكِمَ",
+          "en": "the ruler",
+          "bs": "vladaru",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The people pledge allegiance to the ruler.",
+      "bs": "Narod daje prisegu vjernosti vladaru.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أُبَايِعُ الْقَائِدَ الْجَدِيدَ",
+      "words": [
+        {
+          "arabic": "أُبَايِعُ",
+          "en": "pledge allegiance to",
+          "bs": "dajem prisegu vjernosti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْقَائِدَ",
+          "en": "the leader",
+          "bs": "vođi",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْجَدِيدَ",
+          "en": "new",
+          "bs": "novom",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I pledge allegiance to the new leader.",
+      "bs": "Dajem prisegu vjernosti novom vođi.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَايَعُوا الْخَلِيفَةَ فِي الْمَسْجِدِ",
+      "words": [
+        {
+          "arabic": "بَايَعُوا",
+          "en": "pledged allegiance to",
+          "bs": "dali su prisegu vjernosti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْخَلِيفَةَ",
+          "en": "the caliph",
+          "bs": "halifi",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "u",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَسْجِدِ",
+          "en": "the mosque",
+          "bs": "džamiji",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They pledged allegiance to the caliph in the mosque.",
+      "bs": "Dali su prisegu vjernosti halifi u džamiji.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "بَايِعْ قَائِدَكَ",
+      "words": [
+        {
+          "arabic": "بَايِعْ",
+          "en": "pledge allegiance to",
+          "bs": "daj prisegu vjernosti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "قَائِدَكَ",
+          "en": "your leader",
+          "bs": "svom vođi",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Pledge allegiance to your leader.",
+      "bs": "Daj prisegu vjernosti svom vođi.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "ثقف_1": [
+    {
+      "arabic": "ثَقِفَ الْحَارِسُ اللِّصَّ",
+      "words": [
+        {
+          "arabic": "ثَقِفَ",
+          "en": "caught",
+          "bs": "zatekao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَارِسُ",
+          "en": "the guard",
+          "bs": "čuvar",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "اللِّصَّ",
+          "en": "the thief",
+          "bs": "lopova",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The guard caught the thief.",
+      "bs": "Čuvar je zatekao lopova.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "ثَقِفَ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يَثْقَفُ الطَّالِبُ الدَّرْسَ سَرِيعًا",
+      "words": [
+        {
+          "arabic": "يَثْقَفُ",
+          "en": "grasps",
+          "bs": "shvata",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّالِبُ",
+          "en": "the student",
+          "bs": "učenik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الدَّرْسَ",
+          "en": "the lesson",
+          "bs": "lekciju",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "سَرِيعًا",
+          "en": "quickly",
+          "bs": "brzo",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The student grasps the lesson quickly.",
+      "bs": "Učenik brzo shvata lekciju.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "يَثْقَفُ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَثْقَفُ الْحِسَابَ بِسُهُولَةٍ",
+      "words": [
+        {
+          "arabic": "أَثْقَفُ",
+          "en": "grasp",
+          "bs": "shvatam",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحِسَابَ",
+          "en": "the calculation",
+          "bs": "računanje",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِسُهُولَةٍ",
+          "en": "with ease",
+          "bs": "lahko",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I grasp calculation with ease.",
+      "bs": "Lahko shvatam računanje.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "أَثْقَفُ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "ثَقِفُوا اللُّصُوصَ فِي السُّوقِ",
+      "words": [
+        {
+          "arabic": "ثَقِفُوا",
+          "en": "caught",
+          "bs": "zatekli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللُّصُوصَ",
+          "en": "the thieves",
+          "bs": "lopove",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "السُّوقِ",
+          "en": "the market",
+          "bs": "pijaci",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They caught the thieves in the market.",
+      "bs": "Zatekli su lopove na pijaci.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": [
+          "ثَقِفُوا"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "جور_4": [
+    {
+      "arabic": "يُجِيرُ الْكَرِيمُ الْمَظْلُومَ",
+      "words": [
+        {
+          "arabic": "يُجِيرُ",
+          "en": "protects",
+          "bs": "štiti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكَرِيمُ",
+          "en": "the generous man",
+          "bs": "plemenit čovjek",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَظْلُومَ",
+          "en": "the oppressed",
+          "bs": "potlačenog",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The generous man protects the oppressed.",
+      "bs": "Plemenit čovjek štiti potlačenog.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "خفي_1": [
+    {
+      "arabic": "لَا يَخْفَى الْحَقُّ",
+      "words": [
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "nije",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يَخْفَى",
+          "en": "is hidden",
+          "bs": "skrivena",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَقُّ",
+          "en": "the truth",
+          "bs": "istina",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The truth is not hidden.",
+      "bs": "Istina nije skrivena.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يَخْفَوْنَ عَنِ الْعُيُونِ",
+      "words": [
+        {
+          "arabic": "يَخْفَوْنَ",
+          "en": "are hidden",
+          "bs": "skriveni su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "from",
+          "bs": "od",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْعُيُونِ",
+          "en": "the eyes",
+          "bs": "očiju",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They are hidden from the eyes.",
+      "bs": "Skriveni su od očiju.",
+      "tense": "present",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَنْتَ لَا تَخْفَى عَنْ أُمِّكَ",
+      "words": [
+        {
+          "arabic": "أَنْتَ",
+          "en": "you",
+          "bs": "ti",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "لَا",
+          "en": "not",
+          "bs": "nisi",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "تَخْفَى",
+          "en": "are hidden",
+          "bs": "skriven",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنْ",
+          "en": "from",
+          "bs": "od",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أُمِّكَ",
+          "en": "your mother",
+          "bs": "svoje majke",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "You are not hidden from your mother.",
+      "bs": "Ti nisi skriven od svoje majke.",
+      "tense": "present",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "درك_4": [
+    {
+      "arabic": "يُدْرِكُ الطِّفْلُ الْخَطَرَ",
+      "words": [
+        {
+          "arabic": "يُدْرِكُ",
+          "en": "realizes",
+          "bs": "shvata",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطِّفْلُ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْخَطَرَ",
+          "en": "the danger",
+          "bs": "opasnost",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The child realizes the danger.",
+      "bs": "Dijete shvata opasnost.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "دلل_1": [
+    {
+      "arabic": "دَلَّ الرَّجُلُ الضَّيْفَ عَلَى الطَّرِيقِ",
+      "words": [
+        {
+          "arabic": "دَلَّ",
+          "en": "pointed",
+          "bs": "uputio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الضَّيْفَ",
+          "en": "the guest",
+          "bs": "gosta",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّرِيقِ",
+          "en": "the road",
+          "bs": "put",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The man pointed the guest to the road.",
+      "bs": "Čovjek je gosta uputio na put.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يَدُلُّ السَّهْمُ عَلَى الطَّرِيقِ",
+      "words": [
+        {
+          "arabic": "يَدُلُّ",
+          "en": "points",
+          "bs": "pokazuje",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "السَّهْمُ",
+          "en": "the arrow",
+          "bs": "strelica",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّرِيقِ",
+          "en": "the road",
+          "bs": "put",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The arrow points to the road.",
+      "bs": "Strelica pokazuje put.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَدُلُّ السَّائِحَ عَلَى الْمَتْحَفِ",
+      "words": [
+        {
+          "arabic": "أَدُلُّ",
+          "en": "point",
+          "bs": "upućujem",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "السَّائِحَ",
+          "en": "the tourist",
+          "bs": "turistu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَتْحَفِ",
+          "en": "the museum",
+          "bs": "muzej",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I point the tourist to the museum.",
+      "bs": "Upućujem turistu na muzej.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "دَلُّوا الْأَطْفَالَ عَلَى الْمَدْرَسَةِ",
+      "words": [
+        {
+          "arabic": "دَلُّوا",
+          "en": "pointed",
+          "bs": "uputili su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْأَطْفَالَ",
+          "en": "the children",
+          "bs": "djecu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "do",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَدْرَسَةِ",
+          "en": "the school",
+          "bs": "škole",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They pointed the children to the school.",
+      "bs": "Uputili su djecu do škole.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اُدْلُلْ ضَيْفَكَ عَلَى غُرْفَتِهِ",
+      "words": [
+        {
+          "arabic": "اُدْلُلْ",
+          "en": "point",
+          "bs": "uputi",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "ضَيْفَكَ",
+          "en": "your guest",
+          "bs": "svog gosta",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "do",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "غُرْفَتِهِ",
+          "en": "his room",
+          "bs": "njegove sobe",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Point your guest to his room.",
+      "bs": "Uputi svog gosta do njegove sobe.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": [
+          "اُدْلُلْ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "ذرأ_1": [
+    {
+      "arabic": "ذَرَأَ الْفَلَّاحُ الْبُذُورَ",
+      "words": [
+        {
+          "arabic": "ذَرَأَ",
+          "en": "sowed",
+          "bs": "posijao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْفَلَّاحُ",
+          "en": "the farmer",
+          "bs": "seljak",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْبُذُورَ",
+          "en": "the seeds",
+          "bs": "sjeme",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The farmer sowed the seeds.",
+      "bs": "Seljak je posijao sjeme.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Verb usage: ذرأ in the sense of sowing is attested with the land as object (ذَرَأَ الأرضَ = sowed the land), not the seeds. ذرأ البذور is a forced collocation; MSA would say بذر. Fix: ذَرَأَ الْفَلَّاحُ الْأَرْضَ, 'The farmer sowed the land.' / 'Seljak je zasijao zemlju.'",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "ذَرَأْنَا الْقَمْحَ فِي الْحَقْلِ",
+      "words": [
+        {
+          "arabic": "ذَرَأْنَا",
+          "en": "sowed",
+          "bs": "posijali smo",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْقَمْحَ",
+          "en": "the wheat",
+          "bs": "pšenicu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَقْلِ",
+          "en": "the field",
+          "bs": "njivi",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "We sowed the wheat in the field.",
+      "bs": "Posijali smo pšenicu na njivi.",
+      "tense": "past",
+      "pronoun": "nahnu",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": false,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Verb usage: ذرأ (sow) takes the land as object. ذرأنا القمح is a forced collocation. Fix: ذَرَأْنَا الْحَقْلَ, 'We sowed the field.' / 'Zasijali smo njivu.'",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "ذَرَأَ الْفَلَّاحُ حَقْلَهُ",
+      "words": [
+        {
+          "arabic": "ذَرَأَ",
+          "en": "sowed",
+          "bs": "zasijao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْفَلَّاحُ",
+          "en": "the farmer",
+          "bs": "seljak",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "حَقْلَهُ",
+          "en": "his field",
+          "bs": "svoju njivu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The farmer sowed his field.",
+      "bs": "Seljak je zasijao svoju njivu.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "ذَرَأْنَا الْحَقْلَ",
+      "words": [
+        {
+          "arabic": "ذَرَأْنَا",
+          "en": "sowed",
+          "bs": "zasijali smo",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحَقْلَ",
+          "en": "the field",
+          "bs": "njivu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "We sowed the field.",
+      "bs": "Zasijali smo njivu.",
+      "tense": "past",
+      "pronoun": "nahnu",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "رضع_4": [
+    {
+      "arabic": "أُرْضِعُ طِفْلِي كُلَّ صَبَاحٍ",
+      "words": [
+        {
+          "arabic": "أُرْضِعُ",
+          "en": "breast-feed",
+          "bs": "dojim",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "طِفْلِي",
+          "en": "my child",
+          "bs": "svoje dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "كُلَّ",
+          "en": "every",
+          "bs": "svako",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "صَبَاحٍ",
+          "en": "morning",
+          "bs": "jutro",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "I breast-feed my child every morning.",
+      "bs": "Dojim svoje dijete svako jutro.",
+      "tense": "present",
+      "pronoun": "ana",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَرْضَعَتِ الْأُمُّ طِفْلَهَا",
+      "words": [
+        {
+          "arabic": "أَرْضَعَتِ",
+          "en": "breast-fed",
+          "bs": "podojila je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْأُمُّ",
+          "en": "the mother",
+          "bs": "majka",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "طِفْلَهَا",
+          "en": "her child",
+          "bs": "svoje dijete",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The mother breast-fed her child.",
+      "bs": "Majka je podojila svoje dijete.",
+      "tense": "past",
+      "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "تُرْضِعُ الْمَرْأَةُ ابْنَهَا",
+      "words": [
+        {
+          "arabic": "تُرْضِعُ",
+          "en": "breast-feeds",
+          "bs": "doji",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَرْأَةُ",
+          "en": "the woman",
+          "bs": "žena",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "ابْنَهَا",
+          "en": "her son",
+          "bs": "svog sina",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The woman breast-feeds her son.",
+      "bs": "Žena doji svog sina.",
+      "tense": "present",
+      "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَرْضِعِي الطِّفْلَ",
+      "words": [
+        {
+          "arabic": "أَرْضِعِي",
+          "en": "breast-feed",
+          "bs": "podoji",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطِّفْلَ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Breast-feed the child.",
+      "bs": "Podoji dijete.",
+      "tense": "imperative",
+      "pronoun": "anti",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "زيغ_1": [
+    {
+      "arabic": "زَاغَ السَّهْمُ عَنِ الْهَدَفِ",
+      "words": [
+        {
+          "arabic": "زَاغَ",
+          "en": "deviated",
+          "bs": "skrenula je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "السَّهْمُ",
+          "en": "the arrow",
+          "bs": "strijela",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "from",
+          "bs": "s",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْهَدَفِ",
+          "en": "the target",
+          "bs": "mete",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The arrow deviated from the target.",
+      "bs": "Strijela je skrenula s mete.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يَزِيغُ الطَّالِبُ عَنِ الْمَوْضُوعِ",
+      "words": [
+        {
+          "arabic": "يَزِيغُ",
+          "en": "wanders",
+          "bs": "skreće",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّالِبُ",
+          "en": "the student",
+          "bs": "učenik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "from",
+          "bs": "s",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَوْضُوعِ",
+          "en": "the subject",
+          "bs": "teme",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The student wanders from the subject.",
+      "bs": "Učenik skreće s teme.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "زَاغُوا عَنِ الطَّرِيقِ",
+      "words": [
+        {
+          "arabic": "زَاغُوا",
+          "en": "turned aside",
+          "bs": "skrenuli su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "from",
+          "bs": "s",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّرِيقِ",
+          "en": "the road",
+          "bs": "puta",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They turned aside from the road.",
+      "bs": "Skrenuli su s puta.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "زَاغَتِ السَّيَّارَةُ عَنِ الطَّرِيقِ",
+      "words": [
+        {
+          "arabic": "زَاغَتِ",
+          "en": "turned aside",
+          "bs": "skrenuo je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "السَّيَّارَةُ",
+          "en": "the car",
+          "bs": "auto",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنِ",
+          "en": "from",
+          "bs": "s",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّرِيقِ",
+          "en": "the road",
+          "bs": "puta",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The car turned aside from the road.",
+      "bs": "Auto je skrenuo s puta.",
+      "tense": "past",
+      "pronoun": "hiya",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "سرف_4": [
+    {
+      "arabic": "أَسْرَفَ الضَّيْفُ فِي الْأَكْلِ",
+      "words": [
+        {
+          "arabic": "أَسْرَفَ",
+          "en": "was excessive",
+          "bs": "pretjerao je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الضَّيْفُ",
+          "en": "the guest",
+          "bs": "gost",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "u",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْأَكْلِ",
+          "en": "the eating",
+          "bs": "jelu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The guest was excessive in eating.",
+      "bs": "Gost je pretjerao u jelu.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَسْرَفُوا فِي الْإِنْفَاقِ",
+      "words": [
+        {
+          "arabic": "أَسْرَفُوا",
+          "en": "were excessive",
+          "bs": "pretjerali su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "u",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْإِنْفَاقِ",
+          "en": "the expenditure",
+          "bs": "trošenju",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They were excessive in their expenditure.",
+      "bs": "Pretjerali su u trošenju.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "سري_4": [
+    {
+      "arabic": "أَسْرَى الدَّلِيلُ بِالْقَافِلَةِ",
+      "words": [
+        {
+          "arabic": "أَسْرَى",
+          "en": "traveled by night",
+          "bs": "noću je putovao",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الدَّلِيلُ",
+          "en": "the guide",
+          "bs": "vodič",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْقَافِلَةِ",
+          "en": "with the convoy",
+          "bs": "s konvojem",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The guide traveled by night with the convoy.",
+      "bs": "Vodič je noću putovao s konvojem.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Translation: أسرى بـ is transitive through the preposition and means 'took/led X on a night journey', not 'travelled with'. Fix en: 'The guide led the caravan by night.' and bs: 'Vodič je noću poveo karavan.'. Gloss أَسْرَى as 'led by night' and بِالْقَافِلَةِ as 'the caravan' (قافلة = caravan, not convoy).",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَسْرِ بِالْقَافِلَةِ قَبْلَ الْفَجْرِ",
+      "words": [
+        {
+          "arabic": "أَسْرِ",
+          "en": "travel by night",
+          "bs": "putuj noću",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْقَافِلَةِ",
+          "en": "with the convoy",
+          "bs": "s konvojem",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "قَبْلَ",
+          "en": "before",
+          "bs": "prije",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْفَجْرِ",
+          "en": "the dawn",
+          "bs": "zore",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Travel by night with the convoy before dawn.",
+      "bs": "Putuj noću s konvojem prije zore.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": [
+          "أَسْرِ"
+        ]
+      },
+      "critique": {
+        "approved": false,
+        "grammar_ok": true,
+        "translation_ok": false,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "Translation: أَسْرِ بِـ means 'take/lead X by night'. 'Travel by night with the convoy' is wrong, and 'by night ... before dawn' is redundant. Also, the construction closely mirrors the Quranic فَأَسْرِ بِأَهْلِكَ. Fix en: 'Lead the caravan out by night before dawn.' and bs: 'Izvedi karavan noću prije zore.'. Gloss قافلة as 'caravan'. Consider rephrasing away from the Quranic pattern.",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَسْرَى الدَّلِيلُ بِالْمُسَافِرِينَ",
+      "words": [
+        {
+          "arabic": "أَسْرَى",
+          "en": "led by night",
+          "bs": "noću je poveo",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الدَّلِيلُ",
+          "en": "the guide",
+          "bs": "vodič",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْمُسَافِرِينَ",
+          "en": "the travelers",
+          "bs": "putnike",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The guide led the travelers by night.",
+      "bs": "Vodič je noću poveo putnike.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "أَسْرِ بِالْمُسَافِرِينَ قَبْلَ الْفَجْرِ",
+      "words": [
+        {
+          "arabic": "أَسْرِ",
+          "en": "lead out by night",
+          "bs": "izvedi noću",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْمُسَافِرِينَ",
+          "en": "the travelers",
+          "bs": "putnike",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "قَبْلَ",
+          "en": "before",
+          "bs": "prije",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْفَجْرِ",
+          "en": "the dawn",
+          "bs": "zore",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Lead the travelers out by night before dawn.",
+      "bs": "Izvedi putnike noću prije zore.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": [
+          "أَسْرِ"
+        ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "سلم_2": [
+    {
+      "arabic": "سَلَّمَ الطَّالِبُ عَلَى الْمُعَلِّمِ",
+      "words": [
+        {
+          "arabic": "سَلَّمَ",
+          "en": "greeted",
+          "bs": "pozdravio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّالِبُ",
+          "en": "the student",
+          "bs": "učenik",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "on",
+          "bs": "-",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُعَلِّمِ",
+          "en": "the teacher",
+          "bs": "učitelja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The student greeted the teacher.",
+      "bs": "Učenik je pozdravio učitelja.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "سَلِّمُوا عَلَى جِيرَانِكُمْ",
+      "words": [
+        {
+          "arabic": "سَلِّمُوا",
+          "en": "greet (you all)",
+          "bs": "pozdravite",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "on",
+          "bs": "-",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "جِيرَانِكُمْ",
+          "en": "your (pl.) neighbors",
+          "bs": "svoje komšije",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Greet your (pl.) neighbors, (all of you).",
+      "bs": "Pozdravite (svi) svoje komšije.",
+      "tense": "imperative",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "سَلَّمْتُمُ الْمَفَاتِيحَ لِلْحَارِسِ",
+      "words": [
+        {
+          "arabic": "سَلَّمْتُمُ",
+          "en": "handed over (you all)",
+          "bs": "predali ste",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمَفَاتِيحَ",
+          "en": "the keys",
+          "bs": "ključeve",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "لِلْحَارِسِ",
+          "en": "to the guard",
+          "bs": "čuvaru",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "You (all) handed over the keys to the guard.",
+      "bs": "Predali ste (svi) ključeve čuvaru.",
+      "tense": "past",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "شدد_1": [
+    {
+      "arabic": "اُشْدُدْ عَزْمَكَ",
+      "words": [
+        {
+          "arabic": "اُشْدُدْ",
+          "en": "strengthen",
+          "bs": "ojačaj",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَزْمَكَ",
+          "en": "your resolve",
+          "bs": "svoju odlučnost",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Strengthen your resolve.",
+      "bs": "Ojačaj svoju odlučnost.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "شَدَدْنَا الْحِبَالَ جَيِّدًا",
+      "words": [
+        {
+          "arabic": "شَدَدْنَا",
+          "en": "made tight",
+          "bs": "zategli smo",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحِبَالَ",
+          "en": "the cords",
+          "bs": "konopce",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "جَيِّدًا",
+          "en": "well",
+          "bs": "dobro",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "We tightened the cords well.",
+      "bs": "Dobro smo zategli konopce.",
+      "tense": "past",
+      "pronoun": "nahnu",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "نَشُدُّ الْحِبَالَ قَبْلَ السَّفَرِ",
+      "words": [
+        {
+          "arabic": "نَشُدُّ",
+          "en": "make tight",
+          "bs": "zatežemo",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْحِبَالَ",
+          "en": "the cords",
+          "bs": "konopce",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "قَبْلَ",
+          "en": "before",
+          "bs": "prije",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "السَّفَرِ",
+          "en": "the trip",
+          "bs": "putovanja",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "We tighten the cords before the trip.",
+      "bs": "Zatežemo konopce prije putovanja.",
+      "tense": "present",
+      "pronoun": "nahnu",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "شُدُّوا أَحْزِمَتَكُمْ",
+      "words": [
+        {
+          "arabic": "شُدُّوا",
+          "en": "make tight (you all)",
+          "bs": "zategnite",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "أَحْزِمَتَكُمْ",
+          "en": "your (pl.) belts",
+          "bs": "svoje pojaseve",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Tighten your (pl.) belts, (all of you).",
+      "bs": "Zategnite (svi) svoje pojaseve.",
+      "tense": "imperative",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "صدق_5": [
+    {
+      "arabic": "تَصَدَّقَ الرَّجُلُ بِمَالِهِ",
+      "words": [
+        {
+          "arabic": "تَصَدَّقَ",
+          "en": "gave alms",
+          "bs": "udijelio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الرَّجُلُ",
+          "en": "the man",
+          "bs": "čovjek",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِمَالِهِ",
+          "en": "with his money",
+          "bs": "svoj imetak",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The man gave his money as alms.",
+      "bs": "Čovjek je udijelio svoj imetak kao sadaku.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "تَصَدَّقْ عَلَى الْفَقِيرِ",
+      "words": [
+        {
+          "arabic": "تَصَدَّقْ",
+          "en": "give alms",
+          "bs": "udijeli sadaku",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَلَى",
+          "en": "to",
+          "bs": "-",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْفَقِيرِ",
+          "en": "the poor man",
+          "bs": "siromahu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Give alms to the poor man.",
+      "bs": "Udijeli sadaku siromahu.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "صفح_1": [
+    {
+      "arabic": "اِصْفَحْ عَنْ أَخِيكَ",
+      "words": [
+        {
+          "arabic": "اِصْفَحْ",
+          "en": "pardon",
+          "bs": "oprosti",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنْ",
+          "en": "from",
+          "bs": "-",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَخِيكَ",
+          "en": "your brother",
+          "bs": "svom bratu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Pardon your brother.",
+      "bs": "Oprosti svom bratu.",
+      "tense": "imperative",
+      "pronoun": "anta",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "اِصْفَحُوا عَنْ جِيرَانِكُمْ",
+      "words": [
+        {
+          "arabic": "اِصْفَحُوا",
+          "en": "pardon (you all)",
+          "bs": "oprostite",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "عَنْ",
+          "en": "from",
+          "bs": "-",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "جِيرَانِكُمْ",
+          "en": "your (pl.) neighbors",
+          "bs": "svojim komšijama",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Pardon your (pl.) neighbors, (all of you).",
+      "bs": "Oprostite (svi) svojim komšijama.",
+      "tense": "imperative",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "ظهر_3": [
+    {
+      "arabic": "ظَاهَرُوا صَدِيقَهُمْ فِي الْمُسَابَقَةِ",
+      "words": [
+        {
+          "arabic": "ظَاهَرُوا",
+          "en": "supported",
+          "bs": "podržali su",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "صَدِيقَهُمْ",
+          "en": "their friend",
+          "bs": "svog prijatelja",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "فِي",
+          "en": "in",
+          "bs": "na",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُسَابَقَةِ",
+          "en": "the competition",
+          "bs": "takmičenju",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They supported their friend in the competition.",
+      "bs": "Podržali su svog prijatelja na takmičenju.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "يُظَاهِرُونَ الضَّعِيفَ",
+      "words": [
+        {
+          "arabic": "يُظَاهِرُونَ",
+          "en": "support",
+          "bs": "podržavaju",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الضَّعِيفَ",
+          "en": "the weak",
+          "bs": "slabog",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They support the weak.",
+      "bs": "Podržavaju slabog.",
+      "tense": "present",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "تُظَاهِرُونَ إِخْوَانَكُمْ",
+      "words": [
+        {
+          "arabic": "تُظَاهِرُونَ",
+          "en": "support (you all)",
+          "bs": "podržavate",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "إِخْوَانَكُمْ",
+          "en": "your (pl.) brothers",
+          "bs": "svoju braću",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "You (all) support your (pl.) brothers.",
+      "bs": "Podržavate (svi) svoju braću.",
+      "tense": "present",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "عقب_3": [
+    {
+      "arabic": "عَاقَبَ الْمُعَلِّمُ الطَّالِبَ الْكَسُولَ",
+      "words": [
+        {
+          "arabic": "عَاقَبَ",
+          "en": "punished",
+          "bs": "kaznio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُعَلِّمُ",
+          "en": "the teacher",
+          "bs": "učitelj",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الطَّالِبَ",
+          "en": "the student",
+          "bs": "učenika",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْكَسُولَ",
+          "en": "lazy",
+          "bs": "lijenog",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The teacher punished the lazy student.",
+      "bs": "Učitelj je kaznio lijenog učenika.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "عَاقِبُوا الْغَشَّاشَ بِعَدْلٍ",
+      "words": [
+        {
+          "arabic": "عَاقِبُوا",
+          "en": "punish (you all)",
+          "bs": "kaznite",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْغَشَّاشَ",
+          "en": "the swindler",
+          "bs": "varalicu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِعَدْلٍ",
+          "en": "with justice",
+          "bs": "pravedno",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "Punish the swindler with justice, (all of you).",
+      "bs": "Kaznite (svi) varalicu pravedno.",
+      "tense": "imperative",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "corpus table",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "عَاقَبْتُمُ اللِّصَّ",
+      "words": [
+        {
+          "arabic": "عَاقَبْتُمُ",
+          "en": "punished (you all)",
+          "bs": "kaznili ste",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "اللِّصَّ",
+          "en": "the thief",
+          "bs": "lopova",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "You (all) punished the thief.",
+      "bs": "Kaznili ste (svi) lopova.",
+      "tense": "past",
+      "pronoun": "antum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "علو_1": [
+    {
+      "arabic": "عَلَا صَوْتُ الْمُؤَذِّنِ",
+      "words": [
+        {
+          "arabic": "عَلَا",
+          "en": "rose",
+          "bs": "uzdigao se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "صَوْتُ",
+          "en": "voice of",
+          "bs": "glas",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُؤَذِّنِ",
+          "en": "the muezzin",
+          "bs": "mujezina",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The muezzin's voice rose.",
+      "bs": "Glas mujezina se uzdigao.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "عَلَوُا الْجَبَلَ",
+      "words": [
+        {
+          "arabic": "عَلَوُا",
+          "en": "ascended",
+          "bs": "popeli su se",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْجَبَلَ",
+          "en": "the mountain",
+          "bs": "na planinu",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "They ascended the mountain.",
+      "bs": "Popeli su se na planinu.",
+      "tense": "past",
+      "pronoun": "hum",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    }
+  ],
+  "عهد_1": [
+    {
+      "arabic": "عَهِدَ الْمُدِيرُ إِلَيْهِ بِالْمَهَمَّةِ",
+      "words": [
+        {
+          "arabic": "عَهِدَ",
+          "en": "entrusted",
+          "bs": "povjerio je",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "الْمُدِيرُ",
+          "en": "the manager",
+          "bs": "direktor",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "إِلَيْهِ",
+          "en": "to him",
+          "bs": "mu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْمَهَمَّةِ",
+          "en": "with the task",
+          "bs": "zadatak",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The manager entrusted him with the task.",
+      "bs": "Direktor mu je povjerio zadatak.",
+      "tense": "past",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "عَهِدْنَا إِلَى أَخِينَا بِالْبَيْتِ",
+      "words": [
+        {
+          "arabic": "عَهِدْنَا",
+          "en": "entrusted",
+          "bs": "povjerili smo",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "إِلَى",
+          "en": "to",
+          "bs": "-",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "أَخِينَا",
+          "en": "our brother",
+          "bs": "našem bratu",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "بِالْبَيْتِ",
+          "en": "with the house",
+          "bs": "kuću",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "We entrusted the house to our brother.",
+      "bs": "Povjerili smo kuću našem bratu.",
+      "tense": "past",
+      "pronoun": "nahnu",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
         "glossed_by_exception": []
       },
       "critique": {

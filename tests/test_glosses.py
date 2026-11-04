@@ -105,3 +105,14 @@ def test_drove_meets_its_base_form():
 
 def test_strove_meets_its_base_form():
     assert gloss_agrees("they strove", ["strive;pursue+they_<verb>"]) is True
+
+
+def test_bore_and_caught_meet_their_base_forms():
+    assert gloss_agrees("bore", ["bear;carry+he;it_<verb>"]) is True
+    assert gloss_agrees("they bore", ["bear+they_<verb>"]) is True
+    assert gloss_agrees("caught", ["catch;come_upon+he;it_<verb>"]) is True
+
+
+def test_incurred_meets_its_base_form():
+    # The doubled final r defeats the suffix stemmer ("incurr").
+    assert gloss_agrees("incurred", ["return;incur+he;it_<verb>"]) is True

@@ -490,5 +490,45 @@
    ],
    "why": "The hollow imperative سُقْ (سَاقَ يَسُوقُ, 'drive!') is too short for the analyzer to read, so no analyzable spelling exists; this records the standard form so the gate confirms the verb by the table."
   }
+ },
+ "أخر_10": {
+  "past:huwa": {
+   "spellings": [
+    "اِسْتَأْخَرَ"
+   ],
+   "why": "The CAMeL analyzer has no entry for اِسْتَأْخَرَ (Form X of أخر, 'to stay behind, to delay', cf. 7:34 لَا يَسْتَأْخِرُونَ سَاعَةً) in any spelling, so no form of it is analyzable. The generated اِسْتَأْخَرَ is the regular Form X of a hamza-medial root; this records it so the gate confirms it by the table."
+  },
+  "past:hum": {
+   "spellings": [
+    "اِسْتَأْخَرُوا"
+   ],
+   "why": "The CAMeL analyzer has no entry for اِسْتَأْخَرَ (Form X of أخر, 'to stay behind, to delay', cf. 7:34 لَا يَسْتَأْخِرُونَ سَاعَةً) in any spelling, so no form of it is analyzable. The generated اِسْتَأْخَرُوا is the regular Form X of a hamza-medial root; this records it so the gate confirms it by the table."
+  },
+  "present:huwa": {
+   "spellings": [
+    "يَسْتَأْخِرُ"
+   ],
+   "why": "The CAMeL analyzer has no entry for اِسْتَأْخَرَ (Form X of أخر, 'to stay behind, to delay', cf. 7:34 لَا يَسْتَأْخِرُونَ سَاعَةً) in any spelling, so no form of it is analyzable. The generated يَسْتَأْخِرُ is the regular Form X of a hamza-medial root; this records it so the gate confirms it by the table."
+  },
+  "present:ana": {
+   "spellings": [
+    "أَسْتَأْخِرُ"
+   ],
+   "why": "The CAMeL analyzer has no entry for اِسْتَأْخَرَ (Form X of أخر, 'to stay behind, to delay', cf. 7:34 لَا يَسْتَأْخِرُونَ سَاعَةً) in any spelling, so no form of it is analyzable. The generated أَسْتَأْخِرُ is the regular Form X of a hamza-medial root; this records it so the gate confirms it by the table."
+  },
+  "imperative:anta": {
+   "spellings": [
+    "اِسْتَأْخِرْ"
+   ],
+   "why": "The CAMeL analyzer has no entry for اِسْتَأْخَرَ (Form X of أخر, 'to stay behind, to delay', cf. 7:34 لَا يَسْتَأْخِرُونَ سَاعَةً) in any spelling, so no form of it is analyzable. The generated اِسْتَأْخِرْ is the regular Form X of a hamza-medial root; this records it so the gate confirms it by the table."
+  }
+ },
+ "بوأ_2": {
+  "imperative:anta": {
+   "spellings": [
+    "بَوِّئْ"
+   ],
+   "why": "The analyzer reads no spelling of the Form II imperative of بَوَّأَ 'to settle, to lodge (someone)' (the verb itself it glosses 'accommodate'). بَوِّئْ is the regular Form II imperative of a hamza-final root (cf. 22:26 بَوَّأْنَا, 3:121 تُبَوِّئُ); this records it so the gate confirms it by the table."
+  }
  }
 }

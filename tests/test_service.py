@@ -539,6 +539,21 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("نزع", 6, "تَنَازَعَ", {("past", "ana"): "تَنَازَعْتُ", ("present", "huwa"): "يَتَنَازَعُ"}),
     ("نزل", 5, "تَنَزَّلَ", {("past", "ana"): "تَنَزَّلْتُ", ("present", "ana"): "أَتَنَزَّلُ"}),
     ("نقص", 1, "نَقَصَ", {("past", "ana"): "نَقَصْتُ", ("present", "huwa"): "يَنْقُصُ"}),
+    # Presents يَزِرُ / يَسْتَأْخِرُ / يَنۢبَغِي / يُجِيرُ / يَخْفَى / يَصْفَحُ, the passive ثُقِفُ, the 3fs
+    # past أَرْضَعَتْ, cut stems بَلَّغْ / بايَعْ / شَدَدْ / ظاهَرُ.
+    ("وزر", 1, "وَزَرَ", {("past", "ana"): "وَزَرْتُ", ("present", "huwa"): "يَزِرُ"}),
+    ("أخر", 10, "اسْتَأْخَرَ", {("past", "ana"): "اِسْتَأْخَرْتُ", ("present", "huwa"): "يَسْتَأْخِرُ"}),
+    ("بغي", 7, "انْبَغَى", {("past", "huwa"): "اِنْبَغَى", ("present", "hiya"): "تَنْبَغِي"}),
+    ("بلغ", 2, "بَلَّغَ", {("past", "ana"): "بَلَّغْتُ", ("present", "huwa"): "يُبَلِّغُ"}),
+    ("بيع", 3, "بَايَعَ", {("past", "ana"): "بَايَعْتُ", ("present", "huwa"): "يُبَايِعُ"}),
+    ("ثقف", 1, "ثَقِفَ", {("past", "ana"): "ثَقِفْتُ", ("present", "huwa"): "يَثْقَفُ"}),
+    ("جور", 4, "أَجَارَ", {("past", "ana"): "أَجَرْتُ", ("present", "ana"): "أُجِيرُ",
+                          ("imperative", "anta"): "أَجِرْ"}),
+    ("خفي", 1, "خَفِيَ", {("past", "ana"): "خَفِيتُ", ("past", "hum"): "خَفُوا"}),
+    ("رضع", 4, "أَرْضَعَ", {("past", "huwa"): "أَرْضَعَ", ("present", "huwa"): "يُرْضِعُ"}),
+    ("شدد", 1, "شَدَّ", {("past", "ana"): "شَدَدْتُ", ("present", "huwa"): "يَشُدُّ"}),
+    ("صفح", 1, "صَفَحَ", {("past", "ana"): "صَفَحْتُ", ("present", "huwa"): "يَصْفَحُ"}),
+    ("ظهر", 3, "ظَاهَرَ", {("past", "ana"): "ظَاهَرْتُ", ("present", "huwa"): "يُظَاهِرُ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -629,6 +644,10 @@ def _cell_of(detail, tense: str, pronoun: str):
     ("نفر", {("present", "huwa"): "يَنْفِرُ", ("past", "ana"): "نَفَرْتُ"}),
     ("همم", {("present", "huwa"): "يَهُمُّ", ("past", "ana"): "هَمَمْتُ"}),
     ("حضر", {("present", "huwa"): "يَحْضُرُ", ("past", "ana"): "حَضَرْتُ"}),
+    ("ثقف", {("present", "huwa"): "يَثْقَفُ", ("past", "ana"): "ثَقِفْتُ"}),
+    ("صفح", {("present", "huwa"): "يَصْفَحُ", ("past", "ana"): "صَفَحْتُ"}),
+    ("علو", {("present", "huwa"): "يَعْلُو", ("past", "ana"): "عَلَوْتُ"}),
+    ("بوأ", {("present", "huwa"): "يَبُوءُ", ("past", "ana"): "بُؤْتُ"}),
     # The faʿila past the lemma مَسَّ hides is documented cell by cell.
     ("مسس", {("present", "huwa"): "يَمَسُّ", ("past", "ana"): "مَسِسْتُ", ("past", "huwa"): "مَسَّ"}),
     # Fitted from the corpus once the Uthmani silent alef (يَدْعُوا۟) stopped hiding the present.
@@ -660,3 +679,18 @@ def test_a_form_three_the_generator_reads_as_form_one_is_documented():
     assert table[("past", "ana")] == normalize("NFC", "آخَذْتُ")
     assert table[("present", "huwa")] == normalize("NFC", "يُؤَاخِذُ")
     assert table[("imperative", "anta")] == normalize("NFC", "آخِذْ")
+
+
+@pytest.mark.parametrize("root, form, tense, pronoun, spelling", [
+    # The analyzer knows no spelling of اِسْتَأْخَرَ nor of the Form II imperative بَوِّئْ; the
+    # regular forms are written down so a sentence can use them (data/conjugation_overrides.json).
+    ("أخر", 10, "past", "huwa", "اِسْتَأْخَرَ"),
+    ("أخر", 10, "present", "ana", "أَسْتَأْخِرُ"),
+    ("أخر", 10, "imperative", "anta", "اِسْتَأْخِرْ"),
+    ("بوأ", 2, "imperative", "anta", "بَوِّئْ"),
+])
+def test_a_form_the_analyzer_cannot_read_is_documented(root, form, tense, pronoun, spelling):
+    cell = _cell_of(get_verb(root, form), tense, pronoun)
+
+    assert cell.documented == (spelling,)
+    assert normalize("NFC", cell.plain) == normalize("NFC", spelling)

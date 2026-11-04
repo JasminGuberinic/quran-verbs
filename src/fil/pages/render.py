@@ -11,12 +11,12 @@ comes from the content — meanings, translations, sentences — is escaped.
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from html import escape
 
 from fil.languages import LANGUAGES, Language
-from fil.pages import seo
+from fil.pages import indexing, seo
 from fil.pages.interface_text import fill
 
 FORM_NAMES = ("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
@@ -25,6 +25,7 @@ TENSE_ORDER = ("past", "present", "imperative")
 STYLESHEET = "pages.css"
 _ENGLISH = "en"
 _CURRENT = ' aria-current="page"'
+_NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
           '&amp;family=Noto+Naskh+Arabic&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">\n')
@@ -43,6 +44,11 @@ class EmbeddedAudioOnPublicPage(ValueError):
 class PublishedVerb:
     card: dict
     slug: str
+
+    @property
+    def indexed_languages(self) -> tuple[str, ...]:
+        """The languages this verb's page is offered to search engines in (fil.pages.indexing)."""
+        return indexing.translated_languages(self.card)
 
 
 # ---------- verb page ----------
@@ -70,7 +76,9 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict) -> str:
         _footer(text),
     ))
     head = _head(title=title, description=description, path=path, root=root,
-                 alternates=seo.verb_alternates(verb.slug), structured=structured, page_type="article")
+                 indexed_in=verb.indexed_languages, language=language.code,
+                 alternates=lambda languages: seo.verb_alternates(verb.slug, languages),
+                 structured=structured, page_type="article")
     return _document(language, head, body)
 
 
@@ -254,8 +262,9 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
         f'<ol class="verb-list">{rows}</ol></main>',
         _footer(text),
     ))
-    head = _head(title=title, description=description, path=path, root=root, alternates=seo.index_alternates(),
-                 structured=seo.index_structured_data(title=text["page"]["indexTitle"], description=description,
+    head = _head(title=title, description=description, path=path, root=root,
+                 indexed_in=indexing.indexable_lists([verb.card for verb in verbs]), language=language.code,
+                 alternates=seo.index_alternates, structured=seo.index_structured_data(title=text["page"]["indexTitle"], description=description,
                                                       language=language.code), page_type="website")
     return _document(language, head, body)
 
@@ -306,12 +315,15 @@ def _document(language: Language, head: str, body: str) -> str:
             f'<body>\n{body}\n{_PLAYER}\n</body>\n</html>\n')
 
 
-def _head(*, title: str, description: str, path: str, root: str, alternates: list[seo.Alternate],
-          structured: str, page_type: str) -> str:
+def _head(*, title: str, description: str, path: str, root: str, indexed_in: Sequence[str], language: str,
+          alternates: Callable[[Sequence[str]], list[seo.Alternate]], structured: str, page_type: str) -> str:
+    """An indexed page names its indexed siblings; one kept out of search names none and says noindex."""
     url = seo.absolute(path)
-    links = "".join(f'<link rel="alternate" hreflang="{item.hreflang}" href="{item.url}">\n' for item in alternates)
+    is_indexed = language in indexed_in
+    links = "".join(f'<link rel="alternate" hreflang="{item.hreflang}" href="{item.url}">\n'
+                    for item in (alternates(indexed_in) if is_indexed else ()))
     return (f'<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-            f'<title>{escape(title)}</title>\n'
+            f'<title>{escape(title)}</title>\n{"" if is_indexed else _NOT_INDEXED}'
             + _meta(title=title, description=description, url=url, page_type=page_type)
             + f'<link rel="canonical" href="{url}">\n{links}'
             f'{_FONTS}<link rel="stylesheet" href="{root}{STYLESHEET}">\n'

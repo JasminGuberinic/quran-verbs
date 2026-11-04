@@ -2,7 +2,8 @@
 
 Pure text in, text out: page addresses, language alternates, the sitemap, robots.txt,
 llms.txt and structured data. Every page exists in every language (a missing meaning
-falls back to English on the page itself), so every page lists all its alternates.
+falls back to English on the page itself), but only the translated ones are offered to
+search engines (fil.pages.indexing), so a page lists only those as its alternates.
 
 Paths are relative to the site root and end in "/" for a folder page ("bs/qala/"); the
 root itself is "". GitHub serves the site under /quran-verbs/, so pages link to each
@@ -47,21 +48,26 @@ def to_root(path: str) -> str:
     return "../" * path.count("/")
 
 
-def verb_alternates(slug: str) -> list[Alternate]:
-    return _alternates(lambda language: verb_path(language, slug))
+def verb_alternates(slug: str, languages: Sequence[str]) -> list[Alternate]:
+    return _alternates(lambda language: verb_path(language, slug), languages)
 
 
-def index_alternates() -> list[Alternate]:
-    return _alternates(language_index_path)
+def index_alternates(languages: Sequence[str]) -> list[Alternate]:
+    return _alternates(language_index_path, languages)
 
 
-def _alternates(path_in) -> list[Alternate]:
-    every_language = [Alternate(language, absolute(path_in(language))) for language in CODES]
-    return [*every_language, Alternate("x-default", absolute(path_in(DEFAULT_LANGUAGE)))]
+def _alternates(path_in, languages: Sequence[str]) -> list[Alternate]:
+    """The indexed versions of one page; x-default only when the English one is among them."""
+    unknown = set(languages) - set(CODES)
+    if unknown:
+        raise ValueError(f"no such site languages: {sorted(unknown)}")
+    listed = [Alternate(language, absolute(path_in(language))) for language in CODES if language in languages]
+    default = [Alternate("x-default", absolute(path_in(DEFAULT_LANGUAGE)))] if DEFAULT_LANGUAGE in languages else []
+    return [*listed, *default]
 
 
 def sitemap(paths: Iterable[str]) -> str:
-    """A sitemaps.org sitemap of every page (one file holds up to 50 000 addresses)."""
+    """A sitemaps.org sitemap of the given (indexable) pages (one file holds up to 50 000 addresses)."""
     entries = "".join(f"<url><loc>{escape(absolute(path))}</loc></url>\n" for path in paths)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

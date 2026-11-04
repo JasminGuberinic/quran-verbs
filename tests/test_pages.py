@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from fil.languages import CODES, LANGUAGES
-from fil.pages import deploy, render, seo
+from fil.pages import deploy, indexing, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import EmbeddedAudioOnPublicPage, PublishedVerb
 from fil.pages.slugs import assign_slugs, slug_of
@@ -47,12 +47,18 @@ def test_slugs_are_stable_when_verbs_are_studied_later():
 
 # ---------- addresses, alternates, sitemap ----------
 
-def test_every_page_lists_every_language_and_an_x_default():
-    alternates = seo.verb_alternates("qala")
+def test_a_page_lists_its_indexed_languages_and_an_x_default():
+    alternates = seo.verb_alternates("qala", CODES)
 
     assert [item.hreflang for item in alternates] == [*CODES, "x-default"]
     assert alternates[-1].url == seo.absolute("en/qala/")
     assert all(item.url.startswith(seo.SITE_URL) for item in alternates)
+    assert [item.hreflang for item in seo.verb_alternates("qala", ("en", "bs"))] == ["bs", "en", "x-default"]
+
+
+def test_alternates_refuse_a_language_the_site_does_not_have():
+    with pytest.raises(ValueError):
+        seo.index_alternates(("en", "xx"))
 
 
 def test_relative_paths_find_the_root_from_any_depth():
@@ -61,15 +67,17 @@ def test_relative_paths_find_the_root_from_any_depth():
     assert seo.to_root("bs/qala/") == "../../"
 
 
-def test_the_sitemap_lists_every_page_once_as_valid_xml():
-    verbs = [PublishedVerb({"rank": 1}, "qala"), PublishedVerb({"rank": 2}, "kana")]
+def test_the_sitemap_lists_every_indexable_page_once_as_valid_xml():
+    verbs = [PublishedVerb(_card(), "qala"), PublishedVerb(_translated_card(CODES), "kana")]
     paths = pages.page_paths(verbs)
 
     root = ElementTree.fromstring(seo.sitemap(paths).encode())
     locations = [element.text for element in root.iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
 
-    assert len(locations) == len(set(locations)) == 1 + len(LANGUAGES) * 3
+    # qala is translated into en + bs only; kana into all; every list has at least half translated
+    assert len(locations) == len(set(locations)) == 1 + len(LANGUAGES) * 2 + 2
     assert seo.SITE_URL in locations and seo.absolute("fa/kana/") in locations
+    assert seo.absolute("fa/qala/") not in locations and seo.absolute("bs/qala/") in locations
 
 
 def test_robots_points_to_the_sitemap():
@@ -148,7 +156,7 @@ def test_a_verb_page_is_complete_readable_html_in_its_language():
     assert '<html lang="bs" dir="ltr">' in html
     assert "<title>قالَ – reći · verb</title>" in html
     assert f'<link rel="canonical" href="{seo.SITE_URL}bs/qala/">' in html
-    assert html.count('rel="alternate" hreflang=') == len(CODES) + 1
+    assert html.count('rel="alternate" hreflang=') == 3          # bs, en, x-default: the translated ones
     assert "Sahih International" in html and "&lt;to the angels&gt;" in html   # content is escaped
     assert "<b>AI content</b>" in html                                         # the notice is shown
     assert "Rekao je." in html and "reče" in html
@@ -227,3 +235,66 @@ def test_published_slugs_of_the_whole_catalogue_are_unique_and_never_change():
     # Published addresses: changing one breaks links people have shared.
     assert slugs[:12] == ["qala", "kana", "amana", "alima", "jaala", "kafara",
                           "jaa", "amila", "ata", "raa", "ata-2", "shaa"]
+
+
+# ---------- what search engines may index ----------
+
+def _translated_card(languages) -> dict:
+    """The test card with its meaning, sentence and ayah gloss in every one of `languages`."""
+    card = _card()
+    card["meaning"] = {language: f"meaning-{language}" for language in languages}
+    card["sentences"][0]["translation"] = {language: f"sentence-{language}" for language in languages}
+    card["ayat"][0]["words"][0]["gloss"] = {language: f"gloss-{language}" for language in languages}
+    return card
+
+
+@pytest.mark.parametrize("missing", ["meaning", "sentence", "gloss"])
+def test_a_page_is_translated_only_when_meaning_sentences_and_ayah_glosses_all_are(missing):
+    card = _translated_card(("en", "bs", "tr"))
+    if missing == "meaning":
+        del card["meaning"]["tr"]
+    if missing == "sentence":
+        del card["sentences"][0]["translation"]["tr"]
+    if missing == "gloss":
+        del card["ayat"][0]["words"][0]["gloss"]["tr"]
+
+    assert indexing.translated_languages(card) == ("bs", "en")
+
+
+def test_english_counts_as_translated_for_english_alone():
+    card = _translated_card(("en",))
+    assert indexing.translated_languages(card) == ("en",)
+    assert not indexing.is_translated(card, "bs")
+
+
+def test_an_untranslated_page_is_built_and_linked_but_kept_out_of_search():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("fa"), _text())
+
+    assert '<meta name="robots" content="noindex, follow">' in html
+    assert 'rel="alternate"' not in html
+    assert 'href="../../bs/qala/"' in html                                  # visitors can still switch
+
+
+def test_a_translated_page_names_only_its_translated_siblings():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), _text())
+
+    assert "noindex" not in html
+    assert re.findall(r'hreflang="([\w-]+)" href="https', html) == ["bs", "en", "x-default"]
+
+
+def test_a_list_is_indexed_once_at_least_half_its_verb_pages_are_translated():
+    half = [_card(), _translated_card(CODES)]
+    less = [_card(), _card(), _translated_card(CODES)]
+
+    assert indexing.is_list_indexable(half, "fa")
+    assert not indexing.is_list_indexable(less, "fa")
+    assert indexing.indexable_lists(less) == ("bs", "en")
+
+
+def test_a_list_below_the_threshold_still_lists_every_verb_but_says_noindex():
+    verbs = [PublishedVerb(_card(), "qala"), PublishedVerb(_card(), "kana"), PublishedVerb(_translated_card(CODES), "ata")]
+    html = render.language_index(verbs, _language("fa"), _text())
+
+    assert 'content="noindex, follow"' in html
+    assert all(f'<a href="{slug}/">' in html for slug in ("qala", "kana", "ata"))
+    assert "noindex" not in render.language_index(verbs, _language("bs"), _text())

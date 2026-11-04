@@ -382,6 +382,15 @@ def test_a_documented_spelling_gives_an_uthmani_only_cell_a_plain_form():
     assert cell.plain == "اِسْأَلْ"
 
 
+def test_the_contracted_present_of_tasaala_is_confirmed_not_quarantined():
+    # 4:1 has تَسَآءَلُونَ (one tāʾ of تَتَسَاءَلُونَ dropped); the generator gives only the full form.
+    cell = next(c for c in get_verb("سأل", 6).cells if (c.tense, c.pronoun) == ("present", "antum"))
+
+    assert cell.source == "attested"
+    assert cell.documented == ("تَسَاءَلُونَ", "تَتَسَاءَلُونَ")
+    assert cell.plain == "تَسَاءَلُونَ"
+
+
 def test_a_documented_spelling_outranks_the_generated_one():
     # A hand-documented spelling is written down where the generator is silent or wrong,
     # so whenever both exist the learner sees the documented one.

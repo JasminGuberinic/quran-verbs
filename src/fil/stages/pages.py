@@ -15,6 +15,9 @@ The cards are the ones `fil site` builds (site.assemble) with their sound publis
 files instead of embedded; the pages are rendered from those same cards. Files placed in
 site/verification/ (a search engine's ownership file) are copied to the site root as is.
 
+Every page is built and linked, but only translated pages are offered to search engines
+(fil.pages.indexing): the others say noindex and are left out of sitemap.xml.
+
 The build refuses to finish if any page links a sound that is not in audio/.
 """
 
@@ -28,7 +31,7 @@ from pathlib import Path
 
 from fil import service
 from fil.languages import LANGUAGES
-from fil.pages import deploy, interface_text, render, seo, share_image
+from fil.pages import deploy, indexing, interface_text, render, seo, share_image
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
@@ -80,6 +83,7 @@ def build(pages: Path) -> bool:
     check_card_audio(pages, content.cards)
     site.report(pages, content)
     _report_size(pages, len(written))
+    _report_indexing(verbs)
     return True
 
 
@@ -90,11 +94,12 @@ def published_verbs(cards: Iterable[dict], catalogue_lemmas: list[str]) -> list[
 
 
 def page_paths(verbs: Iterable[PublishedVerb]) -> list[str]:
-    """Every page the sitemap lists: the app, each language's verb list, each verb in each language."""
+    """Every page the sitemap lists: the app, and each verb list and verb page that may be indexed."""
     verbs = list(verbs)
+    lists = indexing.indexable_lists([verb.card for verb in verbs])
     return ["", *(path for language in LANGUAGES for path in (
-        seo.language_index_path(language.code),
-        *(seo.verb_path(language.code, verb.slug) for verb in verbs),
+        *([seo.language_index_path(language.code)] if language.code in lists else []),
+        *(seo.verb_path(language.code, verb.slug) for verb in verbs if language.code in verb.indexed_languages),
     ))]
 
 
@@ -169,6 +174,16 @@ def sound_references(value: object) -> Iterable[str]:
         return [reference for item in value for reference in sound_references(item)]
     is_sound = isinstance(value, str) and value.startswith(f"{AUDIO_FOLDER}/")
     return [value] if is_sound else []
+
+
+def _report_indexing(verbs: list[PublishedVerb]) -> None:
+    lists = indexing.indexable_lists([verb.card for verb in verbs])
+    counts = " · ".join(
+        f"{language.code} {sum(1 for verb in verbs if language.code in verb.indexed_languages)}"
+        f"{'' if language.code in lists else ' (list noindex)'}"
+        for language in LANGUAGES
+    )
+    print(f"Indexable verb pages of {len(verbs)}: {counts}")
 
 
 def _report_size(pages: Path, page_count: int) -> None:

@@ -19,6 +19,7 @@ from fil.stages import (
     dataset,
     evals,
     full,
+    i18n,
     ingest,
     package,
     pages,
@@ -40,6 +41,7 @@ _STAGES = {
     "evals": (evals.main, "report the factory's metrics; re-run the gate over the golden set"),
     "batch": (batch.main, "add verbs in batches: plan, wordbank, draft, meanings, ayah, review-export/import"),
     "site": (site.main, "build the static study site (build/site) for the verbs in data/meanings.json"),
+    "i18n": (i18n.main, "translate into further languages via a translation memory: export, import, status"),
     "pages": (pages.main, "build the public GitHub Pages site (build/pages); --deploy publishes it"),
 }
 
@@ -53,6 +55,9 @@ def main() -> None:
     known, rest = parser.parse_known_args()
     if known.stage == "batch":
         batch.main(rest)
+        return
+    if known.stage == "i18n":
+        i18n.main(rest)
         return
     if known.stage == "pages":
         pages.main(rest)

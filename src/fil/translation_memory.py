@@ -21,7 +21,7 @@ from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
 
 from fil.examples import Example
-from fil.languages import CODES
+from fil.languages import CODES, REQUIRED
 
 WordKey = tuple[str, str]   # (arabic, en): the same word with another meaning is another entry
 
@@ -48,6 +48,11 @@ WORDS = Sheet("words.tsv", ("arabic", "en", "bs"), key_width=2)
 SENTENCES = Sheet("sentences.tsv", ("root|form|index", "arabic", "en", "bs"))
 SHEETS: tuple[Sheet, ...] = (MEANINGS, AYAH, WORDS, SENTENCES)
 
+# Every Quranic form of a verb, glossed once (fil forms). English and Bosnian are written from
+# the Arabic, its grammar and the first ayah it stands in; the other languages translate them.
+FORMS_AUTHORED = Sheet("forms.tsv", ("root|form|arabic", "arabic", "verb", "grammar", "first ayah"))
+FORMS_TRANSLATED = Sheet("forms.tsv", ("root|form|arabic", "arabic", "grammar", "en", "bs"))
+
 
 @dataclass(frozen=True)
 class AyahVerb:
@@ -66,6 +71,18 @@ class Sentence:
     @property
     def id(self) -> str:
         return f"{self.root}|{self.form}|{self.index}"
+
+
+@dataclass(frozen=True)
+class FormToGloss:
+    """One distinct Quranic form of a verb, with what a glosser needs to read it right."""
+
+    key: str                         # root|form|arabic (fil.attested_forms.form_key)
+    arabic: str
+    verb: str                        # the verb and its meaning, e.g. "قَالَ to say"
+    grammar: str                     # its grammar, in English
+    first_ayah: str                  # where it first stands, with that ayah in English
+    glosses: Mapping[str, str]       # language → gloss, as far as it has one
 
 
 @dataclass(frozen=True)
@@ -113,6 +130,20 @@ def entries(content: Content, language: str) -> dict[Sheet, list[Entry]]:
                            dict(s.example.translations).get(language, ""))
                     for s in content.sentences],
     }
+
+
+def form_sheet(language: str) -> Sheet:
+    return FORMS_AUTHORED if language in REQUIRED else FORMS_TRANSLATED
+
+
+def form_entries(forms: Iterable[FormToGloss], language: str) -> list[Entry]:
+    """Every form's entry in one language; a translated language only gets forms glossed in en and bs."""
+    if language in REQUIRED:
+        return [_entry((form.key, form.arabic, form.verb, form.grammar, form.first_ayah), form.glosses.get(language, ""))
+                for form in forms]
+    return [_entry((form.key, form.arabic, form.grammar, form.glosses["en"], form.glosses["bs"]),
+                   form.glosses.get(language, ""))
+            for form in forms if all(form.glosses.get(code) for code in REQUIRED)]
 
 
 def missing(content: Content, language: str) -> dict[Sheet, list[Entry]]:
@@ -202,7 +233,7 @@ def merged(store: Mapping[str, object], translations: Mapping[str, str], languag
     """
     result = dict(store)
     for key, text in translations.items():
-        result[key] = _in_language_order({**store[key], language: text})
+        result[key] = _in_language_order({**store.get(key, {}), language: text})
     return result
 
 

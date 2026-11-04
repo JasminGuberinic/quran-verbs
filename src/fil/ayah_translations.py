@@ -59,6 +59,13 @@ class AyahTranslations:
         self._verses = {source.language: parse(_lines(source, folder, fetch)) for source in SOURCES}
         self._credits = {source.language: source.credit for source in SOURCES}
 
+    @property
+    def languages(self) -> tuple[str, ...]:
+        return tuple(self._verses)
+
+    def credit(self, language: str) -> str:
+        return self._credits[language]
+
     def of(self, surah: int, ayah: int) -> dict[str, dict[str, str]]:
         """{language: {"text", "by"}} for this ayah, in every language that has one."""
         return {

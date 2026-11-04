@@ -449,6 +449,61 @@
       openInApp: "ऐप में इस क्रिया का अभ्यास करें", allVerbs: "सभी क्रियाएँ", notFound: "पेज नहीं मिला।",
     },
   };
-  for (const code of Object.keys(UI)) UI[code].page = PAGE[code];
+  // The full list of a verb's Quranic forms and its ayat (site/ayat.js). Translated into the
+  // languages most learners use; the others read English until they are.
+  const FORMS = {
+    bs: {
+      allForms: (n) => `Svi oblici u Kur'anu (${n})`, formsNote: "Svaka riječ kako stoji u Kur'anu, najčešća prva. Dok oblik nema AI prijevod, prikazana je njegova gramatika.",
+      firstAyah: "prvi put", passive: "pasiv", object: (p) => `objekat: ${p}`,
+      objects: { huwa: "njega/to", hiya: "nju/to", huma: "njih dvoje", hum: "njih", hunna: "njih (ž.)", anta: "tebe", anti: "tebe (ž.)", antuma: "vas dvoje", antum: "vas", antunna: "vas (ž.)", ana: "mene", nahnu: "nas" },
+      showAll: (n) => `Prikaži sve ajete (${n})`, hideAll: "Sakrij ajete", showMore: "Prikaži još", loading: "Učitavanje…", loadFailed: "Ajeti se nisu mogli učitati.",
+    },
+    en: {
+      allForms: (n) => `Every form in the Quran (${n})`, formsNote: "Each word as it stands in the Quran, the most frequent first. Until a form has its AI gloss, its grammar is shown.",
+      firstAyah: "first in", passive: "passive", object: (p) => `object: ${p}`,
+      objects: { huwa: "him/it", hiya: "her/it", huma: "them two", hum: "them", hunna: "them (f.)", anta: "you", anti: "you (f.)", antuma: "you two", antum: "you (pl.)", antunna: "you (f. pl.)", ana: "me", nahnu: "us" },
+      showAll: (n) => `Show all ayat (${n})`, hideAll: "Hide the ayat", showMore: "Show more", loading: "Loading…", loadFailed: "The ayat could not be loaded.",
+    },
+    tr: {
+      allForms: (n) => `Kur'an'daki bütün biçimler (${n})`, formsNote: "Her kelime Kur'an'da geçtiği gibi, en sık geçen önce. Bir biçimin yapay zekâ anlamı henüz yoksa dil bilgisi gösterilir.",
+      firstAyah: "ilk geçtiği yer", passive: "edilgen", object: (p) => `nesne: ${p}`,
+      objects: { huwa: "onu", hiya: "onu (dişi)", huma: "o ikisini", hum: "onları", hunna: "onları (dişi)", anta: "seni", anti: "seni (dişi)", antuma: "siz ikinizi", antum: "sizi", antunna: "sizi (dişi)", ana: "beni", nahnu: "bizi" },
+      showAll: (n) => `Bütün ayetleri göster (${n})`, hideAll: "Ayetleri gizle", showMore: "Daha fazla", loading: "Yükleniyor…", loadFailed: "Ayetler yüklenemedi.",
+    },
+    fr: {
+      allForms: (n) => `Toutes les formes dans le Coran (${n})`, formsNote: "Chaque mot tel qu'il figure dans le Coran, le plus fréquent d'abord. Tant qu'une forme n'a pas sa glose IA, sa grammaire est affichée.",
+      firstAyah: "première fois", passive: "passif", object: (p) => `objet : ${p}`,
+      objects: { huwa: "le/lui", hiya: "la/elle", huma: "eux deux", hum: "eux", hunna: "elles", anta: "toi", anti: "toi (f.)", antuma: "vous deux", antum: "vous", antunna: "vous (f.)", ana: "moi", nahnu: "nous" },
+      showAll: (n) => `Afficher tous les versets (${n})`, hideAll: "Masquer les versets", showMore: "Afficher plus", loading: "Chargement…", loadFailed: "Les versets n'ont pas pu être chargés.",
+    },
+    id: {
+      allForms: (n) => `Semua bentuk dalam Al-Qur'an (${n})`, formsNote: "Setiap kata sebagaimana tertulis dalam Al-Qur'an, yang paling sering lebih dulu. Selama bentuk belum punya glosa AI, tata bahasanya ditampilkan.",
+      firstAyah: "pertama di", passive: "pasif", object: (p) => `objek: ${p}`,
+      objects: { huwa: "dia/-nya (lk.)", hiya: "dia/-nya (pr.)", huma: "mereka berdua", hum: "mereka (lk.)", hunna: "mereka (pr.)", anta: "engkau (lk.)", anti: "engkau (pr.)", antuma: "kalian berdua", antum: "kalian (lk.)", antunna: "kalian (pr.)", ana: "aku", nahnu: "kami" },
+      showAll: (n) => `Tampilkan semua ayat (${n})`, hideAll: "Sembunyikan ayat", showMore: "Tampilkan lagi", loading: "Memuat…", loadFailed: "Ayat tidak dapat dimuat.",
+    },
+    ur: {
+      allForms: (n) => `قرآن میں تمام صیغے (${n})`, formsNote: "ہر لفظ جیسا قرآن میں ہے، سب سے زیادہ آنے والا پہلے۔ جب تک کسی صیغے کا AI معنی نہ ہو، اس کی گرامر دکھائی جاتی ہے۔",
+      firstAyah: "پہلی بار", passive: "مجہول", object: (p) => `مفعول: ${p}`,
+      objects: { huwa: "اسے", hiya: "اسے (مؤنث)", huma: "ان دونوں کو", hum: "انہیں", hunna: "انہیں (مؤنث)", anta: "تجھے", anti: "تجھے (مؤنث)", antuma: "تم دونوں کو", antum: "تمہیں", antunna: "تمہیں (مؤنث)", ana: "مجھے", nahnu: "ہمیں" },
+      showAll: (n) => `تمام آیات دکھائیں (${n})`, hideAll: "آیات چھپائیں", showMore: "مزید دکھائیں", loading: "لوڈ ہو رہا ہے…", loadFailed: "آیات لوڈ نہیں ہو سکیں۔",
+    },
+    bn: {
+      allForms: (n) => `কুরআনে সব রূপ (${n})`, formsNote: "প্রতিটি শব্দ যেভাবে কুরআনে আছে, সবচেয়ে বেশি ব্যবহৃতটি আগে। কোনো রূপের AI অর্থ না থাকা পর্যন্ত তার ব্যাকরণ দেখানো হয়।",
+      firstAyah: "প্রথম", passive: "কর্মবাচ্য", object: (p) => `কর্ম: ${p}`,
+      objects: { huwa: "তাকে/এটাকে", hiya: "তাকে (স্ত্রী)", huma: "তাদের দুজনকে", hum: "তাদেরকে", hunna: "তাদেরকে (স্ত্রী)", anta: "তোমাকে", anti: "তোমাকে (স্ত্রী)", antuma: "তোমাদের দুজনকে", antum: "তোমাদেরকে", antunna: "তোমাদেরকে (স্ত্রী)", ana: "আমাকে", nahnu: "আমাদেরকে" },
+      showAll: (n) => `সব আয়াত দেখান (${n})`, hideAll: "আয়াত লুকান", showMore: "আরও দেখান", loading: "লোড হচ্ছে…", loadFailed: "আয়াতগুলো লোড করা যায়নি।",
+    },
+    fa: {
+      allForms: (n) => `همهٔ صیغه‌ها در قرآن (${n})`, formsNote: "هر واژه همان‌گونه که در قرآن آمده، پرکاربردترین نخست. تا وقتی صیغه‌ای معنای هوش مصنوعی ندارد، دستور آن نشان داده می‌شود.",
+      firstAyah: "نخستین بار", passive: "مجهول", object: (p) => `مفعول: ${p}`,
+      objects: { huwa: "او/آن را", hiya: "او/آن را (مؤنث)", huma: "آن دو را", hum: "آنان را", hunna: "آنان را (مؤنث)", anta: "تو را", anti: "تو را (مؤنث)", antuma: "شما دو را", antum: "شما را", antunna: "شما را (مؤنث)", ana: "مرا", nahnu: "ما را" },
+      showAll: (n) => `نمایش همهٔ آیات (${n})`, hideAll: "پنهان کردن آیات", showMore: "بیشتر", loading: "در حال بارگذاری…", loadFailed: "آیات بارگذاری نشد.",
+    },
+  };
+  for (const code of Object.keys(UI)) {
+    UI[code].page = PAGE[code];
+    UI[code].forms = FORMS[code] || FORMS.en;
+  }
   return UI;
 });

@@ -19,8 +19,9 @@ from functools import lru_cache
 from datetime import datetime, timedelta, timezone
 from typing import Iterable, Iterator
 
-from fil import agenda, agenda_store, conjugation_overrides, example_store, present_vowels
+from fil import agenda, agenda_store, attested_forms, conjugation_overrides, example_store, present_vowels
 from fil.agenda import Job
+from fil.attested_forms import FormOccurrence
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
 from fil.corpus.corrections import (
@@ -893,6 +894,15 @@ def tally(results: list[list[ReconciledCell] | None]) -> CoverageReport:
 def verb_occurrences(lines: Iterable[str]) -> Iterator[VerbOccurrence]:
     """Every verb in the corpus, as the documented corrections say it is (verb and tense)."""
     return apply_corrections(iter_verb_occurrences(iter_segments(iter(lines))), corpus_corrections())
+
+
+@lru_cache(maxsize=1)
+def form_occurrences() -> dict[tuple[str, int], tuple[FormOccurrence, ...]]:
+    """Every verb's occurrences as the whole words they stand in (see fil.attested_forms)."""
+    with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
+        segments = list(iter_segments(lines))
+    occurrences = apply_corrections(iter_verb_occurrences(iter(segments)), corpus_corrections())
+    return attested_forms.form_occurrences(occurrences, attested_forms.word_texts(segments))
 
 
 @lru_cache(maxsize=1)

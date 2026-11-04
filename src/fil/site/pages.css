@@ -64,6 +64,22 @@ span.tag { cursor: default; }
 .translation { margin: 8px 0; }
 .translation small { display: block; color: var(--muted); }
 .ayah-foot { display: flex; align-items: center; gap: 10px; margin: 6px 0 0; color: var(--muted); font-size: 0.9rem; }
+.ayah-text { margin: 8px 0; font-size: 1.6rem; line-height: 2.1; }
+.ayah-text mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
+.ayah-translation { margin: 8px 0; }
+.ayah-translation small { display: block; color: var(--muted); }
+.ayah-head .play { width: 30px; height: 30px; }
+.forms-head { font-size: 1rem; margin: 24px 0 2px; }
+.attested { list-style: none; padding: 0; margin: 8px 0 0; }
+.attested li { display: grid; grid-template-columns: minmax(6em, auto) 3.5em 1fr auto; gap: 2px 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.attested b { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.attested small, .attested a { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.attested .grammar { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+.all-ayat { margin-top: 18px; display: grid; gap: 12px; justify-items: start; }
+.all-ayat-list { width: 100%; }
+button.button { border: 0; font: inherit; cursor: pointer; }
+.button.quiet { background: var(--surface); color: var(--accent); border: 1px solid var(--accent); box-shadow: none; }
 .sentences li { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .sentences p { margin: 2px 0; }
 .sentence { display: flex; align-items: center; gap: 10px; }

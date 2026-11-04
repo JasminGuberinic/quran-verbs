@@ -11,6 +11,7 @@ comes from the content — meanings, translations, sentences — is escaped.
 
 from __future__ import annotations
 
+import json
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from html import escape
@@ -18,6 +19,7 @@ from html import escape
 from fil.languages import LANGUAGES, Language
 from fil.pages import indexing, seo
 from fil.pages.interface_text import fill
+from fil.recitation import AYAH_STREAM
 
 FORM_NAMES = ("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
 PRONOUN_ORDER = ("huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma", "antum", "antunna", "ana", "nahnu")
@@ -179,10 +181,76 @@ def _table_cell(cell: dict | None, root: str, text: dict) -> str:
 
 
 def _ayat(card: dict, language: Language, text: dict, root: str) -> str:
-    if not card["ayat"]:
+    """The example ayat, every form the Quran uses the verb in, and every ayah — on request."""
+    if not card["ayat"] and not card["forms"]:
         return ""
-    items = "".join(_ayah(ayah, language, text, root) for ayah in card["ayat"])
-    return f'<section><h2>{escape(text["inQuran"])}</h2><div class="ayat">{items}</div></section>'
+    examples = "".join(_ayah(ayah, language, text, root) for ayah in card["ayat"])
+    examples_block = f'<div class="ayat">{examples}</div>' if examples else ""
+    return (f'<section><h2>{escape(text["inQuran"])}</h2>{examples_block}'
+            f'{_attested_forms(card, language, text)}{_all_ayat(card, language, text, root)}</section>')
+
+
+def _attested_forms(card: dict, language: Language, text: dict) -> str:
+    words = text["forms"]
+    rows = "".join(_attested_form(form, language, text) for form in card["forms"])
+    heading = f'forms-{card["rank"]}'
+    return (f'<h3 class="forms-head" id="{heading}">{escape(fill(words["allForms"], len(card["forms"])))}</h3>'
+            f'<p class="note">{escape(words["formsNote"])}</p><ol class="attested" aria-labelledby="{heading}">{rows}</ol>')
+
+
+def _attested_form(form: dict, language: Language, text: dict) -> str:
+    surah, number = form["first"].split(":")
+    # Kept lean: one row per form on every page in every language adds up (8,000 pages).
+    return (f'<li><b lang="ar" dir="rtl">{form["arabic"]}</b><small>{form["count"]}×</small>'
+            f'{_form_meaning(form, language, text)}<a href="https://quran.com/{surah}/{number}">{form["first"]}</a></li>')
+
+
+def _form_meaning(form: dict, language: Language, text: dict) -> str:
+    """The form's gloss (in the page's language, else English), or its grammar until it has one."""
+    gloss = form.get("gloss") or {}
+    shown_language = language.code if gloss.get(language.code) else _ENGLISH
+    if not gloss.get(shown_language):
+        return f'<span class="grammar">{escape(grammar_label(form["grammar"], text))}</span>'
+    marked = f' lang="{shown_language}"' if shown_language != language.code else ""
+    return f'<span class="form-gloss"{marked}>{escape(gloss[shown_language])} <span class="ai">AI</span></span>'
+
+
+def grammar_label(readings: Sequence[dict], text: dict) -> str:
+    """"past · they (m.) · object: him/it" — each reading of the letters, separated by " / ".
+
+    site/ayat.js labels the app's rows the same way (grammarLabel); a test holds them equal.
+    """
+    return " / ".join(_reading_label(reading, text) for reading in readings)
+
+
+def _reading_label(reading: dict, text: dict) -> str:
+    words = text["forms"]
+    objects = ", ".join(words["objects"][pronoun] for pronoun in reading["objects"])
+    parts = (text["tenses"][reading["tense"]], words["passive"] if reading["passive"] else "",
+             text["pronouns"][reading["pronoun"]], fill(words["object"], objects) if objects else "")
+    return " · ".join(part for part in parts if part)
+
+
+def _all_ayat(card: dict, language: Language, text: dict, root: str) -> str:
+    """A button that fetches every ayah of the verb (site/ayat.js); the page itself carries none."""
+    words = text["forms"]
+    translations = card["ayatTranslations"]
+    translated_in = language.code if language.code in translations else _ENGLISH
+    is_fallback = translated_in != language.code and language.code != _ENGLISH
+    labels = {"showAll": fill(words["showAll"], card["ayahCount"]), "hideAll": words["hideAll"],
+              "showMore": words["showMore"], "loading": words["loading"], "loadFailed": words["loadFailed"],
+              "recitedAyah": text["recitedAyah"],
+              "fallbackNote": f' · {text["noFreeTranslation"]}' if is_fallback and text["noFreeTranslation"] else ""}
+    listing = f'all-ayat-{card["rank"]}'
+    return (f'<div class="all-ayat" data-all-ayat data-ayat="{root}{card["ayatFile"]}" '
+            f'data-translation="{root}{translations[translated_in]}" data-translation-language="{translated_in}" '
+            f'data-translation-dir="{"rtl" if translated_in == language.code and language.is_rtl else "ltr"}" '
+            f'data-audio-source="{escape(AYAH_STREAM)}" data-audio-attribute="data-audio" '
+            f"data-text='{escape(json.dumps(labels, ensure_ascii=False))}'>"
+            f'<button type="button" class="button quiet" data-all-ayat-toggle aria-expanded="false" '
+            f'aria-controls="{listing}">{escape(labels["showAll"])}</button>'
+            f'<div class="all-ayat-list" id="{listing}" hidden></div></div>'
+            f'<script src="{root}ayat.js" defer></script>')
 
 
 def _ayah(ayah: dict, language: Language, text: dict, root: str) -> str:

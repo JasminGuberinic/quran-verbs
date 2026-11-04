@@ -17,6 +17,7 @@ PRESENT_VOWELS_JSON = DATA_DIR / "present_vowels.json"  # present vowels the cor
 CORPUS_CORRECTIONS_JSON = DATA_DIR / "corpus_corrections.json"  # occurrences the corpus files under the wrong verb or tense
 AYAH_TRANSLATIONS_DIR = DATA_DIR / "translations"  # free ayah translations (fetched, git-ignored)
 AYAH_VERB_GLOSSES_JSON = DATA_DIR / "ayah_verb_glosses.json"  # the example verbs, translated in context
+FORM_GLOSSES_JSON = DATA_DIR / "form_glosses.json"  # every Quranic form of a studied verb, glossed once (fil forms)
 MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per language
 SITE_DIR = BUILD_DIR / "site"               # the static study site (fil site)
 PAGES_DIR = BUILD_DIR / "pages"             # the public GitHub Pages site (fil pages)

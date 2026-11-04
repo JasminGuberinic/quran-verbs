@@ -24,6 +24,9 @@ from fil.resources import RECITATION_CACHE
 Fetch = Callable[[str], bytes]
 
 AYAH_SOURCE = "https://everyayah.com/data/Alafasy_64kbps/{surah:03d}{ayah:03d}.mp3"
+# The same ayah recitation, played straight from the source by the full ayat list of a verb
+# (site/ayat.js), which pads both numbers to three digits: far too many ayat to ship.
+AYAH_STREAM = AYAH_SOURCE.replace("{surah:03d}", "{surah}").replace("{ayah:03d}", "{ayah}")
 WORD_SOURCE = "https://audio.qurancdn.com/wbw/{surah:03d}_{ayah:03d}_{word:03d}.mp3"
 
 

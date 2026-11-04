@@ -18,6 +18,7 @@ from fil.stages import (
     coverage,
     dataset,
     evals,
+    forms,
     full,
     i18n,
     ingest,
@@ -42,6 +43,7 @@ _STAGES = {
     "batch": (batch.main, "add verbs in batches: plan, wordbank, draft, meanings, ayah, review-export/import"),
     "site": (site.main, "build the static study site (build/site) for the verbs in data/meanings.json"),
     "i18n": (i18n.main, "translate into further languages via a translation memory: export, import, status"),
+    "forms": (forms.main, "gloss every Quranic form of the studied verbs once per language: status, export, import"),
     "pages": (pages.main, "build the public GitHub Pages site (build/pages); --deploy publishes it"),
 }
 
@@ -58,6 +60,9 @@ def main() -> None:
         return
     if known.stage == "i18n":
         i18n.main(rest)
+        return
+    if known.stage == "forms":
+        forms.main(rest)
         return
     if known.stage == "pages":
         pages.main(rest)

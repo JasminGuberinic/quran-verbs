@@ -125,6 +125,17 @@ button.quran-tag.playing { background: var(--gold); color: var(--surface); }
 .word-play.playing { background: var(--gold); color: var(--surface); }
 .listen-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .ayah a, .link { color: var(--accent); font-size: 0.86rem; }
+.ayah-text mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
+.forms-head { font-size: 1rem; margin: 18px 0 2px; }
+.attested { list-style: none; padding: 0; margin: 8px 0 0; }
+.attested li { display: grid; grid-template-columns: minmax(6em, auto) 3.5em 1fr auto; gap: 2px 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.attested b { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.attested small, .attested a { color: var(--muted); font-family: var(--font-data); font-size: 0.78rem; }
+.attested .grammar { color: var(--muted); font-size: 0.88rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+.all-ayat { margin-top: 16px; display: grid; gap: 12px; }
+.all-ayat-list { display: grid; gap: 10px; }
+.all-ayat-list .ayah-head .play { width: 32px; height: 32px; }
 
 .sentence { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--line); }
 .sentence:first-of-type { border-top: 0; padding-top: 0; }
@@ -455,6 +466,7 @@ nav.tabs button { min-height: 32px; }
 
 <script src="ui.js"></script>
 <script src="practice.js"></script>
+<script src="ayat.js"></script>
 <script>
 (() => {
   // Where "report a mistake" sends a learner. Empty until the site is public: the page then
@@ -641,7 +653,7 @@ nav.tabs button { min-height: 32px; }
   }
 
   function ayatBlock(verb) {
-    if (!verb.ayat.length) return "";
+    if (!verb.ayat.length && !verb.forms.length) return "";
     const items = verb.ayat.map((ayah) => {
       const [surah, number] = ayah.ref.split(":");
       const text = ayah.words.map((word) => word.hit ? `<button class="word-play" data-file="${word.audio}">${word.text}</button>` : word.text).join(" ");
@@ -659,7 +671,40 @@ nav.tabs button { min-height: 32px; }
         <div class="ayah-foot">${playButton({ file: ayah.audio, extra: "small gold" })}<span>${escapeHtml(t().recitedAyah)}</span></div>
       </div>`;
     }).join("");
-    return `<section><h3 class="section-title">${escapeHtml(t().inQuran)}</h3><p class="note" style="margin:0 0 10px">${escapeHtml(t().listenAyah)}</p><div class="ayat">${items}</div></section>`;
+    const examples = items ? `<p class="note" style="margin:0 0 10px">${escapeHtml(t().listenAyah)}</p><div class="ayat">${items}</div>` : "";
+    return `<section><h3 class="section-title">${escapeHtml(t().inQuran)}</h3>${examples}${attestedFormsBlock(verb)}${allAyatBlock(verb)}</section>`;
+  }
+
+  // Every word the Quran uses the verb in: its gloss where it has one, else its grammar.
+  function attestedFormsBlock(verb) {
+    const words = t().forms;
+    const rows = verb.forms.map((form) => {
+      const gloss = form.gloss?.[language] || form.gloss?.en;
+      const meaning = gloss
+        ? `<span class="form-gloss">${escapeHtml(gloss)} <span class="ai-tag">AI</span></span>`
+        : `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
+      const [surah, number] = form.first.split(":");
+      return `<li><b lang="ar" dir="rtl">${form.arabic}</b><small>${form.count}×</small>${meaning}<a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener" title="${escapeHtml(words.firstAyah)} ${form.first}">${form.first}</a></li>`;
+    }).join("");
+    return `<h4 class="forms-head">${escapeHtml(words.allForms(verb.forms.length))}</h4><p class="note">${escapeHtml(words.formsNote)}</p><ol class="attested">${rows}</ol>`;
+  }
+
+  // The button that fetches every ayah of the verb (ayat.js), in the reader's language or English.
+  function allAyatBlock(verb) {
+    const words = t().forms;
+    const own = verb.ayatTranslations[language];
+    const translatedIn = own ? language : "en";
+    const rtl = own && DATA.languages.find((entry) => entry.code === language)?.rtl;
+    const text = {
+      showAll: words.showAll(verb.ayahCount), hideAll: words.hideAll, showMore: words.showMore,
+      loading: words.loading, loadFailed: words.loadFailed, recitedAyah: t().recitedAyah,
+      fallbackNote: !own && language !== "en" && t().noFreeTranslation ? ` · ${t().noFreeTranslation}` : "",
+    };
+    return `<div class="all-ayat" data-all-ayat data-ayat="${verb.ayatFile}" data-translation="${verb.ayatTranslations[translatedIn]}"
+      data-translation-language="${translatedIn}" data-translation-dir="${rtl ? "rtl" : "ltr"}" data-audio-source="${escapeHtml(DATA.ayahAudio)}"
+      data-audio-attribute="data-file" data-text="${escapeHtml(JSON.stringify(text))}">
+      <button type="button" class="btn" data-all-ayat-toggle aria-expanded="false" aria-controls="all-ayat-${verb.rank}">${escapeHtml(text.showAll)}</button>
+      <div class="all-ayat-list" id="all-ayat-${verb.rank}" hidden></div></div>`;
   }
 
   function sentenceHtml(sentence) {

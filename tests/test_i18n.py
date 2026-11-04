@@ -181,3 +181,33 @@ def test_import_applies_every_sheet_and_keeps_the_verdicts(stage):
         assert all(dict(word.translations)["fr"] == "fr-text" for word in example.words)
         assert example.checks == _PASSED
     assert memory.missing(i18n.load_content(), "fr") == {sheet: [] for sheet in memory.SHEETS}
+
+
+# ---------- every Quranic form, glossed once (fil forms) ----------
+
+def _form_to_gloss(**glosses) -> memory.FormToGloss:
+    return memory.FormToGloss(key="قول|1|وَقَالُوا۟", arabic="وَقَالُوا۟", verb="قَالَ to say",
+                              grammar="past · they (m.)", first_ayah="2:116 And they say", glosses=glosses)
+
+
+def test_a_form_is_glossed_in_english_and_bosnian_from_its_grammar_and_first_ayah():
+    (entry,) = memory.form_entries([_form_to_gloss()], "en")
+    assert memory.form_sheet("en") is memory.FORMS_AUTHORED
+    assert entry.reference == ("قول|1|وَقَالُوا۟", "وَقَالُوا۟", "قَالَ to say", "past · they (m.)", "2:116 And they say")
+    assert entry.is_missing
+
+
+def test_a_form_is_translated_only_once_glossed_in_english_and_bosnian():
+    assert memory.form_entries([_form_to_gloss(en="and they said")], "tr") == []
+    (entry,) = memory.form_entries([_form_to_gloss(en="and they said", bs="i rekoše", tr="ve dediler")], "tr")
+    assert entry.reference[-2:] == ("and they said", "i rekoše") and entry.translation == "ve dediler"
+
+
+def test_a_filled_form_sheet_merges_into_a_store_that_did_not_hold_the_form_yet():
+    known = memory.form_entries([_form_to_gloss()], "bs")
+    line = memory.sheet_line(known[0]).rstrip("\n") + "i rekoše"
+    glosses, problems = memory.read_sheet(memory.FORMS_AUTHORED, [line], known)
+
+    assert problems == []
+    store = memory.merged({"_about": "notes"}, {key[0]: text for key, text in glosses.items()}, "bs")
+    assert store == {"_about": "notes", "قول|1|وَقَالُوا۟": {"bs": "i rekoše"}}

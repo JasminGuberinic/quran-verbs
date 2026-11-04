@@ -1,10 +1,13 @@
 """Build the static study site: every verb in data/meanings.json, ready to learn from.
 
-    fil site    →  build/site/{index.html, data.json, verbs/NNNN.json}
+    fil site    →  build/site/{index.html, data.json, verbs/NNNN.json, ayat/NNNN[.lang].json}
 
 The site is a folder of plain files, so it opens locally and can be hosted anywhere for
 free. data.json is a light index; each verb's card, with its sound embedded, is its own
 file, loaded when the learner reaches it — one file per verb, not hundreds of clips.
+A card lists every form the Quran uses its verb in; the ayat themselves (every one, with
+its free translation) wait in ayat/, fetched only when asked for, and their recitation
+streams from the reciter's source rather than being shipped.
 Where the sound goes is a strategy (fil.site_audio): embedded here, separate shared files
 for the public site (fil pages), which assembles the very same cards through `assemble`.
 
@@ -29,20 +32,22 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
-from fil import example_store, meanings, service, study
+from fil import attested_forms, example_store, meanings, service, study
+from fil.attested_forms import FormOccurrence, VerbAyah
 from fil.audio import RECITATION_BITRATE, compact_aac_command, compact_clip_name
 from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
 from fil.languages import LANGUAGES, REQUIRED
-from fil.recitation import RecitationLibrary, RecitationMissing
+from fil.recitation import AYAH_STREAM, RecitationLibrary, RecitationMissing
 from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
 from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
+from fil.stages import forms
 from fil.study import AyahExample, QuranWord
 
 _TEMPLATE = Path(__file__).resolve().parents[1] / "site" / "index.html"
-APP_FILES = ("index.html", "ui.js", "practice.js")
+APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js")
 _COMPRESSED = BUILD_DIR / "compressed-cache"
 _REVIEW = BUILD_DIR / "site-review.txt"
 
@@ -56,6 +61,7 @@ class _Corpus:
     ayat: dict[tuple[int, int], tuple[QuranWord, ...]]
     recitations: dict[str, study.Recitation]
     nouns: dict[study.VerbKey, dict[str, study.DerivedNoun]]
+    uses: dict[study.VerbKey, tuple[FormOccurrence, ...]]
 
 
 @dataclass(frozen=True)
@@ -65,6 +71,7 @@ class SiteContent:
     cards: tuple[dict, ...]
     speech: SpeechLibrary
     missing_recitations: tuple[str, ...] = ()    # word locations the reciter's source lacks
+    ayat_lists: tuple[tuple[str, dict], ...] = ()  # (path, content): every verb's full ayat, fetched on demand
 
 
 class _Sound:
@@ -77,6 +84,7 @@ class _Sound:
         self.speech = SpeechLibrary(TtsArabicVoice(), SPEECH_CACHE)
         self.translations = AyahTranslations()
         self.verb_glosses = _verb_glosses()
+        self.form_glosses = forms.read_glosses()[0]
 
     def ayah(self, surah: int, ayah: int) -> str:
         return self._recited(self.recitations.ayah(surah, ayah))
@@ -127,11 +135,12 @@ def assemble(sink: AudioSink) -> SiteContent | None:
     ranks = {(verb.root, verb.form): rank for rank, verb in enumerate(catalogue, 1)}
     summaries = {(verb.root, verb.form): verb for verb in catalogue}
 
-    cards = []
+    cards, ayat_lists = [], []
     for meaning in studied:
         key = (meaning.root, meaning.form)
         card = _verb_view(meaning, summaries[key], ranks[key], total, corpus, sound)
         cards.append(card)
+        ayat_lists.extend(_ayat_lists(card, attested_forms.verb_ayat(corpus.uses[key]), corpus, sound))
         print(f"  {card['rank']:>4} {card['lemma']}", flush=True)
 
     payload = {
@@ -143,18 +152,26 @@ def assemble(sink: AudioSink) -> SiteContent | None:
             for language in LANGUAGES
         ],
         "verbs": [{**_summary_of(card), "file": card_file(card)} for card in cards],
+        "ayahAudio": AYAH_STREAM,
     }
-    return SiteContent(payload, tuple(cards), sound.speech, tuple(sound.missing_words))
+    return SiteContent(payload, tuple(cards), sound.speech, tuple(sound.missing_words), tuple(ayat_lists))
 
 
 def card_file(card: dict) -> str:
     return f"verbs/{card['rank']:04d}.json"
 
 
+def ayat_file(rank: int, language: str | None = None) -> str:
+    """A verb's full ayat list (Arabic), or their translation into one language."""
+    return f"ayat/{rank:04d}{f'.{language}' if language else ''}.json"
+
+
 def write_app(site: Path, content: SiteContent) -> None:
     """The app itself: its index, one card file per verb, and the page with its scripts."""
     for card in content.cards:
         (site / card_file(card)).write_text(json.dumps(card, ensure_ascii=False), encoding="utf-8")
+    for path, listed in content.ayat_lists:
+        (site / path).write_text(json.dumps(listed, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (site / "data.json").write_text(json.dumps(content.payload, ensure_ascii=False), encoding="utf-8")
     for name in APP_FILES:
         shutil.copyfile(_TEMPLATE.parent / name, site / name)
@@ -164,13 +181,15 @@ def _read_corpus() -> _Corpus:
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         segments = list(iter_segments(lines))
     words = study.words_of(segments, service.corpus_corrections())
-    return _Corpus(study.ayat_of(words), study.recitation_index(words), study.derived_nouns(segments))
+    return _Corpus(study.ayat_of(words), study.recitation_index(words), study.derived_nouns(segments),
+                   service.form_occurrences())
 
 
 def reset(site: Path) -> None:
     """Start from an empty folder, so a verb dropped from the data is dropped from the site."""
     shutil.rmtree(site, ignore_errors=True)
     (site / "verbs").mkdir(parents=True)
+    (site / "ayat").mkdir()
 
 
 def _summary_of(card: dict) -> dict:
@@ -194,11 +213,52 @@ def _verb_view(meaning, summary, rank: int, total: int, corpus: _Corpus, sound: 
                   for kind, noun in corpus.nouns.get(verb, {}).items()},
         "cells": cells,
         "ayat": [_ayah_view(example, verb, sound) for example in study.example_ayat(corpus.ayat, verb)],
+        "forms": _forms_view(verb, corpus.uses[verb], summary.occurrence_count, sound),
+        "ayatFile": ayat_file(rank),
+        "ayatTranslations": {language: ayat_file(rank, language) for language in sound.translations.languages},
         "sentences": [
             _sentence_view(example, sound)
             for example in example_store.load(meaning.root, meaning.form) if example.is_shippable
         ],
     }
+
+
+class FormsDoNotAddUp(ValueError):
+    """The forms listed for a verb do not account for every time the Quran uses it."""
+
+
+def _forms_view(verb: study.VerbKey, uses: tuple[FormOccurrence, ...], count: int, sound: _Sound) -> list[dict]:
+    """Every word the Quran uses the verb in, the most frequent first, with its gloss if it has one."""
+    forms = attested_forms.attested_forms(uses)
+    if sum(form.count for form in forms) != count:
+        raise FormsDoNotAddUp(f"{verb}: forms count {sum(form.count for form in forms)}, the verb {count}")
+    return [_form_view(verb, form, sound) for form in forms]
+
+
+def _form_view(verb: study.VerbKey, form: attested_forms.AttestedForm, sound: _Sound) -> dict:
+    surah, ayah, _word = form.first
+    view = {"arabic": form.text, "count": form.count, "first": f"{surah}:{ayah}",
+            "grammar": [attested_forms.grammar_view(grammar) for grammar in form.grammars]}
+    gloss = attested_forms.gloss_of(verb, form, sound.form_glosses, sound.verb_glosses)
+    return {**view, "gloss": gloss} if gloss else view
+
+
+def _ayat_lists(card: dict, ayat: list[VerbAyah], corpus: _Corpus, sound: _Sound) -> list[tuple[str, dict]]:
+    """The verb's full ayat list and its translations, one file per language, fetched only when asked for."""
+    arabic = {"ayat": [_listed_ayah(ayah, corpus.ayat[(ayah.surah, ayah.ayah)]) for ayah in ayat]}
+    translated = {path: _translated_list(ayat, language, sound) for language, path in card["ayatTranslations"].items()}
+    return [(card["ayatFile"], arabic), *translated.items()]
+
+
+def _listed_ayah(ayah: VerbAyah, words: tuple[QuranWord, ...]) -> dict:
+    return {"ref": ayah.ref, "text": " ".join(word.text for word in words),
+            "hits": [index for index, word in enumerate(words) if word.number in ayah.words]}
+
+
+def _translated_list(ayat: list[VerbAyah], language: str, sound: _Sound) -> dict:
+    found = {ayah.ref: sound.translations.of(ayah.surah, ayah.ayah).get(language) for ayah in ayat}
+    return {"by": sound.translations.credit(language),
+            "text": {ref: translation["text"] for ref, translation in found.items() if translation}}
 
 
 def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) -> dict:

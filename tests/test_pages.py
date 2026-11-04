@@ -1,13 +1,16 @@
 """Tests for the public site's pure parts: page names, addresses, shared audio, the pages."""
 
+import json
 import re
+import shutil
+import subprocess
 import xml.etree.ElementTree as ElementTree
 from pathlib import Path
 
 import pytest
 
 from fil.languages import CODES, LANGUAGES
-from fil.pages import deploy, indexing, render, seo
+from fil.pages import deploy, indexing, interface_text, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import EmbeddedAudioOnPublicPage, PublishedVerb
 from fil.pages.slugs import assign_slugs, slug_of
@@ -128,6 +131,11 @@ def _text() -> dict:
         "notUsed": "not used", "notUsedNote": "Grey: not used in Arabic.",
         "recitedAyah": "Whole ayah", "noFreeTranslation": "no free translation", "sentences": "Sentences",
         "sentencesNote": "Composed.", "noSentences": "None yet.", "tabs": ["Learn"], "page": page,
+        "forms": {"allForms": "Every form ({0})", "formsNote": "Most frequent first.", "firstAyah": "first in",
+                  "passive": "passive", "object": "object: {0}",
+                  "objects": {pronoun: f"obj-{pronoun}" for pronoun in render.PRONOUN_ORDER},
+                  "showAll": "Show all ayat ({0})", "hideAll": "Hide", "showMore": "More", "loading": "Loading",
+                  "loadFailed": "Failed"},
     }
 
 
@@ -142,6 +150,11 @@ def _card() -> dict:
                   "translation": {"en": {"text": "And when your Lord said <to the angels>", "by": "Sahih International"}},
                   "words": [{"text": "قالَ", "hit": True, "audio": "audio/word.m4a", "gloss": {"en": "said", "bs": "reče"}},
                             {"text": "رَبُّكَ", "hit": False, "audio": None, "gloss": None}]}],
+        "forms": [{"arabic": "قَالَ", "count": 412, "first": "2:30", "gloss": {"en": "he said", "bs": "rekao je"},
+                   "grammar": [{"tense": "past", "pronoun": "huwa", "passive": False, "objects": []}]},
+                  {"arabic": "قَالُوهَا", "count": 1, "first": "9:74",
+                   "grammar": [{"tense": "past", "pronoun": "hum", "passive": False, "objects": ["hiya"]}]}],
+        "ayatFile": "ayat/0001.json", "ayatTranslations": {"en": "ayat/0001.en.json", "ur": "ayat/0001.ur.json"},
         "sentences": [{"arabic": "قالَ", "spoken": "audio/sentence.m4a", "translation": {"en": "He said.", "bs": "Rekao je."},
                        "words": [{"arabic": "قالَ", "target": True, "translation": {"en": "said"}}]}],
     }
@@ -316,3 +329,77 @@ def test_a_list_below_the_threshold_still_lists_every_verb_but_says_noindex():
     assert 'content="noindex, follow"' in html
     assert all(f'<a href="{slug}/">' in html for slug in ("qala", "kana", "ata"))
     assert "noindex" not in render.language_index(verbs, _language("bs"), _text())
+
+
+# ---------- every form in the Quran, and every ayah on request ----------
+
+def test_a_page_lists_every_form_with_its_count_gloss_and_first_ayah():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), _text())
+
+    assert "Every form (2)" in html
+    assert '<b lang="ar" dir="rtl">قَالَ</b><small>412×</small>' in html
+    assert "rekao je <span class=\"ai\">AI</span>" in html
+    assert 'href="https://quran.com/9/74"' in html
+
+
+def test_a_form_without_a_gloss_shows_its_grammar_and_a_missing_language_falls_back_to_english():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("tr"), _text())
+
+    assert '<span class="grammar">past · hum · object: obj-hiya</span>' in html
+    assert '<span class="form-gloss" lang="en">he said' in html
+
+
+def test_grammar_names_tense_voice_subject_and_objects():
+    readings = [{"tense": "past", "pronoun": "huwa", "passive": True, "objects": []},
+                {"tense": "present", "pronoun": "anta", "passive": False, "objects": ["hum", "ana"]}]
+    assert render.grammar_label(readings, _text()) == "past · passive · huwa / present · anta · object: obj-hum, obj-ana"
+
+
+def test_the_ayat_are_not_on_the_page_but_one_accessible_button_away():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), _text())
+
+    assert ('<button type="button" class="button quiet" data-all-ayat-toggle aria-expanded="false" '
+            'aria-controls="all-ayat-1">Show all ayat (1500)</button>') in html
+    assert '<div class="all-ayat-list" id="all-ayat-1" hidden></div>' in html
+    assert 'data-ayat="../../ayat/0001.json"' in html and 'src="../../ayat.js"' in html
+    assert 'data-translation="../../ayat/0001.en.json"' in html                 # no free Bosnian one
+    assert "no free translation" in html.split("data-all-ayat")[1]
+    assert 'data-audio-source="https://everyayah.com/data/Alafasy_64kbps/{surah}{ayah}.mp3"' in html
+
+
+def test_the_ayat_come_in_the_readers_language_when_a_free_translation_exists():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("ur"), _text())
+
+    assert 'data-translation="../../ayat/0001.ur.json" data-translation-language="ur" data-translation-dir="rtl"' in html
+
+
+def test_the_streamed_recitation_is_the_source_the_build_downloads_from():
+    from fil.recitation import AYAH_SOURCE, AYAH_STREAM
+    assert AYAH_STREAM.format(surah="002", ayah="006") == AYAH_SOURCE.format(surah=2, ayah=6)
+
+
+_NODE_LABELS = """
+const ui = require(process.argv[1]), ayat = require(process.argv[2]);
+const readings = JSON.parse(process.argv[3]);
+const out = {};
+for (const code of Object.keys(ui)) out[code] = ayat.grammarLabel(readings, ui[code]);
+out.audio = ayat.ayahAudioUrl(process.argv[4], "2:6");
+process.stdout.write(JSON.stringify(out));
+"""
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_the_app_and_the_pages_label_grammar_and_stream_audio_alike():
+    from fil.recitation import AYAH_SOURCE, AYAH_STREAM
+    readings = [{"tense": "past", "pronoun": "hum", "passive": True, "objects": ["huwa", "nahnu"]},
+                {"tense": "imperative", "pronoun": "antum", "passive": False, "objects": []}]
+    result = subprocess.run(["node", "-e", _NODE_LABELS, str(interface_text.UI_SCRIPT),
+                             str(interface_text.UI_SCRIPT.parent / "ayat.js"), json.dumps(readings), AYAH_STREAM],
+                            capture_output=True, text=True, check=True)
+    from_javascript = json.loads(result.stdout)
+    texts = interface_text.load()
+
+    assert from_javascript.pop("audio") == AYAH_SOURCE.format(surah=2, ayah=6)
+    assert from_javascript == {code: render.grammar_label(readings, text) for code, text in texts.items()}
+    assert texts["en"]["forms"]["objects"]["huwa"] == "him/it"                 # translated where active…
+    assert texts["de"]["forms"] == texts["en"]["forms"]                        # …English elsewhere

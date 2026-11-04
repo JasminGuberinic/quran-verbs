@@ -5,7 +5,8 @@
     fil pages --share-image  →  redraw site/share.png (the link-preview picture)
 
     build/pages/
-      index.html, ui.js, practice.js, data.json, verbs/NNNN.json   the app, as `fil site`
+      index.html, ui.js, practice.js, ayat.js, data.json, verbs/NNNN.json   the app, as `fil site`
+      ayat/NNNN.json, ayat/NNNN.<lang>.json   every ayah of a verb, fetched on request (site/ayat.js)
       audio/<content-hash>.m4a       every clip once, shared by every card and page
       <language>/index.html          the verb list in that language
       <language>/<slug>/index.html   one verb: meaning, forms, conjugation, ayat, sentences

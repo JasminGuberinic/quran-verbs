@@ -12,7 +12,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from typing import Iterable
 
-from fil.corpus.parse import VerbOccurrence
+from fil.corpus.parse import PersonGenderNumber, VerbOccurrence
 
 # (person, gender, number) → the pronoun key the engine uses. Duals are genderless
 # in the verb, so 2MD/2FD/2D all map to antuma, and 3MD/3FD/3D to huma.
@@ -65,7 +65,12 @@ def _is_teachable(occ: VerbOccurrence) -> bool:
 
 
 def _pronoun_of(occ: VerbOccurrence) -> str:
-    """Map an occurrence's person/gender/number to a pronoun key (duals merged)."""
-    if occ.number == "D":
-        return _DUAL_PRONOUN[occ.person]
-    return _PRONOUN_BY_PGN[(occ.person, occ.gender, occ.number)]
+    return pronoun_key((occ.person, occ.gender, occ.number))
+
+
+def pronoun_key(person_gender_number: PersonGenderNumber) -> str:
+    """Map a person/gender/number to a pronoun key (duals merged)."""
+    person, gender, number = person_gender_number
+    if number == "D":
+        return _DUAL_PRONOUN[person]
+    return _PRONOUN_BY_PGN[(person, gender, number)]

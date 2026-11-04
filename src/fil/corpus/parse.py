@@ -21,6 +21,8 @@ from typing import Iterator
 _ASPECT_TO_TENSE = {"PERF": "past", "IMPF": "present", "IMPV": "imperative"}
 _PGN = re.compile(r"^([123])([MF]?)([SDP])$")
 
+PersonGenderNumber = tuple[int, str | None, str]   # (1|2|3, "M"|"F"|None, "S"|"D"|"P")
+
 
 @dataclass(frozen=True)
 class Segment:
@@ -35,8 +37,13 @@ class Segment:
     features: tuple[str, ...]
 
     @property
-    def is_subject_pronoun_suffix(self) -> bool:
+    def is_pronoun_suffix(self) -> bool:
         return "PRON" in self.features and "SUFF" in self.features
+
+    @property
+    def is_subject_pronoun_suffix(self) -> bool:
+        """A pronoun suffix where a subject may stand; whether it is one depends on the verb."""
+        return self.is_pronoun_suffix
 
 
 @dataclass(frozen=True)
@@ -58,6 +65,7 @@ class VerbOccurrence:
     mood: str | None
     passive: bool
     clean: bool           # True if nothing follows the verb + its subject suffix
+    objects: tuple[PersonGenderNumber, ...] = ()   # object pronouns attached to the verb, in order
 
     @property
     def ayah_ref(self) -> str:
@@ -109,7 +117,22 @@ def _verbs_in_word(segments: list[Segment]) -> Iterator[VerbOccurrence]:
             continue
         suffix, consumed = _subject_suffix(segments[position + 1:], occurrence)
         is_clean = position + consumed == len(segments) - 1
-        yield replace(occurrence, surface=occurrence.surface + suffix, clean=is_clean)
+        objects = _object_pronouns(segments[position + 1 + consumed:])
+        yield replace(occurrence, surface=occurrence.surface + suffix, clean=is_clean, objects=objects)
+
+
+def _object_pronouns(following: list[Segment]) -> tuple[PersonGenderNumber, ...]:
+    """The pronoun suffixes after the verb and its subject: its objects (قَالُوا لَهُمْ is two words).
+
+    They end at the next verb, should a word ever hold two.
+    """
+    objects = []
+    for segment in following:
+        if segment.pos == "V":
+            break
+        if segment.is_pronoun_suffix:
+            objects.append(_person_gender_number(segment.features))
+    return tuple(objects)
 
 
 def _subject_suffix(following: list[Segment], verb: VerbOccurrence) -> tuple[str, int]:
@@ -174,7 +197,7 @@ def _feature_value(features: tuple[str, ...] | list[str], key: str) -> str | Non
     return next((f[len(prefix):] for f in features if f.startswith(prefix)), None)
 
 
-def _person_gender_number(features: tuple[str, ...] | list[str]) -> tuple[int, str | None, str]:
+def _person_gender_number(features: tuple[str, ...] | list[str]) -> PersonGenderNumber:
     for feature in features:
         match = _PGN.match(feature)
         if match:

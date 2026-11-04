@@ -152,7 +152,7 @@ def forms_match(a: str, b: str) -> bool:
 
 
 def _normalize(form: str) -> str:
-    text = _fold_orthography(unicodedata.normalize("NFD", form))
+    text = _fold_orthography(_standard_spelling(unicodedata.normalize("NFD", form)))
     text = _strip_leading_harakat(text)
     if len(text) >= 2 and text[0] == _ALEF and ord(text[1]) in _HARAKAT:
         text = text[0] + text[2:]  # imperative's initial connecting vowel
@@ -164,7 +164,9 @@ def _fold_orthography(decomposed: str) -> str:
     folded: list[str] = []
     for char in decomposed:
         code = ord(char)
-        if code in _DROP or code == 0x0621:      # marks + standalone hamza
+        if code == 0x0621 and folded:            # a medial hamza, already seat-free
+            folded.append(char)
+        elif code in _DROP or code == 0x0621:    # marks + a word-initial hamza
             continue
         if code == 0x0670:                       # dagger alef — a letter, or a reading aid
             folded.extend(_dagger_alef(folded))
@@ -192,6 +194,88 @@ def _dagger_alef(folded: list[str]) -> str:
 def _last_letter(folded: list[str]) -> str | None:
     """The most recent actual letter, looking past any vowel marks sitting on it."""
     return next((char for char in reversed(folded) if ord(char) not in _HARAKAT), None)
+
+
+# --- Uthmani → standard spelling ------------------------------------------------------
+#
+# Where Uthmani and standard spelling write the *same sounds* with different letters,
+# we rewrite to one canonical spelling before comparing:
+#
+#   - a medial or final hamza is one sound whatever seat carries it: رَءَيْتَ = رَأَيْتَ,
+#     يَسْتَهْزِءُونَ = يَسْتَهْزِئُونَ, تُنَبِّـُٔونَ = تُنَبِّئُونَ, يَشَآءُونَ = يَشَاؤُونَ. The
+#     vowels around it are kept, so a hamza present on one side only still differs.
+#     Uthmani may also seat it on a superscript alef (ٱدَّٰرَٰٔتُمْ = اِدَّارَأْتُمْ).
+#     A word-initial hamza is left to the alef folding below (أ/ء/ا all start a word alike).
+#   - an alef-madda that is not lengthening a preceding fatḥa is hamza + ā: آ = ءَا;
+#   - the small wāw ۥ and small yāʾ ۦ stand for an unwritten long-vowel letter
+#     (يَسْتَوُۥنَ = يَسْتَوُونَ, يُحْىِۦ = يُحْيِي) — except after the pronoun هـ, where they
+#     only say "read the pronoun long" (بِهِۦ = بِهِ);
+#   - a final unvowelled ى/ي after fatḥa is the long ā that Uthmani may also write
+#     with alef after a hamza: رَءَا = رَأَى.
+#
+# Nothing else is rewritten. A letter Uthmani leaves out altogether — the jussive-like
+# نُنجِ / تُحْىِ before a joining word, تَسْطِع, the dropped ت of تَذَكَّرُونَ — is still a
+# difference: without the ayah's context it cannot be told from a genuinely other form.
+
+_HAMZA, _MADDA, _TATWEEL = "ء", "ٓ", "ـ"
+_SMALL_WAW, _SMALL_YAA = "ۥ", "ۦ"
+_SEATS_AND_CARRIER = frozenset("اويى" + _TATWEEL)
+_HAMZA_ON_SUPERSCRIPT_ALEF = "ٰٔ"  # ٱدَّٰرَٰٔتُمْ = اِدَّارَأْتُمْ
+_ARTICULATION_MARKS = frozenset("ًٌٍَُِّْ" + "ۡ")  # vowels, shadda, sukūn (incl. Uthmani's)
+
+
+def _standard_spelling(decomposed: str) -> str:
+    letters = _letters(decomposed)
+    for rewrite in (_seat_free_hamzas, _madda_as_hamza_and_alef, _small_letters_written_out,
+                    _final_long_a_as_alef):
+        letters = rewrite(letters)
+    return "".join(base + marks for base, marks in letters)
+
+
+def _seat_free_hamzas(letters: list[Letter]) -> list[Letter]:
+    return letters[:1] + [seat_free for letter in letters[1:] for seat_free in _seat_free(letter)]
+
+
+def _seat_free(letter: Letter) -> list[Letter]:
+    """The letter with its hamza standing on its own; Uthmani may seat one on a superscript alef."""
+    base, marks = letter
+    if base in _SEATS_AND_CARRIER and _HAMZA_MARKS & set(marks):
+        return [(_HAMZA, _without_hamza_marks(marks))]
+    if _HAMZA_ON_SUPERSCRIPT_ALEF in marks:
+        return [(base, marks.replace(_HAMZA_ON_SUPERSCRIPT_ALEF, "")), (_HAMZA, "")]
+    return [letter]
+
+
+def _without_hamza_marks(marks: str) -> str:
+    return "".join(mark for mark in marks if mark not in _HAMZA_MARKS)
+
+
+def _madda_as_hamza_and_alef(letters: list[Letter]) -> list[Letter]:
+    rewritten: list[Letter] = []
+    for base, marks in letters:
+        lengthens_a_fatha = bool(rewritten) and _FATHA in rewritten[-1][1]
+        if base == _ALEF and _MADDA in marks and not lengthens_a_fatha:
+            rewritten.extend([(_HAMZA, _FATHA), (_ALEF, marks.replace(_MADDA, ""))])
+        else:
+            rewritten.append((base, marks))
+    return rewritten
+
+
+def _small_letters_written_out(letters: list[Letter]) -> list[Letter]:
+    written_out = {_SMALL_WAW: "و", _SMALL_YAA: _YAA}
+    return [
+        (written_out[base], marks) if base in written_out and index > 0 and letters[index - 1][0] != "ه"
+        else (base, marks)
+        for index, (base, marks) in enumerate(letters)
+    ]
+
+
+def _final_long_a_as_alef(letters: list[Letter]) -> list[Letter]:
+    if len(letters) < 2:
+        return letters
+    (_, before_marks), (last, last_marks) = letters[-2], letters[-1]
+    is_long_a = last in ("ى", _YAA) and _FATHA in before_marks and not _ARTICULATION_MARKS & set(last_marks)
+    return [*letters[:-1], (_ALEF, last_marks)] if is_long_a else letters
 
 
 def _strip_leading_harakat(text: str) -> str:

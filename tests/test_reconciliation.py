@@ -133,3 +133,31 @@ def test_a_join_spelling_of_the_quran_reconciles_as_attested():
 
     assert cells[0].source == "attested" and cells[0].arabic == "ذَرِ"
     assert cells[0].alternatives == ()
+
+
+@pytest.mark.parametrize("standard, uthmani", [
+    ("رَأَيْتَ", "رَءَيْتَ"),                 # hamza on the line for one on an alef
+    ("يَسْتَهْزِئُونَ", "يَسْتَهْزِءُونَ"),     # … for one on a yāʾ seat
+    ("تُنَبِّئُونَ", "تُنَبِّـُٔونَ"),          # … on a tatweel carrier
+    ("يَشَاؤُونَ", "يَشَآءُونَ"),              # wāw seat ≡ madda-lengthened alef + hamza
+    ("اِسْتَأْذَنَ", "ٱسْتَـْٔذَنَ"),
+    ("اِدَّارَأْتُمْ", "ٱدَّٰرَٰٔتُمْ"),         # hamza seated on a superscript alef
+    ("قُرْآن", "قُرْءَان"),                    # medial alef-madda = hamza + ā
+    ("رَأَى", "رَءَا"),                        # final long ā written with alef after hamza
+    ("يُحْيِي", "يُحْىِۦ"),                    # small yāʾ stands for an unwritten yāʾ
+    ("يَسْتَوُونَ", "يَسْتَوُۥنَ"),            # small wāw stands for an unwritten wāw
+    ("بِهِ", "بِهِۦ"),                         # … but after the pronoun هـ it only lengthens it
+])
+def test_uthmani_hamza_seats_and_small_letters_fold_to_standard_spelling(standard, uthmani):
+    assert forms_match(standard, uthmani)
+
+
+@pytest.mark.parametrize("standard, uthmani", [
+    ("نُنْجِي", "نُنجِ"),                      # a yāʾ left out altogether
+    ("تُحْيِي", "تُحْىِ"),
+    ("تَسْتَطِيعُ", "تَسْطِع"),                # an elided ت and yāʾ
+    ("يَسْأَلُ", "يَسَلُ"),                    # a hamza on one side only
+    ("كَانَا", "كَانَتَا"),                    # another person/gender
+])
+def test_a_letter_missing_from_the_uthmani_spelling_is_still_a_difference(standard, uthmani):
+    assert not forms_match(standard, uthmani)

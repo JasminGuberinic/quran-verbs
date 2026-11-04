@@ -101,9 +101,10 @@ def test_to_test_no_longer_claims_the_ayah_about_wearing_out():
     assert "يَبْلَىٰ" not in surfaces
 
 
-def test_every_ayah_verb_gloss_is_shown_on_some_card():
-    # A gloss no card highlights is stale — left behind when a correction moved the word
-    # off its verb or out of its tense — and would be translated into every language for nothing.
+def test_the_ayah_verb_glosses_are_exactly_the_verbs_the_cards_show():
+    # A correction that moves a word off its verb or out of its tense changes which ayat
+    # the cards show: a gloss no card highlights is stale, and a shown verb without one
+    # would stop the site build.
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         ayat = ayat_of(words_of(iter_segments(lines), service.corpus_corrections()))
     verbs = [(meaning.root, meaning.form) for meaning in meanings.load()]
@@ -114,3 +115,4 @@ def test_every_ayah_verb_gloss_is_shown_on_some_card():
                if not key.startswith("_")}
 
     assert sorted(glossed - shown) == []
+    assert sorted(shown - glossed) == []

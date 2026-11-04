@@ -88,8 +88,10 @@ _IRREGULAR = {
     "forbade": "forbid", "forbidden": "forbid", "began": "begin", "begun": "begin",
     "strove": "strive", "striven": "strive",
     "blew": "blow", "blown": "blow", "hid": "hide", "hidden": "hide",
+    "drank": "drink", "drunk": "drink", "grew": "grow", "grown": "grow",
+    "lied": "lie",  # too short for the suffix rules, so it would stay "lied"
     # Regular, but the doubled final consonant defeats the suffix stemmer ("preferr").
-    "preferred": "prefer", "preferring": "prefer",
+    "preferred": "prefer", "preferring": "prefer", "stopped": "stop", "stopping": "stop",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

@@ -27,6 +27,10 @@ def test_irregular_verb_forms_still_agree():
     assert gloss_agrees("we blew", ["inflate;blow_into+we_<verb>"]) is True
     assert gloss_agrees("hid", ["hide;conceal+he;it_<verb>"]) is True
     assert gloss_agrees("we preferred", ["prefer+we_<verb>"]) is True
+    assert gloss_agrees("drank", ["drink+he;it_<verb>"]) is True
+    assert gloss_agrees("we grew", ["germinate;make_grow;cultivate+we_<verb>"]) is True
+    assert gloss_agrees("they lied", ["lie+they_<verb>"]) is True
+    assert gloss_agrees("stopped", ["stop;desist"]) is True
 
 
 def test_inflected_forms_agree_through_the_stem():

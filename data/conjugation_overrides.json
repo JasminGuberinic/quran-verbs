@@ -26,5 +26,11 @@
    "spellings": ["اِئْذَنُوا"],
    "why": "The only attested plural imperative is فَأْذَنُوا۟ (2:279), where the hamzat al-wasl drops after fa; the standalone standard form اِئْذَنُوا is not readable by the analyzer. This records it so a sentence can open with the verb and the gate confirms it by the table."
   }
+ },
+ "قرأ_1": {
+  "imperative:antum": {
+   "spellings": ["اِقْرَؤُوا"],
+   "why": "The generator skips this hamzated verb, so the table holds only the Uthmani ٱقْرَءُوا۟ (69:19 هَآؤُمُ ٱقْرَءُوا۟ كِتَٰبِيَهْ), whose hamza on the line the gate does not match against the standard spelling. اِقْرَؤُوا (hamza on wāw before the plural ending) is the standard form; this records it so the gate confirms it by the table and the table shows it."
+  }
  }
 }

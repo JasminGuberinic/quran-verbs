@@ -92,9 +92,9 @@ def _attested_cell(tense: str, pronoun: str, forms: list[str], attested_form: st
     """
     if not forms:
         return _cell(tense, pronoun, attested_form, "attested", True, None, "", ())
-    agrees = any(forms_match(form, attested_form) for form in forms)
+    agrees = any(agrees_across_join(form, attested_form) for form in forms)
     source = "attested" if agrees else "quarantined"
-    disagreeing = _distinct(form for form in forms if not forms_match(form, attested_form))
+    disagreeing = _distinct(form for form in forms if not agrees_across_join(form, attested_form))
     return _cell(tense, pronoun, attested_form, source, True, agrees, forms[0], disagreeing)
 
 
@@ -208,3 +208,107 @@ def tier_counts(cells: list[ReconciledCell]) -> dict[str, int]:
     for cell in cells:
         counts[cell.source] += 1
     return counts
+
+
+# --- Spellings at a word join --------------------------------------------------------
+#
+# The Quran is written as continuous recitation, so a word is spelled as it sounds
+# *joined to its neighbours*, while a generator spells it in isolation. Five marks
+# change at a join and nowhere else; none of them belongs to the conjugated form:
+#
+#   - the hamzat al-waṣl syllable drops after a preceding word: ٱسْتَغْفَرْتَ → (أَ)سْتَغْفَرْتَ;
+#   - a radical hamza left word-initial by that drop sits on the seat the preceding vowel
+#     gives it: اِئْتِ → (فَ)أْتِ, اُؤْمُرْ → (وَ)أْمُرْ;
+#   - a shadda on the first letter is the preceding nūn or lām assimilated into it
+#     (idghām): (مِن) نَّظُنُّ, (لَ)تَّخَذْتَ — no Arabic word begins with a doubled letter;
+#   - a final sukūn meeting the next word's sukūn becomes a helping vowel: kasra in
+#     general (ذَرْ → ذَرِ, أَخَذَتْ → أَخَذَتِ), ḍamma on the plural mīm (عَلِمْتُمُ) and on
+#     the plural wāw (ٱبْتَغَوُا۟);
+#   - a د or ط before the suffix ت assimilates into it (وَجَدتُّ for وَجَدْتُ) — the same
+#     sound written at the stem–suffix join.
+#
+# Only these marks are set aside: every letter and every other vowel must still agree,
+# so a genuinely different form (مُتْتُ for مِتُّ, تَذَكَّرُونَ for تَتَذَكَّرُونَ) stays a conflict.
+
+_SUKUN, _SHADDA, _FATHA, _DAMMA, _KASRA = "ْ", "ّ", "َ", "ُ", "ِ"
+_HAMZA_MARKS = frozenset("ٕٔ")
+_ALEF_WASL = "ٱ"
+_HAMZA_SEATS = "اوي"
+_ASSIMILATED_DENTALS = "دط"
+_VOWELS = frozenset("ًٌٍَُِ")
+
+Letter = tuple[str, str]  # (base character, the combining marks on it)
+
+
+def agrees_across_join(generated: str, attested: str) -> bool:
+    """Whether a generated form is the Quran's, allowing for how a word is spelled at a join."""
+    return forms_match(generated, attested) or forms_match(
+        isolated_spelling(generated), isolated_spelling(attested))
+
+
+def isolated_spelling(form: str) -> str:
+    """The form with every join-only mark removed (see the note above)."""
+    letters = _letters(unicodedata.normalize("NFD", form))
+    for undo in (_without_wasl_syllable, _without_initial_hamza_seat, _without_initial_shadda,
+                 _without_final_helping_vowel, _without_dental_assimilation):
+        letters = undo(letters)
+    return "".join(base + marks for base, marks in letters)
+
+
+def _letters(decomposed: str) -> list[Letter]:
+    letters: list[Letter] = []
+    for char in decomposed:
+        if letters and unicodedata.combining(char):
+            base, marks = letters[-1]
+            letters[-1] = (base, marks + char)
+        else:
+            letters.append((char, ""))
+    return letters
+
+
+def _without_wasl_syllable(letters: list[Letter]) -> list[Letter]:
+    if not letters:
+        return letters
+    base, marks = letters[0]
+    is_wasl = base == _ALEF_WASL or (base == _ALEF and marks in (_KASRA, _DAMMA))
+    return letters[1:] if is_wasl else letters
+
+
+def _without_initial_hamza_seat(letters: list[Letter]) -> list[Letter]:
+    if not letters:
+        return letters
+    base, marks = letters[0]
+    is_seated_hamza = base in _HAMZA_SEATS and _HAMZA_MARKS & set(marks) and _SUKUN in marks
+    return letters[1:] if is_seated_hamza else letters
+
+
+def _without_initial_shadda(letters: list[Letter]) -> list[Letter]:
+    if not letters:
+        return letters
+    base, marks = letters[0]
+    return [(base, marks.replace(_SHADDA, "")), *letters[1:]]
+
+
+def _without_final_helping_vowel(letters: list[Letter]) -> list[Letter]:
+    if len(letters) < 2:
+        return letters
+    (before, before_marks), (last, last_marks) = letters[-2], letters[-1]
+    if last == _ALEF and not _VOWELS & set(last_marks) and before == "و":
+        return [*letters[:-2], (before, before_marks.replace(_DAMMA, "")), letters[-1]]
+    helping = (_DAMMA, _KASRA) if last == "م" else (_KASRA,)
+    return [*letters[:-1], (last, "".join(mark for mark in last_marks if mark not in helping))]
+
+
+def _without_dental_assimilation(letters: list[Letter]) -> list[Letter]:
+    return [
+        (base, marks.replace(_SHADDA, "")) if _is_assimilated_suffix_ta(letters, index) else (base, marks)
+        for index, (base, marks) in enumerate(letters)
+    ]
+
+
+def _is_assimilated_suffix_ta(letters: list[Letter], index: int) -> bool:
+    base, marks = letters[index]
+    if index == 0 or base != "ت" or _SHADDA not in marks:
+        return False
+    before, before_marks = letters[index - 1]
+    return before in _ASSIMILATED_DENTALS and not _VOWELS & set(before_marks)

@@ -60,6 +60,9 @@ def test_a_mis_tensed_occurrence_is_kept_with_its_true_tense_and_mood():
     {"سعي_1": {"79:22:3": {"why": "w", "tense": "future"}}},                 # no such tense
     {"سعي_1": {"79:22:3": {"why": "w", "tense": "present"}}},                # a present without its mood
     {"سعي_1": {"79:22:3": {"why": "w", "tense": "past", "mood": "IND"}}},    # a mood on a past
+    {"غني_1": {"69:28:2": {"why": "w", "form": 1}}},                        # refiled to itself
+    {"غني_1": {"69:28:2": {"why": "w", "form": 11}}},                       # no such form
+    {"غني_1": {"69:28:2": {"why": "w", "form": 4, "tense": "past"}}},       # two corrections at once
 ])
 def test_a_malformed_or_undocumented_correction_fails_fast(raw):
     with pytest.raises(CorrectionFormatError):
@@ -72,7 +75,8 @@ def test_every_documented_correction_names_a_real_occurrence():
         filed = {(f"{o.surah}:{o.ayah}:{o.word}", o.root, o.form)
                  for o in iter_verb_occurrences(iter_segments(lines))}
     corrections = service.corpus_corrections()
-    for correction in (*corrections.misattributions, *corrections.tense_corrections):
+    for correction in (*corrections.misattributions, *corrections.tense_corrections,
+                       *corrections.form_corrections):
         assert (correction.location, correction.root, correction.form) in filed
 
 
@@ -83,6 +87,24 @@ def test_every_tense_correction_changes_what_the_corpus_says():
                  for o in iter_verb_occurrences(iter_segments(lines))}
     for correction in service.corpus_corrections().tense_corrections:
         assert filed[(correction.location, correction.root, correction.form)] != (correction.tense, correction.mood)
+
+
+_AVAILED = "69:28:2:1\tأَغْنَىٰ\tV\tPERF|VF:1|ROOT:غني|LEM:أَغْنَى|3MS"
+_REFILED = parse_corrections({"غني_1": {"69:28:2": {"form": 4, "why": "أَغْنَى is Form IV"}}})
+
+
+def test_a_misformed_occurrence_moves_to_its_true_form():
+    (occurrence,) = apply_corrections(map(parse_line, (_AVAILED,)), _REFILED)
+
+    assert (occurrence.root, occurrence.form, occurrence.tense) == ("غني", 4, "past")
+    assert build_oracle([occurrence])[("غني", 4)] == {("past", "huwa"): "أَغْنَىٰ"}
+
+
+def test_to_dwell_no_longer_carries_the_form_iv_to_avail():
+    dwell, avail = service.get_verb("غني", 1), service.get_verb("غني", 4)
+
+    assert dwell.lemma == "غَنِيَ" and "69:28" not in dwell.ayat
+    assert "69:28" in avail.ayat and "9:74" not in dwell.ayat
 
 
 def test_he_strives_in_79_22_counts_as_a_present_not_a_past():

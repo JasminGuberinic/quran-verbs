@@ -36,7 +36,7 @@ from fil.examples import (
 from fil.governor import permit
 from fil.journal import Event
 from fil import journal, journal_store
-from fil.reconciliation import ReconciledCell, reconcile, tier_counts
+from fil.reconciliation import ReconciledCell, agrees_across_join, reconcile, tier_counts
 from fil.resources import AGENDA_JSON, CONJUGATION_OVERRIDES_JSON, CORPUS_CORRECTIONS_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
@@ -237,8 +237,9 @@ def get_verb(root: str, form: int, conjugators: list[Conjugator] | None = None) 
     entry = _find(root, form)
     verb = build_verb(entry, _attested(root, form))
     reconciled = _reconcile_entry(entry, conjugators)
-    cells, counts = _cells(reconciled, _attested(root, form))
-    cells = tuple(_with_documented_spellings(entry, cell) for cell in cells)
+    cells, _ = _cells(reconciled, _attested(root, form))
+    cells = tuple(_with_documented_spellings(entry, cell) for cell in cells if not _is_unused(entry, cell))
+    counts = _count_sources(cells)
     return VerbDetail(
         root=entry.root,
         form=entry.form,
@@ -296,10 +297,43 @@ def _table_forms(root: str, form: int, draft: Example) -> frozenset[str]:
     return frozenset(spelling_key(spelling) for spelling in cell.spellings)
 
 
+def _is_unused(entry: VerbEntry, cell: Cell) -> bool:
+    """Whether the language does not use this cell (documented), so no learner should see it.
+
+    Fails fast if the Quran attests a cell documented as unused: the record is wrong.
+    """
+    if not conjugation_overrides.is_unused(_conjugation_overrides(), entry.root, entry.form,
+                                           cell.tense, cell.pronoun):
+        return False
+    if _is_quran_attested(cell):
+        raise ValueError(f"{entry.root}_{entry.form} {cell.tense}:{cell.pronoun} is documented as "
+                         f"unused, yet the Quran attests {cell.arabic}")
+    return True
+
+
 def _with_documented_spellings(entry: VerbEntry, cell: Cell) -> Cell:
+    """The cell with its hand-documented spellings, which supersede a wrong generated form.
+
+    Where the Quran does not attest the cell, the documented spelling *is* the form we
+    ship. Where it does and the documented spelling is the Quran's, the cell is confirmed
+    (attested) — the generator's disagreeing forms were its own error, so they are dropped
+    rather than offered as spellings the gate would accept.
+    """
     documented = conjugation_overrides.documented_spellings(
         _conjugation_overrides(), entry.root, entry.form, cell.tense, cell.pronoun)
-    return replace(cell, documented=documented) if documented else cell
+    if not documented:
+        return cell
+    if not _is_quran_attested(cell):
+        return replace(cell, arabic=documented[0], generated_form="", alternatives=(), documented=documented)
+    if any(agrees_across_join(spelling, cell.arabic) for spelling in documented):
+        return replace(cell, source="attested", confidence=1.0, generated_form="", alternatives=(),
+                       documented=documented)
+    return replace(cell, documented=documented)
+
+
+def _is_quran_attested(cell: Cell) -> bool:
+    # generator_agrees is None exactly when there was no Quranic form to agree with.
+    return cell.source == "attested" or cell.generator_agrees is not None
 
 
 @lru_cache(maxsize=1)

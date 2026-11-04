@@ -1,6 +1,6 @@
 """Documented corrections to the corpus: occurrences it files under the wrong verb or tense.
 
-The Quranic Arabic Corpus occasionally mis-tags a word. Two kinds are corrected here:
+The Quranic Arabic Corpus occasionally mis-tags a word. Three kinds are corrected here:
 
 - **Misattribution** — the word belongs to a different verb that shares its letters.
   يَبْلَىٰ in 20:120 ("[a kingdom that] does not wear out") is بَلِيَ, yet it is filed
@@ -11,9 +11,14 @@ The Quranic Arabic Corpus occasionally mis-tags a word. Two kinds are corrected 
   (ثُمَّ أَدْبَرَ يَسْعَىٰ) is a present indicative, yet it is tagged PERF, so it would
   count as a past form and show as a past-tense example. The occurrence is kept, with
   the tense (and, for a present, the mood) it actually has.
+- **Wrong form** — the word is the same root in a different derived form. أَغْنَىٰ "to
+  avail" (69:28 مَا أَغْنَىٰ عَنِّى مَالِيَهْ) is Form IV, yet the corpus tags most of its
+  occurrences VF:1, which filed them under غَنِيَ "to dwell, to flourish" and headed
+  that card with أَغْنَى. The occurrence moves to the form it belongs to.
 
 Each correction names the word ("surah:ayah:word") and the verb the corpus files it
-under, with the reason; a wrong-tense entry also names the true `tense` (and `mood`).
+under, with the reason; a wrong-tense entry also names the true `tense` (and `mood`),
+a wrong-form entry the true `form`.
 Written down by hand rather than patched in code, so every exception stays visible
 and reviewable, and applied in one place (`apply_corrections`) by everything that
 reads the corpus.
@@ -60,22 +65,36 @@ class TenseCorrection:
 
 
 @dataclass(frozen=True)
+class FormCorrection:
+    """One word the corpus files under the right root but the wrong derived form."""
+
+    location: str  # "surah:ayah:word"
+    root: str
+    form: int      # the form the corpus gives
+    true_form: int
+    why: str
+
+
+@dataclass(frozen=True)
 class CorpusCorrections:
     """Every documented correction, looked up by (location, root, form)."""
 
     misattributions: tuple[Misattribution, ...] = ()
     tense_corrections: tuple[TenseCorrection, ...] = ()
+    form_corrections: tuple[FormCorrection, ...] = ()
 
     def excludes(self, occurrence: VerbOccurrence) -> bool:
         """Whether this occurrence must not count for the verb the corpus gives it."""
         return _identity(occurrence) in self._excluded
 
     def corrected(self, occurrence: VerbOccurrence) -> VerbOccurrence:
-        """The occurrence with its documented tense, or unchanged if none is documented."""
-        correction = self._retensed.get(_identity(occurrence))
-        if correction is None:
-            return occurrence
-        return replace(occurrence, tense=correction.tense, mood=correction.mood)
+        """The occurrence with its documented tense or form, or unchanged if none is documented."""
+        identity = _identity(occurrence)
+        if refiled := self._refiled.get(identity):
+            return replace(occurrence, form=refiled.true_form)
+        if retensed := self._retensed.get(identity):
+            return replace(occurrence, tense=retensed.tense, mood=retensed.mood)
+        return occurrence
 
     @cached_property
     def _excluded(self) -> frozenset[WordIdentity]:
@@ -84,6 +103,10 @@ class CorpusCorrections:
     @cached_property
     def _retensed(self) -> dict[WordIdentity, TenseCorrection]:
         return {(t.location, t.root, t.form): t for t in self.tense_corrections}
+
+    @cached_property
+    def _refiled(self) -> dict[WordIdentity, FormCorrection]:
+        return {(f.location, f.root, f.form): f for f in self.form_corrections}
 
 
 NO_CORRECTIONS = CorpusCorrections()
@@ -94,9 +117,11 @@ class CorrectionFormatError(ValueError):
 
 
 def parse_corrections(raw: Mapping[str, Mapping[str, Mapping]]) -> CorpusCorrections:
-    """`{"root_form": {"s:a:w": {"why": "...", ["tense": ..., "mood": ...]}}}` → CorpusCorrections.
+    """`{"root_form": {"s:a:w": {"why": "...", ["tense": ..., "mood": ...] | ["form": n]}}}`
+    → CorpusCorrections.
 
-    An entry with a `tense` is a wrong-tense correction; one without is a misattribution.
+    An entry with a `tense` is a wrong-tense correction, one with a `form` a wrong-form
+    correction, one with neither a misattribution.
     Fails fast on a bad key, an unknown tense or mood, or a missing reason: a correction
     without its why is exactly the silent exception this file exists to prevent.
     """
@@ -108,6 +133,7 @@ def parse_corrections(raw: Mapping[str, Mapping[str, Mapping]]) -> CorpusCorrect
     return CorpusCorrections(
         misattributions=tuple(c for c in corrections if isinstance(c, Misattribution)),
         tense_corrections=tuple(c for c in corrections if isinstance(c, TenseCorrection)),
+        form_corrections=tuple(c for c in corrections if isinstance(c, FormCorrection)),
     )
 
 
@@ -123,7 +149,8 @@ def _identity(occurrence: VerbOccurrence) -> WordIdentity:
     return location, occurrence.root, occurrence.form
 
 
-def _correction(verb: str, location: str, entry: Mapping) -> Misattribution | TenseCorrection:
+def _correction(verb: str, location: str,
+                entry: Mapping) -> Misattribution | TenseCorrection | FormCorrection:
     root, _, form = verb.rpartition("_")
     if not root or not form.isdigit():
         raise CorrectionFormatError(f"{verb!r}: expected root_form, e.g. بلو_1")
@@ -132,10 +159,21 @@ def _correction(verb: str, location: str, entry: Mapping) -> Misattribution | Te
     why = entry.get("why", "").strip()
     if not why:
         raise CorrectionFormatError(f"{verb} {location}: a correction needs a why")
+    if "tense" in entry and "form" in entry:
+        raise CorrectionFormatError(f"{verb} {location}: correct the tense or the form, not both")
+    if "form" in entry:
+        return FormCorrection(location, root, int(form), _true_form(f"{verb} {location}", entry, int(form)), why)
     if "tense" not in entry:
         return Misattribution(location, root, int(form), why)
     tense, mood = _tense_and_mood(f"{verb} {location}", entry)
     return TenseCorrection(location, root, int(form), tense, mood, why)
+
+
+def _true_form(subject: str, entry: Mapping, filed_form: int) -> int:
+    true_form = entry["form"]
+    if not isinstance(true_form, int) or not 1 <= true_form <= 10 or true_form == filed_form:
+        raise CorrectionFormatError(f"{subject}: form must be another derived form 1..10, not {true_form!r}")
+    return true_form
 
 
 def _tense_and_mood(subject: str, entry: Mapping) -> tuple[str, str | None]:

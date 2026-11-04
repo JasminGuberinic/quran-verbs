@@ -422,6 +422,15 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("حزن", 1, "حَزِنَ", {("past", "huwa"): "حَزِنَ", ("present", "huwa"): "يَحْزَنُ"}),
     ("مشي", 1, "مَشَى", {("past", "huwa"): "مَشَى", ("imperative", "anta"): "اِمْشِ"}),
     ("بدو", 4, "أَبْدَى", {("past", "huwa"): "أَبْدَى", ("present", "huwa"): "يُبْدِي"}),
+    # Cut stems غَلَبُ / أَفْسَدُ / وَعَظْ / لَقُ / مَكَّ, the 3fs أَعْتَدَتْ, the jussive تَرَبَّصْ.
+    ("غلب", 1, "غَلَبَ", {("past", "huwa"): "غَلَبَ", ("present", "huwa"): "يَغْلِبُ"}),
+    ("فسد", 4, "أَفْسَدَ", {("past", "huwa"): "أَفْسَدَ", ("present", "huwa"): "يُفْسِدُ"}),
+    ("وعظ", 1, "وَعَظَ", {("past", "huwa"): "وَعَظَ", ("present", "huwa"): "يَعِظُ",
+                          ("imperative", "anta"): "عِظْ"}),
+    ("لقي", 1, "لَقِيَ", {("past", "ana"): "لَقِيتُ", ("present", "huwa"): "يَلْقَى"}),
+    ("مكن", 2, "مَكَّنَ", {("past", "huwa"): "مَكَّنَ", ("present", "huwa"): "يُمَكِّنُ"}),
+    ("عتد", 4, "أَعْتَدَ", {("past", "nahnu"): "أَعْتَدْنَا"}),
+    ("ربص", 5, "تَرَبَّصَ", {("past", "huwa"): "تَرَبَّصَ", ("present", "ana"): "أَتَرَبَّصُ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -459,3 +468,35 @@ def test_every_taught_verb_is_headed_by_its_citation_form():
               if (faults := _citation_form_faults(verb.root, verb.form, verb.lemma))}
 
     assert faulty == {}
+
+
+def test_a_tense_the_language_does_not_use_is_neither_shown_nor_practised():
+    # وَذَرَ has only يَذَرُ and ذَرْ; the generator's وَذَرْتُ … is documented as unused.
+    detail = get_verb("وذر", 1)
+    tenses = {cell.tense for cell in detail.cells}
+
+    assert "past" not in tenses and {"present", "imperative"} <= tenses
+    assert sum(detail.tier_counts.values()) == len(detail.cells)
+
+
+@pytest.mark.parametrize("pronoun, spelling", [
+    ("ana", "مِتُّ"), ("anta", "مِتَّ"), ("anti", "مِتِّ"), ("antum", "مِتُّمْ"),
+    ("antunna", "مِتُّنَّ"), ("nahnu", "مِتْنَا"), ("hunna", "مِتْنَ"), ("huwa", "مَاتَ"),
+])
+def test_the_past_of_mata_assimilates_its_ta(pronoun, spelling):
+    # The generator wrote مُتْتُ (two ت, no assimilation); Hafs reads مِتُّ (19:23).
+    cell = _cell_of(get_verb("موت", 1), "past", pronoun)
+
+    assert normalize("NFC", cell.plain) == normalize("NFC", spelling)
+    assert not any("تْت" in spelling for spelling in cell.spellings)
+
+
+def test_a_documented_spelling_the_quran_attests_confirms_the_cell():
+    # مِتُّ is the Quran's (19:23): once the generator's مُتْتُ is corrected, nothing disagrees.
+    cell = _cell_of(get_verb("موت", 1), "past", "ana")
+
+    assert cell.source == "attested" and cell.alternatives == ()
+
+
+def _cell_of(detail, tense: str, pronoun: str):
+    return next(cell for cell in detail.cells if (cell.tense, cell.pronoun) == (tense, pronoun))

@@ -65,6 +65,21 @@ _LEMMA_CORRECTIONS: dict[tuple[str, int], str] = {
     ("صنع", 1): "صَنَعَ",
     ("أذي", 4): "آذَى",
     ("نبت", 4): "أَنْبَتَ",
+    # Ranks 226–250 brought more: stems cut before their suffix (غَلَبُ, أَفْسَدُ, وَعَظْ,
+    # حَلَلْ, أَخْلَفُ, لَقُ, مَكَّ), a 3fs past (أَعْتَدَتْ), a jussive (تَرَبَّصْ) and a present
+    # (يَصْلَى). غَنِيَ "to dwell, to flourish" was headed by the Form IV أَغْنَى the corpus
+    # misfiles under it (see data/corpus_corrections.json).
+    ("غلب", 1): "غَلَبَ",
+    ("فسد", 4): "أَفْسَدَ",
+    ("وعظ", 1): "وَعَظَ",
+    ("حلل", 1): "حَلَّ",
+    ("خلف", 4): "أَخْلَفَ",
+    ("عتد", 4): "أَعْتَدَ",
+    ("لقي", 1): "لَقِيَ",
+    ("ربص", 5): "تَرَبَّصَ",
+    ("صلي", 1): "صَلِيَ",
+    ("مكن", 2): "مَكَّنَ",
+    ("غني", 1): "غَنِيَ",
 }
 
 

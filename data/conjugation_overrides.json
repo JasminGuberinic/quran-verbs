@@ -1,36 +1,113 @@
 {
  "سأل_1": {
   "imperative:anta": {
-   "spellings": ["اِسْأَلْ", "سَلْ"],
+   "spellings": [
+    "اِسْأَلْ",
+    "سَلْ"
+   ],
    "why": "The generator skips this hamzated verb, so the table holds only the Uthmani سْـَٔلِ (12:82). اِسْأَلْ is the standard full imperative and سَلْ the classical short one (cf. 2:211 سَلْ)."
   }
  },
  "زيد_1": {
   "imperative:anta": {
-   "spellings": ["زِدْ"],
+   "spellings": [
+    "زِدْ"
+   ],
    "why": "The hollow imperative زِدْ (20:114 رَبِّ زِدْنِي عِلْمًا) is too short for the analyzer to read, so no analyzable spelling exists; this records it as the documented standard form the gate confirms by the table."
   }
  },
  "عسي_1": {
   "past:huwa": {
-   "spellings": ["عَسَى"],
+   "spellings": [
+    "عَسَى"
+   ],
    "why": "عَسَى is an inflexible (jāmid) verb the analyzer reads only as a noun, and the table holds only the Uthmani عَسَىٰٓ (27:72) with its dagger alif. عَسَى is the standard spelling; this records it so the gate confirms the verb by the table."
   }
  },
  "أذن_1": {
   "imperative:anta": {
-   "spellings": ["اِئْذَنْ"],
+   "spellings": [
+    "اِئْذَنْ"
+   ],
    "why": "The hamzated imperative of أَذِنَ is attested only as Uthmani ٱئْذَن (9:49 ٱئْذَن لِّى), which the analyzer cannot read, nor any plain spelling of it. اِئْذَنْ (hamzat al-wasl, then the radical hamza on a yāʾ seat) is the standard imlāʾī form; this records it so the gate confirms it by the table."
   },
   "imperative:antum": {
-   "spellings": ["اِئْذَنُوا"],
+   "spellings": [
+    "اِئْذَنُوا"
+   ],
    "why": "The only attested plural imperative is فَأْذَنُوا۟ (2:279), where the hamzat al-wasl drops after fa; the standalone standard form اِئْذَنُوا is not readable by the analyzer. This records it so a sentence can open with the verb and the gate confirms it by the table."
   }
  },
  "قرأ_1": {
   "imperative:antum": {
-   "spellings": ["اِقْرَؤُوا"],
+   "spellings": [
+    "اِقْرَؤُوا"
+   ],
    "why": "The generator skips this hamzated verb, so the table holds only the Uthmani ٱقْرَءُوا۟ (69:19 هَآؤُمُ ٱقْرَءُوا۟ كِتَٰبِيَهْ), whose hamza on the line the gate does not match against the standard spelling. اِقْرَؤُوا (hamza on wāw before the plural ending) is the standard form; this records it so the gate confirms it by the table and the table shows it."
+  }
+ },
+ "موت_1": {
+  "past:ana": {
+   "spellings": [
+    "مِتُّ",
+    "مُتُّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (مُتْتُ); the two merge into one doubled ت. Hafs reads these persons with kasra — مِتُّ (19:23), مِتَّ (21:34), مِتْنَا (23:82), مِتُّمْ (23:35) — so the table shows that; the regular يَمُوتُ-pattern مُتُّ (cf. 3:157 مُتُّمْ) is kept as the second spelling."
+  },
+  "past:anta": {
+   "spellings": [
+    "مِتَّ",
+    "مُتَّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (مُتْتَ); the two merge into one doubled ت. Hafs reads these persons with kasra — مِتُّ (19:23), مِتَّ (21:34), مِتْنَا (23:82), مِتُّمْ (23:35) — so the table shows that; the regular يَمُوتُ-pattern مُتَّ (cf. 3:157 مُتُّمْ) is kept as the second spelling."
+  },
+  "past:anti": {
+   "spellings": [
+    "مِتِّ",
+    "مُتِّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (مُتْتِ); the two merge into one doubled ت. Hafs reads these persons with kasra — مِتُّ (19:23), مِتَّ (21:34), مِتْنَا (23:82), مِتُّمْ (23:35) — so the table shows that; the regular يَمُوتُ-pattern مُتِّ (cf. 3:157 مُتُّمْ) is kept as the second spelling."
+  },
+  "past:antuma": {
+   "spellings": [
+    "مِتُّمَا",
+    "مُتُّمَا"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (مُتْتُمَا); the two merge into one doubled ت. Hafs reads these persons with kasra — مِتُّ (19:23), مِتَّ (21:34), مِتْنَا (23:82), مِتُّمْ (23:35) — so the table shows that; the regular يَمُوتُ-pattern مُتُّمَا (cf. 3:157 مُتُّمْ) is kept as the second spelling."
+  },
+  "past:antum": {
+   "spellings": [
+    "مِتُّمْ",
+    "مُتُّمْ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (مُتْتُمْ); the two merge into one doubled ت. Hafs reads these persons with kasra — مِتُّ (19:23), مِتَّ (21:34), مِتْنَا (23:82), مِتُّمْ (23:35) — so the table shows that; the regular يَمُوتُ-pattern مُتُّمْ (cf. 3:157 مُتُّمْ) is kept as the second spelling."
+  },
+  "past:antunna": {
+   "spellings": [
+    "مِتُّنَّ",
+    "مُتُّنَّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (مُتْتُنَّ); the two merge into one doubled ت. Hafs reads these persons with kasra — مِتُّ (19:23), مِتَّ (21:34), مِتْنَا (23:82), مِتُّمْ (23:35) — so the table shows that; the regular يَمُوتُ-pattern مُتُّنَّ (cf. 3:157 مُتُّمْ) is kept as the second spelling."
+  },
+  "past:nahnu": {
+   "spellings": [
+    "مِتْنَا",
+    "مُتْنَا"
+   ],
+   "why": "The generator writes مُتْنَا, the regular يَمُوتُ-pattern form. Hafs reads the persons whose stem is closed with kasra — مِتْنَا (23:82) — so the table shows that, consistent with مِتُّ, and keeps مُتْنَا as the second spelling."
+  },
+  "past:hunna": {
+   "spellings": [
+    "مِتْنَ",
+    "مُتْنَ"
+   ],
+   "why": "The generator writes مُتْنَ, the regular يَمُوتُ-pattern form. Hafs reads the persons whose stem is closed with kasra — مِتْنَا (23:82) — so the table shows that, consistent with مِتُّ, and keeps مُتْنَ as the second spelling."
+  }
+ },
+ "وذر_1": {
+  "past:*": {
+   "unused": true,
+   "why": "The past of وَذَرَ is not used: the Arabs abandoned it (أَمَاتُوا مَاضِيَهُ) and say تَرَكَ instead, so the Quran — like all Arabic — has only يَذَرُ and ذَرْ. The generator conjugates the past mechanically (وَذَرْتُ …); those forms are not shown or practised. وَذَرَ stays the dictionary citation."
   }
  }
 }

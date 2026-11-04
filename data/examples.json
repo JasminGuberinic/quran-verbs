@@ -19594,12 +19594,12 @@
         "glossed_by_exception": []
       },
       "critique": {
-        "approved": true,
+        "approved": false,
         "grammar_ok": true,
         "translation_ok": true,
         "verb_usage_ok": true,
-        "by": "claude subagent, blind reviewer (separate context)",
-        "note": "",
+        "by": "orchestrator policy: no Quranic wording",
+        "note": "Reproduces Quranic wording (3:146 وَاللَّهُ يُحِبُّ الصَّابِرِينَ); practice sentences are labelled not from the Quran. Redraft a neutral sentence.",
         "independent": true
       }
     },
@@ -19682,6 +19682,57 @@
         "glossed_by_exception": [
           "أَحْبِبْ"
         ]
+      },
+      "critique": {
+        "approved": true,
+        "grammar_ok": true,
+        "translation_ok": true,
+        "verb_usage_ok": true,
+        "by": "claude subagent, blind reviewer (separate context)",
+        "note": "",
+        "independent": true
+      }
+    },
+    {
+      "arabic": "الطِّفْلُ يُحِبُّ أُمَّهُ",
+      "words": [
+        {
+          "arabic": "الطِّفْلُ",
+          "en": "the child",
+          "bs": "dijete",
+          "is_target": false,
+          "translations": {}
+        },
+        {
+          "arabic": "يُحِبُّ",
+          "en": "loves",
+          "bs": "voli",
+          "is_target": true,
+          "translations": {}
+        },
+        {
+          "arabic": "أُمَّهُ",
+          "en": "his mother",
+          "bs": "svoju majku",
+          "is_target": false,
+          "translations": {}
+        }
+      ],
+      "en": "The child loves his mother.",
+      "bs": "Dijete voli svoju majku.",
+      "tense": "present",
+      "pronoun": "huwa",
+      "source": "generated",
+      "drafted_by": "claude, drafting pass",
+      "translations": {},
+      "checks": {
+        "verb_root": true,
+        "verb_form": true,
+        "all_words_valid": true,
+        "gloss_agreement": true,
+        "gloss_conflicts": [],
+        "verb_form_by": "analyzer",
+        "glossed_by_exception": []
       },
       "critique": {
         "approved": true,

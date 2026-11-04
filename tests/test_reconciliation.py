@@ -1,6 +1,8 @@
 """Tests for reconciliation tiers across the Quran + one or more generators."""
 
-from fil.reconciliation import forms_match, reconcile, tier_counts
+import pytest
+
+from fil.reconciliation import agrees_across_join, forms_match, reconcile, tier_counts
 
 
 def test_folds_alef_madda_against_hamza_alef():
@@ -91,3 +93,43 @@ def test_tier_counts_summarize():
     assert tier_counts(reconcile([generated], attested)) == {
         "attested": 1, "consensus": 0, "generated": 1, "quarantined": 1
     }
+
+
+# --- Spellings at a word join: the Quran spells a word as joined to its neighbour ---
+
+
+@pytest.mark.parametrize("generated, attested", [
+    ("ذَرْ", "ذَرِ"),                    # helping kasra on a final sukūn (6:91)
+    ("أَخَذَتْ", "أَخَذَتِ"),
+    ("عَلِمْتُمْ", "عَلِمْتُمُ"),           # helping ḍamma on the plural mīm
+    ("اِبْتَغَوْا", "ٱبْتَغَوُا۟"),           # ...and on the plural wāw
+    ("نَظُنُّ", "نَّظُنُّ"),               # first letter doubled by the preceding nūn (idghām)
+    ("رَحِمَ", "رَّحِمَ"),
+    ("اِتَّخَذْتَ", "تَّخَذْتَ"),           # waṣl dropped after لَ, then assimilation (18:77)
+    ("اِسْتَغْفَرْتَ", "سْتَغْفَرْتَ"),       # waṣl absorbed by the question hamza (63:6)
+    ("اِئْتِ", "أْتِ"),                   # waṣl dropped after فَ, hamza seated on alif
+    ("اُؤْمُرْ", "أْمُرْ"),
+    ("وَجَدْتُ", "وَجَدتُّ"),              # د assimilated into the suffix ت
+    ("أَرَدْتُمْ", "أَرَدتُّمْ"),
+])
+def test_marks_that_only_belong_to_a_word_join_are_not_a_disagreement(generated, attested):
+    assert agrees_across_join(generated, attested)
+
+
+@pytest.mark.parametrize("generated, attested", [
+    ("مُتْتُ", "مِتُّ"),                  # a wrong vowel and a missing assimilation
+    ("تَتَذَكَّرُونَ", "تَذَكَّرُونَ"),       # a whole syllable
+    ("تَسْتَطِيعُ", "تَسْطِع"),            # a letter
+    ("كَانَا", "كَانَتَا"),
+    ("كَتَبْتَ", "كَتَبْتُ"),              # a final vowel that is not a helping vowel
+    ("فَعَلَ", "فُعِلَ"),
+])
+def test_a_genuine_difference_still_disagrees_across_a_join(generated, attested):
+    assert not agrees_across_join(generated, attested)
+
+
+def test_a_join_spelling_of_the_quran_reconciles_as_attested():
+    cells = reconcile([{"imperative": {"anta": "ذَرْ"}}], {("imperative", "anta"): "ذَرِ"})
+
+    assert cells[0].source == "attested" and cells[0].arabic == "ذَرِ"
+    assert cells[0].alternatives == ()

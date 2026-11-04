@@ -28,6 +28,8 @@ def test_irregular_verb_forms_still_agree():
     assert gloss_agrees("hid", ["hide;conceal+he;it_<verb>"]) is True
     assert gloss_agrees("we preferred", ["prefer+we_<verb>"]) is True
     assert gloss_agrees("drank", ["drink+he;it_<verb>"]) is True
+    assert gloss_agrees("they broke", ["leave;compensate;break+they_<verb>"]) is True
+    assert gloss_agrees("overcame", ["defeat;overcome+he;it_<verb>"]) is True
     assert gloss_agrees("we grew", ["germinate;make_grow;cultivate+we_<verb>"]) is True
     assert gloss_agrees("they lied", ["lie+they_<verb>"]) is True
     assert gloss_agrees("stopped", ["stop;desist"]) is True

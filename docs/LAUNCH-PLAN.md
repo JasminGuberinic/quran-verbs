@@ -39,3 +39,12 @@ Owner's idea (2026-11-04): teach every Quranic word, not only verbs — nouns, a
 - **Practice sentences combining verbs and nouns** — e.g. أَكَلَ الْوَلَدُ التُّفَّاحَ (subject in -u, object in -a), جَلَسَ عَلَى الشَّجَرَةِ (genitive after a preposition) — through the same gate and blind review.
 - **New exercises:** "which case?", "complete the ending", "match the adjective to the noun".
 - Same tooling pattern as verbs (batches by frequency, en + bs first, bulk translation later).
+
+## Phase 4 — stories and dialogues (after phase 3, before promotion)
+
+Owner's idea (2026-11-04): short stories and conversations built only from Quranic vocabulary (verbs, nouns, adjectives), for reading practice.
+- **Graded:** each text uses only words the learner has met so far (the first ones only the top verbs and commonest nouns); every new text adds a few words.
+- **Word by word:** tap a word for its meaning, form/case and pronunciation; a translation per sentence in every learner language.
+- **Audio** for the whole text with the same vowel-checked speech.
+- **Comprehension questions** after each text.
+- Every sentence goes through the same gate and blind review, under the same content policy (no Quranic wording, gentle everyday content).

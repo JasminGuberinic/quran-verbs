@@ -5,6 +5,7 @@ the consensus tally logic is tested purely on synthetic cells.
 """
 
 from dataclasses import replace
+from unicodedata import normalize
 
 import pytest
 
@@ -402,3 +403,21 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
 
     assert brief.writable_form == "زِدْ" and "documented" in brief.writable_note
     assert checks.verb_form_by == "corpus table" and checks.passed
+
+
+@pytest.mark.parametrize("root, form, lemma, cells", [
+    # Corpus lemmas that are not citation forms (أُعِيدُ, يَتَفَكَّرُ, يَضُرَّ) once made the
+    # generator conjugate أَعْيَدَ / يِتْفَكَّرَ, or nothing at all.
+    ("عود", 4, "أَعَادَ", {("past", "huwa"): "أَعَادَ", ("present", "ana"): "أُعِيدُ",
+                          ("imperative", "anta"): "أَعِدْ"}),
+    ("فكر", 5, "تَفَكَّرَ", {("past", "huwa"): "تَفَكَّرَ", ("present", "ana"): "أَتَفَكَّرُ",
+                            ("imperative", "anta"): "تَفَكَّرْ"}),
+    ("ضرر", 1, "ضَرَّ", {("past", "huwa"): "ضَرَّ", ("present", "huwa"): "يَضُرُّ"}),
+])
+def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
+    detail = get_verb(root, form)
+    # Canonical order, so a shadda written before or after its vowel compares equal.
+    table = {(cell.tense, cell.pronoun): normalize("NFC", cell.arabic) for cell in detail.cells}
+
+    assert detail.lemma == lemma
+    assert {key: table[key] for key in cells} == {key: normalize("NFC", form) for key, form in cells.items()}

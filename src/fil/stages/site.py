@@ -130,7 +130,7 @@ def main(site: Path = SITE_DIR) -> None:
 def _read_corpus() -> _Corpus:
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         segments = list(iter_segments(lines))
-    words = study.words_of(segments)
+    words = study.words_of(segments, service.corpus_corrections())
     return _Corpus(study.ayat_of(words), study.recitation_index(words), study.derived_nouns(segments))
 
 

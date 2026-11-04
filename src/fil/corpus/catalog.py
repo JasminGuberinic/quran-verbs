@@ -17,8 +17,19 @@ from fil.corpus.parse import VerbOccurrence
 # lemma is what the generator conjugates from. For Form IV of غني every occurrence
 # carries أَغْنَتْ (a 3fs past), so the table came out as أَغْنَتَ / أَغْنِتْ; its
 # citation form is أَغْنَى (cf. 69:28 مَا أَغْنَىٰ عَنِّى مَالِيَهْ).
+# Others carry a present (يَضُرَّ, يَفْقَهُ, يَتَفَكَّرُ, أُعِيدُ), passive (أُخْفِيَ, ذُكِّرَ)
+# or jussive/imperative (مَتَّعْ) form: the card would show it as the headline and the
+# generator conjugates nonsense from it (يِتْفَكَّرَ, أَعْيَدَ) or nothing at all.
 _LEMMA_CORRECTIONS: dict[tuple[str, int], str] = {
     ("غني", 4): "أَغْنَى",
+    ("ضرر", 1): "ضَرَّ",
+    ("فقه", 1): "فَقِهَ",
+    ("خفي", 4): "أَخْفَى",
+    ("ذكر", 2): "ذَكَّرَ",
+    ("عود", 4): "أَعَادَ",
+    ("متع", 2): "مَتَّعَ",
+    ("غرق", 4): "أَغْرَقَ",
+    ("فكر", 5): "تَفَكَّرَ",
 }
 
 

@@ -12,8 +12,8 @@ from __future__ import annotations
 import json
 from collections import Counter
 
+from fil import service
 from fil.corpus.catalog import VerbEntry, build_catalog
-from fil.corpus.parse import iter_segments, iter_verb_occurrences
 from fil.resources import BUILD_DIR, QAC_MORPHOLOGY
 
 _SOURCE = QAC_MORPHOLOGY
@@ -22,7 +22,7 @@ _OUTPUT = BUILD_DIR / "qac_verbs.json"
 
 def main() -> None:
     with _SOURCE.open(encoding="utf-8") as lines:
-        occurrences = list(iter_verb_occurrences(iter_segments(lines)))
+        occurrences = list(service.verb_occurrences(lines))
     catalog = build_catalog(occurrences)
 
     _write_catalog(catalog)

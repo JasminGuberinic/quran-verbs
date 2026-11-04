@@ -17,13 +17,17 @@ from dataclasses import dataclass, field, replace
 from functools import lru_cache
 
 from datetime import datetime, timedelta, timezone
+from typing import Iterable, Iterator
 
 from fil import agenda, agenda_store, conjugation_overrides, example_store
 from fil.agenda import Job
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
+from fil.corpus.corrections import (
+    NO_CORRECTIONS, CorpusCorrections, parse_corrections, without_misattributed,
+)
 from fil.corpus.oracle import AttestedCells, build_oracle
-from fil.corpus.parse import iter_segments, iter_verb_occurrences
+from fil.corpus.parse import VerbOccurrence, iter_segments, iter_verb_occurrences
 from fil.driver import build_verb
 from fil import evals
 from fil.examples import (
@@ -33,7 +37,7 @@ from fil.governor import permit
 from fil.journal import Event
 from fil import journal, journal_store
 from fil.reconciliation import ReconciledCell, reconcile, tier_counts
-from fil.resources import AGENDA_JSON, CONJUGATION_OVERRIDES_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
+from fil.resources import AGENDA_JSON, CONJUGATION_OVERRIDES_JSON, CORPUS_CORRECTIONS_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
@@ -810,6 +814,19 @@ def tally(results: list[list[ReconciledCell] | None]) -> CoverageReport:
     )
 
 
+def verb_occurrences(lines: Iterable[str]) -> Iterator[VerbOccurrence]:
+    """Every verb in the corpus, minus the words it files under the wrong verb."""
+    return without_misattributed(iter_verb_occurrences(iter_segments(iter(lines))), corpus_corrections())
+
+
+@lru_cache(maxsize=1)
+def corpus_corrections() -> CorpusCorrections:
+    """Hand-documented misattributions: words the corpus files under the wrong verb."""
+    if not CORPUS_CORRECTIONS_JSON.exists():
+        return NO_CORRECTIONS
+    return parse_corrections(json.loads(CORPUS_CORRECTIONS_JSON.read_text(encoding="utf-8")))
+
+
 # --- internals ---------------------------------------------------------------
 
 
@@ -823,7 +840,7 @@ class _Corpus:
 def _corpus() -> _Corpus:
     """Load and index the corpus once per process (it is a few MB of text)."""
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
-        occurrences = list(iter_verb_occurrences(iter_segments(lines)))
+        occurrences = list(verb_occurrences(lines))
     return _Corpus(tuple(build_catalog(occurrences)), build_oracle(occurrences))
 
 

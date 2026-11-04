@@ -20,6 +20,7 @@ from dataclasses import dataclass
 from itertools import groupby
 from typing import Iterable
 
+from fil.corpus.corrections import CorpusCorrections, without_misattributed
 from fil.corpus.parse import Segment, iter_verb_occurrences
 
 VerbKey = tuple[str, int]                 # (root, form)
@@ -77,11 +78,16 @@ class DerivedNoun:
     count: int
 
 
-def words_of(segments: Iterable[Segment]) -> tuple[QuranWord, ...]:
-    """Join segments into whole words, tagging each with the active verbs inside it."""
+def words_of(segments: Iterable[Segment], corrections: CorpusCorrections) -> tuple[QuranWord, ...]:
+    """Join segments into whole words, tagging each with the active verbs inside it.
+
+    A word the corrections say the corpus misfiled is not tagged with that verb, so it
+    never becomes one of its example ayat.
+    """
     segments = list(segments)
     active_verbs = defaultdict(set)
-    for occurrence in iter_verb_occurrences(iter(segments)):
+    occurrences = without_misattributed(iter_verb_occurrences(iter(segments)), corrections)
+    for occurrence in occurrences:
         if not occurrence.passive:
             active_verbs[(occurrence.surah, occurrence.ayah, occurrence.word)].add(
                 (occurrence.root, occurrence.form, occurrence.tense)

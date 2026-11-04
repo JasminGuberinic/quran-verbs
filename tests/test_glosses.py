@@ -24,6 +24,9 @@ def test_irregular_verb_forms_still_agree():
     assert gloss_agrees("I am", ["I+is;are"]) is True
     assert gloss_agrees("forbade", ["outlaw;forbid+he;it_<verb>"]) is True
     assert gloss_agrees("we began", ["start;begin+we_<verb>"]) is True
+    assert gloss_agrees("we blew", ["inflate;blow_into+we_<verb>"]) is True
+    assert gloss_agrees("hid", ["hide;conceal+he;it_<verb>"]) is True
+    assert gloss_agrees("we preferred", ["prefer+we_<verb>"]) is True
 
 
 def test_inflected_forms_agree_through_the_stem():

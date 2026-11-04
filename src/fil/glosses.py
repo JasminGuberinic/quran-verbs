@@ -87,6 +87,9 @@ _IRREGULAR = {
     "withdrew": "withdraw", "withdrawn": "withdraw",
     "forbade": "forbid", "forbidden": "forbid", "began": "begin", "begun": "begin",
     "strove": "strive", "striven": "strive",
+    "blew": "blow", "blown": "blow", "hid": "hide", "hidden": "hide",
+    # Regular, but the doubled final consonant defeats the suffix stemmer ("preferr").
+    "preferred": "prefer", "preferring": "prefer",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

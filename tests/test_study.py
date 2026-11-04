@@ -1,5 +1,6 @@
 """Tests for the study selection — pure decisions over synthetic corpus segments."""
 
+from fil.corpus.corrections import NO_CORRECTIONS, parse_corrections
 from fil.corpus.parse import parse_segment
 from fil.study import (
     ayat_of,
@@ -42,7 +43,7 @@ def _corpus():
 
 
 def test_words_join_segments_and_carry_only_active_verbs():
-    words = words_of(_corpus())
+    words = words_of(_corpus(), NO_CORRECTIONS)
 
     first = words[0]
     assert first.text == "قَالَ" and first.carries(_SAY, "past")
@@ -51,14 +52,14 @@ def test_words_join_segments_and_carry_only_active_verbs():
 
 
 def test_one_shortest_ayah_per_tense():
-    chosen = example_ayat(ayat_of(words_of(_corpus())), _SAY)
+    chosen = example_ayat(ayat_of(words_of(_corpus(), NO_CORRECTIONS)), _SAY)
 
     assert [(example.ref, example.tense) for example in chosen] == [("1:2", "past"), ("1:3", "present")]
 
 
 def test_a_passive_ayah_is_never_offered():
     # Passive "it was said" looks like the verb but teaches the wrong direction.
-    chosen = example_ayat(ayat_of(words_of(_corpus())), _SAY)
+    chosen = example_ayat(ayat_of(words_of(_corpus(), NO_CORRECTIONS)), _SAY)
 
     assert "1:4" not in {example.ref for example in chosen}
 
@@ -68,7 +69,7 @@ def test_a_form_is_located_only_where_it_stands_alone():
         "2:1:1:1\tفَ\tCONJ\tCONJ|PREF|LEM:ف",
         "2:1:1:2\tقَالَ\tV\tPERF|VF:1|ROOT:قول|LEM:قالَ|3MS",
         "2:2:1:1\tقَالَ\tV\tPERF|VF:1|ROOT:قول|LEM:قالَ|3MS",
-    ))
+    ), NO_CORRECTIONS)
 
     assert standalone_locations(words)["قَالَ"] == (2, 2, 1)
 
@@ -89,7 +90,7 @@ def test_a_form_heard_only_behind_a_clitic_is_offered_as_the_whole_word():
         "4:1:1:1\tفَ\tCONJ\tCONJ|PREF|LEM:ف",
         "4:1:1:2\tٱعْلَمْ\tV\tIMPV|VF:1|ROOT:علم|LEM:عَلِمَ|2MS",
         "4:2:1:1\tقَالَ\tV\tPERF|VF:1|ROOT:قول|LEM:قالَ|3MS",
-    ))
+    ), NO_CORRECTIONS)
 
     index = recitation_index(words)
 
@@ -98,4 +99,16 @@ def test_a_form_heard_only_behind_a_clitic_is_offered_as_the_whole_word():
 
 
 def test_a_form_never_recited_has_no_recitation():
-    assert "يَقُلْنَ" not in recitation_index(words_of(_corpus()))
+    assert "يَقُلْنَ" not in recitation_index(words_of(_corpus(), NO_CORRECTIONS))
+
+
+def test_a_word_the_corpus_misfiles_is_not_an_example_of_that_verb():
+    # 20:120 يَبْلَىٰ "wears out" (بَلِيَ) is filed under بلو form I, "to test".
+    segments = _segments("20:120:13:1\tيَبْلَىٰ\tV\tIMPF|VF:1|ROOT:بلو|LEM:بَلَوْ|3MS|MOOD:IND")
+    corrections = parse_corrections({"بلو_1": {"20:120:13": {"why": "it is بَلِيَ"}}})
+
+    tagged = words_of(segments, NO_CORRECTIONS)
+    corrected = words_of(segments, corrections)
+
+    assert tagged[0].carries(("بلو", 1), "present")
+    assert not corrected[0].carries(("بلو", 1), "present")

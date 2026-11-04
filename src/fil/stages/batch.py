@@ -128,7 +128,7 @@ def _write_todo_meanings(verbs) -> None:
 def _write_todo_ayah(keys) -> list[str]:
     glossed = json.loads(AYAH_VERB_GLOSSES_JSON.read_text(encoding="utf-8"))
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
-        words = study.words_of(iter_segments(lines))
+        words = study.words_of(iter_segments(lines), service.corpus_corrections())
     ayat = study.ayat_of(words)
     todo = []
     for verb in sorted(keys):

@@ -8,5 +8,12 @@
   "33:14:11": {
    "why": "تَلَبَّثُوا in وَمَا تَلَبَّثُوا بِهَا إِلَّا يَسِيرًا (33:14) is Form V تَلَبَّثَ (doubled ب, prefix تَ), not Form I لَبِثَ. The corpus tags it VF:1, which counted تَلَبَّثُوا as a Form I past hum spelling."
   }
+ },
+ "سعي_1": {
+  "79:22:3": {
+   "tense": "present",
+   "mood": "IND",
+   "why": "يَسْعَىٰ in ثُمَّ أَدْبَرَ يَسْعَىٰ (79:22) is a present indicative (prefix يَـ, 'then he turned away, striving'), yet the corpus tags it PERF, which counted it as a past huwa spelling and showed it as a past-tense example of سَعَى."
+  }
  }
 }

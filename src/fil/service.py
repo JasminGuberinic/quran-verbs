@@ -24,7 +24,7 @@ from fil.agenda import Job
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
 from fil.corpus.corrections import (
-    NO_CORRECTIONS, CorpusCorrections, parse_corrections, without_misattributed,
+    NO_CORRECTIONS, CorpusCorrections, parse_corrections, apply_corrections,
 )
 from fil.corpus.oracle import AttestedCells, build_oracle
 from fil.corpus.parse import VerbOccurrence, iter_segments, iter_verb_occurrences
@@ -75,7 +75,7 @@ class Cell:
         """The spelling a learner reads and hears: standard where we have one, else the Quran's.
 
         A hand-documented spelling outranks the generator's: it is written down precisely
-        where the generator is silent or wrong (it gives the impossible اُؤْرُ for أَرِ).
+        where the generator is silent or wrong (it skips the hamzated سَأَلَ).
         """
         return next(iter(self.documented), "") or self.generated_form or self.arabic
 
@@ -815,13 +815,13 @@ def tally(results: list[list[ReconciledCell] | None]) -> CoverageReport:
 
 
 def verb_occurrences(lines: Iterable[str]) -> Iterator[VerbOccurrence]:
-    """Every verb in the corpus, minus the words it files under the wrong verb."""
-    return without_misattributed(iter_verb_occurrences(iter_segments(iter(lines))), corpus_corrections())
+    """Every verb in the corpus, as the documented corrections say it is (verb and tense)."""
+    return apply_corrections(iter_verb_occurrences(iter_segments(iter(lines))), corpus_corrections())
 
 
 @lru_cache(maxsize=1)
 def corpus_corrections() -> CorpusCorrections:
-    """Hand-documented misattributions: words the corpus files under the wrong verb."""
+    """Hand-documented corrections: words the corpus files under the wrong verb or tense."""
     if not CORPUS_CORRECTIONS_JSON.exists():
         return NO_CORRECTIONS
     return parse_corrections(json.loads(CORPUS_CORRECTIONS_JSON.read_text(encoding="utf-8")))

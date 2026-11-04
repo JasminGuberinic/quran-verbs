@@ -5,15 +5,16 @@ the consensus tally logic is tested purely on synthetic cells.
 """
 
 from dataclasses import replace
-from unicodedata import normalize
+from unicodedata import combining, normalize
 
 import pytest
 
-from fil import example_store
+from fil import example_store, meanings
 from fil.agenda import TransitionError
 from fil.examples import Critique, Example, ExampleWord
 from fil.reconciliation import ReconciledCell
 from fil.service import (
+    Cell,
     CoverageReport,
     VerbDetail,
     add_examples,
@@ -381,11 +382,12 @@ def test_a_documented_spelling_gives_an_uthmani_only_cell_a_plain_form():
     assert cell.plain == "اِسْأَلْ"
 
 
-def test_a_documented_spelling_replaces_a_wrong_generated_one():
-    # The generator gives the impossible اُؤْرُ for the imperative of أَرَى (show!).
-    cell = next(c for c in get_verb("رأي", 4).cells if (c.tense, c.pronoun) == ("imperative", "anta"))
+def test_a_documented_spelling_outranks_the_generated_one():
+    # A hand-documented spelling is written down where the generator is silent or wrong,
+    # so whenever both exist the learner sees the documented one.
+    cell = Cell("imperative", "anta", arabic="", source="generated", confidence=0.7,
+                generator_agrees=None, generated_form="اُؤْرُ", documented=("أَرِ",))
 
-    assert cell.generated_form == "اُؤْرُ"
     assert cell.plain == "أَرِ"
 
 
@@ -413,6 +415,13 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("فكر", 5, "تَفَكَّرَ", {("past", "huwa"): "تَفَكَّرَ", ("present", "ana"): "أَتَفَكَّرُ",
                             ("imperative", "anta"): "تَفَكَّرْ"}),
     ("ضرر", 1, "ضَرَّ", {("past", "huwa"): "ضَرَّ", ("present", "huwa"): "يَضُرُّ"}),
+    # أَحْبَبْ (a jussive) gave أَحْبَبَ; أَرَيْ gave يَأْرُيُ; مَلَكَتْ, يَحْزُن and مَشَ gave nothing.
+    ("حبب", 4, "أَحَبَّ", {("past", "huwa"): "أَحَبَّ", ("past", "hum"): "أَحَبُّوا"}),
+    ("رأي", 4, "أَرَى", {("present", "huwa"): "يُرِي", ("imperative", "anta"): "أَرِ"}),
+    ("ملك", 1, "مَلَكَ", {("past", "huwa"): "مَلَكَ", ("imperative", "anta"): "اِمْلِكْ"}),
+    ("حزن", 1, "حَزِنَ", {("past", "huwa"): "حَزِنَ", ("present", "huwa"): "يَحْزَنُ"}),
+    ("مشي", 1, "مَشَى", {("past", "huwa"): "مَشَى", ("imperative", "anta"): "اِمْشِ"}),
+    ("بدو", 4, "أَبْدَى", {("past", "huwa"): "أَبْدَى", ("present", "huwa"): "يُبْدِي"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -421,3 +430,32 @@ def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, 
 
     assert detail.lemma == lemma
     assert {key: table[key] for key in cells} == {key: normalize("NFC", form) for key, form in cells.items()}
+
+
+def _citation_form_faults(root: str, form: int, lemma: str) -> list[str]:
+    """Why a lemma does not look like a 3rd-masc-singular active past (empty if it does)."""
+    letters = [index for index, char in enumerate(lemma) if not combining(char)]
+    last = letters[-1]
+    faults = []
+    if lemma[last] not in "اى" and "\u064e" not in lemma[last + 1:]:
+        faults.append("does not end in a fatha")
+    if lemma[1:2] == "\u064f":
+        faults.append("opens with a damma (passive or Form IV present)")
+    if lemma[0] == "ي" and root[0] != "ي":
+        faults.append("opens with the present prefix ي")
+    if lemma[0] == "ت" and form not in (5, 6) and root[0] != "ت":
+        faults.append("opens with the present prefix ت")
+    if any(0x06D6 <= ord(char) <= 0x06ED for char in lemma):
+        faults.append("carries an Uthmani-only mark")
+    return faults
+
+
+def test_every_taught_verb_is_headed_by_its_citation_form():
+    # The card's headline and the generator's input are the lemma; the corpus sometimes
+    # gives a present, passive, jussive or a stem cut before its suffix instead.
+    taught = {f"{meaning.root}_{meaning.form}" for meaning in meanings.load()}
+    faulty = {f"{verb.root}_{verb.form} {verb.lemma}": faults
+              for verb in list_verbs() if f"{verb.root}_{verb.form}" in taught
+              if (faults := _citation_form_faults(verb.root, verb.form, verb.lemma))}
+
+    assert faulty == {}

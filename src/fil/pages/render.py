@@ -28,7 +28,8 @@ _CURRENT = ' aria-current="page"'
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
-          '&amp;family=Noto+Naskh+Arabic&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">\n')
+          '&amp;family=Noto+Naskh+Arabic&amp;family=Space+Grotesk:wght@600;700'
+          '&amp;family=Inter:wght@400;500;600&amp;display=swap">\n')
 
 # One shared player: a tap on any [data-audio] plays that file, stopping the last one.
 _PLAYER = ('<script>document.addEventListener("click",function(e){var b=e.target.closest("[data-audio]");'

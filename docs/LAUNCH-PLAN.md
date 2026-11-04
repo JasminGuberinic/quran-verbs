@@ -1,5 +1,7 @@
 # Fiʿl — launch plan
 
+**Order (owner, 2026-11-04): functionality first.** 1) verbs to ~400–500 → 2) nouns & adjectives ("Phase 3" below) → 3) stories & dialogues ("Phase 4") → 4) translation into the remaining 13 languages → 5) promotion & videos. Until step 4, every batch is bs + en (required) + tr (Turkish, done by a cheaper model right after each batch; it also has a free ayah translation).
+
 Agreed with the project owner on 2026-11-04. **Free options only** — nothing paid, no custom domain.
 
 ## Phase 1 — now, as early as possible (in parallel with adding verbs)

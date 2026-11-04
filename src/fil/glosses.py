@@ -98,6 +98,7 @@ _IRREGULAR = {
     "preferred": "prefer", "preferring": "prefer", "stopped": "stop", "stopping": "stop",
     "incurred": "incur", "incurring": "incur",
     "excelled": "excel", "excelling": "excel",
+    "sinned": "sin", "sinning": "sin", "regretted": "regret", "regretting": "regret",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

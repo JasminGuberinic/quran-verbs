@@ -124,3 +124,9 @@ def test_lent_meets_its_base_form():
 
 def test_excelled_meets_its_base_form():
     assert gloss_agrees("they excelled", ["surpass;excel+they_<verb>"]) is True
+
+
+def test_sinned_and_regretted_meet_their_base_forms():
+    # The doubled final consonant defeats the suffix stemmer ("sinn", "regrett").
+    assert gloss_agrees("we sinned", ["commit_a_crime;sin;do_wrong+we_<verb>"]) is True
+    assert gloss_agrees("they regretted", ["repent;regret+they_<verb>"]) is True

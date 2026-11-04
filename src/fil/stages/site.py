@@ -202,14 +202,19 @@ def _verb_view(meaning, summary, rank: int, total: int, corpus: _Corpus, sound: 
 
 
 def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) -> dict:
-    """One conjugation cell: always spoken, and recited too where the Quran recites it."""
+    """One conjugation cell: spoken, and recited too where the Quran recites it.
+
+    A cell Arabic does not use is shown, marked "not used" — but never spoken: a voice
+    reading it aloud would teach it like any other form.
+    """
     plain = cell.plain
     recitation = recitations.get(cell.arabic) if cell.source == "attested" else None
     recited = sound.word(*recitation.location) if recitation else None
     return {
         "tense": cell.tense, "pronoun": cell.pronoun, "arabic": cell.arabic,
         "plain": plain, "quran": cell.source == "attested",
-        "spoken": sound.spoken(plain),
+        "notUsed": not cell.is_used,
+        "spoken": sound.spoken(plain) if cell.is_used else None,
         "recited": recited,
         "recitedText": recitation.text if recited else None,
     }
@@ -217,13 +222,15 @@ def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) ->
 
 def _principal(cells: list[dict]) -> list[dict]:
     """The forms a card is shown by; a verb the Quran never uses in a principal cell
-    (يَحْزَنُونَ, تَحْزَنُونَ only) is shown by the forms it does use, never by none."""
-    by_cell = {(cell["tense"], cell["pronoun"]): cell for cell in cells}
+    (يَحْزَنُونَ, تَحْزَنُونَ only) is shown by the forms it does use, never by none — and
+    never by a form Arabic does not use (the past of وَذَرَ)."""
+    used = [cell for cell in cells if not cell["notUsed"]]
+    by_cell = {(cell["tense"], cell["pronoun"]): cell for cell in used}
     principal = [
         by_cell[key] for key in _PRINCIPAL
         if key in by_cell and (key[0] != "imperative" or by_cell[key]["quran"])
     ]
-    return principal or [cell for cell in cells if cell["quran"]] or cells
+    return principal or [cell for cell in used if cell["quran"]] or used
 
 
 def _ayah_view(example: AyahExample, verb: study.VerbKey, sound: _Sound) -> dict:

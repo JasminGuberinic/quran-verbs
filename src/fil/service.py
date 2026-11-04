@@ -70,6 +70,14 @@ class Cell:
     # Standard spellings written down by hand (data/conjugation_overrides.json) where the
     # generator gives none or the analyzer reads none — see fil.conjugation_overrides.
     documented: tuple[str, ...] = field(default_factory=tuple)
+    # Why Arabic does not use this cell (documented in data/conjugation_overrides.json);
+    # empty for a cell in use. A cell not in use stays in the table, marked — never
+    # spoken, practised or illustrated.
+    unused_why: str = ""
+
+    @property
+    def is_used(self) -> bool:
+        return not self.unused_why
 
     @property
     def plain(self) -> str:
@@ -239,7 +247,7 @@ def get_verb(root: str, form: int, conjugators: list[Conjugator] | None = None) 
     verb = _generatable_verb(entry)
     reconciled = _reconcile_entry(entry, conjugators)
     cells, _ = _cells(reconciled, _attested(root, form))
-    cells = tuple(_with_documented_spellings(entry, cell) for cell in cells if not _is_unused(entry, cell))
+    cells = tuple(_marked_if_unused(entry, _with_documented_spellings(entry, cell)) for cell in cells)
     counts = _count_sources(cells)
     return VerbDetail(
         root=entry.root,
@@ -291,25 +299,38 @@ def _table_forms(root: str, form: int, draft: Example) -> frozenset[str]:
     """Every spelling the engine has for the draft's declared cell, folded for comparison."""
     if not (draft.tense and draft.pronoun):
         return frozenset()
-    cell = next((c for c in get_verb(root, form).cells
-                 if c.tense == draft.tense and c.pronoun == draft.pronoun), None)
+    cell = _used_cell(get_verb(root, form), draft.tense, draft.pronoun)
     if cell is None:
         return frozenset()
     return frozenset(spelling_key(spelling) for spelling in cell.spellings)
 
 
-def _is_unused(entry: VerbEntry, cell: Cell) -> bool:
-    """Whether the language does not use this cell (documented), so no learner should see it.
+def _marked_if_unused(entry: VerbEntry, cell: Cell) -> Cell:
+    """The cell, marked "not used" where the language does not use it (documented).
 
     Fails fast if the Quran attests a cell documented as unused: the record is wrong.
     """
-    if not conjugation_overrides.is_unused(_conjugation_overrides(), entry.root, entry.form,
-                                           cell.tense, cell.pronoun):
-        return False
+    why = conjugation_overrides.unused_reason(_conjugation_overrides(), entry.root, entry.form,
+                                              cell.tense, cell.pronoun)
+    if not why:
+        return cell
     if _is_quran_attested(cell):
         raise ValueError(f"{entry.root}_{entry.form} {cell.tense}:{cell.pronoun} is documented as "
                          f"unused, yet the Quran attests {cell.arabic}")
-    return True
+    return replace(cell, unused_why=why)
+
+
+class UnusedCellError(ValueError):
+    """A sentence was asked for a cell Arabic does not use — it must never teach one."""
+
+
+def _used_cell(detail: VerbDetail, tense: str, pronoun: str) -> Cell | None:
+    """The verb's cell, or None when it has none; fails fast on a cell marked not used."""
+    cell = next((c for c in detail.cells if c.tense == tense and c.pronoun == pronoun), None)
+    if cell is not None and not cell.is_used:
+        raise UnusedCellError(f"{detail.root}_{detail.form} {tense}:{pronoun} ({cell.plain}) is not used "
+                              f"in Arabic: {cell.unused_why}")
+    return cell
 
 
 def _with_documented_spellings(entry: VerbEntry, cell: Cell) -> Cell:
@@ -395,6 +416,7 @@ def plan_verb(root: str, form: int, cells=None, path=AGENDA_JSON,
     """
     detail = get_verb(root, form)
     wanted = cells if cells is not None else _attested_teaching_cells(detail)
+    _refuse_unused_cells(detail, wanted)
     written = example_store.load(root, form, examples_path)
     fresh = [
         _recognising_existing_work(job, written)
@@ -501,9 +523,7 @@ def agenda_status(path=AGENDA_JSON) -> dict[str, int]:
 def brief_for(job: Job, word_limit: int = 12, analyze: Analyze | None = None) -> Brief:
     """Assemble everything needed to draft this job's sentence in one call."""
     detail = get_verb(job.root, job.form)
-    cell = next(
-        (c for c in detail.cells if c.tense == job.tense and c.pronoun == job.pronoun), None
-    )
+    cell = _used_cell(detail, job.tense, job.pronoun)
     if cell is None:
         raise KeyError(f"{job.key}: the verb has no {job.tense}/{job.pronoun} cell")
 
@@ -545,13 +565,19 @@ def _writable_spelling(cell: Cell, analyze: Analyze | None) -> tuple[str | None,
     return None, "no spelling of this form is analyzable — park the job rather than guess"
 
 
+def _refuse_unused_cells(detail: VerbDetail, wanted) -> None:
+    """A sentence is never planned for a cell Arabic does not use."""
+    for tense, pronoun in wanted:
+        _used_cell(detail, tense, pronoun)
+
+
 def _attested_teaching_cells(detail: VerbDetail) -> list[tuple[str, str]]:
     """The teaching cells this verb attests in the Quran (all of them if none is attested)."""
     attested = {(cell.tense, cell.pronoun) for cell in detail.cells if cell.source == "attested"}
     confirmed = [cell for cell in _TEACHING_CELLS if cell in attested]
     return confirmed or [
         cell for cell in _TEACHING_CELLS
-        if any(c.tense == cell[0] and c.pronoun == cell[1] for c in detail.cells)
+        if any(c.tense == cell[0] and c.pronoun == cell[1] and c.is_used for c in detail.cells)
     ]
 
 

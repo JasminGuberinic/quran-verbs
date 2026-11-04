@@ -53,6 +53,30 @@ test("meanings that share a word overlap", () => {
   assert.ok(!P.meaningsOverlap("to say", "to come"));
 });
 
+test("a form Arabic does not use is never asked about nor offered", () => {
+  const BEFIT = {
+    root: "بغي", form: 7, lemma: "انْبَغَى", meaning: { en: "to be proper", bs: "priličiti" },
+    principal: [cell("present", "huwa", "يَنْبَغِي")],
+    cells: [cell("present", "huwa", "يَنْبَغِي"), cell("present", "hiya", "تَنْبَغِي", false),
+            cell("past", "huwa", "اِنْبَغَى", false),
+            { ...cell("present", "anta", "تَنْبَغِي", false), notUsed: true, spoken: null },
+            { ...cell("present", "ana", "أَنْبَغِي", false), notUsed: true, spoken: null },
+            { ...cell("imperative", "anta", "اِنْبَغِ", false), notUsed: true, spoken: null }],
+    ayat: [], sentences: [],
+  };
+  const unused = new Set(["أَنْبَغِي", "اِنْبَغِ"]);
+  for (const type of ["form", "listen"]) {
+    for (let seed = 1; seed <= 200; seed++) {
+      const question = P.builders[type](BEFIT, [BEFIT, SAY], "en", P.seeded(seed));
+      assert.deepEqual(P.problemsWith(question), [], type);
+      assert.ok(!question.cell.notUsed, type);
+      const offered = question.options.map((option) => option.label ?? option.cell.plain);
+      assert.ok(offered.every((form) => !unused.has(form)), `${type}: ${offered}`);
+      assert.ok(question.readings.every((reading) => !reading.notUsed), type);
+    }
+  }
+});
+
 const cards = realCards();
 
 test("every question in thousands of sessions over the real cards is fair, in every language", { skip: !cards && "build/site not built" }, () => {

@@ -100,10 +100,16 @@
 
   // ---------- the questions ----------
 
+  /** The cells a learner may be asked about: a form Arabic does not use is shown on the
+   *  card, marked, but never drilled — not as the answer and not as a wrong option. */
+  function usedCells(card) {
+    return card.cells.filter((cell) => !cell.notUsed);
+  }
+
   /** Cells of a card that read exactly like `cell` — every reading of that one spelling. */
   function readingsOf(card, cell) {
     const key = spellingKey(cell.plain);
-    return card.cells.filter((other) => spellingKey(other.plain) === key);
+    return usedCells(card).filter((other) => spellingKey(other.plain) === key);
   }
 
   const builders = {
@@ -123,11 +129,12 @@
 
     /** See a form; say who does it and when. Every reading of the spelling counts as right. */
     form(card, cards, language, random) {
-      const attested = card.cells.filter((cell) => cell.quran);
-      const cell = pick(attested.length ? attested : card.cells, random);
+      const cells = usedCells(card);
+      const attested = cells.filter((cell) => cell.quran);
+      const cell = pick(attested.length ? attested : cells, random);
       const readings = readingsOf(card, cell);
       const sameSpelling = new Set(readings.map(labelKey));
-      const wrong = distinctBy(shuffle(card.cells, random).filter((other) => !sameSpelling.has(labelKey(other))),
+      const wrong = distinctBy(shuffle(cells, random).filter((other) => !sameSpelling.has(labelKey(other))),
         labelKey, [labelKey(cell)], OPTION_COUNT - 1);
       return {
         type: "form", card, item: cell.plain, cell, readings,
@@ -137,8 +144,9 @@
 
     /** Hear a form; choose how it is written. */
     listen(card, cards, language, random) {
-      const cell = pick(card.cells, random);
-      const wrong = distinctBy(shuffle(card.cells, random), (other) => spellingKey(other.plain),
+      const cells = usedCells(card);
+      const cell = pick(cells, random);
+      const wrong = distinctBy(shuffle(cells, random), (other) => spellingKey(other.plain),
         [spellingKey(cell.plain)], OPTION_COUNT - 1);
       return {
         type: "listen", card, item: cell.plain, cell, readings: readingsOf(card, cell),
@@ -159,7 +167,7 @@
       if (!card.sentences.length) return null;
       const sentence = pick(card.sentences, random);
       const target = sentence.words.find((word) => word.target);
-      const forms = card.cells.map((cell) => cell.plain);
+      const forms = usedCells(card).map((cell) => cell.plain);
       const wrong = distinctBy(shuffle(forms, random), spellingKey, [spellingKey(target.arabic)], OPTION_COUNT - 1);
       return {
         type: "sentence", card, item: sentence.arabic, sentence, target,
@@ -181,6 +189,8 @@
       return problems;
     }
     const options = question.options;
+    if (question.cell?.notUsed) problems.push("asks about a form Arabic does not use");
+    if (question.type === "form" && options.some((option) => option.cell.notUsed)) problems.push("offers a form Arabic does not use");
     if (options.length < 2) problems.push("fewer than two options");
     if (options.filter((option) => option.correct).length !== 1) problems.push("not exactly one correct option");
     if (question.type === "form") {

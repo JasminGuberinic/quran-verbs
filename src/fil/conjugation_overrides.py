@@ -10,8 +10,11 @@ than loosened in code, so every exception is visible, reviewable, and stays one.
 
 A generator also conjugates every cell mechanically, including ones Arabic does not use:
 the past of وَذَرَ (يَذَرُ, ذَرْ) was abandoned by the Arabs in favour of تَرَكَ, so وَذَرْتُ is a
-form nobody says. Such a cell is written down as `"unused": true` — with the reason — and is
-neither shown on the card nor offered in practice. A key `tense:*` covers a whole tense.
+form nobody says; the impersonal يَنْبَغِي "it is proper" has no أَنْبَغِي and no command اِنْبَغِ.
+Such a cell is written down as `"unused": true` — with the reason. It stays in the table, so
+the paradigm a learner meets is complete, but it is marked "not used": shown greyed, never
+spoken, never practised, never illustrated by a sentence. A key may name one pronoun or a
+group: `tense:*` (the whole tense), `tense:1st` (أَنَا, نَحْنُ) or `tense:2nd` (every أَنْتَ…).
 
 Pure: parsing and lookup only; the file is read by the service at the edge.
 """
@@ -38,6 +41,12 @@ class UnusedForm:
 
 
 ANY_PRONOUN = "*"
+
+# Pronoun groups a "not used" entry may name instead of one pronoun; "*" is every pronoun.
+PRONOUN_GROUPS: Mapping[str, frozenset[str]] = {
+    "1st": frozenset({"ana", "nahnu"}),
+    "2nd": frozenset({"anta", "anti", "antuma", "antum", "antunna"}),
+}
 
 # {(root, form): {(tense, pronoun | "*"): override}}
 Overrides = Mapping[tuple[str, int], Mapping[tuple[str, str], SpellingOverride | UnusedForm]]
@@ -67,10 +76,21 @@ def documented_spellings(overrides: Overrides, root: str, form: int,
     return override.spellings if isinstance(override, SpellingOverride) else ()
 
 
-def is_unused(overrides: Overrides, root: str, form: int, tense: str, pronoun: str) -> bool:
-    """Whether the language does not use this cell (by itself or by its whole tense)."""
+def unused_reason(overrides: Overrides, root: str, form: int, tense: str, pronoun: str) -> str:
+    """Why the language does not use this cell (by itself, its person or its whole tense);
+    empty when the cell is in use."""
     cells = overrides.get((root, form), {})
-    return any(isinstance(cells.get((tense, key)), UnusedForm) for key in (pronoun, ANY_PRONOUN))
+    keys = (pronoun, *(group for group, members in PRONOUN_GROUPS.items() if pronoun in members), ANY_PRONOUN)
+    return next((entry.why for key in keys if isinstance(entry := cells.get((tense, key)), UnusedForm)), "")
+
+
+def is_unused(overrides: Overrides, root: str, form: int, tense: str, pronoun: str) -> bool:
+    """Whether the language does not use this cell."""
+    return bool(unused_reason(overrides, root, form, tense, pronoun))
+
+
+def _is_group(cell: str) -> bool:
+    return cell.partition(":")[2] in (ANY_PRONOUN, *PRONOUN_GROUPS)
 
 
 def _verb_key(verb: str) -> tuple[str, int]:
@@ -98,6 +118,6 @@ def _override(verb: str, cell: str, entry: Mapping) -> SpellingOverride | Unused
         return UnusedForm(why)
     if not spellings:
         raise OverrideFormatError(f"{verb} {cell}: an override needs spellings (or \"unused\": true)")
-    if cell.endswith(":" + ANY_PRONOUN):
-        raise OverrideFormatError(f"{verb} {cell}: spellings belong to one cell, not a whole tense")
+    if _is_group(cell):
+        raise OverrideFormatError(f"{verb} {cell}: spellings belong to one cell, not a group of them")
     return SpellingOverride(spellings, why)

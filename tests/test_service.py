@@ -32,6 +32,7 @@ from fil.service import (
     record_outcome,
     review_queue,
     SelfReviewError,
+    UnusedCellError,
     tally,
     vocabulary,
 )
@@ -421,7 +422,7 @@ def test_the_faila_past_of_zalla_shows_its_kasra_and_the_quran_contracted_forms(
     assert table[("past", "ana")].plain == "ظَلِلْتُ"
     assert table[("past", "anta")].source == "attested"               # ظَلْتَ, 20:97
     assert "ظَلْتُمْ" in table[("past", "antum")].spellings          # 56:65
-    assert not any(tense == "imperative" for tense, _ in table)      # documented unused
+    assert all(not cell.is_used for (tense, _), cell in table.items() if tense == "imperative")  # documented unused
 
 
 def test_a_documented_spelling_outranks_the_generated_one():
@@ -593,13 +594,65 @@ def test_every_taught_verb_is_headed_by_its_citation_form():
     assert faulty == {}
 
 
-def test_a_tense_the_language_does_not_use_is_neither_shown_nor_practised():
+def test_a_tense_the_language_does_not_use_is_shown_marked_not_hidden():
     # وَذَرَ has only يَذَرُ and ذَرْ; the generator's وَذَرْتُ … is documented as unused.
     detail = get_verb("وذر", 1)
-    tenses = {cell.tense for cell in detail.cells}
+    unused = {cell.tense for cell in detail.cells if not cell.is_used}
+    used = {cell.tense for cell in detail.cells if cell.is_used}
 
-    assert "past" not in tenses and {"present", "imperative"} <= tenses
+    assert unused == {"past"} and used == {"present", "imperative"}
+    assert all("تَرَكَ" in cell.unused_why for cell in detail.cells if not cell.is_used)
     assert sum(detail.tier_counts.values()) == len(detail.cells)
+
+
+def test_the_impersonal_yanbaghi_is_used_only_in_the_third_person_and_has_no_command():
+    # يَنْبَغِي "it befits" (25:18 مَا كَانَ يَنبَغِي لَنَا): no اِنْبَغِ, no أَنْبَغِي, no تَنْبَغِي "you befit".
+    table = {(cell.tense, cell.pronoun): cell for cell in get_verb("بغي", 7).cells}
+
+    assert table[("imperative", "anta")].plain == "اِنْبَغِ" and not table[("imperative", "anta")].is_used
+    assert all(not cell.is_used for (tense, _), cell in table.items() if tense == "imperative")
+    assert not table[("present", "ana")].is_used and not table[("present", "anta")].is_used
+    assert not table[("past", "nahnu")].is_used and not table[("past", "antum")].is_used
+    assert table[("present", "huwa")].is_used and table[("present", "hiya")].is_used
+    assert table[("past", "huwa")].is_used
+
+
+@pytest.mark.parametrize("root, form, command", [
+    ("خفي", 1, "اِخْفَ"), ("كود", 1, "كِدْ"), ("زيل", 1, "زِلْ"), ("ظلل", 1, None),
+])
+def test_a_verb_without_a_command_marks_its_imperative_not_used(root, form, command):
+    imperatives = [cell for cell in get_verb(root, form).cells if cell.tense == "imperative"]
+
+    assert imperatives and all(not cell.is_used for cell in imperatives)
+    assert command is None or any(cell.plain == command for cell in imperatives)
+
+
+def test_no_sentence_or_open_job_ever_teaches_a_form_marked_not_used():
+    # Structural invariant over every studied verb: a cell marked "not used" is never
+    # illustrated by a shipped sentence and never owed one by the agenda.
+    from fil import agenda_store
+
+    unused = {(meaning.root, meaning.form, cell.tense, cell.pronoun)
+              for meaning in meanings.load()
+              for cell in get_verb(meaning.root, meaning.form).cells if not cell.is_used}
+    taught = {(meaning.root, meaning.form, example.tense, example.pronoun)
+              for meaning in meanings.load()
+              for example in example_store.load(meaning.root, meaning.form) if example.is_shippable}
+    owed = {(job.root, job.form, job.tense, job.pronoun) for job in agenda_store.load() if job.is_open}
+
+    assert unused, "the overrides document cells not used in Arabic"
+    assert unused & taught == set()
+    assert unused & owed == set()
+
+
+def test_a_sentence_for_a_form_marked_not_used_is_refused_before_the_gate():
+    draft = Example(arabic="اِنْبَغِ", words=(ExampleWord("اِنْبَغِ", "befit", "priliči", is_target=True),),
+                    en="befit", bs="priliči", tense="imperative", pronoun="anta")
+
+    with pytest.raises(UnusedCellError):
+        gate("بغي", 7, draft, analyze=lambda word: [])
+    with pytest.raises(UnusedCellError):
+        plan_verb("بغي", 7, cells=[("imperative", "anta")])
 
 
 @pytest.mark.parametrize("pronoun, spelling", [

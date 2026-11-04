@@ -4,7 +4,8 @@ The service is the single source of truth; this only shapes its output into tabl
 and writes them — the app reads, it never computes. Text content for now; audio
 columns are added when the audio phase lands. Every conjugation cell carries its
 `source` + `confidence` so the app can present attested/consensus forms as trusted
-and hide or mark the rest; every example carries its trust `tier` (see fil.examples),
+and hide or mark the rest, and a cell Arabic does not use carries why (`unused_why`,
+empty for a cell in use) so it is shown marked, never drilled; every example carries its trust `tier` (see fil.examples),
 so a sentence a reviewer approved can be shown differently from one only the analyzer
 has seen.
 """
@@ -53,6 +54,7 @@ def _create_schema(connection: sqlite3.Connection) -> None:
             arabic TEXT NOT NULL,
             source TEXT NOT NULL,
             confidence REAL NOT NULL,
+            unused_why TEXT NOT NULL,
             PRIMARY KEY (verb_id, tense, pronoun)
         );
         CREATE TABLE ayat (
@@ -112,8 +114,8 @@ def _insert_verb(connection: sqlite3.Connection, vid: str, detail: VerbDetail) -
 
 
 def _insert_conjugations(connection: sqlite3.Connection, vid: str, detail: VerbDetail) -> int:
-    rows = [(vid, c.tense, c.pronoun, c.arabic, c.source, c.confidence) for c in detail.cells]
-    connection.executemany("INSERT INTO conjugations VALUES (?,?,?,?,?,?)", rows)
+    rows = [(vid, c.tense, c.pronoun, c.arabic, c.source, c.confidence, c.unused_why) for c in detail.cells]
+    connection.executemany("INSERT INTO conjugations VALUES (?,?,?,?,?,?,?)", rows)
     return len(rows)
 
 

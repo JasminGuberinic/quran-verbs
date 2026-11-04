@@ -51,6 +51,9 @@ span.tag { cursor: default; }
 .conj td.attested { background: var(--accent-soft); }
 .conj td.attested .cell::after { content: " ●"; color: var(--accent); font-size: 0.6rem; vertical-align: middle; }
 .none { color: var(--muted); }
+.conj td.not-used { color: var(--muted); opacity: 0.75; }
+.conj td.not-used .cell { color: var(--muted); cursor: default; }
+.conj td.not-used small { display: block; font-size: 0.7rem; }
 .ayah { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 14px; padding: 12px 16px; }
 .ayah-head { display: flex; justify-content: space-between; margin: 0; font-size: 0.9rem; color: var(--muted); }
 .ayah blockquote { margin: 8px 0; font-size: 1.6rem; line-height: 2.1; }

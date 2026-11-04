@@ -38,6 +38,11 @@ and the site says reviews are by AI. Never park a job "for a human".
   a refused gloss → `data/gloss_exceptions.json` under the correct CAMeL root, or — when the
   analyzer reads the word only under a wrong root — under `"spelling:<word>"` (e.g. `spelling:تُبْ`),
   with `root` and `why`.
+- **Cells Arabic does not use** (impersonal يَنْبَغِي's أَنْبَغِي/اِنْبَغِ, the command of a verb of
+  state like اِخْفَ, of كَادَ or مَا زَالَ) are marked, not hidden: add `"unused": true` + `why` in
+  `data/conjugation_overrides.json` under `tense:pronoun`, `tense:1st`, `tense:2nd` or `tense:*`.
+  The site greys them with a note, never speaks them, and no sentence may be planned for them.
+  Only mark what you are sure of — a rare but possible form is not "not used".
 - To revive a parked job: `service.record_outcome(key, agenda.TODO, reason="un-parked: <why>")`.
 
 ## Steps

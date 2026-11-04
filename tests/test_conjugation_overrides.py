@@ -8,6 +8,7 @@ from fil.conjugation_overrides import (
     UnusedForm,
     documented_spellings,
     is_unused,
+    unused_reason,
     parse_overrides,
 )
 
@@ -57,3 +58,20 @@ def test_a_single_cell_can_be_documented_as_unused():
     assert is_unused(overrides, "ودع", 1, "past", "huwa")
     assert not is_unused(overrides, "ودع", 1, "past", "hum")
     assert not is_unused(parse_overrides(_RAW), "سأل", 1, "imperative", "anta")
+
+
+def test_a_person_group_can_be_documented_as_unused_and_names_its_reason():
+    overrides = parse_overrides({"بغي_7": {
+        "present:1st": {"unused": True, "why": "impersonal: no أَنْبَغِي"},
+        "present:2nd": {"unused": True, "why": "impersonal: no تَنْبَغِي 'you befit'"},
+    }})
+
+    assert unused_reason(overrides, "بغي", 7, "present", "ana") == "impersonal: no أَنْبَغِي"
+    assert unused_reason(overrides, "بغي", 7, "present", "antunna") == "impersonal: no تَنْبَغِي 'you befit'"
+    assert unused_reason(overrides, "بغي", 7, "present", "huwa") == ""
+    assert not is_unused(overrides, "بغي", 7, "past", "ana")
+
+
+def test_a_group_cannot_carry_spellings():
+    with pytest.raises(OverrideFormatError):
+        parse_overrides({"بغي_7": {"present:2nd": {"spellings": ["تَنْبَغِي"], "why": "w"}}})

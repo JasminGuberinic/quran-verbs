@@ -125,6 +125,7 @@ def _text() -> dict:
         "pronouns": {pronoun: pronoun for pronoun in render.PRONOUN_ORDER},
         "mainForms": "Main forms", "recited": "as recited", "inQuran": "In the Quran", "participle": "participle",
         "verbalNoun": "verbal noun", "conjugation": "Conjugation", "fullTable": "{0} of {1}", "tableNote": "●",
+        "notUsed": "not used", "notUsedNote": "Grey: not used in Arabic.",
         "recitedAyah": "Whole ayah", "noFreeTranslation": "no free translation", "sentences": "Sentences",
         "sentencesNote": "Composed.", "noSentences": "None yet.", "tabs": ["Learn"], "page": page,
     }
@@ -192,6 +193,23 @@ def test_the_audio_gate_fails_on_a_missing_file(tmp_path):
     for name in set(re.findall(r"audio/([\w.]+)", page.read_text(encoding="utf-8"))):
         (tmp_path / "audio" / name).write_bytes(b"sound")
     pages.check_audio_links(tmp_path, [page])
+
+
+def test_a_cell_not_used_in_arabic_is_shown_greyed_with_a_note_and_no_sound():
+    card = _card()
+    unused = {"tense": "imperative", "pronoun": "anta", "arabic": "قُلْ", "plain": "قُلْ", "quran": False,
+              "notUsed": True, "spoken": None, "recited": None, "recitedText": None}
+    card["cells"] = [*card["cells"], unused]
+    html = render.verb_page(PublishedVerb(card, "qala"), _language("en"), _text())
+
+    assert '<td class="not-used"' in html and "<small>not used</small>" in html
+    assert "Grey: not used in Arabic." in html
+    assert "None" not in html
+
+
+def test_a_table_without_unused_cells_has_no_unused_note():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("en"), _text())
+    assert "not-used" not in html and "Grey: not used" not in html
 
 
 def test_the_language_index_links_each_verb_page():

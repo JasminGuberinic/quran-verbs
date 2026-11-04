@@ -152,12 +152,24 @@ def _conjugation(card: dict, text: dict, root: str) -> str:
     return (f'<section><h2>{escape(text["conjugation"])}</h2>'
             f'<p class="note">{escape(fill(text["fullTable"], attested, len(card["cells"])))}</p>'
             f'<div class="table-scroll"><table class="conj"><thead><tr><th></th>{header}</tr></thead>'
-            f'<tbody>{rows}</tbody></table></div><p class="note">{escape(text["tableNote"])}</p></section>')
+            f'<tbody>{rows}</tbody></table></div><p class="note">{escape(text["tableNote"])}</p>'
+            f'{_not_used_note(card, text)}</section>')
+
+
+def _not_used_note(card: dict, text: dict) -> str:
+    """The legend for greyed cells, on the tables that have any."""
+    if not any(cell.get("notUsed") for cell in card["cells"]):
+        return ""
+    return f'<p class="note">{escape(text["notUsedNote"])}</p>'
 
 
 def _table_cell(cell: dict | None, root: str, text: dict) -> str:
     if cell is None:
         return '<td class="none">–</td>'
+    if cell.get("notUsed"):
+        # Shown so the paradigm is complete, never voiced: it is not a form to learn.
+        return (f'<td class="not-used" title="{escape(text["notUsedNote"])}"><span class="cell ar" lang="ar" dir="rtl">'
+                f'{cell["plain"]}</span><small>{escape(text["notUsed"])}</small></td>')
     mark = ' class="attested"' if cell["quran"] else ""
     recited = (f' <button class="tag" type="button" data-audio="{audio_link(cell["recited"], root)}" '
                f'aria-label="{escape(text["recited"])}">▶</button>') if cell.get("recited") else ""

@@ -14,6 +14,7 @@ def _detail() -> VerbDetail:
         cells=(
             Cell("past", "huwa", "كَتَبَ", "attested", 1.0, True),
             Cell("present", "huwa", "يَكْتُبُ", "generated", 0.7, None),
+            Cell("imperative", "anta", "اُكْتُبْ", "generated", 0.7, None, unused_why="for the test"),
         ),
         ayat=("2:79", "96:4"),
         examples=(
@@ -34,7 +35,7 @@ def _detail() -> VerbDetail:
 def test_write_bundle_populates_every_table(tmp_path):
     db = tmp_path / "content.sqlite"
     counts = write_bundle([_detail()], db)
-    assert counts == {"verbs": 1, "conjugations": 2, "ayat": 2, "examples": 1}
+    assert counts == {"verbs": 1, "conjugations": 3, "ayat": 2, "examples": 1}
 
     connection = sqlite3.connect(db)
     try:
@@ -43,6 +44,9 @@ def test_write_bundle_populates_every_table(tmp_path):
         assert connection.execute(
             "SELECT source FROM conjugations WHERE verb_id=? AND tense='past'", (vid,)
         ).fetchone()[0] == "attested"
+        assert connection.execute(
+            "SELECT tense, unused_why FROM conjugations WHERE verb_id=? AND unused_why != ''", (vid,)
+        ).fetchall() == [("imperative", "for the test")]
         assert connection.execute(
             "SELECT surah, ayah FROM ayat WHERE verb_id=? ORDER BY surah", (vid,)
         ).fetchall() == [(2, 79), (96, 4)]

@@ -248,6 +248,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .conj-cell:hover { border-color: var(--accent); }
 .conj-cell.attested { box-shadow: inset 0 -2px 0 var(--gold); }
 .conj-cell.playing { background: var(--accent-soft); }
+.conj-cell.not-used { flex-direction: column; gap: 0; color: var(--muted); background: transparent; border: 1px dashed var(--line); cursor: default; opacity: 0.75; }
+.conj-cell.not-used small { font-family: var(--font-body); font-size: 0.65rem; direction: ltr; }
 .conj td .quran-tag { margin-top: 2px; display: inline-block; }
 .conj-switch { display: none; }
 .conj-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.76rem; color: var(--muted); margin-top: 8px; }
@@ -552,6 +554,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     const rows = PRONOUN_ORDER.map((pronoun) => `<tr><th>${escapeHtml(t().pronouns[pronoun])}</th>${TENSE_ORDER.map((tense) => {
       const cell = find(tense, pronoun);
       if (!cell) return `<td data-col="${tense}"><span class="note">–</span></td>`;
+      if (cell.notUsed) return `<td data-col="${tense}"><span class="conj-cell not-used" title="${escapeHtml(t().notUsedNote)}">${cell.plain}<small>${escapeHtml(t().notUsed)}</small></span></td>`;
       const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}">▶ ${escapeHtml(t().recited)}</button>` : "";
       return `<td data-col="${tense}"><button class="conj-cell ${cell.quran ? "attested" : ""}" data-file="${cell.spoken}">${cell.plain}</button>${recited}</td>`;
     }).join("")}</tr>`).join("");
@@ -561,7 +564,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <div class="section-head"><h3 class="section-title">${escapeHtml(t().conjugation)}</h3><span class="note">${escapeHtml(t().fullTable(attested, verb.cells.length))}</span></div>
       ${switcher}
       <table class="conj show-past"><thead><tr><th></th>${TENSE_ORDER.map((tense) => `<th data-col="${tense}">${escapeHtml(t().tenses[tense])}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>
-      <p class="conj-legend"><span><i></i>${escapeHtml(t().tableNote)}</span></p>
+      <p class="conj-legend"><span><i></i>${escapeHtml(t().tableNote)}</span>${verb.cells.some((cell) => cell.notUsed) ? `<span>${escapeHtml(t().notUsedNote)}</span>` : ""}</p>
     </section>`;
   }
 

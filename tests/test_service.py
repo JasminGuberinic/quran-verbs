@@ -387,8 +387,25 @@ def test_the_contracted_present_of_tasaala_is_confirmed_not_quarantined():
     cell = next(c for c in get_verb("سأل", 6).cells if (c.tense, c.pronoun) == ("present", "antum"))
 
     assert cell.source == "attested"
-    assert cell.documented == ("تَسَاءَلُونَ", "تَتَسَاءَلُونَ")
-    assert cell.plain == "تَسَاءَلُونَ"
+    assert cell.documented == ("تَتَسَاءَلُونَ", "تَسَاءَلُونَ")
+    assert cell.plain == "تَتَسَاءَلُونَ"     # the regular form, like the rest of the tense
+
+
+def test_the_assimilated_present_of_tazakka_is_confirmed_not_quarantined():
+    # 80:3 has يَزَّكَّىٰٓ (the tāʾ of يَتَزَكَّى assimilated into the zāy).
+    cell = next(c for c in get_verb("زكو", 5).cells if (c.tense, c.pronoun) == ("present", "huwa"))
+
+    assert cell.source == "attested" and cell.plain == "يَتَزَكَّى"
+
+
+def test_the_faila_past_of_zalla_shows_its_kasra_and_the_quran_contracted_forms():
+    detail = get_verb("ظلل", 1)
+    table = {(cell.tense, cell.pronoun): cell for cell in detail.cells}
+
+    assert table[("past", "ana")].plain == "ظَلِلْتُ"
+    assert table[("past", "anta")].source == "attested"               # ظَلْتَ, 20:97
+    assert "ظَلْتُمْ" in table[("past", "antum")].spellings          # 56:65
+    assert not any(tense == "imperative" for tense, _ in table)      # documented unused
 
 
 def test_a_documented_spelling_outranks_the_generated_one():
@@ -466,6 +483,17 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("حيي", 10, "اسْتَحْيَا", {("past", "ana"): "اِسْتَحْيَيْتُ", ("imperative", "anta"): "اِسْتَحْيِ"}),
     ("خوض", 1, "خَاضَ", {("past", "ana"): "خُضْتُ", ("present", "huwa"): "يَخُوضُ"}),
     ("سأل", 6, "تَسَاءَلَ", {("past", "huwa"): "تَسَاءَلَ", ("present", "hum"): "يَتَسَآءَلُونَ"}),
+    # Presents يُسارِعُ / يُضاعِفُ / يَقْبَلُ / يَلْعَبْ / يَنطِقُ, the passive أُجِيبَت, cut stems
+    # فَرَّقُ / اخْتَصَمُ / راوَدُ.
+    ("سرع", 3, "سَارَعَ", {("past", "ana"): "سَارَعْتُ", ("present", "huwa"): "يُسَارِعُ"}),
+    ("ضعف", 3, "ضَاعَفَ", {("past", "ana"): "ضَاعَفْتُ", ("imperative", "anta"): "ضَاعِفْ"}),
+    ("فرق", 2, "فَرَّقَ", {("past", "ana"): "فَرَّقْتُ", ("present", "huwa"): "يُفَرِّقُ"}),
+    ("قبل", 1, "قَبِلَ", {("past", "ana"): "قَبِلْتُ", ("present", "huwa"): "يَقْبَلُ"}),
+    ("لعب", 1, "لَعِبَ", {("past", "ana"): "لَعِبْتُ", ("present", "huwa"): "يَلْعَبُ"}),
+    ("نطق", 1, "نَطَقَ", {("past", "ana"): "نَطَقْتُ", ("present", "huwa"): "يَنطِقُ"}),
+    ("جوب", 4, "أَجَابَ", {("past", "ana"): "أَجَبْتُ", ("present", "huwa"): "يُجِيبُ"}),
+    ("خصم", 8, "اخْتَصَمَ", {("past", "ana"): "اِخْتَصَمْتُ", ("present", "huwa"): "يَخْتَصِمُ"}),
+    ("رود", 3, "رَاوَدَ", {("past", "ana"): "رَاوَدْتُ", ("present", "huwa"): "يُرَاوِدُ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)
@@ -551,6 +579,8 @@ def _cell_of(detail, tense: str, pronoun: str):
     ("فطر", {("present", "huwa"): "يَفْطُرُ", ("past", "ana"): "فَطَرْتُ"}),
     ("نبذ", {("present", "huwa"): "يَنْبِذُ"}),
     ("تبع", {("present", "huwa"): "يَتْبَعُ", ("past", "ana"): "تَبِعْتُ"}),
+    ("فرض", {("present", "huwa"): "يَفْرِضُ", ("past", "ana"): "فَرَضْتُ"}),
+    ("خسف", {("present", "huwa"): "يَخْسِفُ", ("past", "ana"): "خَسَفْتُ"}),
     # The faʿila past the lemma مَسَّ hides is documented cell by cell.
     ("مسس", {("present", "huwa"): "يَمَسُّ", ("past", "ana"): "مَسِسْتُ", ("past", "huwa"): "مَسَّ"}),
     # Fitted from the corpus once the Uthmani silent alef (يَدْعُوا۟) stopped hiding the present.

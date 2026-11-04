@@ -291,10 +291,75 @@
  "سأل_6": {
   "present:antum": {
    "spellings": [
-    "تَسَاءَلُونَ",
-    "تَتَسَاءَلُونَ"
+    "تَتَسَاءَلُونَ",
+    "تَسَاءَلُونَ"
    ],
-   "why": "The Quran has the contracted تَسَآءَلُونَ (4:1 تَسَآءَلُونَ بِهِۦ), one of the two tāʾs of تَتَسَاءَلُونَ dropped, as is regular for tafāʿala/tafaʿʿala presents; the generator gives only the full form, so every generator 'disagreed' and the cell was quarantined. تَسَاءَلُونَ is the contracted form in standard spelling (what the table shows, matching the Quran) and تَتَسَاءَلُونَ the equally correct full form."
+   "why": "The Quran has the contracted تَسَآءَلُونَ (4:1 تَسَآءَلُونَ بِهِۦ), one of the two tāʾs of تَتَسَاءَلُونَ dropped, as is regular for tafāʿala/tafaʿʿala presents; the generator gives only the full form, so every generator 'disagreed' and the cell was quarantined. تَتَسَاءَلُونَ is the regular full form the table shows, like the rest of the tense, and تَسَاءَلُونَ the Quran's contracted form in standard spelling."
+  }
+ },
+ "ظلل_1": {
+  "past:ana": {
+   "spellings": [
+    "ظَلِلْتُ"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْتُ is the standard form."
+  },
+  "past:nahnu": {
+   "spellings": [
+    "ظَلِلْنَا"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْنَا is the standard form."
+  },
+  "past:anti": {
+   "spellings": [
+    "ظَلِلْتِ"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْتِ is the standard form."
+  },
+  "past:antuma": {
+   "spellings": [
+    "ظَلِلْتُمَا"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْتُمَا is the standard form."
+  },
+  "past:antunna": {
+   "spellings": [
+    "ظَلِلْتُنَّ"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْتُنَّ is the standard form."
+  },
+  "past:hunna": {
+   "spellings": [
+    "ظَلِلْنَ"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْنَ is the standard form."
+  },
+  "past:anta": {
+   "spellings": [
+    "ظَلِلْتَ",
+    "ظَلْتَ"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْتَ is the standard form. The Quran has the contracted ظَلْتَ (20:97 ٱلَّذِى ظَلْتَ عَلَيْهِ عَاكِفًا), dropping the doubled lām as is regular for this verb; both are correct."
+  },
+  "past:antum": {
+   "spellings": [
+    "ظَلِلْتُمْ",
+    "ظَلْتُمْ"
+   ],
+   "why": "ظَلَّ is faʿila (ظَلِلَ يَظَلُّ), but the lemma ظَلَّ hides the past stem vowel, so the generator builds the faʿala past ظَلَلْ-. Before a consonant suffix the kasra shows: ظَلِلْتُمْ is the standard form. The Quran has the contracted ظَلْتُمْ (56:65 فَظَلْتُمْ تَفَكَّهُونَ), dropping the doubled lām as is regular for this verb; both are correct."
+  },
+  "imperative:*": {
+   "unused": true,
+   "why": "ظَلَّ 'to remain, keep doing' is an incomplete verb (a sister of كَانَ) describing a state that lasts through the day; its mechanical imperative اِظْلَلْ is not in use."
+  }
+ },
+ "زكو_5": {
+  "present:huwa": {
+   "spellings": [
+    "يَتَزَكَّى",
+    "يَزَّكَّى"
+   ],
+   "why": "The Quran has يَزَّكَّىٰٓ (80:3 لَعَلَّهُۥ يَزَّكَّىٰٓ, 80:7), the tāʾ of يَتَزَكَّى assimilated into the zāy as is regular for tafaʿʿala presents; the generator gives only the full form, so the cell was quarantined. يَتَزَكَّى is the regular full form the table shows, like the rest of the tense, and يَزَّكَّى the Quran's form in standard spelling."
   }
  }
 }

@@ -19,7 +19,7 @@ from functools import lru_cache
 from datetime import datetime, timedelta, timezone
 from typing import Iterable, Iterator
 
-from fil import agenda, agenda_store, conjugation_overrides, example_store
+from fil import agenda, agenda_store, conjugation_overrides, example_store, present_vowels
 from fil.agenda import Job
 from fil.conjugation import Conjugator, ConjugationTable, QutrubConjugator
 from fil.corpus.catalog import VerbEntry, build_catalog
@@ -35,9 +35,10 @@ from fil.examples import (
 )
 from fil.governor import permit
 from fil.journal import Event
+from fil.models import Verb
 from fil import journal, journal_store
 from fil.reconciliation import ReconciledCell, agrees_across_join, reconcile, tier_counts
-from fil.resources import AGENDA_JSON, CONJUGATION_OVERRIDES_JSON, CORPUS_CORRECTIONS_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, QAC_MORPHOLOGY
+from fil.resources import AGENDA_JSON, CONJUGATION_OVERRIDES_JSON, CORPUS_CORRECTIONS_JSON, EXAMPLES_JSON, GLOSS_EXCEPTIONS_JSON, JOURNAL_JSONL, PRESENT_VOWELS_JSON, QAC_MORPHOLOGY
 from fil.vocabulary import VocabularyEntry, build_vocabulary
 
 # The default generator set: light and always available. Callers opt into consensus
@@ -235,7 +236,7 @@ def get_verb(root: str, form: int, conjugators: list[Conjugator] | None = None) 
     Raises KeyError if the (root, form) is not in the catalogue.
     """
     entry = _find(root, form)
-    verb = build_verb(entry, _attested(root, form))
+    verb = _generatable_verb(entry)
     reconciled = _reconcile_entry(entry, conjugators)
     cells, _ = _cells(reconciled, _attested(root, form))
     cells = tuple(_with_documented_spellings(entry, cell) for cell in cells if not _is_unused(entry, cell))
@@ -334,6 +335,21 @@ def _with_documented_spellings(entry: VerbEntry, cell: Cell) -> Cell:
 def _is_quran_attested(cell: Cell) -> bool:
     # generator_agrees is None exactly when there was no Quranic form to agree with.
     return cell.source == "attested" or cell.generator_agrees is not None
+
+
+def _generatable_verb(entry: VerbEntry) -> Verb | None:
+    """The verb ready for generation — its present vowel fitted to the corpus, else recorded by hand."""
+    documented = present_vowels.documented_vowel(_present_vowels(), entry.root, entry.form)
+    return build_verb(entry, _attested(entry.root, entry.form), documented)
+
+
+@lru_cache(maxsize=1)
+def _present_vowels() -> present_vowels.PresentVowels:
+    """Hand-recorded present vowels: {(root, form): vowel + why} (data/present_vowels.json)."""
+    if not PRESENT_VOWELS_JSON.exists():
+        return {}
+    return present_vowels.parse_present_vowels(
+        json.loads(PRESENT_VOWELS_JSON.read_text(encoding="utf-8")))
 
 
 @lru_cache(maxsize=1)
@@ -900,7 +916,7 @@ def _attested(root: str, form: int) -> AttestedCells:
 
 
 def _reconcile_entry(entry: VerbEntry, conjugators: list[Conjugator] | None) -> list[ReconciledCell] | None:
-    verb = build_verb(entry, _attested(entry.root, entry.form))
+    verb = _generatable_verb(entry)
     if verb is None:
         return None
     tables = _tables(verb, conjugators or _DEFAULT_CONJUGATORS)

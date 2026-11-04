@@ -31,6 +31,20 @@ def test_superscript_alef_over_a_consonant_stands_for_an_omitted_letter():
     assert not forms_match("رَحْمَٰن", "رَحْمن")
 
 
+def test_the_silent_alef_after_a_final_waw_is_no_evidence():
+    # The Uthmani text writes it after a singular defective verb too (يَدْعُوا۟ for
+    # يَدْعُو); it was why دَعَا, تَلَا, رَجَا… could not be fitted to a present vowel.
+    assert forms_match("يَدْعُو", "يَدْعُوا۟")
+    assert forms_match("جَاؤُوا", "جَآءُو")
+    assert forms_match("قَالُوا", "قَالُوا۟")
+
+
+def test_the_long_a_after_a_consonantal_waw_still_counts():
+    # The dual دَعَوَا ends in a pronounced ā; it is not the plural دَعَوْا.
+    assert not forms_match("دَعَوَا", "دَعَوْا")
+    assert not forms_match("دَعَوَا", "دَعَوْ")
+
+
 def test_attested_cell_uses_truth_and_records_agreement():
     generated = {"past": {"hum": "كَتَبُوا", "huwa": "كَتَبَ"}}
     attested = {("past", "hum"): "كَتَبُوا"}  # Quran attests only 'hum'

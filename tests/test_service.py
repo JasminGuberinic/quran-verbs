@@ -514,3 +514,37 @@ def test_a_documented_spelling_the_quran_attests_confirms_the_cell():
 
 def _cell_of(detail, tense: str, pronoun: str):
     return next(cell for cell in detail.cells if (cell.tense, cell.pronoun) == (tense, pronoun))
+
+
+@pytest.mark.parametrize("root, cells", [
+    # Verbs whose present the Quran shows the fit nothing to read in — their vowel is
+    # recorded by hand (data/present_vowels.json) and the full table follows from it.
+    ("قرب", {("present", "huwa"): "يَقْرَبُ", ("past", "ana"): "قَرِبْتُ"}),
+    ("جيأ", {("present", "huwa"): "يَجِيءُ", ("imperative", "anta"): "جِئْ"}),
+    ("ترك", {("present", "huwa"): "يَتْرُكُ", ("imperative", "anta"): "اُتْرُكْ"}),
+    ("كفي", {("present", "huwa"): "يَكْفِي"}),
+    ("وقي", {("present", "huwa"): "يَقِي", ("imperative", "anta"): "قِ"}),
+    ("وقع", {("present", "huwa"): "يَقَعُ", ("imperative", "anta"): "قَعْ"}),
+    ("سوأ", {("present", "huwa"): "يَسُوءُ", ("past", "ana"): "سُؤْتُ"}),
+    ("هود", {("present", "huwa"): "يَهُودُ", ("past", "nahnu"): "هُدْنَا"}),
+    # The faʿila past the lemma مَسَّ hides is documented cell by cell.
+    ("مسس", {("present", "huwa"): "يَمَسُّ", ("past", "ana"): "مَسِسْتُ", ("past", "huwa"): "مَسَّ"}),
+    # Fitted from the corpus once the Uthmani silent alef (يَدْعُوا۟) stopped hiding the present.
+    ("دعو", {("present", "huwa"): "يَدْعُو", ("imperative", "anta"): "اُدْعُ"}),
+])
+def test_a_recorded_present_vowel_gives_the_verb_its_full_table(root, cells):
+    detail = get_verb(root, 1)
+    table = {(cell.tense, cell.pronoun): normalize("NFC", cell.plain) for cell in detail.cells}
+
+    assert detail.generatable
+    assert {key: table[key] for key in cells} == {key: normalize("NFC", form) for key, form in cells.items()}
+
+
+def test_every_recorded_present_vowel_is_one_the_corpus_cannot_show():
+    # A record is only a stand-in: where the fit can read the Quran, the record must go.
+    from fil.driver import _infer_present_vowel
+    from fil.service import _attested, _find, _present_vowels
+
+    fittable = [root for (root, form) in _present_vowels()
+                if _infer_present_vowel(_find(root, form).lemma, _attested(root, form))]
+    assert fittable == []

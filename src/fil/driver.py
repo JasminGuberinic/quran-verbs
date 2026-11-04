@@ -3,7 +3,9 @@
 To conjugate a Form-I verb we need its present-tense stem vowel (a/i/u), which
 the corpus does not tag. We infer it by fitting: generate with each candidate
 vowel and keep the one whose present tense matches the form the Quran attests.
-For derived forms (II–X) the pattern fixes the vowel, so any value works.
+For derived forms (II–X) the pattern fixes the vowel, so any value works. Where the
+Quran attests no present the fit can read, a vowel recorded by hand (with its reason,
+see fil.present_vowels) stands in — the fit wins wherever it can speak.
 
 This is what lets the engine scale from a few hand-authored verbs to every verb
 in the Quran, each still checked against attested truth downstream.
@@ -20,9 +22,14 @@ from fil.reconciliation import forms_match
 _CANDIDATE_VOWELS = ("a", "i", "u")
 
 
-def build_verb(entry: VerbEntry, attested: AttestedCells) -> Verb | None:
-    """Build a Verb ready for generation, or None if we cannot do so safely."""
-    present_vowel = _present_vowel(entry, attested)
+def build_verb(entry: VerbEntry, attested: AttestedCells,
+               documented_vowel: str | None = None) -> Verb | None:
+    """Build a Verb ready for generation, or None if we cannot do so safely.
+
+    `documented_vowel` is the hand-recorded present vowel, used only when the corpus
+    gives the fit nothing to work with.
+    """
+    present_vowel = _present_vowel(entry, attested, documented_vowel)
     if present_vowel is None:
         return None
     try:
@@ -39,11 +46,11 @@ def build_verb(entry: VerbEntry, attested: AttestedCells) -> Verb | None:
         return None  # lemma not a valid vocalized input
 
 
-def _present_vowel(entry: VerbEntry, attested: AttestedCells) -> str | None:
-    """The present stem vowel: fixed by the pattern for II–X, inferred for I."""
+def _present_vowel(entry: VerbEntry, attested: AttestedCells, documented_vowel: str | None) -> str | None:
+    """The present stem vowel: fixed by the pattern for II–X, inferred (else documented) for I."""
     if entry.form != 1:
         return "u"  # ignored by the generator for derived forms
-    return _infer_present_vowel(entry.lemma, attested)
+    return _infer_present_vowel(entry.lemma, attested) or documented_vowel
 
 
 def _infer_present_vowel(lemma: str, attested: AttestedCells) -> str | None:

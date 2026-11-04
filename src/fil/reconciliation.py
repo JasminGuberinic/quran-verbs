@@ -153,7 +153,7 @@ def forms_match(a: str, b: str) -> bool:
 
 def _normalize(form: str) -> str:
     text = _fold_orthography(_standard_spelling(unicodedata.normalize("NFD", form)))
-    text = _strip_leading_harakat(text)
+    text = _without_silent_final_alef(_strip_leading_harakat(text))
     if len(text) >= 2 and text[0] == _ALEF and ord(text[1]) in _HARAKAT:
         text = text[0] + text[2:]  # imperative's initial connecting vowel
     return text
@@ -276,6 +276,17 @@ def _final_long_a_as_alef(letters: list[Letter]) -> list[Letter]:
     (_, before_marks), (last, last_marks) = letters[-2], letters[-1]
     is_long_a = last in ("ى", _YAA) and _FATHA in before_marks and not _ARTICULATION_MARKS & set(last_marks)
     return [*letters[:-1], (_ALEF, last_marks)] if is_long_a else letters
+
+
+def _without_silent_final_alef(text: str) -> str:
+    """Drop the unpronounced alef written after a final wāw.
+
+    Imlāʾī writes it only after the plural wāw (قَالُوا); the Uthmani text also writes it
+    after the wāw of a singular defective verb (يَدْعُوا۟ for يَدْعُو). Either way it is
+    never pronounced, so it is no evidence about the form. A wāw with a fatḥa is a
+    consonant and the alef after it a real long ā (the dual دَعَوَا) — that one is kept.
+    """
+    return text[:-1] if text.endswith("و" + _ALEF) else text
 
 
 def _strip_leading_harakat(text: str) -> str:

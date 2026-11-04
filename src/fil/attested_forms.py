@@ -10,7 +10,9 @@ included. Its meaning in context is a gloss: an authored one (data/form_glosses.
 filled through `fil forms`), or the in-context gloss of an example ayah that holds the
 very same word. A form whose letters read two ways (تَقُولُ: "you say" and "she says")
 reuses no single in-context gloss — it would be wrong half the time. Until a form has a
-gloss, its grammar (tense · person · object) is shown instead, which is never wrong.
+gloss, its grammar (tense · mood · person · object) is shown instead, which is never wrong.
+A present's mood is the corpus's own tag: subjunctive (MOOD:SUBJ, يَقُولَ), jussive
+(MOOD:JUS, يَقُلْ), and indicative (يَقُولُ) wherever it gives none.
 
 Pure: occurrences and texts in, plain values out.
 """
@@ -19,7 +21,7 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 from collections.abc import Iterable, Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from itertools import groupby
 
 from fil.corpus.oracle import pronoun_key
@@ -38,6 +40,10 @@ class Grammar:
     pronoun: str                 # the subject, as a conjugation pronoun key (huwa, antum…)
     is_passive: bool
     objects: tuple[str, ...]     # attached object pronouns, as pronoun keys (huwa = "him")
+    mood: str | None = None      # a present's mood (one of MOODS); None for the past and the command
+
+    def without_mood(self) -> Grammar:
+        return replace(self, mood=None)
 
 
 @dataclass(frozen=True)
@@ -67,7 +73,9 @@ class AttestedForm:
 
     @property
     def is_ambiguous(self) -> bool:
-        return len(self.grammars) > 1
+        # Mood alone does not count: يَقُولُوا۟ after أَن or after لَمْ is still "they say",
+        # by the same people, so its in-context gloss still fits.
+        return len({grammar.without_mood() for grammar in self.grammars}) > 1
 
 
 @dataclass(frozen=True)
@@ -114,13 +122,32 @@ def grammar_of(occurrence: VerbOccurrence) -> Grammar:
         pronoun=pronoun_key((occurrence.person, occurrence.gender, occurrence.number)),
         is_passive=occurrence.passive,
         objects=tuple(pronoun_key(pronoun) for pronoun in occurrence.objects),
+        mood=mood_of(occurrence),
     )
+
+
+MOODS = {"IND": "indicative", "SUBJ": "subjunctive", "JUS": "jussive"}   # corpus tag → our key
+
+
+class UnknownMood(ValueError):
+    """The corpus tags a present with a mood we do not know how to name."""
+
+
+def mood_of(occurrence: VerbOccurrence) -> str | None:
+    """A present's mood; the corpus marks only the subjunctive and the jussive, so the rest are indicative."""
+    if occurrence.tense != "present":
+        return None
+    tag = occurrence.mood or "IND"
+    if tag not in MOODS:
+        raise UnknownMood(f"{occurrence.surah}:{occurrence.ayah}:{occurrence.word}: MOOD:{tag}")
+    return MOODS[tag]
 
 
 def grammar_view(grammar: Grammar) -> dict:
     """A reading as the page data carries it (site/ayat.js and fil.pages.render label it)."""
-    return {"tense": grammar.tense, "pronoun": grammar.pronoun, "passive": grammar.is_passive,
+    view = {"tense": grammar.tense, "pronoun": grammar.pronoun, "passive": grammar.is_passive,
             "objects": list(grammar.objects)}
+    return {**view, "mood": grammar.mood} if grammar.mood else view
 
 
 def attested_forms(uses: Sequence[FormOccurrence]) -> list[AttestedForm]:

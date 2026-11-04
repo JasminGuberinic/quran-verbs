@@ -127,3 +127,39 @@ def test_every_studied_verb_is_its_forms_exactly():
 def test_form_occurrences_carry_their_grammar():
     use = _uses()[_SAY][0]
     assert isinstance(use, FormOccurrence) and use.grammar == _THEY_SAID
+
+
+# The same verb, same person, in each mood: indicative (tagged, then untagged), jussive, subjunctive.
+_MOOD_LINES = [
+    "4:1:1:1\tيَقُولُ\tV\tIMPF|VF:1|ROOT:قول|LEM:قالَ|3MS|MOOD:IND",
+    "4:2:1:1\tيَقُلْ\tV\tIMPF|VF:1|ROOT:قول|LEM:قالَ|3MS|MOOD:JUS",
+    "4:3:1:1\tيَقُولَ\tV\tIMPF|VF:1|ROOT:قول|LEM:قالَ|3MS|MOOD:SUBJ",
+    "4:4:1:1\tيَقُولُ\tV\tIMPF|VF:1|ROOT:قول|LEM:قالَ|3MS",
+    "4:5:1:1\tقَالَ\tV\tPERF|VF:1|ROOT:قول|LEM:قالَ|3MS",
+]
+
+
+def _mood_forms():
+    segments = list(iter_segments(iter(_MOOD_LINES)))
+    uses = attested_forms.form_occurrences(iter_verb_occurrences(iter(segments)), attested_forms.word_texts(segments))
+    return {form.text: form for form in attested_forms.attested_forms(uses[_SAY])}
+
+
+def test_a_present_carries_its_mood_and_the_past_none():
+    forms = _mood_forms()
+    assert [grammar.mood for grammar in forms["يَقُولُ"].grammars] == ["indicative"]
+    assert forms["يَقُلْ"].grammars[0].mood == "jussive"
+    assert forms["يَقُولَ"].grammars[0].mood == "subjunctive"
+    assert forms["قَالَ"].grammars[0].mood is None
+
+
+def test_the_mood_reaches_the_page_data_only_where_there_is_one():
+    forms = _mood_forms()
+    assert attested_forms.grammar_view(forms["يَقُلْ"].grammars[0])["mood"] == "jussive"
+    assert "mood" not in attested_forms.grammar_view(forms["قَالَ"].grammars[0])
+
+
+def test_a_mood_alone_does_not_make_a_form_ambiguous():
+    both = _form("يَقُولُوا۟", Grammar("present", "hum", False, (), "subjunctive"),
+                 Grammar("present", "hum", False, (), "jussive"))
+    assert not both.is_ambiguous

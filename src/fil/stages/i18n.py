@@ -194,6 +194,10 @@ THE RULES
    {name}, not a Christian or secular rendering. Keep honorific usage natural.
 7. Keep the grammar the English shows: tense, person and number ("he said", "they will
    go", "go! (you all)"), and keep it short — these are glosses, not commentary.
+   English "you" hides number; the Arabic does not. A 2nd-person PLURAL form (past ـتُمْ,
+   present تَـ…ـونَ, command ـُوا as in أَطِيعُوا, "your" as ـكُمْ) must be plural in
+   {name} too, even when the English only says "you" — the Bosnian (vi, -te, -ite,
+   vaš) shows it.
 8. Save the files as UTF-8 plain text with the same names.
 
 THE FILES

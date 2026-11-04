@@ -33,6 +33,8 @@ def test_irregular_verb_forms_still_agree():
     assert gloss_agrees("we grew", ["germinate;make_grow;cultivate+we_<verb>"]) is True
     assert gloss_agrees("they lied", ["lie+they_<verb>"]) is True
     assert gloss_agrees("stopped", ["stop;desist"]) is True
+    assert gloss_agrees("fled", ["flee;be_averse_to;be_alienated+he;it_<verb>"]) is True
+    assert gloss_agrees("the noise rose", ["rise;rise above"]) is True
 
 
 def test_inflected_forms_agree_through_the_stem():

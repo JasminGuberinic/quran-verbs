@@ -39,6 +39,13 @@ def test_the_silent_alef_after_a_final_waw_is_no_evidence():
     assert forms_match("قَالُوا", "قَالُوا۟")
 
 
+def test_a_silent_alef_inside_the_word_is_no_letter_of_the_form():
+    # 12:87 لَا يَا۟يْـَٔسُ: the alef under ۟ is written, never read — the form is يَيْأَسُ.
+    assert forms_match("يَيْأَسُ", "يَا۟يْـَٔسُ")
+    assert forms_match("تَيْأَسُوا", "تَا۟يْـَٔسُوا۟")
+    assert not forms_match("يَيْأَسُ", "يَا۟يْـَٔسِينَ")
+
+
 def test_the_long_a_after_a_consonantal_waw_still_counts():
     # The dual دَعَوَا ends in a pronounced ā; it is not the plural دَعَوْا.
     assert not forms_match("دَعَوَا", "دَعَوْا")

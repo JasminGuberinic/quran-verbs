@@ -68,5 +68,11 @@
   "42:5:3": {
    "why": "يَتَفَطَّرْنَ in تَكَادُ السَّمَاوَاتُ يَتَفَطَّرْنَ مِن فَوْقِهِنَّ (42:5) is Form V تَفَطَّرَ 'to split apart' (doubled ط, prefix تَ), not Form I فَطَرَ. The corpus tags it VF:1, which counted it as a Form I present hunna spelling and made the generator's يَفْطُرْنَ look wrong."
   }
+ },
+ "ظهر_4": {
+  "28:48:22": {
+   "form": 6,
+   "why": "تَظَٰهَرَا in سِحْرَانِ تَظَٰهَرَا (28:48, 'two magics backing each other up') is Form VI تَظَاهَرَ (prefix تَ, long ā after the first radical, as in 66:4 تَظَٰهَرَا), not Form IV أَظْهَرَ, yet the corpus tags it VF:4, which counted it as the Form IV past huma and quarantined that cell."
+  }
  }
 }

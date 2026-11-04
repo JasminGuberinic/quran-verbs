@@ -211,7 +211,10 @@ def _last_letter(folded: list[str]) -> str | None:
 #     (يَسْتَوُۥنَ = يَسْتَوُونَ, يُحْىِۦ = يُحْيِي) — except after the pronoun هـ, where they
 #     only say "read the pronoun long" (بِهِۦ = بِهِ);
 #   - a final unvowelled ى/ي after fatḥa is the long ā that Uthmani may also write
-#     with alef after a hamza: رَءَا = رَأَى.
+#     with alef after a hamza: رَءَا = رَأَى;
+#   - an alef inside the word marked with the small round zero ۟ is written but never
+#     pronounced (يَا۟يْـَٔسُ = يَيْأَسُ, 12:87), so it is no letter of the form. (A final
+#     one, after wāw, is left to `_without_silent_final_alef`.)
 #
 # Nothing else is rewritten. A letter Uthmani leaves out altogether — the jussive-like
 # نُنجِ / تُحْىِ before a joining word, تَسْطِع, the dropped ت of تَذَكَّرُونَ — is still a
@@ -219,6 +222,7 @@ def _last_letter(folded: list[str]) -> str | None:
 
 _HAMZA, _MADDA, _TATWEEL = "ء", "ٓ", "ـ"
 _SMALL_WAW, _SMALL_YAA = "ۥ", "ۦ"
+_SILENT_ZERO = "\u06DF"  # small high rounded zero: the letter under it is not pronounced
 _SEATS_AND_CARRIER = frozenset("اويى" + _TATWEEL)
 _HAMZA_ON_SUPERSCRIPT_ALEF = "ٰٔ"  # ٱدَّٰرَٰٔتُمْ = اِدَّارَأْتُمْ
 _ARTICULATION_MARKS = frozenset("ًٌٍَُِّْ" + "ۡ")  # vowels, shadda, sukūn (incl. Uthmani's)
@@ -226,10 +230,15 @@ _ARTICULATION_MARKS = frozenset("ًٌٍَُِّْ" + "ۡ")  # vowels, shadda, su
 
 def _standard_spelling(decomposed: str) -> str:
     letters = _letters(decomposed)
-    for rewrite in (_seat_free_hamzas, _madda_as_hamza_and_alef, _small_letters_written_out,
-                    _final_long_a_as_alef):
+    for rewrite in (_without_silent_medial_alef, _seat_free_hamzas, _madda_as_hamza_and_alef,
+                    _small_letters_written_out, _final_long_a_as_alef):
         letters = rewrite(letters)
     return "".join(base + marks for base, marks in letters)
+
+
+def _without_silent_medial_alef(letters: list[Letter]) -> list[Letter]:
+    return [letter for index, letter in enumerate(letters)
+            if not (letter[0] == _ALEF and _SILENT_ZERO in letter[1] and index < len(letters) - 1)]
 
 
 def _seat_free_hamzas(letters: list[Letter]) -> list[Letter]:

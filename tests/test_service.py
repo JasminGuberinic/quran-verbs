@@ -431,6 +431,14 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("مكن", 2, "مَكَّنَ", {("past", "huwa"): "مَكَّنَ", ("present", "huwa"): "يُمَكِّنُ"}),
     ("عتد", 4, "أَعْتَدَ", {("past", "nahnu"): "أَعْتَدْنَا"}),
     ("ربص", 5, "تَرَبَّصَ", {("past", "huwa"): "تَرَبَّصَ", ("present", "ana"): "أَتَرَبَّصُ"}),
+    # Presents يَصِفُ / يَحْذَرُ / تَدْرِي / يُنظَرُ, the passive قُطِعَ, cut stems حَلَفْ / أَخْزَيْ.
+    ("وصف", 1, "وَصَفَ", {("present", "huwa"): "يَصِفُ", ("imperative", "anta"): "صِفْ"}),
+    ("حذر", 1, "حَذِرَ", {("present", "huwa"): "يَحْذَرُ", ("imperative", "anta"): "اِحْذَرْ"}),
+    ("دري", 1, "دَرَى", {("past", "ana"): "دَرَيْتُ"}),
+    ("نظر", 4, "أَنْظَرَ", {("present", "huwa"): "يُنْظِرُ", ("imperative", "anta"): "أَنْظِرْ"}),
+    ("قطع", 1, "قَطَعَ", {("present", "huwa"): "يَقْطَعُ", ("imperative", "anta"): "اِقْطَعْ"}),
+    ("حلف", 1, "حَلَفَ", {("present", "huwa"): "يَحْلِفُ"}),
+    ("خزي", 4, "أَخْزَى", {("past", "ana"): "أَخْزَيْتُ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)

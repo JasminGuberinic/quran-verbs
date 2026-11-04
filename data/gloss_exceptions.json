@@ -340,9 +340,11 @@
   "ص.ر.ف": {
     "glosses": [
       "turn away",
-      "avert"
+      "avert",
+      "conjugate",
+      "vary"
     ],
-    "why": "CAMeL glosses صَرَفَ only as 'divert; spend' and 'exchange'. Its basic sense, and the one the Quran uses, is to turn (something) away or avert it (12:34 فَصَرَفَ عَنْهُ كَيْدَهُنَّ, 25:65 ٱصْرِفْ عَنَّا), still current in صَرَفَ نَظَرَهُ 'he turned his gaze away'. Added 2026-11-04."
+    "why": "CAMeL glosses صَرَفَ only as 'divert; spend' and 'exchange'. Its basic sense, and the one the Quran uses, is to turn (something) away or avert it (12:34 فَصَرَفَ عَنْهُ كَيْدَهُنَّ, 25:65 ٱصْرِفْ عَنَّا), still current in صَرَفَ نَظَرَهُ 'he turned his gaze away'. Form II صَرَّفَ adds to vary, set forth in various ways (6:105 نُصَرِّفُ ٱلْءَايَٰتِ) and its everyday grammar sense to conjugate (صَرَّفَ الْفِعْلَ, whence تَصْرِيف), neither of which CAMeL glosses. Added 2026-11-04."
   },
   "ر.ب.ص": {
     "glosses": [
@@ -398,5 +400,36 @@
       "bring about"
     ],
     "why": "The lexicon glosses Form IV awratha only as 'bequeath'; its common figurative sense is to cause, to result in (الْكَسَلُ يُورِثُ النَّدَمَ 'laziness causes regret'). Added 2026-11-04."
+  },
+  "ع.ه.د": {
+    "glosses": [
+      "pledge",
+      "promise"
+    ],
+    "why": "CAMeL glosses Form III عَاهَدَ only as 'contract with; conclude an alliance with'. Its everyday sense is to pledge, to promise solemnly (عَاهَدَ نَفْسَهُ عَلَى الصَّبْرِ 'he pledged himself to patience'; cf. 33:23 صَدَقُوا۟ مَا عَٰهَدُوا۟ ٱللَّهَ عَلَيْهِ). Added 2026-11-04."
+  },
+  "ث.ب.ت": {
+    "glosses": [
+      "make firm",
+      "fasten",
+      "fix"
+    ],
+    "why": "CAMeL glosses Form II ثَبَّتَ as 'confirm; reinforce' and reads its imperatives as 'be firm'. Its basic sense, the Quran's (47:7 وَيُثَبِّتْ أَقْدَامَكُمْ) and the everyday one, is to make firm, fasten, fix in place (ثَبَّتَ الرَّفَّ 'he fixed the shelf'). Added 2026-11-04."
+  },
+  "spelling:أُوقِنُ": {
+    "glosses": [
+      "be certain",
+      "be convinced",
+      "be sure"
+    ],
+    "root": "#.ق.ن",
+    "why": "CAMeL reads أُوقِنُ only as أَوْقَ 'burden' (root #.#.ق); it has no first-person present of Form IV أَيْقَنَ 'I am certain' (root #.ق.ن, cf. يُوقِنُونَ 45:20), so it is excepted by this spelling alone. Added 2026-11-04."
+  },
+  "spelling:اِبْنُوا": {
+    "glosses": [
+      "build"
+    ],
+    "root": "ب.ن.#",
+    "why": "CAMeL reads the imperative اِبْنُوا (build!, root ب.ن.ي, cf. 37:97 ٱبْنُوا۟) only as أَبَّنَ 'eulogize' (root #.ب.ن); its analysis under ب.ن.# is missing, so it is excepted by this spelling alone. Added 2026-11-04."
   }
 }

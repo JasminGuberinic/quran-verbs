@@ -33,6 +33,15 @@ test("one spelling with two readings is never a 'wrong' option against itself", 
   }
 });
 
+test("a verb with no table is never asked about, only offered as a wrong meaning", () => {
+  const NEAR = { root: "قرب", form: 1, lemma: "قَرِبَ", meaning: { en: "to approach", bs: "prići" },
+                 principal: [], cells: [], ayat: [], sentences: [] };
+  for (const type of [...P.TYPES, "mix"]) {
+    const questions = P.session(type, [NEAR, SAY], { random: P.seeded(3), size: 5 });
+    assert.ok(questions.every((question) => P.keyOf(question.card) === P.keyOf(SAY)), type);
+  }
+});
+
 test("a connecting alif's vowel does not make two options look different", () => {
   assert.equal(P.spellingKey("اِعْلَمْ"), P.spellingKey("اعْلَمْ"));
   assert.equal(P.spellingKey("ٱعْلَمْ"), P.spellingKey("اعْلَمْ"));

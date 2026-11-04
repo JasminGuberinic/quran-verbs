@@ -212,9 +212,13 @@
   function session(type, cards, { language = "en", boxOf = () => 0, random = Math.random, size = SESSION_SIZE } = {}) {
     const questions = [];
     const asked = new Set();
+    // A verb whose every occurrence is a clitic-laden or jussive form (قَرِبَ: لَا تَقْرَبُوا)
+    // has no table to ask about; it still serves as another card's wrong meaning.
+    const askable = cards.filter((card) => card.principal.length);
+    if (!askable.length) return questions;
     for (let attempt = 0; questions.length < size && attempt < size * 40; attempt++) {
       const kind = type === "mix" ? pick(TYPES, random) : type;
-      const card = weightedCard(cards, boxOf, random);
+      const card = weightedCard(askable, boxOf, random);
       const question = builders[kind](card, cards, language, random);
       if (!question) continue;
       const identity = `${kind}|${keyOf(card)}|${question.item}`;

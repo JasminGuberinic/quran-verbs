@@ -439,6 +439,12 @@ def test_a_documented_spelling_is_what_the_brief_offers_and_the_gate_accepts(tmp
     ("قطع", 1, "قَطَعَ", {("present", "huwa"): "يَقْطَعُ", ("imperative", "anta"): "اِقْطَعْ"}),
     ("حلف", 1, "حَلَفَ", {("present", "huwa"): "يَحْلِفُ"}),
     ("خزي", 4, "أَخْزَى", {("past", "ana"): "أَخْزَيْتُ"}),
+    # Presents يُوقِنُ / يَنالُ, cut stems لَبَسْ / ثَبَّتْ / صَرَّفْ.
+    ("يقن", 4, "أَيْقَنَ", {("past", "ana"): "أَيْقَنْتُ", ("present", "huwa"): "يُوقِنُ"}),
+    ("لبس", 1, "لَبَسَ", {("present", "huwa"): "يَلْبِسُ"}),
+    ("نيل", 1, "نالَ", {("past", "ana"): "نِلْتُ", ("present", "huwa"): "يَنَالُ"}),
+    ("ثبت", 2, "ثَبَّتَ", {("present", "huwa"): "يُثَبِّتُ", ("imperative", "anta"): "ثَبِّتْ"}),
+    ("صرف", 2, "صَرَّفَ", {("past", "ana"): "صَرَّفْتُ", ("present", "huwa"): "يُصَرِّفُ"}),
 ])
 def test_a_corrected_lemma_conjugates_from_its_citation_form(root, form, lemma, cells):
     detail = get_verb(root, form)

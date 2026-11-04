@@ -19,7 +19,8 @@ site/verification/ (a search engine's ownership file) are copied to the site roo
 Every page is built and linked, but only translated pages are offered to search engines
 (fil.pages.indexing): the others say noindex and are left out of sitemap.xml.
 
-The build refuses to finish if any page links a sound that is not in audio/.
+The build refuses to finish if any page links a sound that is not in audio/ — except an
+ayah's recitation, which is streamed from its source and never shipped (fil.recitation).
 """
 
 from __future__ import annotations
@@ -35,6 +36,7 @@ from fil.languages import LANGUAGES
 from fil.pages import deploy, indexing, interface_text, render, seo, share_image
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
+from fil.recitation import is_streamed
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
 from fil.stages import site
@@ -153,7 +155,7 @@ def check_audio_links(pages: Path, written: Iterable[Path]) -> None:
         f"{page.relative_to(pages)} → {link}"
         for page in written
         for link in _AUDIO_LINK.findall(page.read_text(encoding="utf-8"))
-        if not (page.parent / link).is_file()
+        if not is_streamed(link) and not (page.parent / link).is_file()
     })
     if missing:
         raise BrokenAudioLink(f"{len(missing)} play buttons lead nowhere, e.g. {missing[:3]}")

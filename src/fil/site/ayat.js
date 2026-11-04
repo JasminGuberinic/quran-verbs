@@ -4,11 +4,12 @@
  * A verb's page lists every form the Quran uses it in; its ayat (up to ~1,600 for قَالَ) are
  * far too many to carry, so a button fetches them (ayat/NNNN.json, and the translation into
  * the reader's language, ayat/NNNN.<lang>.json) and shows them a page at a time. Each ayah's
- * recitation streams from the reciter's source; nothing is added to the site for it.
+ * recitation streams from the reciter's source (alquran.cloud's CDN, by the ayah's number in
+ * the whole Quran); nothing is added to the site for it.
  *
  * The container says everything this needs in data- attributes (see fil.pages.render._all_ayat):
- *   data-ayat, data-translation, data-translation-language, data-translation-dir,
- *   data-audio-source ("…/{surah}{ayah}.mp3"), data-audio-attribute (the attribute the page's
+ *   data-ayat, data-language (the reader's), data-translation, data-translation-language, data-translation-dir,
+ *   data-audio-source ("…/{number}.mp3"), data-audio-attribute (the attribute the page's
  *   own player listens to), data-text (the interface words, JSON).
  * Pure helpers are exported for the tests (tests/js/ayat.test.mjs).
  */
@@ -20,21 +21,42 @@
   const PAGE_SIZE = 40;
   const AUDIO_ATTRIBUTES = ["data-audio", "data-file"];   // the static pages' player, the app's
   const state = new WeakMap();
+  // Where a reader can study an ayah further (fil.ayah_links names the same places; a test holds them equal).
+  const AYAH_LINKS = [
+    { kind: "islamBa", short: "islam.ba", template: "https://islam.ba/kuran/{surah}/{ayah}", languages: ["bs"] },
+    { kind: "wordByWord", short: "wbw", template: "https://quranwbw.com/{surah}/{ayah}", languages: null },
+  ];
 
   const escapeHtml = (text) => String(text ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
-  const threeDigits = (number) => String(number).padStart(3, "0");
 
   /** The reciter's file for an ayah, from the source's address pattern (fil.recitation.AYAH_STREAM). */
-  function ayahAudioUrl(template, ref) {
-    const [surah, ayah] = ref.split(":");
-    return template.replace("{surah}", threeDigits(surah)).replace("{ayah}", threeDigits(ayah));
+  function ayahAudioUrl(template, ayah) {
+    if (!Number.isInteger(ayah.number)) throw new Error(`ayah ${ayah.ref} has no number in the Quran`);
+    return template.replace("{number}", String(ayah.number));
   }
 
-  /** "past · they (m.) · object: him/it", each reading of the letters joined by " / " — as fil.pages.render.grammar_label. */
+  /** The outbound links offered under an ayah to a reader of `language`. */
+  function ayahLinks(ref, language) {
+    const [surah, ayah] = ref.split(":");
+    return AYAH_LINKS.filter((target) => !target.languages || target.languages.includes(language))
+      .map((target) => ({ kind: target.kind, short: target.short,
+                          url: target.template.replace("{surah}", surah).replace("{ayah}", ayah) }));
+  }
+
+  /** The links as HTML: in full under an ayah, or compact in a form's row (its label a tooltip) — as fil.pages.render.ayah_links_html. */
+  function ayahLinksHtml(ref, language, labels, compact = false) {
+    const links = ayahLinks(ref, language).map(({ kind, short, url }) => (compact
+      ? `<a href="${url}" target="_blank" rel="noopener" title="${escapeHtml(labels[kind])}">${short}</a>`
+      : `<a href="${url}" target="_blank" rel="noopener">${escapeHtml(labels[kind])} ↗</a>`));
+    return `<span class="ayah-links">${links.join(" ")}</span>`;
+  }
+
+  /** "present · jussive · they (m.) · object: him/it", each reading of the letters joined by " / " — as fil.pages.render.grammar_label. */
   function grammarLabel(readings, text) {
     return readings.map((reading) => {
       const objects = reading.objects.map((pronoun) => text.forms.objects[pronoun]).join(", ");
-      return [text.tenses[reading.tense], reading.passive ? text.forms.passive : "",
+      return [text.tenses[reading.tense], reading.mood ? text.forms.moods[reading.mood] : "",
+              reading.passive ? text.forms.passive : "",
               text.pronouns[reading.pronoun], objects ? text.forms.object(objects) : ""]
         .filter(Boolean).join(" · ");
     }).join(" / ");
@@ -50,7 +72,8 @@
       ? `<p class="ayah-translation" lang="${options.translationLanguage}" dir="${options.translationDir}">${escapeHtml(translated)}<small>${escapeHtml(translation.by)}${escapeHtml(options.fallbackNote)}</small></p>`
       : "";
     return `<article class="ayah"><p class="ayah-head"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${ayah.ref} ↗</a>`
-      + `<button type="button" class="play small" ${options.audioAttribute}="${escapeHtml(ayahAudioUrl(options.audioSource, ayah.ref))}" aria-label="${escapeHtml(`${ayah.ref} · ${options.recitedAyah}`)}">▶</button></p>`
+      + `<button type="button" class="play small" ${options.audioAttribute}="${escapeHtml(ayahAudioUrl(options.audioSource, ayah))}" aria-label="${escapeHtml(`${ayah.ref} · ${options.recitedAyah}`)}">▶</button>`
+      + `${ayahLinksHtml(ayah.ref, options.language, options.text.links)}</p>`
       + `<p class="qr ayah-text" lang="ar" dir="rtl">${words}</p>${translationHtml}</article>`;
   }
 
@@ -61,6 +84,7 @@
     return {
       text,
       audioSource: container.dataset.audioSource,
+      language: container.dataset.language,
       audioAttribute: container.dataset.audioAttribute,
       translationLanguage: container.dataset.translationLanguage,
       translationDir: container.dataset.translationDir,
@@ -126,5 +150,5 @@
     });
   }
 
-  return { PAGE_SIZE, ayahAudioUrl, grammarLabel, ayahHtml };
+  return { PAGE_SIZE, AYAH_LINKS, ayahAudioUrl, ayahLinks, ayahLinksHtml, grammarLabel, ayahHtml };
 });

@@ -16,10 +16,11 @@ from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from html import escape
 
+from fil.ayah_links import ayah_links
 from fil.languages import LANGUAGES, Language
 from fil.pages import indexing, seo
 from fil.pages.interface_text import fill
-from fil.recitation import AYAH_STREAM
+from fil.recitation import AYAH_STREAM, is_streamed
 
 FORM_NAMES = ("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
 PRONOUN_ORDER = ("huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma", "antum", "antunna", "ana", "nahnu")
@@ -96,6 +97,8 @@ def audio_link(reference: str | None, root: str) -> str | None:
         return None
     if reference.startswith("data:"):
         raise EmbeddedAudioOnPublicPage("build the cards with PublishedAudio for the public site")
+    if is_streamed(reference):
+        return reference
     return root + reference
 
 
@@ -202,7 +205,8 @@ def _attested_form(form: dict, language: Language, text: dict) -> str:
     surah, number = form["first"].split(":")
     # Kept lean: one row per form on every page in every language adds up (8,000 pages).
     return (f'<li><b lang="ar" dir="rtl">{form["arabic"]}</b><small>{form["count"]}×</small>'
-            f'{_form_meaning(form, language, text)}<a href="https://quran.com/{surah}/{number}">{form["first"]}</a></li>')
+            f'{_form_meaning(form, language, text)}<span class="first"><a href="https://quran.com/{surah}/{number}">{form["first"]}</a> '
+            f'{ayah_links_html(form["first"], language.code, text["forms"]["links"], compact=True)}</span></li>')
 
 
 def _form_meaning(form: dict, language: Language, text: dict) -> str:
@@ -216,7 +220,7 @@ def _form_meaning(form: dict, language: Language, text: dict) -> str:
 
 
 def grammar_label(readings: Sequence[dict], text: dict) -> str:
-    """"past · they (m.) · object: him/it" — each reading of the letters, separated by " / ".
+    """"present · jussive · they (m.) · object: him/it" — each reading of the letters, separated by " / ".
 
     site/ayat.js labels the app's rows the same way (grammarLabel); a test holds them equal.
     """
@@ -226,7 +230,8 @@ def grammar_label(readings: Sequence[dict], text: dict) -> str:
 def _reading_label(reading: dict, text: dict) -> str:
     words = text["forms"]
     objects = ", ".join(words["objects"][pronoun] for pronoun in reading["objects"])
-    parts = (text["tenses"][reading["tense"]], words["passive"] if reading["passive"] else "",
+    mood = words["moods"][reading["mood"]] if reading.get("mood") else ""
+    parts = (text["tenses"][reading["tense"]], mood, words["passive"] if reading["passive"] else "",
              text["pronouns"][reading["pronoun"]], fill(words["object"], objects) if objects else "")
     return " · ".join(part for part in parts if part)
 
@@ -239,10 +244,10 @@ def _all_ayat(card: dict, language: Language, text: dict, root: str) -> str:
     is_fallback = translated_in != language.code and language.code != _ENGLISH
     labels = {"showAll": fill(words["showAll"], card["ayahCount"]), "hideAll": words["hideAll"],
               "showMore": words["showMore"], "loading": words["loading"], "loadFailed": words["loadFailed"],
-              "recitedAyah": text["recitedAyah"],
+              "recitedAyah": text["recitedAyah"], "links": words["links"],
               "fallbackNote": f' · {text["noFreeTranslation"]}' if is_fallback and text["noFreeTranslation"] else ""}
     listing = f'all-ayat-{card["rank"]}'
-    return (f'<div class="all-ayat" data-all-ayat data-ayat="{root}{card["ayatFile"]}" '
+    return (f'<div class="all-ayat" data-all-ayat data-ayat="{root}{card["ayatFile"]}" data-language="{language.code}" '
             f'data-translation="{root}{translations[translated_in]}" data-translation-language="{translated_in}" '
             f'data-translation-dir="{"rtl" if translated_in == language.code and language.is_rtl else "ltr"}" '
             f'data-audio-source="{escape(AYAH_STREAM)}" data-audio-attribute="data-audio" '
@@ -262,10 +267,26 @@ def _ayah(ayah: dict, language: Language, text: dict, root: str) -> str:
         for word in ayah["words"] if word["hit"] and word.get("gloss")
     )
     return (f'<figure class="ayah"><p class="ayah-head"><span class="tense">{escape(text["tenses"][ayah["tense"]])}</span>'
-            f'<a href="https://quran.com/{surah}/{number}" rel="noopener">{surah}:{number} ↗</a></p>'
+            f'<a href="https://quran.com/{surah}/{number}" rel="noopener">{surah}:{number} ↗</a>'
+            f'{ayah_links_html(ayah["ref"], language.code, text["forms"]["links"])}</p>'
             f'<blockquote class="qr" lang="ar" dir="rtl">{words}</blockquote>{glosses}'
             f'{_translation(ayah, language, text)}'
             f'<p class="ayah-foot">{_play(ayah["audio"], root, text["recitedAyah"])} {escape(text["recitedAyah"])}</p></figure>')
+
+
+def ayah_links_html(ref: str, language: str, labels: dict[str, str], compact: bool = False) -> str:
+    """Where to study the ayah further: in full under an ayah, or compact in a form's row (its label a tooltip).
+
+    site/ayat.js writes the very same HTML (ayahLinksHtml); a test holds them equal.
+    """
+    surah, ayah = map(int, ref.split(":"))
+    links = (
+        f'<a href="{link.url}" target="_blank" rel="noopener" title="{escape(labels[link.kind])}">{link.short_name}</a>'
+        if compact else
+        f'<a href="{link.url}" target="_blank" rel="noopener">{escape(labels[link.kind])} ↗</a>'
+        for link in ayah_links(surah, ayah, language)
+    )
+    return f'<span class="ayah-links">{" ".join(links)}</span>'
 
 
 def _ayah_word(word: dict, root: str) -> str:

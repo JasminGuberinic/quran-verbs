@@ -69,6 +69,10 @@ span.tag { cursor: default; }
 .ayah-translation { margin: 8px 0; }
 .ayah-translation small { display: block; color: var(--muted); }
 .ayah-head .play { width: 30px; height: 30px; }
+.ayah-head { gap: 4px 12px; flex-wrap: wrap; }
+.ayah-links { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; }
+.ayah-links a { color: var(--muted); }
+.attested .first { display: inline-flex; flex-wrap: wrap; gap: 0 8px; justify-content: end; }
 .forms-head { font-size: 1rem; margin: 24px 0 2px; }
 .attested { list-style: none; padding: 0; margin: 8px 0 0; }
 .attested li { display: grid; grid-template-columns: minmax(6em, auto) 3.5em 1fr auto; gap: 2px 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }

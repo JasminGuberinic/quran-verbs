@@ -22,5 +22,6 @@ MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per
 SITE_DIR = BUILD_DIR / "site"               # the static study site (fil site)
 PAGES_DIR = BUILD_DIR / "pages"             # the public GitHub Pages site (fil pages)
 REPOSITORY_DIR = _ROOT
-RECITATION_CACHE = BUILD_DIR / "recitation-cache"  # downloaded recitation clips, fetched once
+RECITATION_CACHE = BUILD_DIR / "recitation-cache"  # recited word clips, taken from their source once
+QURANHIVE_WORD_AUDIO = DATA_DIR / "quranhive" / "qh-quran-word-audio-files.zip"  # CC BY 4.0, downloaded, git-ignored
 SPEECH_CACHE = BUILD_DIR / "speech-cache"   # synthesized clips, keyed by what they say

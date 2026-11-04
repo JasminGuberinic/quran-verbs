@@ -6,8 +6,9 @@ The site is a folder of plain files, so it opens locally and can be hosted anywh
 free. data.json is a light index; each verb's card, with its sound embedded, is its own
 file, loaded when the learner reaches it — one file per verb, not hundreds of clips.
 A card lists every form the Quran uses its verb in; the ayat themselves (every one, with
-its free translation) wait in ayat/, fetched only when asked for, and their recitation
-streams from the reciter's source rather than being shipped.
+its free translation) wait in ayat/, fetched only when asked for. No ayah recitation is
+ever shipped: every ayah, on a card or in a list, streams from the reciter's source
+(fil.recitation) when it is played.
 Where the sound goes is a strategy (fil.site_audio): embedded here, separate shared files
 for the public site (fil pages), which assembles the very same cards through `assemble`.
 
@@ -16,10 +17,10 @@ it and refuses to ship what must not ship:
 
   - a verb without a meaning in every promised language (fil.meanings fails the load);
   - a sentence that failed the gate or that a reader refused (only shippable tiers go);
-  - a "recitation" that is not audio (fil.recitation fails the download).
+  - a "recitation" that is not audio (fil.recitation fails the build).
 
-Two kinds of sound, never confused: human recitation of the Quran (whole ayat, and each
-form wherever the Quran recites it), and synthetic speech for everything — every cell,
+Two kinds of sound, never confused: human recitation of the Quran (whole ayat, streamed,
+and each form wherever the Quran recites it, from QuranHive's word-by-word clips), and synthetic speech for everything — every cell,
 noun and practice sentence — spoken from a reading checked against a second, independent
 reader (fil.speech). Where the two readers disagree, the build says so.
 """
@@ -39,8 +40,10 @@ from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
 from fil.languages import LANGUAGES, REQUIRED
-from fil.recitation import AYAH_STREAM, RecitationLibrary, RecitationMissing
-from fil.resources import AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE
+from fil.quran_numbering import ayah_number
+from fil.recitation import AYAH_STREAM, QuranHiveArchive, RecitationMissing, WordRecitations, ayah_stream
+from fil.resources import (AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, QURANHIVE_WORD_AUDIO, RECITATION_CACHE,
+                           SITE_DIR, SPEECH_CACHE)
 from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
 from fil.stages import forms
@@ -77,37 +80,39 @@ class SiteContent:
 class _Sound:
     """Turns a recitation or a spoken text into a reference the page can play."""
 
-    def __init__(self, sink: AudioSink, recitations: RecitationLibrary | None = None) -> None:
+    def __init__(self, sink: AudioSink, recitations: WordRecitations | None = None) -> None:
         self.sink = sink
-        self.recitations = recitations or RecitationLibrary(BUILD_DIR / "recitation-stage", cache=RECITATION_CACHE)
+        self.recitations = recitations or WordRecitations(QuranHiveArchive(QURANHIVE_WORD_AUDIO),
+                                                          RECITATION_CACHE / "quranhive")
         self.missing_words: list[str] = []
         self.speech = SpeechLibrary(TtsArabicVoice(), SPEECH_CACHE)
         self.translations = AyahTranslations()
         self.verb_glosses = _verb_glosses()
         self.form_glosses = forms.read_glosses()[0]
 
-    def ayah(self, surah: int, ayah: int) -> str:
-        return self._recited(self.recitations.ayah(surah, ayah))
+    @staticmethod
+    def ayah(surah: int, ayah: int) -> str:
+        """An ayah's recitation is streamed from its source, never shipped."""
+        return ayah_stream(surah, ayah)
 
     def word(self, surah: int, ayah: int, word: int) -> str | None:
         """A word's recitation, or None (noted for the report) when the source has no clip for it."""
         try:
-            site_path = self.recitations.word(surah, ayah, word)
+            clip = self.recitations.word(surah, ayah, word)
         except RecitationMissing:
             self.missing_words.append(f"{surah}:{ayah}:{word}")
             return None
-        return self._recited(site_path)
+        return self._recited(clip)
 
     def spoken(self, text: str) -> str:
         return self.sink.reference(self.speech.clip(text))
 
-    def _recited(self, site_path: str) -> str:
-        """Recitations arrive as large MP3s (a single word is 320 kb/s); ship them compact."""
-        source = RECITATION_CACHE / site_path
-        compact = _COMPRESSED / compact_clip_name(site_path, RECITATION_BITRATE)
+    def _recited(self, clip: Path) -> str:
+        """Word clips arrive as stereo 64 kb/s MP3s; ship them as compact mono AAC."""
+        compact = _COMPRESSED / compact_clip_name(f"quranhive/{clip.name}", RECITATION_BITRATE)
         if not compact.exists():
             compact.parent.mkdir(parents=True, exist_ok=True)
-            subprocess.run(compact_aac_command(source, compact, RECITATION_BITRATE),
+            subprocess.run(compact_aac_command(clip, compact, RECITATION_BITRATE),
                            check=True, capture_output=True)
         return self.sink.reference(compact)
 
@@ -251,7 +256,9 @@ def _ayat_lists(card: dict, ayat: list[VerbAyah], corpus: _Corpus, sound: _Sound
 
 
 def _listed_ayah(ayah: VerbAyah, words: tuple[QuranWord, ...]) -> dict:
-    return {"ref": ayah.ref, "text": " ".join(word.text for word in words),
+    # "number" addresses the ayah's streamed recitation (site/ayat.js fills AYAH_STREAM with it).
+    return {"ref": ayah.ref, "number": ayah_number(ayah.surah, ayah.ayah),
+            "text": " ".join(word.text for word in words),
             "hits": [index for index, word in enumerate(words) if word.number in ayah.words]}
 
 

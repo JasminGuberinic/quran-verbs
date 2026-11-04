@@ -14,6 +14,7 @@ from fil.pages import deploy, indexing, interface_text, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import EmbeddedAudioOnPublicPage, PublishedVerb
 from fil.pages.slugs import assign_slugs, slug_of
+from fil.recitation import is_streamed
 from fil.site_audio import PublishedAudio, published_name
 from fil.stages import pages
 
@@ -135,7 +136,9 @@ def _text() -> dict:
                   "passive": "passive", "object": "object: {0}",
                   "objects": {pronoun: f"obj-{pronoun}" for pronoun in render.PRONOUN_ORDER},
                   "showAll": "Show all ayat ({0})", "hideAll": "Hide", "showMore": "More", "loading": "Loading",
-                  "loadFailed": "Failed"},
+                  "loadFailed": "Failed",
+                  "moods": {"indicative": "indicative", "subjunctive": "subjunctive", "jussive": "jussive"},
+                  "links": {"islamBa": "On islam.ba", "wordByWord": "Word by word"}},
     }
 
 
@@ -146,7 +149,7 @@ def _card() -> dict:
         "rank": 1, "root": "قول", "form": 1, "lemma": "قالَ", "count": 1722, "ayahCount": 1500, "share": 8.04,
         "meaning": {"en": "to say", "bs": "reći"}, "lemmaSpoken": "audio/lemma.m4a", "principal": [cell], "nouns": {},
         "cells": [cell],
-        "ayat": [{"ref": "2:30", "tense": "past", "audio": "audio/ayah.m4a",
+        "ayat": [{"ref": "2:30", "tense": "past", "audio": "https://cdn.islamic.network/quran/audio/64/ar.alafasy/37.mp3",
                   "translation": {"en": {"text": "And when your Lord said <to the angels>", "by": "Sahih International"}},
                   "words": [{"text": "قالَ", "hit": True, "audio": "audio/word.m4a", "gloss": {"en": "said", "bs": "reče"}},
                             {"text": "رَبُّكَ", "hit": False, "audio": None, "gloss": None}]}],
@@ -190,8 +193,10 @@ def test_every_play_button_on_a_page_reaches_the_shared_audio_folder():
     html = render.verb_page(PublishedVerb(_card(), "qala"), _language("en"), _text())
     links = re.findall(r'data-audio="([^"]+)"', html)
 
-    assert {"../../audio/lemma.m4a", "../../audio/word.m4a", "../../audio/ayah.m4a", "../../audio/sentence.m4a"} <= set(links)
-    assert all(link.startswith("../../audio/") for link in links)
+    streamed = {link for link in links if is_streamed(link)}
+    assert {"../../audio/lemma.m4a", "../../audio/word.m4a", "../../audio/sentence.m4a"} <= set(links)
+    assert streamed == {"https://cdn.islamic.network/quran/audio/64/ar.alafasy/37.mp3"}     # the ayah, never a file
+    assert all(link.startswith("../../audio/") for link in set(links) - streamed)
 
 
 def test_the_audio_gate_fails_on_a_missing_file(tmp_path):
@@ -364,7 +369,45 @@ def test_the_ayat_are_not_on_the_page_but_one_accessible_button_away():
     assert 'data-ayat="../../ayat/0001.json"' in html and 'src="../../ayat.js"' in html
     assert 'data-translation="../../ayat/0001.en.json"' in html                 # no free Bosnian one
     assert "no free translation" in html.split("data-all-ayat")[1]
-    assert 'data-audio-source="https://everyayah.com/data/Alafasy_64kbps/{surah}{ayah}.mp3"' in html
+    assert 'data-audio-source="https://cdn.islamic.network/quran/audio/64/ar.alafasy/{number}.mp3"' in html
+    assert 'data-language="bs"' in html
+
+
+def test_an_ayah_streams_from_its_source_and_is_never_a_file_of_the_site():
+    html = render.verb_page(PublishedVerb(_card(), "qala"), _language("en"), _text())
+
+    assert 'data-audio="https://cdn.islamic.network/quran/audio/64/ar.alafasy/37.mp3"' in html
+    assert "audio/ayah" not in html
+
+
+def test_the_audio_gate_lets_a_streamed_ayah_through_but_not_a_missing_file(tmp_path):
+    page = tmp_path / "en" / "qala" / "index.html"
+    page.parent.mkdir(parents=True)
+    page.write_text('<button data-audio="https://cdn.islamic.network/quran/audio/64/ar.alafasy/37.mp3">', encoding="utf-8")
+    pages.check_audio_links(tmp_path, [page])
+
+    page.write_text('<button data-audio="../../audio/absent.m4a">', encoding="utf-8")
+    with pytest.raises(pages.BrokenAudioLink):
+        pages.check_audio_links(tmp_path, [page])
+
+
+def test_a_bosnian_reader_is_sent_to_islam_ba_and_everyone_to_the_word_by_word_view():
+    bosnian = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), _text())
+    english = render.verb_page(PublishedVerb(_card(), "qala"), _language("en"), _text())
+
+    assert '<a href="https://islam.ba/kuran/2/30" target="_blank" rel="noopener">On islam.ba ↗</a>' in bosnian
+    assert '<a href="https://quranwbw.com/2/30" target="_blank" rel="noopener">Word by word ↗</a>' in bosnian
+    assert "https://islam.ba/" not in english and "https://quranwbw.com/2/30" in english
+    # a form's row links its first ayah compactly, the label as a tooltip
+    assert '<a href="https://quranwbw.com/9/74" target="_blank" rel="noopener" title="Word by word">wbw</a>' in english
+
+
+def test_a_present_is_labelled_with_its_mood():
+    said = {"tense": "present", "pronoun": "huwa", "passive": False, "objects": [], "mood": "indicative"}
+    let_say = {**said, "mood": "jussive"}
+
+    assert render.grammar_label([said], _text()) == "present · indicative · huwa"
+    assert render.grammar_label([let_say], _text()) == "present · jussive · huwa"
 
 
 def test_the_ayat_come_in_the_readers_language_when_a_free_translation_exists():
@@ -373,25 +416,25 @@ def test_the_ayat_come_in_the_readers_language_when_a_free_translation_exists():
     assert 'data-translation="../../ayat/0001.ur.json" data-translation-language="ur" data-translation-dir="rtl"' in html
 
 
-def test_the_streamed_recitation_is_the_source_the_build_downloads_from():
-    from fil.recitation import AYAH_SOURCE, AYAH_STREAM
-    assert AYAH_STREAM.format(surah="002", ayah="006") == AYAH_SOURCE.format(surah=2, ayah=6)
-
-
 _NODE_LABELS = """
 const ui = require(process.argv[1]), ayat = require(process.argv[2]);
 const readings = JSON.parse(process.argv[3]);
-const out = {};
-for (const code of Object.keys(ui)) out[code] = ayat.grammarLabel(readings, ui[code]);
-out.audio = ayat.ayahAudioUrl(process.argv[4], "2:6");
+const out = { labels: {}, links: {}, compact: {} };
+for (const code of Object.keys(ui)) {
+  out.labels[code] = ayat.grammarLabel(readings, ui[code]);
+  out.links[code] = ayat.ayahLinksHtml("2:255", code, ui[code].forms.links);
+  out.compact[code] = ayat.ayahLinksHtml("9:74", code, ui[code].forms.links, true);
+}
+out.audio = ayat.ayahAudioUrl(process.argv[4], { ref: "2:255", number: 262 });
 process.stdout.write(JSON.stringify(out));
 """
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
-def test_the_app_and_the_pages_label_grammar_and_stream_audio_alike():
-    from fil.recitation import AYAH_SOURCE, AYAH_STREAM
+def test_the_app_and_the_pages_label_grammar_link_and_stream_audio_alike():
+    from fil.recitation import AYAH_STREAM, ayah_stream
     readings = [{"tense": "past", "pronoun": "hum", "passive": True, "objects": ["huwa", "nahnu"]},
+                {"tense": "present", "pronoun": "antum", "passive": False, "objects": [], "mood": "jussive"},
                 {"tense": "imperative", "pronoun": "antum", "passive": False, "objects": []}]
     result = subprocess.run(["node", "-e", _NODE_LABELS, str(interface_text.UI_SCRIPT),
                              str(interface_text.UI_SCRIPT.parent / "ayat.js"), json.dumps(readings), AYAH_STREAM],
@@ -399,7 +442,41 @@ def test_the_app_and_the_pages_label_grammar_and_stream_audio_alike():
     from_javascript = json.loads(result.stdout)
     texts = interface_text.load()
 
-    assert from_javascript.pop("audio") == AYAH_SOURCE.format(surah=2, ayah=6)
-    assert from_javascript == {code: render.grammar_label(readings, text) for code, text in texts.items()}
+    assert from_javascript["audio"] == ayah_stream(2, 255)
+    assert from_javascript["labels"] == {code: render.grammar_label(readings, text) for code, text in texts.items()}
+    assert from_javascript["links"] == {code: render.ayah_links_html("2:255", code, text["forms"]["links"])
+                                        for code, text in texts.items()}
+    assert from_javascript["compact"] == {code: render.ayah_links_html("9:74", code, text["forms"]["links"], compact=True)
+                                          for code, text in texts.items()}
     assert texts["en"]["forms"]["objects"]["huwa"] == "him/it"                 # translated where active…
     assert texts["de"]["forms"] == texts["en"]["forms"]                        # …English elsewhere
+
+
+_ACTIVE = ("bs", "en", "tr", "fr", "id", "ur", "bn", "fa")
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_every_page_credits_every_source_as_its_terms_ask():
+    for code, text in interface_text.load().items():
+        footer = " ".join(text["footer"])
+        for required in ('<a href="https://corpus.quran.com" rel="noopener">Morphology: Quranic Arabic Corpus (GNU GPL)</a>',
+                         'href="https://tanzil.net"', 'href="https://tanzil.net/trans/"',
+                         "QuranHive Word-by-Word Audio Dataset — © QuranHive, licensed under ",
+                         'href="https://quranhive.com"', 'href="https://creativecommons.org/licenses/by/4.0/"',
+                         "Recitation: Mishary Rashid Alafasy, streamed from ", 'href="https://alquran.cloud"'):
+            assert required in footer, (code, required)
+        assert "everyayah" not in footer and "quran.com." not in footer, code
+        assert "mustafa0x" not in footer, code          # the modification notice lives in THIRD_PARTY_NOTICES.md
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
+def test_every_active_language_names_the_moods_and_the_links_in_its_own_words():
+    texts = interface_text.load()
+    for code in _ACTIVE:
+        forms = texts[code]["forms"]
+        assert set(forms["moods"]) == {"indicative", "subjunctive", "jussive"}, code
+        assert len(set(forms["moods"].values())) == 3, code
+        assert set(forms["links"]) == {"islamBa", "wordByWord"}, code
+        if code != "en":
+            assert forms["moods"] != texts["en"]["forms"]["moods"], code
+            assert forms["links"] != texts["en"]["forms"]["links"], code

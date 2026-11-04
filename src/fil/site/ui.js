@@ -30,7 +30,7 @@
       whatMeans: "Šta znači ovaj glagol?", whoWhen: "Ko i kada? Odredi oblik.", whichHeard: "Koji oblik si čuo?", findVerb: "Poslušaj ajet i klikni glagol.",
       fillIn: "Dopuni rečenicu tačnim oblikom.", right: "Tačno.", wrong: "Netačno.", nextQ: "Sljedeće pitanje", correct: (a, b) => `${a} / ${b} tačno`,
       noVoice: "Ovaj uređaj nema arapski glas.", listen: "Poslušaj",
-      footer: ["<b>Izvori.</b> Glagoli, oblici, ajeti i imenice: Quranic Arabic Corpus (GPL), tekst Kur'ana po Tanzilu. Učenje ajeta: Mishary Alafasy preko everyayah.com. Pojedinačne riječi: quran.com.", "<b>Glas.</b> Svaki oblik, imenicu i rečenicu izgovara sintetički glas (tts_arabic) iz čitanja koje se provjerava harekat po harekat. Dugme „kako se uči“ pušta pravog učača gdje god Kur'an taj oblik sadrži.", "<b>Prijevodi:</b> bosanski čita čovjek, engleski je provjeren rječnikom (CAMeL), ostali jezici su AI prijevod koji niko nije pregledao."],
+      footer: ["<b>Glas.</b> Svaki oblik, imenicu i rečenicu izgovara sintetički glas (tts_arabic) iz čitanja koje se provjerava harekat po harekat. Dugme „kako se uči“ pušta pravog učača gdje god Kur'an taj oblik sadrži.", "<b>Prijevodi:</b> bosanski čita čovjek, engleski je provjeren rječnikom (CAMeL), ostali jezici su AI prijevod koji niko nije pregledao."],
     },
     en: {
       subtitle: (n) => `The ${n} most frequent verbs of the Quran`, language: "Language",
@@ -50,7 +50,7 @@
       whatMeans: "What does this verb mean?", whoWhen: "Who and when? Identify the form.", whichHeard: "Which form did you hear?", findVerb: "Listen to the ayah and tap the verb.",
       fillIn: "Complete the sentence with the right form.", right: "Correct.", wrong: "Not quite.", nextQ: "Next question", correct: (a, b) => `${a} / ${b} correct`,
       noVoice: "This device has no Arabic voice.", listen: "Listen",
-      footer: ["<b>Sources.</b> Verbs, forms, ayat and nouns: Quranic Arabic Corpus (GPL), Quran text from Tanzil. Ayah recitation: Mishary Alafasy via everyayah.com. Single words: quran.com.", "<b>Voice.</b> Every form, noun and sentence is spoken by a synthetic voice (tts_arabic) from a reading checked vowel by vowel. The “as recited” button plays a real reciter wherever the Quran contains that form.", "<b>Translations:</b> Bosnian is read by a person, English is checked against a lexicon (CAMeL), other languages are unreviewed AI translations."],
+      footer: ["<b>Voice.</b> Every form, noun and sentence is spoken by a synthetic voice (tts_arabic) from a reading checked vowel by vowel. The “as recited” button plays a real reciter wherever the Quran contains that form.", "<b>Translations:</b> Bosnian is read by a person, English is checked against a lexicon (CAMeL), other languages are unreviewed AI translations."],
     },
     tr: {
       subtitle: (n) => `Kur'an'ın en sık geçen ${n} fiili`, language: "Dil",
@@ -70,7 +70,7 @@
       whatMeans: "Bu fiil ne anlama gelir?", whoWhen: "Kim ve ne zaman? Biçimi belirleyin.", whichHeard: "Hangi biçimi duydunuz?", findVerb: "Ayeti dinleyin ve fiile dokunun.",
       fillIn: "Cümleyi doğru biçimle tamamlayın.", right: "Doğru.", wrong: "Yanlış.", nextQ: "Sonraki soru", correct: (a, b) => `${a} / ${b} doğru`,
       noVoice: "Bu cihazda Arapça ses yok.", listen: "Dinle",
-      footer: ["<b>Kaynaklar.</b> Fiiller, biçimler, ayetler ve isimler: Quranic Arabic Corpus (GPL), Kur'an metni Tanzil. Ayet tilaveti: Mishary Alafasy (everyayah.com). Tek kelimeler: quran.com.", "<b>Ses.</b> Her biçim, isim ve cümle, harekesi harekesine kontrol edilmiş bir okumadan sentetik sesle (tts_arabic) seslendirilir. “okunuşu” düğmesi, biçim Kur'an'da geçiyorsa gerçek bir kâriyi çalar.", "<b>Çeviriler:</b> Boşnakçayı bir insan okur, İngilizce sözlükle kontrol edilir, diğer diller incelenmemiş yapay zekâ çevirileridir."],
+      footer: ["<b>Ses.</b> Her biçim, isim ve cümle, harekesi harekesine kontrol edilmiş bir okumadan sentetik sesle (tts_arabic) seslendirilir. “okunuşu” düğmesi, biçim Kur'an'da geçiyorsa gerçek bir kâriyi çalar.", "<b>Çeviriler:</b> Boşnakçayı bir insan okur, İngilizce sözlükle kontrol edilir, diğer diller incelenmemiş yapay zekâ çevirileridir."],
     },
     de: {
       subtitle: (n) => `Die ${n} häufigsten Verben des Korans`, language: "Sprache",
@@ -90,7 +90,7 @@
       whatMeans: "Was bedeutet dieses Verb?", whoWhen: "Wer und wann? Bestimme die Form.", whichHeard: "Welche Form hast du gehört?", findVerb: "Hör den Vers und tippe das Verb.",
       fillIn: "Ergänze den Satz mit der richtigen Form.", right: "Richtig.", wrong: "Falsch.", nextQ: "Nächste Frage", correct: (a, b) => `${a} / ${b} richtig`,
       noVoice: "Dieses Gerät hat keine arabische Stimme.", listen: "Anhören",
-      footer: ["<b>Quellen.</b> Verben, Formen, Verse und Nomen: Quranic Arabic Corpus (GPL), Korantext von Tanzil. Rezitation: Mishary Alafasy über everyayah.com. Einzelne Wörter: quran.com.", "<b>Stimme.</b> Jede Form, jedes Nomen und jeder Satz wird von einer synthetischen Stimme (tts_arabic) aus einer Vokal für Vokal geprüften Lesung gesprochen. „rezitiert“ spielt einen echten Rezitator, wo der Koran die Form enthält.", "<b>Übersetzungen:</b> Bosnisch liest ein Mensch, Englisch ist mit einem Lexikon geprüft, andere Sprachen sind ungeprüfte KI-Übersetzungen."],
+      footer: ["<b>Stimme.</b> Jede Form, jedes Nomen und jeder Satz wird von einer synthetischen Stimme (tts_arabic) aus einer Vokal für Vokal geprüften Lesung gesprochen. „rezitiert“ spielt einen echten Rezitator, wo der Koran die Form enthält.", "<b>Übersetzungen:</b> Bosnisch liest ein Mensch, Englisch ist mit einem Lexikon geprüft, andere Sprachen sind ungeprüfte KI-Übersetzungen."],
     },
     sq: {
       subtitle: (n) => `${n} foljet më të shpeshta të Kuranit`, language: "Gjuha",
@@ -110,7 +110,7 @@
       whatMeans: "Çfarë do të thotë kjo folje?", whoWhen: "Kush dhe kur? Përcaktoni formën.", whichHeard: "Cilën formë dëgjuat?", findVerb: "Dëgjoni ajetin dhe prekni foljen.",
       fillIn: "Plotësoni fjalinë me formën e duhur.", right: "Saktë.", wrong: "Gabim.", nextQ: "Pyetja tjetër", correct: (a, b) => `${a} / ${b} saktë`,
       noVoice: "Kjo pajisje nuk ka zë arab.", listen: "Dëgjo",
-      footer: ["<b>Burimet.</b> Foljet, format, ajetet dhe emrat: Quranic Arabic Corpus (GPL), teksti i Kuranit nga Tanzil. Leximi: Mishary Alafasy (everyayah.com). Fjalët e veçanta: quran.com.", "<b>Zëri.</b> Çdo formë, emër dhe fjali flitet nga një zë sintetik (tts_arabic) nga një lexim i kontrolluar harake për harake. Butoni „si lexohet“ luan një lexues të vërtetë kudo që forma gjendet në Kuran.", "<b>Përkthimet:</b> boshnjakishten e lexon një njeri, anglishtja kontrollohet me fjalor, gjuhët e tjera janë përkthime të pashqyrtuara të IA-së."],
+      footer: ["<b>Zëri.</b> Çdo formë, emër dhe fjali flitet nga një zë sintetik (tts_arabic) nga një lexim i kontrolluar harake për harake. Butoni „si lexohet“ luan një lexues të vërtetë kudo që forma gjendet në Kuran.", "<b>Përkthimet:</b> boshnjakishten e lexon një njeri, anglishtja kontrollohet me fjalor, gjuhët e tjera janë përkthime të pashqyrtuara të IA-së."],
     },
     fr: {
       subtitle: (n) => `Les ${n} verbes les plus fréquents du Coran`, language: "Langue",
@@ -130,7 +130,7 @@
       whatMeans: "Que signifie ce verbe ?", whoWhen: "Qui et quand ? Identifiez la forme.", whichHeard: "Quelle forme avez-vous entendue ?", findVerb: "Écoutez le verset et touchez le verbe.",
       fillIn: "Complétez la phrase avec la bonne forme.", right: "Correct.", wrong: "Incorrect.", nextQ: "Question suivante", correct: (a, b) => `${a} / ${b} correct`,
       noVoice: "Cet appareil n'a pas de voix arabe.", listen: "Écouter",
-      footer: ["<b>Sources.</b> Verbes, formes, versets et noms : Quranic Arabic Corpus (GPL), texte du Coran de Tanzil. Récitation : Mishary Alafasy via everyayah.com. Mots isolés : quran.com.", "<b>Voix.</b> Chaque forme, nom et phrase est prononcé par une voix de synthèse (tts_arabic) à partir d'une lecture vérifiée voyelle par voyelle. « récité » fait entendre un vrai récitateur partout où le Coran contient la forme.", "<b>Traductions :</b> le bosnien est relu par une personne, l'anglais vérifié par un lexique, les autres langues sont des traductions IA non relues."],
+      footer: ["<b>Voix.</b> Chaque forme, nom et phrase est prononcé par une voix de synthèse (tts_arabic) à partir d'une lecture vérifiée voyelle par voyelle. « récité » fait entendre un vrai récitateur partout où le Coran contient la forme.", "<b>Traductions :</b> le bosnien est relu par une personne, l'anglais vérifié par un lexique, les autres langues sont des traductions IA non relues."],
     },
     id: {
       subtitle: (n) => `${n} kata kerja paling sering dalam Al-Qur'an`, language: "Bahasa",
@@ -150,7 +150,7 @@
       whatMeans: "Apa arti kata kerja ini?", whoWhen: "Siapa dan kapan? Tentukan bentuknya.", whichHeard: "Bentuk mana yang Anda dengar?", findVerb: "Dengarkan ayat lalu ketuk kata kerjanya.",
       fillIn: "Lengkapi kalimat dengan bentuk yang tepat.", right: "Benar.", wrong: "Salah.", nextQ: "Soal berikutnya", correct: (a, b) => `${a} / ${b} benar`,
       noVoice: "Perangkat ini tidak punya suara bahasa Arab.", listen: "Dengar",
-      footer: ["<b>Sumber.</b> Kata kerja, bentuk, ayat, dan kata benda: Quranic Arabic Corpus (GPL), teks Al-Qur'an dari Tanzil. Bacaan ayat: Mishary Alafasy (everyayah.com). Kata per kata: quran.com.", "<b>Suara.</b> Setiap bentuk, kata benda, dan kalimat diucapkan suara sintetis (tts_arabic) dari bacaan yang dicek harakat demi harakat. Tombol “bacaan” memutar qari asli bila bentuk itu ada dalam Al-Qur'an.", "<b>Terjemahan:</b> bahasa Bosnia dibaca manusia, bahasa Inggris dicek dengan kamus, bahasa lain adalah terjemahan AI yang belum ditinjau."],
+      footer: ["<b>Suara.</b> Setiap bentuk, kata benda, dan kalimat diucapkan suara sintetis (tts_arabic) dari bacaan yang dicek harakat demi harakat. Tombol “bacaan” memutar qari asli bila bentuk itu ada dalam Al-Qur'an.", "<b>Terjemahan:</b> bahasa Bosnia dibaca manusia, bahasa Inggris dicek dengan kamus, bahasa lain adalah terjemahan AI yang belum ditinjau."],
     },
     ur: {
       subtitle: (n) => `قرآن کے ${n} سب سے زیادہ آنے والے افعال`, language: "زبان",
@@ -170,7 +170,7 @@
       whatMeans: "اس فعل کا معنی کیا ہے؟", whoWhen: "کون اور کب؟ صیغہ پہچانیں۔", whichHeard: "آپ نے کون سا صیغہ سنا؟", findVerb: "آیت سنیں اور فعل پر ٹیپ کریں۔",
       fillIn: "درست صیغے سے جملہ مکمل کریں۔", right: "درست۔", wrong: "غلط۔", nextQ: "اگلا سوال", correct: (a, b) => `${a} / ${b} درست`,
       noVoice: "اس آلے میں عربی آواز نہیں۔", listen: "سنیں",
-      footer: ["<b>ماخذ:</b> افعال، صیغے، آیات اور اسماء: Quranic Arabic Corpus (GPL)، متن Tanzil۔ تلاوت: مشاری العفاسی (everyayah.com)۔ الفاظ: quran.com۔", "<b>آواز:</b> ہر صیغہ، اسم اور جملہ مصنوعی آواز (tts_arabic) سے پڑھا جاتا ہے، جس کی قراءت حرکت بہ حرکت جانچی گئی ہے۔ “تلاوت” کا بٹن اصل قاری سناتا ہے جہاں یہ صیغہ قرآن میں ہے۔", "<b>تراجم:</b> بوسنیائی ایک انسان پڑھتا ہے، انگریزی لغت سے جانچی گئی، باقی زبانیں غیر جانچے AI تراجم ہیں۔"],
+      footer: ["<b>آواز:</b> ہر صیغہ، اسم اور جملہ مصنوعی آواز (tts_arabic) سے پڑھا جاتا ہے، جس کی قراءت حرکت بہ حرکت جانچی گئی ہے۔ “تلاوت” کا بٹن اصل قاری سناتا ہے جہاں یہ صیغہ قرآن میں ہے۔", "<b>تراجم:</b> بوسنیائی ایک انسان پڑھتا ہے، انگریزی لغت سے جانچی گئی، باقی زبانیں غیر جانچے AI تراجم ہیں۔"],
     },
     bn: {
       subtitle: (n) => `কুরআনের সবচেয়ে বেশি ব্যবহৃত ${n}টি ক্রিয়া`, language: "ভাষা",
@@ -190,7 +190,7 @@
       whatMeans: "এই ক্রিয়ার অর্থ কী?", whoWhen: "কে এবং কখন? রূপটি চিহ্নিত করুন।", whichHeard: "আপনি কোন রূপটি শুনলেন?", findVerb: "আয়াতটি শুনুন এবং ক্রিয়াটিতে চাপুন।",
       fillIn: "সঠিক রূপ দিয়ে বাক্যটি পূর্ণ করুন।", right: "সঠিক।", wrong: "পুরোপুরি ঠিক নয়।", nextQ: "পরের প্রশ্ন", correct: (a, b) => `${a} / ${b} সঠিক`,
       noVoice: "এই ডিভাইসে কোনো আরবি কণ্ঠ নেই।", listen: "শুনুন",
-      footer: ["<b>উৎস।</b> ক্রিয়া, রূপ, আয়াত ও বিশেষ্য: Quranic Arabic Corpus (GPL), কুরআনের পাঠ Tanzil থেকে। আয়াত তিলাওয়াত: Mishary Alafasy, everyayah.com-এর মাধ্যমে। একক শব্দ: quran.com।", "<b>কণ্ঠ।</b> প্রতিটি রূপ, বিশেষ্য ও বাক্য একটি কৃত্রিম কণ্ঠ (tts_arabic) দ্বারা উচ্চারিত, এমন পাঠ থেকে যা প্রতিটি হরকত ধরে যাচাই করা হয়েছে। “তিলাওয়াতে যেমন” বোতামটি যেখানে কুরআনে সেই রূপটি আছে সেখানে একজন প্রকৃত ক্বারীর তিলাওয়াত বাজায়।", "<b>অনুবাদ:</b> বসনীয় অনুবাদ একজন মানুষ পড়ে দেখেছেন, ইংরেজি অনুবাদ একটি অভিধানের (CAMeL) সাথে মিলিয়ে যাচাই করা হয়েছে, অন্যান্য ভাষা (বাংলাসহ) পর্যালোচনাহীন কৃত্রিম বুদ্ধিমত্তার অনুবাদ।"],
+      footer: ["<b>কণ্ঠ।</b> প্রতিটি রূপ, বিশেষ্য ও বাক্য একটি কৃত্রিম কণ্ঠ (tts_arabic) দ্বারা উচ্চারিত, এমন পাঠ থেকে যা প্রতিটি হরকত ধরে যাচাই করা হয়েছে। “তিলাওয়াতে যেমন” বোতামটি যেখানে কুরআনে সেই রূপটি আছে সেখানে একজন প্রকৃত ক্বারীর তিলাওয়াত বাজায়।", "<b>অনুবাদ:</b> বসনীয় অনুবাদ একজন মানুষ পড়ে দেখেছেন, ইংরেজি অনুবাদ একটি অভিধানের (CAMeL) সাথে মিলিয়ে যাচাই করা হয়েছে, অন্যান্য ভাষা (বাংলাসহ) পর্যালোচনাহীন কৃত্রিম বুদ্ধিমত্তার অনুবাদ।"],
     },
     fa: {
       subtitle: (n) => `${n} فعل پرکاربرد قرآن`, language: "زبان",
@@ -210,7 +210,7 @@
       whatMeans: "معنای این فعل چیست؟", whoWhen: "چه کسی و چه زمانی؟ صیغه را تشخیص دهید.", whichHeard: "کدام صیغه را شنیدید؟", findVerb: "به آیه گوش دهید و روی فعل بزنید.",
       fillIn: "جمله را با صیغهٔ درست کامل کنید.", right: "درست است.", wrong: "نه کاملاً.", nextQ: "پرسش بعدی", correct: (a, b) => `${a} / ${b} درست`,
       noVoice: "این دستگاه صدای عربی ندارد.", listen: "گوش دادن",
-      footer: ["<b>منابع.</b> فعل‌ها، صیغه‌ها، آیات و اسم‌ها: Quranic Arabic Corpus (GPL)، متن قرآن از Tanzil. قرائت آیات: Mishary Alafasy از طریق everyayah.com. واژه‌های تکی: quran.com.", "<b>صدا.</b> همهٔ صیغه‌ها، اسم‌ها و جمله‌ها با صدای مصنوعی (tts_arabic) و بر پایهٔ خوانشی که حرکت به حرکت بررسی شده است خوانده می‌شوند. دکمهٔ «با قرائت» هر جا که آن صیغه در قرآن آمده باشد، صدای یک قاری واقعی را پخش می‌کند.", "<b>ترجمه‌ها:</b> بوسنیایی را یک انسان خوانده است، انگلیسی با یک واژه‌نامه (CAMeL) بررسی شده است، و زبان‌های دیگر (از جمله فارسی) ترجمه‌های بررسی‌نشدهٔ هوش مصنوعی‌اند."],
+      footer: ["<b>صدا.</b> همهٔ صیغه‌ها، اسم‌ها و جمله‌ها با صدای مصنوعی (tts_arabic) و بر پایهٔ خوانشی که حرکت به حرکت بررسی شده است خوانده می‌شوند. دکمهٔ «با قرائت» هر جا که آن صیغه در قرآن آمده باشد، صدای یک قاری واقعی را پخش می‌کند.", "<b>ترجمه‌ها:</b> بوسنیایی را یک انسان خوانده است، انگلیسی با یک واژه‌نامه (CAMeL) بررسی شده است، و زبان‌های دیگر (از جمله فارسی) ترجمه‌های بررسی‌نشدهٔ هوش مصنوعی‌اند."],
     },
     ru: {
       subtitle: (n) => `${n} самых частых глаголов Корана`, language: "Язык",
@@ -230,7 +230,7 @@
       whatMeans: "Что означает этот глагол?", whoWhen: "Кто и когда? Определите форму.", whichHeard: "Какую форму вы услышали?", findVerb: "Послушайте аят и нажмите на глагол.",
       fillIn: "Дополните предложение правильной формой.", right: "Верно.", wrong: "Не совсем.", nextQ: "Следующий вопрос", correct: (a, b) => `${a} / ${b} верно`,
       noVoice: "На этом устройстве нет арабского голоса.", listen: "Слушать",
-      footer: ["<b>Источники.</b> Глаголы, формы, аяты и имена: Quranic Arabic Corpus (GPL), текст Корана из Tanzil. Чтение аятов: Mishary Alafasy через everyayah.com. Отдельные слова: quran.com.", "<b>Голос.</b> Каждую форму, имя и предложение произносит синтетический голос (tts_arabic) по прочтению, проверенному огласовка за огласовкой. Кнопка «в чтении» воспроизводит настоящего чтеца везде, где эта форма есть в Коране.", "<b>Переводы:</b> боснийский перевод прочитан человеком, английский проверен по словарю (CAMeL), остальные языки (включая русский) — непроверенные переводы ИИ. Перевод аятов — И. Ю. Крачковского."],
+      footer: ["<b>Голос.</b> Каждую форму, имя и предложение произносит синтетический голос (tts_arabic) по прочтению, проверенному огласовка за огласовкой. Кнопка «в чтении» воспроизводит настоящего чтеца везде, где эта форма есть в Коране.", "<b>Переводы:</b> боснийский перевод прочитан человеком, английский проверен по словарю (CAMeL), остальные языки (включая русский) — непроверенные переводы ИИ. Перевод аятов — И. Ю. Крачковского."],
     },
     ms: {
       subtitle: (n) => `${n} kata kerja paling kerap dalam al-Quran`, language: "Bahasa",
@@ -250,7 +250,7 @@
       whatMeans: "Apakah makna kata kerja ini?", whoWhen: "Siapa dan bila? Kenal pasti bentuknya.", whichHeard: "Bentuk manakah yang anda dengar?", findVerb: "Dengar ayat itu dan ketik kata kerjanya.",
       fillIn: "Lengkapkan kalimat dengan bentuk yang betul.", right: "Betul.", wrong: "Kurang tepat.", nextQ: "Soalan seterusnya", correct: (a, b) => `${a} / ${b} betul`,
       noVoice: "Peranti ini tiada suara bahasa Arab.", listen: "Dengar",
-      footer: ["<b>Sumber.</b> Kata kerja, bentuk, ayat dan kata nama: Quranic Arabic Corpus (GPL), teks al-Quran daripada Tanzil. Bacaan ayat: Mishary Alafasy melalui everyayah.com. Perkataan tunggal: quran.com.", "<b>Suara.</b> Setiap bentuk, kata nama dan kalimat dituturkan oleh suara sintetik (tts_arabic) berdasarkan bacaan yang disemak baris demi baris. Butang “seperti dibaca” memainkan bacaan qari sebenar di mana sahaja bentuk itu terdapat dalam al-Quran.", "<b>Terjemahan:</b> bahasa Bosnia telah dibaca oleh manusia, bahasa Inggeris disemak berdasarkan leksikon (CAMeL), bahasa-bahasa lain (termasuk bahasa Melayu) ialah terjemahan AI yang belum disemak."],
+      footer: ["<b>Suara.</b> Setiap bentuk, kata nama dan kalimat dituturkan oleh suara sintetik (tts_arabic) berdasarkan bacaan yang disemak baris demi baris. Butang “seperti dibaca” memainkan bacaan qari sebenar di mana sahaja bentuk itu terdapat dalam al-Quran.", "<b>Terjemahan:</b> bahasa Bosnia telah dibaca oleh manusia, bahasa Inggeris disemak berdasarkan leksikon (CAMeL), bahasa-bahasa lain (termasuk bahasa Melayu) ialah terjemahan AI yang belum disemak."],
     },
     es: {
       subtitle: (n) => `Los ${n} verbos más frecuentes del Corán`, language: "Idioma",
@@ -270,7 +270,7 @@
       whatMeans: "¿Qué significa este verbo?", whoWhen: "¿Quién y cuándo? Identifica la forma.", whichHeard: "¿Qué forma has oído?", findVerb: "Escucha la aleya y toca el verbo.",
       fillIn: "Completa la oración con la forma correcta.", right: "Correcto.", wrong: "No del todo.", nextQ: "Siguiente pregunta", correct: (a, b) => `${a} / ${b} correctas`,
       noVoice: "Este dispositivo no tiene voz en árabe.", listen: "Escuchar",
-      footer: ["<b>Fuentes.</b> Verbos, formas, aleyas y sustantivos: Quranic Arabic Corpus (GPL); texto del Corán de Tanzil. Recitación de las aleyas: Mishary Alafasy vía everyayah.com. Palabras sueltas: quran.com.", "<b>Voz.</b> Cada forma, sustantivo y oración la pronuncia una voz sintética (tts_arabic) a partir de una lectura comprobada vocal por vocal. El botón «recitado» reproduce a un recitador real siempre que el Corán contiene esa forma.", "<b>Traducciones:</b> el bosnio lo revisa una persona, el inglés se contrasta con un diccionario (CAMeL), los demás idiomas (incluido el español) son traducciones de IA sin revisar."],
+      footer: ["<b>Voz.</b> Cada forma, sustantivo y oración la pronuncia una voz sintética (tts_arabic) a partir de una lectura comprobada vocal por vocal. El botón «recitado» reproduce a un recitador real siempre que el Corán contiene esa forma.", "<b>Traducciones:</b> el bosnio lo revisa una persona, el inglés se contrasta con un diccionario (CAMeL), los demás idiomas (incluido el español) son traducciones de IA sin revisar."],
     },
     hi: {
       subtitle: (n) => `क़ुरआन की ${n} सबसे ज़्यादा आने वाली क्रियाएँ`, language: "भाषा",
@@ -290,7 +290,7 @@
       whatMeans: "इस क्रिया का क्या अर्थ है?", whoWhen: "कौन और कब? रूप पहचानें।", whichHeard: "आपने कौन-सा रूप सुना?", findVerb: "आयत सुनें और क्रिया पर टैप करें।",
       fillIn: "सही रूप से वाक्य पूरा करें।", right: "सही।", wrong: "पूरी तरह सही नहीं।", nextQ: "अगला प्रश्न", correct: (a, b) => `${a} / ${b} सही`,
       noVoice: "इस डिवाइस में अरबी आवाज़ नहीं है।", listen: "सुनें",
-      footer: ["<b>स्रोत।</b> क्रियाएँ, रूप, आयतें और संज्ञाएँ: Quranic Arabic Corpus (GPL), क़ुरआन का पाठ Tanzil से। आयत की तिलावत: Mishary Alafasy, everyayah.com के माध्यम से। अलग-अलग शब्द: quran.com।", "<b>आवाज़।</b> हर रूप, संज्ञा और वाक्य एक कृत्रिम आवाज़ (tts_arabic) द्वारा बोला जाता है, ऐसे पाठ से जिसकी हर हरकत जाँची गई है। “तिलावत में” बटन असली क़ारी की आवाज़ चलाता है, जहाँ भी वह रूप क़ुरआन में आता है।", "<b>अनुवाद:</b> बोस्नियाई अनुवाद एक व्यक्ति ने पढ़ा है, अंग्रेज़ी एक शब्दकोश (CAMeL) से जाँची गई है, अन्य भाषाएँ (हिंदी सहित) बिना जाँचे AI अनुवाद हैं।"],
+      footer: ["<b>आवाज़।</b> हर रूप, संज्ञा और वाक्य एक कृत्रिम आवाज़ (tts_arabic) द्वारा बोला जाता है, ऐसे पाठ से जिसकी हर हरकत जाँची गई है। “तिलावत में” बटन असली क़ारी की आवाज़ चलाता है, जहाँ भी वह रूप क़ुरआन में आता है।", "<b>अनुवाद:</b> बोस्नियाई अनुवाद एक व्यक्ति ने पढ़ा है, अंग्रेज़ी एक शब्दकोश (CAMeL) से जाँची गई है, अन्य भाषाएँ (हिंदी सहित) बिना जाँचे AI अनुवाद हैं।"],
     },
     sw: {
       subtitle: (n) => `Vitenzi ${n} vinavyotokea mara nyingi zaidi katika Qur'ani`, language: "Lugha",
@@ -310,7 +310,7 @@
       whatMeans: "Kitenzi hiki kina maana gani?", whoWhen: "Nani na lini? Tambua umbo.", whichHeard: "Umesikia umbo gani?", findVerb: "Sikiliza aya kisha gusa kitenzi.",
       fillIn: "Kamilisha sentensi kwa umbo sahihi.", right: "Sahihi.", wrong: "Si sawa kabisa.", nextQ: "Swali linalofuata", correct: (a, b) => `${a} / ${b} sahihi`,
       noVoice: "Kifaa hiki hakina sauti ya Kiarabu.", listen: "Sikiliza",
-      footer: ["<b>Vyanzo.</b> Vitenzi, maumbo, aya na nomino: Quranic Arabic Corpus (GPL), maandishi ya Qur'ani kutoka Tanzil. Kisomo cha aya: Mishary Alafasy kupitia everyayah.com. Maneno mamoja: quran.com.", "<b>Sauti.</b> Kila umbo, nomino na sentensi hutamkwa na sauti ya kutengenezwa (tts_arabic) kutoka usomaji uliokaguliwa irabu kwa irabu. Kitufe cha “kama inavyosomwa” kinacheza msomaji halisi popote ambapo Qur'ani ina umbo hilo.", "<b>Tafsiri:</b> Kibosnia kimesomwa na mtu, Kiingereza kimekaguliwa dhidi ya kamusi (CAMeL), lugha nyingine (ikiwemo Kiswahili) ni tafsiri za AI ambazo hazijakaguliwa."],
+      footer: ["<b>Sauti.</b> Kila umbo, nomino na sentensi hutamkwa na sauti ya kutengenezwa (tts_arabic) kutoka usomaji uliokaguliwa irabu kwa irabu. Kitufe cha “kama inavyosomwa” kinacheza msomaji halisi popote ambapo Qur'ani ina umbo hilo.", "<b>Tafsiri:</b> Kibosnia kimesomwa na mtu, Kiingereza kimekaguliwa dhidi ya kamusi (CAMeL), lugha nyingine (ikiwemo Kiswahili) ni tafsiri za AI ambazo hazijakaguliwa."],
     },
     so: {
       subtitle: (n) => `${n}-ka fal ee ugu badan Qur'aanka`, language: "Luqadda",
@@ -330,7 +330,7 @@
       whatMeans: "Falkan maxuu ka dhigan yahay?", whoWhen: "Yaa iyo goorma? Garo qaabka.", whichHeard: "Qaabkee ayaad maqashay?", findVerb: "Dhageyso aayadda oo taabo falka.",
       fillIn: "Ku dhammaystir jumladda qaabka saxda ah.", right: "Waa sax.", wrong: "Sax ma aha.", nextQ: "Su'aasha xigta", correct: (a, b) => `${a} / ${b} sax`,
       noVoice: "Qalabkan ma laha cod Carabi ah.", listen: "Dhageyso",
-      footer: ["<b>Ilaha.</b> Falalka, qaababka, aayadaha iyo magacyada: Quranic Arabic Corpus (GPL), qoraalka Qur'aanka waxaa laga keenay Tanzil. Akhriska aayadaha: Mishary Alafasy oo laga helay everyayah.com. Erayada keli ah: quran.com.", "<b>Codka.</b> Qaab kasta, magac kasta iyo jumlad kasta waxaa ku hadla cod macmal ah (tts_arabic) oo ka akhriya qoraal shakal kasta la hubiyey. Badhanka “sida loo akhriyey” wuxuu shiddaa qaari dhab ah meel kasta oo Qur'aanku qaabkaas ku jiro.", "<b>Tarjumaadaha:</b> Bosniyaanka waxaa akhriyey qof, Ingiriisiga waxaa lagu hubiyey qaamuus (CAMeL), luqadaha kale (oo ay ku jirto Soomaaliga) waa tarjumaado AI ah oo aan dib loo eegin."],
+      footer: ["<b>Codka.</b> Qaab kasta, magac kasta iyo jumlad kasta waxaa ku hadla cod macmal ah (tts_arabic) oo ka akhriya qoraal shakal kasta la hubiyey. Badhanka “sida loo akhriyey” wuxuu shiddaa qaari dhab ah meel kasta oo Qur'aanku qaabkaas ku jiro.", "<b>Tarjumaadaha:</b> Bosniyaanka waxaa akhriyey qof, Ingiriisiga waxaa lagu hubiyey qaamuus (CAMeL), luqadaha kale (oo ay ku jirto Soomaaliga) waa tarjumaado AI ah oo aan dib loo eegin."],
     },
   };
 
@@ -455,55 +455,96 @@
     bs: {
       allForms: (n) => `Svi oblici u Kur'anu (${n})`, formsNote: "Svaka riječ kako stoji u Kur'anu, najčešća prva. Dok oblik nema AI prijevod, prikazana je njegova gramatika.",
       firstAyah: "prvi put", passive: "pasiv", object: (p) => `objekat: ${p}`,
+      moods: { indicative: "indikativ", subjunctive: "subjunktiv", jussive: "jusiv" },
+      links: { islamBa: "Prijevod na islam.ba", wordByWord: "Riječ po riječ: quranwbw.com" },
       objects: { huwa: "njega/to", hiya: "nju/to", huma: "njih dvoje", hum: "njih", hunna: "njih (ž.)", anta: "tebe", anti: "tebe (ž.)", antuma: "vas dvoje", antum: "vas", antunna: "vas (ž.)", ana: "mene", nahnu: "nas" },
       showAll: (n) => `Prikaži sve ajete (${n})`, hideAll: "Sakrij ajete", showMore: "Prikaži još", loading: "Učitavanje…", loadFailed: "Ajeti se nisu mogli učitati.",
     },
     en: {
       allForms: (n) => `Every form in the Quran (${n})`, formsNote: "Each word as it stands in the Quran, the most frequent first. Until a form has its AI gloss, its grammar is shown.",
       firstAyah: "first in", passive: "passive", object: (p) => `object: ${p}`,
+      moods: { indicative: "indicative", subjunctive: "subjunctive", jussive: "jussive" },
+      links: { islamBa: "Bosnian translation on islam.ba", wordByWord: "Word by word: quranwbw.com" },
       objects: { huwa: "him/it", hiya: "her/it", huma: "them two", hum: "them", hunna: "them (f.)", anta: "you", anti: "you (f.)", antuma: "you two", antum: "you (pl.)", antunna: "you (f. pl.)", ana: "me", nahnu: "us" },
       showAll: (n) => `Show all ayat (${n})`, hideAll: "Hide the ayat", showMore: "Show more", loading: "Loading…", loadFailed: "The ayat could not be loaded.",
     },
     tr: {
       allForms: (n) => `Kur'an'daki bütün biçimler (${n})`, formsNote: "Her kelime Kur'an'da geçtiği gibi, en sık geçen önce. Bir biçimin yapay zekâ anlamı henüz yoksa dil bilgisi gösterilir.",
       firstAyah: "ilk geçtiği yer", passive: "edilgen", object: (p) => `nesne: ${p}`,
+      moods: { indicative: "merfû", subjunctive: "mansûb", jussive: "meczûm" },
+      links: { islamBa: "islam.ba'da Boşnakça meal", wordByWord: "Kelime kelime: quranwbw.com" },
       objects: { huwa: "onu", hiya: "onu (dişi)", huma: "o ikisini", hum: "onları", hunna: "onları (dişi)", anta: "seni", anti: "seni (dişi)", antuma: "siz ikinizi", antum: "sizi", antunna: "sizi (dişi)", ana: "beni", nahnu: "bizi" },
       showAll: (n) => `Bütün ayetleri göster (${n})`, hideAll: "Ayetleri gizle", showMore: "Daha fazla", loading: "Yükleniyor…", loadFailed: "Ayetler yüklenemedi.",
     },
     fr: {
       allForms: (n) => `Toutes les formes dans le Coran (${n})`, formsNote: "Chaque mot tel qu'il figure dans le Coran, le plus fréquent d'abord. Tant qu'une forme n'a pas sa glose IA, sa grammaire est affichée.",
       firstAyah: "première fois", passive: "passif", object: (p) => `objet : ${p}`,
+      moods: { indicative: "indicatif", subjunctive: "subjonctif", jussive: "apocopé" },
+      links: { islamBa: "Traduction bosniaque sur islam.ba", wordByWord: "Mot à mot : quranwbw.com" },
       objects: { huwa: "le/lui", hiya: "la/elle", huma: "eux deux", hum: "eux", hunna: "elles", anta: "toi", anti: "toi (f.)", antuma: "vous deux", antum: "vous", antunna: "vous (f.)", ana: "moi", nahnu: "nous" },
       showAll: (n) => `Afficher tous les versets (${n})`, hideAll: "Masquer les versets", showMore: "Afficher plus", loading: "Chargement…", loadFailed: "Les versets n'ont pas pu être chargés.",
     },
     id: {
       allForms: (n) => `Semua bentuk dalam Al-Qur'an (${n})`, formsNote: "Setiap kata sebagaimana tertulis dalam Al-Qur'an, yang paling sering lebih dulu. Selama bentuk belum punya glosa AI, tata bahasanya ditampilkan.",
       firstAyah: "pertama di", passive: "pasif", object: (p) => `objek: ${p}`,
+      moods: { indicative: "marfū‘", subjunctive: "manṣūb", jussive: "majzūm" },
+      links: { islamBa: "Terjemahan Bosnia di islam.ba", wordByWord: "Kata per kata: quranwbw.com" },
       objects: { huwa: "dia/-nya (lk.)", hiya: "dia/-nya (pr.)", huma: "mereka berdua", hum: "mereka (lk.)", hunna: "mereka (pr.)", anta: "engkau (lk.)", anti: "engkau (pr.)", antuma: "kalian berdua", antum: "kalian (lk.)", antunna: "kalian (pr.)", ana: "aku", nahnu: "kami" },
       showAll: (n) => `Tampilkan semua ayat (${n})`, hideAll: "Sembunyikan ayat", showMore: "Tampilkan lagi", loading: "Memuat…", loadFailed: "Ayat tidak dapat dimuat.",
     },
     ur: {
       allForms: (n) => `قرآن میں تمام صیغے (${n})`, formsNote: "ہر لفظ جیسا قرآن میں ہے، سب سے زیادہ آنے والا پہلے۔ جب تک کسی صیغے کا AI معنی نہ ہو، اس کی گرامر دکھائی جاتی ہے۔",
       firstAyah: "پہلی بار", passive: "مجہول", object: (p) => `مفعول: ${p}`,
+      moods: { indicative: "مرفوع", subjunctive: "منصوب", jussive: "مجزوم" },
+      links: { islamBa: "islam.ba پر بوسنیائی ترجمہ", wordByWord: "لفظ بہ لفظ: quranwbw.com" },
       objects: { huwa: "اسے", hiya: "اسے (مؤنث)", huma: "ان دونوں کو", hum: "انہیں", hunna: "انہیں (مؤنث)", anta: "تجھے", anti: "تجھے (مؤنث)", antuma: "تم دونوں کو", antum: "تمہیں", antunna: "تمہیں (مؤنث)", ana: "مجھے", nahnu: "ہمیں" },
       showAll: (n) => `تمام آیات دکھائیں (${n})`, hideAll: "آیات چھپائیں", showMore: "مزید دکھائیں", loading: "لوڈ ہو رہا ہے…", loadFailed: "آیات لوڈ نہیں ہو سکیں۔",
     },
     bn: {
       allForms: (n) => `কুরআনে সব রূপ (${n})`, formsNote: "প্রতিটি শব্দ যেভাবে কুরআনে আছে, সবচেয়ে বেশি ব্যবহৃতটি আগে। কোনো রূপের AI অর্থ না থাকা পর্যন্ত তার ব্যাকরণ দেখানো হয়।",
       firstAyah: "প্রথম", passive: "কর্মবাচ্য", object: (p) => `কর্ম: ${p}`,
+      moods: { indicative: "মারফূ", subjunctive: "মানসূব", jussive: "মাজযূম" },
+      links: { islamBa: "islam.ba-তে বসনীয় অনুবাদ", wordByWord: "শব্দে শব্দে: quranwbw.com" },
       objects: { huwa: "তাকে/এটাকে", hiya: "তাকে (স্ত্রী)", huma: "তাদের দুজনকে", hum: "তাদেরকে", hunna: "তাদেরকে (স্ত্রী)", anta: "তোমাকে", anti: "তোমাকে (স্ত্রী)", antuma: "তোমাদের দুজনকে", antum: "তোমাদেরকে", antunna: "তোমাদেরকে (স্ত্রী)", ana: "আমাকে", nahnu: "আমাদেরকে" },
       showAll: (n) => `সব আয়াত দেখান (${n})`, hideAll: "আয়াত লুকান", showMore: "আরও দেখান", loading: "লোড হচ্ছে…", loadFailed: "আয়াতগুলো লোড করা যায়নি।",
     },
     fa: {
       allForms: (n) => `همهٔ صیغه‌ها در قرآن (${n})`, formsNote: "هر واژه همان‌گونه که در قرآن آمده، پرکاربردترین نخست. تا وقتی صیغه‌ای معنای هوش مصنوعی ندارد، دستور آن نشان داده می‌شود.",
       firstAyah: "نخستین بار", passive: "مجهول", object: (p) => `مفعول: ${p}`,
+      moods: { indicative: "مرفوع", subjunctive: "منصوب", jussive: "مجزوم" },
+      links: { islamBa: "ترجمهٔ بوسنیایی در islam.ba", wordByWord: "واژه به واژه: quranwbw.com" },
       objects: { huwa: "او/آن را", hiya: "او/آن را (مؤنث)", huma: "آن دو را", hum: "آنان را", hunna: "آنان را (مؤنث)", anta: "تو را", anti: "تو را (مؤنث)", antuma: "شما دو را", antum: "شما را", antunna: "شما را (مؤنث)", ana: "مرا", nahnu: "ما را" },
       showAll: (n) => `نمایش همهٔ آیات (${n})`, hideAll: "پنهان کردن آیات", showMore: "بیشتر", loading: "در حال بارگذاری…", loadFailed: "آیات بارگذاری نشد.",
     },
   };
+  // Every source, credited as its terms ask, on every page and in the app (THIRD_PARTY_NOTICES.md
+  // says why each line reads as it does, and holds the corpus's full notice and what we changed).
+  // The credits themselves stay in English, word for word; only the words around them are translated.
+  const SOURCES = {
+    bs: { heading: "Izvori.", corpus: "Glagoli, oblici, ajeti i imenice", quranText: "Tekst Kur'ana", translations: "Prijevodi ajeta", recitation: "Učenje.", words: "Pojedinačne riječi", ayat: "Ajeti" },
+    en: { heading: "Sources.", corpus: "Verbs, forms, ayat and nouns", quranText: "Quran text", translations: "Ayah translations", recitation: "Recitation.", words: "Single words", ayat: "Whole ayat" },
+    tr: { heading: "Kaynaklar.", corpus: "Fiiller, biçimler, ayetler ve isimler", quranText: "Kur'an metni", translations: "Ayet mealleri", recitation: "Tilavet.", words: "Tek kelimeler", ayat: "Ayetler" },
+    fr: { heading: "Sources.", corpus: "Verbes, formes, versets et noms", quranText: "Texte du Coran", translations: "Traductions des versets", recitation: "Récitation.", words: "Mots isolés", ayat: "Versets entiers" },
+    id: { heading: "Sumber.", corpus: "Kata kerja, bentuk, ayat, dan kata benda", quranText: "Teks Al-Qur'an", translations: "Terjemahan ayat", recitation: "Bacaan.", words: "Kata per kata", ayat: "Ayat utuh" },
+    ur: { heading: "ماخذ:", corpus: "افعال، صیغے، آیات اور اسماء", quranText: "متنِ قرآن", translations: "آیات کے تراجم", recitation: "تلاوت:", words: "الگ الفاظ", ayat: "پوری آیات" },
+    bn: { heading: "উৎস।", corpus: "ক্রিয়া, রূপ, আয়াত ও বিশেষ্য", quranText: "কুরআনের পাঠ", translations: "আয়াতের অনুবাদ", recitation: "তিলাওয়াত।", words: "একক শব্দ", ayat: "পূর্ণ আয়াত" },
+    fa: { heading: "منابع.", corpus: "فعل‌ها، صیغه‌ها، آیات و اسم‌ها", quranText: "متن قرآن", translations: "ترجمه‌های آیات", recitation: "قرائت.", words: "واژه‌های تکی", ayat: "آیات کامل" },
+  };
+  const link = (href, text) => `<a href="${href}" rel="noopener">${text}</a>`;
+  function credits(words) {
+    return [
+      `<b>${words.heading}</b> ${words.corpus}: ${link("https://corpus.quran.com", "Morphology: Quranic Arabic Corpus (GNU GPL)")}. `
+        + `${words.quranText}: ${link("https://tanzil.net", "Tanzil")}. ${words.translations}: ${link("https://tanzil.net/trans/", "tanzil.net/trans")}.`,
+      `<b>${words.recitation}</b> ${words.words}: QuranHive Word-by-Word Audio Dataset — © QuranHive, licensed under `
+        + `${link("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")} (${link("https://quranhive.com", "quranhive.com")}; `
+        + "re-encoded; report a clip to qh@quranhive.com). "
+        + `${words.ayat}: Recitation: Mishary Rashid Alafasy, streamed from ${link("https://alquran.cloud", "alquran.cloud")} (Islamic Network).`,
+    ];
+  }
   for (const code of Object.keys(UI)) {
     UI[code].page = PAGE[code];
     UI[code].forms = FORMS[code] || FORMS.en;
+    UI[code].footer = [...credits(SOURCES[code] || SOURCES.en), ...UI[code].footer];
   }
   return UI;
 });

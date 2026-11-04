@@ -1,66 +1,91 @@
-"""Tests for the recitation adapter, with the network replaced by a fake."""
+"""Tests for the recitation adapter: the streamed ayat and the QuranHive word clips."""
 
-import urllib.error
-import urllib.request
+import zipfile
 
 import pytest
 
-from fil.recitation import NotAudio, RecitationLibrary, RecitationMissing
+from fil.recitation import (AYAH_STREAM, NotAudio, QuranHiveArchive, RecitationMissing, WordArchiveMissing,
+                            WordRecitations, ayah_stream, word_clip_name)
 
 _MP3 = b"ID3" + b"\x00" * 20
 
 
-def test_a_clip_is_fetched_once_and_placed_in_the_site(tmp_path):
-    fetched = []
-    library = RecitationLibrary(tmp_path / "site", fetch=lambda url: fetched.append(url) or _MP3,
-                                cache=tmp_path / "cache")
+class _FakeSource:
+    def __init__(self, clips: dict[str, bytes]) -> None:
+        self.clips = clips
+        self.asked: list[str] = []
 
-    first = library.ayah(1, 5)
-    library.ayah(1, 5)
+    def clip(self, name: str) -> bytes:
+        self.asked.append(name)
+        if name not in self.clips:
+            raise RecitationMissing(name)
+        return self.clips[name]
 
-    assert first == "audio/ayah/001005.mp3"
-    assert (tmp_path / "site" / first).read_bytes() == _MP3
-    assert fetched == ["https://everyayah.com/data/Alafasy_64kbps/001005.mp3"]
+
+def test_an_ayah_streams_from_the_alquran_cloud_cdn_by_its_number_in_the_quran():
+    assert ayah_stream(2, 255) == "https://cdn.islamic.network/quran/audio/64/ar.alafasy/262.mp3"
+    assert ayah_stream(114, 6).endswith("/6236.mp3")
+    assert "everyayah" not in AYAH_STREAM
 
 
-def test_an_error_page_instead_of_audio_fails_the_build(tmp_path):
-    # Shipping an HTML error page as "recitation" would play silence to a learner.
-    library = RecitationLibrary(tmp_path / "site", fetch=lambda url: b"<html>404</html>",
-                                cache=tmp_path / "cache")
+def test_a_word_clip_is_named_as_the_dataset_names_it():
+    assert word_clip_name(2, 255, 1) == "002_255_001.mp3"
+    assert word_clip_name(114, 6, 3) == "114_006_003.mp3"
+
+
+def test_a_word_clip_is_taken_from_the_source_once_and_cached(tmp_path):
+    source = _FakeSource({"001_005_002.mp3": _MP3})
+    words = WordRecitations(source, tmp_path / "cache")
+
+    first = words.word(1, 5, 2)
+    again = words.word(1, 5, 2)
+
+    assert first == again == tmp_path / "cache" / "001_005_002.mp3"
+    assert first.read_bytes() == _MP3
+    assert source.asked == ["001_005_002.mp3"]
+
+
+def test_something_that_is_not_audio_fails_the_build(tmp_path):
+    # Shipping a broken file as "recitation" would play silence to a learner.
+    words = WordRecitations(_FakeSource({"007_015_001.mp3": b"<html>404</html>"}), tmp_path / "cache")
 
     with pytest.raises(NotAudio):
-        library.word(7, 15, 1)
+        words.word(7, 15, 1)
 
 
-def _not_found(url: str) -> bytes:
-    raise urllib.error.HTTPError(url, 404, "Not Found", None, None)
-
-
-def test_a_clip_the_source_does_not_have_is_reported_as_missing_not_cached(tmp_path, monkeypatch):
-    monkeypatch.setattr(urllib.request, "urlopen", lambda request, timeout: _not_found(request.full_url))
-    library = RecitationLibrary(tmp_path / "site", cache=tmp_path / "cache")
+def test_a_word_the_source_does_not_have_is_missing_and_not_cached(tmp_path):
+    words = WordRecitations(_FakeSource({}), tmp_path / "cache")
 
     with pytest.raises(RecitationMissing):
-        library.word(4, 1, 30)
+        words.word(1, 1, 1)
     assert not (tmp_path / "cache").exists()
 
 
-def test_other_http_failures_still_fail_the_build(tmp_path, monkeypatch):
-    def unavailable(request, timeout):
-        raise urllib.error.HTTPError(request.full_url, 503, "Unavailable", None, None)
-    monkeypatch.setattr(urllib.request, "urlopen", unavailable)
+def _archive(path, names):
+    with zipfile.ZipFile(path, "w") as archive:
+        for name in names:
+            archive.writestr(f"qh-quran-word-audio-files/{name}", _MP3)
+    return path
 
-    with pytest.raises(urllib.error.HTTPError):
-        RecitationLibrary(tmp_path / "site", cache=tmp_path / "cache").word(4, 1, 30)
+
+def test_the_quranhive_archive_is_read_in_place(tmp_path):
+    archive = QuranHiveArchive(_archive(tmp_path / "qh.zip", ["002_255_001.mp3"]))
+
+    assert archive.clip("002_255_001.mp3") == _MP3
+    with pytest.raises(RecitationMissing):
+        archive.clip("001_001_001.mp3")
+
+
+def test_a_missing_archive_says_how_to_download_it(tmp_path):
+    with pytest.raises(WordArchiveMissing, match="curl .*huggingface.co/datasets/quranhive"):
+        QuranHiveArchive(tmp_path / "absent.zip").clip("002_255_001.mp3")
 
 
 def test_a_missing_word_clip_leaves_that_word_without_one_and_is_reported(tmp_path):
     from fil.stages import site
 
-    def fetch(url: str) -> bytes:
-        raise RecitationMissing(url)
-    sound = site._Sound(sink=None, recitations=RecitationLibrary(tmp_path / "site", fetch=fetch,
-                                                                 cache=tmp_path / "cache"))
+    sound = site._Sound(sink=None, recitations=WordRecitations(_FakeSource({}), tmp_path / "cache"))
 
     assert sound.word(4, 1, 30) is None
     assert sound.missing_words == ["4:1:30"]
+    assert sound.ayah(4, 1) == AYAH_STREAM.format(number=494)

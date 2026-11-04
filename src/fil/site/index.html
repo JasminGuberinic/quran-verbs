@@ -114,6 +114,8 @@ button.quran-tag.playing { background: var(--gold); color: var(--surface); }
 .tense-chip { font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold); background: var(--gold-soft); padding: 2px 8px; border-radius: 999px; }
 .ayah-head a { color: var(--muted); text-decoration: none; font-family: var(--font-data); font-size: 0.75rem; }
 .ayah-head a:hover { color: var(--accent); text-decoration: underline; }
+.ayah-links { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; }
+.attested .first { display: inline-flex; flex-wrap: wrap; gap: 0 8px; justify-content: end; }
 .ayah-text { font-size: 1.65rem; line-height: 2; margin: 0; text-align: right; }
 .verb-gloss { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; font-size: 0.95rem; font-weight: 500; }
 .verb-gloss .qr { font-size: 1.3rem; color: var(--gold); }
@@ -664,7 +666,7 @@ nav.tabs button { min-height: 32px; }
         ? `<p class="ayah-translation" dir="${own && language === "ur" ? "rtl" : "ltr"}">${escapeHtml(translation.text)}<small>${escapeHtml(translation.by)}${escapeHtml(fallbackNote)}</small></p>`
         : "";
       return `<div class="ayah">
-        <div class="ayah-head"><span class="tense-chip">${escapeHtml(t().tenses[ayah.tense])}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a></div>
+        <div class="ayah-head"><span class="tense-chip">${escapeHtml(t().tenses[ayah.tense])}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a>${FilAyat.ayahLinksHtml(ayah.ref, language, t().forms.links)}</div>
         <p class="qr ayah-text">${text}</p>
         ${ayah.words.filter((word) => word.hit && word.gloss).map((word) => `<p class="verb-gloss"><span class="qr">${word.text}</span><span>= ${escapeHtml(inLanguage(word.gloss))}</span><span class="ai-tag">AI</span></p>`).join("")}
         ${translationHtml}
@@ -684,7 +686,7 @@ nav.tabs button { min-height: 32px; }
         ? `<span class="form-gloss">${escapeHtml(gloss)} <span class="ai-tag">AI</span></span>`
         : `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
       const [surah, number] = form.first.split(":");
-      return `<li><b lang="ar" dir="rtl">${form.arabic}</b><small>${form.count}×</small>${meaning}<a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener" title="${escapeHtml(words.firstAyah)} ${form.first}">${form.first}</a></li>`;
+      return `<li><b lang="ar" dir="rtl">${form.arabic}</b><small>${form.count}×</small>${meaning}<span class="first"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener" title="${escapeHtml(words.firstAyah)} ${form.first}">${form.first}</a> ${FilAyat.ayahLinksHtml(form.first, language, words.links, true)}</span></li>`;
     }).join("");
     return `<h4 class="forms-head">${escapeHtml(words.allForms(verb.forms.length))}</h4><p class="note">${escapeHtml(words.formsNote)}</p><ol class="attested">${rows}</ol>`;
   }
@@ -697,10 +699,10 @@ nav.tabs button { min-height: 32px; }
     const rtl = own && DATA.languages.find((entry) => entry.code === language)?.rtl;
     const text = {
       showAll: words.showAll(verb.ayahCount), hideAll: words.hideAll, showMore: words.showMore,
-      loading: words.loading, loadFailed: words.loadFailed, recitedAyah: t().recitedAyah,
+      loading: words.loading, loadFailed: words.loadFailed, recitedAyah: t().recitedAyah, links: words.links,
       fallbackNote: !own && language !== "en" && t().noFreeTranslation ? ` · ${t().noFreeTranslation}` : "",
     };
-    return `<div class="all-ayat" data-all-ayat data-ayat="${verb.ayatFile}" data-translation="${verb.ayatTranslations[translatedIn]}"
+    return `<div class="all-ayat" data-all-ayat data-ayat="${verb.ayatFile}" data-language="${language}" data-translation="${verb.ayatTranslations[translatedIn]}"
       data-translation-language="${translatedIn}" data-translation-dir="${rtl ? "rtl" : "ltr"}" data-audio-source="${escapeHtml(DATA.ayahAudio)}"
       data-audio-attribute="data-file" data-text="${escapeHtml(JSON.stringify(text))}">
       <button type="button" class="btn" data-all-ayat-toggle aria-expanded="false" aria-controls="all-ayat-${verb.rank}">${escapeHtml(text.showAll)}</button>

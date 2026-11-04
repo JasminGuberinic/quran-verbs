@@ -109,7 +109,7 @@ def test_a_card_whose_forms_miss_an_occurrence_fails_the_build():
 def test_a_listed_ayah_marks_the_verb_by_its_position():
     words = (QuranWord(2, 10, 1, "وَقَالُوا۟"), QuranWord(2, 10, 2, "قَالَ"), QuranWord(2, 10, 3, "نَعَمْ"))
     listed = _listed_ayah(attested_forms.VerbAyah(2, 10, (2,)), words)
-    assert listed == {"ref": "2:10", "text": "وَقَالُوا۟ قَالَ نَعَمْ", "hits": [1]}
+    assert listed == {"ref": "2:10", "number": 17, "text": "وَقَالُوا۟ قَالَ نَعَمْ", "hits": [1]}
 
 
 @pytest.mark.skipif(not QAC_MORPHOLOGY.exists(), reason="the corpus is not downloaded")

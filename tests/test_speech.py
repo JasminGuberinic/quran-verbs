@@ -2,7 +2,8 @@
 
 import pytest
 
-from fil.speech import expected_phonemes, normalized, prepared, verdict
+from fil.speech import (TtsArabicVoice, expected_phonemes, long_a_spelled_out, normalized, prepared,
+                        shadda_first, verdict)
 
 
 @pytest.mark.parametrize("text, sounds", [
@@ -53,3 +54,53 @@ def test_a_reading_that_differs_from_the_model_is_not_faithful():
 ])
 def test_the_name_of_god_is_read_with_its_long_a(text, sounds):
     assert " ".join(expected_phonemes(prepared(text))) == sounds
+
+
+@pytest.mark.parametrize("text, sounds", [
+    ("وَاسْمُ", "w a s m u"),                      # wa- before a connecting alif: no long ā
+    ("شَيْـًٔا", "$ a y < a n"),                   # Uthmani hamza on a tatweel, with tanwīn
+    ("قَوِيٌّ", "q a w i y y u n"),                # shadda and tanwīn on one letter
+])
+def test_more_words_are_read_as_their_vowels_say(text, sounds):
+    assert " ".join(expected_phonemes(prepared(text))) == sounds
+
+
+def test_a_long_vowel_before_its_own_glide_is_the_doubled_glide():
+    assert normalized("q A w ii0 y u0 n") == ["q", "a", "w", "i", "y", "y", "u", "n"]
+    assert normalized("E a d uu0 w u0 n") == ["E", "a", "d", "u", "w", "w", "u", "n"]
+
+
+def test_the_shadda_is_handed_to_the_model_before_the_tanwin():
+    assert shadda_first("قَوِيٌّ") == "قَوِيّ" + "ٌ"
+
+
+@pytest.mark.parametrize("text, spelled", [
+    ("وَاضِحٌ", "وَىضِحٌ"),                         # a long ā at the start of a word
+    ("كَانَ", "كَىنَ"),
+    ("أَبْوَابٌ", "أَبْوَىبٌ"),                      # the model's start-of-word marker is the letter b
+    ("وَاسْمُ", "وَاسْمُ"),                         # a connecting alif stays
+    ("صَاحِبُ", "صَاحِبُ"),                        # no ambiguity: untouched
+])
+def test_only_the_long_a_the_model_reads_short_is_spelled_out(text, spelled):
+    assert long_a_spelled_out(text) == spelled
+
+
+# The model's own phonetiser, as the second reader: its known slips must not cost a
+# correct text its voice, and a real disagreement must still be caught.
+@pytest.mark.parametrize("text", [
+    "الْحَقُّ وَاضِحٌ",                 # "waDiH": the wā read short
+    "صَوْتُ الْحَقِّ قَوِيٌّ",          # the tanwīn's n doubled instead of the y
+    "سَقَى الْبُسْتَانِيُّ الْجَنَّةَ",  # ī+y for i-yy
+    "صَنَعْتُ عَصِيرًا مِنَ الرُّمَّانِ",  # صَنَعْتُ matched the loan word "net"
+    "عَدُوٌّ", "أَبْوَابٌ", "كَانَ", "وَاسْمُ", "شَيْـًٔا",
+])
+def test_both_readers_agree_on_correct_texts(text):
+    pytest.importorskip("tts_arabic.text")
+    found = TtsArabicVoice().check(text)
+    assert found.is_faithful, (found.expected, found.produced)
+
+
+def test_the_second_reader_still_hears_a_short_a_as_short():
+    pytest.importorskip("tts_arabic.text")
+    assert normalized(TtsArabicVoice.phonemes("وَضَحَ")) == ["w", "a", "D", "a", "H", "a"]
+    assert not verdict("وَضَحَ", lambda text: "w aa D a H a").is_faithful

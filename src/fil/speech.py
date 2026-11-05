@@ -27,6 +27,7 @@ import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
+from unittest import mock
 
 from fil.audio import SPEECH_BITRATE, compact_aac_command, compact_clip_name
 
@@ -66,7 +67,8 @@ def prepared(text: str) -> str:
 
 # Uthmani script seats a hamza with no carrier on a tatweel (يَسْـَٔلُ, from سَأَلَ); the
 # tatweel is only a stroke to hang it on, so the pair is read as a plain hamza.
-_HAMZA_ON_TATWEEL = re.compile(f"\u0640([{FATHA}{DAMMA}{KASRA}{SUKUN}{SHADDA}]*)\u0654")
+# The vowel may be a tanwīn (شَيْـًٔا, "a thing").
+_HAMZA_ON_TATWEEL = re.compile(f"\u0640([{FATHA}{DAMMA}{KASRA}{FATHATAN}{DAMMATAN}{KASRATAN}{SUKUN}{SHADDA}]*)\u0654")
 
 
 def _with_hamza_on_the_line(text: str) -> str:
@@ -159,6 +161,8 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
             sounds += ["<", "aa"]
         elif letter.base == "ا" and letter.vowel:
             sounds += ["<", letter.vowel]                       # a voiced (connecting) alif
+        elif _is_connecting_alif_after_proclitic(letters, position):
+            pass                                                # وَاسْمُ: wa-smu, the alif falls silent
         elif _is_article_after_proclitic(letters, position):
             if _joins_sun_letter(letters, position + 1):
                 position += 1                                   # بِالشَّمْسِ: …and its l joins the sun letter
@@ -188,6 +192,17 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
                 sounds[-1] = "h"
         position += 1
     return sounds
+
+
+def _is_connecting_alif_after_proclitic(letters: list["_Letter"], position: int) -> bool:
+    """A bare alif behind bi-/wa-/fa-/ka-/li- before a vowelless letter is a connecting alif
+    (وَاسْمُ wa-smu), not a long ā: a long vowel is never followed by a sukūn in the middle
+    of a word."""
+    if position != 1 or letters[0].base not in "بفوكل" or not letters[0].vowel:
+        return False
+    letter = letters[1]
+    following = letters[2] if len(letters) > 2 else None
+    return letter.base == "ا" and not letter.vowel and bool(following and following.sukun)
 
 
 def _is_article_after_proclitic(letters: list["_Letter"], position: int) -> bool:
@@ -251,7 +266,24 @@ def normalized(model_phonemes: str) -> list[str]:
             sounds += [bare[0], bare[0]]
         else:
             sounds.append(bare)
-    return sounds
+    return _doubled_glides(sounds)
+
+
+# The model writes a doubled y after kasra as a long ī and one y (قَوِيٌّ "q a w ii y u n"),
+# and a doubled w after damma as ū and one w (عَدُوٌّ); it is the same sound as i-yy / u-ww,
+# which is how `expected_phonemes` spells it. The model makes ī+y and ū+w only there.
+_LONG_VOWEL_BEFORE_ITS_GLIDE = {("ii", "y"): ["i", "y", "y"], ("uu", "w"): ["u", "w", "w"]}
+
+
+def _doubled_glides(sounds: list[str]) -> list[str]:
+    spelled: list[str] = []
+    for sound in sounds:
+        pair = (spelled[-1], sound) if spelled else None
+        if pair in _LONG_VOWEL_BEFORE_ITS_GLIDE:
+            spelled[-1:] = _LONG_VOWEL_BEFORE_ITS_GLIDE[pair]
+        else:
+            spelled.append(sound)
+    return spelled
 
 
 @dataclass(frozen=True)
@@ -273,6 +305,55 @@ def verdict(text: str, model_phonemes) -> Verdict:
 
 # ---------------------------------------------------------------- the voice adapter
 
+# ---------------------------------------------------------------- the model's known slips
+
+_TANWIN_THEN_SHADDA = re.compile(f"([{FATHATAN}{DAMMATAN}{KASRATAN}])({SHADDA})")
+
+
+def shadda_first(text: str) -> str:
+    """Put a shadda before a tanwīn on the same letter.
+
+    Unicode's canonical order writes the tanwīn first (قَوِيٌّ = ي ٌ ّ); the model reads marks
+    in sequence and doubles the n of the tanwīn instead of the letter ("q a w i y u n n").
+    """
+    return _TANWIN_THEN_SHADDA.sub(r"\2\1", text)
+
+
+# An alif behind w/k at the start of a word or right after a b, before a vowelled letter.
+_AMBIGUOUS_LONG_A = re.compile(
+    f"(^|ب{SUKUN}?)([وك]{FATHA}?)ا(?=[^{''.join(_MARKS)}][{FATHA}{DAMMA}{KASRA}{FATHATAN}{DAMMATAN}{KASRATAN}{SHADDA}])")
+
+
+def long_a_spelled_out(text: str) -> str:
+    """Write as ى the long ā the model would read short.
+
+    Its rule table gives an alif after w/k two readings, short (wa- before a connecting
+    alif, وَاسْمُ) and long, and it always returns the first: "kana" for كَانَ, "waDiH" for
+    وَاضِحٌ. The rule means the start of a word, but its start-of-word marker is the letter
+    b, so it fires after ب too (أَبْوَابٌ "abwab"). The writing decides: before a vowelled
+    letter the alif is a long ā, which the model reads from ى without the ambiguity; before
+    a vowelless one it is the connecting alif and is left alone.
+    """
+    return " ".join(_AMBIGUOUS_LONG_A.sub(r"\1\2ى", word) for word in text.split())
+
+
+_DIACRITICS_IN_BUCKWALTER = re.compile("[aiuoFNK~`]")
+
+
+def _whole_word_fixed_words(is_fixed_word, fixed_words):
+    """The model's table of irregular words, matched on the whole word.
+
+    The model matches it on a word's letters from a small alphabet only, so صَنَعْتُ (whose
+    n and t are in that alphabet) became the loan word "net" (n i t) and the rest of the
+    word was lost.
+    """
+    def matched_on_the_whole_word(word, results, orthography, pronunciations):
+        if _DIACRITICS_IN_BUCKWALTER.sub("", word) not in fixed_words:
+            return results
+        return is_fixed_word(word, results, orthography, pronunciations)
+    return matched_on_the_whole_word
+
+
 class TtsArabicVoice:
     """A VoiceProvider backed by tts_arabic, driven by OUR reading of the text.
 
@@ -289,10 +370,17 @@ class TtsArabicVoice:
 
     @staticmethod
     def phonemes(text: str) -> str:
-        """The model's own reading of the text (the second opinion)."""
-        from tts_arabic.text import arabic_to_buckwalter, buckwalter_to_phonemes
+        """The model's own reading of the text (the second opinion), spared its known slips.
 
-        return buckwalter_to_phonemes(arabic_to_buckwalter(text))
+        Each correction below is a bug of the model's phonetiser, not a change of its
+        opinion: where its own rules are right, it is still the independent reader.
+        """
+        from tts_arabic.text import arabic_to_buckwalter, buckwalter_to_phonemes
+        from tts_arabic.text import phonetise_buckwalter as rules
+
+        whole_word_only = _whole_word_fixed_words(rules.isFixedWord, rules.fixedWords)
+        with mock.patch.object(rules, "isFixedWord", whole_word_only):
+            return buckwalter_to_phonemes(arabic_to_buckwalter(long_a_spelled_out(shadda_first(text))))
 
     def check(self, text: str) -> Verdict:
         return verdict(text, self.phonemes)
@@ -301,7 +389,6 @@ class TtsArabicVoice:
         """Speak the text, from our phonemes, into an AAC file (m4a)."""
         import tts_arabic.text as model_text
         from tts_arabic import tts
-        from unittest import mock
 
         reading = " ".join(expected_phonemes(prepared(vocalized_text)))
         tokens = model_text.phonemes_to_tokens(reading)

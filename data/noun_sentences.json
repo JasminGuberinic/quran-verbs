@@ -8341,6 +8341,114 @@
      "independent": true
     }
    }
+  },
+  {
+   "role": "subject",
+   "example": {
+    "arabic": "الْإِبِلُ تَأْكُلُ الْعُشْبَ",
+    "words": [
+     {
+      "arabic": "الْإِبِلُ",
+      "en": "the camels",
+      "bs": "deve",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "تَأْكُلُ",
+      "en": "eat",
+      "bs": "jedu",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْعُشْبَ",
+      "en": "the grass",
+      "bs": "travu",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The camels eat the grass.",
+    "bs": "Deve jedu travu.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct: collective إبل takes feminine verb تأكل; translations accurate.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "object",
+   "example": {
+    "arabic": "سَقَى الْبَدَوِيُّ الْإِبِلَ",
+    "words": [
+     {
+      "arabic": "سَقَى",
+      "en": "watered",
+      "bs": "napojio je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْبَدَوِيُّ",
+      "en": "the Bedouin",
+      "bs": "beduin",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْإِبِلَ",
+      "en": "the camels",
+      "bs": "deve",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The Bedouin watered the camels.",
+    "bs": "Beduin je napojio deve.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct accusative object; natural translations.",
+     "independent": true
+    }
+   }
   }
  ],
  "عَيْن|عين": [
@@ -9770,224 +9878,6 @@
    }
   }
  ],
- "طَيْر|طير": [
-  {
-   "role": "subject",
-   "example": {
-    "arabic": "غَرَّدَ الطَّيْرُ",
-    "words": [
-     {
-      "arabic": "غَرَّدَ",
-      "en": "twittered",
-      "bs": "cvrkutala je",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الطَّيْرُ",
-      "en": "the bird",
-      "bs": "ptica",
-      "is_target": true,
-      "translations": {}
-     }
-    ],
-    "en": "The bird twittered.",
-    "bs": "Ptica je cvrkutala.",
-    "tense": null,
-    "pronoun": null,
-    "source": "generated",
-    "drafted_by": "claude, drafting pass",
-    "translations": {},
-    "checks": {
-     "verb_root": true,
-     "verb_form": true,
-     "all_words_valid": true,
-     "gloss_agreement": true,
-     "gloss_conflicts": [],
-     "verb_form_by": "noun table",
-     "glossed_by_exception": []
-    },
-    "critique": {
-     "approved": true,
-     "grammar_ok": true,
-     "translation_ok": true,
-     "verb_usage_ok": true,
-     "by": "claude subagent, blind reviewer (separate context)",
-     "note": "",
-     "independent": true
-    }
-   }
-  },
-  {
-   "role": "object",
-   "example": {
-    "arabic": "أَطْعَمَ الطِّفْلُ الطَّيْرَ",
-    "words": [
-     {
-      "arabic": "أَطْعَمَ",
-      "en": "fed",
-      "bs": "nahranilo je",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الطِّفْلُ",
-      "en": "the child",
-      "bs": "dijete",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الطَّيْرَ",
-      "en": "the bird",
-      "bs": "pticu",
-      "is_target": true,
-      "translations": {}
-     }
-    ],
-    "en": "The child fed the bird.",
-    "bs": "Dijete je nahranilo pticu.",
-    "tense": null,
-    "pronoun": null,
-    "source": "generated",
-    "drafted_by": "claude, drafting pass",
-    "translations": {},
-    "checks": {
-     "verb_root": true,
-     "verb_form": true,
-     "all_words_valid": true,
-     "gloss_agreement": true,
-     "gloss_conflicts": [],
-     "verb_form_by": "noun table",
-     "glossed_by_exception": []
-    },
-    "critique": {
-     "approved": true,
-     "grammar_ok": true,
-     "translation_ok": true,
-     "verb_usage_ok": true,
-     "by": "claude subagent, blind reviewer (separate context)",
-     "note": "",
-     "independent": true
-    }
-   }
-  },
-  {
-   "role": "preposition",
-   "example": {
-    "arabic": "نَظَرَ الصَّيَّادُ إِلَى الطَّيْرِ",
-    "words": [
-     {
-      "arabic": "نَظَرَ",
-      "en": "looked",
-      "bs": "pogledao je",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الصَّيَّادُ",
-      "en": "the hunter",
-      "bs": "lovac",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "إِلَى",
-      "en": "to",
-      "bs": "-",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الطَّيْرِ",
-      "en": "the bird",
-      "bs": "pticu",
-      "is_target": true,
-      "translations": {}
-     }
-    ],
-    "en": "The hunter looked at the bird.",
-    "bs": "Lovac je pogledao pticu.",
-    "tense": null,
-    "pronoun": null,
-    "source": "generated",
-    "drafted_by": "claude, drafting pass",
-    "translations": {},
-    "checks": {
-     "verb_root": true,
-     "verb_form": true,
-     "all_words_valid": true,
-     "gloss_agreement": true,
-     "gloss_conflicts": [],
-     "verb_form_by": "noun table",
-     "glossed_by_exception": []
-    },
-    "critique": {
-     "approved": true,
-     "grammar_ok": true,
-     "translation_ok": true,
-     "verb_usage_ok": true,
-     "by": "claude subagent, blind reviewer (separate context)",
-     "note": "",
-     "independent": true
-    }
-   }
-  },
-  {
-   "role": "possession",
-   "example": {
-    "arabic": "رِيشُ الطَّيْرِ مُلَوَّنٌ",
-    "words": [
-     {
-      "arabic": "رِيشُ",
-      "en": "feathers",
-      "bs": "perje",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الطَّيْرِ",
-      "en": "of the bird",
-      "bs": "ptice",
-      "is_target": true,
-      "translations": {}
-     },
-     {
-      "arabic": "مُلَوَّنٌ",
-      "en": "colored",
-      "bs": "je šareno",
-      "is_target": false,
-      "translations": {}
-     }
-    ],
-    "en": "The bird's feathers are colourful.",
-    "bs": "Perje ptice je šareno.",
-    "tense": null,
-    "pronoun": null,
-    "source": "generated",
-    "drafted_by": "claude, drafting pass",
-    "translations": {},
-    "checks": {
-     "verb_root": true,
-     "verb_form": true,
-     "all_words_valid": true,
-     "gloss_agreement": true,
-     "gloss_conflicts": [],
-     "verb_form_by": "noun table",
-     "glossed_by_exception": []
-    },
-    "critique": {
-     "approved": true,
-     "grammar_ok": true,
-     "translation_ok": true,
-     "verb_usage_ok": true,
-     "by": "claude subagent, blind reviewer (separate context)",
-     "note": "",
-     "independent": true
-    }
-   }
-  }
- ],
  "لِسان|لسن": [
   {
    "role": "subject",
@@ -10916,60 +10806,6 @@
    }
   },
   {
-   "role": "object",
-   "example": {
-    "arabic": "قَشَّرَتِ الْأُمُّ الرُّمَّانَ",
-    "words": [
-     {
-      "arabic": "قَشَّرَتِ",
-      "en": "peeled",
-      "bs": "oljuštila je",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الْأُمُّ",
-      "en": "the mother",
-      "bs": "majka",
-      "is_target": false,
-      "translations": {}
-     },
-     {
-      "arabic": "الرُّمَّانَ",
-      "en": "the pomegranate",
-      "bs": "nar",
-      "is_target": true,
-      "translations": {}
-     }
-    ],
-    "en": "The mother peeled the pomegranate.",
-    "bs": "Majka je oljuštila nar.",
-    "tense": null,
-    "pronoun": null,
-    "source": "generated",
-    "drafted_by": "claude, drafting pass",
-    "translations": {},
-    "checks": {
-     "verb_root": true,
-     "verb_form": true,
-     "all_words_valid": true,
-     "gloss_agreement": true,
-     "gloss_conflicts": [],
-     "verb_form_by": "noun table",
-     "glossed_by_exception": []
-    },
-    "critique": {
-     "approved": true,
-     "grammar_ok": true,
-     "translation_ok": true,
-     "verb_usage_ok": true,
-     "by": "claude subagent, blind reviewer (separate context)",
-     "note": "",
-     "independent": true
-    }
-   }
-  },
-  {
    "role": "preposition",
    "example": {
     "arabic": "صَنَعْتُ عَصِيرًا مِنَ الرُّمَّانِ",
@@ -11033,34 +10869,34 @@
    }
   },
   {
-   "role": "possession",
+   "role": "object",
    "example": {
-    "arabic": "طَعْمُ الرُّمَّانِ حَامِضٌ",
+    "arabic": "قَشَّرَتِ الْأُمُّ الرُّمَّانَ",
     "words": [
      {
-      "arabic": "طَعْمُ",
-      "en": "taste",
-      "bs": "okus",
+      "arabic": "قَشَّرَتِ",
+      "en": "peeled",
+      "bs": "oljuštila je",
       "is_target": false,
       "translations": {}
      },
      {
-      "arabic": "الرُّمَّانِ",
-      "en": "of the pomegranates",
-      "bs": "nara",
+      "arabic": "الْأُمُّ",
+      "en": "the mother",
+      "bs": "majka",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الرُّمَّانَ",
+      "en": "the pomegranates",
+      "bs": "narove",
       "is_target": true,
-      "translations": {}
-     },
-     {
-      "arabic": "حَامِضٌ",
-      "en": "sour",
-      "bs": "je kiseo",
-      "is_target": false,
       "translations": {}
      }
     ],
-    "en": "The taste of the pomegranate is sour.",
-    "bs": "Okus nara je kiseo.",
+    "en": "The mother peeled the pomegranates.",
+    "bs": "Majka je oljuštila narove.",
     "tense": null,
     "pronoun": null,
     "source": "generated",
@@ -11081,7 +10917,61 @@
      "translation_ok": true,
      "verb_usage_ok": true,
      "by": "claude subagent, blind reviewer (separate context)",
-     "note": "",
+     "note": "Correct accusative; plural 'narove' matches collective meaning.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "possession",
+   "example": {
+    "arabic": "طَعْمُ الرُّمَّانِ حَامِضٌ",
+    "words": [
+     {
+      "arabic": "طَعْمُ",
+      "en": "taste",
+      "bs": "okus",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الرُّمَّانِ",
+      "en": "of the pomegranates",
+      "bs": "narova",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "حَامِضٌ",
+      "en": "sour",
+      "bs": "je kiseo",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The taste of pomegranates is sour.",
+    "bs": "Okus narova je kiseo.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct iḍāfa: طَعْمُ nominative mubtada', الرُّمَّانِ genitive possessor, حَامِضٌ nominative indefinite khabar, masculine singular agreeing with طَعْم. Collective rendered as plural in both languages, consistently. Word gloss 'of the pomegranates' vs. generic 'pomegranates' in the sentence is acceptable. Everyday content.",
      "independent": true
     }
    }
@@ -11309,6 +11199,224 @@
      "verb_usage_ok": true,
      "by": "claude subagent, blind reviewer (separate context)",
      "note": "",
+     "independent": true
+    }
+   }
+  }
+ ],
+ "طَيْر|طير": [
+  {
+   "role": "subject",
+   "example": {
+    "arabic": "غَرَّدَ الطَّيْرُ",
+    "words": [
+     {
+      "arabic": "غَرَّدَ",
+      "en": "twittered",
+      "bs": "cvrkutale su",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطَّيْرُ",
+      "en": "the birds",
+      "bs": "ptice",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The birds twittered.",
+    "bs": "Ptice su cvrkutale.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct: verb-initial masculine singular غرّدَ with collective subject. Optionally 'chirped/sang' instead of 'twittered'.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "object",
+   "example": {
+    "arabic": "أَطْعَمَ الطِّفْلُ الطَّيْرَ",
+    "words": [
+     {
+      "arabic": "أَطْعَمَ",
+      "en": "fed",
+      "bs": "nahranilo je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطِّفْلُ",
+      "en": "the child",
+      "bs": "dijete",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطَّيْرَ",
+      "en": "the birds",
+      "bs": "ptice",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The child fed the birds.",
+    "bs": "Dijete je nahranilo ptice.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct accusative object; translations accurate.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "preposition",
+   "example": {
+    "arabic": "نَظَرَ الصَّيَّادُ إِلَى الطَّيْرِ",
+    "words": [
+     {
+      "arabic": "نَظَرَ",
+      "en": "looked",
+      "bs": "pogledao je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الصَّيَّادُ",
+      "en": "the hunter",
+      "bs": "lovac",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "إِلَى",
+      "en": "to",
+      "bs": "-",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطَّيْرِ",
+      "en": "the birds",
+      "bs": "ptice",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The hunter looked at the birds.",
+    "bs": "Lovac je pogledao ptice.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct genitive after إلى; translations natural.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "possession",
+   "example": {
+    "arabic": "رِيشُ الطَّيْرِ مُلَوَّنٌ",
+    "words": [
+     {
+      "arabic": "رِيشُ",
+      "en": "feathers",
+      "bs": "perje",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطَّيْرِ",
+      "en": "of the birds",
+      "bs": "ptica",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "مُلَوَّنٌ",
+      "en": "colored",
+      "bs": "je šareno",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The birds' feathers are colourful.",
+    "bs": "Perje ptica je šareno.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct iḍāfa; ملوّنٌ agrees with masculine collective ريش. Minor: gloss 'colored' vs sentence 'colourful' spelling.",
      "independent": true
     }
    }

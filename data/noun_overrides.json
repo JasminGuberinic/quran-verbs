@@ -1,8 +1,77 @@
 {
  "_about": "Noun cells spelled by hand where the generator fails, each with why; gated like generated forms and never over the Quran's own spelling (fil.nouns.table.with_documented). Keys: lemma|root → number|state|case.",
  "عَصا|عصو": {
-  "S|definite|NOM": {"text": "الْعَصَا", "why": "CAMeL writes a case vowel on the final alif (الْعَصاُ); a noun ending in a long alif shows no case"},
-  "S|definite|ACC": {"text": "الْعَصَا", "why": "as the nominative: the long alif shows no case"},
-  "S|definite|GEN": {"text": "الْعَصَا", "why": "as the nominative: the long alif shows no case"}
+  "S|definite|NOM": {
+   "text": "الْعَصَا",
+   "why": "CAMeL writes a case vowel on the final alif (الْعَصاُ); a noun ending in a long alif shows no case"
+  },
+  "S|definite|ACC": {
+   "text": "الْعَصَا",
+   "why": "as the nominative: the long alif shows no case"
+  },
+  "S|definite|GEN": {
+   "text": "الْعَصَا",
+   "why": "as the nominative: the long alif shows no case"
+  }
+ },
+ "إِبِل|أبل": {
+  "S|definite|NOM": {
+   "text": "الْإِبِلُ",
+   "why": "CAMeL vowels it إِبْل; the Quran's ٱلْإِبِلِ (6:144, 88:17) fixes the stem إِبِل, a triptote (إِبِلٌ إِبِلًا إِبِلٍ)"
+  },
+  "S|definite|ACC": {
+   "text": "الْإِبِلَ",
+   "why": "CAMeL vowels it إِبْل; the Quran's ٱلْإِبِلِ (6:144, 88:17) fixes the stem إِبِل, a triptote (إِبِلٌ إِبِلًا إِبِلٍ)"
+  },
+  "S|indefinite|NOM": {
+   "text": "إِبِلٌ",
+   "why": "CAMeL vowels it إِبْل; the Quran's ٱلْإِبِلِ (6:144, 88:17) fixes the stem إِبِل, a triptote (إِبِلٌ إِبِلًا إِبِلٍ)"
+  },
+  "S|indefinite|ACC": {
+   "text": "إِبِلًا",
+   "why": "CAMeL vowels it إِبْل; the Quran's ٱلْإِبِلِ (6:144, 88:17) fixes the stem إِبِل, a triptote (إِبِلٌ إِبِلًا إِبِلٍ)"
+  },
+  "S|indefinite|GEN": {
+   "text": "إِبِلٍ",
+   "why": "CAMeL vowels it إِبْل; the Quran's ٱلْإِبِلِ (6:144, 88:17) fixes the stem إِبِل, a triptote (إِبِلٌ إِبِلًا إِبِلٍ)"
+  }
+ },
+ "بَقَرَة|بقر": {
+  "S|definite|NOM": {
+   "text": "الْبَقَرَةُ",
+   "why": "CAMeL generates nothing for بَقَرَة; a regular triptote in -ة (Quranic بَقَرَةٌ, بَقَرَةً), the article added"
+  },
+  "S|definite|ACC": {
+   "text": "الْبَقَرَةَ",
+   "why": "CAMeL generates nothing for بَقَرَة; a regular triptote in -ة (Quranic بَقَرَةٌ, بَقَرَةً), the article added"
+  },
+  "S|definite|GEN": {
+   "text": "الْبَقَرَةِ",
+   "why": "CAMeL generates nothing for بَقَرَة; a regular triptote in -ة (Quranic بَقَرَةٌ, بَقَرَةً), the article added"
+  },
+  "S|indefinite|GEN": {
+   "text": "بَقَرَةٍ",
+   "why": "CAMeL generates nothing for بَقَرَة; a regular triptote in -ة (Quranic بَقَرَةٌ, بَقَرَةً), the article added"
+  },
+  "P|definite|NOM": {
+   "text": "الْبَقَرَاتُ",
+   "why": "CAMeL generates nothing for بَقَرَة; its sound feminine plural is Quranic (بَقَرَٰتٍ 12:43), declined regularly (-ātu/-āti)"
+  },
+  "P|definite|ACC": {
+   "text": "الْبَقَرَاتِ",
+   "why": "CAMeL generates nothing for بَقَرَة; its sound feminine plural is Quranic (بَقَرَٰتٍ 12:43), declined regularly (-ātu/-āti)"
+  },
+  "P|definite|GEN": {
+   "text": "الْبَقَرَاتِ",
+   "why": "CAMeL generates nothing for بَقَرَة; its sound feminine plural is Quranic (بَقَرَٰتٍ 12:43), declined regularly (-ātu/-āti)"
+  },
+  "P|indefinite|NOM": {
+   "text": "بَقَرَاتٌ",
+   "why": "CAMeL generates nothing for بَقَرَة; its sound feminine plural is Quranic (بَقَرَٰتٍ 12:43), declined regularly (-ātu/-āti)"
+  },
+  "P|indefinite|ACC": {
+   "text": "بَقَرَاتٍ",
+   "why": "CAMeL generates nothing for بَقَرَة; its sound feminine plural is Quranic (بَقَرَٰتٍ 12:43), declined regularly (-ātu/-āti)"
+  }
  }
 }

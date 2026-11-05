@@ -151,6 +151,11 @@ def forms_match(a: str, b: str) -> bool:
     return _normalize(a) == _normalize(b)
 
 
+def orthographic_key(form: str) -> str:
+    """The folded spelling `forms_match` compares: equal keys, the same written form."""
+    return _normalize(form)
+
+
 def _normalize(form: str) -> str:
     text = _fold_orthography(_standard_spelling(unicodedata.normalize("NFD", form)))
     text = _without_silent_final_alef(_strip_leading_harakat(text))

@@ -23,6 +23,7 @@ from fil.stages import (
     full,
     i18n,
     ingest,
+    nouns,
     package,
     pages,
     review,
@@ -46,6 +47,7 @@ _STAGES = {
     "i18n": (i18n.main, "translate into further languages via a translation memory: export, import, status"),
     "forms": (forms.main, "gloss every Quranic form of the studied verbs once per language: status, export, import"),
     "compose": (compose.main, "gloss the remaining Quranic forms by rule: status, sheets, paradigms, build, sample"),
+    "nouns": (nouns.main, "the Quran's nouns and adjectives: status, catalogue, paradigms"),
     "pages": (pages.main, "build the public GitHub Pages site (build/pages); --deploy publishes it"),
 }
 
@@ -68,6 +70,9 @@ def main() -> None:
         return
     if known.stage == "compose":
         compose.main(rest)
+        return
+    if known.stage == "nouns":
+        nouns.main(rest)
         return
     if known.stage == "pages":
         pages.main(rest)

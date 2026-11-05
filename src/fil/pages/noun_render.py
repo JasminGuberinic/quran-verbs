@@ -279,13 +279,16 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
     path = seo.noun_index_path(language.code)
     root = seo.to_root(path)
     title = f'{words["indexTitle"]} · {seo.SITE_NAME}'
+    # The list counts 1, 2, 3…: the nouns studied so far are not consecutive in frequency
+    # (a batch mixes the most frequent with picturable ones), so the corpus rank would jump.
+    # The rank itself stays on each noun's page ("#81").
     rows = "".join(
-        f'<li><a href="{card["slug"]}/"><span class="rank">{card["rank"]}</span>'
+        f'<li><a href="{card["slug"]}/"><span class="rank">{position}</span>'
         f'{_thumbnail(card, root)}<span class="ar" lang="ar" dir="rtl">{card["lemma"]}</span>'
         f'<span class="meaning">{escape(card["meaning"][language.code])}</span>'
         f'<span class="count">{escape(words["categories"].get(categories.get(card["key"], ""), ""))} · '
         f'{escape(fill(text["times"], card["count"]))}</span></a></li>'
-        for card in cards
+        for position, card in enumerate(cards, start=1)
     )
     body = "".join((
         _top_bar(text, root, language, seo.noun_index_path, is_section_list=True),

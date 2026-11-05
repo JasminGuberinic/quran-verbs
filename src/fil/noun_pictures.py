@@ -14,7 +14,7 @@ from pathlib import Path
 from fil.nouns.categories import LemmaKey, NounCategory, parse_categories
 from fil.nouns.palette import SITE_PALETTE, recolour
 from fil.nouns.picture_gate import minified, picture_problems
-from fil.nouns.pictures import OPENMOJI, TWEMOJI, NounPicture, PictureSource, parse_manifest
+from fil.nouns.pictures import OPENMOJI, OWN_DRAWING, TWEMOJI, NounPicture, PictureSource, parse_manifest
 from fil.resources import NOUN_CATEGORIES_JSON, NOUN_PICTURES_DIR, NOUN_PICTURES_JSON
 
 _VARIATION_SELECTOR = "-FE0F"
@@ -69,8 +69,8 @@ def write_pictures(pictures: list[NounPicture], directories: dict[str, EmojiDire
     out_dir.mkdir(parents=True, exist_ok=True)
     problems: list[str] = []
     for picture in pictures:
-        if picture.source is None:
-            continue
+        if picture.source is None or picture.source == OWN_DRAWING:
+            continue                       # nothing to draw, or drawn by hand in assets/nouns
         svg = shipped_svg(directories[picture.source.name], picture.codepoint)
         found = picture_problems(svg, SITE_PALETTE)
         if found:

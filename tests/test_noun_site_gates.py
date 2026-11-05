@@ -18,6 +18,7 @@ import pytest
 from fil import noun_store
 from fil.languages import LANGUAGES
 from fil.noun_pictures import load_pictures
+from fil.nouns.pictures import CREDITED
 from fil.pages import render, seo
 from fil.resources import PAGES_DIR
 from fil.stages.noun_site import UnvoicedNounText, check_voiced, unvoiced_texts
@@ -204,7 +205,7 @@ def test_every_published_nouns_picture_is_shown_on_its_pages_and_credited():
             html = page.read_text(encoding="utf-8")
             assert f'class="noun-picture" src="../../../pictures/{pictures[slug].file_name}"' in html, page
             assert (PAGES_DIR / "pictures" / pictures[slug].file_name).is_file()
-            assert "<b>Pictures.</b>" in html, page
+            assert ("<b>Pictures.</b>" in html) == (pictures[slug].source in CREDITED), page
     for code, folder in seo.NOUN_FOLDERS.items():
         listing = (PAGES_DIR / code / folder / "index.html").read_text(encoding="utf-8")
         shown = set(re.findall(r'class="thumb" src="\.\./\.\./pictures/([^"]+)"', listing))
@@ -212,8 +213,15 @@ def test_every_published_nouns_picture_is_shown_on_its_pages_and_credited():
         assert "<b>Pictures.</b>" in listing
 
 
+def _credited_files() -> set[str]:
+    """Pictures from a licensed set — our own drawings owe no credit."""
+    return {picture.file_name for picture in load_pictures() if picture.source in CREDITED}
+
+
 @built
-def test_a_page_without_pictures_carries_no_picture_credit():
+def test_a_page_carries_the_picture_credit_exactly_when_it_shows_a_licensed_picture():
+    credited = _credited_files()
     for page in [*_noun_pages(), *_verb_pages_sample()]:
         html = page.read_text(encoding="utf-8")
-        assert ("<b>Pictures.</b>" in html) == ('class="noun-picture"' in html or 'class="thumb" src=' in html), page
+        shown = set(re.findall(r'pictures/([^"]+\.svg)"', html))
+        assert ("<b>Pictures.</b>" in html) == bool(shown & credited), page

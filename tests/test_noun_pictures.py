@@ -108,7 +108,7 @@ def test_categories_parse_and_index_by_lemma_and_root():
 
 
 @pytest.mark.parametrize("change", [{"category": "fruit"}, {"picturable": "yes"}, {"gloss_en": " "},
-                                    {"category": "people_family"}])
+                                    {"category": "abstract"}])
 def test_a_bad_category_entry_fails_fast(change):
     with pytest.raises(NounCategoryFormatError):
         parse_categories([{**CATEGORY, **change}])
@@ -188,3 +188,12 @@ def test_minifying_rounds_coordinates_to_a_tenth_but_leaves_colours_alone():
 
     assert minified(svg) == ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">'
                              '<path fill="#52c2a6" d="M21.3.62c-1.8 0 4.5 7"/></svg>')
+
+
+def test_an_own_drawing_needs_no_codepoint_and_owes_no_credit():
+    from fil.nouns.pictures import OWN_DRAWING, _picture, sources_used
+
+    drawn = _picture({"lemma": "عَصا", "root": "عصو", "slug": "asa", "bs": "štap", "codepoint": "", "source": "fil"})
+
+    assert drawn.source == OWN_DRAWING and drawn.has_picture
+    assert sources_used([drawn]) == []

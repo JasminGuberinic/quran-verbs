@@ -33,9 +33,10 @@ CATEGORIES: Mapping[str, str] = {
     "abstract": "apstraktno",
 }
 
-# Categories whose members are never pictured, whatever an entry says.
-NEVER_PICTURED = frozenset({"people_family", "faith_hereafter", "qualities_feelings", "abstract", "time",
-                            "numbers_quantities"})
+# Categories whose members are never pictured, whatever an entry says. People and time may be
+# (owner, 2026-11-05: "narod", "ljudi", "dan", "rob" are not abstract) — people only as faceless
+# figures or by an object (a slave by shackles), never a face, never a prophet.
+NEVER_PICTURED = frozenset({"faith_hereafter", "qualities_feelings", "abstract", "numbers_quantities"})
 
 LemmaKey = tuple[str, str]   # (lemma, root): three lemmas share their spelling across roots
 

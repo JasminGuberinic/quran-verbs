@@ -1,6 +1,6 @@
 [
 {"lemma": "أَرْض", "root": "أرض", "slug": "ard", "bs": "earth", "codepoint": "1F30D", "source": "twemoji"},
-{"lemma": "سَماء", "root": "سمو", "slug": "sama", "bs": "sama", "codepoint": "", "source": null},
+{"lemma": "سَماء", "root": "سمو", "slug": "sama", "bs": "sama", "codepoint": "", "source": "fil"},
 {"lemma": "كِتاب", "root": "كتب", "slug": "kitab", "bs": "knjiga", "codepoint": "1F4D6", "source": "twemoji"},
 {"lemma": "نار", "root": "نور", "slug": "nar", "bs": "vatra", "codepoint": "1F525", "source": "twemoji"},
 {"lemma": "قَلْب", "root": "قلب", "slug": "qalb", "bs": "srce", "codepoint": "1FAC0", "source": "twemoji"},
@@ -9,7 +9,7 @@
 {"lemma": "يَمِين", "root": "يمن", "slug": "yamin", "bs": "desna ruka", "codepoint": "1FAF1", "source": "twemoji"},
 {"lemma": "ماء", "root": "موه", "slug": "ma", "bs": "voda", "codepoint": "1F4A7", "source": "twemoji"},
 {"lemma": "عَيْن", "root": "عين", "slug": "ayn", "bs": "oko", "codepoint": "1F441", "source": "twemoji"},
-{"lemma": "نَهَر", "root": "نهر", "slug": "nahar-2", "bs": "rijeka", "codepoint": "", "source": null},
+{"lemma": "نَهَر", "root": "نهر", "slug": "nahar-2", "bs": "rijeka", "codepoint": "", "source": "fil"},
 {"lemma": "صَدْر", "root": "صدر", "slug": "sadr", "bs": "prsa", "codepoint": "", "source": null},
 {"lemma": "بَحْر", "root": "بحر", "slug": "bahr", "bs": "more", "codepoint": "1F30A", "source": "twemoji"},
 {"lemma": "جَبَل", "root": "جبل", "slug": "jabal", "bs": "planina", "codepoint": "26F0", "source": "twemoji"},
@@ -44,7 +44,7 @@
 {"lemma": "دَم", "root": "دمو", "slug": "dam", "bs": "krv", "codepoint": "1FA78", "source": "twemoji"},
 {"lemma": "رَواسِي", "root": "رسو", "slug": "rawasi", "bs": "planine", "codepoint": "26F0", "source": "twemoji"},
 {"lemma": "زَرْع", "root": "زرع", "slug": "zar", "bs": "usjevi", "codepoint": "1F33E", "source": "openmoji"},
-{"lemma": "عَصا", "root": "عصو", "slug": "asa", "bs": "štap", "codepoint": "", "source": null},
+{"lemma": "عَصا", "root": "عصو", "slug": "asa", "bs": "štap", "codepoint": "", "source": "fil"},
 {"lemma": "عِجْل", "root": "عجل", "slug": "ijl", "bs": "tele", "codepoint": "1F42E", "source": "openmoji"},
 {"lemma": "لِباس", "root": "لبس", "slug": "libas", "bs": "odjeća", "codepoint": "1F455", "source": "twemoji"},
 {"lemma": "جُلُود", "root": "جلد", "slug": "julud", "bs": "koža", "codepoint": "", "source": null},
@@ -209,7 +209,7 @@
 {"lemma": "بِغال", "root": "بغل", "slug": "bighal", "bs": "mazga", "codepoint": "", "source": null},
 {"lemma": "تَرائِب", "root": "ترب", "slug": "taraib", "bs": "prsna kost", "codepoint": "", "source": null},
 {"lemma": "تَراقِي", "root": "ترق", "slug": "taraqi", "bs": "ključna kost", "codepoint": "", "source": null},
-{"lemma": "تِين", "root": "تين", "slug": "tin-2", "bs": "smokva", "codepoint": "", "source": null},
+{"lemma": "تِين", "root": "تين", "slug": "tin-2", "bs": "smokva", "codepoint": "", "source": "fil"},
 {"lemma": "جَبِين", "root": "جبن", "slug": "jabin", "bs": "čelo", "codepoint": "", "source": null},
 {"lemma": "جَذْوَة", "root": "جذو", "slug": "jadhwa", "bs": "žar", "codepoint": "1F525", "source": "twemoji"},
 {"lemma": "جَلابِيب", "root": "جلب", "slug": "jalabib", "bs": "ogrtač", "codepoint": "", "source": null},
@@ -318,5 +318,10 @@
 {"lemma": "وَرِق", "root": "ورق", "slug": "wariq", "bs": "srebro", "codepoint": "", "source": null},
 {"lemma": "وَرْدَة", "root": "ورد", "slug": "warda", "bs": "ruža", "codepoint": "1F339", "source": "openmoji"},
 {"lemma": "وَصِيد", "root": "وصد", "slug": "wasid", "bs": "prag", "codepoint": "", "source": null},
-{"lemma": "وُحُوش", "root": "وحش", "slug": "wuhush", "bs": "zvijeri", "codepoint": "", "source": null}
+{"lemma": "وُحُوش", "root": "وحش", "slug": "wuhush", "bs": "zvijeri", "codepoint": "", "source": null},
+{"lemma": "سَبِيل", "root": "سبل", "slug": "sabil", "bs": "put", "codepoint": "", "source": "fil"},
+{"lemma": "يَوْم", "root": "يوم", "slug": "yawm", "bs": "dan", "codepoint": "", "source": "fil"},
+{"lemma": "قَوْم", "root": "قوم", "slug": "qawm", "bs": "narod", "codepoint": "", "source": "fil"},
+{"lemma": "ناس", "root": "أنس", "slug": "nas", "bs": "ljudi", "codepoint": "", "source": "fil"},
+{"lemma": "عَبْد", "root": "عبد", "slug": "abd", "bs": "rob, sluga", "codepoint": "", "source": "fil"}
 ]

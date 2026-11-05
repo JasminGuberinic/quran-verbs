@@ -34,7 +34,12 @@ OPENMOJI = PictureSource(name="openmoji", title="OpenMoji", url="https://openmoj
                          licence="CC BY-SA 4.0", licence_url="https://creativecommons.org/licenses/by-sa/4.0/")
 TWEMOJI = PictureSource(name="twemoji", title="Twemoji", url="https://github.com/jdecked/twemoji",
                         licence="CC BY 4.0", licence_url="https://creativecommons.org/licenses/by/4.0/")
-SOURCES: Mapping[str, PictureSource] = {source.name: source for source in (OPENMOJI, TWEMOJI)}
+# Drawn by hand in our palette for the few picturable nouns no emoji set shows correctly
+# (fig, river, staff, sky). Ours, so they owe no credit and are never regenerated.
+OWN_DRAWING = PictureSource(name="fil", title="Fiʿl", url="https://jasminguberinic.github.io/quran-verbs/",
+                            licence="own drawing", licence_url="")
+CREDITED: tuple[PictureSource, ...] = (OPENMOJI, TWEMOJI)
+SOURCES: Mapping[str, PictureSource] = {source.name: source for source in (*CREDITED, OWN_DRAWING)}
 
 
 @dataclass(frozen=True)
@@ -93,9 +98,9 @@ def shown(pictures: Iterable[NounPicture]) -> list[NounPicture]:
 
 
 def sources_used(pictures: Iterable[NounPicture]) -> list[PictureSource]:
-    """The sets the given pictures come from, in a fixed order (for the credit line)."""
+    """The licensed sets the given pictures come from, in a fixed order (for the credit line)."""
     names = {picture.source.name for picture in pictures if picture.source}
-    return [source for name, source in SOURCES.items() if name in names]
+    return [source for source in CREDITED if source.name in names]
 
 
 def _picture(item: Mapping) -> NounPicture:
@@ -107,7 +112,7 @@ def _picture(item: Mapping) -> NounPicture:
         raise PictureManifestError(f"{item['lemma']}: unknown source {source_name!r}")
     if not item["slug"] or not item["slug"].replace("-", "").isalnum() or not item["slug"].isascii():
         raise PictureManifestError(f"{item['lemma']}: slug {item['slug']!r} is not lowercase ASCII")
-    if source_name is not None and not re.fullmatch(r"[0-9A-F]{4,5}(?:-[0-9A-F]{4,5})*", item["codepoint"]):
+    if source_name not in (None, OWN_DRAWING.name) and not re.fullmatch(r"[0-9A-F]{4,5}(?:-[0-9A-F]{4,5})*", item["codepoint"]):
         raise PictureManifestError(f"{item['lemma']}: a picture needs its emoji codepoint, got {item['codepoint']!r}")
     return NounPicture(lemma=item["lemma"], root=item["root"], slug=item["slug"], bosnian=item["bs"],
                        codepoint=item["codepoint"], source=SOURCES[source_name] if source_name else None)

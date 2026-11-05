@@ -44,6 +44,7 @@ SEPARATE_PREPOSITIONS = frozenset({"في", "علي", "من", "ءلي", "عن", "
 NounTable = Mapping[str, tuple[Cell, ...]]
 _DAMMATAN, _FATHATAN, _KASRATAN = "\u064c", "\u064b", "\u064d"
 _PLAIN_VOWELS = {_DAMMATAN: "\u064f", _FATHATAN: "\u064e", _KASRATAN: "\u0650"}
+_ALIF_MAQSURA = "\u0649"
 
 
 def table_index(cells: Sequence[tuple[Cell, str]]) -> dict[str, tuple[Cell, ...]]:
@@ -57,9 +58,12 @@ def table_index(cells: Sequence[tuple[Cell, str]]) -> dict[str, tuple[Cell, ...]
 
 
 def construct_form(indefinite: str) -> str | None:
-    """رَبٌّ → رَبُّ, كِتَابًا → كِتَابَ: nunation becomes its plain vowel (and a seat alif goes).
-    None for a form without nunation (a sound plural or a dual loses its nūn instead)."""
+    """رَبٌّ → رَبُّ, كِتَابًا → كِتَابَ, مَوْلًى → مَوْلَى: nunation becomes its plain vowel (a seat
+    alif goes, an alif maqṣūra stays). None for a form without nunation (a sound plural or a dual
+    loses its nūn instead)."""
     text = unicodedata.normalize("NFC", indefinite)
+    if _is_maqsur_on_alif_maqsura(text):
+        return text[:-2] + _PLAIN_VOWELS[_FATHATAN] + _ALIF_MAQSURA
     if text.endswith("ا" + _FATHATAN):        # كِتاباً: nunation written after its seat
         text = text[:-2] + _FATHATAN
     if text.endswith("ا") and _FATHATAN in _trailing_marks(text[:-1]):
@@ -72,18 +76,28 @@ def construct_form(indefinite: str) -> str | None:
     return body + marks.replace(nunation, _PLAIN_VOWELS[nunation])
 
 
+def _is_maqsur_on_alif_maqsura(text: str) -> bool:
+    """مَوْلًى: the nunation sits before a final ى, which is always the stem's own letter."""
+    return text.endswith(_FATHATAN + _ALIF_MAQSURA)
+
+
 def _trailing_marks(text: str) -> str:
     return text[len(text.rstrip("".join(chr(code) for code in range(0x064B, 0x0653)))):]
 
 
 def _construct_cells(cells: Sequence[tuple[Cell, str]]) -> list[tuple[Cell, str]]:
-    """Only for a number whose nominative shows nunation on a consonant (رَبٌّ): the alif of
-    عَصًا is the stem's own and stays in construct (عَصَا مُوسَى) — the letters cannot say which."""
+    """Only for a number whose nominative shows nunation on a consonant (رَبٌّ) or before an
+    alif maqṣūra (مَوْلًى): the alif of عَصًا may be the stem's own and stay in construct
+    (عَصَا مُوسَى) or be a seat that goes (كِتَابًا) — the letters cannot say which."""
     declined = {cell.number for cell, text in cells if cell.state == INDEFINITE and cell.case == NOMINATIVE
-                and _DAMMATAN in _trailing_marks(unicodedata.normalize("NFC", text))}
+                and _has_nunation_that_construct_can_drop(unicodedata.normalize("NFC", text))}
     found = [(Cell(cell.number, CONSTRUCT, cell.case), construct_form(text)) for cell, text in cells
              if cell.state == INDEFINITE and cell.number in declined]
     return [(cell, text) for cell, text in found if text]
+
+
+def _has_nunation_that_construct_can_drop(text: str) -> bool:
+    return _DAMMATAN in _trailing_marks(text) or _is_maqsur_on_alif_maqsura(text)
 
 
 def checked(example: Example, role: str, table: NounTable, analyze: Analyze,

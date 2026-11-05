@@ -142,6 +142,28 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   To drop a noun mid-batch: delete its key from noun_meanings/noun_bs_paradigms/noun_sentences,
   skip/hold it, save batch.txt, `plan next K`, then concatenate the old batch (minus it) + the new K.
 
+- Batch 5 (2026-11-05): skipped أَقْرَب، مُصَدِّق، مُعْرِض، عالِم، قائِم، مُهْتَدي، آمِن، أَظْلَم، حُسْنَى،
+  أَلْف، خاشِع، شاكِر، ضالّ، قادِر، مُهِين, and ابْتِغاء (always a bare accusative "seeking", مفعول لأجله — and a
+  construct of its hamza-final cell is not a cell); HELD_BACK سَعِير، تَنزِيل، مَرْجِع (Quranic sense only
+  about Hell/revelation/return to God; MSA sense differs). Edit both lists with a script that copies
+  spellings from batch.txt via NFC (typed shadda order misses), and re-plan until clean BEFORE meanings.
+- meanings.tsv has NO header line (a header is parsed as a noun: "key: no root").
+- Gloss exceptions (root-keyed) added: harm ض.ر.ر، scheming م.ك.ر، shade ظ.ل.ل، indecency ف.ح.ش،
+  spendthrift س.ر.ف، wrongdoing ن.ك.ر، custom س.ن.ن، message ب.ل.غ، adornment ز.#.ن، dust ت.ر.ب. The
+  meanings import still WARNs for them (it reads the lexicon only) — the sentence gate honours them.
+- Failed → accepted: fear (تَخَافُ)→flee (تَهْرُبُ), tied→ties (present), next→following, brown (بُنِّيّ)
+  fails → red, professor (أُسْتَاذ), safeguards (يَحْرُسُ), went against (خَالَفَ), pursuit (اتِّبَاع),
+  harvested (قَطَفَ), made happy (أَسْعَدَ), sadness (حُزْن), tie (رِبَاط), connection (صِلَة), precise
+  (دَقِيق), faithful (أَمِين), found out (عَلِمَ بِـ), costly (غَالٍ), cold/coldness (بَارِد، بُرُودَة),
+  the dominion (الْمُلْك), were afraid (خَافَ), loses (يُضَيِّعُ), form (شَكْل), polite (لَطِيف), the young
+  (الصَّغِيرَة), characteristic (صِفَة), elevated (مُرْتَفِع). Refused: relief (رَاحَة، الْفَرَج), step (دَرَجَة).
+- Sonnet halves: check -ka nouns' D/L (poruka → "poruci", not "poruki") in the one compact print.
+- Reviewer refusals: دُبُر reads as anus/buttocks in MSA → HELD_BACK (dropped mid-batch; والِد came in);
+  bare الْمَوْلَى reads as God → make the human explicit (مَوْلَى الْبَيْتِ); الْحَرَج alone is
+  "embarrassment"; الْقِسْط next to a sale is "installment"; a bs gloss must agree with the bs
+  sentence's noun (temperatura → "je visoka"). The gate now makes construct cells of alif-maqṣūra
+  indefinites (مَوْلًى → مَوْلَى) — document the indefinite cells with an override first.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

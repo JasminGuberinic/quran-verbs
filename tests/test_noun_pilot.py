@@ -13,10 +13,10 @@ from fil.nouns import bosnian, english, explanation, gate, sentence_gate
 from fil.nouns.bosnian import BosnianNoun, CannotSay, InvalidBosnianNoun, Phrase, possessive_adjective
 from fil.nouns.compose import Composed, NounGlossing, Skipped, compose
 from fil.nouns.english import EnglishNoun, EnglishPhrase
-from fil.nouns.model import (ACCUSATIVE, DEFINITE, DUAL, GENITIVE, INDEFINITE, MISSING, NOMINATIVE, PLURAL, SINGULAR,
-                             Cell, ParadigmCell)
+from fil.nouns.model import (ACCUSATIVE, CONSTRUCT, DEFINITE, DUAL, GENITIVE, INDEFINITE, MISSING, NOMINATIVE,
+                             PLURAL, SINGULAR, Cell, ParadigmCell)
 from fil.nouns.selection import skip_reason
-from fil.nouns.spelling import standalone
+from fil.nouns.spelling import spelling_key, standalone
 from fil.nouns.studied import NounTable, TableRow
 from fil.nouns.table import with_documented
 from fil.corpus.nouns import iter_noun_occurrences
@@ -271,10 +271,16 @@ def test_the_noun_is_held_to_its_table_and_its_role(role, words, passes):
 
 
 @pytest.mark.parametrize(("indefinite", "construct"), [
-    ("رَبٌّ", "رَبُّ"), ("كِتَابًا", "كِتَابَ"), ("كِتاباً", "كِتابَ"), ("شَيْئًا", "شَيْئَ"), ("مُؤْمِنُونَ", None),
+    ("رَبٌّ", "رَبُّ"), ("كِتَابًا", "كِتَابَ"), ("كِتاباً", "كِتابَ"), ("شَيْئًا", "شَيْئَ"), ("مَوْلًى", "مَوْلَى"), ("مُؤْمِنُونَ", None),
 ])
 def test_the_construct_form_drops_nunation(indefinite, construct):
     assert sentence_gate.construct_form(indefinite) == construct
+
+
+def test_a_noun_on_alif_maqsura_keeps_it_in_construct():
+    index = sentence_gate.table_index([(Cell(SINGULAR, INDEFINITE, NOMINATIVE), "مَوْلًى")])
+    construct = index[spelling_key("مَوْلَى")]
+    assert {cell.state for cell in construct} == {CONSTRUCT}
 
 
 def test_a_maqsur_noun_gets_no_construct_cell():

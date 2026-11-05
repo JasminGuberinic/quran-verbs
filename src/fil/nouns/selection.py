@@ -38,6 +38,13 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "واحِدَة": "quantifier", "طَيِّبَة": "adjective-like",
     "سَواء": "adjective-like", "غافِل": "adjective-like", "أَجْمَع": "quantifier", "أَكْبَر": "adjective-like",
     "حَيّ": "adjective-like", "غَنِيّ": "adjective-like", "سَبْع": "quantifier", "أَعْمَى": "adjective-like", "مُسَمًّى": "adjective-like", "ساجِد": "adjective-like", "صابِر": "adjective-like", "حَمِيم": "adjective-like",
+    "أَقْرَب": "adjective-like", "مُصَدِّق": "adjective-like", "مُعْرِض": "adjective-like",
+    "عالِم": "adjective-like", "قائِم": "adjective-like", "مُهْتَدي": "adjective-like",
+    "آمِن": "adjective-like", "أَظْلَم": "adjective-like", "حُسْنَى": "adjective-like", "أَلْف": "quantifier",
+    "خاشِع": "adjective-like", "شاكِر": "adjective-like", "ضالّ": "adjective-like", "قادِر": "adjective-like",
+    "مُهِين": "adjective-like",
+    # ابْتِغَاءَ is in the Quran always a bare accusative of purpose ("seeking …"), learned as a construction.
+    "ابْتِغاء": "adverb",
 }
 _NOT_TAUGHT_KINDS = {ADVERB: "adverb", ADJECTIVE: "adjective", PROPER_NOUN: "proper name"}
 

@@ -58,7 +58,10 @@ MAX_WORDS = 5
 # آلاء: in the Quran only "the favours of your Lord"; no everyday human sense to teach it by.
 # جَحِيم (hellfire) and جِنّ (jinn) have no everyday human sense either; جُنَاح lives in Arabic
 # only in the idiom لَا جُنَاحَ عَلَى "no blame on" (an offense is جُنْحَة).
-HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو", "جَحِيم|جحم", "جِنّ|جنن", "جُناح|جنح")
+# سَعِير (the blaze of Hell) and تَنزِيل (revelation; in MSA "download") likewise;
+# مَرْجِع is in the Quran only the return to God (in MSA "a reference"); دُبُر (back) reads in MSA
+# as the anus or buttocks — refused by the blind reviewer as unfit for learners' sentences.
+HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو", "جَحِيم|جحم", "جِنّ|جنن", "جُناح|جنح", "سَعِير|سعر", "تَنزِيل|نزل", "مَرْجِع|رجع", "دُبُر|دبر")
 
 
 @dataclass(frozen=True)

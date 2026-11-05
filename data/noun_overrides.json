@@ -485,5 +485,169 @@
    "text": "الْمَأْوَى",
    "why": "مَأْوَى ends in alif maqṣūra: the definite form is the same in every case (ٱلْمَأْوَىٰ 79:41 nominative); CAMeL generates only the nominative"
   }
+ },
+ "أَهْواء|هوي": {
+  "P|definite|NOM": {
+   "text": "الْأَهْوَاءُ",
+   "why": "Plural-only lemma (plural of هَوًى, 'desire'): CAMeL builds no table for it. أَفْعَال is a regular triptote: أَهْوَاءٌ أَهْوَاءً أَهْوَاءٍ (بِأَهْوَآئِهِم 6:119)."
+  },
+  "P|definite|ACC": {
+   "text": "الْأَهْوَاءَ",
+   "why": "Plural-only lemma (plural of هَوًى, 'desire'): CAMeL builds no table for it. أَفْعَال is a regular triptote: أَهْوَاءٌ أَهْوَاءً أَهْوَاءٍ (بِأَهْوَآئِهِم 6:119)."
+  },
+  "P|definite|GEN": {
+   "text": "الْأَهْوَاءِ",
+   "why": "Plural-only lemma (plural of هَوًى, 'desire'): CAMeL builds no table for it. أَفْعَال is a regular triptote: أَهْوَاءٌ أَهْوَاءً أَهْوَاءٍ (بِأَهْوَآئِهِم 6:119)."
+  },
+  "P|indefinite|NOM": {
+   "text": "أَهْوَاءٌ",
+   "why": "Plural-only lemma (plural of هَوًى, 'desire'): CAMeL builds no table for it. أَفْعَال is a regular triptote: أَهْوَاءٌ أَهْوَاءً أَهْوَاءٍ (بِأَهْوَآئِهِم 6:119)."
+  },
+  "P|indefinite|ACC": {
+   "text": "أَهْوَاءً",
+   "why": "Plural-only lemma (plural of هَوًى, 'desire'): CAMeL builds no table for it. أَفْعَال is a regular triptote: أَهْوَاءٌ أَهْوَاءً أَهْوَاءٍ (بِأَهْوَآئِهِم 6:119)."
+  },
+  "P|indefinite|GEN": {
+   "text": "أَهْوَاءٍ",
+   "why": "Plural-only lemma (plural of هَوًى, 'desire'): CAMeL builds no table for it. أَفْعَال is a regular triptote: أَهْوَاءٌ أَهْوَاءً أَهْوَاءٍ (بِأَهْوَآئِهِم 6:119)."
+  }
+ },
+ "حُدُود|حدد": {
+  "P|definite|NOM": {
+   "text": "الْحُدُودُ",
+   "why": "Plural-only lemma (plural of حَدّ, 'limit'): CAMeL builds no table for it. فُعُول is a regular triptote (تِلْكَ حُدُودُ 2:229)."
+  },
+  "P|definite|ACC": {
+   "text": "الْحُدُودَ",
+   "why": "Plural-only lemma (plural of حَدّ, 'limit'): CAMeL builds no table for it. فُعُول is a regular triptote (تِلْكَ حُدُودُ 2:229)."
+  },
+  "P|definite|GEN": {
+   "text": "الْحُدُودِ",
+   "why": "Plural-only lemma (plural of حَدّ, 'limit'): CAMeL builds no table for it. فُعُول is a regular triptote (تِلْكَ حُدُودُ 2:229)."
+  },
+  "P|indefinite|NOM": {
+   "text": "حُدُودٌ",
+   "why": "Plural-only lemma (plural of حَدّ, 'limit'): CAMeL builds no table for it. فُعُول is a regular triptote (تِلْكَ حُدُودُ 2:229)."
+  },
+  "P|indefinite|ACC": {
+   "text": "حُدُودًا",
+   "why": "Plural-only lemma (plural of حَدّ, 'limit'): CAMeL builds no table for it. فُعُول is a regular triptote (تِلْكَ حُدُودُ 2:229)."
+  },
+  "P|indefinite|GEN": {
+   "text": "حُدُودٍ",
+   "why": "Plural-only lemma (plural of حَدّ, 'limit'): CAMeL builds no table for it. فُعُول is a regular triptote (تِلْكَ حُدُودُ 2:229)."
+  }
+ },
+ "أَلْباب|لبب": {
+  "P|definite|NOM": {
+   "text": "الْأَلْبَابُ",
+   "why": "Plural-only lemma (plural of لُبّ, 'mind'): CAMeL builds only the definite genitive. أَفْعَال is a regular triptote (أُولِى ٱلْأَلْبَٰبِ 3:190)."
+  },
+  "P|definite|ACC": {
+   "text": "الْأَلْبَابَ",
+   "why": "Plural-only lemma (plural of لُبّ, 'mind'): CAMeL builds only the definite genitive. أَفْعَال is a regular triptote (أُولِى ٱلْأَلْبَٰبِ 3:190)."
+  },
+  "P|indefinite|NOM": {
+   "text": "أَلْبَابٌ",
+   "why": "Plural-only lemma (plural of لُبّ, 'mind'): CAMeL builds only the definite genitive. أَفْعَال is a regular triptote (أُولِى ٱلْأَلْبَٰبِ 3:190)."
+  },
+  "P|indefinite|ACC": {
+   "text": "أَلْبَابًا",
+   "why": "Plural-only lemma (plural of لُبّ, 'mind'): CAMeL builds only the definite genitive. أَفْعَال is a regular triptote (أُولِى ٱلْأَلْبَٰبِ 3:190)."
+  },
+  "P|indefinite|GEN": {
+   "text": "أَلْبَابٍ",
+   "why": "Plural-only lemma (plural of لُبّ, 'mind'): CAMeL builds only the definite genitive. أَفْعَال is a regular triptote (أُولِى ٱلْأَلْبَٰبِ 3:190)."
+  }
+ },
+ "ثَمَرَة|ثمر": {
+  "S|definite|NOM": {
+   "text": "الثَّمَرَةُ",
+   "why": "CAMeL generates only the indefinite genitive of the singular; ثَمَرَة is a regular triptote with tāʾ marbūṭa (مِن ثَمَرَةٍ 2:25)."
+  },
+  "S|definite|ACC": {
+   "text": "الثَّمَرَةَ",
+   "why": "CAMeL generates only the indefinite genitive of the singular; ثَمَرَة is a regular triptote with tāʾ marbūṭa (مِن ثَمَرَةٍ 2:25)."
+  },
+  "S|definite|GEN": {
+   "text": "الثَّمَرَةِ",
+   "why": "CAMeL generates only the indefinite genitive of the singular; ثَمَرَة is a regular triptote with tāʾ marbūṭa (مِن ثَمَرَةٍ 2:25)."
+  },
+  "S|indefinite|NOM": {
+   "text": "ثَمَرَةٌ",
+   "why": "CAMeL generates only the indefinite genitive of the singular; ثَمَرَة is a regular triptote with tāʾ marbūṭa (مِن ثَمَرَةٍ 2:25)."
+  },
+  "S|indefinite|ACC": {
+   "text": "ثَمَرَةً",
+   "why": "CAMeL generates only the indefinite genitive of the singular; ثَمَرَة is a regular triptote with tāʾ marbūṭa (مِن ثَمَرَةٍ 2:25)."
+  }
+ },
+ "تَقْوَى|وقي": {
+  "S|definite|ACC": {
+   "text": "التَّقْوَى",
+   "why": "The noun ends in alif maqṣūra: the definite form is the same in every case (ٱلْ…ىٰ nominative in the Quran); CAMeL generates only the nominative."
+  }
+ },
+ "قُرْبَى|قرب": {
+  "S|definite|ACC": {
+   "text": "الْقُرْبَى",
+   "why": "The noun ends in alif maqṣūra: the definite form is the same in every case (ٱلْ…ىٰ nominative in the Quran); CAMeL generates only the nominative."
+  }
+ },
+ "بُشْرَى|بشر": {
+  "S|definite|ACC": {
+   "text": "الْبُشْرَى",
+   "why": "The noun ends in alif maqṣūra: the definite form is the same in every case (ٱلْ…ىٰ nominative in the Quran); CAMeL generates only the nominative."
+  }
+ },
+ "مَوْلَى|ولي": {
+  "S|definite|ACC": {
+   "text": "الْمَوْلَى",
+   "why": "The noun ends in alif maqṣūra: the definite form is the same in every case (ٱلْ…ىٰ nominative in the Quran); CAMeL generates only the nominative."
+  },
+  "S|indefinite|NOM": {
+   "text": "مَوْلًى",
+   "why": "مَوْلًى ends in alif maqṣūra with tanwīn: the indefinite form is the same in every case (مَوْلًى عَن مَّوْلًى 44:41); CAMeL generates none of them."
+  },
+  "S|indefinite|ACC": {
+   "text": "مَوْلًى",
+   "why": "مَوْلًى ends in alif maqṣūra with tanwīn: the indefinite form is the same in every case (مَوْلًى عَن مَّوْلًى 44:41); CAMeL generates none of them."
+  },
+  "S|indefinite|GEN": {
+   "text": "مَوْلًى",
+   "why": "مَوْلًى ends in alif maqṣūra with tanwīn: the indefinite form is the same in every case (مَوْلًى عَن مَّوْلًى 44:41); CAMeL generates none of them."
+  }
+ },
+ "أُخْت|أخو": {
+  "S|definite|ACC": {
+   "text": "الْأُخْتَ",
+   "why": "CAMeL generates every cell of أُخْت but the accusatives; it is a regular triptote (وَلَهُۥٓ أُخْتٌ 4:12)."
+  },
+  "S|indefinite|ACC": {
+   "text": "أُخْتًا",
+   "why": "CAMeL generates every cell of أُخْت but the accusatives; it is a regular triptote (وَلَهُۥٓ أُخْتٌ 4:12)."
+  }
+ },
+ "والِد|ولد": {
+  "S|definite|NOM": {
+   "text": "الْوَالِدُ",
+   "why": "CAMeL generates only the indefinite nominative and genitive of وَالِد (father, parent); it is a regular triptote (وَوَالِدٍ وَمَا وَلَدَ 90:3)."
+  },
+  "S|definite|ACC": {
+   "text": "الْوَالِدَ",
+   "why": "CAMeL generates only the indefinite nominative and genitive of وَالِد (father, parent); it is a regular triptote (وَوَالِدٍ وَمَا وَلَدَ 90:3)."
+  },
+  "S|definite|GEN": {
+   "text": "الْوَالِدِ",
+   "why": "CAMeL generates only the indefinite nominative and genitive of وَالِد (father, parent); it is a regular triptote (وَوَالِدٍ وَمَا وَلَدَ 90:3)."
+  },
+  "S|indefinite|ACC": {
+   "text": "وَالِدًا",
+   "why": "CAMeL generates only the indefinite nominative and genitive of وَالِد (father, parent); it is a regular triptote (وَوَالِدٍ وَمَا وَلَدَ 90:3)."
+  },
+  "D|definite|ACC": {
+   "text": "الْوَالِدَيْنِ",
+   "why": "The dual accusative equals the genitive (ٱلْوَٰلِدَيْنِ, attested 2:180); CAMeL leaves the accusative cell empty."
+  }
  }
 }

@@ -479,5 +479,138 @@
  "مَرَّة|مرر": {
   "kind": "ordinary",
   "why": "Reviewed: one time, an occasion (Quran 9:126 مَرَّةً أَوْ مَرَّتَيْنِ), a noun of instance of مَرَّ with its own dual and plural; no collective مَرّ of that sense."
+ },
+ "إِنس|أنس": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي: humankind, human beings as a kind, paired with الْجِنّ; no plural or dual of its own. One human is إِنسِيّ (Quran 19:26 فَلَنْ أُكَلِّمَ ٱلْيَوْمَ إِنسِيًّا). Both agreements are Quranic: لَّا يُسْأَلُ عَن ذَنۢبِهِۦٓ إِنسٌ (55:39, masculine) and أَن لَّن تَقُولَ ٱلْإِنسُ (72:5, feminine).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "إِنْسِيٌّ",
+    "gender": "M",
+    "en": "a human being",
+    "bs": "čovjek",
+    "lemma": "إِنسِيّ|أنس"
+   }
+  ]
+ },
+ "ثَمَرَة|ثمر": {
+  "kind": "singulative",
+  "why": "اسم الوحدة: one fruit, of the collective ثَمَر 'fruit' (Quran 6:141 كُلُوا۟ مِن ثَمَرِهِۦٓ إِذَآ أَثْمَرَ); its plural ثَمَرَات is Quranic (2:22) and stays in the table.",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "ثَمَرٌ",
+    "gender": "M",
+    "en": "fruit",
+    "bs": "plodovi",
+    "lemma": "ثَمَر|ثمر"
+   }
+  ]
+ },
+ "ذَكَر|ذكر": {
+  "kind": "pair",
+  "why": "Male, paired with أُنثَى (female) (Quran 49:13 مِّن ذَكَرٍ وَأُنثَىٰ); its plural ذُكُور is Quranic (42:49).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "أُنْثَى",
+    "gender": "F",
+    "en": "female",
+    "bs": "žensko",
+    "lemma": "أُنثَى|أنث"
+   }
+  ]
+ },
+ "بِنْت|بني": {
+  "kind": "pair",
+  "why": "The male of بِنْت (daughter) is ابْن (son) (Quran 4:23 وَبَنَاتُ ٱلْأَخِ وَبَنَاتُ ٱلْأُخْتِ; ابْن passim). Its plural بَنَات is Quranic.",
+  "related": [
+   {
+    "role": "male",
+    "ar": "ابْنٌ",
+    "gender": "M",
+    "en": "son",
+    "bs": "sin",
+    "lemma": "ابْن|بني"
+   }
+  ]
+ },
+ "أُخْت|أخو": {
+  "kind": "pair",
+  "why": "The male of أُخْت (sister) is أَخ (brother) (Quran 4:12 وَلَهُۥٓ أَخٌ أَوْ أُخْتٌ).",
+  "related": [
+   {
+    "role": "male",
+    "ar": "أَخٌ",
+    "gender": "M",
+    "en": "brother",
+    "bs": "brat",
+    "lemma": "أَخ|أخو"
+   }
+  ]
+ },
+ "رَيْب|ريب": {
+  "kind": "ordinary",
+  "why": "Reviewed: رِيبَة (suspicion) is a different word of the same root, not its singulative or female; رَيْب is a mass noun (لَا رَيْبَ فِيهِ)."
+ },
+ "مُنكَر|نكر": {
+  "kind": "ordinary",
+  "why": "Reviewed: مُنكَرَة is the regular feminine of the participle used as an adjective, not a different word."
+ },
+ "أَهْواء|هوي": {
+  "kind": "ordinary",
+  "why": "Reviewed: the plural of هَوًى (desire, whim), which is Quranic too (وَنَهَى ٱلنَّفْسَ عَنِ ٱلْهَوَىٰ 79:40); a plain broken plural, not a collective."
+ },
+ "أَلْباب|لبب": {
+  "kind": "ordinary",
+  "why": "Reviewed: the plural of لُبّ (mind, kernel); the singular is not Quranic. A plain broken plural (أُولُوا۟ ٱلْأَلْبَٰبِ)."
+ },
+ "سُنَّة|سنن": {
+  "kind": "ordinary",
+  "why": "Reviewed: an ordinary feminine noun with the plural سُنَن (3:137); سِنّ/سَنَة are different words."
+ },
+ "بَلَد|بلد": {
+  "kind": "ordinary",
+  "why": "Reviewed: بَلْدَة (27:91) is a separate word, 'a town', not its singulative; بَلَد has the ordinary plural بِلَاد (3:196)."
+ },
+ "حُدُود|حدد": {
+  "kind": "ordinary",
+  "why": "Reviewed: the plural of حَدّ (limit, border), whose singular is not Quranic; a plain broken plural."
+ },
+ "صِدْق|صدق": {
+  "kind": "ordinary",
+  "why": "Reviewed: صِدْقَة/صَدَقَة (charity) is a different word of the same root; صِدْق is a mass noun."
+ },
+ "ظِلّ|ظلل": {
+  "kind": "ordinary",
+  "why": "Reviewed: ظُلَّة (a canopy, 26:189) is a different word; ظِلّ has the ordinary plural ظِلَال (13:15)."
+ },
+ "لَعْنَة|لعن": {
+  "kind": "ordinary",
+  "why": "Reviewed: an ordinary feminine noun (a curse), plural لَعَنَات; لَعْن is the verbal noun, not a collective."
+ },
+ "مَدِينَة|مدن": {
+  "kind": "ordinary",
+  "why": "Reviewed: an ordinary feminine noun (a city) with the broken plural مَدَائِن (7:111); not a collective or singulative."
+ },
+ "مَقام|قوم": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَقَام (a place of standing, a station, a rank) is an ordinary noun of place; مُقَام (a stay) and مَقَامَة are different words, not its singulative or female."
+ },
+ "والِد|ولد": {
+  "kind": "pair",
+  "why": "The female of وَالِد (father, parent) is وَالِدَة (mother) (Quran 19:32 وَبَرًّۢا بِوَٰلِدَتِى); the dual ٱلْوَٰلِدَانِ means both parents (4:7).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "وَالِدَةٌ",
+    "gender": "F",
+    "en": "mother",
+    "bs": "majka",
+    "lemma": "والِدَة|ولد"
+   }
+  ]
  }
 }

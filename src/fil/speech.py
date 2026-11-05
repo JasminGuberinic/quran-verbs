@@ -56,6 +56,8 @@ _SILENT_UTHMANI = "ۣۜ۟۠ۡۢۤۥۦۧۨ۩۪ۭ۫۬ٓ"
 
 def prepared(text: str) -> str:
     """The text rewritten so the model reads every vowel as written."""
+    text = _SILENT_LETTER.sub("", text)
+    text = _SILENT_WAW_SEAT.sub("ا", text)
     text = "".join(char for char in text if char not in _SILENT_UTHMANI)
     text = _UTHMANI_FINAL_ALIF_MAQSURA.sub(ALIF_MAQSURA, text)
     text = _UTHMANI_VOWELLED_YA.sub("ي", text)
@@ -68,6 +70,12 @@ def prepared(text: str) -> str:
 
 
 ALIF_MAQSURA = "ى"
+# Uthmani marks a letter that is never pronounced with a small high rounded zero (U+06DF):
+# the alif of ٱلرِّبَوٰا۟ and ٱلْبَلَٰٓؤُا۟, the wāw of أُو۟لَٰٓئِكَ. The letter goes with its mark.
+_SILENT_LETTER = re.compile("[\u0621-\u064A]\u06DF")
+# A wāw carrying only a small alif is the seat of a long ā (ٱلصَّلَوٰة aṣ-ṣalāh, ٱلرِّبَوٰا۟ ar-ribā);
+# a wāw with a vowel of its own stays a consonant (ٱلسَّمَٰوَٰتِ).
+_SILENT_WAW_SEAT = re.compile("و" + SUPERSCRIPT_ALIF)
 # Uthmani writes a final ā as ى with a small alif over it (ٱلْهُدَىٰ): the ى already is the
 # long ā, so the small alif is not a second one.
 _UTHMANI_FINAL_ALIF_MAQSURA = re.compile(ALIF_MAQSURA + SUPERSCRIPT_ALIF + r"(?=\s|$)")
@@ -186,7 +194,9 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
             if sounds and sounds[-1] == "a":
                 sounds[-1] = "aa"                               # long ā after a fatha
             elif sounds and sounds[-1] == "i":
-                sounds[-1] = "ii"                               # ى after kasra reads ī
+                if letter.base == "ى":
+                    sounds[-1] = "ii"                           # ى after kasra reads ī
+                # an alif after kasra is silent: مِائَة mi'a, الِاتِّجَاه l-ittijāh
             elif not sounds or sounds[-1] not in ("a", "aa"):
                 sounds.append("aa")                             # undotted fatha before alif
         elif letter.base == "و" and _is_bare_glide(letter) and sounds and sounds[-1] == "u":

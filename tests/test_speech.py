@@ -22,6 +22,10 @@ from fil.speech import (TtsArabicVoice, expected_phonemes, long_a_spelled_out, n
     ("الْغَنِيُّ", "< a l g a n i y y u"),        # a doubled y, not a long ī
     ("يَسْـَٔلُ", "y a s < a l u"),                # Uthmani hamza seated on a tatweel
     ("هُزُوًا", "h u z u w a n"),                  # a wāw with tanwīn is a consonant, not ū
+    ("مِائَةُ", "m i < a t u"),                     # the alif of مِائَة is silent after kasra
+    ("ٱلرِّبَوٰا۟", "< a r r i b aa"),                  # wāw seat of ā, then an alif marked silent
+    ("ٱلصَّلَوٰةُ", "< a S S a l aa t u"),               # aṣ-ṣalātu: the wāw is only the seat of ā
+    ("ٱلسَّمَٰوَٰتِ", "< a s s a m aa w aa t i"),        # a voweled wāw stays a consonant
 ])
 def test_words_are_read_as_their_vowels_say(text, sounds):
     assert " ".join(expected_phonemes(prepared(text))) == sounds
@@ -109,6 +113,10 @@ def test_only_the_long_a_the_model_reads_short_is_spelled_out(text, spelled):
     "ٱلنَّبِىُّ", "اسْمُ ٱلنَّبِىِّ",      # undotted ى with shadda is the consonant yāʾ
     "ٱلِٱسْمُ", "بِٱلِٱسْمِ",            # al-ismu (49:11): the alif of ism falls silent
     "هُزُوًا",                           # huzuwan (2:67): a wāw with tanwīn is a consonant
+    "عُمُرُ الشَّجَرَةِ مِائَةُ سَنَةٍ",          # mi'atu: an alif after kasra is silent
+    "ٱلْبَلَٰٓؤُا۟",                         # al-balāʾu: the alif marked ۟ is never said
+    "مِنَ ٱلرِّبَوٰا۟",                       # mina r-ribā
+    "الْقِبْلَةُ فِي هَذَا الِاتِّجَاهِ",         # l-ittijāh: the connecting alif after the article's kasra
 ])
 def test_both_readers_agree_on_correct_texts(text):
     pytest.importorskip("tts_arabic.text")

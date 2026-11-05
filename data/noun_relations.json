@@ -775,5 +775,104 @@
     "bs": "oblak"
    }
   ]
+ },
+ "بَصِيرَة|بصر": {
+  "kind": "ordinary",
+  "why": "Reviewed: insight, an ordinary feminine noun with the plural بَصَائِر (قَدْ جَاءَكُمْ بَصَائِرُ 6:104); بَصِير 'seeing' is an adjective, not its collective or male."
+ },
+ "تَوْبَة|توب": {
+  "kind": "ordinary",
+  "why": "Reviewed: repentance, a verbal noun of تَابَ (إِنَّمَا التَّوْبَةُ 4:17); تَوَّاب is an adjective, not its collective or male."
+ },
+ "جَهْر|جهر": {
+  "kind": "ordinary",
+  "why": "Reviewed: saying aloud, a verbal noun of جَهَرَ (يَعْلَمُ الْجَهْرَ 87:7); جَهْرَة 'openly' is an adverbial accusative, not its singulative."
+ },
+ "حُجَّة|حجج": {
+  "kind": "ordinary",
+  "why": "Reviewed: a proof, an argument (حُجَّتُنَا 6:83); حَجّ (pilgrimage) is another word, not its collective."
+ },
+ "ذِلَّة|ذلل": {
+  "kind": "ordinary",
+  "why": "Reviewed: humiliation (ضُرِبَتْ عَلَيْهِمُ الذِّلَّةُ 2:61); ذُلّ (lowliness, 17:24) is a different abstract noun, not its collective."
+ },
+ "سَفَر|سفر": {
+  "kind": "ordinary",
+  "why": "Reviewed: a journey (عَلَىٰ سَفَرٍ 2:184); سَفَرَة (80:15) is the plural of سَافِر 'scribe', another word."
+ },
+ "عُمُر|عمر": {
+  "kind": "ordinary",
+  "why": "Reviewed: a lifetime, age (أَرْذَلِ الْعُمُرِ 16:70); عُمْرَة (the lesser pilgrimage, 2:196) is another word."
+ },
+ "قِبْلَة|قبل": {
+  "kind": "ordinary",
+  "why": "Reviewed: the direction faced in prayer (فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا 2:144); قِبَل/قَبْل are other words."
+ },
+ "مُهاجِر|هجر": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُهَاجِرَة (الْمُؤْمِنَاتُ مُهَاجِرَاتٍ 60:10) is the regular feminine of a participle, not a different word."
+ },
+ "إِخْوَة|أخو": {
+  "kind": "ordinary",
+  "why": "Reviewed: إِخْوَة is a plural of أَخ (Quran 12:58 وَجَاءَ إِخْوَةُ يُوسُفَ), which the corpus files as its own lemma; a plural with a singular is not a collective."
+ },
+ "حَبّ|حبب": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: grain as a kind; one grain is حَبَّة (كَمَثَلِ حَبَّةٍ أَنْبَتَتْ سَبْعَ سَنَابِلَ 2:261). It agrees masculine singular: وَالْحَبُّ ذُو الْعَصْفِ (55:12).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "حَبَّةٌ",
+    "gender": "F",
+    "en": "a grain",
+    "bs": "zrno",
+    "lemma": "حَبَّة|حبب"
+   }
+  ]
+ },
+ "شَجَر|شجر": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: trees as a kind; one tree is شَجَرَة (وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ 2:35). It agrees masculine singular: مِنَ الشَّجَرِ الْأَخْضَرِ نَارًا (36:80).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "شَجَرَةٌ",
+    "gender": "F",
+    "en": "tree",
+    "bs": "drvo",
+    "lemma": "شَجَرَة|شجر"
+   }
+  ]
+ },
+ "نَخِيل|نخل": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جمع: date palms, with no singular of its own pattern; one palm is نَخْلَة (19:23). The Quran gives it a plural adjective (وَنَخِيلٌ صِنْوَانٌ وَغَيْرُ صِنْوَانٍ 13:4); like نَخْل it takes masculine or feminine agreement in classical usage. نَخْل is a separate lemma.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "نَخْلَةٌ",
+    "gender": "F",
+    "en": "date palm",
+    "bs": "palma",
+    "lemma": "نَخْلَة|نخل"
+   }
+  ]
+ },
+ "ناقَة|نوق": {
+  "kind": "pair",
+  "why": "The she-camel; the male camel is جَمَل (حَتَّىٰ يَلِجَ الْجَمَلُ فِي سَمِّ الْخِيَاطِ 7:40). Both are ones of the collective إِبِل.",
+  "related": [
+   {
+    "role": "male",
+    "ar": "جَمَلٌ",
+    "gender": "M",
+    "en": "camel (male)",
+    "bs": "deva (mužjak)",
+    "lemma": "جَمَل|جمل"
+   }
+  ]
  }
 }

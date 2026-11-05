@@ -130,6 +130,8 @@ def test_uthmani_silent_waw_and_dropped_article_lam_fold_to_imlai():
     assert spelling_key("حَيَوٰةٌ") == spelling_key("حَيَاةٌ")
     assert spelling_key("ٱلَّيْلُ") == spelling_key("اللَّيْلُ")
     assert spelling_key("ٱلسَّمَٰوَٰتِ") == spelling_key("السَّمَاوَاتِ")   # a voweled wāw stays a wāw
+    assert spelling_key("ٱلرِّبَوٰا۟") == spelling_key("الرِّبَا")   # the silent alif after the seat
+    assert spelling_key("كَفَرُوا۟") == spelling_key("كَفَرُوا")   # a silent alif after a voweled wāw stays
 
 
 def test_skeleton_and_standalone():

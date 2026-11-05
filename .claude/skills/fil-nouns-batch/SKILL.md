@@ -212,6 +212,31 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - Voice: the God-name rule read اللَّهْو as allāhw — fixed in fil.speech (the hāʾ must end the word). Run
   `pytest tests/test_noun_site_gates.py -k read_alike` before `fil pages`: it names silent sentences in 90 s.
 
+- Batch 8 (2026-11-06): 8 re-plan rounds. A dual lemma (أَبَوان، أُنثَيَيْن, like والِدَي) gets no card — skip
+  it as "dual (on its singular's card)". Skipped participles/elatives/numbers (مُبارَك، مُتَّكِئ، مُدْبِر، مُشْفِق،
+  مُقَرَّب، سابِق، عاكِف، غابِر، قاعِد، كارِه، مُرِيب، مُنِيب، مُتَكَبِّر، مَفْعُول، كَبِيرَة، بالِغ، جاعِل، أَوّاب، أَسْفَل،
+  أَبْقَى، أَهْدَى، أَبْكَم، أَرْبَع، اثْنَتَيْن، سِتَّة، عَشْر، نِصْف، ثُلُث), بُعْد (always the curse بُعْدًا) and صَفّ (always
+  صَفًّا "in rows"). HELD_BACK: مُحْصَنَة، نُزُل (MSA hotel)، جانّ، زُبُر، سَوْءَة، حِجاب (MSA headscarf)، قَدْر، فُرْقان، هاد،
+  مِهاد (Hell's bed)، هَدْي (sacrifice; MSA guidance)، أَخْذ (God's seizing)، أَنداد، أُمِّيّ. Print attested forms
+  (`att.py`: Counter of o.word_text per NFC lemma over noun_stage.load_occurrences()) for every doubtful
+  lemma in ONE call before deciding: it exposed بُعْد، صَفّ، هاد، أَخْذ.
+- A word CAMeL cannot analyze at all (يَمّ) needs `spelling:<form>` gloss exceptions per used form —
+  a root key never matches. Indefinite رِبًا (alif with fatḥatān) fails the cell gate: leave it.
+- spelling_key now drops the silent alif after a silent-wāw seat (ٱلرِّبَوٰا۟ = الرِّبَا); the voice reader
+  now keeps an alif after kasra silent (مِائَة، الِاتِّجَاه). A manqūṣ definite GEN attested as ٱلْوَادِ is no
+  cell for الْوَادِي, and its construct وَادِي is not made — واد has no possession sentence.
+- Voice: fil.speech now drops a letter marked ۟ (U+06DF, never pronounced) and reads a bare وٰ as ā
+  (ٱلرِّبَوٰا۟ ar-ribā, ٱلْبَلَٰٓؤُا۟, ٱلصَّلَوٰة aṣ-ṣalāh) — Uthmani table cells and case examples were silent.
+- Failed → accepted: ripened→matured, ready (جَاهِز)→prepared, bothered (أَزْعَجَ), decreased (خَفَّفَ), came
+  true→was realized, told (حَكَى)→related, تَفْسِير→explanation (else "exegesis"), fed→feeds, enjoyable→
+  pleasing, أَنْهَى fails, حَلَّ fails, تَحْقِيق→achievement, تَحَمَّلَ fails→faced, يَصْدَأُ and يُضَيِّعُ have no
+  analysis, صَادِق→truthful, مَرَّتَيْنِ→two times, الْفُصُول→sections, نُقْطَة→point.
+- Reviewer refusals: bare الْإِخْرَاج next to مُدِير reads "directing" (give it an object: إِخْرَاجُ الطَّالِبِ);
+  bare الْجَهْر is not "loudness" (الْجَهْرُ بِالْكَلَامِ); الْحَمْلُ alone reads "pregnancy"; فَازَ بِـ = won
+  something; "dob" is a person's age, not a tree's; "notified" is too formal for family talk.
+- A relation's `lemma` typed by hand (حَبَّة|حبب, shadda/vowel order) stops `fil pages` ("names what is not
+  studied"): copy it from the catalogue keys (`nb._key(l)` over `noun_stage.catalogue`), NFC-matched.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

@@ -181,3 +181,10 @@ def test_every_chosen_picture_ships_valid_inert_small_and_in_our_palette():
 def test_only_chosen_pictures_are_shipped():
     expected = {picture.file_name for picture in shown(load_pictures())}
     assert {path.name for path in NOUN_PICTURES_DIR.glob("*")} == expected
+
+
+def test_minifying_rounds_coordinates_to_a_tenth_but_leaves_colours_alone():
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#52c2a6" d="M21.388.62c-1.852 0 4.5 7"/></svg>'
+
+    assert minified(svg) == ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">'
+                             '<path fill="#52c2a6" d="M21.3.62c-1.8 0 4.5 7"/></svg>')

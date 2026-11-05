@@ -41,13 +41,23 @@ def picture_problems(svg: str, palette: Palette) -> list[str]:
     return problems
 
 
+COORDINATE_DECIMALS = 1   # a tenth of a unit on a 36–72 unit canvas is invisible at 64–128 px
+
+
 def minified(svg: str) -> str:
-    """`svg` without its XML declaration, comments, ids, metadata and layout whitespace."""
+    """`svg` without its XML declaration, comments, ids, metadata and layout whitespace,
+    its coordinates rounded to COORDINATE_DECIMALS — a fifth of the bytes, the same picture."""
     text = re.sub(r"<\?xml[^>]*\?>|<!--.*?-->", "", svg, flags=re.S)
+    text = _rounded_coordinates(text)
     text = re.sub(r"<(metadata|title|desc)\b.*?</\1>", "", text, flags=re.S)
     text = re.sub(r'\s(?:id|stroke-miterlimit|version|xml:space|sodipodi:[a-z]+|xmlns:sodipodi)="[^"]*"', "", text)
     text = re.sub(r">\s+<", "><", text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+def _rounded_coordinates(svg: str) -> str:
+    """Every decimal number cut to COORDINATE_DECIMALS places (hex colours have no dot)."""
+    return re.sub(rf"(\d+\.\d{{{COORDINATE_DECIMALS}}})\d+", r"\1", svg)
 
 
 def _structure_problems(svg: str) -> list[str]:

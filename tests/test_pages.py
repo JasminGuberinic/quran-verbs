@@ -314,7 +314,7 @@ def _translated_card(languages) -> dict:
 
 @pytest.mark.parametrize("missing", ["meaning", "sentence", "gloss"])
 def test_a_page_is_translated_only_when_meaning_sentences_and_ayah_glosses_all_are(missing):
-    card = _translated_card(("en", "bs", "tr"))
+    card = _translated_card(("en", "bs", "tr", "fr"))
     if missing == "meaning":
         del card["meaning"]["tr"]
     if missing == "sentence":
@@ -322,7 +322,14 @@ def test_a_page_is_translated_only_when_meaning_sentences_and_ayah_glosses_all_a
     if missing == "gloss":
         del card["ayat"][0]["words"][0]["gloss"]["tr"]
 
-    assert indexing.translated_languages(card) == ("bs", "en")
+    assert indexing.translated_languages(card) == ("bs", "en", "fr")
+
+
+def test_an_ayah_gloss_written_only_in_english_and_bosnian_does_not_hold_other_languages_back():
+    card = _translated_card(("en", "bs", "tr"))
+    card["ayat"][0]["words"].append({"hit": True, "gloss": {"en": "he said", "bs": "rekao je"}})
+
+    assert indexing.translated_languages(card) == ("bs", "en", "tr")
 
 
 def test_english_counts_as_translated_for_english_alone():

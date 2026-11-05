@@ -7,7 +7,9 @@ engines only in a language that has all three of the verb's own texts:
 
   - its meaning,
   - the translation of every practice sentence,
-  - the gloss of the verb in every example ayah.
+  - the gloss of the verb in every example ayah — except glosses written only in the
+    focus languages (FOCUS_ONLY: English and Bosnian), which newer content has before
+    the other languages are backfilled; those never hold another language's page back.
 
 English is the source language and counts as translated for English only. Untranslated
 pages carry `noindex, follow`, stay out of the sitemap and out of other pages' hreflang
@@ -28,6 +30,7 @@ from collections.abc import Sequence
 from fil.languages import CODES
 
 SOURCE_LANGUAGE = "en"
+FOCUS_ONLY = frozenset({"en", "bs"})   # content written in these alone does not block other languages
 LIST_INDEX_SHARE = 0.5    # a list is indexed when at least this share of its verb pages is
 
 
@@ -37,7 +40,11 @@ def is_translated(card: dict, language: str) -> bool:
         return True
     return (bool(card["meaning"].get(language))
             and all(sentence["translation"].get(language) for sentence in card["sentences"])
-            and all(gloss.get(language) for gloss in _ayah_verb_glosses(card)))
+            and all(gloss.get(language) or _focus_only(gloss) for gloss in _ayah_verb_glosses(card)))
+
+
+def _focus_only(gloss: dict) -> bool:
+    return {language for language, text in gloss.items() if text} <= FOCUS_ONLY
 
 
 def _ayah_verb_glosses(card: dict) -> list[dict]:

@@ -33,6 +33,10 @@ INDEFINITE = "indefinite"    # with nunation (or a diptote's bare ending): كِ�
 CONSTRUCT = "construct"      # neither — possessed by a suffix or a following genitive: كِتَابُهُ
 STATES = (DEFINITE, INDEFINITE)  # the two states a paradigm table shows
 
+# The word families that change what an accusative does: after إِنَّ it is the subject
+# ("إِنَّ ٱلْأَرْضَ" — the earth is…), after كَانَ the predicate. Neither is an object.
+INNA, KANA = "inna", "kana"
+
 # ------------------------------------------------------------------ plural kinds
 
 SOUND_MASCULINE = "sound_masculine"   # مُؤْمِنُونَ
@@ -48,6 +52,7 @@ class NounParts:
     has_article: bool
     possessive: str | None = None        # the possessor suffix as person-gender-number: "3MP"
     governing_preposition: str | None = None  # lemma of the preposition ruling a genitive: "ب", "فِي"
+    follows: str | None = None           # the word before is إِنَّ or a sister (INNA), كَانَ or a sister (KANA)
 
 
 @dataclass(frozen=True)

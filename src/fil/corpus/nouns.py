@@ -24,9 +24,11 @@ from itertools import groupby
 
 from fil.composition.decomposition import AND, EMPHATIC, QUESTION, SO, CannotCompose, pgn
 from fil.corpus.parse import Segment
-from fil.nouns.model import (ACTIVE_PARTICIPLE, ADJECTIVE, ADVERB, CONSTRUCT, DEFINITE, DUAL, INDEFINITE, NOUN,
-                             PASSIVE_PARTICIPLE, PLURAL, PROPER_NOUN, SINGULAR, VERBAL_NOUN, NounOccurrence,
-                             NounParts)
+from fil.nouns.catalogue import plural_kind
+from fil.nouns.spelling import skeleton
+from fil.nouns.model import (ACTIVE_PARTICIPLE, ADJECTIVE, ADVERB, CONSTRUCT, DEFINITE, DUAL, INDEFINITE, INNA,
+                             KANA, NOUN, PASSIVE_PARTICIPLE, PLURAL, PROPER_NOUN, SINGULAR, VERBAL_NOUN,
+                             NounOccurrence, NounParts, SOUND_MASCULINE)
 
 # Proclitic roles before a noun (the verb's AND, SO, EMPHATIC, QUESTION, plus these).
 BI = "bi"                # بِـ "with, by, in"
@@ -47,6 +49,7 @@ _PREPOSITIONS = {"ب": BI, "ل": LI, "ك": KA}
 _OATH_LETTERS = {"و", "ت"}
 _ARTICLE = "DET"
 _PREPOSITION = "P"
+_FAMILIES = {"إِنّ": INNA, "كَان": KANA}   # the corpus's FAM feature
 
 
 def iter_noun_occurrences(segments: Iterable[Segment]) -> Iterator[NounOccurrence]:
@@ -77,7 +80,7 @@ def _occurrence(stem: Segment, word: Sequence[Segment], previous: Sequence[Segme
         root=feature_value(stem, "ROOT") or "",
         kind=_kind(stem),
         gender=gender, number=number, case=case,
-        state=_state(stem, has_article),
+        state=_state(stem, has_article, number, word),
         verb_form=_verb_form(stem),
         parts=parts, skip_reason=reason,
     )
@@ -106,6 +109,7 @@ def decompose_noun(stem: Segment, word: Sequence[Segment], previous: Sequence[Se
         has_article=has_article,
         possessive=_possessive(after),
         governing_preposition=_governing_preposition(before, previous) if case == "GEN" else None,
+        follows=_family_before(before, previous),
     )
 
 
@@ -155,6 +159,15 @@ def _governing_preposition(before: Sequence[Segment], previous: Sequence[Segment
     return None
 
 
+def _family_before(before: Sequence[Segment], previous: Sequence[Segment]) -> str | None:
+    """INNA or KANA when the word right before is one of theirs and nothing of the noun's own
+    word stands between (a preposition of its own would govern it instead)."""
+    if any(_tag(segment) == _PREPOSITION for segment in before):
+        return None
+    families = (_FAMILIES.get(feature_value(segment, "FAM") or "") for segment in previous)
+    return next((family for family in families if family), None)
+
+
 # ------------------------------------------------------------------ grammar from tags
 
 def _kind(stem: Segment) -> str:
@@ -167,10 +180,25 @@ def _gender_number(stem: Segment) -> tuple[str | None, str]:
     return found if found is not None else (None, SINGULAR)
 
 
-def _state(stem: Segment, has_article: bool) -> str:
+def _state(stem: Segment, has_article: bool, number: str, word: Sequence[Segment]) -> str:
     if has_article:
         return DEFINITE
-    return INDEFINITE if "INDEF" in stem.features else CONSTRUCT
+    if "INDEF" in stem.features or _keeps_its_nun(stem, number, word):
+        return INDEFINITE
+    return CONSTRUCT
+
+
+def _keeps_its_nun(stem: Segment, number: str, word: Sequence[Segment]) -> bool:
+    """A dual or sound plural is in construct only when it drops its nūn (يَدَا, مُؤْمِنُو); the
+    corpus never tags these INDEF, so one that keeps its nūn and has no suffix is indefinite
+    (عَيْنَانِ "two springs", مُؤْمِنِينَ)."""
+    if number not in (DUAL, PLURAL) or any(segment.index > stem.index for segment in word):
+        return False
+    letters = skeleton(stem.surface)
+    if number == DUAL:
+        return letters.endswith(("ان", "ين"))
+    lemma = feature_value(stem, "LEM") or ""
+    return plural_kind(lemma, stem.surface) == SOUND_MASCULINE and letters.endswith(("ون", "ين"))
 
 
 def _verb_form(stem: Segment) -> int | None:

@@ -23,6 +23,7 @@ _HARAKAT = {chr(code) for code in range(0x064B, 0x0653)}
 _HAMZA_SEATS = str.maketrans({"أ": "ء", "إ": "ء", "ؤ": "ء", "ئ": "ء", "آ": "ءا", "ٱ": "ا", "ى": "ي", "ٰ": "ا",
                               chr(0x0654): "ء", chr(0x0655): "ء", chr(0x0640): "",
                               chr(0x06E5): "و", chr(0x06E6): "ي"})
+_IQLAB_MARKS = chr(0x06E2) + chr(0x06ED)
 _UTHMANI_MARKS = {chr(code) for code in range(0x06D6, 0x06EE)} | {chr(0x0653)}
 # Inside a word, yāʾ-shaped ى under a dagger alif is only its seat: أَيَّىٰم is أيّام.
 _SEATED_DAGGER_ALEF = re.compile(chr(0x0649) + chr(0x0670) + "(?=[" + chr(0x0621) + "-" + chr(0x064A) + "])")
@@ -72,11 +73,13 @@ def standalone(stem: str) -> str:
     No word begins with a doubled letter: a shadda there is assimilation — of a sun letter
     to the article (ٱلسَّمَٰوَٰت) or of nunation in the word before (رِزْقًا مُّؤْمِنِينَ). And
     a hamza on a tatweel (بِـَٔايَٰت) is the Uthmani way of writing it after a proclitic;
-    alone it sits on the line (ءَايَٰت).
+    alone it sits on the line (ءَايَٰت). Its end, too, may carry a mark of the word after it:
+    the small mīm of nunation turning to m before a bāʾ (كَافِرٍۭ بِهِۦ, بَابٌۢ).
     """
     text = unicodedata.normalize("NFC", stem)
     if text.startswith(_TATWEEL):
         text = text[1:].replace(_HAMZA_ABOVE, "", 1)
         text = _HAMZA + text
     marks_end = next((index for index, char in enumerate(text[1:], 1) if not unicodedata.combining(char)), len(text))
-    return text[0] + text[1:marks_end].replace(_SHADDA, "") + text[marks_end:]
+    text = text[0] + text[1:marks_end].replace(_SHADDA, "") + text[marks_end:]
+    return text.replace(_IQLAB_MARKS[0], "").replace(_IQLAB_MARKS[1], "")

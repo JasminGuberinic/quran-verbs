@@ -835,6 +835,16 @@ def _features_of(draft: Example, resolve) -> dict | None:
     return resolve(draft.tense, draft.pronoun)
 
 
+def camel_analyzer() -> Analyze:
+    """The CAMeL analyzer the gate uses, for gates outside this service (fil.nouns.sentence_gate)."""
+    return _camel_analyze()
+
+
+def gloss_exceptions() -> dict[str, tuple[str, ...]]:
+    """The documented lexicon gaps (data/gloss_exceptions.json), for gates outside this service."""
+    return _gloss_exceptions()
+
+
 def _camel_analyze() -> Analyze:
     from fil import camel
 

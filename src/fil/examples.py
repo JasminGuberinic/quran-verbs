@@ -208,7 +208,7 @@ def check_example(
 
     analyses = {word: analyze(word.arabic) for word in example.words}
     verb_analyses = [a for a in analyses[target] if a.get("pos") == "verb" and a.get("root")]
-    gloss_agreement, gloss_conflicts, by_exception = _gloss_check(analyses, gloss_exceptions or {})
+    gloss_agreement, gloss_conflicts, by_exception = gloss_check(analyses, gloss_exceptions or {})
     root_ok = any(_root_matches(expected_root, a["root"]) for a in verb_analyses)
     form_ok = _form_check(verb_analyses, expected_root, expected_features)
     form_by = "analyzer" if form_ok else ""
@@ -271,7 +271,7 @@ def _form_check(verb_analyses: list[dict], expected_root: str, features: dict | 
     )
 
 
-def _gloss_check(
+def gloss_check(
     analyses: dict[ExampleWord, list[dict]], exceptions: GlossExceptions
 ) -> tuple[bool | None, tuple[str, ...], tuple[str, ...]]:
     """Compare every declared meaning with the lexicon's own, naming the disagreements.

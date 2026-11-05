@@ -17,13 +17,13 @@ from fil.resources import EXAMPLES_JSON
 
 def load(root: str, form: int, path: Path = EXAMPLES_JSON) -> list[Example]:
     """The stored examples for one verb (empty list if none)."""
-    return [_from_dict(item) for item in _read(path).get(_key(root, form), [])]
+    return [from_dict(item) for item in _read(path).get(_key(root, form), [])]
 
 
 def save(root: str, form: int, examples: list[Example], path: Path = EXAMPLES_JSON) -> None:
     """Replace the stored examples for one verb."""
     store = _read(path)
-    store[_key(root, form)] = [_to_dict(example) for example in examples]
+    store[_key(root, form)] = [to_dict(example) for example in examples]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(store, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -47,7 +47,7 @@ def _read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _to_dict(example: Example) -> dict:
+def to_dict(example: Example) -> dict:
     """The example as JSON; translations become a {language: text} map, which reads naturally."""
     data = asdict(example)
     data["translations"] = dict(example.translations)
@@ -66,7 +66,7 @@ def _word_from(data: dict) -> ExampleWord:
     return ExampleWord(**{**data, "translations": _translations_from(data)})
 
 
-def _from_dict(data: dict) -> Example:
+def from_dict(data: dict) -> Example:
     return Example(
         arabic=data["arabic"],
         words=tuple(_word_from(word) for word in data["words"]),

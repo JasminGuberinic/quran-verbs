@@ -39,7 +39,8 @@ _SOUND_ENDINGS = {(PLURAL, NOMINATIVE): "ون" + _FATHA, (PLURAL, ACCUSATIVE): "
 def problems(form: str, cell: Cell, lemma: str) -> tuple[str, ...]:
     """Every way `form` fails to be the `cell` of `lemma`; empty when it passes."""
     text = spelling_key(form)
-    found = [_state_problem(form, cell), _defective_problem(text), _ending_problem(text, form, cell, lemma)]
+    found = [_state_problem(form, cell), _defective_problem(text), _long_alif_problem(text),
+             _ending_problem(text, form, cell, lemma)]
     return tuple(problem for problem in found if problem)
 
 
@@ -77,6 +78,15 @@ def _defective_problem(text: str) -> str | None:
     """A defective noun's final yāʾ is silent in the nominative and genitive (الْأَيْدِي)."""
     if text.endswith((_KASRA + "ي" + _DAMMA, _KASRA + "ي" + _KASRA)):
         return "case vowel on a defective yāʾ"
+    return None
+
+
+def _long_alif_problem(text: str) -> str | None:
+    """A final long alif carries no case vowel (الْعَصَا, never الْعَصاُ); only nunation's
+    fatḥatān may be written on its seat alif (كِتَاباً)."""
+    marks = _trailing_marks(text)
+    if text[:len(text) - len(marks)].endswith("ا") and set(marks) & (_ALL_VOWELS - {_FATHATAN}):
+        return "case vowel on a final alif"
     return None
 
 

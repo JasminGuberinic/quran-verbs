@@ -83,3 +83,19 @@ take feminine singular.
 4. Adjectives.
 5. Batches of 50 by frequency to ~600 nouns (83% of noun occurrences) + all adjectives,
    one batch per new session, then the rest.
+
+## Spike findings (ffdfa3d0) and adjustments
+
+- 3,125 lemmas catalogued (`fil nouns status|catalogue|paradigms`); 99.2% of 30,916 noun
+  occurrences decompose cleanly; the governing preposition is captured (attached or the
+  word before).
+- QAC marks plurals only by gender+number; a broken plural carries its singular's lemma.
+  945 lemmas have a plural: 377 sound masc., 117 sound fem., 519 broken; 88 have a dual.
+- CAMeL (calima-msa-r13) declines nouns: for the top 600, 1,984 cells are Quranic, 2,172
+  generated cells pass the gate (83% of what CAMeL produced), 1,232 stay empty.
+- Adjustments: adverbs (بَيْن، عِنْد) get no case table · a second plural (كَافِرُون /
+  كُفَّار) is its own row · empty cells stay empty, never forced · generated forms are
+  shown in Quranic-style spelling or marked "standard spelling" · only ~70 of the top 600
+  are picturable, so pictures also cover concrete nouns beyond the top 600 (fruit,
+  animals, body, nature, objects), and the pilot's picturable 25 are hand-picked from
+  `build/nouns/categories.tsv`.

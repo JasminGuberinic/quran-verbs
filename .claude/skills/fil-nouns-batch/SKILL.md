@@ -124,6 +124,24 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   reordered in قُوَّة) imports as "unknown"; remap by the `#n` suffix. حَمْد with no agent sounds
   reserved for God (give it one: حَمْدَ النَّاسِ); a prize is جَائِزَة, not جَزَاء; صِرَاط only figurative.
 
+- Batch 4 (2026-11-05): skipped سَواء، غافِل، أَجْمَع، أَكْبَر، حَيّ، غَنِيّ، سَبْع، أَعْمَى، مُسَمًّى،
+  ساجِد، صابِر; HELD_BACK جَحِيم، جِنّ (no everyday human sense). Read batch.txt for adjectives/
+  participles-as-ḥāl BEFORE writing meanings — each skip re-plans and pulls in a new noun.
+- Tables hold only the numbers the Quran uses: مُنافِق، مُكَذِّب، ظُلُمَة are plural-only — draft them
+  in the plural; a Bosnian word with no natural plural (tama) fills the pl row with its singular forms.
+- Draft key = batch lemma (امْرَأَت, not امْرَأَة). A construct of a hamza-final indefinite cell
+  (دُعَاءَ أُمِّهِ) is "not a cell" — use the definite. Uthmani-only iNOM (نَبَؤٌا۟) likewise.
+- Print the gloss table of the failing words once (CAMeL `gloss` per word) and fix all in one pass.
+  Failed → accepted: smell→odor, accuracy→correctness, founded→established, comforts→relaxes,
+  amuses/delights→gladdens, watched (رَاقَبَ)→observed, seller→vendor, عَمَل deed→action,
+  common→widespread, frightening→frightful, await→wait for, ترك abandoned (use رَفَضَ rejected), brown.
+- The Sonnet halves put bi "" everywhere: set bi "-" for people and abstract nouns (and min "od"
+  for abstracts) with one scripted fix file over both halves.
+- Refused as nouns by the reviewer: جُنَاح (only the idiom لَا جُنَاحَ; offense is جُنْحَة) → HELD_BACK;
+  حَمِيم (MSA adjective صَدِيقٌ حَمِيمٌ) → skipped; bare الطَّائِفَة reads "sect" — say طَائِفَةٌ مِنَ السُّيَّاحِ.
+  To drop a noun mid-batch: delete its key from noun_meanings/noun_bs_paradigms/noun_sentences,
+  skip/hold it, save batch.txt, `plan next K`, then concatenate the old batch (minus it) + the new K.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

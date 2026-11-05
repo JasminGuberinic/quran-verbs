@@ -447,5 +447,43 @@
    "text": "أَنْصَارٌ",
    "why": "CAMeL misses these cells; the Quran's ٱلْأَنصَارِ and أَنصَارًا fix the plural أَنْصَار, a regular triptote"
   }
+ },
+ "آل|أول": {
+  "S|indefinite|NOM": {
+   "text": "آلٌ",
+   "why": "آل (family, house of) occurs in the Quran only as a construct head (آلَ فِرْعَوْنَ 2:49); CAMeL generates no form of it — the regular triptote declension, taught through its construct forms"
+  },
+  "S|indefinite|ACC": {
+   "text": "آلًا",
+   "why": "آل (family, house of) occurs in the Quran only as a construct head (آلَ فِرْعَوْنَ 2:49); CAMeL generates no form of it — the regular triptote declension, taught through its construct forms"
+  },
+  "S|indefinite|GEN": {
+   "text": "آلٍ",
+   "why": "آل (family, house of) occurs in the Quran only as a construct head (آلَ فِرْعَوْنَ 2:49); CAMeL generates no form of it — the regular triptote declension, taught through its construct forms"
+  }
+ },
+ "امْرَأَت|مرأ": {
+  "S|indefinite|GEN": {
+   "text": "امْرَأَةٍ",
+   "why": "The corpus spells the lemma امْرَأَت, which CAMeL cannot analyze; امْرَأَة is a regular triptote, and with the article it is written الْمَرْأَة (the hamzat al-waṣl drops)"
+  },
+  "S|definite|NOM": {
+   "text": "الْمَرْأَةُ",
+   "why": "The corpus spells the lemma امْرَأَت, which CAMeL cannot analyze; امْرَأَة is a regular triptote, and with the article it is written الْمَرْأَة (the hamzat al-waṣl drops)"
+  },
+  "S|definite|ACC": {
+   "text": "الْمَرْأَةَ",
+   "why": "The corpus spells the lemma امْرَأَت, which CAMeL cannot analyze; امْرَأَة is a regular triptote, and with the article it is written الْمَرْأَة (the hamzat al-waṣl drops)"
+  },
+  "S|definite|GEN": {
+   "text": "الْمَرْأَةِ",
+   "why": "The corpus spells the lemma امْرَأَت, which CAMeL cannot analyze; امْرَأَة is a regular triptote, and with the article it is written الْمَرْأَة (the hamzat al-waṣl drops)"
+  }
+ },
+ "مَأْوَى|أوي": {
+  "S|definite|ACC": {
+   "text": "الْمَأْوَى",
+   "why": "مَأْوَى ends in alif maqṣūra: the definite form is the same in every case (ٱلْمَأْوَىٰ 79:41 nominative); CAMeL generates only the nominative"
+  }
  }
 }

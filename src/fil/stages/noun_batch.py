@@ -56,7 +56,9 @@ MAX_WORDS = 5
 # Nouns a batch does not take by itself: their sentences would have to speak of God or of gods
 # (content policy); the owner decides.
 # آلاء: in the Quran only "the favours of your Lord"; no everyday human sense to teach it by.
-HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو")
+# جَحِيم (hellfire) and جِنّ (jinn) have no everyday human sense either; جُنَاح lives in Arabic
+# only in the idiom لَا جُنَاحَ عَلَى "no blame on" (an offense is جُنْحَة).
+HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو", "جَحِيم|جحم", "جِنّ|جنن", "جُناح|جنح")
 
 
 @dataclass(frozen=True)

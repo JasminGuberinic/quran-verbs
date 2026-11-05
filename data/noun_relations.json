@@ -415,5 +415,69 @@
     "bs": "žena"
    }
   ]
+ },
+ "مُؤْمِنَة|أمن": {
+  "kind": "ordinary",
+  "why": "Reviewed: the regular feminine of the participle مُؤْمِن (Quran 4:92 فَتَحْرِيرُ رَقَبَةٍ مُؤْمِنَةٍ), not a singulative of a collective; agreement is taught with the adjectives."
+ },
+ "مُنافِق|نفق": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُنَافِقَة (Quran 33:73 الْمُنَافِقِينَ وَالْمُنَافِقَاتِ) is the regular feminine of a participle, not a different word."
+ },
+ "طائِفَة|طوف": {
+  "kind": "ordinary",
+  "why": "Reviewed: a group or party, with its own plural (طَائِفَتَانِ 49:9, a dual); طَائِف (7:201 طَائِفٌ مِنَ الشَّيْطَانِ, a passing touch) is a different word, not its collective or male."
+ },
+ "ظُلُمَة|ظلم": {
+  "kind": "ordinary",
+  "why": "Reviewed: darkness, used in the Quran in the plural ظُلُمَات (2:17 وَتَرَكَهُمْ فِي ظُلُمَاتٍ); ظُلْم (injustice) is a different word of the root, not its collective."
+ },
+ "حِكْمَة|حكم": {
+  "kind": "ordinary",
+  "why": "Reviewed: wisdom, a mass noun (2:269 يُؤْتِي الْحِكْمَةَ مَنْ يَشَاءُ); حُكْم (judgement) is a different word of the root, not its collective."
+ },
+ "امْرَأَت|مرأ": {
+  "kind": "pair",
+  "why": "The male of امْرَأَة (woman) is رَجُل (man) (Quran 4:12 رَجُلٌ يُورَثُ كَلَالَةً أَوِ امْرَأَةٌ); its plural in sense is نِسَاء (4:1). The corpus spells the lemma امْرَأَت, so the card links to رَجُل only.",
+  "related": [
+   {
+    "role": "male",
+    "ar": "رَجُلٌ",
+    "gender": "M",
+    "en": "man",
+    "bs": "čovjek, muškarac",
+    "lemma": "رَجُل|رجل"
+   }
+  ]
+ },
+ "رِجال|رجل": {
+  "kind": "ordinary",
+  "why": "Reviewed: رِجَال is the broken plural of رَجُل (Quran 4:1 رِجَالًا كَثِيرًا وَنِسَاءً), which the corpus files as its own lemma; a plural with a singular is not a collective."
+ },
+ "أُنثَى|أنث": {
+  "kind": "pair",
+  "why": "Female, paired with ذَكَر (male) (Quran 49:13 مِنْ ذَكَرٍ وَأُنْثَى); its plural is إِنَاث (4:117).",
+  "related": [
+   {
+    "role": "male",
+    "ar": "ذَكَرٌ",
+    "gender": "M",
+    "en": "male",
+    "bs": "muško",
+    "lemma": "ذَكَر|ذكر"
+   }
+  ]
+ },
+ "فُلْك|فلك": {
+  "kind": "ordinary",
+  "why": "Reviewed: one form serves for one ship (Quran 36:41 فِي الْفُلْكِ الْمَشْحُونِ, masculine singular) and for ships (2:164 وَالْفُلْكِ الَّتِي تَجْرِي, feminine); it has no singular of another form, so it is taught as the noun 'ship'."
+ },
+ "ظُلْم|ظلم": {
+  "kind": "ordinary",
+  "why": "Reviewed: injustice, a mass noun (Quran 4:30 عُدْوَانًا وَظُلْمًا); ظُلُمَة (darkness, plural ظُلُمَات) is a different word of the root, not its singulative."
+ },
+ "مَرَّة|مرر": {
+  "kind": "ordinary",
+  "why": "Reviewed: one time, an occasion (Quran 9:126 مَرَّةً أَوْ مَرَّتَيْنِ), a noun of instance of مَرَّ with its own dual and plural; no collective مَرّ of that sense."
  }
 }

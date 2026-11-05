@@ -10,6 +10,8 @@
       audio/<content-hash>.m4a       every clip once, shared by every card and page
       <language>/index.html          the verb list in that language
       <language>/<slug>/index.html   one verb: meaning, forms, conjugation, ayat, sentences
+      bs/imenica/, en/noun/          the studied nouns (fil.stages.noun_pages), Bosnian and English only
+      pictures/<slug>.svg            the noun pictures the noun pages show
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
 
 The cards are the ones `fil site` builds (site.assemble) with their sound published as
@@ -28,7 +30,8 @@ from __future__ import annotations
 import argparse
 import re
 import shutil
-from collections.abc import Iterable
+from collections.abc import Iterable, Sequence
+from dataclasses import replace
 from pathlib import Path
 
 from fil import service
@@ -39,7 +42,8 @@ from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
-from fil.stages import site
+from fil.stages import noun_pages, site
+from fil.stages.noun_site import assemble_nouns
 
 _SOURCES = Path(__file__).resolve().parents[1] / "site"
 _VERIFICATION = _SOURCES / "verification"
@@ -74,16 +78,20 @@ def _parse(arguments: list[str]) -> argparse.Namespace:
 def build(pages: Path) -> bool:
     texts = interface_text.load()          # fail before the long part if Node is missing
     site.reset(pages)
-    content = site.assemble(PublishedAudio(pages))
+    sink = PublishedAudio(pages)
+    content = site.assemble(sink)
     if content is None:
         return False
-    site.write_app(pages, content)
     verbs = published_verbs(content.cards, [verb.lemma for verb in service.list_verbs()])
+    nouns = _assemble_nouns(sink, verbs)
+    content = replace(content, payload={**content.payload, "nounPages": noun_pages.app_paths() if nouns.cards else {}})
+    site.write_app(pages, content)
     _write_app_page(pages, texts)
-    written = [*_write_language_pages(pages, verbs, texts)]
-    _write_site_files(pages, verbs, texts)
+    written = [*_write_language_pages(pages, verbs, texts, nouns.cards)]
+    written += noun_pages.write(pages, nouns, texts)
+    _write_site_files(pages, verbs, texts, nouns.cards)
     check_audio_links(pages, written)
-    check_card_audio(pages, content.cards)
+    check_card_audio(pages, [*content.cards, *nouns.cards])
     site.report(pages, content)
     _report_size(pages, len(written))
     _report_indexing(verbs)
@@ -120,12 +128,20 @@ def _replace_once(html: str, marker: str, replacement: str) -> str:
     return html.replace(marker, replacement)
 
 
-def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict]) -> Iterable[Path]:
+def _assemble_nouns(sink, verbs: list[PublishedVerb]):
+    sound = site.Sound(sink)
+    verb_slugs = {f"{verb.card['root']}_{verb.card['form']}": verb.slug for verb in verbs}
+    return assemble_nouns(sound, site.read_corpus().ayat, verb_slugs)
+
+
+def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
+                          nouns: Sequence[dict] = ()) -> Iterable[Path]:
     for language in LANGUAGES:
         text = texts[language.code]
         yield _write(pages, seo.language_index_path(language.code), render.language_index(verbs, language, text))
         for verb in verbs:
-            yield _write(pages, seo.verb_path(language.code, verb.slug), render.verb_page(verb, language, text))
+            related = noun_pages.nouns_of_verb(verb.card, nouns, language, text)
+            yield _write(pages, seo.verb_path(language.code, verb.slug), render.verb_page(verb, language, text, related))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:
@@ -135,8 +151,8 @@ def _write(pages: Path, path: str, html: str) -> Path:
     return target
 
 
-def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict]) -> None:
-    (pages / "sitemap.xml").write_text(seo.sitemap(page_paths(verbs)), encoding="utf-8")
+def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict], nouns: Sequence[dict] = ()) -> None:
+    (pages / "sitemap.xml").write_text(seo.sitemap([*page_paths(verbs), *noun_pages.page_paths(nouns)]), encoding="utf-8")
     (pages / "robots.txt").write_text(seo.robots(), encoding="utf-8")
     listed = [seo.ListedVerb(verb.card["lemma"], verb.slug, verb.card["meaning"]["en"], verb.card["count"]) for verb in verbs]
     names = {language.code: language.name for language in LANGUAGES}

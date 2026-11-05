@@ -428,6 +428,9 @@ nav.tabs button[aria-selected="true"] {
 }
 .lang select:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: var(--glow); }
 nav.tabs button { min-height: 32px; }
+.nouns-link { display: inline-flex; align-items: center; min-height: 32px; padding: 8px 14px; border-radius: 999px; font-weight: 500; color: var(--muted); text-decoration: none; white-space: nowrap; background: color-mix(in srgb, var(--line) 55%, transparent); }
+.nouns-link:hover { color: var(--ink); }
+.nouns-link[hidden] { display: none; }
 /* status line: on a phone the caption and the progress stack instead of squeezing */
 @media (max-width: 720px) {
   .status { grid-template-columns: minmax(0, 1fr); }
@@ -466,6 +469,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   <div class="topbar-inner">
     <div class="brand"><h1>Fiʿl <span class="ar">فِعْل</span></h1></div>
     <nav class="tabs" role="tablist" id="tabs"></nav>
+    <a class="nouns-link" id="nouns-link" hidden></a>
     <label class="lang"><span class="note" id="lang-label"></span> <select id="language"></select></label>
   </div>
 </header>
@@ -590,8 +594,18 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     $("lang-label").textContent = ui.language;
     $("notice").innerHTML = ui.notice;
     $("footer").innerHTML = ui.footer.map((line) => `<p>${line}</p>`).join("");
+    renderNounsLink(ui);
     $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");
     renderProgress();
+  }
+  // The noun pages are static pages of the public site (Bosnian and English); other languages go to English.
+  function renderNounsLink(ui) {
+    const link = $("nouns-link"), paths = DATA.nounPages || {};
+    const path = paths[language] || paths.en;
+    link.hidden = !path;
+    if (!path) return;
+    link.href = path;
+    link.textContent = (paths[language] ? ui.nounPage : UI.en.nounPage).nav;
   }
   function renderLanguagePicker() {
     $("language").innerHTML = DATA.languages.map((entry) => `<option value="${entry.code}" ${entry.code === language ? "selected" : ""}>${escapeHtml(entry.name)}</option>`).join("");

@@ -61,7 +61,7 @@ _PRINCIPAL = (("past", "huwa"), ("present", "huwa"), ("imperative", "anta"))
 
 
 @dataclass(frozen=True)
-class _Corpus:
+class Corpus:
     ayat: dict[tuple[int, int], tuple[QuranWord, ...]]
     recitations: dict[str, study.Recitation]
     nouns: dict[study.VerbKey, dict[str, study.DerivedNoun]]
@@ -78,7 +78,7 @@ class SiteContent:
     ayat_lists: tuple[tuple[str, dict], ...] = ()  # (path, content): every verb's full ayat, fetched on demand
 
 
-class _Sound:
+class Sound:
     """Turns a recitation or a spoken text into a reference the page can play."""
 
     def __init__(self, sink: AudioSink, recitations: WordRecitations | None = None,
@@ -137,8 +137,8 @@ def assemble(sink: AudioSink) -> SiteContent | None:
         print("data/meanings.json lists no verbs — nothing to build.")
         return None
 
-    corpus = _read_corpus()
-    sound = _Sound(sink)
+    corpus = read_corpus()
+    sound = Sound(sink)
     catalogue = service.list_verbs()
     total = sum(verb.occurrence_count for verb in catalogue)
     ranks = {(verb.root, verb.form): rank for rank, verb in enumerate(catalogue, 1)}
@@ -186,11 +186,11 @@ def write_app(site: Path, content: SiteContent) -> None:
         shutil.copyfile(_TEMPLATE.parent / name, site / name)
 
 
-def _read_corpus() -> _Corpus:
+def read_corpus() -> Corpus:
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
         segments = list(iter_segments(lines))
     words = study.words_of(segments, service.corpus_corrections())
-    return _Corpus(study.ayat_of(words), study.recitation_index(words), study.derived_nouns(segments),
+    return Corpus(study.ayat_of(words), study.recitation_index(words), study.derived_nouns(segments),
                    service.form_occurrences())
 
 
@@ -207,7 +207,7 @@ def _summary_of(card: dict) -> dict:
     return {key: card[key] for key in keys}
 
 
-def _verb_view(meaning, summary, rank: int, total: int, corpus: _Corpus, sound: _Sound) -> dict:
+def _verb_view(meaning, summary, rank: int, total: int, corpus: Corpus, sound: Sound) -> dict:
     detail = service.get_verb(meaning.root, meaning.form)
     verb = (meaning.root, meaning.form)
     cells = [_cell_view(cell, corpus.recitations, sound) for cell in detail.cells]
@@ -237,7 +237,7 @@ class FormsDoNotAddUp(ValueError):
     """The forms listed for a verb do not account for every time the Quran uses it."""
 
 
-def _forms_view(verb: study.VerbKey, uses: tuple[FormOccurrence, ...], count: int, sound: _Sound) -> list[dict]:
+def _forms_view(verb: study.VerbKey, uses: tuple[FormOccurrence, ...], count: int, sound: Sound) -> list[dict]:
     """Every word the Quran uses the verb in, the most frequent first, with its gloss if it has one."""
     forms = attested_forms.attested_forms(uses)
     if sum(form.count for form in forms) != count:
@@ -245,7 +245,7 @@ def _forms_view(verb: study.VerbKey, uses: tuple[FormOccurrence, ...], count: in
     return [_form_view(verb, form, sound) for form in forms]
 
 
-def _form_view(verb: study.VerbKey, form: attested_forms.AttestedForm, sound: _Sound) -> dict:
+def _form_view(verb: study.VerbKey, form: attested_forms.AttestedForm, sound: Sound) -> dict:
     """A form's row: its word, recited as at its first occurrence, and what it means.
 
     Optional keys are left out when empty — one row per form on every page adds up.
@@ -259,7 +259,7 @@ def _form_view(verb: study.VerbKey, form: attested_forms.AttestedForm, sound: _S
     return {**view, **{key: meaning for key, meaning in meanings.items() if meaning}}
 
 
-def _ayat_lists(card: dict, ayat: list[VerbAyah], corpus: _Corpus, sound: _Sound) -> list[tuple[str, dict]]:
+def _ayat_lists(card: dict, ayat: list[VerbAyah], corpus: Corpus, sound: Sound) -> list[tuple[str, dict]]:
     """The verb's full ayat list and its translations, one file per language, fetched only when asked for."""
     arabic = {"ayat": [_listed_ayah(ayah, corpus.ayat[(ayah.surah, ayah.ayah)]) for ayah in ayat]}
     translated = {path: _translated_list(ayat, language, sound) for language, path in card["ayatTranslations"].items()}
@@ -273,13 +273,13 @@ def _listed_ayah(ayah: VerbAyah, words: tuple[QuranWord, ...]) -> dict:
             "hits": [index for index, word in enumerate(words) if word.number in ayah.words]}
 
 
-def _translated_list(ayat: list[VerbAyah], language: str, sound: _Sound) -> dict:
+def _translated_list(ayat: list[VerbAyah], language: str, sound: Sound) -> dict:
     found = {ayah.ref: sound.translations.of(ayah.surah, ayah.ayah).get(language) for ayah in ayat}
     return {"by": sound.translations.credit(language),
             "text": {ref: translation["text"] for ref, translation in found.items() if translation}}
 
 
-def _cell_view(cell, recitations: dict[str, study.Recitation], sound: _Sound) -> dict:
+def _cell_view(cell, recitations: dict[str, study.Recitation], sound: Sound) -> dict:
     """One conjugation cell: spoken, and recited too where the Quran recites it.
 
     A cell Arabic does not use is shown, marked "not used" — but never spoken: a voice
@@ -311,7 +311,7 @@ def _principal(cells: list[dict]) -> list[dict]:
     return principal or [cell for cell in used if cell["quran"]] or used
 
 
-def _example_ayat_view(verb: study.VerbKey, corpus: _Corpus, sound: _Sound) -> list[dict]:
+def _example_ayat_view(verb: study.VerbKey, corpus: Corpus, sound: Sound) -> list[dict]:
     uses = corpus.uses[verb]
     forms = attested_forms.forms_by_location(attested_forms.attested_forms(uses))
     readings = _readings_by_location(uses)
@@ -326,7 +326,7 @@ def _readings_by_location(uses: tuple[FormOccurrence, ...]) -> dict[study.Locati
 
 
 def _ayah_view(example: AyahExample, verb: study.VerbKey, forms: dict[study.Location, attested_forms.AttestedForm],
-               readings: dict[study.Location, list[dict]], sound: _Sound) -> dict:
+               readings: dict[study.Location, list[dict]], sound: Sound) -> dict:
     """An example ayah; its verb shows its gloss, or — until it is glossed — its grammar, which is never wrong."""
     return {
         "ref": example.ref,
@@ -339,7 +339,7 @@ def _ayah_view(example: AyahExample, verb: study.VerbKey, forms: dict[study.Loca
 
 
 def _ayah_word_view(word: QuranWord, verb: study.VerbKey, forms: dict[study.Location, attested_forms.AttestedForm],
-                    readings: dict[study.Location, list[dict]], sound: _Sound) -> dict:
+                    readings: dict[study.Location, list[dict]], sound: Sound) -> dict:
     if not word.carries(verb):
         return {"text": word.text, "hit": False, "audio": None, "gloss": None}
     gloss = attested_forms.example_gloss(verb, word.location, forms, sound.form_glosses, sound.verb_glosses)
@@ -354,7 +354,7 @@ def _verb_glosses() -> dict[str, dict[str, str]]:
     return {key: glosses for key, glosses in entries.items() if not key.startswith("_")}
 
 
-def _sentence_view(example: Example, sound: _Sound | None = None) -> dict:
+def _sentence_view(example: Example, sound: Sound | None = None) -> dict:
     return {
         "arabic": example.arabic,
         "spoken": sound.spoken(example.arabic) if sound else None,

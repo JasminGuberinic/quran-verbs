@@ -56,7 +56,8 @@ class PublishedVerb:
 
 # ---------- verb page ----------
 
-def verb_page(verb: PublishedVerb, language: Language, text: dict) -> str:
+def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "") -> str:
+    """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render)."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
     card = verb.card
@@ -74,6 +75,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict) -> str:
         _conjugation(card, text, root),
         _ayat(card, language, text, root),
         _sentences(card, language, text, root),
+        nouns_of_root,
         _app_link(card, language, text, root),
         "</article></main>",
         _footer(text),

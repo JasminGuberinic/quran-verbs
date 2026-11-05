@@ -84,7 +84,7 @@ def test_a_missing_archive_says_how_to_download_it(tmp_path):
 def test_a_missing_word_clip_leaves_that_word_without_one_and_is_reported(tmp_path):
     from fil.stages import site
 
-    sound = site._Sound(sink=None, recitations=WordRecitations(_FakeSource({}), tmp_path / "cache"))
+    sound = site.Sound(sink=None, recitations=WordRecitations(_FakeSource({}), tmp_path / "cache"))
 
     assert sound.word(4, 1, 30) is None
     assert sound.missing_words == ["4:1:30"]

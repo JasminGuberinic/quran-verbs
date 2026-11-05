@@ -6,7 +6,7 @@ terms allow it is chosen. Until then the build wires `NoWordTranslations`, and e
 row shows the form's grammar, which is never wrong.
 
 An adapter for a real source implements `WordTranslations` and is wired in the site
-stage's composition root (`fil.stages.site._Sound`); nothing else changes.
+stage's composition root (`fil.stages.site.Sound`); nothing else changes.
 """
 
 from __future__ import annotations

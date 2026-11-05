@@ -43,6 +43,24 @@ def verb_path(language: str, slug: str) -> str:
     return f"{language}/{slug}/"
 
 
+# The noun pages live in a folder of their own per language (Bosnian and English only, for now).
+NOUN_FOLDERS = {"bs": "imenica", "en": "noun"}
+
+
+def noun_index_path(language: str) -> str:
+    return f"{language}/{NOUN_FOLDERS[language]}/"
+
+
+def noun_path(language: str, slug: str) -> str:
+    return f"{noun_index_path(language)}{slug}/"
+
+
+def noun_alternates(slug: str | None) -> list[Alternate]:
+    """A noun page (or, with no slug, the noun list) in each language it is built in."""
+    path_in = (lambda language: noun_path(language, slug)) if slug else noun_index_path
+    return _alternates(path_in, tuple(NOUN_FOLDERS))
+
+
 def to_root(path: str) -> str:
     """The relative way back to the site root from a page at `path`."""
     return "../" * path.count("/")

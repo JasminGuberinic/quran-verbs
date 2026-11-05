@@ -4,6 +4,12 @@
     fil nouns catalogue         build/nouns/catalogue.tsv (+ proper_names.tsv): every lemma by rank
     fil nouns paradigms [TOP]   build/nouns/paradigms.tsv: the case table of the TOP lemmas (default 600),
                                 Quranic spellings first, CAMeL Tools for the rest, every form gated
+    fil nouns pictures OPENMOJI_DIR TWEMOJI_DIR
+                                assets/nouns/<slug>.svg: the chosen emoji of data/noun_pictures.json,
+                                recoloured to our greens; fails if any picture fails the gate
+    fil nouns picture-candidates OPENMOJI_DIR TWEMOJI_DIR
+                                build/nouns/picture-candidates/{openmoji,twemoji}/: both sets' version
+                                of every mapped noun, for the reviewer to choose from
 
 This stage is the composition root of the noun engine: it reads the corpus, loads our
 verbs, and wires CAMeL in as the generator.
@@ -14,6 +20,7 @@ from __future__ import annotations
 import sys
 from collections import Counter, defaultdict
 from collections.abc import Sequence
+from dataclasses import replace
 from pathlib import Path
 
 from fil import meanings
@@ -23,7 +30,9 @@ from fil.nouns.catalogue import TSV_COLUMNS, build_catalogue, tsv_rows
 from fil.nouns.model import (ATTESTED, BROKEN, GENERATED, MISSING, PROPER_NOUN, SOUND_FEMININE, SOUND_MASCULINE,
                              NounLemma, NounOccurrence, Paradigm)
 from fil.nouns.paradigm import NounGenerator, build_paradigm
-from fil.resources import BUILD_DIR, QAC_MORPHOLOGY
+from fil.noun_pictures import EmojiDirectory, EmojiNotFound, emoji_directories, load_pictures, write_pictures
+from fil.nouns.pictures import shown
+from fil.resources import BUILD_DIR, NOUN_PICTURES_DIR, QAC_MORPHOLOGY
 
 OUT = BUILD_DIR / "nouns"
 TOP = 600
@@ -76,6 +85,34 @@ def load_occurrences() -> list[NounOccurrence]:
 def catalogue(occurrences: Sequence[NounOccurrence]) -> tuple[NounLemma, ...]:
     taught = [f"{meaning.root}_{meaning.form}" for meaning in meanings.load()]
     return build_catalogue(occurrences, taught)
+
+
+def write_noun_pictures(openmoji: Path, twemoji: Path) -> None:
+    pictures = load_pictures()
+    problems = write_pictures(shown(pictures), emoji_directories(openmoji, twemoji))
+    if problems:
+        print("\n".join(problems), file=sys.stderr)
+        raise SystemExit(f"{len(problems)} picture problems: nothing that fails the gate ships")
+    print(f"noun pictures: {len(shown(pictures))} of {len(pictures)} picturable nouns → {NOUN_PICTURES_DIR}")
+
+
+def write_picture_candidates(openmoji: Path, twemoji: Path) -> None:
+    directories = emoji_directories(openmoji, twemoji)
+    mapped = [picture for picture in load_pictures() if picture.codepoint]
+    for name, directory in directories.items():
+        candidates = [replace(picture, source=directory.source) for picture in mapped]
+        available = [picture for picture in candidates if _has_emoji(directory, picture.codepoint)]
+        problems = write_pictures(available, {name: directory}, OUT / "picture-candidates" / name)
+        print(f"{directory.source.title}: {len(available)} of {len(mapped)} candidates, {len(problems)} fail the gate")
+        print("\n".join(problems[:10]))
+
+
+def _has_emoji(directory: EmojiDirectory, codepoint: str) -> bool:
+    try:
+        directory.svg(codepoint)
+    except EmojiNotFound:
+        return False
+    return True
 
 
 def build_paradigms(lemmas: Sequence[NounLemma], occurrences: Sequence[NounOccurrence],
@@ -132,8 +169,11 @@ def main(argv: list[str] | None = None) -> None:
         "status": status,
         "catalogue": write_catalogue,
         "paradigms": lambda: write_paradigms(int(args[1]) if len(args) > 1 else TOP),
+        "pictures": lambda: write_noun_pictures(Path(args[1]), Path(args[2])),
+        "picture-candidates": lambda: write_picture_candidates(Path(args[1]), Path(args[2])),
     }
-    if not args or args[0] not in commands:
+    needs_emoji_directories = args[:1] in (["pictures"], ["picture-candidates"]) and len(args) < 3
+    if not args or args[0] not in commands or needs_emoji_directories:
         print(__doc__)
         raise SystemExit(2)
     commands[args[0]]()

@@ -99,3 +99,15 @@ take feminine singular.
   are picturable, so pictures also cover concrete nouns beyond the top 600 (fruit,
   animals, body, nature, objects), and the pilot's picturable 25 are hand-picked from
   `build/nouns/categories.tsv`.
+
+## Pictures (owner decision: OpenMoji + Twemoji, recoloured)
+
+- `data/noun_categories.json`: all 3,125 lemmas → category + picturable (Sonnet-classified,
+  sacred/people/idol/body-of-a-person entries forced off by hand); 320 picturable.
+- `data/noun_pictures.json`: per picturable noun its Bosnian name, slug (same as the future
+  page slug), emoji codepoint and the reviewer's choice — openmoji 42, twemoji 159, none 119
+  (112 with no fitting emoji, 7 rejected at review). Nouns with none get no picture.
+- `fil nouns picture-candidates|pictures OPENMOJI_DIR TWEMOJI_DIR` rebuild candidates /
+  `assets/nouns/<slug>.svg`; `tests/test_noun_pictures.py` gates every shipped file.
+- Credit: `fil.pages.picture_credits.picture_credit` — wire into the footer of pages that
+  show pictures when the noun pages exist.

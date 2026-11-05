@@ -28,3 +28,6 @@ REPOSITORY_DIR = _ROOT
 RECITATION_CACHE = BUILD_DIR / "recitation-cache"  # recited word clips, taken from their source once
 QURANHIVE_WORD_AUDIO = DATA_DIR / "quranhive" / "qh-quran-word-audio-files.zip"  # CC BY 4.0, downloaded, git-ignored
 SPEECH_CACHE = BUILD_DIR / "speech-cache"   # synthesized clips, keyed by what they say
+NOUN_CATEGORIES_JSON = DATA_DIR / "noun_categories.json"  # every noun lemma's category and whether it is picturable
+NOUN_PICTURES_JSON = DATA_DIR / "noun_pictures.json"  # which recoloured emoji pictures which noun (fil nouns pictures)
+NOUN_PICTURES_DIR = _ROOT / "assets" / "nouns"   # the shipped noun pictures, one SVG per slug

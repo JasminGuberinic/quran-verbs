@@ -16,6 +16,8 @@ fails the build if one goes missing).
 | Tanzil Quran metadata | surah lengths (ayah numbering) | CC BY 3.0 | no (used to compute numbers) |
 | QuranHive Word-by-Word Audio | single recited words | CC BY 4.0 | yes, re-encoded |
 | alquran.cloud / Islamic Network CDN | whole-ayah recitation, Mishary Rashid Alafasy | alquran.cloud terms | **no** — streamed at play time |
+| OpenMoji 15.1 | noun pictures (emoji), recoloured | CC BY-SA 4.0 | yes, recoloured SVGs |
+| Twemoji 15.1 (jdecked fork) | noun pictures (emoji), recoloured | CC BY 4.0 | yes, recoloured SVGs |
 | islam.ba, quranwbw.com, quran.com | outbound links only | — | no content copied |
 
 ---
@@ -172,6 +174,27 @@ as the site joins them (`fil.study.words_of`):
   Mishary Rashid Alafasy, streamed from alquran.cloud (Islamic Network)" with a link to
   https://alquran.cloud. The site is free and educational.
 - Single words are never cut out of these ayah recordings; they come from QuranHive above.
+
+## Noun pictures: OpenMoji and Twemoji
+
+- Sources: OpenMoji 15.1.0, https://openmoji.org — "All emojis designed by OpenMoji – the
+  open-source emoji and icon project", licensed under **CC BY-SA 4.0**
+  (https://creativecommons.org/licenses/by-sa/4.0/; text in
+  [`LICENSES/CC-BY-SA-4.0.txt`](LICENSES/CC-BY-SA-4.0.txt)); and Twemoji 15.1.0, the
+  maintained fork https://github.com/jdecked/twemoji (graphics © 2014–2021 Twitter, © 2022–
+  Jason Sofonia & Justine De Caires and contributors), licensed under **CC BY 4.0**
+  (text in [`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt)).
+- What we ship: `assets/nouns/<slug>.svg`, one picture per picturable noun. Each is the
+  original emoji **modified**: every colour replaced by one of the site's greens
+  (`fil.nouns.palette`) and the markup minified. `data/noun_pictures.json` records for every
+  file the set it came from and the original codepoint.
+- Share-alike: the recoloured **OpenMoji** pictures are adaptations of CC BY-SA 4.0 work and
+  are shared under **CC BY-SA 4.0** too; the recoloured **Twemoji** pictures under
+  **CC BY 4.0**. Neither licence reaches the rest of the repository (the pictures are
+  separate files, only collected alongside it).
+- How we comply: every page that shows a picture carries the credit line of
+  `fil.pages.picture_credits` — set, author, licence link, "recoloured" — naming only the
+  sets that page uses. Pages without pictures do not carry it.
 
 ## Links only
 

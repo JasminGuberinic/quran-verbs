@@ -200,5 +200,11 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .cta h3 { margin-top: 24px; }
 .noun-list a { grid-template-columns: 3em 32px 1fr 2fr auto; }
 @media (max-width: 560px) { .noun-list a { grid-template-columns: 2.5em 32px 1fr; } .noun-list .meaning { grid-column: 3; } .noun-list .count { grid-column: 2 / -1; font-size: 12px; } }
+.category-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.category-filter .chip { display: inline-flex; gap: 6px; align-items: center; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font-size: 14px; text-decoration: none; }
+.category-filter .chip span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.category-filter .chip:hover, .category-filter .chip:focus-visible { border-color: var(--accent); }
+.category-filter .chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.noun-hero .eyebrow a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .noun-links a { display: inline-flex; align-items: center; gap: 8px; }
 .noun-links .thumb { width: 24px; height: 24px; border-radius: 6px; background: var(--accent-soft); padding: 2px; }

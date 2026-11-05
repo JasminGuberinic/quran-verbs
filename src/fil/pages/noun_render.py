@@ -10,6 +10,8 @@ Interface text is ours and may carry markup; everything from the content is esca
 
 from __future__ import annotations
 
+from collections import Counter
+
 from collections.abc import Sequence
 from html import escape
 
@@ -63,7 +65,8 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, c
     if card.get("gender"):
         facts.append(escape(words["genders"][card["gender"]]))
     if category:
-        facts.append(escape(words["categories"].get(category, category)))
+        listing = f'{root}{seo.noun_index_path(language.code)}#{_category_anchor(category)}'
+        facts.append(f'<a href="{listing}">{escape(words["categories"].get(category, category))}</a>')
     picture = (f'<img class="noun-picture" src="{root}{card["picture"]}" width="96" height="96" '
                f'alt="{escape(fill(words["picture"], meaning))}">') if card.get("picture") else ""
     stats = " · ".join((fill(text["times"], card["count"]), fill(text["inAyat"], card["ayahCount"])))
@@ -283,7 +286,8 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
     # (a batch mixes the most frequent with picturable ones), so the corpus rank would jump.
     # The rank itself stays on each noun's page ("#81").
     rows = "".join(
-        f'<li><a href="{card["slug"]}/"><span class="rank">{position}</span>'
+        f'<li data-category="{escape(categories.get(card["key"], ""))}"><a href="{card["slug"]}/">'
+        f'<span class="rank">{position}</span>'
         f'{_thumbnail(card, root)}<span class="ar" lang="ar" dir="rtl">{card["lemma"]}</span>'
         f'<span class="meaning">{escape(card["meaning"][language.code])}</span>'
         f'<span class="count">{escape(words["categories"].get(categories.get(card["key"], ""), ""))} · '
@@ -294,7 +298,9 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
         _top_bar(text, root, language, seo.noun_index_path, is_section_list=True),
         f'<main class="wrap"><h1>{escape(words["indexTitle"])}</h1><p class="lead">{escape(words["indexIntro"])}</p>',
         f'<p class="notice">{text["notice"]}</p>',
+        _category_filter(cards, words, categories),
         f'<ol class="verb-list noun-list">{rows}</ol></main>',
+        _CATEGORY_FILTER_SCRIPT,
         _footer(text, picture_credit),
     ))
     head = render._head(title=title, description=words["indexIntro"], path=path, root=root, indexed_in=NOUN_LANGUAGES,
@@ -302,6 +308,40 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
                         structured=seo.index_structured_data(title=words["indexTitle"], description=words["indexIntro"],
                                                              language=language.code), page_type="website")
     return render._document(language, head, body, root=root, text=text)
+
+
+def _category_anchor(category: str) -> str:
+    return f"k-{category}"
+
+
+def _category_filter(cards: Sequence[dict], words: dict, categories: dict[str, str]) -> str:
+    """Buttons that narrow the list to one category; each is also a link (#k-<category>) so a
+    noun page's category can point straight at its group."""
+    counts = Counter(categories.get(card["key"], "") for card in cards)
+    present = [category for category in words["categories"] if counts.get(category)]
+    buttons = [f'<a class="chip" href="#" data-filter="" aria-pressed="true">{escape(words["allCategories"])} '
+               f'<span>{len(cards)}</span></a>']
+    buttons += [f'<a class="chip" href="#{_category_anchor(category)}" data-filter="{category}" aria-pressed="false">'
+                f'{escape(words["categories"][category])} <span>{counts[category]}</span></a>'
+                for category in present]
+    return f'<nav class="category-filter" aria-label="{escape(words["filterBy"])}">{"".join(buttons)}</nav>'
+
+
+# Filters the noun list by the category in the address (#k-animals), so a link can open a group.
+_CATEGORY_FILTER_SCRIPT = """<script>
+(() => {
+  const chips = [...document.querySelectorAll(".category-filter .chip")];
+  const rows = [...document.querySelectorAll(".noun-list li")];
+  const show = () => {
+    const wanted = location.hash.startsWith("#k-") ? location.hash.slice(3) : "";
+    chips.forEach(chip => chip.setAttribute("aria-pressed", String(chip.dataset.filter === wanted)));
+    rows.forEach(row => { row.hidden = Boolean(wanted) && row.dataset.category !== wanted; });
+  };
+  chips[0]?.addEventListener("click", event => { event.preventDefault(); history.replaceState(null, "", location.pathname); show(); });
+  addEventListener("hashchange", show);
+  show();
+})();
+</script>"""
 
 
 def _thumbnail(card: dict, root: str) -> str:

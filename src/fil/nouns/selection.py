@@ -47,6 +47,10 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "ضِعْف": "quantifier", "عَلِيّ": "adjective-like", "عِدَّة": "quantifier", "قَوِيّ": "adjective-like", "مَجْنُون": "adjective-like", "مَعْلُوم": "adjective-like", "مُخْلِص": "adjective-like",
     "أَحَقّ": "adjective-like", "رَواسِي": "adjective-like",
     "سَرِيع": "adjective-like",
+    "مُحْضَر": "adjective-like", "مُخْتَلِف": "adjective-like", "مُقِيم": "adjective-like", "مِائَة": "quantifier", "آتِي": "adjective-like", "أَرْبَعَة": "quantifier", "أَضَلّ": "adjective-like", "أَعْلَى": "adjective-like", "خَبِيث": "adjective-like", "سَوْء": "adjective-like", "فاعِل": "adjective-like",
+    "مُحِيط": "adjective-like", "مُخْلَص": "adjective-like", "واسِع": "adjective-like", "أَبْيَض": "adjective-like", "ثَلاث": "quantifier", "أَشُدّ": "idiom",
+    "خِلال": "adverb", "راكِع": "adjective-like", "ضَعِيف": "adjective-like", "ظاهِر": "adjective-like",
+    "قانِت": "adjective-like",
     # ابْتِغَاءَ is in the Quran always a bare accusative of purpose ("seeking …"), learned as a construction.
     "ابْتِغاء": "adverb",
 }

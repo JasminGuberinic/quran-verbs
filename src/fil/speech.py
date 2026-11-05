@@ -95,14 +95,16 @@ _UNWRITTEN_LONG_A = {
 }
 
 # The name of God carries a long ā after its doubled lām (اللَّه → allāh), written only in
-# Uthmani script. Any proclitic in front (بِ, لِ, وَ, فَ …) is kept.
+# Uthmani script. Any proclitic in front (بِ, لِ, وَ, فَ …) is kept. The hāʾ must end the word
+# (with its case vowel, or اللَّهُمَّ): اللَّهْو "amusement" and اللَّهَب "flame" are other words.
 _GOD = re.compile("لَّه")
+_NAME_OF_GOD = re.compile("^(?:(?:[بوفتك]\u064e?\u0650?)?ا?ل|لِ)لَّه[\u064e\u064f\u0650]?(?:مَّ)?$")
 
 
 def _prepared_word(word: str) -> str:
     word = word.replace("ٱ", "ا")
     word = _UNWRITTEN_LONG_A.get(word, word)
-    if re.search("^(?:[بوفتك]\u064e?\u0650?)?ا?للَّه", word) or word.startswith("لِلَّه"):
+    if _NAME_OF_GOD.match(word):
         word = _GOD.sub("لَّا" + "ه", word, count=1)
     word = re.sub(f"{FATHATAN}ا$|ا{FATHATAN}$", FATHATAN, word)        # خَيْرًا → خَيْرً
     word = re.sub(f"و([{SUKUN}{DAMMA}]?)ا$", r"و\1", word)             # قَالُوا → قَالُو

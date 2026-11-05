@@ -58,6 +58,14 @@ def test_the_name_of_god_is_read_with_its_long_a(text, sounds):
 
 
 @pytest.mark.parametrize("text, sounds", [
+    ("اللَّهْوُ", "< a l l a h w u"),             # al-lahwu "amusement": short a, not allāh
+    ("بِاللَّهْوِ", "b i l l a h w i"),
+])
+def test_a_word_that_only_begins_like_the_name_of_god_keeps_its_short_a(text, sounds):
+    assert " ".join(expected_phonemes(prepared(text))) == sounds
+
+
+@pytest.mark.parametrize("text, sounds", [
     ("وَاسْمُ", "w a s m u"),                      # wa- before a connecting alif: no long ā
     ("شَيْـًٔا", "$ a y < a n"),                   # Uthmani hamza on a tatweel, with tanwīn
     ("قَوِيٌّ", "q a w i y y u n"),                # shadda and tanwīn on one letter

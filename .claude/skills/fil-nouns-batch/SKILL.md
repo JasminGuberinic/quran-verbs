@@ -193,6 +193,25 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   deeds context; الْخِزْيُ صَعْبٌ is unidiomatic (مُؤْلِمٌ). Changing a bs word after approval:
   delete that noun's approved sentence from noun_sentences.json (`draft` SKIPs an existing role).
 
+- Batch 7 (2026-11-06, 216 sentences, 14+2 refused in 3 rounds): 5 re-plan rounds. HELD_BACK: تَذْكِرَة (MSA ticket),
+  رِجْز، عِبادَت، فَصْل (day of decision), قَرار (MSA decision), غُرُور (MSA vanity), غِلّ (corpus merges غُلّ
+  shackles: its plural أَغْلال), مَآب، مَبْعُوث، مُبَشِّر (MSA missionary), شِمال (MSA north), صُحُف (MSA
+  newspapers), طاغُوت، فَرْج, and mid-batch مَغْرِب (bare الْمَغْرِب reads Morocco — refused 4/4). Check the
+  MSA reading of every bare definite BEFORE meanings: الْقَرِين reads the jinn companion (add الصَّالِح),
+  الْمُسْتَقَرّ reads "the stable" (use a construct: مُسْتَقَرُّ الْعَائِلَةِ), اللَّيْلَةَ = "tonight".
+- Plural-only/dual-only lemmas (أَساطِير، خَزائِن، مَنافِع، والِدَي) and possessive-only singulars (عُنُق، عَقِب)
+  get NO table row: write the whole row in noun_overrides.json in one script (a `tri(row, defs, indefs, why)`
+  helper); a missing row is created by its overrides. Diptote patterns (فَعْلاء، فَعائِل، مَفاعِل، فُعَلاء)
+  need their indefinite cells documented. CAMeL vowels لَعِب as لَعْب: the definite fails the gloss gate
+  until a root exception exists (ل.ع.ب "play").
+- A meanings line typed by hand imports fine, but copy keys from batch.txt anyway. Glosses that failed →
+  accepted: led→guided, reviewed→examined, happened (وَقَعَ), endured (تَحَمَّلَ), sad/tragic (مُحْزِن: use
+  مُؤْلِم painful), forbidden→prohibited, profitable→lucrative, small (قَلِيل)→little, bag→briefcase, scarf,
+  statement (بَيَان), academic, hung (عَلَّقَ), effective/impressive (مُؤَثِّر: avoid), goldsmith→jeweler,
+  good (صالِح)→upright/righteous, manners→morals, تَجْمَعُ "brings together"; مِنْ "against/out of" fails (use "of"/"from").
+- Voice: the God-name rule read اللَّهْو as allāhw — fixed in fil.speech (the hāʾ must end the word). Run
+  `pytest tests/test_noun_site_gates.py -k read_alike` before `fil pages`: it names silent sentences in 90 s.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

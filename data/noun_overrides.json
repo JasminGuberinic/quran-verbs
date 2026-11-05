@@ -849,5 +849,335 @@
    "text": "الْأَعْرَابَ",
    "why": "the regular accusative of ٱلْأَعْرَابُ (9:97), a triptote broken plural; CAMeL misses it"
   }
+ },
+ "والِدَي|ولد": {
+  "D|definite|NOM": {
+   "text": "الْوَالِدَانِ",
+   "why": "وَالِدَانِ 'parents' is the dual of وَالِد, filed by the corpus as its own lemma (ٱلْوَٰلِدَانِ 4:7, وَبِٱلْوَٰلِدَيْنِ 2:83); CAMeL generates no form of it — the regular dual declension"
+  },
+  "D|definite|ACC": {
+   "text": "الْوَالِدَيْنِ",
+   "why": "وَالِدَانِ 'parents' is the dual of وَالِد, filed by the corpus as its own lemma (ٱلْوَٰلِدَانِ 4:7, وَبِٱلْوَٰلِدَيْنِ 2:83); CAMeL generates no form of it — the regular dual declension"
+  },
+  "D|definite|GEN": {
+   "text": "الْوَالِدَيْنِ",
+   "why": "وَالِدَانِ 'parents' is the dual of وَالِد, filed by the corpus as its own lemma (ٱلْوَٰلِدَانِ 4:7, وَبِٱلْوَٰلِدَيْنِ 2:83); CAMeL generates no form of it — the regular dual declension"
+  },
+  "D|indefinite|NOM": {
+   "text": "وَالِدَانِ",
+   "why": "وَالِدَانِ 'parents' is the dual of وَالِد, filed by the corpus as its own lemma (ٱلْوَٰلِدَانِ 4:7, وَبِٱلْوَٰلِدَيْنِ 2:83); CAMeL generates no form of it — the regular dual declension"
+  },
+  "D|indefinite|ACC": {
+   "text": "وَالِدَيْنِ",
+   "why": "وَالِدَانِ 'parents' is the dual of وَالِد, filed by the corpus as its own lemma (ٱلْوَٰلِدَانِ 4:7, وَبِٱلْوَٰلِدَيْنِ 2:83); CAMeL generates no form of it — the regular dual declension"
+  },
+  "D|indefinite|GEN": {
+   "text": "وَالِدَيْنِ",
+   "why": "وَالِدَانِ 'parents' is the dual of وَالِد, filed by the corpus as its own lemma (ٱلْوَٰلِدَانِ 4:7, وَبِٱلْوَٰلِدَيْنِ 2:83); CAMeL generates no form of it — the regular dual declension"
+  }
+ },
+ "أَساطِير|سطر": {
+  "P|definite|NOM": {
+   "text": "الْأَسَاطِيرُ",
+   "why": "أَسَاطِير is a plural-only lemma (أَسَٰطِيرُ ٱلْأَوَّلِينَ 6:25); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِيل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَسَاطِيرَ",
+   "why": "أَسَاطِير is a plural-only lemma (أَسَٰطِيرُ ٱلْأَوَّلِينَ 6:25); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِيل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَسَاطِيرِ",
+   "why": "أَسَاطِير is a plural-only lemma (أَسَٰطِيرُ ٱلْأَوَّلِينَ 6:25); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِيل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَسَاطِيرُ",
+   "why": "أَسَاطِير is a plural-only lemma (أَسَٰطِيرُ ٱلْأَوَّلِينَ 6:25); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِيل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَسَاطِيرَ",
+   "why": "أَسَاطِير is a plural-only lemma (أَسَٰطِيرُ ٱلْأَوَّلِينَ 6:25); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِيل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَسَاطِيرَ",
+   "why": "أَسَاطِير is a plural-only lemma (أَسَٰطِيرُ ٱلْأَوَّلِينَ 6:25); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِيل, a diptote: the indefinite genitive ends in -a"
+  }
+ },
+ "خَزائِن|خزن": {
+  "P|definite|NOM": {
+   "text": "الْخَزَائِنُ",
+   "why": "خَزَائِن is a plural-only lemma (خَزَآئِنُ 6:50); CAMeL generates no form of it — the regular declension of the pattern فَعَائِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|definite|ACC": {
+   "text": "الْخَزَائِنَ",
+   "why": "خَزَائِن is a plural-only lemma (خَزَآئِنُ 6:50); CAMeL generates no form of it — the regular declension of the pattern فَعَائِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|definite|GEN": {
+   "text": "الْخَزَائِنِ",
+   "why": "خَزَائِن is a plural-only lemma (خَزَآئِنُ 6:50); CAMeL generates no form of it — the regular declension of the pattern فَعَائِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|NOM": {
+   "text": "خَزَائِنُ",
+   "why": "خَزَائِن is a plural-only lemma (خَزَآئِنُ 6:50); CAMeL generates no form of it — the regular declension of the pattern فَعَائِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|ACC": {
+   "text": "خَزَائِنَ",
+   "why": "خَزَائِن is a plural-only lemma (خَزَآئِنُ 6:50); CAMeL generates no form of it — the regular declension of the pattern فَعَائِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|GEN": {
+   "text": "خَزَائِنَ",
+   "why": "خَزَائِن is a plural-only lemma (خَزَآئِنُ 6:50); CAMeL generates no form of it — the regular declension of the pattern فَعَائِل, a diptote: the indefinite genitive ends in -a"
+  }
+ },
+ "مَنافِع|نفع": {
+  "P|definite|NOM": {
+   "text": "الْمَنَافِعُ",
+   "why": "مَنَافِع is a plural-only lemma (مَنَٰفِعُ 36:73); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|definite|ACC": {
+   "text": "الْمَنَافِعَ",
+   "why": "مَنَافِع is a plural-only lemma (مَنَٰفِعُ 36:73); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|definite|GEN": {
+   "text": "الْمَنَافِعِ",
+   "why": "مَنَافِع is a plural-only lemma (مَنَٰفِعُ 36:73); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|NOM": {
+   "text": "مَنَافِعُ",
+   "why": "مَنَافِع is a plural-only lemma (مَنَٰفِعُ 36:73); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|ACC": {
+   "text": "مَنَافِعَ",
+   "why": "مَنَافِع is a plural-only lemma (مَنَٰفِعُ 36:73); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِل, a diptote: the indefinite genitive ends in -a"
+  },
+  "P|indefinite|GEN": {
+   "text": "مَنَافِعَ",
+   "why": "مَنَافِع is a plural-only lemma (مَنَٰفِعُ 36:73); CAMeL generates no form of it — the regular declension of the pattern مَفَاعِل, a diptote: the indefinite genitive ends in -a"
+  }
+ },
+ "جُلُود|جلد": {
+  "P|definite|ACC": {
+   "text": "الْجُلُودَ",
+   "why": "جُلُود is a plural-only lemma (ٱلْجُلُودُ 22:20); CAMeL reads it only as 'patient' and generates no other form — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الْجُلُودِ",
+   "why": "جُلُود is a plural-only lemma (ٱلْجُلُودُ 22:20); CAMeL reads it only as 'patient' and generates no other form — the regular triptote declension"
+  },
+  "P|indefinite|NOM": {
+   "text": "جُلُودٌ",
+   "why": "جُلُود is a plural-only lemma (ٱلْجُلُودُ 22:20); CAMeL reads it only as 'patient' and generates no other form — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "جُلُودٍ",
+   "why": "جُلُود is a plural-only lemma (ٱلْجُلُودُ 22:20); CAMeL reads it only as 'patient' and generates no other form — the regular triptote declension"
+  }
+ },
+ "ثِياب|ثوب": {
+  "P|definite|NOM": {
+   "text": "الثِّيَابُ",
+   "why": "ثِيَاب is a plural-only lemma (ثِيَابًا خُضْرًا 18:31); CAMeL generates no definite form of it — the regular triptote declension"
+  },
+  "P|definite|ACC": {
+   "text": "الثِّيَابَ",
+   "why": "ثِيَاب is a plural-only lemma (ثِيَابًا خُضْرًا 18:31); CAMeL generates no definite form of it — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الثِّيَابِ",
+   "why": "ثِيَاب is a plural-only lemma (ثِيَابًا خُضْرًا 18:31); CAMeL generates no definite form of it — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "ثِيَابٍ",
+   "why": "ثِيَاب is a plural-only lemma (ثِيَابًا خُضْرًا 18:31); CAMeL generates no definite form of it — the regular triptote declension"
+  }
+ },
+ "أَذًى|أذي": {
+  "S|definite|NOM": {
+   "text": "الْأَذَى",
+   "why": "أَذًى ends in alif maqṣūra: the form is the same in every case (ٱلْأَذَىٰ 2:264, أَذًى 2:196); CAMeL generates only some of them"
+  },
+  "S|definite|ACC": {
+   "text": "الْأَذَى",
+   "why": "أَذًى ends in alif maqṣūra: the form is the same in every case (ٱلْأَذَىٰ 2:264, أَذًى 2:196); CAMeL generates only some of them"
+  },
+  "S|indefinite|GEN": {
+   "text": "أَذًى",
+   "why": "أَذًى ends in alif maqṣūra: the form is the same in every case (ٱلْأَذَىٰ 2:264, أَذًى 2:196); CAMeL generates only some of them"
+  }
+ },
+ "مَرِيض|مرض": {
+  "P|definite|NOM": {
+   "text": "الْمَرْضَى",
+   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
+  },
+  "P|definite|ACC": {
+   "text": "الْمَرْضَى",
+   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
+  },
+  "P|indefinite|NOM": {
+   "text": "مَرْضَى",
+   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
+  },
+  "P|indefinite|ACC": {
+   "text": "مَرْضَى",
+   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
+  },
+  "P|indefinite|GEN": {
+   "text": "مَرْضَى",
+   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
+  }
+ },
+ "إِفْك|أفك": {
+  "S|definite|NOM": {
+   "text": "الْإِفْكُ",
+   "why": "the regular triptote declension of إِفْك (بِٱلْإِفْكِ 24:11, إِفْكٌ 25:4); CAMeL generates only some of its forms"
+  },
+  "S|definite|ACC": {
+   "text": "الْإِفْكَ",
+   "why": "the regular triptote declension of إِفْك (بِٱلْإِفْكِ 24:11, إِفْكٌ 25:4); CAMeL generates only some of its forms"
+  },
+  "S|indefinite|GEN": {
+   "text": "إِفْكٍ",
+   "why": "the regular triptote declension of إِفْك (بِٱلْإِفْكِ 24:11, إِفْكٌ 25:4); CAMeL generates only some of its forms"
+  }
+ },
+ "ضَرّاء|ضرر": {
+  "S|indefinite|NOM": {
+   "text": "ضَرَّاءُ",
+   "why": "ضَرَّاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a (ضَرَّآءَ 10:21); CAMeL generates only the definite forms"
+  },
+  "S|indefinite|ACC": {
+   "text": "ضَرَّاءَ",
+   "why": "ضَرَّاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a (ضَرَّآءَ 10:21); CAMeL generates only the definite forms"
+  },
+  "S|indefinite|GEN": {
+   "text": "ضَرَّاءَ",
+   "why": "ضَرَّاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a (ضَرَّآءَ 10:21); CAMeL generates only the definite forms"
+  }
+ },
+ "ضَلالَة|ضلل": {
+  "S|indefinite|ACC": {
+   "text": "ضَلَالَةً",
+   "why": "the regular triptote declension of ضَلَالَة (ضَلَٰلَةٌ 7:61); CAMeL generates only some of its forms"
+  },
+  "S|indefinite|GEN": {
+   "text": "ضَلَالَةٍ",
+   "why": "the regular triptote declension of ضَلَالَة (ضَلَٰلَةٌ 7:61); CAMeL generates only some of its forms"
+  }
+ },
+ "عِوَج|عوج": {
+  "S|definite|NOM": {
+   "text": "الْعِوَجُ",
+   "why": "the regular triptote declension of عِوَج (عِوَجًا 18:1, عِوَجٍ 39:28); CAMeL generates only the indefinite accusative and genitive"
+  },
+  "S|definite|ACC": {
+   "text": "الْعِوَجَ",
+   "why": "the regular triptote declension of عِوَج (عِوَجًا 18:1, عِوَجٍ 39:28); CAMeL generates only the indefinite accusative and genitive"
+  },
+  "S|definite|GEN": {
+   "text": "الْعِوَجِ",
+   "why": "the regular triptote declension of عِوَج (عِوَجًا 18:1, عِوَجٍ 39:28); CAMeL generates only the indefinite accusative and genitive"
+  },
+  "S|indefinite|NOM": {
+   "text": "عِوَجٌ",
+   "why": "the regular triptote declension of عِوَج (عِوَجًا 18:1, عِوَجٍ 39:28); CAMeL generates only the indefinite accusative and genitive"
+  }
+ },
+ "لَعِب|لعب": {
+  "S|definite|NOM": {
+   "text": "اللَّعِبُ",
+   "why": "the regular triptote declension of لَعِب (لَعِبٌ 6:32, لَعِبًا 5:57); CAMeL vowels the stem otherwise and generates only some forms"
+  },
+  "S|definite|ACC": {
+   "text": "اللَّعِبَ",
+   "why": "the regular triptote declension of لَعِب (لَعِبٌ 6:32, لَعِبًا 5:57); CAMeL vowels the stem otherwise and generates only some forms"
+  },
+  "S|definite|GEN": {
+   "text": "اللَّعِبِ",
+   "why": "the regular triptote declension of لَعِب (لَعِبٌ 6:32, لَعِبًا 5:57); CAMeL vowels the stem otherwise and generates only some forms"
+  },
+  "S|indefinite|GEN": {
+   "text": "لَعِبٍ",
+   "why": "the regular triptote declension of لَعِب (لَعِبٌ 6:32, لَعِبًا 5:57); CAMeL vowels the stem otherwise and generates only some forms"
+  }
+ },
+ "عُنُق|عنق": {
+  "S|definite|NOM": {
+   "text": "الْعُنُقُ",
+   "why": "the singular عُنُق is Quranic only with a possessive (عُنُقِهِۦ 17:13); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|definite|ACC": {
+   "text": "الْعُنُقَ",
+   "why": "the singular عُنُق is Quranic only with a possessive (عُنُقِهِۦ 17:13); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|definite|GEN": {
+   "text": "الْعُنُقِ",
+   "why": "the singular عُنُق is Quranic only with a possessive (عُنُقِهِۦ 17:13); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|indefinite|NOM": {
+   "text": "عُنُقٌ",
+   "why": "the singular عُنُق is Quranic only with a possessive (عُنُقِهِۦ 17:13); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|indefinite|ACC": {
+   "text": "عُنُقًا",
+   "why": "the singular عُنُق is Quranic only with a possessive (عُنُقِهِۦ 17:13); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|indefinite|GEN": {
+   "text": "عُنُقٍ",
+   "why": "the singular عُنُق is Quranic only with a possessive (عُنُقِهِۦ 17:13); CAMeL generates none of its forms — the regular triptote declension"
+  }
+ },
+ "عَقِب|عقب": {
+  "S|definite|NOM": {
+   "text": "الْعَقِبُ",
+   "why": "the singular عَقِب is Quranic only with a possessive (عَقِبِهِۦ 43:28); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|definite|ACC": {
+   "text": "الْعَقِبَ",
+   "why": "the singular عَقِب is Quranic only with a possessive (عَقِبِهِۦ 43:28); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|definite|GEN": {
+   "text": "الْعَقِبِ",
+   "why": "the singular عَقِب is Quranic only with a possessive (عَقِبِهِۦ 43:28); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|indefinite|NOM": {
+   "text": "عَقِبٌ",
+   "why": "the singular عَقِب is Quranic only with a possessive (عَقِبِهِۦ 43:28); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|indefinite|ACC": {
+   "text": "عَقِبًا",
+   "why": "the singular عَقِب is Quranic only with a possessive (عَقِبِهِۦ 43:28); CAMeL generates none of its forms — the regular triptote declension"
+  },
+  "S|indefinite|GEN": {
+   "text": "عَقِبٍ",
+   "why": "the singular عَقِب is Quranic only with a possessive (عَقِبِهِۦ 43:28); CAMeL generates none of its forms — the regular triptote declension"
+  }
+ },
+ "صاعِقَة|صعق": {
+  "P|indefinite|NOM": {
+   "text": "صَوَاعِقُ",
+   "why": "صَوَاعِق (pattern فَوَاعِل) is diptote: no tanwīn, genitive in -a; CAMeL generates only the definite forms"
+  },
+  "P|indefinite|ACC": {
+   "text": "صَوَاعِقَ",
+   "why": "صَوَاعِق (pattern فَوَاعِل) is diptote: no tanwīn, genitive in -a; CAMeL generates only the definite forms"
+  },
+  "P|indefinite|GEN": {
+   "text": "صَوَاعِقَ",
+   "why": "صَوَاعِق (pattern فَوَاعِل) is diptote: no tanwīn, genitive in -a; CAMeL generates only the definite forms"
+  }
+ },
+ "قَرِين|قرن": {
+  "P|indefinite|NOM": {
+   "text": "قُرَنَاءُ",
+   "why": "قُرَنَاء (pattern فُعَلَاء) is diptote: no tanwīn, genitive in -a (قُرَنَآءَ 41:25); CAMeL generates only the definite forms"
+  },
+  "P|indefinite|ACC": {
+   "text": "قُرَنَاءَ",
+   "why": "قُرَنَاء (pattern فُعَلَاء) is diptote: no tanwīn, genitive in -a (قُرَنَآءَ 41:25); CAMeL generates only the definite forms"
+  },
+  "P|indefinite|GEN": {
+   "text": "قُرَنَاءَ",
+   "why": "قُرَنَاء (pattern فُعَلَاء) is diptote: no tanwīn, genitive in -a (قُرَنَآءَ 41:25); CAMeL generates only the definite forms"
+  }
  }
 }

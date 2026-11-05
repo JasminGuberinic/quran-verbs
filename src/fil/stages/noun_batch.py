@@ -55,7 +55,8 @@ REVIEWER = "claude subagent, blind reviewer (separate context)"
 MAX_WORDS = 5
 # Nouns a batch does not take by itself: their sentences would have to speak of God or of gods
 # (content policy); the owner decides.
-HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم")
+# آلاء: in the Quran only "the favours of your Lord"; no everyday human sense to teach it by.
+HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو")
 
 
 @dataclass(frozen=True)

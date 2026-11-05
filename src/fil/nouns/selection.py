@@ -33,6 +33,9 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "آخَر": "adjective-like", "أَكْثَر": "adjective-like", "مُبِين": "adjective-like", "خالِد": "adjective-like",
     "قَلِيل": "adjective-like", "كَثِير": "adjective-like", "عَزِيز": "adjective-like", "غَفُور": "adjective-like",
     "بَصِير": "adjective-like", "أَعْلَم": "adjective-like", "أَحَد": "pronoun-like", "جَمِيع": "quantifier",
+    "سَمِيع": "adjective-like", "قَدِير": "adjective-like", "مُسْتَقِيم": "adjective-like",
+    "مَيِّت": "adjective-like", "أَحْسَن": "adjective-like", "أَشَدّ": "adjective-like",
+    "واحِدَة": "quantifier", "طَيِّبَة": "adjective-like",
 }
 _NOT_TAUGHT_KINDS = {ADVERB: "adverb", ADJECTIVE: "adjective", PROPER_NOUN: "proper name"}
 

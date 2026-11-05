@@ -60,6 +60,8 @@ def test_the_name_of_god_is_read_with_its_long_a(text, sounds):
     ("وَاسْمُ", "w a s m u"),                      # wa- before a connecting alif: no long ā
     ("شَيْـًٔا", "$ a y < a n"),                   # Uthmani hamza on a tatweel, with tanwīn
     ("قَوِيٌّ", "q a w i y y u n"),                # shadda and tanwīn on one letter
+    ("ٱلِٱسْمُ", "< a l i s m u"),                 # the article's lām voweled before ism's connecting alif
+    ("بِٱلِٱسْمِ", "b i l i s m i"),               # …also behind a proclitic
 ])
 def test_more_words_are_read_as_their_vowels_say(text, sounds):
     assert " ".join(expected_phonemes(prepared(text))) == sounds
@@ -96,6 +98,7 @@ def test_only_the_long_a_the_model_reads_short_is_spelled_out(text, spelled):
     "بِٱلَّيْلِ",                        # Uthmani drops the article's lām before lām: bi-l-layli
     "طَرِيقُ ٱلْهُدَىٰ", "ٱلْهُدَىٰ",      # final ىٰ is one long ā, not two
     "ٱلنَّبِىُّ", "اسْمُ ٱلنَّبِىِّ",      # undotted ى with shadda is the consonant yāʾ
+    "ٱلِٱسْمُ", "بِٱلِٱسْمِ",            # al-ismu (49:11): the alif of ism falls silent
 ])
 def test_both_readers_agree_on_correct_texts(text):
     pytest.importorskip("tts_arabic.text")

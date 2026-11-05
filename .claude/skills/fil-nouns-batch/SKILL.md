@@ -107,6 +107,23 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   boy (الْوَلَد) → "child", big → "large", buys → "purchases", policeman → "police officer",
   topic (مَوْضُوع) → "subject", drew → "sketched"; قَبْلَ/بَعْدَ are not prepositions for the role.
 
+- Batch 3 (2026-11-05): more adjectives/quantity words to skip (سَمِيع، قَدِير، مُسْتَقِيم، مَيِّت،
+  أَحْسَن، أَشَدّ، واحِدَة، طَيِّبَة); آلاء (only "your Lord's favours") is HELD_BACK.
+- Before writing glosses, print CAMeL's glosses for doubtful words in ONE call
+  (`service.camel_analyzer()` from fil.stages.noun_batch, `{x['root'], x['gloss']}`): it shows
+  the root key a gloss exception needs (سُلْطَان is س.ل.ط.ن, four letters) and the accepted word
+  (خَضَعَ "was subject", not "submitted"). Glosses that failed: the shepherd (الرَّاعِي) → farmer,
+  the old man (الشَّيْخ) → grandfather, spacious, talked (تَحَدَّثَ → تَكَلَّمَ spoke), spent (قَضَى),
+  passed (مَضَى → مَرَّ), erred, exposed (كَشَفَ "discovered"), cared (اهْتَمَّ، اعْتَنَى), graze.
+- A sound-feminine-plural ACC override (الْأُمَّهَاتِ) fails the gate when the corpus files the
+  plural as broken — leave that gap. data/gloss_exceptions.json is indented 2, the noun_*.json 1.
+- A Bosnian plurale tantum (grudi for صَدْر) uses the collective mechanism: sg row in the plural,
+  `"pluralForms": ["sg"]`. Re-check the Sonnet halves' first word against the sentences you
+  plan (hvala→pohvala, skupina→tim, naknada→nagrada) and fix with a small paradigms file.
+- Tell the blind reviewer to copy ids from blind.json programmatically: a retyped id (marks
+  reordered in قُوَّة) imports as "unknown"; remap by the `#n` suffix. حَمْد with no agent sounds
+  reserved for God (give it one: حَمْدَ النَّاسِ); a prize is جَائِزَة, not جَزَاء; صِرَاط only figurative.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

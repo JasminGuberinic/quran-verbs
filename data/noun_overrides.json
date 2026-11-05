@@ -317,5 +317,135 @@
    "text": "الْبَنِينَ",
    "why": "the accusative of the sound plural بَنُونَ is بَنِينَ, as its genitive"
   }
+ },
+ "أَب|أبو": {
+  "S|definite|NOM": {
+   "text": "الْأَبُ",
+   "why": "CAMeL gives no full form of أَب; the Quran has only construct forms (أَبُوهُ، أَبَاهُ، أَبِيهِ). Out of construct it is a regular triptote: الْأَبُ، أَبٌ (أَبًا is attested)"
+  },
+  "S|definite|ACC": {
+   "text": "الْأَبَ",
+   "why": "CAMeL gives no full form of أَب; the Quran has only construct forms (أَبُوهُ، أَبَاهُ، أَبِيهِ). Out of construct it is a regular triptote: الْأَبُ، أَبٌ (أَبًا is attested)"
+  },
+  "S|definite|GEN": {
+   "text": "الْأَبِ",
+   "why": "CAMeL gives no full form of أَب; the Quran has only construct forms (أَبُوهُ، أَبَاهُ، أَبِيهِ). Out of construct it is a regular triptote: الْأَبُ، أَبٌ (أَبًا is attested)"
+  },
+  "S|indefinite|NOM": {
+   "text": "أَبٌ",
+   "why": "CAMeL gives no full form of أَب; the Quran has only construct forms (أَبُوهُ، أَبَاهُ، أَبِيهِ). Out of construct it is a regular triptote: الْأَبُ، أَبٌ (أَبًا is attested)"
+  },
+  "S|indefinite|GEN": {
+   "text": "أَبٍ",
+   "why": "CAMeL gives no full form of أَب; the Quran has only construct forms (أَبُوهُ، أَبَاهُ، أَبِيهِ). Out of construct it is a regular triptote: الْأَبُ، أَبٌ (أَبًا is attested)"
+  }
+ },
+ "كَذِب|كذب": {
+  "S|definite|NOM": {
+   "text": "الْكَذِبُ",
+   "why": "CAMeL gives no nominative; the Quran's ٱلْكَذِبَ (16:105) and كَذِبًا fix the stem كَذِب, a regular triptote"
+  },
+  "S|indefinite|NOM": {
+   "text": "كَذِبٌ",
+   "why": "CAMeL gives no nominative; the Quran's ٱلْكَذِبَ (16:105) and كَذِبًا fix the stem كَذِب, a regular triptote"
+  }
+ },
+ "نَعَم|نعم": {
+  "S|definite|NOM": {
+   "text": "النَّعَمُ",
+   "why": "CAMeL reads نعم as the particle 'yes' or the verb; the Quran's ٱلنَّعَمِ (5:95) fixes the noun نَعَم (livestock), a regular triptote"
+  },
+  "S|definite|ACC": {
+   "text": "النَّعَمَ",
+   "why": "CAMeL reads نعم as the particle 'yes' or the verb; the Quran's ٱلنَّعَمِ (5:95) fixes the noun نَعَم (livestock), a regular triptote"
+  },
+  "S|indefinite|NOM": {
+   "text": "نَعَمٌ",
+   "why": "CAMeL reads نعم as the particle 'yes' or the verb; the Quran's ٱلنَّعَمِ (5:95) fixes the noun نَعَم (livestock), a regular triptote"
+  },
+  "S|indefinite|ACC": {
+   "text": "نَعَمًا",
+   "why": "CAMeL reads نعم as the particle 'yes' or the verb; the Quran's ٱلنَّعَمِ (5:95) fixes the noun نَعَم (livestock), a regular triptote"
+  },
+  "S|indefinite|GEN": {
+   "text": "نَعَمٍ",
+   "why": "CAMeL reads نعم as the particle 'yes' or the verb; the Quran's ٱلنَّعَمِ (5:95) fixes the noun نَعَم (livestock), a regular triptote"
+  }
+ },
+ "جُند|جند": {
+  "S|definite|NOM": {
+   "text": "الْجُنْدُ",
+   "why": "CAMeL gives no definite forms; the Quran's جُندٌ (38:11) and ٱلْجُنُودِ (85:17) fix both stems, regular triptotes"
+  },
+  "S|definite|ACC": {
+   "text": "الْجُنْدَ",
+   "why": "CAMeL gives no definite forms; the Quran's جُندٌ (38:11) and ٱلْجُنُودِ (85:17) fix both stems, regular triptotes"
+  },
+  "S|definite|GEN": {
+   "text": "الْجُنْدِ",
+   "why": "CAMeL gives no definite forms; the Quran's جُندٌ (38:11) and ٱلْجُنُودِ (85:17) fix both stems, regular triptotes"
+  },
+  "P|definite|NOM": {
+   "text": "الْجُنُودُ",
+   "why": "CAMeL gives no definite forms; the Quran's جُندٌ (38:11) and ٱلْجُنُودِ (85:17) fix both stems, regular triptotes"
+  },
+  "P|definite|ACC": {
+   "text": "الْجُنُودَ",
+   "why": "CAMeL gives no definite forms; the Quran's جُندٌ (38:11) and ٱلْجُنُودِ (85:17) fix both stems, regular triptotes"
+  }
+ },
+ "مَلَأ|ملأ": {
+  "S|indefinite|ACC": {
+   "text": "مَلَأً",
+   "why": "CAMeL gives no indefinite accusative/genitive; the Quran's ٱلْمَلَأُ fixes the stem, a triptote: مَلَأٌ مَلَأً مَلَإٍ (hamza on alif, on the line below kasra)"
+  },
+  "S|indefinite|GEN": {
+   "text": "مَلَإٍ",
+   "why": "CAMeL gives no indefinite accusative/genitive; the Quran's ٱلْمَلَأُ fixes the stem, a triptote: مَلَأٌ مَلَأً مَلَإٍ (hamza on alif, on the line below kasra)"
+  }
+ },
+ "بَصَر|بصر": {
+  "P|indefinite|NOM": {
+   "text": "أَبْصَارٌ",
+   "why": "CAMeL misses these cells; the Quran's ٱلْأَبْصَٰرُ and أَبْصَٰرًا fix the plural أَبْصَار, a regular triptote"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَبْصَارٍ",
+   "why": "CAMeL misses these cells; the Quran's ٱلْأَبْصَٰرُ and أَبْصَٰرًا fix the plural أَبْصَار, a regular triptote"
+  }
+ },
+ "جَزاء|جزي": {
+  "S|indefinite|GEN": {
+   "text": "جَزَاءٍ",
+   "why": "CAMeL misses this cell; the Quran's جَزَآءً and جَزَآءُ fix the stem, a triptote (جَزَاءٌ جَزَاءً جَزَاءٍ)"
+  }
+ },
+ "شَرِيك|شرك": {
+  "P|indefinite|NOM": {
+   "text": "شُرَكَاءُ",
+   "why": "the plural شُرَكَاء is a diptote (Quran 6:94 شُرَكَٰٓؤُا۟، 6:100 شُرَكَآءَ): no tanwīn, the genitive written like the accusative"
+  },
+  "P|indefinite|ACC": {
+   "text": "شُرَكَاءَ",
+   "why": "the plural شُرَكَاء is a diptote (Quran 6:94 شُرَكَٰٓؤُا۟، 6:100 شُرَكَآءَ): no tanwīn, the genitive written like the accusative"
+  },
+  "P|indefinite|GEN": {
+   "text": "شُرَكَاءَ",
+   "why": "the plural شُرَكَاء is a diptote (Quran 6:94 شُرَكَٰٓؤُا۟، 6:100 شُرَكَآءَ): no tanwīn, the genitive written like the accusative"
+  }
+ },
+ "نَصِير|نصر": {
+  "P|definite|NOM": {
+   "text": "الْأَنْصَارُ",
+   "why": "CAMeL misses these cells; the Quran's ٱلْأَنصَارِ and أَنصَارًا fix the plural أَنْصَار, a regular triptote"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَنْصَارَ",
+   "why": "CAMeL misses these cells; the Quran's ٱلْأَنصَارِ and أَنصَارًا fix the plural أَنْصَار, a regular triptote"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَنْصَارٌ",
+   "why": "CAMeL misses these cells; the Quran's ٱلْأَنصَارِ and أَنصَارًا fix the plural أَنْصَار, a regular triptote"
+  }
  }
 }

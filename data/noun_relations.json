@@ -293,5 +293,127 @@
  "نِعْمَة|نعم": {
   "kind": "ordinary",
   "why": "Reviewed: نَعَم/أَنْعَام (livestock) share the root but are other words; نِعْمَة has the plurals نِعَم and أَنْعُم."
+ },
+ "مُشْرِك|شرك": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُشْرِكَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "مُسْلِم|سلم": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُسْلِمَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "مُحْسِن|حسن": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُحْسِنَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "مُرْسَل|رسل": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُرْسَلَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "خاسِر|خسر": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine خَاسِرَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "كَلِمَة|كلم": {
+  "kind": "singulative",
+  "why": "اسم الوحدة: one word, of the collective كَلِم 'words, speech' (Quran 4:46 يُحَرِّفُونَ الْكَلِمَ عَنْ مَوَاضِعِهِ; 35:10 إِلَيْهِ يَصْعَدُ الْكَلِمُ الطَّيِّبُ, masculine). كَلِمَة also has the sound plural كَلِمَات, which stays in its table.",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "كَلِمٌ",
+    "gender": "M",
+    "en": "words",
+    "bs": "riječi",
+    "lemma": "كَلِم|كلم"
+   }
+  ]
+ },
+ "ضَلال|ضلل": {
+  "kind": "ordinary",
+  "why": "Reviewed: a verbal noun (error, going astray), not a collective; ضَلَالَة (7:61 لَيْسَ بِي ضَلَالَةٌ) is a separate noun of the same root, not its singulative."
+ },
+ "مَعْرُوف|عرف": {
+  "kind": "ordinary",
+  "why": "Reviewed: a passive participle used as a noun (what is known to be right); مَعْرُوفَة is only its adjective feminine, not a different word."
+ },
+ "حَسَنَة|حسن": {
+  "kind": "ordinary",
+  "why": "Reviewed: the feminine of the adjective حَسَن used as a noun (a good deed, plural حَسَنَات), like سَيِّئَة; not a singulative of a collective."
+ },
+ "حُكْم|حكم": {
+  "kind": "ordinary",
+  "why": "Reviewed: a verbal noun (judgment, ruling); حِكْمَة (wisdom) is a different word of the same root, not its singulative."
+ },
+ "جُند|جند": {
+  "kind": "ordinary",
+  "why": "Reviewed: an army or host, grammatically singular with its own Quranic plural جُنُود (جُنْدٌ مَا هُنَالِكَ مَهْزُومٌ 38:11, masculine singular); one soldier is جُنْدِيّ (not in the Quran)."
+ },
+ "بَشَر|بشر": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس: human beings, mankind; it also names one human (بَشَرًا سَوِيًّا 19:17) and has the dual بَشَرَيْنِ (23:47), but no plural. Agreement is masculine: singular as in مَا أَنْتُمْ إِلَّا بَشَرٌ مِثْلُنَا (36:15), plural as in إِذَا أَنْتُمْ بَشَرٌ تَنْتَشِرُونَ (30:20). One human is إِنْسَان (same meaning, other root).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "إِنْسَانٌ",
+    "gender": "M",
+    "en": "a human being",
+    "bs": "čovjek",
+    "lemma": "إِنسان|أنس"
+   }
+  ]
+ },
+ "نَعَم|نعم": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جمع: livestock (camels, cattle, sheep and goats), no singular of its own (مِثْلُ مَا قَتَلَ مِنَ النَّعَمِ 5:95). Its Quranic plural أَنْعَام is agreed with both ways: وَالْأَنْعَامَ خَلَقَهَا (16:5, feminine) and مِمَّا فِي بُطُونِهِ (16:66, masculine). نِعْمَة (favour) is another word of the root.",
+  "related": []
+ },
+ "مَلَأ|ملأ": {
+  "kind": "collective",
+  "agreement": "MP",
+  "why": "اسم جمع: the chiefs, the council of a people, no singular of its own. Agreement is masculine plural: إِنَّ الْمَلَأَ يَأْتَمِرُونَ بِكَ (28:20), قَالَ الْمَلَأُ الَّذِينَ اسْتَكْبَرُوا (7:75); the verb before it stays singular as with any plural subject.",
+  "related": []
+ },
+ "أُمّ|أمم": {
+  "kind": "pair",
+  "why": "The male of أُمّ (mother) is أَب (father) (Quran 4:11 وَلِأَبَوَيْهِ ... فَلِأُمِّهِ). أُمَّة (a nation) is a different word of the same root.",
+  "related": [
+   {
+    "role": "male",
+    "ar": "أَبٌ",
+    "gender": "M",
+    "en": "father",
+    "bs": "otac",
+    "lemma": "أَب|أبو"
+   }
+  ]
+ },
+ "أَب|أبو": {
+  "kind": "pair",
+  "why": "The female of أَب (father) is أُمّ (mother) (Quran 4:11 فَلِأُمِّهِ); the dual أَبَوَانِ 'parents' covers both (12:100). Its Quranic plural آبَاء is studied as its own lemma.",
+  "related": [
+   {
+    "role": "female",
+    "ar": "أُمٌّ",
+    "gender": "F",
+    "en": "mother",
+    "bs": "majka",
+    "lemma": "أُمّ|أمم"
+   }
+  ]
+ },
+ "رَجُل|رجل": {
+  "kind": "pair",
+  "why": "The female of رَجُل (man) is امْرَأَة (woman) (Quran 4:12 رَجُلٌ يُورَثُ كَلَالَةً أَوِ امْرَأَةٌ); in the plural رِجَال and نِسَاء (4:1). The corpus spells the lemma امْرَأَت, so no lemma link.",
+  "related": [
+   {
+    "role": "female",
+    "ar": "امْرَأَةٌ",
+    "gender": "F",
+    "en": "woman",
+    "bs": "žena"
+   }
+  ]
  }
 }

@@ -3,9 +3,10 @@
     "glosses": [
       "disbelieve",
       "deny",
-      "be ungrateful"
+      "be ungrateful",
+      "disbelief"
     ],
-    "why": "The CAMeL MSA lexicon glosses kafara only in modern senses (blaspheme, renege Islam, atone). In the Quran it means to disbelieve or deny, and also to be ungrateful (e.g. 2:152, 14:7). Added 2026-11-03."
+    "why": "The CAMeL MSA lexicon glosses kafara only in modern senses (blaspheme, renege Islam, atone). In the Quran it means to disbelieve or deny, and also to be ungrateful (e.g. 2:152, 14:7). Added 2026-11-03. كُفْر: the lexicon glosses the noun only as 'infidelity; atheism'. In the Quran it is disbelief (ٱلْكُفْرَ بِٱلْإِيمَٰنِ 2:108). Added 2026-11-05 (noun batch 3)."
   },
   "#.ت.#": {
     "glosses": [
@@ -74,9 +75,11 @@
   "ب.ش.ر": {
     "glosses": [
       "give good news",
-      "announce"
+      "announce",
+      "humans",
+      "human beings"
     ],
-    "why": "The lexicon glosses bashshara only as 'rejoice; augur; evangelize' (and 'peel'). In the Quran it means to give good news, to announce glad tidings, e.g. 15:53, 37:101, 84:24. Added 2026-11-03."
+    "why": "The lexicon glosses bashshara only as 'rejoice; augur; evangelize' (and 'peel'). In the Quran it means to give good news, to announce glad tidings, e.g. 15:53, 37:101, 84:24. Added 2026-11-03. بَشَر: the lexicon glosses the noun only as 'joy' or 'mankind'. In the Quran it is human beings, a human (بَشَرٌ مِثْلُنَا 36:15). Added 2026-11-05 (noun batch 3)."
   },
   "ح.ش.ر": {
     "glosses": [
@@ -548,9 +551,11 @@
     "glosses": [
       "win",
       "triumph",
-      "overcome"
+      "overcome",
+      "supporter",
+      "supporters"
     ],
-    "why": "The lexicon glosses ifta'ala اِنْتَصَرَ only as 'be victorious'. Its everyday sense is to win (اِنْتَصَرَ الْفَرِيقُ 'the team won') and, with عَلَى, to triumph over, to overcome. Added 2026-11-04."
+    "why": "The lexicon glosses ifta'ala اِنْتَصَرَ only as 'be victorious'. Its everyday sense is to win (اِنْتَصَرَ الْفَرِيقُ 'the team won') and, with عَلَى, to triumph over, to overcome. Added 2026-11-04. أَنْصَار, plural of نَصِير: the lexicon reads it only as the proper name Ansar. It means supporters, helpers (مَنْ أَنصَارِىٓ 3:52). Added 2026-11-05 (noun batch 3)."
   },
   "ن.ز.ل": {
     "glosses": [
@@ -801,5 +806,53 @@
       "witness"
     ],
     "why": "شَهِيد: the lexicon glosses it only as 'martyr'. In the Quran it is mostly a witness (وَٱسْتَشْهِدُوا۟ شَهِيدَيْنِ 2:282). Added 2026-11-05 (noun batch 2)."
+  },
+  "ع.ر.ف": {
+    "glosses": [
+      "kindness",
+      "what is right"
+    ],
+    "why": "مَعْرُوف: the lexicon glosses it only as the adjective 'known'. In the Quran it is mostly a noun, what is right and kind (بِٱلْمَعْرُوفِ 2:178, قَوْلٌ مَعْرُوفٌ 2:263). Added 2026-11-05 (noun batch 3)."
+  },
+  "ح.س.ن": {
+    "glosses": [
+      "doer of good",
+      "doers of good"
+    ],
+    "why": "مُحْسِن: the lexicon glosses it only as 'embellisher'. In the Quran it is one who does good (إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ 2:195). Added 2026-11-05 (noun batch 3)."
+  },
+  "ف.س.ق": {
+    "glosses": [
+      "transgressor",
+      "transgressors"
+    ],
+    "why": "فَاسِق: the lexicon glosses it only as 'adulterer'. In the Quran it is one who defiantly disobeys, a transgressor (وَأَكْثَرُهُمُ ٱلْفَٰسِقُونَ 3:110). Added 2026-11-05 (noun batch 3)."
+  },
+  "ر.س.ل": {
+    "glosses": [
+      "envoy",
+      "envoys"
+    ],
+    "why": "مُرْسَل: the lexicon glosses it only as the participle 'sent'. As a noun it is one sent, an envoy (إِنَّكَ لَمِنَ ٱلْمُرْسَلِينَ 36:3). Added 2026-11-05 (noun batch 3)."
+  },
+  "ن.ع.م": {
+    "glosses": [
+      "livestock"
+    ],
+    "why": "نَعَم: the lexicon reads نعم only as 'yes' or a verb. The Quran's ٱلنَّعَمِ (5:95) and ٱلْأَنْعَٰم are livestock. Added 2026-11-05 (noun batch 3)."
+  },
+  "م.ل.#": {
+    "glosses": [
+      "chiefs",
+      "council"
+    ],
+    "why": "مَلَأ: the lexicon reads it only as the verb 'be bored'. In the Quran ٱلْمَلَأُ is the chiefs, the council of a people (7:60). Added 2026-11-05 (noun batch 3)."
+  },
+  "س.ل.ط.ن": {
+    "glosses": [
+      "authority",
+      "proof"
+    ],
+    "why": "سُلْطَان: the lexicon glosses it only as the title 'Sultan'. In the Quran it is authority or a proof (بِسُلْطَٰنٍ مُبِينٍ 11:96). CAMeL keys سُلْطَان under the four-letter root س.ل.ط.ن. Added 2026-11-05 (noun batch 3)."
   }
 }

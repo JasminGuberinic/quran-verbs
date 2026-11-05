@@ -173,6 +173,8 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
             sounds += ["<", letter.vowel]                       # a voiced (connecting) alif
         elif _is_connecting_alif_after_proclitic(letters, position):
             pass                                                # وَاسْمُ: wa-smu, the alif falls silent
+        elif _is_connecting_alif_inside_word(letters, position):
+            pass                                                # ٱلِٱسْمُ: al-ismu, the alif of ism falls silent
         elif _is_article_after_proclitic(letters, position):
             if _joins_sun_letter(letters, position + 1):
                 position += 1                                   # بِالشَّمْسِ: …and its l joins the sun letter
@@ -215,15 +217,27 @@ def _is_connecting_alif_after_proclitic(letters: list["_Letter"], position: int)
     return letter.base == "ا" and not letter.vowel and bool(following and following.sukun)
 
 
+def _is_connecting_alif_inside_word(letters: list["_Letter"], position: int) -> bool:
+    """A bare alif after a voweled letter and before a vowelless one is a connecting alif
+    (the article's lām takes a kasra before it: ٱلِٱسْمُ al-ismu), not a long vowel — for the
+    same reason as behind a proclitic."""
+    if position == 0 or position + 1 >= len(letters) or not letters[position - 1].vowel:
+        return False
+    letter, following = letters[position], letters[position + 1]
+    return letter.base == "ا" and not letter.vowel and following.sukun
+
+
 def _is_article_after_proclitic(letters: list["_Letter"], position: int) -> bool:
     """The alif of al- behind bi-/wa-/fa-/ka-/li- (بِالْحَقِّ) is not pronounced — also when the
-    article's lām is itself doubled, the next word starting with lām (Uthmani بِٱلَّيْلِ)."""
+    article's lām is itself doubled, the next word starting with lām (Uthmani بِٱلَّيْلِ), or
+    voweled before a connecting alif (بِٱلِٱسْمِ)."""
     if position != 1 or letters[0].base not in "بفوكل" or not letters[0].vowel:
         return False
     if letters[1].base != "ا" or letters[1].vowel or len(letters) < 3 or letters[2].base != "ل":
         return False
     after_l = letters[3] if len(letters) > 3 else None
-    return letters[2].sukun or letters[2].shadda or bool(after_l and after_l.shadda)
+    return (letters[2].sukun or letters[2].shadda or bool(after_l and after_l.shadda)
+            or _is_connecting_alif_inside_word(letters, 3))      # بِٱلِٱسْمِ: bil-ismi
 
 
 def _joins_sun_letter(letters: list["_Letter"], position: int) -> bool:

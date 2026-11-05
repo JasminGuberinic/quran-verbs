@@ -121,7 +121,7 @@ def test_every_sound_in_a_card_is_found():
 
 def _text() -> dict:
     page = {"indexTitle": "Verbs of the Quran", "indexIntro": "Every verb.", "verbTitle": "{0} – {1} · verb",
-            "verbDescription": "{0} ({1}): {2}×", "openInApp": "Practice", "allVerbs": "All verbs", "notFound": "Not found"}
+            "verbDescription": "{0} ({1}): {2}×", "openInApp": "Practice", "allVerbs": "All verbs", "nav": "Verbs", "notFound": "Not found"}
     return {
         "notice": "<b>AI content</b>", "footer": ["<b>Sources.</b>"], "language": "Language", "listen": "Listen",
         "root": "root", "form": "form", "times": "{0}× in the Quran", "inAyat": "in {0} ayat", "ofAll": "{0}% of all",
@@ -131,7 +131,7 @@ def _text() -> dict:
         "verbalNoun": "verbal noun", "conjugation": "Conjugation", "fullTable": "{0} of {1}", "tableNote": "●",
         "notUsed": "not used", "notUsedNote": "Grey: not used in Arabic.",
         "recitedAyah": "Whole ayah", "noFreeTranslation": "no free translation", "sentences": "Sentences",
-        "sentencesNote": "Composed.", "noSentences": "None yet.", "tabs": ["Learn"], "page": page,
+        "sentencesNote": "Composed.", "noSentences": "None yet.", "tabs": ["Learn"], "page": page, "nounPage": {"nav": "Nouns"},
         "forms": {"allForms": "Every form ({0})", "formsNote": "Most frequent first.", "firstAyah": "first in",
                   "passive": "passive", "object": "object: {0}",
                   "objects": {pronoun: f"obj-{pronoun}" for pronoun in render.PRONOUN_ORDER},

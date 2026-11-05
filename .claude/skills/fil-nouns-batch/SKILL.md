@@ -73,6 +73,10 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - A lexicon gap gets a documented entry in `data/gloss_exceptions.json` (أَغْلَقَ "close", عَذْب
   "fresh" were added in the pilot) — never a wrong English gloss to please the gate: the
   reviewer refuses "locked" for أَغْلَقَ.
+- Voice gate: `fil pages` FAILS when a noun sentence, table cell, case example or headword has no
+  checked voice (the two readers in fil.speech disagree). Fix the reader with a golden test in
+  tests/test_speech.py (the model's phonetiser has known slips: wā/kā read short, tanwīn before
+  shadda, "net" for صَنَعْتُ) — `data/noun_unvoiced.json` (text → why) is the last resort.
 - عَذَاب is torment/punishment, not everyday pain (refused once).
 - An object noun without a possessor can be unnatural (غَسَلَ الْأَطْفَالُ الْأَيْدِيَ): Arabic says
   أَيْدِيَهُمْ, which the table cannot hold — choose another sentence.

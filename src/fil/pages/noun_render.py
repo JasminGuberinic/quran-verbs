@@ -38,7 +38,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
     structured = seo.verb_structured_data(title=title, description=description, language=language.code, path=path,
                                           lemma=card["lemma"], meaning=meaning, index_title=words["indexTitle"])
     body = "".join((
-        _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"]), back="../"),
+        _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"])),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun">',
         _hero(card, meaning, language, text, root, category),
         _table(card, text, root),
@@ -249,9 +249,8 @@ def _links(card: dict, language: Language, text: dict, root: str, related: Seque
         parts.append(f'<p><a class="button quiet" href="{root}{seo.verb_path(language.code, card["verb"]["slug"])}">'
                      f'{escape(words["verb"])} →</a></p>')
     if related:
-        items = "".join(f'<li><a href="{root}{seo.noun_path(language.code, other["slug"])}"><span class="ar" lang="ar" dir="rtl">'
-                        f'{other["lemma"]}</span> {escape(other["meaning"][language.code])}</a></li>' for other in related)
-        parts.append(f'<h3>{escape(words["nounsOfRoot"])}</h3><ul class="language-list">{items}</ul>')
+        items = "".join(_noun_link(other, language, root) for other in related)
+        parts.append(f'<h3>{escape(words["nounsOfRoot"])}</h3><ul class="language-list noun-links">{items}</ul>')
     return f'<section class="cta">{"".join(parts)}</section>' if parts else ""
 
 
@@ -260,9 +259,16 @@ def nouns_of_root_section(nouns: Sequence[dict], language: Language, text: dict,
     if language.code not in NOUN_LANGUAGES or not nouns:
         return ""
     words = text["nounPage"]
-    items = "".join(f'<li><a href="{root}{seo.noun_path(language.code, noun["slug"])}"><span class="ar" lang="ar" dir="rtl">'
-                    f'{noun["lemma"]}</span> {escape(noun["meaning"][language.code])}</a></li>' for noun in nouns)
-    return f'<section><h2>{escape(words["nounsOfRoot"])}</h2><ul class="language-list">{items}</ul></section>'
+    items = "".join(_noun_link(noun, language, root) for noun in nouns)
+    return f'<section><h2>{escape(words["nounsOfRoot"])}</h2><ul class="language-list noun-links">{items}</ul></section>'
+
+
+def _noun_link(noun: dict, language: Language, root: str) -> str:
+    """A link to another noun's page, with its picture when it has one."""
+    picture = (f'<img class="thumb" src="{root}{noun["picture"]}" width="24" height="24" alt="" loading="lazy">'
+               if noun.get("picture") else "")
+    return (f'<li><a href="{root}{seo.noun_path(language.code, noun["slug"])}">{picture}<span class="ar" lang="ar" dir="rtl">'
+            f'{noun["lemma"]}</span> {escape(noun["meaning"][language.code])}</a></li>')
 
 
 # ---------- the list of nouns ----------
@@ -282,8 +288,7 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
         for card in cards
     )
     body = "".join((
-        _top_bar(text, root, language, seo.noun_index_path, back=f'{root}{seo.language_index_path(language.code)}',
-                 back_label=text["page"]["allVerbs"]),
+        _top_bar(text, root, language, seo.noun_index_path, is_section_list=True),
         f'<main class="wrap"><h1>{escape(words["indexTitle"])}</h1><p class="lead">{escape(words["indexIntro"])}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         f'<ol class="verb-list noun-list">{rows}</ol></main>',
@@ -304,18 +309,16 @@ def _thumbnail(card: dict, root: str) -> str:
 
 # ---------- shared ----------
 
-def _top_bar(text: dict, root: str, language: Language, path_in, back: str, back_label: str | None = None) -> str:
-    words = text["nounPage"]
+def _top_bar(text: dict, root: str, language: Language, path_in, is_section_list: bool = False) -> str:
+    """The site's top bar (render.top_bar), switching only between the languages nouns are written in."""
     switcher = "".join(
         f'<a href="{root}{path_in(code)}" hreflang="{code}" lang="{code}"'
         f'{render._CURRENT if code == language.code else ""}>{escape(name)}</a>'
         for code, name in (("bs", "Bosanski"), ("en", "English"))
     )
-    return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>'
-            f'<a href="{back}">{escape(back_label or words["allNouns"])}</a>'
-            f'<details class="languages"><summary>{escape(text["language"])}</summary>{switcher}</details></header>')
+    return render.top_bar(text, root, language, switcher, section=render.NOUNS, is_section_list=is_section_list,
+                          has_nouns=True)
 
 
 def _footer(text: dict, picture_credit: str) -> str:
-    lines = [*text["footer"], picture_credit] if picture_credit else text["footer"]
-    return f'<footer class="wrap">{"".join(f"<p>{line}</p>" for line in lines)}</footer>'
+    return render._footer(text, picture_credit)

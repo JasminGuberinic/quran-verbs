@@ -29,6 +29,7 @@ STYLESHEET = "pages.css"
 _ENGLISH = "en"
 _ENGLISH_STOP = "Stop"   # the label of a playing button in a language that has no word for it yet
 _CURRENT = ' aria-current="page"'
+VERBS, NOUNS = "verbs", "nouns"     # the sections of the site, in its top bar
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
@@ -56,8 +57,11 @@ class PublishedVerb:
 
 # ---------- verb page ----------
 
-def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "") -> str:
-    """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render)."""
+def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "", *,
+              has_nouns: bool = False, picture_credit: str = "") -> str:
+    """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render);
+    `has_nouns`: the noun pages are published, so the top bar leads to them; `picture_credit`: the
+    footer line owed for the pictures that section shows."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
     card = verb.card
@@ -68,7 +72,8 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         title=title, description=description, language=language.code, path=path,
         lemma=card["lemma"], meaning=meaning, index_title=text["page"]["indexTitle"])
     body = "".join((
-        _top_bar(text, root, back="../", switcher=_language_links(root, lambda code: seo.verb_path(code, verb.slug), language)),
+        top_bar(text, root, language, _language_links(root, lambda code: seo.verb_path(code, verb.slug), language),
+                section=VERBS, has_nouns=has_nouns),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article>',
         _hero(card, meaning, language, text, root),
         _main_forms(card, text, root),
@@ -78,7 +83,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         nouns_of_root,
         _app_link(card, language, text, root),
         "</article></main>",
-        _footer(text),
+        _footer(text, picture_credit),
     ))
     head = _head(title=title, description=description, path=path, root=root,
                  indexed_in=verb.indexed_languages, language=language.code,
@@ -372,7 +377,7 @@ def app_link(rank: int, language: str, root: str) -> str:
 
 # ---------- language index ----------
 
-def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dict) -> str:
+def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dict, *, has_nouns: bool = False) -> str:
     path = seo.language_index_path(language.code)
     root = seo.to_root(path)
     title = f'{text["page"]["indexTitle"]} · {seo.SITE_NAME}'
@@ -385,7 +390,8 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
         for verb in verbs
     )
     body = "".join((
-        _top_bar(text, root, back=None, switcher=_language_links(root, seo.language_index_path, language)),
+        top_bar(text, root, language, _language_links(root, seo.language_index_path, language),
+                section=VERBS, is_section_list=True, has_nouns=has_nouns),
         f'<main class="wrap"><h1>{escape(text["page"]["indexTitle"])}</h1><p class="lead">{escape(description)}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         f'<p class="cta"><a class="button" href="{root}index.html?lang={language.code}">{escape(text["tabs"][0])} · {seo.SITE_NAME} →</a></p>',
@@ -477,10 +483,25 @@ def _meta(*, title: str, description: str, url: str, page_type: str) -> str:
             f'<meta name="twitter:description" content="{description}">\n<meta name="twitter:image" content="{image}">\n')
 
 
-def _top_bar(text: dict, root: str, back: str | None, switcher: str) -> str:
-    back_link = f'<a href="{back}">{escape(text["page"]["allVerbs"])}</a>' if back else ""
-    return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>{back_link}'
+def top_bar(text: dict, root: str, language: Language, switcher: str, *, section: str,
+            is_section_list: bool = False, has_nouns: bool = False) -> str:
+    """The one top bar of every static page: the brand, the site's sections (verbs, nouns) with
+    the current one marked, and the language switcher. The nouns appear only in the languages
+    they are written in, so no link leads to a missing page."""
+    sections = [(VERBS, seo.language_index_path(language.code), text["page"]["nav"])]
+    if has_nouns and language.code in seo.NOUN_FOLDERS:
+        sections.append((NOUNS, seo.noun_index_path(language.code), text["nounPage"]["nav"]))
+    links = "".join(f'<a href="{root}{path}"{_section_mark(name == section, is_section_list)}>{escape(label)}</a>'
+                    for name, path, label in sections)
+    return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>'
+            f'<nav class="sections">{links}</nav>'
             f'<details class="languages"><summary>{escape(text["language"])}</summary>{switcher}</details></header>')
+
+
+def _section_mark(is_current: bool, is_section_list: bool) -> str:
+    if not is_current:
+        return ""
+    return _CURRENT if is_section_list else ' aria-current="true"'
 
 
 def _language_links(root: str, path_in, current: Language) -> str:
@@ -491,8 +512,9 @@ def _language_links(root: str, path_in, current: Language) -> str:
     )
 
 
-def _footer(text: dict) -> str:
-    return f'<footer class="wrap">{"".join(f"<p>{line}</p>" for line in text["footer"])}</footer>'
+def _footer(text: dict, picture_credit: str = "") -> str:
+    lines = [*text["footer"], picture_credit] if picture_credit else text["footer"]
+    return f'<footer class="wrap">{"".join(f"<p>{line}</p>" for line in lines)}</footer>'
 
 
 def _play(reference: str | None, root: str, label: str) -> str:

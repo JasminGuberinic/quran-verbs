@@ -33,7 +33,7 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict]) -> list[Path]
     _write_ayat(pages, nouns.ayat_lists)
     _copy_pictures(pages, nouns.pictures)
     categories = {f"{key[0]}|{key[1]}": entry.category for key, entry in _categories().items()}
-    credit_for = _credits(nouns.pictures)
+    credit_for = credits(nouns.pictures)
     written = []
     for language in _languages():
         text = texts[language.code]
@@ -43,13 +43,13 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict]) -> list[Path]
         for card in nouns.cards:
             related = [other for other in nouns.cards if other["root"] == card["root"] and other is not card]
             html = noun_render.noun_page(card, language, text, category=categories.get(card["key"]),
-                                         picture_credit=credit_for([card]), related=related)
+                                         picture_credit=credit_for([card, *related]), related=related)
             written.append(_write(pages, seo.noun_path(language.code, card["slug"]), html))
     return written
 
 
 def app_paths() -> dict[str, str]:
-    """Where the app's "Nouns" link leads, per language (others use English)."""
+    """Where the app's "Nouns" link leads, per language (hidden in the others)."""
     return {code: seo.noun_index_path(code) for code in noun_render.NOUN_LANGUAGES}
 
 
@@ -60,9 +60,13 @@ def page_paths(nouns: Sequence[dict]) -> list[str]:
             for path in (seo.noun_index_path(code), *(seo.noun_path(code, card["slug"]) for card in nouns))]
 
 
-def nouns_of_verb(verb_card: dict, nouns: Sequence[dict], language: Language, text: dict) -> str:
-    """The section a verb page shows: the studied nouns of its root."""
-    related = [noun for noun in nouns if noun["root"] == verb_card["root"]]
+def nouns_of_verb(verb_card: dict, nouns: Sequence[dict]) -> list[dict]:
+    """The studied nouns of a verb's root (cards)."""
+    return [noun for noun in nouns if noun["root"] == verb_card["root"]]
+
+
+def nouns_of_verb_section(related: Sequence[dict], language: Language, text: dict) -> str:
+    """The section a verb page shows: the studied nouns of its root, linked."""
     return noun_render.nouns_of_root_section(related, language, text, seo.to_root(seo.verb_path(language.code, "x")))
 
 
@@ -77,7 +81,8 @@ def _categories():
         return {}
 
 
-def _credits(pictures: Sequence[NounPicture]):
+def credits(pictures: Sequence[NounPicture]):
+    """The footer credit a page owes for the pictures of the noun cards it shows."""
     by_key = {f"{picture.lemma}|{picture.root}": picture for picture in pictures}
 
     def credit(cards: Sequence[dict]) -> str:

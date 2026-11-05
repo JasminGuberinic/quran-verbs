@@ -8,7 +8,8 @@ decided by the pure noun modules; this stage only gathers it and refuses to ship
 must not ship:
 
   - a noun without a Bosnian declension, an English meaning or a case table;
-  - a spoken text whose two readings disagree (fil.speech) — it is shown, never voiced;
+  - a spoken text whose two readings disagree (fil.speech) — it is shown, never voiced,
+    and the build stops (`check_voiced`) unless data/noun_unvoiced.json says why;
   - a sentence that failed the gate or a reader refused.
 """
 
@@ -72,7 +73,7 @@ def assemble_nouns(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord,
                             pictures.get((lemma.lemma, lemma.root)))
         cards.append(card)
         lists.extend(builder.ayat_lists(card))
-        unvoiced = f" (not voiced, our reader cannot read: {' '.join(builder.unvoiced)})" if builder.unvoiced else ""
+        unvoiced = f" (not voiced, the two readers disagree: {' | '.join(builder.unvoiced)})" if builder.unvoiced else ""
         print(f"  noun {lemma.rank:>4} {lemma.lemma}{unvoiced}", flush=True)
     shown = tuple(pictures[key] for key in pictures if any(card["pictureKey"] == list(key) for card in cards))
     return NounContent(tuple(sorted(cards, key=lambda card: card["rank"])), tuple(lists), shown)
@@ -140,12 +141,17 @@ class _CardBuilder:
         except ValueError:
             self.unvoiced.append(text)
             return None
-        return reference if self.sound.speech.verdicts[text].is_faithful else None
+        if not self.sound.speech.verdicts[text].is_faithful:
+            self.unvoiced.append(text)
+            return None
+        return reference
 
-    def _citation_form(self) -> str | None:
+    def _citation_form(self) -> str:
+        """The headword as the table says it in the nominative, else as the dictionary writes it
+        (إِبِل is only in the genitive in the Quran)."""
         main = next((row for row in self.table.rows if row.row in NUMBERS), None)
-        return next((text for text in (main.text("indefinite", "NOM"), main.text("definite", "NOM")) if text), None) \
-            if main else self.lemma.lemma
+        said = (main.text("indefinite", "NOM"), main.text("definite", "NOM")) if main else ()
+        return next((text for text in said if text), self.lemma.lemma)
 
     # ---------------------------------------------------------------- the case table
 
@@ -255,6 +261,31 @@ class _CardBuilder:
         found = {f"{surah}:{ayah}": self.sound.translations.of(surah, ayah).get(language) for surah, ayah in places}
         return {"by": self.sound.translations.credit(language),
                 "text": {ref: translation["text"] for ref, translation in found.items() if translation}}
+
+
+# ---------------------------------------------------------------- the voice gate
+
+class UnvoicedNounText(Exception):
+    """A noun text would reach a learner without its checked voice."""
+
+
+def unvoiced_texts(card: dict) -> list[str]:
+    """Every text of a card the synthetic voice should say but does not: the headword,
+    each case-table cell the Quran does not recite, each case example, each sentence."""
+    cells = [cell for row in card["table"] for cell in row["cells"] if cell["text"]]
+    said = [(card["lemma"], card["lemmaSpoken"]),
+            *((cell["text"], cell["audio"]) for cell in cells),
+            *((example["arabic"], example["audio"]) for example in card["explanation"]),
+            *((sentence["arabic"], sentence["spoken"]) for sentence in card["sentences"])]
+    return [text for text, sound in said if not sound]
+
+
+def check_voiced(cards: Iterable[dict], documented: Mapping[str, str]) -> None:
+    """Fail the build when a noun text ships silent without a documented reason."""
+    silent = sorted({f"{card['lemma']}: {text}" for card in cards for text in unvoiced_texts(card) if text not in documented})
+    if silent:
+        raise UnvoicedNounText(f"{len(silent)} noun texts have no checked voice (fix fil.speech, or document them "
+                               f"in data/noun_unvoiced.json): {silent[:10]}")
 
 
 # ---------------------------------------------------------------- pure helpers

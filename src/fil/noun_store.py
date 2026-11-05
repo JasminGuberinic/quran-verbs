@@ -4,6 +4,7 @@
     data/noun_tables.json        {"يَد|يدي": {"rows": [...]}}             (fil nouns batch tables)
     data/noun_bs_paradigms.json  {"يَد|يدي": {"cells", "genders", "prepositions"}}
     data/noun_sentences.json     {"يَد|يدي": [{"role": "subject", ...example}]}
+    data/noun_unvoiced.json      {"<Arabic text>": "why it ships without a voice"}
 
 A small I/O adapter; what an entry must hold is decided in fil.nouns.studied and
 fil.nouns.bosnian.
@@ -20,7 +21,7 @@ from fil.nouns.bosnian import BosnianNoun
 from fil.nouns.studied import (NounMeaning, NounSentence, NounTable, meaning_entry, parse_meaning, parse_table,
                                table_entry)
 from fil.resources import (NOUN_BS_PARADIGMS_JSON, NOUN_MEANINGS_JSON, NOUN_OVERRIDES_JSON, NOUN_SENTENCES_JSON,
-                           NOUN_TABLES_JSON)
+                           NOUN_TABLES_JSON, NOUN_UNVOICED_JSON)
 
 _ABOUT = "_about"
 _ABOUTS = {
@@ -86,6 +87,15 @@ def save_sentences(sentences: list[NounSentence], path: Path = NOUN_SENTENCES_JS
     for sentence in sentences:
         grouped.setdefault(sentence.key, []).append({"role": sentence.role, "example": to_dict(sentence.example)})
     _write(path, grouped)
+
+
+def load_unvoiced(path: Path = NOUN_UNVOICED_JSON) -> dict[str, str]:
+    """The noun texts allowed to ship without a voice: text → why. Every entry needs a reason."""
+    entries = _entries(path)
+    unexplained = [text for text, why in entries.items() if not isinstance(why, str) or not why.strip()]
+    if unexplained:
+        raise ValueError(f"{path.name}: every unvoiced text needs a reason; missing for {unexplained}")
+    return entries
 
 
 def _entries(path: Path) -> dict:

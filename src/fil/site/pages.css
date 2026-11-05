@@ -23,6 +23,10 @@ a { color: var(--accent); }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 .top { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; max-width: 760px; margin: 0 auto; padding: 14px 16px; }
 .brand { font-weight: 650; font-size: 1.2rem; color: var(--ink); text-decoration: none; margin-inline-end: auto; }
+.sections { display: flex; gap: 4px; }
+.sections a { display: inline-flex; align-items: center; min-height: 32px; padding: 6px 14px; border-radius: 999px; font-weight: 500; color: var(--muted); text-decoration: none; white-space: nowrap; background: color-mix(in srgb, var(--line) 55%, transparent); }
+.sections a:hover { color: var(--ink); }
+.sections a[aria-current] { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
 .languages { position: relative; }
 .languages summary { cursor: pointer; color: var(--muted); }
 .languages[open] > a { display: inline-block; margin: 4px 10px 0 0; }
@@ -196,3 +200,5 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .cta h3 { margin-top: 24px; }
 .noun-list a { grid-template-columns: 3em 32px 1fr 2fr auto; }
 @media (max-width: 560px) { .noun-list a { grid-template-columns: 2.5em 32px 1fr; } .noun-list .meaning { grid-column: 3; } .noun-list .count { grid-column: 2 / -1; font-size: 12px; } }
+.noun-links a { display: inline-flex; align-items: center; gap: 8px; }
+.noun-links .thumb { width: 24px; height: 24px; border-radius: 6px; background: var(--accent-soft); padding: 2px; }

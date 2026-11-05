@@ -34,7 +34,7 @@ from collections.abc import Iterable, Sequence
 from dataclasses import replace
 from pathlib import Path
 
-from fil import service
+from fil import noun_store, service
 from fil.languages import LANGUAGES
 from fil.pages import deploy, indexing, interface_text, render, seo, share_image
 from fil.pages.render import PublishedVerb
@@ -43,7 +43,7 @@ from fil.recitation import is_streamed
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
 from fil.stages import noun_pages, site
-from fil.stages.noun_site import assemble_nouns
+from fil.stages.noun_site import NounContent, assemble_nouns, check_voiced
 
 _SOURCES = Path(__file__).resolve().parents[1] / "site"
 _VERIFICATION = _SOURCES / "verification"
@@ -84,10 +84,11 @@ def build(pages: Path) -> bool:
         return False
     verbs = published_verbs(content.cards, [verb.lemma for verb in service.list_verbs()])
     nouns = _assemble_nouns(sink, verbs)
+    check_voiced(nouns.cards, noun_store.load_unvoiced())
     content = replace(content, payload={**content.payload, "nounPages": noun_pages.app_paths() if nouns.cards else {}})
     site.write_app(pages, content)
     _write_app_page(pages, texts)
-    written = [*_write_language_pages(pages, verbs, texts, nouns.cards)]
+    written = [*_write_language_pages(pages, verbs, texts, nouns)]
     written += noun_pages.write(pages, nouns, texts)
     _write_site_files(pages, verbs, texts, nouns.cards)
     check_audio_links(pages, written)
@@ -135,13 +136,19 @@ def _assemble_nouns(sink, verbs: list[PublishedVerb]):
 
 
 def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
-                          nouns: Sequence[dict] = ()) -> Iterable[Path]:
+                          nouns: NounContent) -> Iterable[Path]:
+    credit_for = noun_pages.credits(nouns.pictures)
+    has_nouns = bool(nouns.cards)
     for language in LANGUAGES:
         text = texts[language.code]
-        yield _write(pages, seo.language_index_path(language.code), render.language_index(verbs, language, text))
+        yield _write(pages, seo.language_index_path(language.code),
+                     render.language_index(verbs, language, text, has_nouns=has_nouns))
         for verb in verbs:
-            related = noun_pages.nouns_of_verb(verb.card, nouns, language, text)
-            yield _write(pages, seo.verb_path(language.code, verb.slug), render.verb_page(verb, language, text, related))
+            related = noun_pages.nouns_of_verb(verb.card, nouns.cards)
+            section = noun_pages.nouns_of_verb_section(related, language, text)
+            credit = credit_for(related) if section else ""
+            yield _write(pages, seo.verb_path(language.code, verb.slug),
+                         render.verb_page(verb, language, text, section, has_nouns=has_nouns, picture_credit=credit))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:

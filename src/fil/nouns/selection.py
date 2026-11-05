@@ -15,6 +15,7 @@ Pure.
 
 from __future__ import annotations
 
+import unicodedata
 from collections.abc import Iterable, Sequence
 
 from fil.nouns.model import ADJECTIVE, ADVERB, PROPER_NOUN, NounLemma
@@ -27,13 +28,27 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "لَدُن": "adverb", "فَوْق": "adverb", "تَحْت": "adverb", "حَوْل": "adverb", "أَمام": "adverb",
     "خَلْف": "adverb", "وَراء": "adverb", "حَيْث": "adverb", "إِذْ": "adverb", "إِذا": "adverb",
     "مَعَ": "adverb", "شَطْر": "adverb", "سُبْحان": "exclamation", "أَيْن": "interrogative", "أَنَّى": "interrogative",
+    # Adjectives the corpus files as nouns: in the Quran they describe (كِتَابٌ مُبِينٌ, خَالِدِينَ
+    # فِيهَا, عَزِيزٌ حَكِيمٌ) and wait for the adjective phase with their peers (عَلِيم, رَحِيم).
+    "آخَر": "adjective-like", "أَكْثَر": "adjective-like", "مُبِين": "adjective-like", "خالِد": "adjective-like",
+    "قَلِيل": "adjective-like", "كَثِير": "adjective-like", "عَزِيز": "adjective-like", "غَفُور": "adjective-like",
+    "بَصِير": "adjective-like", "أَعْلَم": "adjective-like", "أَحَد": "pronoun-like", "جَمِيع": "quantifier",
 }
 _NOT_TAUGHT_KINDS = {ADVERB: "adverb", ADJECTIVE: "adjective", PROPER_NOUN: "proper name"}
 
 
 def skip_reason(lemma: NounLemma) -> str | None:
     """Why this lemma gets no noun card, or None when it does."""
-    return _NOT_TAUGHT_KINDS.get(lemma.kind) or NOT_TAUGHT_AS_NOUNS.get(lemma.lemma)
+    return _NOT_TAUGHT_KINDS.get(lemma.kind) or _NOT_TAUGHT_BY_CANONICAL_SPELLING.get(_canonical(lemma.lemma))
+
+
+def _canonical(text: str) -> str:
+    """The corpus writes shadda before the vowel (أَوَّل as أ َ و ّ َ ل), the list after it: NFC
+    puts both in the same order, so a lemma is found however its marks are ordered."""
+    return unicodedata.normalize("NFC", text)
+
+
+_NOT_TAUGHT_BY_CANONICAL_SPELLING = {_canonical(lemma): reason for lemma, reason in NOT_TAUGHT_AS_NOUNS.items()}
 
 
 def next_nouns(lemmas: Sequence[NounLemma], count: int, studied: Iterable[str],

@@ -33,6 +33,12 @@ _SEATED_DAGGER_ALEF = re.compile(chr(0x0649) + chr(0x0670) + "(?=[" + chr(0x0621
 # folded before `orthographic_key`, which reads one over yāʾ as a mere reading aid.
 _DAGGER_AFTER_FATHA = re.compile("(?<=[" + chr(0x064E) + chr(0x0651) + "])" + chr(0x0670))
 _MEDIAL_MADD = re.compile("(?<=.)آ")
+# Uthmani writes some long ā on a silent wāw (ٱلصَّلَوٰة, ٱلْحَيَوٰة, ٱلزَّكَوٰة): a wāw carrying the
+# dagger alif directly, with no vowel of its own, is only the alif's seat — imlāʾī الصَّلَاة.
+_SILENT_WAW_SEAT = "و" + chr(0x0670)
+# Before a word that starts with lām, Uthmani drops the article's lām (ٱلَّيْل); imlāʾī keeps
+# it (اللَّيْل). Both are folded to one lām, so they key alike.
+_ARTICLE_BEFORE_LAM = "الل"
 
 
 def spelling_key(form: str) -> str:
@@ -42,12 +48,13 @@ def spelling_key(form: str) -> str:
     the alif does not (CAMeL omits it), nunation may be written before or after its seat
     alif (كِتَابًا / كِتاباً), and the sukūn of the article is a reading aid.
     """
-    text = unicodedata.normalize("NFD", form)
+    text = unicodedata.normalize("NFD", form).replace(_SILENT_WAW_SEAT, _ALEF)
     text = "".join(_OPEN_TANWIN.get(char, char) for char in text)
     text = _DAGGER_AFTER_FATHA.sub(_ALEF, text)
     text = orthographic_key(text).replace(_ALEF + _FATHATAN, _FATHATAN + _ALEF)
     text = text.replace(_FATHA + _SHADDA + _ALEF, _SHADDA + _ALEF)   # NFD puts fatḥa before shadda
-    return text.replace(_FATHA + _ALEF, _ALEF).replace(_SUKUN, "")
+    text = text.replace(_FATHA + _ALEF, _ALEF).replace(_SUKUN, "")
+    return "ال" + text[len(_ARTICLE_BEFORE_LAM):] if text.startswith(_ARTICLE_BEFORE_LAM) else text
 
 
 def skeleton(form: str) -> str:

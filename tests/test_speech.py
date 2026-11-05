@@ -93,6 +93,9 @@ def test_only_the_long_a_the_model_reads_short_is_spelled_out(text, spelled):
     "سَقَى الْبُسْتَانِيُّ الْجَنَّةَ",  # ī+y for i-yy
     "صَنَعْتُ عَصِيرًا مِنَ الرُّمَّانِ",  # صَنَعْتُ matched the loan word "net"
     "عَدُوٌّ", "أَبْوَابٌ", "كَانَ", "وَاسْمُ", "شَيْـًٔا",
+    "بِٱلَّيْلِ",                        # Uthmani drops the article's lām before lām: bi-l-layli
+    "طَرِيقُ ٱلْهُدَىٰ", "ٱلْهُدَىٰ",      # final ىٰ is one long ā, not two
+    "ٱلنَّبِىُّ", "اسْمُ ٱلنَّبِىِّ",      # undotted ى with shadda is the consonant yāʾ
 ])
 def test_both_readers_agree_on_correct_texts(text):
     pytest.importorskip("tts_arabic.text")

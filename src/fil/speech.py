@@ -57,12 +57,22 @@ _SILENT_UTHMANI = "ۣۜ۟۠ۡۢۤۥۦۧۨ۩۪ۭ۫۬ٓ"
 def prepared(text: str) -> str:
     """The text rewritten so the model reads every vowel as written."""
     text = "".join(char for char in text if char not in _SILENT_UTHMANI)
+    text = _UTHMANI_FINAL_ALIF_MAQSURA.sub(ALIF_MAQSURA, text)
+    text = _UTHMANI_VOWELLED_YA.sub("ي", text)
     text = text.replace(FATHA + SUPERSCRIPT_ALIF, FATHA + "ا").replace(SUPERSCRIPT_ALIF, "ا")
     text = _with_hamza_on_the_line(text)
     words = [_prepared_word(word) for word in text.split()]
     if words:
         words[0] = _opening(words[0])
     return " ".join(words)
+
+
+ALIF_MAQSURA = "ى"
+# Uthmani writes a final ā as ى with a small alif over it (ٱلْهُدَىٰ): the ى already is the
+# long ā, so the small alif is not a second one.
+_UTHMANI_FINAL_ALIF_MAQSURA = re.compile(ALIF_MAQSURA + SUPERSCRIPT_ALIF + r"(?=\s|$)")
+# Uthmani writes yāʾ undotted where it carries a vowel or shadda (ٱلنَّبِىُّ): a consonant yāʾ.
+_UTHMANI_VOWELLED_YA = re.compile(ALIF_MAQSURA + f"(?=[{FATHA}{DAMMA}{KASRA}{FATHATAN}{DAMMATAN}{KASRATAN}{SHADDA}])")
 
 
 # Uthmani script seats a hamza with no carrier on a tatweel (يَسْـَٔلُ, from سَأَلَ); the
@@ -206,13 +216,14 @@ def _is_connecting_alif_after_proclitic(letters: list["_Letter"], position: int)
 
 
 def _is_article_after_proclitic(letters: list["_Letter"], position: int) -> bool:
-    """The alif of al- behind bi-/wa-/fa-/ka-/li- (بِالْحَقِّ) is not pronounced."""
+    """The alif of al- behind bi-/wa-/fa-/ka-/li- (بِالْحَقِّ) is not pronounced — also when the
+    article's lām is itself doubled, the next word starting with lām (Uthmani بِٱلَّيْلِ)."""
     if position != 1 or letters[0].base not in "بفوكل" or not letters[0].vowel:
         return False
     if letters[1].base != "ا" or letters[1].vowel or len(letters) < 3 or letters[2].base != "ل":
         return False
     after_l = letters[3] if len(letters) > 3 else None
-    return letters[2].sukun or bool(after_l and after_l.shadda)
+    return letters[2].sukun or letters[2].shadda or bool(after_l and after_l.shadda)
 
 
 def _joins_sun_letter(letters: list["_Letter"], position: int) -> bool:

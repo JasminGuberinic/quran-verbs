@@ -85,9 +85,27 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   checked voice (the two readers in fil.speech disagree). Fix the reader with a golden test in
   tests/test_speech.py (the model's phonetiser has known slips: wā/kā read short, tanwīn before
   shadda, "net" for صَنَعْتُ) — `data/noun_unvoiced.json` (text → why) is the last resort.
+- Fixed in batch 2 (no longer needed): Uthmani ٱلصَّلَوٰة/ٱلْحَيَوٰة/ٱلَّيْل now key like imlāʾī
+  spellings in the table lookup, and the voice reads ىٰ, undotted ىّ and بِٱلَّيْلِ correctly.
 - عَذَاب is torment/punishment, not everyday pain (refused once).
 - An object noun without a possessor can be unnatural (غَسَلَ الْأَطْفَالُ الْأَيْدِيَ): Arabic says
   أَيْدِيَهُمْ, which the table cannot hold — choose another sentence.
+
+- Batch 2 (2026-11-05): the planner lets through adjectives the corpus files as nouns
+  (مُبِين، خالِد، قَلِيل، كَثِير، أَكْثَر، آخَر، عَزِيز، غَفُور، بَصِير، أَعْلَم) and أَحَد/جَمِيع — add
+  them to `NOT_TAUGHT_AS_NOUNS` (fil/nouns/selection.py, NFC-matched) and re-plan until clean;
+  God-only nouns (رَحْمٰن) go to `HELD_BACK`.
+- Plural-only lemmas (آباء، أَصْحاب) get no table from CAMeL: document the P row in
+  `noun_overrides.json`. Override keys are number|state|case, so a second-plural row (P2) cannot
+  be targeted — leave its gaps. A relation's `lemma` must spell the related word's letters
+  (the corpus's امْرَأَت|مرأ fails for امْرَأَةٌ): omit it then. Copy relation keys from
+  batch.txt — a key typed with shadda/vowel in the other order is silently "missing" in status.
+- Draft spelling: `*بِالْ…` (star before the attached preposition, never `بِ*`); a definite
+  ابْن is written الْاِبْن in the table — use construct ابْنُ … instead.
+- Lexicon gaps for Quranic senses are root-keyed in gloss_exceptions.json (angel, guardian,
+  favor, righteous, warner, witness, evil added). Glosses that fail: sought → "requested",
+  boy (الْوَلَد) → "child", big → "large", buys → "purchases", policeman → "police officer",
+  topic (مَوْضُوع) → "subject", drew → "sketched"; قَبْلَ/بَعْدَ are not prepositions for the role.
 
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.

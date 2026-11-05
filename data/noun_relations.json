@@ -215,5 +215,83 @@
  "جَنَّة|جنن": {
   "kind": "ordinary",
   "why": "Reviewed: جِنّ (jinn) and جُنَّة (shield) share the root but are other words; جَنَّة is an ordinary noun with the plural جَنَّات."
+ },
+ "رَحْمَة|رحم": {
+  "kind": "ordinary",
+  "why": "Reviewed: رَحِم (womb, kinship) shares the root but is another word, not a collective of رَحْمَة."
+ },
+ "مَثَل|مثل": {
+  "kind": "ordinary",
+  "why": "Reviewed: مِثْل (like, the same as) is another word; مَثَل is an ordinary noun with the plural أَمْثَال."
+ },
+ "هُدًى|هدي": {
+  "kind": "ordinary",
+  "why": "Reviewed: هَدْي (the sacrificial animal) is another word; هُدًى is a verbal noun with no plural."
+ },
+ "لَيْل|ليل": {
+  "kind": "ordinary",
+  "why": "Reviewed: لَيْل is night as a time, agreeing as a masculine singular (وَاللَّيْلِ إِذَا يَغْشَى 92:1), not a group of nights; لَيْلَة (one night, لَيْلَةِ الْقَدْرِ 97:1) is a word of its own whose plural لَيَالٍ the corpus files under لَيْل."
+ },
+ "أَصْحاب|صحب": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَصْحَاب is the broken plural of صَاحِب (Quran 18:34 فَقَالَ لِصَاحِبِهِ), which the corpus files as its own lemma; a plural with a singular is not a collective."
+ },
+ "صالِح|صلح": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine صَالِحَة is the regular feminine of a participle (taught with the adjectives); صَالِح the prophet is a proper name."
+ },
+ "وَجْه|وجه": {
+  "kind": "ordinary",
+  "why": "Reviewed: وِجْهَة (a direction, 2:148) is another word; وَجْه is an ordinary noun with the plural وُجُوه."
+ },
+ "بَيِّنَة|بين": {
+  "kind": "ordinary",
+  "why": "Reviewed: the feminine of the adjective بَيِّن used as a noun (a clear proof), with the plural بَيِّنَات; not a singulative of a collective."
+ },
+ "آباء|أبو": {
+  "kind": "ordinary",
+  "why": "Reviewed: آبَاء is the plural of أَب (Quran 12:8 إِنَّ أَبَانَا), which the corpus files as its own lemma; a plural with a singular is not a collective."
+ },
+ "أُمَّة|أمم": {
+  "kind": "ordinary",
+  "why": "Reviewed: أُمّ (mother) shares the root but is another word; أُمَّة is an ordinary noun with the plural أُمَم."
+ },
+ "صالِحَة|صلح": {
+  "kind": "ordinary",
+  "why": "Reviewed: the regular feminine of the participle صَالِح, used as a noun (a good deed, الصَّالِحَات); not a singulative of a collective."
+ },
+ "صادِق|صدق": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine صَادِقَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "نِساء|نسو": {
+  "kind": "collective",
+  "agreement": "F",
+  "why": "اسم جمع: women, no singular of its own root; one woman is امْرَأَة (Quran 4:12 أَوِ امْرَأَةٌ). نِسْوَة (12:30) is a second Quranic form of the same collective. Agreement is feminine: فَإِنْ كُنَّ نِسَاءً (4:11), نِسَاؤُكُمْ حَرْثٌ لَكُمْ (2:223) with feminine plural pronouns. (The corpus files امْرَأَة as امْرَأَت|مرأ, whose letters the relation check cannot match, so no lemma link.)",
+  "related": [
+   {
+    "role": "one",
+    "ar": "امْرَأَةٌ",
+    "gender": "F",
+    "en": "a woman",
+    "bs": "žena (jedna)"
+   }
+  ]
+ },
+ "سَيِّئَة|سوأ": {
+  "kind": "ordinary",
+  "why": "Reviewed: the feminine of the adjective سَيِّئ used as a noun (a misdeed), with the plural سَيِّئَات; سُوء (evil) is another word."
+ },
+ "سُوء|سوأ": {
+  "kind": "ordinary",
+  "why": "Reviewed: سَيِّئَة (a misdeed) is another word; سُوء is a verbal noun with no plural."
+ },
+ "عَدُوّ|عدو": {
+  "kind": "ordinary",
+  "why": "Reviewed: عُدْوَان (aggression) and عَدْو (running) are other words; عَدُوّ has the plural أَعْدَاء (it may also stand for a group: فَإِنَّهُمْ عَدُوٌّ لِي 26:77)."
+ },
+ "نِعْمَة|نعم": {
+  "kind": "ordinary",
+  "why": "Reviewed: نَعَم/أَنْعَام (livestock) share the root but are other words; نِعْمَة has the plurals نِعَم and أَنْعُم."
  }
 }

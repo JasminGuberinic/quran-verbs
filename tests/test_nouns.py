@@ -122,6 +122,13 @@ def test_one_spelling_key_for_uthmani_imlai_and_camel():
     assert spelling_key("نَهَرٌ") != spelling_key("نَهْرٌ")
 
 
+def test_uthmani_silent_waw_and_dropped_article_lam_fold_to_imlai():
+    assert spelling_key("ٱلصَّلَوٰةُ") == spelling_key("الصَّلَاةُ")
+    assert spelling_key("حَيَوٰةٌ") == spelling_key("حَيَاةٌ")
+    assert spelling_key("ٱلَّيْلُ") == spelling_key("اللَّيْلُ")
+    assert spelling_key("ٱلسَّمَٰوَٰتِ") == spelling_key("السَّمَاوَاتِ")   # a voweled wāw stays a wāw
+
+
 def test_skeleton_and_standalone():
     assert skeleton("ءَايَٰتِ") == skeleton("ـَٔايَٰتِ") == skeleton("آيات")
     assert skeleton("أَيَّىٰمٍ") == "ءيام"

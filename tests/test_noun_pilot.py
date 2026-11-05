@@ -205,6 +205,12 @@ def test_adverbs_quantifiers_and_adjectives_get_no_noun_card():
     assert skip_reason(lemma("بَيْت")) is None
 
 
+def test_a_lemma_is_skipped_whatever_order_its_marks_come_in():
+    from fil.nouns.model import NOUN, NounLemma
+    shadda_before_fatha = "\u0623\u064e\u0648\u0651\u064e\u0644"  # أَوَّل as the corpus writes it
+    assert skip_reason(NounLemma(shadda_before_fatha, "r", NOUN, None, 1, 1, None, (), 0, (), None)) == "adjective-like"
+
+
 # ---------------------------------------------------------------- the case explanation
 
 @pytest.mark.parametrize(("nominative", "expected"), [

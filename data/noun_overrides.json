@@ -73,5 +73,249 @@
    "text": "بَقَرَاتٍ",
    "why": "CAMeL generates nothing for بَقَرَة; its sound feminine plural is Quranic (بَقَرَٰتٍ 12:43), declined regularly (-ātu/-āti)"
   }
+ },
+ "آباء|أبو": {
+  "P|definite|NOM": {
+   "text": "الْآبَاءُ",
+   "why": "آبَاء is the plural of أَب, filed by the corpus as its own lemma and only ever with a possessive (آبَاؤُنَا); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|definite|ACC": {
+   "text": "الْآبَاءَ",
+   "why": "آبَاء is the plural of أَب, filed by the corpus as its own lemma and only ever with a possessive (آبَاؤُنَا); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الْآبَاءِ",
+   "why": "آبَاء is the plural of أَب, filed by the corpus as its own lemma and only ever with a possessive (آبَاؤُنَا); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|NOM": {
+   "text": "آبَاءٌ",
+   "why": "آبَاء is the plural of أَب, filed by the corpus as its own lemma and only ever with a possessive (آبَاؤُنَا); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|ACC": {
+   "text": "آبَاءً",
+   "why": "آبَاء is the plural of أَب, filed by the corpus as its own lemma and only ever with a possessive (آبَاؤُنَا); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "آبَاءٍ",
+   "why": "آبَاء is the plural of أَب, filed by the corpus as its own lemma and only ever with a possessive (آبَاؤُنَا); CAMeL generates no form of it — the regular triptote declension"
+  }
+ },
+ "أَصْحاب|صحب": {
+  "P|definite|NOM": {
+   "text": "الْأَصْحَابُ",
+   "why": "أَصْحَاب is the plural of صَاحِب, filed by the corpus as its own lemma; CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَصْحَابَ",
+   "why": "أَصْحَاب is the plural of صَاحِب, filed by the corpus as its own lemma; CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَصْحَابِ",
+   "why": "أَصْحَاب is the plural of صَاحِب, filed by the corpus as its own lemma; CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَصْحَابًا",
+   "why": "أَصْحَاب is the plural of صَاحِب, filed by the corpus as its own lemma; CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَصْحَابٍ",
+   "why": "أَصْحَاب is the plural of صَاحِب, filed by the corpus as its own lemma; CAMeL generates no form of it — the regular triptote declension"
+  }
+ },
+ "ابْن|بني": {
+  "P|definite|NOM": {
+   "text": "الْأَبْنَاءُ",
+   "why": "the Quranic plural أَبْنَاء (21×, always with a possessive) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَبْنَاءَ",
+   "why": "the Quranic plural أَبْنَاء (21×, always with a possessive) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَبْنَاءِ",
+   "why": "the Quranic plural أَبْنَاء (21×, always with a possessive) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَبْنَاءٌ",
+   "why": "the Quranic plural أَبْنَاء (21×, always with a possessive) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَبْنَاءً",
+   "why": "the Quranic plural أَبْنَاء (21×, always with a possessive) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَبْنَاءٍ",
+   "why": "the Quranic plural أَبْنَاء (21×, always with a possessive) that CAMeL does not generate — the regular triptote declension"
+  }
+ },
+ "لَيْل|ليل": {
+  "P|definite|NOM": {
+   "text": "اللَّيَالِي",
+   "why": "لَيَالٍ (89:2) is a defective plural: CAMeL makes only the indefinite; the definite ends in -ī (-iya in the accusative), the indefinite accusative is لَيَالِيَ"
+  },
+  "P|definite|ACC": {
+   "text": "اللَّيَالِيَ",
+   "why": "لَيَالٍ (89:2) is a defective plural: CAMeL makes only the indefinite; the definite ends in -ī (-iya in the accusative), the indefinite accusative is لَيَالِيَ"
+  },
+  "P|definite|GEN": {
+   "text": "اللَّيَالِي",
+   "why": "لَيَالٍ (89:2) is a defective plural: CAMeL makes only the indefinite; the definite ends in -ī (-iya in the accusative), the indefinite accusative is لَيَالِيَ"
+  },
+  "P|indefinite|ACC": {
+   "text": "لَيَالِيَ",
+   "why": "لَيَالٍ (89:2) is a defective plural: CAMeL makes only the indefinite; the definite ends in -ī (-iya in the accusative), the indefinite accusative is لَيَالِيَ"
+  }
+ },
+ "أَخ|أخو": {
+  "S|definite|NOM": {
+   "text": "الْأَخُ",
+   "why": "CAMeL makes no definite nominative/accusative of أَخ; the regular declension (الْأَخِ is Quranic)"
+  },
+  "S|definite|ACC": {
+   "text": "الْأَخَ",
+   "why": "CAMeL makes no definite nominative/accusative of أَخ; the regular declension (الْأَخِ is Quranic)"
+  },
+  "P|definite|NOM": {
+   "text": "الْإِخْوَانُ",
+   "why": "the Quranic plural إِخْوَان (إِخْوَانًا 3:103) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|definite|ACC": {
+   "text": "الْإِخْوَانَ",
+   "why": "the Quranic plural إِخْوَان (إِخْوَانًا 3:103) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الْإِخْوَانِ",
+   "why": "the Quranic plural إِخْوَان (إِخْوَانًا 3:103) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|indefinite|NOM": {
+   "text": "إِخْوَانٌ",
+   "why": "the Quranic plural إِخْوَان (إِخْوَانًا 3:103) that CAMeL does not generate — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "إِخْوَانٍ",
+   "why": "the Quranic plural إِخْوَان (إِخْوَانًا 3:103) that CAMeL does not generate — the regular triptote declension"
+  }
+ },
+ "مَلَك|ملك": {
+  "S|definite|ACC": {
+   "text": "الْمَلَكَ",
+   "why": "CAMeL misreads مَلَك (as مُلْك/مَلِك); the regular declension of the Quranic word (ٱلْمَلَكُ 69:17)"
+  },
+  "S|definite|GEN": {
+   "text": "الْمَلَكِ",
+   "why": "CAMeL misreads مَلَك (as مُلْك/مَلِك); the regular declension of the Quranic word (ٱلْمَلَكُ 69:17)"
+  },
+  "D|definite|NOM": {
+   "text": "الْمَلَكَانِ",
+   "why": "the regular dual of مَلَك (ٱلْمَلَكَيْنِ 2:102)"
+  },
+  "D|definite|ACC": {
+   "text": "الْمَلَكَيْنِ",
+   "why": "the regular dual of مَلَك (ٱلْمَلَكَيْنِ 2:102)"
+  },
+  "D|indefinite|NOM": {
+   "text": "مَلَكَانِ",
+   "why": "the regular dual of مَلَك (ٱلْمَلَكَيْنِ 2:102)"
+  },
+  "D|indefinite|GEN": {
+   "text": "مَلَكَيْنِ",
+   "why": "the regular dual of مَلَك (ٱلْمَلَكَيْنِ 2:102)"
+  },
+  "P|indefinite|GEN": {
+   "text": "مَلَائِكَةٍ",
+   "why": "the indefinite genitive of the Quranic plural مَلَائِكَة"
+  }
+ },
+ "مال|مول": {
+  "P|definite|NOM": {
+   "text": "الْأَمْوَالُ",
+   "why": "the definite nominative/accusative of the Quranic plural أَمْوَال (ٱلْأَمْوَٰلِ 18:46) that CAMeL does not generate"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَمْوَالَ",
+   "why": "the definite nominative/accusative of the Quranic plural أَمْوَال (ٱلْأَمْوَٰلِ 18:46) that CAMeL does not generate"
+  }
+ },
+ "وَلِيّ|ولي": {
+  "P|indefinite|NOM": {
+   "text": "أَوْلِيَاءُ",
+   "why": "the Quranic plural أَوْلِيَاءَ is a diptote: indefinite -u, -a in accusative and genitive"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَوْلِيَاءَ",
+   "why": "the Quranic plural أَوْلِيَاءَ is a diptote: indefinite -u, -a in accusative and genitive"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَوْلِيَاءَ",
+   "why": "the Quranic plural أَوْلِيَاءَ is a diptote: indefinite -u, -a in accusative and genitive"
+  }
+ },
+ "صالِحَة|صلح": {
+  "P|indefinite|NOM": {
+   "text": "صَالِحَاتٌ",
+   "why": "the indefinite of the Quranic plural ٱلصَّٰلِحَٰتُ: a sound feminine plural, -in in accusative and genitive"
+  },
+  "P|indefinite|ACC": {
+   "text": "صَالِحَاتٍ",
+   "why": "the indefinite of the Quranic plural ٱلصَّٰلِحَٰتُ: a sound feminine plural, -in in accusative and genitive"
+  },
+  "P|indefinite|GEN": {
+   "text": "صَالِحَاتٍ",
+   "why": "the indefinite of the Quranic plural ٱلصَّٰلِحَٰتُ: a sound feminine plural, -in in accusative and genitive"
+  }
+ },
+ "صادِق|صدق": {
+  "P|indefinite|GEN": {
+   "text": "صَادِقِينَ",
+   "why": "the indefinite genitive of the sound plural صَادِقُونَ"
+  }
+ },
+ "قَرْيَة|قري": {
+  "P|definite|ACC": {
+   "text": "الْقُرَى",
+   "why": "قُرًى ends in alif maqsura: no case shows, the indefinite keeps tanwin"
+  },
+  "P|indefinite|NOM": {
+   "text": "قُرًى",
+   "why": "قُرًى ends in alif maqsura: no case shows, the indefinite keeps tanwin"
+  },
+  "P|indefinite|ACC": {
+   "text": "قُرًى",
+   "why": "قُرًى ends in alif maqsura: no case shows, the indefinite keeps tanwin"
+  },
+  "P|indefinite|GEN": {
+   "text": "قُرًى",
+   "why": "قُرًى ends in alif maqsura: no case shows, the indefinite keeps tanwin"
+  }
+ },
+ "شَهِيد|شهد": {
+  "P|indefinite|NOM": {
+   "text": "شُهَدَاءُ",
+   "why": "the Quranic plural شُهَدَاء is a diptote: indefinite -u, -a in accusative and genitive"
+  },
+  "P|indefinite|ACC": {
+   "text": "شُهَدَاءَ",
+   "why": "the Quranic plural شُهَدَاء is a diptote: indefinite -u, -a in accusative and genitive"
+  },
+  "P|indefinite|GEN": {
+   "text": "شُهَدَاءَ",
+   "why": "the Quranic plural شُهَدَاء is a diptote: indefinite -u, -a in accusative and genitive"
+  }
+ },
+ "عَدُوّ|عدو": {
+  "P|indefinite|NOM": {
+   "text": "أَعْدَاءٌ",
+   "why": "the regular triptote declension of the Quranic plural أَعْدَاء (أَعْدَآءً 3:103)"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَعْدَاءٍ",
+   "why": "the regular triptote declension of the Quranic plural أَعْدَاء (أَعْدَآءً 3:103)"
+  }
+ },
+ "بُنَىّ|بني": {
+  "P|definite|ACC": {
+   "text": "الْبَنِينَ",
+   "why": "the accusative of the sound plural بَنُونَ is بَنِينَ, as its genitive"
+  }
  }
 }

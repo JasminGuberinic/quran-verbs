@@ -128,3 +128,32 @@ speak of God or gods, owner's decision) and 25 picturable ones.
   sound plural that keeps its nūn as indefinite.
 - Pages: `/bs/imenica/<slug>/`, `/en/noun/<slug>/` + lists, in the sitemap; an "Imenice/Nouns"
   link in the app; verb pages list the studied nouns of their root.
+
+## Collectives, singulatives and male/female pairs (2026-11-05)
+
+A plain singular/dual/plural table teaches some nouns wrongly (owner's find: إِبِل). The rule,
+for the pilot and every batch — reviewed data in `data/noun_relations.json` (fil.nouns.relations,
+validated on load; rendering reads it, never guesses):
+
+- **Collective** (`collective`): a group with no singular of its own — اسم جمع (إِبِل، قَوْم، نَاس)
+  or اسم جنس جمعي with a singulative in -ة (نَخْل/نَخْلَة، طَيْر/طَائِر، تِين، زَيْتُون، رُمَّان، عِنَب).
+  It records its **agreement** as used (إِبِل F: الْإِبِلُ تَأْكُلُ; قَوْم M or F: قَالَ قَوْمُهُ /
+  كَذَّبَتْ قَوْمُ نُوحٍ; نَاس masculine plural) and its individual words: `one` (نَخْلَة, إِنْسَان),
+  `male`/`female` (إِبِل → جَمَل / نَاقَة). Its table has **no dual and no generated plural** — only
+  its own row, labelled "zbirno", plus a plural the Quran itself uses (أَعْنَاب); `fil nouns batch
+  tables` and the page build enforce it. Meanings are plural in sense ("deve", "ptice", "camels");
+  the Bosnian sg row is declined in the plural with `"pluralForms": ["sg"]`, so possessives agree
+  ("njegove deve"). Practice sentences use the right agreement (الْإِبِلُ تَأْكُلُ, feminine).
+- **Singulative** (`singulative`): the one of a collective (شَجَرَة of شَجَر، بَقَرَة of بَقَر).
+- **Pair** (`pair`): male and female are different words (عَبْد/أَمَة، كَلْب/كَلْبَة; بَقَرَة/ثَوْر).
+  Regular feminines of participles (مُؤْمِنَة) are not pairs — they are taught with adjectives.
+- **Ordinary** (`ordinary`): flagged by the batch check, reviewed, none of the above (جَبَل).
+
+The card's header says the kind and the agreement ("zbirna imenica (množina značenja) · ženski rod
+u slaganju"); a section shows each related word with its meaning, gender, Quranic count, voice (the
+reciter's clip where the Quran says that very word alone — نَاقَةٌ 26:155 — else the checked
+synthetic voice, gated like every noun text) and a link when it is a studied noun.
+
+**Batch check:** `fil nouns batch plan` writes `collectives.tsv` — lemmas that are known
+collectives, only ever plural with no pattern of their own, or have a same-root sibling with or
+without -ة — and `fil nouns batch status` lists each as lacking `relation` until it has an entry.

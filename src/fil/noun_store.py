@@ -5,6 +5,7 @@
     data/noun_bs_paradigms.json  {"يَد|يدي": {"cells", "genders", "prepositions"}}
     data/noun_sentences.json     {"يَد|يدي": [{"role": "subject", ...example}]}
     data/noun_unvoiced.json      {"<Arabic text>": "why it ships without a voice"}
+    data/noun_relations.json     {"إِبِل|أبل": {"kind", "agreement", "why", "related": [...]}}
 
 A small I/O adapter; what an entry must hold is decided in fil.nouns.studied and
 fil.nouns.bosnian.
@@ -18,10 +19,11 @@ from pathlib import Path
 from fil.example_store import from_dict, to_dict
 from fil.nouns import bosnian
 from fil.nouns.bosnian import BosnianNoun
+from fil.nouns.relations import NounRelation, parse_relations
 from fil.nouns.studied import (NounMeaning, NounSentence, NounTable, meaning_entry, parse_meaning, parse_table,
                                table_entry)
-from fil.resources import (NOUN_BS_PARADIGMS_JSON, NOUN_MEANINGS_JSON, NOUN_OVERRIDES_JSON, NOUN_SENTENCES_JSON,
-                           NOUN_TABLES_JSON, NOUN_UNVOICED_JSON)
+from fil.resources import (NOUN_BS_PARADIGMS_JSON, NOUN_MEANINGS_JSON, NOUN_OVERRIDES_JSON, NOUN_RELATIONS_JSON,
+                           NOUN_SENTENCES_JSON, NOUN_TABLES_JSON, NOUN_UNVOICED_JSON)
 
 _ABOUT = "_about"
 _ABOUTS = {
@@ -87,6 +89,11 @@ def save_sentences(sentences: list[NounSentence], path: Path = NOUN_SENTENCES_JS
     for sentence in sentences:
         grouped.setdefault(sentence.key, []).append({"role": sentence.role, "example": to_dict(sentence.example)})
     _write(path, grouped)
+
+
+def load_relations(path: Path = NOUN_RELATIONS_JSON) -> dict[str, NounRelation]:
+    """The reviewed collectives, singulatives and pairs (fil.nouns.relations), validated."""
+    return parse_relations(_entries(path))
 
 
 def load_unvoiced(path: Path = NOUN_UNVOICED_JSON) -> dict[str, str]:

@@ -30,6 +30,13 @@ to study-site when done (never main, never deploy).
    - iḍāfa: a construct head that is natural with this noun as possessor, nominative,
      full harakat (`بَابُ` + الْبَيْتِ → "vrata kuće"); en/bs translate the head only.
    `fil nouns batch meanings build/nouns/batch/meanings.tsv`.
+   **Collectives, singulatives, pairs** (docs/NOUNS-PLAN.md): review every lemma in
+   `build/nouns/batch/collectives.tsv` (and any collective you spot yourself: herds, crops, fruit,
+   peoples) into `data/noun_relations.json` — `collective` (+ `agreement` F|M|MF|MP as the Quran
+   uses it, + `one`/`male`/`female` words), `singulative` (+ its `collective`), `pair` (+ `male` or
+   `female`), or `ordinary`; each with a `why` citing evidence, related words as indefinite
+   nominatives with full harakat (`ar`) and `lemma` lemma|root when the Quran has them. A
+   collective's meaning is plural in sense ("deve", "ptice"; `countable` n). Do this before tables.
 3. `fil nouns batch tables` → data/noun_tables.json (Quranic spellings first, CAMeL + gate for
    the rest; a second plural is its own row; a "plural" spelled like the singular is dropped as
    a collective). A cell CAMeL cannot make (عَصَا: it writes a vowel on the alif) may be
@@ -37,8 +44,8 @@ to study-site when done (never main, never deploy).
 4. Bosnian declensions: `fil nouns batch bs-sheet` → `bs-sheet.json`; split in two and give
    each half to a **Sonnet** sub-agent (prompt: decline the first bs word, one word per cell,
    du cells as "dvije ruke/dviju ruku/dvjema rukama", genders m/ma/f/n as a possessive agrees,
-   a preposition choice per Arabic preposition from the sheet's options; collectives such as
-   إِبِل get their sg row in the Bosnian plural). Import each with
+   a preposition choice per Arabic preposition from the sheet's options; a collective (إِبِل, طَيْر)
+   gets its sg row in the Bosnian plural — deve/deva/devama — and `"pluralForms": ["sg"]`). Import each with
    `fil nouns batch paradigms FILE` (validated: Latin Bosnian, every needed cell, allowed choices).
    Then **review the choices yourself** (one compact print): drvo → G "drveta" (not "drva");
    set a preposition to `"-"` where the verb, not the noun, decides the Bosnian case — `bi` for
@@ -51,13 +58,14 @@ to study-site when done (never main, never deploy).
    2–5 words, natural MSA, full harakat, standard spelling. The target must be a cell of the
    noun's table (or the construct form of an indefinite cell: رَبُّ الْبَيْتِ) — pick forms the table
    has (print it if unsure). A noun whose table lacks a case gets no sentence for that role
-   (إِبِل has only the genitive). `fil nouns batch check FILE` until clean, then `draft FILE`.
+   (fill a missing cell with a documented override first when CAMeL fails: إِبِل's NOM/ACC). For a
+   collective, agree as recorded: الْإِبِلُ تَأْكُلُ (feminine); translate in the plural ("ptice"). `fil nouns batch check FILE` until clean, then `draft FILE`.
 6. Blind review: `fil nouns batch review-export` → `blind.json`; ONE fresh general-purpose agent,
    strong model (opus), judges grammar (every case ending!), en + bs translation, noun usage and
    content policy, writes verdicts `{id, grammar_ok, translation_ok, noun_usage_ok, approved, note}`;
    `fil nouns batch review-import FILE`. Repair refused ones in a new draft file, export again,
    and review with a *fresh* agent.
-7. `fil nouns batch status` (what each noun still lacks), `fil pages` (log to a file; report only
+7. `fil nouns batch status` (what each noun still lacks, `relation` included), `fil pages` (log to a file; report only
    errors), `pytest -q`, `node --test tests/js`, commit, push.
 
 ## Content policy (as for verbs)

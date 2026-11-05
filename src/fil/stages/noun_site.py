@@ -26,9 +26,11 @@ from fil.nouns.compose import Composed, NounGlossing, compose, preposition_name,
 from fil.nouns.english import EnglishNoun
 from fil.nouns.model import NUMBERS, PROPER_NOUN, NounLemma, NounOccurrence
 from fil.nouns.pictures import NounPicture
+from fil.nouns.relations import NounRelation, RelatedNoun
+from fil.nouns.table import as_collective
 from fil.nouns.sentence_gate import ROLES
 from fil.nouns.spelling import spelling_key
-from fil.nouns.studied import SECOND_PLURAL, NounMeaning, NounSentence, NounTable, bosnian_numbers, noun_key
+from fil.nouns.studied import SECOND_PLURAL, InvalidNounData, NounMeaning, NounSentence, NounTable, bosnian_numbers, noun_key
 from fil.pages.slugs import assign_slugs
 from fil.quran_numbering import ayah_number
 from fil.stages import nouns as noun_stage
@@ -62,15 +64,19 @@ def assemble_nouns(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord,
     tables = noun_store.load_tables()
     bosnian = noun_store.load_bosnian({meaning.key: bosnian_numbers(tables[meaning.key]) for meaning in meanings})
     sentences = noun_store.load_sentences()
+    relations = _checked_relations(noun_store.load_relations(), {meaning.key for meaning in meanings}, by_key)
+    pages_of = {key: slugs[(lemma.lemma, lemma.root)] for key, lemma in by_key.items()
+                if key in {meaning.key for meaning in meanings}}
     pictures = {picture.key: picture for picture in _shown_pictures()}
     cards, lists = [], []
     for meaning in meanings:
         lemma = by_key[meaning.key]
         builder = _CardBuilder(lemma, meaning, tables[meaning.key], bosnian[meaning.key],
                                by_lemma[(lemma.lemma, lemma.root)], sound, ayat)
-        card = builder.card(slugs[(lemma.lemma, lemma.root)], verb_pages,
-                            [sentence for sentence in sentences if sentence.key == meaning.key],
-                            pictures.get((lemma.lemma, lemma.root)))
+        card = {**builder.card(slugs[(lemma.lemma, lemma.root)], verb_pages,
+                               [sentence for sentence in sentences if sentence.key == meaning.key],
+                               pictures.get((lemma.lemma, lemma.root))),
+                "relation": builder.relation(relations.get(meaning.key), by_lemma, pages_of)}
         cards.append(card)
         lists.extend(builder.ayat_lists(card))
         unvoiced = f" (not voiced, the two readers disagree: {' | '.join(builder.unvoiced)})" if builder.unvoiced else ""
@@ -81,6 +87,18 @@ def assemble_nouns(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord,
 
 def noun_ayat_file(slug: str, language: str | None = None) -> str:
     return f"ayat/noun-{slug}{f'.{language}' if language else ''}.json"
+
+
+def _checked_relations(relations: Mapping[str, NounRelation], studied: set[str],
+                       catalogued: Mapping[str, NounLemma]) -> Mapping[str, NounRelation]:
+    """The relations, refused when one names a noun nobody studies or a corpus lemma that
+    does not exist — a typo there would silently drop a Quranic clip or a link."""
+    unknown = [key for key in relations if key not in studied]
+    unknown += [f"{key} → {word.lemma}" for key, relation in relations.items() for word in relation.related
+                if word.lemma and word.lemma not in catalogued]
+    if unknown:
+        raise InvalidNounData(f"data/noun_relations.json names what is not studied or not in the corpus: {unknown}")
+    return relations
 
 
 def _shown_pictures() -> list[NounPicture]:
@@ -152,6 +170,30 @@ class _CardBuilder:
         main = next((row for row in self.table.rows if row.row in NUMBERS), None)
         said = (main.text("indefinite", "NOM"), main.text("definite", "NOM")) if main else ()
         return next((text for text in said if text), self.lemma.lemma)
+
+    # ---------------------------------------------------------------- collectives and pairs
+
+    def relation(self, relation: NounRelation | None, occurrences_of: Mapping[tuple[str, str], Sequence[NounOccurrence]],
+                 pages_of: Mapping[str, str]) -> dict | None:
+        """What kind of noun this is (fil.nouns.relations) and the words shown beside it, each
+        with its voice — the reciter's where the Quran says that very word alone — and a link
+        when it is a studied noun itself."""
+        if relation is None:
+            return None
+        if relation.is_collective and as_collective(self.table) != self.table:
+            raise InvalidNounData(f"{relation.key}: a collective's table shows a dual or plural — "
+                                  "run `fil nouns batch tables`")
+        return {"kind": relation.kind, "agreement": relation.agreement,
+                "related": [self._related(word, occurrences_of, pages_of) for word in relation.related]}
+
+    def _related(self, word: RelatedNoun, occurrences_of: Mapping[tuple[str, str], Sequence[NounOccurrence]],
+                 pages_of: Mapping[str, str]) -> dict:
+        found = occurrences_of.get(tuple(word.lemma.split("|")), ()) if word.lemma else ()
+        location = _recited_locations(found).get(spelling_key(word.arabic))
+        recited = self.sound.word(*location) if location else None
+        return {"role": word.role, "arabic": word.arabic, "gender": word.gender, "meaning": {"en": word.en, "bs": word.bs},
+                "audio": recited or self._spoken(word.arabic), "recited": bool(recited), "quranCount": len(found),
+                "slug": pages_of.get(word.lemma) if word.lemma else None}
 
     # ---------------------------------------------------------------- the case table
 
@@ -271,12 +313,14 @@ class UnvoicedNounText(Exception):
 
 def unvoiced_texts(card: dict) -> list[str]:
     """Every text of a card the synthetic voice should say but does not: the headword,
-    each case-table cell the Quran does not recite, each case example, each sentence."""
+    each case-table cell the Quran does not recite, each case example, each sentence, each
+    related word (a collective's one, a male or female)."""
     cells = [cell for row in card["table"] for cell in row["cells"] if cell["text"]]
     said = [(card["lemma"], card["lemmaSpoken"]),
             *((cell["text"], cell["audio"]) for cell in cells),
             *((example["arabic"], example["audio"]) for example in card["explanation"]),
-            *((sentence["arabic"], sentence["spoken"]) for sentence in card["sentences"])]
+            *((sentence["arabic"], sentence["spoken"]) for sentence in card["sentences"]),
+            *((word["arabic"], word["audio"]) for word in (card.get("relation") or {}).get("related", ()))]
     return [text for text, sound in said if not sound]
 
 

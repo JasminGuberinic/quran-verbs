@@ -1,0 +1,219 @@
+{
+ "_about": "Reviewed linguistic data (fil.nouns.relations): which studied nouns are collectives (no singular of their own; agreement as used), singulatives (the one of a collective) or one of a male/female pair, and the words their cards show beside them. `ar` is the indefinite nominative with full harakat; `lemma` is the corpus lemma|root when the Quran has the word. Every entry says why. Checked in every batch: `fil nouns batch plan` flags likely collectives.",
+ "إِبِل|أبل": {
+  "kind": "collective",
+  "agreement": "F",
+  "why": "اسم جمع: 'camels' as a herd, no singular of its own; one camel is جَمَل (male) or نَاقَة (female). Treated as feminine: الْإِبِلُ تَأْكُلُ, and its diminutive is أُبَيْلَة. No dual or plural of its own meaning (آبَال is rare, not Quranic). Triptote: إِبِلٌ إِبِلًا إِبِلٍ.",
+  "related": [
+   {
+    "role": "male",
+    "ar": "جَمَلٌ",
+    "gender": "M",
+    "en": "camel (male)",
+    "bs": "deva (mužjak)",
+    "lemma": "جَمَل|جمل"
+   },
+   {
+    "role": "female",
+    "ar": "نَاقَةٌ",
+    "gender": "F",
+    "en": "she-camel",
+    "bs": "deva (ženka)",
+    "lemma": "ناقَة|نوق"
+   }
+  ]
+ },
+ "قَوْم|قوم": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جمع: a people, a group of men, no singular of its own. The Quran agrees with it both ways: قَالَ قَوْمُهُ (masculine) and كَذَّبَتْ قَوْمُ نُوحٍ (feminine); pronouns referring to it are mostly masculine plural. Its plural أَقْوَام is not Quranic."
+ },
+ "ناس|أنس": {
+  "kind": "collective",
+  "agreement": "MP",
+  "why": "اسم جمع: people, no singular of its own; one person is إِنْسَان (same root). Treated as masculine plural: يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمُ. The corpus tags it plural; it has no plural or dual of its own.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "إِنْسَانٌ",
+    "gender": "M",
+    "en": "a human being",
+    "bs": "čovjek",
+    "lemma": "إِنسان|أنس"
+   }
+  ]
+ },
+ "نَخْل|نخل": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي: date palms as a kind; one palm is نَخْلَة (Quran 19:23 جِذْعِ النَّخْلَةِ). Both agreements are Quranic: أَعْجَازُ نَخْلٍ مُنْقَعِرٍ (54:20) and أَعْجَازُ نَخْلٍ خَاوِيَةٍ (69:7). نَخِيل is a separate lemma.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "نَخْلَةٌ",
+    "gender": "F",
+    "en": "a date palm",
+    "bs": "palma (jedna)",
+    "lemma": "نَخْلَة|نخل"
+   }
+  ]
+ },
+ "طَيْر|طير": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي (some count it a plural of طَائِر): birds; one bird is طَائِر (Quran 6:38 وَلَا طَائِرٍ يَطِيرُ بِجَنَاحَيْهِ). Agreement in the Quran is feminine (وَالطَّيْرَ مَحْشُورَةً 38:19, وَالطَّيْرُ صَافَّاتٍ 24:41) or masculine with the verb before it (غَرَّدَ الطَّيْرُ is correct).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "طَائِرٌ",
+    "gender": "M",
+    "en": "a bird",
+    "bs": "ptica (jedna)",
+    "lemma": "طائِر|طير"
+   }
+  ]
+ },
+ "تِين|تين": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي: figs; one fig is تِينَة (not in the Quran).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "تِينَةٌ",
+    "gender": "F",
+    "en": "a fig",
+    "bs": "smokva (jedna)"
+   }
+  ]
+ },
+ "زَيْتُون|زيت": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي: olives, olive trees; one is زَيْتُونَة (Quran 24:35 شَجَرَةٍ مُبَارَكَةٍ زَيْتُونَةٍ).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "زَيْتُونَةٌ",
+    "gender": "F",
+    "en": "an olive (tree)",
+    "bs": "maslina (jedna)",
+    "lemma": "زَيْتُونَة|زيت"
+   }
+  ]
+ },
+ "رُمّان|رمن": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي: pomegranates; one is رُمَّانَة (not in the Quran).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "رُمَّانَةٌ",
+    "gender": "F",
+    "en": "a pomegranate",
+    "bs": "nar (jedan)"
+   }
+  ]
+ },
+ "عِنَب|عنب": {
+  "kind": "collective",
+  "agreement": "MF",
+  "why": "اسم جنس جمعي: grapes; one grape is عِنَبَة (not in the Quran). Its plural أَعْنَاب (vines, kinds of grapes) is Quranic and stays in the table.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "عِنَبَةٌ",
+    "gender": "F",
+    "en": "a grape",
+    "bs": "boba grožđa"
+   }
+  ]
+ },
+ "شَجَرَة|شجر": {
+  "kind": "singulative",
+  "why": "اسم الوحدة: one tree, of the collective شَجَر 'trees' (Quran 55:6 وَالنَّجْمُ وَالشَّجَرُ يَسْجُدَانِ).",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "شَجَرٌ",
+    "gender": "M",
+    "en": "trees",
+    "bs": "drveće",
+    "lemma": "شَجَر|شجر"
+   }
+  ]
+ },
+ "بَقَرَة|بقر": {
+  "kind": "singulative",
+  "why": "اسم الوحدة: one head of cattle, a cow, of the collective بَقَر (Quran 2:70 إِنَّ الْبَقَرَ تَشَابَهَ عَلَيْنَا). The bull is ثَوْر (not in the Quran).",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "بَقَرٌ",
+    "gender": "M",
+    "en": "cattle",
+    "bs": "goveda",
+    "lemma": "بَقَر|بقر"
+   },
+   {
+    "role": "male",
+    "ar": "ثَوْرٌ",
+    "gender": "M",
+    "en": "bull",
+    "bs": "bik"
+   }
+  ]
+ },
+ "عَبْد|عبد": {
+  "kind": "pair",
+  "why": "The female of عَبْد (male slave, servant) is أَمَة (Quran 2:221 وَلَأَمَةٌ مُؤْمِنَةٌ). عَبْد of God is said of men and women alike.",
+  "related": [
+   {
+    "role": "female",
+    "ar": "أَمَةٌ",
+    "gender": "F",
+    "en": "female slave",
+    "bs": "robinja",
+    "lemma": "أَمَة|أمو"
+   }
+  ]
+ },
+ "كَلْب|كلب": {
+  "kind": "pair",
+  "why": "The female of كَلْب (dog) is كَلْبَة (standard Arabic, not in the Quran).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "كَلْبَةٌ",
+    "gender": "F",
+    "en": "female dog",
+    "bs": "kuja"
+   }
+  ]
+ },
+ "مُؤْمِن|أمن": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine مُؤْمِنَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "كافِر|كفر": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine كَافِرَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "ظالِم|ظلم": {
+  "kind": "ordinary",
+  "why": "Reviewed: its feminine ظَالِمَة is the regular feminine of a participle, not a different word; agreement is taught with the adjectives."
+ },
+ "خَيْر|خير": {
+  "kind": "ordinary",
+  "why": "Reviewed: خِيَرَة/خَيْرَات are other words (choice; good things), not a singulative of خَيْر."
+ },
+ "جَبَل|جبل": {
+  "kind": "ordinary",
+  "why": "Reviewed: جِبِلَّة (a multitude, a created nature) is another word; جَبَل is an ordinary noun with the plural جِبَال."
+ },
+ "جَنَّة|جنن": {
+  "kind": "ordinary",
+  "why": "Reviewed: جِنّ (jinn) and جُنَّة (shield) share the root but are other words; جَنَّة is an ordinary noun with the plural جَنَّات."
+ }
+}

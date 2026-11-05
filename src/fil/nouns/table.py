@@ -13,7 +13,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import replace
 
 from fil.nouns import gate
-from fil.nouns.model import (ATTESTED, MISSING, NUMBERS, PLURAL, SINGULAR, NounLemma, NounOccurrence, ParadigmCell,
+from fil.nouns.model import (ATTESTED, DUAL, MISSING, NUMBERS, PLURAL, SINGULAR, NounLemma, NounOccurrence, ParadigmCell,
                              table_cells)
 from fil.nouns.spelling import spelling_key
 from fil.nouns.paradigm import NounGenerator, build_paradigm
@@ -33,6 +33,15 @@ def build_table(lemma: NounLemma, occurrences: Sequence[NounOccurrence], generat
     singular = {spelling_key(found.text) for row in rows if row.number == SINGULAR for found in row.cells if found.text}
     kept = (row for row in rows if _has_text(row) and not _is_collective(row, singular))
     return NounTable(noun_key(lemma.lemma, lemma.root), tuple(kept))
+
+
+def as_collective(table: NounTable) -> NounTable:
+    """A collective's table (fil.nouns.relations): its own row and nothing it has no meaning
+    for. إِبِل "camels" has no dual and no plural; a generated one would teach a word Arabic
+    does not use. A plural the Quran itself says (أَعْنَاب of عِنَب, "vines") stays."""
+    own, *others = table.rows
+    kept = [row for row in others if row.number != DUAL and any(found.source == ATTESTED for found in row.cells)]
+    return replace(table, rows=(own, *kept))
 
 
 def with_documented(table: NounTable, documented: Mapping[str, Mapping[str, str]], lemma: str) -> NounTable:

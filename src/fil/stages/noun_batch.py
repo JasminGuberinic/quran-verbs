@@ -2,7 +2,9 @@
 
     fil nouns batch plan next N        the N most frequent teachable nouns not yet studied
     fil nouns batch plan FILE          the nouns listed in FILE (one lemma or lemma|root per line)
-                                       → build/nouns/batch/{batch.txt, plan.tsv, todo-meanings.tsv}
+                                       → build/nouns/batch/{batch.txt, plan.tsv, todo-meanings.tsv, collectives.tsv}
+                                       (collectives.tsv: likely collectives/singulatives/pairs to review
+                                       into data/noun_relations.json)
     fil nouns batch meanings FILE.tsv  merge meanings: key en en_plural bs countable adverbial polysemous
                                        idafa_ar idafa_en idafa_bs   (y/n flags)
     fil nouns batch tables             compute and store the batch's case tables (data/noun_tables.json)
@@ -38,10 +40,11 @@ from fil.glosses import gloss_agrees
 from fil.nouns import bosnian as bosnian_nouns
 from fil.nouns import sentence_gate
 from fil.nouns.model import PROPER_NOUN, NounLemma
+from fil.nouns.relations import likely_collective
 from fil.nouns.selection import next_nouns
 from fil.nouns.spelling import spelling_key
 from fil.nouns.studied import NounMeaning, NounSentence, bosnian_numbers, noun_key, parse_meaning
-from fil.nouns.table import build_table, with_documented
+from fil.nouns.table import as_collective, build_table, with_documented
 from fil.resources import BUILD_DIR
 from fil.stages import nouns as noun_stage
 
@@ -83,9 +86,22 @@ def plan(arguments: Sequence[str]) -> None:
                  ", ".join(f"{plural.text} {plural.count}×" for plural in lemma.plurals), lemma.linked_verb or "")
                 for lemma in chosen])
     _write_todo_meanings([lemma for lemma in chosen if _key(lemma) not in studied])
+    flagged = _unreviewed_collectives(chosen, lemmas)
+    _write_tsv(OUT / "collectives.tsv", ("key", "why it may be a collective, singulative or pair"), flagged)
     print(f"planned {len(chosen)} nouns → {OUT}/batch.txt, plan.tsv, todo-meanings.tsv")
+    if flagged:
+        print(f"review {len(flagged)} likely collectives → data/noun_relations.json (collectives.tsv): "
+              + ", ".join(key.split("|")[0] for key, _why in flagged))
     if skipped:
         print("skipped: " + ", ".join(f"{lemma.lemma} ({reason})" for lemma, reason in skipped))
+
+
+def _unreviewed_collectives(chosen: Sequence[NounLemma], catalogue: Sequence[NounLemma]) -> list[tuple[str, str]]:
+    """The batch's lemmas that may be collectives, singulatives or pairs and have no reviewed
+    entry yet: the drafter decides each (an `ordinary` entry when it is none)."""
+    reviewed = noun_store.load_relations()
+    return [(_key(lemma), why) for lemma in chosen if _key(lemma) not in reviewed
+            for why in [likely_collective(lemma, catalogue)] if why]
 
 
 def _listed(lemmas: Sequence[NounLemma], path: Path) -> list[NounLemma]:
@@ -164,9 +180,11 @@ def write_tables() -> None:
     generator = CamelNounGenerator()
     tables = noun_store.load_tables()
     documented = noun_store.load_overrides()
+    collectives = {key for key, relation in noun_store.load_relations().items() if relation.is_collective}
     for lemma in lemmas:
         table = build_table(lemma, by_lemma[(lemma.lemma, lemma.root)], generator)
-        tables[_key(lemma)] = with_documented(table, documented.get(_key(lemma), {}), lemma.lemma)
+        table = with_documented(table, documented.get(_key(lemma), {}), lemma.lemma)
+        tables[_key(lemma)] = as_collective(table) if _key(lemma) in collectives else table
     noun_store.save_tables(tables)
     sources = Counter(found.source for key in keys if key in tables for row in tables[key].rows for found in row.cells)
     print(f"tables: {len(lemmas)} nouns — attested {sources['attested']}, generated {sources['generated']}, "
@@ -374,10 +392,14 @@ def status() -> None:
     tables = noun_store.load_tables()
     bosnian = noun_store.bosnian_entries()
     sentences = noun_store.load_sentences()
+    catalogue = noun_stage.catalogue(noun_stage.load_occurrences())
+    batch = set(_batch_keys())
+    unreviewed = {key for key, _why in _unreviewed_collectives([lemma for lemma in catalogue if _key(lemma) in batch], catalogue)}
     lacking = []
     for key in _batch_keys():
         roles = {sentence.role for sentence in sentences if sentence.key == key and sentence.example.is_shippable}
-        missing = [name for name, done in (("meaning", key in meanings), ("table", key in tables), ("bs", key in bosnian))
+        missing = [name for name, done in (("meaning", key in meanings), ("table", key in tables), ("bs", key in bosnian),
+                                           ("relation", key not in unreviewed))
                    if not done] + [f"sentence:{role}" for role in sentence_gate.ROLES if role not in roles]
         if missing:
             lacking.append(f"{key.split('|')[0]}: {' '.join(missing)}")

@@ -83,6 +83,7 @@ _SHORT = {"moj": "m", "tvoj": "tv"}
 _SHORT_ENDINGS = {GENITIVE: "og", DATIVE: "om", LOCATIVE: "om"}
 
 _BOSNIAN = re.compile(r"^[a-zA-ZčćžšđČĆŽŠĐ' -]+$")
+PLURAL_FORMS = "pluralForms"   # entry key: the numbers declined as Bosnian plurals (a collective's "sg": deve)
 CELL = re.compile(r"^(sg|du|pl)\|(N|G|D|A|I|L)$")
 
 
@@ -97,6 +98,9 @@ class BosnianNoun:
     cells: Mapping[str, str]
     genders: Mapping[str, str]          # "sg" → "f"; "ma" is a masculine animate (its A is its G)
     prepositions: Mapping[str, str]     # "fi" → "na"
+    # The numbers whose Bosnian words are plurals: a collective's own row (إِبِل → "deve"),
+    # so what agrees with it is plural too ("njegove deve", never "njegova deve").
+    plural_numbers: frozenset[str] = frozenset()
 
     def cell(self, number: str, case: str) -> str | None:
         return self.cells.get(f"{number}|{case}")
@@ -183,7 +187,7 @@ def _possessive(noun: BosnianNoun, possessor: str, number: str, case: str) -> st
     gender = noun.genders.get(number)
     if gender is None:
         raise CannotSay(f"no gender for {number}")
-    return possessive_adjective(possessor, gender, number, case)
+    return possessive_adjective(possessor, gender, PLURAL if number in noun.plural_numbers else number, case)
 
 
 # ------------------------------------------------------------------ validation on import
@@ -201,14 +205,16 @@ def validated(entries: Mapping[str, Mapping], needs: Mapping[str, tuple[str, ...
 
 def from_entry(entry: Mapping) -> BosnianNoun:
     return BosnianNoun(cells=dict(entry["cells"]), genders=dict(entry["genders"]),
-                       prepositions=dict(entry["prepositions"]))
+                       prepositions=dict(entry["prepositions"]), plural_numbers=frozenset(entry.get(PLURAL_FORMS, ())))
 
 
 def _problems(key: str, entry: Mapping, numbers: tuple[str, ...]) -> list[str]:
     if not isinstance(entry, Mapping) or not {"cells", "genders", "prepositions"} <= set(entry):
         return [f"{key}: needs cells, genders and prepositions"]
     found = [*_cell_problems(key, entry["cells"]), *_gender_problems(key, entry["genders"]),
-             *_preposition_problems(key, entry["prepositions"])]
+             *_preposition_problems(key, entry["prepositions"]),
+             *(f"{key}: {PLURAL_FORMS} lists {number!r}, not a number" for number in entry.get(PLURAL_FORMS, ())
+               if number not in NUMBERS)]
     missing = [f"{number}|{case}" for number in numbers for case in CASES if f"{number}|{case}" not in entry["cells"]]
     if missing:
         found.append(f"{key}: missing {', '.join(missing)}")

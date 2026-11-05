@@ -36,4 +36,5 @@ NOUN_TABLES_JSON = DATA_DIR / "noun_tables.json"      # each studied noun's Arab
 NOUN_BS_PARADIGMS_JSON = DATA_DIR / "noun_bs_paradigms.json"  # each studied noun's Bosnian declension and prepositions
 NOUN_SENTENCES_JSON = DATA_DIR / "noun_sentences.json"  # practice sentences per noun and role, gated and reviewed
 NOUN_OVERRIDES_JSON = DATA_DIR / "noun_overrides.json"  # documented spellings of noun cells the generator cannot make
+NOUN_RELATIONS_JSON = DATA_DIR / "noun_relations.json"  # collectives, singulatives, male/female pairs (reviewed)
 NOUN_UNVOICED_JSON = DATA_DIR / "noun_unvoiced.json"  # noun texts documented to ship without a voice, each with why

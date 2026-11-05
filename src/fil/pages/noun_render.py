@@ -16,6 +16,7 @@ from collections.abc import Sequence
 from html import escape
 
 from fil.languages import Language
+from fil.nouns.relations import COLLECTIVE
 from fil.pages import render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import audio_link
@@ -43,6 +44,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
         _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"])),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun">',
         _hero(card, meaning, language, text, root, category),
+        _related(card, language, text, root),
         _table(card, text, root),
         _explanation(card, language, text, root),
         _sentences(card, language, text, root),
@@ -61,9 +63,10 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, c
     words = text["nounPage"]
     english = "" if language.code == "en" else f'<span class="meaning-en" lang="en" dir="ltr">{escape(card["meaning"]["en"])}</span>'
     facts = [f'#{card["rank"]}', f'{escape(text["root"])} <span class="ar root" lang="ar" dir="rtl">{" ".join(card["root"])}</span>',
-             escape(words["kinds"].get(card["kind"], card["kind"]))]
-    if card.get("gender"):
-        facts.append(escape(words["genders"][card["gender"]]))
+             escape(_kind(card, words))]
+    gender = _gender(card, words)
+    if gender:
+        facts.append(escape(gender))
     if category:
         listing = f'{root}{seo.noun_index_path(language.code)}#{_category_anchor(category)}'
         facts.append(f'<a href="{listing}">{escape(words["categories"].get(category, category))}</a>')
@@ -77,6 +80,20 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, c
             f'<p class="stats">{stats}</p>{_plurals(card, words)}</div></header>')
 
 
+def _kind(card: dict, words: dict) -> str:
+    """"zbirna imenica (množina značenja)" for a collective, else the corpus's kind of noun."""
+    relation = card.get("relation") or {}
+    return words["relationKinds"].get(relation.get("kind"), words["kinds"].get(card["kind"], card["kind"]))
+
+
+def _gender(card: dict, words: dict) -> str | None:
+    """A collective's gender is how what refers to it agrees (إِبِل: feminine), not its form's."""
+    agreement = (card.get("relation") or {}).get("agreement")
+    if agreement:
+        return words["agreements"][agreement]
+    return words["genders"][card["gender"]] if card.get("gender") else None
+
+
 def _plurals(card: dict, words: dict) -> str:
     if not card["plurals"]:
         return ""
@@ -85,22 +102,52 @@ def _plurals(card: dict, words: dict) -> str:
     return f'<p class="stats">{escape(words["plurals"])}: {shown}</p>'
 
 
+# ---------- one, male, female ----------
+
+def _related(card: dict, language: Language, text: dict, root: str) -> str:
+    """A collective's one, male and female (إِبِل → جَمَل, نَاقَة), a singulative's collective,
+    a pair's other half — each heard, and linked when it has a page of its own."""
+    relation = card.get("relation")
+    if not relation or relation["kind"] not in text["nounPage"]["relatedIntro"]:
+        return ""
+    words = text["nounPage"]
+    roles = [words["relatedRoles"][word["role"]] for word in relation["related"]]
+    heading = " · ".join(roles).capitalize() if roles else words["relatedTitle"]
+    items = "".join(_related_word(word, language, words, text, root) for word in relation["related"])
+    listed = f'<ul class="sentences related">{items}</ul>' if items else ""
+    return (f'<section><h2>{escape(heading)}</h2><p class="note">{escape(words["relatedIntro"][relation["kind"]])}</p>'
+            f'{listed}</section>')
+
+
+def _related_word(word: dict, language: Language, words: dict, text: dict, root: str) -> str:
+    meaning = escape(word["meaning"].get(language.code) or word["meaning"]["en"])
+    named = (f'<a href="{root}{seo.noun_path(language.code, word["slug"])}">{meaning}</a>' if word.get("slug") else meaning)
+    found = fill(words["relatedInQuran"], word["quranCount"]) if word["quranCount"] else words["relatedNotInQuran"]
+    return (f'<li><p class="role">{escape(words["relatedRoles"][word["role"]])}</p>'
+            f'<p class="sentence">{render._play(word.get("audio"), root, text["listen"])}'
+            f'<span class="ar" lang="ar" dir="rtl">{word["arabic"]}</span></p>'
+            f'<p>{named} · <span class="note">{escape(words["genders"][word["gender"]])} · {escape(found)}</span></p></li>')
+
+
 # ---------- the case table ----------
 
 def _table(card: dict, text: dict, root: str) -> str:
     words = text["nounPage"]
     header = "".join(f'<th scope="col">{escape(words["cases"][case])}</th>' for case in _CASE_ORDER)
-    rows = "".join(_table_rows(row, words, root, text) for row in card["table"])
+    is_collective = (card.get("relation") or {}).get("kind") == COLLECTIVE
+    rows = "".join(_table_rows(row, words, root, text, label="C" if is_collective and index == 0 else row["row"])
+                   for index, row in enumerate(card["table"]))
     return (f'<section><h2>{escape(words["table"])}</h2><p class="note">{escape(words["tableIntro"])}</p>'
             f'<div class="table-scroll"><table class="conj cases"><thead><tr><th></th>{header}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div><p class="note">{escape(words["tableNote"])}</p></section>')
 
 
-def _table_rows(row: dict, words: dict, root: str, text: dict) -> str:
+def _table_rows(row: dict, words: dict, root: str, text: dict, label: str) -> str:
+    """`label` names the row: its number, or "C" for a collective's own row ("zbirno")."""
     by_cell = {(cell["state"], cell["case"]): cell for cell in row["cells"]}
     plural = f' <span class="ar" lang="ar" dir="rtl">{row["plural"]}</span>' if row["row"] == "P2" and row.get("plural") else ""
     return "".join(
-        f'<tr><th scope="row">{escape(words["numbers"][row["row"]])}{plural if state == _STATE_ORDER[0] else ""}'
+        f'<tr><th scope="row">{escape(words["numbers"][label])}{plural if state == _STATE_ORDER[0] else ""}'
         f'<small>{escape(words["states"][state])}</small></th>'
         + "".join(_table_cell(by_cell.get((state, case)), words, root, text) for case in _CASE_ORDER) + "</tr>"
         for state in _STATE_ORDER

@@ -111,3 +111,20 @@ take feminine singular.
   `assets/nouns/<slug>.svg`; `tests/test_noun_pictures.py` gates every shipped file.
 - Credit: `fil.pages.picture_credits.picture_credit` — wire into the footer of pages that
   show pictures when the noun pages exist.
+
+## Pilot batch (2026-11-05)
+
+50 nouns end to end, bs + en (`fil nouns batch …`, skill `/fil-nouns-batch`): the 25 most
+frequent teachable nouns (skipped: كُلّ، بَعْض، أَيّ، غَيْر quantifiers/pronoun-like; بَيْن، عِند،
+قَبْل، بَعْد، دُون adverbs; عَلِيم، آخِر adjective(-like); إِلٰه held back — its sentences could only
+speak of God or gods, owner's decision) and 25 picturable ones.
+
+- Data: `data/noun_meanings.json` (meaning, iḍāfa example, flags), `data/noun_tables.json`
+  (Arabic case tables), `data/noun_overrides.json` (documented cells), `data/noun_bs_paradigms.json`
+  (Bosnian declension + preposition choices, written by Sonnet agents, validated on import),
+  `data/noun_sentences.json` (4 roles per noun, gated + blind-reviewed).
+- Engine: `fil.nouns.{bosnian,english,compose,explanation,sentence_gate,table,selection,studied}`;
+  the corpus layer now marks what precedes a noun (إِنَّ/كَانَ families) and reads a dual or
+  sound plural that keeps its nūn as indefinite.
+- Pages: `/bs/imenica/<slug>/`, `/en/noun/<slug>/` + lists, in the sitemap; an "Imenice/Nouns"
+  link in the app; verb pages list the studied nouns of their root.

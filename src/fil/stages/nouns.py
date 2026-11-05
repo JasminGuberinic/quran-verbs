@@ -10,6 +10,7 @@
     fil nouns picture-candidates OPENMOJI_DIR TWEMOJI_DIR
                                 build/nouns/picture-candidates/{openmoji,twemoji}/: both sets' version
                                 of every mapped noun, for the reviewer to choose from
+    fil nouns batch …           add studied nouns in batches of 50 (fil.stages.noun_batch)
 
 This stage is the composition root of the noun engine: it reads the corpus, loads our
 verbs, and wires CAMeL in as the generator.
@@ -115,11 +116,16 @@ def _has_emoji(directory: EmojiDirectory, codepoint: str) -> bool:
     return True
 
 
-def build_paradigms(lemmas: Sequence[NounLemma], occurrences: Sequence[NounOccurrence],
-                    generator: NounGenerator) -> list[Paradigm]:
+def occurrences_by_lemma(occurrences: Sequence[NounOccurrence]) -> dict[tuple[str, str], list[NounOccurrence]]:
     by_lemma: dict[tuple[str, str], list[NounOccurrence]] = defaultdict(list)
     for occurrence in occurrences:
         by_lemma[(occurrence.lemma, occurrence.root)].append(occurrence)
+    return by_lemma
+
+
+def build_paradigms(lemmas: Sequence[NounLemma], occurrences: Sequence[NounOccurrence],
+                    generator: NounGenerator) -> list[Paradigm]:
+    by_lemma = occurrences_by_lemma(occurrences)
     return [build_paradigm(lemma, by_lemma[(lemma.lemma, lemma.root)], generator) for lemma in lemmas]
 
 
@@ -163,6 +169,12 @@ def _write_tsv(path: Path, header: Sequence[str], rows: Sequence[Sequence[str]])
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def _batch(argv: list[str]) -> None:
+    from fil.stages import noun_batch   # it builds on this stage's wiring
+
+    noun_batch.main(argv)
+
+
 def main(argv: list[str] | None = None) -> None:
     args = argv if argv is not None else sys.argv[2:]
     commands = {
@@ -171,6 +183,7 @@ def main(argv: list[str] | None = None) -> None:
         "paradigms": lambda: write_paradigms(int(args[1]) if len(args) > 1 else TOP),
         "pictures": lambda: write_noun_pictures(Path(args[1]), Path(args[2])),
         "picture-candidates": lambda: write_picture_candidates(Path(args[1]), Path(args[2])),
+        "batch": lambda: _batch(args[1:]),
     }
     needs_emoji_directories = args[:1] in (["pictures"], ["picture-candidates"]) and len(args) < 3
     if not args or args[0] not in commands or needs_emoji_directories:

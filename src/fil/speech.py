@@ -187,9 +187,9 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
                 sounds[-1] = "ii"                               # ى after kasra reads ī
             elif not sounds or sounds[-1] not in ("a", "aa"):
                 sounds.append("aa")                             # undotted fatha before alif
-        elif letter.base == "و" and not letter.vowel and not letter.sukun and sounds and sounds[-1] == "u" and not letter.shadda:
+        elif letter.base == "و" and _is_bare_glide(letter) and sounds and sounds[-1] == "u":
             sounds[-1] = "uu"                                   # long ū
-        elif letter.base == "ي" and not letter.vowel and not letter.sukun and sounds and sounds[-1] == "i" and not letter.shadda:
+        elif letter.base == "ي" and _is_bare_glide(letter) and sounds and sounds[-1] == "i":
             sounds[-1] = "ii"                                   # long ī
         else:
             consonant = _CONSONANTS.get(letter.base)
@@ -204,6 +204,12 @@ def _word_sounds(word: str, utterance_start: bool) -> list[str]:
                 sounds[-1] = "h"
         position += 1
     return sounds
+
+
+def _is_bare_glide(letter: "_Letter") -> bool:
+    """A wāw or yāʾ with no mark of its own lengthens the vowel before it; one carrying a
+    tanwīn is a consonant (هُزُوًا: huzuwan, not huzū)."""
+    return not (letter.vowel or letter.sukun or letter.shadda or letter.tanwin)
 
 
 def _is_connecting_alif_after_proclitic(letters: list["_Letter"], position: int) -> bool:

@@ -649,5 +649,205 @@
    "text": "الْوَالِدَيْنِ",
    "why": "The dual accusative equals the genitive (ٱلْوَٰلِدَيْنِ, attested 2:180); CAMeL leaves the accusative cell empty."
   }
+ },
+ "أَفْواه|فوه": {
+  "P|definite|NOM": {
+   "text": "الْأَفْوَاهُ",
+   "why": "أَفْوَاه is the plural of فَم, filed by the corpus as its own lemma and only ever with a possessive (بِأَفْوَٰهِهِمْ); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَفْوَاهَ",
+   "why": "أَفْوَاه is the plural of فَم, filed by the corpus as its own lemma and only ever with a possessive (بِأَفْوَٰهِهِمْ); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَفْوَاهِ",
+   "why": "أَفْوَاه is the plural of فَم, filed by the corpus as its own lemma and only ever with a possessive (بِأَفْوَٰهِهِمْ); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَفْوَاهٌ",
+   "why": "أَفْوَاه is the plural of فَم, filed by the corpus as its own lemma and only ever with a possessive (بِأَفْوَٰهِهِمْ); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَفْوَاهًا",
+   "why": "أَفْوَاه is the plural of فَم, filed by the corpus as its own lemma and only ever with a possessive (بِأَفْوَٰهِهِمْ); CAMeL generates no form of it — the regular triptote declension"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَفْوَاهٍ",
+   "why": "أَفْوَاه is the plural of فَم, filed by the corpus as its own lemma and only ever with a possessive (بِأَفْوَٰهِهِمْ); CAMeL generates no form of it — the regular triptote declension"
+  }
+ },
+ "عِظام|عظم": {
+  "P|definite|NOM": {
+   "text": "الْعِظَامُ",
+   "why": "عِظَام, plural of عَظْم, is a regular triptote; CAMeL misses these cells"
+  },
+  "P|indefinite|NOM": {
+   "text": "عِظَامٌ",
+   "why": "عِظَام, plural of عَظْم, is a regular triptote; CAMeL misses these cells"
+  },
+  "P|indefinite|GEN": {
+   "text": "عِظَامٍ",
+   "why": "عِظَام, plural of عَظْم, is a regular triptote; CAMeL misses these cells"
+  }
+ },
+ "إِمام|أمم": {
+  "S|definite|NOM": {
+   "text": "الْإِمَامُ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الْإِمَامَ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الْإِمَامِ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "إِمَامٌ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "P|definite|NOM": {
+   "text": "الْأَئِمَّةُ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَئِمَّةَ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَئِمَّةِ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَئِمَّةٌ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَئِمَّةٍ",
+   "why": "إِمَام (plural أَئِمَّة, أَئِمَّةً 21:73) is a regular triptote; CAMeL generates none of these cells"
+  }
+ },
+ "مَثْوًى|ثوي": {
+  "S|definite|NOM": {
+   "text": "الْمَثْوَى",
+   "why": "مَثْوًى ends in alif maqṣūra: the definite form is the same in every case, the indefinite is مَثْوًى in every case (مَثْوًى لِّلْكَٰفِرِينَ 29:68); CAMeL generates only the indefinite nominative"
+  },
+  "S|definite|ACC": {
+   "text": "الْمَثْوَى",
+   "why": "مَثْوًى ends in alif maqṣūra: the definite form is the same in every case, the indefinite is مَثْوًى in every case (مَثْوًى لِّلْكَٰفِرِينَ 29:68); CAMeL generates only the indefinite nominative"
+  },
+  "S|definite|GEN": {
+   "text": "الْمَثْوَى",
+   "why": "مَثْوًى ends in alif maqṣūra: the definite form is the same in every case, the indefinite is مَثْوًى in every case (مَثْوًى لِّلْكَٰفِرِينَ 29:68); CAMeL generates only the indefinite nominative"
+  },
+  "S|indefinite|ACC": {
+   "text": "مَثْوًى",
+   "why": "مَثْوًى ends in alif maqṣūra: the definite form is the same in every case, the indefinite is مَثْوًى in every case (مَثْوًى لِّلْكَٰفِرِينَ 29:68); CAMeL generates only the indefinite nominative"
+  }
+ },
+ "نَجْوَى|نجو": {
+  "S|indefinite|NOM": {
+   "text": "نَجْوَى",
+   "why": "نَجْوَى (فَعْلَى) ends in alif maqṣūra and takes no tanwīn: the indefinite is نَجْوَى in every case (إِذَا تَنَٰجَيْتُمْ … 58:9; نَجْوَىٰ ثَلَٰثَةٍ 58:7); CAMeL generates none"
+  },
+  "S|indefinite|ACC": {
+   "text": "نَجْوَى",
+   "why": "نَجْوَى (فَعْلَى) ends in alif maqṣūra and takes no tanwīn: the indefinite is نَجْوَى in every case (إِذَا تَنَٰجَيْتُمْ … 58:9; نَجْوَىٰ ثَلَٰثَةٍ 58:7); CAMeL generates none"
+  },
+  "S|indefinite|GEN": {
+   "text": "نَجْوَى",
+   "why": "نَجْوَى (فَعْلَى) ends in alif maqṣūra and takes no tanwīn: the indefinite is نَجْوَى in every case (إِذَا تَنَٰجَيْتُمْ … 58:9; نَجْوَىٰ ثَلَٰثَةٍ 58:7); CAMeL generates none"
+  }
+ },
+ "ضَرّ|ضرر": {
+  "S|definite|NOM": {
+   "text": "الضَّرُّ",
+   "why": "ضَرّ (harm, ضَرًّا وَلَا نَفْعًا 5:76) is a regular triptote; CAMeL reads the word as 'polygamy' and generates none of these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الضَّرَّ",
+   "why": "ضَرّ (harm, ضَرًّا وَلَا نَفْعًا 5:76) is a regular triptote; CAMeL reads the word as 'polygamy' and generates none of these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الضَّرِّ",
+   "why": "ضَرّ (harm, ضَرًّا وَلَا نَفْعًا 5:76) is a regular triptote; CAMeL reads the word as 'polygamy' and generates none of these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "ضَرٌّ",
+   "why": "ضَرّ (harm, ضَرًّا وَلَا نَفْعًا 5:76) is a regular triptote; CAMeL reads the word as 'polygamy' and generates none of these cells"
+  },
+  "S|indefinite|GEN": {
+   "text": "ضَرٍّ",
+   "why": "ضَرّ (harm, ضَرًّا وَلَا نَفْعًا 5:76) is a regular triptote; CAMeL reads the word as 'polygamy' and generates none of these cells"
+  }
+ },
+ "عَشِيّ|عشو": {
+  "S|definite|NOM": {
+   "text": "الْعَشِيُّ",
+   "why": "عَشِيّ (evening, بِٱلْعَشِيِّ 3:41, عَشِيًّا 19:11) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الْعَشِيَّ",
+   "why": "عَشِيّ (evening, بِٱلْعَشِيِّ 3:41, عَشِيًّا 19:11) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "عَشِيٌّ",
+   "why": "عَشِيّ (evening, بِٱلْعَشِيِّ 3:41, عَشِيًّا 19:11) is a regular triptote; CAMeL generates none of these cells"
+  },
+  "S|indefinite|GEN": {
+   "text": "عَشِيٍّ",
+   "why": "عَشِيّ (evening, بِٱلْعَشِيِّ 3:41, عَشِيًّا 19:11) is a regular triptote; CAMeL generates none of these cells"
+  }
+ },
+ "حِجارَة|حجر": {
+  "S|definite|ACC": {
+   "text": "الْحِجَارَةَ",
+   "why": "the regular accusative of ٱلْحِجَارَةُ (2:24); CAMeL misses it"
+  }
+ },
+ "عامِل|عمل": {
+  "P|definite|ACC": {
+   "text": "الْعَامِلِينَ",
+   "why": "the sound masculine plural accusative of ٱلْعَٰمِلُونَ (ٱلْعَٰمِلِينَ 3:136 is genitive); CAMeL misses it"
+  }
+ },
+ "فَقِير|فقر": {
+  "P|definite|GEN": {
+   "text": "الْفُقَرَاءِ",
+   "why": "the genitive of ٱلْفُقَرَآءُ (diptote broken plural; لِلْفُقَرَآءِ 2:273); CAMeL misses it"
+  }
+ },
+ "سِنِين|سنو": {
+  "P|definite|NOM": {
+   "text": "السِّنُونَ",
+   "why": "سِنُونَ/سِنِينَ, the plural of سَنَة, is declined like a sound masculine plural (ملحق بجمع المذكر السالم: عَدَدَ ٱلسِّنِينَ 10:5); the corpus files it as its own lemma and CAMeL generates no form of it"
+  },
+  "P|definite|ACC": {
+   "text": "السِّنِينَ",
+   "why": "سِنُونَ/سِنِينَ, the plural of سَنَة, is declined like a sound masculine plural (ملحق بجمع المذكر السالم: عَدَدَ ٱلسِّنِينَ 10:5); the corpus files it as its own lemma and CAMeL generates no form of it"
+  },
+  "P|definite|GEN": {
+   "text": "السِّنِينَ",
+   "why": "سِنُونَ/سِنِينَ, the plural of سَنَة, is declined like a sound masculine plural (ملحق بجمع المذكر السالم: عَدَدَ ٱلسِّنِينَ 10:5); the corpus files it as its own lemma and CAMeL generates no form of it"
+  },
+  "P|indefinite|NOM": {
+   "text": "سِنُونَ",
+   "why": "سِنُونَ/سِنِينَ, the plural of سَنَة, is declined like a sound masculine plural (ملحق بجمع المذكر السالم: عَدَدَ ٱلسِّنِينَ 10:5); the corpus files it as its own lemma and CAMeL generates no form of it"
+  },
+  "P|indefinite|ACC": {
+   "text": "سِنِينَ",
+   "why": "سِنُونَ/سِنِينَ, the plural of سَنَة, is declined like a sound masculine plural (ملحق بجمع المذكر السالم: عَدَدَ ٱلسِّنِينَ 10:5); the corpus files it as its own lemma and CAMeL generates no form of it"
+  },
+  "P|indefinite|GEN": {
+   "text": "سِنِينَ",
+   "why": "سِنُونَ/سِنِينَ, the plural of سَنَة, is declined like a sound masculine plural (ملحق بجمع المذكر السالم: عَدَدَ ٱلسِّنِينَ 10:5); the corpus files it as its own lemma and CAMeL generates no form of it"
+  }
+ },
+ "أَعْراب|عرب": {
+  "P|definite|ACC": {
+   "text": "الْأَعْرَابَ",
+   "why": "the regular accusative of ٱلْأَعْرَابُ (9:97), a triptote broken plural; CAMeL misses it"
+  }
  }
 }

@@ -164,6 +164,35 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   sentence's noun (temperatura → "je visoka"). The gate now makes construct cells of alif-maqṣūra
   indefinites (مَوْلًى → مَوْلَى) — document the indefinite cells with an override first.
 
+- Batch 6 (2026-11-05, 195 sentences, 15+1 refused in 2 rounds): skipped numbers/quantities (اثْنَيْن، ثَلاثَة، إِحْدَى، ضِعْف، عِدَّة), بَغْتَة (adverb),
+  حَسْب, and adjectives/participles-as-ḥāl (حافِظ، غالِب، مُفْلِح، أَدْنَى، أَصَمّ، بَرِيء، تَوّاب، حَفِيظ، حَنِيف،
+  مُعْجِز، أَوْلَى، رَءُوف، عَلِيّ، قَوِيّ، مَجْنُون، مَعْلُوم، مُخْلِص، أَحَقّ، رَواسِي، سَرِيع). HELD_BACK: رِضْوان، خالِق،
+  عابِد، قَدَر (God only), نُطْفَة (sperm), شِيعَة (MSA "Shia"), جِنَّة (jinn/madness), رِسالَة، سُورَة (revelation
+  only), شَفِيع، صُور (the unseen), طُور (the Mount; MSA "stage"), بَغْي (lexicon reads "whore"). Substantive
+  participles stay (ظالِم، مِسْكِين precedent: فَقِير، جاهِل، ناصِر، عامِل). `skiphold.py`-style script: one
+  call per round edits both lists from batch.txt spellings; expect ~6 re-plan rounds.
+- Read todo-meanings.tsv's FIRST lexicon gloss for every word: it exposes vulgar readings (بَغْي) and
+  merged lemmas. The corpus lemma هَواء|هوي is mostly هَوَى "whim" (its attested cells are ٱلْهَوَىٰ) —
+  print the attested cells of a doubtful lemma before meanings; held back mid-batch.
+- Dropping mid-batch also needs its key removed from data/noun_tables.json (tables keep orphans:
+  جُناح، حَمِيم are still there from batch 4/5).
+- `plural_kind` now treats a plural-only lemma spelled with its own sound ending (سِنِين) as sound
+  masculine, so its overrides (السِّنُونَ) pass the gate. Gloss exceptions added: crops ز.ر.ع/ح.ر.ث,
+  evening ع.ش.#, calf ع.ج.ل, sin خ.ط.#. هُزُو has only the Uthmani هُزُوًا (MSA هُزْء): no sentences.
+- Failed → accepted: fell (نَزَلَ "descended" → سَقَطَ), جَمَعَ collected → gathered, نَادَى → saw,
+  انْتَهَى → تَوَقَّفَ stopped, مُنْتَشِر widespread → prevalent, بِسُرْعَةٍ → سَرِيعًا quickly, سَرِيع quick,
+  الْوَفِيّ → الْأَمِين faithful, لَيِّن flexible, صَعْب difficult, مَحْفُوظ preserved, حَفِظَ → كَتَمَ concealed,
+  أَخْبَرَ notified, الصِّدْق sincerity, طَبَق dish, عُرُوق (roots) → جِسْم body, عَاصِفَة (tempest) → رِيح wind,
+  تَنْفَعُ fails, إِلَى = "to" (not "until"). The gl helper (print `root:gloss` per analysis) misleads on
+  definite words (shows "the") — query the bare word.
+- Voice: a wāw/yāʾ carrying tanwīn is a consonant (هُزُوًا huzuwan) — fixed in fil.speech.
+- Reviewer refusals: أَرْحام as "kinships" (use "relatives", bs rodbina; never as the agent who
+  visits — only visited/kept in touch with: صِلَةُ الْأَرْحَامِ), رِجْس is moral/ritual impurity
+  (nečistoća), not dirt; ضَرّ is a person's harm/hardship (nevolja) — damage to things is ضَرَر;
+  اسْمُ النَّاصِرِ reads as the name al-Nāṣir; bare الْخَيْرَات reads "good things" — give it a
+  deeds context; الْخِزْيُ صَعْبٌ is unidiomatic (مُؤْلِمٌ). Changing a bs word after approval:
+  delete that noun's approved sentence from noun_sentences.json (`draft` SKIPs an existing role).
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

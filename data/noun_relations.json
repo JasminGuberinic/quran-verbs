@@ -612,5 +612,102 @@
     "lemma": "والِدَة|ولد"
    }
   ]
+ },
+ "حُسْن|حسن": {
+  "kind": "ordinary",
+  "why": "Reviewed: حُسْن (beauty, goodness) is an abstract noun; حَسَنَة (a good deed) is a different word, not its singulative or female."
+ },
+ "صَدَقَة|صدق": {
+  "kind": "ordinary",
+  "why": "Reviewed: صَدَقَة (charity) is an ordinary noun with the plural صَدَقَات (9:60); صِدْق (truthfulness) is a different word."
+ },
+ "أَرْحام|رحم": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَرْحَام is the broken plural (أَفْعَال) of رَحِم 'womb, kinship', not a collective; the Quran uses only the plural (3:6, 4:1)."
+ },
+ "أَفْواه|فوه": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَفْوَاه is the broken plural of فَم/فُوه 'mouth'; the Quran uses only the plural (3:118)."
+ },
+ "سِنِين|سنو": {
+  "kind": "ordinary",
+  "why": "Reviewed: سِنِين is the plural of سَنَة 'year' (أَلْفَ سَنَةٍ 29:14), a plural with a singular of its own, not a collective."
+ },
+ "مَسْكَن|سكن": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَسْكَن (a dwelling) has the plural مَسَاكِن (9:72); مَسْكَنَة (poverty, 2:61) is a different word."
+ },
+ "مَوْعِد|وعد": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَوْعِد (an appointed time or place) is an ordinary noun; مَوْعِدَة (a promise, 9:114) is a different word."
+ },
+ "عِزَّة|عزز": {
+  "kind": "ordinary",
+  "why": "Reviewed: عِزَّة (honor, might) is an abstract noun; عِزّ is a near-synonym, not its collective or male."
+ },
+ "فاكِهَة|فكه": {
+  "kind": "ordinary",
+  "why": "Reviewed: فَاكِهَة (fruit) is a generic noun with the plural فَوَاكِه (23:19); فَاكِه (enjoying, فَٰكِهِينَ 52:18) is an adjective, not its male."
+ },
+ "أَعْراب|عرب": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَعْرَاب (Bedouins) is used as a plural (one Bedouin is the nisba أَعْرَابِيّ); the table keeps its plural row as the Quran has it (قَالَتِ ٱلْأَعْرَابُ 49:14)."
+ },
+ "خَيْرَة|خير": {
+  "kind": "ordinary",
+  "why": "Reviewed: خَيْرَة, plural خَيْرَات (good deeds, فَٱسْتَبِقُوا۟ ٱلْخَيْرَٰتِ 2:148), is its own word; خَيْر (good, better) is not its collective or male."
+ },
+ "زَرْع|زرع": {
+  "kind": "ordinary",
+  "why": "Reviewed: زَرْع (crops) is a mass noun with its own plural زُرُوع (44:26), so not a collective without a singular."
+ },
+ "عَشِيّ|عشو": {
+  "kind": "ordinary",
+  "why": "Reviewed: عَشِيّ (the evening time, بِٱلْعَشِيِّ 3:41) is a time noun; عَشِيَّة (one evening, 79:46) is a related word, not its singulative in use."
+ },
+ "صاحِب|صحب": {
+  "kind": "pair",
+  "why": "The female of صَاحِب (companion) is صَاحِبَة (companion, wife) (Quran 70:12 وَصَٰحِبَتِهِۦ وَأَخِيهِ).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "صَاحِبَةٌ",
+    "gender": "F",
+    "en": "female companion, wife",
+    "bs": "drugarica, supruga"
+   }
+  ]
+ },
+ "عامِل|عمل": {
+  "kind": "pair",
+  "why": "In MSA the female of عَامِل (worker) is عَامِلَة (a female worker); the Quran has عَامِلَة only as an adjective (عَامِلَةٌ نَّاصِبَةٌ 88:3), so no lemma is given.",
+  "related": [
+   {
+    "role": "female",
+    "ar": "عَامِلَةٌ",
+    "gender": "F",
+    "en": "female worker",
+    "bs": "radnica"
+   }
+  ]
+ },
+ "حِجارَة|حجر": {
+  "kind": "collective",
+  "agreement": "F",
+  "why": "حِجَارَة (stones) is a plural/collective of حَجَر with no singulative in -ة; one stone is حَجَر (ٱضْرِب بِّعَصَاكَ ٱلْحَجَرَ 2:60). The Quran refers to it in the feminine (وَإِنَّ مِنَ ٱلْحِجَارَةِ لَمَا يَتَفَجَّرُ مِنْهُ ٱلْأَنْهَٰرُ ۚ وَإِنَّ مِنْهَا لَمَا يَشَّقَّقُ 2:74).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "حَجَرٌ",
+    "gender": "M",
+    "en": "stone",
+    "bs": "kamen",
+    "lemma": "حَجَر|حجر"
+   }
+  ]
+ },
+ "جَمْع|جمع": {
+  "kind": "ordinary",
+  "why": "Reviewed: جَمْع (a gathering, a host) is a verbal noun with a dual (ٱلْجَمْعَانِ 3:155), not a collective; جَمَاعَة is a different word."
  }
 }

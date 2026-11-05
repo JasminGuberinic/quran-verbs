@@ -43,6 +43,10 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "آمِن": "adjective-like", "أَظْلَم": "adjective-like", "حُسْنَى": "adjective-like", "أَلْف": "quantifier",
     "خاشِع": "adjective-like", "شاكِر": "adjective-like", "ضالّ": "adjective-like", "قادِر": "adjective-like",
     "مُهِين": "adjective-like",
+    "اثْنَيْن": "quantifier", "بَغْتَة": "adverb", "ثَلاثَة": "quantifier", "حافِظ": "adjective-like", "غالِب": "adjective-like", "مُفْلِح": "adjective-like", "أَدْنَى": "adjective-like", "أَصَمّ": "adjective-like", "بَرِيء": "adjective-like", "تَوّاب": "adjective-like", "حَفِيظ": "adjective-like", "حَنِيف": "adjective-like", "مُعْجِز": "adjective-like", "أَوْلَى": "adjective-like", "إِحْدَى": "quantifier", "حَسْب": "pronoun-like", "رَءُوف": "adjective-like",
+    "ضِعْف": "quantifier", "عَلِيّ": "adjective-like", "عِدَّة": "quantifier", "قَوِيّ": "adjective-like", "مَجْنُون": "adjective-like", "مَعْلُوم": "adjective-like", "مُخْلِص": "adjective-like",
+    "أَحَقّ": "adjective-like", "رَواسِي": "adjective-like",
+    "سَرِيع": "adjective-like",
     # ابْتِغَاءَ is in the Quran always a bare accusative of purpose ("seeking …"), learned as a construction.
     "ابْتِغاء": "adverb",
 }

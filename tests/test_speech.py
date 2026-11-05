@@ -21,6 +21,7 @@ from fil.speech import (TtsArabicVoice, expected_phonemes, long_a_spelled_out, n
     ("ذَلِكَ", "* aa l i k a"),
     ("الْغَنِيُّ", "< a l g a n i y y u"),        # a doubled y, not a long ī
     ("يَسْـَٔلُ", "y a s < a l u"),                # Uthmani hamza seated on a tatweel
+    ("هُزُوًا", "h u z u w a n"),                  # a wāw with tanwīn is a consonant, not ū
 ])
 def test_words_are_read_as_their_vowels_say(text, sounds):
     assert " ".join(expected_phonemes(prepared(text))) == sounds
@@ -99,6 +100,7 @@ def test_only_the_long_a_the_model_reads_short_is_spelled_out(text, spelled):
     "طَرِيقُ ٱلْهُدَىٰ", "ٱلْهُدَىٰ",      # final ىٰ is one long ā, not two
     "ٱلنَّبِىُّ", "اسْمُ ٱلنَّبِىِّ",      # undotted ى with shadda is the consonant yāʾ
     "ٱلِٱسْمُ", "بِٱلِٱسْمِ",            # al-ismu (49:11): the alif of ism falls silent
+    "هُزُوًا",                           # huzuwan (2:67): a wāw with tanwīn is a consonant
 ])
 def test_both_readers_agree_on_correct_texts(text):
     pytest.importorskip("tts_arabic.text")

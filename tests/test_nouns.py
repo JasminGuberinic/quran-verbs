@@ -90,6 +90,9 @@ def test_rootless_nouns_are_not_read():
     ("سَماء", "سَمَٰوَٰتِ", SOUND_FEMININE),
     ("صَلاة", "صَلَوَٰتِ", SOUND_FEMININE),
     ("مَيِّت", "أَمْوَٰتًا", BROKEN),                     # ends in -āt, yet broken
+    ("سِنِين", "السِّنُونَ", SOUND_MASCULINE),             # a plural-only lemma with its own ending
+    ("سِنِين", "سِنِينَ", SOUND_MASCULINE),
+    ("طِين", "طِينٌ", BROKEN),                           # a singular in -īn is no sound plural
 ])
 def test_tells_sound_plurals_from_broken_ones(lemma, plural, kind):
     assert plural_kind(lemma, plural) == kind

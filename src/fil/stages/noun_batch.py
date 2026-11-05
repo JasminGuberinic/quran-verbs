@@ -61,7 +61,7 @@ MAX_WORDS = 5
 # سَعِير (the blaze of Hell) and تَنزِيل (revelation; in MSA "download") likewise;
 # مَرْجِع is in the Quran only the return to God (in MSA "a reference"); دُبُر (back) reads in MSA
 # as the anus or buttocks — refused by the blind reviewer as unfit for learners' sentences.
-HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو", "جَحِيم|جحم", "جِنّ|جنن", "جُناح|جنح", "سَعِير|سعر", "تَنزِيل|نزل", "مَرْجِع|رجع", "دُبُر|دبر")
+HELD_BACK = ("إِلٰه|أله", "رَحْمٰن|رحم", "آلاء|ألو", "جَحِيم|جحم", "جِنّ|جنن", "جُناح|جنح", "سَعِير|سعر", "تَنزِيل|نزل", "مَرْجِع|رجع", "دُبُر|دبر", "رِضْوان|رضو", "خالِق|خلق", "نُطْفَة|نطف", "شِيعَة|شيع", "عابِد|عبد", "قَدَر|قدر", "جِنَّة|جنن", "رِسالَة|رسل", "سُورَة|سور", "شَفِيع|شفع", "صُور|صور", "بَغْي|بغي", "طُور|طور", "هَواء|هوي")
 
 
 @dataclass(frozen=True)

@@ -130,7 +130,15 @@ def _bases(singular: str, ending: str) -> tuple[str, ...]:
         return singular, singular[:-1] + "و"
     if ending != "ات" and singular.endswith("ي"):
         return singular, singular[:-1]   # a defective singular loses its yāʾ: مُتَّقِي → مُتَّقُونَ
+    if ending != "ات" and _is_plural_only_sound_lemma(singular):
+        return singular, singular[:-2]   # the corpus files سِنُونَ/سِنِينَ under سِنِين itself
     return (singular,)
+
+
+def _is_plural_only_sound_lemma(lemma: str) -> bool:
+    """A plural-only lemma spelled with its own sound ending (سِنِين): at least two letters must
+    stay, so a singular that merely ends in -īn (طِين, دِين) never counts as one."""
+    return lemma.endswith(("ين", "ون")) and len(lemma) >= 4
 
 
 def _without_feminine_ending(singular: str) -> str:

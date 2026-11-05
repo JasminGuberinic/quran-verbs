@@ -5,9 +5,16 @@ paradigm, as it would open a sentence. A word in front may pull the enclitic clu
 (su, mu, je, će, se…) up behind it: after "pa", "zaista", "zar", "da" and "neka" the
 cluster stands second ("pa su rekli", "da mu kažu"); after "i" it stays where it was
 ("i rekli su"), since "i su rekli" is not Bosnian.
+
+"da" and "neka" want the perfective present where the verb has one: "da te ubiju", not
+"da te ubijaju" — a purpose or a command names one deed, not an ongoing one. A paradigm
+keeps that form in a cell of its own (perfective|act|3MP|2MS); a verb still without one
+falls back to its present cell, which is the right form for verbs with no perfective.
 """
 
 from __future__ import annotations
+
+from collections.abc import Mapping
 
 from fil.composition.decomposition import AND, EMPHATIC, LET, PURPOSE, QUESTION, SO, CannotCompose, Cell
 
@@ -25,6 +32,24 @@ ENCLITICS = frozenset(
 FUTURE_AUXILIARIES = frozenset({"ću", "ćeš", "će", "ćemo", "ćete"})
 _WORDS = {AND: "i", SO: "pa", EMPHATIC: "zaista", PURPOSE: "da", LET: "neka", QUESTION: "zar"}
 _HOSTS = frozenset({"pa", "zaista", "zar", "da", "neka"})
+PERFECTIVE = "perfective"   # the paradigm's name for the perfective present a "da"/"neka" clause takes
+
+
+def cell_text(proclitics: tuple[str, ...], cell: Cell, paradigm: Mapping[str, str]) -> str | None:
+    """The paradigm's Bosnian for `cell` as these proclitics need it, or None if it has none."""
+    if wants_perfective(proclitics, cell) and perfective_code(cell) in paradigm:
+        return paradigm[perfective_code(cell)]
+    return paradigm.get(cell.code)
+
+
+def wants_perfective(proclitics: tuple[str, ...], cell: Cell) -> bool:
+    """A present after "da" or "neka"."""
+    return cell.tense == "present" and (LET in proclitics or PURPOSE in proclitics)
+
+
+def perfective_code(cell: Cell) -> str:
+    """The present cell's code with the perfective in place of the tense: perfective|act|3MP|-."""
+    return "|".join((PERFECTIVE, *cell.code.split("|")[1:]))
 
 
 def gloss(proclitics: tuple[str, ...], cell: Cell, cell_text: str) -> str:

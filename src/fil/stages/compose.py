@@ -23,9 +23,9 @@ from pathlib import Path
 from fil import attested_forms, meanings, service
 from fil.attested_forms import AttestedForm, VerbKey
 from fil.ayah_translations import AyahTranslations
-from fil.composition import english
+from fil.composition import bosnian, english
 from fil.composition.compose import Composed, Reading, Skipped, compose, plan
-from fil.composition.decomposition import CannotCompose
+from fil.composition.decomposition import CannotCompose, Decomposition
 from fil.composition.english import EnglishVerb
 from fil.composition.paradigms import SHEET_COLUMNS, InvalidParadigm, from_sheet, validated, verb_key
 from fil.resources import (AYAH_VERB_GLOSSES_JSON, BS_PARADIGMS_JSON, COMPOSED_FORM_GLOSSES_JSON, FORM_GLOSSES_JSON,
@@ -103,7 +103,9 @@ def _balanced(rows: list[tuple[str, ...]], sheet_count: int) -> list[set[str]]:
 
 def import_paradigms(folder: Path) -> bool:
     try:
-        filled = [from_sheet(path.read_text(encoding="utf-8").splitlines()) for path in sorted(folder.glob(f"*/{SHEET}"))]
+        known = _paradigms()
+        filled = [from_sheet(path.read_text(encoding="utf-8").splitlines(), known)
+                  for path in sorted(folder.glob(f"*/{SHEET}"))]
     except InvalidParadigm as problem:
         print(f"compose paradigms: REFUSED, nothing written — {str(problem)[:2000]}")
         return False
@@ -162,13 +164,24 @@ def _needed_rows(paradigms: dict) -> list[tuple[str, ...]]:
             planned = plan(candidate.key, candidate.form, candidate.readings, candidate.meaning_en, _polysemous())
         except CannotCompose:
             continue
-        cell = planned.decomposition.cell
-        if cell.code in paradigms.get(candidate.key, {}) or (candidate.key, cell.code) in rows:
-            continue
+        cell, known = planned.decomposition.cell, paradigms.get(candidate.key, {})
         hint = english.cell_gloss(cell, EnglishVerb.from_meaning(candidate.meaning_en))
-        rows[(candidate.key, cell.code)] = (candidate.key, lemmas[candidate.verb], candidate.meaning_en,
-                                            candidate.meaning_bs, cell.code, hint, candidate.form.text, "")
+        for code, code_hint in _cells_needed(planned.decomposition, hint, known):
+            if code not in known:
+                rows.setdefault((candidate.key, code), (candidate.key, lemmas[candidate.verb], candidate.meaning_en,
+                                                        candidate.meaning_bs, code, code_hint, candidate.form.text, ""))
     return list(rows.values())
+
+
+def _cells_needed(decomposition: Decomposition, hint: str, known: dict[str, str]) -> list[tuple[str, str]]:
+    """The form's cell, and after "da"/"neka" its perfective present too — the filler sees the
+    imperfective and writes its perfective partner, or "same" where there is none."""
+    cell = decomposition.cell
+    needed = [(cell.code, hint)]
+    if bosnian.wants_perfective(decomposition.proclitics, cell):
+        imperfective = known.get(cell.code, "the present cell above")
+        needed.append((bosnian.perfective_code(cell), f"{hint} — perfective of: {imperfective}"))
+    return needed
 
 
 def _report(results: list[tuple[Candidate, Composed | Skipped]]) -> None:

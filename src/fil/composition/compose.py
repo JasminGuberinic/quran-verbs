@@ -78,11 +78,11 @@ def compose(verb: str, form: AttestedForm, readings: Sequence[Reading], meaning:
     """The form's gloss in English and Bosnian, or why it keeps its label (`verb` is "root|form")."""
     try:
         planned = plan(verb, form, readings, meaning, polysemous)
-        cell = planned.decomposition.cell
-        if cell.code not in paradigm:
+        proclitics, cell = planned.decomposition.proclitics, planned.decomposition.cell
+        cell_text = bosnian.cell_text(proclitics, cell, paradigm)
+        if cell_text is None:
             raise CannotCompose("no paradigm cell")
-        return Composed(planned.english,
-                        bosnian.gloss(planned.decomposition.proclitics, cell, paradigm[cell.code]))
+        return Composed(planned.english, bosnian.gloss(proclitics, cell, cell_text))
     except CannotCompose as reason:
         return Skipped(reason.reason)
 

@@ -183,7 +183,44 @@ def test_bosnian_purpose_needs_a_present():
         bosnian.gloss((PURPOSE,), Cell("past", "3MP", False), "rekli su")
 
 
+PRESENT_AND_PERFECTIVE = {"present|act|3MP|2MS": "ubijaju te", "perfective|act|3MP|2MS": "ubiju te"}
+
+
+@pytest.mark.parametrize("proclitics, expected", [
+    ((PURPOSE,), "ubiju te"),
+    ((AND, LET), "ubiju te"),
+    ((AND,), "ubijaju te"),
+    ((), "ubijaju te"),
+])
+def test_da_and_neka_take_the_perfective_present(proclitics, expected):
+    assert bosnian.cell_text(proclitics, Cell("present", "3MP", False, ("2MS",)), PRESENT_AND_PERFECTIVE) == expected
+
+
+def test_without_a_perfective_cell_da_falls_back_to_the_present():
+    paradigm = {"present|act|3MP|2MS": "ubijaju te"}
+    assert bosnian.cell_text((PURPOSE,), Cell("present", "3MP", False, ("2MS",)), paradigm) == "ubijaju te"
+
+
+def test_a_past_never_takes_the_perfective_cell():
+    paradigm = {"past|act|3MP|-": "rekli su", "perfective|act|3MP|-": "kažu"}
+    assert bosnian.cell_text((PURPOSE,), Cell("past", "3MP", False), paradigm) == "rekli su"
+
+
 # ---------------------------------------------------------------- paradigms
+
+def test_a_perfective_same_becomes_its_present_cell():
+    header = "\t".join(SHEET_COLUMNS)
+    row = "أمن|4\tآمَنَ\tto believe\tvjerovati\tperfective|act|3MP|-\tthey believe\tلِيُؤْمِنُوا\tsame"
+    known = {"أمن|4": {"present|act|3MP|-": "vjeruju"}}
+    assert from_sheet([header, row], known) == {"أمن|4": {"perfective|act|3MP|-": "vjeruju"}}
+
+
+@pytest.mark.parametrize("code", ["perfective|act|3MP|-", "present|act|3MP|-"])
+def test_same_without_a_known_present_is_refused(code):
+    header = "\t".join(SHEET_COLUMNS)
+    with pytest.raises(InvalidParadigm):
+        from_sheet([header, f"أمن|4\tآمَنَ\tto believe\tvjerovati\t{code}\tthey believe\tيُؤْمِنُوا\tsame"])
+
 
 def test_a_sheet_becomes_paradigms():
     header = "\t".join(SHEET_COLUMNS)

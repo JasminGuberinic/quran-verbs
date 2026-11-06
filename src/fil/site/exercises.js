@@ -137,6 +137,17 @@
 
   // ---------- what the learner reads after answering ----------
 
+  // The kinds about a verb's forms: their facts name the verb and the cells (tense:person) a form is.
+  const VERB_FORM_KINDS = ["form-meaning", "meaning-form", "quran-form"];
+
+  /** "present:anta,present:hiya" → "sadašnje · ti (m.) / sadašnje · ona": every reading of the form. */
+  function cellNames(readings, words) {
+    return readings.split(",").map((cell) => {
+      const [tense, person] = cell.split(":");
+      return `${words.tenses[tense]} · ${words.pronouns[person]}`;
+    }).join(" / ");
+  }
+
   /** The lines of explanation for an answered question, as plain text in the page's language. */
   function explanationLines(kind, item, words, language) {
     const text = (texts) => (texts ? texts[language] || texts.en : "");
@@ -157,6 +168,8 @@
       lines.push(words.agreesIn(words.cases[facts.case], words.states[facts.state]));
     }
     if (kind === "particle" && item.gloss) lines.push(`${words.use}: ${text(item.gloss)}`);
+    if (facts.readings) lines.push(words.formIs(cellNames(facts.readings, words)));
+    if (VERB_FORM_KINDS.includes(kind) && item.gloss) lines.push(`${words.verb}: ${facts.verb} – ${text(item.gloss)}`);
     if ((kind === "picture" || kind === "nuance") && item.gloss) lines.push(`${words.meaning}: ${text(item.gloss)}`);
     if (item.explanation) lines.push(`${kind === "nuance" ? words.why : words.inThisAyah}: ${text(item.explanation)}`);
     return lines.filter(Boolean);
@@ -249,7 +262,10 @@
       if (item.sound) box.append(soundButton(item.sound, words.listen), make("span", { class: "note" }, words.listen));
       if (item.passage) box.append(passage(item));
       if (item.lead) box.append(lead(kind, item.lead));
-      if (item.translation) box.append(make("p", { class: "note" }, item.translation[language] || item.translation.en));
+      // Značenje → oblik: the meaning is the question itself, not a hint beside it.
+      if (item.translation) {
+        box.append(make("p", { class: kind === "meaning-form" ? "lead exercise-meaning" : "note" }, item.translation[language] || item.translation.en));
+      }
       return box;
     }
 
@@ -378,7 +394,7 @@
   /** The interface text arrives as JSON (fil.pages.exercise_render); its templates have numbered holes. */
   function withTemplates(words) {
     const fill = (template) => (...values) => values.reduce((text, value, index) => text.replace(`{${index}}`, value), template);
-    const templated = ["questionOf", "score", "sessionScore", "inBosnian", "renderedAs", "agreesIn"];
+    const templated = ["questionOf", "score", "sessionScore", "inBosnian", "renderedAs", "agreesIn", "formIs"];
     return { ...words, ...Object.fromEntries(templated.map((name) => [name, fill(words[name])])) };
   }
 
@@ -390,6 +406,6 @@
   return {
     SESSION_SIZE, AGAIN_AFTER, BOX_DAYS, DAY, STORAGE_KEY,
     shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, emptyProgress, record, sessionOrder, askAgain,
-    readProgress, writeProgress, explanationLines, optionLabel, withTemplates,
+    readProgress, writeProgress, explanationLines, optionLabel, withTemplates, cellNames, VERB_FORM_KINDS,
   };
 });

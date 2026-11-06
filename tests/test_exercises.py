@@ -14,7 +14,7 @@ from fil.exercises.agreement import AdjectiveForm, AdjectiveSentence, agreement_
 from fil.exercises.ayat import (AyahWord, CitedAyah, NuanceGroup, NuanceMember, ParticleUse, nuance_exercises,
                                 particle_exercises)
 from fil.exercises.cases import NounSentence, SentenceWord, case_exercises
-from fil.exercises.model import (CASE, LISTEN, Bilingual, Exercise, InvalidExercise, Option, Segment,
+from fil.exercises.model import (CASE, KINDS, LISTEN, Bilingual, Exercise, InvalidExercise, Option, Segment,
                                  word_id)
 from fil.exercises.prepositions import NounForms, QuranicForm, TableRow, preposition_exercises
 from fil.exercises.shards import shard_of, shards
@@ -319,7 +319,7 @@ def test_the_json_leaves_out_empty_fields_and_marks_positions():
 
 # ---------------------------------------------------------------- pages
 
-TEXTS_KINDS = ("picture", "listen", "case", "preposition", "agreement", "nuance", "particle")
+TEXTS_KINDS = KINDS
 
 
 @pytest.fixture(scope="module")

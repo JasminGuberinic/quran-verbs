@@ -1,6 +1,6 @@
 ---
 name: fil-exercises
-description: Add or change an exercise kind ("Vježbe / Exercises": picture → word, listen, which case, preposition + case, adjective agreement, nuances, particles) on the Fiʿl study site, or refresh the exercises after a content batch. Use when the user says "/fil-exercises", "nova vježba", "add an exercise type", or asks why an exercise is wrong.
+description: Add or change an exercise kind ("Vježbe / Exercises": picture → word, listen, verb form ↔ meaning, from the Quran, which case, preposition + case, adjective agreement, nuances, particles) on the Fiʿl study site, or refresh the exercises after a content batch. Use when the user says "/fil-exercises", "nova vježba", "add an exercise type", or asks why an exercise is wrong.
 ---
 
 # Exercises (bs + en)
@@ -21,6 +21,11 @@ fil.pages.exercise_render, script src/fil/site/exercises.js, interface text site
 - No tells: show Arabic options in one style (`text.in_one_style`), never mix Uthmani and standard spelling.
 - Meaning options never share a content word in either language, never come from one root or one nuance group.
 - A contested reading (a qirāʾa, a grammarians' dispute) is not a good question: prefer another ayah of the same use.
+- Verb forms (src/fil/exercises/verb_forms.py): a spelling's readings are practice.js `readingsOf` (`text.reading_key` =
+  `spellingKey`, a test runs both — change them together). Options of one verb's forms clash on the same gloss in
+  either language (`text.same_gloss`), not on a shared word; each question passes its kind's `*_problems` validator
+  (fail fast in the generator) before the gate. Meanings only where `compose_cell` composes them; never a you/she
+  present in Iz Kur'ana, never active/passive twins, never a same-cell form differing by "and/so".
 
 ## Working in an agent worktree
 - Symlink `data/qac`, `data/quranhive`, `data/translations` to the main repo's; copy `build/nouns/*.tsv`; link
@@ -42,6 +47,16 @@ fil.pages.exercise_render, script src/fil/site/exercises.js, interface text site
 5. Golden tests in tests/test_exercises.py (right answer, a distractor that must never appear, a case that must be
    skipped) and JS tests if the script changed. `fil pages` runs the gate over every real item.
 6. Update the counts in docs/EXERCISES-PLAN.md.
+
+## Verb forms (2026-11-06): form-meaning 1,246 · meaning-form 1,598 · quran-form 3,306
+Lessons:
+- `same_spelling` (nouns' `spelling_key`) is broad: it folds hamza seats and a silent final alif, so أَدْعُو ≈ اُدْعُوا. Fine
+  for "never offer both", wrong for "is one spelling with two readings" — that is `is_read_alike`.
+- English "you said" is 2MS and 2FS; Bosnian "kaže" is he and she, "rekli su" 3MP and 3MD: compare glosses per language.
+- Quranic forms come with long ayat and translations: ≤ 30-word ayat, 20 forms a verb, and `shards` grows the count until no
+  file is far over budget (a word's questions are never split).
+- The Sources fields the verb kinds need (paradigms, polysemous, ayat, translations) default to empty: an old pickle in
+  the fast loop gets them with `dataclasses.replace(sources, …)` from `read_sources()`.
 
 ## Pilot (2026-11-06): 7 kinds
 picture 98 · listen 1,100 · case 2,382 · preposition 291 · agreement 303 · nuance 699 · particle 98.

@@ -12,7 +12,7 @@ from dataclasses import dataclass
 
 from fil.attested_forms import AttestedForm
 from fil.composition import bosnian, english
-from fil.composition.decomposition import CannotCompose, Decomposition, decompose
+from fil.composition.decomposition import CannotCompose, Cell, Decomposition, decompose
 from fil.composition.english import EnglishVerb
 from fil.corpus.parse import Segment, VerbOccurrence
 
@@ -83,6 +83,23 @@ def compose(verb: str, form: AttestedForm, readings: Sequence[Reading], meaning:
         if cell_text is None:
             raise CannotCompose("no paradigm cell")
         return Composed(planned.english, bosnian.gloss(proclitics, cell, cell_text))
+    except CannotCompose as reason:
+        return Skipped(reason.reason)
+
+
+def compose_cell(verb: str, cell: Cell, meaning: str, paradigm: Mapping[str, str],
+                 polysemous: Collection[str] = frozenset()) -> Composed | Skipped:
+    """A bare cell of the verb's table (no clitic, no object) in English and Bosnian, by the same rules
+    and the same refusals as a Quranic form: what is not composed here is never shown as a meaning."""
+    try:
+        if verb in IDIOMATIC_VERBS:
+            raise CannotCompose("idiomatic meaning")
+        if verb in polysemous:
+            raise CannotCompose("polysemous verb")
+        cell_text = bosnian.cell_text((), cell, paradigm)
+        if cell_text is None:
+            raise CannotCompose("no paradigm cell")
+        return Composed(english.cell_gloss(cell, EnglishVerb.from_meaning(meaning)), bosnian.gloss((), cell, cell_text))
     except CannotCompose as reason:
         return Skipped(reason.reason)
 

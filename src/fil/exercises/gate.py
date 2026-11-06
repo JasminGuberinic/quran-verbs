@@ -3,7 +3,8 @@ learner could fairly call right too.
 
   - exactly one option is right, and there are 2–4 options, all of one sort;
   - no two Arabic options are the same word as a reader sees it (ٱلْأَرْضِ and الْأَرْضِ are one);
-  - no two meaning options share a content word in either language ("srce" and "srce, duša");
+  - no two meaning options share a content word in either language ("srce" and "srce, duša"), and no two
+    meanings of one verb's forms are the same in either language ("you said": قُلْتَ and قُلْتِ);
   - no grammatical answer is offered twice;
   - a passage with a blank has the blank, one with a mark has the mark;
   - every text is in Bosnian and English, and every exercise practises at least one word;
@@ -23,8 +24,8 @@ from collections import Counter
 from collections.abc import Iterable, Sequence
 from itertools import combinations
 
-from fil.exercises.model import AGREEMENT, KINDS, NUANCE, Bilingual, Exercise, InvalidExercise, Option
-from fil.exercises.text import meanings_overlap, same_spelling
+from fil.exercises.model import AGREEMENT, KINDS, NUANCE, ONE_VERB_MEANINGS, Bilingual, Exercise, InvalidExercise, Option
+from fil.exercises.text import meanings_overlap, same_gloss, same_spelling
 
 MIN_OPTIONS, MAX_OPTIONS = 2, 4
 _BLANKED = (NUANCE, AGREEMENT)   # the kinds whose passage hides the word to find
@@ -41,7 +42,7 @@ def check(exercises: Iterable[Exercise]) -> None:
 
 def problems(exercise: Exercise) -> list[str]:
     """What is wrong with one exercise (nothing, for one that may be shown)."""
-    return [*_shape_problems(exercise), *_option_problems(exercise.options), *_text_problems(exercise)]
+    return [*_shape_problems(exercise), *_option_problems(exercise), *_text_problems(exercise)]
 
 
 def _duplicate_keys(exercises: Sequence[Exercise]) -> list[str]:
@@ -62,7 +63,8 @@ def _shape_problems(exercise: Exercise) -> list[str]:
     return found
 
 
-def _option_problems(options: Sequence[Option]) -> list[str]:
+def _option_problems(exercise: Exercise) -> list[str]:
+    options = exercise.options
     found = []
     if not MIN_OPTIONS <= len(options) <= MAX_OPTIONS:
         found.append(f"{len(options)} options (wanted {MIN_OPTIONS}–{MAX_OPTIONS})")
@@ -72,19 +74,26 @@ def _option_problems(options: Sequence[Option]) -> list[str]:
     sorts = {option.sort for option in options}
     if len(sorts) > 1:
         found.append(f"options of several sorts: {sorted(sorts)}")
-    found += [_clash(first, second) for first, second in combinations(options, 2) if _clash(first, second)]
+    clashes = (_clash(first, second, exercise.kind) for first, second in combinations(options, 2))
+    found += [clash for clash in clashes if clash]
     return found
 
 
-def _clash(first: Option, second: Option) -> str:
+def _clash(first: Option, second: Option, kind: str) -> str:
     """Why two options cannot both be offered ("" when they can)."""
     if first.arabic is not None and second.arabic is not None and same_spelling(first.arabic, second.arabic):
         return f"two options are one word: {first.arabic} / {second.arabic}"
-    if first.meaning is not None and second.meaning is not None and meanings_overlap(first.meaning, second.meaning):
+    if first.meaning is not None and second.meaning is not None and _are_one_meaning(first.meaning, second.meaning, kind):
         return f"two meanings overlap: {first.meaning.en} / {second.meaning.en}"
     if first.code is not None and first.code == second.code:
         return f"the answer {first.code} is offered twice"
     return ""
+
+
+def _are_one_meaning(first: Bilingual, second: Bilingual, kind: str) -> bool:
+    """Meanings of one verb's forms share the verb ("rekao je" / "rekli su"): they clash only when they are
+    the same meaning; meanings of different words clash on any shared content word."""
+    return same_gloss(first, second) if kind in ONE_VERB_MEANINGS else meanings_overlap(first, second)
 
 
 def _text_problems(exercise: Exercise) -> list[str]:

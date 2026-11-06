@@ -89,6 +89,8 @@ const WORDS = E.withTemplates({
   cases: { ACC: "akuzativ" }, states: { indefinite: "neodređen" },
   meaning: "Značenje", why: "Zašto", inThisAyah: "U ovom ajetu", use: "Upotreba",
   questionOf: "Pitanje {0} / {1}", score: "{0} od {1} · niz {2} · najbolji {3}", sessionScore: "{0} od {1}",
+  verb: "Glagol", formIs: "Oblik: {0}.", tenses: { past: "prošlo", present: "sadašnje" },
+  pronouns: { ana: "ja", anta: "ti (m.)", hiya: "ona" },
 });
 
 test("option labels: Arabic as it is, a meaning in the page's language, a code by its name", () => {
@@ -109,4 +111,14 @@ test("the explanation after answering says why, in the page's language", () => {
   assert.deepEqual(E.explanationLines("agreement", agreeing, WORDS, "bs"), ["Množina stvari.", "Padež (akuzativ), određenost (neodređen)."]);
   const nuance = { gloss: { bs: "čovjek", en: "man" }, explanation: { bs: "Ljudska narav.", en: "Human nature." } };
   assert.deepEqual(E.explanationLines("nuance", nuance, WORDS, "en"), ["Značenje: man", "Zašto: Human nature."]);
+});
+
+test("a verb form's explanation names every reading of it and its verb", () => {
+  assert.equal(E.cellNames("present:anta,present:hiya", WORDS), "sadašnje · ti (m.) / sadašnje · ona");
+  const form = { facts: { readings: "present:anta,present:hiya", verb: "قَالَ" }, gloss: { bs: "reći", en: "to say" } };
+  assert.deepEqual(E.explanationLines("form-meaning", form, WORDS, "bs"),
+    ["Oblik: sadašnje · ti (m.) / sadašnje · ona.", "Glagol: قَالَ – reći"]);
+  const quranic = { facts: { verb: "قَالَ" }, gloss: { bs: "reći", en: "to say" } };
+  assert.deepEqual(E.explanationLines("quran-form", quranic, WORDS, "en"), ["Glagol: قَالَ – to say"]);
+  assert.deepEqual(E.VERB_FORM_KINDS, ["form-meaning", "meaning-form", "quran-form"]);
 });

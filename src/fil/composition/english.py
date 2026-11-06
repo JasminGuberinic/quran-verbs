@@ -184,7 +184,7 @@ def gloss(decomposition: Decomposition, verb: EnglishVerb) -> str:
 
 
 def cell_gloss(cell: Cell, verb: EnglishVerb) -> str:
-    """The bare cell, as a hint for whoever writes its Bosnian."""
+    """The bare cell: a hint for whoever writes its Bosnian, and a table cell's meaning (compose.compose_cell)."""
     return _clause(cell, verb, set())
 
 

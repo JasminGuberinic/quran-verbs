@@ -17,7 +17,7 @@ from collections.abc import Callable, Collection, Mapping, Sequence
 from html import escape
 from urllib.parse import quote
 
-from fil.exercises.model import KINDS, word_id
+from fil.exercises.model import KINDS, VERB_WORD, word_id
 from fil.languages import Language
 from fil.pages import render, seo
 from fil.pages.interface_text import fill
@@ -114,12 +114,17 @@ def practice_links(family: str, kinds_of_word: Mapping[str, Sequence[str]], text
 
 
 def practice_link(word: str, kinds: Sequence[str], language: Language, text: dict, root: str) -> str:
-    """"Vježbaj ovu riječ →" on a word's page: the hub, practising only that word in the kinds that ask about it."""
+    """"Vježbaj ovu riječ →" ("Vježbaj ovaj glagol →" on a verb's) on a word's page: the hub, practising only
+    that word in the kinds that ask about it."""
     if language.code not in EXERCISE_LANGUAGES or not kinds:
         return ""
     address = f'{root}{seo.exercise_index_path(language.code)}?w={quote(word, safe=":")}&amp;t={",".join(kinds)}'
+    label = _LINK_LABELS.get(word.split(":", 1)[0], "practiseWord")
     return (f'<p class="cta"><a class="button quiet" href="{address}">'
-            f'{escape(text["exercisePage"]["practiseWord"])} →</a></p>')
+            f'{escape(text["exercisePage"][label])} →</a></p>')
+
+
+_LINK_LABELS = {VERB_WORD: "practiseVerb"}   # every other family: "practiseWord"
 
 
 # ---------- shared ----------

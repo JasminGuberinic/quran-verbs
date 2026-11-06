@@ -8,6 +8,10 @@ gate — and the pure generators of fil.exercises: it reads the cards into the g
 adds what the cards do not carry (the emoji a picture was drawn from, a noun's category, the
 studied nouns' readings for agreement, the Bosnian case a preposition takes), runs the exercise
 gate over everything (a problem stops the build) and writes each kind in shards a phone loads quickly.
+
+The verb forms' meanings are composed here, cell by cell, by the rules that gloss the Quran's forms
+(fil.composition.compose.compose_cell, from the verb's Bosnian paradigm); a Quranic form is asked in
+the example ayah that shows it with the same gloss, else in the first ayah it stands in.
 """
 
 from __future__ import annotations
@@ -15,24 +19,35 @@ from __future__ import annotations
 import json
 import re
 from collections.abc import Iterable, Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from fil import noun_store
 from fil.adjectives.agreement import AdjectiveReading
+from fil.ayah_translations import AyahTranslations
+from fil.composition.compose import Composed, compose_cell
+from fil.composition.decomposition import Cell as VerbCell
+from fil.composition.decomposition import pgn
+from fil.composition.paradigms import verb_key
+from fil.corpus.oracle import table_person
 from fil.exercises import gate
 from fil.exercises.agreement import AdjectiveForm, AdjectiveSentence, agreement_exercises
 from fil.exercises.ayat import AyahWord, CitedAyah, NuanceGroup, NuanceMember, ParticleUse, nuance_exercises, particle_exercises
 from fil.exercises.cases import NounSentence, SentenceWord, case_exercises
-from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, KINDS, LISTEN, NOUN_WORD, NUANCE, NUANCE_WORD, PARTICLE,
-                                 PARTICLE_WORD, PICTURE, PREPOSITION, VERB_WORD, Bilingual, Exercise, QuranTranslation, word_id)
+from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, FORM_MEANING, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
+                                 NUANCE_WORD, PARTICLE, PARTICLE_WORD, PICTURE, PREPOSITION, QURAN_FORM, VERB_WORD, Bilingual,
+                                 Exercise, QuranTranslation, word_id)
 from fil.exercises.prepositions import NounForms, QuranicForm, TableRow, preposition_exercises
 from fil.exercises.shards import shards
+from fil.exercises.verb_forms import (AttestedForm, Grammar, QuranicVerb, TableForm, VerbTable, form_meaning_exercises,
+                                      meaning_form_exercises, quran_form_exercises)
 from fil.exercises.vocabulary import Word, listen_exercises, picture_exercises
 from fil.noun_pictures import load_categories, load_pictures
 from fil.nouns import bosnian as bosnian_nouns
 from fil.nouns.model import Cell
+from fil.stages import site
 from fil.stages.adjectives import Corpus, noun_readings
+from fil.stages.compose import read_paradigms, read_polysemous
 
 FOLDER = "exercises"
 # How the cards' notes name another canonical reading ("in Ḥafṣ's reading; other readings have…").
@@ -49,6 +64,10 @@ class Sources:
     categories: Mapping[tuple[str, str], str]     # (lemma, root) → the noun's category
     noun_readings: Mapping[str, tuple]            # fil.stages.adjectives.noun_readings
     bosnian: Mapping[str, Mapping]                # noun key → its Bosnian entry (fil.nouns.bosnian)
+    paradigms: Mapping[str, Mapping[str, str]] = field(default_factory=dict)   # "root|form" → cell code → Bosnian
+    polysemous: frozenset[str] = frozenset()      # verbs one sense would mislead on: never composed
+    ayat: Mapping[str, tuple[str, ...]] = field(default_factory=dict)          # "2:30" → the ayah's words
+    translations: Mapping[str, QuranTranslation] = field(default_factory=dict)  # "2:30" → its English translation
 
 
 @dataclass(frozen=True)
@@ -75,10 +94,15 @@ class ExerciseSets:
 
 def read_sources() -> Sources:
     """Read what the exercises need beyond the cards (the pictures' emoji, the categories, the
-    studied nouns' readings, the Bosnian nouns)."""
+    studied nouns' readings, the Bosnian nouns, the verbs' Bosnian paradigms, the Quran's ayat and their English)."""
+    ayat = {f"{surah}:{ayah}": tuple(word.text for word in words) for (surah, ayah), words in site.read_corpus().ayat.items()}
+    english = AyahTranslations()
     return Sources(emoji={picture.key: picture.codepoint for picture in load_pictures() if picture.has_picture},
                    categories={key: entry.category for key, entry in load_categories().items()},
-                   noun_readings=noun_readings(Corpus()), bosnian=noun_store.bosnian_entries())
+                   noun_readings=noun_readings(Corpus()), bosnian=noun_store.bosnian_entries(),
+                   paradigms=read_paradigms(), polysemous=read_polysemous(), ayat=ayat,
+                   translations={reference: translation for reference in ayat
+                                 for translation in (_english(english, reference),) if translation})
 
 
 def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjectives: Sequence[dict],
@@ -87,9 +111,13 @@ def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjective
     synonyms = _synonym_groups(nuances, nouns, verbs)
     noun_words = [_noun_word(card, sources) for card in nouns]
     verb_words = [_verb_word(slug, card) for slug, card in verbs]
+    tables = [_verb_table(word, card, sources) for word, (_slug, card) in zip(verb_words, verbs)]
     built = {
         PICTURE: picture_exercises(noun_words, synonyms),
         LISTEN: listen_exercises([*noun_words, *verb_words], synonyms),
+        FORM_MEANING: form_meaning_exercises(tables),
+        MEANING_FORM: meaning_form_exercises(tables, synonyms),
+        QURAN_FORM: quran_form_exercises([_quranic_verb(table, card, sources) for table, (_slug, card) in zip(tables, verbs)]),
         CASE: case_exercises([sentence for card in nouns for sentence in _noun_sentences(card)]),
         PREPOSITION: preposition_exercises([_noun_forms(card, sources.bosnian) for card in nouns]),
         AGREEMENT: agreement_exercises([sentence for card in adjectives for sentence in _adjective_sentences(card)],
@@ -147,6 +175,72 @@ def _synonym_groups(nuances: Iterable[dict], nouns: Sequence[dict], verbs: Seque
     return [frozenset(found for member in group["members"] for found in (
                 *(noun_ids.get(key) for key in member.get("lemmaKeys") or ()), verb_ids.get(member.get("verbKey") or ""))
             if found) for group in nuances]
+
+
+# ---------------------------------------------------------------- the verbs' forms
+
+def _verb_table(word: Word, card: dict, sources: Sources) -> VerbTable:
+    key = verb_key(card["root"], card["form"])
+    paradigm = sources.paradigms.get(key, {})
+    return VerbTable(verb=word, pattern=card["form"], forms=tuple(
+        TableForm(grammar=Grammar(cell["tense"], cell["pronoun"]), arabic=cell["plain"], is_used=not cell["notUsed"],
+                  meaning=_cell_meaning(key, cell, card["meaning"]["en"], paradigm, sources.polysemous),
+                  sound=cell.get("spoken"))
+        for cell in card["cells"]))
+
+
+def _cell_meaning(key: str, cell: dict, meaning: str, paradigm: Mapping[str, str],
+                  polysemous: frozenset[str]) -> Bilingual | None:
+    """The cell's meaning composed by rule, or None where the rules do not reach."""
+    subject = pgn(*table_person(cell["pronoun"]))
+    composed = compose_cell(key, VerbCell(cell["tense"], subject, False), meaning, paradigm, polysemous)
+    return Bilingual(bs=composed.bs, en=composed.en) if isinstance(composed, Composed) else None
+
+
+def _quranic_verb(table: VerbTable, card: dict, sources: Sources) -> QuranicVerb:
+    return QuranicVerb(table, tuple(found for found in (_attested(form, card, sources) for form in card["forms"]) if found))
+
+
+def _attested(form: dict, card: dict, sources: Sources) -> AttestedForm | None:
+    """A form with one reading and a gloss in both languages, in an ayah where it stands — else None."""
+    gloss = form.get("gloss") or {}
+    if len(form["grammar"]) != 1 or not (gloss.get("bs") and gloss.get("en")):
+        return None
+    meaning = _bilingual(gloss)
+    ayah = _example_ayah(form["arabic"], meaning, card) or _first_ayah(form, sources)
+    if ayah is None:
+        return None
+    grammar = form["grammar"][0]
+    return AttestedForm(arabic=form["arabic"], gloss=meaning, ayah=ayah, sound=form.get("audio"),
+                        grammar=Grammar(grammar["tense"], grammar["pronoun"], grammar["passive"], tuple(grammar["objects"])))
+
+
+def _example_ayah(arabic: str, gloss: Bilingual, card: dict) -> CitedAyah | None:
+    """An example ayah of the card in which the form stands glossed as the form is (the gloss read in place)."""
+    for ayah in card["ayat"]:
+        hits = [word for word in ayah["words"] if word["hit"]]
+        if hits and all(word["text"] == arabic and _bilingual(word.get("gloss") or {}) == gloss for word in hits):
+            english = (ayah.get("translation") or {}).get("en")
+            return CitedAyah(reference=ayah["ref"], why=Bilingual("", ""),
+                             words=tuple(AyahWord(word["text"], word["hit"]) for word in ayah["words"]),
+                             translation=QuranTranslation(english["text"], english["by"]) if english else None)
+    return None
+
+
+def _first_ayah(form: dict, sources: Sources) -> CitedAyah | None:
+    """The first ayah the form stands in, the form marked wherever the ayah writes it."""
+    words = sources.ayat.get(form["first"], ())
+    if form["arabic"] not in words:
+        return None
+    return CitedAyah(reference=form["first"], why=Bilingual("", ""),
+                     words=tuple(AyahWord(text, text == form["arabic"]) for text in words),
+                     translation=sources.translations.get(form["first"]))
+
+
+def _english(translations: AyahTranslations, reference: str) -> QuranTranslation | None:
+    surah, ayah = map(int, reference.split(":"))
+    english = translations.of(surah, ayah).get("en")
+    return QuranTranslation(english["text"], english["by"]) if english else None
 
 
 # ---------------------------------------------------------------- the nouns' sentences and forms

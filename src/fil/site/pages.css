@@ -239,6 +239,7 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .exercise-passage { font-size: 1.6rem; line-height: 2.1; overflow-wrap: anywhere; }
 .exercise-passage mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
 .exercise-lead { font-size: 1.8rem; }
+.exercise-meaning { font-size: 1.3rem; font-weight: 600; color: var(--ink); }
 .blank { display: inline-block; min-width: 3em; border-bottom: 2px solid var(--accent); color: transparent; }
 .exercise-options { display: grid; grid-template-columns: 1fr; gap: 8px; }
 @media (min-width: 560px) { .exercise-options { grid-template-columns: 1fr 1fr; } }

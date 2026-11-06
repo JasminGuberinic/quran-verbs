@@ -41,7 +41,7 @@ from pathlib import Path
 
 from fil import noun_store, service
 from fil.languages import LANGUAGES
-from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD
+from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
 from fil.pages import (adjective_render, deploy, exercise_render, indexing, interface_text, nuance_render, particle_render,
                        render, seo, share_image)
 from fil.pages.render import PublishedVerb
@@ -121,7 +121,8 @@ def build(pages: Path) -> bool:
                                         "exercisePages": exercise_pages.app_paths() if render.EXERCISES in published else {}})
     site.write_app(pages, content)
     _write_app_page(pages, texts)
-    written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances, published)]
+    written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances, published,
+                                      practice_link(VERB_WORD))]
     written += noun_pages.write(pages, nouns, texts, adjectives.cards, nuances, published, practice_link(NOUN_WORD))
     written += adjective_pages.write(pages, adjectives, nouns.cards, texts, noun_pages.credits(nouns.pictures), nuances,
                                      published, practice_link(ADJECTIVE_WORD))
@@ -206,7 +207,8 @@ def _practice_links(practice: exercises.ExerciseSets, texts: dict[str, dict]):
 
 def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
                           nouns: NounContent, adjectives: Sequence[dict] = (), nuances: Sequence[dict] = (),
-                          published: Collection[str] = frozenset()) -> Iterable[Path]:
+                          published: Collection[str] = frozenset(),
+                          practice: exercise_render.PracticeLink = exercise_render.no_practice) -> Iterable[Path]:
     credit_for = noun_pages.credits(nouns.pictures)
     for language in LANGUAGES:
         text = texts[language.code]
@@ -222,7 +224,8 @@ def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[s
             similar = nuance_render.similar_words_section(groups, language, text, seo.to_root(path))
             yield _write(pages, path, render.verb_page(verb, language, text, section, published=published,
                                                        picture_credit=credit, adjectives_of_root=adjectives_section,
-                                                       similar_words=similar))
+                                                       similar_words=similar,
+                                                       practice=practice(verb.slug, language, seo.to_root(path))))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:

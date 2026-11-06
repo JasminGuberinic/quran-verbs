@@ -21,6 +21,7 @@ Item = TypeVar("Item")
 # site/practice.js reads meanings the same way.
 _STOPWORDS = frozenset({"to", "the", "a", "an", "of", "for", "oneself", "se", "i", "je", "u", "na", "od", "za", "and"})
 _WORD_BREAK = re.compile(r"[\s,;()/.!?–-]+")
+_GLOSS_NOISE = re.compile(r"[!?.,;:]")
 
 # A letter followed straight by a long ā, with no vowel written on it (CAMeL's الرَّحِيمانِ):
 # the fatḥa is written, as in every other form a learner compares it with (الرَّحِيمَانِ).
@@ -31,8 +32,29 @@ _FATHA = "َ"
 
 
 def same_spelling(first: str, second: str) -> bool:
-    """Two Arabic forms a reader sees as one word (Uthmani or standard, a fatḥa before alif or none)."""
+    """Two Arabic forms a reader sees as one word (Uthmani or standard, a fatḥa before alif or none).
+
+    Broad on purpose (it folds hamza seats and a silent final alif too): two options it calls one
+    word are never offered together. Whether one spelling *is* two cells is `is_read_alike`'s."""
     return spelling_key(first) == spelling_key(second)
+
+
+# Uthmani pause and silence marks, the madda sign and tatweel; a vowel on a connecting alif.
+# site/practice.js `spellingKey` folds exactly these (a test holds the two equal).
+_SILENT_MARKS = re.compile("[\u06dc\u06df-\u06ea\u06e8-\u06ed\u0653\u0640]")
+_CONNECTING_ALIF_VOWEL = re.compile("(^|\\s)\u0627[\u064e\u064f\u0650]")
+
+
+def reading_key(form: str) -> str:
+    """A voweled form as a reader of it sees it: equal keys, one spelling with all its readings
+    (تَقُولُ: "you say" and "she says"). The app's rule (practice.js `spellingKey`), word for word."""
+    word = _SILENT_MARKS.sub("", unicodedata.normalize("NFD", form)).replace("\u0671", "\u0627")
+    return unicodedata.normalize("NFC", _CONNECTING_ALIF_VOWEL.sub("\\1\u0627", word))
+
+
+def is_read_alike(first: str, second: str) -> bool:
+    """One spelling: whatever one of the two forms may mean, the other may too (practice.js `readingsOf`)."""
+    return reading_key(first) == reading_key(second)
 
 
 def meaning_words(meaning: str) -> frozenset[str]:
@@ -44,6 +66,15 @@ def meanings_overlap(first: Bilingual, second: Bilingual) -> bool:
     """Two meanings share a content word in either language ("srce" and "srce, duša"): offering
     both would leave the learner two right answers."""
     return bool(meaning_words(first.bs) & meaning_words(second.bs) or meaning_words(first.en) & meaning_words(second.en))
+
+
+def same_gloss(first: Bilingual, second: Bilingual) -> bool:
+    """One meaning in either language, punctuation and case aside ("you said" for قُلْتَ and قُلْتِ)."""
+    return _folded(first.bs) == _folded(second.bs) or _folded(first.en) == _folded(second.en)
+
+
+def _folded(gloss: str) -> str:
+    return " ".join(_GLOSS_NOISE.sub(" ", gloss.casefold()).split())
 
 
 def in_one_style(form: str) -> str:

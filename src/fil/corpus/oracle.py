@@ -24,6 +24,8 @@ _PRONOUN_BY_PGN: dict[tuple[int, str | None, str], str] = {
     (3, "M", "P"): "hum", (3, "F", "P"): "hunna",
 }
 _DUAL_PRONOUN = {2: "antuma", 3: "huma"}
+# A table's dual cells conjugate the masculine dual (قَالَا, يَقُولَانِ); the second person has one dual.
+_TABLE_DUALS: dict[str, tuple[int, str | None, str]] = {"antuma": (2, None, "D"), "huma": (3, "M", "D")}
 
 # Per (root, form): the attested surface for each (tense, pronoun) cell.
 AttestedCells = dict[tuple[str, str], str]
@@ -74,3 +76,10 @@ def pronoun_key(person_gender_number: PersonGenderNumber) -> str:
     if number == "D":
         return _DUAL_PRONOUN[person]
     return _PRONOUN_BY_PGN[(person, gender, number)]
+
+
+def table_person(pronoun: str) -> PersonGenderNumber:
+    """A table cell's pronoun key → the person, gender and number the cell conjugates (its duals masculine)."""
+    if pronoun in _TABLE_DUALS:
+        return _TABLE_DUALS[pronoun]
+    return next(found for found, key in _PRONOUN_BY_PGN.items() if key == pronoun)

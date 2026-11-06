@@ -16,6 +16,7 @@ from collections.abc import Sequence
 from fil.exercises.model import Exercise
 
 MAX_SHARD_BYTES = 60_000
+_SLACK = 1.25   # how far over its budget a shard may go before the kind is split further
 _FNV_OFFSET, _FNV_PRIME = 0x811C9DC5, 0x01000193
 
 
@@ -28,11 +29,25 @@ def shard_of(word: str, count: int) -> int:
 
 
 def shards(exercises: Sequence[Exercise], max_bytes: int = MAX_SHARD_BYTES) -> list[list[dict]]:
-    """The exercises as JSON-ready shards of about `max_bytes` each (by their first word)."""
+    """The exercises as JSON-ready shards of about `max_bytes` each (by their first word).
+
+    The fewest shards the size asks for, and more while a shard is far over its budget — words hash
+    unevenly, and a word with many questions (قَالَ in the Quran) must not share its file with another
+    such word. Never more shards than words: a word's questions are never split."""
     shown = [exercise.as_json() for exercise in exercises]
-    size = sum(len(json.dumps(item, ensure_ascii=False, separators=(",", ":")).encode("utf-8")) for item in shown)
-    count = max(1, math.ceil(size / max_bytes))
+    sizes = [len(json.dumps(item, ensure_ascii=False, separators=(",", ":")).encode("utf-8")) for item in shown]
+    words = [exercise.words[0] for exercise in exercises]
+    count = max(1, math.ceil(sum(sizes) / max_bytes))
+    while count < len(set(words)) and max(_shard_sizes(words, sizes, count)) > max_bytes * _SLACK:
+        count += 1
     split: list[list[dict]] = [[] for _ in range(count)]
-    for exercise, item in zip(exercises, shown):
-        split[shard_of(exercise.words[0], count)].append(item)
+    for word, item in zip(words, shown):
+        split[shard_of(word, count)].append(item)
     return split
+
+
+def _shard_sizes(words: Sequence[str], sizes: Sequence[int], count: int) -> list[int]:
+    totals = [0] * count
+    for word, size in zip(words, sizes):
+        totals[shard_of(word, count)] += size
+    return totals

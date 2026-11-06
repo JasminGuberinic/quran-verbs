@@ -22,7 +22,13 @@ PREPOSITION = "preposition"   # a preposition from the Quran → the ending of t
 AGREEMENT = "agreement"       # a noun in a sentence → the adjective form that agrees with it
 NUANCE = "nuance"             # an ayah with a blank → which of the near-synonyms the Quran says there
 PARTICLE = "particle"         # a particle in an ayah → what it does to the next word
-KINDS = (PICTURE, LISTEN, CASE, PREPOSITION, AGREEMENT, NUANCE, PARTICLE)
+FORM_MEANING = "form-meaning" # a verb form of the table, heard → its meaning (who, when)
+MEANING_FORM = "meaning-form" # a meaning → the verb form that says it
+QURAN_FORM = "quran-form"     # a verb form marked in an ayah → its gloss
+KINDS = (PICTURE, LISTEN, FORM_MEANING, MEANING_FORM, QURAN_FORM, CASE, PREPOSITION, AGREEMENT, NUANCE, PARTICLE)
+# The kinds whose meaning options are forms of one verb: they differ by person and tense ("rekao je" /
+# "rekli su"), so they may share words; two of them that are the same meaning may not be offered.
+ONE_VERB_MEANINGS = (FORM_MEANING, QURAN_FORM)
 
 # The word families an exercise is about, as its word ids name them ("noun:ard"), so a word's page
 # can link the exercises about that word.

@@ -60,12 +60,14 @@ class PublishedVerb:
 # ---------- verb page ----------
 
 def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "", *,
-              published: Collection[str] = frozenset(), picture_credit: str = "", adjectives_of_root: str = "", similar_words: str = "") -> str:
+              published: Collection[str] = frozenset(), picture_credit: str = "", adjectives_of_root: str = "", similar_words: str = "",
+              practice: str = "") -> str:
     """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render);
     `adjectives_of_root`: the same for the studied adjectives (fil.pages.adjective_render);
     `similar_words`: the section linking the near-synonym groups the verb belongs to (fil.pages.nuance_render);
     `published`: the sections beyond the verbs whose pages are published (NOUNS, …), so the top bar leads to them;
-    `picture_credit`: the footer line owed for the pictures the nouns' section shows."""
+    `picture_credit`: the footer line owed for the pictures the nouns' section shows;
+    `practice`: the "Vježbaj ovaj glagol" link to the verb's exercises (fil.pages.exercise_render), or ""."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
     card = verb.card
@@ -87,6 +89,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         nouns_of_root,
         adjectives_of_root,
         similar_words,
+        practice,
         _app_link(card, language, text, root),
         "</article></main>",
         _footer(text, picture_credit),

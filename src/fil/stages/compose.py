@@ -60,12 +60,12 @@ class Candidate:
 # ---------------------------------------------------------------- commands
 
 def status() -> None:
-    paradigms = _paradigms()
+    paradigms = read_paradigms()
     _report([(candidate, _composed(candidate, paradigms)) for candidate in candidates()])
 
 
 def build() -> None:
-    paradigms = _paradigms()
+    paradigms = read_paradigms()
     results = [(candidate, _composed(candidate, paradigms)) for candidate in candidates()]
     glosses = {attested_forms.form_key(candidate.verb, candidate.form.text): {"en": result.en, "bs": result.bs}
                for candidate, result in results if isinstance(result, Composed)}
@@ -76,7 +76,7 @@ def build() -> None:
 def sheets(out: Path, per_sheet: int = VERBS_PER_SHEET) -> None:
     """About PER verbs a sheet, each sheet as long as the next, listing every cell a
     composable form needs and no paradigm has yet."""
-    rows = _needed_rows(_paradigms())
+    rows = _needed_rows(read_paradigms())
     verbs = list(dict.fromkeys(row[0] for row in rows))
     for number, batch in enumerate(_balanced(rows, -(-len(verbs) // per_sheet)), 1):
         folder = out / str(number)
@@ -103,13 +103,13 @@ def _balanced(rows: list[tuple[str, ...]], sheet_count: int) -> list[set[str]]:
 
 def import_paradigms(folder: Path) -> bool:
     try:
-        known = _paradigms()
+        known = read_paradigms()
         filled = [from_sheet(path.read_text(encoding="utf-8").splitlines(), known)
                   for path in sorted(folder.glob(f"*/{SHEET}"))]
     except InvalidParadigm as problem:
         print(f"compose paradigms: REFUSED, nothing written — {str(problem)[:2000]}")
         return False
-    merged = {verb: dict(cells) for verb, cells in _paradigms().items()}
+    merged = {verb: dict(cells) for verb, cells in read_paradigms().items()}
     for sheet in filled:
         for verb, cells in sheet.items():
             merged.setdefault(verb, {}).update(cells)
@@ -153,7 +153,7 @@ def candidates(every: bool = False) -> list[Candidate]:
 
 def _composed(candidate: Candidate, paradigms: dict) -> Composed | Skipped:
     return compose(candidate.key, candidate.form, candidate.readings, candidate.meaning_en,
-                   paradigms.get(candidate.key, {}), _polysemous())
+                   paradigms.get(candidate.key, {}), read_polysemous())
 
 
 def _needed_rows(paradigms: dict) -> list[tuple[str, ...]]:
@@ -161,7 +161,7 @@ def _needed_rows(paradigms: dict) -> list[tuple[str, ...]]:
     lemmas = {(verb.root, verb.form): verb.lemma for verb in service.list_verbs()}
     for candidate in candidates():
         try:
-            planned = plan(candidate.key, candidate.form, candidate.readings, candidate.meaning_en, _polysemous())
+            planned = plan(candidate.key, candidate.form, candidate.readings, candidate.meaning_en, read_polysemous())
         except CannotCompose:
             continue
         cell, known = planned.decomposition.cell, paradigms.get(candidate.key, {})
@@ -193,12 +193,12 @@ def _report(results: list[tuple[Candidate, Composed | Skipped]]) -> None:
 
 
 @lru_cache(maxsize=1)
-def _polysemous() -> frozenset[str]:
+def read_polysemous() -> frozenset[str]:
     """Verbs whose first sense misleads in too many ayat (data/polysemous_verbs.json: verb → its other senses)."""
     return frozenset(_read(POLYSEMOUS_VERBS_JSON))
 
 
-def _paradigms() -> dict[str, dict[str, str]]:
+def read_paradigms() -> dict[str, dict[str, str]]:
     return validated(_read(BS_PARADIGMS_JSON))
 
 

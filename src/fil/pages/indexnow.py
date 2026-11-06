@@ -93,3 +93,8 @@ def _send(submission: Submission, post: HttpPost, report: Callable[[str], None])
         return False
     report(f"IndexNow accepted {len(submission.urls)} addresses (HTTP {status})")
     return True
+
+
+def is_key_live(body: str) -> bool:
+    """The engines refuse a ping (HTTP 403) until the key file they fetch holds exactly our key."""
+    return body.strip() == KEY

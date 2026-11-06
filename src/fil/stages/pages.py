@@ -40,6 +40,7 @@ from __future__ import annotations
 import argparse
 import re
 import shutil
+import time
 from collections.abc import Callable, Collection, Iterable, Sequence
 from dataclasses import dataclass, replace
 from datetime import datetime, timezone
@@ -97,6 +98,9 @@ def main(arguments: list[str] | None = None) -> None:
     print(f"Published to the {deploy.BRANCH} branch → {seo.SITE_URL}")
     if options.no_ping:
         return
+    if not wait_for_key(web.get, time.sleep):
+        print("IndexNow: the key file is not live yet; run `fil pages --deploy` again later to announce")
+        return
     announce(built.urls if options.ping_all else indexnow.news(built.entries, built.changed_urls, published), web.post)
 
 
@@ -107,6 +111,23 @@ def published_dates(get: Callable[[str], str]) -> dict[str, str] | None:
     except (OSError, ElementTree.ParseError) as error:
         print(f"IndexNow: the live sitemap could not be read ({error}); announcing only this build's changes")
         return None
+
+
+KEY_WAIT_ATTEMPTS = 40
+KEY_WAIT_SECONDS = 30
+
+
+def wait_for_key(get: Callable[[str], str], sleep: Callable[[float], None],
+                 attempts: int = KEY_WAIT_ATTEMPTS, seconds: float = KEY_WAIT_SECONDS) -> bool:
+    """Wait until GitHub Pages serves the new key file — pinging before that only earns a 403."""
+    for attempt in range(attempts):
+        try:
+            if indexnow.is_key_live(get(indexnow.key_location() + f"?t={attempt}")):
+                return True
+        except OSError:
+            pass
+        sleep(seconds)
+    return False
 
 
 def announce(urls: Sequence[str], post: indexnow.HttpPost) -> bool:

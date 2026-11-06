@@ -235,3 +235,24 @@ def test_the_built_pages_match_their_recorded_fingerprints():
 @built
 def test_the_indexnow_key_file_is_published():
     assert (PAGES_DIR / indexnow.key_file_name()).read_text(encoding="utf-8") == indexnow.KEY
+
+
+def test_the_ping_waits_until_the_key_file_is_live() -> None:
+    from fil.pages import indexnow
+    from fil.stages.pages import wait_for_key
+    answers = iter([OSError("404"), "<html>not found</html>", indexnow.KEY + "\n"])
+
+    def get(url: str) -> str:
+        answer = next(answers)
+        if isinstance(answer, Exception):
+            raise answer
+        return answer
+
+    slept: list[float] = []
+    assert wait_for_key(get, slept.append, attempts=5, seconds=1)
+    assert slept == [1, 1]
+
+
+def test_the_ping_gives_up_when_the_key_never_appears() -> None:
+    from fil.stages.pages import wait_for_key
+    assert not wait_for_key(lambda url: "nope", lambda seconds: None, attempts=3, seconds=0)

@@ -151,9 +151,12 @@ def test_cards_link_their_root_where_the_root_pages_are_written():
 
 
 def test_the_top_bar_leads_to_the_roots_once_they_are_published(texts):
-    bar = render.top_bar(texts["en"], "../", _LANGUAGE["en"], "", section=render.VERBS, published={render.ROOTS})
+    bar = render.top_bar(texts["en"], "../", _LANGUAGE["en"], seo.language_index_path, section=render.VERBS,
+                         published={render.ROOTS})
     assert '<a href="../en/root/">Roots</a>' in bar
-    assert "korijen" not in render.top_bar(texts["bs"], "../", _LANGUAGE["bs"], "", section=render.VERBS, published=())
+    unpublished = render.top_bar(texts["bs"], "../", _LANGUAGE["bs"], seo.language_index_path, section=render.VERBS,
+                                 published=())
+    assert "korijen" not in unpublished
 
 
 # ---------------------------------------------------------------- golden roots, from the corpus
@@ -213,7 +216,7 @@ def test_gate_every_studied_word_on_its_root_page_and_every_root_adding_up(corpu
 
 built = pytest.mark.skipif(not (PAGES_DIR / "bs" / "korijen" / "index.html").is_file(),
                            reason="build/pages has no root pages (run `fil pages`)")
-_ROOT_LINK = re.compile(r'<a class="ar root" lang="ar" dir="rtl" href="([^"]+)">')
+_ROOT_LINK = re.compile(r'<a class="ar root[^"]*" lang="ar" dir="rtl" href="([^"]+)"')   # the marking pass may add to it
 
 
 @built

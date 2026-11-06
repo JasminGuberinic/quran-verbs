@@ -24,6 +24,9 @@ Paradigms = Mapping[str, Mapping[str, str]]   # verb key → cell code → Bosni
 _BOSNIAN = re.compile(r"^[a-zA-ZčćžšđČĆŽŠĐ' -]+!?$")
 _CELL = re.compile(r"^(%s)\|(act|pass)\|(1S|1P|2MS|2FS|2MP|2FP|2D|3MS|3FS|3MP|3FP|3MD|3FD|3D)\|(-|[0-9A-Z+]+)$"
                    % "|".join((*TENSES, PERFECTIVE)))
+# "se je": the third person "je" falls away after the reflexive "se" ("prepirao se", not "prepirao se je");
+# an object "je" (her) would stand before "se", never after it.
+_SE_JE = re.compile(r"\bse je\b")
 SAME = "same"   # a perfective cell that is the present cell word for word
 SHEET_COLUMNS = ("verb", "lemma", "meaning_en", "meaning_bs", "cell", "english", "example", "bs")
 
@@ -84,4 +87,6 @@ def _problems(verb: str, code: str, text: str) -> list[str]:
         return [f"{where}: \"same\" only stands for a perfective whose present cell is known"]
     if starts_with_enclitic(text):
         return [f"{where}: opens with an enclitic: {text!r}"]
+    if _SE_JE.search(text):
+        return [f"{where}: \"se je\" is not Bosnian, the \"je\" falls away: {text!r}"]
     return []

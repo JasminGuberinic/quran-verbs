@@ -3,7 +3,8 @@
     fil compose status               what composition would gloss now, and why the rest are skipped
     fil compose sheets DIR [PER]     DIR/<n>/cells.tsv: the Bosnian paradigm cells still to write, PER verbs a sheet
     fil compose paradigms DIR        check every filled DIR/*/cells.tsv; merge into data/bs_paradigms.json — all or nothing
-    fil compose build                write data/composed_form_glosses.json (English and Bosnian)
+    fil compose build                write data/composed_form_glosses.json (English and Bosnian), with the
+                                     corrections of data/composed_gloss_corrections.json applied
     fil compose sample N OUT [SEED]  a random sample of composed glosses for a blind review
 
 Only forms without a gloss are composed: an authored gloss or an example ayah's own gloss
@@ -23,13 +24,13 @@ from pathlib import Path
 from fil import attested_forms, meanings, service
 from fil.attested_forms import AttestedForm, VerbKey
 from fil.ayah_translations import AyahTranslations
-from fil.composition import bosnian, english
+from fil.composition import bosnian, corrections, english
 from fil.composition.compose import Composed, Reading, Skipped, compose, plan
 from fil.composition.decomposition import CannotCompose, Decomposition
 from fil.composition.english import EnglishVerb
 from fil.composition.paradigms import SHEET_COLUMNS, InvalidParadigm, from_sheet, validated, verb_key
-from fil.resources import (AYAH_VERB_GLOSSES_JSON, BS_PARADIGMS_JSON, COMPOSED_FORM_GLOSSES_JSON, FORM_GLOSSES_JSON,
-                           POLYSEMOUS_VERBS_JSON)
+from fil.resources import (AYAH_VERB_GLOSSES_JSON, BS_PARADIGMS_JSON, COMPOSED_FORM_GLOSSES_JSON,
+                           COMPOSED_GLOSS_CORRECTIONS_JSON, FORM_GLOSSES_JSON, POLYSEMOUS_VERBS_JSON)
 from fil.stages import forms
 
 SHEET = "cells.tsv"
@@ -67,10 +68,18 @@ def status() -> None:
 def build() -> None:
     paradigms = read_paradigms()
     results = [(candidate, _composed(candidate, paradigms)) for candidate in candidates()]
-    glosses = {attested_forms.form_key(candidate.verb, candidate.form.text): {"en": result.en, "bs": result.bs}
+    by_rule = {attested_forms.form_key(candidate.verb, candidate.form.text): (result.en, result.bs)
                for candidate, result in results if isinstance(result, Composed)}
+    corrected = corrections.validated(read_corrections(), by_rule)
+    glosses = {key: _gloss(corrected[key]) if key in corrected else {"en": en, "bs": bs}
+               for key, (en, bs) in by_rule.items()}
     _write_json(COMPOSED_FORM_GLOSSES_JSON, {"_about": _ABOUT_GLOSSES, **dict(sorted(glosses.items()))})
     _report(results)
+    print(f"  corrected in context: {len(corrected)}")
+
+
+def _gloss(correction: corrections.Correction) -> dict[str, str]:
+    return {"en": correction.en, "bs": correction.bs}
 
 
 def sheets(out: Path, per_sheet: int = VERBS_PER_SHEET) -> None:
@@ -196,6 +205,11 @@ def _report(results: list[tuple[Candidate, Composed | Skipped]]) -> None:
 def read_polysemous() -> frozenset[str]:
     """Verbs whose first sense misleads in too many ayat (data/polysemous_verbs.json: verb → its other senses)."""
     return frozenset(_read(POLYSEMOUS_VERBS_JSON))
+
+
+def read_corrections() -> dict[str, corrections.Correction]:
+    """Composed glosses corrected in context (data/composed_gloss_corrections.json), checked for form only."""
+    return corrections.read(_read(COMPOSED_GLOSS_CORRECTIONS_JSON))
 
 
 def read_paradigms() -> dict[str, dict[str, str]]:

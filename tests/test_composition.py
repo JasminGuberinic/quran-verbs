@@ -10,6 +10,9 @@ from fil.composition import bosnian, english
 from fil.composition.compose import Composed, Skipped, compose
 from fil.composition.decomposition import AND, EMPHATIC, LET, PURPOSE, QUESTION, SO, CannotCompose, Cell, decompose
 from fil.composition.english import IRREGULAR, EnglishVerb
+from fil.composition.corrections import Correction, InvalidCorrection
+from fil.composition.corrections import read as read_corrections
+from fil.composition.corrections import validated as validated_corrections
 from fil.composition.paradigms import SHEET_COLUMNS, InvalidParadigm, from_sheet, validated
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
 
@@ -102,6 +105,16 @@ def test_refuses_what_the_rules_do_not_cover(word, reason):
     ("to let enjoy", Cell("present", "1S", False, ("2MP",)), "I let you (all) enjoy"),
     ("to will, to wish", Cell("present", "3MP", False), "they wish"),
     ("to carry, to bear", Cell("present", "3MS", False), "he/it carries"),
+    # Found by the review of every composed gloss against its ayat (2026-11-06):
+    ("to create", Cell("past", "3MS", True), "he/it was created"),                 # 21:37 man was created
+    ("to have mercy", Cell("present", "2MP", True), "you (all) are shown mercy"),   # not "are had mercy"
+    ("to take the soul, to cause to die", Cell("present", "3MP", True), "they are taken in death"),
+    ("to take the soul, to cause to die", Cell("past", "2MS", False, ("1S",)), "you took me in death"),
+    ("to let enjoy, to provide", Cell("present", "3MP", True), "they are given enjoyment"),
+    ("to withdraw, to keep away from", Cell("past", "3MP", False, ("2MP",)), "they withdrew from you (all)"),
+    ("to convey, to inform", Cell("past", "1S", False, ("2MP",)), "I conveyed to you (all)"),
+    ("to plot, to scheme", Cell("imperative", "2MP", False, ("1S",)), "(you all) plot against me!"),
+    ("to turn over, to turn about", Cell("present", "1P", False, ("3MP",)), "we turn them over"),
 ])
 def test_conjugates_a_cell(meaning, cell, expected):
     assert english.cell_gloss(cell, EnglishVerb.from_meaning(meaning)) == expected
@@ -234,6 +247,7 @@ def test_a_sheet_becomes_paradigms():
     ("past|act|3MP|-", "рекли су"),
     ("past|act|3MP|-", "su rekli"),
     ("past|act|9XX|-", "rekli su"),
+    ("past|act|3MS|2MS", "prepirao se je s tobom"),
 ])
 def test_a_bad_cell_is_refused(code, text):
     with pytest.raises(InvalidParadigm):
@@ -290,7 +304,7 @@ def test_skips_an_object_that_is_its_own_subject():
     assert compose("أتي|1", form_of(odd), (odd,), "to come", PARADIGM) == Skipped("object same as subject")
 
 
-@pytest.mark.parametrize("meaning", ["to die", "to be able", "to turn away"])
+@pytest.mark.parametrize("meaning", ["to die", "to be able", "to turn away", "to associate (partners with God)"])
 def test_refuses_the_passive_of_an_intransitive_meaning(meaning):
     with pytest.raises(CannotCompose):
         english.cell_gloss(Cell("past", "1P", True), EnglishVerb.from_meaning(meaning))
@@ -343,3 +357,55 @@ def test_a_dual_ending_is_the_subject_not_an_object():
 def test_skips_a_present_that_reads_you_or_she():
     tafrah = reading("تَفْرَحْ V IMPF|VF:1|ROOT:فرح|LEM:فَرِحَ|3FS|MOOD:JUS")
     assert compose("فرح|1", form_of(tafrah), (tafrah,), "to rejoice", PARADIGM) == Skipped("you or she")
+
+
+# ---------------------------------------------------------------- corrections in context
+
+AKHLAFTUKUM = ("so I broke you (all)", "pa sam vam prekršio obećanje")   # the rule's gloss of فَأَخْلَفْتُكُمْ
+
+
+def _correction(en: str, bs: str = AKHLAFTUKUM[1], why: str = "14:22: the promise, not the people") -> Correction:
+    return Correction(en, bs, why)
+
+
+def test_a_correction_in_the_glosss_shape_replaces_the_rule():
+    fixed = _correction("so I broke my promise to you (all)")
+    assert validated_corrections({"خلف|4|فَأَخْلَفْتُكُمْ": fixed}, {"خلف|4|فَأَخْلَفْتُكُمْ": AKHLAFTUKUM}) \
+        == {"خلف|4|فَأَخْلَفْتُكُمْ": fixed}
+
+
+@pytest.mark.parametrize("en, bs", [
+    ("I broke my promise to you (all)", AKHLAFTUKUM[1]),                   # its "so" dropped
+    ("so I broke my promise to you (all)", "prekršio sam vam obećanje"),   # its "pa" dropped
+    ("so I broke my promise to you (all)!", AKHLAFTUKUM[1]),               # a statement made a command
+    ("so I broke my promise to you (all)", "pa sam vam prekršio obećanje?"),
+    ("so I broke my promise to you (all)", "pa sam vam prekršio/iznevjerio obećanje"),
+    AKHLAFTUKUM,                                                            # no change at all
+])
+def test_a_correction_that_changes_the_glosss_shape_is_refused(en, bs):
+    with pytest.raises(InvalidCorrection):
+        validated_corrections({"خلف|4|فَأَخْلَفْتُكُمْ": _correction(en, bs)}, {"خلف|4|فَأَخْلَفْتُكُمْ": AKHLAFTUKUM})
+
+
+def test_a_correction_opening_with_an_enclitic_is_refused():
+    rule = ("they entered him/it", "ušli su u njega")
+    with pytest.raises(InvalidCorrection):
+        validated_corrections({"دخل|1|دَخَلُوهُ": _correction("they entered it", "su ušli u njega")}, {"دخل|1|دَخَلُوهُ": rule})
+
+
+def test_a_correction_of_a_form_the_rules_no_longer_compose_is_refused():
+    with pytest.raises(InvalidCorrection, match="no longer compose"):
+        validated_corrections({"خلف|4|فَأَخْلَفْتُكُمْ": _correction("so I broke my promise to you (all)")}, {})
+
+
+def test_a_correction_without_a_reason_is_refused():
+    with pytest.raises(InvalidCorrection):
+        read_corrections({"خلف|4|فَأَخْلَفْتُكُمْ": {"en": "so I broke my promise to you (all)", "bs": AKHLAFTUKUM[1]}})
+
+
+def test_every_stored_correction_is_in_the_composed_glosses():
+    """`fil compose build` checks each correction against the rule and writes it; a stale file fails here."""
+    from fil.resources import COMPOSED_FORM_GLOSSES_JSON, COMPOSED_GLOSS_CORRECTIONS_JSON
+    composed = _stored(COMPOSED_FORM_GLOSSES_JSON)
+    for key, correction in read_corrections(_stored(COMPOSED_GLOSS_CORRECTIONS_JSON)).items():
+        assert composed.get(key) == {"en": correction.en, "bs": correction.bs}, key

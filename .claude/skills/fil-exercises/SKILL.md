@@ -48,7 +48,7 @@ fil.pages.exercise_render, script src/fil/site/exercises.js, interface text site
    skipped) and JS tests if the script changed. `fil pages` runs the gate over every real item.
 6. Update the counts in docs/EXERCISES-PLAN.md.
 
-## Verb forms (2026-11-06): form-meaning 1,246 · meaning-form 1,598 · quran-form 3,306
+## Verb forms (2026-11-06): form-meaning 1,249 · meaning-form 1,604 · quran-form 3,302
 Lessons:
 - `same_spelling` (nouns' `spelling_key`) is broad: it folds hamza seats and a silent final alif, so أَدْعُو ≈ اُدْعُوا. Fine
   for "never offer both", wrong for "is one spelling with two readings" — that is `is_read_alike`.

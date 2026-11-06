@@ -118,5 +118,84 @@
   "9:56:10": {
    "why": "يَفْرَقُونَ in وَلَٰكِنَّهُمْ قَوْمٌ يَفْرَقُونَ (9:56) is فَرِقَ يَفْرَقُ 'to be afraid', not فَرَقَ يَفْرُقُ 'to separate, to distinguish'. The corpus files it under فرق form I, which fitted the present as يَفْرَقُ and put the attested imperative فَافْرُقْ (5:25) in conflict with the table."
   }
+ },
+ "أتي_4": {
+  "7:190:2": {
+   "tense": "past",
+   "person": "3MS",
+   "why": "ءَاتَىٰ here is the past آتَى 'he gave' (7:190 فَلَمَّآ ءَاتَىٰهُمَا صَٰلِحًا, 'when He gave them a good child'), yet the corpus tags it as the present 1S 'I give' (the letters ءَاتَىٰ read both ways), which glossed it \"I give\"."
+  },
+  "7:190:8": {
+   "tense": "past",
+   "person": "3MS",
+   "why": "ءَاتَىٰ here is the past آتَى 'he gave' (7:190 فِيمَآ ءَاتَىٰهُمَا, 'in what He had given them'), yet the corpus tags it as the present 1S 'I give' (the letters ءَاتَىٰ read both ways), which glossed it \"I give\"."
+  },
+  "9:75:6": {
+   "tense": "past",
+   "person": "3MS",
+   "why": "ءَاتَىٰ here is the past آتَى 'he gave' (9:75 لَئِنْ ءَاتَىٰنَا مِن فَضْلِهِۦ, 'if He gives us of His bounty'), yet the corpus tags it as the present 1S 'I give' (the letters ءَاتَىٰ read both ways), which glossed it \"I give\"."
+  },
+  "65:7:20": {
+   "tense": "past",
+   "person": "3MS",
+   "why": "ءَاتَىٰ here is the past آتَى 'he gave' (65:7 إِلَّا مَآ ءَاتَىٰهَا, 'except what He has given it'), yet the corpus tags it as the present 1S 'I give' (the letters ءَاتَىٰ read both ways), which glossed it \"I give\"."
+  }
+ },
+ "رأي_1": {
+  "3:152:18": {
+   "form": 4,
+   "why": "أَرَىٰ with an object here is Form IV أَرَى 'to show' (3:152 مِّنۢ بَعْدِ مَآ أَرَىٰكُم مَّا تُحِبُّونَ, 'after He had shown you what you love'), yet the corpus tags it VF:1, which filed it under رَأَى 'to see' and glossed it \"saw\"."
+  },
+  "8:43:8": {
+   "form": 4,
+   "why": "أَرَىٰ with an object here is Form IV أَرَى 'to show' (8:43 وَلَوْ أَرَىٰكَهُمْ كَثِيرًا, 'had He shown them to you as many'), yet the corpus tags it VF:1, which filed it under رَأَى 'to see' and glossed it \"saw\"."
+  },
+  "79:20:1": {
+   "form": 4,
+   "why": "أَرَىٰ with an object here is Form IV أَرَى 'to show' (79:20 فَأَرَىٰهُ ٱلْءَايَةَ ٱلْكُبْرَىٰ, 'and he showed him the greatest sign'), yet the corpus tags it VF:1, which filed it under رَأَى 'to see' and glossed it \"saw\"."
+  },
+  "4:105:10": {
+   "form": 4,
+   "tense": "past",
+   "person": "3MS",
+   "why": "أَرَىٰكَ in بِمَآ أَرَىٰكَ ٱللَّهُ (4:105, 'by what Allah has shown you') is the past of Form IV أَرَى 'to show', yet the corpus tags it as the Form I present 'I see', which glossed it \"I see you\"."
+  }
+ },
+ "برأ_5": {
+  "2:167:11": {
+   "tense": "past",
+   "person": "3MP",
+   "why": "تَبَرَّءُوا۟ in كَمَا تَبَرَّءُوا۟ مِنَّا (2:167, 'as they have disowned us') is the past 'they disowned', yet the corpus tags it as the command 'disown!' (the letters read both ways)."
+  }
+ },
+ "دعو_1": {
+  "2:186:11": {
+   "person": "3MS",
+   "why": "دَعَانِ in أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ (2:186, 'when he calls upon Me') has the caller (ٱلدَّاعِ) for its subject, yet the corpus tags it 'you', which glossed it \"you called me\"."
+  }
+ },
+ "كذب_2": {
+  "29:18:2": {
+   "voice": "active",
+   "why": "تُكَذِّبُوا۟ in وَإِن تُكَذِّبُوا۟ (29:18, 'and if you deny') is active — the stem vowel before the last radical is a kasra (تُكَذِّبُ, not تُكَذَّبُ) — yet the corpus tags it passive, which glossed it \"you (all) are denied\"."
+  }
+ },
+ "شقق_3": {
+  "16:27:10": {
+   "voice": "active",
+   "why": "تُشَٰٓقُّونَ in ٱلَّذِينَ كُنتُمْ تُشَٰٓقُّونَ فِيهِمْ (16:27, 'for whom you used to oppose') is active — the stem vowel before the last radical is a kasra (تُشَاقِقُونَ contracted) — yet the corpus tags it passive, which glossed it \"you (all) are opposed\"."
+  }
+ },
+ "حجج_3": {
+  "6:80:4": {
+   "voice": "active",
+   "why": "أَتُحَٰٓجُّوٓنِّى (6:80, 'do you argue with me about Allah?') is active — the stem vowel before the last radical is a kasra (تُحَاجِجُونَ contracted) — yet the corpus tags it passive, which glossed it \"you (all) are argued\"."
+  }
+ },
+ "جعل_1": {
+  "7:190:4": {
+   "person": "3MD",
+   "why": "جَعَلَا in جَعَلَا لَهُۥ شُرَكَآءَ (7:190, 'they [the two] ascribed partners to Him') is dual, the ending ـَا showing it, yet the corpus tags it 3MS, which glossed it \"he made\"."
+  }
  }
 }

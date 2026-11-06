@@ -41,7 +41,7 @@
   "bs": "dali su"
  },
  "أتي|4|ءَاتَوْهُ": {
-  "en": "they gave him/it",
+  "en": "they gave him",
   "bs": "dali su mu"
  },
  "أتي|4|ءَاتَىٰكَ": {
@@ -60,6 +60,10 @@
   "en": "he/it gave you (all)",
   "bs": "dao vam je"
  },
+ "أتي|4|ءَاتَىٰنَا": {
+  "en": "he/it gave us",
+  "bs": "dao nam je"
+ },
  "أتي|4|ءَاتَىٰنِىَ": {
   "en": "he/it gave me",
   "bs": "dao mi je"
@@ -69,11 +73,11 @@
   "bs": "dao mi je"
  },
  "أتي|4|ءَاتَىٰهَا": {
-  "en": "I give her/it",
-  "bs": "dajem joj"
+  "en": "he/it gave it",
+  "bs": "dao joj je"
  },
  "أتي|4|ءَاتَىٰهُ": {
-  "en": "he/it gave him/it",
+  "en": "he/it gave him",
   "bs": "dao mu je"
  },
  "أتي|4|ءَاتَىٰهُم": {
@@ -81,8 +85,8 @@
   "bs": "dao im je"
  },
  "أتي|4|ءَاتَىٰهُمَا": {
-  "en": "I give them (two)",
-  "bs": "dajem im"
+  "en": "he/it gave them (two)",
+  "bs": "dao im je"
  },
  "أتي|4|ءَاتَىٰهُمُ": {
   "en": "he/it gave them",
@@ -141,11 +145,11 @@
   "bs": "dali smo vam"
  },
  "أتي|4|ءَاتَيْنَٰهَآ": {
-  "en": "we gave her/it",
-  "bs": "dali smo joj"
+  "en": "we gave it",
+  "bs": "dali smo ga"
  },
  "أتي|4|ءَاتَيْنَٰهُ": {
-  "en": "we gave him/it",
+  "en": "we gave him",
   "bs": "dali smo mu"
  },
  "أتي|4|ءَاتَيْنَٰهُم": {
@@ -221,7 +225,7 @@
   "bs": "dat će nam"
  },
  "أتي|4|فَسَيُؤْتِيهِ": {
-  "en": "so he/it will give him/it",
+  "en": "so he/it will give him",
   "bs": "pa će mu dati"
  },
  "أتي|4|فَـَٔاتَىٰهُمُ": {
@@ -261,15 +265,15 @@
   "bs": "daje nam se"
  },
  "أتي|4|نُؤْتِهِۦ": {
-  "en": "we give him/it",
+  "en": "we give him",
   "bs": "dajemo mu"
  },
  "أتي|4|نُؤْتِيهِ": {
-  "en": "we give him/it",
+  "en": "we give him",
   "bs": "dajemo mu"
  },
  "أتي|4|نُّؤْتِهَآ": {
-  "en": "we give her/it",
+  "en": "we give her",
   "bs": "dajemo joj"
  },
  "أتي|4|وَءَاتَتْ": {
@@ -289,7 +293,7 @@
   "bs": "i dao vam je"
  },
  "أتي|4|وَءَاتَىٰهُ": {
-  "en": "and he/it gave him/it",
+  "en": "and he/it gave him",
   "bs": "i dao mu je"
  },
  "أتي|4|وَءَاتَىٰهُمْ": {
@@ -309,7 +313,7 @@
   "bs": "i dali smo"
  },
  "أتي|4|وَءَاتَيْنَٰهُ": {
-  "en": "and we gave him/it",
+  "en": "and we gave him",
   "bs": "i dali smo mu"
  },
  "أتي|4|وَءَاتَيْنَٰهُم": {
@@ -349,8 +353,8 @@
   "bs": "i dato joj je"
  },
  "أتي|4|وَتُؤْتُوهَا": {
-  "en": "and you (all) give her/it",
-  "bs": "i dajete joj"
+  "en": "and you (all) give them",
+  "bs": "i dajete ih"
  },
  "أتي|4|وَيُؤْتُوا۟": {
   "en": "and they give",
@@ -401,8 +405,8 @@
   "bs": "daje vam"
  },
  "أتي|4|يُؤْتِيهِ": {
-  "en": "he/it gives him/it",
-  "bs": "daje mu"
+  "en": "he/it gives it",
+  "bs": "daje je"
  },
  "أتي|4|يُؤْتِيهِمْ": {
   "en": "he/it gives them",
@@ -413,7 +417,7 @@
   "bs": "daje mi"
  },
  "أتي|4|يُؤْتِيَهُ": {
-  "en": "he/it gives him/it",
+  "en": "he/it gives him",
   "bs": "daje mu"
  },
  "أتي|4|يُؤْتِيَهُمُ": {
@@ -433,7 +437,7 @@
   "bs": "i daju prednost"
  },
  "أخذ|1|أَتَأْخُذُونَهُۥ": {
-  "en": "do you (all) take him/it?",
+  "en": "do you (all) take it?",
   "bs": "zar ga uzimate?"
  },
  "أخذ|1|أَخَذَ": {
@@ -445,59 +449,59 @@
   "bs": "uzela je"
  },
  "أخذ|1|أَخَذَتْهُ": {
-  "en": "she/it took him/it",
+  "en": "she/it took him",
   "bs": "uzela ga je"
  },
  "أخذ|1|أَخَذَتْهُمُ": {
-  "en": "she/it took them",
-  "bs": "uzela ih je"
+  "en": "she/it seized them",
+  "bs": "stigla ih je"
  },
  "أخذ|1|أَخَذْتُ": {
-  "en": "I took",
-  "bs": "uzeo sam"
+  "en": "I seized",
+  "bs": "kaznio sam"
  },
  "أخذ|1|أَخَذْتُمْ": {
   "en": "you (all) took",
   "bs": "uzeli ste"
  },
  "أخذ|1|أَخَذْتُهَا": {
-  "en": "I took her/it",
-  "bs": "uzeo sam je"
+  "en": "I seized it",
+  "bs": "kaznio sam ga"
  },
  "أخذ|1|أَخَذْتُهُمْ": {
-  "en": "I took them",
-  "bs": "uzeo sam ih"
+  "en": "I seized them",
+  "bs": "kaznio sam ih"
  },
  "أخذ|1|أَخَذْنَا": {
   "en": "we took",
   "bs": "uzeli smo"
  },
  "أخذ|1|أَخَذْنَآ": {
-  "en": "we took",
-  "bs": "uzeli smo"
+  "en": "we seized",
+  "bs": "kaznili smo"
  },
  "أخذ|1|أَخَذْنَٰهُم": {
-  "en": "we took them",
-  "bs": "uzeli smo ih"
+  "en": "we seized them",
+  "bs": "kaznili smo ih"
  },
  "أخذ|1|أُخِذَ": {
   "en": "it was taken",
   "bs": "uzeto je"
  },
  "أخذ|1|أُخِذُوا۟": {
-  "en": "they were taken",
-  "bs": "uzeti su"
+  "en": "they were seized",
+  "bs": "uhvaćeni su"
  },
  "أخذ|1|تَأْخُذُوا۟": {
   "en": "you (all) take",
   "bs": "uzimate"
  },
  "أخذ|1|تَأْخُذُونَهَا": {
-  "en": "you (all) take her/it",
-  "bs": "uzimate je"
+  "en": "you (all) take them",
+  "bs": "uzimate ga"
  },
  "أخذ|1|تَأْخُذُونَهُۥ": {
-  "en": "you (all) take him/it",
+  "en": "you (all) take it",
   "bs": "uzimate ga"
  },
  "أخذ|1|خُذُوا۟": {
@@ -513,31 +517,31 @@
   "bs": "uzmi!"
  },
  "أخذ|1|خُذْهَا": {
-  "en": "take her/it!",
+  "en": "take it!",
   "bs": "uzmi je!"
  },
  "أخذ|1|فَأَخَذَتْكُمُ": {
-  "en": "so she/it took you (all)",
-  "bs": "pa vas je uzela"
+  "en": "so she/it seized you (all)",
+  "bs": "pa vas je stigla"
  },
  "أخذ|1|فَأَخَذَتْهُمْ": {
-  "en": "so she/it took them",
-  "bs": "pa ih je uzela"
+  "en": "so she/it seized them",
+  "bs": "pa ih je stigla"
  },
  "أخذ|1|فَأَخَذَهُمْ": {
-  "en": "so he/it took them",
-  "bs": "pa ih je uzeo"
+  "en": "so he/it seized them",
+  "bs": "pa ih je kaznio"
  },
  "أخذ|1|فَأَخَذْتُهُمْ": {
-  "en": "so I took them",
-  "bs": "pa sam ih uzeo"
+  "en": "so I seized them",
+  "bs": "pa sam ih kaznio"
  },
  "أخذ|1|فَأَخَذْنَٰهُمْ": {
-  "en": "so we took them",
-  "bs": "pa smo ih uzeli"
+  "en": "so we seized them",
+  "bs": "pa smo ih kaznili"
  },
  "أخذ|1|فَخُذُوهُ": {
-  "en": "so (you all) take him/it!",
+  "en": "so (you all) take it!",
   "bs": "pa ga uzmite!"
  },
  "أخذ|1|فَخُذُوهُمْ": {
@@ -549,7 +553,7 @@
   "bs": "pa uzmi!"
  },
  "أخذ|1|فَخُذْهَا": {
-  "en": "so take her/it!",
+  "en": "so take it!",
   "bs": "pa je uzmi!"
  },
  "أخذ|1|فَيُؤْخَذُ": {
@@ -557,16 +561,16 @@
   "bs": "pa se uzima"
  },
  "أخذ|1|لِتَأْخُذُوهَا": {
-  "en": "so that you (all) may take her/it",
-  "bs": "da je uzmete"
+  "en": "so that you (all) may take them",
+  "bs": "da ga uzmete"
  },
  "أخذ|1|لِيَأْخُذَ": {
   "en": "so that he/it may take",
   "bs": "da uzme"
  },
  "أخذ|1|لِيَأْخُذُوهُ": {
-  "en": "so that they may take him/it",
-  "bs": "da ga uzmu"
+  "en": "so that they may seize him",
+  "bs": "da ga uhvate"
  },
  "أخذ|1|نَّأْخُذَ": {
   "en": "we take",
@@ -577,8 +581,8 @@
   "bs": "i uzeo je"
  },
  "أخذ|1|وَأَخَذَتِ": {
-  "en": "and she/it took",
-  "bs": "i uzela je"
+  "en": "and she/it seized",
+  "bs": "i stigla je"
  },
  "أخذ|1|وَأَخَذْتُمْ": {
   "en": "and you (all) took",
@@ -593,12 +597,12 @@
   "bs": "i uzeli smo"
  },
  "أخذ|1|وَأَخَذْنَٰهُم": {
-  "en": "and we took them",
-  "bs": "i uzeli smo ih"
+  "en": "and we seized them",
+  "bs": "i kaznili smo ih"
  },
  "أخذ|1|وَأُخِذُوا۟": {
-  "en": "and they were taken",
-  "bs": "i uzeti su"
+  "en": "and they were seized",
+  "bs": "i uhvaćeni su"
  },
  "أخذ|1|وَخُذُوا۟": {
   "en": "and (you all) take!",
@@ -637,15 +641,15 @@
   "bs": "uzimaju"
  },
  "أخذ|1|يَأْخُذُونَهَا": {
-  "en": "they take her/it",
-  "bs": "uzimaju je"
+  "en": "they take them",
+  "bs": "uzimaju ga"
  },
  "أخذ|1|يَأْخُذُوهُ": {
-  "en": "they take him/it",
+  "en": "they take it",
   "bs": "uzimaju ga"
  },
  "أخذ|1|يَأْخُذْهُ": {
-  "en": "he/it takes him/it",
+  "en": "he/it takes him",
   "bs": "uzima ga"
  },
  "أخذ|1|يُؤْخَذُ": {
@@ -657,19 +661,19 @@
   "bs": "uzima se"
  },
  "أخذ|3|يُؤَاخِذُ": {
-  "en": "he/it blames",
+  "en": "he/it takes to task",
   "bs": "kažnjava"
  },
  "أخذ|3|يُؤَاخِذُكُم": {
-  "en": "he/it blames you (all)",
+  "en": "he/it takes you (all) to task",
   "bs": "kažnjava vas"
  },
  "أخذ|3|يُؤَاخِذُكُمُ": {
-  "en": "he/it blames you (all)",
+  "en": "he/it takes you (all) to task",
   "bs": "kažnjava vas"
  },
  "أخذ|3|يُؤَاخِذُهُم": {
-  "en": "he/it blames them",
+  "en": "he/it takes them to task",
   "bs": "kažnjava ih"
  },
  "أخذ|8|ءَأَتَّخِذُ": {
@@ -717,7 +721,7 @@
   "bs": "pa ste ih uzeli"
  },
  "أخذ|8|فَٱتَّخِذُوهُ": {
-  "en": "so (you all) take him/it!",
+  "en": "so (you all) take him!",
   "bs": "pa ga uzmite!"
  },
  "أخذ|8|لَأَتَّخِذَنَّ": {
@@ -733,7 +737,7 @@
   "bs": "da uzme"
  },
  "أخذ|8|نَتَّخِذَهُۥ": {
-  "en": "we take him/it",
+  "en": "we take him",
   "bs": "uzimamo ga"
  },
  "أخذ|8|نَّتَّخِذَ": {
@@ -745,8 +749,8 @@
   "bs": "i uzima"
  },
  "أخذ|8|وَيَتَّخِذَهَا": {
-  "en": "and he/it takes her/it",
-  "bs": "i uzima je"
+  "en": "and he/it takes it",
+  "bs": "i uzima ga"
  },
  "أخذ|8|وَيَتَّخِذُ": {
   "en": "and he/it takes (for himself)",
@@ -765,7 +769,7 @@
   "bs": "i uzeli su"
  },
  "أخذ|8|وَٱتَّخَذْتُمُوهُ": {
-  "en": "and you (all) took him/it",
+  "en": "and you (all) took him",
   "bs": "i uzeli ste ga"
  },
  "أخذ|8|وَٱتَّخِذُوا۟": {
@@ -793,7 +797,7 @@
   "bs": "uzimaju te"
  },
  "أخذ|8|يَتَّخِذُوهُ": {
-  "en": "they take him/it",
+  "en": "they take it",
   "bs": "uzimaju ga"
  },
  "أخذ|8|يَتَّخِذِ": {
@@ -809,19 +813,19 @@
   "bs": "uzela je"
  },
  "أخذ|8|ٱتَّخَذَهَا": {
-  "en": "he/it took her/it",
-  "bs": "uzeo ju je"
+  "en": "he/it took them",
+  "bs": "uzeo ih je"
  },
  "أخذ|8|ٱتَّخَذُوا۟": {
   "en": "they took (for themselves)",
   "bs": "uzeli su"
  },
  "أخذ|8|ٱتَّخَذُوهَا": {
-  "en": "they took her/it",
-  "bs": "uzeli su je"
+  "en": "they took it",
+  "bs": "uzeli su ga"
  },
  "أخذ|8|ٱتَّخَذُوهُ": {
-  "en": "they took him/it",
+  "en": "they took it",
   "bs": "uzeli su ga"
  },
  "أخذ|8|ٱتَّخَذُوهُمْ": {
@@ -921,8 +925,8 @@
   "bs": "pa neka preda"
  },
  "أدي|2|يُؤَدِّهِۦٓ": {
-  "en": "he/it delivers him/it",
-  "bs": "predaje mu"
+  "en": "he/it delivers it",
+  "bs": "predaje ga"
  },
  "أذن|10|فَلْيَسْتَـْٔذِنُوا۟": {
   "en": "so let them ask permission",
@@ -949,7 +953,7 @@
   "bs": "traže ti dozvolu"
  },
  "أذن|10|يَسْتَـْٔذِنُوهُ": {
-  "en": "they ask him/it permission",
+  "en": "they ask him permission",
   "bs": "traže mu dozvolu"
  },
  "أذن|10|ٱسْتَـْٔذَنَ": {
@@ -985,8 +989,8 @@
   "bs": "pa dozvoli!"
  },
  "أذن|1|فَأْذَنُوا۟": {
-  "en": "so (you all) permit!",
-  "bs": "pa dozvolite!"
+  "en": "so (you all) be informed!",
+  "bs": "pa znajte!"
  },
  "أذن|1|لِيُؤْذَنَ": {
   "en": "so that it may be permitted",
@@ -1037,8 +1041,8 @@
   "bs": "uznemiravate me"
  },
  "أذي|4|فَـَٔاذُوهُمَا": {
-  "en": "so (you all) harm them (two)!",
-  "bs": "pa ih uznemirite!"
+  "en": "so (you all) punish them (two)!",
+  "bs": "pa ih kaznite!"
  },
  "أذي|4|وَأُوذُوا۟": {
   "en": "and they were harmed",
@@ -1065,8 +1069,8 @@
   "bs": "jedete"
  },
  "أكل|1|تَأْكُلُوهَآ": {
-  "en": "you (all) eat her/it",
-  "bs": "jedete je"
+  "en": "you (all) eat it",
+  "bs": "jedete ga"
  },
  "أكل|1|تَأْكُلُوٓا۟": {
   "en": "you (all) eat",
@@ -1077,11 +1081,11 @@
   "bs": "pa su jeli"
  },
  "أكل|1|فَأَكَلَهُ": {
-  "en": "so he/it ate him/it",
+  "en": "so he/it ate him",
   "bs": "pa ga je jeo"
  },
  "أكل|1|فَكُلُوهُ": {
-  "en": "so (you all) eat him/it!",
+  "en": "so (you all) eat it!",
   "bs": "pa ga jedite!"
  },
  "أكل|1|فَكُلِى": {
@@ -1137,7 +1141,7 @@
   "bs": "jedu"
  },
  "أكل|1|يَأْكُلَهُ": {
-  "en": "he/it eats him/it",
+  "en": "he/it eats him",
   "bs": "jede ga"
  },
  "أكل|1|يَأْكُلُ": {
@@ -1181,7 +1185,7 @@
   "bs": "spaja"
  },
  "أمر|1|ءَامُرُهُۥ": {
-  "en": "I command him/it",
+  "en": "I command him",
   "bs": "naređujem mu"
  },
  "أمر|1|أَتَأْمُرُونَ": {
@@ -1201,7 +1205,7 @@
   "bs": "naredio im je"
  },
  "أمر|1|أَمَرَهُۥ": {
-  "en": "he/it commanded him/it",
+  "en": "he/it commanded him",
   "bs": "naredio mu je"
  },
  "أمر|1|أَمَرْتَنِى": {
@@ -1309,12 +1313,12 @@
   "bs": "zar ste se osjećali sigurnima?"
  },
  "أمن|1|ءَامَنُكُمْ": {
-  "en": "I feel safe from you (all)",
-  "bs": "osjećam se sigurnim od vas"
+  "en": "I trust you (all)",
+  "bs": "vjerujem vam"
  },
  "أمن|1|أَمِنتُكُمْ": {
-  "en": "I felt safe from you (all)",
-  "bs": "osjećao sam se sigurnim od vas"
+  "en": "I trusted you (all)",
+  "bs": "vjerovao sam vam"
  },
  "أمن|1|أَمِنتُم": {
   "en": "you (all) felt safe",
@@ -1325,8 +1329,8 @@
   "bs": "osjećali ste se sigurnima"
  },
  "أمن|1|أَمِنَ": {
-  "en": "he/it felt safe",
-  "bs": "osjećao se je sigurnim"
+  "en": "he/it entrusted",
+  "bs": "povjerio je"
  },
  "أمن|1|وَيَأْمَنُوا۟": {
   "en": "and they feel safe",
@@ -1465,8 +1469,8 @@
   "bs": "i povjerovao je"
  },
  "أمن|4|وَءَامَنَهُم": {
-  "en": "and he/it believed them",
-  "bs": "i povjerovao im je"
+  "en": "and he/it made them safe",
+  "bs": "i učinio ih je sigurnim"
  },
  "أمن|4|وَءَامَنُوا۟": {
   "en": "and they believed",
@@ -1585,11 +1589,11 @@
   "bs": "i podržao ih je"
  },
  "أيد|2|وَأَيَّدَهُۥ": {
-  "en": "and he/it supported him/it",
+  "en": "and he/it supported him",
   "bs": "i podržao ga je"
  },
  "أيد|2|وَأَيَّدْنَٰهُ": {
-  "en": "and we supported him/it",
+  "en": "and we supported him",
   "bs": "i podržali smo ga"
  },
  "أيد|2|يُؤَيِّدُ": {
@@ -1605,7 +1609,7 @@
   "bs": "i raširio je"
  },
  "بخس|1|يَبْخَسْ": {
-  "en": "he/it cheats (of)",
+  "en": "he/it diminishes",
   "bs": "zakida"
  },
  "بخس|1|يُبْخَسُونَ": {
@@ -1629,16 +1633,16 @@
   "bs": "škrtari"
  },
  "بدأ|1|بَدَءُوكُمْ": {
-  "en": "they began you (all)",
-  "bs": "počeli su vas"
+  "en": "they attacked you (all) first",
+  "bs": "prvi su vas napali"
  },
  "بدأ|1|بَدَأَ": {
   "en": "he/it began",
   "bs": "počeo je"
  },
  "بدأ|1|بَدَأَكُمْ": {
-  "en": "he/it began you (all)",
-  "bs": "počeo vas je"
+  "en": "he/it originated you (all)",
+  "bs": "stvorio vas je"
  },
  "بدأ|1|بَدَأْنَآ": {
   "en": "we began",
@@ -1649,7 +1653,7 @@
   "bs": "pa je počeo"
  },
  "بدل|2|أُبَدِّلَهُۥ": {
-  "en": "I change him/it",
+  "en": "I change it",
   "bs": "mijenjam ga"
  },
  "بدل|2|بَدَّلَ": {
@@ -1657,8 +1661,8 @@
   "bs": "promijenio je"
  },
  "بدل|2|بَدَّلَهُۥ": {
-  "en": "he/it changed him/it",
-  "bs": "promijenio ga je"
+  "en": "he/it changed it",
+  "bs": "promijenio ju je"
  },
  "بدل|2|بَدَّلُوا۟": {
   "en": "they changed",
@@ -1673,7 +1677,7 @@
   "bs": "promijenili smo ih"
  },
  "بدل|2|بَدِّلْهُ": {
-  "en": "change him/it!",
+  "en": "change it!",
   "bs": "promijeni ga!"
  },
  "بدل|2|فَبَدَّلَ": {
@@ -1701,8 +1705,8 @@
   "bs": "mijenjaju"
  },
  "بدل|2|يُبَدِّلُونَهُۥٓ": {
-  "en": "they change him/it",
-  "bs": "mijenjaju ga"
+  "en": "they change it",
+  "bs": "mijenjaju je"
  },
  "بدل|2|يُبَدِّلْ": {
   "en": "he/it changes",
@@ -1729,11 +1733,11 @@
   "bs": "pokazujete"
  },
  "بدو|4|تُبْدُونَهَا": {
-  "en": "you (all) show her/it",
-  "bs": "pokazujete je"
+  "en": "you (all) show them",
+  "bs": "pokazujete ih"
  },
  "بدو|4|تُبْدُوهُ": {
-  "en": "you (all) show him/it",
+  "en": "you (all) show it",
   "bs": "pokazujete ga"
  },
  "بدو|4|لِيُبْدِىَ": {
@@ -1745,7 +1749,7 @@
   "bs": "pokazuju"
  },
  "بدو|4|يُبْدِهَا": {
-  "en": "he/it shows her/it",
+  "en": "he/it shows it",
   "bs": "pokazuje je"
  },
  "بدو|4|يُبْدِينَ": {
@@ -1753,8 +1757,8 @@
   "bs": "pokazuju"
  },
  "برأ|5|تَبَرَّءُوا۟": {
-  "en": "(you all) disown!",
-  "bs": "odreknite se!"
+  "en": "they disowned",
+  "bs": "odrekli su se"
  },
  "برأ|5|تَبَرَّأْنَآ": {
   "en": "we disowned",
@@ -1781,16 +1785,16 @@
   "bs": "i blagoslovili smo"
  },
  "برك|6|تَبَارَكَ": {
-  "en": "he/it was blessed",
-  "bs": "bio je blagoslovljen"
+  "en": "blessed is he/it",
+  "bs": "uzvišen je"
  },
  "برك|6|فَتَبَارَكَ": {
-  "en": "so he/it was blessed",
-  "bs": "pa je bio blagoslovljen"
+  "en": "so blessed is he/it",
+  "bs": "pa je uzvišen"
  },
  "برك|6|وَتَبَارَكَ": {
-  "en": "and he/it was blessed",
-  "bs": "i bio je blagoslovljen"
+  "en": "and blessed is he/it",
+  "bs": "i uzvišen je"
  },
  "بسط|1|بَسَطتَ": {
   "en": "you spread",
@@ -1801,8 +1805,8 @@
   "bs": "raširio je"
  },
  "بسط|1|فَيَبْسُطُهُۥ": {
-  "en": "so he/it spreads him/it",
-  "bs": "pa ga širi"
+  "en": "so he/it spreads them",
+  "bs": "pa ih širi"
  },
  "بسط|1|وَيَبْسُطُوٓا۟": {
   "en": "and they spread",
@@ -1841,7 +1845,7 @@
   "bs": "radujete"
  },
  "بشر|2|فَبَشَّرْنَٰهَا": {
-  "en": "so we gave her/it good news",
+  "en": "so we gave her good news",
   "bs": "pa smo je obradovali"
  },
  "بشر|2|فَبَشِّرْ": {
@@ -1849,15 +1853,15 @@
   "bs": "pa obraduj!"
  },
  "بشر|2|فَبَشِّرْهُ": {
-  "en": "so give him/it good news!",
+  "en": "so give him good news!",
   "bs": "pa ga obraduj!"
  },
  "بشر|2|وَبَشَّرُوهُ": {
-  "en": "and they gave him/it good news",
+  "en": "and they gave him good news",
   "bs": "i obradovali su ga"
  },
  "بشر|2|وَبَشَّرْنَٰهُ": {
-  "en": "and we gave him/it good news",
+  "en": "and we gave him good news",
   "bs": "i obradovali smo ga"
  },
  "بشر|2|وَبَشِّرِ": {
@@ -1897,8 +1901,8 @@
   "bs": "vidjeli smo"
  },
  "بصر|4|أَبْصِرْ": {
-  "en": "see!",
-  "bs": "vidi!"
+  "en": "how well he/it sees!",
+  "bs": "kako dobro vidi!"
  },
  "بصر|4|تُبْصِرُونَ": {
   "en": "you (all) see",
@@ -2077,7 +2081,7 @@
   "bs": "dostavi!"
  },
  "بلغ|2|وَأُبَلِّغُكُم": {
-  "en": "and I convey you (all)",
+  "en": "and I convey to you (all)",
   "bs": "i dostavljam vam"
  },
  "بلغ|2|يُبَلِّغُونَ": {
@@ -2089,16 +2093,16 @@
   "bs": "dostavili su"
  },
  "بلغ|4|أَبْلَغْتُكُم": {
-  "en": "I conveyed you (all)",
+  "en": "I conveyed to you (all)",
   "bs": "dostavio sam vam"
  },
  "بلغ|4|أَبْلَغْتُكُمْ": {
-  "en": "I conveyed you (all)",
+  "en": "I conveyed to you (all)",
   "bs": "dostavio sam vam"
  },
  "بلغ|4|أَبْلِغْهُ": {
-  "en": "convey him/it!",
-  "bs": "dostavi mu!"
+  "en": "convey him!",
+  "bs": "dostavi ga!"
  },
  "بلو|1|لَيَبْلُوَنَّكُمُ": {
   "en": "surely he/it will test you (all)",
@@ -2165,8 +2169,8 @@
   "bs": "sagradili su"
  },
  "بني|1|بَنَيْنَٰهَا": {
-  "en": "we built her/it",
-  "bs": "sagradili smo je"
+  "en": "we built it",
+  "bs": "sagradili smo ga"
  },
  "بني|1|وَبَنَيْنَا": {
   "en": "and we built",
@@ -2177,16 +2181,16 @@
   "bs": "gradi!"
  },
  "بوأ|1|بَآءَ": {
-  "en": "he/it returned",
-  "bs": "vratio se"
+  "en": "he/it incurred",
+  "bs": "navukao je na sebe"
  },
  "بوأ|1|فَبَآءُو": {
-  "en": "so they returned",
-  "bs": "pa su se vratili"
+  "en": "so they incurred",
+  "bs": "pa su navukli na sebe"
  },
  "بوأ|1|وَبَآءُو": {
-  "en": "and they returned",
-  "bs": "i vratili su se"
+  "en": "and they incurred",
+  "bs": "i navukli su na sebe"
  },
  "بوأ|2|بَوَّأْنَا": {
   "en": "we settled",
@@ -2205,8 +2209,8 @@
   "bs": "i nastanio vas je"
  },
  "بيع|3|بَايَعْتُم": {
-  "en": "you (all) pledged allegiance",
-  "bs": "dali ste prisegu vjernosti"
+  "en": "you (all) made a bargain",
+  "bs": "sklopili ste pogodbu"
  },
  "بيع|3|فَبَايِعْهُنَّ": {
   "en": "so pledge allegiance to them!",
@@ -2229,12 +2233,12 @@
   "bs": "pojasnili smo"
  },
  "بين|2|بَيَّنَّٰهُ": {
-  "en": "we made him/it clear",
+  "en": "we made it clear",
   "bs": "pojasnili smo ga"
  },
  "بين|2|لَتُبَيِّنُنَّهُۥ": {
-  "en": "surely you (all) will make him/it clear",
-  "bs": "zaista ćete ga pojasniti"
+  "en": "surely you (all) will make it clear",
+  "bs": "zaista ćete je pojasniti"
  },
  "بين|2|لِيُبَيِّنَ": {
   "en": "so that he/it may make clear",
@@ -2269,24 +2273,24 @@
   "bs": "pojašnjava"
  },
  "بين|2|يُبَيِّنُهَا": {
-  "en": "he/it makes her/it clear",
-  "bs": "pojašnjava je"
+  "en": "he/it makes them clear",
+  "bs": "pojašnjava ih"
  },
  "بين|5|تَبَيَّنَتِ": {
-  "en": "she/it became clear",
-  "bs": "postala je jasna"
+  "en": "she/it realized",
+  "bs": "uvidjela je"
  },
  "بين|5|تَّبَيَّنَ": {
   "en": "he/it became clear",
   "bs": "postalo je jasno"
  },
  "بين|5|فَتَبَيَّنُوا۟": {
-  "en": "so (you all) become clear!",
-  "bs": "pa postanite jasni!"
+  "en": "so (you all) verify!",
+  "bs": "pa provjerite!"
  },
  "بين|5|فَتَبَيَّنُوٓا۟": {
-  "en": "so (you all) become clear!",
-  "bs": "pa postanite jasni!"
+  "en": "so (you all) verify!",
+  "bs": "pa provjerite!"
  },
  "بين|5|وَتَبَيَّنَ": {
   "en": "and he/it became clear",
@@ -2313,7 +2317,7 @@
   "bs": "pa je slijedio"
  },
  "تبع|4|فَأَتْبَعَهُ": {
-  "en": "so he/it followed him/it",
+  "en": "so he/it followed him",
   "bs": "pa ga je slijedio"
  },
  "تبع|4|فَأَتْبَعَهُمْ": {
@@ -2321,7 +2325,7 @@
   "bs": "pa ih je slijedio"
  },
  "تبع|4|فَأَتْبَعَهُۥ": {
-  "en": "so he/it followed him/it",
+  "en": "so he/it followed him",
   "bs": "pa ga je slijedio"
  },
  "تبع|4|فَأَتْبَعُوهُم": {
@@ -2329,20 +2333,20 @@
   "bs": "pa su ih slijedili"
  },
  "تبع|4|فَأَتْبَعْنَا": {
-  "en": "so we followed",
-  "bs": "pa smo slijedili"
+  "en": "so we made (them) follow",
+  "bs": "pa smo učinili da slijede"
  },
  "تبع|4|وَأَتْبَعْنَٰهُمْ": {
-  "en": "and we followed them",
-  "bs": "i slijedili smo ih"
+  "en": "and we made (a curse) follow them",
+  "bs": "i učinili smo da ih prati"
  },
  "تبع|4|وَأُتْبِعُوا۟": {
   "en": "and they were followed",
   "bs": "i slijeđeni su"
  },
  "تبع|4|يُتْبِعُونَ": {
-  "en": "they follow",
-  "bs": "slijede"
+  "en": "they follow up",
+  "bs": "propraćuju"
  },
  "تبع|8|أَتَّبِعُ": {
   "en": "I follow",
@@ -2353,8 +2357,8 @@
   "bs": "slijedim te"
  },
  "تبع|8|أَتَّبِعْهُ": {
-  "en": "I follow him/it",
-  "bs": "slijedim ga"
+  "en": "I follow it",
+  "bs": "slijedim je"
  },
  "تبع|8|تَتَّبِعُوا۟": {
   "en": "you (all) follow",
@@ -2377,7 +2381,7 @@
   "bs": "pa slijede"
  },
  "تبع|8|فَٱتَّبَعُوهُ": {
-  "en": "so they followed him/it",
+  "en": "so they followed him",
   "bs": "pa su ga slijedili"
  },
  "تبع|8|فَٱتَّبَعُوٓا۟": {
@@ -2397,8 +2401,8 @@
   "bs": "pa me slijedi!"
  },
  "تبع|8|فَٱتَّبِعْهَا": {
-  "en": "so follow her/it!",
-  "bs": "pa je slijedi!"
+  "en": "so follow it!",
+  "bs": "pa ga slijedi!"
  },
  "تبع|8|نَتَّبِعُ": {
   "en": "we follow",
@@ -2409,7 +2413,7 @@
   "bs": "slijedimo vas"
  },
  "تبع|8|نَّتَّبِعُهُۥٓ": {
-  "en": "we follow him/it",
+  "en": "we follow him",
   "bs": "slijedimo ga"
  },
  "تبع|8|نَّتَّبِعِ": {
@@ -2453,7 +2457,7 @@
   "bs": "i slijedite me!"
  },
  "تبع|8|وَٱتَّبِعُوهُ": {
-  "en": "and (you all) follow him/it!",
+  "en": "and (you all) follow him!",
   "bs": "i slijedite ga!"
  },
  "تبع|8|وَٱتَّبِعُوٓا۟": {
@@ -2513,7 +2517,7 @@
   "bs": "slijedili su te"
  },
  "تبع|8|ٱتَّبَعُوهُ": {
-  "en": "they followed him/it",
+  "en": "they followed him",
   "bs": "slijedili su ga"
  },
  "تبع|8|ٱتَّبَعُوهُم": {
@@ -2569,8 +2573,8 @@
   "bs": "ostavili ste"
  },
  "ترك|1|تَرَكْتُمُوهَا": {
-  "en": "you (all) left her/it",
-  "bs": "ostavili ste je"
+  "en": "you (all) left them",
+  "bs": "ostavili ste ih"
  },
  "ترك|1|تَرَكْتُمْ": {
   "en": "you (all) left",
@@ -2589,11 +2593,11 @@
   "bs": "ostavili smo"
  },
  "ترك|1|تَّرَكْنَٰهَآ": {
-  "en": "we left her/it",
-  "bs": "ostavili smo je"
+  "en": "we left it",
+  "bs": "ostavili smo ga"
  },
  "ترك|1|فَتَرَكَهُۥ": {
-  "en": "so he/it left him/it",
+  "en": "so he/it left it",
   "bs": "pa ga je ostavio"
  },
  "ترك|1|نَّتْرُكَ": {
@@ -2633,7 +2637,7 @@
   "bs": "učite"
  },
  "تلو|1|تَلَوْتُهُۥ": {
-  "en": "I recited him/it",
+  "en": "I recited it",
   "bs": "učio sam ga"
  },
  "تلو|1|تُلِيَتْ": {
@@ -2645,7 +2649,7 @@
   "bs": "učit ću"
  },
  "تلو|1|فَٱتْلُوهَآ": {
-  "en": "so (you all) recite her/it!",
+  "en": "so (you all) recite it!",
   "bs": "pa je učite!"
  },
  "تلو|1|نَتْلُوا۟": {
@@ -2653,15 +2657,15 @@
   "bs": "učimo"
  },
  "تلو|1|نَتْلُوهَا": {
-  "en": "we recite her/it",
-  "bs": "učimo je"
+  "en": "we recite them",
+  "bs": "učimo ih"
  },
  "تلو|1|نَتْلُوهُ": {
-  "en": "we recite him/it",
+  "en": "we recite it",
   "bs": "učimo ga"
  },
  "تلو|1|وَيَتْلُوهُ": {
-  "en": "and he/it recites him/it",
+  "en": "and he/it recites it",
   "bs": "i uči ga"
  },
  "تلو|1|يَتْلُونَ": {
@@ -2669,7 +2673,7 @@
   "bs": "uče"
  },
  "تلو|1|يَتْلُونَهُۥ": {
-  "en": "they recite him/it",
+  "en": "they recite it",
   "bs": "uče ga"
  },
  "تلو|1|يُتْلَىٰ": {
@@ -2681,7 +2685,7 @@
   "bs": "uči!"
  },
  "تمم|4|أَتَمَّهَا": {
-  "en": "he/it completed her/it",
+  "en": "he/it completed it",
   "bs": "upotpunio ju je"
  },
  "تمم|4|أَتِمُّوا۟": {
@@ -2697,8 +2701,8 @@
   "bs": "upotpuni!"
  },
  "تمم|4|فَأَتَمَّهُنَّ": {
-  "en": "so he/it completed them",
-  "bs": "pa ih je dovršio"
+  "en": "so he/it fulfilled them",
+  "bs": "pa ih je ispunio"
  },
  "تمم|4|فَأَتِمُّوٓا۟": {
   "en": "so (you all) complete!",
@@ -2713,8 +2717,8 @@
   "bs": "i upotpunio sam"
  },
  "تمم|4|وَأَتْمَمْنَٰهَا": {
-  "en": "and we completed her/it",
-  "bs": "i upotpunili smo je"
+  "en": "and we completed them",
+  "bs": "i upotpunili smo ih"
  },
  "تمم|4|وَلِأُتِمَّ": {
   "en": "and so that I may complete",
@@ -2773,16 +2777,16 @@
   "bs": "zatekli ste ih"
  },
  "ثقف|1|ثُقِفُوٓا۟": {
-  "en": "they were come upon",
+  "en": "they were found",
   "bs": "zatečeni su"
  },
  "ثقف|1|يَثْقَفُوكُمْ": {
-  "en": "they come upon you (all)",
-  "bs": "zatiču vas"
+  "en": "they overpower you (all)",
+  "bs": "svladaju vas"
  },
  "ثور|4|وَأَثَارُوا۟": {
-  "en": "and they stirred up",
-  "bs": "i podigli su"
+  "en": "and they tilled",
+  "bs": "i obrađivali su"
  },
  "جبي|8|وَٱجْتَبَيْنَآ": {
   "en": "and we chose",
@@ -2809,15 +2813,15 @@
   "bs": "izabrao vas je"
  },
  "جبي|8|ٱجْتَبَىٰهُ": {
-  "en": "he/it chose him/it",
+  "en": "he/it chose him",
   "bs": "izabrao ga je"
  },
  "جبي|8|ٱجْتَبَيْتَهَا": {
-  "en": "you chose her/it",
+  "en": "you chose it",
   "bs": "izabrao si je"
  },
  "جبي|8|ٱجْتَبَٰهُ": {
-  "en": "he/it chose him/it",
+  "en": "he/it chose him",
   "bs": "izabrao ga je"
  },
  "جحد|1|جَحَدُوا۟": {
@@ -2877,44 +2881,44 @@
   "bs": "počinili smo zločin"
  },
  "جري|1|وَجَرَيْنَ": {
-  "en": "and they flowed",
-  "bs": "i tekle su"
+  "en": "and they sailed",
+  "bs": "i plovile su"
  },
  "جري|1|يَجْرِى": {
-  "en": "he/it flows",
-  "bs": "teče"
+  "en": "he/it runs",
+  "bs": "kreće se"
  },
  "جري|1|يَجْرِىٓ": {
-  "en": "he/it flows",
-  "bs": "teče"
+  "en": "he/it runs",
+  "bs": "kreće se"
  },
  "جزي|1|تُجْزَوْنَ": {
-  "en": "you (all) are rewarded",
-  "bs": "bivate nagrađeni"
+  "en": "you (all) are repaid",
+  "bs": "biva vam uzvraćeno"
  },
  "جزي|1|جَزَيْتُهُمُ": {
   "en": "I rewarded them",
   "bs": "nagradio sam ih"
  },
  "جزي|1|جَزَيْنَٰهُم": {
-  "en": "we rewarded them",
-  "bs": "nagradili smo ih"
+  "en": "we repaid them",
+  "bs": "uzvratili smo im"
  },
  "جزي|1|سَنَجْزِى": {
-  "en": "we will reward",
-  "bs": "nagradit ćemo"
+  "en": "we will repay",
+  "bs": "uzvratit ćemo"
  },
  "جزي|1|سَيَجْزِيهِم": {
-  "en": "he/it will reward them",
-  "bs": "nagradit će ih"
+  "en": "he/it will repay them",
+  "bs": "uzvratit će im"
  },
  "جزي|1|سَيَجْزِيهِمْ": {
-  "en": "he/it will reward them",
-  "bs": "nagradit će ih"
+  "en": "he/it will repay them",
+  "bs": "uzvratit će im"
  },
  "جزي|1|سَيُجْزَوْنَ": {
-  "en": "they will be rewarded",
-  "bs": "bit će nagrađeni"
+  "en": "they will be repaid",
+  "bs": "bit će im uzvraćeno"
  },
  "جزي|1|لِيَجْزِىَ": {
   "en": "so that he/it may reward",
@@ -2933,8 +2937,8 @@
   "bs": "da nagradi"
  },
  "جزي|1|نَجْزِيهِ": {
-  "en": "we reward him/it",
-  "bs": "nagrađujemo ga"
+  "en": "we repay him",
+  "bs": "uzvraćamo mu"
  },
  "جزي|1|وَسَنَجْزِى": {
   "en": "and we will reward",
@@ -2965,20 +2969,20 @@
   "bs": "nagrađuje"
  },
  "جزي|1|يُجْزَ": {
-  "en": "he/it is rewarded",
-  "bs": "biva nagrađen"
+  "en": "he/it is repaid",
+  "bs": "uzvraća mu se"
  },
  "جزي|1|يُجْزَوْنَ": {
-  "en": "they are rewarded",
-  "bs": "nagrađuju se"
+  "en": "they are repaid",
+  "bs": "biva im uzvraćeno"
  },
  "جزي|1|يُجْزَى": {
-  "en": "he/it is rewarded",
-  "bs": "biva nagrađen"
+  "en": "he/it is repaid",
+  "bs": "uzvraća mu se"
  },
  "جزي|1|يُجْزَىٰٓ": {
-  "en": "he/it is rewarded",
-  "bs": "biva nagrađen"
+  "en": "he/it is repaid",
+  "bs": "uzvraća mu se"
  },
  "جعل|1|أَجَعَلَ": {
   "en": "did he/it make?",
@@ -3001,19 +3005,19 @@
   "bs": "činite"
  },
  "جعل|1|تَجْعَلُونَهُۥ": {
-  "en": "you (all) make him/it",
-  "bs": "činite ga"
+  "en": "you (all) make it",
+  "bs": "činite je"
  },
  "جعل|1|جَعَلَ": {
   "en": "he/it made",
   "bs": "učinio je"
  },
  "جعل|1|جَعَلَا": {
-  "en": "he/it made",
-  "bs": "učinio je"
+  "en": "they (two) made",
+  "bs": "učinili su"
  },
  "جعل|1|جَعَلَتْهُ": {
-  "en": "she/it made him/it",
+  "en": "she/it made it",
   "bs": "učinila ga je"
  },
  "جعل|1|جَعَلَكُم": {
@@ -3025,15 +3029,15 @@
   "bs": "učinio vas je"
  },
  "جعل|1|جَعَلَهَا": {
-  "en": "he/it made her/it",
-  "bs": "učinio ju je"
+  "en": "he/it made it",
+  "bs": "učinio ga je"
  },
  "جعل|1|جَعَلَهُ": {
-  "en": "he/it made him/it",
+  "en": "he/it made it",
   "bs": "učinio ga je"
  },
  "جعل|1|جَعَلَهُۥ": {
-  "en": "he/it made him/it",
+  "en": "he/it made it",
   "bs": "učinio ga je"
  },
  "جعل|1|جَعَلُوا۟": {
@@ -3041,8 +3045,8 @@
   "bs": "učinili su"
  },
  "جعل|1|جَعَلُوٓا۟": {
-  "en": "they made",
-  "bs": "učinili su"
+  "en": "they put",
+  "bs": "stavili su"
  },
  "جعل|1|جَعَلْتُمُ": {
   "en": "you (all) made",
@@ -3105,7 +3109,7 @@
   "bs": "pa smo učinili"
  },
  "جعل|1|فَجَعَلْنَٰهَا": {
-  "en": "so we made her/it",
+  "en": "so we made it",
   "bs": "pa smo je učinili"
  },
  "جعل|1|فَجَعَلْنَٰهُ": {
@@ -3129,7 +3133,7 @@
   "bs": "pa činimo"
  },
  "جعل|1|فَيَجْعَلَهُۥ": {
-  "en": "so he/it makes him/it",
+  "en": "so he/it makes it",
   "bs": "pa ga čini"
  },
  "جعل|1|فَٱجْعَل": {
@@ -3145,7 +3149,7 @@
   "bs": "zaista ću te učiniti"
  },
  "جعل|1|لِنَجْعَلَهَا": {
-  "en": "so that we may make her/it",
+  "en": "so that we may make it",
   "bs": "da je učinimo"
  },
  "جعل|1|لِيَجْعَلَ": {
@@ -3165,7 +3169,7 @@
   "bs": "činimo"
  },
  "جعل|1|نَجْعَلُهَا": {
-  "en": "we make her/it",
+  "en": "we make it",
   "bs": "činimo je"
  },
  "جعل|1|نَجْعَلِ": {
@@ -3201,7 +3205,7 @@
   "bs": "i učinio me je"
  },
  "جعل|1|وَجَعَلَهَا": {
-  "en": "and he/it made her/it",
+  "en": "and he/it made it",
   "bs": "i učinio ju je"
  },
  "جعل|1|وَجَعَلُوا۟": {
@@ -3229,7 +3233,7 @@
   "bs": "i učinili smo je"
  },
  "جعل|1|وَجَعَلْنَٰهَآ": {
-  "en": "and we made her/it",
+  "en": "and we made it",
   "bs": "i učinili smo je"
  },
  "جعل|1|وَجَعَلْنَٰهُ": {
@@ -3273,7 +3277,7 @@
   "bs": "i čini vas"
  },
  "جعل|1|وَيَجْعَلُهُۥ": {
-  "en": "and he/it makes him/it",
+  "en": "and he/it makes it",
   "bs": "i čini ga"
  },
  "جعل|1|وَيَجْعَلُونَ": {
@@ -3293,7 +3297,7 @@
   "bs": "i učini me!"
  },
  "جعل|1|وَٱجْعَلْهُ": {
-  "en": "and make him/it!",
+  "en": "and make him!",
   "bs": "i učini ga!"
  },
  "جعل|1|يَجْعَل": {
@@ -3313,12 +3317,12 @@
   "bs": "čini ga"
  },
  "جعل|1|يَجْعَلُونَ": {
-  "en": "they make",
-  "bs": "čine"
+  "en": "they put",
+  "bs": "stavljaju"
  },
  "جعل|1|يَجْعَلُوهُ": {
-  "en": "they make him/it",
-  "bs": "čine ga"
+  "en": "they place him",
+  "bs": "stavljaju ga"
  },
  "جعل|1|يَجْعَلِ": {
   "en": "he/it makes",
@@ -3333,7 +3337,7 @@
   "bs": "čini me"
  },
  "جعل|1|يَجْعَلْهُ": {
-  "en": "he/it makes him/it",
+  "en": "he/it makes him",
   "bs": "čini ga"
  },
  "جعل|1|ٱجْعَل": {
@@ -3341,8 +3345,8 @@
   "bs": "učini!"
  },
  "جعل|1|ٱجْعَلُوا۟": {
-  "en": "(you all) make!",
-  "bs": "učinite!"
+  "en": "(you all) place!",
+  "bs": "stavite!"
  },
  "جعل|1|ٱجْعَلْ": {
   "en": "make!",
@@ -3353,8 +3357,8 @@
   "bs": "učini me!"
  },
  "جمع|1|تَجْمَعُوا۟": {
-  "en": "you (all) gather",
-  "bs": "okupljate"
+  "en": "you (all) join together",
+  "bs": "spajate"
  },
  "جمع|1|جَمَعُوا۟": {
   "en": "they gathered",
@@ -3385,8 +3389,8 @@
   "bs": "zaista će vas okupiti"
  },
  "جمع|1|وَجَمَعَ": {
-  "en": "and he/it gathered",
-  "bs": "i okupio je"
+  "en": "and he/it amassed",
+  "bs": "i sakupio je"
  },
  "جمع|1|وَجُمِعَ": {
   "en": "and he/it was gathered",
@@ -3401,8 +3405,8 @@
   "bs": "okuplja vas"
  },
  "جمع|1|يَجْمَعُونَ": {
-  "en": "they gather",
-  "bs": "okupljaju"
+  "en": "they amass",
+  "bs": "sakupljaju"
  },
  "جنب|8|تَجْتَنِبُوا۟": {
   "en": "you (all) avoid",
@@ -3413,7 +3417,7 @@
   "bs": "pa izbjegavajte!"
  },
  "جنب|8|فَٱجْتَنِبُوهُ": {
-  "en": "so (you all) avoid him/it!",
+  "en": "so (you all) avoid it!",
   "bs": "pa ga izbjegavajte!"
  },
  "جنب|8|وَٱجْتَنِبُوا۟": {
@@ -3533,7 +3537,7 @@
   "bs": "odgovara"
  },
  "جور|4|فَأَجِرْهُ": {
-  "en": "so protect him/it!",
+  "en": "so protect him!",
   "bs": "pa ga zaštiti!"
  },
  "جور|4|وَيُجِرْكُم": {
@@ -3585,11 +3589,11 @@
   "bs": "došla nam je"
  },
  "جيأ|1|جَآءَتْهَا": {
-  "en": "she/it came to her/it",
-  "bs": "došla joj je"
+  "en": "she/it came to it",
+  "bs": "došla mu je"
  },
  "جيأ|1|جَآءَتْهُ": {
-  "en": "she/it came to him/it",
+  "en": "she/it came to him",
   "bs": "došla mu je"
  },
  "جيأ|1|جَآءَتْهُمُ": {
@@ -3629,7 +3633,7 @@
   "bs": "došao mi je"
  },
  "جيأ|1|جَآءَهَا": {
-  "en": "he/it came to her/it",
+  "en": "he/it came to it",
   "bs": "došao joj je"
  },
  "جيأ|1|جَآءَهُم": {
@@ -3649,7 +3653,7 @@
   "bs": "došao mu je"
  },
  "جيأ|1|جَآءَهُۥٓ": {
-  "en": "he/it came to him/it",
+  "en": "he/it came to him",
   "bs": "došao mu je"
  },
  "جيأ|1|جَآءُو": {
@@ -3669,7 +3673,7 @@
   "bs": "došli su vam"
  },
  "جيأ|1|جَآءُوهَا": {
-  "en": "they came to her/it",
+  "en": "they came to it",
   "bs": "došli su joj"
  },
  "جيأ|1|جِئْتَ": {
@@ -3701,16 +3705,16 @@
   "bs": "došli ste nam"
  },
  "جيأ|1|جِئْتُمْ": {
-  "en": "you (all) came",
-  "bs": "došli ste"
+  "en": "you (all) did",
+  "bs": "učinili ste"
  },
  "جيأ|1|جِئْتِ": {
-  "en": "you came",
-  "bs": "došla si"
+  "en": "you did",
+  "bs": "učinila si"
  },
  "جيأ|1|جِئْنَا": {
-  "en": "we came",
-  "bs": "došli smo"
+  "en": "we brought",
+  "bs": "donijeli smo"
  },
  "جيأ|1|جِئْنَٰكَ": {
   "en": "we came to you",
@@ -3725,19 +3729,19 @@
   "bs": "došli smo im"
  },
  "جيأ|1|فَأَجَآءَهَا": {
-  "en": "so he/it came to her/it",
-  "bs": "pa joj je došao"
+  "en": "so he/it drove her",
+  "bs": "pa ju je natjerao"
  },
  "جيأ|1|فَجَآءَ": {
   "en": "so he/it came",
   "bs": "pa je došao"
  },
  "جيأ|1|فَجَآءَتْهُ": {
-  "en": "so she/it came to him/it",
+  "en": "so she/it came to him",
   "bs": "pa mu je došla"
  },
  "جيأ|1|فَجَآءَهَا": {
-  "en": "so he/it came to her/it",
+  "en": "so he/it came to it",
   "bs": "pa joj je došao"
  },
  "جيأ|1|فَجَآءُوهُم": {
@@ -3753,7 +3757,7 @@
   "bs": "i došla je"
  },
  "جيأ|1|وَجَآءَتْهُ": {
-  "en": "and she/it came to him/it",
+  "en": "and she/it came to him",
   "bs": "i došla mu je"
  },
  "جيأ|1|وَجَآءَتْهُمْ": {
@@ -3777,7 +3781,7 @@
   "bs": "i došao im je"
  },
  "جيأ|1|وَجَآءَهُۥ": {
-  "en": "and he/it came to him/it",
+  "en": "and he/it came to him",
   "bs": "i došao mu je"
  },
  "جيأ|1|وَجَآءُو": {
@@ -3797,8 +3801,8 @@
   "bs": "i došao sam vam"
  },
  "جيأ|1|وَجِئْنَا": {
-  "en": "and we came",
-  "bs": "i došli smo"
+  "en": "and we brought",
+  "bs": "i donijeli smo"
  },
  "حبب|4|أَحْبَبْتَ": {
   "en": "you loved",
@@ -3817,7 +3821,7 @@
   "bs": "volite"
  },
  "حبب|4|تُحِبُّونَهَا": {
-  "en": "you (all) love her/it",
+  "en": "you (all) love it",
   "bs": "volite je"
  },
  "حبب|4|تُحِبُّونَهُمْ": {
@@ -3833,7 +3837,7 @@
   "bs": "i voli"
  },
  "حبب|4|وَيُحِبُّونَهُۥٓ": {
-  "en": "and they love him/it",
+  "en": "and they love him",
   "bs": "i vole ga"
  },
  "حبب|4|وَّيُحِبُّونَ": {
@@ -3884,6 +3888,10 @@
   "en": "do you (all) argue with us?",
   "bs": "zar se prepirete s nama?"
  },
+ "حجج|3|أَتُحَٰٓجُّوٓنِّى": {
+  "en": "do you (all) argue with me?",
+  "bs": "zar se raspravljate sa mnom?"
+ },
  "حجج|3|تُحَآجُّونَ": {
   "en": "you (all) argue",
   "bs": "prepirete se"
@@ -3894,7 +3902,7 @@
  },
  "حجج|3|حَآجَّكَ": {
   "en": "he/it argued with you",
-  "bs": "prepirao se je s tobom"
+  "bs": "prepirao se s tobom"
  },
  "حجج|3|حَآجُّوكَ": {
   "en": "they argued with you",
@@ -3909,8 +3917,8 @@
   "bs": "da se prepiru s vama"
  },
  "حجج|3|وَحَآجَّهُۥ": {
-  "en": "and he/it argued with him/it",
-  "bs": "i prepirao se je s njim"
+  "en": "and he/it argued with him",
+  "bs": "i prepirao se s njim"
  },
  "حجج|3|يُحَآجُّوكُمْ": {
   "en": "they argue with you (all)",
@@ -3933,7 +3941,7 @@
   "bs": "pa se čuvajte!"
  },
  "حذر|1|فَٱحْذَرُوهُ": {
-  "en": "so (you all) beware of him/it!",
+  "en": "so (you all) beware of him!",
   "bs": "pa ga se čuvajte!"
  },
  "حذر|1|فَٱحْذَرْهُمْ": {
@@ -3961,12 +3969,12 @@
   "bs": "zabranio je"
  },
  "حرم|2|حَرَّمَهَا": {
-  "en": "he/it forbade her/it",
-  "bs": "zabranio joj je"
+  "en": "he/it made it sacred",
+  "bs": "učinio ga je svetim"
  },
  "حرم|2|حَرَّمَهُمَا": {
   "en": "he/it forbade them (two)",
-  "bs": "zabranio im je"
+  "bs": "zabranio ih je"
  },
  "حرم|2|حَرَّمْنَا": {
   "en": "we forbade",
@@ -4001,8 +4009,8 @@
   "bs": "i zabranjuje"
  },
  "حرم|2|وَيُحَرِّمُونَهُۥ": {
-  "en": "and they forbid him/it",
-  "bs": "i zabranjuju mu"
+  "en": "and they forbid it",
+  "bs": "i zabranjuju ga"
  },
  "حرم|2|يُحَرِّمُونَ": {
   "en": "they forbid",
@@ -4029,8 +4037,8 @@
   "bs": "zaista me žalosti"
  },
  "حزن|1|لِيَحْزُنَ": {
-  "en": "so that he/it may grieve",
-  "bs": "da tuguje"
+  "en": "so that he/it may sadden",
+  "bs": "da ožalosti"
  },
  "حزن|1|يَحْزَنُونَ": {
   "en": "they grieve",
@@ -4061,7 +4069,7 @@
   "bs": "zar misle?"
  },
  "حسب|1|تَحْسَبُوهُ": {
-  "en": "you (all) think him/it",
+  "en": "you (all) think it",
   "bs": "smatrate ga"
  },
  "حسب|1|حَسِبَ": {
@@ -4069,7 +4077,7 @@
   "bs": "mislio je"
  },
  "حسب|1|حَسِبَتْهُ": {
-  "en": "she/it thought him/it",
+  "en": "she/it thought it",
   "bs": "smatrala ga je"
  },
  "حسب|1|حَسِبْتَ": {
@@ -4085,11 +4093,11 @@
   "bs": "mislili ste"
  },
  "حسب|1|لِتَحْسَبُوهُ": {
-  "en": "so that you (all) may think him/it",
+  "en": "so that you (all) may think it",
   "bs": "da ga smatrate"
  },
  "حسب|1|وَتَحْسَبُونَهُۥ": {
-  "en": "and you (all) think him/it",
+  "en": "and you (all) think it",
   "bs": "i smatrate ga"
  },
  "حسب|1|وَحَسِبُوٓا۟": {
@@ -4097,7 +4105,7 @@
   "bs": "i mislili su"
  },
  "حسب|1|يَحْسَبُهُ": {
-  "en": "he/it thinks him/it",
+  "en": "he/it thinks it",
   "bs": "smatra ga"
  },
  "حسب|1|يَحْسَبُهُمُ": {
@@ -4189,7 +4197,7 @@
   "bs": "i okupljamo ih"
  },
  "حشر|1|وَنَحْشُرُهُۥ": {
-  "en": "and we gather him/it",
+  "en": "and we gather him",
   "bs": "i okupljamo ga"
  },
  "حشر|1|يَحْشُرُهُمْ": {
@@ -4213,19 +4221,19 @@
   "bs": "okupljaju se"
  },
  "حصي|4|أَحْصَىٰهَا": {
-  "en": "he/it counted her/it",
+  "en": "he/it counted it",
   "bs": "izbrojao ju je"
  },
  "حصي|4|أَحْصَىٰهُ": {
-  "en": "he/it counted him/it",
+  "en": "he/it counted it",
   "bs": "izbrojao ga je"
  },
  "حصي|4|أَحْصَيْنَٰهُ": {
-  "en": "we counted him/it",
+  "en": "we counted it",
   "bs": "izbrojali smo ga"
  },
  "حصي|4|تُحْصُوهُ": {
-  "en": "you (all) count him/it",
+  "en": "you (all) count it",
   "bs": "brojite ga"
  },
  "حصي|4|وَأَحْصَىٰ": {
@@ -4237,8 +4245,8 @@
   "bs": "i izbrojite!"
  },
  "حضر|1|حَضَرَ": {
-  "en": "he/it was present",
-  "bs": "bio je prisutan"
+  "en": "he/it came",
+  "bs": "došao je"
  },
  "حفظ|1|حَفِظَ": {
   "en": "he/it guarded",
@@ -4261,19 +4269,19 @@
   "bs": "i čuvajte!"
  },
  "حفظ|1|يَحْفَظُونَهُۥ": {
-  "en": "they guard him/it",
+  "en": "they guard him",
   "bs": "čuvaju ga"
  },
  "حقق|1|حَقَّ": {
-  "en": "he/it was true",
+  "en": "he/it came true",
   "bs": "obistinio se"
  },
  "حقق|1|حَقَّتْ": {
-  "en": "she/it was true",
+  "en": "she/it came true",
   "bs": "obistinila se"
  },
  "حقق|1|وَحَقَّ": {
-  "en": "and he/it was true",
+  "en": "and he/it came true",
   "bs": "i obistinio se"
  },
  "حكم|1|تَحْكُمُوا۟": {
@@ -4357,8 +4365,8 @@
   "bs": "dozvolio je"
  },
  "حلل|4|أَحَلَّنَا": {
-  "en": "he/it permitted us",
-  "bs": "dozvolio nam je"
+  "en": "he/it settled us",
+  "bs": "nastanio nas je"
  },
  "حلل|4|أَحْلَلْنَا": {
   "en": "we permitted",
@@ -4373,8 +4381,8 @@
   "bs": "dozvoljeno je"
  },
  "حلل|4|تُحِلُّوا۟": {
-  "en": "you (all) permit",
-  "bs": "dozvoljavate"
+  "en": "you (all) profane",
+  "bs": "skrnavite"
  },
  "حلل|4|فَيُحِلُّوا۟": {
   "en": "so they permit",
@@ -4401,7 +4409,7 @@
   "bs": "i dozvoljava"
  },
  "حلل|4|يُحِلُّونَهُۥ": {
-  "en": "they permit him/it",
+  "en": "they permit it",
   "bs": "dozvoljavaju ga"
  },
  "حمل|1|أَحْمِلُ": {
@@ -4425,12 +4433,12 @@
   "bs": "ponijela je"
  },
  "حمل|1|حَمَلَتْهُ": {
-  "en": "she/it carried him/it",
+  "en": "she/it carried him",
   "bs": "ponijela ga je"
  },
  "حمل|1|حَمَلْتَهُۥ": {
-  "en": "you carried him/it",
-  "bs": "ponio si ga"
+  "en": "you laid it",
+  "bs": "natovario si ga"
  },
  "حمل|1|حَمَلْنَا": {
   "en": "we carried",
@@ -4445,11 +4453,11 @@
   "bs": "da ponesu"
  },
  "حمل|1|وَحَمَلَهَا": {
-  "en": "and he/it carried her/it",
-  "bs": "i ponio ju je"
+  "en": "and he/it carried it",
+  "bs": "i ponio ga je"
  },
  "حمل|1|وَحَمَلْنَٰهُ": {
-  "en": "and we carried him/it",
+  "en": "and we carried him",
   "bs": "i ponijeli smo ga"
  },
  "حمل|1|وَحَمَلْنَٰهُمْ": {
@@ -4457,8 +4465,8 @@
   "bs": "i ponijeli smo ih"
  },
  "حمل|1|وَحُمِلَتِ": {
-  "en": "and she/it was carried",
-  "bs": "i ponešena je"
+  "en": "and she/it was lifted",
+  "bs": "i podignuta je"
  },
  "حمل|1|وَلَيَحْمِلُنَّ": {
   "en": "and surely they will carry",
@@ -4477,20 +4485,20 @@
   "bs": "nose"
  },
  "حمل|1|يَحْمِلُوهَا": {
-  "en": "they carry her/it",
-  "bs": "nose je"
+  "en": "they carry it",
+  "bs": "nose ga"
  },
  "حمل|1|يَحْمِلْنَهَا": {
-  "en": "they carry her/it",
-  "bs": "nose je"
+  "en": "they carry it",
+  "bs": "nose ga"
  },
  "حمل|1|يُحْمَلْ": {
   "en": "he/it is carried",
   "bs": "biva nošen"
  },
  "حمل|1|ٱحْمِلْ": {
-  "en": "carry!",
-  "bs": "nosi!"
+  "en": "load!",
+  "bs": "ukrcaj!"
  },
  "حمل|2|حُمِّلَ": {
   "en": "he/it was loaded",
@@ -4513,16 +4521,16 @@
   "bs": "okružio je"
  },
  "حوط|4|أَحَطتُ": {
-  "en": "I surrounded",
-  "bs": "okružio sam"
+  "en": "I comprehended",
+  "bs": "obuhvatio sam"
  },
  "حوط|4|أُحِيطَ": {
   "en": "he/it was surrounded",
   "bs": "okružen je"
  },
  "حوط|4|تُحِيطُوا۟": {
-  "en": "you (all) surround",
-  "bs": "okružujete"
+  "en": "you (all) comprehend",
+  "bs": "obuhvaćate"
  },
  "حوط|4|وَأَحَاطَ": {
   "en": "and he/it surrounded",
@@ -4541,12 +4549,12 @@
   "bs": "biva okružen"
  },
  "حوط|4|يُحِيطُوا۟": {
-  "en": "they surround",
-  "bs": "okružuju"
+  "en": "they comprehend",
+  "bs": "obuhvaćaju"
  },
  "حوط|4|يُحِيطُونَ": {
-  "en": "they surround",
-  "bs": "okružuju"
+  "en": "they comprehend",
+  "bs": "obuhvaćaju"
  },
  "حيق|1|يَحِيقُ": {
   "en": "he/it surrounds",
@@ -4577,11 +4585,11 @@
   "bs": "oživio vas je"
  },
  "حيي|4|أَحْيَاهَا": {
-  "en": "he/it gave her/it life",
+  "en": "he/it gave it life",
   "bs": "oživio ju je"
  },
  "حيي|4|أَحْيَيْنَٰهَا": {
-  "en": "we gave her/it life",
+  "en": "we gave it life",
   "bs": "oživili smo je"
  },
  "حيي|4|أَحْيَٰهُمْ": {
@@ -4601,7 +4609,7 @@
   "bs": "pa smo oživili"
  },
  "حيي|4|فَأَحْيَيْنَٰهُ": {
-  "en": "so we gave him/it life",
+  "en": "so we gave him life",
   "bs": "pa smo ga oživili"
  },
  "حيي|4|فَأَحْيَٰكُمْ": {
@@ -4653,8 +4661,8 @@
   "bs": "oživljava vas"
  },
  "حيي|4|يُحْيِيهَا": {
-  "en": "he/it gives her/it life",
-  "bs": "oživljava je"
+  "en": "he/it gives them life",
+  "bs": "oživljava ih"
  },
  "حيي|4|يُحْۦِىَ": {
   "en": "he/it gives life",
@@ -4729,8 +4737,8 @@
   "bs": "izađi!"
  },
  "خرج|4|أَخْرَجَتْكَ": {
-  "en": "she/it brought you out",
-  "bs": "izvela te je"
+  "en": "she/it drove you out",
+  "bs": "istjerala te je"
  },
  "خرج|4|أَخْرَجَكَ": {
   "en": "he/it brought you out",
@@ -4745,20 +4753,20 @@
   "bs": "izveo me je"
  },
  "خرج|4|أَخْرَجَهُ": {
-  "en": "he/it brought him/it out",
-  "bs": "izveo ga je"
+  "en": "he/it drove him out",
+  "bs": "istjerao ga je"
  },
  "خرج|4|أَخْرَجُوكُمْ": {
-  "en": "they brought you (all) out",
-  "bs": "izveli su vas"
+  "en": "they drove you (all) out",
+  "bs": "istjerali su vas"
  },
  "خرج|4|أَخْرَجْنَا": {
   "en": "we brought out",
   "bs": "izveli smo"
  },
  "خرج|4|أَخْرِجُوهُم": {
-  "en": "(you all) bring them out!",
-  "bs": "izvedite ih!"
+  "en": "(you all) drive them out!",
+  "bs": "istjerajte ih!"
  },
  "خرج|4|أَخْرِجُوٓا۟": {
   "en": "(you all) bring out!",
@@ -4778,75 +4786,75 @@
  },
  "خرج|4|أُخْرِجَتْ": {
   "en": "she/it was brought out",
-  "bs": "izvedeno je"
+  "bs": "izvedena je"
  },
  "خرج|4|أُخْرِجُوا۟": {
-  "en": "they were brought out",
-  "bs": "izvedeni su"
+  "en": "they were driven out",
+  "bs": "protjerani su"
  },
  "خرج|4|أُخْرِجْتُمْ": {
-  "en": "you (all) were brought out",
-  "bs": "izvedeni ste"
+  "en": "you (all) were driven out",
+  "bs": "protjerani ste"
  },
  "خرج|4|أُخْرِجْنَا": {
-  "en": "we were brought out",
-  "bs": "izvedeni smo"
+  "en": "we were driven out",
+  "bs": "protjerani smo"
  },
  "خرج|4|تُخْرَجُونَ": {
   "en": "you (all) are brought out",
   "bs": "bivate izvedeni"
  },
  "خرج|4|تُخْرِجُونَ": {
-  "en": "you (all) bring out",
-  "bs": "izvodite"
+  "en": "you (all) drive out",
+  "bs": "izgonite"
  },
  "خرج|4|تُخْرِجُوهُنَّ": {
-  "en": "you (all) bring them out",
-  "bs": "izvodite ih"
+  "en": "you (all) expel them",
+  "bs": "izgonite ih"
  },
  "خرج|4|فَأَخْرَجَ": {
   "en": "so he/it brought out",
   "bs": "pa je izveo"
  },
  "خرج|4|فَأَخْرَجَهُمَا": {
-  "en": "so he/it brought them (two) out",
-  "bs": "pa ih je izveo"
+  "en": "so he/it expelled them (two)",
+  "bs": "pa ih je istjerao"
  },
  "خرج|4|فَأَخْرَجْنَا": {
   "en": "so we brought out",
   "bs": "pa smo izveli"
  },
  "خرج|4|فَأَخْرَجْنَٰهُم": {
-  "en": "so we brought them out",
-  "bs": "pa smo ih izveli"
+  "en": "so we expelled them",
+  "bs": "pa smo ih istjerali"
  },
  "خرج|4|فَنُخْرِجُ": {
   "en": "so we bring out",
   "bs": "pa izvodimo"
  },
  "خرج|4|لَنُخْرِجَنَّكَ": {
-  "en": "surely we will bring you out",
-  "bs": "zaista ćemo te izvesti"
+  "en": "surely we will drive you out",
+  "bs": "zaista ćemo te istjerati"
  },
  "خرج|4|لَنُخْرِجَنَّكُم": {
-  "en": "surely we will bring you (all) out",
-  "bs": "zaista ćemo vas izvesti"
+  "en": "surely we will drive you (all) out",
+  "bs": "zaista ćemo vas istjerati"
  },
  "خرج|4|لَيُخْرِجَنَّ": {
-  "en": "surely he/it will bring out",
-  "bs": "zaista će izvesti"
+  "en": "surely he/it will drive out",
+  "bs": "zaista će istjerati"
  },
  "خرج|4|لِتُخْرِجُوا۟": {
-  "en": "so that you (all) may bring out",
-  "bs": "da izvedete"
+  "en": "so that you (all) may drive out",
+  "bs": "da istjerate"
  },
  "خرج|4|لِيُخْرِجَكُم": {
   "en": "so that he/it may bring you (all) out",
   "bs": "da vas izvede"
  },
  "خرج|4|لِيُخْرِجُوكَ": {
-  "en": "so that they may bring you out",
-  "bs": "da te izvedu"
+  "en": "so that they may drive you out",
+  "bs": "da te istjeraju"
  },
  "خرج|4|لِّيُخْرِجَ": {
   "en": "so that he/it may bring out",
@@ -4877,28 +4885,28 @@
   "bs": "i izvela je"
  },
  "خرج|4|وَأَخْرَجُوكُم": {
-  "en": "and they brought you (all) out",
-  "bs": "i izveli su vas"
+  "en": "and they drove you (all) out",
+  "bs": "i istjerali su vas"
  },
  "خرج|4|وَأَخْرَجْنَا": {
   "en": "and we brought out",
   "bs": "i izveli smo"
  },
  "خرج|4|وَأَخْرِجُوهُم": {
-  "en": "and (you all) bring them out!",
-  "bs": "i izvedite ih!"
+  "en": "and (you all) drive them out!",
+  "bs": "i istjerajte ih!"
  },
  "خرج|4|وَأَخْرِجْنِى": {
   "en": "and bring me out!",
   "bs": "i izvedi me!"
  },
  "خرج|4|وَأُخْرِجُوا۟": {
-  "en": "and they were brought out",
-  "bs": "i izvedeni su"
+  "en": "and they were driven out",
+  "bs": "i protjerani su"
  },
  "خرج|4|وَتُخْرِجُونَ": {
-  "en": "and you (all) bring out",
-  "bs": "i izvodite"
+  "en": "and you (all) drive out",
+  "bs": "i izgonite"
  },
  "خرج|4|وَنُخْرِجُ": {
   "en": "and we bring out",
@@ -4929,12 +4937,12 @@
   "bs": "izvodi"
  },
  "خرج|4|يُخْرِجَاكُم": {
-  "en": "they (two) bring you (all) out",
-  "bs": "izvode vas"
+  "en": "they (two) drive you (all) out",
+  "bs": "izgone vas"
  },
  "خرج|4|يُخْرِجَكُم": {
-  "en": "he/it brings you (all) out",
-  "bs": "izvodi vas"
+  "en": "he/it drives you (all) out",
+  "bs": "izgoni vas"
  },
  "خرج|4|يُخْرِجُ": {
   "en": "he/it brings out",
@@ -4949,16 +4957,16 @@
   "bs": "izvodi ih"
  },
  "خرج|4|يُخْرِجُوكَ": {
-  "en": "they bring you out",
-  "bs": "izvode te"
+  "en": "they drive you out",
+  "bs": "izgone te"
  },
  "خرج|4|يُخْرِجُوكُم": {
-  "en": "they bring you (all) out",
-  "bs": "izvode vas"
+  "en": "they drive you (all) out",
+  "bs": "izgone vas"
  },
  "خرج|4|يُخْرِجُونَ": {
-  "en": "they bring out",
-  "bs": "izvode"
+  "en": "they drive out",
+  "bs": "izgone"
  },
  "خرج|4|يُخْرِجُونَهُم": {
   "en": "they bring them out",
@@ -5009,7 +5017,7 @@
   "bs": "sramoti"
  },
  "خزي|4|يُخْزِيهِ": {
-  "en": "he/it disgraces him/it",
+  "en": "he/it disgraces him",
   "bs": "sramoti ga"
  },
  "خزي|4|يُخْزِيهِمْ": {
@@ -5037,8 +5045,8 @@
   "bs": "dajemo da propadne"
  },
  "خسف|1|وَخَسَفَ": {
-  "en": "and he/it made sink",
-  "bs": "i dao je da propadne"
+  "en": "and he/it darkened",
+  "bs": "i pomračio se"
  },
  "خشي|1|أَتَخْشَوْنَهُمْ": {
   "en": "do you (all) fear them?",
@@ -5053,7 +5061,7 @@
   "bs": "bojite se"
  },
  "خشي|1|تَخْشَوْهُ": {
-  "en": "you (all) fear him/it",
+  "en": "you (all) fear him",
   "bs": "bojite ga se"
  },
  "خشي|1|تَخْشَوْهُمْ": {
@@ -5093,7 +5101,7 @@
   "bs": "i boje se"
  },
  "خشي|1|وَيَخْشَوْنَهُۥ": {
-  "en": "and they fear him/it",
+  "en": "and they fear him",
   "bs": "i boje ga se"
  },
  "خشي|1|وَٱخْشَوْا۟": {
@@ -5121,8 +5129,8 @@
   "bs": "boji se"
  },
  "خشي|1|يَخْشَىٰهَا": {
-  "en": "he/it fears her/it",
-  "bs": "boji je se"
+  "en": "he/it fears it",
+  "bs": "boji ga se"
  },
  "خشي|1|يَخْشَىٰٓ": {
   "en": "he/it fears",
@@ -5173,8 +5181,8 @@
   "bs": "sakriven je"
  },
  "خفي|4|أُخْفِيهَا": {
-  "en": "I hide her/it",
-  "bs": "skrivam je"
+  "en": "I hide it",
+  "bs": "skrivam ga"
  },
  "خفي|4|تُخْفُوا۟": {
   "en": "you (all) hide",
@@ -5185,11 +5193,11 @@
   "bs": "skrivate"
  },
  "خفي|4|تُخْفُوهَا": {
-  "en": "you (all) hide her/it",
+  "en": "you (all) hide it",
   "bs": "skrivate je"
  },
  "خفي|4|تُخْفُوهُ": {
-  "en": "you (all) hide him/it",
+  "en": "you (all) hide it",
   "bs": "skrivate ga"
  },
  "خفي|4|نُخْفِى": {
@@ -5209,11 +5217,11 @@
   "bs": "skrivaju"
  },
  "خلف|10|لَيَسْتَخْلِفَنَّهُمْ": {
-  "en": "surely he/it will appoint them as successor",
+  "en": "surely he/it will appoint them as successors",
   "bs": "zaista će ih postaviti za nasljednike"
  },
  "خلف|10|وَيَسْتَخْلِفَكُمْ": {
-  "en": "and he/it appoints you (all) as successor",
+  "en": "and he/it appoints you (all) as successors",
   "bs": "i postavlja vas za nasljednike"
  },
  "خلف|10|وَيَسْتَخْلِفُ": {
@@ -5237,20 +5245,20 @@
   "bs": "prekršili smo obećanje"
  },
  "خلف|4|فَأَخْلَفْتُكُمْ": {
-  "en": "so I broke you (all)",
+  "en": "so I broke my promise to you (all)",
   "bs": "pa sam vam prekršio obećanje"
  },
  "خلف|4|نُخْلِفُهُۥ": {
-  "en": "we break him/it",
-  "bs": "kršimo mu obećanje"
+  "en": "we break it",
+  "bs": "kršimo ga"
  },
  "خلف|4|يُخْلِفَ": {
   "en": "he/it breaks (a promise)",
   "bs": "krši obećanje"
  },
  "خلف|4|يُخْلِفُهُۥ": {
-  "en": "he/it breaks him/it",
-  "bs": "krši mu obećanje"
+  "en": "he/it replaces it",
+  "bs": "nadoknađuje ga"
  },
  "خلف|8|فَٱخْتَلَفُوا۟": {
   "en": "so they differed",
@@ -5301,8 +5309,8 @@
   "bs": "stvorio me je"
  },
  "خلق|1|خَلَقَهَا": {
-  "en": "he/it created her/it",
-  "bs": "stvorio ju je"
+  "en": "he/it created them",
+  "bs": "stvorio ih je"
  },
  "خلق|1|خَلَقَهُمْ": {
   "en": "he/it created them",
@@ -5329,7 +5337,7 @@
   "bs": "stvorio si me"
  },
  "خلق|1|خَلَقْتَهُۥ": {
-  "en": "you created him/it",
+  "en": "you created him",
   "bs": "stvorio si ga"
  },
  "خلق|1|خَلَقْتُ": {
@@ -5373,12 +5381,12 @@
   "bs": "stvorili smo ih"
  },
  "خلق|1|خُلِقَ": {
-  "en": "it was created",
-  "bs": "stvoreno je"
+  "en": "he/it was created",
+  "bs": "stvoren je"
  },
  "خلق|1|خُلِقَتْ": {
-  "en": "it was created",
-  "bs": "stvoreno je"
+  "en": "she/it was created",
+  "bs": "stvorena je"
  },
  "خلق|1|خُلِقُوا۟": {
   "en": "they were created",
@@ -5405,7 +5413,7 @@
   "bs": "i stvorio je"
  },
  "خلق|1|وَخَلَقْتَهُۥ": {
-  "en": "and you created him/it",
+  "en": "and you created him",
   "bs": "i stvorio si ga"
  },
  "خلق|1|وَخَلَقْنَا": {
@@ -5417,8 +5425,8 @@
   "bs": "i stvorili smo vas"
  },
  "خلق|1|وَخُلِقَ": {
-  "en": "and it was created",
-  "bs": "i stvoreno je"
+  "en": "and he/it was created",
+  "bs": "i stvoren je"
  },
  "خلق|1|وَيَخْلُقُ": {
   "en": "and he/it creates",
@@ -5449,7 +5457,7 @@
   "bs": "bivaju stvoreni"
  },
  "خلق|1|يُخْلَقْ": {
-  "en": "it is created",
+  "en": "he/it is created",
   "bs": "stvara se"
  },
  "خوض|1|خَاضُوٓا۟": {
@@ -5533,7 +5541,7 @@
   "bs": "boje se"
  },
  "خوف|1|يَخَافُهُۥ": {
-  "en": "he/it fears him/it",
+  "en": "he/it fears him",
   "bs": "boji ga se"
  },
  "خوف|1|يَخَافُونَ": {
@@ -5545,7 +5553,7 @@
   "bs": "boje se"
  },
  "خون|1|أَخُنْهُ": {
-  "en": "I betray him/it",
+  "en": "I betray him",
   "bs": "izdajem ga"
  },
  "خون|1|خَانُوا۟": {
@@ -5553,16 +5561,16 @@
   "bs": "izdali su"
  },
  "خون|1|فَخَانَتَاهُمَا": {
-  "en": "so they (two) betrayed",
-  "bs": "pa su izdale"
+  "en": "so they (two) betrayed them (two)",
+  "bs": "pa su ih izdale"
  },
  "دخل|1|تَدْخُلُوا۟": {
   "en": "you (all) enter",
   "bs": "ulazite"
  },
  "دخل|1|تَدْخُلُوهَا": {
-  "en": "you (all) enter her/it",
-  "bs": "ulazite u nju"
+  "en": "you (all) enter them",
+  "bs": "ulazite u njih"
  },
  "دخل|1|دَخَلَ": {
   "en": "he/it entered",
@@ -5573,7 +5581,7 @@
   "bs": "ušla je"
  },
  "دخل|1|دَخَلَهُۥ": {
-  "en": "he/it entered him/it",
+  "en": "he/it entered it",
   "bs": "ušao je u njega"
  },
  "دخل|1|دَخَلُوا۟": {
@@ -5581,7 +5589,7 @@
   "bs": "ušli su"
  },
  "دخل|1|دَخَلُوهُ": {
-  "en": "they entered him/it",
+  "en": "they entered it",
   "bs": "ušli su u njega"
  },
  "دخل|1|دَخَلْتَ": {
@@ -5593,8 +5601,8 @@
   "bs": "ušli ste"
  },
  "دخل|1|دَخَلْتُمُوهُ": {
-  "en": "you (all) entered him/it",
-  "bs": "ušli ste u njega"
+  "en": "you (all) entered it",
+  "bs": "ušli ste kroz njih"
  },
  "دخل|1|دُخِلَتْ": {
   "en": "she/it was entered",
@@ -5613,8 +5621,8 @@
   "bs": "pa uđite!"
  },
  "دخل|1|فَٱدْخُلُوهَا": {
-  "en": "so (you all) enter her/it!",
-  "bs": "pa uđite u nju!"
+  "en": "so (you all) enter it!",
+  "bs": "pa uđite u njega!"
  },
  "دخل|1|فَٱدْخُلُوٓا۟": {
   "en": "so (you all) enter!",
@@ -5629,11 +5637,11 @@
   "bs": "zaista ćete ući"
  },
  "دخل|1|نَّدْخُلَهَا": {
-  "en": "we enter her/it",
+  "en": "we enter it",
   "bs": "ulazimo u nju"
  },
  "دخل|1|نَّدْخُلَهَآ": {
-  "en": "we enter her/it",
+  "en": "we enter it",
   "bs": "ulazimo u nju"
  },
  "دخل|1|وَدَخَلَ": {
@@ -5661,16 +5669,16 @@
   "bs": "ulaze"
  },
  "دخل|1|يَدْخُلُونَهَا": {
-  "en": "they enter her/it",
-  "bs": "ulaze u nju"
+  "en": "they enter them",
+  "bs": "ulaze u njih"
  },
  "دخل|1|يَدْخُلُوهَا": {
-  "en": "they enter her/it",
-  "bs": "ulaze u nju"
+  "en": "they enter it",
+  "bs": "ulaze u njega"
  },
  "دخل|1|يَدْخُلُوهَآ": {
-  "en": "they enter her/it",
-  "bs": "ulaze u nju"
+  "en": "they enter them",
+  "bs": "ulaze u njih"
  },
  "دخل|1|يَدْخُلِ": {
   "en": "he/it enters",
@@ -5737,8 +5745,8 @@
   "bs": "i uveli smo ih"
  },
  "دخل|4|وَأَدْخِلْ": {
-  "en": "and admit!",
-  "bs": "i uvedi!"
+  "en": "and put in!",
+  "bs": "i zavuci!"
  },
  "دخل|4|وَأَدْخِلْنِى": {
   "en": "and admit me!",
@@ -5789,15 +5797,15 @@
   "bs": "uvodi"
  },
  "دخل|4|يُدْخِلْهُ": {
-  "en": "he/it admits him/it",
+  "en": "he/it admits him",
   "bs": "uvodi ga"
  },
  "درس|1|يَدْرُسُونَهَا": {
-  "en": "they study her/it",
-  "bs": "proučavaju je"
+  "en": "they study them",
+  "bs": "proučavaju ih"
  },
  "درك|4|أَدْرَكَهُ": {
-  "en": "he/it overtook him/it",
+  "en": "he/it overtook him",
   "bs": "stigao ga je"
  },
  "درك|4|يُدْرِككُّمُ": {
@@ -5805,7 +5813,7 @@
   "bs": "stiže vas"
  },
  "درك|4|يُدْرِكْهُ": {
-  "en": "he/it overtakes him/it",
+  "en": "he/it overtakes him",
   "bs": "stiže ga"
  },
  "دري|1|أَدْرِى": {
@@ -5869,7 +5877,7 @@
   "bs": "zovete me"
  },
  "دعو|1|تَدْعُونَهُۥ": {
-  "en": "you (all) call him/it",
+  "en": "you (all) call him",
   "bs": "zovete ga"
  },
  "دعو|1|تُدْعَوْنَ": {
@@ -5889,11 +5897,11 @@
   "bs": "zvao nas je"
  },
  "دعو|1|دَعَانِ": {
-  "en": "you called me",
-  "bs": "zvao si me"
+  "en": "he/it called me",
+  "bs": "zvao me je"
  },
  "دعو|1|دَعَاهُ": {
-  "en": "he/it called him/it",
+  "en": "he/it called him",
   "bs": "zvao ga je"
  },
  "دعو|1|دَعَآ": {
@@ -5965,7 +5973,7 @@
   "bs": "pa zovite!"
  },
  "دعو|1|فَٱدْعُوهُ": {
-  "en": "so (you all) call him/it!",
+  "en": "so (you all) call him!",
   "bs": "pa ga zovite!"
  },
  "دعو|1|فَٱدْعُوهُمْ": {
@@ -5981,7 +5989,7 @@
   "bs": "zovemo"
  },
  "دعو|1|نَدْعُوهُ": {
-  "en": "we call him/it",
+  "en": "we call him",
   "bs": "zovemo ga"
  },
  "دعو|1|نَّدْعُوا۟": {
@@ -6014,7 +6022,7 @@
  },
  "دعو|1|وَيُدْعَوْنَ": {
   "en": "and they are called",
-  "bs": "i zovu se"
+  "bs": "i pozivaju se"
  },
  "دعو|1|وَٱدْعُ": {
   "en": "and call!",
@@ -6025,7 +6033,7 @@
   "bs": "i zovite!"
  },
  "دعو|1|وَٱدْعُوهُ": {
-  "en": "and (you all) call him/it!",
+  "en": "and (you all) call him!",
   "bs": "i zovite ga!"
  },
  "دعو|1|يَدْعُ": {
@@ -6053,11 +6061,11 @@
   "bs": "zovu me"
  },
  "دعو|1|يَدْعُونَهُۥٓ": {
-  "en": "they call him/it",
+  "en": "they call him",
   "bs": "zovu ga"
  },
  "دعو|1|يَدْعُوهُ": {
-  "en": "he/it calls him/it",
+  "en": "he/it calls him",
   "bs": "zove ga"
  },
  "دعو|1|يَدْعُوهُمْ": {
@@ -6070,7 +6078,7 @@
  },
  "دعو|1|يُدْعَوْنَ": {
   "en": "they are called",
-  "bs": "zovu se"
+  "bs": "pozivaju se"
  },
  "دعو|1|يُدْعَىٰٓ": {
   "en": "he/it is called",
@@ -6113,7 +6121,7 @@
   "bs": "uništili smo ih"
  },
  "دمر|2|فَدَمَّرْنَٰهَا": {
-  "en": "so we destroyed her/it",
+  "en": "so we destroyed it",
   "bs": "pa smo je uništili"
  },
  "دمر|2|فَدَمَّرْنَٰهُمْ": {
@@ -6129,16 +6137,16 @@
   "bs": "trajala je"
  },
  "دوم|1|دَامُوا۟": {
-  "en": "they lasted",
-  "bs": "trajali su"
+  "en": "they remained",
+  "bs": "ostali su"
  },
  "دوم|1|دُمْتَ": {
-  "en": "you lasted",
-  "bs": "trajao si"
+  "en": "you remained",
+  "bs": "ostao si"
  },
  "دوم|1|دُمْتُمْ": {
-  "en": "you (all) lasted",
-  "bs": "trajali ste"
+  "en": "you (all) remained",
+  "bs": "ostali ste"
  },
  "ذبح|1|أَذْبَحُكَ": {
   "en": "I slaughter you",
@@ -6146,14 +6154,14 @@
  },
  "ذبح|1|تَذْبَحُوا۟": {
   "en": "you (all) slaughter",
-  "bs": "klanjate"
+  "bs": "koljete"
  },
  "ذبح|1|ذُبِحَ": {
   "en": "he/it was slaughtered",
   "bs": "zaklan je"
  },
  "ذبح|1|فَذَبَحُوهَا": {
-  "en": "so they slaughtered her/it",
+  "en": "so they slaughtered it",
   "bs": "pa su je zaklali"
  },
  "ذرأ|1|ذَرَأَ": {
@@ -6165,12 +6173,12 @@
   "bs": "stvorili smo"
  },
  "ذرأ|1|يَذْرَؤُكُمْ": {
-  "en": "he/it creates you (all)",
-  "bs": "stvara vas"
+  "en": "he/it multiplies you (all)",
+  "bs": "umnožava vas"
  },
  "ذكر|1|أَذْكُرَهُۥ": {
-  "en": "I remember him/it",
-  "bs": "spominjem ga"
+  "en": "I mention it",
+  "bs": "spominjem je"
  },
  "ذكر|1|أَذْكُرْكُمْ": {
   "en": "I remember you (all)",
@@ -6185,11 +6193,11 @@
   "bs": "sjetili su se"
  },
  "ذكر|1|ذَكَرْتَ": {
-  "en": "you remembered",
-  "bs": "sjetio si se"
+  "en": "you mentioned",
+  "bs": "spomenuo si"
  },
  "ذكر|1|ذُكِرَ": {
-  "en": "he/it was remembered",
+  "en": "he/it was mentioned",
   "bs": "spomenut je"
  },
  "ذكر|1|سَتَذْكُرُونَهُنَّ": {
@@ -6213,8 +6221,8 @@
   "bs": "pa se sjetite!"
  },
  "ذكر|1|لِّيَذْكُرُوا۟": {
-  "en": "so that they may remember",
-  "bs": "da se sjete"
+  "en": "so that they may mention",
+  "bs": "da spomenu"
  },
  "ذكر|1|وَذَكَرَ": {
   "en": "and he/it remembered",
@@ -6225,7 +6233,7 @@
   "bs": "i sjetili su se"
  },
  "ذكر|1|وَذُكِرَ": {
-  "en": "and he/it was remembered",
+  "en": "and he/it was mentioned",
   "bs": "i spomenut je"
  },
  "ذكر|1|وَنَذْكُرَكَ": {
@@ -6233,11 +6241,11 @@
   "bs": "i spominjemo te"
  },
  "ذكر|1|وَيَذْكُرُوا۟": {
-  "en": "and they remember",
-  "bs": "i sjećaju se"
+  "en": "and they mention",
+  "bs": "i spominju"
  },
  "ذكر|1|وَيُذْكَرَ": {
-  "en": "and he/it is remembered",
+  "en": "and he/it is mentioned",
   "bs": "i biva spomenut"
  },
  "ذكر|1|وَٱذْكُر": {
@@ -6257,8 +6265,8 @@
   "bs": "i sjetite se!"
  },
  "ذكر|1|وَٱذْكُرْ": {
-  "en": "and remember!",
-  "bs": "i sjeti se!"
+  "en": "and mention!",
+  "bs": "i spomeni!"
  },
  "ذكر|1|وَٱذْكُرْنَ": {
   "en": "and (you all) remember!",
@@ -6269,19 +6277,19 @@
   "bs": "sjeća se"
  },
  "ذكر|1|يَذْكُرُهُمْ": {
-  "en": "he/it remembers them",
+  "en": "he/it mentions them",
   "bs": "spominje ih"
  },
  "ذكر|1|يُذْكَرَ": {
-  "en": "he/it is remembered",
+  "en": "he/it is mentioned",
   "bs": "biva spomenut"
  },
  "ذكر|1|يُذْكَرُ": {
-  "en": "he/it is remembered",
+  "en": "he/it is mentioned",
   "bs": "biva spomenut"
  },
  "ذكر|1|يُذْكَرِ": {
-  "en": "he/it is remembered",
+  "en": "he/it is mentioned",
   "bs": "biva spomenut"
  },
  "ذكر|1|ٱذْكُرُوا۟": {
@@ -6293,7 +6301,7 @@
   "bs": "sjeti se!"
  },
  "ذكر|1|ٱذْكُرْنِى": {
-  "en": "remember me!",
+  "en": "mention me!",
   "bs": "spomeni me!"
  },
  "ذكر|2|ذُكِّرَ": {
@@ -6361,8 +6369,8 @@
   "bs": "sjećaju se"
  },
  "ذهب|4|أَذْهَبْتُمْ": {
-  "en": "you (all) removed",
-  "bs": "uklonili ste"
+  "en": "you (all) squandered",
+  "bs": "protratili ste"
  },
  "ذهب|4|لِيُذْهِبَ": {
   "en": "so that he/it may remove",
@@ -6425,7 +6433,7 @@
   "bs": "dao im je da okuse"
  },
  "ذوق|4|أَذَقْنَٰهُ": {
-  "en": "we made him/it taste",
+  "en": "we made him taste",
   "bs": "dali smo mu da okusi"
  },
  "ذوق|4|فَأَذَاقَهُمُ": {
@@ -6433,7 +6441,7 @@
   "bs": "pa im je dao da okuse"
  },
  "ذوق|4|فَأَذَٰقَهَا": {
-  "en": "so he/it made her/it taste",
+  "en": "so he/it made it taste",
   "bs": "pa joj je dao da okusi"
  },
  "ذوق|4|فَلَنُذِيقَنَّ": {
@@ -6449,7 +6457,7 @@
   "bs": "da im damo da okuse"
  },
  "ذوق|4|نُذِقْهُ": {
-  "en": "we make him/it taste",
+  "en": "we make him taste",
   "bs": "dajemo mu da okusi"
  },
  "ذوق|4|نُذِيقُهُمُ": {
@@ -6457,11 +6465,11 @@
   "bs": "dajemo im da okuse"
  },
  "ذوق|4|نُّذِقْهُ": {
-  "en": "we make him/it taste",
+  "en": "we make him taste",
   "bs": "dajemo mu da okusi"
  },
  "ذوق|4|وَنُذِيقُهُۥ": {
-  "en": "and we make him/it taste",
+  "en": "and we make him taste",
   "bs": "i dajemo mu da okusi"
  },
  "ذوق|4|وَيُذِيقَ": {
@@ -6473,12 +6481,12 @@
   "bs": "zar si vidio?"
  },
  "رأي|1|أَرَءَيْتُم": {
-  "en": "did you (all) see?",
-  "bs": "zar ste vidjeli?"
+  "en": "have you (all) considered?",
+  "bs": "zar ste razmislili?"
  },
  "رأي|1|أَرَءَيْتُمْ": {
-  "en": "did you (all) see?",
-  "bs": "zar ste vidjeli?"
+  "en": "have you (all) considered?",
+  "bs": "zar ste razmislili?"
  },
  "رأي|1|أَرَى": {
   "en": "I see",
@@ -6492,9 +6500,9 @@
   "en": "I see you",
   "bs": "vidim te"
  },
- "رأي|1|أَرَىٰكَهُمْ": {
-  "en": "he/it saw them",
-  "bs": "vidio ih je"
+ "رأي|1|أَرَىٰكُم": {
+  "en": "I see you (all)",
+  "bs": "vidim vas"
  },
  "رأي|1|أَرَىٰكُمْ": {
   "en": "I see you (all)",
@@ -6517,8 +6525,8 @@
   "bs": "vidite ih"
  },
  "رأي|1|تَرَوْهَا": {
-  "en": "you (all) see her/it",
-  "bs": "vidite je"
+  "en": "you (all) see them",
+  "bs": "vidite ih"
  },
  "رأي|1|رَءَا": {
   "en": "he/it saw",
@@ -6529,8 +6537,8 @@
   "bs": "vidio te je"
  },
  "رأي|1|رَءَاهَا": {
-  "en": "he/it saw her/it",
-  "bs": "vidio ju je"
+  "en": "he/it saw it",
+  "bs": "vidio ga je"
  },
  "رأي|1|رَءَاهُ": {
   "en": "he/it saw him/it",
@@ -6541,7 +6549,7 @@
   "bs": "vidio je"
  },
  "رأي|1|رَأَتْهُ": {
-  "en": "she/it saw him/it",
+  "en": "she/it saw it",
   "bs": "vidjela ga je"
  },
  "رأي|1|رَأَتْهُم": {
@@ -6561,11 +6569,11 @@
   "bs": "vidjeli su te"
  },
  "رأي|1|رَأَوْهَا": {
-  "en": "they saw her/it",
+  "en": "they saw it",
   "bs": "vidjeli su je"
  },
  "رأي|1|رَأَوْهُ": {
-  "en": "they saw him/it",
+  "en": "they saw it",
   "bs": "vidjeli su ga"
  },
  "رأي|1|رَأَوْهُمْ": {
@@ -6593,15 +6601,15 @@
   "bs": "vidio sam"
  },
  "رأي|1|رَأَيْتُمُوهُ": {
-  "en": "you (all) saw him/it",
-  "bs": "vidjeli ste ga"
+  "en": "you (all) saw it",
+  "bs": "vidjeli ste je"
  },
  "رأي|1|رَأَيْتُهُمْ": {
   "en": "I saw them",
   "bs": "vidio sam ih"
  },
  "رأي|1|رَأَيْنَهُۥٓ": {
-  "en": "they saw him/it",
+  "en": "they saw him",
   "bs": "vidjele su ga"
  },
  "رأي|1|رَّءَا": {
@@ -6609,19 +6617,15 @@
   "bs": "vidio je"
  },
  "رأي|1|رَّءَاهُ": {
-  "en": "he/it saw him/it",
-  "bs": "vidio ga je"
- },
- "رأي|1|فَأَرَىٰهُ": {
-  "en": "so he/it saw him/it",
-  "bs": "pa ga je vidio"
+  "en": "he/it saw himself",
+  "bs": "vidio je sebe"
  },
  "رأي|1|فَرَءَاهُ": {
   "en": "so he/it saw him/it",
   "bs": "pa ga je vidio"
  },
  "رأي|1|فَرَأَوْهُ": {
-  "en": "so they saw him/it",
+  "en": "so they saw it",
   "bs": "pa su ga vidjeli"
  },
  "رأي|1|فَسَيَرَى": {
@@ -6633,15 +6637,15 @@
   "bs": "zaista ćete vidjeti"
  },
  "رأي|1|لَتَرَوُنَّهَا": {
-  "en": "surely you (all) will see her/it",
-  "bs": "zaista ćete je vidjeti"
+  "en": "surely you (all) will see it",
+  "bs": "zaista ćete ga vidjeti"
  },
  "رأي|1|لَنَرَىٰكَ": {
   "en": "surely we see you",
   "bs": "zaista te vidimo"
  },
  "رأي|1|لَنَرَىٰهَا": {
-  "en": "surely we see her/it",
+  "en": "surely we see her",
   "bs": "zaista je vidimo"
  },
  "رأي|1|نَرَى": {
@@ -6681,7 +6685,7 @@
   "bs": "i vidjet će"
  },
  "رأي|1|وَنَرَىٰهُ": {
-  "en": "and we see him/it",
+  "en": "and we see it",
   "bs": "i vidimo ga"
  },
  "رأي|1|وَيَرَى": {
@@ -6693,11 +6697,11 @@
   "bs": "vidi"
  },
  "رأي|1|يَرَهُۥ": {
-  "en": "he/it sees him/it",
+  "en": "he/it sees it",
   "bs": "vidi ga"
  },
  "رأي|1|يَرَهُۥٓ": {
-  "en": "he/it sees him/it",
+  "en": "he/it sees him",
   "bs": "vidi ga"
  },
  "رأي|1|يَرَوُا۟": {
@@ -6713,8 +6717,8 @@
   "bs": "vide"
  },
  "رأي|1|يَرَوْنَهَا": {
-  "en": "they see her/it",
-  "bs": "vide je"
+  "en": "they see it",
+  "bs": "vide ga"
  },
  "رأي|1|يَرَوْنَهُم": {
   "en": "they see them",
@@ -6741,7 +6745,7 @@
   "bs": "vidi vas"
  },
  "رأي|1|يَرَىٰهَا": {
-  "en": "he/it sees her/it",
+  "en": "he/it sees it",
   "bs": "vidi je"
  },
  "رأي|1|يَرَىٰٓ": {
@@ -6755,6 +6759,18 @@
  "رأي|1|يُرَىٰٓ": {
   "en": "he/it is seen",
   "bs": "biva viđen"
+ },
+ "رأي|4|أَرَىٰكَ": {
+  "en": "he/it showed you",
+  "bs": "pokazao ti je"
+ },
+ "رأي|4|أَرَىٰكَهُمْ": {
+  "en": "he/it showed them to you",
+  "bs": "pokazao ti ih je"
+ },
+ "رأي|4|أَرَىٰكُم": {
+  "en": "he/it showed you (all)",
+  "bs": "pokazao vam je"
  },
  "رأي|4|أَرَيْنَٰكَ": {
   "en": "we showed you",
@@ -6792,12 +6808,16 @@
   "en": "he/it will show you (all)",
   "bs": "pokazat će vam"
  },
+ "رأي|4|فَأَرَىٰهُ": {
+  "en": "so he/it showed him/it",
+  "bs": "pa mu je pokazao"
+ },
  "رأي|4|فَأَرُونِى": {
   "en": "so (you all) show me!",
   "bs": "pa mi pokažite!"
  },
  "رأي|4|لِنُرِيَهُۥ": {
-  "en": "so that we may show him/it",
+  "en": "so that we may show him",
   "bs": "da mu pokažemo"
  },
  "رأي|4|لِيُرِيَكُم": {
@@ -6950,7 +6970,7 @@
  },
  "رجع|1|يُرْجَعُونَ": {
   "en": "they are returned",
-  "bs": "vraćaju se"
+  "bs": "bivaju vraćeni"
  },
  "رجع|1|ٱرْجِعُوا۟": {
   "en": "(you all) return!",
@@ -6965,8 +6985,8 @@
   "bs": "vratite se!"
  },
  "رجع|1|ٱرْجِعِ": {
-  "en": "return!",
-  "bs": "vrati se!"
+  "en": "return (your vision)!",
+  "bs": "vrati pogled!"
  },
  "رجع|1|ٱرْجِعْ": {
   "en": "return!",
@@ -7009,7 +7029,7 @@
   "bs": "nada se"
  },
  "رحم|1|تُرْحَمُونَ": {
-  "en": "you (all) are had mercy",
+  "en": "you (all) are shown mercy",
   "bs": "bivate pomilovani"
  },
  "رحم|1|رَحِمَ": {
@@ -7021,11 +7041,11 @@
   "bs": "smilovao nam se"
  },
  "رحم|1|رَحِمَهُۥ": {
-  "en": "he/it had mercy on him/it",
+  "en": "he/it had mercy on him",
   "bs": "smilovao mu se"
  },
  "رحم|1|رَحِمْتَهُۥ": {
-  "en": "you had mercy on him/it",
+  "en": "you had mercy on him",
   "bs": "smilovao si mu se"
  },
  "رحم|1|رَحِمْنَٰهُمْ": {
@@ -7069,7 +7089,7 @@
   "bs": "vratili smo"
  },
  "ردد|1|رَدُّوهُ": {
-  "en": "they returned him/it",
+  "en": "they returned it",
   "bs": "vratili su ga"
  },
  "ردد|1|رُدَّتْ": {
@@ -7081,8 +7101,8 @@
   "bs": "vraćeni su"
  },
  "ردد|1|رُدُّوهَآ": {
-  "en": "(you all) return her/it!",
-  "bs": "vratite je!"
+  "en": "(you all) return it!",
+  "bs": "vratite ga!"
  },
  "ردد|1|رُدُّوٓا۟": {
   "en": "they were returned",
@@ -7093,7 +7113,7 @@
   "bs": "vraćen sam"
  },
  "ردد|1|فَرَدَدْنَٰهُ": {
-  "en": "so we returned him/it",
+  "en": "so we returned him",
   "bs": "pa smo ga vratili"
  },
  "ردد|1|فَرَدُّوٓا۟": {
@@ -7101,7 +7121,7 @@
   "bs": "pa su vratili"
  },
  "ردد|1|فَرُدُّوهُ": {
-  "en": "so (you all) return him/it!",
+  "en": "so (you all) return it!",
   "bs": "pa ga vratite!"
  },
  "ردد|1|نُرَدُّ": {
@@ -7109,8 +7129,8 @@
   "bs": "vraćamo se"
  },
  "ردد|1|وَرَدَّ": {
-  "en": "and he/it returned",
-  "bs": "i vratio je"
+  "en": "and he/it repelled",
+  "bs": "i odbio je"
  },
  "ردد|1|وَرُدُّوٓا۟": {
   "en": "and they were returned",
@@ -7193,7 +7213,7 @@
   "bs": "opskrbljeni smo"
  },
  "رزق|1|رَّزَقْنَٰهُ": {
-  "en": "we provided him/it",
+  "en": "we provided him",
   "bs": "opskrbili smo ga"
  },
  "رزق|1|فَٱرْزُقُوهُم": {
@@ -7229,7 +7249,7 @@
   "bs": "i opskrbili smo ih"
  },
  "رزق|1|وَيَرْزُقْهُ": {
-  "en": "and he/it provides him/it",
+  "en": "and he/it provides him",
   "bs": "i opskrbljuje ga"
  },
  "رزق|1|وَٱرْزُقُوهُمْ": {
@@ -7257,12 +7277,12 @@
   "bs": "opskrbljuje vas"
  },
  "رزق|1|يَرْزُقُهَا": {
-  "en": "he/it provides her/it",
+  "en": "he/it provides it",
   "bs": "opskrbljuje je"
  },
  "رزق|1|يُرْزَقُونَ": {
   "en": "they are provided",
-  "bs": "opskrbljuju se"
+  "bs": "bivaju opskrbljeni"
  },
  "رسل|4|أَرْسَلَ": {
   "en": "he/it sent",
@@ -7285,11 +7305,11 @@
   "bs": "poslali smo te"
  },
  "رسل|4|أَرْسَلْنَٰهُ": {
-  "en": "we sent him/it",
+  "en": "we sent him",
   "bs": "poslali smo ga"
  },
  "رسل|4|أَرْسِلْهُ": {
-  "en": "send him/it!",
+  "en": "send him!",
   "bs": "pošalji ga!"
  },
  "رسل|4|أُرْسِلَ": {
@@ -7297,7 +7317,7 @@
   "bs": "poslan je"
  },
  "رسل|4|أُرْسِلَهُۥ": {
-  "en": "I send him/it",
+  "en": "I send him",
   "bs": "šaljem ga"
  },
  "رسل|4|أُرْسِلُوا۟": {
@@ -7337,7 +7357,7 @@
   "bs": "pa me pošaljite!"
  },
  "رسل|4|فَأَرْسِلْهُ": {
-  "en": "so send him/it!",
+  "en": "so send him!",
   "bs": "pa ga pošalji!"
  },
  "رسل|4|فَيُرْسِلَ": {
@@ -7373,7 +7393,7 @@
   "bs": "i poslali smo te"
  },
  "رسل|4|وَأَرْسَلْنَٰهُ": {
-  "en": "and we sent him/it",
+  "en": "and we sent him",
   "bs": "i poslali smo ga"
  },
  "رسل|4|وَأَرْسِلْ": {
@@ -7417,7 +7437,7 @@
   "bs": "dojile su vas"
  },
  "رضع|4|أَرْضِعِيهِ": {
-  "en": "breast-feed him/it!",
+  "en": "breast-feed him!",
   "bs": "doji ga!"
  },
  "رضع|4|يُرْضِعْنَ": {
@@ -7450,7 +7470,7 @@
  },
  "رضو|1|لِتَرْضَوْا۟": {
   "en": "so that you (all) may be pleased",
-  "bs": "da ste zadovoljni"
+  "bs": "da budete zadovoljni"
  },
  "رضو|1|وَرَضُوا۟": {
   "en": "and they were pleased",
@@ -7485,15 +7505,15 @@
   "bs": "podigao je"
  },
  "رفع|1|رَفَعَهَا": {
-  "en": "he/it raised her/it",
-  "bs": "podigao ju je"
+  "en": "he/it raised it",
+  "bs": "podigao ga je"
  },
  "رفع|1|رُفِعَتْ": {
   "en": "she/it was raised",
-  "bs": "podignuto je"
+  "bs": "podignuta je"
  },
  "رفع|1|رَّفَعَهُ": {
-  "en": "he/it raised him/it",
+  "en": "he/it raised him",
   "bs": "podigao ga je"
  },
  "رفع|1|نَرْفَعُ": {
@@ -7513,7 +7533,7 @@
   "bs": "podiže"
  },
  "رفع|1|يَرْفَعُهُۥ": {
-  "en": "he/it raises him/it",
+  "en": "he/it raises it",
   "bs": "podiže ga"
  },
  "رفع|1|يَرْفَعِ": {
@@ -7537,8 +7557,8 @@
   "bs": "da jašete"
  },
  "ركب|1|لِتَرْكَبُوهَا": {
-  "en": "so that you (all) may ride her/it",
-  "bs": "da je jašete"
+  "en": "so that you (all) may ride them",
+  "bs": "da ih jašete"
  },
  "ركب|1|يَرْكَبُونَ": {
   "en": "they ride",
@@ -7553,15 +7573,15 @@
   "bs": "i pokloni se!"
  },
  "رهق|1|يَرْهَقُ": {
-  "en": "he/it overtakes",
-  "bs": "obuzima"
+  "en": "he/it covers",
+  "bs": "prekriva"
  },
  "رود|3|رَٰوَدتُّنَّ": {
   "en": "you (all) tried to persuade",
   "bs": "nagovarale ste"
  },
  "رود|3|رَٰوَدتُّهُۥ": {
-  "en": "I tried to persuade him/it",
+  "en": "I tried to persuade him",
   "bs": "nagovarao sam ga"
  },
  "رود|3|رَٰوَدَتْنِى": {
@@ -7569,7 +7589,7 @@
   "bs": "nagovarala me je"
  },
  "رود|3|وَرَٰوَدَتْهُ": {
-  "en": "and she/it tried to persuade him/it",
+  "en": "and she/it tried to persuade him",
   "bs": "i nagovarala ga je"
  },
  "رود|4|أَتُرِيدُونَ": {
@@ -7621,7 +7641,7 @@
   "bs": "htjeli smo"
  },
  "رود|4|أَرَدْنَٰهُ": {
-  "en": "we wanted him/it",
+  "en": "we wanted it",
   "bs": "željeli smo ga"
  },
  "رود|4|أُرِيدَ": {
@@ -7793,15 +7813,15 @@
   "bs": "čisti se"
  },
  "زوج|2|زُوِّجَتْ": {
-  "en": "she/it was married (someone) off",
-  "bs": "udata je"
+  "en": "she/it was paired",
+  "bs": "spojena je"
  },
  "زيد|1|تَزِيدُونَنِى": {
   "en": "you (all) increase me",
   "bs": "povećavate me"
  },
  "زيد|1|زَادَتْهُ": {
-  "en": "she/it increased him/it",
+  "en": "she/it increased him",
   "bs": "povećala ga je"
  },
  "زيد|1|زَادَتْهُمْ": {
@@ -7837,7 +7857,7 @@
   "bs": "pa ih je povećao"
  },
  "زيد|1|فَزِدْهُ": {
-  "en": "so increase him/it!",
+  "en": "so increase him!",
   "bs": "pa ga povećaj!"
  },
  "زيد|1|لَأَزِيدَنَّكُمْ": {
@@ -7865,7 +7885,7 @@
   "bs": "i povećao ih je"
  },
  "زيد|1|وَزَادَهُۥ": {
-  "en": "and he/it increased him/it",
+  "en": "and he/it increased him",
   "bs": "i povećao ga je"
  },
  "زيد|1|وَسَنَزِيدُ": {
@@ -7897,7 +7917,7 @@
   "bs": "i povećava ih"
  },
  "زيد|1|يَزِدْهُ": {
-  "en": "he/it increases him/it",
+  "en": "he/it increases him",
   "bs": "povećava ga"
  },
  "زيد|1|يَزِدْهُمْ": {
@@ -7913,8 +7933,8 @@
   "bs": "povećava ih"
  },
  "زيد|1|يَزِيدُونَ": {
-  "en": "they increase",
-  "bs": "povećavaju"
+  "en": "they exceed",
+  "bs": "premašuju"
  },
  "زيد|8|لِيَزْدَادُوٓا۟": {
   "en": "so that they may increase",
@@ -7973,7 +7993,7 @@
   "bs": "i ukrasio je"
  },
  "زين|2|وَزَيَّنَهُۥ": {
-  "en": "and he/it adorned him/it",
+  "en": "and he/it adorned it",
   "bs": "i ukrasio ga je"
  },
  "زين|2|وَزَيَّنَّا": {
@@ -7981,8 +8001,8 @@
   "bs": "i ukrasili smo"
  },
  "زين|2|وَزَيَّنَّٰهَا": {
-  "en": "and we adorned her/it",
-  "bs": "i ukrasili smo je"
+  "en": "and we adorned it",
+  "bs": "i ukrasili smo ga"
  },
  "زين|2|وَزُيِّنَ": {
   "en": "and he/it was adorned",
@@ -8009,8 +8029,8 @@
   "bs": "pitao te je"
  },
  "سأل|1|سَأَلَهَا": {
-  "en": "he/it asked her/it",
-  "bs": "pitao ju je"
+  "en": "he/it asked them",
+  "bs": "pitao ih je"
  },
  "سأل|1|سَأَلَهُمْ": {
   "en": "he/it asked them",
@@ -8037,7 +8057,7 @@
   "bs": "pitao sam vas"
  },
  "سأل|1|سَأَلْتُمُوهُ": {
-  "en": "you (all) asked him/it",
+  "en": "you (all) asked it",
   "bs": "pitali ste ga"
  },
  "سأل|1|سَأَلْتُمُوهُنَّ": {
@@ -8058,7 +8078,7 @@
  },
  "سأل|1|سُئِلَتْ": {
   "en": "she/it was asked",
-  "bs": "pitano je"
+  "bs": "upitana je"
  },
  "سأل|1|سُئِلُوا۟": {
   "en": "they were asked",
@@ -8085,7 +8105,7 @@
   "bs": "pa pitaj!"
  },
  "سأل|1|فَسْـَٔلْهُ": {
-  "en": "so ask him/it!",
+  "en": "so ask him!",
   "bs": "pa ga pitaj!"
  },
  "سأل|1|فَلَنَسْـَٔلَنَّ": {
@@ -8161,7 +8181,7 @@
   "bs": "pita vas"
  },
  "سأل|1|يَسْـَٔلُهُۥ": {
-  "en": "he/it asks him/it",
+  "en": "he/it asks him",
   "bs": "pita ga"
  },
  "سأل|1|يَسْـَٔلُونَ": {
@@ -8185,11 +8205,11 @@
   "bs": "bivaju pitani"
  },
  "سأل|6|تَسَآءَلُونَ": {
-  "en": "you (all) wonder",
+  "en": "you (all) ask one another",
   "bs": "pitate se"
  },
  "سأل|6|لِيَتَسَآءَلُوا۟": {
-  "en": "so that they may wonder",
+  "en": "so that they may ask one another",
   "bs": "da se pitaju"
  },
  "سبح|2|تُسَبِّحُونَ": {
@@ -8209,7 +8229,7 @@
   "bs": "pa slavi!"
  },
  "سبح|2|فَسَبِّحْهُ": {
-  "en": "so glorify him/it!",
+  "en": "so glorify him!",
   "bs": "pa ga slavi!"
  },
  "سبح|2|نُسَبِّحُ": {
@@ -8217,7 +8237,7 @@
   "bs": "slavimo"
  },
  "سبح|2|وَتُسَبِّحُوهُ": {
-  "en": "and you (all) glorify him/it",
+  "en": "and you (all) glorify him",
   "bs": "i slavite ga"
  },
  "سبح|2|وَسَبَّحُوا۟": {
@@ -8229,7 +8249,7 @@
   "bs": "i slavi!"
  },
  "سبح|2|وَسَبِّحْهُ": {
-  "en": "and glorify him/it!",
+  "en": "and glorify him!",
   "bs": "i slavi ga!"
  },
  "سبح|2|وَيُسَبِّحُ": {
@@ -8237,7 +8257,7 @@
   "bs": "i slavi"
  },
  "سبح|2|وَيُسَبِّحُونَهُۥ": {
-  "en": "and they glorify him/it",
+  "en": "and they glorify him",
   "bs": "i slave ga"
  },
  "سبح|2|يُسَبِّحُ": {
@@ -8381,8 +8401,8 @@
   "bs": "potčinio ju je"
  },
  "سخر|2|سَخَّرْنَٰهَا": {
-  "en": "we subjected her/it",
-  "bs": "potčinili smo je"
+  "en": "we subjected them",
+  "bs": "potčinili smo ih"
  },
  "سخر|2|فَسَخَّرْنَا": {
   "en": "so we subjected",
@@ -8405,11 +8425,11 @@
   "bs": "tajili su"
  },
  "سرر|4|فَأَسَرَّهَا": {
-  "en": "so he/it kept her/it secret",
+  "en": "so he/it kept it secret",
   "bs": "pa ju je tajio"
  },
  "سرر|4|وَأَسَرُّوهُ": {
-  "en": "and they kept him/it secret",
+  "en": "and they kept him secret",
   "bs": "i tajili su ga"
  },
  "سرر|4|وَأَسْرَرْتُ": {
@@ -8441,12 +8461,12 @@
   "bs": "pretjeruje"
  },
  "سري|4|أَسْرَىٰ": {
-  "en": "he/it travelled by night",
-  "bs": "putovao je noću"
+  "en": "he/it took by night",
+  "bs": "noću je poveo"
  },
  "سري|4|أَسْرِ": {
-  "en": "travel by night!",
-  "bs": "putuj noću!"
+  "en": "take (them) away by night!",
+  "bs": "povedi noću!"
  },
  "سعي|1|سَعَوْ": {
   "en": "they strove",
@@ -8457,8 +8477,8 @@
   "bs": "trudili su se"
  },
  "سعي|1|فَٱسْعَوْا۟": {
-  "en": "so (you all) strive!",
-  "bs": "pa se trudite!"
+  "en": "so (you all) hasten!",
+  "bs": "pa požurite!"
  },
  "سعي|1|وَسَعَىٰ": {
   "en": "and he/it strove",
@@ -8505,8 +8525,8 @@
   "bs": "napajaju"
  },
  "سقي|1|يُسْقَىٰ": {
-  "en": "he/it is given to drink",
-  "bs": "biva napojen"
+  "en": "he/it is watered",
+  "bs": "biva zalijevan"
  },
  "سقي|4|نُّسْقِيكُم": {
   "en": "we give you (all) to drink",
@@ -8525,28 +8545,28 @@
   "bs": "bivaju napojeni"
  },
  "سكن|1|تَسْكُنُونَ": {
-  "en": "you (all) dwell",
-  "bs": "stanujete"
+  "en": "you (all) rest",
+  "bs": "odmarate se"
  },
  "سكن|1|سَكَنتُم": {
   "en": "you (all) dwelt",
   "bs": "stanovali ste"
  },
  "سكن|1|لِتَسْكُنُوا۟": {
-  "en": "so that you (all) may dwell",
-  "bs": "da stanujete"
+  "en": "so that you (all) may rest",
+  "bs": "da se odmarate"
  },
  "سكن|1|لِيَسْكُنَ": {
-  "en": "so that he/it may dwell",
-  "bs": "da stanuje"
+  "en": "so that he/it may find rest",
+  "bs": "da se smiri"
  },
  "سكن|1|لِيَسْكُنُوا۟": {
-  "en": "so that they may dwell",
-  "bs": "da stanuju"
+  "en": "so that they may rest",
+  "bs": "da se odmaraju"
  },
  "سكن|1|لِّتَسْكُنُوٓا۟": {
-  "en": "so that you (all) may dwell",
-  "bs": "da stanujete"
+  "en": "so that you (all) may find rest",
+  "bs": "da se smirite"
  },
  "سكن|1|وَسَكَنتُمْ": {
   "en": "and you (all) dwelt",
@@ -8569,15 +8589,15 @@
   "bs": "nastanite ih!"
  },
  "سكن|4|فَأَسْكَنَّٰهُ": {
-  "en": "so we settled him/it",
-  "bs": "pa smo ga nastanili"
+  "en": "so we lodged it",
+  "bs": "pa smo je smjestili"
  },
  "سكن|4|يُسْكِنِ": {
-  "en": "he/it settles",
-  "bs": "nastanjuje"
+  "en": "he/it calms",
+  "bs": "stišava"
  },
  "سلف|1|سَلَفَ": {
-  "en": "he/it was past",
+  "en": "he/it has passed",
   "bs": "prošlo je"
  },
  "سلك|1|فَٱسْلُكِى": {
@@ -8585,20 +8605,20 @@
   "bs": "pa idi putem!"
  },
  "سلك|1|فَٱسْلُكْ": {
-  "en": "so follow a path!",
-  "bs": "pa idi putem!"
+  "en": "so introduce!",
+  "bs": "pa uvedi!"
  },
  "سلك|1|وَسَلَكَ": {
-  "en": "and he/it followed a path",
-  "bs": "i išao je putem"
+  "en": "and he/it threaded",
+  "bs": "i provukao je"
  },
  "سلك|1|يَسْلُكُ": {
-  "en": "he/it follows a path",
-  "bs": "ide putem"
+  "en": "he/it sends along",
+  "bs": "šalje"
  },
  "سلك|1|ٱسْلُكْ": {
-  "en": "follow a path!",
-  "bs": "idi putem!"
+  "en": "thrust in!",
+  "bs": "zavuci!"
  },
  "سلم|4|ءَأَسْلَمْتُمْ": {
   "en": "did you (all) submit?",
@@ -8677,8 +8697,8 @@
   "bs": "čuli su"
  },
  "سمع|1|سَمِعْتُمُوهُ": {
-  "en": "you (all) heard him/it",
-  "bs": "čuli ste ga"
+  "en": "you (all) heard it",
+  "bs": "čuli ste je"
  },
  "سمع|1|سَمِعْتُمْ": {
   "en": "you (all) heard",
@@ -8721,12 +8741,12 @@
   "bs": "čuju vas"
  },
  "سمع|1|يَسْمَعْهَا": {
-  "en": "he/it hears her/it",
-  "bs": "čuje je"
+  "en": "he/it hears them",
+  "bs": "čuje ih"
  },
  "سمع|4|وَأَسْمِعْ": {
-  "en": "and make hear!",
-  "bs": "i daj da čuje!"
+  "en": "and how well he/it hears!",
+  "bs": "i kako dobro čuje!"
  },
  "سمع|4|يُسْمِعُ": {
   "en": "he/it makes hear",
@@ -8761,11 +8781,11 @@
   "bs": "nazvao vas je"
  },
  "سمو|2|سَمَّيْتُمُوهَآ": {
-  "en": "you (all) named her/it",
-  "bs": "nazvali ste je"
+  "en": "you (all) named them",
+  "bs": "nazvali ste ih"
  },
  "سمو|2|سَمَّيْتُهَا": {
-  "en": "I named her/it",
+  "en": "I named her",
   "bs": "nazvao sam je"
  },
  "سمو|2|سَمُّوهُمْ": {
@@ -8781,11 +8801,11 @@
   "bs": "učinili su zlo"
  },
  "سوق|1|سُقْنَٰهُ": {
-  "en": "we drove him/it",
+  "en": "we drove it",
   "bs": "otjerali smo ga"
  },
  "سوق|1|فَسُقْنَٰهُ": {
-  "en": "so we drove him/it",
+  "en": "so we drove it",
   "bs": "pa smo ga otjerali"
  },
  "سوق|1|نَسُوقُ": {
@@ -8805,15 +8825,15 @@
   "bs": "oblikovao te je"
  },
  "سوي|2|سَوَّىٰهَا": {
-  "en": "he/it fashioned her/it",
+  "en": "he/it fashioned it",
   "bs": "oblikovao ju je"
  },
  "سوي|2|سَوَّىٰهُ": {
-  "en": "he/it fashioned him/it",
+  "en": "he/it fashioned him",
   "bs": "oblikovao ga je"
  },
  "سوي|2|سَوَّيْتُهُۥ": {
-  "en": "I fashioned him/it",
+  "en": "I fashioned him",
   "bs": "oblikovao sam ga"
  },
  "سوي|2|فَسَوَّىٰ": {
@@ -8853,24 +8873,24 @@
   "bs": "i pokrenuta je"
  },
  "سير|2|يُسَيِّرُكُمْ": {
-  "en": "he/it sets you (all) in motion",
-  "bs": "pokreće vas"
+  "en": "he/it makes you (all) travel",
+  "bs": "omogućava vam da putujete"
  },
  "شدد|1|سَنَشُدُّ": {
-  "en": "we will tighten",
-  "bs": "stegnut ćemo"
+  "en": "we will strengthen",
+  "bs": "ojačat ćemo"
  },
  "شدد|1|فَشُدُّوا۟": {
   "en": "so (you all) tighten!",
   "bs": "pa stegnite!"
  },
  "شدد|1|وَشَدَدْنَآ": {
-  "en": "and we tightened",
-  "bs": "i stegnuli smo"
+  "en": "and we strengthened",
+  "bs": "i ojačali smo"
  },
  "شدد|1|وَٱشْدُدْ": {
-  "en": "and tighten!",
-  "bs": "i stegni!"
+  "en": "and harden!",
+  "bs": "i zapečati!"
  },
  "شرب|1|شَرِبَ": {
   "en": "he/it drank",
@@ -8964,14 +8984,6 @@
   "en": "and I associate (partners with God)",
   "bs": "i pripisujem druga Allahu"
  },
- "شرك|4|يُشْرَكَ": {
-  "en": "he/it is associated (partners with God)",
-  "bs": "biva pridružen Allahu"
- },
- "شرك|4|يُشْرَكْ": {
-  "en": "he/it is associated (partners with God)",
-  "bs": "biva pridružen Allahu"
- },
  "شرك|4|يُشْرِكُ": {
   "en": "he/it associates (partners with God)",
   "bs": "pripisuje druga Allahu"
@@ -9041,8 +9053,8 @@
   "bs": "zauzima se"
  },
  "شقق|3|تُشَٰٓقُّونَ": {
-  "en": "you (all) are opposed",
-  "bs": "bivate osporavani"
+  "en": "you (all) oppose",
+  "bs": "suprotstavljate se"
  },
  "شقق|3|وَشَآقُّوا۟": {
   "en": "and they opposed",
@@ -9098,15 +9110,15 @@
  },
  "شهد|1|أَشَهِدُوا۟": {
   "en": "did they witness?",
-  "bs": "zar su svjedočili?"
+  "bs": "zar su prisustvovali?"
  },
  "شهد|1|أَشْهَدُ": {
   "en": "I witness",
   "bs": "svjedočim"
  },
  "شهد|1|تَشْهَدُونِ": {
-  "en": "you (all) witness me",
-  "bs": "svjedočite mi"
+  "en": "you (all) are present with me",
+  "bs": "prisustvujete uz mene"
  },
  "شهد|1|شَهِدتُّمْ": {
   "en": "you (all) witnessed",
@@ -9134,7 +9146,7 @@
  },
  "شهد|1|لِّيَشْهَدُوا۟": {
   "en": "so that they may witness",
-  "bs": "da posvjedoče"
+  "bs": "da prisustvuju"
  },
  "شهد|1|نَشْهَدُ": {
   "en": "we witness",
@@ -9154,7 +9166,7 @@
  },
  "شهد|1|وَلْيَشْهَدْ": {
   "en": "and let him witness",
-  "bs": "i neka posvjedoči"
+  "bs": "i neka prisustvuje"
  },
  "شهد|1|وَٱشْهَدُوٓا۟": {
   "en": "and (you all) witness!",
@@ -9173,8 +9185,8 @@
   "bs": "svjedoči"
  },
  "شهد|1|يَشْهَدُهُ": {
-  "en": "he/it witnesses him/it",
-  "bs": "svjedoči mu"
+  "en": "he/it witnesses it",
+  "bs": "prisustvuje mu"
  },
  "شهد|1|يَشْهَدُونَ": {
   "en": "they witness",
@@ -9281,8 +9293,8 @@
   "bs": "postali su"
  },
  "صبح|4|تُصْبِحُونَ": {
-  "en": "you (all) become",
-  "bs": "postajete"
+  "en": "you (all) enter the morning",
+  "bs": "osvanjujete"
  },
  "صبح|4|فَأَصْبَحْتُم": {
   "en": "so you (all) became",
@@ -9381,7 +9393,7 @@
   "bs": "strpi se!"
  },
  "صدد|1|تَصُدُّونَ": {
-  "en": "you (all) turn away",
+  "en": "you (all) hinder (others)",
   "bs": "odvraćate"
  },
  "صدد|1|تَصُدُّونَا": {
@@ -9409,19 +9421,19 @@
   "bs": "pa ih je odvratio"
  },
  "صدد|1|فَصَدُّوا۟": {
-  "en": "so they turned away",
+  "en": "so they hindered (others)",
   "bs": "pa su odvratili"
  },
  "صدد|1|لِيَصُدُّوا۟": {
-  "en": "so that they may turn away",
+  "en": "so that they may hinder (others)",
   "bs": "da odvrate"
  },
  "صدد|1|وَتَصُدُّونَ": {
-  "en": "and you (all) turn away",
+  "en": "and you (all) hinder (others)",
   "bs": "i odvraćate"
  },
  "صدد|1|وَصَدَّهَا": {
-  "en": "and he/it turned her/it away",
+  "en": "and he/it turned her away",
   "bs": "i odvratio ju je"
  },
  "صدد|1|وَصَدُّوكُمْ": {
@@ -9441,8 +9453,8 @@
   "bs": "odvraćaju"
  },
  "صدد|1|يَصِدُّونَ": {
-  "en": "they turn away",
-  "bs": "odvraćaju"
+  "en": "they cry out",
+  "bs": "dižu viku"
  },
  "صدق|5|تَصَدَّقَ": {
   "en": "he/it gave alms",
@@ -9473,15 +9485,15 @@
   "bs": "odvratio vas je"
  },
  "صرف|1|صَرَفْنَآ": {
-  "en": "we turned away",
-  "bs": "odvratili smo"
+  "en": "we directed",
+  "bs": "usmjerili smo"
  },
  "صرف|1|لِنَصْرِفَ": {
   "en": "so that we may turn away",
   "bs": "da odvratimo"
  },
  "صرف|1|وَيَصْرِفُهُۥ": {
-  "en": "and he/it turns him/it away",
+  "en": "and he/it turns it away",
   "bs": "i odvraća ga"
  },
  "صرف|2|صَرَّفْنَا": {
@@ -9525,7 +9537,7 @@
   "bs": "odabrao te je"
  },
  "صفو|8|ٱصْطَفَىٰهُ": {
-  "en": "he/it chose him/it",
+  "en": "he/it chose him",
   "bs": "odabrao ga je"
  },
  "صفو|8|ٱصْطَفَىٰٓ": {
@@ -9541,7 +9553,7 @@
   "bs": "odabrali smo"
  },
  "صفو|8|ٱصْطَفَيْنَٰهُ": {
-  "en": "we chose him/it",
+  "en": "we chose him",
   "bs": "odabrali smo ga"
  },
  "صلح|4|تُصْلِحُوا۟": {
@@ -9549,8 +9561,8 @@
   "bs": "popravljate"
  },
  "صلح|4|فَأَصْلَحَ": {
-  "en": "so he/it reformed",
-  "bs": "pa je popravio"
+  "en": "so he/it made peace",
+  "bs": "pa je pomirio"
  },
  "صلح|4|وَأَصْلَحَ": {
   "en": "and he/it reformed",
@@ -9565,7 +9577,7 @@
   "bs": "i popravili su"
  },
  "صلح|4|وَأَصْلَحْنَا": {
-  "en": "and we reformed",
+  "en": "and we set right",
   "bs": "i popravili smo"
  },
  "صلح|4|وَأَصْلِحُوا۟": {
@@ -9577,12 +9589,12 @@
   "bs": "i popravi!"
  },
  "صلح|4|وَتُصْلِحُوا۟": {
-  "en": "and you (all) reform",
-  "bs": "i popravljate"
+  "en": "and you (all) make peace",
+  "bs": "i mirite"
  },
  "صلح|4|يُصْلِحَا": {
-  "en": "they (two) reform",
-  "bs": "poprave"
+  "en": "they (two) make peace",
+  "bs": "nagode se"
  },
  "صلح|4|يُصْلِحُ": {
   "en": "he/it reforms",
@@ -9613,11 +9625,11 @@
   "bs": "gori"
  },
  "صلي|1|يَصْلَىٰهَا": {
-  "en": "he/it burns in her/it",
-  "bs": "gori u njoj"
+  "en": "he/it burns in it",
+  "bs": "gori u njemu"
  },
  "صلي|1|يَصْلَىٰهَآ": {
-  "en": "he/it burns in her/it",
+  "en": "he/it burns in it",
   "bs": "gori u njoj"
  },
  "صنع|1|تَصْنَعُونَ": {
@@ -9649,32 +9661,32 @@
   "bs": "napravi!"
  },
  "صوب|4|أَصَابَ": {
-  "en": "he/it struck",
-  "bs": "pogodio je"
+  "en": "he/it befell",
+  "bs": "zadesio je"
  },
  "صوب|4|أَصَابَتْ": {
   "en": "she/it struck",
   "bs": "pogodila je"
  },
  "صوب|4|أَصَابَتْهُ": {
-  "en": "she/it struck him/it",
+  "en": "she/it struck him",
   "bs": "pogodila ga je"
  },
  "صوب|4|أَصَابَكَ": {
-  "en": "he/it struck you",
-  "bs": "pogodio te je"
+  "en": "he/it befell you",
+  "bs": "zadesio te je"
  },
  "صوب|4|أَصَابَهَا": {
-  "en": "he/it struck her/it",
+  "en": "he/it struck it",
   "bs": "pogodio ju je"
  },
  "صوب|4|أَصَابَهُمْ": {
-  "en": "he/it struck them",
-  "bs": "pogodio ih je"
+  "en": "he/it befell them",
+  "bs": "zadesio ih je"
  },
  "صوب|4|أَصَابَهُۥ": {
-  "en": "he/it struck him/it",
-  "bs": "pogodio ga je"
+  "en": "he/it befell him",
+  "bs": "zadesio ga je"
  },
  "صوب|4|أَصَبْتُم": {
   "en": "you (all) struck",
@@ -9697,8 +9709,8 @@
   "bs": "pogodio vas je"
  },
  "صوب|4|أَصَٰبَكُمْ": {
-  "en": "he/it struck you (all)",
-  "bs": "pogodio vas je"
+  "en": "he/it befell you (all)",
+  "bs": "zadesio vas je"
  },
  "صوب|4|أُصِيبُ": {
   "en": "I strike",
@@ -9717,7 +9729,7 @@
   "bs": "pogodit će ih"
  },
  "صوب|4|فَأَصَابَهَآ": {
-  "en": "so he/it struck her/it",
+  "en": "so he/it struck it",
   "bs": "pa ju je pogodio"
  },
  "صوب|4|فَأَصَابَهُمْ": {
@@ -9725,7 +9737,7 @@
   "bs": "pa ih je pogodio"
  },
  "صوب|4|فَأَصَابَهُۥ": {
-  "en": "so he/it struck him/it",
+  "en": "so he/it struck it",
   "bs": "pa ga je pogodio"
  },
  "صوب|4|فَأَصَٰبَتْكُم": {
@@ -9737,11 +9749,11 @@
   "bs": "pa pogađa"
  },
  "صوب|4|نُصِيبُ": {
-  "en": "we strike",
-  "bs": "pogađamo"
+  "en": "we touch",
+  "bs": "dotičemo"
  },
  "صوب|4|وَأَصَابَهُ": {
-  "en": "and he/it struck him/it",
+  "en": "and he/it struck him",
   "bs": "i pogodio ga je"
  },
  "صوب|4|يُصِبْكُم": {
@@ -9749,7 +9761,7 @@
   "bs": "pogađa vas"
  },
  "صوب|4|يُصِبْهَا": {
-  "en": "he/it strikes her/it",
+  "en": "he/it strikes it",
   "bs": "pogađa je"
  },
  "صوب|4|يُصِيبَكُم": {
@@ -9761,8 +9773,8 @@
   "bs": "pogađa vas"
  },
  "صوب|4|يُصِيبَنَآ": {
-  "en": "he/it strikes us",
-  "bs": "pogađa nas"
+  "en": "he/it befalls us",
+  "bs": "zadesi nas"
  },
  "صوب|4|يُصِيبَهُم": {
   "en": "he/it strikes them",
@@ -9773,8 +9785,8 @@
   "bs": "pogađa ih"
  },
  "صوب|4|يُصِيبُ": {
-  "en": "he/it strikes",
-  "bs": "pogađa"
+  "en": "he/it touches",
+  "bs": "dotiče"
  },
  "صوب|4|يُصِيبُهُمْ": {
   "en": "he/it strikes them",
@@ -9793,11 +9805,11 @@
   "bs": "smiju se"
  },
  "ضرر|1|تَضُرُّونَهُۥ": {
-  "en": "you (all) harm him/it",
+  "en": "you (all) harm him",
   "bs": "štetite mu"
  },
  "ضرر|1|تَضُرُّوهُ": {
-  "en": "you (all) harm him/it",
+  "en": "you (all) harm him",
   "bs": "štetite mu"
  },
  "ضرر|1|يَضُرَّ": {
@@ -9825,7 +9837,7 @@
   "bs": "šteti im"
  },
  "ضرر|1|يَضُرُّهُۥ": {
-  "en": "he/it harms him/it",
+  "en": "he/it harms him",
   "bs": "šteti mu"
  },
  "ضرر|1|يَضُرُّوا۟": {
@@ -9845,7 +9857,7 @@
   "bs": "štete ti"
  },
  "ضرر|8|أَضْطَرُّهُۥٓ": {
-  "en": "I compel him/it",
+  "en": "I compel him",
   "bs": "prisiljavam ga"
  },
  "ضرر|8|ٱضْطُرِرْتُمْ": {
@@ -9865,8 +9877,8 @@
   "bs": "bivaju potlačeni"
  },
  "ضعف|10|ٱسْتَضْعَفُونِى": {
-  "en": "they oppressed me",
-  "bs": "potlačili su me"
+  "en": "they deemed me weak",
+  "bs": "smatrali su me slabim"
  },
  "ضعف|10|ٱسْتُضْعِفُوا۟": {
   "en": "they were oppressed",
@@ -9889,11 +9901,11 @@
   "bs": "udvostručuje"
  },
  "ضعف|3|يُضَٰعِفْهَا": {
-  "en": "he/it doubles her/it",
-  "bs": "udvostručuje je"
+  "en": "he/it doubles it",
+  "bs": "udvostručuje ga"
  },
  "ضعف|3|يُضَٰعِفْهُ": {
-  "en": "he/it doubles him/it",
+  "en": "he/it doubles it",
   "bs": "udvostručuje ga"
  },
  "ضلل|1|أَضِلُّ": {
@@ -9909,8 +9921,8 @@
   "bs": "zalutao sam"
  },
  "ضلل|1|ضَلَلْنَا": {
-  "en": "we went astray",
-  "bs": "zalutali smo"
+  "en": "we were lost",
+  "bs": "izgubili smo se"
  },
  "ضلل|1|ضَلُّوا۟": {
   "en": "they went astray",
@@ -9925,8 +9937,8 @@
   "bs": "pa su zalutali"
  },
  "ضلل|1|وَضَلَّ": {
-  "en": "and he/it went astray",
-  "bs": "i zalutao je"
+  "en": "and he/it was lost",
+  "bs": "i nestao je"
  },
  "ضلل|1|وَضَلُّوا۟": {
   "en": "and they went astray",
@@ -10001,7 +10013,7 @@
   "bs": "i zaveo je"
  },
  "ضلل|4|وَأَضَلَّهُ": {
-  "en": "and he/it misled him/it",
+  "en": "and he/it misled him",
   "bs": "i zaveo ga je"
  },
  "ضلل|4|وَأَضَلَّهُمُ": {
@@ -10025,7 +10037,7 @@
   "bs": "zavodi ih"
  },
  "ضلل|4|يُضِلَّهُۥ": {
-  "en": "he/it misleads him/it",
+  "en": "he/it misleads him",
   "bs": "zavodi ga"
  },
  "ضلل|4|يُضِلُّ": {
@@ -10033,7 +10045,7 @@
   "bs": "zavodi"
  },
  "ضلل|4|يُضِلُّهُۥ": {
-  "en": "he/it misleads him/it",
+  "en": "he/it misleads him",
   "bs": "zavodi ga"
  },
  "ضلل|4|يُضِلُّوا۟": {
@@ -10061,7 +10073,7 @@
   "bs": "zavodi"
  },
  "ضلل|4|يُضْلِلْهُ": {
-  "en": "he/it misleads him/it",
+  "en": "he/it misleads him",
   "bs": "zavodi ga"
  },
  "ضيع|4|أُضِيعُ": {
@@ -10081,16 +10093,16 @@
   "bs": "bila je tijesna"
  },
  "ضيق|1|وَضَاقَ": {
-  "en": "and he/it was narrow",
-  "bs": "i bio je tijesan"
+  "en": "and he/it was distressed",
+  "bs": "i bio je potišten"
  },
  "ضيق|1|وَضَاقَتْ": {
   "en": "and she/it was narrow",
   "bs": "i bila je tijesna"
  },
  "ضيق|1|وَيَضِيقُ": {
-  "en": "and he/it is narrow",
-  "bs": "i tijesan je"
+  "en": "and he/it is constricted",
+  "bs": "i steže se"
  },
  "طبع|1|نَطْبَعُ": {
   "en": "we seal",
@@ -10117,19 +10129,19 @@
   "bs": "jeli ste"
  },
  "طعم|1|يَطْعَمُهَآ": {
-  "en": "he/it eats her/it",
-  "bs": "jede je"
+  "en": "he/it eats them",
+  "bs": "jede ih"
  },
  "طعم|1|يَطْعَمُهُۥٓ": {
-  "en": "he/it eats him/it",
+  "en": "he/it eats it",
   "bs": "jede ga"
  },
  "طعم|1|يَطْعَمْهُ": {
-  "en": "he/it eats him/it",
-  "bs": "jede ga"
+  "en": "he/it tastes it",
+  "bs": "kuša je"
  },
  "طعم|4|أَطْعَمَهُۥٓ": {
-  "en": "he/it fed him/it",
+  "en": "he/it fed him",
   "bs": "nahranio ga je"
  },
  "طعم|4|أَنُطْعِمُ": {
@@ -10198,11 +10210,11 @@
  },
  "طلق|2|طَلَّقَكُنَّ": {
   "en": "he/it divorced you (all)",
-  "bs": "razveo se je od vas"
+  "bs": "razveo se od vas"
  },
  "طلق|2|طَلَّقَهَا": {
-  "en": "he/it divorced her/it",
-  "bs": "razveo se je od nje"
+  "en": "he/it divorced her",
+  "bs": "razveo se od nje"
  },
  "طلق|2|طَلَّقْتُمُ": {
   "en": "you (all) divorced",
@@ -10518,7 +10530,7 @@
  },
  "ظلم|1|ظُلِمَ": {
   "en": "he/it was wronged",
-  "bs": "nepravedno je tretiran"
+  "bs": "učinjena mu je nepravda"
  },
  "ظلم|1|ظُلِمُوا۟": {
   "en": "they were wronged",
@@ -10569,8 +10581,8 @@
   "bs": "mislim"
  },
  "ظنن|1|ظَنَنتُ": {
-  "en": "I thought",
-  "bs": "mislio sam"
+  "en": "I was certain",
+  "bs": "bio sam siguran"
  },
  "ظنن|1|ظَنَنتُم": {
   "en": "you (all) thought",
@@ -10601,15 +10613,15 @@
   "bs": "pa je mislio"
  },
  "ظنن|1|فَظَنُّوٓا۟": {
-  "en": "so they thought",
-  "bs": "pa su mislili"
+  "en": "so they were certain",
+  "bs": "pa su bili sigurni"
  },
  "ظنن|1|لَأَظُنُّكَ": {
   "en": "surely I think you",
   "bs": "zaista te smatram"
  },
  "ظنن|1|لَأَظُنُّهُۥ": {
-  "en": "surely I think him/it",
+  "en": "surely I think him",
   "bs": "zaista ga smatram"
  },
  "ظنن|1|لَنَظُنُّكَ": {
@@ -10637,8 +10649,8 @@
   "bs": "i mislili ste"
  },
  "ظنن|1|وَظَنُّوا۟": {
-  "en": "and they thought",
-  "bs": "i mislili su"
+  "en": "and they were certain",
+  "bs": "i bili su sigurni"
  },
  "ظنن|1|وَظَنُّوٓا۟": {
   "en": "and they thought",
@@ -10693,7 +10705,7 @@
   "bs": "pa me obožavajte!"
  },
  "عبد|1|فَٱعْبُدُوهُ": {
-  "en": "so (you all) worship him/it!",
+  "en": "so (you all) worship him!",
   "bs": "pa ga obožavajte!"
  },
  "عبد|1|فَٱعْبُدِ": {
@@ -10709,7 +10721,7 @@
   "bs": "pa me obožavaj!"
  },
  "عبد|1|فَٱعْبُدْهُ": {
-  "en": "so worship him/it!",
+  "en": "so worship him!",
   "bs": "pa ga obožavaj!"
  },
  "عبد|1|لِنَعْبُدَ": {
@@ -10753,7 +10765,7 @@
   "bs": "i obožavaju"
  },
  "عبد|1|وَٱعْبُدُوهُ": {
-  "en": "and (you all) worship him/it!",
+  "en": "and (you all) worship him!",
   "bs": "i obožavajte ga!"
  },
  "عبد|1|وَٱعْبُدْ": {
@@ -10773,8 +10785,8 @@
   "bs": "obožavaju me"
  },
  "عبد|1|يَعْبُدُوهَا": {
-  "en": "they worship her/it",
-  "bs": "obožavaju je"
+  "en": "they worship them",
+  "bs": "obožavaju ih"
  },
  "عبد|1|يُعْبَدُونَ": {
   "en": "they are worshipped",
@@ -10849,15 +10861,15 @@
   "bs": "požurujete"
  },
  "عجل|10|تَسْتَعْجِلُونِ": {
-  "en": "you (all) hasten me",
+  "en": "you (all) ask me to hasten",
   "bs": "požurujete me"
  },
  "عجل|10|تَسْتَعْجِلُوهُ": {
-  "en": "you (all) hasten him/it",
-  "bs": "požurujete ga"
+  "en": "you (all) seek to hasten it",
+  "bs": "požurujete je"
  },
  "عجل|10|وَيَسْتَعْجِلُونَكَ": {
-  "en": "and they hasten you",
+  "en": "and they ask you to hasten",
   "bs": "i požuruju te"
  },
  "عجل|10|يَسْتَعْجِلُ": {
@@ -10869,7 +10881,7 @@
   "bs": "požuruju"
  },
  "عجل|10|يَسْتَعْجِلُونِ": {
-  "en": "they hasten me",
+  "en": "they ask me to hasten",
   "bs": "požuruju me"
  },
  "عجل|10|ٱسْتَعْجَلْتُم": {
@@ -10910,7 +10922,7 @@
  },
  "عدد|4|أُعِدَّتْ": {
   "en": "she/it was prepared",
-  "bs": "pripremljeno je"
+  "bs": "pripremljena je"
  },
  "عدد|4|وَأَعِدُّوا۟": {
   "en": "and (you all) prepare!",
@@ -10921,16 +10933,16 @@
   "bs": "prekoračujete granice"
  },
  "عدو|8|تَعْتَدُوهَا": {
-  "en": "you (all) transgress her/it",
-  "bs": "prekoračujete je"
+  "en": "you (all) transgress them",
+  "bs": "prekoračujete ih"
  },
  "عدو|8|تَعْتَدُوٓا۟": {
   "en": "you (all) transgress",
   "bs": "prekoračujete granice"
  },
  "عدو|8|فَٱعْتَدُوا۟": {
-  "en": "so (you all) transgress!",
-  "bs": "pa prekoračite granice!"
+  "en": "so (you all) attack!",
+  "bs": "pa napadnite!"
  },
  "عدو|8|لِّتَعْتَدُوا۟": {
   "en": "so that you (all) may transgress",
@@ -10949,11 +10961,11 @@
   "bs": "prekoračili smo granice"
  },
  "عذب|2|أُعَذِّبُهُۥ": {
-  "en": "I punish him/it",
+  "en": "I punish him",
   "bs": "kažnjavam ga"
  },
  "عذب|2|أُعَذِّبُهُۥٓ": {
-  "en": "I punish him/it",
+  "en": "I punish him",
   "bs": "kažnjavam ga"
  },
  "عذب|2|سَنُعَذِّبُهُم": {
@@ -10969,11 +10981,11 @@
   "bs": "pa ih kažnjava"
  },
  "عذب|2|فَيُعَذِّبُهُۥ": {
-  "en": "so he/it punishes him/it",
+  "en": "so he/it punishes him",
   "bs": "pa ga kažnjava"
  },
  "عذب|2|لَأُعَذِّبَنَّهُۥ": {
-  "en": "surely I will punish him/it",
+  "en": "surely I will punish him",
   "bs": "zaista ću ga kazniti"
  },
  "عذب|2|لِيُعَذِّبَهُم": {
@@ -10989,7 +11001,7 @@
   "bs": "da kazni"
  },
  "عذب|2|نُعَذِّبُهُۥ": {
-  "en": "we punish him/it",
+  "en": "we punish him",
   "bs": "kažnjavamo ga"
  },
  "عذب|2|نُعَذِّبْ": {
@@ -11001,8 +11013,8 @@
   "bs": "i kaznio je"
  },
  "عذب|2|وَعَذَّبْنَٰهَا": {
-  "en": "and we punished her/it",
-  "bs": "i kaznili smo je"
+  "en": "and we punished it",
+  "bs": "i kaznili smo ga"
  },
  "عذب|2|وَيُعَذِّبَ": {
   "en": "and he/it punishes",
@@ -11045,7 +11057,7 @@
   "bs": "kažnjava vas"
  },
  "عذب|2|يُعَذِّبْهُ": {
-  "en": "he/it punishes him/it",
+  "en": "he/it punishes him",
   "bs": "kažnjava ga"
  },
  "عذب|2|يُعَذِّبْهُمُ": {
@@ -11113,8 +11125,8 @@
   "bs": "znali su"
  },
  "عرف|1|فَتَعْرِفُونَهَا": {
-  "en": "so you (all) know her/it",
-  "bs": "pa je znate"
+  "en": "so you (all) know them",
+  "bs": "pa ih znate"
  },
  "عرف|1|يَعْرِفُوا۟": {
   "en": "they know",
@@ -11125,7 +11137,7 @@
   "bs": "znaju"
  },
  "عرف|1|يَعْرِفُونَهَآ": {
-  "en": "they know her/it",
+  "en": "they know it",
   "bs": "znaju je"
  },
  "عرف|1|يَعْرِفُونَهُم": {
@@ -11142,31 +11154,31 @@
  },
  "عرف|1|يُعْرَفْنَ": {
   "en": "they are known",
-  "bs": "poznaju se"
+  "bs": "bivaju prepoznate"
  },
  "عزل|8|فَٱعْتَزِلُوا۟": {
   "en": "so (you all) withdraw!",
   "bs": "pa se povucite!"
  },
  "عزل|8|وَأَعْتَزِلُكُمْ": {
-  "en": "and I withdraw you (all)",
-  "bs": "i povlačim vas"
+  "en": "and I withdraw from you (all)",
+  "bs": "i povlačim se od vas"
  },
  "عزل|8|يَعْتَزِلُوكُمْ": {
-  "en": "they withdraw you (all)",
-  "bs": "povlače vas"
+  "en": "they withdraw from you (all)",
+  "bs": "povlače se od vas"
  },
  "عزل|8|ٱعْتَزَلَهُمْ": {
-  "en": "he/it withdrew them",
-  "bs": "povukao ih je"
+  "en": "he/it withdrew from them",
+  "bs": "povukao se od njih"
  },
  "عزل|8|ٱعْتَزَلُوكُمْ": {
-  "en": "they withdrew you (all)",
-  "bs": "povukli su vas"
+  "en": "they withdrew from you (all)",
+  "bs": "povukli su se od vas"
  },
  "عزل|8|ٱعْتَزَلْتُمُوهُمْ": {
-  "en": "you (all) withdrew them",
-  "bs": "povukli ste ih"
+  "en": "you (all) withdrew from them",
+  "bs": "povukli ste se od njih"
  },
  "عصم|8|وَٱعْتَصَمُوا۟": {
   "en": "and they held fast",
@@ -11205,7 +11217,7 @@
   "bs": "nisam poslušao"
  },
  "عصي|1|عَصَيْتُهُۥ": {
-  "en": "I disobeyed him/it",
+  "en": "I disobeyed him",
   "bs": "nisam ga poslušao"
  },
  "عصي|1|فَعَصَوْا۟": {
@@ -11285,8 +11297,8 @@
   "bs": "oprostio je"
  },
  "عفو|1|عَفَوا۟": {
-  "en": "they pardoned",
-  "bs": "oprostili su"
+  "en": "they multiplied",
+  "bs": "umnožili su se"
  },
  "عفو|1|عُفِىَ": {
   "en": "he/it was pardoned",
@@ -11337,8 +11349,8 @@
   "bs": "oprašta"
  },
  "عقب|3|عَاقَبَ": {
-  "en": "he/it punished",
-  "bs": "kaznio je"
+  "en": "he/it retaliated",
+  "bs": "uzvratio je"
  },
  "عقب|3|عُوقِبَ": {
   "en": "he/it was punished",
@@ -11349,8 +11361,8 @@
   "bs": "kažnjeni ste"
  },
  "عقب|3|فَعَاقَبْتُمْ": {
-  "en": "so you (all) punished",
-  "bs": "pa ste kaznili"
+  "en": "so you (all) retaliated",
+  "bs": "pa ste uzvratili"
  },
  "عقر|1|فَعَقَرَ": {
   "en": "so he/it hamstrung",
@@ -11361,7 +11373,7 @@
   "bs": "pa su presjekli tetive"
  },
  "عقل|1|عَقَلُوهُ": {
-  "en": "they understood him/it",
+  "en": "they understood it",
   "bs": "razumjeli su ga"
  },
  "عقل|1|نَعْقِلُ": {
@@ -11369,8 +11381,8 @@
   "bs": "razumijemo"
  },
  "عقل|1|يَعْقِلُهَآ": {
-  "en": "he/it understands her/it",
-  "bs": "razumije je"
+  "en": "he/it understands them",
+  "bs": "razumije ih"
  },
  "عقل|1|يَعْقِلُونَ": {
   "en": "they understand",
@@ -11425,7 +11437,7 @@
   "bs": "znao si"
  },
  "علم|1|عَلِمْتَهُۥ": {
-  "en": "you knew him/it",
+  "en": "you knew it",
   "bs": "znao si ga"
  },
  "علم|1|عَلِمْتُ": {
@@ -11593,7 +11605,7 @@
   "bs": "zna"
  },
  "علم|1|يَعْلَمَهُۥ": {
-  "en": "he/it knows him/it",
+  "en": "he/it knows it",
   "bs": "zna ga"
  },
  "علم|1|يَعْلَمُ": {
@@ -11601,19 +11613,19 @@
   "bs": "zna"
  },
  "علم|1|يَعْلَمُهَا": {
-  "en": "he/it knows her/it",
-  "bs": "zna je"
+  "en": "he/it knows it",
+  "bs": "zna ga"
  },
  "علم|1|يَعْلَمُهَآ": {
-  "en": "he/it knows her/it",
-  "bs": "zna je"
+  "en": "he/it knows them",
+  "bs": "zna ih"
  },
  "علم|1|يَعْلَمُهُمْ": {
   "en": "he/it knows them",
   "bs": "zna ih"
  },
  "علم|1|يَعْلَمُهُۥ": {
-  "en": "he/it knows him/it",
+  "en": "he/it knows it",
   "bs": "zna ga"
  },
  "علم|1|يَعْلَمُوا۟": {
@@ -11637,7 +11649,7 @@
   "bs": "zna"
  },
  "علم|1|يَعْلَمْهُ": {
-  "en": "he/it knows him/it",
+  "en": "he/it knows it",
   "bs": "zna ga"
  },
  "علم|1|ٱعْلَمُوٓا۟": {
@@ -11673,7 +11685,7 @@
   "bs": "naučio me je"
  },
  "علم|2|عَلَّمَهُ": {
-  "en": "he/it taught him/it",
+  "en": "he/it taught him",
   "bs": "naučio ga je"
  },
  "علم|2|عَلَّمْتَنَآ": {
@@ -11689,7 +11701,7 @@
   "bs": "naučili ste"
  },
  "علم|2|عَلَّمْنَٰهُ": {
-  "en": "we taught him/it",
+  "en": "we taught him",
   "bs": "naučili smo ga"
  },
  "علم|2|عُلِّمْتَ": {
@@ -11709,7 +11721,7 @@
   "bs": "i naučio te je"
  },
  "علم|2|وَعَلَّمَهُۥ": {
-  "en": "and he/it taught him/it",
+  "en": "and he/it taught him",
   "bs": "i naučio ga je"
  },
  "علم|2|وَعَلَّمْتَنِى": {
@@ -11717,7 +11729,7 @@
   "bs": "i naučio si me"
  },
  "علم|2|وَعَلَّمْنَٰهُ": {
-  "en": "and we taught him/it",
+  "en": "and we taught him",
   "bs": "i naučili smo ga"
  },
  "علم|2|وَعُلِّمْتُم": {
@@ -11745,7 +11757,7 @@
   "bs": "poučavaju"
  },
  "علم|2|يُعَلِّمُهُۥ": {
-  "en": "he/it teaches him/it",
+  "en": "he/it teaches him",
   "bs": "poučava ga"
  },
  "علم|2|يُعَلِّمُونَ": {
@@ -11769,8 +11781,8 @@
   "bs": "uzdigao se"
  },
  "علو|1|عَلَوْا۟": {
-  "en": "they rose high",
-  "bs": "uzdigli su se"
+  "en": "they conquered",
+  "bs": "osvojili su"
  },
  "علو|1|وَلَتَعْلُنَّ": {
   "en": "and surely you (all) will rise high",
@@ -11873,8 +11885,8 @@
   "bs": "radite!"
  },
  "عمل|1|ٱعْمَلْ": {
-  "en": "do!",
-  "bs": "radi!"
+  "en": "make!",
+  "bs": "izradi!"
  },
  "عمي|1|عَمُوا۟": {
   "en": "they were blind",
@@ -11885,20 +11897,20 @@
   "bs": "bio je slijep"
  },
  "عمي|1|وَأَعْمَىٰٓ": {
-  "en": "and he/it was blind",
-  "bs": "i bio je slijep"
+  "en": "and he/it blinded",
+  "bs": "i oslijepio je"
  },
  "عهد|1|أَعْهَدْ": {
-  "en": "I entrust",
-  "bs": "povjeravam"
+  "en": "I enjoin",
+  "bs": "naređujem"
  },
  "عهد|1|عَهِدَ": {
-  "en": "he/it entrusted",
-  "bs": "povjerio je"
+  "en": "he/it enjoined",
+  "bs": "naložio je"
  },
  "عهد|1|وَعَهِدْنَآ": {
-  "en": "and we entrusted",
-  "bs": "i povjerili smo"
+  "en": "and we enjoined",
+  "bs": "i naložili smo"
  },
  "عهد|3|عَٰهَدتَّ": {
   "en": "you made a covenant with",
@@ -11953,7 +11965,7 @@
   "bs": "vraćeni su"
  },
  "عود|4|سَنُعِيدُهَا": {
-  "en": "we will bring her/it back",
+  "en": "we will bring it back",
   "bs": "vratit ćemo je"
  },
  "عود|4|نُعِيدُكُمْ": {
@@ -11961,7 +11973,7 @@
   "bs": "vraćamo vas"
  },
  "عود|4|نُّعِيدُهُۥ": {
-  "en": "we bring him/it back",
+  "en": "we bring it back",
   "bs": "vraćamo ga"
  },
  "عود|4|يُعِيدَكُمْ": {
@@ -11981,11 +11993,11 @@
   "bs": "vraća nas"
  },
  "عود|4|يُعِيدُهُۥ": {
-  "en": "he/it brings him/it back",
+  "en": "he/it brings it back",
   "bs": "vraća ga"
  },
  "عود|4|يُعِيدُهُۥٓ": {
-  "en": "he/it brings him/it back",
+  "en": "he/it brings it back",
   "bs": "vraća ga"
  },
  "عود|4|يُعِيدُوكُمْ": {
@@ -12033,7 +12045,7 @@
   "bs": "potopljeni su"
  },
  "غرق|4|فَأَغْرَقْنَٰهُ": {
-  "en": "so we drowned him/it",
+  "en": "so we drowned him",
   "bs": "pa smo ga potopili"
  },
  "غرق|4|فَأَغْرَقْنَٰهُمْ": {
@@ -12073,8 +12085,8 @@
   "bs": "prekriva ih"
  },
  "غشو|1|يُغْشَىٰ": {
-  "en": "he/it is covered",
-  "bs": "biva prekriven"
+  "en": "he/it is overcome",
+  "bs": "biva obuzet"
  },
  "غضب|1|غَضِبَ": {
   "en": "he/it became angry",
@@ -12105,7 +12117,7 @@
   "bs": "pa su tražili oprost"
  },
  "غفر|10|فَٱسْتَغْفِرُوهُ": {
-  "en": "so (you all) ask him/it forgiveness!",
+  "en": "so (you all) ask him forgiveness!",
   "bs": "pa mu tražite oprost!"
  },
  "غفر|10|فَٱسْتَغْفِرْ": {
@@ -12125,7 +12137,7 @@
   "bs": "i traže oprost"
  },
  "غفر|10|وَيَسْتَغْفِرُونَهُۥ": {
-  "en": "and they ask him/it forgiveness",
+  "en": "and they ask him forgiveness",
   "bs": "i traže mu oprost"
  },
  "غفر|10|وَٱسْتَغْفَرَ": {
@@ -12137,7 +12149,7 @@
   "bs": "i tražite oprost!"
  },
  "غفر|10|وَٱسْتَغْفِرُوهُ": {
-  "en": "and (you all) ask him/it forgiveness!",
+  "en": "and (you all) ask him forgiveness!",
   "bs": "i tražite mu oprost!"
  },
  "غفر|10|وَٱسْتَغْفِرِ": {
@@ -12153,7 +12165,7 @@
   "bs": "i traži oprost!"
  },
  "غفر|10|وَٱسْتَغْفِرْهُ": {
-  "en": "and ask him/it forgiveness!",
+  "en": "and ask him forgiveness!",
   "bs": "i traži mu oprost!"
  },
  "غفر|10|يَسْتَغْفِرُوا۟": {
@@ -12254,7 +12266,7 @@
  },
  "غلب|1|غُلِبَتِ": {
   "en": "she/it was overcome",
-  "bs": "pobijeđeno je"
+  "bs": "pobijeđena je"
  },
  "غلب|1|فَغُلِبُوا۟": {
   "en": "so they were overcome",
@@ -12285,12 +12297,12 @@
   "bs": "utajio je"
  },
  "غلل|1|غُلَّتْ": {
-  "en": "she/it was embezzled",
-  "bs": "utajeno je"
+  "en": "she/it was fettered",
+  "bs": "okovana je"
  },
  "غلل|1|فَغُلُّوهُ": {
-  "en": "so (you all) embezzle him/it!",
-  "bs": "pa ga utajite!"
+  "en": "so (you all) fetter him!",
+  "bs": "pa ga okujte!"
  },
  "غلل|1|يَغُلَّ": {
   "en": "he/it embezzles",
@@ -12393,7 +12405,7 @@
   "bs": "pa sam pobjegao"
  },
  "فرض|1|تَفْرِضُوا۟": {
-  "en": "you (all) impose",
+  "en": "you (all) appoint",
   "bs": "određujete"
  },
  "فرض|1|فَرَضَ": {
@@ -12401,7 +12413,7 @@
   "bs": "odredio je"
  },
  "فرض|1|فَرَضْتُمْ": {
-  "en": "you (all) imposed",
+  "en": "you (all) appointed",
   "bs": "odredili ste"
  },
  "فرض|1|فَرَضْنَا": {
@@ -12449,16 +12461,16 @@
   "bs": "razdvajaju"
  },
  "فرق|5|تَتَفَرَّقُوا۟": {
-  "en": "you (all) disperse",
+  "en": "you (all) become divided",
   "bs": "razilazite se"
  },
  "فرق|5|تَفَرَّقُوٓا۟": {
-  "en": "they dispersed",
+  "en": "they became divided",
   "bs": "razišli su se"
  },
  "فرق|5|يَتَفَرَّقَا": {
-  "en": "they (two) disperse",
-  "bs": "raziđu se"
+  "en": "they (two) separate",
+  "bs": "rastanu se"
  },
  "فري|8|أَفْتَرَىٰ": {
   "en": "did he/it fabricate?",
@@ -12485,7 +12497,7 @@
   "bs": "biva izmišljen"
  },
  "فري|8|ٱفْتَرَىٰهُ": {
-  "en": "he/it fabricated him/it",
+  "en": "he/it fabricated it",
   "bs": "izmislio ga je"
  },
  "فري|8|ٱفْتَرَىٰٓ": {
@@ -12493,7 +12505,7 @@
   "bs": "izmislio je laž"
  },
  "فري|8|ٱفْتَرَيْتُهُۥ": {
-  "en": "I fabricated him/it",
+  "en": "I fabricated it",
   "bs": "izmislio sam ga"
  },
  "فري|8|ٱفْتَرَيْنَا": {
@@ -12501,8 +12513,8 @@
   "bs": "izmislili smo laž"
  },
  "فسد|4|أَفْسَدُوهَا": {
-  "en": "they corrupted her/it",
-  "bs": "pokvarili su je"
+  "en": "they ruined it",
+  "bs": "upropastili su ga"
  },
  "فسد|4|تُفْسِدُوا۟": {
   "en": "you (all) corrupt",
@@ -12553,7 +12565,7 @@
   "bs": "objasnio je potanko"
  },
  "فصل|2|فَصَّلْنَٰهُ": {
-  "en": "we explained him/it in detail",
+  "en": "we explained it in detail",
   "bs": "objasnili smo ga potanko"
  },
  "فصل|2|فُصِّلَتْ": {
@@ -12629,7 +12641,7 @@
   "bs": "činite"
  },
  "فعل|1|تَفْعَلُوهُ": {
-  "en": "you (all) do him/it",
+  "en": "you (all) do it",
   "bs": "činite ga"
  },
  "فعل|1|تَفْعَلُوٓا۟": {
@@ -12641,7 +12653,7 @@
   "bs": "učinio je"
  },
  "فعل|1|فَعَلَهُۥ": {
-  "en": "he/it did him/it",
+  "en": "he/it did it",
   "bs": "učinio ga je"
  },
  "فعل|1|فَعَلُوا۟": {
@@ -12661,11 +12673,11 @@
   "bs": "učinili ste"
  },
  "فعل|1|فَعَلْتُهَآ": {
-  "en": "I did her/it",
-  "bs": "učinio sam je"
+  "en": "I did it",
+  "bs": "učinio sam ga"
  },
  "فعل|1|فَعَلْتُهُۥ": {
-  "en": "I did him/it",
+  "en": "I did it",
   "bs": "učinio sam ga"
  },
  "فعل|1|فَعَلْنَ": {
@@ -12717,7 +12729,7 @@
   "bs": "čini"
  },
  "فعل|1|يَفْعَلْهُ": {
-  "en": "he/it does him/it",
+  "en": "he/it does it",
   "bs": "čini ga"
  },
  "فعل|1|يُفْعَلَ": {
@@ -12745,7 +12757,7 @@
   "bs": "razumiju"
  },
  "فقه|1|يَفْقَهُوهُ": {
-  "en": "they understand him/it",
+  "en": "they understand it",
   "bs": "razumiju ga"
  },
  "فكر|5|تَتَفَكَّرُوا۟": {
@@ -12821,7 +12833,7 @@
   "bs": "prihvaćen je"
  },
  "قبل|5|فَتَقَبَّلَهَا": {
-  "en": "so he/it accepted her/it",
+  "en": "so he/it accepted her",
   "bs": "pa ju je prihvatio"
  },
  "قبل|5|فَتَقَبَّلْ": {
@@ -12869,7 +12881,7 @@
   "bs": "ubijate"
  },
  "قتل|1|تَقْتُلُوهُ": {
-  "en": "you (all) kill him/it",
+  "en": "you (all) kill him",
   "bs": "ubijate ga"
  },
  "قتل|1|تَقْتُلُوهُمْ": {
@@ -12909,11 +12921,11 @@
   "bs": "ubio ih je"
  },
  "قتل|1|قَتَلَهُۥ": {
-  "en": "he/it killed him/it",
+  "en": "he/it killed it",
   "bs": "ubio ga je"
  },
  "قتل|1|قَتَلُوهُ": {
-  "en": "they killed him/it",
+  "en": "they killed him",
   "bs": "ubili su ga"
  },
  "قتل|1|قَتَلُوٓا۟": {
@@ -12946,7 +12958,7 @@
  },
  "قتل|1|قُتِلَتْ": {
   "en": "she/it was killed",
-  "bs": "ubijeno je"
+  "bs": "ubijena je"
  },
  "قتل|1|قُتِلُوا۟": {
   "en": "they were killed",
@@ -13033,7 +13045,7 @@
   "bs": "ubijte!"
  },
  "قتل|1|ٱقْتُلُوهُ": {
-  "en": "(you all) kill him/it!",
+  "en": "(you all) kill him!",
   "bs": "ubijte ga!"
  },
  "قتل|1|ٱقْتُلُوٓا۟": {
@@ -13121,8 +13133,8 @@
   "bs": "i borite se protiv njih!"
  },
  "قتل|3|يُقَٰتَلُونَ": {
-  "en": "they are fought",
-  "bs": "bori se protiv njih"
+  "en": "they are fought against",
+  "bs": "protiv njih se bori"
  },
  "قتل|3|يُقَٰتِلُوا۟": {
   "en": "they fight",
@@ -13145,36 +13157,36 @@
   "bs": "pa ga je odmjerio"
  },
  "قدر|2|قَدَّرَ": {
-  "en": "he/it measured",
-  "bs": "odmjerio je"
+  "en": "he/it determined",
+  "bs": "odredio je"
  },
  "قدر|2|قَدَّرُوهَا": {
-  "en": "they measured her/it",
-  "bs": "odmjerili su je"
+  "en": "they measured them",
+  "bs": "odmjerili su ih"
  },
  "قدر|2|قَدَّرْنَا": {
-  "en": "we measured",
-  "bs": "odmjerili smo"
+  "en": "we decreed",
+  "bs": "odredili smo"
  },
  "قدر|2|قَدَّرْنَآ": {
-  "en": "we measured",
-  "bs": "odmjerili smo"
+  "en": "we decreed",
+  "bs": "odredili smo"
  },
  "قدر|2|قَدَّرْنَٰهَا": {
-  "en": "we measured her/it",
-  "bs": "odmjerili smo je"
+  "en": "we destined her",
+  "bs": "odredili smo je"
  },
  "قدر|2|قَدَّرْنَٰهُ": {
-  "en": "we measured him/it",
-  "bs": "odmjerili smo ga"
+  "en": "we determined it",
+  "bs": "odredili smo ga"
  },
  "قدر|2|وَقَدَّرَهُۥ": {
-  "en": "and he/it measured him/it",
-  "bs": "i odmjerio ga je"
+  "en": "and he/it determined it",
+  "bs": "i odredio ga je"
  },
  "قدر|2|وَقَدَّرْنَا": {
-  "en": "and we measured",
-  "bs": "i odmjerili smo"
+  "en": "and we determined",
+  "bs": "i odredili smo"
  },
  "قدر|2|يُقَدِّرُ": {
   "en": "he/it measures",
@@ -13189,8 +13201,8 @@
   "bs": "pa pošaljite unaprijed!"
  },
  "قدم|2|قَدَّمَ": {
-  "en": "he/it sent forward",
-  "bs": "poslao je unaprijed"
+  "en": "he/it prepared",
+  "bs": "pripremio je"
  },
  "قدم|2|قَدَّمَتْ": {
   "en": "she/it sent forward",
@@ -13201,23 +13213,23 @@
   "bs": "poslali su unaprijed"
  },
  "قدم|2|قَدَّمْتُمُوهُ": {
-  "en": "you (all) sent him/it forward",
-  "bs": "poslali ste ga unaprijed"
+  "en": "you (all) prepared it",
+  "bs": "pripremili ste to"
  },
  "قدم|2|قَدَّمْتُمْ": {
-  "en": "you (all) sent forward",
-  "bs": "poslali ste unaprijed"
+  "en": "you (all) prepared",
+  "bs": "pripremili ste"
  },
  "قدم|2|وَقَدِّمُوا۟": {
   "en": "and (you all) send forward!",
   "bs": "i pošaljite unaprijed!"
  },
  "قذف|1|فَقَذَفْنَٰهَا": {
-  "en": "so we threw her/it",
-  "bs": "pa smo je bacili"
+  "en": "so we threw them",
+  "bs": "pa smo ih bacili"
  },
  "قذف|1|فَٱقْذِفِيهِ": {
-  "en": "so throw him/it!",
+  "en": "so throw it!",
   "bs": "pa ga baci!"
  },
  "قذف|1|نَقْذِفُ": {
@@ -13237,11 +13249,11 @@
   "bs": "i bivaju bačeni"
  },
  "قذف|1|ٱقْذِفِيهِ": {
-  "en": "throw him/it!",
+  "en": "throw him!",
   "bs": "baci ga!"
  },
  "قرأ|1|فَقَرَأَهُۥ": {
-  "en": "so he/it read him/it",
+  "en": "so he/it read it",
   "bs": "pa ga je čitao"
  },
  "قرأ|1|فَٱقْرَءُوا۟": {
@@ -13257,8 +13269,8 @@
   "bs": "pročitan je"
  },
  "قرأ|1|نَّقْرَؤُهُۥ": {
-  "en": "we read him/it",
-  "bs": "čitamo ga"
+  "en": "we read it",
+  "bs": "čitamo je"
  },
  "قرأ|1|يَقْرَءُونَ": {
   "en": "they read",
@@ -13273,8 +13285,8 @@
   "bs": "prilazite mi"
  },
  "قرب|1|تَقْرَبُوهَا": {
-  "en": "you (all) approach her/it",
-  "bs": "prilazite joj"
+  "en": "you (all) approach them",
+  "bs": "prilazite im"
  },
  "قرب|1|تَقْرَبُوهُنَّ": {
   "en": "you (all) approach them",
@@ -13345,7 +13357,7 @@
   "bs": "kazujemo"
  },
  "قصص|1|نَقُصُّهُۥ": {
-  "en": "we narrate him/it",
+  "en": "we narrate it",
   "bs": "kazujemo ga"
  },
  "قصص|1|نَقْصُصْ": {
@@ -13401,48 +13413,48 @@
   "bs": "i presijecaju"
  },
  "قطع|1|يَقْطَعُونَ": {
-  "en": "they cut",
-  "bs": "presijecaju"
+  "en": "they cross",
+  "bs": "prelaze"
  },
  "قطع|2|فَقَطَّعَ": {
   "en": "so he/it cut into pieces",
   "bs": "pa je isjekao"
  },
  "قطع|2|فَلَأُقَطِّعَنَّ": {
-  "en": "so surely I will cut into pieces",
-  "bs": "pa zaista ću isjeći"
+  "en": "so surely I will cut off",
+  "bs": "pa zaista ću odsjeći"
  },
  "قطع|2|قَطَّعْنَ": {
-  "en": "they cut into pieces",
-  "bs": "isjekle su"
+  "en": "they cut",
+  "bs": "porezale su"
  },
  "قطع|2|قُطِّعَتْ": {
   "en": "she/it was cut into pieces",
-  "bs": "isječeno je"
+  "bs": "isječena je"
  },
  "قطع|2|وَتُقَطِّعُوٓا۟": {
-  "en": "and you (all) cut into pieces",
-  "bs": "i isijecate"
+  "en": "and you (all) sever",
+  "bs": "i kidate"
  },
  "قطع|2|وَقَطَّعْنَ": {
-  "en": "and they cut into pieces",
-  "bs": "i isjekle su"
+  "en": "and they cut",
+  "bs": "i porezale su"
  },
  "قطع|2|وَقَطَّعْنَٰهُمُ": {
-  "en": "and we cut them into pieces",
-  "bs": "i isjekli smo ih"
+  "en": "and we divided them",
+  "bs": "i razdijelili smo ih"
  },
  "قطع|2|وَقَطَّعْنَٰهُمْ": {
-  "en": "and we cut them into pieces",
-  "bs": "i isjekli smo ih"
+  "en": "and we split them up",
+  "bs": "i raspršili smo ih"
  },
  "قطع|5|تَّقَطَّعَ": {
   "en": "he/it was cut off",
   "bs": "prekinuo se"
  },
  "قطع|5|فَتَقَطَّعُوٓا۟": {
-  "en": "so they were cut off",
-  "bs": "pa su se prekinuli"
+  "en": "so they split up",
+  "bs": "pa su se podijelili"
  },
  "قطع|5|وَتَقَطَّعَتْ": {
   "en": "and she/it was cut off",
@@ -13465,23 +13477,23 @@
   "bs": "i sjeo je"
  },
  "قعد|1|وَٱقْعُدُوا۟": {
-  "en": "and (you all) sit!",
-  "bs": "i sjedite!"
+  "en": "and (you all) lie in wait!",
+  "bs": "i vrebajte!"
  },
  "قعد|1|ٱقْعُدُوا۟": {
   "en": "(you all) sit!",
   "bs": "sjedite!"
  },
  "قلب|2|وَقَلَّبُوا۟": {
-  "en": "and they turned",
-  "bs": "i okrenuli su se"
+  "en": "and they turned over",
+  "bs": "i prevrtali su"
  },
  "قلب|2|وَنُقَلِّبُ": {
   "en": "and we turn",
   "bs": "i okrećemo"
  },
  "قلب|2|وَنُقَلِّبُهُمْ": {
-  "en": "and we turn over them",
+  "en": "and we turn them over",
   "bs": "i okrećemo ih"
  },
  "قلب|7|فَيَنقَلِبُوا۟": {
@@ -13657,8 +13669,8 @@
   "bs": "rekla je"
  },
  "قول|1|قَالَهَا": {
-  "en": "he/it said her/it",
-  "bs": "rekao joj je"
+  "en": "he/it said it",
+  "bs": "rekao je to"
  },
  "قول|1|قَالُوا۟": {
   "en": "they said",
@@ -13697,8 +13709,8 @@
   "bs": "rekli ste"
  },
  "قول|1|قُلْتُهُۥ": {
-  "en": "I said him/it",
-  "bs": "rekao sam mu"
+  "en": "I said it",
+  "bs": "rekao sam to"
  },
  "قول|1|قُلْنَ": {
   "en": "they said",
@@ -13949,8 +13961,8 @@
   "bs": "stoji"
  },
  "قوم|1|يَقُومُونَ": {
-  "en": "they stand",
-  "bs": "stoje"
+  "en": "they rise",
+  "bs": "ustaju"
  },
  "قوم|4|أَقَامُوا۟": {
   "en": "they established",
@@ -13965,8 +13977,8 @@
   "bs": "uspostavi!"
  },
  "قوم|4|أَقِمْ": {
-  "en": "establish!",
-  "bs": "uspostavi!"
+  "en": "direct!",
+  "bs": "usmjeri!"
  },
  "قوم|4|أَقِيمُوا۟": {
   "en": "(you all) establish!",
@@ -13977,16 +13989,16 @@
   "bs": "uspostavljate"
  },
  "قوم|4|فَأَقَامَهُۥ": {
-  "en": "so he/it established him/it",
-  "bs": "pa ga je uspostavio"
+  "en": "so he/it set it upright",
+  "bs": "pa ga je uspravio"
  },
  "قوم|4|فَأَقَمْتَ": {
   "en": "so you established",
   "bs": "pa si uspostavio"
  },
  "قوم|4|فَأَقِمْ": {
-  "en": "so establish!",
-  "bs": "pa uspostavi!"
+  "en": "so direct!",
+  "bs": "pa usmjeri!"
  },
  "قوم|4|فَأَقِيمُوا۟": {
   "en": "so (you all) establish!",
@@ -14021,8 +14033,8 @@
   "bs": "i uspostavljaju"
  },
  "قوم|4|يُقِيمَا": {
-  "en": "they (two) establish",
-  "bs": "uspostavljaju"
+  "en": "they (two) keep",
+  "bs": "održavaju"
  },
  "قوم|4|يُقِيمُوا۟": {
   "en": "they establish",
@@ -14081,8 +14093,8 @@
   "bs": "skrivate"
  },
  "كتم|1|تَكْتُمُونَهُۥ": {
-  "en": "you (all) conceal him/it",
-  "bs": "skrivate ga"
+  "en": "you (all) conceal it",
+  "bs": "skrivate je"
  },
  "كتم|1|كَتَمَ": {
   "en": "he/it concealed",
@@ -14117,8 +14129,8 @@
   "bs": "skrivaju"
  },
  "كتم|1|يَكْتُمْهَا": {
-  "en": "he/it conceals her/it",
-  "bs": "skriva je"
+  "en": "he/it conceals it",
+  "bs": "skriva ga"
  },
  "كذب|1|تَكْذِبُونَ": {
   "en": "you (all) lie",
@@ -14137,8 +14149,8 @@
   "bs": "zar ste poricali?"
  },
  "كذب|2|تُكَذِّبُوا۟": {
-  "en": "you (all) are denied",
-  "bs": "bivate poricani"
+  "en": "you (all) deny",
+  "bs": "poričete"
  },
  "كذب|2|تُكَذِّبُونَ": {
   "en": "you (all) deny",
@@ -14153,7 +14165,7 @@
   "bs": "pa su poricali"
  },
  "كذب|2|فَكَذَّبُوهُ": {
-  "en": "so they denied him/it",
+  "en": "so they denied him",
   "bs": "pa su ga poricali"
  },
  "كذب|2|فَكَذَّبُوهُمَا": {
@@ -14189,7 +14201,7 @@
   "bs": "poricali su me"
  },
  "كذب|2|كَذَّبُوهُ": {
-  "en": "they denied him/it",
+  "en": "they denied him",
   "bs": "poricali su ga"
  },
  "كذب|2|كَذَّبْتُمْ": {
@@ -14325,7 +14337,7 @@
   "bs": "zaradili ste"
  },
  "كسب|1|يَكْسِبُهُۥ": {
-  "en": "he/it earns him/it",
+  "en": "he/it earns it",
   "bs": "zarađuje ga"
  },
  "كسب|1|يَكْسِبْ": {
@@ -14345,8 +14357,8 @@
   "bs": "otklonio si"
  },
  "كشف|1|وَكَشَفَتْ": {
-  "en": "and she/it removed",
-  "bs": "i otklonila je"
+  "en": "and she/it uncovered",
+  "bs": "i otkrila je"
  },
  "كشف|1|وَكَشَفْنَا": {
   "en": "and we removed",
@@ -14357,8 +14369,8 @@
   "bs": "i otklanja"
  },
  "كشف|1|يُكْشَفُ": {
-  "en": "he/it is removed",
-  "bs": "biva otklonjen"
+  "en": "he/it is uncovered",
+  "bs": "biva otkriven"
  },
  "كفر|2|كَفَّرَ": {
   "en": "he/it removed (sins)",
@@ -14405,36 +14417,36 @@
   "bs": "briše grijehe"
  },
  "كفف|1|فَكَفَّ": {
-  "en": "so he/it refrained",
-  "bs": "pa se suzdržao"
+  "en": "so he/it withheld",
+  "bs": "pa je zadržao"
  },
  "كفف|1|كَفَفْتُ": {
-  "en": "I refrained",
-  "bs": "suzdržao sam se"
+  "en": "I withheld",
+  "bs": "zadržao sam"
  },
  "كفف|1|كَفَّ": {
-  "en": "he/it refrained",
-  "bs": "suzdržao se"
+  "en": "he/it withheld",
+  "bs": "zadržao je"
  },
  "كفف|1|كُفُّوٓا۟": {
-  "en": "(you all) refrain!",
-  "bs": "suzdržite se!"
+  "en": "(you all) withhold!",
+  "bs": "zadržite!"
  },
  "كفف|1|وَكَفَّ": {
-  "en": "and he/it refrained",
-  "bs": "i suzdržao se"
+  "en": "and he/it withheld",
+  "bs": "i zadržao je"
  },
  "كفف|1|وَيَكُفُّوٓا۟": {
-  "en": "and they refrain",
-  "bs": "i suzdržavaju se"
+  "en": "and they restrain",
+  "bs": "i zadržavaju"
  },
  "كفف|1|يَكُفَّ": {
-  "en": "he/it refrains",
-  "bs": "suzdržava se"
+  "en": "he/it restrains",
+  "bs": "zadržava"
  },
  "كفف|1|يَكُفُّونَ": {
-  "en": "they refrain",
-  "bs": "suzdržavaju se"
+  "en": "they hold back",
+  "bs": "zadržavaju"
  },
  "كفي|1|فَكَفَىٰ": {
   "en": "so he/it sufficed",
@@ -14477,7 +14489,7 @@
   "bs": "govorio je"
  },
  "كلم|2|كَلَّمَهُۥ": {
-  "en": "he/it spoke to him/it",
+  "en": "he/it spoke to him",
   "bs": "govorio mu je"
  },
  "كلم|2|كُلِّمَ": {
@@ -14497,7 +14509,7 @@
   "bs": "i govorio im je"
  },
  "كلم|2|وَكَلَّمَهُۥ": {
-  "en": "and he/it spoke to him/it",
+  "en": "and he/it spoke to him",
   "bs": "i govorio mu je"
  },
  "كلم|2|وَيُكَلِّمُ": {
@@ -14505,7 +14517,7 @@
   "bs": "i govori"
  },
  "كلم|2|يُكَلِّمَهُ": {
-  "en": "he/it speaks to him/it",
+  "en": "he/it speaks to him",
   "bs": "govori mu"
  },
  "كلم|2|يُكَلِّمُنَا": {
@@ -14829,11 +14841,11 @@
   "bs": "pa spletkare"
  },
  "كيد|1|كِدْنَا": {
-  "en": "we plotted",
-  "bs": "spletkarili smo"
+  "en": "we devised",
+  "bs": "smislili smo"
  },
  "كيد|1|كِيدُونِ": {
-  "en": "(you all) plot me!",
+  "en": "(you all) plot against me!",
   "bs": "spletkarite protiv mene!"
  },
  "كيد|1|لَأَكِيدَنَّ": {
@@ -14897,8 +14909,8 @@
   "bs": "ostaju"
  },
  "لبس|1|تَلْبَسُونَهَا": {
-  "en": "you (all) make her/it vague",
-  "bs": "zamagljujete je"
+  "en": "you (all) wear it",
+  "bs": "nosite ga"
  },
  "لبس|1|تَلْبِسُوا۟": {
   "en": "you (all) make vague",
@@ -14913,12 +14925,12 @@
   "bs": "i da zamagle"
  },
  "لبس|1|وَيَلْبَسُونَ": {
-  "en": "and they make vague",
-  "bs": "i zamagljuju"
+  "en": "and they wear",
+  "bs": "i nose"
  },
  "لبس|1|يَلْبِسَكُمْ": {
-  "en": "he/it makes you (all) vague",
-  "bs": "zamagljuje vas"
+  "en": "he/it confuses you (all)",
+  "bs": "zbunjuje vas"
  },
  "لبس|1|يَلْبِسُوٓا۟": {
   "en": "they make vague",
@@ -14957,7 +14969,7 @@
   "bs": "proklela je"
  },
  "لعن|1|لَّعَنَهُ": {
-  "en": "he/it cursed him/it",
+  "en": "he/it cursed him",
   "bs": "prokleo ga je"
  },
  "لعن|1|لَّعَنَهُمُ": {
@@ -14977,7 +14989,7 @@
   "bs": "i prokleo ih je"
  },
  "لعن|1|وَلَعَنَهُۥ": {
-  "en": "and he/it cursed him/it",
+  "en": "and he/it cursed him",
   "bs": "i prokleo ga je"
  },
  "لعن|1|وَلُعِنُوا۟": {
@@ -14997,8 +15009,8 @@
   "bs": "proklinje ih"
  },
  "لقي|1|تَلْقَوْهُ": {
-  "en": "you (all) meet him/it",
-  "bs": "susrećete ga"
+  "en": "you (all) meet it",
+  "bs": "susrećete je"
  },
  "لقي|1|لَقُوا۟": {
   "en": "they met",
@@ -15029,8 +15041,8 @@
   "bs": "susreću"
  },
  "لقي|1|يَلْقَىٰهُ": {
-  "en": "he/it meets him/it",
-  "bs": "susreće ga"
+  "en": "he/it finds it",
+  "bs": "nalazi je"
  },
  "لقي|2|وَيُلَقَّوْنَ": {
   "en": "and they are granted",
@@ -15069,11 +15081,11 @@
   "bs": "uživali ste"
  },
  "متع|2|أُمَتِّعْكُنَّ": {
-  "en": "I let you (all) enjoy",
-  "bs": "dajem vam da uživate"
+  "en": "I provide for you (all)",
+  "bs": "darujem vas"
  },
  "متع|2|تُمَتَّعُونَ": {
-  "en": "you (all) are let enjoy",
+  "en": "you (all) are given enjoyment",
   "bs": "daje vam se da uživate"
  },
  "متع|2|سَنُمَتِّعُهُمْ": {
@@ -15081,7 +15093,7 @@
   "bs": "dat ćemo im da uživaju"
  },
  "متع|2|فَأُمَتِّعُهُۥ": {
-  "en": "so I let him/it enjoy",
+  "en": "so I let him enjoy",
   "bs": "pa mu dajem da uživa"
  },
  "متع|2|فَمَتَّعْنَٰهُمْ": {
@@ -15089,15 +15101,15 @@
   "bs": "pa smo im dali da uživaju"
  },
  "متع|2|فَمَتِّعُوهُنَّ": {
-  "en": "so (you all) let them enjoy!",
-  "bs": "pa im dajte da uživaju!"
+  "en": "so (you all) provide for them!",
+  "bs": "pa ih darujte!"
  },
  "متع|2|مَتَّعْتُ": {
-  "en": "I let enjoy",
+  "en": "I gave enjoyment",
   "bs": "dao sam da uživa"
  },
  "متع|2|مَتَّعْنَا": {
-  "en": "we let enjoy",
+  "en": "we gave enjoyment",
   "bs": "dali smo da uživa"
  },
  "متع|2|مَّتَّعْتَهُمْ": {
@@ -15105,7 +15117,7 @@
   "bs": "dao si im da uživaju"
  },
  "متع|2|مَّتَّعْنَٰهُ": {
-  "en": "we let him/it enjoy",
+  "en": "we let him enjoy",
   "bs": "dali smo mu da uživa"
  },
  "متع|2|وَمَتَّعْنَٰهُمْ": {
@@ -15113,11 +15125,11 @@
   "bs": "i dali smo im da uživaju"
  },
  "متع|2|وَمَتِّعُوهُنَّ": {
-  "en": "and (you all) let them enjoy!",
-  "bs": "i dajte im da uživaju!"
+  "en": "and (you all) provide for them!",
+  "bs": "i darujte ih!"
  },
  "متع|2|يُمَتَّعُونَ": {
-  "en": "they are let enjoy",
+  "en": "they are given enjoyment",
   "bs": "daje im se da uživaju"
  },
  "متع|2|يُمَتِّعْكُم": {
@@ -15158,19 +15170,19 @@
  },
  "مدد|1|مُدَّتْ": {
   "en": "she/it was extended",
-  "bs": "pruženo je"
+  "bs": "pružena je"
  },
  "مدد|1|وَنَمُدُّ": {
   "en": "and we extend",
   "bs": "i pružamo"
  },
  "مدد|1|يَمُدُّهُۥ": {
-  "en": "he/it extends him/it",
-  "bs": "pruža ga"
+  "en": "he/it replenishes it",
+  "bs": "dopunjava ga"
  },
  "مدد|1|يَمُدُّونَهُمْ": {
-  "en": "they extend them",
-  "bs": "pružaju ih"
+  "en": "they draw them on",
+  "bs": "navode ih"
  },
  "مدد|4|أَتُمِدُّونَنِ": {
   "en": "do you (all) supply me?",
@@ -15193,12 +15205,12 @@
   "bs": "i opskrbljuje vas"
  },
  "مدد|4|يُمِدَّكُمْ": {
-  "en": "he/it supplies you (all)",
-  "bs": "opskrbljuje vas"
+  "en": "he/it reinforces you (all)",
+  "bs": "pomaže vam"
  },
  "مدد|4|يُمْدِدْكُمْ": {
-  "en": "he/it supplies you (all)",
-  "bs": "opskrbljuje vas"
+  "en": "he/it reinforces you (all)",
+  "bs": "pomaže vam"
  },
  "مرر|1|فَمَرَّتْ": {
   "en": "so she/it passed",
@@ -15213,7 +15225,7 @@
   "bs": "prolaze"
  },
  "مسس|1|تَمَسُّوهَا": {
-  "en": "you (all) touch her/it",
+  "en": "you (all) touch her",
   "bs": "dotičete je"
  },
  "مسس|1|تَمَسُّوهُنَّ": {
@@ -15229,7 +15241,7 @@
   "bs": "dotaknuo je"
  },
  "مسس|1|مَسَّتْهُ": {
-  "en": "she/it touched him/it",
+  "en": "she/it touched him",
   "bs": "dotaknula ga je"
  },
  "مسس|1|مَسَّتْهُمْ": {
@@ -15265,11 +15277,11 @@
   "bs": "dotaknuo me je"
  },
  "مسس|1|مَّسَّهُ": {
-  "en": "he/it touched him/it",
+  "en": "he/it touched him",
   "bs": "dotaknuo ga je"
  },
  "مسس|1|مَّسَّهُۥ": {
-  "en": "he/it touched him/it",
+  "en": "he/it touched him",
   "bs": "dotaknuo ga je"
  },
  "مسس|1|يَمَسَّكَ": {
@@ -15313,11 +15325,11 @@
   "bs": "držao ih je"
  },
  "مسك|4|أَمْسَكْنَ": {
-  "en": "they held",
-  "bs": "držale su"
+  "en": "they caught",
+  "bs": "uhvatile su"
  },
  "مسك|4|أَيُمْسِكُهُۥ": {
-  "en": "does he/it hold him/it?",
+  "en": "does he/it hold it?",
   "bs": "zar ga drži?"
  },
  "مسك|4|تُمْسِكُوا۟": {
@@ -15349,8 +15361,8 @@
   "bs": "drži ih"
  },
  "مسك|4|يُمْسِكْ": {
-  "en": "he/it holds",
-  "bs": "drži"
+  "en": "he/it withholds",
+  "bs": "zadržava"
  },
  "مشي|1|تَمْشُونَ": {
   "en": "you (all) walk",
@@ -15377,8 +15389,8 @@
   "bs": "hoda"
  },
  "مطر|4|أُمْطِرَتْ": {
-  "en": "she/it was rained",
-  "bs": "zasuto je"
+  "en": "she/it was rained upon",
+  "bs": "zasuta je"
  },
  "مطر|4|فَأَمْطِرْ": {
   "en": "so rain!",
@@ -15401,8 +15413,8 @@
   "bs": "spletkarili su"
  },
  "مكر|1|مَّكَرْتُمُوهُ": {
-  "en": "you (all) plotted him/it",
-  "bs": "spletkarili ste mu"
+  "en": "you (all) plotted it",
+  "bs": "smislili ste ga"
  },
  "مكر|1|وَمَكَرَ": {
   "en": "and he/it plotted",
@@ -15454,7 +15466,7 @@
  },
  "ملأ|1|مُلِئَتْ": {
   "en": "she/it was filled",
-  "bs": "napunjeno je"
+  "bs": "napunjena je"
  },
  "ملك|1|تَمْلِكُونَ": {
   "en": "you (all) own",
@@ -15493,16 +15505,16 @@
   "bs": "spriječio je"
  },
  "منع|1|وَنَمْنَعْكُم": {
-  "en": "and we prevent you (all)",
-  "bs": "i sprječavamo vas"
+  "en": "and we protect you (all)",
+  "bs": "i štitimo vas"
  },
  "منع|1|وَيَمْنَعُونَ": {
-  "en": "and they prevent",
-  "bs": "i sprječavaju"
+  "en": "and they withhold",
+  "bs": "i uskraćuju"
  },
  "منن|1|تَمُنُّوا۟": {
-  "en": "you (all) bestow a favour",
-  "bs": "obdarujete"
+  "en": "you (all) count it a favour",
+  "bs": "smatrate to uslugom"
  },
  "منن|1|فَمَنَّ": {
   "en": "so he/it bestowed a favour",
@@ -15525,8 +15537,8 @@
   "bs": "obdaruje"
  },
  "منن|1|يَمُنُّونَ": {
-  "en": "they bestow a favour",
-  "bs": "obdaruju"
+  "en": "they count it a favour",
+  "bs": "smatraju to uslugom"
  },
  "مني|5|تَتَمَنَّوْا۟": {
   "en": "you (all) wish",
@@ -15541,8 +15553,8 @@
   "bs": "pa poželite!"
  },
  "مني|5|يَتَمَنَّوْنَهُۥٓ": {
-  "en": "they wish for him/it",
-  "bs": "žele ga"
+  "en": "they wish for it",
+  "bs": "žele je"
  },
  "موت|1|أَمُوتُ": {
   "en": "I die",
@@ -15601,7 +15613,7 @@
   "bs": "usmrtio si nas"
  },
  "موت|4|فَأَمَاتَهُ": {
-  "en": "so he/it caused him/it to die",
+  "en": "so he/it caused him to die",
   "bs": "pa ga je usmrtio"
  },
  "موت|4|وَأُمِيتُ": {
@@ -15637,7 +15649,7 @@
   "bs": "obavještavam vas"
  },
  "نبأ|2|تُنَبِّـُٔونَهُۥ": {
-  "en": "you (all) inform him/it",
+  "en": "you (all) inform him",
   "bs": "obavještavate ga"
  },
  "نبأ|2|سَأُنَبِّئُكَ": {
@@ -15685,7 +15697,7 @@
   "bs": "obavijestio me je"
  },
  "نبأ|2|نَبَّأَهَا": {
-  "en": "he/it informed her/it",
+  "en": "he/it informed her",
   "bs": "obavijestio ju je"
  },
  "نبأ|2|نَبَّأْتُكُمَا": {
@@ -15757,7 +15769,7 @@
   "bs": "i uzgojila je"
  },
  "نبت|4|وَأَنۢبَتَهَا": {
-  "en": "and he/it caused her/it to grow",
+  "en": "and he/it caused her to grow",
   "bs": "i uzgojio ju je"
  },
  "نبت|4|وَأَنۢبَتْنَا": {
@@ -15769,11 +15781,11 @@
   "bs": "uzgaja"
  },
  "نبذ|1|فَنَبَذُوهُ": {
-  "en": "so they cast him/it away",
-  "bs": "pa su ga odbacili"
+  "en": "so they cast it away",
+  "bs": "pa su je odbacili"
  },
  "نبذ|1|فَنَبَذْتُهَا": {
-  "en": "so I cast her/it away",
+  "en": "so I cast it away",
   "bs": "pa sam je odbacio"
  },
  "نبذ|1|فَنَبَذْنَٰهُمْ": {
@@ -15793,7 +15805,7 @@
   "bs": "odbacio je"
  },
  "نبذ|1|نَّبَذَهُۥ": {
-  "en": "he/it cast him/it away",
+  "en": "he/it cast it away",
   "bs": "odbacio ga je"
  },
  "نجو|2|فَنَجَّيْنَٰكَ": {
@@ -15805,7 +15817,7 @@
   "bs": "pa je spašen"
  },
  "نجو|2|لَنُنَجِّيَنَّهُۥ": {
-  "en": "surely we will save him/it",
+  "en": "surely we will save him",
   "bs": "zaista ćemo ga spasiti"
  },
  "نجو|2|نَجَّىٰكُمْ": {
@@ -15829,7 +15841,7 @@
   "bs": "spasili smo vas"
  },
  "نجو|2|نَجَّيْنَٰهُ": {
-  "en": "we saved him/it",
+  "en": "we saved him",
   "bs": "spasili smo ga"
  },
  "نجو|2|نَجِّنِى": {
@@ -15849,7 +15861,7 @@
   "bs": "i spasili smo"
  },
  "نجو|2|وَنَجَّيْنَٰهُ": {
-  "en": "and we saved him/it",
+  "en": "and we saved him",
   "bs": "i spasili smo ga"
  },
  "نجو|2|وَنَجَّيْنَٰهُم": {
@@ -15897,11 +15909,11 @@
   "bs": "spasili smo vas"
  },
  "نجو|4|فَأَنجَىٰهُ": {
-  "en": "so he/it saved him/it",
+  "en": "so he/it saved him",
   "bs": "pa ga je spasio"
  },
  "نجو|4|فَأَنجَيْنَٰهُ": {
-  "en": "so we saved him/it",
+  "en": "so we saved him",
   "bs": "pa smo ga spasili"
  },
  "نجو|4|فَأَنجَيْنَٰهُمْ": {
@@ -15917,7 +15929,7 @@
   "bs": "spašavamo"
  },
  "ندي|3|فَنَادَتْهُ": {
-  "en": "so she/it called him/it",
+  "en": "so she/it called him",
   "bs": "pa ga je pozvala"
  },
  "ندي|3|فَنَادَوا۟": {
@@ -15933,7 +15945,7 @@
   "bs": "pa je pozvao"
  },
  "ندي|3|فَنَادَىٰهَا": {
-  "en": "so he/it called her/it",
+  "en": "so he/it called her",
   "bs": "pa ju je pozvao"
  },
  "ندي|3|نَادَىٰ": {
@@ -15945,7 +15957,7 @@
   "bs": "pozvao nas je"
  },
  "ندي|3|نَادَىٰهُ": {
-  "en": "he/it called him/it",
+  "en": "he/it called him",
   "bs": "pozvao ga je"
  },
  "ندي|3|نَادَيْتُمْ": {
@@ -15986,7 +15998,7 @@
  },
  "ندي|3|يُنَادَوْنَ": {
   "en": "they are called",
-  "bs": "pozivaju se"
+  "bs": "bivaju pozvani"
  },
  "ندي|3|يُنَادُونَكَ": {
   "en": "they call you",
@@ -16089,7 +16101,7 @@
   "bs": "zaista ćemo ukloniti"
  },
  "نزع|1|نَزَعْنَٰهَا": {
-  "en": "we removed her/it",
+  "en": "we removed it",
   "bs": "uklonili smo je"
  },
  "نزع|1|وَنَزَعْنَا": {
@@ -16121,7 +16133,7 @@
   "bs": "objavio je"
  },
  "نزل|2|نَزَّلَهُۥ": {
-  "en": "he/it sent him/it down",
+  "en": "he/it sent it down",
   "bs": "objavio ga je"
  },
  "نزل|2|نَزَّلْنَا": {
@@ -16130,7 +16142,7 @@
  },
  "نزل|2|نَزَّلْنَآ": {
   "en": "we sent down",
-  "bs": "objavili smo"
+  "bs": "spustili smo"
  },
  "نزل|2|نُزِّلَ": {
   "en": "it was sent down",
@@ -16141,8 +16153,8 @@
   "bs": "objavljeno je"
  },
  "نزل|2|نُنَزِّلُهُۥٓ": {
-  "en": "we send him/it down",
-  "bs": "objavljujemo ga"
+  "en": "we send it down",
+  "bs": "spuštamo ga"
  },
  "نزل|2|نُنَزِّلْ": {
   "en": "we send down",
@@ -16150,19 +16162,19 @@
  },
  "نزل|2|نَّزَّلَ": {
   "en": "he/it sent down",
-  "bs": "objavio je"
+  "bs": "spustio je"
  },
  "نزل|2|وَنَزَّلْنَا": {
   "en": "and we sent down",
   "bs": "i objavili smo"
  },
  "نزل|2|وَنَزَّلْنَٰهُ": {
-  "en": "and we sent him/it down",
+  "en": "and we sent it down",
   "bs": "i objavili smo ga"
  },
  "نزل|2|وَنُزِّلَ": {
   "en": "and it was sent down",
-  "bs": "i objavljeno je"
+  "bs": "i spušteno je"
  },
  "نزل|2|وَنُنَزِّلُ": {
   "en": "and we send down",
@@ -16170,7 +16182,7 @@
  },
  "نزل|2|وَيُنَزِّلُ": {
   "en": "and he/it sends down",
-  "bs": "i objavljuje"
+  "bs": "i spušta"
  },
  "نزل|2|يُنَزَّلَ": {
   "en": "it is sent down",
@@ -16186,7 +16198,7 @@
  },
  "نزل|2|يُنَزِّلُ": {
   "en": "he/it sends down",
-  "bs": "objavljuje"
+  "bs": "spušta"
  },
  "نزل|2|يُنَزِّلْ": {
   "en": "he/it sends down",
@@ -16201,15 +16213,15 @@
   "bs": "objavio je"
  },
  "نزل|4|أَنزَلَهُ": {
-  "en": "he/it sent him/it down",
+  "en": "he/it sent it down",
   "bs": "objavio ga je"
  },
  "نزل|4|أَنزَلَهُۥ": {
-  "en": "he/it sent him/it down",
+  "en": "he/it sent it down",
   "bs": "objavio ga je"
  },
  "نزل|4|أَنزَلَهُۥٓ": {
-  "en": "he/it sent him/it down",
+  "en": "he/it sent it down",
   "bs": "objavio ga je"
  },
  "نزل|4|أَنزَلْتَ": {
@@ -16221,19 +16233,19 @@
   "bs": "objavio sam"
  },
  "نزل|4|أَنزَلْتُمُوهُ": {
-  "en": "you (all) sent him/it down",
-  "bs": "objavili ste ga"
+  "en": "you (all) sent it down",
+  "bs": "spustili ste ga"
  },
  "نزل|4|أَنزَلْنَآ": {
   "en": "we sent down",
   "bs": "objavili smo"
  },
  "نزل|4|أَنزَلْنَٰهَا": {
-  "en": "we sent her/it down",
+  "en": "we sent it down",
   "bs": "objavili smo je"
  },
  "نزل|4|أَنزَلْنَٰهُ": {
-  "en": "we sent him/it down",
+  "en": "we sent it down",
   "bs": "objavili smo ga"
  },
  "نزل|4|أَنزِلْ": {
@@ -16301,7 +16313,7 @@
   "bs": "zaboravili su"
  },
  "نسي|1|نَسُوهُ": {
-  "en": "they forgot him/it",
+  "en": "they forgot it",
   "bs": "zaboravili su ga"
  },
  "نسي|1|نَسِىَ": {
@@ -16353,8 +16365,8 @@
   "bs": "zaboravlja"
  },
  "نسي|4|فَأَنسَىٰهُ": {
-  "en": "so he/it made him/it forget",
-  "bs": "pa je učinio da ga zaboravi"
+  "en": "so he/it made him forget",
+  "bs": "pa je učinio da zaboravi"
  },
  "نسي|4|نُنسِهَا": {
   "en": "we make her/it forget",
@@ -16373,8 +16385,8 @@
   "bs": "stvorio vas je"
  },
  "نشأ|4|أَنشَأَهَآ": {
-  "en": "he/it produced her/it",
-  "bs": "stvorio ju je"
+  "en": "he/it produced them",
+  "bs": "stvorio ih je"
  },
  "نشأ|4|أَنشَأْتُمْ": {
   "en": "you (all) produced",
@@ -16385,7 +16397,7 @@
   "bs": "stvorili smo"
  },
  "نشأ|4|أَنشَأْنَٰهُ": {
-  "en": "we produced him/it",
+  "en": "we produced it",
   "bs": "stvorili smo ga"
  },
  "نشأ|4|فَأَنشَأْنَا": {
@@ -16409,7 +16421,7 @@
   "bs": "pomažete"
  },
  "نصر|1|تَنصُرُوهُ": {
-  "en": "you (all) help him/it",
+  "en": "you (all) help him",
   "bs": "pomažete mu"
  },
  "نصر|1|تُنصَرُونَ": {
@@ -16429,7 +16441,7 @@
   "bs": "zaista pomažemo"
  },
  "نصر|1|لَيَنصُرَنَّهُ": {
-  "en": "surely he/it will help him/it",
+  "en": "surely he/it will help him",
   "bs": "zaista će mu pomoći"
  },
  "نصر|1|نَصَرَكُمُ": {
@@ -16437,7 +16449,7 @@
   "bs": "pomogao vam je"
  },
  "نصر|1|نَصَرَهُ": {
-  "en": "he/it helped him/it",
+  "en": "he/it helped him",
   "bs": "pomogao mu je"
  },
  "نصر|1|نَصَرَهُمُ": {
@@ -16453,11 +16465,11 @@
   "bs": "i zaista će pomoći"
  },
  "نصر|1|وَنَصَرُوهُ": {
-  "en": "and they helped him/it",
+  "en": "and they helped him",
   "bs": "i pomogli su mu"
  },
  "نصر|1|وَنَصَرْنَٰهُ": {
-  "en": "and we helped him/it",
+  "en": "and we helped him",
   "bs": "i pomogli smo mu"
  },
  "نصر|1|وَيَنصُرُونَ": {
@@ -16481,7 +16493,7 @@
   "bs": "i pomogli su"
  },
  "نصر|1|يَنصُرَهُ": {
-  "en": "he/it helps him/it",
+  "en": "he/it helps him",
   "bs": "pomaže mu"
  },
  "نصر|1|يَنصُرُ": {
@@ -16501,11 +16513,11 @@
   "bs": "pomaže mi"
  },
  "نصر|1|يَنصُرُهُۥ": {
-  "en": "he/it helps him/it",
+  "en": "he/it helps him",
   "bs": "pomaže mu"
  },
  "نصر|1|يَنصُرُهُۥٓ": {
-  "en": "he/it helps him/it",
+  "en": "he/it helps him",
   "bs": "pomaže mu"
  },
  "نصر|1|يَنصُرُونَ": {
@@ -16525,7 +16537,7 @@
   "bs": "pomažu im"
  },
  "نصر|1|يَنصُرُونَهُۥ": {
-  "en": "they help him/it",
+  "en": "they help him",
   "bs": "pomažu mu"
  },
  "نصر|1|يَنصُرْكُمُ": {
@@ -16541,8 +16553,8 @@
   "bs": "bivaju potpomognuti"
  },
  "نصر|8|وَٱنتَصَرُوا۟": {
-  "en": "and they won",
-  "bs": "i pobijedili su"
+  "en": "and they defended themselves",
+  "bs": "i odbranili su se"
  },
  "نطق|1|يَنطِقُ": {
   "en": "he/it speaks",
@@ -16621,8 +16633,8 @@
   "bs": "gledaju"
  },
  "نظر|1|يَنظُرُونَ": {
-  "en": "they look",
-  "bs": "gledaju"
+  "en": "they wait",
+  "bs": "čekaju"
  },
  "نظر|1|يَنظُرُوٓا۟": {
   "en": "they look",
@@ -16633,8 +16645,8 @@
   "bs": "pogledajte!"
  },
  "نظر|1|ٱنظُرُونَا": {
-  "en": "(you all) look at us!",
-  "bs": "pogledajte nas!"
+  "en": "(you all) wait for us!",
+  "bs": "pričekajte nas!"
  },
  "نظر|1|ٱنظُرُوٓا۟": {
   "en": "(you all) look!",
@@ -16681,7 +16693,7 @@
   "bs": "podario je blagodat"
  },
  "نعم|4|أَنْعَمَهَا": {
-  "en": "he/it bestowed favour on her/it",
+  "en": "he/it bestowed favour on it",
   "bs": "podario joj je blagodat"
  },
  "نعم|4|أَنْعَمْتُ": {
@@ -16733,8 +16745,8 @@
   "bs": "krenuo je"
  },
  "نفع|1|فَنَفَعَهَآ": {
-  "en": "so he/it benefited her/it",
-  "bs": "pa joj je koristio"
+  "en": "so he/it benefited it",
+  "bs": "pa mu je koristio"
  },
  "نفع|1|يَنفَعَكُمُ": {
   "en": "he/it benefits you (all)",
@@ -16765,7 +16777,7 @@
   "bs": "koristi im"
  },
  "نفع|1|يَنفَعُهُۥ": {
-  "en": "he/it benefits him/it",
+  "en": "he/it benefits him",
   "bs": "koristi mu"
  },
  "نفق|4|أَنفَقَ": {
@@ -16797,8 +16809,8 @@
   "bs": "pa potrošite!"
  },
  "نفق|4|فَسَيُنفِقُونَهَا": {
-  "en": "so they will spend her/it",
-  "bs": "pa će je potrošiti"
+  "en": "so they will spend them",
+  "bs": "pa će ih potrošiti"
  },
  "نفق|4|فَلْيُنفِقْ": {
   "en": "so let him spend",
@@ -16829,15 +16841,15 @@
   "bs": "troši"
  },
  "نفق|4|يُنفِقُونَهَا": {
-  "en": "they spend her/it",
-  "bs": "troše je"
+  "en": "they spend them",
+  "bs": "troše ih"
  },
  "نقص|1|تَنقُصُوا۟": {
-  "en": "you (all) decrease",
-  "bs": "smanjujete se"
+  "en": "you (all) diminish",
+  "bs": "umanjujete"
  },
  "نقص|1|نَنقُصُهَا": {
-  "en": "we decrease her/it",
+  "en": "we decrease it",
   "bs": "umanjujemo je"
  },
  "نقص|1|يَنقُصُوكُمْ": {
@@ -16853,8 +16865,8 @@
   "bs": "kršite"
  },
  "نقض|1|نَقَضَتْ": {
-  "en": "she/it broke (a pledge)",
-  "bs": "prekršila je"
+  "en": "she/it unravelled",
+  "bs": "rasplela je"
  },
  "نقم|8|فَيَنتَقِمُ": {
   "en": "so he/it takes revenge",
@@ -16913,7 +16925,7 @@
   "bs": "ženi se"
  },
  "نكح|1|يَنكِحُهَآ": {
-  "en": "he/it marries her/it",
+  "en": "he/it marries her",
   "bs": "ženi je"
  },
  "نكح|1|يَنكِحْنَ": {
@@ -16930,7 +16942,7 @@
  },
  "نهي|1|تُنْهَوْنَ": {
   "en": "you (all) are forbidden",
-  "bs": "bivate zabranjeni"
+  "bs": "zabranjeno vam je"
  },
  "نهي|1|نَنْهَكَ": {
   "en": "we forbid you",
@@ -17053,7 +17065,7 @@
   "bs": "postiže"
  },
  "نيل|1|يَنَالُهُ": {
-  "en": "he/it attains him/it",
+  "en": "he/it attains him",
   "bs": "postiže ga"
  },
  "نيل|1|يَنَالُهُمُ": {
@@ -17197,7 +17209,7 @@
   "bs": "uputili smo"
  },
  "هدي|1|هَدَيْنَٰهُ": {
-  "en": "we guided him/it",
+  "en": "we guided him",
   "bs": "uputili smo ga"
  },
  "هدي|1|هُدِىَ": {
@@ -17213,11 +17225,11 @@
   "bs": "i uputio je"
  },
  "هدي|1|وَهَدَىٰهُ": {
-  "en": "and he/it guided him/it",
+  "en": "and he/it guided him",
   "bs": "i uputio ga je"
  },
  "هدي|1|وَهَدَيْنَٰهُ": {
-  "en": "and we guided him/it",
+  "en": "and we guided him",
   "bs": "i uputili smo ga"
  },
  "هدي|1|وَهَدَيْنَٰهُمَا": {
@@ -17241,7 +17253,7 @@
   "bs": "i upućuje"
  },
  "هدي|1|وَيَهْدِيهِ": {
-  "en": "and he/it guides him/it",
+  "en": "and he/it guides him",
   "bs": "i upućuje ga"
  },
  "هدي|1|وَيَهْدِيهِمْ": {
@@ -17293,7 +17305,7 @@
   "bs": "upućuje me"
  },
  "هدي|1|يَهْدِيهِ": {
-  "en": "he/it guides him/it",
+  "en": "he/it guides him",
   "bs": "upućuje ga"
  },
  "هدي|1|يَهْدِيهِمُ": {
@@ -17313,7 +17325,7 @@
   "bs": "upućuje me"
  },
  "هدي|1|يَهْدِيَهُۥ": {
-  "en": "he/it guides him/it",
+  "en": "he/it guides him",
   "bs": "upućuje ga"
  },
  "هدي|1|يُهْدَىٰ": {
@@ -17397,8 +17409,8 @@
   "bs": "uništio si ih"
  },
  "هلك|4|أَهْلَكْتُ": {
-  "en": "I destroyed",
-  "bs": "uništio sam"
+  "en": "I squandered",
+  "bs": "potrošio sam"
  },
  "هلك|4|أَهْلَكْنَا": {
   "en": "we destroyed",
@@ -17409,11 +17421,11 @@
   "bs": "uništili smo"
  },
  "هلك|4|أَهْلَكْنَٰهَا": {
-  "en": "we destroyed her/it",
+  "en": "we destroyed it",
   "bs": "uništili smo je"
  },
  "هلك|4|أَهْلَكْنَٰهَآ": {
-  "en": "we destroyed her/it",
+  "en": "we destroyed it",
   "bs": "uništili smo je"
  },
  "هلك|4|أَهْلَكْنَٰهُم": {
@@ -17425,7 +17437,7 @@
   "bs": "uništili smo ih"
  },
  "هلك|4|فَأَهْلَكَتْهُ": {
-  "en": "so she/it destroyed him/it",
+  "en": "so she/it destroyed it",
   "bs": "pa ga je uništila"
  },
  "هلك|4|فَأَهْلَكْنَآ": {
@@ -17509,7 +17521,7 @@
   "bs": "nalazite"
  },
  "وجد|1|تَجِدُوهُ": {
-  "en": "you (all) find him/it",
+  "en": "you (all) find it",
   "bs": "nalazite ga"
  },
  "وجد|1|سَتَجِدُونَ": {
@@ -17525,8 +17537,8 @@
   "bs": "pa su našli"
  },
  "وجد|1|فَوَجَدْنَٰهَا": {
-  "en": "so we found her/it",
-  "bs": "pa smo je našli"
+  "en": "so we found it",
+  "bs": "pa smo ga našli"
  },
  "وجد|1|لَأَجِدَنَّ": {
   "en": "surely I will find",
@@ -17557,7 +17569,7 @@
   "bs": "našli ste"
  },
  "وجد|1|وَجَدتُّهَا": {
-  "en": "I found her/it",
+  "en": "I found her",
   "bs": "našao sam je"
  },
  "وجد|1|وَجَدَ": {
@@ -17565,8 +17577,8 @@
   "bs": "našao je"
  },
  "وجد|1|وَجَدَهَا": {
-  "en": "he/it found her/it",
-  "bs": "našao ju je"
+  "en": "he/it found it",
+  "bs": "našao ga je"
  },
  "وجد|1|وَجَدُوا۟": {
   "en": "they found",
@@ -17581,7 +17593,7 @@
   "bs": "našli smo"
  },
  "وجد|1|وَجَدْنَٰهُ": {
-  "en": "we found him/it",
+  "en": "we found him",
   "bs": "našli smo ga"
  },
  "وجد|1|وَلْيَجِدُوا۟": {
@@ -17609,7 +17621,7 @@
   "bs": "nalaze"
  },
  "وجد|1|يَجِدُونَهُۥ": {
-  "en": "they find him/it",
+  "en": "they find him",
   "bs": "nalaze ga"
  },
  "وجد|1|يَجِدِ": {
@@ -17621,7 +17633,7 @@
   "bs": "nalazi"
  },
  "وجد|1|يَجِدْهُ": {
-  "en": "he/it finds him/it",
+  "en": "he/it finds it",
   "bs": "nalazi ga"
  },
  "وحي|4|أَوْحَىٰٓ": {
@@ -17661,12 +17673,12 @@
   "bs": "objavljujemo"
  },
  "وحي|4|نُوحِيهَآ": {
-  "en": "we inspire her/it",
-  "bs": "objavljujemo joj"
+  "en": "we inspire them",
+  "bs": "objavljujemo ih"
  },
  "وحي|4|نُوحِيهِ": {
-  "en": "we inspire him/it",
-  "bs": "objavljujemo mu"
+  "en": "we inspire them",
+  "bs": "objavljujemo ih"
  },
  "وحي|4|نُّوحِىٓ": {
   "en": "we inspire",
@@ -17737,11 +17749,11 @@
   "bs": "ostavi ih!"
  },
  "وذر|1|فَذَرُوهَا": {
-  "en": "so (you all) leave her/it!",
+  "en": "so (you all) leave her!",
   "bs": "pa je ostavite!"
  },
  "وذر|1|فَذَرُوهُ": {
-  "en": "so (you all) leave him/it!",
+  "en": "so (you all) leave it!",
   "bs": "pa ga ostavite!"
  },
  "وذر|1|فَذَرْنِى": {
@@ -17817,7 +17829,7 @@
   "bs": "i naslijedio je"
  },
  "ورث|1|وَوَرِثَهُۥٓ": {
-  "en": "and he/it inherited him/it",
+  "en": "and he/it inherited him",
   "bs": "i naslijedio ga je"
  },
  "ورث|1|وَيَرِثُ": {
@@ -17829,11 +17841,11 @@
   "bs": "nasljeđuje me"
  },
  "ورث|1|يَرِثُهَا": {
-  "en": "he/it inherits her/it",
+  "en": "he/it inherits it",
   "bs": "nasljeđuje je"
  },
  "ورث|1|يَرِثُهَآ": {
-  "en": "he/it inherits her/it",
+  "en": "he/it inherits her",
   "bs": "nasljeđuje je"
  },
  "ورث|1|يَرِثُونَ": {
@@ -17865,7 +17877,7 @@
   "bs": "i ostavili smo u nasljedstvo"
  },
  "ورث|4|يُورِثُهَا": {
-  "en": "he/it bequeaths her/it",
+  "en": "he/it bequeaths it",
   "bs": "ostavlja je u nasljedstvo"
  },
  "وزر|1|يَزِرُونَ": {
@@ -17909,15 +17921,15 @@
   "bs": "i oporučili smo"
  },
  "وصي|4|تُوصُونَ": {
-  "en": "you (all) enjoin",
+  "en": "you (all) bequeath",
   "bs": "oporučujete"
  },
  "وصي|4|يُوصَىٰ": {
-  "en": "he/it is enjoined",
+  "en": "he/it is bequeathed",
   "bs": "biva oporučen"
  },
  "وصي|4|يُوصِى": {
-  "en": "he/it enjoins",
+  "en": "he/it bequeaths",
   "bs": "oporučuje"
  },
  "وصي|4|يُوصِيكُمُ": {
@@ -17925,7 +17937,7 @@
   "bs": "oporučuje vam"
  },
  "وصي|4|يُوصِينَ": {
-  "en": "they enjoin",
+  "en": "they bequeath",
   "bs": "oporučuju"
  },
  "وعد|1|أَيَعِدُكُمْ": {
@@ -17965,19 +17977,19 @@
   "bs": "obećao nam je"
  },
  "وعد|1|وَعَدَهَا": {
-  "en": "he/it promised her/it",
-  "bs": "obećao joj je"
+  "en": "he/it promised it",
+  "bs": "obećao ju je"
  },
  "وعد|1|وَعَدَهَآ": {
-  "en": "he/it promised her/it",
-  "bs": "obećao joj je"
+  "en": "he/it promised it",
+  "bs": "obećao ga je"
  },
  "وعد|1|وَعَدُوهُ": {
-  "en": "they promised him/it",
+  "en": "they promised him",
   "bs": "obećali su mu"
  },
  "وعد|1|وَعَدْنَٰهُ": {
-  "en": "we promised him/it",
+  "en": "we promised him",
   "bs": "obećali smo mu"
  },
  "وعد|1|وَعِدْهُمْ": {
@@ -18053,7 +18065,7 @@
   "bs": "opominje vas"
  },
  "وعظ|1|يَعِظُهُۥ": {
-  "en": "he/it admonishes him/it",
+  "en": "he/it admonishes him",
   "bs": "opominje ga"
  },
  "وعظ|1|يُوعَظُ": {
@@ -18069,7 +18081,7 @@
   "bs": "isplaćuje vam se u potpunosti"
  },
  "وفي|2|فَوَفَّىٰهُ": {
-  "en": "so he/it paid him/it in full",
+  "en": "so he/it paid him in full",
   "bs": "pa mu je isplatio u potpunosti"
  },
  "وفي|2|فَيُوَفِّيهِمْ": {
@@ -18086,7 +18098,7 @@
  },
  "وفي|2|وَوُفِّيَتْ": {
   "en": "and she/it was paid in full",
-  "bs": "i isplaćeno je u potpunosti"
+  "bs": "i isplaćena je u potpunosti"
  },
  "وفي|2|يُوَفَّ": {
   "en": "he/it is paid in full",
@@ -18105,16 +18117,16 @@
   "bs": "ispunjavam"
  },
  "وفي|4|أُوفِى": {
-  "en": "I fulfil",
-  "bs": "ispunjavam"
+  "en": "I give in full",
+  "bs": "dajem u cijelosti"
  },
  "وفي|4|فَأَوْفُوا۟": {
-  "en": "so (you all) fulfil!",
-  "bs": "pa ispunite!"
+  "en": "so (you all) give in full!",
+  "bs": "pa dajte u cijelosti!"
  },
  "وفي|4|فَأَوْفِ": {
-  "en": "so fulfil!",
-  "bs": "pa ispuni!"
+  "en": "so give in full!",
+  "bs": "pa daj u cijelosti!"
  },
  "وفي|4|وَأَوْفُوا۟": {
   "en": "and (you all) fulfil!",
@@ -18125,23 +18137,23 @@
   "bs": "i neka ispune"
  },
  "وفي|5|تَوَفَّتْهُ": {
-  "en": "she/it took the soul of him/it",
+  "en": "she/it took him in death",
   "bs": "usmrtila ga je"
  },
  "وفي|5|تَوَفَّىٰهُمُ": {
-  "en": "he/it took the soul of them",
+  "en": "he/it took them in death",
   "bs": "usmrtio ih je"
  },
  "وفي|5|تَوَفَّيْتَنِى": {
-  "en": "you took the soul of me",
+  "en": "you took me in death",
   "bs": "usmrtio si me"
  },
  "وفي|5|وَتَوَفَّنَا": {
-  "en": "and take the soul of us!",
+  "en": "and take us in death!",
   "bs": "i usmrti nas!"
  },
  "وفي|5|يَتَوَفَّوْنَهُمْ": {
-  "en": "they take the soul of them",
+  "en": "they take them in death",
   "bs": "usmrćuju ih"
  },
  "وفي|5|يَتَوَفَّى": {
@@ -18149,39 +18161,39 @@
   "bs": "usmrćuje"
  },
  "وفي|5|يَتَوَفَّىٰكُمْ": {
-  "en": "he/it takes the soul of you (all)",
+  "en": "he/it takes you (all) in death",
   "bs": "usmrćuje vas"
  },
  "وفي|5|يَتَوَفَّىٰهُنَّ": {
-  "en": "he/it takes the soul of them",
+  "en": "he/it takes them in death",
   "bs": "usmrćuje ih"
  },
  "وفي|5|يُتَوَفَّوْنَ": {
-  "en": "they are taken the soul",
+  "en": "they are taken in death",
   "bs": "bivaju usmrćeni"
  },
  "وفي|5|يُتَوَفَّىٰ": {
-  "en": "he/it is taken the soul",
+  "en": "he/it is taken in death",
   "bs": "biva usmrćen"
  },
  "وقع|1|فَوَقَعَ": {
-  "en": "so he/it fell",
-  "bs": "pa je pao"
+  "en": "so he/it was established",
+  "bs": "pa se potvrdio"
  },
  "وقع|1|وَقَعَ": {
   "en": "he/it fell",
   "bs": "pao je"
  },
  "وقع|1|وَوَقَعَ": {
-  "en": "and he/it fell",
-  "bs": "i pao je"
+  "en": "and he/it came to pass",
+  "bs": "i ostvario se"
  },
  "وقي|1|فَقِنَا": {
   "en": "so protect us!",
   "bs": "pa nas zaštiti!"
  },
  "وقي|1|فَوَقَىٰهُ": {
-  "en": "so he/it protected him/it",
+  "en": "so he/it protected him",
   "bs": "pa ga je zaštitio"
  },
  "وقي|1|قُوٓا۟": {
@@ -18201,8 +18213,8 @@
   "bs": "biva zaštićen"
  },
  "وقي|8|تَتَّقُوا۟": {
-  "en": "you (all) are mindful (of God)",
-  "bs": "bojite se"
+  "en": "you (all) guard yourselves",
+  "bs": "čuvate se"
  },
  "وقي|8|تَتَّقُونَ": {
   "en": "you (all) are mindful (of God)",
@@ -18229,7 +18241,7 @@
   "bs": "i bojali su se"
  },
  "وقي|8|وَٱتَّقُوا۟": {
-  "en": "and (you all) be mindful (of God)!",
+  "en": "and (you all) be mindful!",
   "bs": "i bojte se!"
  },
  "وقي|8|وَٱتَّقِ": {
@@ -18245,8 +18257,8 @@
   "bs": "boji se"
  },
  "وقي|8|يَتَّقِى": {
-  "en": "he/it is mindful (of God)",
-  "bs": "boji se"
+  "en": "he/it shields (himself)",
+  "bs": "štiti se"
  },
  "وقي|8|ٱتَّقَوا۟": {
   "en": "they were mindful (of God)",
@@ -18326,15 +18338,15 @@
  },
  "ولي|2|تُوَلُّوا۟": {
   "en": "you (all) turn",
-  "bs": "okrećete"
+  "bs": "okrećete se"
  },
  "ولي|2|تُوَلُّونَ": {
   "en": "you (all) turn",
-  "bs": "okrećete"
+  "bs": "okrećete se"
  },
  "ولي|2|تُوَلُّوهُمُ": {
-  "en": "you (all) turn them",
-  "bs": "okrećete ih"
+  "en": "you (all) turn (your backs) to them",
+  "bs": "okrećete im leđa"
  },
  "ولي|2|فَوَلُّوا۟": {
   "en": "so (you all) turn!",
@@ -18346,23 +18358,23 @@
  },
  "ولي|2|لَيُوَلُّنَّ": {
   "en": "surely they will turn",
-  "bs": "zaista će okrenuti"
+  "bs": "zaista će se okrenuti"
  },
  "ولي|2|نُوَلِّهِۦ": {
-  "en": "we turn him/it",
+  "en": "we turn him",
   "bs": "okrećemo ga"
  },
  "ولي|2|نُوَلِّى": {
-  "en": "we turn",
-  "bs": "okrećemo"
+  "en": "we set over",
+  "bs": "postavljamo"
  },
  "ولي|2|وَلَّوْا۟": {
   "en": "they turned",
-  "bs": "okrenuli su"
+  "bs": "okrenuli su se"
  },
  "ولي|2|وَلَّىٰ": {
   "en": "he/it turned",
-  "bs": "okrenuo je"
+  "bs": "okrenuo se"
  },
  "ولي|2|وَلَّىٰهُمْ": {
   "en": "he/it turned them",
@@ -18373,16 +18385,16 @@
   "bs": "okrenuli ste"
  },
  "ولي|2|يُوَلُّوكُمُ": {
-  "en": "they turn you (all)",
-  "bs": "okreću vas"
+  "en": "they turn (their backs) to you (all)",
+  "bs": "okreću vam leđa"
  },
  "ولي|2|يُوَلُّونَ": {
   "en": "they turn",
   "bs": "okreću"
  },
  "ولي|2|يُوَلِّهِمْ": {
-  "en": "he/it turns them",
-  "bs": "okreće ih"
+  "en": "he/it turns (his back) to them",
+  "bs": "okreće im leđa"
  },
  "وهب|1|فَهَبْ": {
   "en": "so give!",
@@ -18441,11 +18453,11 @@
   "bs": "očajava"
  },
  "يسر|2|فَسَنُيَسِّرُهُۥ": {
-  "en": "so we will make him/it easy",
+  "en": "so we will ease him",
   "bs": "pa ćemo mu olakšati"
  },
  "يسر|2|وَنُيَسِّرُكَ": {
-  "en": "and we make you easy",
+  "en": "and we ease you",
   "bs": "i olakšavamo ti"
  },
  "يسر|2|يَسَّرْنَا": {
@@ -18453,8 +18465,8 @@
   "bs": "olakšali smo"
  },
  "يسر|2|يَسَّرْنَٰهُ": {
-  "en": "we made him/it easy",
-  "bs": "olakšali smo mu"
+  "en": "we made it easy",
+  "bs": "olakšali smo ga"
  },
  "يقن|4|تُوقِنُونَ": {
   "en": "you (all) are certain",

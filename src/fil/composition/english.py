@@ -70,23 +70,29 @@ _CONJUNCTIONS = {AND: "and", SO: "so"}
 
 _AMBIGUOUS_SENSES = frozenset({"to will"})
 
-# Whose passive has a thing for its subject: "it was said", "it was decreed".
+# Whose passive has a thing for its subject: "it was said", "it was decreed". Not "create":
+# خُلِقَ ٱلْإِنسَٰنُ, "man was created" (21:37, 4:28), is as often a person.
 _IMPERSONAL_PASSIVES = frozenset({"say", "decree", "write", "permit", "command", "forbid", "send down", "inspire",
-                                  "promise", "blow", "recite", "make", "do", "open", "create", "throw", "put",
+                                  "promise", "blow", "recite", "make", "do", "open", "throw", "put",
                                   "set in motion", "explain in detail", "take", "show"})
-# A passive English says with another verb: "I was born", not "I was given birth".
-_PASSIVE_PHRASES = {"give birth": "born"}
+# A passive English says with another verb: "I was born", not "I was given birth"; "you are
+# shown mercy", not "you are had mercy"; "they are taken in death", not "taken the soul".
+_PASSIVE_PHRASES = {"give birth": "born", "have mercy": "shown mercy", "take the soul": "taken in death",
+                    "let enjoy": "given enjoyment"}
 
 # Senses that take no object in English, so their passive would read "we were died": the
 # Arabic passive of these verbs means something else ("was hindered", "was brought").
+# يُشْرَكَ بِهِۦ "that partners be associated with Him" (4:48) has no subject English can name.
 _INTRANSITIVE = frozenset({"appear", "arrive", "come", "die", "go astray", "lie", "differ", "disbelieve",
-                           "go around", "transgress", "turn away"})
+                           "go around", "transgress", "turn away", "associate (partners with God)"})
 
 # Where an object pronoun goes when the general rule would misplace it ("came us",
 # "had him mercy"); None where no English phrase with it is safe ("associated him").
 _OBJECT_TEMPLATES: dict[str, str | None] = {
     "come": "come to {object}", "go": "go to {object}", "look": "look at {object}",
-    "have mercy": "have mercy on {object}", "take the soul": "take the soul of {object}",
+    "have mercy": "have mercy on {object}", "take the soul": "take {object} in death",
+    "withdraw": "withdraw from {object}", "convey": "convey to {object}", "plot": "plot against {object}",
+    "turn over": "turn {object} over",
     "take charge of": "take charge of {object}", "argue": "argue with {object}",
     "try to persuade": "try to persuade {object}", "give birth": "give birth to {object}",
     "bestow favour": "bestow favour on {object}", "bestow a favour": "bestow a favour on {object}",

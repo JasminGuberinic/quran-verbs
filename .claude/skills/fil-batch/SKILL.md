@@ -74,6 +74,11 @@ and the site says reviews are by AI. Never park a job "for a human".
 - English glosses are compared in base form; prefer lexicon words (e.g. "wished, willed" for شَاءَ).
 - Hamzat-wasl imperatives are confirmed by the corpus table — that is expected, not a failure.
 - Documented lexicon gaps live in `data/gloss_exceptions.json` (add one only with a reason).
+- Composed form glosses (`fil compose build`) wrong in context: fix at the source first — a corpus
+  mis-tag (form, tense, person, voice) in `data/corpus_corrections.json`, a Bosnian cell in
+  `data/bs_paradigms.json`, an English rule in `fil.composition.english` (golden test); only a
+  verb-specific sense or referent goes to `data/composed_gloss_corrections.json` (en, bs, why; same
+  clitic words and "!"/"?" as the rule's gloss — the build refuses anything else).
 
 ## Later: the other 14 languages (several batches at once)
 Build a translation memory (each unique word glossed once per language), export compact

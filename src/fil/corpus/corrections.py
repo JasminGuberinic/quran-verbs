@@ -10,15 +10,21 @@ The Quranic Arabic Corpus occasionally mis-tags a word. Three kinds are correcte
 - **Wrong tense** — the word is the right verb in a different tense. يَسْعَىٰ in 79:22
   (ثُمَّ أَدْبَرَ يَسْعَىٰ) is a present indicative, yet it is tagged PERF, so it would
   count as a past form and show as a past-tense example. The occurrence is kept, with
-  the tense (and, for a present, the mood) it actually has.
+  the tense (and, for a present, the mood) it actually has — and its `person` too where
+  the tag got that wrong as well: ءَاتَىٰهُمَا in 7:190 is "he gave them", a past, yet it is
+  tagged as the present "I give" (the letters ءَاتَىٰ read both ways).
 - **Wrong form** — the word is the same root in a different derived form. أَغْنَىٰ "to
   avail" (69:28 مَا أَغْنَىٰ عَنِّى مَالِيَهْ) is Form IV, yet the corpus tags most of its
   occurrences VF:1, which filed them under غَنِيَ "to dwell, to flourish" and headed
-  that card with أَغْنَى. The occurrence moves to the form it belongs to.
+  that card with أَغْنَى. The occurrence moves to the form it belongs to. A word
+  wrong in both (بِمَآ أَرَىٰكَ ٱللَّهُ, 4:105: Form IV "He showed you", tagged as Form I
+  "I see") names its true form, tense and person together.
 
 Each correction names the word ("surah:ayah:word") and the verb the corpus files it
-under, with the reason; a wrong-tense entry also names the true `tense` (and `mood`),
-a wrong-form entry the true `form`.
+under, with the reason; a wrong-tag entry names the true `tense` (and `mood`), `person`
+("3MS") or `voice` ("active" / "passive") — any of them, alone or together — and a
+wrong-form entry the true `form`. إِذَا دَعَانِ (2:186) "when he calls Me" is tagged
+"you"; وَإِن تُكَذِّبُوا۟ (29:18) "if you deny" is tagged passive.
 Written down by hand rather than patched in code, so every exception stays visible
 and reviewable, and applied in one place (`apply_corrections`) by everything that
 reads the corpus.
@@ -33,9 +39,10 @@ from dataclasses import dataclass, replace
 from functools import cached_property
 from typing import Iterable, Iterator, Mapping
 
-from fil.corpus.parse import VerbOccurrence
+from fil.corpus.parse import PersonGenderNumber, VerbOccurrence
 
 _LOCATION = re.compile(r"^\d+:\d+:\d+$")
+_PERSON = re.compile(r"^(?P<person>[123])(?P<gender>[MF]?)(?P<number>[SDP])$")
 _TENSES = ("past", "present", "imperative")
 _PRESENT_MOODS = ("IND", "SUBJ", "JUS")
 
@@ -59,9 +66,11 @@ class TenseCorrection:
     location: str  # "surah:ayah:word"
     root: str
     form: int
-    tense: str
-    mood: str | None  # the present's mood; None for the past and the imperative
+    tense: str | None  # None where only the person or the voice is wrong
+    mood: str | None   # the present's mood; None for the past and the imperative
     why: str
+    person: PersonGenderNumber | None = None   # the true subject, where the tag has that wrong
+    is_passive: bool | None = None             # the true voice, where the tag has that wrong
 
 
 @dataclass(frozen=True)
@@ -88,13 +97,14 @@ class CorpusCorrections:
         return _identity(occurrence) in self._excluded
 
     def corrected(self, occurrence: VerbOccurrence) -> VerbOccurrence:
-        """The occurrence with its documented tense or form, or unchanged if none is documented."""
+        """The occurrence with its documented form, tense, person and voice, or unchanged if none is documented."""
         identity = _identity(occurrence)
+        corrected = occurrence
         if refiled := self._refiled.get(identity):
-            return replace(occurrence, form=refiled.true_form)
-        if retensed := self._retensed.get(identity):
-            return replace(occurrence, tense=retensed.tense, mood=retensed.mood)
-        return occurrence
+            corrected = replace(corrected, form=refiled.true_form)
+        if retagged := self._retensed.get(identity):
+            corrected = _retagged(corrected, retagged)
+        return corrected
 
     @cached_property
     def _excluded(self) -> frozenset[WordIdentity]:
@@ -117,18 +127,19 @@ class CorrectionFormatError(ValueError):
 
 
 def parse_corrections(raw: Mapping[str, Mapping[str, Mapping]]) -> CorpusCorrections:
-    """`{"root_form": {"s:a:w": {"why": "...", ["tense": ..., "mood": ...] | ["form": n]}}}`
+    """`{"root_form": {"s:a:w": {"why": "...", ["form": n], ["tense": ..., "mood": ..., "person": "3MS"]}}}`
     → CorpusCorrections.
 
     An entry with a `tense` is a wrong-tense correction, one with a `form` a wrong-form
-    correction, one with neither a misattribution.
+    correction (with both, the word is wrong in both), one with neither a misattribution.
     Fails fast on a bad key, an unknown tense or mood, or a missing reason: a correction
     without its why is exactly the silent exception this file exists to prevent.
     """
     corrections = [
-        _correction(verb, location, entry)
+        correction
         for verb, locations in raw.items()
         for location, entry in locations.items()
+        for correction in _corrections(verb, location, entry)
     ]
     return CorpusCorrections(
         misattributions=tuple(c for c in corrections if isinstance(c, Misattribution)),
@@ -149,8 +160,8 @@ def _identity(occurrence: VerbOccurrence) -> WordIdentity:
     return location, occurrence.root, occurrence.form
 
 
-def _correction(verb: str, location: str,
-                entry: Mapping) -> Misattribution | TenseCorrection | FormCorrection:
+def _corrections(verb: str, location: str,
+                 entry: Mapping) -> list[Misattribution | TenseCorrection | FormCorrection]:
     root, _, form = verb.rpartition("_")
     if not root or not form.isdigit():
         raise CorrectionFormatError(f"{verb!r}: expected root_form, e.g. بلو_1")
@@ -159,14 +170,49 @@ def _correction(verb: str, location: str,
     why = entry.get("why", "").strip()
     if not why:
         raise CorrectionFormatError(f"{verb} {location}: a correction needs a why")
-    if "tense" in entry and "form" in entry:
-        raise CorrectionFormatError(f"{verb} {location}: correct the tense or the form, not both")
+    if "mood" in entry and "tense" not in entry:
+        raise CorrectionFormatError(f"{verb} {location}: a mood is corrected together with its tense")
+    if not _RETAGS & set(entry) and "form" not in entry:
+        return [Misattribution(location, root, int(form), why)]
+    found: list[Misattribution | TenseCorrection | FormCorrection] = []
     if "form" in entry:
-        return FormCorrection(location, root, int(form), _true_form(f"{verb} {location}", entry, int(form)), why)
-    if "tense" not in entry:
-        return Misattribution(location, root, int(form), why)
-    tense, mood = _tense_and_mood(f"{verb} {location}", entry)
-    return TenseCorrection(location, root, int(form), tense, mood, why)
+        found.append(FormCorrection(location, root, int(form), _true_form(f"{verb} {location}", entry, int(form)), why))
+    if _RETAGS & set(entry):
+        found.append(_retag(f"{verb} {location}", location, root, int(form), entry, why))
+    return found
+
+
+_RETAGS = frozenset({"tense", "person", "voice"})
+_VOICES = {"active": False, "passive": True}
+
+
+def _retag(subject: str, location: str, root: str, form: int, entry: Mapping, why: str) -> TenseCorrection:
+    tense, mood = _tense_and_mood(subject, entry) if "tense" in entry else (None, None)
+    person = _person(subject, entry["person"]) if "person" in entry else None
+    if "voice" in entry and entry["voice"] not in _VOICES:
+        raise CorrectionFormatError(f"{subject}: voice must be one of {tuple(_VOICES)}, not {entry['voice']!r}")
+    return TenseCorrection(location, root, form, tense, mood, why, person, _VOICES.get(entry.get("voice")))
+
+
+def _retagged(occurrence: VerbOccurrence, correction: TenseCorrection) -> VerbOccurrence:
+    corrected = occurrence
+    if correction.tense:
+        corrected = replace(corrected, tense=correction.tense, mood=correction.mood)
+    if correction.person:
+        person, gender, number = correction.person
+        corrected = replace(corrected, person=person, gender=gender, number=number)
+    if correction.is_passive is not None:
+        corrected = replace(corrected, passive=correction.is_passive)
+    return corrected
+
+
+def _person(subject: str, code: object) -> PersonGenderNumber:
+    """"3MS" → (3, "M", "S"); a first person has no gender ("1S"), nor does a second person dual ("2D")."""
+    match = _PERSON.match(code) if isinstance(code, str) else None
+    genderless = match is not None and (match["person"] == "1" or (match["person"] == "2" and match["number"] == "D"))
+    if not match or genderless == bool(match["gender"]):
+        raise CorrectionFormatError(f"{subject}: person must read like 3MS, 1P or 2D, not {code!r}")
+    return int(match["person"]), match["gender"] or None, match["number"]
 
 
 def _true_form(subject: str, entry: Mapping, filed_form: int) -> int:

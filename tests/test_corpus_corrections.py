@@ -63,7 +63,10 @@ def test_a_mis_tensed_occurrence_is_kept_with_its_true_tense_and_mood():
     {"سعي_1": {"79:22:3": {"why": "w", "tense": "past", "mood": "IND"}}},    # a mood on a past
     {"غني_1": {"69:28:2": {"why": "w", "form": 1}}},                        # refiled to itself
     {"غني_1": {"69:28:2": {"why": "w", "form": 11}}},                       # no such form
-    {"غني_1": {"69:28:2": {"why": "w", "form": 4, "tense": "past"}}},       # two corrections at once
+    {"أتي_4": {"7:190:2": {"why": "w", "mood": "IND"}}},                     # a mood without its tense
+    {"أتي_4": {"7:190:2": {"why": "w", "voice": "middle"}}},                 # no such voice
+    {"أتي_4": {"7:190:2": {"why": "w", "tense": "past", "person": "he"}}},   # no such person
+    {"أتي_4": {"7:190:2": {"why": "w", "tense": "past", "person": "1MS"}}},  # a first person has no gender
 ])
 def test_a_malformed_or_undocumented_correction_fails_fast(raw):
     with pytest.raises(CorrectionFormatError):
@@ -82,12 +85,53 @@ def test_every_documented_correction_names_a_real_occurrence():
 
 
 def test_every_tense_correction_changes_what_the_corpus_says():
-    # A correction that restates the corpus's own tense is stale and documents nothing.
+    # A correction that restates the corpus's own tense, person or voice is stale and documents nothing.
     with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
-        filed = {(f"{o.surah}:{o.ayah}:{o.word}", o.root, o.form): (o.tense, o.mood)
-                 for o in iter_verb_occurrences(iter_segments(lines))}
+        filed = {(f"{o.surah}:{o.ayah}:{o.word}", o.root, o.form): o for o in iter_verb_occurrences(iter_segments(lines))}
     for correction in service.corpus_corrections().tense_corrections:
-        assert filed[(correction.location, correction.root, correction.form)] != (correction.tense, correction.mood)
+        occurrence = filed[(correction.location, correction.root, correction.form)]
+        changes = [
+            correction.tense is not None and (occurrence.tense, occurrence.mood) != (correction.tense, correction.mood),
+            correction.person is not None and (occurrence.person, occurrence.gender, occurrence.number) != correction.person,
+            correction.is_passive is not None and occurrence.passive != correction.is_passive,
+        ]
+        assert any(changes), correction.location
+
+
+_GAVE = "7:190:2:1\tءَاتَىٰ\tV\tIMPF|VF:4|ROOT:أتي|LEM:آتَى|1S|MOOD:IND"
+_SHOWED = "4:105:10:1\tأَرَىٰ\tV\tIMPF|VF:1|ROOT:رأي|LEM:رَأَى|1S|MOOD:SUBJ"
+
+
+def test_a_mis_tagged_person_is_corrected_with_its_tense():
+    # فَلَمَّآ ءَاتَىٰهُمَا (7:190) "when He gave them": the corpus reads the letters as "I give".
+    corrections = parse_corrections({"أتي_4": {"7:190:2": {"tense": "past", "person": "3MS", "why": "he gave"}}})
+    (occurrence,) = apply_corrections(map(parse_line, (_GAVE,)), corrections)
+
+    assert (occurrence.tense, occurrence.mood, occurrence.person, occurrence.gender, occurrence.number) \
+        == ("past", None, 3, "M", "S")
+
+
+def test_a_word_wrong_in_form_tense_and_person_is_corrected_in_all_three():
+    # بِمَآ أَرَىٰكَ ٱللَّهُ (4:105) "by what Allah has shown you": Form IV past, tagged Form I "I see".
+    corrections = parse_corrections(
+        {"رأي_1": {"4:105:10": {"form": 4, "tense": "past", "person": "3MS", "why": "he showed"}}})
+    (occurrence,) = apply_corrections(map(parse_line, (_SHOWED,)), corrections)
+
+    assert (occurrence.form, occurrence.tense, occurrence.person, occurrence.number) == (4, "past", 3, "S")
+
+
+_CALLS_ME = "2:186:11:1\tدَعَا\tV\tPERF|VF:1|ROOT:دعو|LEM:دَعا|2MS"
+_DENY = "29:18:2:1\tتُكَذِّبُ\tV\tIMPF|VF:2|PASS|ROOT:كذب|LEM:كَذَّبَ|2MP|MOOD:SUBJ"
+
+
+def test_a_person_or_a_voice_is_corrected_alone():
+    # إِذَا دَعَانِ (2:186) "when he calls Me", tagged "you"; وَإِن تُكَذِّبُوا۟ (29:18) "if you deny", tagged passive.
+    corrections = parse_corrections({"دعو_1": {"2:186:11": {"person": "3MS", "why": "he calls"}},
+                                     "كذب_2": {"29:18:2": {"voice": "active", "why": "you deny"}}})
+    calls, deny = apply_corrections(map(parse_line, (_CALLS_ME, _DENY)), corrections)
+
+    assert (calls.tense, calls.person, calls.gender, calls.number) == ("past", 3, "M", "S")
+    assert (deny.tense, deny.passive, deny.person) == ("present", False, 2)
 
 
 _AVAILED = "69:28:2:1\tأَغْنَىٰ\tV\tPERF|VF:1|ROOT:غني|LEM:أَغْنَى|3MS"

@@ -19,6 +19,7 @@ AYAH_TRANSLATIONS_DIR = DATA_DIR / "translations"  # free ayah translations (fet
 AYAH_VERB_GLOSSES_JSON = DATA_DIR / "ayah_verb_glosses.json"  # the example verbs, translated in context
 FORM_GLOSSES_JSON = DATA_DIR / "form_glosses.json"  # every Quranic form of a studied verb, glossed once (fil forms)
 COMPOSED_FORM_GLOSSES_JSON = DATA_DIR / "composed_form_glosses.json"  # forms glossed by rule from their parts (fil compose)
+COMPOSED_GLOSS_CORRECTIONS_JSON = DATA_DIR / "composed_gloss_corrections.json"  # composed glosses fixed in context
 BS_PARADIGMS_JSON = DATA_DIR / "bs_paradigms.json"  # per verb, the Bosnian of each cell the Quran uses (fil compose)
 POLYSEMOUS_VERBS_JSON = DATA_DIR / "polysemous_verbs.json"  # verbs one sense would mislead on; never composed
 MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per language

@@ -81,6 +81,16 @@ test("only the questions about the asked word, when one is asked", () => {
   assert.equal(E.aboutWord(items, "").length, 2);
 });
 
+test("a root's words, asked together: the questions about any of them, each once, from each word's shard", () => {
+  const items = [item("a", ["verb:qala"]), item("b", ["noun:bayt"]), item("c", ["noun:qawl", "verb:qala"])];
+  assert.deepEqual(E.askedWords("verb:qala,noun:qawl"), ["verb:qala", "noun:qawl"]);
+  assert.deepEqual(E.aboutWord(items, "verb:qala,noun:qawl").map((found) => found.id), ["a", "c"]);
+  assert.deepEqual(E.uniqueById([...items, items[2]]).map((found) => found.id), ["a", "b", "c"]);
+  const shards = E.shardsFor("noun:ard,nuance:insan-bashar", 7, () => 0);
+  assert.deepEqual(shards, [...new Set([E.shardOf("noun:ard", 7), E.shardOf("nuance:insan-bashar", 7)])]);
+  assert.deepEqual(E.shardsFor("", 7, () => 0.5), [3]);
+});
+
 const WORDS = E.withTemplates({
   roles: { subject: "nominativ – subjekat" }, effects: { JUS: "jusiv" },
   roleWhy: { subject: "Subjekat je u nominativu." }, inBosnian: "Na bosanskom: „{0}“.",

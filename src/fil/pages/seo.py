@@ -116,6 +116,31 @@ def particle_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(PARTICLE_FOLDERS))
 
 
+# The root pages likewise (Bosnian and English only, for now): every word of one root.
+ROOT_FOLDERS = {"bs": "korijen", "en": "root"}
+
+
+def root_index_path(language: str) -> str:
+    return f"{language}/{ROOT_FOLDERS[language]}/"
+
+
+def root_path(language: str, slug: str) -> str:
+    return f"{root_index_path(language)}{slug}/"
+
+
+def root_alternates(slug: str | None) -> list[Alternate]:
+    """A root's page (or, with no slug, the list of roots) in each language it is built in."""
+    path_in = (lambda language: root_path(language, slug)) if slug else root_index_path
+    return _alternates(path_in, tuple(ROOT_FOLDERS))
+
+
+def root_structured_data(*, title: str, description: str, language: str, path: str, index_title: str) -> str:
+    """schema.org: a free learning resource on the words of one root, in the list of roots."""
+    return listed_page_structured_data(title=title, description=description, language=language, path=path,
+                                       index_title=index_title, index_path=root_index_path(language),
+                                       resource_type="vocabulary")
+
+
 # The pronoun pages likewise (Bosnian and English only, for now): built by the particle engine.
 PRONOUN_FOLDERS = {"bs": "zamjenica", "en": "pronoun"}
 

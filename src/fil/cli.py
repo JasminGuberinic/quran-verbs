@@ -30,6 +30,7 @@ from fil.stages import (
     pages,
     particles,
     review,
+    roots,
     site,
 )
 
@@ -55,6 +56,7 @@ _STAGES = {
     "nuances": (nuances.main, "the Quran's near-synonyms (Nijanse): check the groups against the corpus, review-export"),
     "particles": (particles.main, "the Quran's particles (Čestice): frequency, find ayat, check the pages against the corpus"),
     "pronouns": (particles.pronouns_main, "the Quran's pronouns (Zamjenice): the same commands as `particles`"),
+    "roots": (roots.main, "the root pages (Korijeni): check every studied word stands on its root page, show a root"),
     "pages": (pages.main, "build the public GitHub Pages site (build/pages); --deploy publishes it"),
 }
 
@@ -92,6 +94,9 @@ def main() -> None:
         return
     if known.stage == "pronouns":
         particles.pronouns_main(rest)
+        return
+    if known.stage == "roots":
+        roots.main(rest)
         return
     if known.stage == "pages":
         pages.main(rest)

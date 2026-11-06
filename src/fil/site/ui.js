@@ -603,6 +603,49 @@
       sourcesNote: "The explanations are in our own words, following the classical grammar named here. Counts are from the Quranic Arabic Corpus: how often it files the pronoun as a word of its own (not as a suffix).",
     },
   };
+  // The roots (fil.pages.root_render): every word of one root. Bosnian and English only, for now.
+  const ROOT_PAGE = {
+    bs: {
+      nav: "Korijeni", indexTitle: "Korijeni: riječi Kur'ana po korijenu",
+      indexIntro: "Arapske riječi rastu iz korijena od tri (rijetko četiri) suglasnika. Za svaki korijen iz kojeg ovdje učimo barem jednu riječ: sve njegove riječi u Kur'anu – glagoli po vrstama, imenice, pridjevi i participi – s brojem pojavljivanja i značenjem.",
+      title: (letters, meaning) => `Korijen ${letters} (${meaning}) · riječi u Kur'anu`,
+      description: (letters, meaning, count, words) => `Korijen ${letters} – ${meaning}: ${count}× u Kur'anu, ${words} riječi (glagoli, imenice, pridjevi, participi) sa značenjem i izgovorom.`,
+      meaning: "Značenje", meaningNote: "Iz značenja riječi ovog korijena koje učimo na sajtu.",
+      wordCount: (n) => `${n} riječi`,
+      corrected: (n) => `Korpus ovdje svrstava još ${n}× riječ koja se, prema našim zabilježenim ispravkama, čita kao druga riječ; nije uračunata među riječi ispod.`,
+      coreIdea: "Osnovna ideja", coreIdeaSource: "Našim riječima, prema natuknici ovog korijena u ar-Rāġibovom djelu Mufradāt alfāẓ al-Qur'ān.",
+      sections: { verbs: "Glagoli", nouns: "Imenice", adjectives: "Pridjevi", participles: "Participi" },
+      kinds: {
+        noun: "imenica", verbal_noun: "glagolska imenica (masdar)", adverb: "prilog", proper_noun: "vlastito ime",
+        adjective: "pridjev", active_participle: "aktivni particip", passive_participle: "pasivni particip",
+      },
+      card: { verb: "Stranica glagola", noun: "Stranica imenice", adjective: "Stranica pridjeva", particle: "Stranica čestice" },
+      nuances: "Nijanse s riječima ovog korijena",
+      sourcesNote: "Brojevi su iz Quranic Arabic Corpusa: korijen se broji po riječima Kur'ana u kojima stoji. Riječ bez svoje stranice ima značenje samo ako ga imamo provjereno; inače su navedeni samo arapski oblik i broj.",
+      search: "Traži", searchHint: "korijen, riječ ili značenje", alphabet: "Abeceda korijena",
+      found: (n) => `Pronađeno korijena: ${n}`, noneFound: "Nijedan korijen ne odgovara.",
+    },
+    en: {
+      nav: "Roots", indexTitle: "Roots: the words of the Quran by root",
+      indexIntro: "Arabic words grow from a root of three (rarely four) consonants. For every root we teach at least one word of: all its words in the Quran — verbs by form, nouns, adjectives and participles — with how often each occurs and what it means.",
+      title: (letters, meaning) => `The root ${letters} (${meaning}) · its words in the Quran`,
+      description: (letters, meaning, count, words) => `The root ${letters} – ${meaning}: ${count}× in the Quran, ${words} words (verbs, nouns, adjectives, participles) with their meanings and audio.`,
+      meaning: "Meaning", meaningNote: "From the meanings of the words of this root that the site teaches.",
+      wordCount: (n) => `${n} words`,
+      corrected: (n) => `The corpus files ${n}× more here a word that our documented corrections read as another word; it is not counted among the words below.`,
+      coreIdea: "Core idea", coreIdeaSource: "In our own words, following this root's entry in ar-Rāġib's Mufradāt alfāẓ al-Qur'ān.",
+      sections: { verbs: "Verbs", nouns: "Nouns", adjectives: "Adjectives", participles: "Participles" },
+      kinds: {
+        noun: "noun", verbal_noun: "verbal noun (maṣdar)", adverb: "adverb", proper_noun: "proper name",
+        adjective: "adjective", active_participle: "active participle", passive_participle: "passive participle",
+      },
+      card: { verb: "Verb page", noun: "Noun page", adjective: "Adjective page", particle: "Particle page" },
+      nuances: "Nuances with words of this root",
+      sourcesNote: "Counts are from the Quranic Arabic Corpus: a root is counted by the words of the Quran it stands in. A word without a page of its own shows a meaning only where we have a checked one; otherwise only its Arabic and its count are given.",
+      search: "Search", searchHint: "root, word or meaning", alphabet: "Roots by letter",
+      found: (n) => `Roots found: ${n}`, noneFound: "No root matches.",
+    },
+  };
   // The exercises (fil.pages.exercise_render, site/exercises.js): Bosnian and English only, like the nouns.
   const EXERCISE_PAGE = {
     bs: {
@@ -610,7 +653,7 @@
       indexIntro: "Kratke vježbe iz onoga što sajt već uči: slika i riječ, slušanje, glagolski oblici, padeži, prijedlozi, slaganje pridjeva, nijanse i čestice. Svako pitanje ima tačno jedan tačan odgovor, a pogrešno odgovorena pitanja vraćaju se ranije.",
       title: (name) => `${name} · vježbe arapskog jezika Kur'ana`,
       allKinds: "Sve vrste izmiješano", allKindsIntro: "Po deset pitanja iz svih vrsta vježbi.",
-      count: (n) => `${n} pitanja`, open: "Vježbaj", practiseWord: "Vježbaj ovu riječ", practiseVerb: "Vježbaj ovaj glagol", wordOnly: "Samo pitanja o jednoj riječi.", allExercises: "Sve vježbe",
+      count: (n) => `${n} pitanja`, open: "Vježbaj", practiseWord: "Vježbaj ovu riječ", practiseVerb: "Vježbaj ovaj glagol", practiseRoot: "Vježbaj ovaj korijen", wordOnly: "Samo pitanja o jednoj riječi.", rootOnly: "Samo pitanja o riječima ovog korijena.", allExercises: "Sve vježbe",
       questionOf: (n, t) => `Pitanje ${n} / ${t}`, right: "Tačno.", wrong: "Netačno.", rightAnswer: "Tačan odgovor:",
       next: "Sljedeće pitanje", finish: "Završi rundu", done: "Runda je gotova.", sessionScore: (a, t) => `${a} od ${t} tačno.`, again: "Nova runda",
       score: (right, answered, streak, best) => `Tačno ${right} od ${answered} · niz ${streak} · najbolji niz ${best}`,
@@ -662,7 +705,7 @@
       indexIntro: "Short exercises on what the site already teaches: picture and word, listening, verb forms, cases, prepositions, adjective agreement, nuances and particles. Every question has exactly one right answer, and the ones you miss come back sooner.",
       title: (name) => `${name} · exercises in Quranic Arabic`,
       allKinds: "All kinds, mixed", allKindsIntro: "Ten questions at a time from every kind of exercise.",
-      count: (n) => `${n} questions`, open: "Practise", practiseWord: "Practise this word", practiseVerb: "Practise this verb", wordOnly: "Only the questions about one word.", allExercises: "All exercises",
+      count: (n) => `${n} questions`, open: "Practise", practiseWord: "Practise this word", practiseVerb: "Practise this verb", practiseRoot: "Practise this root", wordOnly: "Only the questions about one word.", rootOnly: "Only the questions about the words of this root.", allExercises: "All exercises",
       questionOf: (n, t) => `Question ${n} / ${t}`, right: "Right.", wrong: "Not right.", rightAnswer: "The right answer:",
       next: "Next question", finish: "Finish the round", done: "Round finished.", sessionScore: (a, t) => `${a} of ${t} right.`, again: "New round",
       score: (right, answered, streak, best) => `${right} of ${answered} right · streak ${streak} · best streak ${best}`,
@@ -718,6 +761,7 @@
     UI[code].nounPage = NOUN_PAGE[code] || NOUN_PAGE.en;
     UI[code].adjectivePage = ADJECTIVE_PAGE[code] || ADJECTIVE_PAGE.en;
     UI[code].nuancePage = NUANCE_PAGE[code] || NUANCE_PAGE.en;
+    UI[code].rootPage = ROOT_PAGE[code] || ROOT_PAGE.en;
     UI[code].forms = FORMS[code] || FORMS.en;
     UI[code].footer = [...credits(SOURCES[code] || SOURCES.en), ...UI[code].footer];
   }

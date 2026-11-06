@@ -127,6 +127,20 @@ def practice_link(word: str, kinds: Sequence[str], language: Language, text: dic
 _LINK_LABELS = {VERB_WORD: "practiseVerb"}   # every other family: "practiseWord"
 
 
+def words_practice_link(words: Sequence[str], kinds_of_word: Mapping[str, Sequence[str]], language: Language, text: dict,
+                        root: str) -> str:
+    """"Vježbaj ovaj korijen →" on a root's page: the hub, practising only the root's studied words (ids
+    "verb:qala,noun:qawl") in every kind that asks about any of them; "" when none is practised."""
+    practised = [word for word in words if kinds_of_word.get(word)]
+    kinds = [kind for kind in KINDS if any(kind in kinds_of_word[word] for word in practised)]
+    if language.code not in EXERCISE_LANGUAGES or not kinds:
+        return ""
+    asked = ",".join(quote(word, safe=":") for word in practised)
+    address = f'{root}{seo.exercise_index_path(language.code)}?w={asked}&amp;t={",".join(kinds)}'
+    return (f'<p class="cta"><a class="button quiet" href="{address}">'
+            f'{escape(text["exercisePage"]["practiseRoot"])} →</a></p>')
+
+
 # ---------- shared ----------
 
 def _practice(kinds: Sequence[str], shards: Mapping[str, int], words: dict, language: Language, root: str) -> str:

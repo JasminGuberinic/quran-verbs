@@ -27,7 +27,7 @@ _STATE_ORDER = ("definite", "indefinite")
 
 def adjective_page(card: dict, language: Language, text: dict, *, related: Sequence[dict] = (),
                    nouns_of_root: Sequence[dict] = (), picture_credit: str = "", published: Collection[str] = frozenset(),
-                   similar_words: str = "", practice: str = "") -> str:
+                   similar_words: str = "", practice: str = "", root_slug: str | None = None) -> str:
     """One adjective's page (`practice`: the link to its exercises, fil.pages.exercise_render). `related` are the other studied adjectives of its root, `nouns_of_root`
     the studied nouns of its root (cards); `picture_credit` the footer line owed for their pictures;
     `similar_words` the section linking the near-synonym groups it belongs to (fil.pages.nuance_render)."""
@@ -42,7 +42,7 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
     body = "".join((
         _top_bar(text, root, language, lambda code: seo.adjective_path(code, card["slug"]), published=published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun adjective">',
-        _hero(card, meaning, language, text, root),
+        _hero(card, meaning, language, text, root, root_slug=root_slug),
         _table(card, text, root),
         _agreement(card, language, text, root),
         _sentences(card, language, text, root),
@@ -59,11 +59,11 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
     return render._document(language, head, body, root=root, text=text)
 
 
-def _hero(card: dict, meaning: str, language: Language, text: dict, root: str) -> str:
+def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, root_slug: str | None = None) -> str:
     words = text["adjectivePage"]
     english = "" if language.code == "en" else f'<span class="meaning-en" lang="en" dir="ltr">{escape(card["meaning"]["en"])}</span>'
     listing = f'{root}{seo.adjective_index_path(language.code)}#{_category_anchor(card["category"])}'
-    facts = [f'#{card["rank"]}', f'{escape(text["root"])} <span class="ar root" lang="ar" dir="rtl">{" ".join(card["root"])}</span>',
+    facts = [f'#{card["rank"]}', f'{escape(text["root"])} {render.root_mark(card["root"], language.code, root, root_slug)}',
              f'{escape(words["pattern"])} <span class="ar" lang="ar" dir="rtl">{card["pattern"]}</span>',
              f'<a href="{listing}">{escape(words["categories"].get(card["category"], card["category"]))}</a>']
     stats = " · ".join((fill(text["times"], card["count"]), fill(text["inAyat"], card["ayahCount"])))

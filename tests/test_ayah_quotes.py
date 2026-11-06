@@ -8,7 +8,7 @@ over every file that quotes ayat, so a later batch cannot bring a copyrighted re
 import pytest
 
 from fil import ayah_quotes
-from fil.resources import AYAH_TRANSLATIONS_DIR, NUANCE_GROUPS_JSON, PARTICLES_JSON, PRONOUNS_JSON
+from fil.resources import AYAH_TRANSLATIONS_DIR, NUANCE_GROUPS_JSON, PARTICLES_JSON, PRONOUNS_JSON, ROOT_CORE_IDEAS_JSON
 from fil.stages import quotations
 
 ENGLISH = {
@@ -84,6 +84,6 @@ needs_translation = pytest.mark.skipif(not (AYAH_TRANSLATIONS_DIR / "en.pickthal
 
 
 @needs_translation
-@pytest.mark.parametrize("path", [NUANCE_GROUPS_JSON, PARTICLES_JSON, PRONOUNS_JSON], ids=lambda path: path.name)
+@pytest.mark.parametrize("path", [NUANCE_GROUPS_JSON, PARTICLES_JSON, PRONOUNS_JSON, ROOT_CORE_IDEAS_JSON], ids=lambda path: path.name)
 def test_every_ayah_quoted_in_the_data_is_the_shipped_english_or_our_own_bosnian(path) -> None:
     assert quotations.problems_in(path) == []

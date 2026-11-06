@@ -31,7 +31,7 @@ _ENGLISH_STOP = "Stop"   # the label of a playing button in a language that has 
 _CURRENT = ' aria-current="page"'
 # the sections of the site
 VERBS, NOUNS, ADJECTIVES, NUANCES, PARTICLES, PRONOUNS = "verbs", "nouns", "adjectives", "nuances", "particles", "pronouns"
-EXERCISES = "exercises"
+EXERCISES, ROOTS = "exercises", "roots"
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
@@ -67,13 +67,14 @@ class PublishedVerb:
 
 def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "", *,
               published: Collection[str] = frozenset(), picture_credit: str = "", adjectives_of_root: str = "", similar_words: str = "",
-              practice: str = "") -> str:
+              practice: str = "", root_slug: str | None = None) -> str:
     """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render);
     `adjectives_of_root`: the same for the studied adjectives (fil.pages.adjective_render);
     `similar_words`: the section linking the near-synonym groups the verb belongs to (fil.pages.nuance_render);
     `published`: the sections beyond the verbs whose pages are published (NOUNS, …), so the top bar leads to them;
     `picture_credit`: the footer line owed for the pictures the nouns' section shows;
-    `practice`: the "Vježbaj ovaj glagol" link to the verb's exercises (fil.pages.exercise_render), or ""."""
+    `practice`: the "Vježbaj ovaj glagol" link to the verb's exercises (fil.pages.exercise_render), or "";
+    `root_slug`: the page of the verb's root (fil.pages.root_render), which its root letters link to."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
     card = verb.card
@@ -86,7 +87,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
     body = "".join((
         top_bar(text, root, language, lambda code: seo.verb_path(code, verb.slug), section=VERBS, published=published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article>',
-        _hero(card, meaning, language, text, root),
+        _hero(card, meaning, language, text, root, root_slug),
         _main_forms(card, text, root),
         _conjugation(card, text, root),
         _ayat(card, language, text, root),
@@ -127,14 +128,14 @@ def audio_link(reference: str | None, root: str) -> str | None:
     return root + reference
 
 
-def _hero(card: dict, meaning: str, language: Language, text: dict, root: str) -> str:
+def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, root_slug: str | None) -> str:
     shown_in = meaning_language(card, language.code)
     english = (f'<span class="meaning-en" lang="en" dir="ltr">{escape(card["meaning"][_ENGLISH])}</span>'
                if shown_in != _ENGLISH else "")
     stats = " · ".join((fill(text["times"], card["count"]), fill(text["inAyat"], card["ayahCount"]),
                         fill(text["ofAll"], f'{card["share"]:.1f}')))
     return (f'<header class="hero"><p class="eyebrow">#{card["rank"]} · {escape(text["root"])} '
-            f'<span class="ar root" lang="ar" dir="rtl">{" ".join(card["root"])}</span> · '
+            f'{root_mark(card["root"], language.code, root, root_slug)} · '
             f'{escape(text["form"])} {FORM_NAMES[card["form"]]}</p>'
             f'<h1><span class="ar lemma" lang="ar" dir="rtl">{card["lemma"]}</span>'
             f'{_play(card.get("lemmaSpoken"), root, text["listen"])}'
@@ -556,7 +557,16 @@ _SECTIONS = ((NOUNS, seo.NOUN_FOLDERS, seo.noun_index_path, "nounPage"),
              (NUANCES, seo.NUANCE_FOLDERS, seo.nuance_index_path, "nuancePage"),
              (PARTICLES, seo.PARTICLE_FOLDERS, seo.particle_index_path, "particlePage"),
              (PRONOUNS, seo.PRONOUN_FOLDERS, seo.pronoun_index_path, "pronounPage"),
+             (ROOTS, seo.ROOT_FOLDERS, seo.root_index_path, "rootPage"),
              (EXERCISES, seo.EXERCISE_FOLDERS, seo.exercise_index_path, "exercisePage"))
+
+
+def root_mark(root_letters: str, language: str, page_root: str, slug: str | None) -> str:
+    """A card's root letters: a link to the root's page where there is one in this language, else plain letters."""
+    letters = " ".join(root_letters)
+    if not slug or language not in seo.ROOT_FOLDERS:
+        return f'<span class="ar root" lang="ar" dir="rtl">{letters}</span>'
+    return f'<a class="ar root" lang="ar" dir="rtl" href="{page_root}{seo.root_path(language, slug)}">{letters}</a>'
 
 
 def _section_mark(is_current: bool, is_section_list: bool) -> str:

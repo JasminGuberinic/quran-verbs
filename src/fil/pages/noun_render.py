@@ -31,7 +31,7 @@ _ATTESTED, _QURAN_MARK, _STANDARD_MARK = "attested", "●", "◦"
 
 def noun_page(card: dict, language: Language, text: dict, *, category: str | None, picture_credit: str = "",
               related: Sequence[dict] = (), adjectives_of_root: str = "", published: Collection[str] = frozenset(),
-              similar_words: str = "", practice: str = "") -> str:
+              similar_words: str = "", practice: str = "", root_slug: str | None = None) -> str:
     """One noun's page. `related` are the other studied nouns of its root (cards);
     `adjectives_of_root` the section linking the studied adjectives of its root; `similar_words`
     the section linking the near-synonym groups it belongs to (fil.pages.nuance_render); `practice`
@@ -47,7 +47,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
     body = "".join((
         _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"]), published=published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun">',
-        _hero(card, meaning, language, text, root, category),
+        _hero(card, meaning, language, text, root, category, root_slug=root_slug),
         _related(card, language, text, root),
         _table(card, text, root),
         _explanation(card, language, text, root),
@@ -66,10 +66,11 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
     return render._document(language, head, body, root=root, text=text)
 
 
-def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, category: str | None) -> str:
+def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, category: str | None,
+          root_slug: str | None = None) -> str:
     words = text["nounPage"]
     english = "" if language.code == "en" else f'<span class="meaning-en" lang="en" dir="ltr">{escape(card["meaning"]["en"])}</span>'
-    facts = [f'#{card["rank"]}', f'{escape(text["root"])} <span class="ar root" lang="ar" dir="rtl">{" ".join(card["root"])}</span>',
+    facts = [f'#{card["rank"]}', f'{escape(text["root"])} {render.root_mark(card["root"], language.code, root, root_slug)}',
              escape(_kind(card, words))]
     gender = _gender(card, words)
     if gender:

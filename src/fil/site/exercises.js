@@ -70,9 +70,27 @@
 
   const questionKey = (question) => `${question.kind}:${question.item.id}`;
 
-  /** Only the questions practising one word ("noun:ard"), when a word is asked for. */
+  /** The words asked for: one ("noun:ard"), or a root's several, comma-separated ("verb:qala,noun:qawl"). */
+  function askedWords(word) {
+    return (word || "").split(",").filter(Boolean);
+  }
+
+  /** Only the questions practising an asked word, when any is asked for. */
   function aboutWord(items, word) {
-    return word ? items.filter((item) => item.words.includes(word)) : items;
+    const asked = askedWords(word);
+    return asked.length ? items.filter((item) => asked.some((one) => item.words.includes(one))) : items;
+  }
+
+  /** The shards a kind's questions about the asked words are in (one random shard when none is asked). */
+  function shardsFor(word, count, random) {
+    const asked = askedWords(word);
+    return asked.length ? [...new Set(asked.map((one) => shardOf(one, count)))] : [Math.floor(random() * count)];
+  }
+
+  /** Each question once, though two asked words may bring it from two shards. */
+  function uniqueById(items) {
+    const seen = new Set();
+    return items.filter((item) => !seen.has(item.id) && seen.add(item.id));
   }
 
   // ---------- progress ----------
@@ -217,17 +235,14 @@
 
     function load() {
       $(".exercise-status").textContent = words.loading;
-      const files = wanted.map((kind) => {
-        const count = shards[kind];
-        const number = word ? shardOf(word, count) : Math.floor(random() * count);
-        return fetch(`${root}exercises/${shardFile(kind, number)}`).then((response) => {
+      const files = wanted.map((kind) => Promise.all(shardsFor(word, shards[kind], random).map((number) =>
+        fetch(`${root}exercises/${shardFile(kind, number)}`).then((response) => {
           if (!response.ok) throw new Error(response.statusText);
           return response.json();
-        }).then((items) => aboutWord(items, word).map((item) => ({ kind, item })));
-      });
+        }))).then((loaded) => uniqueById(aboutWord(loaded.flat(), word)).map((item) => ({ kind, item }))));
       Promise.all(files).then((loaded) => {
         const questions = loaded.flat();
-        $(".exercise-status").textContent = !questions.length ? words.empty : word ? words.wordOnly : "";
+        $(".exercise-status").textContent = !questions.length ? words.empty : askedWords(word).length > 1 ? words.rootOnly || words.wordOnly : word ? words.wordOnly : "";
         if (questions.length) begin(questions);
       }).catch(() => { $(".exercise-status").textContent = words.loadFailed; });
     }
@@ -412,7 +427,7 @@
 
   return {
     SESSION_SIZE, AGAIN_AFTER, BOX_DAYS, DAY, STORAGE_KEY,
-    shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, emptyProgress, record, sessionOrder, askAgain,
+    shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, askedWords, shardsFor, uniqueById, emptyProgress, record, sessionOrder, askAgain,
     readProgress, writeProgress, explanationLines, optionLabel, withTemplates, cellNames, VERB_FORM_KINDS,
   };
 });

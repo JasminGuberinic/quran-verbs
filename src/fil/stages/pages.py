@@ -17,6 +17,7 @@
       bs/nijanse/, en/nuances/       the groups of near-synonyms (fil.stages.nuance_pages), Bosnian and English only
       bs/cestica/, en/particle/      the particles (fil.stages.particle_pages), Bosnian and English only
       bs/zamjenica/, en/pronoun/     the pronouns, built by the particle engine, Bosnian and English only
+      bs/korijen/, en/root/          the roots (fil.stages.root_pages): every word of a root we teach a word of
       bs/vjezbe/, en/exercises/      the exercises (fil.stages.exercise_pages), their questions in exercises/*.json
       pictures/<slug>.svg            the noun pictures the noun pages show
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
@@ -41,7 +42,7 @@ import argparse
 import re
 import shutil
 import time
-from collections.abc import Callable, Collection, Iterable, Sequence
+from collections.abc import Callable, Collection, Iterable, Mapping, Sequence
 from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
@@ -58,7 +59,8 @@ from fil.recitation import is_streamed
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
 from fil.stages import (adjective_pages, exercise_pages, exercises, noun_pages, nuance_pages, nuance_site, particle_pages,
-                        particle_site, site)
+                        particle_site, root_pages, site)
+from fil.stages import roots as root_stage
 from fil.stages import particles as word_lists
 from fil.stages.adjective_site import AdjectiveContent, assemble_adjectives
 from fil.stages.noun_site import NounContent, assemble_nouns, check_voiced
@@ -168,11 +170,13 @@ def build(pages: Path) -> BuiltSite | None:
     check_voiced([*nouns.cards, *adjectives.cards], unvoiced)
     nuance_site.check_voiced(nuances, unvoiced)
     particle_site.check_voiced([*particles, *pronouns], unvoiced)
+    roots = _assemble_roots(verbs, nouns.cards, adjectives.cards, particles, nuances)
+    root_slugs = root_pages.slugs_by_root(roots)
     practice = exercises.assemble([(verb.slug, verb.card) for verb in verbs], nouns.cards, adjectives.cards, nuances,
                                   particles, exercises.read_sources())
     published = frozenset(name for name, cards in ((render.NOUNS, nouns.cards), (render.ADJECTIVES, adjectives.cards),
                                                    (render.NUANCES, nuances), (render.PARTICLES, particles),
-                                                   (render.PRONOUNS, pronouns),
+                                                   (render.PRONOUNS, pronouns), (render.ROOTS, roots),
                                                    (render.EXERCISES, practice.kinds())) if cards)
     practice_link = _practice_links(practice, texts)
     content = replace(content, payload={**content.payload,
@@ -181,24 +185,28 @@ def build(pages: Path) -> BuiltSite | None:
                                         "nuancePages": nuance_pages.app_paths() if nuances else {},
                                         "particlePages": particle_pages.app_paths() if particles else {},
                                         "pronounPages": particle_pages.app_paths(particle_render.PRONOUNS) if pronouns else {},
+                                        "rootPages": root_pages.app_paths() if roots else {},
                                         "exercisePages": exercise_pages.app_paths() if render.EXERCISES in published else {}})
     site.write_app(pages, content)
     _write_app_page(pages, texts)
     written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances, published,
-                                      practice_link(VERB_WORD))]
-    written += noun_pages.write(pages, nouns, texts, adjectives.cards, nuances, published, practice_link(NOUN_WORD))
+                                      practice_link(VERB_WORD), root_slugs)]
+    written += noun_pages.write(pages, nouns, texts, adjectives.cards, nuances, published, practice_link(NOUN_WORD),
+                                root_slugs)
     written += adjective_pages.write(pages, adjectives, nouns.cards, texts, noun_pages.credits(nouns.pictures), nuances,
-                                     published, practice_link(ADJECTIVE_WORD))
+                                     published, practice_link(ADJECTIVE_WORD), root_slugs)
     written += nuance_pages.write(pages, nuances, texts, published, practice_link(NUANCE_WORD))
     written += particle_pages.write(pages, particles, texts, published, practice=practice_link(PARTICLE_WORD))
     written += particle_pages.write(pages, pronouns, texts, published, particle_render.PRONOUNS)
     written += exercise_pages.write(pages, practice, texts, published)
+    written += root_pages.write(pages, roots, texts, published, nuances, practice.words())
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
                              {"exercises": exercises.sounds(practice)}])
     # Dated only once the gates passed: a build that fails them must not move a single <lastmod>.
     built = _date_pages(pages, _sitemap_paths(verbs, nouns.cards, adjectives.cards, nuances, particles, pronouns,
-                                              exercise_pages.page_paths(practice, texts)))
+                                              [*exercise_pages.page_paths(practice, texts),
+                                               *root_pages.page_paths(roots)]))
     _write_site_files(pages, verbs, texts, built.entries)
     site.report(pages, content)
     _report_size(pages, len(written))
@@ -265,6 +273,15 @@ def _assemble_particles(sink, studied: nuance_site.StudiedCards, catalogue: Cata
     return particle_site.assemble_particles(site.Sound(sink), site.read_corpus().ayat, studied_words, words)
 
 
+def _assemble_roots(verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives: Sequence[dict],
+                    particles: Sequence[dict], nuances: Sequence[dict]):
+    """The root pages, gated: every studied word on its root's page (fil.stages.roots)."""
+    corpus = root_stage.RootCorpus.from_corpus()
+    cards = root_stage.StudiedCards(verbs=[(verb.card, verb.slug) for verb in verbs], nouns=nouns,
+                                    adjectives=adjectives, particles=particles)
+    return root_stage.assemble_roots(corpus, root_stage.studied_pages(cards, corpus), nuances)
+
+
 def _practice_links(practice: exercises.ExerciseSets, texts: dict[str, dict]):
     """For each word family, the "Vježbaj ovu riječ" link of its pages (fil.pages.exercise_render)."""
     kinds_of_word = practice.words()
@@ -274,7 +291,8 @@ def _practice_links(practice: exercises.ExerciseSets, texts: dict[str, dict]):
 def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
                           nouns: NounContent, adjectives: Sequence[dict] = (), nuances: Sequence[dict] = (),
                           published: Collection[str] = frozenset(),
-                          practice: exercise_render.PracticeLink = exercise_render.no_practice) -> Iterable[Path]:
+                          practice: exercise_render.PracticeLink = exercise_render.no_practice,
+                          root_slugs: Mapping[str, str] | None = None) -> Iterable[Path]:
     credit_for = noun_pages.credits(nouns.pictures)
     for language in LANGUAGES:
         text = texts[language.code]
@@ -291,7 +309,8 @@ def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[s
             yield _write(pages, path, render.verb_page(verb, language, text, section, published=published,
                                                        picture_credit=credit, adjectives_of_root=adjectives_section,
                                                        similar_words=similar,
-                                                       practice=practice(verb.slug, language, seo.to_root(path))))
+                                                       practice=practice(verb.slug, language, seo.to_root(path)),
+                                                       root_slug=(root_slugs or {}).get(verb.card["root"])))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:
@@ -303,10 +322,10 @@ def _write(pages: Path, path: str, html: str) -> Path:
 
 def _sitemap_paths(verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives: Sequence[dict],
                    nuances: Sequence[dict], particles: Sequence[dict], pronouns: Sequence[dict],
-                   exercise_paths: Sequence[str]) -> list[str]:
+                   section_paths: Sequence[str]) -> list[str]:
     return [*page_paths(verbs), *noun_pages.page_paths(nouns), *adjective_pages.page_paths(adjectives),
             *nuance_pages.page_paths(nuances), *particle_pages.page_paths(particles),
-            *particle_pages.page_paths(pronouns, particle_render.PRONOUNS), *exercise_paths]
+            *particle_pages.page_paths(pronouns, particle_render.PRONOUNS), *section_paths]   # exercise and root pages
 
 
 def _date_pages(pages: Path, paths: Sequence[str]) -> BuiltSite:

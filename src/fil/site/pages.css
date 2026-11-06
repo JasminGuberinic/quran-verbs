@@ -273,3 +273,28 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .exercise-kinds .note { grid-column: 1 / -1; grid-row: 2; margin: 0; }
 @media (max-width: 520px) { .verb-list.exercise-kinds .count { display: inline; font-size: 0.8rem; } }
 .link-button { border: 0; background: none; padding: 0; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; }
+/* Korijeni / Roots (fil.pages.root_render) */
+a.root { text-decoration: underline; text-underline-offset: 3px; }
+.root-letters { font-size: 2.2rem; letter-spacing: .08em; }
+.root-meaning { margin: 8px 0 0; }
+.core-idea { margin: 16px 0 0; padding: 12px 16px; border-left: 4px solid var(--gold); background: var(--gold-soft); border-radius: 8px; }
+.core-idea h2 { margin: 0 0 6px; font-size: 1rem; }
+.core-idea p { margin: 0 0 4px; }
+.root-words { list-style: none; padding: 0; margin: 0; }
+.root-words li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 8px 4px; border-bottom: 1px solid var(--line); }
+.root-words li > .ar { font-size: 1.4rem; min-width: 4.5em; }
+.root-words .label { color: var(--muted); font-size: 0.85rem; }
+.root-words .meaning { flex: 1 1 10em; }
+.root-words .meaning.none, .root-words .count { color: var(--muted); }
+.root-words .count { font-variant-numeric: tabular-nums; }
+.root-words li:not(.studied) > .ar { color: var(--muted); }
+.root-words .card-link { font-size: 0.9rem; white-space: nowrap; }
+.root-search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0; }
+.root-search[hidden] { display: none; }
+.root-search input { flex: 1 1 14em; min-width: 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: inherit; }
+.root-alphabet { display: flex; flex-wrap: wrap; gap: 4px; margin: 12px 0; font-family: var(--font-arabic); font-size: 1.3rem; }
+.root-alphabet a { min-width: 2em; text-align: center; padding: 2px 6px; border-radius: 8px; text-decoration: none; background: var(--accent-soft); }
+.root-letter { scroll-margin-top: 72px; }
+.root-letter[hidden], .root-list li[hidden] { display: none; }
+.root-letter h2 { font-size: 1.6rem; margin: 20px 0 4px; }
+.verb-list.root-list a { grid-template-columns: 5em 1fr auto; }

@@ -1,0 +1,483 @@
+{
+ "_about": "The core idea of a root (Korijeni / Roots, docs/ROOTS-PLAN.md): one line, bs + en, in our own words, grounded in ar-Rāġib al-Iṣfahānī's Mufradāt entry for the root and verified against the OpenITI text (0502RaghibIsbahani.Mufradat.JK001150-ara1, CC BY-NC-SA 4.0, read locally, never shipped or quoted). A root whose entry gives no base sense we can vouch for has no line. Validated on load (fil.roots.model.parse_core_ideas).",
+ "قول": {
+  "core": {
+   "bs": "Govor iskazan riječima – a u prenesenom smislu i ono što se misli ili vjeruje.",
+   "en": "Speech put into words — and, by extension, what one holds in mind or believes."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قول", "قيل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry قول: first sense is uttered speech; further senses include what is in the mind before uttering and belief/doctrine."
+ },
+ "كون": {
+  "core": {
+   "bs": "Biti ili bivati: upućuje na ono što je bilo, često na trajno svojstvo; može značiti i ‚dogodilo se‘.",
+   "en": "Being or having been: it points to what was, often to a lasting trait; it can also mean ‘came about’."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كان"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry كان: kāna expresses past time, with a described trait signalling it is inseparable; one reading glosses it as ‚happened, occurred‘."
+ },
+ "ربب": {
+  "core": {
+   "bs": "Odgajanje i razvijanje nečega korak po korak do potpunosti; otuda Gospodar – bez dodatka samo za Allaha.",
+   "en": "Nurturing a thing stage by stage to completion; hence Lord — said absolutely only of Allah."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رب"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry رب: al-rabb in origin is tarbiya, raising a thing state by state to completion; unqualified rabb is said only of God."
+ },
+ "أمن": {
+  "core": {
+   "bs": "Smirenost duše i nestanak straha; otuda povjerenje, emanet i vjerovanje.",
+   "en": "Inner calm and the removal of fear; from it come trust, what is entrusted, and faith."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أمن"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry أمن: the root sense (asl) is tranquillity of the soul and removal of fear; amāna (trust) and īmān (faith) are treated under it."
+ },
+ "علم": {
+  "core": {
+   "bs": "Spoznaja stvari onakve kakva uistinu jest – znati šta je, ili ispravno suditi šta joj pripada.",
+   "en": "Grasping a thing as it truly is — knowing what it is, or rightly judging what holds true of it."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["علم"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry علم: ʿilm is perceiving a thing in its reality, of two kinds: perceiving its essence, and judging something present or absent in it."
+ },
+ "قوم": {
+  "core": {
+   "bs": "Stajanje: uspravno tijelom, staranje o nečemu ili ustajanje s odlukom da se djeluje; i ono na čemu nešto stoji.",
+   "en": "Standing: upright in body, standing by something to keep it, or rising resolved to act; also what a thing stands on."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قوم"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry قوم: qiyām is of three kinds (bodily standing, maintaining/guarding a thing, resolve), and qiyām/qawām names what a thing stands firm by."
+ },
+ "أيي": {
+  "core": {
+   "bs": "Jasan znak vezan za nešto skriveno, pa ko spozna znak spozna i drugo; i ajet Kur'ana, te upitno ‚koji?‘.",
+   "en": "A clear sign bound to something hidden, so grasping one reveals the other; also a verse of the Quran, and ‘which?’."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أي"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry أي: āya is the manifest sign inseparable from something not manifest; also each Qur'anic unit; ayy asks after one of a kind."
+ },
+ "أتي": {
+  "core": {
+   "bs": "Dolazak s lakoćom – lično, ili naredbom i odredbom; u obliku آتى donošenje, davanje.",
+   "en": "Coming with ease — in person, or by command and decree; in the form آتى, bringing or giving."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أتى"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry أتى: ityān is coming with ease, said of coming in person and by command/arrangement; ātā (giving) is discussed in the same entry."
+ },
+ "كفر": {
+  "core": {
+   "bs": "Prekrivanje nečega – nezahvalnost skriva blagodat; najteži oblik je poricanje Allahove jednoće, šerijata ili poslanstva.",
+   "en": "Covering something over — ingratitude hides a favour; its gravest form is denying Allah's oneness, law or prophethood."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كفر"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry كفر: kufr linguistically is covering a thing; ingratitude covers a favour; the greatest kufr is denying oneness, sharia or prophethood."
+ },
+ "بين": {
+  "core": {
+   "bs": "Prostor između dvije stvari; otuda razdvajanje i postajanje jasnim – skriveno se odvoji i pokaže.",
+   "en": "The space between two things; hence separating, and becoming clear — what was hidden stands apart and shows."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["بين", "بان"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry بين: bayn denotes the gap between two things; bāna means to separate and for what was hidden to appear (bayyina = clear evidence)."
+ },
+ "شيأ": {
+  "core": {
+   "bs": "Stvar: neki je određuju kao sve što se može znati i o čemu se može govoriti; drugi je vežu za htijenje (شاء).",
+   "en": "A thing: some define it as whatever can be known and spoken of; others tie it to willing (شاء)."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["شيء"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry شيء: shayʾ is what can be known and reported, originally the verbal noun of shāʾa; God's will entails the thing's existence (mā shāʾa Allāh kān). Reworded on review: the definitions are given as the views of others (qīla, ʿinda baʿḍihim), as the entry gives them."
+ },
+ "رسل": {
+  "core": {
+   "bs": "Odašiljanje laganim hodom; otuda blagost, i poslanik – onaj koji je poslan noseći poruku.",
+   "en": "Being sent off at an easy pace; hence gentleness, and a messenger — one sent bearing a message."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رسل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry رسل: the root sense (asl) is setting off unhurriedly; from it both gentleness (ʿalā rislik) and rasūl, the one sent / bearer of the message."
+ },
+ "يوم": {
+  "core": {
+   "bs": "Dan: od izlaska do zalaska sunca – a i bilo koji period vremena.",
+   "en": "Day: from sunrise to sunset — and any span of time at all."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["يوم"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry يوم: yawm is the time from sunrise to sunset, and is also used for any period of time."
+ },
+ "أرض": {
+  "core": {
+   "bs": "Zemlja, tijelo nasuprot nebu; i najniži dio bilo čega.",
+   "en": "Earth, the body set against the sky; also the lowest part of anything."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أرض"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry أرض: arḍ is the body facing the sky, and expresses the lower part of a thing as samāʾ expresses its top."
+ },
+ "سمو": {
+  "core": {
+   "bs": "Najviši dio bilo čega; otuda nebo – i kiša, koja s njega dolazi.",
+   "en": "The highest part of anything; hence the sky — and rain, which comes from it."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سما"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry سما: samāʾ of anything is its top; the sky opposite the earth, and rain called samāʾ because it comes from it."
+ },
+ "عذب": {
+  "core": {
+   "bs": "Slatka, pitka voda; i عذاب: žestoka bol ili kazna (kako su povezani, sporno je).",
+   "en": "Sweet, fresh water; and عذاب: severe pain or punishment (how the two connect is disputed)."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عذب"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry عذب: entry opens with sweet cool water, defines ʿadhāb as severe infliction of pain, and says its origin is disputed."
+ },
+ "عمل": {
+  "core": {
+   "bs": "Namjerno djelovanje živog bića – uže od pukog činjenja; kaže se i za dobra i za loša djela.",
+   "en": "Deliberate action by a living being — narrower than mere doing; used of good and evil deeds alike."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عمل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry عمل: ʿamal is every act done with intent by a living being, more specific than fiʿl, used for righteous and evil deeds."
+ },
+ "جعل": {
+  "core": {
+   "bs": "Najopćiji glagol činjenja: početi, stvoriti, napraviti od nečega, preobratiti u nešto ili proglasiti.",
+   "en": "The most general verb of doing: to begin, to bring about, to make from, to turn into, or to deem."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جعل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry جعل: jaʿala is the most general verb of action, more general than faʿala and ṣanaʿa, with five uses listed."
+ },
+ "رحم": {
+  "core": {
+   "bs": "Materica, a otuda i rodbinska veza; milost je nježnost koja vodi dobročinstvu – od Allaha čisto dobročinstvo i blagodat.",
+   "en": "The womb, and kinship from it; mercy is tenderness moving to kindness — from Allah, pure kindness and grace."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رحم"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry رحم: raḥim is the womb, borrowed for kinship; raḥma is tenderness entailing kindness, and of God denotes kindness alone without tenderness."
+ },
+ "أنس": {
+  "core": {
+   "bs": "Ljudski rod nasuprot džinima; i bliskost, suprotno otuđenju – osjećati se prisno s nekim.",
+   "en": "Humankind as opposed to jinn; and familiarity, the opposite of shying away — being at ease with someone."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["إنس"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry إنس: al-ins is the opposite of jinn, and uns the opposite of nufūr (shying away); insān linked to mutual familiarity."
+ },
+ "رأي": {
+  "core": {
+   "bs": "Opažanje – okom, maštom, razmišljanjem ili razumom; otuda i mišljenje koje čovjek zauzme o nečemu.",
+   "en": "Perceiving – with the eyes, the imagination, reflection or the intellect; hence also an opinion one comes to hold."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رأى"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry رأى: ru'ya is defined as perceiving the seen, in four kinds (sense, imagination, reflection, intellect), and ra'y as a belief held on preponderant supposition."
+ },
+ "كتب": {
+  "core": {
+   "bs": "Spajanje dijelova – najprije kože šivenjem, zatim slova pisanjem; u prenesenom smislu utvrditi, odrediti ili propisati.",
+   "en": "Joining pieces together – first leather by stitching, then letters in writing; by extension, fixing, decreeing or prescribing."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كتب"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry كتب: the base is joining leather to leather by sewing, then joining letters in script, and kitāba is used for establishing, decreeing, obligating and prescribing."
+ },
+ "هدي": {
+  "core": {
+   "bs": "Upućivanje blagim i obzirnim pokazivanjem puta; od istog korijena je i poklon.",
+   "en": "Guiding by gently and kindly showing the way; the same root also gives the word for a gift."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["هدى"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry هدى: hidāya is defined as guidance given with gentleness, and hadiyya (gift) is derived from it."
+ },
+ "ظلم": {
+  "core": {
+   "bs": "Stavljanje stvari mimo njenog mjesta, prelaženje granice istine; od istog korijena je i tama, odsustvo svjetla.",
+   "en": "Putting a thing where it does not belong, overstepping what is right; the same root gives darkness, the absence of light."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ظلم"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry ظلم: ẓulm is placing a thing other than in its proper place and overstepping the right, and ẓulma is the absence of light."
+ },
+ "نفس": {
+  "core": {
+   "bs": "Duša, odnosno sopstvo i bit nečega; od istog korijena je i dah koji ulazi u tijelo i izlazi iz njega.",
+   "en": "The soul – the self, the very essence of a being; the same root gives breath, the air drawn in and out of the body."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نفس"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry نفس: nafs is glossed as the spirit and as a being's self/essence, and nafas as the air entering and leaving the body."
+ },
+ "قبل": {
+  "core": {
+   "bs": "Biti ispred – po mjestu, vremenu, rangu ili redoslijedu, suprotno od poslije; i okretanje prema nečemu i primanje toga.",
+   "en": "Being before – in place, time, rank or order, the opposite of after; also turning toward something and accepting it."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قبل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry قبل: qabl denotes precedence (place, time, rank, ordered sequence) opposed to baʿd; iqbāl is facing toward, and qabūl is accepting (excuse, repentance, deeds)."
+ },
+ "نزل": {
+  "core": {
+   "bs": "Spuštanje s visine; i odsjedanje na nekom mjestu, a od Allaha spuštanje objave, blagodati ili kazne.",
+   "en": "Descending from a height; also halting somewhere to stay, and, from Allah, sending down revelation, blessings or punishment."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نزل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry نزل: nuzūl is originally descent from a height, also alighting at a place, and Allah's inzāl of His favours, punishments and the Book."
+ },
+ "ذكر": {
+  "core": {
+   "bs": "Držanje znanja prisutnim u svijesti – sjećanje srcem ili spominjanje jezikom.",
+   "en": "Keeping knowledge present in mind – remembering in the heart or mentioning with the tongue."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ذكر"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry ذكر: dhikr is a faculty of retaining knowledge viewed as making it present, and the presence of a thing in the heart or speech, hence dhikr of heart and of tongue."
+ },
+ "حقق": {
+  "core": {
+   "bs": "Tačno podudaranje – ono što odgovara stvarnosti, ili biva onako, onda i onoliko koliko treba; otuda istina.",
+   "en": "Exact correspondence – what matches how a thing really is, or happens as, when and as much as it should; hence truth."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حق"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry حق: the asl of ḥaqq is correspondence and agreement, applied to belief matching its object and to acts and words occurring as, as much as and when they must."
+ },
+ "كذب": {
+  "core": {
+   "bs": "Govoriti ono što se ne slaže sa stvarnošću ili s vlastitim uvjerenjem; a u pojačanom obliku proglasiti nekoga lašcem.",
+   "en": "Saying what does not match the facts or one's own belief; in the intensive form, branding someone a liar."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كذب", "صدق"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كذب and صدق: truth and lying belong originally to statements, truth being agreement of speech with conviction and the thing reported; takdhīb is ascribing lying to someone, in the Qur'an to the truthful."
+ },
+ "جيأ": {
+  "core": {
+   "bs": "Dolazak koji se ostvari – ljudi, stvari ili pojmova, lično ili naredbom; s prijedlogom bi- znači donijeti nešto.",
+   "en": "Coming that actually arrives – of people, things or ideas, in person or by command; with ‘bi-’ it means to bring."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جاء"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry جاء: majīʾ is like ityān but broader and said with regard to actual arrival, of entities and meanings, by itself or by command; jāʾa bi- means to bring/produce."
+ },
+ "عبد": {
+  "core": {
+   "bs": "Iskazivanje poniznosti; ibadet je njen najviši stepen i pripada samo Allahu, Onome Čija je dobrota najveća.",
+   "en": "Showing humble submission; worship is its utmost degree, owed only to Allah, the One whose bounty is greatest."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عبد"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry عبد: ʿubūdiyya is showing humility and ʿibāda its utmost degree, deserved only by the One of utmost bounty, Allah."
+ },
+ "أخذ": {
+  "core": {
+   "bs": "Prisvajanje i dobijanje nečega – uzimanjem rukom ili silom, kao kad kazna zahvati neki narod.",
+   "en": "Getting hold of something and securing it – by taking it in hand, or by force, as when punishment seizes a people."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أخذ"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry أخذ: akhdh is acquiring and obtaining a thing, sometimes by taking hold and sometimes by overpowering, as with sleep, fever or punishment."
+ },
+ "خلق": {
+  "core": {
+   "bs": "Ispravno odmjeravanje; otuda stvaranje bez uzora – što pripada samo Allahu – ili tvorenje jedne stvari od druge.",
+   "en": "Measuring out rightly; hence bringing into being without a model – which belongs to Allah alone – or making one thing from another."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["خلق"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry خلق: the asl of khalq is right measuring (taqdīr), used for originating without precedent, which is Allah's alone, and for producing a thing from another."
+ },
+ "وقي": {
+  "core": {
+   "bs": "Čuvanje nečega od onoga što mu šteti; takvaluk je stavljanje sebe pod zaštitu od onoga čega se čovjek boji.",
+   "en": "Shielding something from what harms it; taqwa is placing oneself under such protection from what one fears."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["وقى"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry وقى: wiqāya is protecting a thing from what harms it, and taqwā is putting oneself in protection from what is feared."
+ },
+ "أخر": {
+  "core": {
+   "bs": "Ono što dolazi poslije – posljednje naspram prvog, odgađanje naspram prednošenja; otuda i Ahiret, drugi život.",
+   "en": "What comes after – the last as against the first, delaying as against putting forward; hence the Hereafter, the second life."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["آخر"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry آخر: ākhir is set against awwal, al-dār al-ākhira denotes the second existence, and taʾkhīr is the opposite of taqdīm."
+ },
+ "أمر": {
+  "core": {
+   "bs": "Stvar ili posao, svako djelo i riječ; i naređivanje, zaduživanje nekoga da nešto učini; kod Allaha i Njegovo stvaranje.",
+   "en": "An affair or matter, any deed or word; and commanding, charging someone to act; with Allah, also His bringing into being."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أمر"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry أمر: amr is a matter/affair, general for all deeds and words, the verbal noun of charging someone to act, and for Allah also originating (ibdāʿ)."
+ },
+ "بعد": {
+  "core": {
+   "bs": "Udaljenost, suprotno od blizine, u prostoru ili u značenju; i propast; a kao prijedlog poslije, suprotno od prije.",
+   "en": "Distance, the opposite of nearness, in space or in meaning; also perishing; and, as a particle, after, the opposite of before."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["بعد"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries بعد (two): buʿd is the opposite of nearness, sensory or intellectual, often used of perishing, and baʿd is used as the counterpart of qabl."
+ },
+ "غفر": {
+  "core": {
+   "bs": "Pokrivanje nečega onim što ga štiti od prljanja; Allahov oprost čuva Njegovog roba da ga ne dotakne kazna.",
+   "en": "Covering something with what protects it from soiling; Allah's forgiveness shields His servant from being touched by punishment."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["غفر"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry غفر: ghafr is clothing a thing with what guards it from dirt, and Allah's maghfira is protecting the servant from being touched by punishment."
+ },
+ "ولي": {
+  "core": {
+   "bs": "Dvije stvari jedna uz drugu bez ičega stranog između; otuda bliskost po mjestu, srodstvu, vjeri ili pomoći, i preuzimanje brige.",
+   "en": "Two things following on with nothing foreign between them; hence nearness in place, kinship, faith or support, and taking charge."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ولى"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry ولى: walāʾ is two or more things occurring with nothing between them not of them, borrowed for nearness of place, relation, religion, friendship and support; wilāya is support and taking charge of an affair."
+ },
+ "دعو": {
+  "core": {
+   "bs": "Dozivanje nekoga, obično imenom – pa otuda i molba, traženje pomoći ili poziv ka nečemu.",
+   "en": "Calling out to someone, usually by name — and so asking, pleading for help, or urging toward something."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["دعا"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry دعا: confirmed du‘ā’ as calling (normally with the name), extended to asking/seeking help and to urging toward a thing."
+ },
+ "حكم": {
+  "core": {
+   "bs": "Sputavanje radi popravljanja – otuda i presuđivanje, odlučivanje i mudrost.",
+   "en": "Holding something back in order to set it right — hence judging, deciding, and wisdom."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حكم"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry حكم: confirmed the root's asl as restraining for the sake of setting right (the bridle), with judging and hikma treated under it."
+ },
+ "ملك": {
+  "core": {
+   "bs": "Čvrsta vlast nad onim čime se raspolaže – posjedovanje stvari i vladanje ljudima naredbom i zabranom.",
+   "en": "Firm control over what one disposes of — owning things, and ruling people by command and prohibition."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ملك"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry ملك: confirmed mulk as firm control of what is disposed of by authority, malik as one who governs people by command and prohibition, and milk (ownership) as the broader genus."
+ },
+ "جنن": {
+  "core": {
+   "bs": "Skrivanje nečega od osjetila – otuda noćni pokrov, štit, vrt prekriven drvećem i nevidljivi džini.",
+   "en": "Concealing something from the senses — hence night's cover, a shield, a garden veiled by trees, the unseen jinn."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جن"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry جن: confirmed the asl as hiding a thing from the senses, with night, shield, tree-covered garden, fetus and jinn derived from it."
+ },
+ "عند": {
+  "core": {
+   "bs": "Blizina – u prostoru, u mišljenju ili u položaju; otuda i tvrdoglavo dičenje onim što se ima.",
+   "en": "Nearness — in place, in one's view, or in standing; from it, being stubbornly proud of what one has."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عند"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry عند: confirmed ‘inda as a word for nearness (place, belief, rank) and ‘anīd/mu‘ānid as one vain or boastful about what he has."
+ },
+ "خير": {
+  "core": {
+   "bs": "Ono za čim svi žude – razum, pravda, korist – suprotno zlu; ponekad i imetak.",
+   "en": "What everyone desires — reason, justice, what benefits — the opposite of evil; at times, wealth."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["خير"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry خير: confirmed khayr as what all desire (reason, justice, benefit), opposite of sharr, and its use for wealth."
+ },
+ "نور": {
+  "core": {
+   "bs": "Raširena svjetlost koja omogućava gledanje – očima ili pronicljivošću, kao svjetlo razuma i Kur'ana.",
+   "en": "Spreading light that lets one see — with the eyes, or with insight, as the light of reason and the Quran."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نور"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry نور: confirmed nūr as diffused light that aids seeing, either sensory or perceived by insight (reason, the Qur'an)."
+ },
+ "حسن": {
+  "core": {
+   "bs": "Sve što raduje i za čim se žudi – po sudu razuma, sklonosti ili osjetila.",
+   "en": "Whatever delights and is desired — as judged by reason, by inclination, or by the senses."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حسن"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry حسن: confirmed husn as everything delightful and desired, in three kinds: by reason, by desire, by sense."
+ },
+ "ضلل": {
+  "core": {
+   "bs": "Skretanje s pravog puta, namjerno ili iz previda, malo ili mnogo – suprotno uputi.",
+   "en": "Straying from the straight way, on purpose or by oversight, slightly or greatly — the opposite of guidance."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ضل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry ضل: confirmed dalāl as deviating from the straight path, deliberate or not, little or much, opposite of hidāya."
+ },
+ "حيي": {
+  "core": {
+   "bs": "Život u više vidova: rast, osjet, razum, olakšanje od tuge, vječni život – i Allahov život kojem smrt ne pristupa.",
+   "en": "Life on several levels: growth, sensation, reason, relief from grief, life eternal — and the deathless life of Allah."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حيي"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry حيي: confirmed his six uses of hayāt (growth, sensation, intellect, removal of grief, eternal afterlife, Allah's life free of death)."
+ },
+ "سمع": {
+  "core": {
+   "bs": "Sluh, moć uha da opaža glasove – a u prenesenom smislu i razumijevanje i pokoravanje.",
+   "en": "Hearing, the ear's power to perceive sounds — and by extension understanding, and obeying."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سمع"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry سمع: confirmed sam‘ as the ear's faculty for perceiving sounds, also used for understanding and for obedience."
+ },
+ "بني": {
+  "core": {
+   "bs": "Gradnja, podizanje zdanja – i sin je po tome nazvan, kao onaj koga je otac izgradio.",
+   "en": "Building, raising a structure — a son too is named from it, as one built up by his father."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["بنى"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry بنى: confirmed binā’ as building and that ibn is so called for being the father's building."
+ },
+ "خرج": {
+  "core": {
+   "bs": "Izlazak iz mjesta ili stanja u kojem se bilo – kuće, grada, odjeće ili nekog položaja.",
+   "en": "Emerging from where or how one was — a home, a town, a garment, or a state of affairs."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["خرج"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry خرج: confirmed khurūj as coming out of one's place or condition, be it house, town, garment or state."
+ },
+ "صلح": {
+  "core": {
+   "bs": "Ispravnost, suprotno kvarenju, najčešće u djelima – i mirenje, otklanjanje odbojnosti među ljudima.",
+   "en": "Soundness, the opposite of corruption, mostly of deeds — and making peace, removing aversion between people."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["صلح"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry صلح: confirmed salāh as the opposite of fasād, mainly of actions, and sulh as removing estrangement between people."
+ },
+ "سبل": {
+  "core": {
+   "bs": "Put koji se lahko prelazi – i sve što do nečega vodi, bilo dobro ili zlo.",
+   "en": "An easy road — and anything through which something is reached, whether good or bad."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سبل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry سبل: confirmed sabīl as a road with ease in it, used for any means to a thing, good or bad."
+ },
+ "تبع": {
+  "core": {
+   "bs": "Ići nečijim tragom – bilo slijedeći ga i pokoravajući mu se, bilo sustižući ga.",
+   "en": "Following in someone's footsteps — whether obeying them, or catching up with them."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["تبع"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry تبع: confirmed tabi‘a/ittaba‘a as tracing someone's steps, by compliance, and atba‘a as overtaking."
+ },
+ "قتل": {
+  "core": {
+   "bs": "Odvajanje duše od tijela – smrt viđena kao nečije djelo; preneseno i savladati ili pouzdano spoznati.",
+   "en": "Removing the soul from the body — death seen as someone's act; figuratively, to subdue or to know for certain."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قتل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry قتل: confirmed the asl as removing the soul from the body (death viewed as an agent's act), with figurative uses for subduing and for certain knowledge."
+ },
+ "مثل": {
+  "core": {
+   "bs": "Uspravljanje i poprimanje oblika – otuda kip, sličnost i prispodoba koja jedno predočava drugim.",
+   "en": "Standing upright, taking visible form — hence an image, a likeness, and a parable showing one thing through another."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["مثل"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry مثل: confirmed the asl of muthūl as standing upright/taking form, with timthāl, mithl (likeness) and mathal (parable) under it."
+ },
+ "قلب": {
+  "core": {
+   "bs": "Okretanje nečega s jedne strane na drugu – i srce je, kaže se, tako nazvano jer se stalno prevrće.",
+   "en": "Turning something over, from one side to another — the heart, it is said, is named for its constant turning."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قلب"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry قلب: confirmed qalb as turning a thing from one face to another, and (as a reported view) the heart named for its frequent turning."
+ },
+ "شرك": {
+  "core": {
+   "bs": "Kad dvojica ili više dijele jednu stvar, opipljivu ili pojmovnu – a u vjeri, pripisivanje Allahu sudruga.",
+   "en": "Two or more sharing in one thing, concrete or abstract — and, in religion, ascribing a partner to Allah."
+  },
+  "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["شرك"]}],
+  "notes": "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entry شرك: confirmed shirka as a thing belonging to two or more, concrete or abstract, and the gravest religious shirk as affirming a partner to Allah."
+ }
+}

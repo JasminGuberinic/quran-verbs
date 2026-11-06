@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import json
 import shutil
-from collections.abc import Collection, Sequence
+from collections.abc import Collection, Mapping, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
@@ -30,10 +30,11 @@ PICTURE_FOLDER = "pictures"
 
 def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: Sequence[dict] = (),
           nuances: Sequence[dict] = (), published: Collection[str] = frozenset(),
-          practice: PracticeLink = no_practice) -> list[Path]:
+          practice: PracticeLink = no_practice, root_slugs: Mapping[str, str] | None = None) -> list[Path]:
     """Every noun page and list, the nouns' ayat files and pictures; the pages written. A noun page
     links the studied `adjectives` (cards) of its root and the `nuances` (group cards) it belongs to;
-    `published` names the sections the top bar leads to (fil.pages.render)."""
+    `published` names the sections the top bar leads to (fil.pages.render);
+    `root_slugs` the root pages (by root) a noun's root letters link to."""
     if not nouns.cards:
         return []
     write_ayat(pages, nouns.ayat_lists)
@@ -56,7 +57,8 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: S
                                          published=published,
                                          similar_words=nuance_render.similar_words_section(
                                              groups_of_lemma(card["key"], nuances), language, text, seo.to_root(path)),
-                                         practice=practice(card["slug"], language, seo.to_root(path)))
+                                         practice=practice(card["slug"], language, seo.to_root(path)),
+                                         root_slug=(root_slugs or {}).get(card["root"]))
             written.append(_write(pages, path, html))
     return written
 

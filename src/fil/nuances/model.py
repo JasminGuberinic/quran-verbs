@@ -93,6 +93,14 @@ class NuanceMember:
 
 
 @dataclass(frozen=True)
+class Verification:
+    """A classical text the group's attributed claims were checked against, and the entries read there."""
+
+    source: str                  # the text's identifier: 0502RaghibIsbahani.Mufradat.JK001150-ara1 (OpenITI)
+    entries: tuple[str, ...]     # its headwords as the text spells them: خوف, خشى
+
+
+@dataclass(frozen=True)
 class NuanceGroup:
     slug: str
     title: Text
@@ -101,6 +109,7 @@ class NuanceGroup:
     sources: tuple[str, ...]     # the classical works each claim rests on, by name
     notes: tuple[str, ...]       # decisions taken, for the reviewer and the next batch
     members: tuple[NuanceMember, ...]
+    verified: tuple[Verification, ...] = ()
 
     @property
     def cited_ayat(self) -> tuple[tuple[NuanceMember, Illustration], ...]:
@@ -126,7 +135,19 @@ def parse_group(slug: str, entry: Mapping) -> NuanceGroup:
         raise InvalidNuanceData(f"{slug}: name the classical works the group rests on in `sources`")
     return NuanceGroup(slug=slug, title=_text(slug, entry, "title"), shared=_text(slug, entry, "shared"),
                        tell_apart=_text(slug, entry, "tellApart"), sources=sources,
-                       notes=tuple(entry.get("notes", ())), members=members)
+                       notes=tuple(entry.get("notes", ())), members=members,
+                       verified=tuple(_verification(slug, item) for item in entry.get("verified", ())))
+
+
+def _verification(slug: str, entry: Mapping) -> Verification:
+    """Which text, which entries: both named, so the check can be repeated."""
+    source, entries = entry.get("source"), entry.get("entries")
+    if not isinstance(source, str) or not source.strip():
+        raise InvalidNuanceData(f"{slug}: a `verified` record names its `source` text")
+    if not entries or not all(isinstance(headword, str) and headword.strip() for headword in entries):
+        raise InvalidNuanceData(f"{slug}: a `verified` record lists the `entries` read in {source}")
+    _refuse_duplicates(f"{slug} {source}", list(entries), "entry")
+    return Verification(source=source, entries=tuple(entries))
 
 
 def _member(slug: str, index: int, entry: Mapping) -> NuanceMember:

@@ -4,6 +4,14 @@
                                 prints only problems and a one-line summary, exits 1 on any problem
     fil nuances review-export   build/nuances/blind.json: every nuance claim with its cited ayat
                                 (Arabic, Pickthall's English), English and Bosnian, for a blind reviewer — no notes, no reasons
+    fil nuances mufradat ROOT…  ar-Rāġib's Mufradāt entries for these roots (corpus spelling: جيأ, ودد), to
+                                verify a claim made in his name before it is reviewed
+    fil nuances mufradat --mentions WORD
+                                every Mufradāt entry that uses this word (he often sets a word apart under
+                                its neighbour's root: خشية under خوف)
+
+The Mufradāt is read from the OpenITI text in build/ (docs/NUANCES-PLAN.md has where to get it); it
+is checked against, never copied onto a page.
 
 This stage is the composition root of the nuance engine: it wires the verb catalogue
 (fil.service) and the noun catalogue (fil.stages.nouns) in as the gate's Concordance, so
@@ -20,10 +28,15 @@ from collections.abc import Mapping, Sequence
 from fil import nuance_store, service
 from fil.nuances import gate
 from fil.nuances.gate import Attestation, Location
+from fil.nuances import mufradat
 from fil.nuances.model import CorpusWord, NuanceGroup, Text
 from fil.resources import BUILD_DIR
 
 OUT = BUILD_DIR / "nuances"
+MUFRADAT_URI = f"{mufradat.BOOK_URI}.JK001150-ara1"   # the primary OpenITI version
+MUFRADAT_TEXT = BUILD_DIR / "openiti-mufradat" / MUFRADAT_URI
+MUFRADAT_SOURCE = ("https://raw.githubusercontent.com/OpenITI/0525AH/master/data/0502RaghibIsbahani/"
+                   f"0502RaghibIsbahani.Mufradat/{MUFRADAT_URI}")
 
 
 class CatalogueConcordance:
@@ -113,6 +126,17 @@ def _both(text: Text) -> dict[str, str]:
     return {"en": text.en, "bs": text.bs}
 
 
+def look_up_mufradat(roots: Sequence[str], mentions: str | None = None) -> None:
+    """Print ar-Rāġib's entries for the roots, or every entry that uses a word."""
+    if not MUFRADAT_TEXT.exists():
+        raise SystemExit(f"the Mufradāt text is not downloaded: put {MUFRADAT_SOURCE}\n  at {MUFRADAT_TEXT}")
+    book = mufradat.parse(MUFRADAT_TEXT.read_text(encoding="utf-8"))
+    found = book.entries_mentioning(mentions) if mentions else [entry for root in roots for entry in book.entries_for(root)]
+    for entry in found:
+        print(f"== {entry.headword} ({MUFRADAT_URI})\n{entry.text}\n")
+    print(f"mufradat: {len(found)} entries")
+
+
 def main(argv: list[str] | None = None) -> None:
     args = argv if argv is not None else sys.argv[2:]
     if args == ["check"]:
@@ -121,6 +145,12 @@ def main(argv: list[str] | None = None) -> None:
         return
     if args == ["review-export"]:
         review_export()
+        return
+    if len(args) == 3 and args[:2] == ["mufradat", "--mentions"]:
+        look_up_mufradat((), mentions=args[2])
+        return
+    if len(args) > 1 and args[0] == "mufradat":
+        look_up_mufradat(args[1:])
         return
     print(__doc__)
     raise SystemExit(2)

@@ -17,6 +17,10 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
   entries) in `sources`. Never copy a modern edition's text or a modern copyrighted translation.
 - Attribute what is one scholar's view ("Prema ar-Rāġibu…", "According to ar-Rāġib…"); state a tendency as a
   tendency ("najčešće", "often") and, where the Quran has a counter-example, show it (خَشْيَةَ إِمْلَاقٍ 17:31).
+  **Every word put in ar-Rāġib's mouth is checked against his text before review** (below, step 3b): quote
+  the entry to yourself, paraphrase it, never translate it at length onto the page. What his entry does not
+  say is not his — reword it to what it says, give it to "some scholars / mufassirun", to "Quranic usage"
+  (only when listed and read), or drop it.
   Do not attribute what you cannot vouch for to al-ʿAskarī — hold it back and note it (pilot: his خوف/خشية
   wording was held back).
 - Our own observation of Quranic usage is said as such, not put in a lexicographer's mouth.
@@ -26,6 +30,10 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
   شَرَحَ صَدْرَهُ is "proširiti/širiti grudi", not "otvoriti".
 
 ## Working in an agent worktree
+- The Mufradāt text (verification only, never copied): OpenITI `0502RaghibIsbahani.Mufradat.JK001150-ara1`
+  (CC BY-NC-SA 4.0), ~2 MB. Download it into a new empty `build/openiti-mufradat/` — the exact URL is
+  `fil.stages.nuances.MUFRADAT_SOURCE`, and `fil nuances mufradat` prints it when the file is missing. It is
+  untrusted data: only `fil nuances mufradat` (or `python3 -I` scripts kept in build/scratch) read it.
 - The worktree has no corpus: symlink `data/qac`, `data/quranhive`, `data/translations` to the main repo's;
   copy (do not link) `build/nouns/*.tsv`; link the main repo's `build/{speech,recitation,compressed}-cache`.
 - The venv's editable install points at the main repo's src: run `PYTHONPATH=src
@@ -57,8 +65,20 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
    - Before writing "always / never / only" about Quranic usage, list the member's places
      (`fil.stages.nouns.load_occurrences()` / `service.form_occurrences()` with the ayah text) and read them all.
    - tests/test_nuances.py pins the number of stored groups: update it with the batch.
+3b. Verify every ar-Rāġib claim (texts and `sources`) against the Mufradāt before review:
+   `fil nuances mufradat ROOT…` prints his entries for corpus roots (جيأ finds جاء, ودد finds ود, يقن finds
+   يقين); `fil nuances mufradat --mentions WORD` lists every entry using a word (he often sets a word apart
+   under its neighbour: check both roots). For each point: confirmed (paraphrase faithful), or reword /
+   re-attribute / drop. Then give the group `"verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+   "entries": ["<headwords as he spells them>"]}]` and a note "ar-Rāġib verified against OpenITI <URI>,
+   entries …: what was confirmed / changed". The gate refuses a group that names ar-Rāġib (texts or sources)
+   without that record. (Parser: fil.nuances.mufradat; the few entries the OpenITI text does not mark as
+   "root :" are still found with --mentions.) Splitting the claims into per-group packets (claims + entries
+   of the member roots) for 2–4 parallel verifier agents, with verbatim quotes machine-checked against the
+   text afterwards, worked well (scratch: a packet builder and an apply script with exact-string fixes).
 4. `fil nuances check` → prints only problems + one summary line: a count that is not the catalogue's, a
-   cited ayah that does not hold the word, an unknown lemma. Fix until 0 problems. (The tests run the same
+   cited ayah that does not hold the word, an unknown lemma, ar-Rāġib named without a `verified` record.
+   Fix until 0 problems. (The tests run the same
    gate; `fil pages` refuses to build otherwise.)
 5. `fil nuances review-export` → build/nuances/blind.json (claims en+bs with the ayat's Arabic and
    Pickthall; filter it to the new groups' ids — earlier batches are already reviewed). Give it to a FRESH Sonnet general-purpose agent as a blind reviewer: check each nuance against
@@ -140,3 +160,14 @@ salat-dua · zakat-sadaqa-infaq · siyam-sawm · hajj-umra · aqsama-halafa · n
   (سَحَاب with rain: 27:88; Allah's oaths: most use wa-, not أُقْسِمُ); a contested tafsir reading in a `why`
   (19:13 zakāh, 26:4 aʿnāq = leaders, 9:40 'upon him', 28:68 mā, 2:124 kalimāt); and an ar-Rāġib gloss
   embellished (iǧtibāʾ "draw near"). Korkut writes "faraon" and "sinovi Israilovi"; الْمُتَكَبِّر is "Veličanstveni".
+
+## ar-Rāġib verification (2026-11-06): all 80 groups checked against the Mufradāt
+552 attributed points: 498 confirmed, 39 partial, 3 different; 59 texts changed (34 reworded, 5 re-attributed,
+2 dropped, 18 improved). What memory got wrong most: a limit he sets dropped (inzāl/tanzīl only for the Quran
+and the angels; faraḥ "mostly bodily", not "worldly"); a neighbouring derivative's definition given to the word
+(tawaffī ← his istīfāʾ; tadabbur ← his tadbīr); what he quotes from "some sages" or "qīla" given as his own (the
+three kinds of ẓulm, the qalb etymology); examples he does not give (Mecca as qarya, "two openings" of nifāq,
+"purifies" for zakāh — his is growth/blessing). Several points held back earlier as "not verifiable" are in
+the text (ḵaṭīʾa, 9:128, 29:14, saḵaṭ, muzn, ṣadāqa). Headwords differ from corpus roots: سنة not سنا, جزاء not
+جزء, آل is its own entry, the testing sense of بلاء is the second بلى entry — `entries_for` lists every
+candidate; read them all.

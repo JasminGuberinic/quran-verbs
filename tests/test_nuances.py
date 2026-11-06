@@ -38,6 +38,7 @@ def _member(arabic: str = "قَلْب", **changes) -> dict:
 
 def _entry(**changes) -> dict:
     entry = {"title": _text(), "shared": _text(), "tellApart": _text(), "sources": ["ar-Rāġib, Mufradāt"],
+             "verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قلب", "فأد"]}],
              "members": [_member(), _member("فُؤَاد", lemmas=["فُؤاد|فأد"], count=16,
                                             ayat=[{"ref": "28:10", "why": _text()}])]}
     return {**entry, **changes}
@@ -68,6 +69,10 @@ def test_a_complete_group_parses():
     ("qalb", _entry(members=[_member(verb="قلب_1"), _member("فُؤَاد")]), "exactly one of"),
     ("qalb", _entry(members=[_member(lemmas=None, verb="قلب"), _member("فُؤَاد")]), "root_form"),
     ("qalb", _entry(members=[_member(lemmas=["قَلْب"]), _member("فُؤَاد")]), "lemma|root"),
+    ("qalb", _entry(verified=[{"entries": ["قلب"]}]), "source"),
+    ("qalb", _entry(verified=[{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": []}]), "entries"),
+    ("qalb", _entry(verified=[{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قلب", "قلب"]}]),
+     "same entry twice"),
 ])
 def test_the_model_refuses_what_must_not_reach_a_learner(slug, entry, complaint):
     with pytest.raises(InvalidNuanceData, match=complaint):
@@ -121,6 +126,16 @@ def test_the_gate_refuses_a_wrong_count_a_wrong_ayah_and_an_unknown_word():
     assert any("the corpus counts 131, the data says 132" in problem for problem in found)
     assert any("22:46 does not hold this word" in problem for problem in found)
     assert any("فُؤَاد" in problem and "not a word of the corpus" in problem for problem in found)
+
+
+def test_the_gate_refuses_words_put_in_ar_raghibs_mouth_unchecked():
+    concordance = _Concordance({"قَلْب|قلب": _attested(132, (22, 46, 14)), "فُؤاد|فأد": _attested(16, (28, 10, 2))})
+    unchecked = parse_groups({"qalb": _entry(verified=[])})
+    assert gate.problems(unchecked, concordance) == [
+        "qalb: speaks in ar-Rāġib's name but records no check against the Mufradāt "
+        "(`verified`: 0502RaghibIsbahani.Mufradat…, `fil nuances mufradat ROOT`)"]
+    unattributed = parse_groups({"qalb": _entry(verified=[], sources=["Quranic usage — our own observation"])})
+    assert gate.problems(unattributed, concordance) == []
 
 
 def test_an_attestation_knows_the_words_of_an_ayah():

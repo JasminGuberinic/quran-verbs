@@ -1,7 +1,9 @@
 """The corpus gate of the nuance groups: what a group says about the Quran must be so.
 
   - every member is a word of the corpus, and its stated count is the corpus's count;
-  - every ayah cited to illustrate a member really holds that member's word.
+  - every ayah cited to illustrate a member really holds that member's word;
+  - a group that speaks in ar-Rāġib's name (its texts or its sources) records that it was checked
+    against his Mufradāt (`verified`), so no attribution made from memory reaches a page.
 
 The corpus is behind a port (`Concordance`), so the rule is tested without the corpus
 and the stages wire in the verb and noun catalogues (fil.stages.nuances).
@@ -9,12 +11,15 @@ and the stages wire in the verb and noun catalogues (fil.stages.nuances).
 
 from __future__ import annotations
 
+import re
 from collections.abc import Iterable
 from dataclasses import dataclass
 from typing import Protocol
 
-from fil.nuances.model import CorpusWord, NuanceGroup
+from fil.nuances.model import CorpusWord, NuanceGroup, Text
+from fil.nuances.mufradat import BOOK_URI
 
+_NAMES_RAGHIB = re.compile(r"R[āa]ġib|Mufrad[āa]t")
 Location = tuple[int, int, int]      # (surah, ayah, word)
 
 
@@ -46,7 +51,7 @@ def problems(groups: Iterable[NuanceGroup], concordance: Concordance) -> list[st
 
 
 def _group_problems(group: NuanceGroup, concordance: Concordance) -> list[str]:
-    found = []
+    found = _unverified_attribution(group)
     for member in group.members:
         where = f"{group.slug} {member.arabic} ({member.corpus.describe()})"
         attestation = concordance.attestation(member.corpus)
@@ -58,3 +63,20 @@ def _group_problems(group: NuanceGroup, concordance: Concordance) -> list[str]:
         found += [f"{where}: {illustration.reference} does not hold this word"
                   for illustration in member.ayat if (illustration.surah, illustration.ayah) not in attestation.places]
     return found
+
+
+def _unverified_attribution(group: NuanceGroup) -> list[str]:
+    if not any(_NAMES_RAGHIB.search(text) for text in _published_texts(group)):
+        return []
+    if any(record.source.startswith(BOOK_URI) for record in group.verified):
+        return []
+    return [f"{group.slug}: speaks in ar-Rāġib's name but records no check against the Mufradāt "
+            f"(`verified`: {BOOK_URI}…, `fil nuances mufradat ROOT`)"]
+
+
+def _published_texts(group: NuanceGroup) -> list[str]:
+    """Everything of the group a page shows: its sources and every text in both languages."""
+    texts: list[Text] = [group.title, group.shared, group.tell_apart]
+    for member in group.members:
+        texts += [member.meaning, member.nuance, *(illustration.why for illustration in member.ayat)]
+    return [*group.sources, *(language for text in texts for language in (text.bs, text.en))]

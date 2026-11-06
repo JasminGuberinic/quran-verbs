@@ -10,6 +10,14 @@ where the choice of word matters. Bosnian and English only, like nouns and adjec
   edition's text or copyrighted translation is copied.
 - A view one scholar holds is attributed to him; a tendency is stated as a tendency, with a counter-example
   when the Quran has one; contested tafsir readings are named in the ayah's note.
+- Every claim in ar-Rāġib's name is checked against his text before review: the OpenITI corpus's
+  *al-Mufradāt fī ġarīb al-Qurʾān*, version `0502RaghibIsbahani.Mufradat.JK001150-ara1` (ed. M. S. Kīlānī,
+  Dār al-Maʿrifa; OpenITI 0525AH repository on GitHub). The OpenITI corpus is released under **CC BY-NC-SA
+  4.0** (Zenodo, doi:10.5281/zenodo.3082464). We use it for verification only: it is downloaded into the
+  gitignored `build/openiti-mufradat/`, never committed, and none of its text reaches a page — our
+  explanations are our own words. `fil nuances mufradat ROOT…` / `--mentions WORD` (fil.nuances.mufradat)
+  prints the entries; each group records what was read in `verified` (source + headwords) and in a note, and
+  the gate refuses a group that names ar-Rāġib without that record.
 - A blind Sonnet reviewer checks every claim against the cited ayat (`fil nuances review-export`); its flags
   are resolved by softening, attributing or holding back, and each decision is written in the group's `notes`.
 
@@ -61,3 +69,19 @@ Acts of worship: صَلَاة/دُعَاء · زَكَاة/صَدَقَة/أَن
 review: ar-Rāġib's wording on saḵaṭ, ḫuḍūʿ, muzn and ṣadīq (not verifiable here), "draw near" for iǧtibāʾ (not his),
 "lifeless" as a rule for جَسَد, the loanword claim for يَمّ, and al-ʿAskarī throughout. Not cited because tafsir differs
 widely: 2:210, 7:203, 38:34, 42:23, 71:13 and the لَامَسْتُم ayat (4:43, 5:6).
+
+## ar-Rāġib verified against the Mufradāt (80 groups, 2026-11-06)
+All 80 groups' ar-Rāġib claims (and the few given to az-Zamaḫšarī / al-ʿAskarī) were checked against the
+OpenITI text, entry by entry, by four parallel verifiers with every quote machine-checked against the text.
+552 attributed points: 498 confirmed, 39 partial, 3 different, 12 not checkable here (other authors), 0 not
+found. 59 texts changed: 34 reworded to what he says, 5 re-attributed (Quranic usage, or from an unverifiable
+author to ar-Rāġib where he says the same), 2 dropped (the al-Kaššāf and al-Furūq source lines), 18 improved
+where his entry says more than we had. 78 groups carry a `verified` record (faqir-miskin and matar-ghayth
+name no lexicographer). Notable corrections: the inzāl/tanzīl contrast is his only for the Quran and the
+angels; ityān may be said of the intent to come (not "on its way"); faraḥ "mostly bodily" (not "worldly"),
+allowed in his reading only in 10:58 and 30:4; zakāh from growth/blessing (not "purifies the soul"); tawaffī
+"taking in full" is his definition of istīfāʾ; ab for grandfather/uncle only when named with the father; the
+three kinds of ẓulm and the "breast" saying are quoted by him from "some sages"; nifāq from nafaq, a tunnel
+through (not "two openings"); naẓar "look and not see" is his (al-ʿAskarī no longer cited); the 6:1 note
+gives his reading of خلق/جعل instead of az-Zamaḫšarī's (al-Kaššāf could not be checked). Recovered from
+"held back": ḵaṭīʾa mostly unintended, 9:128 for raḥīm, 29:14 sana/ʿām, saḵaṭ, muzn, ḫuḍūʿ, ṣadāqa.

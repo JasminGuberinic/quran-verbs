@@ -1,5 +1,5 @@
 {
- "_about": "Quranic near-synonyms (Nijanse / Nuances): per group what the words share, how each differs, and ayat that show why the word was chosen there. Keyed by the group's page slug. Each member names its corpus identity: `verb` (root_form, the verb catalogue) or `lemmas` (lemma|root of the noun catalogue, summed when the corpus files one word under several lemmas); `count` must equal the corpus count and every cited ayah must hold the member's lemma (fil.nuances.gate, run by the tests and `fil nuances check`). An optional `spoken` is the headword as voiced where the two speech readers disagree on how it is shown. Explanations are our own words, grounded in the classical works named in `sources`; `notes` record the decisions taken. Validated on load (fil.nuances.model).",
+ "_about": "Quranic near-synonyms (Nijanse / Nuances): per group what the words share, how each differs, and ayat that show why the word was chosen there. Keyed by the group's page slug. Each member names its corpus identity: `verb` (root_form, the verb catalogue) or `lemmas` (lemma|root of the noun catalogue, summed when the corpus files one word under several lemmas); `count` must equal the corpus count and every cited ayah must hold the member's lemma (fil.nuances.gate, run by the tests and `fil nuances check`). An optional `spoken` is the headword as voiced where the two speech readers disagree on how it is shown. Explanations are our own words, grounded in the classical works named in `sources`; `notes` record the decisions taken; `verified` names the classical text the group's attributed claims were checked against and the entries read there (ar-Rāġib's Mufradāt in OpenITI: `fil nuances mufradat ROOT`) — a group that names ar-Rāġib without it fails the gate. Validated on load (fil.nuances.model).",
  "insan-bashar": {
   "title": {"bs": "Čovjek", "en": "Human being"},
   "shared": {
@@ -11,13 +11,17 @@
    "en": "Human nature → إِنْسَان; the visible, bodily creature → بَشَر; the male (as against a woman or an angel) → رَجُل; each individual on his own → اِمْرُؤ; people as a community → نَاس."
   },
   "sources": [
-   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries أنس, بشر, رجل, مرأ"
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries أنس, بشر, رجل, مرأ, نوس"
   ],
   "notes": [
    "اِمْرُؤ: the corpus files this one word under four lemmas (امْرِئ 5, مَرْء 4, امْرُؤٌا 1, امْرَأ 1); with the article it is الْمَرْء. Counted together (11), as ar-Rāġib treats them as one word.",
    "رَجُل: the corpus lemmatises the broken plural رِجَال separately (28); counted together with the singular (29). Two of the plural's places (2:239, 22:27) mean 'on foot' (plural of رَاجِل) but are filed under the same lemma by the corpus; the count follows the corpus.",
    "نَاس: the sense 'people of virtue' (2:13) is ar-Rāġib's reading and is attributed to him.",
-   "اِمْرُؤ: the lexicons define it as a person, a (male) human being; 'the individual' is our observation of its Quranic use, stated as such and not attributed to ar-Rāġib (blind review)."
+   "اِمْرُؤ: the lexicons define it as a person, a (male) human being; 'the individual' is our observation of its Quranic use, stated as such and not attributed to ar-Rāġib (blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries إنس, بشر, رجل, مرأ, نوس (2026-11-06): 11 attributed points confirmed; changed — sources/0 (reworded): The nās/2:13 reading is in his entry نوس, which the source line did not list; members/4/ayat/2/why (reworded): He reads 2:13 as 'those in whom the meaning of humanity is found', not explicitly 'the believers'"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["إنس", "بشر", "رجل", "مرأ", "نوس"]}
   ],
   "members": [
    {
@@ -92,7 +96,7 @@
     "ayat": [
      {"ref": "49:13", "why": {"bs": "Obraćanje cijelom čovječanstvu, stvorenom od muškarca i žene.", "en": "An address to all mankind, created from a male and a female."}},
      {"ref": "114:1", "why": {"bs": "Gospodar svih ljudi – ljudi kao cjelina.", "en": "The Lord of mankind — people as a whole."}},
-     {"ref": "2:13", "why": {"bs": "„Vjerujte kao što su vjerovali ljudi”: prema ar-Rāġibu, ovdje su to vjernici, ljudi od vrijednosti.", "en": "“Believe as the people have believed”: according to ar-Rāġib, here these are the believers, people of worth."}}
+     {"ref": "2:13", "why": {"bs": "„Vjerujte kao što su vjerovali ljudi”: prema ar-Rāġibu, ovdje su to ljudi u kojima je istinska ljudskost, ljudi od vrijednosti.", "en": "“Believe as the people have believed”: according to ar-Rāġib, here these are people in whom true humanity is found, people of worth."}}
     ]
    }
   ]
@@ -113,7 +117,11 @@
   "notes": [
    "The distinction is ar-Rāġib's (al-ityān is a coming with ease and may be said by intention before arrival; al-majīʾ is more general and said with regard to arrival) and is attributed to him.",
    "Later scholars' view that جَاءَ is used for weightier matters and أَتَى for lighter ones is not used: it is not in the two classical works this section relies on.",
-   "Only Form I أَتَى is a member; Form IV آتَى 'to give' is a different verb."
+   "Only Form I أَتَى is a member; Form IV آتَى 'to give' is a different verb.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries جاء, أتى (2026-11-06): 5 attributed points confirmed; changed — members/1/nuance (reworded): He says ityān may be said with regard to intent even if arrival never results, not 'on its way before fully arriving'"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جاء", "أتى"]}
   ],
   "members": [
    {
@@ -137,8 +145,8 @@
     "count": 264,
     "meaning": {"bs": "doći, nastupiti", "en": "to come"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, „dolazak s lahkoćom”; može se reći i za ono što je na putu, prije nego što je potpuno stiglo.",
-     "en": "According to ar-Rāġib, “a coming with ease”; it may also be said of what is on its way, before it has fully arrived."
+     "bs": "Prema ar-Rāġibu, „dolazak s lahkoćom”; može se reći i s obzirom na namjeru dolaska, čak i kad do samog dolaska ne dođe.",
+     "en": "According to ar-Rāġib, “a coming with ease”; it may also be said with regard to the intent to come, even when the arrival does not take place."
     },
     "ayat": [
      {"ref": "16:1", "why": {"bs": "Allahova odredba „je došla”, a ipak se kaže „ne požurujte je”; tefsir prošlo vrijeme tumači sigurnošću onoga što dolazi. Primjer dolaska koji je tek na putu.", "en": "The command of Allah “has come”, yet they are told “do not hasten it”; tafsir explains the past tense as the certainty of what is coming. An example of a coming still on its way."}},
@@ -159,12 +167,15 @@
    "en": "نَظَرَ is directing the gaze (and the mind) and may stop short of seeing; رَأَى is seeing itself — with the eyes, in a dream or with the mind; أَبْصَرَ is clear perception, often grasping the truth. 7:198 holds the difference in one place: they look (يَنْظُرُونَ) but do not see (لَا يُبْصِرُونَ)."
   },
   "sources": [
-   "Abū Hilāl al-ʿAskarī, al-Furūq al-luġawiyya — the difference between an-naẓar and ar-ruʾya",
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries رأى, نظر, بصر"
   ],
   "notes": [
    "أَبْصَرَ is the Form IV verb (29); the rare Form I بَصُرَ (3) is not a member.",
-   "105:1 أَلَمْ تَرَ: the Prophet was not an eyewitness of the event, so the seeing is read as knowing (ar-Rāġib's 'seeing by the mind'); stated as a reading."
+   "105:1 أَلَمْ تَرَ: the Prophet was not an eyewitness of the event, so the seeing is read as knowing (cf. ar-Rāġib's 'seeing by the intellect'; he does not cite 105:1); stated as a reading.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries رأى, نظر, بصر (2026-11-06): 7 attributed points confirmed; changed — notes/1 (reworded): He has a category of seeing by the intellect (example 53:11) but does not cite 105:1; members/0/nuance (reworded): His second kind is supposition/imagination (example 'I think Zayd has left'), not dreams; and he says ra'ā means knowing when it takes two objects, without 'for certain'; members/1/nuance (reattributed): Al-ʿAskarī cannot be checked, but ar-Rāġib himself defines naẓar as turning the eye to perceive and see a thing, and says one may look and not see; sources/0 (dropped): al-ʿAskarī's source line dropped: his naẓar/ruʾya wording cannot be checked here, and ar-Rāġib (نظر) makes the same point, so the nuance now cites him"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رأى", "نظر", "بصر"]}
   ],
   "members": [
    {
@@ -173,8 +184,8 @@
     "count": 271,
     "meaning": {"bs": "vidjeti", "en": "to see"},
     "nuance": {
-     "bs": "Viđenje kao opažaj. Ar-Rāġib navodi viđenje osjetilom, maštom (u snu), razmišljanjem i razumom – zato رَأَى znači i „vidjeti očima” i „znati sa sigurnošću”.",
-     "en": "Seeing as perception. Ar-Rāġib lists seeing by the senses, by imagination (in a dream), by reflection and by the intellect — so رَأَى means both “to see with the eyes” and “to know for certain”."
+     "bs": "Viđenje kao opažaj. Ar-Rāġib navodi viđenje osjetilom, pretpostavkom i maštom, razmišljanjem i razumom – zato رَأَى znači i „vidjeti očima” i, s dva objekta, „znati”.",
+     "en": "Seeing as perception. Ar-Rāġib lists seeing by the senses, by supposition and imagination, by reflection and by the intellect — so رَأَى means both “to see with the eyes” and, with two objects, “to know”."
     },
     "ayat": [
      {"ref": "6:76", "why": {"bs": "Ibrahim je ugledao zvijezdu – viđenje očima.", "en": "Abraham saw a star — sight with the eyes."}},
@@ -188,8 +199,8 @@
     "count": 87,
     "meaning": {"bs": "gledati, pogledati; razmotriti", "en": "to look; to consider"},
     "nuance": {
-     "bs": "Al-ʿAskarī: nazar je okretanje oka prema nečemu da bi se vidjelo, a ru'ja je samo viđenje – pa se može gledati, a ne vidjeti. Ar-Rāġib dodaje da znači i razmatranje i ispitivanje razumom.",
-     "en": "Al-ʿAskarī: naẓar is turning the eye toward something in order to see it, while ruʾya is the seeing itself — so one may look and not see. Ar-Rāġib adds that it also means considering and examining with the mind."
+     "bs": "Ar-Rāġib: nazar je okretanje oka prema nečemu da bi se vidjelo, a ru'ja je samo viđenje – pa se može gledati, a ne vidjeti. On dodaje da znači i razmatranje i ispitivanje razumom.",
+     "en": "Ar-Rāġib: naẓar is turning the eye toward something in order to see it, while ruʾya is the seeing itself — so one may look and not see. He adds that it also means considering and examining with the mind."
     },
     "ayat": [
      {"ref": "7:198", "why": {"bs": "Gledaju prema tebi, a ne vide (jedni tumače: kipovi s izrezanim očima, drugi: mnogobošci) – gledanje bez viđenja.", "en": "They look toward you but do not see (some say the idols, whose carved eyes seem to look; others, the idolaters) — looking without seeing."}},
@@ -229,7 +240,11 @@
   ],
   "notes": [
    "ar-Rāġib says khashya is 'most often' (akṯaru mā yakūnu) born of knowledge; 17:31 (fear of poverty) shows the word is also used of fear of a thing itself, so the page states a tendency and shows that ayah.",
-   "al-ʿAskarī's distinction between the two is held back: the blind reviewer recalled a different formulation of it, and it could not be checked against the text here. 13:21 uses the verbs, not these nouns, so it is quoted in the summary, not as an illustration."
+   "al-ʿAskarī's distinction between the two is held back: the blind reviewer recalled a different formulation of it, and it could not be checked against the text here. 13:21 uses the verbs, not these nouns, so it is quoted in the summary, not as an illustration.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries خوف, خشى (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["خوف", "خشى"]}
   ],
   "members": [
    {
@@ -280,7 +295,11 @@
   ],
   "notes": [
    "The fuʾād-as-glowing link (faʾada, to roast) is ar-Rāġib's etymology and is attributed to him.",
-   "The saying that 'breast' covers the heart's understanding and the other inner forces (desire, anger) is given as 'it has been said', without naming ar-Rāġib: the attribution could not be checked here (blind review)."
+   "The saying that 'breast' covers the heart's understanding and the other inner forces (desire, anger) is given as 'it has been said': ar-Rāġib quotes it under صدر from 'some sages' (baʿḍ al-ḥukamāʾ), not as his own view.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries قلب, فأد, صدر (2026-11-06): 5 attributed points confirmed; changed — notes/1 (improved): The saying is in the Mufradāt under صدر, quoted from 'some sages' (قال بعض الحكماء); members/0/nuance (reworded): He gives the taqallub etymology as a reported view ('qīla'), not as his own statement; members/1/ayat/2/why (reworded): On 104:7 he says singling out the afʾida points to the fire's overwhelming effect, not explicitly to the word's link with burning"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قلب", "فأد", "صدر"]}
   ],
   "members": [
    {
@@ -289,8 +308,8 @@
     "count": 132,
     "meaning": {"bs": "srce", "en": "heart"},
     "nuance": {
-     "bs": "Ar-Rāġib kaže da je srce tako nazvano zbog čestog prevrtanja (taqallub) i da se njime izražava ono što mu pripada: duša, znanje, hrabrost. U Kur'anu je sjedište razumijevanja, vjerovanja i sjećanja na Allaha.",
-     "en": "Ar-Rāġib says the heart is so named for its frequent turning (taqallub) and that it expresses what belongs to it: spirit, knowledge, courage. In the Quran it is the seat of understanding, faith and remembrance of Allah."
+     "bs": "Ar-Rāġib prenosi da je srce, kako se kaže, tako nazvano zbog čestog prevrtanja (taqallub) i da se njime izražava ono što mu pripada: duša, znanje, hrabrost. U Kur'anu je sjedište razumijevanja, vjerovanja i sjećanja na Allaha.",
+     "en": "Ar-Rāġib reports that the heart is said to be so named for its frequent turning (taqallub) and that it expresses what belongs to it: spirit, knowledge, courage. In the Quran it is the seat of understanding, faith and remembrance of Allah."
     },
     "ayat": [
      {"ref": "22:46", "why": {"bs": "Srca kojima se razumije – قَلْب kao sjedište razuma.", "en": "Hearts with which to understand — qalb as the seat of reason."}},
@@ -310,7 +329,7 @@
     "ayat": [
      {"ref": "28:10", "why": {"bs": "Srce (فُؤَاد) Musaove majke ostalo je „prazno” (tefsir se razilazi: bez strpljenja, ili bez svega osim misli na sina), a u istom ajetu Allah učvršćuje njeno قَلْب: unutrašnji nemir je فُؤَاد, postojanost قَلْب.", "en": "The heart (fuʾād) of Moses' mother became “void” (tafsir differs: of patience, or of all but her son), and in the same ayah Allah fortifies her qalb: the inner upheaval is named fuʾād, the steadfastness qalb."}},
      {"ref": "53:11", "why": {"bs": "Srce nije poreklo ono što je vidjelo – unutrašnji doživljaj.", "en": "The heart did not deny what it saw — inner experience."}},
-     {"ref": "104:7", "why": {"bs": "Vatra koja se diže do srca – ar-Rāġib ovdje vidi vezu riječi s gorenjem.", "en": "The fire that mounts up to the hearts — ar-Rāġib sees here the word's link with burning."}}
+     {"ref": "104:7", "why": {"bs": "Vatra koja se diže do srca – ar-Rāġib kaže da spominjanje srca ovdje ukazuje na to koliko ih vatra snažno pogađa.", "en": "The fire that mounts up to the hearts — ar-Rāġib says naming the hearts here points to how intensely the fire affects them."}}
     ]
    },
    {
@@ -347,7 +366,11 @@
    "ar-Rāġib: ʿilm is grasping a thing in its reality; maʿrifa is perceiving a thing by reflecting on its traces, narrower than ʿilm, its opposite inkār; one says a person yaʿrifu Allah and Allah yaʿlamu, not Allah yaʿrifu — all attributed to him.",
    "That Allah is never the subject of عَرَفَ in the Quran is our own observation (all 20 uses checked), said as such.",
    "al-ʿAskarī's entry on ʿilm and maʿrifa is not used: its wording could not be verified here.",
-   "2:146: tafsir differs on what they recognise (the Prophet, or the truth of the qibla); both named."
+   "2:146: tafsir differs on what they recognise (the Prophet, or the truth of the qibla); both named.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries علم, عرف (2026-11-06): 8 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["علم", "عرف"]}
   ],
   "members": [
    {
@@ -394,14 +417,17 @@
   },
   "sources": [
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries خلق, جعل, فطر",
-   "az-Zamaḫšarī, al-Kaššāf — on 6:1",
    "aṭ-Ṭabarī, Jāmiʿ al-bayān — the report from Ibn ʿAbbās on fāṭir"
   ],
   "notes": [
    "ar-Rāġib: khalq is at root right measuring, used of bringing a thing into being without origin or model, and in that sense only Allah creates; jaʿl is general for all doings, wider than fiʿl and ṣunʿ, including making one thing from another and turning a thing from one state to another; faṭr is at root splitting lengthwise, and Allah's faṭr is bringing a thing into being in a form ready for its work — attributed to him.",
-   "az-Zamaḫšarī's contrast on 6:1 (khalq: measuring; jaʿl: one thing from another, or one thing into another) is attributed to him.",
+   "az-Zamaḫšarī's contrast on 6:1 (khalq: measuring; jaʿl: one thing from another, or one thing into another) is no longer used: al-Kaššāf could not be checked against a text here. The 6:1 note gives ar-Rāġib's own reading instead (خلق there = أبدع, 'originated'; جعل there 'runs like أوجد', one object).",
    "The Ibn ʿAbbās report (two Bedouins disputing over a well: 'I faṭartuhā', i.e. I began it) is given as reported in tafsir (aṭ-Ṭabarī); the place where he cites it is not named (blind review).",
-   "Form I بَرَأَ (1×) and the noun بَارِئ are not members: too rare in the corpus to illustrate here."
+   "Form I بَرَأَ (1×) and the noun بَارِئ are not members: too rare in the corpus to illustrate here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries خلق, جعل, فطر (2026-11-06): 14 attributed points confirmed; changed — members/0/ayat/2/why (reattributed): Al-Kaššāf cannot be checked; ar-Rāġib reads khalaqa in this phrase as ibdāʿ and classes jaʿala in 6:1 as 'like awjada' - keep az-Zamaḫšarī only if verified in al-Kaššāf; sources/1 (dropped): al-Kaššāf on 6:1 dropped from the sources: it cannot be checked here, and the 6:1 note now gives ar-Rāġib's own reading; notes/1 (reattributed)"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["خلق", "جعل", "فطر"]}
   ],
   "members": [
    {
@@ -416,7 +442,7 @@
     "ayat": [
      {"ref": "54:49", "why": {"bs": "„Mi smo sve s mjerom stvorili” – خَلَقَ i mjera (qadar) u istom ajetu.", "en": "“We have created every thing by measure” — خَلَقَ and measure (qadar) in one ayah."}},
      {"ref": "16:4", "why": {"bs": "Čovjeka je stvorio od kapi – خَلَقَ i za stvaranje iz nečega.", "en": "He created man from a drop — خَلَقَ also of making from something."}},
-     {"ref": "6:1", "why": {"bs": "Allah je stvorio (خَلَقَ) nebesa i Zemlju i dao (جَعَلَ) tmine i svjetlo; az-Zamaḫšarī kaže da je u خَلَقَ značenje odmjeravanja, a u جَعَلَ nastanka nečega iz nečega ili pretvaranja nečega u nešto.", "en": "Allah created (خَلَقَ) the heavens and the earth and made (جَعَلَ) the darkness and the light; az-Zamaḫšarī says khalaqa carries the sense of measuring, and jaʿala that of one thing from another or one thing made into another."}}
+     {"ref": "6:1", "why": {"bs": "Allah je stvorio (خَلَقَ) nebesa i Zemlju i dao (جَعَلَ) tmine i svjetlo; ar-Rāġib خَلَقَ ovdje tumači kao stvaranje bez uzora, a جَعَلَ ovdje kao davanje postojanja.", "en": "Allah created (خَلَقَ) the heavens and the earth and made (جَعَلَ) the darkness and the light; ar-Rāġib reads خَلَقَ here as originating without a model, and جَعَلَ here as simply bringing into being."}}
     ]
    },
    {
@@ -466,7 +492,11 @@
   ],
   "notes": [
    "ar-Rāġib: irsāl is said of people and of things, welcome and hateful, sometimes by subjection (wind, rain), sometimes by sending one who has choice (messengers); baʿṯ is at root rousing a thing and directing it, its sense varying with what it is applied to — attributed to him.",
-   "That the Quran uses بَعَثَ for raising the dead and waking the people of the cave is plain from the cited ayat, said as our own observation."
+   "That the Quran uses بَعَثَ for raising the dead and waking the people of the cave is plain from the cited ayat, said as our own observation.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries رسل, بعث (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رسل", "بعث"]}
   ],
   "members": [
    {
@@ -517,7 +547,11 @@
   "notes": [
    "ar-Rāġib's sense of qawl as what is conceived in the soul before it is uttered (58:8) and his definition of nuṭq (articulate sounds the tongue utters and the ears take in) are attributed to him.",
    "That كَلَّمَ names the one addressed and that نَطَقَ is often negated in the Quran are our own observations, said as such.",
-   "Form V تَكَلَّمَ (4×) is not a member; كَلَّمَ is the studied verb."
+   "Form V تَكَلَّمَ (4×) is not a member; كَلَّمَ is the studied verb.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries قول, نطق (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قول", "نطق"]}
   ],
   "members": [
    {
@@ -582,7 +616,11 @@
   "notes": [
    "ar-Rāġib: 'hearing' is sometimes said for understanding and sometimes for obedience — attributed to him.",
    "اِسْتَمَعَ as attentive, deliberate listening is the sense of Form VIII here, said in our own words.",
-   "أَنْصَتَ as falling silent in order to listen is the classical dictionaries' definition (Lisān al-ʿarab)."
+   "أَنْصَتَ as falling silent in order to listen is the classical dictionaries' definition (Lisān al-ʿarab).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries سمع (2026-11-06): 4 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سمع"]}
   ],
   "members": [
    {
@@ -638,17 +676,21 @@
    "en": "Both verbs, from one root, mean “to send down” and both are said of revelation; they differ in form: أَنْزَلَ (IV) and نَزَّلَ (II)."
   },
   "tellApart": {
-   "bs": "Spuštanje općenito → أَنْزَلَ; prema ar-Rāġibu, spuštanje dio po dio, jedno za drugim → نَزَّلَ. To je sklonost, ne strogo pravilo (25:32).",
-   "en": "Sending down in general → أَنْزَلَ; according to ar-Rāġib, sending down piece by piece, one part after another → نَزَّلَ. A tendency, not a strict rule (25:32)."
+   "bs": "Spuštanje općenito → أَنْزَلَ; prema ar-Rāġibu, kad je riječ o Kur'anu i melekima, spuštanje dio po dio, jedno za drugim → نَزَّلَ. To je sklonost, ne strogo pravilo (25:32).",
+   "en": "Sending down in general → أَنْزَلَ; according to ar-Rāġib, when the Quran and the angels are described, sending down piece by piece, one part after another → نَزَّلَ. A tendency, not a strict rule (25:32)."
   },
   "sources": [
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نزل"
   ],
   "notes": [
-   "ar-Rāġib's distinction (tanzīl for what is sent down in parts, time after time; inzāl general) is attributed to him and given as a tendency.",
+   "ar-Rāġib's distinction (in describing the Quran and the angels: tanzīl for what is sent down in parts, time after time; inzāl general) is attributed to him and given as a tendency.",
    "25:32 is shown as a counter-example: نُزِّلَ with جُمْلَةً وَاحِدَةً, in the unbelievers' words.",
    "97:1: tafsir differs (the whole Quran sent to the nearest heaven, or the beginning of revelation); both named.",
-   "Form I نَزَلَ and Form V تَنَزَّلَ are not members."
+   "Form I نَزَلَ and Form V تَنَزَّلَ are not members.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نزل (2026-11-06): 2 attributed points confirmed; changed — tellApart (reworded): He limits the inzāl/tanzīl distinction to the description of the Quran and the angels; notes/0 (reworded): He limits the distinction to the description of the Quran and the angels; members/1/nuance (reworded): He limits the distinction to the Quran and the angels; he also explains أنزل in 97:1 and 2:185 by the Quran's descent at once to the lowest heaven"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نزل"]}
   ],
   "members": [
    {
@@ -672,8 +714,8 @@
     "count": 62,
     "meaning": {"bs": "objavljivati (postepeno)", "en": "to send down (in stages)"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, تَنْزِيل se odnosi na ono što je spušteno dio po dio, jedno za drugim, dok je إِنْزَال opće. Postepena objava Kur'ana kroz godine dobro odgovara tom značenju.",
-     "en": "According to ar-Rāġib, tanzīl applies to what is sent down in parts, one after another, while inzāl is general. The Quran's gradual revelation over the years fits that sense well."
+     "bs": "Prema ar-Rāġibu, kad se opisuju Kur'an i meleki, تَنْزِيل se odnosi na ono što je spušteno dio po dio, jedno za drugim, dok je إِنْزَال opće. Postepena objava Kur'ana kroz godine dobro odgovara tom značenju.",
+     "en": "According to ar-Rāġib, when the Quran and the angels are described, tanzīl applies to what is sent down in parts, one after another, while inzāl is general. The Quran's gradual revelation over the years fits that sense well."
     },
     "ayat": [
      {"ref": "3:3", "why": {"bs": "Kur'anu stoji نَزَّلَ, a Tevratu i Indžilu أَنْزَلَ – dva oblika u istom ajetu.", "en": "For the Quran نَزَّلَ, for the Torah and the Gospel أَنْزَلَ — the two forms in one ayah."}},
@@ -699,7 +741,11 @@
   "notes": [
    "ar-Rāġib: rujūʿ is return to where a thing began (place, deed or word); ʿawd is return to a thing after turning away from it, in person or in word and resolve — attributed to him.",
    "The split by most frequent use is our own observation, given as a tendency.",
-   "Form IV أَعَادَ is a different verb and not a member."
+   "Form IV أَعَادَ is a different verb and not a member.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries رجع, عود (2026-11-06): 7 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رجع", "عود"]}
   ],
   "members": [
    {
@@ -751,7 +797,11 @@
    "ar-Rāġib: īṭāʾ is iʿṭāʾ, and the Quran expresses the paying of zakat with īṭāʾ; hiba is making one's property another's without return — attributed to him.",
    "Modern distinctions between آتَى and أَعْطَى (e.g. by what can be taken back) are not used: they are not in the classical works this section relies on.",
    "Form I أَتَى 'to come' is a different verb (group jaa-ata).",
-   "15:87: tafsir differs on 'seven of the often repeated' (al-Fātiḥa, or the seven long surahs); both named (blind review)."
+   "15:87: tafsir differs on 'seven of the often repeated' (al-Fātiḥa, or the seven long surahs); both named (blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries أتى, وهب (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أتى", "وهب"]}
   ],
   "members": [
    {
@@ -817,7 +867,11 @@
   "notes": [
    "ar-Rāġib: fiʿl is an effect from an agent, general (done well or not, knowingly or not, intended or not), and may be ascribed to animals and things; ʿamal is every doing of a living being with intent, narrower than fiʿl; ṣunʿ is doing a deed well, every ṣunʿ is fiʿl but not every fiʿl ṣunʿ — attributed to him.",
    "29:45 is shown as the general use of صَنَعَ ('what you do').",
-   "The Quran's neutral and negative uses of صَنَعَ (5:62, 29:45) are named beside ar-Rāġib's definition (blind review)."
+   "The Quran's neutral and negative uses of صَنَعَ (5:62, 29:45) are named beside ar-Rāġib's definition (blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فعل, عمل, صنع (2026-11-06): 9 attributed points confirmed; changed — members/1/nuance (reworded): He says ʿamal is used of righteous and evil deeds alike; he does not derive 'righteous deed' from the intent element"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["فعل", "عمل", "صنع"]}
   ],
   "members": [
    {
@@ -841,8 +895,8 @@
     "count": 276,
     "meaning": {"bs": "raditi, činiti", "en": "to do, to work"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, svako djelovanje živog bića učinjeno s namjerom; uže je od فِعْل i rijetko se pripisuje životinjama i stvarima. Odatle عَمَلٌ صَالِحٌ – dobro djelo.",
-     "en": "According to ar-Rāġib, every doing of a living being done with intent; narrower than fiʿl, and seldom ascribed to animals and things. Hence عَمَلٌ صَالِحٌ — the righteous deed."
+     "bs": "Prema ar-Rāġibu, svako djelovanje živog bića učinjeno s namjerom; uže je od فِعْل i rijetko se pripisuje životinjama i stvarima. Kaže da se koristi i za dobra i za loša djela – odatle عَمَلٌ صَالِحٌ, dobro djelo.",
+     "en": "According to ar-Rāġib, every doing of a living being done with intent; narrower than fiʿl, and seldom ascribed to animals and things. He notes it is used of good and evil deeds alike — hence عَمَلٌ صَالِحٌ, the righteous deed."
     },
     "ayat": [
      {"ref": "99:7", "why": {"bs": "„Ko bude uradio koliko trun dobra, vidjet će ga” – namjerno djelo i njegova posljedica.", "en": "“Whoever does an atom's weight of good will see it” — a deliberate deed and its outcome."}},
@@ -883,7 +937,11 @@
   ],
   "notes": [
    "That طَعِمَ in 2:249 is said of water (tasting it) is the reading of tafsir; 5:93 is explained in tafsir as wine drunk before its prohibition — both given as tafsir.",
-   "The figurative 'eating' of wealth is plain Quranic usage (4:10, 2:188), said as our observation."
+   "The figurative 'eating' of wealth is plain Quranic usage (4:10, 2:188), said as our observation.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries أكل, طعم (2026-11-06): 1 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أكل", "طعم"]}
   ],
   "members": [
    {
@@ -936,7 +994,11 @@
    "The corpus files حُزْن and حَزَن (two vocalisations of one word) as two lemmas; summed.",
    "أَسِف 'grieved' (7:150, 20:86) is a different word (adjective) and not summed.",
    "43:55 is given as tafsir explains it ('they provoked Our anger'), with 'as befits Allah' (content policy, blind review).",
-   "3:153: tafsir differs on what the two distresses were; said so."
+   "3:153: tafsir differs on what the two distresses were; said so.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries حزن, أسف, غم (2026-11-06): 8 attributed points confirmed; changed — members/1/nuance (improved): Ar-Rāġib himself glosses 43:55 as 'they angered Us' and adds that Allah does not grieve as we do, so he can be cited instead of 'tafsir'; members/2/nuance (reworded): He glosses ghamm/ghumma as karb (distress); 'grief that covers the heart' is not his wording"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حزن", "أسف", "غم"]}
   ],
   "members": [
    {
@@ -960,8 +1022,8 @@
     "count": 2,
     "meaning": {"bs": "žalost (sa srdžbom)", "en": "sorrow (with anger)"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, tuga i srdžba zajedno, a kaže se i za svaku od njih posebno: prema slabijem postaje srdžba, prema jačem tuga. Zato se 43:55 فَلَمَّا آسَفُونَا u tefsiru tumači: „kad su izazvali Našu srdžbu” – kako to Allahu priliči.",
-     "en": "According to ar-Rāġib, grief and anger together, though said of either alone: towards one below it becomes anger, towards one above, grief. Hence tafsir explains 43:55 فَلَمَّا آسَفُونَا as “when they provoked Our anger” — as befits Allah."
+     "bs": "Prema ar-Rāġibu, tuga i srdžba zajedno, a kaže se i za svaku od njih posebno: prema slabijem postaje srdžba, prema jačem tuga. Zato ar-Rāġib 43:55 فَلَمَّا آسَفُونَا tumači: „kad su izazvali Našu srdžbu” – kako to Allahu priliči.",
+     "en": "According to ar-Rāġib, grief and anger together, though said of either alone: towards one below it becomes anger, towards one above, grief. Hence ar-Rāġib explains 43:55 فَلَمَّا آسَفُونَا as “when they provoked Our anger” — as befits Allah."
     },
     "ayat": [
      {"ref": "12:84", "why": {"bs": "„O, jada moga za Jusufom!” – bolna žalost.", "en": "“Oh, my sorrow over Joseph!” — painful sorrow."}},
@@ -974,8 +1036,8 @@
     "count": 6,
     "meaning": {"bs": "tjeskoba", "en": "distress"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, osnovno značenje je prekrivanje – odatle غَمَام, oblaci koji zaklanjaju sunce; غَمّ je tuga koja srce prekrije.",
-     "en": "According to ar-Rāġib, the root sense is covering — hence غَمَام, clouds that veil the sun; ghamm is the grief that covers the heart."
+     "bs": "Prema ar-Rāġibu, osnovno značenje je prekrivanje – odatle غَمَام, oblaci koji zaklanjaju sunce; غَمّ tumači kao karb – tjeskobu koja čovjeka pritisne.",
+     "en": "According to ar-Rāġib, the root sense is covering — hence غَمَام, clouds that veil the sun; he glosses ghamm as karb, distress that closes in on one."
     },
     "ayat": [
      {"ref": "20:40", "why": {"bs": "„I Mi smo te tjeskobe spasili” – Musa nakon što je ubio čovjeka.", "en": "“And We saved you from distress” — Moses after he had killed a man."}},
@@ -999,10 +1061,14 @@
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فرح, سر"
   ],
   "notes": [
-   "ar-Rāġib: faraḥ is the breast's expansion at an immediate pleasure, mostly bodily and worldly, which is why it is mostly blamed (he names 10:58 and 30:4 as allowed; the review added 3:170, so 'only' is not said); surūr is what is concealed of joy — attributed to him.",
+   "ar-Rāġib: faraḥ is the breast's expansion at an immediate pleasure, mostly bodily, which is why it is mostly blamed (he names 10:58 and 30:4 as allowed; the review added 3:170, so 'only' is not said); surūr is what is concealed of joy — attributed to him.",
    "84:13 is shown as a counter-example: مَسْرُور of the denier's careless joy in this world.",
    "سُرُور and مَسْرُور are separate lemmas and separate members.",
-   "The tellApart no longer calls مَسْرُور hidden joy: 84:9 is open gladness; 'concealed joy' is kept as ar-Rāġib's root sense of سُرُور (blind review)."
+   "The tellApart no longer calls مَسْرُور hidden joy: 84:9 is open gladness; 'concealed joy' is kept as ar-Rāġib's root sense of سُرُور (blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فرح, سرر (2026-11-06): 8 attributed points confirmed; changed — notes/0 (reworded): He says faraḥ is mostly at bodily pleasures and that it is permitted only in 10:58 and 30:4; 'worldly' is our addition; members/0/nuance (reworded): He says faraḥ is mostly at bodily pleasures and is permitted only in 10:58 and 30:4; 'worldly' and 3:170 were ours"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["فرح", "سرر"]}
   ],
   "members": [
    {
@@ -1011,8 +1077,8 @@
     "count": 16,
     "meaning": {"bs": "radovati se", "en": "to rejoice"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, širenje grudi zbog trenutnog užitka, najčešće tjelesnog i ovosvjetskog; zato je u Kur'anu uglavnom pokuđeno, a pohvaljeno u nekoliko ajeta, kao 10:58, 30:4 i 3:170.",
-     "en": "According to ar-Rāġib, the expansion of the breast at an immediate pleasure, mostly bodily and worldly; hence in the Quran it is mostly blamed, and approved in a few ayat such as 10:58, 30:4 and 3:170."
+     "bs": "Prema ar-Rāġibu, širenje grudi zbog trenutnog užitka, najčešće tjelesnog; zato je u Kur'anu uglavnom pokuđeno, a on kao dopuštenu navodi samo 10:58 i 30:4 (3:170 je još jedan ajet koji je hvali).",
+     "en": "According to ar-Rāġib, the expansion of the breast at an immediate pleasure, mostly bodily; hence in the Quran it is mostly blamed, and he names only 10:58 and 30:4 as allowing it (3:170 is another approving ayah)."
     },
     "ayat": [
      {"ref": "57:23", "why": {"bs": "„I da se ne radujete obijesno onome što vam On daje” – pokuđena radost.", "en": "“Nor exult over what He has given you” — joy that is blamed."}},
@@ -1065,7 +1131,11 @@
   "notes": [
    "ar-Rāġib: ifk is anything turned from the face it ought to have, and a lie is so called for that; zūr is called so because it inclines away from its course — attributed to him.",
    "25:72: tafsir differs on الزُّور there (false witness, or attending gatherings of falsehood and idolatry); both named.",
-   "24:11: the slander is named by tafsir (against ʿĀʾiša), not by the ayah; said so."
+   "24:11: the slander is named by tafsir (against ʿĀʾiša), not by the ayah; said so.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries أفك, زور (2026-11-06): 7 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أفك", "زور"]}
   ],
   "members": [
    {
@@ -1130,9 +1200,13 @@
   ],
   "notes": [
    "ar-Rāġib: ḏanb from ḏanab (tail), used of any deed whose end is feared; iṯm a name for deeds that slow one from reward; sūʾ whatever grieves a person; ḵaṭaʾ a turning from the right direction — attributed to him.",
-   "ar-Rāġib's further remark that ḵaṭīʾa is mostly said of what was not itself intended is held back: its exact wording could not be verified here.",
+   "ar-Rāġib's further remark that ḵaṭīʾa is mostly said of what was not itself intended is now verified (لكن الخطيئة أكثر ما تقال فيما لا يكون مقصودا إليه في نفسه) and used in the ḵaṭīʾa nuance.",
    "ذَنُوب (51:59, 'a portion') is a different word and not summed; the corpus files ذُنُوب under ذَنب.",
-   "2:81: many exegetes read the encompassing khaṭīʾa as shirk; said so."
+   "2:81: many exegetes read the encompassing khaṭīʾa as shirk; said so.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries ذنب, إثم, سوأ, خطأ (2026-11-06): 12 attributed points confirmed; changed — notes/1 (improved): The remark is in the Mufradāt under خطأ: khaṭīʾa is mostly said of a wrong not itself intended but caused by something intended; members/3/nuance (improved): Confirmed; he also says khaṭīʾa is mostly a wrong not itself intended but arising from an intended act (e.g. shooting game and hitting a man)"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ذنب", "إثم", "سوأ", "خطأ"]}
   ],
   "members": [
    {
@@ -1188,8 +1262,8 @@
     "count": 10,
     "meaning": {"bs": "grijeh, pogreška", "en": "sin, fault"},
     "nuance": {
-     "bs": "Iz korijena خطأ; prema ar-Rāġibu, to je skretanje s pravog pravca. U Kur'anu se kaže i za grijeh koji obuhvati čovjeka (2:81) i u Ibrahimovoj poniznoj nadi u oprost (26:82).",
-     "en": "From the root ḵ-ṭ-ʾ; according to ar-Rāġib, a turning from the right direction. In the Quran it is said of the sin that encompasses a person (2:81) and in Abraham's humble hope of forgiveness (26:82)."
+     "bs": "Iz korijena خطأ; prema ar-Rāġibu, to je skretanje s pravog pravca; kaže da se خَطِيئَة najčešće kaže za grijeh koji nije sam bio namjeravan, nego je proistekao iz nečeg namjeravanog. U Kur'anu se kaže i za grijeh koji obuhvati čovjeka (2:81) i u Ibrahimovoj poniznoj nadi u oprost (26:82).",
+     "en": "From the root ḵ-ṭ-ʾ; according to ar-Rāġib, a turning from the right direction; he says خَطِيئَة is mostly said of a wrong not itself intended, but arising from something that was. In the Quran it is said of the sin that encompasses a person (2:81) and in Abraham's humble hope of forgiveness (26:82)."
     },
     "ayat": [
      {"ref": "2:81", "why": {"bs": "„Ko bude zlo činio i grijeh ga njegov sa svih strana obuhvati” – سَيِّئَة i خَطِيئَة u istom ajetu; mnogi mufessiri ovdje خَطِيئَة tumače kao širk.", "en": "“Whoever earns evil and his sin has encompassed him” — سَيِّئَة and خَطِيئَة in one ayah; many exegetes read the khaṭīʾa here as shirk."}},
@@ -1216,7 +1290,11 @@
    "ar-Rāġib: ʿaḏāb is severe pain — attributed to him.",
    "ʿIqāb is explained by its root ʿ-q-b ('what comes after'; ʿaqib heel, ʿāqiba outcome), said as the root's sense, not put in a lexicographer's mouth.",
    "al-ʿAskarī's entry on the pair is not used: its wording could not be verified here.",
-   "That the noun عِقَاب in the Quran is always Allah's is our own observation (all 20 uses); the verb عَاقَبَ is used of people (16:126), so the claim is limited to the noun (blind review)."
+   "That the noun عِقَاب in the Quran is always Allah's is our own observation (all 20 uses); the verb عَاقَبَ is used of people (16:126), so the claim is limited to the noun (blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عذب, عقب (2026-11-06): 3 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عذب", "عقب"]}
   ],
   "members": [
    {
@@ -1262,12 +1340,16 @@
    "en": "According to ar-Rāġib, a year that is often hard and barren → سَنَة; a year often of plenty → عَام. A tendency, not a rule: in the Quran both words are often neutral (12:47, 9:28)."
   },
   "sources": [
-   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries عوم, سنو"
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries عوم, سنة"
   ],
   "notes": [
-   "ar-Rāġib: sana is mostly used of a year of hardship or drought (drought itself is called sana), ʿām of a year of ease and plenty (12:49) — attributed to him. His remark on 29:14 (sana for the whole, ʿām for the exception) is held back: the blind reviewer could not vouch for it.",
+   "ar-Rāġib: sana is mostly used of a year of hardship or drought (drought itself is called sana), ʿām of a year of ease and plenty (12:49) — attributed to him. On 29:14 he only notes that sana for the whole and ʿām for the exception hides a subtle point, which he defers to a later work (checked against the text).",
    "Quranic سَنَة is mostly neutral (2:96, 18:25, 32:5) and 12:47 uses سِنِين of years of sowing; 9:28 shows عَام used neutrally. The distinction is given as ar-Rāġib's, a tendency of the language, not of Quranic usage (blind review).",
-   "سَنَة and its plural سِنِين are two lemmas in the corpus; summed."
+   "سَنَة and its plural سِنِين are two lemmas in the corpus; summed.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عوم, سنة (2026-11-06): 11 attributed points confirmed; changed — sources/0 (reworded): His discussion of sana is under the headword سنة; the سنا entry is about light, not the year; notes/0 (improved): The 29:14 remark exists in the ʿām entry, but he only flags a subtle point and does not explain it"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عوم", "سنة"]}
   ],
   "members": [
    {
@@ -1318,7 +1400,11 @@
   ],
   "notes": [
    "ar-Rāġib: ṭarīq is the way beaten by feet (ṭaraqa, to strike); sabīl a way with ease in it; ṣirāṭ the straight way — attributed to him.",
-   "That صِرَاط is never plural in the Quran while سَبِيل has the plural سُبُل (6:153) is our own observation, said as such."
+   "That صِرَاط is never plural in the Quran while سَبِيل has the plural سُبُل (6:153) is our own observation, said as such.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries طرق, سبل, صرط (2026-11-06): 7 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["طرق", "سبل", "صرط"]}
   ],
   "members": [
    {
@@ -1384,7 +1470,11 @@
   "notes": [
    "ar-Rāġib: bayt is at root a person's shelter for the night, then any house; dār is named from the wall that encircles it, then a town, a region, this world and the Hereafter; sukūn is stillness after motion, also used of dwelling — attributed to him.",
    "59:9: tafsir takes الدَّار as Medina; said so.",
-   "24:27 keeps Korkut's 'dok ne zatražite dozvolu' in Bosnian beside Sahih International's 'ascertain welcome'; the reviewer's drift note is accepted as a difference of the two translations' wording."
+   "24:27 keeps Korkut's 'dok ne zatražite dozvolu' in Bosnian beside Sahih International's 'ascertain welcome'; the reviewer's drift note is accepted as a difference of the two translations' wording.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries بيت, دار, سكن (2026-11-06): 11 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["بيت", "دار", "سكن"]}
   ],
   "members": [
    {
@@ -1445,14 +1535,18 @@
    "en": "Light that spreads and helps sight, and figuratively guidance → نُور; strong light, radiance — the sun → ضِيَاء."
   },
   "sources": [
-   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نور",
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نور, ضوأ",
    "Tafsir on 10:5 (the stronger light), unattributed"
   ],
   "notes": [
-   "ar-Rāġib's definition of nūr (spread light that helps seeing, of two kinds: seen with the eye and seen with insight) is attributed to him.",
-   "That ḍiyāʾ is the stronger light (10:5) is given as a common tafsir explanation; its attribution to az-Zamaḫšarī is held back — the blind reviewer could not vouch for it in the Kaššāf.",
+   "ar-Rāġib's definition of nūr (spread light that helps seeing, worldly or otherworldly, the worldly either seen with the eye or seen with insight) is attributed to him.",
+   "That ḍiyāʾ is the stronger light (10:5) is given as a common tafsir explanation; its attribution to az-Zamaḫšarī is held back — the blind reviewer could not vouch for it in the Kaššāf. ar-Rāġib himself explains 10:5 only by ḍawʾ being more specific (akhaṣṣ) than nūr.",
    "The later explanation that ḍiyāʾ is light from its own source and nūr reflected light is not used: it is not in the works cited here.",
-   "24:35 carries the tafsir gloss (He illumines the heavens and the earth and guides those in them), so the ayah is not read literally (content policy, blind review)."
+   "24:35 carries the tafsir gloss (He illumines the heavens and the earth and guides those in them), so the ayah is not read literally (content policy, blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نور, ضوأ (2026-11-06): 3 attributed points confirmed; changed — sources/0 (improved): He also has a ḍawʾ entry and explains 10:5 by ḍawʾ being more specific than nūr, which we can cite; notes/0 (reworded): His first division is worldly vs otherworldly light; the eye/insight split is a subdivision of worldly light; notes/1 (improved): ar-Rāġib explains the sun/moon contrast in 10:5 by ḍawʾ being more specific than nūr, not by it being stronger; members/0/nuance (reworded): He divides light into worldly and otherworldly, splits worldly light into seen by eye or by insight, and names reason and the Quran (not guidance and faith) as examples"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نور", "ضوأ"]}
   ],
   "members": [
    {
@@ -1461,8 +1555,8 @@
     "count": 43,
     "meaning": {"bs": "svjetlo", "en": "light"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, raširena svjetlost koja pomaže vidu; dvojaka je: ona koja se vidi očima i ona koja se vidi pronicljivošću – uputa i vjera.",
-     "en": "According to ar-Rāġib, spread light that helps seeing; of two kinds: what is seen with the eye and what is seen with insight — guidance and faith."
+     "bs": "Prema ar-Rāġibu, raširena svjetlost koja pomaže vidu; na ovom svijetu ili se vidi očima ili pronicljivošću – kao svjetlost razuma i Kur'ana; a postoji i svjetlost ahireta.",
+     "en": "According to ar-Rāġib, spread light that helps seeing; in this world it is either seen with the eye or seen with insight — like the light of reason and of the Quran; there is also the light of the hereafter."
     },
     "ayat": [
      {"ref": "10:5", "why": {"bs": "Sunce je učinio sjajem (ضِيَاء), a Mjesec svjetlom (نُور).", "en": "He made the sun a shining light (ضِيَاء) and the moon a light (نُور)."}},
@@ -1553,7 +1647,11 @@
   ],
   "notes": [
    "ar-Rāġib: ʿayn is the organ of sight and is also said of a spring; baṣar is said of the seeing organ and of the faculty in it, the heart's perception being baṣīra — attributed to him.",
-   "The corpus files الأَبْصَار under بَصَر; one word, nothing to sum."
+   "The corpus files الأَبْصَار under بَصَر; one word, nothing to sum.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عين, بصر (2026-11-06): 8 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عين", "بصر"]}
   ],
   "members": [
    {
@@ -1603,7 +1701,11 @@
   ],
   "notes": [
    "ar-Rāġib: kitāb is at root sewing leather to leather, in usage joining letters in writing; ṣaḥīfa is anything spread flat, then the leaf one writes on — attributed to him.",
-   "صِحَاف (43:71, 'platters') is a different word and not summed."
+   "صِحَاف (43:71, 'platters') is a different word and not summed.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كتب, صحف (2026-11-06): 7 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كتب", "صحف"]}
   ],
   "members": [
    {
@@ -1655,7 +1757,11 @@
    "ar-Rāġib: 'great' and 'small' (kabīr, ṣaġīr) are relative terms said of things compared with one another; ʿiẓam is at root bigness of bone, then borrowed for every great thing, perceptible or intelligible — attributed to him.",
    "That كَبِير is said of age (28:23) and عَظِيم never is our own observation.",
    "The relative sense of كَبِير is hedged as 'often': al-Kabīr is also a name of Allah (blind review).",
-   "68:4: Korkut's 'najljepše ćudi' is kept, with the literal 'velike ćudi' beside it."
+   "68:4: Korkut's 'najljepše ćudi' is kept, with the literal 'velike ćudi' beside it.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كبر, عظم (2026-11-06): 7 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كبر", "عظم"]}
   ],
   "members": [
    {
@@ -1707,7 +1813,11 @@
    "ar-Rāġib: ḥamd is praising for excellence, narrower than madḥ and wider than šukr; šukr is in return for a favour; every šukr is ḥamd but not every ḥamd šukr — attributed to him.",
    "That كُفْر is set against شُكْر in 14:7, 2:152 and 27:40 is plain from the ayat, said as our observation.",
    "حَمْد (noun) and شَكَرَ (verb) are the studied words; the verb حَمِدَ occurs once.",
-   "'Only in return for a favour' is softened: Allah is šākir (2:158), which tafsir explains as rewarding deeds (blind review)."
+   "'Only in return for a favour' is softened: Allah is šākir (2:158), which tafsir explains as rewarding deeds (blind review).",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries حمد, شكر (2026-11-06): 8 attributed points confirmed; changed — members/1/nuance (improved): ar-Rāġib himself explains Allah's šukr as His favour and recompense for worship, and names kufr (forgetting and hiding the favour) as its opposite"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حمد", "شكر"]}
   ],
   "members": [
    {
@@ -1730,8 +1840,8 @@
     "count": 46,
     "meaning": {"bs": "zahvaljivati, biti zahvalan", "en": "to thank, to be grateful"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, šukr je priznanje primljene blagodati. Kad je Allah شَاكِر (2:158), tefsir to tumači nagrađivanjem djela. U Kur'anu mu je suprotnost كُفْر – nezahvalnost.",
-     "en": "According to ar-Rāġib, šukr is acknowledging a favour received. Where Allah is شَاكِر (2:158), tafsir explains it as His rewarding of deeds. In the Quran its opposite is kufr — ingratitude."
+     "bs": "Prema ar-Rāġibu, šukr je priznanje primljene blagodati. Kad je Allah شَاكِر (2:158), ar-Rāġib to tumači Njegovom blagodati robovima i nagrađivanjem njihovog ibadeta. Suprotnost mu je, kaže on, كُفْر – zaboravljanje i prikrivanje blagodati.",
+     "en": "According to ar-Rāġib, šukr is acknowledging a favour received. Where Allah is شَاكِر (2:158), ar-Rāġib explains it as His favour to His servants and His rewarding of their worship. Its opposite, he notes, is kufr — forgetting and concealing the favour."
     },
     "ayat": [
      {"ref": "14:7", "why": {"bs": "„Ako budete zahvalni, sigurno ću vam još više dati.”", "en": "“If you are grateful, I will surely increase you.”"}},
@@ -1757,7 +1867,11 @@
   ],
   "notes": [
    "ar-Rāġib: ẓann arises from a sign, leading to knowledge when strong and not passing imagination when very weak; ḥusbān is judging for one of two opposites without the other coming to mind, unlike ẓann where both are in mind and one prevails; zaʿm is reporting a claim open to suspicion of falsehood, which is why it comes in the Quran in blame of those who make it — attributed to him.",
-   "ẓann as certainty in 2:46 is the tafsir reading (aṭ-Ṭabarī), named as such."
+   "ẓann as certainty in 2:46 is the tafsir reading (aṭ-Ṭabarī), named as such.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries ظن, حسب, زعم (2026-11-06): 11 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ظن", "حسب", "زعم"]}
   ],
   "members": [
    {
@@ -1820,11 +1934,15 @@
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries رحم, رأف"
   ],
   "notes": [
-   "ar-Rāġib: raḥma is a tenderness that calls for doing good to the one shown mercy; when ascribed to Allah it means the doing of good alone, without the tenderness; ar-Raḥmān is said of Allah alone, while raḥīm is said of others too — all attributed to him. 9:128 is shown as the Quranic case of raḥīm said of a human being; that ar-Rāġib cites it there is not claimed (blind review).",
+   "ar-Rāġib: raḥma is a tenderness that calls for doing good to the one shown mercy; when ascribed to Allah it means the doing of good alone, without the tenderness; ar-Raḥmān is said of Allah alone, while raḥīm is said of others too — all attributed to him. 9:128 is shown as the Quranic case of raḥīm said of a human being; ar-Rāġib himself cites it there, right after saying raḥīm is used of others too (checked against the text).",
    "'Raḥmān of this world, Raḥīm of the hereafter' and 'Raḥmān for all creatures, Raḥīm for the believers' (with 33:43) are given as sayings found in tafsir, not attributed to one scholar; they are not the only views.",
    "ar-Rāġib glosses raʾfa simply as raḥma; that raʾfa is a more tender or intense mercy is said in tafsir and stated as such, not put in his mouth.",
    "That رَءُوف stands beside رَحِيم in 9 of its 11 places, and is said once of the Prophet (9:128) and otherwise of Allah, is our own observation (all 11 read). That ar-Raḥmān is never said of anyone but Allah holds for all 56 places (checked).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries رحم, رأف (2026-11-06): 8 attributed points confirmed; changed — notes/0 (improved): ar-Rāġib does cite 9:128 as raḥīm said of the Prophet, directly after saying raḥīm is used of others than Allah"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رحم", "رأف"]}
   ],
   "members": [
    {
@@ -1889,11 +2007,15 @@
   ],
   "notes": [
    "ar-Rāġib: kufr is at root covering a thing; kufr of a favour is covering it by not giving thanks; the greatest kufr is denying the oneness of Allah, the sharīʿa or prophethood — attributed to him.",
-   "ar-Rāġib: nifāq is entering the religion by one door and leaving it by another, from nāfiqāʾ, the jerboa's burrow with two openings — attributed to him.",
+   "ar-Rāġib: nifāq is entering the religion by one door and leaving it by another, related, like nāfiqāʾ (the jerboa's bolt-hole), to nafaq, a tunnel that runs right through — attributed to him.",
    "The distinction between major shirk and minor shirk (showing off in worship) is a common one among scholars, stated without naming one.",
    "That كَفَرَ is wider than شِرْك (98:1 names among those who disbelieved both People of the Scripture and idolaters) is read from the ayah itself.",
    "Members are the verb كَفَرَ and the agent nouns مُشْرِك, مُنَافِق: the forms a learner meets most; the nouns كُفْر (37), شِرْك (5) and نِفَاق (3) are rarer.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كفر, شرك, نفق (2026-11-06): 9 attributed points confirmed; changed — notes/1 (reworded): He derives both nāfiqāʾ al-yarbūʿ and nifāq from nafaq, a passage that goes through; 'two openings' is not his wording; members/0/nuance (reattributed): He does not rank the three words; he calls shirk the greatest kufr and reports that most jurists take 'mushrikūn' in 9:5 to mean all kuffār; members/2/nuance (reworded): He derives nifāq, like the jerboa's nāfiqāʾ, from nafaq (a tunnel that goes through); he does not mention two openings"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كفر", "شرك", "نفق"]}
   ],
   "members": [
    {
@@ -1902,8 +2024,8 @@
     "count": 289,
     "meaning": {"bs": "ne vjerovati, biti nezahvalan", "en": "to disbelieve, to be ungrateful"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, osnovno značenje je „prekriti”: nevjernik prekriva istinu, a nezahvalnik blagodat. Najšira od tri riječi – obuhvata i mušrike i one od sljedbenika Knjige koji ne vjeruju, a znači i nezahvalnost.",
-     "en": "According to ar-Rāġib, the root sense is “to cover”: the disbeliever covers the truth, the ingrate covers a favour. The widest of the three — it takes in the idolaters and those of the People of the Scripture who disbelieve, and it also means ingratitude."
+     "bs": "Prema ar-Rāġibu, osnovno značenje je „prekriti”: nevjernik prekriva istinu, a nezahvalnik blagodat. U kur'anskoj upotrebi najšira od tri riječi – obuhvata i mušrike i one od sljedbenika Knjige koji ne vjeruju, a znači i nezahvalnost.",
+     "en": "According to ar-Rāġib, the root sense is “to cover”: the disbeliever covers the truth, the ingrate covers a favour. In Quranic usage the widest of the three — it takes in the idolaters and those of the People of the Scripture who disbelieve, and it also means ingratitude."
     },
     "ayat": [
      {"ref": "98:1", "why": {"bs": "„Oni koji ne vjeruju, od sljedbenika Knjige i mušrika” – كَفَرَ obuhvata obje skupine.", "en": "“Those who disbelieved among the People of the Scripture and the polytheists” — كَفَرَ takes in both groups."}},
@@ -1932,8 +2054,8 @@
     "count": 27,
     "meaning": {"bs": "licemjer, munafik", "en": "hypocrite"},
     "nuance": {
-     "bs": "Onaj ko javno pokazuje vjerovanje, a krije nevjerstvo. Prema ar-Rāġibu, riječ dolazi od jazbine pustinjskog miša s dva izlaza: munafik ulazi u vjeru na jedna vrata, a izlazi na druga.",
-     "en": "One who shows faith in public and hides disbelief. According to ar-Rāġib the word comes from the jerboa's burrow with two openings: the hypocrite enters the religion by one door and leaves by another."
+     "bs": "Onaj ko javno pokazuje vjerovanje, a krije nevjerstvo. Prema ar-Rāġibu, riječ dolazi od نَفَق, prolaza koji vodi skroz kroz zemlju, kao izlaz iz jazbine pustinjskog miša: munafik ulazi u vjeru na jedna vrata, a izlazi na druga.",
+     "en": "One who shows faith in public and hides disbelief. According to ar-Rāġib the word comes from nafaq, a tunnel that runs right through, like the jerboa's bolt-hole: the hypocrite enters the religion by one door and leaves by another."
     },
     "ayat": [
      {"ref": "63:1", "why": {"bs": "Svjedoče da je on Allahov Poslanik, a Allah svjedoči da su lažljivci – riječi bez uvjerenja.", "en": "They bear witness that he is Allah's Messenger, and Allah bears witness that they are liars — words without conviction."}},
@@ -1961,7 +2083,11 @@
    "ar-Rāġib: yaqīn is a quality of knowledge above maʿrifa — stillness of understanding with firmness of judgement — attributed to him.",
    "Scholars differ on whether īmān and islām are one or two; a widespread view is that they differ when named together (as in 49:14) and each includes the other when named alone. Stated as a difference of views.",
    "أَيْقَنَ is Form IV (يُوقِنُونَ); the noun يَقِين (8) is not a separate member.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries سلم, يقين (2026-11-06): 9 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سلم", "يقين"]}
   ],
   "members": [
    {
@@ -2027,7 +2153,11 @@
   "notes": [
    "ar-Rāġib: nidāʾ is raising the voice and making it heard; duʿāʾ is like nidāʾ, except that nidāʾ may be just “yā” or “ayā” without a name, while duʿāʾ is hardly said without the name; he cites 2:171 (duʿāʾan wa-nidāʾan, nouns, so not a member ayah here) — attributed to him.",
    "19:3 'a secret call' (nidāʾan khafiyyan): that this joins a word for calling aloud with secrecy is commented on in tafsir; given as tafsir, not a named mufassir.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries دعا, ندا (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["دعا", "ندا"]}
   ],
   "members": [
    {
@@ -2079,7 +2209,11 @@
    "ar-Rāġib: hidāya is guiding with gentleness; Allah's guidance is of four kinds — the general guidance given to every creature, the call through the prophets, the help (tawfīq) given to the guided, and the guidance to Paradise in the hereafter — attributed to him.",
    "ar-Rāġib: rashad and rushd are the opposite of ghayy and used like hidāya; he reports that some said rushd is said of worldly and otherworldly matters and rashad of otherworldly matters only — given as the view of 'some' he reports.",
    "رُشْد (6) and رَشَد (5) are two vocalisations of one word, filed by the corpus as two lemmas; counted together (11).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries هدى, رشد (2026-11-06): 14 attributed points confirmed; changed — members/0/nuance (improved): He adds that the Quran reserves the word hudā (unlike hidāya) for guidance Allah Himself grants, citing ﴿ هدى للمتقين ﴾"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["هدى", "رشد"]}
   ],
   "members": [
    {
@@ -2088,8 +2222,8 @@
     "count": 85,
     "meaning": {"bs": "uputa", "en": "guidance"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, upućivanje s blagošću. Allahova uputa je četverostruka: opća uputa svakom stvorenju, poziv po poslanicima, pomoć (tevfik) upućenima i uvođenje u džennet. Knjiga se sama zove هُدًى.",
-     "en": "According to ar-Rāġib, guiding with gentleness. Allah's guidance is fourfold: general guidance to every creature, the call through the prophets, help (tawfīq) to the guided, and leading into Paradise. The Book itself is called هُدًى."
+     "bs": "Prema ar-Rāġibu, upućivanje s blagošću. Allahova uputa je četverostruka: opća uputa svakom stvorenju, poziv po poslanicima, pomoć (tevfik) upućenima i uvođenje u džennet. On ističe da je riječ هُدًى rezervisana za uputu koju daje sam Allah – zato se i Knjiga zove هُدًى.",
+     "en": "According to ar-Rāġib, guiding with gentleness. Allah's guidance is fourfold: general guidance to every creature, the call through the prophets, help (tawfīq) to the guided, and leading into Paradise. He notes that the word هُدًى is reserved for guidance Allah Himself grants — so the Book itself is called هُدًى."
     },
     "ayat": [
      {"ref": "2:2", "why": {"bs": "„Uputa onima koji se boje Allaha” – Knjiga kao uputa.", "en": "“A guidance for those conscious of Allah” — the Book as guidance."}},
@@ -2132,7 +2266,11 @@
    "ar-Rāġib: ghayy is ignorance that comes from a corrupt belief, as distinct from ignorance with no belief at all — attributed to him.",
    "53:2 (mā ḍalla … wa-mā ghawā) shows both roots side by side, but uses verbs, not these nouns; mentioned here only.",
    "The corpus files ضَلَالَة (9) as a separate lemma; it is not added to ضَلَال.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries ضل, غوى, رشد (2026-11-06): 7 attributed points confirmed; changed — members/0/nuance (reworded): His examples of the light end are oversight and forgetting (﴿ أن تضل إحداهما ﴾ = forgets), set against 'far error' which is kufr; 'being at a loss' is not his"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ضل", "غوى", "رشد"]}
   ],
   "members": [
    {
@@ -2141,8 +2279,8 @@
     "count": 38,
     "meaning": {"bs": "zabluda, lutanje", "en": "error, straying"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, skretanje s pravog puta – svako, namjerno ili nenamjerno, malo ili veliko. Zato se kaže i za „izgubljenost” u nevolji i za veliku zabludu nevjerstva.",
-     "en": "According to ar-Rāġib, turning aside from the straight path — any such turning, intended or not, small or great. Hence it is said both of being at a loss and of the great error of disbelief."
+     "bs": "Prema ar-Rāġibu, skretanje s pravog puta – svako, namjerno ili nenamjerno, malo ili veliko. Zato se, kaže on, odnosi i na običan previd ili zaborav i na daleku zabludu nevjerstva (ضَلَالًا بَعِيدًا).",
+     "en": "According to ar-Rāġib, turning aside from the straight path — any such turning, intended or not, small or great. Hence, he notes, it is said both of a mere oversight or forgetting and of the far error of disbelief (ضَلَالًا بَعِيدًا)."
     },
     "ayat": [
      {"ref": "4:116", "why": {"bs": "Ko Allahu pripisuje druga, daleko je zalutao – ضَلَال بَعِيد, najveća zabluda.", "en": "Whoever associates others with Allah has gone far astray — ضَلَال بَعِيد, the greatest error."}},
@@ -2181,12 +2319,16 @@
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries ظلم, بغى, عدا"
   ],
   "notes": [
-   "ar-Rāġib: ẓulm is putting a thing in other than its proper place, by falling short, by excess, or by deviating in time or place; it is of three kinds — between man and Allah (the greatest: kufr and shirk), between man and people, and between man and himself — attributed to him.",
-   "ar-Rāġib: baghy is seeking to go beyond the right measure, whether or not one goes beyond it; the blameworthy baghy is wrongdoing against others — attributed to him.",
+   "ar-Rāġib: ẓulm is putting a thing in other than its proper place, by falling short, by excess, or by deviating in time or place; he cites some sages that it is of three kinds — between man and Allah (the greatest: kufr, shirk and nifāq), between man and people, and between man and himself — attributed to him.",
+   "ar-Rāġib: baghy is seeking to go beyond the right measure, whether or not one goes beyond it; the blameworthy baghy is passing beyond the truth to falsehood or to the doubtful, and in most places in the Quran it is blameworthy — attributed to him.",
    "ʿudwān is explained by its root ʿ-d-w (going beyond, overstepping); said as the root's sense.",
    "2:193 (no ʿudwān except against the wrongdoers): many mufassirun explain that the just response is called ʿudwān by correspondence (mušākala) with the wrong it answers; given as their explanation (blind review).",
    "6:82: the Prophet's explanation of ẓulm there as shirk (citing 31:13) is reported in the Ṣaḥīḥ collections; the ayah is not cited as a member ayah, the hadith is mentioned in 31:13's note only.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries ظلم, بغى (2026-11-06): 6 attributed points confirmed; changed — notes/0 (reworded): He gives the definition as that of lexicographers and many scholars, and reports the three-fold division from 'some sages', naming kufr, shirk and nifāq as the gravest; notes/1 (reworded): He defines blameworthy baghy as passing from truth to falsehood or the doubtful, and says it is blameworthy in most Quranic places; 'against others' is not his definition; members/0/nuance (reworded): The three-fold division is reported by him from 'some sages', not stated as his own"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ظلم", "بغى"]}
   ],
   "members": [
    {
@@ -2195,8 +2337,8 @@
     "count": 20,
     "meaning": {"bs": "nepravda, nasilje", "en": "injustice, wrong"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, stavljanje stvari na mjesto koje joj ne pripada. Najšira riječ: nepravda prema Allahu (širk), prema ljudima i prema samome sebi.",
-     "en": "According to ar-Rāġib, putting a thing where it does not belong. The widest word: wrong against Allah (shirk), against people, and against oneself."
+     "bs": "Prema ar-Rāġibu, stavljanje stvari na mjesto koje joj ne pripada. Najšira riječ; on navodi mudrace koji je dijele na nepravdu prema Allahu (širk), prema ljudima i prema samome sebi.",
+     "en": "According to ar-Rāġib, putting a thing where it does not belong. The widest word; he cites sages who divide it into wrong against Allah (shirk), against people, and against oneself."
     },
     "ayat": [
      {"ref": "31:13", "why": {"bs": "„Širk je, zaista, velika nepravda” – ẓulm prema Allahu; Poslanik je tim ajetom objasnio ẓulm u 6:82.", "en": "“Association is great injustice” — ẓulm against Allah; with this ayah the Prophet explained the ẓulm of 6:82."}},
@@ -2254,9 +2396,13 @@
    "ar-Rāġib: ʿadl is equality; ʿadl is used of what is grasped by insight (judgements), ʿidl of what is perceived by the senses (weights, numbers) — attributed to him.",
    "ar-Rāġib: qisṭ is the share given justly; qasaṭa is taking another's share (injustice, 72:15 al-qāsiṭūn) while aqsaṭa is giving another his share (justice) — attributed to him.",
    "That قِسْط often stands with weighing and measure (6:152, 55:9, 21:47) is our observation of its 15 places.",
-   "In 2:48 and 5:95 the Quran's word is read ʿadl (with fatḥa) in the sense of an equivalent, although ar-Rāġib ties that sense to ʿidl; shown as the Quran has it (blind review).",
+   "In 2:48 and 5:95 the Quran's word is read ʿadl (with fatḥa) in the sense of an equivalent, and ar-Rāġib himself cites 5:95 under ʿadl, as an equivalence grasped by insight rather than by the senses.",
    "49:9 joins both (fa-aṣliḥū baynahumā bi-l-ʿadl wa-aqsiṭū): cited under عَدْل.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عدل, قسط (2026-11-06): 10 attributed points confirmed; changed — notes/3 (reworded): He cites ﴿ أو عدل ذلك صياما ﴾ (5:95) as the example of ʿadl, the equivalence grasped by insight, and glosses it as fasting equal to the food; members/0/nuance (reworded): He explains 5:95 as fasting equal to the food of the expiation; he does not discuss the ransom sense of 2:48"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["عدل", "قسط"]}
   ],
   "members": [
    {
@@ -2265,8 +2411,8 @@
     "count": 14,
     "meaning": {"bs": "pravda, pravičnost", "en": "justice, equity"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, jednakost: dati svakome jednako, suditi bez naginjanja. Odatle i „protuvrijednost”: otkupnina jednake vrijednosti, ili post jednak iskupu.",
-     "en": "According to ar-Rāġib, equality: giving each alike, judging without leaning. Hence also an “equivalent”: a ransom equal in value, or fasting equal to an expiation."
+     "bs": "Prema ar-Rāġibu, jednakost: dati svakome jednako, suditi bez naginjanja. Odatle i „protuvrijednost”: post jednak hrani iskupa (5:95, kako ga on tumači), ili otkupnina jednake vrijednosti.",
+     "en": "According to ar-Rāġib, equality: giving each alike, judging without leaning. Hence also an “equivalent”: fasting equal to the food of an expiation (5:95, as he explains it), or a ransom equal in value."
     },
     "ayat": [
      {"ref": "16:90", "why": {"bs": "„Allah naređuje pravednost i dobročinstvo” – عَدْل kao temelj.", "en": "“Allah orders justice and good conduct” — عَدْل as the foundation."}},
@@ -2308,7 +2454,11 @@
    "ar-Rāġib: jazāʾ is what suffices, requital good for good and evil for evil; ajr is what returns from a deed, worldly or otherworldly, said of what comes under a contract or what is like one, and only of benefit, never harm, while jazāʾ is said with or without a contract and of benefit and harm — attributed to him.",
    "ar-Rāġib: thawāb is from thawb, a thing's return to its first state — what returns to a person for his deeds; the word is used of good and evil but is mostly known for good (he cites the verb in 3:153) — attributed to him.",
    "That the noun ثَوَاب in the Quran is always a reward (all 9 places read) is our observation; the verb أَثَابَ is used of grief in 3:153.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries جزاء, أجر, ثوب (2026-11-06): 16 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جزاء", "أجر", "ثوب"]}
   ],
   "members": [
    {
@@ -2376,7 +2526,11 @@
    "That جَحِيم is said once of the fire prepared for Ibrāhīm (37:97) and otherwise of Hell, and that all 16 places of سَعِير speak of the hereafter, is our observation (all places read).",
    "جَهَنَّم is not a member: the corpus treats it as a proper name outside the noun catalogue.",
    "Content: the ayat are quoted as warnings, with no description beyond the Quran's own words.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نور, جحم, سعر (2026-11-06): 8 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نور", "جحم", "سعر"]}
   ],
   "members": [
    {
@@ -2443,7 +2597,11 @@
    "ar-Rāġib: qarya is a name for the place where people gather and for the people together, used of either — attributed to him.",
    "That the Quran calls one place (as tafsir identifies it) both قَرْيَة and مَدِينَة (18:77 and 18:82; 36:13 and 36:20), and that Mecca is called قَرْيَة (47:13, umm al-qurā 6:92), is our observation; 'qarya = village' is therefore not the Quranic sense.",
    "مَدِينَة: the corpus files the broken plural مَدَائِن (3, Pharaoh's cities) separately; counted together (17).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries قرى (2026-11-06): 3 attributed points confirmed; changed — members/0/nuance (reattributed): He cites 47:13 ('your qarya') and calls qarya a name for a city, but never names Mecca, so the Mecca point is now a Quranic observation"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قرى"]}
   ],
   "members": [
    {
@@ -2453,8 +2611,8 @@
     "count": 57,
     "meaning": {"bs": "naselje, grad", "en": "town, settlement"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, mjesto gdje se ljudi okupljaju – i sami ljudi. Ne znači samo selo: i Meka se zove قَرْيَة. Najčešće se govori o narodima i njihovim naseljima koja su uništena (naše zapažanje).",
-     "en": "According to ar-Rāġib, the place where people gather — and the people themselves. It does not mean only a village: Mecca too is called قَرْيَة. Most often said of peoples and their towns that were destroyed (our observation)."
+     "bs": "Prema ar-Rāġibu, mjesto gdje se ljudi okupljaju – i sami ljudi. Ne znači samo selo: u Kur'anu se i Meka zove قَرْيَة (47:13). Najčešće se govori o narodima i njihovim naseljima koja su uništena (naše zapažanje).",
+     "en": "According to ar-Rāġib, the place where people gather — and the people themselves. It does not mean only a village: in the Quran Mecca too is called قَرْيَة (47:13). Most often said of peoples and their towns that were destroyed (our observation)."
     },
     "ayat": [
      {"ref": "12:82", "why": {"bs": "„Pitaj grad u kojem smo bili” – قَرْيَة za stanovnike.", "en": "“Ask the city in which we were” — قَرْيَة for its people."}},
@@ -2494,10 +2652,14 @@
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries موت, وفى"
   ],
   "notes": [
-   "ar-Rāġib: tawaffī is taking a thing in full; death and sleep are both expressed by tawaffī (6:60, 39:42) — attributed to him.",
+   "ar-Rāġib: istīfāʾ (same root) is taking a thing in full; death and sleep are both expressed by tawaffī (6:60, 39:42) — attributed to him.",
    "That the subject of تَوَفَّى in all 24 places is Allah, the angels or death, or the verb is passive, is our observation (all places read).",
    "3:55 (mutawaffīka) and 5:117 (tawaffaytanī), about ʿĪsā, are not cited: tafsir differs on their meaning (sleep, being taken up, or death), and the participle in 3:55 is not filed under the verb.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries وفى, موت (2026-11-06): 3 attributed points confirmed; changed — notes/0 (reworded): He defines istīfāʾ, not tawaffī, as taking a thing in full; that death and sleep are both called tawaffī (6:60, 39:42) is his; members/1/nuance (reworded): 'Taking in full' is his gloss of istīfāʾ in the same root, not a definition of tawaffī; death and sleep being called tawaffī is his"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["وفى", "موت"]}
   ],
   "members": [
    {
@@ -2521,8 +2683,8 @@
     "count": 24,
     "meaning": {"bs": "uzeti dušu (u smrti i u snu)", "en": "to take the soul (in death and in sleep)"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, „uzeti nešto u potpunosti”; tako se kaže i za smrt i za san. Subjekt je Allah, meleki ili smrt; čovjek je onaj čija se duša uzima.",
-     "en": "According to ar-Rāġib, “to take a thing in full”; it is said of death and of sleep alike. The subject is Allah, the angels or death; the person is the one whose soul is taken."
+     "bs": "Iz korijena „uzeti nešto u potpunosti”; prema ar-Rāġibu, njime se izražavaju i smrt i san. Subjekt je Allah, meleki ili smrt; čovjek je onaj čija se duša uzima.",
+     "en": "From the root of “taking a thing in full”; according to ar-Rāġib, death and sleep alike are expressed by it. The subject is Allah, the angels or death; the person is the one whose soul is taken."
     },
     "ayat": [
      {"ref": "6:60", "why": {"bs": "On vam noću uzima duše (يَتَوَفَّاكُم), u snu – تَوَفَّى i za san.", "en": "He takes your souls by night (in sleep) — تَوَفَّى said of sleep too."}},
@@ -2549,7 +2711,11 @@
    "ar-Rāġib: suʾāl is a request for knowledge (answered by tongue, or by writing) or for property (answered by hand) — attributed to him.",
    "ar-Rāġib: futyā and fatwā are the answer to what is unclear in rulings; istaftā is asking for it — attributed to him.",
    "اِسْتَفْتَى is used of a dream's interpretation (12:41) and of asking someone's opinion in argument (37:11, 18:22): our reading of all 6 places.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries سأل, فتى (2026-11-06): 4 attributed points confirmed; changed — members/0/nuance (reworded): His second kind of asking is a request for wealth (māl), not for any 'thing'"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سأل", "فتى"]}
   ],
   "members": [
    {
@@ -2558,8 +2724,8 @@
     "count": 106,
     "meaning": {"bs": "pitati, tražiti", "en": "to ask"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, tražiti znanje ili tražiti stvar. Najopćija riječ za pitanje: od pitanja o mladom mjesecu do pitanja o samom Allahu.",
-     "en": "According to ar-Rāġib, to ask for knowledge or to ask for a thing. The most general word for asking: from questions about the new moons to asking about Allah Himself."
+     "bs": "Prema ar-Rāġibu, tražiti znanje ili tražiti imetak. Najopćija riječ za pitanje: od pitanja o mladom mjesecu do pitanja o samom Allahu.",
+     "en": "According to ar-Rāġib, to ask for knowledge or to ask for wealth. The most general word for asking: from questions about the new moons to asking about Allah Himself."
     },
     "ayat": [
      {"ref": "2:189", "why": {"bs": "„Pitaju te o mlađacima” – pitanje radi znanja.", "en": "“They ask you about the new moons” — a question for knowledge."}},
@@ -2601,7 +2767,11 @@
    "ar-Rāġib: waṣiyya is directing another to something to be acted on, joined with admonition — attributed to him.",
    "That وَصَّى in the Quran is said of what is to be kept across generations (2:132, 42:13) and of the core commandments (6:151–153) is our reading of its 10 places.",
    "Form IV أَوْصَى (يُوصِيكُمُ اللَّهُ, 4:11) is a separate verb in the catalogue and not a member.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries وصى (2026-11-06): 3 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["وصى"]}
   ],
   "members": [
    {
@@ -2652,7 +2822,11 @@
   "notes": [
    "ar-Rāġib: nahy is restraining from a thing; ḥarām is what is withheld, and taḥrīm may be by Allah's decree in creation (taskhīr, 28:12), by a human, or by the sharīʿa — attributed to him.",
    "That people are reproached in the Quran for ḥarrama without authority (6:140, 7:32) is read from the ayat.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نهى, حرم (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نهى", "حرم"]}
   ],
   "members": [
    {
@@ -2705,7 +2879,11 @@
    "ar-Rāġib: one says yadharu ash-shayʾ, 'he leaves the thing', i.e. casts it off for setting little store by it, and its past tense is not used — attributed to him.",
    "That وَذَرَ appears in the Quran only in the present and the imperative (all 45 uses) is our observation; the headword وَذَرَ is the dictionary form.",
    "74:11 (dharnī, 'leave Me with him') is not cited: it is an ayah of threat whose tafsir needs more room than a line.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries ترك, وذر (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ترك", "وذر"]}
   ],
   "members": [
    {
@@ -2756,7 +2934,11 @@
   "notes": [
    "ar-Rāġib: jamʿ is bringing a thing together by drawing its parts close; ḥashr is bringing a group out of where they settled and driving them to war and the like, and is said only of a group — attributed to him.",
    "20:124–125 (wa-naḥshuruhu … ḥashartanī aʿmā) use حَشَرَ of one person (both ayat) on the Day of Judgement: shown beside ar-Rāġib's rule as a counter-example.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries جمع, حشر (2026-11-06): 8 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جمع", "حشر"]}
   ],
   "members": [
    {
@@ -2808,7 +2990,11 @@
    "ar-Rāġib: halāk is used in several senses — loss of a thing, its corruption, death, and passing away altogether — attributed to him.",
    "That دَمَّرَ is said in 7 of its 8 places of Allah's destruction of peoples and their works, and once of the wind 'by the command of its Lord' (46:25), and that its doubled form and the cognate accusative (17:16 tadmīran) stress completeness, is our observation, not a lexicographer's wording.",
    "17:16 has both verbs: nuhlika then dammarnāhā.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries هلك (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["هلك"]}
   ],
   "members": [
    {
@@ -2861,7 +3047,11 @@
    "On 2:286 tafsir often explains why good is with kasabat and evil with iktasabat: the Form VIII stresses effort, and the soul strives harder after evil it desires. Given as the explanation of many mufassirun, not pinned to one; some treat the variation as stylistic only. 'Form VIII stresses effort' is theirs, not ar-Rāġib's (blind review).",
    "4:32 (iktasabū / iktasabna, of men's and women's earnings) shows اِكْتَسَبَ used for what is not evil; so the 2:286 contrast is not a rule of the word.",
    "اِكْتَسَبَ: 5 uses in 4 ayat.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كسب (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كسب"]}
   ],
   "members": [
    {
@@ -2965,7 +3155,11 @@
    "ar-Rāġib: walāʾ is two or more things being so close that nothing comes between them, used of nearness in place, kinship, religion, friendship, help and belief — attributed to him.",
    "That walī is the one who takes care of one's affairs and naṣīr the one who aids against an enemy is how tafsir often explains the pair; stated as such, not pinned to one mufassir.",
    "That the two often stand together (2:107, 4:45, 9:116) is read from the ayat.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries ولى (2026-11-06): 4 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["ولى"]}
   ],
   "members": [
    {
@@ -3016,10 +3210,14 @@
   ],
   "notes": [
    "ar-Rāġib: shakk is two opposites being equal in a person's mind, with no sign tipping towards either — attributed to him.",
-   "That rayb is doubt joined with unease and suspicion is how tafsir often explains it on 2:2; stated as such. ar-Rāġib's own wording on rayb is not used: it could not be checked word for word here.",
+   "That rayb is doubt joined with unease and suspicion is how tafsir often explains it on 2:2; stated as such. ar-Rāġib's own definition differs: rayb is imagining something about a thing that is then uncovered (entry ريب).",
    "The two meet in 11:62 and 34:54 (shakk … murīb), where murīb is from the root of rayb; cited under شَكّ.",
    "52:30 rayb al-manūn: tafsir explains it as the accidents of time, or death; given as tafsir.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries شكك, ريب (2026-11-06): 3 attributed points confirmed; changed — notes/1 (improved): He does not speak of unease: he defines rayb as suspecting something in a thing that is then uncovered, and rība as a sign of rancour and little certainty"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["شكك", "ريب"]}
   ],
   "members": [
    {
@@ -3072,7 +3270,11 @@
    "ar-Rāġib: takfīr of a sin is covering it until it is as if it had not been done — attributed to him.",
    "That ʿafw is from ʿafā, 'to efface' (as wind effaces a trace) is a common explanation in tafsir; given as such. Which of maghfira and ʿafw is the greater is not decided here: tafsir differs.",
    "The ordering in 2:286 (wa-ʿfu ʿannā wa-ghfir lanā) is cited as it stands, without a claim about why.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries غفر, كفر (2026-11-06): 8 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["غفر", "كفر"]}
   ],
   "members": [
    {
@@ -3139,7 +3341,11 @@
    "ar-Rāġib: tawb is leaving a sin in the best way, the most eloquent form of apology; when Allah is said to tāba ʿalā someone, He accepts his repentance — attributed to him.",
    "ar-Rāġib: ināba to Allah is returning to Him with repentance and sincerity of deed — attributed to him.",
    "That أَنَابَ is never said of Allah in the Quran (all 11 uses have a human subject) while تَابَ is said of both, is our observation.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries توب, نوب (2026-11-06): 7 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["توب", "نوب"]}
   ],
   "members": [
    {
@@ -3193,7 +3399,11 @@
    "وَالِد: the corpus files the dual with suffix (وَالِدَيْهِ, 10) as a lemma of its own beside وَالِد (14); counted together: 24.",
    "12:100 abawayhi: tafsir differs on whether this is his father and mother (if she was still alive) or his father and maternal aunt; stated so.",
    "90:3 wa-wālidin wa-mā walad: tafsir differs (Ādam and his offspring, or every begetter and what he begets); stated so.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries أبا (2026-11-06): 5 attributed points confirmed; changed — members/0/nuance (reworded): His examples of the 'cause' sense are the Prophet and the teacher; grandfather and uncle are called ab only when paired with the father (2:133)"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أبا"]}
   ],
   "members": [
    {
@@ -3202,8 +3412,8 @@
     "count": 117,
     "meaning": {"bs": "otac, predak", "en": "father, forefather"},
     "nuance": {
-     "bs": "Otac; prema ar-Rāġibu, i svako ko je uzrok nastanka ili popravka nečega – djed, predak, pa i amidža. U množini (آبَاء) često „preci” čiju predaju ljudi slijede.",
-     "en": "Father; according to ar-Rāġib, also anyone who is a cause of a thing's coming to be or its betterment — a grandfather, a forefather, even an uncle. In the plural (آبَاء) often the “forefathers” whose way people follow."
+     "bs": "Otac; prema ar-Rāġibu, i svako ko je uzrok nastanka ili popravka nečega; a uz oca se i djed, pa i amidža, ubrajaju među očeve (2:133). U množini (آبَاء) često „preci” čiju predaju ljudi slijede.",
+     "en": "Father; according to ar-Rāġib, also anyone who is a cause of a thing's coming to be or its betterment; and alongside the father, a grandfather or even an uncle is counted among one's fathers (2:133). In the plural (آبَاء) often the “forefathers” whose way people follow."
     },
     "ayat": [
      {"ref": "2:133", "why": {"bs": "„Tvome Bogu i Bogu tvojih predaka Ibrahima, Ismaila i Ishaka” – Ismail, Jakubov amidža, među „očevima”.", "en": "“Your God and the God of your fathers, Abraham and Ishmael and Isaac” — Ishmael, Jacob's uncle, among the “fathers”."}},
@@ -3246,7 +3456,11 @@
    "9:103 (ṣalli ʿalayhim … ṣalātaka) is explained in tafsir as the Prophet's supplication for those who gave; we say 'tafsir explains', not a named mufassir.",
    "That دُعَاء in the Quran is also made by people in hardship who turn away once relieved (41:51), and that صَلَاة is once said of the idolaters' worship at the House (8:35), is our observation.",
    "Blind review: 'at root a supplication' and 'almost always with أَقَامَ' softened (many lexicographers; most often — 23:2, 70:23, 62:9).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries صلا (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["صلا"]}
   ],
   "members": [
    {
@@ -3297,11 +3511,15 @@
    "Tafsir on 9:60 (ṣadaqāt as the obligatory zakat) and on 19:13, 18:81 (zakāh as purity)"
   ],
   "notes": [
-   "ar-Rāġib: zakāh comes from growth that comes with Allah's blessing, and the prescribed alms are so called for the blessing hoped in them or for the purifying of the soul; ṣadaqa is what one gives from one's wealth seeking nearness to Allah, at root said of the voluntary gift, while zakāh is said of the due one — and the due one may also be called ṣadaqa. Paraphrased and attributed.",
+   "ar-Rāġib: zakāh comes from growth that comes with Allah's blessing, and the prescribed alms are so called for the blessing hoped in them or for tazkiyat an-nafs, which he glosses as making the soul grow in good; ṣadaqa is what one gives from one's wealth seeking nearness to Allah, at root said of the voluntary gift, while zakāh is said of the due one — and the due one may also be called ṣadaqa. Paraphrased and attributed.",
    "That 9:60's ṣadaqāt are the obligatory zakat is the reading of most tafsir and fiqh; we say 'most mufassirun'.",
    "That many mufassirun take زَكَاة as purity (others: righteousness; some for 19:13: charity) in 19:13 and 18:81, that it stands beside صَلَاة in most of its places, and that أَنْفَقَ is also said of spending on one's family (65:7) and of disbelievers' spending against the faith (8:36), are our observations of all places.",
    "Blind review: zakāh as purity in 19:13 / 18:81 given as many mufassirun's reading, not as fact; 9:103 marked as disputed (zakat or expiatory charity).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries زكا, صدق (2026-11-06): 7 attributed points confirmed; changed — notes/0 (reworded): He explains tazkiyat an-nafs here as making the soul grow in good and blessings, not as purifying it; members/0/nuance (reworded): He says the alms are named for hoped blessing or for making the soul grow in good, not for purifying it"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["زكا", "صدق"]}
   ],
   "members": [
    {
@@ -3311,8 +3529,8 @@
     "count": 32,
     "meaning": {"bs": "zekat; čistoća", "en": "zakat; purity"},
     "nuance": {
-     "bs": "Propisano davanje, u Kur'anu najčešće odmah uz namaz. Prema ar-Rāġibu, riječ u osnovi znači rast koji dolazi s Allahovim blagoslovom, a zekat tako čisti i dušu. U 19:13 i 18:81 mnogi mufesiri je tumače kao čistoću (drugi: dobročinstvo).",
-     "en": "The prescribed giving, in the Quran most often right beside prayer. According to ar-Rāġib, the word at root means growth that comes with Allah's blessing, and zakat so purifies the soul too. In 19:13 and 18:81 many mufassirun take it as purity (others: righteousness)."
+     "bs": "Propisano davanje, u Kur'anu najčešće odmah uz namaz. Prema ar-Rāġibu, riječ u osnovi znači rast koji dolazi s Allahovim blagoslovom, a zekat je tako nazvan zbog blagoslova koji se od njega očekuje, ili zato što dušu uzdiže u dobru. U 19:13 i 18:81 mnogi mufesiri je tumače kao čistoću (drugi: dobročinstvo).",
+     "en": "The prescribed giving, in the Quran most often right beside prayer. According to ar-Rāġib, the word at root means growth that comes with Allah's blessing, and the alms are so named for the blessing hoped in them, or because they make the soul grow in good. In 19:13 and 18:81 many mufassirun take it as purity (others: righteousness)."
     },
     "ayat": [
      {"ref": "98:5", "why": {"bs": "„…da obavljaju namaz i daju zekat – a to je prava vjera” – zekat kao temelj vjere.", "en": "“…to establish prayer and give zakat; that is the correct religion” — zakat as a pillar of the faith."}},
@@ -3372,7 +3590,11 @@
    "Tafsir on 19:26 mostly explains ṣawm as silence; some add that fasting in their law included silence. Both are named.",
    "That صِيَام (9 times) is always the legal fast and صَوْم occurs only in 19:26 is our observation of all places. That the two forms differ in meaning is not claimed as a rule of the language: both are verbal nouns of صَامَ.",
    "Blind review: the Bosnian of 19:26 now says abstention, matching the point; 2:184 is not called a Ramadan ayah (some take it as an earlier fast); 2:185 šahida rendered 'witnesses / dočeka'.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries صوم (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["صوم"]}
   ],
   "members": [
    {
@@ -3422,8 +3644,8 @@
  "hajj-umra": {
   "title": {"bs": "Hadž i umra", "en": "Hajj and umrah"},
   "shared": {
-   "bs": "Obje riječi označavaju putovanje Allahovoj Kući radi obreda. Prema ar-Rāġibu, ḥajj u osnovi znači namjeru (polazak) u posjetu, a ʿumra posjetu; šerijat je obje vezao za Kabu.",
-   "en": "Both words name the journey to Allah's House for its rites. According to ar-Rāġib, ḥajj at root means setting out to visit, and ʿumra a visit; the Sharia tied both to the Kaaba."
+   "bs": "Obje riječi označavaju putovanje Allahovoj Kući radi obreda. Prema ar-Rāġibu, ḥajj u osnovi znači namjeru (polazak) u posjetu, a ʿumra posjetu koja održava naklonost; šerijat je obje vezao za Kabu.",
+   "en": "Both words name the journey to Allah's House for its rites. According to ar-Rāġib, ḥajj at root means setting out to visit, and ʿumra a visit that keeps affection alive; the Sharia tied both to the Kaaba."
   },
   "tellApart": {
    "bs": "Hadž, u poznatim mjesecima, obaveza onome ko može → حَجّ; umra, posjeta Kabi, koja nije vezana za te mjesece → عُمْرَة.",
@@ -3438,7 +3660,11 @@
    "That hajj is bound to its months (2:197) while umrah may be made at any time is the common ground of fiqh. Whether umrah is obligatory is disputed (Shāfiʿī and Ḥanbalī: yes, with 2:196; Ḥanafī and Mālikī: a sunna); both views are named, neither chosen.",
    "حَجّ sums the corpus's lemmas حَجّ and حِجّ (3:97 is read ḥijju in Ḥafṣ).",
    "Blind review: 'only in 2:196' restricted to the noun (the verb iʿtamara is in 2:158).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries حج, عمر (2026-11-06): 6 attributed points confirmed; changed — shared (improved): Confirmed, and he glosses ʿumra more precisely as a visit in which affection is kept alive (ʿimārat al-wudd), tying it to its root"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حج", "عمر"]}
   ],
   "members": [
    {
@@ -3491,7 +3717,11 @@
    "That أَقْسَمَ is Allah's oath in 8 ayat (لَا أُقْسِمُ / فَلَا أُقْسِمُ) and otherwise people's oaths, often 'their strongest oaths' that are then belied, is our observation of all 19 ayat.",
    "Tafsir differs on the لَا in لَا أُقْسِمُ: an emphasis ('Nay, I swear') or a rejection of what the deniers said before the oath; both are named.",
    "Blind review: أَقْسَمَ carries only some of Allah's oaths — most use the particle wa-.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries قسم, حلف (2026-11-06): 2 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["قسم", "حلف"]}
   ],
   "members": [
    {
@@ -3544,7 +3774,11 @@
    "That نَبَأ (with its plural أَنْبَاء) is mostly said of the stories of earlier prophets and peoples, of the unseen and of the Last Day, is our observation of all 29 places; 49:6 (news brought by a fāsiq, to be verified) shows that a nabaʾ can still need checking.",
    "خَبَر sums the corpus's lemmas خَبَر and its plural أَخْبَار (2 + 3).",
    "Blind review: ġalabat aẓ-ẓann rendered 'strong probability'; the derivation of نَبِيّ from nabaʾ given as many's view (others: from nabwa).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نبأ, خبر (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["نبأ", "خبر"]}
   ],
   "members": [
    {
@@ -3598,7 +3832,11 @@
    "That سَارَ occurs 13 times in 'travel through the land and see the end of…' is our observation of all 16 places; that مَشَى is often qualified by the manner of walking (17:37, 25:63, 28:25) likewise.",
    "62:9 fa-sʿaw: tafsir mostly explains it as going with care and readiness, not running (the Prophet forbade running to prayer); both senses of saʿy are named.",
    "Blind review: 62:9 fa-sʿaw given as most mufassirun's reading.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries مشى, سار, سعى (2026-11-06): 6 attributed points confirmed; changed — members/2/nuance (improved): Confirmed; he adds that saʿy is most often used of praiseworthy deeds, which we had not said"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["مشى", "سار", "سعى"]}
   ],
   "members": [
    {
@@ -3637,8 +3875,8 @@
     "count": 20,
     "meaning": {"bs": "žuriti; truditi se", "en": "to hasten; to strive"},
     "nuance": {
-     "bs": "Prema ar-Rāġibu, brz hod, ali ne trčanje; prenosi se na zalaganje u nekom poslu – u dobru (za ahiret) ili u zlu (smutnja po zemlji).",
-     "en": "According to ar-Rāġib, a quick walk short of running; it is carried over to earnest effort in a matter — in good (for the hereafter) or in evil (spreading corruption)."
+     "bs": "Prema ar-Rāġibu, brz hod, ali ne trčanje; prenosi se na zalaganje u nekom poslu – u dobru (za ahiret) ili u zlu (smutnja po zemlji), mada najčešće za pohvalna djela.",
+     "en": "According to ar-Rāġib, a quick walk short of running; it is carried over to earnest effort in a matter — in good (for the hereafter) or in evil (spreading corruption), though most often of praiseworthy deeds."
     },
     "ayat": [
      {"ref": "36:20", "why": {"bs": "„I s kraja grada dođe jedan čovjek žureći (يَسْعَى)” – brzi hod.", "en": "“And there came from the farthest end of the city a man, running (يَسْعَى)” — the quick walk."}},
@@ -3664,9 +3902,13 @@
   "notes": [
    "ar-Rāġib: ġaḍab is the boiling of the heart's blood in wishing for revenge; when Allah is described by it, he says, punishment alone is meant. Many scholars of Ahl as-Sunna instead affirm anger as an attribute of Allah as befits Him, unlike creatures' anger. Both views are named in the member text; the ayat about Allah's anger carry no likening.",
    "ar-Rāġib: ġayẓ is the most intense anger, the heat a person feels from the boiling of his heart's blood — paraphrased and attributed.",
-   "That غَيْظ is never said of Allah (all 6 places read), and that سَخَط and its verb stand against رِضْوَان / رَضِيَ (3:162, 47:28, 9:58), is our own observation. ar-Rāġib's wording on saḵaṭ is not used: it could not be verified here.",
+   "That غَيْظ is never said of Allah (all 6 places read), and that سَخَط and its verb stand against رِضْوَان / رَضِيَ (3:162, 47:28, 9:58), is our own observation. ar-Rāġib: saḵaṭ is intense anger that calls for punishment, and from Allah it is the sending down of punishment.",
    "Blind review: 3:162 سَخَط rendered 'displeasure', not 'anger', with 'as befits Him'.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries غضب, غيظ, سخط (2026-11-06): 5 attributed points confirmed; changed — notes/2 (improved): His saḵaṭ entry exists: intense anger calling for punishment, from Allah the sending down of punishment"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["غضب", "غيظ", "سخط"]}
   ],
   "members": [
    {
@@ -3732,7 +3974,11 @@
    "That the verb وَدَّ means 'to wish' (mostly وَدَّ لَوْ / أَنْ) in all 16 places, and that مَوَدَّة is in every place affection between people, is our observation of all places.",
    "42:23 (al-mawaddata fī l-qurbā) is not cited: tafsir gives several readings of it.",
    "Blind review: 'always means wish' restricted to the basic verb (Form III yuwāddūna, 58:22, is affection); Allah's love glossed 'as befits Him'.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries حب, ودد (2026-11-06): 4 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["حب", "ودد"]}
   ],
   "members": [
    {
@@ -3802,7 +4048,11 @@
    "71:13 is explained in much of tafsir as 'why do you not fear Allah's majesty'; we give that reading as tafsir's and do not cite the ayah as a member example.",
    "That رَجَا has as object the meeting with Allah, the Last Day or Allah's mercy in most of its 22 places, and that طَمِعَ is praised (26:82, 26:51, 5:84) and blamed (70:38, 74:15, 33:32), is our observation of all places.",
    "Blind review: the reading 'do not fear' for lā yarjūna (10:7) is named beside 'do not hope'.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries رجا, طمع (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["رجا", "طمع"]}
   ],
   "members": [
    {
@@ -3854,7 +4104,11 @@
    "ar-Rāġib: istikbār is seeking to become great; it is praiseworthy when rightly placed, and blameworthy when one shows of himself what he does not have — and the Quran's uses are of the second kind. Takabbur is either real excellence beyond others, in which sense Allah is al-Mutakabbir, or a pretended one, which is that of people. Paraphrased and attributed to him.",
    "That اسْتَكْبَرَ is most often refusal of worship, of the messengers or of the truth (Iblis 2:34, 40:60, 71:7), and that مُتَكَبِّر is Allah's name once (59:23) and otherwise always arrogant people (Hell's dwellers; 40:27, 40:35), is our observation of all places.",
    "Blind review: الْمُتَكَبِّر rendered Veličanstveni / the Supreme (not Uzvišeni, which belongs to al-ʿAlī).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كبر (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["كبر"]}
   ],
   "members": [
    {
@@ -3918,9 +4172,13 @@
   "notes": [
    "ar-Rāġib: ḫušūʿ is ḍarāʿa, mostly used of what is found in the limbs, while ḍarāʿa is mostly used of what is in the heart; hence the saying 'when the heart is humbled the limbs become humble' — he gives it as 'it has been related', and so do we.",
    "Counter-example shown: 57:16 'that their hearts should be humbled (taḫšaʿa qulūbuhum)', so ḫušūʿ of the heart is also Quranic; the distinction is a tendency.",
-   "That خَاشِع is said of eyes, faces, voices, the earth and a mountain (54:7, 88:2, 41:39, 59:21), and that خَاضِع occurs once (26:4), is our observation; ar-Rāġib's wording on ḫuḍūʿ is not used.",
+   "That خَاشِع is said of eyes, faces, voices, the earth and a mountain (54:7, 88:2, 41:39, 59:21), and that خَاضِع occurs once (26:4), is our observation; ar-Rāġib simply glosses ḫuḍūʿ as ḫušūʿ.",
    "Blind review: 6:63 'aloud' corrected to 'humbly and secretly'; 26:4 aʿnāquhum given as necks or (for some mufassirun) leaders.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries خشع, ضرع, خضع (2026-11-06): 7 attributed points confirmed; changed — notes/2 (improved): His ḫuḍūʿ entry exists and simply equates ḫuḍūʿ with ḫušūʿ; members/1/nuance (reworded): He says ḍarāʿa is mostly used of what is in the heart (not exclusively), and that taḍarruʿ is showing ḍarāʿa"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["خشع", "ضرع", "خضع"]}
   ],
   "members": [
    {
@@ -3944,8 +4202,8 @@
     "count": 3,
     "meaning": {"bs": "ponizna molba, preklinjanje", "en": "humble entreaty"},
     "nuance": {
-     "bs": "Ponizno, usrdno preklinjanje, najčešće u dovi. Prema ar-Rāġibu, ḍarāʿa je poniznost u srcu.",
-     "en": "Humble, earnest entreaty, most often in supplication. According to ar-Rāġib, ḍarāʿa is lowliness in the heart."
+     "bs": "Ponizno, usrdno preklinjanje, najčešće u dovi. Prema ar-Rāġibu, ḍarāʿa se najčešće kaže za poniznost u srcu, a taḍarruʿ je njeno pokazivanje.",
+     "en": "Humble, earnest entreaty, most often in supplication. According to ar-Rāġib, ḍarāʿa is mostly said of lowliness in the heart, and taḍarruʿ is showing it."
     },
     "ayat": [
      {"ref": "7:55", "why": {"bs": "„Molite se Gospodaru svome ponizno (تَضَرُّعًا) i u sebi” – kako se upućuje dova.", "en": "“Call upon your Lord in humility and privately” — how supplication is made."}},
@@ -3987,7 +4245,11 @@
    "That all 7 ayat with يَمّ belong to the story of Moses and Pharaoh (the infant set afloat, Pharaoh's drowning, the calf's ashes scattered), while بَحْر is used in that story too (2:50, 20:77, 26:63), is our observation of all places.",
    "Tafsir mostly takes the yamm of 20:39 and 28:7 to be the Nile; for Pharaoh's drowning it is the sea. A claim that yamm is a loanword is not made: it could not be verified here.",
    "Blind review: 28:7 'the same water' corrected — the Nile in 20:39 / 28:7, the sea in 28:40.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries بحر, يم (2026-11-06): 3 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["بحر", "يم"]}
   ],
   "members": [
    {
@@ -4037,10 +4299,14 @@
    "Tafsir on 56:69 (al-muzn as clouds)"
   ],
   "notes": [
-   "ar-Rāġib: saḥāb is so named either because the wind drags it or because it drags the water; ġamām is the cloud, named for covering (ġamma) the light of the sun — paraphrased and attributed. His wording on muzn is not used; the lexicons commonly describe it as white rain clouds, and tafsir on 56:69 explains it as the clouds.",
+   "ar-Rāġib: saḥāb is so named because the wind drags it, or it drags the water, or it is itself dragged along in its passage; ġamām is the cloud, named for covering (ġamma) the light of the sun — paraphrased and attributed. muzn he glosses as bright (luminous) clouds, a single piece being muzna, and tafsir on 56:69 explains it as the clouds.",
    "That سَحَاب is often tied to the winds and to rain (7:57, 24:43, 30:48, 35:9), though also an image of passing and darkness (27:88, 24:40), and that غَمَام is never the bearer of rain but a shade (2:57, 7:160) or a sign of the Last Day (25:25, 2:210), is our observation of all places. 2:210 (Allah's coming in shades of cloud) is not cited: its meaning is left to tafsir.",
    "Blind review: سَحَاب 'almost always with rain' softened to 'often' (27:88, 24:40, 52:44); Korkut's 'sinovi Israilovi' and 2:57 wording.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries سحب, غم, مزن (2026-11-06): 2 attributed points confirmed; changed — notes/0 (improved): He gives three derivations for saḥāb (we had two) and does define muzn: bright, luminous clouds"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["سحب", "غم", "مزن"]}
   ],
   "members": [
    {
@@ -4103,7 +4369,11 @@
    "ar-Rāġib: āl is a transposed form of ahl, but is restricted to being joined to names of rational persons — one does not say āl of a place or a time — and is used of those bound to a person by close kinship or allegiance; ahl is joined to anything. Paraphrased and attributed to him.",
    "That آل is joined to a proper name in all 23 ayat (Ibrahim, ʿImran, Yaʿqub, Musa, Harun, Dawud, Lut, Firʿawn) is our observation; آل فِرْعَوْن (his people and followers) shows it is not only kinship.",
    "Blind review: 'always with a name' marked as our observation; أَهْلُ النَّارِ rendered 'stanovnici Vatre'. 'faraon' is kept, as in Korkut's translation.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries أهل, آل (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أهل", "آل"]}
   ],
   "members": [
    {
@@ -4153,11 +4423,15 @@
   ],
   "notes": [
    "ar-Rāġib: ṣāḥib is one who keeps company, be it a person, an animal, a place or a time, and in usage only one whose company is frequent; ḫulla is love, either because it pervades (taḫallala) the soul, or pierces it, or from great need of it — paraphrased and attributed to him.",
-   "That صَدِيق is linked with ṣidq (truth) is said of the word's root; ar-Rāġib's own wording on ṣadīq is not used.",
+   "That صَدِيق is linked with ṣidq (truth) is said of the word's root; ar-Rāġib defines ṣadāqa (friendship) as truthfulness of conviction in affection, something proper to humans.",
    "9:40 (lā taḥzan … li-ṣāḥibihi): the companion in the cave is Abu Bakr by the agreement of tafsir.",
    "خَلِيل includes its plural أَخِلَّاء (43:67) in one corpus lemma.",
    "Blind review: 'your companion' reworded so it cannot read as diminishing the Prophet; khalīl's other derivation (need) named and Allah's ḫulla glossed as unlike human friendship; 43:67 keeps 'except the righteous'.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries صحب, خل, صدق (2026-11-06): 7 attributed points confirmed; changed — notes/1 (improved): He defines ṣadāqa as sincerity of conviction in affection, proper to humans, citing 26:101"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["صحب", "خل", "صدق"]}
   ],
   "members": [
    {
@@ -4220,10 +4494,14 @@
    "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فكر, دبر, عقل, فقه"
   ],
   "notes": [
-   "ar-Rāġib: fikr is a faculty that leads knowledge to the known, and tafakkur its running according to the mind's view, said only of what can take form in the heart; tadabbur is reflecting on the ends (dubur) of matters; ʿaql is the faculty ready to receive knowledge, and the knowledge gained by it; fiqh is reaching knowledge of the absent through knowledge of the present, so it is narrower than ʿilm. Paraphrased and attributed to him.",
+   "ar-Rāġib: fikr is a faculty that leads knowledge to the known, and tafakkur its running according to the mind's view, said only of what can take form in the heart; he gives no definition of tadabbur, but defines tadbīr as thinking on the ends (dubur) of matters; ʿaql is the faculty ready to receive knowledge, and the knowledge gained by it; fiqh is reaching knowledge of the absent through knowledge of the present, so it is narrower than ʿilm. Paraphrased and attributed to him.",
    "Our observations of all places: تَدَبَّرَ (4 times) has the Quran, its ayat or 'the word' as object; عَقَلَ occurs only as a verb (49 times) — the noun ʿaql is not in the Quran; فَقِهَ is negated or denied in most of its 19 ayat.",
    "Blind review: tadabbur 'always the Quran' marked as our observation (23:68 al-qawl); tafakkur also of stories (7:176) and of the Prophet (34:46); 2:44 is about saying one thing and doing another, not 'hypocrisy'; 22:46 phrased as the Quran ascribing understanding to the heart.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فكر, دبر, عقل, فقه (2026-11-06): 6 attributed points confirmed; changed — notes/0 (reworded): The 'thinking on the ends of matters' definition is his for tadbīr; he defines no tadabbur (checked with --mentions)"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["فكر", "دبر", "عقل", "فقه"]}
   ],
   "members": [
    {
@@ -4302,7 +4580,11 @@
    "That اخْتَارَ is once said of a human chooser (Moses, 7:155) while اصْطَفَى and اجْتَبَى are Allah's choice in every place except where idolaters' claims are quoted or rejected (37:153, 39:4, 7:203), is our observation of all places.",
    "7:203 (lawlā jtabaytahā) is explained in tafsir as 'why have you not devised it (yourself)'; it is not cited.",
    "Blind review: 'draw near' removed from اجْتَبَى (not ar-Rāġib's) and pardon kept for Adam only; 3:42 'očistio'; 28:68 mā as negation given as most tafsir's reading.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries صفو, جبى, خير (2026-11-06): 7 attributed points confirmed; changed — members/1/nuance (reworded): He says it is for the prophets and some near them (ṣiddīqs and martyrs), not 'mostly for prophets'"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["صفو", "جبى", "خير"]}
   ],
   "members": [
    {
@@ -4326,8 +4608,8 @@
     "count": 10,
     "meaning": {"bs": "odabrati i privući sebi", "en": "to choose and draw near"},
     "nuance": {
-     "bs": "Odabrati i obasuti milošću – prema ar-Rāġibu, obilje blagodati koje čovjek nije zaslužio trudom, najčešće za vjerovjesnike; u Kur'anu često uz uputu (هَدَى): o Ademu (uz oprost), Ibrahimu, Junusu, Jusufu.",
-     "en": "To single out and shower with favour — according to ar-Rāġib, an abundance of blessing the servant did not earn by striving, mostly for prophets; in the Quran often with guidance (هَدَى): of Adam (with pardon), Abraham, Jonah, Joseph."
+     "bs": "Odabrati i obasuti milošću – prema ar-Rāġibu, obilje blagodati koje čovjek nije zaslužio trudom, data vjerovjesnicima i nekima koji su im blizu po stepenu; u Kur'anu često uz uputu (هَدَى): o Ademu (uz oprost), Ibrahimu, Junusu, Jusufu.",
+     "en": "To single out and shower with favour — according to ar-Rāġib, an abundance of blessing the servant did not earn by striving, given to prophets and some close to them in rank; in the Quran often with guidance (هَدَى): of Adam (with pardon), Abraham, Jonah, Joseph."
     },
     "ayat": [
      {"ref": "20:122", "why": {"bs": "„Zatim ga Gospodar njegov odabra, pa mu oprosti i na pravi put uputi” – Adem nakon posrnuća.", "en": "“Then his Lord chose him and turned to him in forgiveness and guided him” — Adam after his slip."}},
@@ -4371,7 +4653,11 @@
    "That سَكِينَة is, in 5 of its 6 places, sent down (أَنْزَلَ) by Allah on the Prophet and the believers, and in 2:248 is 'in the Ark … from your Lord', is our observation; tafsir differs on what the sakīna of 2:248 was, and we do not choose.",
    "That اطْمَأَنَّ is also blamed — being content with this world (10:7) or with worship only while it goes well (22:11) — is our observation of all places.",
    "Blind review: 2:260 glossed 'not from doubt — he said Yes'; 9:40 'upon him' given as the Prophet (most) or Abu Bakr (some).",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries طمن (2026-11-06): 3 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["طمن"]}
   ],
   "members": [
    {
@@ -4424,7 +4710,11 @@
    "ar-Rāġib: ǧidāl is negotiation by way of contention and trying to overcome, from ǧadaltu l-ḥabla, 'I twisted the rope tight'; ḥuǧǧa is the evidence that makes the right path (maḥaǧǧa) clear, and muḥāǧǧa is each side seeking to turn the other from his proof; ḫuṣūma is contention, at root each side holding the other's side (ḫuṣm). Paraphrased and attributed to him.",
    "That جَادَلَ is praised or commanded in 16:125, 11:74 and 58:1 and blamed elsewhere, that حَاجَّ is about Allah, His messengers or Ibrahim in most places, and that اخْتَصَمَ is a quarrel in the hereafter in 3 of 8 places (26:96, 39:31, 50:28), are our observations of all places.",
    "Blind review: حَاجَّ is arguing with (or claiming) proofs, often without knowledge (3:66); 50:28 and 22:19 glossed with their context.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries جدل, حج, خصم (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جدل", "حج", "خصم"]}
   ],
   "members": [
    {
@@ -4492,7 +4782,11 @@
    "The order dawn → morning → forenoon is shown with the Quran's own pictures (2:187 the white thread, 81:18 'when it breathes', 93:1); ṣubḥ, dawn and morning prayer times are not legislated here.",
    "صُبْح is kept apart from the corpus's separate lemma صَبَاح (37:177).",
    "Blind review: Bosnian ṣubḥ rendered 'jutro' (not 'zora', kept for فَجْر) and 74:34 asfara 'razdani'; 93:1 'prijepodnevna svjetlost'; 20:59 'all can see' marked as tafsir.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فجر, صبح, ضحى (2026-11-06): 5 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["فجر", "صبح", "ضحى"]}
   ],
   "members": [
    {
@@ -4560,7 +4854,11 @@
    "That وَقْت occurs 3 times, all of the Hour or 'the day of the known time' (7:187, 15:38, 38:81), and that أَجَل covers life-spans, nations, debts and waiting periods, is our observation of all places. مِيقَات includes its plural مَوَاقِيت (2:189) in one corpus lemma.",
    "أَجَل is the corpus lemma أَجَل only; the different word أَجْل (min aǧli, 'because of', 5:32) is left out.",
    "Blind review: miqāt in 7:142 'appointed time' (not 'term', kept for ajal); the place sense attributed to ar-Rāġib; 15:38 marked as disputed.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries أجل, وقت (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["أجل", "وقت"]}
   ],
   "members": [
    {
@@ -4624,11 +4922,15 @@
    "Tafsir on 10:92 (bi-badanika)"
   ],
   "notes": [
-   "ar-Rāġib: ǧasad is like ǧism but more specific — paraphrased and attributed; the further distinctions he reports from others (colour, said of humans only) are not used.",
+   "ar-Rāġib: ǧasad is like ǧism but more specific — paraphrased and attributed; he reports from al-Khalīl that ǧasad is said only of humans; in his own words under بدن, badan is said with regard to bodily bulk and ǧasad with regard to colour.",
    "That جِسْم (2 places) describes an impressive build, and that جَسَد (4 places) is the bare bodily form — a lifeless figure for the calf (7:148, 20:88), and in 21:8 the body that needs food — is our observation; 'lifeless' is not a rule of the word (blind review); 38:34 (a ǧasad on Sulayman's throne) is not cited, as tafsir differs widely on it.",
    "10:92: most tafsir take badan as Pharaoh's lifeless body; some take it as 'with your coat of mail'. Both are named.",
    "Blind review: 'a body without life' dropped as a rule for جَسَد; 10:92 nunaǧǧīka rendered 'spasiti' in Bosnian, matching 'save'; بُدْن (22:36) noted as another word.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries جسم, جسد, بدن (2026-11-06): 4 attributed points confirmed; changed — notes/0 (improved): Only 'humans only' is al-Khalīl's; the colour point he states himself under بدن, where badan is named for bodily bulk and ǧasad for colour"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["جسم", "جسد", "بدن"]}
   ],
   "members": [
    {
@@ -4694,7 +4996,11 @@
    "The corpus files 4:43 and 5:6 (lāmastum an-nisāʾ, read lamastum by some readers) under لَمَسَ; they are not cited, and the fiqh dispute over them (touch or intercourse) is only named here.",
    "56:79: tafsir differs — the purified angels and the Preserved Tablet, or a ruling about touching the muṣḥaf; both are named.",
    "Blind review: 72:8 Bosnian 'tražili (pokušali dotaći)' to match 'sought'.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries مسس, لمس (2026-11-06): 8 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["مسس", "لمس"]}
   ],
   "members": [
    {
@@ -4747,7 +5053,11 @@
    "2:191 al-fitna ašaddu mina l-qatl: tafsir mostly explains fitna there as shirk or persecution for the faith; 2:49 balāʾ: tafsir differs — a trial in the torment, or a favour in the rescue. Both are named.",
    "That فِتْنَة is also said of wealth and children (8:28, 64:15) and of discord (8:73), is our observation of all places.",
    "Blind review: added that Allah tests not to learn but to bring out what is in a person; fitna also as punishment (51:14); 2:191 given with its context (2:190); 2:124 kalimāt marked as disputed.",
-   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فتن, بلى (2026-11-06): 6 attributed points confirmed"
+  ],
+  "verified": [
+   {"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1", "entries": ["فتن", "بلى"]}
   ],
   "members": [
    {

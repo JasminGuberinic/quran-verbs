@@ -284,6 +284,25 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - Reviewer refusals: bare الْأَصْل reads "the origin" (say أَصْلُ الشَّجَرَةِ); إِيتَاء only with مال/حقوق/صدقة, never gifts;
   وَقْتُ الْمَنَامِ is bedtime, not dream (polysemous noun: stay in the chosen sense); إِلَى الْأَذْقَانِ is Quranic (36:8).
 
+- Batch 12 (2026-11-06, 18 re-plan rounds — the count-3 tail is mostly مُ-participles). Time-savers: `plan next 80` once
+  to PREVIEW 30 candidates and decide them all in one skiphold call; diff the plan with python (`comm` on Arabic misfires).
+  NEVER `plan next 50` after meanings are imported — it treats the batch as studied and plans a fresh 50: to swap a noun,
+  hold it, `plan next 1`, concatenate the saved 49 + the new one into batch.txt, and drop the old key from noun_meanings/
+  tables/relations and its paradigms file. HELD_BACK: حَمَإ، دائِرَة، داع، رَبّانِيِّن، رَجْع، رَوْح، زان، زانِيَة، زَفِير، سَلْوَى، سَمُوم،
+  سَيّارَة (MSA car)، سِجِّيل، سِلْسِلَة، شَهَوَة، شِرْب، ضَرْب، ضِغْث، طَوْل، عاصِم، عَصْف، عِير (lexicon onager)، غاشِيَة، غَرُور، غَمْرَة،
+  فِدْيَة، قَرْح، قَوارِيرا، قُرْبان (lexicon Mass)، قِرَدَة، كُفُور، لَهَب، مَحِيض، مَشْأَمَة/مَيْمَنَة، مَشْرَب، مَعْشَر، مَغْرَم، مَفاتِح، مَوْثِق،
+  مُؤْتَفِكَة، مُدْخَل، مُرْسَى، مُضْغَة، مُقام (lexicon brooms)، مُنتَهَى، مُنقَلِب، مُهْل، مِزاج، ناصِيَة، نَشْأَة، نَفَر، نَكال، نُصُب، هادِي،
+  مَحِلّ (MSA مَحَلّ shop)، صُورَة (God forms; MSA picture). Plural variants skipped on their singular's card (فَواكِه، فِتْيَة، مَدائِن،
+  مَوالِي، مُسْلِمَة، مَمات، مَوْتَت، فِسْق on فُسُوق). Root exceptions added: load ح.م.ل، chief س.#.د، illicit gain س.ح.ت، mountain pass
+  ف.ج.ج، foundations ق.ع.د، worshippers ص.ل.#، hypocrisy ن.ف.ق، division ق.س.م. Failed → accepted: الرَّجُلَيْنِ (dual), دِقَّة→precision,
+  كِيس (read كَيِّس), خَافَ + object → "was afraid of", قَافِلَة→convoy, مَقْبُولَة→accepted, حَسَبَ→computed.
+- Reviewer refusals: a bare definite whose unvocalized spelling is another MSA word (السَّحَر = السِّحْر magic; الْقَوَاعِد = rules;
+  النَّفَقَة = alimony; الْحِفْظ = memorization; كَتَبَ الْخِطَابَ = wrote the letter) needs context or a plural/construct;
+  فِي الْحُسْبَانِ is the idiom "taken into account"; قَوَاعِدُ الْبَيْتِ echoes 2:127 (say الْمَبْنَى); a bs word with a commoner
+  sense (odbijanje = rejection) — pick an unambiguous one (odvikavanje od dojke) BEFORE the Sonnet halves. Left with 3
+  sentences after 3 rounds: حُسْبان (MSA lives in فِي الْحُسْبَانِ "taken into account"; no natural preposition frame) and
+  مَعِيشَة possession (مُسْتَوَى/تَكَالِيفُ الْمَعِيشَةِ need the gloss "of living", which the gate refuses; bs život ≠ livelihood).
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

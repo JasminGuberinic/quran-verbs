@@ -1083,5 +1083,130 @@
  "ثُلَّة|ثلل": {
   "kind": "ordinary",
   "why": "Reviewed: ثُلَّة 'a crowd, a large group' (56:13 ثُلَّةٌ مِنَ الْأَوَّلِينَ) is an ordinary feminine noun, not a singulative."
+ },
+ "خالَة|خول": {
+  "kind": "pair",
+  "why": "The male of خَالَة (maternal aunt) is خَال (maternal uncle); the Quran names both: أَخْوَالِكُمْ أَوْ بُيُوتِ خَالَاتِكُمْ (24:61).",
+  "related": [
+   {
+    "role": "male",
+    "ar": "خَالٌ",
+    "gender": "M",
+    "en": "maternal uncle",
+    "bs": "daidža",
+    "lemma": "خال|خول"
+   }
+  ]
+ },
+ "عَمَّة|عمم": {
+  "kind": "pair",
+  "why": "The male of عَمَّة (paternal aunt) is عَمّ (paternal uncle); the Quran names both: بُيُوتِ أَعْمَامِكُمْ أَوْ بُيُوتِ عَمَّاتِكُمْ (24:61).",
+  "related": [
+   {
+    "role": "male",
+    "ar": "عَمٌّ",
+    "gender": "M",
+    "en": "paternal uncle",
+    "bs": "amidža",
+    "lemma": "عَمّ|عمم"
+   }
+  ]
+ },
+ "سارِق|سرق": {
+  "kind": "pair",
+  "why": "The female of سَارِق (thief) is سَارِقَة; the Quran names both: وَالسَّارِقُ وَالسَّارِقَةُ (5:38).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "سَارِقَةٌ",
+    "gender": "F",
+    "en": "female thief",
+    "bs": "lopovka"
+   }
+  ]
+ },
+ "فَتَى|فتي": {
+  "kind": "pair",
+  "why": "The female of فَتًى (young man, servant lad) is فَتَاة (young woman); the Quran has its plural فَتَيَاتِكُمْ (4:25).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "فَتَاةٌ",
+    "gender": "F",
+    "en": "young woman",
+    "bs": "djevojka",
+    "lemma": "فَتاة|فتي"
+   }
+  ]
+ },
+ "غَنَم|غنم": {
+  "kind": "collective",
+  "agreement": "F",
+  "why": "اسم جنس جمعي: 'sheep' as a flock; one sheep is شَاة (not in the Quran). The Quran makes it feminine: إِذْ نَفَشَتْ فِيهِ غَنَمُ الْقَوْمِ (21:78). Triptote: غَنَمٌ غَنَمًا غَنَمٍ.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "شَاةٌ",
+    "gender": "F",
+    "en": "a sheep",
+    "bs": "ovca"
+   }
+  ]
+ },
+ "حَكَم|حكم": {
+  "kind": "ordinary",
+  "why": "Reviewed: حَكَم 'arbiter' (4:35 فَابْعَثُوا حَكَمًا مِنْ أَهْلِهِ) is an ordinary masculine noun (plural حُكَّام), not a collective."
+ },
+ "خائِن|خون": {
+  "kind": "ordinary",
+  "why": "Reviewed: خَائِن 'traitor' is a substantive participle with the sound plural الْخَائِنِينَ (8:58); not a collective."
+ },
+ "ذُلّ|ذلل": {
+  "kind": "ordinary",
+  "why": "Reviewed: ذُلّ 'humiliation, humility' (17:24 جَنَاحَ الذُّلِّ) is an abstract masculine noun, not a collective."
+ },
+ "رَحْل|رحل": {
+  "kind": "ordinary",
+  "why": "Reviewed: رَحْل 'saddlebag, baggage' (12:70 فِي رَحْلِ أَخِيهِ) is an ordinary masculine noun with the broken plural رِحَال (12:62); not a collective."
+ },
+ "رَهْط|رهط": {
+  "kind": "ordinary",
+  "why": "Reviewed: رَهْط 'kinsfolk, band of men' (11:91 وَلَوْلَا رَهْطُكَ) is a group noun (اسم جمع) with no singulative; the Quran treats it as an ordinary masculine noun (11:92 أَرَهْطِي أَعَزُّ)."
+ },
+ "سَرابِيل|سربل": {
+  "kind": "ordinary",
+  "why": "Reviewed: سَرَابِيل is the regular broken plural (pattern فَعَالِيل) of سِرْبَال 'garment' (16:81 سَرَابِيلَ تَقِيكُمُ الْحَرَّ); the singular is not in the Quran."
+ },
+ "قَواعِد|قعد": {
+  "kind": "ordinary",
+  "why": "Reviewed: قَوَاعِد is the regular broken plural (pattern فَوَاعِل) of قَاعِدَة 'foundation' (2:127 الْقَوَاعِدَ مِنَ الْبَيْتِ); the singular is not in the Quran."
+ },
+ "قِسْمَة|قسم": {
+  "kind": "ordinary",
+  "why": "Reviewed: قِسْمَة 'division, sharing' (4:8 وَإِذَا حَضَرَ الْقِسْمَةَ) is an ordinary feminine masdar, not a singulative."
+ },
+ "مَضاجِع|ضجع": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَضَاجِع is the regular broken plural (pattern مَفَاعِل) of مَضْجَع 'bed, resting place' (32:16 عَنِ الْمَضَاجِعِ); the singular is not in the Quran."
+ },
+ "مَعْذِرَة|عذر": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَعْذِرَة 'excuse' (7:164 مَعْذِرَةً إِلَى رَبِّكُمْ) is an ordinary feminine noun (plural مَعَاذِير, 75:15), not a singulative."
+ },
+ "مَواضِع|وضع": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَوَاضِع is the regular broken plural (pattern مَفَاعِل) of مَوْضِع 'place' (4:46 عَنْ مَوَاضِعِهِ); the singular is not in the Quran."
+ },
+ "مَيْسِر|يسر": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَيْسِر 'gambling' (2:219 الْخَمْرِ وَالْمَيْسِرِ) is an abstract masculine noun, not a collective."
+ },
+ "نَفَقَة|نفق": {
+  "kind": "ordinary",
+  "why": "Reviewed: نَفَقَة 'expenditure' (9:121 نَفَقَةً صَغِيرَةً) is an ordinary feminine noun with the plural نَفَقَات (9:54), not a singulative."
+ },
+ "عَمَد|عمد": {
+  "kind": "ordinary",
+  "why": "Reviewed: عَمَد 'columns, pillars' (13:2 بِغَيْرِ عَمَدٍ تَرَوْنَهَا) is a plural (pattern فَعَل) of عَمُود/عِمَاد with no singulative; adjectives agree in the feminine (104:9 فِي عَمَدٍ مُمَدَّدَةٍ). Taught as a plural in sense."
  }
 }

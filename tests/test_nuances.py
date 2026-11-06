@@ -95,7 +95,7 @@ def test_the_stored_groups_load_and_every_text_is_bilingual():
     groups = nuance_store.load_groups()
     assert [group.slug for group in groups][:5] == ["insan-bashar", "jaa-ata", "raa-nazara-absara", "khawf-khashya",
                                                     "qalb-fuad-sadr"]
-    assert len(groups) == 130 and len({group.slug for group in groups}) == 130
+    assert len(groups) == 155 and len({group.slug for group in groups}) == 155
     assert all(len(group.members) >= 2 and group.sources for group in groups)
 
 

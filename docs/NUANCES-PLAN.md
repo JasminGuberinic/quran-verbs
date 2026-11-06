@@ -122,3 +122,18 @@ Left out on purpose: 69:29 (سُلْطَان there is power or proof, he gives b
 6:125 حَرَج, 86:15–16 and 7:99, 2:34, 38:24, 94:2, and 28:87, 20:16, 2:147 (said to the Prophet). 107:7 al-māʿūn is
 cited only for his "opposite of giving", its meaning left open. Not built yet: particle groups (لَنْ/لَا, إِنْ/إِذَا) —
 members are verbs or noun lemmas only.
+
+## Batch 7 (25 groups, 155 in all)
+Restraint and loss: صَبْر/حَلِيم/كَاظِم · خَسِرَ/خَابَ · حَبِطَ/أَبْطَلَ · حَذِرَ/مُشْفِق/وَجِلَ · حَسْرَة/نَادِم. Signs, mind, religion:
+آيَة/بُرْهَان/بَيِّنَة/حُجَّة · أَلْبَاب/نُهَى · نَفْس/رُوح · دِين/مِلَّة/شِرْعَة · هَوًى/شَهْوَة · وَعَظَ/نَصَحَ · أَتَمَّ/أَكْمَلَ. Fear:
+رُعْب/فَزَع/رَوْع. The earth and its gifts: ثَمَرَة/فَاكِهَة · حَرْث/زَرْع · سَقَى/أَسْقَى · رِزْق/مَتَاع · جَبَل/رَوَاسِي · فُلْك/سَفِينَة ·
+كَأْس/أَكْوَاب/أَبَارِيق · قَبْر/أَجْدَاث. Hands and people: قَبَضَ/أَمْسَكَ · بَسَطَ/مَدَّ · زَوْج/بَعْل · فَاسِق/فَاجِر/عَصَى.
+Drafted from the Mufradāt entries, verified (513 points: 477 confirmed, 34 partial, 2 not found; 33 texts changed,
+quotes machine-checked), reviewed blind (83 claims, 39 flagged, every flag fixed in the texts, none held back).
+Allah's ḥilm, nafs, qabḍ/basṭ and imsāk carry "as befits Him"; 17:85 leaves the rūḥ's reality with Allah and says
+the mufassirun differ; Paradise vessels and fruit only as the ayat give them. Left out on purpose: 49:2 (scope of the
+warning differs), 12:24, 2:124, 2:256 (he gives two readings), 2:223, 4:34, 56:82, 20:121 (Adam), 39:65 and 6:88
+(conditionals about prophets), and 9:84, 5:41, 5:49, 33:37, 15:88, 20:131, 35:8 (said to the Prophet). Counts that
+include another sense are noted per group (دِين with yawm ad-dīn, بَعْل with the idol Baʿl, هَوَاء with 14:43);
+حِجْر (intellect only in 89:5) and rīḥ/riyāḥ (one lemma in the corpus) were not built. The new Bosnian texts spell
+Paradise Dženet throughout.

@@ -221,3 +221,27 @@ abda-azhara-alana · hizb-fariq-taifa · nima-fadl · mulk-sultan · abada-ataa 
 - `spoken` was needed for لَهْو (sukūn-final like بَغْي); حَمَأ, رِجْس, وِزْر, حَرَج voiced without one.
 - Particles are not nuance members yet (members are catalogue verbs or noun lemmas): a particle group would
   need a third corpus identity in fil.nuances.model.
+
+## Batch 7 (2026-11-06): 25 groups → 155
+sabr-hilm-kazm · khasira-khaba · qabr-jadath · atamma-akmala · aya-burhan-bayyina · thamar-fakiha · habita-abtala
+· hadhar-ishfaq-wajal · waaza-nasaha · nafs-ruh · albab-nuha · din-milla · hawa-shahwa · rub-faza-rawa · hasra-nadam
+· saqa-asqa · harth-zar · fulk-safina · kas-kub-ibriq · jabal-rawasi · qabada-amsaka · basata-madda · zawj-bal
+· fasiq-fajir-asi · rizq-mata. Same order as batch 6 (`xref7.py` → 3 drafter forks → `merge7.py` → `packets.py` on
+`new7.json` → 3 verifiers with `VBRIEF7.md` → `apply5.py` → 2 Sonnet reviewers on `blind7.py`'s halves →
+`apply_review.py` with `--skip` for multi-field flags → `fix7review.py` → `notes7review.py`); `check` and `fil pages`
+passed first time. Lessons:
+- Verification: 513 points, 477 confirmed, 34 partial, 2 not found; 33 texts changed. Caught: a verse quoted by
+  wording given the wrong number (his نسقيكم مما في بطونها is 23:21, 16:66 has بطونه; his مواخر wording is 35:12;
+  his بعثر ما في القبور is 100:9, not 82:4) — check the exact wording, not the theme; an etymology he does not give
+  ("بَعْل named for standing over" — his is "since the husband was seen as standing over"); "small sins" for his
+  "few sins"; a definition taken from one of his alternative images (ḥasra "too late").
+- Blind review flagged 39 of 83 claims. Most common: a count true of one form only (فَاكِهَة singular vs fawākih;
+  رَوَاسِي vs رَاسِيَات 34:13; نَصَحَ لِـ is the verb only); a `why` that borrows the neighbouring ayah (28:31 staff,
+  80:32, 15:52, 26:158); one member's key word in another's text (proof for بُرْهَان and حُجَّة, regret for حَسْرَة
+  and نَادِم, griješnik for فَاسِق and فَاجِر); his example sentence taken as Quranic usage (isqāʾ "a river").
+- Count caveats belong in `notes`: دِين includes yawm ad-dīn, بَعْل the idol Baʿl (37:125), the هَوًى member sums
+  هَوَاء (14:43 "empty" included) with أَهْوَاء, حِجْر (intellect only in 89:5) was left out of albab-nuha.
+- One Bosnian spelling of Paradise inside a batch: the new texts mixed Dženet / Džennet / dženet; `fix7review.py`
+  normalises the new groups' bs to Dženet (earlier batches still mix — a later pass may unify them).
+- Left out on purpose: 49:2 (scope of the warning differs; 5:5 shown), 12:24, 2:124, 2:256, 2:223, 4:34, 9:84,
+  5:41, 5:49, 33:37, 15:88, 20:131, 35:8 (said to the Prophet), 39:65, 6:88, 20:121.

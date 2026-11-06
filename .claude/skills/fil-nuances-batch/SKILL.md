@@ -115,3 +115,28 @@ rahman-rahim-rauf · kafara-mushrik-munafiq · amana-aslama-ayqana · daa-nada �
   Sahih wording, e.g. 6:60 "uspavljuje" vs "takes your souls"); and ayat cited for what the next ayah says
   (96:9 vs 96:10, 20:59 vs 20:60). "bijednik" is pejorative for مِسْكِين: use "nevoljnik, potrebit".
 - بَغْي needed `spoken` بَغْيٌ (a final yāʾ with sukūn, like the tāʾ marbūṭa cases).
+
+## Batch 4 (2026-11-06): 25 groups → 80
+salat-dua · zakat-sadaqa-infaq · siyam-sawm · hajj-umra · aqsama-halafa · naba-khabar · masha-sara-saa
+· ghadab-ghayz-sakhat · ahabba-wadda · raja-tamia · istakbara-takabbara · khushu-tadarru · bahr-yamm
+· sahab-ghamam-muzn · ahl-al · sahib-khalil-sadiq · tafakkara-tadabbara-aqala · istafa-ijtaba-ikhtara
+· itmaanna-sakina · jadala-hajja-ikhtasama · fajr-subh-duha · ajal-miqat-waqt · jism-jasad-badan · massa-lamasa
+· fitna-bala. `check` and `fil pages` passed first time. Lessons:
+- Scratch kit (copy from the last batch's worktree): `lookup.py <roots>` (catalogue verbs + nouns, studied
+  flag), `where.py <verb_key|exact lemma key>` and `where2.py <lemma|root>` (matches by consonant skeleton, so a
+  hand-typed key still lists its places — but it also merges look-alikes: أَجَل with أَجْل), `forms.py`,
+  `merge4.py` (resolves keys, fills counts, appends a per-group blind-review note from `notes4.REVIEW` before
+  the al-ʿAskarī note), `review4a/b.py` (exact-string fixes that fail unless each old text occurs once).
+- Split the blind review between two fresh Sonnet agents (~45 claims each), run in parallel with `fil pages`.
+- Thin members are fine when the group is a well-known pair (صَوْم 1×, عُمْرَة 2×, مُزْن 1×, بَدَن 1×), but say
+  "only here" precisely: the noun عُمْرَة is only in 2:196, the verb اِعْتَمَرَ is in 2:158; بَدَن is 1× but بُدْن
+  (22:36) is another word.
+- The corpus files 4:43 and 5:6 (Ḥafṣ لَامَسْتُمْ) under لمس_1: don't cite them for لَمَسَ.
+- What the reviewers flagged most this time: in-group word clashes in Bosnian (zora for both فَجْر and صُبْح;
+  "term" for both أَجَل and مِيقَات) — give each member its own word; bs/en drift where the Bosnian follows the
+  verse and the English our point (19:26 "postiti" vs "abstention", 10:92 "izbaciti" vs "save"); Allah's attributes
+  (love, anger, displeasure, ḫulla with Ibrahim) without "as befits Him"; a prophet's words that could read as
+  doubt (2:260 — add "not from doubt, he said Yes"); "always / only" about usage that a counter-example breaks
+  (سَحَاب with rain: 27:88; Allah's oaths: most use wa-, not أُقْسِمُ); a contested tafsir reading in a `why`
+  (19:13 zakāh, 26:4 aʿnāq = leaders, 9:40 'upon him', 28:68 mā, 2:124 kalimāt); and an ar-Rāġib gloss
+  embellished (iǧtibāʾ "draw near"). Korkut writes "faraon" and "sinovi Israilovi"; الْمُتَكَبِّر is "Veličanstveni".

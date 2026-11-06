@@ -51,3 +51,13 @@ Verbs: آمَنَ/أَسْلَمَ/أَيْقَنَ · دَعَا/نَادَى �
 wording on rayb (now tafsir on 2:2), "Form VIII stresses effort" as his (now "many mufassirun", with the dissent),
 and al-ʿAskarī throughout. Not built: a Paradise-names group (فِرْدَوْس, عَدْن and جَهَنَّم are outside the noun
 catalogue). The faqīr/miskīn dispute is shown with both sides' proof ayat, neither chosen.
+
+## Batch 4 (25 groups, 80 in all)
+Acts of worship: صَلَاة/دُعَاء · زَكَاة/صَدَقَة/أَنْفَقَ · صِيَام/صَوْم/صَامَ · حَجّ/عُمْرَة. Speech acts and the mind: أَقْسَمَ/حَلَفَ ·
+نَبَأ/خَبَر · جَادَلَ/حَاجَّ/اخْتَصَمَ · تَفَكَّرَ/تَدَبَّرَ/عَقَلَ/فَقِهَ · اصْطَفَى/اجْتَبَى/اخْتَارَ. Motion and body: مَشَى/سَارَ/سَعَى ·
+مَسَّ/لَمَسَ · جِسْم/جَسَد/بَدَن. Emotions and states: غَضَب/غَيْظ/سَخَط · أَحَبَّ/وَدَّ/مَوَدَّة · رَجَا/طَمِعَ ·
+اسْتَكْبَرَ/تَكَبَّرَ/مُتَكَبِّر · خَاشِع/تَضَرُّع/خَاضِع · اطْمَأَنَّ/سَكِينَة · فِتْنَة/بَلَاء/ابْتَلَى. Nature, time, people:
+بَحْر/يَمّ · سَحَاب/غَمَام/مُزْن · فَجْر/صُبْح/ضُحًى · أَجَل/مِيقَات/وَقْت · أَهْل/آل · صَاحِب/خَلِيل/صَدِيق. Held back after
+review: ar-Rāġib's wording on saḵaṭ, ḫuḍūʿ, muzn and ṣadīq (not verifiable here), "draw near" for iǧtibāʾ (not his),
+"lifeless" as a rule for جَسَد, the loanword claim for يَمّ, and al-ʿAskarī throughout. Not cited because tafsir differs
+widely: 2:210, 7:203, 38:34, 42:23, 71:13 and the لَامَسْتُم ayat (4:43, 5:6).

@@ -3227,5 +3227,1574 @@
     ]
    }
   ]
+ },
+ "salat-dua": {
+  "title": {"bs": "Namaz i dova", "en": "Prayer and supplication"},
+  "shared": {
+   "bs": "Obje riječi govore o čovjekovom obraćanju Allahu. Prema ar-Rāġibu, mnogi jezikoslovci kažu da je osnovno značenje riječi ṣalāh upravo dova; u šerijatu je ona postala ime za propisani namaz.",
+   "en": "Both words speak of turning to Allah. ar-Rāġib reports that many lexicographers take the basic sense of ṣalāh to be supplication itself; in the Sharia it became the name of the prescribed prayer."
+  },
+  "tellApart": {
+   "bs": "Propisani namaz, s određenim oblikom i vremenom (a, prema mnogim jezikoslovcima, u osnovi i dova) → صَلَاة; dova, molba upućena Allahu, u svako vrijeme i svojim riječima → دُعَاء.",
+   "en": "The prescribed prayer, with its set form and times (and, according to many lexicographers, at root a supplication too) → صَلَاة; supplication, a plea to Allah at any time and in one's own words → دُعَاء."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries صلا, دعا"
+  ],
+  "notes": [
+   "ar-Rāġib: many lexicographers say ṣalāh means duʿāʾ, blessing and glorifying; the prescribed prayer is called ṣalāh after a part of what it contains (the supplication) — paraphrased and attributed to him.",
+   "9:103 (ṣalli ʿalayhim … ṣalātaka) is explained in tafsir as the Prophet's supplication for those who gave; we say 'tafsir explains', not a named mufassir.",
+   "That دُعَاء in the Quran is also made by people in hardship who turn away once relieved (41:51), and that صَلَاة is once said of the idolaters' worship at the House (8:35), is our observation.",
+   "Blind review: 'at root a supplication' and 'almost always with أَقَامَ' softened (many lexicographers; most often — 23:2, 70:23, 62:9).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "صَلَاة",
+    "lemmas": ["صَلاة|صلو"],
+    "spoken": "صَلَاةٌ",
+    "count": 83,
+    "meaning": {"bs": "namaz, molitva", "en": "prayer"},
+    "nuance": {
+     "bs": "Propisani namaz, najčešće uz glagol „obavljati, uspostavljati” (أَقَامَ) i često uz zekat. Ponegdje u Kur'anu zadržava i osnovno značenje dove i blagoslova.",
+     "en": "The prescribed prayer, most often with the verb “to establish” (أَقَامَ) and often beside zakat. In places the Quran keeps its root sense of supplication and blessing."
+    },
+    "ayat": [
+     {"ref": "2:43", "why": {"bs": "„Obavljajte namaz i dajite zekat” – namaz kao propisani ibadet, uz zekat.", "en": "“Establish prayer and give zakat” — prayer as a prescribed act of worship, beside zakat."}},
+     {"ref": "9:103", "why": {"bs": "„I moli se za njih, jer tvoja dova je njima smirenje” – u tefsiru: صَلَاة ovdje znači Poslanikovu dovu za njih.", "en": "“And invoke blessings upon them; your invocations are reassurance for them” — tafsir: صَلَاة here is the Prophet's supplication for them."}},
+     {"ref": "29:45", "why": {"bs": "„Namaz odvraća od razvrata i od onoga što je mrsko” – namaz kao ibadet koji oblikuje čovjeka.", "en": "“Prayer prohibits immorality and wrongdoing” — prayer as worship that shapes the one who prays."}}
+    ]
+   },
+   {
+    "arabic": "دُعَاء",
+    "lemmas": ["دُعاء|دعو"],
+    "count": 22,
+    "meaning": {"bs": "dova, molba", "en": "supplication"},
+    "nuance": {
+     "bs": "Molba upućena Allahu (ili, kod mušrika, nekom drugom), svojim riječima i u svako vrijeme. Vjerovjesnici u Kur'anu svoje molbe zovu دُعَاء.",
+     "en": "A plea addressed to Allah (or, by idolaters, to others), in one's own words and at any time. In the Quran the prophets call their own pleas دُعَاء."
+    },
+    "ayat": [
+     {"ref": "14:40", "why": {"bs": "Ibrahim moli da obavlja namaz i završava: „Gospodaru naš, primi moju dovu” – obje riječi u jednom ajetu.", "en": "Abraham asks to establish prayer and ends: “Our Lord, accept my supplication” — both words in one ayah."}},
+     {"ref": "19:4", "why": {"bs": "Zekerijja: „nikad nisam bio nesretan moleći Te” – dova kao lično obraćanje.", "en": "Zechariah: “never have I been in my supplication to You unhappy” — supplication as a personal plea."}},
+     {"ref": "41:51", "why": {"bs": "Kad čovjeka zadesi zlo, „on se dugo moli” – دُعَاء u nevolji, bez propisanog oblika.", "en": "When evil touches man, “he is full of extensive supplication” — supplication in hardship, with no set form."}}
+    ]
+   }
+  ]
+ },
+ "zakat-sadaqa-infaq": {
+  "title": {"bs": "Zekat, sadaka i udjeljivanje", "en": "Zakat, charity and spending"},
+  "shared": {
+   "bs": "Sve tri riječi govore o davanju imetka. Razlikuju se po tome je li davanje propisano, dobrovoljno ili bilo kakvo trošenje.",
+   "en": "All three words speak of giving wealth. They differ in whether the giving is prescribed, voluntary, or any spending at all."
+  },
+  "tellApart": {
+   "bs": "Propisani zekat, riječ koja znači i čistoću i rast → زَكَاة; sadaka, u osnovi dobrovoljna, ali se kaže i za obavezno davanje → صَدَقَة; trošiti, udjeljivati – najšire, svako trošenje imetka → أَنْفَقَ.",
+   "en": "Prescribed zakat, a word that also means purity and growth → زَكَاة; charity, at root voluntary but also said of what is due → صَدَقَة; to spend — the widest, any spending of wealth → أَنْفَقَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries زكا, صدق, نفق",
+   "Tafsir on 9:60 (ṣadaqāt as the obligatory zakat) and on 19:13, 18:81 (zakāh as purity)"
+  ],
+  "notes": [
+   "ar-Rāġib: zakāh comes from growth that comes with Allah's blessing, and the prescribed alms are so called for the blessing hoped in them or for the purifying of the soul; ṣadaqa is what one gives from one's wealth seeking nearness to Allah, at root said of the voluntary gift, while zakāh is said of the due one — and the due one may also be called ṣadaqa. Paraphrased and attributed.",
+   "That 9:60's ṣadaqāt are the obligatory zakat is the reading of most tafsir and fiqh; we say 'most mufassirun'.",
+   "That many mufassirun take زَكَاة as purity (others: righteousness; some for 19:13: charity) in 19:13 and 18:81, that it stands beside صَلَاة in most of its places, and that أَنْفَقَ is also said of spending on one's family (65:7) and of disbelievers' spending against the faith (8:36), are our observations of all places.",
+   "Blind review: zakāh as purity in 19:13 / 18:81 given as many mufassirun's reading, not as fact; 9:103 marked as disputed (zakat or expiatory charity).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "زَكَاة",
+    "lemmas": ["زَكاة|زكو"],
+    "spoken": "زَكَاةٌ",
+    "count": 32,
+    "meaning": {"bs": "zekat; čistoća", "en": "zakat; purity"},
+    "nuance": {
+     "bs": "Propisano davanje, u Kur'anu najčešće odmah uz namaz. Prema ar-Rāġibu, riječ u osnovi znači rast koji dolazi s Allahovim blagoslovom, a zekat tako čisti i dušu. U 19:13 i 18:81 mnogi mufesiri je tumače kao čistoću (drugi: dobročinstvo).",
+     "en": "The prescribed giving, in the Quran most often right beside prayer. According to ar-Rāġib, the word at root means growth that comes with Allah's blessing, and zakat so purifies the soul too. In 19:13 and 18:81 many mufassirun take it as purity (others: righteousness)."
+    },
+    "ayat": [
+     {"ref": "98:5", "why": {"bs": "„…da obavljaju namaz i daju zekat – a to je prava vjera” – zekat kao temelj vjere.", "en": "“…to establish prayer and give zakat; that is the correct religion” — zakat as a pillar of the faith."}},
+     {"ref": "23:4", "why": {"bs": "Vjernici su oni „koji zekat daju” – zekat među osobinama uspješnih.", "en": "The believers are those “who are observant of zakat” — zakat among the marks of the successful."}},
+     {"ref": "19:13", "why": {"bs": "O Jahji: „i čistoću (زَكَاة)” od Nas – mufesiri: čistoća, dobročinstvo; neki: milostinja.", "en": "Of John: “and purity (زَكَاة)” from Us — mufassirun: purity, righteousness; some: charity."}}
+    ]
+   },
+   {
+    "arabic": "صَدَقَة",
+    "lemmas": ["صَدَقَة|صدق"],
+    "spoken": "صَدَقَةٌ",
+    "count": 13,
+    "meaning": {"bs": "sadaka, milostinja", "en": "charity, alms"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ono što se daje da bi se čovjek približio Allahu: u osnovi dobrovoljno, ali se i propisani zekat može nazvati sadakom. Riječ je iz korijena istine (ṣidq).",
+     "en": "According to ar-Rāġib, what one gives to draw near to Allah: at root voluntary, though the prescribed zakat may also be called ṣadaqa. The word comes from the root of truthfulness (ṣidq)."
+    },
+    "ayat": [
+     {"ref": "9:60", "why": {"bs": "„Zekat (الصَّدَقَات) pripada samo siromasima…” – većina mufesira: ovdje je riječ o obaveznom zekatu.", "en": "“Zakah expenditures (الصَّدَقَات) are only for the poor…” — most mufassirun: here the obligatory zakat is meant."}},
+     {"ref": "9:103", "why": {"bs": "„Uzmi od imetka njihova sadaku, da ih njome očistiš” – sadaka koja čisti (tefsir se razilazi je li to zekat ili sadaka kao iskup); uz nju i glagol korijena zekata.", "en": "“Take from their wealth a charity by which you purify them” — charity that cleanses (tafsir differs: zakat, or an expiatory charity); a verb of zakat's root beside it."}},
+     {"ref": "2:264", "why": {"bs": "„Ne kvarite svoje sadake prigovaranjem i uvredama” – dobrovoljna sadaka i njena pravila.", "en": "“Do not invalidate your charities with reminders or injury” — voluntary charity and its manners."}}
+    ]
+   },
+   {
+    "arabic": "أَنْفَقَ",
+    "verb": "نفق_4",
+    "count": 68,
+    "meaning": {"bs": "trošiti, udjeljivati", "en": "to spend"},
+    "nuance": {
+     "bs": "Najšira riječ: svako trošenje imetka – na Allahovom putu, na porodicu, pa i trošenje nevjernika protiv vjere. Kur'an je najčešće koristi kad poziva na davanje.",
+     "en": "The widest word: any spending of wealth — in Allah's way, on one's family, even the disbelievers' spending against the faith. The Quran most often uses it when it calls to giving."
+    },
+    "ayat": [
+     {"ref": "2:3", "why": {"bs": "Bogobojazni „od onoga čime ih opskrbljujemo – udjeljuju” – udjeljivanje uz vjeru i namaz.", "en": "The righteous “spend out of what We have provided for them” — spending beside faith and prayer."}},
+     {"ref": "65:7", "why": {"bs": "„Neka imućni troši prema svom imetku” – trošenje na porodicu, ne milostinja.", "en": "“Let a man of wealth spend from his wealth” — spending on one's family, not alms."}},
+     {"ref": "8:36", "why": {"bs": "Nevjernici „troše imetke svoje da bi od Allahova puta odvraćali” – ista riječ za trošenje protiv vjere.", "en": "The disbelievers “spend their wealth to avert people from the way of Allah” — the same word for spending against the faith."}}
+    ]
+   }
+  ]
+ },
+ "siyam-sawm": {
+  "title": {"bs": "Post i suzdržavanje", "en": "Fasting and abstaining"},
+  "shared": {
+   "bs": "Sve su to riječi korijena ṣ-w-m: oba imena su glagolske imenice od صَامَ. Prema ar-Rāġibu, ṣawm u osnovi znači suzdržavanje od nečega – jela, govora ili kretanja; u šerijatu je to post.",
+   "en": "All are words of the root ṣ-w-m: both nouns are verbal nouns of صَامَ. According to ar-Rāġib, ṣawm at root means holding back from something — food, speech or movement; in the Sharia it is the fast."
+  },
+  "tellApart": {
+   "bs": "Propisani post, u Kur'anu uvijek u propisima → صِيَام; jedino mjesto, Merjemin zavjet, koji tefsir uglavnom tumači kao šutnju → صَوْم; postiti (glagol) → صَامَ.",
+   "en": "The prescribed fast, in the Quran always within the rulings → صِيَام; its one place, Mary's vow, which tafsir mostly explains as silence → صَوْم; to fast (the verb) → صَامَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries صوم",
+   "Tafsir on 19:26 (ṣawm as silence)"
+  ],
+  "notes": [
+   "ar-Rāġib: ṣawm is at root holding back from an act, be it eating, speech or walking; in the Sharia the fast; on 19:26 he notes it has been said that holding back from speech is meant, because of 'so I will not speak to any man today'. Paraphrased and attributed.",
+   "Tafsir on 19:26 mostly explains ṣawm as silence; some add that fasting in their law included silence. Both are named.",
+   "That صِيَام (9 times) is always the legal fast and صَوْم occurs only in 19:26 is our observation of all places. That the two forms differ in meaning is not claimed as a rule of the language: both are verbal nouns of صَامَ.",
+   "Blind review: the Bosnian of 19:26 now says abstention, matching the point; 2:184 is not called a Ramadan ayah (some take it as an earlier fast); 2:185 šahida rendered 'witnesses / dočeka'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "صِيَام",
+    "lemmas": ["صِيام|صوم"],
+    "count": 9,
+    "meaning": {"bs": "post", "en": "fasting"},
+    "nuance": {
+     "bs": "Propisani post: ramazanski post i post kao iskup (kefaret) u propisima. U Kur'anu (naše zapažanje) uvijek u tom pravnom značenju.",
+     "en": "The prescribed fast: the fast of Ramadan and the fast of expiation in the rulings. In the Quran (our observation) always in this legal sense."
+    },
+    "ayat": [
+     {"ref": "2:183", "why": {"bs": "„Propisuje vam se post (الصِّيَام) kao što je propisan onima prije vas” – temeljni ajet o postu.", "en": "“Decreed upon you is fasting (الصِّيَام) as it was decreed upon those before you” — the founding ayah of the fast."}},
+     {"ref": "2:187", "why": {"bs": "„Dozvoljava vam se u noćima posta…” – propisi o postu i noći.", "en": "“It has been made permissible for you the night preceding fasting…” — the rulings of the fast and its nights."}},
+     {"ref": "58:4", "why": {"bs": "„…post dva uzastopna mjeseca” – post kao iskup.", "en": "“…fasting for two months consecutively” — fasting as expiation."}}
+    ]
+   },
+   {
+    "arabic": "صَوْم",
+    "lemmas": ["صَوْم|صوم"],
+    "count": 1,
+    "meaning": {"bs": "suzdržavanje; post", "en": "abstaining; fast"},
+    "nuance": {
+     "bs": "Samo jednom u Kur'anu: Merjemin zavjet. Odmah iza njega stoji „neću danas ni s kim govoriti”, pa ga tefsir uglavnom tumači kao šutnju; neki dodaju da je post u njihovom zakonu uključivao i šutnju.",
+     "en": "Only once in the Quran: Mary's vow. It is followed at once by “I will not speak to any man today”, so tafsir mostly explains it as silence; some add that fasting in their law included silence."
+    },
+    "ayat": [
+     {"ref": "19:26", "why": {"bs": "„Zavjetovala sam se Milostivom na suzdržavanje (صَوْمًا), pa danas ni s kim neću govoriti” – suzdržavanje od govora.", "en": "“I have vowed to the Most Merciful abstention (صَوْمًا), so I will not speak to any man today” — holding back from speech."}}
+    ]
+   },
+   {
+    "arabic": "صَامَ",
+    "verb": "صوم_1",
+    "count": 2,
+    "meaning": {"bs": "postiti", "en": "to fast"},
+    "nuance": {
+     "bs": "Glagol od kojeg su obje imenice. U Kur'anu samo dva puta, oba puta u ajetima o postu (2:184–185).",
+     "en": "The verb both nouns come from. Only twice in the Quran, both times in the ayat on fasting (2:184–185)."
+    },
+    "ayat": [
+     {"ref": "2:184", "why": {"bs": "„A da postite (تَصُومُوا), bolje vam je” – glagol u propisima o postu.", "en": "“And to fast (تَصُومُوا) is best for you” — the verb within the rulings of the fast."}},
+     {"ref": "2:185", "why": {"bs": "„Ko od vas dočeka taj mjesec, neka ga posti” – zapovijed ramazanskog posta.", "en": "“Whoever of you witnesses the month, let him fast it” — the command of the Ramadan fast."}}
+    ]
+   }
+  ]
+ },
+ "hajj-umra": {
+  "title": {"bs": "Hadž i umra", "en": "Hajj and umrah"},
+  "shared": {
+   "bs": "Obje riječi označavaju putovanje Allahovoj Kući radi obreda. Prema ar-Rāġibu, ḥajj u osnovi znači namjeru (polazak) u posjetu, a ʿumra posjetu; šerijat je obje vezao za Kabu.",
+   "en": "Both words name the journey to Allah's House for its rites. According to ar-Rāġib, ḥajj at root means setting out to visit, and ʿumra a visit; the Sharia tied both to the Kaaba."
+  },
+  "tellApart": {
+   "bs": "Hadž, u poznatim mjesecima, obaveza onome ko može → حَجّ; umra, posjeta Kabi, koja nije vezana za te mjesece → عُمْرَة.",
+   "en": "Hajj, in the well-known months, a duty on whoever is able → حَجّ; umrah, a visit to the Kaaba not tied to those months → عُمْرَة."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries حج, عمر",
+   "Fiqh on 2:196 and 3:97 (whether umrah is obligatory)"
+  ],
+  "notes": [
+   "ar-Rāġib: the root of ḥajj is setting out to visit, in the Sharia setting out for the House of Allah to perform the rites; ʿumra is a visit, in the Sharia the particular visit — paraphrased and attributed to him.",
+   "That hajj is bound to its months (2:197) while umrah may be made at any time is the common ground of fiqh. Whether umrah is obligatory is disputed (Shāfiʿī and Ḥanbalī: yes, with 2:196; Ḥanafī and Mālikī: a sunna); both views are named, neither chosen.",
+   "حَجّ sums the corpus's lemmas حَجّ and حِجّ (3:97 is read ḥijju in Ḥafṣ).",
+   "Blind review: 'only in 2:196' restricted to the noun (the verb iʿtamara is in 2:158).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "حَجّ",
+    "lemmas": ["حَجّ|حجج", "حِجّ|حجج"],
+    "count": 10,
+    "meaning": {"bs": "hadž", "en": "pilgrimage, hajj"},
+    "nuance": {
+     "bs": "Hodočašće Kabi u određeno vrijeme, s Arefatom i ostalim obredima. Kur'an ga propisuje svakome ko može do Kuće doći.",
+     "en": "The pilgrimage to the Kaaba at its set time, with ʿArafa and its other rites. The Quran makes it a duty on whoever is able to reach the House."
+    },
+    "ayat": [
+     {"ref": "2:197", "why": {"bs": "„Hadž je u poznatim mjesecima” – hadž vezan za vrijeme.", "en": "“Hajj is during well-known months” — hajj bound to its time."}},
+     {"ref": "3:97", "why": {"bs": "„Allahu su ljudi dužni hodočastiti Hram (حِجُّ الْبَيْتِ) – ko god je u mogućnosti” – hadž kao obaveza.", "en": "“Due to Allah from the people is a pilgrimage to the House — for whoever is able” — hajj as a duty."}},
+     {"ref": "22:27", "why": {"bs": "„I oglasi ljudima hadž” – Ibrahimov poziv na hodočašće.", "en": "“And proclaim to the people the Hajj” — Abraham's call to the pilgrimage."}}
+    ]
+   },
+   {
+    "arabic": "عُمْرَة",
+    "lemmas": ["عُمْرَة|عمر"],
+    "spoken": "عُمْرَةٌ",
+    "count": 2,
+    "meaning": {"bs": "umra", "en": "umrah, the lesser pilgrimage"},
+    "nuance": {
+     "bs": "Posjeta Kabi s obredima ihrama, tavafa i sa'ja, koja nije vezana za mjesece hadža. Imenica ʿumra spomenuta je samo u 2:196 (glagol iʿtamara i u 2:158), uz hadž; je li obavezna, učenjaci se razilaze.",
+     "en": "A visit to the Kaaba with the rites of iḥrām, ṭawāf and saʿy, not bound to the months of hajj. The noun ʿumra occurs only in 2:196 (the verb iʿtamara also in 2:158), beside hajj; whether it is obligatory, scholars differ."
+    },
+    "ayat": [
+     {"ref": "2:196", "why": {"bs": "„I hadž i umru radi Allaha upotpunite” – obje riječi zajedno; neki učenjaci odatle zaključuju da je i umra obavezna, drugi ne.", "en": "“And complete the Hajj and umrah for Allah” — both words together; some scholars infer from it that umrah is obligatory too, others do not."}}
+    ]
+   }
+  ]
+ },
+ "aqsama-halafa": {
+  "title": {"bs": "Zakleti se", "en": "To swear an oath"},
+  "shared": {
+   "bs": "Oba glagola znače zakleti se. Razlikuje ih (naše zapažanje) to ko se u Kur'anu zaklinje i čemu zakletva služi.",
+   "en": "Both verbs mean to swear an oath. What tells them apart (our observation) is who swears in the Quran and what the oath is for."
+  },
+  "tellApart": {
+   "bs": "Zakletva uopće – i neke Allahove zakletve (لَا أُقْسِمُ…) i zakletve ljudi → أَقْسَمَ; zakletva koja u Kur'anu gotovo uvijek prati laž ili izgovor licemjera → حَلَفَ.",
+   "en": "Oath in general — some of Allah's oaths (لَا أُقْسِمُ…) and people's → أَقْسَمَ; an oath that in the Quran almost always goes with the hypocrites' lie or excuse → حَلَفَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries قسم, حلف",
+   "Tafsir on لَا أُقْسِمُ (75:1, 90:1)"
+  ],
+  "notes": [
+   "That حَلَفَ describes, in 10 of its 11 ayat, the oaths of hypocrites or of people swearing to a lie (4:62, ch. 9, 58:14, 58:18), and is neutral only in the expiation ruling of 5:89, is our own observation of all places — not put in ar-Rāġib's mouth; some later writers draw a rule from it, which we do not.",
+   "That أَقْسَمَ is Allah's oath in 8 ayat (لَا أُقْسِمُ / فَلَا أُقْسِمُ) and otherwise people's oaths, often 'their strongest oaths' that are then belied, is our observation of all 19 ayat.",
+   "Tafsir differs on the لَا in لَا أُقْسِمُ: an emphasis ('Nay, I swear') or a rejection of what the deniers said before the oath; both are named.",
+   "Blind review: أَقْسَمَ carries only some of Allah's oaths — most use the particle wa-.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "أَقْسَمَ",
+    "verb": "قسم_4",
+    "count": 20,
+    "meaning": {"bs": "zakleti se", "en": "to swear"},
+    "nuance": {
+     "bs": "Opća riječ za zakletvu. Njime su izrečene neke Allahove zakletve u Kur'anu (većina ide česticom wa-, npr. وَالْفَجْرِ), a i zakletve ljudi – vjernika, svjedoka u propisima, ali i nevjernika „najtežim zakletvama”.",
+     "en": "The general word for an oath. Some of Allah's oaths in the Quran are spoken with it (most use the particle wa-, e.g. وَالْفَجْرِ), and so are people's — believers', witnesses' in the rulings, and disbelievers' “strongest oaths”."
+    },
+    "ayat": [
+     {"ref": "75:1", "why": {"bs": "„Kunem se Danom kijameta!” – Allahova zakletva; tefsir se razilazi je li لَا pojačanje ili odbijanje tvrdnje poricatelja.", "en": "“I swear by the Day of Resurrection” — Allah's oath; tafsir differs on whether لَا is emphasis or a rejection of the deniers' claim."}},
+     {"ref": "6:109", "why": {"bs": "„I kunu se Allahom, najtežim zakletvama, da će vjerovati ako im dođe znak” – zakletva nevjernika.", "en": "“They swear by Allah their strongest oaths that if a sign came to them they would surely believe” — the disbelievers' oath."}},
+     {"ref": "68:17", "why": {"bs": "Vlasnici vrta „zakleše se da će ga ujutro obrati” – zakletva ljudi o vlastitoj namjeri.", "en": "The owners of the garden “swore to cut its fruit in the morning” — people's oath about their own plan."}}
+    ]
+   },
+   {
+    "arabic": "حَلَفَ",
+    "verb": "حلف_1",
+    "count": 12,
+    "meaning": {"bs": "zakleti se", "en": "to swear"},
+    "nuance": {
+     "bs": "Također „zakleti se”, ali u Kur'anu (naše zapažanje) gotovo uvijek o licemjerima i onima koji se kunu da bi prikrili laž ili se opravdali; neutralno je samo u propisu o iskupu za zakletvu.",
+     "en": "Also “to swear”, but in the Quran (our observation) almost always of hypocrites and those who swear to cover a lie or excuse themselves; it is neutral only in the ruling on expiating an oath."
+    },
+    "ayat": [
+     {"ref": "9:56", "why": {"bs": "„I kunu se Allahom da su vaši, a nisu vaši” – zakletva licemjera.", "en": "“They swear by Allah that they are from among you while they are not from among you” — the hypocrites' oath."}},
+     {"ref": "58:14", "why": {"bs": "„…i svjesno se krivo kunu (يَحْلِفُونَ عَلَى الْكَذِبِ)” – zakletva uz laž.", "en": "“…and they swear to a lie while they know” — an oath bound to a lie."}},
+     {"ref": "5:89", "why": {"bs": "„…to je iskup za zakletve vaše kad se zakunete” – jedino neutralno mjesto: propis o zakletvi.", "en": "“…that is the expiation for oaths when you have sworn” — the one neutral place: the ruling on oaths."}}
+    ]
+   }
+  ]
+ },
+ "naba-khabar": {
+  "title": {"bs": "Vijest", "en": "News"},
+  "shared": {
+   "bs": "Obje riječi znače vijest, obavijest o nečemu. Prema ar-Rāġibu, نَبَأ je vijest od velike koristi koja donosi znanje ili jaku vjerovatnoću.",
+   "en": "Both words mean news, a report of something. According to ar-Rāġib, نَبَأ is news of great benefit that brings knowledge or a strong probability."
+  },
+  "tellApart": {
+   "bs": "Važna vijest od velike koristi – kazivanja o vjerovjesnicima, nevidljivom svijetu i Sudnjem danu → نَبَأ; vijest, obavijest uopće, i ono što se o nekome zna → خَبَر.",
+   "en": "Weighty news of great benefit — accounts of prophets, the unseen and the Last Day → نَبَأ; news, information in general, and what is known about someone → خَبَر."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نبأ, خبر"
+  ],
+  "notes": [
+   "ar-Rāġib: nabaʾ is news of great benefit from which knowledge or strong probability arises, and news is not properly called nabaʾ until it has these three things — paraphrased and attributed to him.",
+   "That نَبَأ (with its plural أَنْبَاء) is mostly said of the stories of earlier prophets and peoples, of the unseen and of the Last Day, is our observation of all 29 places; 49:6 (news brought by a fāsiq, to be verified) shows that a nabaʾ can still need checking.",
+   "خَبَر sums the corpus's lemmas خَبَر and its plural أَخْبَار (2 + 3).",
+   "Blind review: ġalabat aẓ-ẓann rendered 'strong probability'; the derivation of نَبِيّ from nabaʾ given as many's view (others: from nabwa).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "نَبَأ",
+    "lemmas": ["نَبَأ|نبأ"],
+    "count": 29,
+    "meaning": {"bs": "vijest, kazivanje", "en": "news, tidings"},
+    "nuance": {
+     "bs": "Vijest od težine i koristi. U Kur'anu najčešće o vjerovjesnicima i narodima prije, o nevidljivom svijetu i o Sudnjem danu. Mnogi iz istog korijena izvode i نَبِيّ – vjerovjesnik (drugi iz nabwa, uzvišenost).",
+     "en": "News of weight and benefit. In the Quran most often of the prophets and peoples of old, of the unseen and of the Last Day. Many derive نَبِيّ, prophet, from the same root (others from nabwa, elevation)."
+    },
+    "ayat": [
+     {"ref": "78:2", "why": {"bs": "„…o velikoj vijesti (النَّبَإِ الْعَظِيمِ)” – vijest o proživljenju.", "en": "“About the great news” — the tidings of the Resurrection."}},
+     {"ref": "27:22", "why": {"bs": "Pupavac: „donosim ti pouzdanu vijest (بِنَبَإٍ يَقِينٍ) iz Sebe” – vijest koja donosi sigurno znanje.", "en": "The hoopoe: “I have come to you from Sheba with certain news” — news that brings sure knowledge."}},
+     {"ref": "49:6", "why": {"bs": "„Ako vam nepošten čovjek donese kakvu vijest, provjerite je” – i važnu vijest treba provjeriti.", "en": "“If there comes to you a disobedient one with information, investigate” — even weighty news must be checked."}}
+    ]
+   },
+   {
+    "arabic": "خَبَر",
+    "lemmas": ["خَبَر|خبر", "أَخْبار|خبر"],
+    "count": 5,
+    "meaning": {"bs": "vijest, obavijest", "en": "news, information"},
+    "nuance": {
+     "bs": "Vijest, obavijest uopće; u množini i ono što se o nekome zna (njegova djela i stanje).",
+     "en": "News, information in general; in the plural also what is known about someone (their deeds and state)."
+    },
+    "ayat": [
+     {"ref": "27:7", "why": {"bs": "Musa porodici: „donijet ću vam od nje kakvu vijest (بِخَبَرٍ)” – obična vijest o putu.", "en": "Moses to his family: “I will bring you from there information” — ordinary news about the way."}},
+     {"ref": "99:4", "why": {"bs": "„Tog dana će ona vijesti svoje kazivati” – zemlja govori o onome što se na njoj činilo.", "en": "“That Day, it will report its news” — the earth tells what was done upon it."}},
+     {"ref": "47:31", "why": {"bs": "„…i da provjerimo vijesti o vama” – أَخْبَار kao ono što se o ljudima zna.", "en": "“…and test your affairs” — أَخْبَار as what is known of people."}}
+    ]
+   }
+  ]
+ },
+ "masha-sara-saa": {
+  "title": {"bs": "Ići, putovati, žuriti", "en": "To walk, to travel, to hasten"},
+  "shared": {
+   "bs": "Sva tri glagola govore o kretanju. Razlikuju se po načinu, dužini puta i po tome je li u kretanju trud.",
+   "en": "All three verbs speak of motion. They differ in manner, in the length of the way and in whether the motion carries effort."
+  },
+  "tellApart": {
+   "bs": "Hodati, ići – kretanje i način hoda → مَشَى; putovati, ići kroz zemlju, najčešće s pozivom da se gleda i pouka uzme → سَارَ; žuriti, i trud u nekom poslu, dobrom ili lošem → سَعَى.",
+   "en": "To walk — motion and the manner of walking → مَشَى; to travel, to go through the land, most often with a call to look and take heed → سَارَ; to hasten, and effort in a matter, good or bad → سَعَى."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries مشى, سير, سعى",
+   "Tafsir on 62:9 (fa-sʿaw)"
+  ],
+  "notes": [
+   "ar-Rāġib: mashy is moving from place to place by will; sayr is going on through the land; saʿy is a quick walk short of running, and is used for earnest effort in a matter, good or evil — paraphrased and attributed to him.",
+   "That سَارَ occurs 13 times in 'travel through the land and see the end of…' is our observation of all 16 places; that مَشَى is often qualified by the manner of walking (17:37, 25:63, 28:25) likewise.",
+   "62:9 fa-sʿaw: tafsir mostly explains it as going with care and readiness, not running (the Prophet forbade running to prayer); both senses of saʿy are named.",
+   "Blind review: 62:9 fa-sʿaw given as most mufassirun's reading.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "مَشَى",
+    "verb": "مشي_1",
+    "count": 21,
+    "meaning": {"bs": "hodati, ići", "en": "to walk"},
+    "nuance": {
+     "bs": "Obično hodanje s mjesta na mjesto. Kur'an uz njega često kaže kako se hoda – oholo, smjerno, stidljivo.",
+     "en": "Ordinary walking from place to place. The Quran often says with it how one walks — proudly, humbly, shyly."
+    },
+    "ayat": [
+     {"ref": "25:63", "why": {"bs": "Robovi Milostivog „po zemlji mirno hodaju” – način hoda kao vrlina.", "en": "The servants of the Most Merciful “walk upon the earth easily” — the manner of walking as a virtue."}},
+     {"ref": "17:37", "why": {"bs": "„I ne idi po zemlji nadmeno” – način hoda kao porok.", "en": "“And do not walk upon the earth exultantly” — the manner of walking as a vice."}},
+     {"ref": "28:25", "why": {"bs": "Jedna od dvije djevojke „dođe stidno hodeći” – hod koji pokazuje ćud.", "en": "One of the two women “came to him walking with shyness” — a gait that shows character."}}
+    ]
+   },
+   {
+    "arabic": "سَارَ",
+    "verb": "سير_1",
+    "count": 16,
+    "meaning": {"bs": "putovati, ići", "en": "to travel, to go"},
+    "nuance": {
+     "bs": "Putovati, ići dalje kroz zemlju. U Kur'anu najčešće u pozivu „putujte po zemlji pa pogledajte kakav je bio kraj…” – putovanje radi pouke.",
+     "en": "To travel, to go on through the land. In the Quran most often in the call “travel through the land and see how was the end of…” — travel for the lesson it teaches."
+    },
+    "ayat": [
+     {"ref": "6:11", "why": {"bs": "„Putujte po zemlji, pa pogledajte kakav je bio kraj onih koji su poricali” – putovanje radi pouke.", "en": "“Travel through the land; then observe how was the end of the deniers” — travel for a lesson."}},
+     {"ref": "28:29", "why": {"bs": "Musa „krenu s porodicom” nakon isteka roka – dugo putovanje.", "en": "Moses “was traveling with his family” after the term ended — a long journey."}},
+     {"ref": "52:10", "why": {"bs": "„…i planine se pokrenu” – سَارَ i za kretanje planina na Sudnjem danu.", "en": "“And the mountains will pass on, departing” — سَارَ also for the moving of mountains on the Last Day."}}
+    ]
+   },
+   {
+    "arabic": "سَعَى",
+    "verb": "سعي_1",
+    "count": 20,
+    "meaning": {"bs": "žuriti; truditi se", "en": "to hasten; to strive"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, brz hod, ali ne trčanje; prenosi se na zalaganje u nekom poslu – u dobru (za ahiret) ili u zlu (smutnja po zemlji).",
+     "en": "According to ar-Rāġib, a quick walk short of running; it is carried over to earnest effort in a matter — in good (for the hereafter) or in evil (spreading corruption)."
+    },
+    "ayat": [
+     {"ref": "36:20", "why": {"bs": "„I s kraja grada dođe jedan čovjek žureći (يَسْعَى)” – brzi hod.", "en": "“And there came from the farthest end of the city a man, running (يَسْعَى)” — the quick walk."}},
+     {"ref": "53:39", "why": {"bs": "„…i da čovjeku pripada samo ono što sam uradi (مَا سَعَى)” – trud, zalaganje.", "en": "“And that there is not for man except that for which he strives” — effort, striving."}},
+     {"ref": "62:9", "why": {"bs": "„…pohitajte da Allaha spominjete” – većina mufesira: idite odmah i smireno, ne trčite.", "en": "“…then proceed to the remembrance of Allah” — most mufassirun: go promptly and calmly, not at a run."}}
+    ]
+   }
+  ]
+ },
+ "ghadab-ghayz-sakhat": {
+  "title": {"bs": "Srdžba, bijes i nezadovoljstvo", "en": "Anger, rage and displeasure"},
+  "shared": {
+   "bs": "Sve tri riječi govore o srdžbi. Razlikuju se po jačini, po tome da li se kaže za Allaha i čemu su suprotne.",
+   "en": "All three words speak of anger. They differ in strength, in whether they are said of Allah, and in what they stand against."
+  },
+  "tellApart": {
+   "bs": "Srdžba, i ljudska i Allahova → غَضَب; najjači, uzavreli bijes, u Kur'anu nikada za Allaha → غَيْظ; nezadovoljstvo, suprotno zadovoljstvu (رِضْوَان) → سَخَط.",
+   "en": "Anger, both human and Allah's → غَضَب; the strongest, seething rage, never said of Allah in the Quran → غَيْظ; displeasure, the opposite of good pleasure (رِضْوَان) → سَخَط."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries غضب, غيظ, سخط"
+  ],
+  "notes": [
+   "ar-Rāġib: ġaḍab is the boiling of the heart's blood in wishing for revenge; when Allah is described by it, he says, punishment alone is meant. Many scholars of Ahl as-Sunna instead affirm anger as an attribute of Allah as befits Him, unlike creatures' anger. Both views are named in the member text; the ayat about Allah's anger carry no likening.",
+   "ar-Rāġib: ġayẓ is the most intense anger, the heat a person feels from the boiling of his heart's blood — paraphrased and attributed.",
+   "That غَيْظ is never said of Allah (all 6 places read), and that سَخَط and its verb stand against رِضْوَان / رَضِيَ (3:162, 47:28, 9:58), is our own observation. ar-Rāġib's wording on saḵaṭ is not used: it could not be verified here.",
+   "Blind review: 3:162 سَخَط rendered 'displeasure', not 'anger', with 'as befits Him'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "غَضَب",
+    "lemmas": ["غَضَب|غضب"],
+    "count": 14,
+    "meaning": {"bs": "srdžba", "en": "anger"},
+    "nuance": {
+     "bs": "Srdžba čovjeka (Musa na svoj narod) i Allahova srdžba na one koji je zasluže. Ar-Rāġib je, kad se kaže za Allaha, tumači kao kaznu; mnogi učenjaci ehli-sunneta potvrđuju je kao Allahovo svojstvo kakvo Njemu dolikuje, ne nalik ljudskom.",
+     "en": "The anger of a man (Moses at his people) and Allah's anger at those who earn it. ar-Rāġib explains it, when said of Allah, as punishment; many scholars of Ahl as-Sunna affirm it as an attribute of Allah as befits Him, unlike human anger."
+    },
+    "ayat": [
+     {"ref": "7:154", "why": {"bs": "„A kad se Musa smiri od srdžbe, uze ploče” – ljudska srdžba koja prođe.", "en": "“And when the anger subsided in Moses, he took up the tablets” — human anger that passes."}},
+     {"ref": "20:81", "why": {"bs": "„…da vas ne bi stigla srdžba Moja” – Allahova srdžba kao posljedica obijesti.", "en": "“…lest My anger should descend upon you” — Allah's anger as the outcome of transgression."}},
+     {"ref": "16:106", "why": {"bs": "Na onima koji se od vjere odmetnu „je Allahova srdžba” – srdžba kao presuda.", "en": "Upon those who disbelieve after belief “is wrath from Allah” — anger as a verdict."}}
+    ]
+   },
+   {
+    "arabic": "غَيْظ",
+    "lemmas": ["غَيْظ|غيظ"],
+    "count": 6,
+    "meaning": {"bs": "bijes, jarost", "en": "rage, fury"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, najjača srdžba, vrelina koja ključa u srcu. U Kur'anu se kaže za ljude – nevjernike, ali i vjernike koji ga savladavaju – i za vatru; nikada za Allaha (naše zapažanje).",
+     "en": "According to ar-Rāġib, the most intense anger, a heat that boils in the heart. In the Quran it is said of people — disbelievers, and believers who restrain it — and of the Fire; never of Allah (our observation)."
+    },
+    "ayat": [
+     {"ref": "3:134", "why": {"bs": "„…koji srdžbu savlađuju (الْكَاظِمِينَ الْغَيْظَ)” – vrlina je obuzdati najjači bijes.", "en": "“…who restrain anger (الْكَاظِمِينَ الْغَيْظَ)” — the virtue of holding back the fiercest rage."}},
+     {"ref": "3:119", "why": {"bs": "„Umrite od jarosti svoje!” – bijes licemjera prema vjernicima.", "en": "“Die in your rage” — the hypocrites' fury at the believers."}},
+     {"ref": "67:8", "why": {"bs": "Vatra „samo što se od bijesa ne raspadne” – غَيْظ i za Džehennem.", "en": "The Fire “almost bursts with rage” — غَيْظ said even of Hell."}}
+    ]
+   },
+   {
+    "arabic": "سَخَط",
+    "lemmas": ["سَخَط|سخط"],
+    "count": 1,
+    "meaning": {"bs": "nezadovoljstvo, srdžba", "en": "displeasure, wrath"},
+    "nuance": {
+     "bs": "Nezadovoljstvo, suprotno zadovoljstvu. U Kur'anu (naše zapažanje) ova riječ i njen glagol stoje nasuprot Allahovom zadovoljstvu (رِضْوَان) ili ljudskom zadovoljstvu (رَضُوا).",
+     "en": "Displeasure, the opposite of being pleased. In the Quran (our observation) this word and its verb stand against Allah's good pleasure (رِضْوَان) or human contentment (رَضُوا)."
+    },
+    "ayat": [
+     {"ref": "3:162", "why": {"bs": "„Zar je onaj koji Allahovo zadovoljstvo slijedi kao onaj koji navuče Allahovo nezadovoljstvo (بِسَخَطٍ)?” – سَخَط nasuprot رِضْوَان, kako Njemu dolikuje.", "en": "“Is one who pursues the pleasure of Allah like one who brings upon himself displeasure from Allah?” — سَخَط against رِضْوَان, as befits Him."}}
+    ]
+   }
+  ]
+ },
+ "ahabba-wadda": {
+  "title": {"bs": "Ljubav i naklonost", "en": "Love and affection"},
+  "shared": {
+   "bs": "Sve tri riječi govore o ljubavi i privrženosti. Prema ar-Rāġibu, wudd je voljeti nešto i željeti da bude, pa se riječ koristi u oba značenja.",
+   "en": "All three words speak of love and attachment. According to ar-Rāġib, wudd is loving a thing and wishing it to be, so the word is used in both senses."
+  },
+  "tellApart": {
+   "bs": "Voljeti – i ljudi Allaha, i Allah one koji to zaslužuju → أَحَبَّ; željeti, poželjeti (osnovni glagol وَدَّ u Kur'anu uvijek znači to) → وَدَّ; naklonost, prisnost među ljudima → مَوَدَّة.",
+   "en": "To love — people loving Allah, and Allah loving those who earn it → أَحَبَّ; to wish (the basic verb وَدَّ always means this in the Quran) → وَدَّ; affection, warmth between people → مَوَدَّة."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries حب, ود"
+  ],
+  "notes": [
+   "ar-Rāġib: wudd is loving a thing and wishing it to be, and is used in each of the two senses, wishing containing the sense of love — paraphrased and attributed.",
+   "That the verb وَدَّ means 'to wish' (mostly وَدَّ لَوْ / أَنْ) in all 16 places, and that مَوَدَّة is in every place affection between people, is our observation of all places.",
+   "42:23 (al-mawaddata fī l-qurbā) is not cited: tafsir gives several readings of it.",
+   "Blind review: 'always means wish' restricted to the basic verb (Form III yuwāddūna, 58:22, is affection); Allah's love glossed 'as befits Him'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "أَحَبَّ",
+    "verb": "حبب_4",
+    "count": 64,
+    "meaning": {"bs": "voljeti", "en": "to love"},
+    "nuance": {
+     "bs": "Opća riječ za ljubav: prema Allahu, prema imetku, prema ljudima. Kaže se i za Allahovu ljubav prema dobročiniteljima i bogobojaznima, kako Njemu dolikuje.",
+     "en": "The general word for love: of Allah, of wealth, of people. It is said too of Allah's love for those who do good and fear Him, as befits Him."
+    },
+    "ayat": [
+     {"ref": "3:31", "why": {"bs": "„Ako Allaha volite, mene slijedite, i Allah će vas voljeti” – ljubav vjernika prema Allahu i Allahova ljubav prema njemu, kako Njemu dolikuje.", "en": "“If you should love Allah, then follow me, so Allah will love you” — the believer's love for Allah, and Allah's love for him as befits Him."}},
+     {"ref": "3:92", "why": {"bs": "„…dok ne udijelite od onoga što volite” – ljubav prema imetku.", "en": "“…until you spend from that which you love” — love of wealth."}},
+     {"ref": "28:56", "why": {"bs": "„Ti ne možeš uputiti onoga koga ti voliš” – ljubav prema bližnjem.", "en": "“You do not guide whom you like” — love for one dear to you."}}
+    ]
+   },
+   {
+    "arabic": "وَدَّ",
+    "verb": "ودد_1",
+    "count": 16,
+    "meaning": {"bs": "željeti, poželjeti", "en": "to wish"},
+    "nuance": {
+     "bs": "Iako je iz korijena naklonosti, glagol u Kur'anu (naše zapažanje) uvijek znači „željeti”, najčešće ono što se neće ostvariti ili što bi drugima naudilo.",
+     "en": "Though from the root of affection, the verb in the Quran (our observation) always means “to wish”, most often for what will not come true or would harm others."
+    },
+    "ayat": [
+     {"ref": "2:109", "why": {"bs": "„Mnogi sljedbenici Knjige bi željeli da vas vrate u nevjerstvo” – želja da drugi zastrane.", "en": "“Many of the People of the Scripture wish they could turn you back to disbelief” — a wish that others go astray."}},
+     {"ref": "15:2", "why": {"bs": "„Nevjernici će zaželjeti da su bili muslimani” – kasna želja.", "en": "“Perhaps those who disbelieve will wish that they had been Muslims” — a wish that comes too late."}},
+     {"ref": "68:9", "why": {"bs": "„Oni bi željeli da im ti popustiš, pa da i oni popuste” – želja za kompromisom u vjeri.", "en": "“They wish that you would soften in your position, so they would soften” — a wish for compromise in faith."}}
+    ]
+   },
+   {
+    "arabic": "مَوَدَّة",
+    "lemmas": ["مَوَدَّة|ودد"],
+    "spoken": "مَوَدَّةٌ",
+    "count": 8,
+    "meaning": {"bs": "naklonost, ljubav", "en": "affection"},
+    "nuance": {
+     "bs": "Prisnost i naklonost među ljudima – među supružnicima, prijateljima, pa i prema neprijatelju. Allah je spominje kao Svoj znak i dar.",
+     "en": "Warmth and affection between people — between spouses, friends, even towards an enemy. Allah names it as His sign and gift."
+    },
+    "ayat": [
+     {"ref": "30:21", "why": {"bs": "„…i između vas ljubav i samilost uspostavio” – مَوَدَّة među supružnicima kao Allahov znak.", "en": "“…and He placed between you affection and mercy” — مَوَدَّة between spouses as a sign of Allah."}},
+     {"ref": "60:7", "why": {"bs": "„Allah će možda uspostaviti ljubav između vas i onih s kojima ste u neprijateljstvu” – naklonost koja može zamijeniti neprijateljstvo.", "en": "“Perhaps Allah will put, between you and those to whom you have been enemies, affection” — affection that can replace enmity."}},
+     {"ref": "5:82", "why": {"bs": "„…a vjernicima su ljubavlju najbliži…” – naklonost jednog naroda prema drugom.", "en": "“…and you will find the nearest of them in affection to the believers…” — one people's affection for another."}}
+    ]
+   }
+  ]
+ },
+ "raja-tamia": {
+  "title": {"bs": "Nadati se i žudjeti", "en": "To hope and to long for"},
+  "shared": {
+   "bs": "Oba glagola govore o iščekivanju nečeg dobrog. Prema ar-Rāġibu, rajāʾ je pretpostavka koja očekuje ono što raduje, a ṭamaʿ je težnja duše prema nečemu iz želje za njim.",
+   "en": "Both verbs speak of expecting some good. According to ar-Rāġib, rajāʾ is an expectation of what brings joy, while ṭamaʿ is the soul's inclination towards a thing out of desire for it."
+  },
+  "tellApart": {
+   "bs": "Nadati se, s razlogom, najčešće susretu s Allahom i ahiretu → رَجَا; žudjeti, priželjkivati – hvalevrijedno kad se žudi za Allahovim oprostom, a pokudno kad je bez osnova ili iz bolesti srca → طَمِعَ.",
+   "en": "To hope, with grounds, most often for the meeting with Allah and the hereafter → رَجَا; to long for, to covet — praiseworthy when it is longing for Allah's forgiveness, blameworthy when groundless or from a sick heart → طَمِعَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries رجا, طمع",
+   "Tafsir on 71:13 (lā tarjūna li-llāhi waqāran)"
+  ],
+  "notes": [
+   "ar-Rāġib: rajāʾ is an expectation that calls for the coming of what brings joy; ṭamaʿ is the soul's inclination to a thing out of desire for it — paraphrased and attributed.",
+   "71:13 is explained in much of tafsir as 'why do you not fear Allah's majesty'; we give that reading as tafsir's and do not cite the ayah as a member example.",
+   "That رَجَا has as object the meeting with Allah, the Last Day or Allah's mercy in most of its 22 places, and that طَمِعَ is praised (26:82, 26:51, 5:84) and blamed (70:38, 74:15, 33:32), is our observation of all places.",
+   "Blind review: the reading 'do not fear' for lā yarjūna (10:7) is named beside 'do not hope'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "رَجَا",
+    "verb": "رجو_1",
+    "count": 22,
+    "meaning": {"bs": "nadati se", "en": "to hope"},
+    "nuance": {
+     "bs": "Nada koja ima osnova i očekuje radost. U Kur'anu najčešće nada u susret s Allahom, u Sudnji dan i u Allahovu milost; „oni koji se ne nadaju susretu s Nama” su oni koji ga poriču.",
+     "en": "Hope that has grounds and expects joy. In the Quran most often hope for the meeting with Allah, for the Last Day and Allah's mercy; “those who do not hope for the meeting with Us” are those who deny it."
+    },
+    "ayat": [
+     {"ref": "18:110", "why": {"bs": "„Ko se nada susretu sa svojim Gospodarom, neka čini dobra djela” – nada koja vodi djelu.", "en": "“Whoever would hope for the meeting with his Lord, let him do righteous work” — hope that leads to deeds."}},
+     {"ref": "2:218", "why": {"bs": "„…oni se nadaju Allahovoj milosti” – nada vjernika nakon truda.", "en": "“…those expect the mercy of Allah” — the believers' hope after effort."}},
+     {"ref": "10:7", "why": {"bs": "„Oni koji ne očekuju susret s Nama i zadovolje se životom na ovom svijetu…” – odsustvo nade kao poricanje (neki mufesiri: „ne boje se”).", "en": "“Those who do not expect the meeting with Us and are satisfied with the life of this world…” — no hope, as denial (some mufassirun: “do not fear”)."}}
+    ]
+   },
+   {
+    "arabic": "طَمِعَ",
+    "verb": "طمع_1",
+    "count": 8,
+    "meaning": {"bs": "žudjeti, priželjkivati", "en": "to long for, to covet"},
+    "nuance": {
+     "bs": "Težnja duše za nečim. Kad je usmjerena na Allahov oprost, Kur'an je hvali; kad je bez osnova ili iz bolesti srca, kudi je.",
+     "en": "The soul's reaching for something. Turned to Allah's forgiveness, the Quran praises it; when groundless or from a sick heart, it blames it."
+    },
+    "ayat": [
+     {"ref": "26:82", "why": {"bs": "Ibrahim: „…od Koga žudim da mi na Sudnjem danu grijehe moje oprosti” – hvalevrijedna žudnja.", "en": "Abraham: “And who I aspire that He will forgive me my sin on the Day of Recompense” — praiseworthy longing."}},
+     {"ref": "70:38", "why": {"bs": "„Zar svaki od njih žudi da bude uveden u Džennet blagodati?” – žudnja bez osnova.", "en": "“Does every person among them aspire to enter a garden of pleasure?” — groundless longing."}},
+     {"ref": "33:32", "why": {"bs": "„…pa da ne požudi onaj u čijem je srcu bolest” – žudnja iz bolesti srca.", "en": "“…lest he in whose heart is disease should covet” — longing from a sick heart."}}
+    ]
+   }
+  ]
+ },
+ "istakbara-takabbara": {
+  "title": {"bs": "Oholost", "en": "Arrogance"},
+  "shared": {
+   "bs": "Sve tri riječi su iz korijena veličine (k-b-r) i govore o uzdizanju sebe. Razlikuju se po tome da li je veličina stvarna ili umišljena i kome se pripisuje.",
+   "en": "All three words are of the root of greatness (k-b-r) and speak of raising oneself up. They differ in whether the greatness is real or assumed, and to whom it is ascribed."
+  },
+  "tellApart": {
+   "bs": "Oholo odbiti, uzoholiti se pred istinom i ibadetom → اسْتَكْبَرَ; oholiti se, izdizati se nad drugima po zemlji → تَكَبَّرَ; ohol – o ljudima pokudno, a kao Allahovo ime: Veličanstveni → مُتَكَبِّر.",
+   "en": "To disdain, to grow arrogant before the truth and worship → اسْتَكْبَرَ; to behave arrogantly, to set oneself above others in the land → تَكَبَّرَ; arrogant — blame for people, and as Allah's name: the Supreme → مُتَكَبِّر."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries كبر"
+  ],
+  "notes": [
+   "ar-Rāġib: istikbār is seeking to become great; it is praiseworthy when rightly placed, and blameworthy when one shows of himself what he does not have — and the Quran's uses are of the second kind. Takabbur is either real excellence beyond others, in which sense Allah is al-Mutakabbir, or a pretended one, which is that of people. Paraphrased and attributed to him.",
+   "That اسْتَكْبَرَ is most often refusal of worship, of the messengers or of the truth (Iblis 2:34, 40:60, 71:7), and that مُتَكَبِّر is Allah's name once (59:23) and otherwise always arrogant people (Hell's dwellers; 40:27, 40:35), is our observation of all places.",
+   "Blind review: الْمُتَكَبِّر rendered Veličanstveni / the Supreme (not Uzvišeni, which belongs to al-ʿAlī).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "اسْتَكْبَرَ",
+    "verb": "كبر_10",
+    "count": 40,
+    "meaning": {"bs": "uzoholiti se, oholo odbiti", "en": "to be arrogant, to disdain"},
+    "nuance": {
+     "bs": "Uzoholiti se tako da se odbije istina, poslanik ili ibadet. Prva oholost u Kur'anu je Iblisova.",
+     "en": "To grow so arrogant as to refuse the truth, a messenger or worship. The first arrogance in the Quran is Iblis's."
+    },
+    "ayat": [
+     {"ref": "2:34", "why": {"bs": "Iblis „odbi i uzoholi se” – oholost kao odbijanje naredbe.", "en": "Iblis “refused and was arrogant” — arrogance as refusing a command."}},
+     {"ref": "40:60", "why": {"bs": "„Oni koji se iz oholosti neće da Mi ibadet čine…” – oholost pred ibadetom.", "en": "“Those who disdain My worship…” — arrogance before worship."}},
+     {"ref": "71:7", "why": {"bs": "Nuhov narod „uporno ostade i silno se uzoholi” – oholost pred poslanikom.", "en": "Noah's people “persisted, and were arrogant with great arrogance” — arrogance before a messenger."}}
+    ]
+   },
+   {
+    "arabic": "تَكَبَّرَ",
+    "verb": "كبر_5",
+    "count": 2,
+    "meaning": {"bs": "oholiti se", "en": "to behave arrogantly"},
+    "nuance": {
+     "bs": "Uzdizati se nad drugima, pokazivati veličinu koja čovjeku ne pripada. U Kur'anu samo dva puta, oba puta pokudno.",
+     "en": "To set oneself above others, to show a greatness one does not have. Only twice in the Quran, both times in blame."
+    },
+    "ayat": [
+     {"ref": "7:13", "why": {"bs": "Iblisu: „Tebi ne priliči da se u njemu oholiš” – oholost tamo gdje joj nije mjesto.", "en": "To Iblis: “It is not for you to be arrogant therein” — arrogance where it has no place."}},
+     {"ref": "7:146", "why": {"bs": "„…one koji se bez prava ohole na Zemlji” – oholost nad drugima.", "en": "“…those who are arrogant upon the earth without right” — arrogance over others."}}
+    ]
+   },
+   {
+    "arabic": "مُتَكَبِّر",
+    "lemmas": ["مُتَكَبِّر|كبر"],
+    "count": 7,
+    "meaning": {"bs": "ohol; Uzvišeni", "en": "arrogant; the Supreme"},
+    "nuance": {
+     "bs": "O ljudima: ohol, onaj koji se pravi velikim. Kao Allahovo ime (59:23): Onaj kome jedinome istinska veličina pripada – prema ar-Rāġibu, veličina koja je stvarna, a ne umišljena.",
+     "en": "Of people: arrogant, one who makes himself great. As Allah's name (59:23): the One to whom alone true greatness belongs — according to ar-Rāġib, a greatness that is real, not assumed."
+    },
+    "ayat": [
+     {"ref": "59:23", "why": {"bs": "„…Silni, Veličanstveni (الْمُتَكَبِّرُ)” – Allahovo ime; istinska veličina pripada samo Njemu.", "en": "“…the Compeller, the Supreme (الْمُتَكَبِّرُ)” — a name of Allah; true greatness is His alone."}},
+     {"ref": "40:27", "why": {"bs": "Musa: „Ja tražim zaštitu od svakog oholog (مُتَكَبِّرٍ) koji ne vjeruje u Dan obračuna” – ista riječ o čovjeku, pokudno.", "en": "Moses: “I seek refuge from every arrogant one who does not believe in the Day of Account” — the same word of a man, in blame."}}
+    ]
+   }
+  ]
+ },
+ "khushu-tadarru": {
+  "title": {"bs": "Skrušenost i ponizna molba", "en": "Humility and humble entreaty"},
+  "shared": {
+   "bs": "Sve tri riječi govore o poniznosti. Ar-Rāġib ističe da se khušūʿ najčešće kaže za ono što se vidi na tijelu, a ḍarāʿa za ono što je u srcu: „kad se srce ponizi, udovi postanu skrušeni”.",
+   "en": "All three words speak of lowliness. ar-Rāġib notes that ḫušūʿ is mostly said of what shows in the body and ḍarāʿa of what is in the heart: “when the heart is humbled, the limbs become humble”."
+  },
+  "tellApart": {
+   "bs": "Skrušen – poniznost koja se vidi na licu, pogledu, glasu → خَاشِع; ponizna molba, preklinjanje iz srca → تَضَرُّع; pokoren, onaj koji se savija pred većim → خَاضِع.",
+   "en": "Humble — lowliness that shows in the face, the gaze, the voice → خَاشِع; humble entreaty, pleading from the heart → تَضَرُّع; submissive, bowing before one greater → خَاضِع."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries خشع, ضرع"
+  ],
+  "notes": [
+   "ar-Rāġib: ḫušūʿ is ḍarāʿa, mostly used of what is found in the limbs, while ḍarāʿa is mostly used of what is in the heart; hence the saying 'when the heart is humbled the limbs become humble' — he gives it as 'it has been related', and so do we.",
+   "Counter-example shown: 57:16 'that their hearts should be humbled (taḫšaʿa qulūbuhum)', so ḫušūʿ of the heart is also Quranic; the distinction is a tendency.",
+   "That خَاشِع is said of eyes, faces, voices, the earth and a mountain (54:7, 88:2, 41:39, 59:21), and that خَاضِع occurs once (26:4), is our observation; ar-Rāġib's wording on ḫuḍūʿ is not used.",
+   "Blind review: 6:63 'aloud' corrected to 'humbly and secretly'; 26:4 aʿnāquhum given as necks or (for some mufassirun) leaders.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "خَاشِع",
+    "lemmas": ["خاشِع|خشع"],
+    "count": 14,
+    "meaning": {"bs": "skrušen, ponizan", "en": "humble, humbly submissive"},
+    "nuance": {
+     "bs": "Skrušen; poniznost koja se vidi – u namazu, na licima i pogledima na Sudnjem danu, pa i na zemlji i planini. Može biti iz bogobojaznosti, ali i iz poniženja.",
+     "en": "Humble; a lowliness that is seen — in prayer, on faces and in eyes on the Last Day, even on the earth and a mountain. It may come from awe, or from abasement."
+    },
+    "ayat": [
+     {"ref": "23:2", "why": {"bs": "„…koji u namazu svome skrušeni budu” – skrušenost u ibadetu.", "en": "“…they who are during their prayer humbly submissive” — humility in worship."}},
+     {"ref": "59:21", "why": {"bs": "„…vidio bi je skrušenu i kako se od straha pred Allahom raspada” – planina, kad bi joj bio objavljen Kur'an.", "en": "“…you would have seen it humbled and coming apart from fear of Allah” — a mountain, were the Quran sent down upon it."}},
+     {"ref": "88:2", "why": {"bs": "„Neka lica će tog dana ponižena (خَاشِعَة) biti” – skrušenost iz poniženja.", "en": "“Some faces, that Day, will be humbled” — lowliness from abasement."}}
+    ]
+   },
+   {
+    "arabic": "تَضَرُّع",
+    "lemmas": ["تَضَرُّع|ضرع"],
+    "count": 3,
+    "meaning": {"bs": "ponizna molba, preklinjanje", "en": "humble entreaty"},
+    "nuance": {
+     "bs": "Ponizno, usrdno preklinjanje, najčešće u dovi. Prema ar-Rāġibu, ḍarāʿa je poniznost u srcu.",
+     "en": "Humble, earnest entreaty, most often in supplication. According to ar-Rāġib, ḍarāʿa is lowliness in the heart."
+    },
+    "ayat": [
+     {"ref": "7:55", "why": {"bs": "„Molite se Gospodaru svome ponizno (تَضَرُّعًا) i u sebi” – kako se upućuje dova.", "en": "“Call upon your Lord in humility and privately” — how supplication is made."}},
+     {"ref": "6:63", "why": {"bs": "„…kada Ga ponizno i u sebi molite” – preklinjanje u nevolji na kopnu i moru.", "en": "“…you call upon Him humbly and secretly” — entreaty in distress on land and sea."}},
+     {"ref": "7:205", "why": {"bs": "„I spominji Gospodara svoga u sebi, ponizno i sa strahom” – تَضَرُّع i u zikru.", "en": "“And remember your Lord within yourself in humility and in fear” — تَضَرُّع in remembrance too."}}
+    ]
+   },
+   {
+    "arabic": "خَاضِع",
+    "lemmas": ["خاضِع|خضع"],
+    "count": 1,
+    "meaning": {"bs": "pokoren, ponizan", "en": "submissive, bowed"},
+    "nuance": {
+     "bs": "Pokoren, onaj koji se savija pred većim. U Kur'anu jednom (naše zapažanje), o šijama (ili, prema nekim mufesirima, prvacima) koje bi se pognule pred znakom s neba.",
+     "en": "Submissive, bending before what is greater. Once in the Quran (our observation), of necks (or, for some mufassirun, leaders) that would bow before a sign from heaven."
+    },
+    "ayat": [
+     {"ref": "26:4", "why": {"bs": "„…pa bi se šije njihove (ili: prvaci njihovi) pred njim pokorno pognule” – pokornost na koju bi se bili prisiljeni.", "en": "“…and their necks (or: their leaders) would remain humbled to it” — a submission they would be forced into."}}
+    ]
+   }
+  ]
+ },
+ "bahr-yamm": {
+  "title": {"bs": "More", "en": "The sea"},
+  "shared": {
+   "bs": "Obje riječi znače more, veliku vodu. Razlikuje ih (naše zapažanje) to gdje ih Kur'an koristi.",
+   "en": "Both words mean the sea, a great body of water. What tells them apart (our observation) is where the Quran uses them."
+  },
+  "tellApart": {
+   "bs": "More uopće – slano i slatko, more kojim plove lađe, more kao slika neizmjernosti → بَحْر; more (ili rijeka) u kazivanju o Musau i faraonu – u Kur'anu samo tamo → يَمّ.",
+   "en": "The sea in general — salt and fresh, the sea ships sail, the sea as an image of the boundless → بَحْر; the sea (or river) in the story of Moses and Pharaoh — in the Quran only there → يَمّ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries بحر, يم",
+   "Tafsir on 20:39 and 28:7 (al-yamm as the Nile)"
+  ],
+  "notes": [
+   "ar-Rāġib: the root of baḥr is every wide place gathering much water; yamm he glosses as the sea — paraphrased and attributed.",
+   "That all 7 ayat with يَمّ belong to the story of Moses and Pharaoh (the infant set afloat, Pharaoh's drowning, the calf's ashes scattered), while بَحْر is used in that story too (2:50, 20:77, 26:63), is our observation of all places.",
+   "Tafsir mostly takes the yamm of 20:39 and 28:7 to be the Nile; for Pharaoh's drowning it is the sea. A claim that yamm is a loanword is not made: it could not be verified here.",
+   "Blind review: 28:7 'the same water' corrected — the Nile in 20:39 / 28:7, the sea in 28:40.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "بَحْر",
+    "lemmas": ["بَحْر|بحر"],
+    "count": 41,
+    "meaning": {"bs": "more", "en": "sea"},
+    "nuance": {
+     "bs": "Opća riječ za more i veliku vodu: kojim plove lađe, slatko i slano „dva mora”, more koje se razdvojilo pred Musaom, more kao mjera neizmjernosti Allahovih riječi.",
+     "en": "The general word for the sea and great waters: the sea ships sail, the sweet and salt “two seas”, the sea parted before Moses, the sea as a measure of the boundlessness of Allah's words."
+    },
+    "ayat": [
+     {"ref": "25:53", "why": {"bs": "„On je dva mora pustio – jedno slatko i pitko, a drugo slano i gorko” – بَحْر i za slatku vodu.", "en": "“He released the two seas, one fresh and sweet and one salty and bitter” — بَحْر also of fresh water."}},
+     {"ref": "2:50", "why": {"bs": "„I kad smo zbog vas more rastavili…” – بَحْر i u kazivanju o Musau.", "en": "“And when We parted the sea for you…” — بَحْر in the story of Moses too."}},
+     {"ref": "18:109", "why": {"bs": "„Kad bi more bilo mastilo za riječi Gospodara moga…” – more kao slika neizmjernosti.", "en": "“If the sea were ink for the words of my Lord…” — the sea as an image of the boundless."}}
+    ]
+   },
+   {
+    "arabic": "يَمّ",
+    "lemmas": ["يَمّ|يمم"],
+    "count": 8,
+    "meaning": {"bs": "more, velika voda", "en": "the sea, the river"},
+    "nuance": {
+     "bs": "More ili velika voda – u Kur'anu (naše zapažanje) samo u kazivanju o Musau: u nju je majka spustila dojenče, u njoj su potopljeni faraon i njegova vojska (u 20:39 i 28:7 tefsir je tumači kao Nil, u 28:40 kao more).",
+     "en": "The sea or a great water — in the Quran (our observation) only in the story of Moses: his mother set the infant upon it, and Pharaoh and his soldiers were drowned in it (tafsir: the Nile in 20:39 and 28:7, the sea in 28:40)."
+    },
+    "ayat": [
+     {"ref": "20:39", "why": {"bs": "„Stavi ga u kovčeg, pa ga pusti u rijeku (الْيَمّ)” – tefsir: u Nil.", "en": "“Cast him into the chest and cast it into the river (الْيَمّ)” — tafsir: the Nile."}},
+     {"ref": "28:7", "why": {"bs": "„…a kad se za nj uplašiš, baci ga u rijeku i ne strahuj” – ista riječ, isto kazivanje (tefsir: Nil).", "en": "“…and when you fear for him, cast him into the river and do not fear” — the same word, the same story (tafsir: the Nile)."}},
+     {"ref": "28:40", "why": {"bs": "„Pa smo i njega i vojsku njegovu kaznili i u more ih bacili” – faraonov kraj.", "en": "“So We took him and his soldiers and threw them into the sea” — Pharaoh's end."}}
+    ]
+   }
+  ]
+ },
+ "sahab-ghamam-muzn": {
+  "title": {"bs": "Oblaci", "en": "Clouds"},
+  "shared": {
+   "bs": "Sve tri riječi znače oblak. Razlikuju se po onome što ime ističe i po ulozi oblaka u ajetima.",
+   "en": "All three words mean cloud. They differ in what the name brings out and in the part the cloud plays in the ayat."
+  },
+  "tellApart": {
+   "bs": "Oblak koji vjetrovi vuku i gone, najčešće kišni → سَحَاب; oblak koji zaklanja i daje hlad (od korijena „pokriti”) → غَمَام; kišni oblak – jednom, kao izvor slatke vode → مُزْن.",
+   "en": "The cloud drawn and driven by the winds, usually rain-bearing → سَحَاب; the cloud that covers and shades (from the root “to cover”) → غَمَام; the rain cloud — once, as the source of sweet water → مُزْن."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries سحب, غم, مزن",
+   "Tafsir on 56:69 (al-muzn as clouds)"
+  ],
+  "notes": [
+   "ar-Rāġib: saḥāb is so named either because the wind drags it or because it drags the water; ġamām is the cloud, named for covering (ġamma) the light of the sun — paraphrased and attributed. His wording on muzn is not used; the lexicons commonly describe it as white rain clouds, and tafsir on 56:69 explains it as the clouds.",
+   "That سَحَاب is often tied to the winds and to rain (7:57, 24:43, 30:48, 35:9), though also an image of passing and darkness (27:88, 24:40), and that غَمَام is never the bearer of rain but a shade (2:57, 7:160) or a sign of the Last Day (25:25, 2:210), is our observation of all places. 2:210 (Allah's coming in shades of cloud) is not cited: its meaning is left to tafsir.",
+   "Blind review: سَحَاب 'almost always with rain' softened to 'often' (27:88, 24:40, 52:44); Korkut's 'sinovi Israilovi' and 2:57 wording.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "سَحَاب",
+    "lemmas": ["سَحاب|سحب"],
+    "count": 9,
+    "meaning": {"bs": "oblak, oblaci", "en": "clouds"},
+    "nuance": {
+     "bs": "Oblak koji vjetrovi tjeraju, skupljaju i iz kojeg pada kiša. U Kur'anu (naše zapažanje) često uz vjetrove i kišu, kao znak Allahove moći i milosti, ali i kao slika prolaznosti (27:88) i tame (24:40).",
+     "en": "Clouds driven and gathered by the winds, from which rain falls. In the Quran (our observation) often with winds and rain, as a sign of Allah's power and mercy, but also as an image of passing (27:88) and of darkness (24:40)."
+    },
+    "ayat": [
+     {"ref": "24:43", "why": {"bs": "„Allah polahko goni oblake, zatim ih spaja i gomila… pa vidiš kišu kako iz njih pada” – oblak koji nosi kišu.", "en": "“Allah drives clouds, then brings them together, then makes them into a mass, and you see the rain emerge” — the rain-bearing cloud."}},
+     {"ref": "7:57", "why": {"bs": "„…kad vjetrovi pokrenu teške oblake, Mi ih poženemo u mrtav kraj” – vjetrovi i oblaci.", "en": "“…when they have carried heavy rainclouds, We drive them to a dead land” — winds and clouds."}}
+    ]
+   },
+   {
+    "arabic": "غَمَام",
+    "lemmas": ["غَمام|غمم"],
+    "count": 4,
+    "meaning": {"bs": "oblak (koji zaklanja)", "en": "cloud (that shades)"},
+    "nuance": {
+     "bs": "Oblak koji pokriva i zaklanja. U Kur'anu (naše zapažanje) nikad kao kišni oblak: hlad koji je Allah dao sinovima Israilovim i oblaci Sudnjeg dana.",
+     "en": "The cloud that covers and screens. In the Quran (our observation) never as a rain cloud: the shade Allah gave the Children of Israel, and the clouds of the Last Day."
+    },
+    "ayat": [
+     {"ref": "2:57", "why": {"bs": "„I Mi smo vas oblacima zasjenili” – oblak kao hlad u pustinji.", "en": "“And We shaded you with clouds” — the cloud as shade in the desert."}},
+     {"ref": "25:25", "why": {"bs": "„Na Dan kad će se nebo oblacima rascijepiti…” – oblaci Sudnjeg dana.", "en": "“And the Day the heaven will split open with clouds…” — the clouds of the Last Day."}}
+    ]
+   },
+   {
+    "arabic": "مُزْن",
+    "lemmas": ["مُزْن|مزن"],
+    "count": 1,
+    "meaning": {"bs": "kišni oblaci", "en": "rain clouds"},
+    "nuance": {
+     "bs": "Kišni oblaci; jednom u Kur'anu, u pitanju: ko spušta vodu za piće iz njih?",
+     "en": "Rain clouds; once in the Quran, in a question: who sends down the drinking water from them?"
+    },
+    "ayat": [
+     {"ref": "56:69", "why": {"bs": "„Da li je vi iz oblaka spuštate ili Mi to činimo?” – مُزْن kao izvor pitke vode.", "en": "“Is it you who brought it down from the clouds, or is it We who bring it down?” — مُزْن as the source of drinking water."}}
+    ]
+   }
+  ]
+ },
+ "ahl-al": {
+  "title": {"bs": "Porodica i čeljad", "en": "Family and household"},
+  "shared": {
+   "bs": "Obje riječi označavaju čovjekove bližnje i one koji mu pripadaju. Prema ar-Rāġibu, آل je izveden od أَهْل, ali se koristi uže.",
+   "en": "Both words name a person's own, those who belong to him. According to ar-Rāġib, آل comes from أَهْل but is used more narrowly."
+  },
+  "tellApart": {
+   "bs": "Porodica, ukućani, ali i stanovnici, sljedbenici, oni koji nečemu pripadaju (ehli-kitab, stanovnici sela) → أَهْل; porodica, rod ili pristalice – u Kur'anu (naše zapažanje) uvijek uz ime osobe (Ibrahimova, Lutova, faraonova) → آل.",
+   "en": "Family, household, but also inhabitants, followers, those who belong to something (People of the Book, people of the towns) → أَهْل; family, house or followers — in the Quran (our observation) always with a person's name (of Abraham, of Lot, of Pharaoh) → آل."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries أهل, آل"
+  ],
+  "notes": [
+   "ar-Rāġib: āl is a transposed form of ahl, but is restricted to being joined to names of rational persons — one does not say āl of a place or a time — and is used of those bound to a person by close kinship or allegiance; ahl is joined to anything. Paraphrased and attributed to him.",
+   "That آل is joined to a proper name in all 23 ayat (Ibrahim, ʿImran, Yaʿqub, Musa, Harun, Dawud, Lut, Firʿawn) is our observation; آل فِرْعَوْن (his people and followers) shows it is not only kinship.",
+   "Blind review: 'always with a name' marked as our observation; أَهْلُ النَّارِ rendered 'stanovnici Vatre'. 'faraon' is kept, as in Korkut's translation.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "أَهْل",
+    "lemmas": ["أَهْل|أهل"],
+    "count": 127,
+    "meaning": {"bs": "porodica; stanovnici; sljedbenici", "en": "family; people of; followers"},
+    "nuance": {
+     "bs": "Najšira riječ: ukućani i porodica, ali i stanovnici mjesta, ljudi jedne knjige ili jednog stanja („stanovnici Vatre”, أَهْلُ النَّارِ).",
+     "en": "The widest word: household and family, but also the inhabitants of a place, the people of a scripture or of a state (“the people of the Fire”, أَهْلُ النَّارِ)."
+    },
+    "ayat": [
+     {"ref": "20:132", "why": {"bs": "„I naređuj porodici svojoj (أَهْلَكَ) da obavlja namaz” – ukućani.", "en": "“And enjoin prayer upon your family” — the household."}},
+     {"ref": "3:64", "why": {"bs": "„Reci: ‘O sljedbenici Knjige (أَهْلَ الْكِتَابِ), dođite…’” – ljudi jedne knjige.", "en": "“Say: O People of the Scripture, come…” — the people of a scripture."}},
+     {"ref": "7:96", "why": {"bs": "„A da su stanovnici sela (أَهْلَ الْقُرَى) vjerovali…” – stanovnici mjesta.", "en": "“And if only the people of the cities had believed…” — the inhabitants of a place."}}
+    ]
+   },
+   {
+    "arabic": "آل",
+    "lemmas": ["آل|أول"],
+    "count": 26,
+    "meaning": {"bs": "porodica, rod; pristalice", "en": "family, house; followers"},
+    "nuance": {
+     "bs": "Porodica ili rod jedne poznate osobe, ali i njeni sljedbenici i pristalice. U Kur'anu uvijek uz vlastito ime: Ibrahimova i Imranova porodica, ali i faraonovi ljudi.",
+     "en": "The family or house of a known person, but also his followers and partisans. In the Quran always with a proper name: the family of Abraham and of Imran, but also Pharaoh's people."
+    },
+    "ayat": [
+     {"ref": "3:33", "why": {"bs": "„Allah je izabrao Adema i Nuha i Ibrahimovu porodicu i Imranovu porodicu” – آل plemenitih.", "en": "“Allah chose Adam and Noah and the family of Abraham and the family of Imran” — the house of the noble."}},
+     {"ref": "15:59", "why": {"bs": "„…osim Lutove porodice; njih ćemo sve spasiti” – porodica poslanika.", "en": "“…except the family of Lot; indeed, we will save them all” — a prophet's household."}},
+     {"ref": "40:46", "why": {"bs": "„Uvedite faraonove ljude (آلَ فِرْعَوْنَ) u najteže patnje!” – آل kao pristalice, ne samo rod.", "en": "“Make the people of Pharaoh enter the severest punishment” — آل as followers, not only kin."}}
+    ]
+   }
+  ]
+ },
+ "sahib-khalil-sadiq": {
+  "title": {"bs": "Drug i prijatelj", "en": "Companion and friend"},
+  "shared": {
+   "bs": "Sve tri riječi govore o bliskom čovjeku. Razlikuju se po dubini veze: od pratioca do prisnog prijatelja.",
+   "en": "All three words speak of someone close. They differ in the depth of the bond: from a companion to an intimate friend."
+  },
+  "tellApart": {
+   "bs": "Drug, pratilac, onaj s kim je čovjek često – i bez ljubavi → صَاحِب; prisni prijatelj, ljubav koja prožima dušu → خَلِيل; iskren prijatelj, onaj čija je ljubav istinita → صَدِيق.",
+   "en": "Companion, one a person is often with — even without love → صَاحِب; intimate friend, a love that pervades the soul → خَلِيل; true friend, one whose affection is sincere → صَدِيق."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries صحب, خل, صدق"
+  ],
+  "notes": [
+   "ar-Rāġib: ṣāḥib is one who keeps company, be it a person, an animal, a place or a time, and in usage only one whose company is frequent; ḫulla is love, either because it pervades (taḫallala) the soul, or pierces it, or from great need of it — paraphrased and attributed to him.",
+   "That صَدِيق is linked with ṣidq (truth) is said of the word's root; ar-Rāġib's own wording on ṣadīq is not used.",
+   "9:40 (lā taḥzan … li-ṣāḥibihi): the companion in the cave is Abu Bakr by the agreement of tafsir.",
+   "خَلِيل includes its plural أَخِلَّاء (43:67) in one corpus lemma.",
+   "Blind review: 'your companion' reworded so it cannot read as diminishing the Prophet; khalīl's other derivation (need) named and Allah's ḫulla glossed as unlike human friendship; 43:67 keeps 'except the righteous'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "صَاحِب",
+    "lemmas": ["صاحِب|صحب"],
+    "count": 12,
+    "meaning": {"bs": "drug, pratilac", "en": "companion"},
+    "nuance": {
+     "bs": "Pratilac, drug s kojim se čovjek često nalazi – na putu, u zatvoru, u pećini. Govori o druženju, ne nužno o ljubavi; poricatelje Kur'an podsjeća da Poslanika, „svog druga”, dobro poznaju.",
+     "en": "A companion one is often with — on the road, in prison, in a cave. It speaks of keeping company, not necessarily of love; the Quran reminds the deniers that the Prophet, “your companion”, is one they know well."
+    },
+    "ayat": [
+     {"ref": "9:40", "why": {"bs": "„…kad je drugu svome (لِصَاحِبِهِ) govorio: ‘Ne brini se’” – drug u pećini, prema tefsiru Ebu Bekr.", "en": "“…when he said to his companion: Do not grieve” — the companion in the cave, Abu Bakr according to tafsir."}},
+     {"ref": "53:2", "why": {"bs": "„Drug vaš (صَاحِبُكُمْ) nije zalutao” – Poslanik kao onaj koga dobro poznaju.", "en": "“Your companion has not strayed” — the Prophet as one they know well."}},
+     {"ref": "12:39", "why": {"bs": "„O drugovi moji u tamnici!” – drugovi po okolnosti.", "en": "“O two companions of prison” — companions by circumstance."}}
+    ]
+   },
+   {
+    "arabic": "خَلِيل",
+    "lemmas": ["خَلِيل|خلل"],
+    "count": 4,
+    "meaning": {"bs": "prisni prijatelj", "en": "intimate friend"},
+    "nuance": {
+     "bs": "Prijatelj najprisnije ljubavi – prema ar-Rāġibu, ljubav koja prožima dušu (on bilježi i druga izvođenja, među njima „potrebu”). Najviše: Allah je uzeo Ibrahima za halila – počast najveće bliskosti, bez ikakve sličnosti s ljudskim prijateljstvom; a u kajanju: grešnik žali za lošim prijateljem.",
+     "en": "A friend of the closest love — according to ar-Rāġib, a love that pervades the soul (he records other derivations too, among them “need”). At the highest: Allah took Abraham as khalīl — an honour of the highest nearness, nothing like a human friendship; in regret: the sinner rues his bad friend."
+    },
+    "ayat": [
+     {"ref": "4:125", "why": {"bs": "„…a Allah je uzeo Ibrahima za prijatelja (خَلِيلًا)” – najviši stupanj bliskosti.", "en": "“…and Allah took Abraham as an intimate friend” — the highest degree of closeness."}},
+     {"ref": "25:28", "why": {"bs": "„Teško meni, kamo sreće da toga i toga nisam uzeo za prijatelja!” – kajanje zbog lošeg prijatelja.", "en": "“Oh, woe to me! I wish I had not taken that one as a friend” — regret over a bad friend."}},
+     {"ref": "43:67", "why": {"bs": "„Prijatelji (الْأَخِلَّاءُ) će tog dana jedni drugima neprijatelji biti, osim bogobojaznih” – prijateljstvo koje nije na bogobojaznosti ne izdrži.", "en": "“Close friends, that Day, will be enemies to each other, except for the righteous” — friendship not built on taqwa does not endure."}}
+    ]
+   },
+   {
+    "arabic": "صَدِيق",
+    "lemmas": ["صَدِيق|صدق"],
+    "count": 2,
+    "meaning": {"bs": "iskren prijatelj", "en": "true friend"},
+    "nuance": {
+     "bs": "Prijatelj čija je naklonost iskrena (riječ je iz korijena istine). U Kur'anu dva puta: među onima u čijim kućama je dozvoljeno jesti, i kao prijatelj kojeg grešnik na Sudnjem danu neće imati.",
+     "en": "A friend whose affection is true (the word is of the root of truth). Twice in the Quran: among those in whose houses one may eat, and as the friend the sinner will not have on the Last Day."
+    },
+    "ayat": [
+     {"ref": "26:101", "why": {"bs": "„…ni iskrena prijatelja (صَدِيقٍ حَمِيمٍ)” – prijatelj koji tog dana nedostaje.", "en": "“…and not a devoted friend” — the friend missed on that Day."}},
+     {"ref": "24:61", "why": {"bs": "„…ili kod prijatelja svoga (صَدِيقِكُمْ)” – prijatelj s pravom bliskosti u kući.", "en": "“…or from the house of your friend” — a friend with the right of closeness in one's home."}}
+    ]
+   }
+  ]
+ },
+ "tafakkara-tadabbara-aqala": {
+  "title": {"bs": "Razmišljati i razumjeti", "en": "To reflect and to understand"},
+  "shared": {
+   "bs": "Sva četiri glagola govore o radu uma. Kur'an ih koristi kad poziva na promišljanje i kad kudi one koji to ne čine.",
+   "en": "All four verbs speak of the work of the mind. The Quran uses them when it calls to reflection and when it blames those who do not reflect."
+  },
+  "tellApart": {
+   "bs": "Razmišljati, pustiti misao kroz znakove stvaranja → تَفَكَّرَ; razmišljati o krajnjem smislu, o posljedicama – u Kur'anu (naše zapažanje) o Kur'anu i njegovim riječima → تَدَبَّرَ; shvatiti, razumom pojmiti i po tome se ravnati → عَقَلَ; prodrijeti u smisao, razumjeti ono skriveno iz onog vidljivog → فَقِهَ.",
+   "en": "To reflect, to let thought run through the signs of creation → تَفَكَّرَ; to ponder the outcome, where a thing leads — in the Quran (our observation) of the Quran and its words → تَدَبَّرَ; to grasp, to comprehend by reason and be guided by it → عَقَلَ; to penetrate the meaning, to understand the hidden from the seen → فَقِهَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فكر, دبر, عقل, فقه"
+  ],
+  "notes": [
+   "ar-Rāġib: fikr is a faculty that leads knowledge to the known, and tafakkur its running according to the mind's view, said only of what can take form in the heart; tadabbur is reflecting on the ends (dubur) of matters; ʿaql is the faculty ready to receive knowledge, and the knowledge gained by it; fiqh is reaching knowledge of the absent through knowledge of the present, so it is narrower than ʿilm. Paraphrased and attributed to him.",
+   "Our observations of all places: تَدَبَّرَ (4 times) has the Quran, its ayat or 'the word' as object; عَقَلَ occurs only as a verb (49 times) — the noun ʿaql is not in the Quran; فَقِهَ is negated or denied in most of its 19 ayat.",
+   "Blind review: tadabbur 'always the Quran' marked as our observation (23:68 al-qawl); tafakkur also of stories (7:176) and of the Prophet (34:46); 2:44 is about saying one thing and doing another, not 'hypocrisy'; 22:46 phrased as the Quran ascribing understanding to the heart.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "تَفَكَّرَ",
+    "verb": "فكر_5",
+    "count": 17,
+    "meaning": {"bs": "razmišljati", "en": "to reflect, to give thought"},
+    "nuance": {
+     "bs": "Razmišljati, pustiti misao da kruži oko nečega. U Kur'anu najčešće o stvaranju nebesa i Zemlje i o Allahovim znakovima u čovjeku i prirodi, ali i o kazivanjima (7:176) i o Poslaniku (34:46).",
+     "en": "To reflect, to let thought turn about a thing. In the Quran most often about the creation of the heavens and earth and Allah's signs in man and nature, but also about stories (7:176) and about the Prophet (34:46)."
+    },
+    "ayat": [
+     {"ref": "3:191", "why": {"bs": "„…i razmišljaju o stvaranju nebesa i Zemlje” – razmišljanje o stvaranju.", "en": "“…and give thought to the creation of the heavens and the earth” — reflection on creation."}},
+     {"ref": "30:21", "why": {"bs": "„…to su doista dokazi za ljude koji razmišljaju” – razmišljanje o znaku u braku.", "en": "“…indeed in that are signs for a people who give thought” — reflection on a sign in marriage."}}
+    ]
+   },
+   {
+    "arabic": "تَدَبَّرَ",
+    "verb": "دبر_5",
+    "count": 4,
+    "meaning": {"bs": "razmišljati o smislu, pomno proučavati", "en": "to ponder, to reflect upon"},
+    "nuance": {
+     "bs": "Razmišljati o krajnjem smislu i posljedicama (od dubur – „kraj, zadnja strana”). U Kur'anu (naše zapažanje) uvijek s Kur'anom, njegovim ajetima ili „Riječju” (23:68) kao predmetom.",
+     "en": "To ponder the outcome and the end of a thing (from dubur, “the back, the end”). In the Quran (our observation) always with the Quran, its ayat or “the Word” (23:68) as object."
+    },
+    "ayat": [
+     {"ref": "4:82", "why": {"bs": "„Zašto oni ne razmisle o Kur'anu?” – poziv na dubinsko promišljanje Objave.", "en": "“Then do they not reflect upon the Quran?” — a call to ponder the Revelation deeply."}},
+     {"ref": "38:29", "why": {"bs": "„Knjigu blagoslovljenu objavljujemo tebi da bi oni o riječima njezinim razmislili” – svrha objave.", "en": "“A blessed Book which We have revealed to you, that they might reflect upon its verses” — the purpose of revelation."}}
+    ]
+   },
+   {
+    "arabic": "عَقَلَ",
+    "verb": "عقل_1",
+    "count": 49,
+    "meaning": {"bs": "shvatiti, razumjeti", "en": "to reason, to understand"},
+    "nuance": {
+     "bs": "Shvatiti razumom i po tome se ravnati. Kur'an ne koristi imenicu „razum”, nego samo glagol: razum je ono što se čini (naše zapažanje), često u pitanju „Zar ne shvatate?”.",
+     "en": "To grasp by reason and act by it. The Quran never uses the noun “reason”, only the verb: reasoning is something done (our observation), often in the question “Will you not reason?”."
+    },
+    "ayat": [
+     {"ref": "22:46", "why": {"bs": "„…pa da imaju srca kojima bi shvatili (يَعْقِلُونَ)” – Kur'an razumijevanje pripisuje srcu.", "en": "“…and have hearts by which to reason” — the Quran ascribes understanding to the heart."}},
+     {"ref": "2:44", "why": {"bs": "„…a Knjigu čitate? Zar ne shvatate?” – razum koji bi trebao spriječiti da se jedno govori, a drugo čini.", "en": "“…while you recite the Scripture? Then will you not reason?” — reason that should prevent saying one thing and doing another."}}
+    ]
+   },
+   {
+    "arabic": "فَقِهَ",
+    "verb": "فقه_1",
+    "count": 19,
+    "meaning": {"bs": "razumjeti, pronići", "en": "to understand, to comprehend"},
+    "nuance": {
+     "bs": "Prodrijeti u smisao, razumjeti skriveno iz vidljivog; prema ar-Rāġibu uže od znanja (ʿilm). U Kur'anu (naše zapažanje) najčešće u odricanju: „oni ne razumiju”.",
+     "en": "To penetrate the meaning, to understand the hidden from the seen; according to ar-Rāġib narrower than knowledge (ʿilm). In the Quran (our observation) most often negated: “they do not understand”."
+    },
+    "ayat": [
+     {"ref": "7:179", "why": {"bs": "„Oni imaju srca kojima ne shvataju (لَا يَفْقَهُونَ)” – srce koje ne pronikne.", "en": "“They have hearts with which they do not understand” — a heart that does not penetrate."}},
+     {"ref": "20:28", "why": {"bs": "Musa: „…da bi razumjeli govor moj” – dova za razumijevanje.", "en": "Moses: “That they may understand my speech” — a prayer to be understood."}}
+    ]
+   }
+  ]
+ },
+ "istafa-ijtaba-ikhtara": {
+  "title": {"bs": "Odabrati", "en": "To choose"},
+  "shared": {
+   "bs": "Sva tri glagola znače odabrati. Ar-Rāġib ih razlikuje po onome što se uzima: iṣṭifāʾ je uzeti čisti dio (ṣafw), iḫtiyār uzeti najbolje (ḫayr), a iǧtibāʾ uzeti i sabrati (kao vodu u bazenu).",
+   "en": "All three verbs mean to choose. ar-Rāġib tells them apart by what is taken: iṣṭifāʾ is taking the pure part (ṣafw), iḫtiyār taking the best (ḫayr), and iǧtibāʾ gathering in (like water into a basin)."
+  },
+  "tellApart": {
+   "bs": "Odabrati ono najčistije – vjerovjesnike, Merjem, poslanike → اصْطَفَى; odabrati i obasuti milošću koju čovjek nije zaslužio, i uputiti → اجْتَبَى; izabrati između više mogućnosti – i Allah, i čovjek → اخْتَارَ.",
+   "en": "To choose the purest — prophets, Mary, messengers → اصْطَفَى; to single out and shower with unearned favour, and guide → اجْتَبَى; to choose among options — Allah, and also a man → اخْتَارَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries صفو, جبى, خير"
+  ],
+  "notes": [
+   "ar-Rāġib: iṣṭifāʾ is taking the ṣafw (purest part) of a thing, as iḫtiyār is taking its best and iǧtibāʾ taking its gathering-in; Allah's iǧtibāʾ of a servant is His singling him out with a divine bounty bringing kinds of favour without the servant's striving, which is for the prophets and some near them. Paraphrased and attributed.",
+   "That اخْتَارَ is once said of a human chooser (Moses, 7:155) while اصْطَفَى and اجْتَبَى are Allah's choice in every place except where idolaters' claims are quoted or rejected (37:153, 39:4, 7:203), is our observation of all places.",
+   "7:203 (lawlā jtabaytahā) is explained in tafsir as 'why have you not devised it (yourself)'; it is not cited.",
+   "Blind review: 'draw near' removed from اجْتَبَى (not ar-Rāġib's) and pardon kept for Adam only; 3:42 'očistio'; 28:68 mā as negation given as most tafsir's reading.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "اصْطَفَى",
+    "verb": "صفو_8",
+    "count": 12,
+    "meaning": {"bs": "odabrati (najčistije)", "en": "to choose (the purest)"},
+    "nuance": {
+     "bs": "Odabrati najčistiji, najodabraniji dio. Allah odabire vjerovjesnike, njihove porodice, Merjem, poslanike među melekima i ljudima.",
+     "en": "To choose the purest, most excellent part. Allah chooses the prophets, their families, Mary, and messengers from angels and from people."
+    },
+    "ayat": [
+     {"ref": "3:33", "why": {"bs": "„Allah je odabrao Adema i Nuha…” – odabir vjerovjesnika i porodica.", "en": "“Allah chose Adam and Noah…” — the choosing of prophets and families."}},
+     {"ref": "3:42", "why": {"bs": "„O Merjema, Allah te je odabrao i očistio, i odabrao te nad ženama svijeta” – dvostruki odabir.", "en": "“O Mary, Allah has chosen you and purified you and chosen you above the women of the worlds” — a twofold choosing."}},
+     {"ref": "22:75", "why": {"bs": "„Allah odabire poslanike među melekima i među ljudima” – odabir za poslanstvo.", "en": "“Allah chooses from the angels messengers and from the people” — choosing for the message."}}
+    ]
+   },
+   {
+    "arabic": "اجْتَبَى",
+    "verb": "جبي_8",
+    "count": 10,
+    "meaning": {"bs": "odabrati i privući sebi", "en": "to choose and draw near"},
+    "nuance": {
+     "bs": "Odabrati i obasuti milošću – prema ar-Rāġibu, obilje blagodati koje čovjek nije zaslužio trudom, najčešće za vjerovjesnike; u Kur'anu često uz uputu (هَدَى): o Ademu (uz oprost), Ibrahimu, Junusu, Jusufu.",
+     "en": "To single out and shower with favour — according to ar-Rāġib, an abundance of blessing the servant did not earn by striving, mostly for prophets; in the Quran often with guidance (هَدَى): of Adam (with pardon), Abraham, Jonah, Joseph."
+    },
+    "ayat": [
+     {"ref": "20:122", "why": {"bs": "„Zatim ga Gospodar njegov odabra, pa mu oprosti i na pravi put uputi” – Adem nakon posrnuća.", "en": "“Then his Lord chose him and turned to him in forgiveness and guided him” — Adam after his slip."}},
+     {"ref": "68:50", "why": {"bs": "„I Gospodar njegov ga odabra i učini ga jednim od dobrih” – Junus.", "en": "“And his Lord chose him and made him of the righteous” — Jonah."}},
+     {"ref": "16:121", "why": {"bs": "„…On ga je odabrao i na pravi put uputio” – Ibrahim.", "en": "“He chose him and guided him to a straight path” — Abraham."}}
+    ]
+   },
+   {
+    "arabic": "اخْتَارَ",
+    "verb": "خير_8",
+    "count": 4,
+    "meaning": {"bs": "izabrati", "en": "to choose, to select"},
+    "nuance": {
+     "bs": "Izabrati ono što je bolje između više mogućnosti. Kaže se za Allaha, ali i za čovjeka: Musa je izabrao sedamdesetoricu.",
+     "en": "To pick what is better among options. Said of Allah, and also of a man: Moses chose seventy men."
+    },
+    "ayat": [
+     {"ref": "20:13", "why": {"bs": "„A Ja sam te izabrao, zato slušaj ono što ti se objavljuje” – Allah bira Musu.", "en": "“And I have chosen you, so listen to what is revealed” — Allah chooses Moses."}},
+     {"ref": "7:155", "why": {"bs": "„I Musa izabra iz naroda svoga sedamdeset ljudi” – čovjek koji bira.", "en": "“And Moses chose from his people seventy men” — a man who chooses."}},
+     {"ref": "28:68", "why": {"bs": "„Gospodar tvoj stvara što hoće i izabire; oni nemaju izbora” – Allahov izbor nasuprot ljudskom (većina tefsira مَا čita kao odricanje).", "en": "“Your Lord creates what He wills and chooses; not for them was the choice” — Allah's choice over man's (most tafsir read مَا as negation)."}}
+    ]
+   }
+  ]
+ },
+ "itmaanna-sakina": {
+  "title": {"bs": "Smirenost", "en": "Tranquillity"},
+  "shared": {
+   "bs": "Obje riječi govore o miru srca. Prema ar-Rāġibu, iṭmiʾnān je smirenost nakon uznemirenosti.",
+   "en": "Both words speak of the heart's peace. According to ar-Rāġib, iṭmiʾnān is stillness after agitation."
+  },
+  "tellApart": {
+   "bs": "Smiriti se, srce se smiri nakon nemira – ali i zadovoljiti se dunjalukom → اطْمَأَنَّ; smirenost koju Allah spušta u srca u času straha → سَكِينَة.",
+   "en": "To be at ease, the heart settling after unrest — but also to settle for this world → اطْمَأَنَّ; the tranquillity Allah sends down into hearts in a moment of fear → سَكِينَة."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries طمن, سكن",
+   "Tafsir on 2:248 (the sakīna in the Ark)"
+  ],
+  "notes": [
+   "ar-Rāġib: ṭumaʾnīna and iṭmiʾnān are stillness after disturbance — paraphrased and attributed.",
+   "That سَكِينَة is, in 5 of its 6 places, sent down (أَنْزَلَ) by Allah on the Prophet and the believers, and in 2:248 is 'in the Ark … from your Lord', is our observation; tafsir differs on what the sakīna of 2:248 was, and we do not choose.",
+   "That اطْمَأَنَّ is also blamed — being content with this world (10:7) or with worship only while it goes well (22:11) — is our observation of all places.",
+   "Blind review: 2:260 glossed 'not from doubt — he said Yes'; 9:40 'upon him' given as the Prophet (most) or Abu Bakr (some).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "اطْمَأَنَّ",
+    "verb": "طمأن_4",
+    "count": 9,
+    "meaning": {"bs": "smiriti se", "en": "to be at ease, to be reassured"},
+    "nuance": {
+     "bs": "Smiriti se nakon nemira; srce se smiruje spominjanjem Allaha i uvjerenjem. Ali čovjek se može smiriti i uz dunjaluk – tada je to pokudno.",
+     "en": "To come to rest after unrest; the heart is reassured by the remembrance of Allah and by certainty. But a man may also settle in this world — then it is blamed."
+    },
+    "ayat": [
+     {"ref": "13:28", "why": {"bs": "„Allahovim spominjanjem srca se smiruju” – mir srca kroz spominjanje Allaha.", "en": "“Unquestionably, by the remembrance of Allah hearts are assured” — the heart's peace through remembrance."}},
+     {"ref": "2:260", "why": {"bs": "Ibrahim: „…ali da mi se srce smiri” – ne iz sumnje (rekao je „Vjerujem”), nego radi uvjerenosti viđenjem.", "en": "Abraham: “…but only that my heart may be satisfied” — not from doubt (he said “Yes”), but for the certainty of seeing."}},
+     {"ref": "10:7", "why": {"bs": "„…i zadovolje se životom na ovom svijetu i smire se uz njega” – pokudno smirenje.", "en": "“…and are satisfied with the life of this world and feel secure therein” — a blameworthy ease."}}
+    ]
+   },
+   {
+    "arabic": "سَكِينَة",
+    "lemmas": ["سَكِينَة|سكن"],
+    "spoken": "سَكِينَةٌ",
+    "count": 6,
+    "meaning": {"bs": "smirenost, spokoj", "en": "tranquillity"},
+    "nuance": {
+     "bs": "Smirenost i spokoj koje Allah spušta u srca, najčešće u trenucima straha i iskušenja – na Hunejnu, u pećini, na Hudejbiji.",
+     "en": "Calm and peace that Allah sends down into hearts, most often in moments of fear and trial — at Ḥunayn, in the cave, at al-Ḥudaybiya."
+    },
+    "ayat": [
+     {"ref": "48:4", "why": {"bs": "„On spušta smirenost u srca vjernika da bi se vjerovanje njihovo još više povećalo” – سَكِينَة kao dar.", "en": "“It is He who sent down tranquillity into the hearts of the believers that they would increase in faith” — سَكِينَة as a gift."}},
+     {"ref": "9:40", "why": {"bs": "„…pa Allah spusti smirenost Svoju na njega” – u pećini, u času najvećeg straha (većina: na Poslanika; neki: na Ebu Bekra).", "en": "“…and Allah sent down His tranquillity upon him” — in the cave, at the hour of greatest fear (most: upon the Prophet; some: upon Abu Bakr)."}},
+     {"ref": "2:248", "why": {"bs": "„…kovčeg u kome je smirenost od Gospodara vašeg” – tefsir se razilazi šta je ta سَكِينَة bila.", "en": "“…the chest in which is assurance from your Lord” — tafsir differs on what this سَكِينَة was."}}
+    ]
+   }
+  ]
+ },
+ "jadala-hajja-ikhtasama": {
+  "title": {"bs": "Raspravljati se i sporiti", "en": "To dispute and to quarrel"},
+  "shared": {
+   "bs": "Sva tri glagola govore o sporu između dvije strane. Razlikuju se po onome čime se spori i gdje se spor vodi.",
+   "en": "All three verbs speak of a dispute between two sides. They differ in what the dispute is waged with and where it is held."
+  },
+  "tellApart": {
+   "bs": "Raspravljati se, nadmudrivati – pokudno kad je radi pobjede, a naređeno kad je „na najljepši način” → جَادَلَ; raspravljati se dokazima, iznositi argumente, najčešće o Allahu i vjeri → حَاجَّ; sporiti se kao zavađene strane, često pred Allahom na Sudnjem danu → اخْتَصَمَ.",
+   "en": "To argue, to contend — blamed when it is for winning, commanded when it is “in the best way” → جَادَلَ; to argue with proofs, to bring arguments, most often about Allah and religion → حَاجَّ; to quarrel as opposing parties, often before Allah on the Last Day → اخْتَصَمَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries جدل, حج, خصم"
+  ],
+  "notes": [
+   "ar-Rāġib: ǧidāl is negotiation by way of contention and trying to overcome, from ǧadaltu l-ḥabla, 'I twisted the rope tight'; ḥuǧǧa is the evidence that makes the right path (maḥaǧǧa) clear, and muḥāǧǧa is each side seeking to turn the other from his proof; ḫuṣūma is contention, at root each side holding the other's side (ḫuṣm). Paraphrased and attributed to him.",
+   "That جَادَلَ is praised or commanded in 16:125, 11:74 and 58:1 and blamed elsewhere, that حَاجَّ is about Allah, His messengers or Ibrahim in most places, and that اخْتَصَمَ is a quarrel in the hereafter in 3 of 8 places (26:96, 39:31, 50:28), are our observations of all places.",
+   "Blind review: حَاجَّ is arguing with (or claiming) proofs, often without knowledge (3:66); 50:28 and 22:19 glossed with their context.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "جَادَلَ",
+    "verb": "جدل_3",
+    "count": 25,
+    "meaning": {"bs": "raspravljati se", "en": "to argue, to dispute"},
+    "nuance": {
+     "bs": "Raspravljati se, nastojati nadvladati drugoga u govoru. Najčešće pokudno – raspra bez znanja i dokaza; ali Kur'an naređuje raspravu „na najljepši način”.",
+     "en": "To argue, to try to get the better of another in speech. Most often blamed — argument without knowledge or proof; but the Quran commands argument “in a way that is best”."
+    },
+    "ayat": [
+     {"ref": "16:125", "why": {"bs": "„…i s njima raspravljaj na najljepši način” – naređena, lijepa rasprava.", "en": "“…and argue with them in a way that is best” — commanded, gracious argument."}},
+     {"ref": "58:1", "why": {"bs": "„Allah je čuo riječi one koja se s tobom raspravljala o mužu svom” – rasprava žene koja traži pravdu.", "en": "“Allah has heard the speech of the one who argues with you concerning her husband” — a woman arguing for justice."}},
+     {"ref": "40:35", "why": {"bs": "„…oni koji se o Allahovim dokazima raspravljaju bez dokaza koji im je došao” – pokudna rasprava.", "en": "“…those who dispute concerning the signs of Allah without an authority having come to them” — blameworthy argument."}}
+    ]
+   },
+   {
+    "arabic": "حَاجَّ",
+    "verb": "حجج_3",
+    "count": 12,
+    "meaning": {"bs": "raspravljati se dokazima", "en": "to argue with proofs"},
+    "nuance": {
+     "bs": "Raspravljati se navodeći (ili tvrdeći da navodi) dokaze (ḥuǧǧa); u Kur'anu najčešće o Allahu, o vjeri i o Ibrahimu – često i bez znanja.",
+     "en": "To argue by bringing (or claiming to bring) proofs (ḥuǧǧa); in the Quran most often about Allah, the religion and Abraham — often without knowledge."
+    },
+    "ayat": [
+     {"ref": "2:258", "why": {"bs": "„Zar nisi vidio onoga koji se s Ibrahimom o Gospodaru njegovu raspravljao?” – spor dokazima o Allahu.", "en": "“Have you not considered the one who argued with Abraham about his Lord?” — a dispute of proofs about Allah."}},
+     {"ref": "6:80", "why": {"bs": "„I narod njegov se s njim raspravljaše. ‘Zar da se sa mnom o Allahu raspravljate…’” – Ibrahim pred svojim narodom.", "en": "“And his people argued with him. He said: Do you argue with me concerning Allah…” — Abraham before his people."}},
+     {"ref": "3:66", "why": {"bs": "„…zašto se onda raspravljate o onome o čemu ništa ne znate?” – raspravljanje bez znanja.", "en": "“…why do you argue about that of which you have no knowledge?” — argument without knowledge."}}
+    ]
+   },
+   {
+    "arabic": "اخْتَصَمَ",
+    "verb": "خصم_8",
+    "count": 8,
+    "meaning": {"bs": "sporiti se", "en": "to quarrel, to dispute"},
+    "nuance": {
+     "bs": "Sporiti se kao dvije zavađene strane; u Kur'anu često spor pred Allahom na Sudnjem danu.",
+     "en": "To quarrel as two opposing parties; in the Quran often a quarrel before Allah on the Last Day."
+    },
+    "ayat": [
+     {"ref": "39:31", "why": {"bs": "„Zatim ćete se na Sudnjem danu pred Gospodarom svojim jedni s drugima sporiti” – spor pred Allahom.", "en": "“Then indeed you, on the Day of Resurrection, before your Lord, will dispute” — a quarrel before Allah."}},
+     {"ref": "22:19", "why": {"bs": "„Ovo su dvije strane koje se o Gospodaru svome spore” – dvije zavađene strane (tefsir: vjernici i nevjernici, ili dvoboj na Bedru).", "en": "“These are two adversaries who have disputed over their Lord” — two opposing parties (tafsir: believers and disbelievers, or the duel at Badr)."}},
+     {"ref": "50:28", "why": {"bs": "„Ne raspravljajte se preda Mnom” – Allah prekida spor: upozorenje je već bilo dato.", "en": "“Do not dispute before Me” — Allah closes the dispute: the warning had already been given."}}
+    ]
+   }
+  ]
+ },
+ "fajr-subh-duha": {
+  "title": {"bs": "Zora, jutro i prijepodne", "en": "Dawn, morning and forenoon"},
+  "shared": {
+   "bs": "Sve tri riječi označavaju početak dana, ali svaka drugi trenutak u njemu.",
+   "en": "All three words name the beginning of the day, but each a different moment in it."
+  },
+  "tellApart": {
+   "bs": "Zora – svjetlost koja „probija” noć → فَجْر; jutro, kad se razdani i svane → صُبْح; prijepodne, kad se sunce podigne i svjetlost raširi → ضُحًى.",
+   "en": "Dawn — the light that “breaks through” the night → فَجْر; morning, when day has broken and grown light → صُبْح; forenoon, when the sun has risen and its light spreads → ضُحًى."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فجر, صبح, ضحى"
+  ],
+  "notes": [
+   "ar-Rāġib: faǧr is splitting a thing widely, and dawn is so named for splitting the night; ṣubḥ is the start of the day, when the horizon reddens with the sun's edge; ḍuḥā is the spreading of the sunlight and the lengthening of the day, and the time is named after it. Paraphrased and attributed to him.",
+   "The order dawn → morning → forenoon is shown with the Quran's own pictures (2:187 the white thread, 81:18 'when it breathes', 93:1); ṣubḥ, dawn and morning prayer times are not legislated here.",
+   "صُبْح is kept apart from the corpus's separate lemma صَبَاح (37:177).",
+   "Blind review: Bosnian ṣubḥ rendered 'jutro' (not 'zora', kept for فَجْر) and 74:34 asfara 'razdani'; 93:1 'prijepodnevna svjetlost'; 20:59 'all can see' marked as tafsir.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "فَجْر",
+    "lemmas": ["فَجْر|فجر"],
+    "count": 6,
+    "meaning": {"bs": "zora", "en": "dawn"},
+    "nuance": {
+     "bs": "Zora, prva svjetlost koja probija tamu noći (od korijena „rascijepiti, provaliti”). Njome počinje post i sabahski namaz.",
+     "en": "Dawn, the first light that breaks the dark of night (from the root “to split, to burst forth”). The fast and the dawn prayer begin with it."
+    },
+    "ayat": [
+     {"ref": "2:187", "why": {"bs": "„…dok ne razlikujete bijeli konac od crnog konca – zoru (الْفَجْرِ)” – zora kao granica posta.", "en": "“…until the white thread of dawn becomes distinct to you from the black thread” — dawn as the limit of the fast."}},
+     {"ref": "97:5", "why": {"bs": "„Ona je mir – sve do zore (مَطْلَعِ الْفَجْرِ)” – kraj Noći Kadr.", "en": "“Peace it is until the emergence of dawn” — the end of the Night of Decree."}},
+     {"ref": "17:78", "why": {"bs": "„…i Kur'an u zoru, jer Kur'an u zoru je posvjedočen” – učenje na sabahskom namazu.", "en": "“…and the Quran of dawn; indeed, the recitation of dawn is ever witnessed” — the recitation of the dawn prayer."}}
+    ]
+   },
+   {
+    "arabic": "صُبْح",
+    "lemmas": ["صُبْح|صبح"],
+    "count": 5,
+    "meaning": {"bs": "jutro, svitanje", "en": "morning, daybreak"},
+    "nuance": {
+     "bs": "Jutro, kad se razdani. Kur'an mu daje slike: kad „zablista”, kad „počne disati”; i jutro kao čas kazne.",
+     "en": "Morning, when day has broken. The Quran gives it pictures: when it “brightens”, when it “breathes”; and morning as the hour of punishment."
+    },
+    "ayat": [
+     {"ref": "81:18", "why": {"bs": "„…i jutrom kad uzdahne” – jutro koje oživljava.", "en": "“And by the morning when it breathes” — morning coming to life."}},
+     {"ref": "74:34", "why": {"bs": "„…i jutrom kad se razdani” – jutro koje se razvidjelo.", "en": "“And by the morning when it brightens” — morning grown light."}},
+     {"ref": "11:81", "why": {"bs": "„Njihov rok je jutro; a zar jutro nije blizu?” – jutro kao čas kazne Lutovog naroda.", "en": "“Indeed, their appointment is the morning. Is not the morning near?” — morning as the hour of Lot's people's punishment."}}
+    ]
+   },
+   {
+    "arabic": "ضُحًى",
+    "lemmas": ["ضُحًى|ضحو"],
+    "count": 6,
+    "meaning": {"bs": "prijepodne, jutarnje sunce", "en": "forenoon, morning brightness"},
+    "nuance": {
+     "bs": "Doba kad se sunce podigne i njegova svjetlost raširi; Kur'an se njime zaklinje.",
+     "en": "The time when the sun has risen and its light spreads; the Quran swears by it."
+    },
+    "ayat": [
+     {"ref": "93:1", "why": {"bs": "„Tako mi prijepodnevne svjetlosti (وَالضُّحَى)!” – zakletva prijepodnevnom svjetlošću.", "en": "“By the morning brightness” — an oath by the forenoon light."}},
+     {"ref": "91:1", "why": {"bs": "„Tako mi Sunca i svjetlosti njegove (وَضُحَاهَا)!” – ضُحًى kao sjaj Sunca.", "en": "“By the sun and its brightness” — ضُحًى as the sun's radiance."}},
+     {"ref": "20:59", "why": {"bs": "Musa traži da se ljudi skupe „u prijepodne (ضُحًى)” – tefsir: vrijeme kad svi mogu vidjeti.", "en": "Moses asks that the people be gathered “at forenoon” — tafsir: the time when all can see."}}
+    ]
+   }
+  ]
+ },
+ "ajal-miqat-waqt": {
+  "title": {"bs": "Rok i određeno vrijeme", "en": "Term and appointed time"},
+  "shared": {
+   "bs": "Sve tri riječi govore o vremenu koje je za nešto određeno. Razlikuju se po tome je li to trajanje, sastanak ili trenutak.",
+   "en": "All three words speak of time set for something. They differ in whether it is a span, an appointment or a moment."
+  },
+  "tellApart": {
+   "bs": "Rok, određeno trajanje – život, narod, dug, iddet → أَجَل; određeno vrijeme sastanka (i mjesto) – Musaov sastanak, Dan odluke → مِيقَات; vrijeme, čas – u Kur'anu (naše zapažanje) samo o Času i poznatom danu → وَقْت.",
+   "en": "A term, a set span — of a life, a nation, a debt, a waiting period → أَجَل; an appointed time of meeting (and place) — Moses' appointment, the Day of Decision → مِيقَات; time, the hour — in the Quran (our observation) only of the Hour and the known day → وَقْت."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries أجل, وقت"
+  ],
+  "notes": [
+   "ar-Rāġib: aǧal is the span set for a thing; waqt is the end of the time set for an act, so it is hardly said except of what is determined; mīqāt is the time set for a thing and a promise for which a time is fixed (and, by extension, a place) — paraphrased and attributed to him.",
+   "That وَقْت occurs 3 times, all of the Hour or 'the day of the known time' (7:187, 15:38, 38:81), and that أَجَل covers life-spans, nations, debts and waiting periods, is our observation of all places. مِيقَات includes its plural مَوَاقِيت (2:189) in one corpus lemma.",
+   "أَجَل is the corpus lemma أَجَل only; the different word أَجْل (min aǧli, 'because of', 5:32) is left out.",
+   "Blind review: miqāt in 7:142 'appointed time' (not 'term', kept for ajal); the place sense attributed to ar-Rāġib; 15:38 marked as disputed.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "أَجَل",
+    "lemmas": ["أَجَل|أجل"],
+    "count": 52,
+    "meaning": {"bs": "rok, određeni čas", "en": "term, appointed time"},
+    "nuance": {
+     "bs": "Rok, određeno trajanje i njegov kraj: životni vijek, rok naroda, rok duga, iddet žene, pa i putanja Sunca i Mjeseca „do određenog roka”.",
+     "en": "A term, a set span and its end: a lifetime, a nation's term, a debt's term, a woman's waiting period, even the course of sun and moon “for a specified term”."
+    },
+    "ayat": [
+     {"ref": "7:34", "why": {"bs": "„Svaki narod ima svoj rok (أَجَل); pa kad dođe rok njihov, ni za tren ga neće ni odgoditi ni ubrzati” – rok naroda.", "en": "“For every nation is a term; when their time has come, they will not remain behind an hour, nor precede it” — a nation's term."}},
+     {"ref": "2:282", "why": {"bs": "„Kad jedni drugima dug odobravate do određenog roka, zapišite ga” – rok duga.", "en": "“When you contract a debt for a specified term, write it down” — the term of a debt."}},
+     {"ref": "6:2", "why": {"bs": "„…zatim je odredio rok, a i drugi rok kod Njega je određen” – tefsir: rok života i rok proživljenja (ima i drugih tumačenja).", "en": "“…then decreed a term and a specified time with Him” — tafsir: the term of life and of resurrection (there are other readings)."}}
+    ]
+   },
+   {
+    "arabic": "مِيقَات",
+    "lemmas": ["مِيقات|وقت"],
+    "count": 8,
+    "meaning": {"bs": "određeno vrijeme sastanka", "en": "appointed time"},
+    "nuance": {
+     "bs": "Vrijeme (a prema ar-Rāġibu, prenosno i mjesto) određeno za sastanak ili događaj: Musaov sastanak s Gospodarom, Dan odluke, mlađaci kao mjerila vremena za ljude i hadž.",
+     "en": "The time (and, ar-Rāġib adds, by extension the place) set for a meeting or event: Moses' appointment with his Lord, the Day of Decision, the new moons as measures of time for people and for hajj."
+    },
+    "ayat": [
+     {"ref": "7:142", "why": {"bs": "„…pa se vrijeme Gospodara njegova navrši – četrdeset noći” – određeni sastanak.", "en": "“…so the appointed time of his Lord was completed as forty nights” — an appointed meeting."}},
+     {"ref": "78:17", "why": {"bs": "„Dan sudnji je, zaista, određeno vrijeme” – Dan odluke kao مِيقَات.", "en": "“Indeed, the Day of Judgement is an appointed time” — the Day of Decision as مِيقَات."}},
+     {"ref": "2:189", "why": {"bs": "„Reci: ‘To su oznake vremena za ljude i hadž’” – mjeseci kao مَوَاقِيت.", "en": "“Say: They are measurements of time for the people and for Hajj” — the new moons as مَوَاقِيت."}}
+    ]
+   },
+   {
+    "arabic": "وَقْت",
+    "lemmas": ["وَقْت|وقت"],
+    "count": 3,
+    "meaning": {"bs": "vrijeme, čas", "en": "time, appointed hour"},
+    "nuance": {
+     "bs": "Trenutak određen za nešto. U Kur'anu (naše zapažanje) samo tri puta, svaki put o Času čije je vrijeme poznato samo Allahu ili o „danu poznatog vremena”.",
+     "en": "The moment set for something. In the Quran (our observation) only three times, each time of the Hour, whose time Allah alone knows, or of “the day of the known time”."
+    },
+    "ayat": [
+     {"ref": "7:187", "why": {"bs": "„Samo će je On u njeno vrijeme (لِوَقْتِهَا) objelodaniti” – čas Sudnjeg dana.", "en": "“None will reveal its time except Him” — the hour of the Last Day."}},
+     {"ref": "15:38", "why": {"bs": "„…do Dana već određenog (يَوْمِ الْوَقْتِ الْمَعْلُومِ)” – odgoda data Iblisu (tefsir se razilazi o kojem je danu riječ).", "en": "“…until the Day of the time well-known” — the respite granted to Iblis (tafsir differs on which day is meant)."}}
+    ]
+   }
+  ]
+ },
+ "jism-jasad-badan": {
+  "title": {"bs": "Tijelo", "en": "The body"},
+  "shared": {
+   "bs": "Sve tri riječi znače tijelo. Prema ar-Rāġibu, ǧasad je kao ǧism, ali uže. U Kur'anu (naše zapažanje) svaka stoji u drukčijoj slici.",
+   "en": "All three words mean body. According to ar-Rāġib, ǧasad is like ǧism, but narrower. In the Quran (our observation) each stands in a different picture."
+  },
+  "tellApart": {
+   "bs": "Tijelo kao stas i snaga, ono što se vidi i čemu se divi → جِسْم; puki tjelesni oblik – beživotni lik zlatnog teleta, tijelo kojem treba hrana → جَسَد; tijelo, puki trup – faraonovo tijelo spašeno kao pouka → بَدَن.",
+   "en": "The body as build and strength, what is seen and admired → جِسْم; the bare bodily form — the lifeless figure of the golden calf, a body that needs food → جَسَد; the body, the bare frame — Pharaoh's body saved as a lesson → بَدَن."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries جسم, جسد, بدن",
+   "Tafsir on 10:92 (bi-badanika)"
+  ],
+  "notes": [
+   "ar-Rāġib: ǧasad is like ǧism but more specific — paraphrased and attributed; the further distinctions he reports from others (colour, said of humans only) are not used.",
+   "That جِسْم (2 places) describes an impressive build, and that جَسَد (4 places) is the bare bodily form — a lifeless figure for the calf (7:148, 20:88), and in 21:8 the body that needs food — is our observation; 'lifeless' is not a rule of the word (blind review); 38:34 (a ǧasad on Sulayman's throne) is not cited, as tafsir differs widely on it.",
+   "10:92: most tafsir take badan as Pharaoh's lifeless body; some take it as 'with your coat of mail'. Both are named.",
+   "Blind review: 'a body without life' dropped as a rule for جَسَد; 10:92 nunaǧǧīka rendered 'spasiti' in Bosnian, matching 'save'; بُدْن (22:36) noted as another word.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "جِسْم",
+    "lemmas": ["جِسْم|جسم"],
+    "count": 2,
+    "meaning": {"bs": "tijelo, stas", "en": "body, physique"},
+    "nuance": {
+     "bs": "Tijelo kao stas i snaga. Dva puta u Kur'anu: Talutova tjelesna snaga i stas licemjera koji se dopada oku.",
+     "en": "The body as build and strength. Twice in the Quran: Saul's bodily strength, and the hypocrites' build that pleases the eye."
+    },
+    "ayat": [
+     {"ref": "2:247", "why": {"bs": "„…i dao mu je znanje veliko i snagu tjelesnu (وَالْجِسْمِ)” – stas kao vrlina vođe.", "en": "“…and increased him abundantly in knowledge and stature” — build as a leader's merit."}},
+     {"ref": "63:4", "why": {"bs": "„Kad ih vidiš, njihova tijela (أَجْسَامُهُمْ) ti se dopadaju” – stas bez sadržine.", "en": "“And when you see them, their forms please you” — build without substance."}}
+    ]
+   },
+   {
+    "arabic": "جَسَد",
+    "lemmas": ["جَسَد|جسد"],
+    "count": 4,
+    "meaning": {"bs": "tijelo (bez duše)", "en": "body, lifeless form"},
+    "nuance": {
+     "bs": "Puki tjelesni oblik: u 7:148 beživotni lik zlatnog teleta koji samo muče; u 21:8 tijelo – vjerovjesnici nisu bili tijela koja ne trebaju hranu.",
+     "en": "The bare bodily form: in 7:148 the lifeless figure of the golden calf that only lowed; in 21:8 the body — the prophets were not bodies that need no food."
+    },
+    "ayat": [
+     {"ref": "7:148", "why": {"bs": "„…tele, tijelo (جَسَدًا) koje je mukalo” – beživotni lik.", "en": "“…a calf — an image having a lowing sound” — a lifeless figure."}},
+     {"ref": "21:8", "why": {"bs": "„Mi ih nismo stvorili kao tijela (جَسَدًا) koja ne jedu” – vjerovjesnici su bili ljudi.", "en": "“And We did not make the prophets forms not eating food” — the prophets were human."}}
+    ]
+   },
+   {
+    "arabic": "بَدَن",
+    "lemmas": ["بَدَن|بدن"],
+    "count": 1,
+    "meaning": {"bs": "tijelo, trup", "en": "body"},
+    "nuance": {
+     "bs": "Tijelo, trup; ova imenica jednom u Kur'anu – faraonovo tijelo spašeno iz mora kao pouka potomcima (množina بُدْن, žrtvene deve, u 22:36 je druga riječ).",
+     "en": "The body, the trunk; this noun once in the Quran — Pharaoh's body saved from the sea as a lesson to those after him (بُدْن, sacrificial camels, 22:36, is another word)."
+    },
+    "ayat": [
+     {"ref": "10:92", "why": {"bs": "„Danas ćemo spasiti tijelo tvoje (بِبَدَنِكَ) da budeš pouka onima poslije tebe” – mnogi mufesiri: mrtvo tijelo; neki: s oklopom.", "en": "“So today We will save you in body that you may be a sign for those who succeed you” — many mufassirun: the lifeless body; some: with the coat of mail."}}
+    ]
+   }
+  ]
+ },
+ "massa-lamasa": {
+  "title": {"bs": "Dodirnuti", "en": "To touch"},
+  "shared": {
+   "bs": "Oba glagola znače dodirnuti. Prema ar-Rāġibu, lams je opažanje površinom kože, kao i mass, ali se kaže i za traženje; a mass se kaže za sve što čovjeka zadesi od nevolje.",
+   "en": "Both verbs mean to touch. According to ar-Rāġib, lams is perception by the surface of the skin, like mass, but is also said of seeking; and mass is said of whatever harm befalls a person."
+  },
+  "tellApart": {
+   "bs": "Dotaći, zadesiti – najčešće nevolja, zlo ili kazna koja „dotakne” čovjeka; i blag izraz za bračni odnos → مَسَّ; opipati rukom, i tražiti → لَمَسَ.",
+   "en": "To touch, to befall — most often harm, evil or punishment that “touches” a person; and a gentle word for marital relations → مَسَّ; to feel with the hand, and to seek → لَمَسَ."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries مس, لمس",
+   "Tafsir on 56:79 and 72:8"
+  ],
+  "notes": [
+   "ar-Rāġib: lams is perceiving by the outer skin, like mass, and is used for seeking (72:8); mass is said of whatever harm reaches a person, and is used as a euphemism for marriage — paraphrased and attributed.",
+   "That مَسَّ is in most of its 52 ayat the touch of harm, evil, fire or punishment, with counter-examples of good touching (3:120, 6:17, 70:21) and of marriage (2:237, 3:47, 19:20, 33:49), is our observation of all places.",
+   "The corpus files 4:43 and 5:6 (lāmastum an-nisāʾ, read lamastum by some readers) under لَمَسَ; they are not cited, and the fiqh dispute over them (touch or intercourse) is only named here.",
+   "56:79: tafsir differs — the purified angels and the Preserved Tablet, or a ruling about touching the muṣḥaf; both are named.",
+   "Blind review: 72:8 Bosnian 'tražili (pokušali dotaći)' to match 'sought'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "مَسَّ",
+    "verb": "مسس_1",
+    "count": 56,
+    "meaning": {"bs": "dotaći, zadesiti", "en": "to touch, to befall"},
+    "nuance": {
+     "bs": "Dotaći; u Kur'anu najčešće o nevolji, zlu ili kazni koja zadesi čovjeka – i dobro ga može „dotaći”. Blag je izraz i za bračni odnos.",
+     "en": "To touch; in the Quran most often of harm, evil or punishment that befalls a person — good may “touch” him too. It is also a gentle word for marital relations."
+    },
+    "ayat": [
+     {"ref": "21:83", "why": {"bs": "Ejjub: „Mene je snašla nevolja (مَسَّنِيَ الضُّرُّ), a Ti si od milostivih najmilostiviji” – nevolja koja dotakne.", "en": "Job: “Indeed, adversity has touched me, and You are the most merciful of the merciful” — harm that touches."}},
+     {"ref": "2:237", "why": {"bs": "„A ako ih pustite prije nego što ste ih dodirnuli (تَمَسُّوهُنَّ)…” – blag izraz za bračni odnos.", "en": "“And if you divorce them before you have touched them…” — a gentle word for consummation."}},
+     {"ref": "56:79", "why": {"bs": "„…koju samo čisti dodiruju” – tefsir se razilazi: čisti meleki i Ploča, ili propis o dodirivanju mushafa.", "en": "“None touch it except the purified” — tafsir differs: the purified angels and the Tablet, or a ruling on touching the muṣḥaf."}}
+    ]
+   },
+   {
+    "arabic": "لَمَسَ",
+    "verb": "لمس_1",
+    "count": 4,
+    "meaning": {"bs": "opipati; tražiti", "en": "to touch, to feel; to seek"},
+    "nuance": {
+     "bs": "Dotaći i opipati rukom, opažanje dodirom. Prema ar-Rāġibu, kaže se i za traženje – džini „dotakoše” nebo, tj. pokušaše do njega doći.",
+     "en": "To touch and feel with the hand, perceiving by touch. According to ar-Rāġib, it is said of seeking too — the jinn “touched” the heaven, i.e. sought to reach it."
+    },
+    "ayat": [
+     {"ref": "6:7", "why": {"bs": "„…pa da je oni rukama svojim opipaju…” – opipljivi dodir.", "en": "“…and they touched it with their hands…” — a touch of the hand."}},
+     {"ref": "72:8", "why": {"bs": "„Mi smo nebo tražili (لَمَسْنَا – pokušali dotaći), pa smo ga našli punog strogih čuvara” – tefsir: pokušali doseći, tražili.", "en": "“And we have sought the heaven but found it filled with stern guards” — tafsir: tried to reach it, sought it."}}
+    ]
+   }
+  ]
+ },
+ "fitna-bala": {
+  "title": {"bs": "Iskušenje", "en": "Trial"},
+  "shared": {
+   "bs": "Sve tri riječi govore o kušnji kojom se čovjek provjerava. Kur'an kaže da Allah iskušava i zlom i dobrom (21:35) – ne da bi saznao, jer On sve zna, nego da se pokaže šta je u čovjeku.",
+   "en": "All three words speak of a trial by which a person is tested. The Quran says Allah tests with both evil and good (21:35) — not to learn, for He knows all, but to bring out what is in a person."
+  },
+  "tellApart": {
+   "bs": "Iskušenje koje pokaže šta je u čovjeku – i zavodljivost, i smutnja, i progon → فِتْنَة; kušnja, iskušenje – i nevoljom i blagodati → بَلَاء; iskušati, staviti na kušnju (glagol) → ابْتَلَى.",
+   "en": "A trial that shows what is in a person — and temptation, discord, persecution → فِتْنَة; a test, a trial — by hardship and by blessing → بَلَاء; to test, to put to trial (the verb) → ابْتَلَى."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فتن, بلا",
+   "Tafsir on 2:191 (al-fitna) and 2:49 (balāʾ)"
+  ],
+  "notes": [
+   "ar-Rāġib: the root of fatn is putting gold into the fire to show its good from its bad; balāʾ is from wearing a garment thin, as if testing wore a thing out by much trying, and Allah tries with both hardship and ease — paraphrased and attributed.",
+   "2:191 al-fitna ašaddu mina l-qatl: tafsir mostly explains fitna there as shirk or persecution for the faith; 2:49 balāʾ: tafsir differs — a trial in the torment, or a favour in the rescue. Both are named.",
+   "That فِتْنَة is also said of wealth and children (8:28, 64:15) and of discord (8:73), is our observation of all places.",
+   "Blind review: added that Allah tests not to learn but to bring out what is in a person; fitna also as punishment (51:14); 2:191 given with its context (2:190); 2:124 kalimāt marked as disputed.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here."
+  ],
+  "members": [
+   {
+    "arabic": "فِتْنَة",
+    "lemmas": ["فِتْنَة|فتن"],
+    "spoken": "فِتْنَةٌ",
+    "count": 34,
+    "meaning": {"bs": "iskušenje; smutnja", "en": "trial; temptation, discord"},
+    "nuance": {
+     "bs": "Iskušenje koje razdvaja dobro od lošeg – prema ar-Rāġibu, od stavljanja zlata u vatru. Riječ obuhvata zavodljivost imetka i djece, smutnju među ljudima, progon zbog vjere, a i samu kaznu (51:14).",
+     "en": "A trial that separates good from bad — according to ar-Rāġib, from putting gold into the fire. The word covers the lure of wealth and children, discord among people, persecution for the faith, and punishment itself (51:14)."
+    },
+    "ayat": [
+     {"ref": "21:35", "why": {"bs": "„I Mi vas iskušavamo i zlom i dobrom (فِتْنَةً)” – kušnja s obje strane.", "en": "“And We test you with evil and with good as trial” — trial from both sides."}},
+     {"ref": "8:28", "why": {"bs": "„I znajte da su imeci vaši i djeca vaša samo iskušenje” – zavodljivost blagodati.", "en": "“And know that your properties and your children are but a trial” — the lure of blessings."}},
+     {"ref": "2:191", "why": {"bs": "„…a smutnja (الْفِتْنَةُ) je gora od ubijanja” – u kontekstu borbe protiv onih koji napadaju (2:190); tefsir: širk ili progon zbog vjere.", "en": "“…and fitnah is worse than killing” — in the context of fighting those who fight you (2:190); tafsir: shirk or persecution for the faith."}}
+    ]
+   },
+   {
+    "arabic": "بَلَاء",
+    "lemmas": ["بَلاء|بلو"],
+    "count": 6,
+    "meaning": {"bs": "kušnja, iskušenje", "en": "test, trial"},
+    "nuance": {
+     "bs": "Kušnja koja provjerava čovjeka – nevoljom i blagodati. Ibrahimova naredba da žrtvuje sina je „očita kušnja”.",
+     "en": "A test that proves a person — by hardship and by blessing. Abraham's command to sacrifice his son is “the clear trial”."
+    },
+    "ayat": [
+     {"ref": "37:106", "why": {"bs": "„To je, zaista, bila očita kušnja” – Ibrahimovo iskušenje.", "en": "“Indeed, this was the clear trial” — Abraham's test."}},
+     {"ref": "2:49", "why": {"bs": "„…a to vam je bilo veliko iskušenje od Gospodara vašeg” – tefsir: kušnja u patnji ili blagodat u spasu.", "en": "“…and in that was a great trial from your Lord” — tafsir: a trial in the torment, or a favour in the rescue."}}
+    ]
+   },
+   {
+    "arabic": "ابْتَلَى",
+    "verb": "بلو_8",
+    "count": 8,
+    "meaning": {"bs": "iskušati, staviti na kušnju", "en": "to test, to try"},
+    "nuance": {
+     "bs": "Staviti na kušnju; Allah iskušava i čašću i oskudicom, a čovjek ne treba ni jedno ni drugo smatrati znakom svoje vrijednosti.",
+     "en": "To put to the test; Allah tests with honour and with want, and a person should take neither as the measure of his worth."
+    },
+    "ayat": [
+     {"ref": "2:124", "why": {"bs": "„A kad Ibrahima Gospodar njegov s nekoliko riječi (zapovijedi) iskuša, i on ih izvrši…” – kušnja vjerovjesnika; tefsir se razilazi šta su te riječi bile.", "en": "“And when Abraham was tried by his Lord with words (commands) and he fulfilled them…” — a prophet's test; tafsir differs on what they were."}},
+     {"ref": "89:15", "why": {"bs": "„A čovjek, kad ga Gospodar njegov iskuša, pa mu počast i blagodati pruži…” – kušnja blagodati.", "en": "“And as for man, when his Lord tries him and is generous to him and favours him…” — the test of blessing."}},
+     {"ref": "33:11", "why": {"bs": "„Tu su vjernici bili u iskušenju i jako uzdrmani” – kušnja strahom na Hendeku.", "en": "“There the believers were tested and shaken with a severe shaking” — the trial of fear at the Trench."}}
+    ]
+   }
+  ]
  }
 }

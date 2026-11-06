@@ -332,6 +332,33 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   for the noun (trouble), على "down" fails.
 - Reviewer refusals: a plural target glossed/translated as a singular (الْحَنَاجِر "throat"), أَلَمُ الْحَنَاجِرِ unidiomatic.
 
+- Batch 14 (2026-11-06, 5 re-plan rounds, 202 sentences, 10 refused in round 1, 2 in round 2, 0 in round 3). Everything left is
+  count 2. Skipped participles/adjectives (رَمِيم، سائِغ، سَقِيم، سَلِيم، ضَيِّق، ظَلُوم، عَذْب، غَضْبان، كاظِم …), always-bare-accusative
+  lemmas (زُلْفَة، زُمَر، سَبْح، سَراح، سَرْمَد، سِخْرِيّ، شَطَط، شُكُور، ضِرار، عَدّ، عَدْو، عِتِيّ، غَوْر، فُرادَى، كَهْل، كِذّاب), quantities
+  رُباع، رُبُع، سادِس، عَشَرَة, idioms شَفا (عَلَى شَفَا)، عُرْوَة (الْعُرْوَة الْوُثْقَى)، غَداة، غَيابَت، قِطْع (بِقِطْعٍ مِنَ اللَّيْلِ), the dual كَفَّي, and
+  variants رَشاد (رُشْد)، عُسْرَة (عُسْر)، عِصِيّ (عَصا)، ظالِمِي (ظالِم)، عَظْم (on عِظام's card: same word, "bone/kost"). HELD_BACK with reasons:
+  place names رَسّ، طُوًى; God/Hereafter/unseen زَجْرَة، سِجِّين، سِدْرَة (Lote Tree of the Boundary)، شافِع، شَهِيق، صِبْغَة، عِلِّيّ، عِيشَة، غافِر،
+  غَسّاق، فالِق، قُطُوف، رُفات، كِبْرِياء; content رَفَث، شَهْوَة، غائِط، صُلْب (loins); Quranic sense ≠ MSA زَعِيم (guarantor/leader)، رَهَق،
+  سُبات (hibernation)، سُلالَة (dynasty)، ضَيْق (MSA ضِيق)، طاقَة (energy)، عارِض (symptom)، عَفْو (Quran "surplus", MSA pardon)، عَقَبَة
+  (obstacle)، عِشاء (dinner)، فَتاة (Quran slave girls)، قَلائِد (necklaces)، قِطْر (diameter)، كاهِن (priest)، سَكْرَة، صَدّ (only from God's
+  way)، طارِق، عَراء (lexicon "nakedness"); merged senses شِعْر (poetry/hair)، سِقايَة (cup/watering)، عُرْف، قَبِيل، كِبْر، رَيْحان (basil/
+  provision); archaic/rare سُعُر، شَنَآن، صِنْوان، عُتُوّ، عُدْوَة، عِهْن، غُثاء، غِشاوَة، قَبَس، كَلالَة، شَمائِل (like شِمال).
+- Heredocs and loops over `$var` paths trip the worktree sandbox ("too complex to verify"): write helper scripts with the Write tool
+  under build/ and call them by literal path; the scratchpad outside the worktree is refused too.
+- Near-synonym wording (owner: distinct words, never escalate): صَدِيق "true friend"/drugar (خَلِيل has friend/prijatelj), فَزَع
+  "fright"/užas (رُعْب has terror), عُذْر "justification"/opravdanje (مَعْذِرَة has excuse), سَلْم "truce"/primirje (سَلام peace), سَيْر
+  "motion"/kretanje (سَفَر journey), صَبِيّ "young boy"/mališan (غُلام boy), قِسْطاس "balance"/kantar (Korkut; مِيزان scale), كِسْوَة
+  "attire"/ruho. A two-word en meaning ("true friend", "lote trees") passes the gloss gate when one content word is in the lexicon.
+  Root exceptions added: foolishness، truce، torrent، settlement، making، justification، Umrah، parting.
+- زُجاجَة is "bottle" in MSA: the taught "glass" (Sahih, Korkut staklo) needs a lantern context (زُجَاجَةُ الْفَانُوسِ) — all four bare
+  uses were refused. رُكْن: a bare رُكْن reads "corner" and رُكْنُ الْعَائِلَةِ a person ("pillar of the family") — pass with a person
+  referent (مَرَضُ رُكْنِ الْعَائِلَةِ) or a building (يَحْتَاجُ الْبَيْتُ إِلَى رُكْنٍ قَوِيٍّ). سَمِيّ needs a referent (سَمِيُّ أَبِي). Gloss
+  fails: هَدَمَ destroyed → demolished, وَافَقَ agreed → agree (present), شُرُوط terms → stipulations, اسْتَيْقَظَ awakened → wakes up,
+  رَقِيق thin → delicate, رِحْلَة trip → journey, مُرْتَفِع high (fails), اللَّيْلَة tonight, مِرْفَق elbow (lexicon facility), اتِّجَاه direction.
+- Own pictures (source "fil", assets/nouns/SLUG.svg, 36×36, the three greens): write them from one script that runs
+  `minified` + `picture_problems` and flips the manifest's `"source": null` to `"fil"`; preview with `qlmanage -t -s 128 -o DIR FILE.svg`
+  and look — a palm crease read as a smiling mouth, a lone round tree as a lollipop, a smooth dome as a tent.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

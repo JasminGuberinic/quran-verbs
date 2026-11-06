@@ -1340,5 +1340,70 @@
  "خَرْدَل|خردل": {
   "kind": "ordinary",
   "why": "Reviewed: mustard, a mass noun (21:47 مِثْقَالَ حَبَّةٍ مِنْ خَرْدَلٍ); one seed is حَبَّة, not a singulative of its own."
+ },
+ "سِدْر|سدر": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: lote trees as a kind (34:16 وَشَيْءٍ مِنْ سِدْرٍ قَلِيلٍ; 56:28 فِي سِدْرٍ مَخْضُودٍ), with the singulative سِدْرَة 'one lote tree' (53:14, the Lote Tree of the Utmost Boundary — held back, unseen). Masculine in Arabic (سِدْرٌ مَخْضُودٌ, the adjective agrees in the masculine singular).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "سِدْرَةٌ",
+    "gender": "F",
+    "en": "a lote tree",
+    "bs": "lotos"
+   }
+  ]
+ },
+ "صَخْرَة|صخر": {
+  "kind": "singulative",
+  "why": "One rock (18:63 إِذْ أَوَيْنَا إِلَى الصَّخْرَةِ; 31:16 فِي صَخْرَةٍ), of the collective صَخْر 'rock' that Thamud carved (89:9 جَابُوا الصَّخْرَ بِالْوَادِ). Its plural صُخُور is not Quranic.",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "صَخْرٌ",
+    "gender": "M",
+    "en": "rock",
+    "bs": "stijenje"
+   }
+  ]
+ },
+ "عَمّ|عمم": {
+  "kind": "pair",
+  "why": "The female of عَمّ (paternal uncle) is عَمَّة (paternal aunt); the Quran names both: بُيُوتِ أَعْمَامِكُمْ أَوْ بُيُوتِ عَمَّاتِكُمْ (24:61); بَنَاتِ عَمِّكَ وَبَنَاتِ عَمَّاتِكَ (33:50).",
+  "related": [
+   {
+    "role": "female",
+    "ar": "عَمَّةٌ",
+    "gender": "F",
+    "en": "paternal aunt",
+    "bs": "tetka",
+    "lemma": "عَمَّة|عمم"
+   }
+  ]
+ },
+ "سِنّ|سنن": {
+  "kind": "ordinary",
+  "why": "Reviewed: سِنّ is one tooth (5:45 وَالسِّنَّ بِالسِّنِّ), with the broken plural أَسْنَان; سَنَة (year) and سُنَّة (custom) are other words of the root."
+ },
+ "صَدِيق|صدق": {
+  "kind": "ordinary",
+  "why": "Reviewed: صَدِيق is a friend (24:61 أَوْ صَدِيقِكُمْ; 26:101 وَلَا صَدِيقٍ حَمِيمٍ), with the broken plural أَصْدِقَاء; صَدِيقَة 'a woman friend' is not Quranic and صِدْق/صَدَقَة are other words."
+ },
+ "صُنْع|صنع": {
+  "kind": "ordinary",
+  "why": "Reviewed: صُنْع is the verbal noun 'making, work' (27:88 صُنْعَ اللَّهِ; 18:104); صَنْعَة (a craft) is another word, not its singulative."
+ },
+ "عُمْرَة|عمر": {
+  "kind": "ordinary",
+  "why": "Reviewed: عُمْرَة is the lesser pilgrimage (2:196 وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ); عُمُر (a lifetime) is another word, not its collective."
+ },
+ "قَبْضَة|قبض": {
+  "kind": "ordinary",
+  "why": "Reviewed: قَبْضَة is a handful, one grasp (20:96 فَقَبَضْتُ قَبْضَةً); the verbal noun قَبْض 'seizing' is not a collective of it."
+ },
+ "قَسَم|قسم": {
+  "kind": "ordinary",
+  "why": "Reviewed: قَسَم is an oath (56:76 وَإِنَّهُ لَقَسَمٌ; 89:5), with the plural أَقْسَام; قِسْمَة (division) is another word."
  }
 }

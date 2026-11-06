@@ -209,13 +209,16 @@ def test_every_published_nouns_picture_is_shown_on_its_pages_and_credited():
     pictures = {picture.slug: picture for picture in load_pictures() if picture.has_picture}
     published = {page.parent.name for page in (PAGES_DIR / "en" / "noun").glob("*/index.html")}
     assert published, "no noun pages built"
+    credited = {picture.file_name for picture in pictures.values() if picture.source in CREDITED}
     for slug in published & set(pictures):
         for code, folder in seo.NOUN_FOLDERS.items():
             page = PAGES_DIR / code / folder / slug / "index.html"
             html = page.read_text(encoding="utf-8")
             assert f'class="noun-picture" src="../../../pictures/{pictures[slug].file_name}"' in html, page
             assert (PAGES_DIR / "pictures" / pictures[slug].file_name).is_file()
-            assert ("<b>Pictures.</b>" in html) == (pictures[slug].source in CREDITED), page
+            # A page owes the credit for every licensed picture it shows: its own, or a related noun's (سُوق shows ساق).
+            shows_credited = any(f'pictures/{name}"' in html for name in credited)
+            assert ("<b>Pictures.</b>" in html) == shows_credited, page
     for code, folder in seo.NOUN_FOLDERS.items():
         listing = (PAGES_DIR / code / folder / "index.html").read_text(encoding="utf-8")
         shown = set(re.findall(r'class="thumb" src="\.\./\.\./pictures/([^"]+)"', listing))

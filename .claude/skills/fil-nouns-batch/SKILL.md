@@ -358,6 +358,10 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - Own pictures (source "fil", assets/nouns/SLUG.svg, 36×36, the three greens): write them from one script that runs
   `minified` + `picture_problems` and flips the manifest's `"source": null` to `"fil"`; preview with `qlmanage -t -s 128 -o DIR FILE.svg`
   and look — a palm crease read as a smiling mouth, a lone round tree as a lollipop, a smooth dome as a tent.
+  Headless Chrome (`--headless=new --screenshot`) of one contact sheet (64 + 128 px, light and dark) checks 40 at a glance.
+  Round 2 (42 drawn): any pair of short arcs on a rounded shape reads as a sleeping face (clay lump, clay block) —
+  use straight strokes; pegs with a band read as pencils/cups until a mallet strikes them. Left undrawn: طِين clay
+  (lump/block/wheel all read as something else), حَرِير silk (a curtain, i.e. حِجاب), أَذْقان chins (only as a face profile).
 
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.

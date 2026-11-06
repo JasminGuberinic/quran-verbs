@@ -46,6 +46,8 @@ Quranic first, CAMeL one gender at a time, then a gated rule for the regular cel
 sentence gate; agreement examples composed from our nouns' cells and blind-reviewed), pages
 /bs/pridjev/ and /en/adjective/, `fil adjectives batch …` and the /fil-adjectives-batch skill. Elatives
 show on their positive's card; Divine-Name adjectives with no human sense (غَفُور, سَمِيع, بَصِير) are held back.
+Batch 2 brought it to 100; batch 3 (2026-11-06) shipped the last 5 teachable candidates (105 in all) — every
+other candidate is held back or refused with a recorded reason (fil.adjectives.selection).
 
 ## Categories and pictures
 

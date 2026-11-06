@@ -1599,5 +1599,85 @@
    "thingPlural": "بَحْر|بحر"
   },
   "masculinePlural": "-"
+ },
+ "غَرْبِيّ|غرب": {
+  "en": "western",
+  "bs": "zapadni",
+  "bsShort": "zapadni",
+  "bsLong": "zapadni",
+  "feminine": "غَرْبِيَّة",
+  "feminineLemma": true,
+  "pattern": "فَعْلِيّ",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "جانِب|جنب",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "بَلَد|بلد"
+  },
+  "masculinePlural": "-"
+ },
+ "قَصِيّ|قصو": {
+  "en": "remote",
+  "bs": "udaljen, zabačen",
+  "bsShort": "udaljen",
+  "bsLong": "udaljeni",
+  "feminine": "قَصِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "بَلَد|بلد",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "جَبَل|جبل"
+  },
+  "masculinePlural": "-"
+ },
+ "لَيِّن|لين": {
+  "en": "soft, mild",
+  "bs": "mekan, blag",
+  "bsShort": "mekan",
+  "bsLong": "meki",
+  "feminine": "لَيِّنَة",
+  "feminineLemma": false,
+  "pattern": "فَيْعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "فِراش|فرش",
+   "feminine": "يَد|يدي",
+   "thingPlural": "فِراش|فرش"
+  },
+  "masculinePlural": "-"
+ },
+ "مُرْتاب|ريب": {
+  "en": "skeptical, doubting",
+  "bs": "sumnjičav",
+  "bsShort": "sumnjičav",
+  "bsLong": "sumnjičavi",
+  "feminine": "مُرْتَابَة",
+  "feminineLemma": false,
+  "pattern": "مُفْتَعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "وَهّاج|وهج": {
+  "en": "glowing, blazing",
+  "bs": "blistav, žarki",
+  "bsShort": "blistav",
+  "bsLong": "blistavi",
+  "feminine": "وَهَّاجَة",
+  "feminineLemma": false,
+  "pattern": "فَعَّال",
+  "category": "other",
+  "nouns": {
+   "masculine": "نَجْم|نجم",
+   "feminine": "شَمْس|شمس",
+   "thingPlural": "نَجْم|نجم"
+  },
+  "masculinePlural": "-"
  }
 }

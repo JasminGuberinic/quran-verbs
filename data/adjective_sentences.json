@@ -26652,5 +26652,1339 @@
     }
    }
   }
+ ],
+ "غَرْبِيّ|غرب": [
+  {
+   "role": "masculine",
+   "example": {
+    "arabic": "يَقِفُ الْحَارِسُ عِنْدَ الْبَابِ الْغَرْبِيِّ",
+    "words": [
+     {
+      "arabic": "يَقِفُ",
+      "en": "stands",
+      "bs": "stoji",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْحَارِسُ",
+      "en": "the guard",
+      "bs": "stražar",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "عِنْدَ",
+      "en": "at",
+      "bs": "kod",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْبَابِ",
+      "en": "the gate",
+      "bs": "kapije",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْغَرْبِيِّ",
+      "en": "western",
+      "bs": "zapadne",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The guard stands at the western gate.",
+    "bs": "Stražar stoji kod zapadne kapije.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct genitive definite agreement; natural.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "feminine",
+   "example": {
+    "arabic": "زَارَ أَخِي مَدِينَةً غَرْبِيَّةً",
+    "words": [
+     {
+      "arabic": "زَارَ",
+      "en": "visited",
+      "bs": "posjetio je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "أَخِي",
+      "en": "my brother",
+      "bs": "moj brat",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مَدِينَةً",
+      "en": "a city",
+      "bs": "grad",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "غَرْبِيَّةً",
+      "en": "western",
+      "bs": "zapadni",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "My brother visited a western city.",
+    "bs": "Moj brat je posjetio zapadni grad.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Indefinite feminine accusative agreement correct.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "predicate",
+   "example": {
+    "arabic": "الرِّيحُ الْيَوْمَ غَرْبِيَّةٌ",
+    "words": [
+     {
+      "arabic": "الرِّيحُ",
+      "en": "the wind",
+      "bs": "vjetar",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْيَوْمَ",
+      "en": "today",
+      "bs": "danas",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "غَرْبِيَّةٌ",
+      "en": "western",
+      "bs": "zapadni",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "Today the wind is westerly.",
+    "bs": "Danas je vjetar zapadni.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "ريح is feminine, predicate nominative correct; Bosnian acceptable (alt: 'Danas puše zapadni vjetar').",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "plural",
+   "example": {
+    "arabic": "يُسَافِرُ التُّجَّارُ إِلَى بِلَادٍ غَرْبِيَّةٍ",
+    "words": [
+     {
+      "arabic": "يُسَافِرُ",
+      "en": "travel",
+      "bs": "putuju",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "التُّجَّارُ",
+      "en": "the merchants",
+      "bs": "trgovci",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "إِلَى",
+      "en": "to",
+      "bs": "u",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "بِلَادٍ",
+      "en": "countries",
+      "bs": "zemlje",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "غَرْبِيَّةٍ",
+      "en": "western",
+      "bs": "zapadne",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The merchants travel to western countries.",
+    "bs": "Trgovci putuju u zapadne zemlje.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "بلاد non-human plural takes fem. sing. genitive; singular verb before plural subject correct.",
+     "independent": true
+    }
+   }
+  }
+ ],
+ "قَصِيّ|قصو": [
+  {
+   "role": "masculine",
+   "example": {
+    "arabic": "عَاشَ الرَّجُلُ فِي بَلَدٍ قَصِيٍّ",
+    "words": [
+     {
+      "arabic": "عَاشَ",
+      "en": "lived",
+      "bs": "živio je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الرَّجُلُ",
+      "en": "the man",
+      "bs": "čovjek",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "فِي",
+      "en": "in",
+      "bs": "u",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "بَلَدٍ",
+      "en": "a country",
+      "bs": "zemlji",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "قَصِيٍّ",
+      "en": "remote",
+      "bs": "udaljenoj",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The man lived in a remote country.",
+    "bs": "Čovjek je živio u udaljenoj zemlji.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; قصي is literary but valid.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "feminine",
+   "example": {
+    "arabic": "وَصَلَ الطَّبِيبُ إِلَى قَرْيَةٍ قَصِيَّةٍ",
+    "words": [
+     {
+      "arabic": "وَصَلَ",
+      "en": "reached",
+      "bs": "stigao je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطَّبِيبُ",
+      "en": "the doctor",
+      "bs": "doktor",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "إِلَى",
+      "en": "to",
+      "bs": "u",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "قَرْيَةٍ",
+      "en": "a village",
+      "bs": "selo",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "قَصِيَّةٍ",
+      "en": "remote",
+      "bs": "udaljeno",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The doctor reached a remote village.",
+    "bs": "Doktor je stigao u udaljeno selo.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct agreement; natural.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "predicate",
+   "example": {
+    "arabic": "هَذَا الْمَكَانُ قَصِيٌّ",
+    "words": [
+     {
+      "arabic": "هَذَا",
+      "en": "this",
+      "bs": "ovo",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْمَكَانُ",
+      "en": "the place",
+      "bs": "mjesto",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "قَصِيٌّ",
+      "en": "remote",
+      "bs": "udaljeno",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "This place is remote.",
+    "bs": "Ovo mjesto je udaljeno.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; not verbatim Quran (cf. مكانا قصيا).",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "plural",
+   "example": {
+    "arabic": "رَأَيْنَا جِبَالًا قَصِيَّةً",
+    "words": [
+     {
+      "arabic": "رَأَيْنَا",
+      "en": "we saw",
+      "bs": "vidjeli smo",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "جِبَالًا",
+      "en": "mountains",
+      "bs": "planine",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "قَصِيَّةً",
+      "en": "remote",
+      "bs": "udaljene",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "We saw remote mountains.",
+    "bs": "Vidjeli smo udaljene planine.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "جبال non-human plural takes fem. sing. accusative; correct.",
+     "independent": true
+    }
+   }
+  }
+ ],
+ "لَيِّن|لين": [
+  {
+   "role": "masculine",
+   "example": {
+    "arabic": "نَامَ الطِّفْلُ عَلَى فِرَاشٍ لَيِّنٍ",
+    "words": [
+     {
+      "arabic": "نَامَ",
+      "en": "slept",
+      "bs": "spavalo je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطِّفْلُ",
+      "en": "the child",
+      "bs": "dijete",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "عَلَى",
+      "en": "on",
+      "bs": "na",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "فِرَاشٍ",
+      "en": "a bed",
+      "bs": "postelji",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "لَيِّنٍ",
+      "en": "soft",
+      "bs": "mekoj",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The child slept on a soft bed.",
+    "bs": "Dijete je spavalo na mekoj postelji.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": [
+      "لَيِّنٍ"
+     ]
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; natural.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "feminine",
+   "example": {
+    "arabic": "مَشَيْنَا عَلَى أَرْضٍ لَيِّنَةٍ",
+    "words": [
+     {
+      "arabic": "مَشَيْنَا",
+      "en": "we walked",
+      "bs": "hodali smo",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "عَلَى",
+      "en": "on",
+      "bs": "po",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "أَرْضٍ",
+      "en": "ground",
+      "bs": "zemlji",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "لَيِّنَةٍ",
+      "en": "soft",
+      "bs": "mekoj",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "We walked on soft ground.",
+    "bs": "Hodali smo po mekoj zemlji.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": [
+      "لَيِّنَةٍ"
+     ]
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; natural.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "predicate",
+   "example": {
+    "arabic": "كَانَ الْفِرَاشُ لَيِّنًا",
+    "words": [
+     {
+      "arabic": "كَانَ",
+      "en": "was",
+      "bs": "bila je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْفِرَاشُ",
+      "en": "the bed",
+      "bs": "postelja",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "لَيِّنًا",
+      "en": "soft",
+      "bs": "meka",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The bed was soft.",
+    "bs": "Postelja je bila meka.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": [
+      "لَيِّنًا"
+     ]
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Predicate of كان accusative; correct.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "plural",
+   "example": {
+    "arabic": "هَبَّتْ رِيَاحٌ لَيِّنَةٌ",
+    "words": [
+     {
+      "arabic": "هَبَّتْ",
+      "en": "blew",
+      "bs": "puhali su",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "رِيَاحٌ",
+      "en": "winds",
+      "bs": "vjetrovi",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "لَيِّنَةٌ",
+      "en": "mild",
+      "bs": "blagi",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "Mild winds blew.",
+    "bs": "Puhali su blagi vjetrovi.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": [
+      "لَيِّنَةٌ"
+     ]
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "رياح non-human plural takes fem. sing.; ريح لينة = gentle wind, attested.",
+     "independent": true
+    }
+   }
+  }
+ ],
+ "مُرْتاب|ريب": [
+  {
+   "role": "masculine",
+   "example": {
+    "arabic": "جَاءَ رَجُلٌ مُرْتَابٌ إِلَى الْقَاضِي",
+    "words": [
+     {
+      "arabic": "جَاءَ",
+      "en": "came",
+      "bs": "došao je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "رَجُلٌ",
+      "en": "a man",
+      "bs": "čovjek",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مُرْتَابٌ",
+      "en": "skeptical",
+      "bs": "sumnjičav",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "إِلَى",
+      "en": "to",
+      "bs": "kod",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْقَاضِي",
+      "en": "the judge",
+      "bs": "sudije",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "A skeptical man came to the judge.",
+    "bs": "Sumnjičav čovjek je došao kod sudije.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct indefinite nominative agreement.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "feminine",
+   "example": {
+    "arabic": "سَأَلَتِ امْرَأَةٌ مُرْتَابَةٌ عَنِ الثَّمَنِ",
+    "words": [
+     {
+      "arabic": "سَأَلَتِ",
+      "en": "asked",
+      "bs": "pitala je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "امْرَأَةٌ",
+      "en": "a woman",
+      "bs": "žena",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مُرْتَابَةٌ",
+      "en": "skeptical",
+      "bs": "sumnjičava",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "عَنِ",
+      "en": "about",
+      "bs": "za",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الثَّمَنِ",
+      "en": "the price",
+      "bs": "cijenu",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "A skeptical woman asked about the price.",
+    "bs": "Sumnjičava žena je pitala za cijenu.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; سألتِ with linking kasra fine.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "predicate",
+   "example": {
+    "arabic": "الرَّجُلُ مُرْتَابٌ مِنْ هَذَا الْخَبَرِ",
+    "words": [
+     {
+      "arabic": "الرَّجُلُ",
+      "en": "the man",
+      "bs": "čovjek",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مُرْتَابٌ",
+      "en": "skeptical",
+      "bs": "sumnjičav",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "مِنْ",
+      "en": "of",
+      "bs": "prema",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "هَذَا",
+      "en": "this",
+      "bs": "ovoj",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْخَبَرِ",
+      "en": "the news",
+      "bs": "vijesti",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The man is skeptical of this news.",
+    "bs": "Čovjek je sumnjičav prema ovoj vijesti.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": false,
+     "grammar_ok": true,
+     "translation_ok": false,
+     "verb_usage_ok": false,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "ارتاب/مرتاب normally takes في (مرتاب في هذا الخبر), not من; Bosnian 'sumnjičav prema ovoj vijesti' is awkward (better 'sumnja u ovu vijest').",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "plural",
+   "example": {
+    "arabic": "سَأَلَ رِجَالٌ مُرْتَابُونَ عَنِ الْخَبَرِ",
+    "words": [
+     {
+      "arabic": "سَأَلَ",
+      "en": "asked",
+      "bs": "pitali su",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "رِجَالٌ",
+      "en": "men",
+      "bs": "muškarci",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مُرْتَابُونَ",
+      "en": "skeptical",
+      "bs": "sumnjičavi",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "عَنِ",
+      "en": "about",
+      "bs": "o",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْخَبَرِ",
+      "en": "the news",
+      "bs": "vijesti",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "Skeptical men asked about the news.",
+    "bs": "Sumnjičavi muškarci su pitali o vijesti.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Human plural takes sound masc. plural مرتابون; correct.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "predicate",
+   "example": {
+    "arabic": "كَانَ الرَّجُلُ مُرْتَابًا",
+    "words": [
+     {
+      "arabic": "كَانَ",
+      "en": "was",
+      "bs": "bio je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الرَّجُلُ",
+      "en": "the man",
+      "bs": "čovjek",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مُرْتَابًا",
+      "en": "skeptical",
+      "bs": "sumnjičav",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The man was skeptical.",
+    "bs": "Čovjek je bio sumnjičav.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct: كَانَ + accusative predicate مُرْتَابًا, masculine singular agreeing with الرَّجُلُ; EN and BS match, natural.",
+     "independent": true
+    }
+   }
+  }
+ ],
+ "وَهّاج|وهج": [
+  {
+   "role": "masculine",
+   "example": {
+    "arabic": "رَأَيْنَا فِي السَّمَاءِ نَجْمًا وَهَّاجًا",
+    "words": [
+     {
+      "arabic": "رَأَيْنَا",
+      "en": "we saw",
+      "bs": "vidjeli smo",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "فِي",
+      "en": "in",
+      "bs": "na",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "السَّمَاءِ",
+      "en": "the sky",
+      "bs": "nebu",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "نَجْمًا",
+      "en": "a star",
+      "bs": "zvijezdu",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "وَهَّاجًا",
+      "en": "glowing",
+      "bs": "blistavu",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "We saw a glowing star in the sky.",
+    "bs": "Vidjeli smo blistavu zvijezdu na nebu.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; echoes سراجا وهاجا only loosely, not verbatim.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "feminine",
+   "example": {
+    "arabic": "خَرَجْنَا تَحْتَ شَمْسٍ وَهَّاجَةٍ",
+    "words": [
+     {
+      "arabic": "خَرَجْنَا",
+      "en": "we went out",
+      "bs": "izašli smo",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "تَحْتَ",
+      "en": "under",
+      "bs": "pod",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "شَمْسٍ",
+      "en": "a sun",
+      "bs": "suncem",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "وَهَّاجَةٍ",
+      "en": "glowing",
+      "bs": "blistavim",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "We went out under a glowing sun.",
+    "bs": "Izašli smo pod blistavim suncem.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct; 'blazing sun' / 'žarkim suncem' would be slightly more natural.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "predicate",
+   "example": {
+    "arabic": "النَّجْمُ وَهَّاجٌ فِي السَّمَاءِ",
+    "words": [
+     {
+      "arabic": "النَّجْمُ",
+      "en": "the star",
+      "bs": "zvijezda",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "وَهَّاجٌ",
+      "en": "glowing",
+      "bs": "blistava",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "فِي",
+      "en": "in",
+      "bs": "na",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "السَّمَاءِ",
+      "en": "the sky",
+      "bs": "nebu",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The star is glowing in the sky.",
+    "bs": "Zvijezda je blistava na nebu.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "Correct predicate agreement; Bosnian gender follows zvijezda, fine.",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "plural",
+   "example": {
+    "arabic": "تَظْهَرُ نُجُومٌ وَهَّاجَةٌ فِي اللَّيْلِ",
+    "words": [
+     {
+      "arabic": "تَظْهَرُ",
+      "en": "appear",
+      "bs": "pojavljuju se",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "نُجُومٌ",
+      "en": "stars",
+      "bs": "zvijezde",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "وَهَّاجَةٌ",
+      "en": "glowing",
+      "bs": "blistave",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "فِي",
+      "en": "at",
+      "bs": "u",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "اللَّيْلِ",
+      "en": "night",
+      "bs": "noći",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "Glowing stars appear at night.",
+    "bs": "Blistave zvijezde se pojavljuju u noći.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "adjective and noun tables",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "نجوم non-human plural takes fem. sing.; 'noću' slightly more natural than 'u noći'.",
+     "independent": true
+    }
+   }
+  }
  ]
 }

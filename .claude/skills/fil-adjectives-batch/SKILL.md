@@ -92,5 +92,22 @@ src/fil/stages/adjectives.py, pages fil.stages.adjective_site/adjective_pages + 
   seller → vendor, help (مُسَاعَدَة) → assistance, tasks → actions, meet (اجْتَمَعَ) → met, bag → suitcase.
 - Reviewer refusals: خَبِيث is not "rotten" fruit (فاسِد) — use it of people/words/water; أَيَّامٍ مَعْلُومَةٍ and
   الْيَوْمُ الْآخَرُ echo the Quran; living whales pulled out by one fisherman is not believable.
+- Batch 3 (2026-11-06): the list is exhausted. After batch 2 only 40 candidates were left, all Quranic
+  hapaxes (rank 2400+); 35 were refused and 5 shipped (غَرْبِيّ, قَصِيّ, لَيِّن, مُرْتاب, وَهّاج). A further
+  batch needs a policy change (HELD_BACK, a recorded refusal reconsidered, or new candidates beyond QAC ADJ
+  and NOT_TAUGHT_AS_NOUNS' "adjective…" entries) — `plan next 50` then plans 0.
+- The planner pairs a feminine lemma by letters alone: لِينَة (a palm tree, 59:5) was offered as the feminine
+  of لَيِّن. Read the feminine-lemma column; a different word gets feminine_lemma n.
+- Table cells write a doubled letter with its vowel (جَبَّارٌ, شَكًّا): fil.nouns.spelling.with_voweled_shadda
+  mends CAMeL's جَبّارٌ / شَكّاً at the adapter and the rule's الصّابِرُ (from a lemma written صابِر); the gate
+  refuses a bare shadda. data/adjective_example_reviews.json is keyed by the example's Arabic text, so any
+  engine change that respells cells must re-key it (else approved examples silently drop): compare
+  `review-export`'s example count before and after.
+- Gloss gate, batch 3: لَيِّن needs the root exception ل.#.ن (soft, mild; the lexicon has only "flexible");
+  وَهَّاج passes as "glowing" (not "blazing"); اللَّيْلَةَ "tonight" and سَأَلَ "questioned" fail (use "asked");
+  CAMeL does not read فُرُش as the plural of فِرَاش — keep it to the agreement examples.
+- Example nouns whose own en/bs senses differ get refused: بَاب (en "door", bs "kapija"), قَرْيَة (en "village",
+  bs "naselje"). سُوق is mostly feminine (التأنيث فيها أغلب) — never a model of masculine agreement (شَرْقِيّ's
+  card still uses it: a follow-up). Pick an unambiguously masculine noun (جانِب, بَلَد, نَجْم).
 - Examples are shown in standard spelling (fil.nouns.spelling.imlai folds the Quran's ٱ, dagger alif,
   ءَا, undotted ى, madda only where spelling_key says it is the same word).

@@ -7,7 +7,9 @@ The corpus segments a word into proclitics, a stem and suffixes, and tags the st
     2:79:5:3   هِمْ     N   PRON|SUFF|3MP
 
 What it leaves implicit we derive. Definiteness: the article is its own segment (DET),
-nunation is the INDEF tag, and a noun with neither is in construct. Number: the gender
+nunation is the INDEF tag, and a noun with neither is in construct — unless it is a diptote
+or ends in alif maqṣūra, which cannot take nunation (أُخْرَىٰ, أَعْمَىٰ, أَوْلِيَآءَ), and
+no possessor follows it: such a noun is indefinite though the corpus never tags it so. Number: the gender
 tag carries it (MP, FD); a bare M or F is singular. A broken plural is lemmatised under
 its singular (أَيْدِي → LEM:يَد) and tagged plural like any other — nothing marks it as
 broken; `fil.nouns.catalogue` tells the kinds apart. The preposition ruling a genitive
@@ -19,8 +21,9 @@ but leaves them rootless (see fil.vocabulary).
 
 from __future__ import annotations
 
+import unicodedata
 from collections.abc import Iterable, Iterator, Sequence
-from itertools import groupby
+from itertools import groupby, pairwise
 
 from fil.composition.decomposition import AND, EMPHATIC, QUESTION, SO, CannotCompose, pgn
 from fil.corpus.parse import Segment
@@ -50,15 +53,34 @@ _OATH_LETTERS = {"و", "ت"}
 _ARTICLE = "DET"
 _PREPOSITION = "P"
 _FAMILIES = {"إِنّ": INNA, "كَان": KANA}   # the corpus's FAM feature
+_VOCATIVE = "VOC"
+_NEGATION = "NEG"
+_FATHA, _DAMMA = "\u064e", "\u064f"
+_ALIF_MAQSURA = "\u0649"
+_HAMZA = "\u0621"
+_ALIFS = ("\u0627", "\u0622")             # ا, and آ as the Uthmani text writes ـَآءُ
+_SIGNS_AFTER_THE_LAST_LETTER = "\u0670\u0653"   # dagger alif, madda: أُخْرَىٰ, أَدْنَىٰٓ
 
 
 def iter_noun_occurrences(segments: Iterable[Segment]) -> Iterator[NounOccurrence]:
-    """Every rooted noun stem in the corpus, read with its word and the word before it."""
+    """Every rooted noun stem in the corpus, read with its word, the word before it and the
+    word after it within the same ayah."""
     previous: Sequence[Segment] = ()
-    for _location, grouped in groupby(segments, key=lambda segment: (segment.surah, segment.ayah, segment.word)):
-        word = tuple(grouped)
-        yield from (_occurrence(stem, word, previous) for stem in word if is_noun_stem(stem))
+    for word, following in _with_following(_words(segments)):
+        yield from (_occurrence(stem, word, previous, following) for stem in word if is_noun_stem(stem))
         previous = word
+
+
+def _words(segments: Iterable[Segment]) -> Iterator[tuple[Segment, ...]]:
+    for _location, grouped in groupby(segments, key=lambda segment: (segment.surah, segment.ayah, segment.word)):
+        yield tuple(grouped)
+
+
+def _with_following(words: Iterable[tuple[Segment, ...]]) -> Iterator[tuple[tuple[Segment, ...], tuple[Segment, ...]]]:
+    """Each word with the next one of its ayah (empty at the ayah's end)."""
+    for word, following in pairwise((*words, ())):
+        is_same_ayah = bool(following) and (following[0].surah, following[0].ayah) == (word[0].surah, word[0].ayah)
+        yield word, following if is_same_ayah else ()
 
 
 def is_noun_stem(segment: Segment) -> bool:
@@ -67,7 +89,8 @@ def is_noun_stem(segment: Segment) -> bool:
             and "PREF" not in segment.features and "SUFF" not in segment.features)
 
 
-def _occurrence(stem: Segment, word: Sequence[Segment], previous: Sequence[Segment]) -> NounOccurrence:
+def _occurrence(stem: Segment, word: Sequence[Segment], previous: Sequence[Segment],
+                following: Sequence[Segment] = ()) -> NounOccurrence:
     gender, number = _gender_number(stem)
     case = next((tag for tag in _CASES if tag in stem.features), None)
     has_article = any(_tag(segment) == _ARTICLE for segment in word if segment.index < stem.index)
@@ -80,7 +103,7 @@ def _occurrence(stem: Segment, word: Sequence[Segment], previous: Sequence[Segme
         root=feature_value(stem, "ROOT") or "",
         kind=_kind(stem),
         gender=gender, number=number, case=case,
-        state=_state(stem, has_article, number, word),
+        state=_state(stem, has_article, number, word, previous, following),
         verb_form=_verb_form(stem),
         parts=parts, skip_reason=reason,
     )
@@ -180,12 +203,59 @@ def _gender_number(stem: Segment) -> tuple[str | None, str]:
     return found if found is not None else (None, SINGULAR)
 
 
-def _state(stem: Segment, has_article: bool, number: str, word: Sequence[Segment]) -> str:
+def _state(stem: Segment, has_article: bool, number: str, word: Sequence[Segment],
+           previous: Sequence[Segment] = (), following: Sequence[Segment] = ()) -> str:
     if has_article:
         return DEFINITE
     if "INDEF" in stem.features or _keeps_its_nun(stem, number, word):
         return INDEFINITE
+    if _is_indefinite_without_nunation(stem, word, previous, following):
+        return INDEFINITE
     return CONSTRUCT
+
+
+def _is_indefinite_without_nunation(stem: Segment, word: Sequence[Segment], previous: Sequence[Segment],
+                                    following: Sequence[Segment]) -> bool:
+    """A noun that cannot take nunation is indefinite when nothing possesses it: a genitive
+    in fatha is a diptote's (أُخَرَ, never a construct's kasra); alif maqṣūra and -āʾ show
+    no nunation either (أُخْرَىٰ, أَعْمَىٰ, أَوْلِيَآءَ), so these are in construct only before
+    their possessor (هُدَى ٱللَّهِ). Left as they were: names (definite by themselves), the
+    called (يَٰسَمَآءُ) and the noun after لَا of absolute negation (لَا مَوْلَىٰ لَهُمْ), whose
+    bare form is not the indefinite cell's (مَوْلًى)."""
+    if "PN" in stem.features or any(_tag(segment) == _VOCATIVE for segment in word if segment.index < stem.index):
+        return False
+    if _is_absolute_negation(previous):
+        return False
+    if any(segment.index > stem.index for segment in word):
+        return False
+    ending = unicodedata.normalize("NFC", stem.surface).rstrip(_SIGNS_AFTER_THE_LAST_LETTER)
+    if "GEN" in stem.features and ending.endswith(_FATHA):
+        return True
+    return _cannot_take_nunation(ending) and not _may_be_possessor(following)
+
+
+def _is_absolute_negation(word: Sequence[Segment]) -> bool:
+    return len(word) == 1 and _tag(word[0]) == _NEGATION and feature_value(word[0], "LEM") == "لا"
+
+
+def _cannot_take_nunation(ending: str) -> bool:
+    """Ends in alif maqṣūra after a fatha (أُخْرَى — the Uthmani text writes a final yāʾ with
+    the same letter: أَبِى) or in -āʾ with a bare case vowel (أَوْلِيَآءَ, شُهَدَآءُ)."""
+    if ending.endswith(_FATHA + _ALIF_MAQSURA):
+        return True
+    letters = ending.rstrip(_FATHA + _DAMMA)
+    return letters != ending and letters.endswith(_HAMZA) and letters[:-1].endswith(_ALIFS)
+
+
+def _may_be_possessor(word: Sequence[Segment]) -> bool:
+    """The word may be the genitive possessor of the word before: it starts with its noun (or
+    the article) — a preposition or a conjunction in front begins a phrase of its own — and
+    is not an indefinite outside the genitive (تَفْسِيرًا after أَحْسَنَ is a specification).
+    The corpus's case is not trusted further: it tags the diptote ءَادَمَ in بَنِىٓ ءَادَمَ ACC."""
+    if not word or (word[0].pos != _NOUN and _tag(word[0]) != _ARTICLE):
+        return False
+    nouns = [segment for segment in word if segment.pos == _NOUN and "SUFF" not in segment.features]
+    return any("GEN" in noun.features or "INDEF" not in noun.features for noun in nouns)
 
 
 def _keeps_its_nun(stem: Segment, number: str, word: Sequence[Segment]) -> bool:

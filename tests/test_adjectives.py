@@ -57,6 +57,12 @@ def test_the_dual_and_the_sound_plurals():
     assert declension.sound_plural("صَابِر")[(DEFINITE, NOMINATIVE)] == "الصَّابِرُونَ"
 
 
+def test_a_doubled_letter_before_the_feminine_ending_keeps_one_fatha():
+    """حَيَّة in canonical order writes its fatḥa before the shadda; the plural must not double it."""
+    assert declension.sound_plural("حَيَّة")[(INDEFINITE, NOMINATIVE)] == unicodedata.normalize("NFC", "حَيَّاتٌ")
+    assert declension.sound_plural("عَرَبِيَّة")[(DEFINITE, GENITIVE)] == unicodedata.normalize("NFC", "الْعَرَبِيَّاتِ")
+
+
 def test_a_doubled_ya_is_a_consonant_but_a_hamza_or_long_vowel_is_refused():
     assert declension.declined("حَيّ")[(INDEFINITE, ACCUSATIVE)] == "حَيًّا"
     for stem in ("بَرِيء", "أَعْمَى", "مَوْتَى"):

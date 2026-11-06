@@ -4,7 +4,8 @@ A generator is trusted for nothing the Quran can check, and the ending of a decl
 is fully determined by its cell: the article by the state, the last vowel by the case,
 the shape of the ending by the number and the kind of plural. A form whose ending says
 another cell than the one it was generated for is refused — and so is the one ending
-Arabic never writes, a case vowel on the yāʾ of a defective noun (الأَيْدِيُ).
+Arabic never writes, a case vowel on the yāʾ of a defective noun (الأَيْدِيُ), and a letter
+written with two vowels (حَيََّاتٌ: a fatḥa left over when an ending was joined on).
 
 Pure: a form and a cell in, the list of problems out (empty = it passes).
 """
@@ -28,6 +29,7 @@ _SUN_LETTERS = set("تثدذرزسشصضطظلن")
 _SHADDA = chr(0x0651)
 _ALL_VOWELS = _CASE_VOWELS[NOMINATIVE] | _CASE_VOWELS[ACCUSATIVE] | _CASE_VOWELS[GENITIVE]
 _ALL_MARKS = {chr(code) for code in range(0x064B, 0x0653)}
+_VOWELS_AND_SUKUN = _ALL_VOWELS | {chr(0x0652)}
 _DIPTOTE_VOWELS = {NOMINATIVE: {_DAMMA}, ACCUSATIVE: {_FATHA}, GENITIVE: {_FATHA}}
 _FEMININE_PLURAL_VOWELS = {NOMINATIVE: {_DAMMA, _DAMMATAN}, ACCUSATIVE: {_KASRA, _KASRATAN},
                            GENITIVE: {_KASRA, _KASRATAN}}
@@ -39,7 +41,7 @@ _SOUND_ENDINGS = {(PLURAL, NOMINATIVE): "ون" + _FATHA, (PLURAL, ACCUSATIVE): "
 def problems(form: str, cell: Cell, lemma: str) -> tuple[str, ...]:
     """Every way `form` fails to be the `cell` of `lemma`; empty when it passes."""
     text = spelling_key(form)
-    found = [_state_problem(form, cell), _defective_problem(text), _long_alif_problem(text),
+    found = [_state_problem(form, cell), _two_vowels_problem(form), _defective_problem(text), _long_alif_problem(text),
              _ending_problem(text, form, cell, lemma)]
     return tuple(problem for problem in found if problem)
 
@@ -72,6 +74,24 @@ def has_article(form: str) -> bool:
     text = unicodedata.normalize("NFC", form)
     letters = [char for char in text if not unicodedata.combining(char)]
     return letters[:2] in (["ا", "ل"], ["ٱ", "ل"])
+
+
+def _two_vowels_problem(form: str) -> str | None:
+    """A letter carries at most one vowel (or sukūn) — beside it only a shadda."""
+    marks = _letter_marks(unicodedata.normalize("NFD", form))
+    is_doubled = any(sum(mark in _VOWELS_AND_SUKUN for mark in letter) > 1 for letter in marks)
+    return "two vowels on one letter" if is_doubled else None
+
+
+def _letter_marks(text: str) -> list[str]:
+    """The marks written on each letter, in order."""
+    found: list[str] = []
+    for char in text:
+        if unicodedata.combining(char) and found:
+            found[-1] += char
+        elif not unicodedata.combining(char):
+            found.append("")
+    return found
 
 
 def _defective_problem(text: str) -> str | None:

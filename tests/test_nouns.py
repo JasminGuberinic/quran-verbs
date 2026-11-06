@@ -68,6 +68,39 @@ def test_a_bare_masculine_tag_is_singular_and_nunation_is_indefinite():
     assert (noun.gender, noun.number, noun.state) == ("M", SINGULAR, INDEFINITE)
 
 
+UKHRA_NOM = ["أُخْرَىٰ N ROOT:أخر|LEM:آخَر|FS|NOM"]
+UKHARA_GEN = ["أُخَرَ N ROOT:أخر|LEM:آخَر|FP|GEN|ADJ"]
+AWLIYAA_ACC = ["أَوْلِيَآءَ N ROOT:ولي|LEM:وَلِيّ|MP|ACC"]
+AAMA_NOM = ["أَعْمَىٰ N ROOT:عمي|LEM:أَعْمَى|M|NOM"]
+HUDA_CONSTRUCT = ["هُدَى N ROOT:هدي|LEM:هُدَى|M|NOM"]
+ALLAHI = ["ٱللَّهِ N PN|ROOT:أله|LEM:اللَّه|GEN"]
+MIN = ["مِنْ P P|LEM:مِن"]
+QALAT = ["قَالَتْ V PERF|VF:1|ROOT:قول|LEM:قالَ|3FS"]
+LA = ["لَا P NEG|LEM:لا"]
+MAWLA = ["مَوْلَىٰ N ROOT:ولي|LEM:مَوْلَى|M|ACC"]
+YA_SAMAU = ["يَٰ P VOC|PREF|LEM:ي", "سَمَآءُ N ROOT:سمو|LEM:سَماء|F|NOM"]
+
+
+@pytest.mark.parametrize("words", [
+    (UKHRA_NOM, QALAT),          # alif maqṣūra: no nunation to show (2:282 … أُخْرَىٰ)
+    (AAMA_NOM,),                 # at the ayah's end nothing can possess it
+    (AWLIYAA_ACC, MIN),          # a diptote in -āʾ before a preposition (أَوْلِيَآءَ مِن دُونِ)
+    (UKHARA_GEN, QALAT),         # a genitive in fatḥa is a diptote's, never a construct's
+])
+def test_a_noun_that_cannot_take_nunation_is_indefinite_without_a_possessor(words):
+    assert occurrences(*words)[0].state == INDEFINITE
+
+
+@pytest.mark.parametrize("words", [
+    (HUDA_CONSTRUCT, ALLAHI),    # هُدَى ٱللَّهِ: before its possessor it is in construct
+    (LA, MAWLA, MIN),            # لَا مَوْلَىٰ: the bare form is not the indefinite cell (مَوْلًى)
+    (YA_SAMAU, QALAT),           # the called يَٰسَمَآءُ
+])
+def test_the_same_shape_stays_in_construct_when_it_is_not_an_indefinite_cell(words):
+    noun = next(occurrence for occurrence in occurrences(*words) if occurrence.lemma != "اللَّه")
+    assert noun.state == CONSTRUCT
+
+
 def test_a_word_beyond_the_rules_is_kept_with_its_reason():
     (noun,) = occurrences(YAWMA_IDHIN)
     assert not noun.is_clean
@@ -166,6 +199,7 @@ def test_the_gate_passes_well_formed_cells(form, cell):
     ("أَلِيمٌ", Cell(SINGULAR, INDEFINITE, NOMINATIVE), None),   # a hamza, not the article
     ("ٱلْأَيْدِى", Cell(PLURAL, DEFINITE, ACCUSATIVE), "ACC ending expected, found no vowel"),
     ("ٱلْجَنَّتَيْنِ", Cell(DUAL, DEFINITE, NOMINATIVE), "NOM D must end in -انِ"),
+    ("حَيََّاتٌ", Cell(PLURAL, INDEFINITE, NOMINATIVE), "two vowels on one letter"),
 ])
 def test_the_gate_refuses_what_says_another_cell(form, cell, problem):
     found = gate.problems(form, cell, "أَلِيم" if problem is None else "يَد")

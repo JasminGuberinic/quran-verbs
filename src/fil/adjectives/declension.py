@@ -28,6 +28,7 @@ from fil.nouns.spelling import skeleton
 _DAMMA, _FATHA, _KASRA = "ُ", "َ", "ِ"
 _DAMMATAN, _FATHATAN, _KASRATAN = "ٌ", "ً", "ٍ"
 _SHADDA, _SUKUN = "ّ", "ْ"
+_ALL_MARKS = "".join(chr(code) for code in range(0x064B, 0x0653))
 _SUN_LETTERS = set("تثدذرزسشصضطظلن")
 _TRIPTOTE = {(INDEFINITE, NOMINATIVE): _DAMMATAN, (INDEFINITE, ACCUSATIVE): _FATHATAN,
              (INDEFINITE, GENITIVE): _KASRATAN}
@@ -83,11 +84,18 @@ def sound_plural(singular: str) -> Forms:
     """كَبِير → كَبِيرُونَ; كَبِيرَة → كَبِيرَاتٌ."""
     stem = _checked(singular)
     if stem.endswith("ة"):
-        base = stem[:-1].removesuffix(_FATHA) + _FATHA + "ات"
+        base = _without_final_fatha(stem[:-1]) + _FATHA + "ات"
         return _nfc({(state, case): (with_article(base) if state == DEFINITE else base)
                      + _FEMININE_PLURAL_ENDINGS[(state, case)] for state in (DEFINITE, INDEFINITE) for case in CASES})
     return _nfc({(state, case): (with_article(stem) if state == DEFINITE else stem) + SOUND_MASCULINE_ENDINGS[case]
                  for state in (DEFINITE, INDEFINITE) for case in CASES})
+
+
+def _without_final_fatha(text: str) -> str:
+    """The last letter's marks without its fatḥa: in canonical order حَيَّة writes the fatḥa
+    before the shadda (يَّ), so a plain removesuffix would leave it and double it (حَيََّات)."""
+    letters = text.rstrip(_ALL_MARKS)
+    return letters + text[len(letters):].replace(_FATHA, "")
 
 
 def elative_nominative(elative: str) -> str | None:

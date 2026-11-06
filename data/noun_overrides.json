@@ -236,20 +236,6 @@
    "why": "the definite nominative/accusative of the Quranic plural أَمْوَال (ٱلْأَمْوَٰلِ 18:46) that CAMeL does not generate"
   }
  },
- "وَلِيّ|ولي": {
-  "P|indefinite|NOM": {
-   "text": "أَوْلِيَاءُ",
-   "why": "the Quranic plural أَوْلِيَاءَ is a diptote: indefinite -u, -a in accusative and genitive"
-  },
-  "P|indefinite|ACC": {
-   "text": "أَوْلِيَاءَ",
-   "why": "the Quranic plural أَوْلِيَاءَ is a diptote: indefinite -u, -a in accusative and genitive"
-  },
-  "P|indefinite|GEN": {
-   "text": "أَوْلِيَاءَ",
-   "why": "the Quranic plural أَوْلِيَاءَ is a diptote: indefinite -u, -a in accusative and genitive"
-  }
- },
  "صالِحَة|صلح": {
   "P|indefinite|NOM": {
    "text": "صَالِحَاتٌ",
@@ -286,20 +272,6 @@
   "P|indefinite|GEN": {
    "text": "قُرًى",
    "why": "قُرًى ends in alif maqsura: no case shows, the indefinite keeps tanwin"
-  }
- },
- "شَهِيد|شهد": {
-  "P|indefinite|NOM": {
-   "text": "شُهَدَاءُ",
-   "why": "the Quranic plural شُهَدَاء is a diptote: indefinite -u, -a in accusative and genitive"
-  },
-  "P|indefinite|ACC": {
-   "text": "شُهَدَاءَ",
-   "why": "the Quranic plural شُهَدَاء is a diptote: indefinite -u, -a in accusative and genitive"
-  },
-  "P|indefinite|GEN": {
-   "text": "شُهَدَاءَ",
-   "why": "the Quranic plural شُهَدَاء is a diptote: indefinite -u, -a in accusative and genitive"
   }
  },
  "عَدُوّ|عدو": {
@@ -418,20 +390,6 @@
   "S|indefinite|GEN": {
    "text": "جَزَاءٍ",
    "why": "CAMeL misses this cell; the Quran's جَزَآءً and جَزَآءُ fix the stem, a triptote (جَزَاءٌ جَزَاءً جَزَاءٍ)"
-  }
- },
- "شَرِيك|شرك": {
-  "P|indefinite|NOM": {
-   "text": "شُرَكَاءُ",
-   "why": "the plural شُرَكَاء is a diptote (Quran 6:94 شُرَكَٰٓؤُا۟، 6:100 شُرَكَآءَ): no tanwīn, the genitive written like the accusative"
-  },
-  "P|indefinite|ACC": {
-   "text": "شُرَكَاءَ",
-   "why": "the plural شُرَكَاء is a diptote (Quran 6:94 شُرَكَٰٓؤُا۟، 6:100 شُرَكَآءَ): no tanwīn, the genitive written like the accusative"
-  },
-  "P|indefinite|GEN": {
-   "text": "شُرَكَاءَ",
-   "why": "the plural شُرَكَاء is a diptote (Quran 6:94 شُرَكَٰٓؤُا۟، 6:100 شُرَكَآءَ): no tanwīn, the genitive written like the accusative"
   }
  },
  "نَصِير|نصر": {
@@ -1013,14 +971,6 @@
    "text": "الْمَرْضَى",
    "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
   },
-  "P|indefinite|NOM": {
-   "text": "مَرْضَى",
-   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
-  },
-  "P|indefinite|ACC": {
-   "text": "مَرْضَى",
-   "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
-  },
   "P|indefinite|GEN": {
    "text": "مَرْضَى",
    "why": "مَرْضَى ends in alif maqṣūra and is diptote: the form is the same in every case (مَّرْضَىٰٓ 4:102, ٱلْمَرْضَىٰ 9:91); CAMeL generates only the genitive"
@@ -1043,10 +993,6 @@
  "ضَرّاء|ضرر": {
   "S|indefinite|NOM": {
    "text": "ضَرَّاءُ",
-   "why": "ضَرَّاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a (ضَرَّآءَ 10:21); CAMeL generates only the definite forms"
-  },
-  "S|indefinite|ACC": {
-   "text": "ضَرَّاءَ",
    "why": "ضَرَّاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a (ضَرَّآءَ 10:21); CAMeL generates only the definite forms"
   },
   "S|indefinite|GEN": {
@@ -1169,10 +1115,6 @@
  "قَرِين|قرن": {
   "P|indefinite|NOM": {
    "text": "قُرَنَاءُ",
-   "why": "قُرَنَاء (pattern فُعَلَاء) is diptote: no tanwīn, genitive in -a (قُرَنَآءَ 41:25); CAMeL generates only the definite forms"
-  },
-  "P|indefinite|ACC": {
-   "text": "قُرَنَاءَ",
    "why": "قُرَنَاء (pattern فُعَلَاء) is diptote: no tanwīn, genitive in -a (قُرَنَآءَ 41:25); CAMeL generates only the definite forms"
   },
   "P|indefinite|GEN": {
@@ -1614,10 +1556,6 @@
   "P|indefinite|ACC": {
    "text": "أَسَاوِرَ",
    "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
-  },
-  "P|indefinite|GEN": {
-   "text": "أَسَاوِرَ",
-   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
   }
  },
  "خُطُوَة|خطو": {
@@ -1833,10 +1771,6 @@
   },
   "P|definite|ACC": {
    "text": "الْأَسْرَى",
-   "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
-  },
-  "P|indefinite|NOM": {
-   "text": "أَسْرَى",
    "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
   },
   "P|indefinite|ACC": {
@@ -2112,10 +2046,6 @@
    "why": "مَغَانِم (pattern مَفَاعِل, plural of مَغْنَم 'spoil, gain') is diptote: no tanwīn, genitive in -a when indefinite (Quran وَمَغَانِمَ كَثِيرَةً 48:19); the Quran has only the plural, so CAMeL makes no row"
   },
   "P|indefinite|ACC": {
-   "text": "مَغَانِمَ",
-   "why": "مَغَانِم (pattern مَفَاعِل, plural of مَغْنَم 'spoil, gain') is diptote: no tanwīn, genitive in -a when indefinite (Quran وَمَغَانِمَ كَثِيرَةً 48:19); the Quran has only the plural, so CAMeL makes no row"
-  },
-  "P|indefinite|GEN": {
    "text": "مَغَانِمَ",
    "why": "مَغَانِم (pattern مَفَاعِل, plural of مَغْنَم 'spoil, gain') is diptote: no tanwīn, genitive in -a when indefinite (Quran وَمَغَانِمَ كَثِيرَةً 48:19); the Quran has only the plural, so CAMeL makes no row"
   }

@@ -2,29 +2,13 @@
  "_about": "Documented adjective cells the generators cannot make (per gender: number|state|case → text, why); gated like any other, never over a Quranic cell.",
  "آخَر|أخر": {
   "F": {
-   "S|indefinite|NOM": {
-    "text": "أُخْرَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
-   },
-   "S|indefinite|ACC": {
-    "text": "أُخْرَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
-   },
-   "S|indefinite|GEN": {
-    "text": "أُخْرَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
-   },
    "P|indefinite|NOM": {
     "text": "أُخَرُ",
-    "why": "the Quran's plural (2:184 أُخَرَ), a diptote; the corpus tags it construct"
+    "why": "the Quran's plural (2:184 أُخَرَ), a diptote: its nominative and accusative look like a construct's, so only its genitive (in fatḥa) is read as attested"
    },
    "P|indefinite|ACC": {
     "text": "أُخَرَ",
-    "why": "the Quran's plural (2:184 أُخَرَ), a diptote; the corpus tags it construct"
-   },
-   "P|indefinite|GEN": {
-    "text": "أُخَرَ",
-    "why": "the Quran's plural (2:184 أُخَرَ), a diptote; the corpus tags it construct"
+    "why": "the Quran's plural (2:184 أُخَرَ), a diptote: its nominative and accusative look like a construct's, so only its genitive (in fatḥa) is read as attested"
    }
   }
  },
@@ -32,19 +16,11 @@
   "M": {
    "S|definite|ACC": {
     "text": "الْأَعْمَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
-   },
-   "S|indefinite|NOM": {
-    "text": "أَعْمَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
-   },
-   "S|indefinite|ACC": {
-    "text": "أَعْمَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+    "why": "ends in alif maqṣūra: no case shows; the Quran has no definite accusative, and neither CAMeL nor the rule declines it"
    },
    "S|indefinite|GEN": {
     "text": "أَعْمَى",
-    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+    "why": "ends in alif maqṣūra: no case shows; the Quran's indefinite أَعْمَىٰ is nominative or accusative, and neither CAMeL nor the rule declines it"
    },
    "D|definite|NOM": {
     "text": "الْأَعْمَيَانِ",

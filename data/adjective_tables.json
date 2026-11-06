@@ -605,19 +605,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الرُّحَمَاءُ",
+       "text": "الرُّحَمَاءُ",
        "source": "documented"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الرُّحَمَاءَ",
+       "text": "الرُّحَمَاءَ",
        "source": "documented"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الرُّحَمَاءِ",
+       "text": "الرُّحَمَاءِ",
        "source": "documented"
       },
       {
@@ -738,19 +738,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الرَّحِيمَاتُ",
+       "text": "الرَّحِيمَاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الرَّحِيمَاتِ",
+       "text": "الرَّحِيمَاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الرَّحِيمَاتِ",
+       "text": "الرَّحِيمَاتِ",
        "source": "rule"
       },
       {
@@ -2728,45 +2728,54 @@
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "أُخْرَى",
-       "source": "documented"
+       "text": "أُخْرَىٰ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "أُخْرَى",
-       "source": "documented"
+       "text": "أُخْرَىٰ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "أُخْرَى",
-       "source": "documented"
+       "text": "أُخْرَىٰ",
+       "source": "attested"
       }
      ]
     },
     {
      "row": "P",
      "number": "P",
-     "plural": null,
+     "plural": "أُخَرَ",
      "cells": [
       {
        "state": "definite",
        "case": "NOM",
        "text": null,
-       "source": "missing"
+       "source": "missing",
+       "problems": [
+        "not generated"
+       ]
       },
       {
        "state": "definite",
        "case": "ACC",
        "text": null,
-       "source": "missing"
+       "source": "missing",
+       "problems": [
+        "not generated"
+       ]
       },
       {
        "state": "definite",
        "case": "GEN",
        "text": null,
-       "source": "missing"
+       "source": "missing",
+       "problems": [
+        "not generated"
+       ]
       },
       {
        "state": "indefinite",
@@ -2784,7 +2793,7 @@
        "state": "indefinite",
        "case": "GEN",
        "text": "أُخَرَ",
-       "source": "documented"
+       "source": "attested"
       }
      ]
     }
@@ -2981,19 +2990,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "السَّيِّئَاتُ",
+       "text": "السَّيِّئَاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "السَّيِّئَاتِ",
+       "text": "السَّيِّئَاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "السَّيِّئَاتِ",
+       "text": "السَّيِّئَاتِ",
        "source": "rule"
       },
       {
@@ -3116,19 +3125,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الشِّدَادُ",
+       "text": "الشِّدَادُ",
        "source": "documented"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الشِّدَادَ",
+       "text": "الشِّدَادَ",
        "source": "documented"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الشِّدَادِ",
+       "text": "الشِّدَادِ",
        "source": "documented"
       },
       {
@@ -3249,19 +3258,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الشَّدِيدَاتُ",
+       "text": "الشَّدِيدَاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الشَّدِيدَاتِ",
+       "text": "الشَّدِيدَاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الشَّدِيدَاتِ",
+       "text": "الشَّدِيدَاتِ",
        "source": "rule"
       },
       {
@@ -6590,37 +6599,37 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الْحَيََّاتُ",
+       "text": "الْحَيَّاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الْحَيََّاتِ",
+       "text": "الْحَيَّاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الْحَيََّاتِ",
+       "text": "الْحَيَّاتِ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "حَيََّاتٌ",
+       "text": "حَيَّاتٌ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "حَيََّاتٍ",
+       "text": "حَيَّاتٍ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "حَيََّاتٍ",
+       "text": "حَيَّاتٍ",
        "source": "rule"
       }
      ]
@@ -6743,14 +6752,14 @@
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "أَغْنِيَاءُ",
-       "source": "documented"
+       "text": "أَغْنِيَآءُ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "أَغْنِيَاءَ",
-       "source": "documented"
+       "text": "أَغْنِيَآءَ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
@@ -6858,37 +6867,37 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الْغَنِيََّاتُ",
+       "text": "الْغَنِيَّاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الْغَنِيََّاتِ",
+       "text": "الْغَنِيَّاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الْغَنِيََّاتِ",
+       "text": "الْغَنِيَّاتِ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "غَنِيََّاتٌ",
+       "text": "غَنِيَّاتٌ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "غَنِيََّاتٍ",
+       "text": "غَنِيَّاتٍ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "غَنِيََّاتٍ",
+       "text": "غَنِيَّاتٍ",
        "source": "rule"
       }
      ]
@@ -7193,14 +7202,14 @@
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "أَعْمَى",
-       "source": "documented"
+       "text": "أَعْمَىٰٓ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "أَعْمَى",
-       "source": "documented"
+       "text": "أَعْمَىٰ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
@@ -9303,7 +9312,7 @@
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الضّالِّينَ",
+       "text": "الضّالِّينَ",
        "source": "rule"
       },
       {
@@ -9327,7 +9336,7 @@
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "ضالِّينَ",
+       "text": "ضالِّينَ",
        "source": "rule"
       }
      ]
@@ -9430,37 +9439,37 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الضّالََّاتُ",
+       "text": "الضّالَّاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الضّالََّاتِ",
+       "text": "الضّالَّاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الضّالََّاتِ",
+       "text": "الضّالَّاتِ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "ضالََّاتٌ",
+       "text": "ضالَّاتٌ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "ضالََّاتٍ",
+       "text": "ضالَّاتٍ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "ضالََّاتٍ",
+       "text": "ضالَّاتٍ",
        "source": "rule"
       }
      ]
@@ -10909,37 +10918,37 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الْقَوِيََّاتُ",
+       "text": "الْقَوِيَّاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الْقَوِيََّاتِ",
+       "text": "الْقَوِيَّاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الْقَوِيََّاتِ",
+       "text": "الْقَوِيَّاتِ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "قَوِيََّاتٌ",
+       "text": "قَوِيَّاتٌ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "قَوِيََّاتٍ",
+       "text": "قَوِيَّاتٍ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "قَوِيََّاتٍ",
+       "text": "قَوِيَّاتٍ",
        "source": "rule"
       }
      ]
@@ -11402,37 +11411,37 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الْعَرَبِيََّاتُ",
+       "text": "الْعَرَبِيَّاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الْعَرَبِيََّاتِ",
+       "text": "الْعَرَبِيَّاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الْعَرَبِيََّاتِ",
+       "text": "الْعَرَبِيَّاتِ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "عَرَبِيََّاتٌ",
+       "text": "عَرَبِيَّاتٌ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "عَرَبِيََّاتٍ",
+       "text": "عَرَبِيَّاتٍ",
        "source": "rule"
       },
       {
        "state": "indefinite",
        "case": "GEN",
-       "text": "عَرَبِيََّاتٍ",
+       "text": "عَرَبِيَّاتٍ",
        "source": "rule"
       }
      ]
@@ -11627,19 +11636,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "السَّرِيعَاتُ",
+       "text": "السَّرِيعَاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "السَّرِيعَاتِ",
+       "text": "السَّرِيعَاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "السَّرِيعَاتِ",
+       "text": "السَّرِيعَاتِ",
        "source": "rule"
       },
       {
@@ -11842,14 +11851,14 @@
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "بَيْضَاءُ",
-       "source": "rule"
+       "text": "بَيْضَآءُ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
        "case": "ACC",
-       "text": "بَيْضَاءَ",
-       "source": "rule"
+       "text": "بَيْضَآءَ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
@@ -12202,8 +12211,8 @@
       {
        "state": "indefinite",
        "case": "NOM",
-       "text": "ضُعَفَاءُ",
-       "source": "documented"
+       "text": "ضُعَفَآءُ",
+       "source": "attested"
       },
       {
        "state": "indefinite",
@@ -12375,19 +12384,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الضَّعِيفَاتُ",
+       "text": "الضَّعِيفَاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الضَّعِيفَاتِ",
+       "text": "الضَّعِيفَاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الضَّعِيفَاتِ",
+       "text": "الضَّعِيفَاتِ",
        "source": "rule"
       },
       {
@@ -12510,19 +12519,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الصِّغَارُ",
+       "text": "الصِّغَارُ",
        "source": "documented"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الصِّغَارَ",
+       "text": "الصِّغَارَ",
        "source": "documented"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الصِّغَارِ",
+       "text": "الصِّغَارِ",
        "source": "documented"
       },
       {
@@ -12643,19 +12652,19 @@
       {
        "state": "definite",
        "case": "NOM",
-       "text": "الصَّغِيرَاتُ",
+       "text": "الصَّغِيرَاتُ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "ACC",
-       "text": "الصَّغِيرَاتِ",
+       "text": "الصَّغِيرَاتِ",
        "source": "rule"
       },
       {
        "state": "definite",
        "case": "GEN",
-       "text": "الصَّغِيرَاتِ",
+       "text": "الصَّغِيرَاتِ",
        "source": "rule"
       },
       {

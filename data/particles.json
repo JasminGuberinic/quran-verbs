@@ -11,14 +11,14 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
    "Uses shown: CONJ, REM, CIRC, P (oath), SUP (after the question hamza) and COM (accompaniment).",
    "SUP: 51 of the 59 SUP wāws stand after the question hamza, 7 before لَٰكِنْ; the use says 'most often'.",
-   "COM: the corpus's three COM wāws (3:142, 10:71, 5:36); 5:36 is not cited. The Basran/Kufan view on the subjunctive is the one al-Inṣāf records.",
-   "The corpus tags some oath wāws at the head of a surah as CONJ (52:1, 51:1); examples are taken from P only."
+   "COM: the corpus's three COM wāws (3:142, 10:71, 5:36); 5:36 is not cited. Ibn Hišām says the accompaniment wāw before a noun 'did not come in the Quran with certainty' and gives 10:71 both readings, as the use says.",
+   "The corpus tags some oath wāws at the head of a surah as CONJ (52:1, 51:1); examples are taken from P only.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section الواو المفردة: maṭlaq al-jamʿ (CONFIRMED), wāw al-istiʾnāf, wāw al-ḥāl, the oath wāw, the wāw of accompaniment and the Kufans' wāw aṣ-ṣarf (re-attributed: no Basran named); Sībawayh with the majority on أَوَ (الهمزة)."
   ],
   "uses": [
    {
@@ -123,8 +123,8 @@
     "tags": ["SUP"],
     "title": {"bs": "أَوَ: iza hemze pitanja", "en": "أَوَ: after the question hamza"},
     "explanation": {
-     "bs": "Korpus ovako (SUP) bilježi وَ koja najčešće stoji iza hemze pitanja: أَوَلَمْ، أَوَلَوْ. Prema većini gramatičara, to je veznik rečenice koja slijedi, a hemza je stavljena ispred njega jer pitanje ide na početak (vidi أَ).",
-     "en": "The corpus files so (SUP) a وَ that most often stands after the question hamza: أَوَلَمْ، أَوَلَوْ. According to most grammarians it is the conjunction of the sentence that follows, and the hamza is put before it because a question goes first (see أَ)."
+     "bs": "Korpus ovako (SUP) bilježi وَ koja najčešće stoji iza hemze pitanja: أَوَلَمْ، أَوَلَوْ. Prema Sībawayhu i većini gramatičara, to je veznik rečenice koja slijedi, a hemza je stavljena ispred njega jer pitanje ide na početak (vidi أَ).",
+     "en": "The corpus files so (SUP) a وَ that most often stands after the question hamza: أَوَلَمْ، أَوَلَوْ. According to Sībawayh and most grammarians it is the conjunction of the sentence that follows, and the hamza is put before it because a question goes first (see أَ)."
     },
     "ayat": [
      {
@@ -166,8 +166,8 @@
     "tags": ["COM"],
     "title": {"bs": "Uz glagol: subjunktiv", "en": "With a verb: the subjunctive"},
     "explanation": {
-     "bs": "Kad ova وَ veže glagol uz prethodni u smislu „a da ujedno…“, glagol je u subjunktivu. Prema basrijskim gramatičarima subjunktiv daje podrazumijevano أَنْ; prema kufskim, „skretanje“ (aṣ-ṣarf) od povezivanja.",
-     "en": "When this وَ ties a verb to the one before in the sense “while at the same time…”, the verb is subjunctive. According to the Basran grammarians an understood أَنْ makes it so; according to the Kufans, the “turning away” (aṣ-ṣarf) from joining."
+     "bs": "Kad ova وَ veže glagol uz prethodni u smislu „a da ujedno…“, glagol je u subjunktivu. Kufski gramatičari je zovu „vav skretanja“ (wāw aṣ-ṣarf) i kažu da subjunktiv daje ona sama; Ibn Hišām to odbacuje: to je veznik koji glagol (s podrazumijevanim أَنْ) veže uz glagolsku imenicu koja se podrazumijeva prije.",
+     "en": "When this وَ ties a verb to the one before in the sense “while at the same time…”, the verb is subjunctive. The Kufans call it the wāw of “turning away” (wāw aṣ-ṣarf) and say it makes the verb subjunctive itself; Ibn Hišām rejects this: it is the conjunction, joining the verb (with an understood أَنْ) to a verbal noun understood before it."
     },
     "ayat": [
      {
@@ -196,7 +196,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section مِنْ (15 meanings): ibtidāʾ al-ġāya, tabʿīḍ, bayān al-jins and the additional مِنْ after a negation (at-tanṣīṣ ʿalā al-ʿumūm) — all CONFIRMED."
+  ],
   "uses": [
    {
     "key": "from",
@@ -294,7 +296,8 @@
   "notes": [
    "Uses shown: CONJ, REM, RSLT, CAUS and SUP (after the question hamza).",
    "SUP: 130 of the 155 SUP fāʾs stand after the question hamza; the rest are scattered; the use says 'most often'.",
-   "Review: 80:4 فَتَنفَعَهُ is Ḥafṣ's reading (others: indicative) — said in the ayah's note."
+   "Review: 80:4 فَتَنفَعَهُ is Ḥafṣ's reading (others: indicative) — said in the ayah's note.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section الفاء المفردة: tartīb + taʿqīb (CONFIRMED), the fāʾ binding an answer, the subjunctive by an implied أَنْ against some Kufans (re-attributed); Muġnī does not grant a separate resumptive fāʾ (its tanbīh: 'it is said… the truth is it joins the sentence') — REM kept as the corpus's label, unattributed."
   ],
   "uses": [
    {
@@ -374,8 +377,8 @@
     "tags": ["CAUS"],
     "title": {"bs": "„pa da“: posljedica, glagol u subjunktivu", "en": "“so that”: consequence, the verb subjunctive"},
     "explanation": {
-     "bs": "Iza naredbe, zabrane, pitanja, negacije ili nade (لَعَلَّ) فَ kaže šta bi uslijedilo, a glagol iza nje je u subjunktivu (fāʾ as-sababiyya). Prema basranskim gramatičarima, subjunktiv čini skriveno أَنْ.",
-     "en": "After a command, a prohibition, a question, a negation or a hope (لَعَلَّ), فَ says what would follow, and the verb after it is subjunctive (fāʾ as-sababiyya). According to the Basran grammarians, an implied أَنْ makes it so."
+     "bs": "Iza naredbe, zabrane, pitanja, negacije ili nade (لَعَلَّ) فَ kaže šta bi uslijedilo, a glagol iza nje je u subjunktivu (fāʾ as-sababiyya). Prema Ibn Hišāmu, subjunktiv čini skriveno أَنْ, a ne sama فَ, kako su tvrdili neki kufski gramatičari.",
+     "en": "After a command, a prohibition, a question, a negation or a hope (لَعَلَّ), فَ says what would follow, and the verb after it is subjunctive (fāʾ as-sababiyya). According to Ibn Hišām an implied أَنْ makes it so, not فَ itself as some Kufan grammarians held."
     },
     "ayat": [
      {
@@ -401,8 +404,8 @@
     "tags": ["SUP"],
     "title": {"bs": "أَفَ: iza hemze pitanja", "en": "أَفَ: after the question hamza"},
     "explanation": {
-     "bs": "Korpus ovako (SUP) bilježi فَ koja najčešće stoji iza hemze pitanja: أَفَلَا تَعْقِلُونَ „pa zar ne shvatate?“. Kao i kod أَوَ, prema većini gramatičara veznik pripada rečenici iza, a hemza stoji ispred jer pitanje ide na početak.",
-     "en": "The corpus files so (SUP) a فَ that most often stands after the question hamza: أَفَلَا تَعْقِلُونَ “will you not then reason?”. As with أَوَ, according to most grammarians the conjunction belongs to the sentence after it, and the hamza stands first because a question goes first."
+     "bs": "Korpus ovako (SUP) bilježi فَ koja najčešće stoji iza hemze pitanja: أَفَلَا تَعْقِلُونَ „pa zar ne shvatate?“. Kao i kod أَوَ, prema Sībawayhu i većini gramatičara veznik pripada rečenici iza, a hemza stoji ispred jer pitanje ide na početak.",
+     "en": "The corpus files so (SUP) a فَ that most often stands after the question hamza: أَفَلَا تَعْقِلُونَ “will you not then reason?”. As with أَوَ, according to Sībawayh and most grammarians the conjunction belongs to the sentence after it, and the hamza stands first because a question goes first."
     },
     "ayat": [
      {
@@ -433,7 +436,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: the corpus's P, PRP and IMPV lām. Its EMPH lām (لَـ of emphasis, 1001) has its own page (la-2) and its DIST lām (in ذَٰلِكَ) belongs to the demonstrative; both are left out."
+   "Counted: the corpus's P, PRP and IMPV lām. Its EMPH lām (لَـ of emphasis, 1001) has its own page (la-2) and its DIST lām (in ذَٰلِكَ) belongs to the demonstrative; both are left out.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section اللام المفردة: the lām of the genitive (istiḥqāq, iḫtiṣāṣ, milk), of purpose (implied أَنْ 'with the majority', against most Kufans — re-attributed) and of command (lām aṭ-ṭalab) — CONFIRMED."
   ],
   "uses": [
    {
@@ -469,8 +473,8 @@
     "tags": ["PRP"],
     "title": {"bs": "„da bi“: namjera", "en": "“so that”: purpose"},
     "explanation": {
-     "bs": "Ispred glagola kaže svrhu (lām at-taʿlīl ili lām kay); glagol je u subjunktivu. Prema basranskim gramatičarima, subjunktiv čini skriveno أَنْ iza nje.",
-     "en": "Before a verb it gives the purpose (lām at-taʿlīl, or lām kay); the verb is subjunctive. According to the Basran grammarians, an implied أَنْ after it makes it so."
+     "bs": "Ispred glagola kaže svrhu (lām at-taʿlīl ili lām kay); glagol je u subjunktivu. Prema većini gramatičara (al-jumhūr), subjunktiv čini skriveno أَنْ iza nje; većina kufskih kaže da ga čini sam lām.",
+     "en": "Before a verb it gives the purpose (lām at-taʿlīl, or lām kay); the verb is subjunctive. According to most grammarians (al-jumhūr), an implied أَنْ after it makes it so; most Kufans say the lām itself does."
     },
     "ayat": [
      {
@@ -531,7 +535,8 @@
   ],
   "notes": [
    "Counted: NEG (with its كَان family), REL, INTG, PREV, SUB, COND and SUP; the two SUP uses share the tag.",
-   "The corpus tags إِنَّمَا تُوعَدُونَ as PREV in 51:5 but REL in 77:7; neither is cited."
+   "The corpus tags إِنَّمَا تُوعَدُونَ as PREV in 51:5 but REL in 77:7; neither is cited.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section ما: 'two aspects, nominal and particle' (CONFIRMED); negating, kāffa, maṣdariyya, relative, interrogative, conditional; the non-kāffa mā after a preposition (فَبِمَا رَحْمَةٍ) and after a jussive (إِمَّا، أَيْنَمَا) — CONFIRMED."
   ],
   "uses": [
    {
@@ -739,7 +744,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Review: 1:1 بِسْمِ dropped as an example of the instrument (its bāʾ is read as istiʿāna, muṣāḥaba or mulābasa); Sībawayh's own term al-ilzāq named beside al-ilṣāq."
+   "Review: 1:1 بِسْمِ dropped as an example of the instrument (its bāʾ is read as istiʿāna, muṣāḥaba or mulābasa); Sībawayh's own term al-ilzāq named beside al-ilṣāq.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section الباء المفردة: ilṣāq ('therefore Sībawayh confined himself to it'), taʿdiya with 2:17 itself, istiʿāna, ẓarfiyya, the additional bāʾ in a negative predicate (ليس زيد بقائم، وما الله بغافل) — CONFIRMED. Sībawayh's own word al-ilzāq: CONFIRMED in al-Kitāb (OpenITI 0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1, 'وباء الجر إنما هي للإلزاق والاختلاط')."
   ],
   "uses": [
    {
@@ -837,7 +843,8 @@
    "NEG|FAM:كَان: the corpus tags 5:109 لَا عِلْمَ لَنَآ (an accusative, the لَا of the kind) under it; not cited. The non-governing reading of لَا خَوْفٌ is named beside the corpus's.",
    "Review: 2:254 بَيْعٌ is Ḥafṣ's reading; Ibn Kaṯīr and Abū ʿAmr read the fatḥa (لَا of the kind) — said in the ayah's note.",
    "The corpus files some prohibitions as NEG (31:13, 9:40: NEG with a jussive verb) and some لَا إِلَٰهَ as NEG (37:35), so the per-use counts are the corpus's tags, not a full count of each use; examples are taken only where the corpus tags the use as claimed.",
-   "Review: the none-at-all use claims no effect — for a simple noun the Basrans say it is fixed on the fatḥa in the place of an accusative, while the corpus tags ACC; the text says both."
+   "Review: the none-at-all use claims no effect — for a simple noun Muġnī says it is built on the fatḥa (its accusative ending; as-Sīrāfī and az-Zajjāj held it declined), while the corpus tags ACC; the text says both.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لا: the لَا of the kind (built on the fatḥa — re-attributed from 'the Basrans' to Muġnī's own statement), لَا like لَيْسَ, the negating and the prohibiting لَا — uses CONFIRMED. The 2:254 qirāʾa readers are not a Muġnī claim (not checked here)."
   ],
   "uses": [
    {
@@ -891,8 +898,8 @@
     "tags": ["NEG|FAM:إِنّ"],
     "title": {"bs": "„nema nikakvog“: negacija roda", "en": "“there is no … at all”: denying the kind"},
     "explanation": {
-     "bs": "Negira cijeli rod (lā an-nāfiya li-l-jins) i djeluje kao إِنَّ: imenica iza nje ima fethu bez nunacije (لَا رَيْبَ). Prema basranskim gramatičarima, jednostavna imenica tu je nepromjenljiva na fethi, na mjestu akuzativa; korpus je bilježi kao akuzativ i stavlja لَا u porodicu إِنَّ.",
-     "en": "It denies a whole kind (lā an-nāfiya li-l-jins) and works like إِنَّ: the noun after it takes a fatḥa without nunation (لَا رَيْبَ). According to the Basran grammarians a simple noun there is fixed on the fatḥa, in the place of an accusative; the corpus tags it accusative and puts لَا in the family of إِنَّ."
+     "bs": "Negira cijeli rod (lā an-nāfiya li-l-jins) i djeluje kao إِنَّ: imenica iza nje ima fethu bez nunacije (لَا رَيْبَ). Prema Ibn Hišāmu, jednostavna imenica tu je nepromjenljiva (mebnij) na fethi, završetku koji bi imala u akuzativu; korpus je bilježi kao akuzativ i stavlja لَا u porodicu إِنَّ.",
+     "en": "It denies a whole kind (lā an-nāfiya li-l-jins) and works like إِنَّ: the noun after it takes a fatḥa without nunation (لَا رَيْبَ). According to Ibn Hišām a simple noun there is fixed (built) on the fatḥa, the ending it would have as an accusative; the corpus tags it accusative and puts لَا in the family of إِنَّ."
     },
     "ayat": [
      {
@@ -954,7 +961,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section في: ẓarfiyya of place and time and taʿlīl with 24:14 itself (لَمَسَّكُمْ فِيمَا أَفَضْتُمْ) — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "place",
@@ -1017,7 +1026,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إنّ المكسورة المشددة: the particle of emphasis that puts its noun in the accusative — CONFIRMED; the sentence quoted after 'say' is Muġnī's al-jumla al-maḥkiyya bi-l-qawl (Bāb 2), unattributed."
+  ],
   "uses": [
    {
     "key": "indeed",
@@ -1082,7 +1093,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section على: al-istiʿlāʾ, literal or figurative (ولهم عليّ ذنب) — CONFIRMED; duty and reliance are shown as figurative istiʿlāʾ, unattributed."
+  ],
   "uses": [
    {
     "key": "on",
@@ -1146,13 +1159,13 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
    "Counted: the corpus's EMPH lām (1001). Its uses share one tag, so the page cannot count them apart; examples are taken where the context shows the use.",
    "The corpus also files the ـنَّ of emphasis on verbs as its own EMPH particle (lemma ن, 243); it is named here, not given a page.",
-   "The corpus files إِنْ before لَـ as CERT in 26:97/26:186 but as COND in 37:167 and 17:73; only CERT ayat are cited for the lightened إِنْ."
+   "The corpus files إِنْ before لَـ as CERT in 26:97/26:186 but as COND in 37:167 and 17:73; only CERT ayat are cited for the lightened إِنْ.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section اللام المفردة, 'the non-governing lāms': lām al-ibtidāʾ, the muzaḥlaqa in the predicate of إِنَّ, the lām answering لَوْ / لَوْلَا / an oath — CONFIRMED; the lām after the lightened إِنْ re-attributed (Sībawayh and most / al-Fārisī and Ibn Ǧinnī / the Kufans)."
   ],
   "uses": [
    {
@@ -1272,8 +1285,8 @@
     "tags": ["EMPH"],
     "title": {"bs": "Iza olakšanog إِنْ", "en": "After the lightened إِنْ"},
     "explanation": {
-     "bs": "Iza إِنْ olakšanog od إِنَّ dolazi لَـ. Basrijski gramatičari kažu da ovaj lām razlikuje potvrdno إِنْ od negacije (al-lām al-fāriqa); kufski kažu da je إِنْ tu negacija, a لَـ znači إِلَّا. Vidi إِنْ.",
-     "en": "After إِنْ lightened from إِنَّ comes لَـ. The Basran grammarians say this lām tells the affirming إِنْ apart from the negating one (al-lām al-fāriqa); the Kufans say إِنْ is a negation there and لَـ means إِلَّا. See إِنْ."
+     "bs": "Iza إِنْ olakšanog od إِنَّ dolazi لَـ. Prema Sībawayhu i većini gramatičara to je lām naglaska koji ujedno razlikuje potvrdno إِنْ od negacije; al-Fārisī, Ibn Ǧinnī i drugi smatraju ga posebnim lāmom razlikovanja (al-lām al-fāriqa); kufski kažu da je إِنْ tu negacija, a لَـ znači إِلَّا. Vidi إِنْ.",
+     "en": "After إِنْ lightened from إِنَّ comes لَـ. According to Sībawayh and most grammarians it is the lām of emphasis, which also tells the affirming إِنْ apart from the negating one; al-Fārisī, Ibn Ǧinnī and others take it as a separate lām of distinction (al-lām al-fāriqa); the Kufans say إِنْ is a negation there and لَـ means إِلَّا. See إِنْ."
     },
     "ayat": [
      {
@@ -1309,7 +1322,8 @@
   ],
   "notes": [
    "Counted: REL (650), COND (184) and INTG (37).",
-   "The corpus tags 20:49 فَمَن رَّبُّكُمَا as REL though it is a question; it is not cited."
+   "The corpus tags 20:49 فَمَن رَّبُّكُمَا as REL though it is a question; it is not cited.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section مَنْ (four aspects): conditional, interrogative, relative — CONFIRMED."
   ],
   "uses": [
    {
@@ -1401,7 +1415,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Review: the maʿa reading of 4:2 is Ibn Hišām's; the Basran taḍmīn reading is named beside it."],
+  "notes": [
+   "Muġnī (إلى, meaning 2) gives maʿa to the Kufans and some Basrans with 3:52, not 4:2; it explains 4:2 by taḍmīn (after az-Zamaḫšarī, Bāb 8) and states the Basrans' rule that prepositions do not stand for one another (الباء, tanbīh). 3:52 added; 4:2 kept as the taḍmīn reading.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إلى (eight meanings): intihāʾ al-ġāya of place and time — CONFIRMED; maʿa REWORDED (see the note above)."
+  ],
   "uses": [
    {
     "key": "to-place",
@@ -1441,15 +1458,22 @@
     "tags": ["P"],
     "title": {"bs": "„uz, zajedno s“", "en": "“together with”"},
     "explanation": {
-     "bs": "Ibn Hišām navodi i značenje „zajedno s“ (maʿa) uz ovaj ajet: „ne jedite njihove imetke uz svoje“; basranski gramatičari to tumače kao skriveno značenje pridruživanja (at-taḍmīn).",
-     "en": "Ibn Hišām also lists the meaning “together with” (maʿa) for this ayah: “do not consume their wealth along with yours”; the Basran grammarians read it as an implied sense of adding (at-taḍmīn)."
+     "bs": "Kad se jedno pridružuje drugom, إِلَى može značiti „zajedno s“ (al-maʿiyya): Ibn Hišām navodi da tako kažu kufski i dio basranskih gramatičara, uz 3:52. Basranska škola smatra da jedan prijedlog ne stoji umjesto drugog; u 4:2 Ibn Hišām, za az-Zamaḫšarījem, glagol „jesti“ čita sa skrivenim značenjem „pridružiti“ (at-taḍmīn).",
+     "en": "When one thing is added to another, إِلَى can mean “together with” (al-maʿiyya): Ibn Hišām reports this from the Kufans and some Basrans, with 3:52. The Basran school holds that one preposition does not stand for another; in 4:2 Ibn Hišām, after az-Zamaḫšarī, reads “consume” with an implied sense of “add” (at-taḍmīn)."
     },
     "ayat": [
      {
+      "ref": "3:52:9",
+      "why": {
+       "bs": "„Ko su moji pomagači (zajedno) s Allahom?“ – značenje maʿa koje Ibn Hišām navodi od kufskih i dijela basranskih; prevodi se i „na Allahovom putu“.",
+       "en": "“Who are my helpers (together) with Allah?” – the maʿa sense Ibn Hišām reports from the Kufans and some Basrans; it is also rendered “for (the cause of) Allah”."
+      }
+     },
+     {
       "ref": "4:2:11",
       "why": {
-       "bs": "„…i ne jedite imetke njihove (pridružujući ih) vašim imecima“.",
-       "en": "“…and do not consume their properties into your own”."
+       "bs": "„…i ne jedite imetke njihove (pridružujući ih) vašim imecima“ – „jesti“ sa skrivenim značenjem „pridružiti“ (at-taḍmīn).",
+       "en": "“…and do not consume their properties into your own” – “consume” with the implied sense of “add” (at-taḍmīn)."
       }
      }
     ],
@@ -1468,12 +1492,12 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
    "Counted: COND, NEG and CERT (the lightened إِنَّ). The corpus files the same lightened إِنْ as COND in 37:167 and 17:73; only CERT ayat are cited.",
-   "The Basran/Kufan disagreement is the one al-Inṣāf records. 20:63 is a qirāʾa question, named without listing the readers."
+   "The lām after the lightened إِنْ is given as Muġnī states it (اللام, fasl): Sībawayh and most — lām al-ibtidāʾ that also tells it apart; al-Fārisī and Ibn Ǧinnī — a separate lām; the Kufans — إِنْ negates, لَـ = إِلَّا. 20:63 is a qirāʾa question, named without listing the readers.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إن المكسورة الخفيفة (four aspects): conditional, negating, lightened from إِنَّ — CONFIRMED; the lām re-attributed (see the note above)."
   ],
   "uses": [
    {
@@ -1522,8 +1546,8 @@
     "tags": ["CERT"],
     "title": {"bs": "Olakšano إِنَّ: „zaista“", "en": "The lightened إِنَّ: “indeed”"},
     "explanation": {
-     "bs": "إِنْ olakšano od إِنَّ (al-muḫaffafa) potvrđuje, a predikat mu dobiva لَـ. Basrijski gramatičari kažu da je to إِنَّ olakšano i da لَـ razlikuje potvrdu od negacije; kufski kažu da je إِنْ tu negacija, a لَـ znači إِلَّا („nismo bili nego u zabludi“). Smisao je u oba čitanja isti.",
-     "en": "إِنْ lightened from إِنَّ (al-muḫaffafa) affirms, and its predicate takes لَـ. The Basran grammarians say it is the lightened إِنَّ and لَـ tells affirming from negating; the Kufans say إِنْ is a negation there and لَـ means إِلَّا (“we were nothing but in error”). The sense is the same either way."
+     "bs": "إِنْ olakšano od إِنَّ (al-muḫaffafa) potvrđuje, a predikat mu dobiva لَـ. Prema Sībawayhu i većini gramatičara to je إِنَّ olakšano, a لَـ je lām naglaska koji ujedno razlikuje potvrdu od negacije; kufski kažu da je إِنْ tu negacija, a لَـ znači إِلَّا („nismo bili nego u zabludi“). Smisao je u oba čitanja isti.",
+     "en": "إِنْ lightened from إِنَّ (al-muḫaffafa) affirms, and its predicate takes لَـ. According to Sībawayh and most grammarians it is the lightened إِنَّ, and لَـ is the lām of emphasis that also tells affirming from negating; the Kufans say إِنْ is a negation there and لَـ means إِلَّا (“we were nothing but in error”). The sense is the same either way."
     },
     "ayat": [
      {
@@ -1554,7 +1578,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إلا (four aspects): exception (and the exception after a negation) — CONFIRMED; no attributed claim."
+  ],
   "uses": [
    {
     "key": "except",
@@ -1618,7 +1644,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section أن المفتوحة الخفيفة: 'a verbal-noun particle that puts the present in the subjunctive' — CONFIRMED; the mufassira REWORDED: Muġnī lists its conditions for 'those who affirm it' and says of the Kufans' denial 'وهو عندي متجه'."
+  ],
   "uses": [
    {
     "key": "that",
@@ -1647,8 +1675,8 @@
     "tags": ["INT"],
     "title": {"bs": "„to jest“: sadržaj objave", "en": "“namely”: the content of a message"},
     "explanation": {
-     "bs": "Iza riječi koja znači govor, ali nije „reći“ (objaviti, pozvati), أَنْ kaže sadržaj: „…da“. Najčešće se objašnjava kao tumačeća (al-mufassira, Ibn Hišām); ne mijenja glagol.",
-     "en": "After a word that means speech but is not “say” (reveal, call), أَنْ gives the content: “…that”. It is most commonly explained as the explaining one (al-mufassira, Ibn Hišām); it does not change the verb."
+     "bs": "Iza riječi koja znači govor, ali nije „reći“ (objaviti, pozvati), أَنْ kaže sadržaj: „…da“. Gramatičari koji je priznaju zovu je tumačećom (al-mufassira) i postavljaju joj uvjete; kufski je ne priznaju, a Ibn Hišām njihovo mišljenje smatra opravdanim. Ne mijenja glagol.",
+     "en": "After a word that means speech but is not “say” (reveal, call), أَنْ gives the content: “…that”. Grammarians who accept it call it the explaining one (al-mufassira) and set conditions for it; the Kufans deny it, and Ibn Hišām finds their view sound. It does not change the verb."
     },
     "ayat": [
      {"ref": "37:104", "why": {"bs": "„Mi ga zovnusmo: ‘O Ibrahime…’“", "en": "“We called to him, ‘O Abraham…’”"}},
@@ -1675,7 +1703,8 @@
   ],
   "notes": [
    "Counted: INTG (507) and EQ (6). The two INTG uses share one tag, so the page cannot count them apart.",
-   "Review: the view that the conjunction after the hamza belongs to the following sentence is given as the majority's (al-jumhūr), not Sībawayh's by name; the left-out sentence is az-Zamaḫšarī's — both as Ibn Hišām reports them."
+   "The view that the conjunction after the hamza belongs to the following sentence is 'the school of Sībawayh and the majority' in Muġnī (الهمزة, 4th rule) — the blind reviewer's earlier removal of Sībawayh's name is reversed; the left-out sentence is az-Zamaḫšarī's.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section الألف المفردة (the hamza): taṣawwur with أم, before a negation and before وَ/فَ/ثُمَّ (CONFIRMED); taswiya, inkār ibṭālī/tawbīḫī, taqrīr (CONFIRMED); the hamza before the conjunction is 'the school of Sībawayh and the majority', against az-Zamaḫšarī (Sībawayh's name RESTORED)."
   ],
   "uses": [
    {
@@ -1710,8 +1739,8 @@
     "tags": ["INTG"],
     "title": {"bs": "Pitanje koje potvrđuje ili kori", "en": "A question that affirms or rebukes"},
     "explanation": {
-     "bs": "Pitanje često ne traži obavijest (a u Allahovom govoru nikad ne traži ono što On ne zna): ili navodi slušaoca da potvrdi (taqrīr – أَلَمْ „zar nije?“), ili kori i poriče (inkār, tawbīḫ). Hemza stoji ispred وَ i فَ: أَوَلَمْ، أَفَلَا. Prema većini gramatičara (al-jumhūr), veznik pripada rečenici iza, a hemza je samo stavljena ispred jer pitanje ide na početak; az-Zamaḫšarī je smatrao da je između njih izostavljena rečenica (Ibn Hišām navodi oba mišljenja).",
-     "en": "A question often does not ask for information (and in Allah's speech it never seeks what He does not know): it leads the listener to admit (taqrīr – أَلَمْ “have We not?”), or it rebukes and denies (inkār, tawbīḫ). The hamza stands before وَ and فَ: أَوَلَمْ، أَفَلَا. According to most grammarians (al-jumhūr) the conjunction belongs to the sentence after it, and the hamza is put before it because a question goes first; az-Zamaḫšarī held that a sentence is left out between them (Ibn Hišām gives both views)."
+     "bs": "Pitanje često ne traži obavijest (a u Allahovom govoru nikad ne traži ono što On ne zna): ili navodi slušaoca da potvrdi (taqrīr – أَلَمْ „zar nije?“), ili kori i poriče (inkār, tawbīḫ). Hemza stoji ispred وَ i فَ: أَوَلَمْ، أَفَلَا. Prema Sībawayhu i većini gramatičara (al-jumhūr), veznik pripada rečenici iza, a hemza je samo stavljena ispred jer pitanje ide na početak; az-Zamaḫšarī je smatrao da je između njih izostavljena rečenica (Ibn Hišām navodi oba mišljenja).",
+     "en": "A question often does not ask for information (and in Allah's speech it never seeks what He does not know): it leads the listener to admit (taqrīr – أَلَمْ “have We not?”), or it rebukes and denies (inkār, tawbīḫ). The hamza stands before وَ and فَ: أَوَلَمْ، أَفَلَا. According to Sībawayh and most grammarians (al-jumhūr) the conjunction belongs to the sentence after it, and the hamza is put before it because a question goes first; az-Zamaḫšarī held that a sentence is left out between them (Ibn Hišām gives both views)."
     },
     "ayat": [
      {
@@ -1772,7 +1801,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Review: the Bosnian grammar keeps a Bosnian-only line on how عَنْ is rendered (od + genitiv, o + lokativ); the noun engine has no rendering for عَنْ, so the page shows no derived line."
+   "Review: the Bosnian grammar keeps a Bosnian-only line on how عَنْ is rendered (od + genitiv, o + lokativ); the noun engine has no rendering for عَنْ, so the page shows no derived line.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section عن: al-mujāwaza ('the Basrans mention no other') and 'after' with 84:19 itself — CONFIRMED."
   ],
   "uses": [
    {
@@ -1831,7 +1861,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إذا: the surprise iḏā (al-mufājaʾa) — CONFIRMED; the conditional time iḏā (its three fuṣūl) — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "when",
@@ -1884,7 +1916,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["The two uses share the corpus tag CERT, so the page cannot count them apart."],
+  "notes": [
+   "The two uses share the corpus tag CERT, so the page cannot count them apart.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section قد (five meanings): taḥqīq with the past; with قَدْ يَعْلَمُ Muġnī reports taqlīl, taḥqīq (az-Zamaḫšarī: 'to stress the knowledge') and prefers taḥqīq ('أظهر') — CONFIRMED, unattributed on the page."
+  ],
   "uses": [
    {
     "key": "indeed-past",
@@ -1942,7 +1977,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section أنّ المفتوحة المشددة: the particle of emphasis, a branch of إِنَّ — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "that",
@@ -1986,7 +2023,8 @@
   "notes": [
    "Counted: VOC (361). The corpus's case on the called noun is not consistent (يَٰفِرْعَوْنُ 7:104 is ACC, يَٰٓأَبَانَا 12:97 NOM), so only the annexed use claims an effect, checked on its ayat.",
    "The ḍamma of a called name is given as the grammarians' 'built on the ḍamma in the place of an accusative' and the corpus's NOM, without naming a school.",
-   "The corpus's VOC mīm (اللَّهُمَّ, 5) is not a word of its own and is left out."
+   "The corpus's VOC mīm (اللَّهُمَّ, 5) is not a word of its own and is left out.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section حرف الياء (يا): the commonest vocative particle, the only one for يَا أَيُّهَا — CONFIRMED; before a non-noun REWORDED to 'two views' (قيل… وقيل…)."
   ],
   "uses": [
    {
@@ -2065,8 +2103,8 @@
     "tags": ["VOC"],
     "title": {"bs": "يَا ispred لَيْتَ: „Kamo sreće…“", "en": "يَا before لَيْتَ: “Oh, I wish…”"},
     "explanation": {
-     "bs": "يَا stoji i ispred riječi koja nije imenica (يَٰلَيْتَنِى). Prema Ibn Hišāmu tu se ili podrazumijeva onaj koji se doziva, ili يَا samo skreće pažnju (tanbīh).",
-     "en": "يَا also stands before a word that is not a noun (يَٰلَيْتَنِى). According to Ibn Hišām either the one called is understood there, or يَا only draws attention (tanbīh)."
+     "bs": "يَا stoji i ispred riječi koja nije imenica (يَٰلَيْتَنِى). Ibn Hišām navodi dva mišljenja: ili se tu podrazumijeva onaj koji se doziva, ili يَا samo skreće pažnju (tanbīh).",
+     "en": "يَا also stands before a word that is not a noun (يَٰلَيْتَنِى). Ibn Hišām reports two views: either the one called is understood there, or يَا only draws attention (tanbīh)."
     },
     "ayat": [
      {
@@ -2093,7 +2131,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لم: 'a jussive particle negating the present and turning it to the past' — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "did-not",
@@ -2134,7 +2174,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section ثمّ: tašrīk, tartīb, muhla, and order that is not of time (5 answers on 39:6) — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "then",
@@ -2173,7 +2215,8 @@
   ],
   "notes": [
    "Counted: T (309), which includes the إِذْ inside يَوْمَئِذٍ and حِينَئِذٍ; the two uses share the tag.",
-   "The إِذْ of cause (43:39 إِذ ظَّلَمْتُمْ) is filed under the same T tag and is not shown as a use of its own."
+   "The إِذْ of cause (43:39 إِذ ظَّلَمْتُمْ) is filed under the same T tag and is not shown as a use of its own.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إذ: a noun of past time, and at the head of stories mostly the object of an understood 'remember' — CONFIRMED; the tanwīn al-ʿiwaḍ of يَوْمَئِذٍ is in the section التنوين — CONFIRMED."
   ],
   "uses": [
    {
@@ -2242,7 +2285,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Review: 105:5 keeps Korkut's „lišće izjedeno“ beside Sahih International's “straw”."],
+  "notes": [
+   "Review: 105:5 keeps Korkut's „lišće izjedeno“ beside Sahih International's “straw”.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section الكاف المفردة: tašbīh; the additional kāf of 42:11 'قال الأكثرون' — CONFIRMED (now 'most')."
+  ],
   "uses": [
    {
     "key": "like",
@@ -2265,8 +2311,8 @@
     "tags": ["P"],
     "title": {"bs": "Pojačanje: „ništa nije kao On“", "en": "Emphasis: “nothing is like Him”"},
     "explanation": {
-     "bs": "Ibn Hišām navodi da je u ovom ajetu kāf prema mnogima dodatna (zāʾida) i pojačava: „ništa nije kao On“; drugi je tumače drugačije.",
-     "en": "Ibn Hišām reports that in this ayah the kāf is, for many, additional (zāʾida) and emphatic: “there is nothing like Him”; others explain it differently."
+     "bs": "Ibn Hišām navodi da je u ovom ajetu kāf prema većini (al-akṯarūn) dodatna (zāʾida) i pojačava: „ništa nije kao On“; drugi je tumače drugačije.",
+     "en": "Ibn Hišām reports that in this ayah the kāf is, for most (al-akṯarūn), additional (zāʾida) and emphatic: “there is nothing like Him”; others explain it differently."
     },
     "ayat": [
      {
@@ -2284,17 +2330,17 @@
   "count": 280,
   "meaning": {"bs": "ili", "en": "or"},
   "grammar": {
-   "bs": "Veznik izbora: „ili“. Riječ iza njega dijeli padež ili način riječi s kojom je povezana. Prema Ibn Hišāmu značenja mu se razlikuju: u naredbi daje izbor, u tvrdnji izražava neizvjesnost, nejasnoću ili raspodjelu.",
-   "en": "A conjunction of choice: “or”. The word after it shares the case or mood of the word it is joined to. According to Ibn Hišām its meanings differ: in a command it gives a choice, in a statement it expresses doubt, vagueness or division."
+   "bs": "Veznik izbora: „ili“. Riječ iza njega dijeli padež ili način riječi s kojom je povezana. Kasniji gramatičari mu nabrajaju mnoga značenja (izbor, neizvjesnost, nejasnoća, raspodjela…); prema Ibn Hišāmu أَوْ znači „jedno od dvoga (ili više)“, može prijeći u značenje بَلْ ili وَ, a ostala značenja daje kontekst.",
+   "en": "A conjunction of choice: “or”. The word after it shares the case or mood of the word it is joined to. Later grammarians list many meanings (choice, doubt, vagueness, division…); according to Ibn Hišām أَوْ means “one of the two (or more)”, can come to mean بَلْ or وَ, and the other senses come from the context."
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
    "Counted: CONJ (280). The two uses share it.",
-   "37:147: the Kufan reading as بَلْ is given as Ibn Hišām reports it, with al-Farrāʾ named; the other side is not given a school."
+   "37:147 as Muġnī reports it (أو, meaning 6): al-Farrāʾ بَلْ, some Kufans وَ, the Basrans ibhām / taḫyīr / the viewer's doubt (Ibn Ǧinnī). The grammar line follows Ibn Hišām's own tanbīh (أو is for one of two things).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section أو: REWORDED to Ibn Hišām's tanbīh (one of two things; can mean بَلْ or وَ; the rest from context) and to the 37:147 views as listed."
   ],
   "uses": [
    {
@@ -2329,8 +2375,8 @@
     "tags": ["CONJ"],
     "title": {"bs": "„ili (čak)…“: 37:147", "en": "“or (even)…”: 37:147"},
     "explanation": {
-     "bs": "U „poslali smo ga stotini hiljada ili više“ gramatičari se razilaze: kufski, među njima al-Farrāʾ, čitaju أَوْ kao بَلْ („čak i više“); drugi zadržavaju „ili“, gledano očima onoga ko bi ih vidio. Ibn Hišām navodi ova mišljenja.",
-     "en": "In “We sent him to a hundred thousand or more” the grammarians differ: the Kufans, al-Farrāʾ among them, read أَوْ as بَلْ (“rather, more”); others keep “or”, as it would look to one who saw them. Ibn Hišām gives these views."
+     "bs": "U „poslali smo ga stotini hiljada ili više“ gramatičari se razilaze: al-Farrāʾ čita أَوْ kao بَلْ („čak i više“), neki kufski kao وَ; basranski zadržavaju „ili“ – nejasnoću, ili dvoumljenje onoga ko bi ih vidio. Ibn Hišām navodi ova mišljenja.",
+     "en": "In “We sent him to a hundred thousand or more” the grammarians differ: al-Farrāʾ reads أَوْ as بَلْ (“rather, more”), some Kufans as وَ; the Basrans keep “or” – vagueness, or the doubt of one who would see them. Ibn Hišām gives these views."
     },
     "ayat": [
      {
@@ -2359,7 +2405,8 @@
   ],
   "notes": [
    "Counted: COND (189) and SUB (12). The two COND uses share their tag.",
-   "Ibn Hišām's refinement of 'imtināʿ li-imtināʿ' is given in our words; the maṣdariyya view is attributed to al-Farrāʾ and Ibn Mālik as Ibn Hišām names them."
+   "Ibn Hišām's refinement of 'imtināʿ li-imtināʿ' is given in our words; the maṣdariyya view is attributed to al-Farrāʾ and Ibn Mālik as Ibn Hišām names them.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لو: the three views on imtināʿ; the third, 'the view of the muḥaqqiqūn' (only the condition is denied), followed by Ibn Hišām — CONFIRMED, slightly reworded; the maṣdariyya after wadda: 'established by al-Farrāʾ, Abū ʿAlī, Abū l-Baqāʾ, at-Tibrīzī and Ibn Mālik', others conditional — CONFIRMED."
   ],
   "uses": [
    {
@@ -2368,8 +2415,8 @@
     "tags": ["COND"],
     "title": {"bs": "„Da je…, bilo bi…“", "en": "“If it were…, it would…”"},
     "explanation": {
-     "bs": "Gramatičari je zovu riječju „nečega što se nije desilo jer se nije desilo drugo“; Ibn Hišām to preciznije kaže: لَوْ sama govori samo da se uvjet nije desio; ne kaže da se odgovor nije desio, jer on može postojati i iz drugog razloga.",
-     "en": "Grammarians call it the word “of a thing not happening because another did not happen”; Ibn Hišām puts it more precisely: لَوْ by itself says only that the condition did not happen; it does not say the answer did not happen, for that may hold by another cause."
+     "bs": "Gramatičari je zovu riječju „nečega što se nije desilo jer se nije desilo drugo“; Ibn Hišām, s pomnim gramatičarima (al-muḥaqqiqūn), kaže preciznije: لَوْ sama govori samo da se uvjet nije desio; ne kaže da se odgovor nije desio, jer on može postojati i iz drugog razloga.",
+     "en": "Grammarians call it the word “of a thing not happening because another did not happen”; Ibn Hišām, with the careful grammarians (al-muḥaqqiqūn), puts it more precisely: لَوْ by itself says only that the condition did not happen; it does not say the answer did not happen, for that may hold by another cause."
     },
     "ayat": [
      {
@@ -2451,7 +2498,8 @@
    "Counted: T (154), NEG (8), EXP (3).",
    "The corpus tags 62:3 لَمَّا يَلْحَقُوا۟ as followed by a subjunctive; it is not cited.",
    "86:4 is a qirāʾa question (لَمَّا / لَمَا); the readers are not named one by one.",
-   "Sībawayh's 'wujūd li-wujūd' and the adverb view of Ibn as-Sarrāj and al-Fārisī are given as Ibn Hišām reports them."
+   "Sībawayh's 'wujūd li-wujūd' and the adverb view of Ibn as-Sarrāj and al-Fārisī are given as Ibn Hišām reports them.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لمّا (three aspects): the jussive لَمَّا (lasting to now, expected) and the exceptive لَمَّا (86:4) — CONFIRMED; Ibn as-Sarrāj and al-Fārisī (with Ibn Ǧinnī) as an adverb 'when' — CONFIRMED. Muġnī says 'ḥarf wujūd li-wujūd' without naming Sībawayh; Sībawayh's gloss CONFIRMED in al-Kitāb (OpenITI 0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1, 'وأما لما فهي للأمر الذي قد وقع لوقوع غيره')."
   ],
   "uses": [
    {
@@ -2536,12 +2584,12 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
    "Counted: P (95) and INC (47). The two P uses share the tag.",
-   "The Basran/Kufan disagreement on the subjunctive after حَتَّى is the one al-Inṣāf records; 2:214 حَتَّىٰ يَقُولَ is read with an indicative by Nāfiʿ, so it is not cited."
+   "The subjunctive after حَتَّى is given as Muġnī argues it (by an implied أَنْ, 'not by itself as the Kufans say'); Muġnī does not name the Basrans here. 2:214 حَتَّىٰ يَقُولَ is read with an indicative by Nāfiʿ, so it is not cited.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section حتى: the genitive and the subjunctive (implied أَنْ, against the Kufans — re-attributed), the ibtidāʾiyya before a sentence and before إِذَا ('the majority') — CONFIRMED."
   ],
   "uses": [
    {
@@ -2577,8 +2625,8 @@
     "tags": ["P"],
     "title": {"bs": "„Dok ne…“ s glagolom", "en": "“Until…” with a verb"},
     "explanation": {
-     "bs": "Glagol u sadašnjem obliku iza nje je u subjunktivu. Prema basrijskim gramatičarima subjunktiv daje podrazumijevano أَنْ, a حَتَّى ostaje prijedlog; prema kufskim, sama حَتَّى daje subjunktiv.",
-     "en": "A present-tense verb after it is subjunctive. According to the Basran grammarians an understood أَنْ makes it subjunctive and حَتَّى stays a preposition; according to the Kufans حَتَّى itself makes it subjunctive."
+     "bs": "Glagol u sadašnjem obliku iza nje je u subjunktivu. Prema Ibn Hišāmu subjunktiv daje podrazumijevano أَنْ, a حَتَّى ostaje prijedlog; prema kufskim, sama حَتَّى daje subjunktiv.",
+     "en": "A present-tense verb after it is subjunctive. According to Ibn Hišām an understood أَنْ makes it subjunctive and حَتَّى stays a preposition; according to the Kufans حَتَّى itself makes it subjunctive."
     },
     "ayat": [
      {
@@ -2641,7 +2689,8 @@
   ],
   "notes": [
    "Counted: CONJ (137); the corpus does not tell the two kinds apart, so the page cannot count them apart.",
-   "Review: the munqaṭiʿa is given as بَلْ (mostly with the hamza) / بَلْ alone without naming schools — the reviewer could not vouch for a Basran-vs-al-Kisāʾī split."
+   "The munqaṭiʿa is given as Muġnī describes it (أم, 2nd aspect): always iḍrāb, sometimes bare, sometimes with a denying or real question — kinds, not two rival views.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section أم: the muttaṣila after the hamza of taswiya or of taʿyīn, the munqaṭiʿa (always iḍrāb) — CONFIRMED; the munqaṭiʿa REWORDED (see the note above)."
   ],
   "uses": [
    {
@@ -2673,8 +2722,8 @@
     "tags": ["CONJ"],
     "title": {"bs": "„Ili zar…?“: novo pitanje", "en": "“Or is it that…?”: a new question"},
     "explanation": {
-     "bs": "Bez hemze prije sebe أَمْ prekida prethodno i otvara novo pitanje, najčešće prijekorno. Gramatičari je razumiju kao بَلْ, najčešće s hemzom pitanja (بَلْ أَ…), a neki kao samo بَلْ; Ibn Hišām navodi oba mišljenja.",
-     "en": "With no hamza before it, أَمْ breaks off and opens a new question, mostly a reproachful one. Grammarians understand it as بَلْ, mostly with the question hamza (بَلْ أَ…), and some as بَلْ alone; Ibn Hišām gives both views."
+     "bs": "Bez hemze prije sebe أَمْ prekida prethodno i prelazi na novo (al-iḍrāb, kao بَلْ). Prema Ibn Hišāmu ponekad samo to, a ponekad uz to i pita, najčešće prijekorno (بَلْ أَ…).",
+     "en": "With no hamza before it, أَمْ breaks off and moves on (al-iḍrāb, like بَلْ). According to Ibn Hišām it sometimes does only that, and sometimes it also asks, mostly reproachfully (بَلْ أَ…)."
     },
     "ayat": [
      {
@@ -2706,7 +2755,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: ACC|FAM:إِنّ (129); the uses share the tag. The ta‘līl view is attributed to al-Aḫfaš and al-Kisāʾī as Ibn Hišām names them."
+   "Counted: ACC|FAM:إِنّ (129); the uses share the tag. The ta‘līl view is attributed to al-Aḫfaš and al-Kisāʾī as Ibn Hišām names them.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لعلّ: tawaqquʿ (hope and fear) and taʿlīl 'affirmed by a group, al-Aḫfaš and al-Kisāʾī among them', with 20:44; 'whoever denies it turns the hope to the addressees' — CONFIRMED."
   ],
   "uses": [
    {
@@ -2771,7 +2821,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: RET (122), INC (4) and CONJ (1): the corpus files the same turning-away بَلْ under three tags (3:169 INC, 85:21 CONJ); all are one use here."
+   "Counted: RET (122), INC (4) and CONJ (1): the corpus files the same turning-away بَلْ under three tags (3:169 INC, 85:21 CONJ); all are one use here.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section بل: ibṭāl and intiqāl after a sentence — CONFIRMED."
   ],
   "uses": [
    {
@@ -2823,7 +2874,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: FUT (119). Ibn Hišām's line against both schools is given as his (Muġnī, the entry on السين); the reviewer could not confirm it, it is kept as his own statement, not as the schools' own words."
+   "Counted: FUT (119). Ibn Hišām's line against both schools is given as his (Muġnī, the entry on السين); the reviewer could not confirm it, it is kept as his own statement, not as the schools' own words.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section السين المفردة: 'not cut short from سَوْفَ, against the Kufans; its future not narrower than سَوْفَ's, against the Basrans' — CONFIRMED word for word."
   ],
   "uses": [
    {
@@ -2865,7 +2917,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لن: 'لَنْ gives neither emphasis of the negation, against az-Zamaḫšarī in al-Kaššāf, nor permanence, against him in al-Unmūḏaj' — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "will-not",
@@ -2905,7 +2959,8 @@
   ],
   "notes": [
    "Counted: INTG (93); the three uses share it.",
-   "76:1: the قَدْ reading is attributed to Ibn ʿAbbās and al-Kisāʾī as Ibn Hišām lists them; the Bosnian keeps both readings in the gloss."
+   "76:1: the قَدْ reading is attributed to Ibn ʿAbbās and al-Kisāʾī as Ibn Hišām lists them; the Bosnian keeps both readings in the gloss.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section هل: the ten differences from the hamza (no taṣawwur, not before a negation; a question meaning a denial, هل جزاء الإحسان إلا الإحسان) — CONFIRMED; هَلْ = قَدْ in 76:1 'a group, Ibn ʿAbbās, al-Kisāʾī, al-Farrāʾ and al-Mubarrad among them' — CONFIRMED."
   ],
   "uses": [
    {
@@ -2979,10 +3034,13 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: COND (34) and EXH (41).", "The Basran/Kufan view of the noun after لَوْلَا is the one al-Inṣāf records."],
+  "notes": [
+   "Counted: COND (34) and EXH (41).",
+   "The noun after لَوْلَا is given as Muġnī states it (لولا, 1st aspect): a subject with its predicate left out, 'against those who claimed' a left-out verb or لَوْلَا itself; Muġnī names no school there.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لولا (four aspects): conditional (the noun after it a subject) and urging — CONFIRMED; the school attribution re-worded (see the note above)."
+  ],
   "uses": [
    {
     "key": "if-not",
@@ -2990,8 +3048,8 @@
     "tags": ["COND"],
     "title": {"bs": "„Da nije…“", "en": "“If not for…”"},
     "explanation": {
-     "bs": "Imenica iza je u nominativu. Prema basrijskim gramatičarima to je subjekat čiji je predikat izostavljen („da nije blagodati – postojeće“); prema kufskim, nominativ joj daje sama لَوْلَا.",
-     "en": "The noun after it is nominative. According to the Basran grammarians it is a subject whose predicate is left out (“were it not for the favour – being there”); according to the Kufans, لَوْلَا itself makes it nominative."
+     "bs": "Imenica iza je u nominativu. Prema Ibn Hišāmu to je subjekat čiji je predikat izostavljen („da nije blagodati – postojeće“), a ne vršilac izostavljenog glagola niti imenica kojoj nominativ daje sama لَوْلَا, kako su neki tvrdili.",
+     "en": "The noun after it is nominative. According to Ibn Hišām it is a subject whose predicate is left out (“were it not for the favour – being there”), not the doer of a left-out verb, nor made nominative by لَوْلَا itself, as some held."
     },
     "ayat": [
      {
@@ -3050,7 +3108,9 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": [],
+  "notes": [
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لكنّ المشددة: istidrāk, the common view — CONFIRMED; no attributed claim."
+  ],
   "uses": [
    {
     "key": "but",
@@ -3094,7 +3154,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: AMD (65). The corpus files the وَ before it as SUP (see وَ)."],
+  "notes": [
+   "Counted: AMD (65). The corpus files the وَ before it as SUP (see وَ).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section لكن الساكنة: before a sentence a ḥarf ibtidāʾ for istidrāk, 'not a conjunction', with or without وَ — CONFIRMED; the clause on وَ joining REWORDED (Muġnī gives it only for a single word, as Yūnus's / Ibn Mālik's view)."
+  ],
   "uses": [
    {
     "key": "but",
@@ -3102,8 +3165,8 @@
     "tags": ["AMD"],
     "title": {"bs": "„Ali…“", "en": "“But…”"},
     "explanation": {
-     "bs": "Prema Ibn Hišāmu, kad iza nje dođe rečenica, لَٰكِنْ samo uvodi ispravku i nije veznik; kad uz nju stoji وَ, povezuje وَ.",
-     "en": "According to Ibn Hišām, when a sentence follows it, لَٰكِنْ only introduces the correction and is not a conjunction; when وَ stands with it, it is the وَ that joins."
+     "bs": "Prema Ibn Hišāmu, kad iza nje dođe rečenica, لَٰكِنْ samo uvodi ispravku i nije veznik, bilo da uz nju stoji وَ ili ne.",
+     "en": "According to Ibn Hišām, when a sentence follows it, لَٰكِنْ only introduces the correction and is not a conjunction, whether وَ stands with it or not."
     },
     "ayat": [
      {
@@ -3134,7 +3197,8 @@
   ],
   "notes": [
    "Counted: EXL (55). Sībawayh's gloss is named as his.",
-   "Review: 'regularly' bound with فَـ, not 'always' — the فَ is dropped with an understood 'it will be said' (3:106)."
+   "Review: 'regularly' bound with فَـ, not 'always' — the فَ is dropped with an understood 'it will be said' (3:106).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section أمّا: 'a particle of condition, setting out and emphasis'; Sībawayh's gloss 'مهما يكن من شيء' (quoted via az-Zamaḫšarī) — CONFIRMED, also in al-Kitāb (OpenITI 0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1); the fāʾ dropped in 3:106 (the left-out فيقال لهم) — CONFIRMED."
   ],
   "uses": [
    {
@@ -3178,7 +3242,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: FUT (42)."],
+  "notes": [
+   "Counted: FUT (42).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section سوف: 'a synonym of the sīn or wider, on the disagreement' and the sīn entry's 'against the Basrans' — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "will",
@@ -3220,7 +3287,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: ATT (39). The أَلَا of offer and urging (24:22 أَلَا تُحِبُّونَ) is filed by the corpus as the question hamza with لَا and is not part of this page."
+   "Counted: ATT (39). The أَلَا of offer and urging (24:22 أَلَا تُحِبُّونَ) is filed by the corpus as the question hamza with لَا and is not part of this page.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section ألا (five aspects): tanbīh that shows what follows is certain (taḥqīq) — CONFIRMED."
   ],
   "uses": [
    {
@@ -3266,7 +3334,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: AVR (33). The schools' views are given as Ibn Hišām reports them; the views of Abū Ḥātim and al-Farrāʾ he also lists are left out."
+   "Counted: AVR (33). The schools' views are given as Ibn Hišām reports them; the views of Abū Ḥātim and al-Farrāʾ he also lists are left out.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section كلا: 'with Sībawayh, al-Ḫalīl, al-Mubarrad, az-Zajjāj and most Basrans: deterring and rebuke'; al-Kisāʾī 'ḥaqqan' — CONFIRMED (Ibn Hišām himself prefers Abū Ḥātim's 'ألا', not shown)."
   ],
   "uses": [
    {
@@ -3311,7 +3380,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: ACC|FAM:إِنّ (31). The lightened كَأَنْ is a lemma of its own in the corpus (9) and is left for a later batch."
+   "Counted: ACC|FAM:إِنّ (31). The lightened كَأَنْ is a lemma of its own in the corpus (9) and is left for a later batch.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section كأنّ: tašbīh, 'the commonest and agreed meaning' — CONFIRMED."
   ],
   "uses": [
    {
@@ -3357,7 +3427,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: ANS (31). No ayah tagged ANS is followed by a subjunctive in the corpus; the governing rule is stated as the grammarians' and not claimed for an ayah."
+   "Counted: ANS (31). No ayah tagged ANS is followed by a subjunctive in the corpus; the governing rule is stated as the grammarians' and not claimed for an ayah.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section إذن: 'Sībawayh said its meaning is answer and requital' — CONFIRMED (also in al-Kitāb, OpenITI 0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1); the subjunctive conditions are the grammarians', unattributed."
   ],
   "uses": [
    {
@@ -3391,14 +3462,17 @@
   "count": 28,
   "meaning": {"bs": "kako?; otkud?", "en": "how?; from where?"},
   "grammar": {
-   "bs": "Upitna riječ s više značenja: „kako?“ i „otkud?“ (Ibn Hišām navodi i „kada?“). Ne mijenja padež ni način. Često izražava čuđenje ili poricanje.",
-   "en": "A question word with more than one meaning: “how?” and “from where?” (Ibn Hišām also lists “when?”). It changes no case or mood. It often expresses wonder or denial."
+   "bs": "Upitna riječ s više značenja: „kako?“ i „otkud?“ (Sībawayh je tumači sa كَيْفَ i أَيْنَ). Ne mijenja padež ni način. Često izražava čuđenje ili poricanje.",
+   "en": "A question word with more than one meaning: “how?” and “from where?” (Sībawayh glosses it with كَيْفَ and أَيْنَ). It changes no case or mood. It often expresses wonder or denial."
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: INTG (28). 2:223 is not cited."],
+  "notes": [
+   "Counted: INTG (28). 2:223 is not cited.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), Muġnī has no entry for أَنَّى: the claim 'Ibn Hišām also lists when?' is DROPPED; Sībawayh's 'أنى تكون في معنى كيف وأين' CONFIRMED in al-Kitāb (OpenITI 0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1)."
+  ],
   "uses": [
    {
     "key": "how",
@@ -3441,7 +3515,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: ANS (22)."],
+  "notes": [
+   "Counted: ANS (22).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section بلى: an answer particle 'proper to a negation, and it cancels it', with or without a question — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "yes-indeed",
@@ -3485,7 +3562,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: INTG (10) and COND (7). In 4:78 the corpus places the next-word marker on the مَا of أَيْنَمَا, so the conditional use claims no effect; the jussive is said in the notes of the ayat."
+   "Counted: INTG (10) and COND (7). In 4:78 the corpus places the next-word marker on the مَا of أَيْنَمَا, so the conditional use claims no effect; the jussive is said in the notes of the ayat.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), Muġnī has no entry for أَيْنَ; the page attributes nothing to anyone."
   ],
   "uses": [
    {
@@ -3542,14 +3620,17 @@
   "count": 14,
   "meaning": {"bs": "kamo sreće da, da je bar", "en": "if only, I wish"},
   "grammar": {
-   "bs": "Iz porodice إِنَّ: imenicu iza sebe stavlja u akuzativ, predikat ostaje u nominativu. Izražava želju, prema Ibn Hišāmu najčešće za nečim nemogućim ili teškim. U Kur'anu je najčešće يَٰلَيْتَنِى „kamo sreće da sam ja…“, na Sudnjem danu.",
-   "en": "Of the إِنَّ family: it puts the noun after it in the accusative, the predicate stays nominative. It expresses a wish, according to Ibn Hišām mostly for the impossible or the hard. In the Quran it is mostly يَٰلَيْتَنِى “oh, I wish that I…”, on the Day of Judgement."
+   "bs": "Iz porodice إِنَّ: imenicu iza sebe stavlja u akuzativ, predikat ostaje u nominativu. Izražava želju, prema Ibn Hišāmu najčešće za nečim nemogućim, rjeđe za mogućim. U Kur'anu je najčešće يَٰلَيْتَنِى „kamo sreće da sam ja…“, na Sudnjem danu.",
+   "en": "Of the إِنَّ family: it puts the noun after it in the accusative, the predicate stays nominative. It expresses a wish, according to Ibn Hišām mostly for the impossible, more rarely for the possible. In the Quran it is mostly يَٰلَيْتَنِى “oh, I wish that I…”, on the Day of Judgement."
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: ACC|FAM:إِنّ (14)."],
+  "notes": [
+   "Counted: ACC|FAM:إِنّ (14).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section ليت: 'a wish, mostly for the impossible, rarely for the possible' — REWORDED from 'the impossible or the hard'."
+  ],
   "uses": [
    {
     "key": "if-only",
@@ -3586,7 +3667,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: INTG (9)."],
+  "notes": [
+   "Counted: INTG (9).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section متى: interrogative and conditional — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "when",
@@ -3630,7 +3714,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: SUB (7). The corpus files three لِكَيْلَا as NEG (57:23, 33:50, 22:5) and one as SUB (3:153); the NEG ones are left out of the count."
+   "Counted: SUB (7). The corpus files three لِكَيْلَا as NEG (57:23, 33:50, 22:5) and one as SUB (3:153); the NEG ones are left out of the count.",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section كي: like the lām of purpose (an implied أَنْ after it) or like the verbal-noun أَنْ after لِـ (لِكَيْلَا) — CONFIRMED."
   ],
   "uses": [
    {
@@ -3675,7 +3760,10 @@
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: ANS (4)."],
+  "notes": [
+   "Counted: ANS (4).",
+   "Verified against Muġnī (OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1), section نعم: a particle of confirming, promising and informing — CONFIRMED."
+  ],
   "uses": [
    {
     "key": "yes",

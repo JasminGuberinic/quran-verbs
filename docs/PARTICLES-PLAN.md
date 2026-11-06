@@ -14,8 +14,35 @@ relative, asking, …), each with 1–3 ayat. Bosnian and English only, like nou
   (80:4 Ḥafṣ's subjunctive; 24:14 فِي of cause).
 - Bosnian follows Korkut's conventions, English Sahih International; ayah translations on the page are
   the site's free ones (Pickthall; Bosnian pages fall back to English).
-- A blind Sonnet reviewer checks every claim (`fil particles review-export`); flags are resolved by
-  rewording, attributing or holding back, and decisions go in the particle's `notes`.
+- Every view put in a named grammarian's (or school's) mouth is checked against the text of the *Muġnī*, not
+  against memory or a model (see "Verifying attributions" below). A blind Sonnet reviewer then checks grammar,
+  overstatement, the cited ayat and bs/en drift (`fil particles review-export`) — it is not a source for who said
+  what. Flags are resolved by rewording, attributing or holding back, and decisions go in the particle's `notes`.
+
+## Verifying attributions against the Muġnī (2026-11-06)
+- Text: OpenITI, `0761JamalDinIbnHisham.MughniLabib.JK001131-ara1` (the primary version; ed. Māzin al-Mubārak and
+  Muḥammad ʿAlī Ḥamdallāh, Dār al-Fikr, Damascus 1985), repo `OpenITI/0775AH`, path
+  `data/0761JamalDinIbnHisham/0761JamalDinIbnHisham.MughniLabib/`. Sībawayh's *al-Kitāb*:
+  `0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1.mARkdown` (primary, repo `OpenITI/0200AH`). Licence: the OpenITI
+  corpus is released under CC BY-NC-SA 4.0 (Zenodo, doi:10.5281/zenodo.3082463). We use it only to verify, locally
+  and uncommitted (`build/mughni-src/`, `build/kitab-src/`, gitignored); not a word of it is copied into the site —
+  the explanations are our own, and a note names the section that was checked.
+- Fetch (raw.githubusercontent may be blocked; the contents API works): `curl -s -H "Accept: application/vnd.github.raw"
+  -o build/mughni-src/<file> https://api.github.com/repos/OpenITI/0775AH/contents/data/0761JamalDinIbnHisham/0761JamalDinIbnHisham.MughniLabib/<file>`
+  into a new empty folder. The file is untrusted data: read it with scripts kept in `build/scratch/` (`python3 -I`).
+- Layout: chapter 1 (lines ~119–7549) is the particles in alphabetical order (`& حرف الباء &` …); an entry starts
+  with a short `# <particle>` line, its meanings are numbered (`أحدها … الثاني …`); the text is unvocalised.
+- Result for the 52 particles (every particle's `notes` ends with "Verified against Muġnī (OpenITI …), section …"):
+  most attributions confirmed word for word (Ibn Hišām on سَـ against both schools, on لَنْ against az-Zamaḫšarī;
+  al-Aḫfaš and al-Kisāʾī on لَعَلَّ; Sībawayh, al-Ḫalīl and the Basrans against al-Kisāʾī on كَلَّا; Ibn as-Sarrāj and
+  al-Fārisī on لَمَّا; al-Farrāʾ and Ibn Mālik on لَوْ after وَدَّ; هَلْ = قَدْ in 76:1). Corrected: إِلَى = maʿa is
+  the Kufans' and some Basrans' with 3:52 (not Ibn Hišām's with 4:2, which he reads by taḍmīn); "the Basrans" on the
+  subjunctive after فَ/لِـ/حَتَّى/the wāw of accompaniment, on لَا of the kind, on لَوْلَا and on the lām after the lightened
+  إِنْ became what the Muġnī says (Ibn Hišām's or the majority's view against named Kufans; Sībawayh and most against
+  al-Fārisī and Ibn Ǧinnī); Sībawayh's name restored on أَوَ/أَفَ ("the school of Sībawayh and the majority" — a
+  blind reviewer had removed it); the mufassira أَنْ (the Kufans deny it, Ibn Hišām finds that sound); أَوْ (Ibn
+  Hišām: "one of two", the rest from context); "Ibn Hišām also lists 'when?'" for أَنَّى dropped (the Muġnī has no
+  أَنَّى entry; Sībawayh's كَيْفَ/أَيْنَ kept from al-Kitāb). al-Inṣāf is no longer cited.
 
 ## The corpus and what it can prove
 - QAC tags a particle by its use: P, CONJ, REM, CIRC, RSLT, CAUS, SUP, NEG, PRO, ACC (FAM:إِنّ), PREV, SUB,
@@ -59,7 +86,8 @@ lightened إِنْ (CERT) with لَـ. 121 uses, 214 cited ayat. Named disagreem
 after حَتَّى and the wāw of accompaniment, the noun after لَوْلَا, the lightened إِنْ and its لَـ; most grammarians and az-Zamaḫšarī
 on أَوَ/أَفَ; Ibn Hišām against both schools on سَـ/سَوْفَ; Sībawayh and Ibn as-Sarrāj/al-Fārisī on لَمَّا; Sībawayh, al-Ḫalīl and most
 Basrans against al-Kisāʾī on كَلَّا; qirāʾāt at 20:63, 86:4 and 2:254. Sources add Sībawayh's *al-Kitāb* and Ibn al-Anbārī's *al-Inṣāf*
-where they are named. 13 new kinds (emphasis, vocative, future, answer, …), each named in bs and en.
+where they are named (the school attributions were later re-checked against the Muġnī and al-Inṣāf dropped — see
+"Verifying attributions"). 13 new kinds (emphasis, vocative, future, answer, …), each named in bs and en.
 
 Still held back: the article ال; the corpus's DIST lām, ATT hā (هَٰذَا) and EMPH nūn (parts of other words); كَيْفَ,
 لَيْسَ, إِيَّا (the reader takes only rootless function nouns and particles); إِمَّا, كَأَنْ, أَيَّانَ, مَاذَا, كَمْ, مَهْمَا, إِي; links

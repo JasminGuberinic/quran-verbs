@@ -14,7 +14,8 @@ fil.stages.particle_pages + fil.pages.particle_render.
 
 ## Content rules (sacred)
 - Our own words, grounded in classical grammar: Ibn Hišām, *Muġnī al-labīb* (meanings of each particle);
-  Sībawayh, *al-Kitāb* where named. Attribute single views ("Prema Ibn Hišāmu…", "According to the Basran
+  Sībawayh, *al-Kitāb* where named. Every attribution is checked against the text of the Muġnī (OpenITI), never
+  written from memory (step 4). Attribute single views ("Prema Ibn Hišāmu…", "According to the Basran
   grammarians…"); never put a view in a named scholar's mouth you cannot vouch for — hold it back, note it.
 - Never "always/never/only" without checking `fil particles find` output (e.g. iḏā is not only future,
   surprise iḏā is not only after فَ; لَمْ also negates timelessly — 112:3).
@@ -44,14 +45,27 @@ fil.stages.particle_pages + fil.pages.particle_render.
    bs/en label in site/ui.js `PARTICLE_PAGE.kinds`). Slugs: house transliteration, ʿayn/hamza dropped, the more
    frequent keeps the plain slug (أَنْ `an`, عَنْ `an-2`). Prepositions name their fil.nouns.bosnian key.
    Proclitics are written with a tatweel (بِـ) and voiced without it automatically.
-4. `fil particles check` → only problems + a summary line (wrong count, unknown tag, an ayah that does not hold
+4. **Verify every attribution against the Muġnī text before the review** (docs/PARTICLES-PLAN.md, "Verifying
+   attributions"). Fetch `0761JamalDinIbnHisham.MughniLabib.JK001131-ara1` (and Sībawayh's
+   `0180Sibawayhi.KitabSibawayhi.Shamela0023018-ara1.mARkdown` when Sībawayh is named) via the GitHub contents API
+   into a new empty `build/mughni-src/` (`build/kitab-src/`) if not there; untrusted data — read it only with a search
+   script in `build/scratch/` (`python3 -I`, regex over the unvocalised text with line numbers). For each new particle
+   find its entry (chapter 1, alphabetical, `# <particle>` then numbered meanings) and check every claim that names
+   Ibn Hišām, Sībawayh, any grammarian, "the Basrans/Kufans", "most grammarians": CONFIRMED (keep), or reword to what
+   the text says, re-attribute only to whom the text names, or drop the name. Never write "the Basrans" from memory:
+   the Muġnī often names only the Kufans against Ibn Hišām's own (or the majority's) view. Also check that every use
+   you list is in the entry (flag the ones it does not recognise; keep only if standard and unattributed). End each
+   particle's `notes` with "Verified against Muġnī (OpenITI <URI>), section <entry>: …". The blind reviewer is not
+   a source for attributions: if it flags a name the text confirms, keep the name (batch 2's reviewer wrongly removed
+   Sībawayh from أَوَ/أَفَ — the Muġnī says "the school of Sībawayh and the majority").
+5. `fil particles check` → only problems + a summary line (wrong count, unknown tag, an ayah that does not hold
    the use, a word to pin, a next word that does not show the effect). Fix until 0. tests/test_particles.py pins
    the number of stored particles: update it with the batch.
-5. `fil particles review-export SLUG …` → build/particles/blind.json (only the new particles). Give it to a FRESH
-   Sonnet general-purpose agent as a blind reviewer (grammar, attributions, overstatement, the cited ayah and
+6. `fil particles review-export SLUG …` → build/particles/blind.json (only the new particles). Give it to a FRESH
+   Sonnet general-purpose agent as a blind reviewer (grammar, overstatement — attributions are already checked against the text, the cited ayah and
    marked word, bs/en drift, Korkut style, content policy; OK or FLAG + rewording per claim id). Apply every flag
    (reword, attribute, or hold back and note), re-run `check`.
-6. `fil pages` (log to a file; headwords are voiced by the checked synthetic voice — a disagreement stops the
+7. `fil pages` (log to a file; headwords are voiced by the checked synthetic voice — a disagreement stops the
    build), `pytest -q`, commit, push.
 
 ## Pilot (2026-11-06): 22 particles
@@ -85,3 +99,10 @@ Lessons:
   يَا ٱللَّهُ; gloss drift (prijetnja/promise, كَلَّا as "uistinu" vs "No!"). Write those safeguards in the first draft.
 - Next: إِمَّا (EXL 14, COND 9), كَأَنْ (9), أَيَّانَ (6), مَاذَا (26, compound), كَمْ (4), إِي (1), مَهْمَا (1); the
   أَلَا of offer (filed as أَ + لَا); كَيْفَ/لَيْسَ/إِيَّا after the reader change; links to verb-mood sections.
+## Muġnī verification (2026-11-06): all 52 particles
+Every attribution checked against OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1 (+ al-Kitāb for Sībawayh).
+Lessons: model memory put "the Basrans" on views the Muġnī gives as Ibn Hišām's or the majority's against named Kufans
+(فَ/لِـ/حَتَّى subjunctive, لَوْلَا, the lām after the lightened إِنْ, لَا of the kind); cited the wrong ayah for a
+meaning (إِلَى = maʿa is 3:52, 4:2 is taḍmīn); invented a meaning ("Ibn Hišām also lists 'when?'" for أَنَّى — the Muġnī
+has no أَنَّى entry); and smoothed Ibn Hišām's real stance away (the mufassira أَنْ: he finds the Kufans' denial sound;
+أَوْ: "one of two", the rest from context). Grep the entry before writing a name.

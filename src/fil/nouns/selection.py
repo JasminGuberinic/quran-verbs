@@ -73,6 +73,12 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "سَبْعَة": "quantifier", "سَمّاع": "adjective-like", "شَقِيّ": "adjective-like",
     "صاحِبَة": "variant (on صاحِب's card)",
     "طائِف": "adjective-like",
+    "طَوْع": "adverb", "ظالِمَة": "variant (on ظالِم's card)", "عالِي": "adjective-like", "عَشَر": "quantifier", "عَلانِيَة": "adverb", "عَلّام": "adjective-like", "عِين": "adjective-like", "فائِز": "adjective-like", "فُجّار": "adjective-like", "قُعُود": "adjective-like", "قِيل": "idiom", "عُلُوّ": "adverb", "كَلِم": "variant (on كَلِمَة's card)", "مَحْرُوم": "adjective-like", "مَسْحُور": "adjective-like", "مَكْنُون": "adjective-like", "مَمْنُون": "adjective-like", "مُبارَكَة": "adjective-like", "مُبْصِر": "adjective-like", "مُبْلِس": "adjective-like",
+    "مُتَقابِل": "adjective-like", "مُتَوَكِّل": "adjective-like", "مُجاهِد": "adjective-like", "مُحَرَّم": "adjective-like", "مُخَلَّف": "adjective-like", "مُرْسِل": "adjective-like", "مُعَذَّب": "adjective-like", "مُعَذِّب": "adjective-like", "مُغْرَق": "adjective-like", "مُقْتَدِر": "adjective-like", "مُلاقُوا": "adjective-like", "مُمْتَري": "adjective-like", "مُنتَصِر": "adjective-like", "هَنِيئ": "adverb", "واسِعَة": "adjective-like", "آثِم": "adjective-like", "آخِذ": "adjective-like", "آكِل": "adjective-like", "آناء": "adverb", "أَتْراب": "adjective-like",
+    "أَشْقَى": "adjective-like", "أَعَزّ": "adjective-like", "أَعْجَمِيّ": "adjective-like", "أَعْظَم": "adjective-like", "أَقْصا": "adjective-like", "أُجاج": "adjective-like", "أُفّ": "exclamation", "باطِن": "adjective-like", "باغ": "adjective-like", "بالِغَة": "adjective-like",
+    "بَيات": "adverb", "بُشْر": "adverb", "تابِع": "adjective-like", "تارِك": "adjective-like", "تَسْلِيم": "adverb", "تَضَرُّع": "adverb",
+    "تِلْقاء": "adverb", "جامِع": "adjective-like", "جَهْرَة": "adverb",
+    "حاشِر": "adjective-like",
     # ابْتِغَاءَ is in the Quran always a bare accusative of purpose ("seeking …"), learned as a construction.
     "ابْتِغاء": "adverb",
 }

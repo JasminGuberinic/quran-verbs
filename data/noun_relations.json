@@ -1014,5 +1014,74 @@
     "lemma": "سُنبُل|سنبل"
    }
   ]
+ },
+ "عَرْض|عرض": {
+  "kind": "ordinary",
+  "why": "Reviewed: عَرْض 'width' (3:133 عَرْضُهَا السَّمَاوَاتُ وَالْأَرْضُ) is an abstract masculine noun, not a collective."
+ },
+ "كَفّارَة|كفر": {
+  "kind": "ordinary",
+  "why": "Reviewed: كَفَّارَة 'atonement' (5:89 فَكَفَّارَتُهُ إِطْعَامُ عَشَرَةِ مَسَاكِينَ) is an ordinary feminine noun (plural كَفَّارَات), not a singulative."
+ },
+ "مَغانِم|غنم": {
+  "kind": "ordinary",
+  "why": "Reviewed: مَغَانِم is the regular broken plural (pattern مَفَاعِل) of مَغْنَم 'spoil, gain' (48:19 وَمَغَانِمَ كَثِيرَةً); the singular is not in the Quran."
+ },
+ "أَخْبار|خبر": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَخْبَار is the regular broken plural (pattern أَفْعَال) of خَبَر 'piece of news' (99:4 تُحَدِّثُ أَخْبَارَهَا); not a collective."
+ },
+ "أَذْقان|ذقن": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَذْقَان is the regular broken plural (pattern أَفْعَال) of ذَقَن 'chin' (17:107 يَخِرُّونَ لِلْأَذْقَانِ); the singular is not in the Quran."
+ },
+ "أَوْتاد|وتد": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَوْتَاد is the regular broken plural (pattern أَفْعَال) of وَتِد 'peg' (78:7 وَالْجِبَالَ أَوْتَادًا); the singular is not in the Quran."
+ },
+ "حَدائِق|حدق": {
+  "kind": "ordinary",
+  "why": "Reviewed: حَدَائِق is the regular broken plural (pattern فَعَائِل) of حَدِيقَة 'garden' (78:32 حَدَائِقَ وَأَعْنَابًا); the singular is not in the Quran."
+ },
+ "بَقَر|بقر": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: 'cows, cattle' as a kind; one cow is the singulative بَقَرَة (2:67 أَنْ تَذْبَحُوا بَقَرَةً). The Quran makes it masculine: إِنَّ الْبَقَرَ تَشَابَهَ عَلَيْنَا (2:70). Triptote: بَقَرٌ بَقَرًا بَقَرٍ.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "بَقَرَةٌ",
+    "gender": "F",
+    "en": "cow",
+    "bs": "krava",
+    "lemma": "بَقَرَة|بقر"
+   }
+  ]
+ },
+ "غَمام|غمم": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: 'clouds' as a mass; one cloud is the singulative غَمَامَة (not in the Quran). No verb or adjective agrees with it in the Quran (2:57 وَظَلَّلْنَا عَلَيْكُمُ الْغَمَامَ); Arabic treats such collectives as masculine (الْغَمَامُ الْكَثِيفُ).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "غَمَامَةٌ",
+    "gender": "F",
+    "en": "a cloud",
+    "bs": "oblak"
+   }
+  ]
+ },
+ "نَعْجَة|نعج": {
+  "kind": "ordinary",
+  "why": "Reviewed: نَعْجَة 'ewe' (38:23 تِسْعٌ وَتِسْعُونَ نَعْجَةً) is an ordinary feminine noun with the broken plural نِعَاج; the ram is كَبْش, a different word, not a gender pair of the same root."
+ },
+ "بَهِيمَة|بهم": {
+  "kind": "ordinary",
+  "why": "Reviewed: بَهِيمَة 'animal' (5:1 بَهِيمَةُ الْأَنْعَامِ) is an ordinary feminine noun (plural بَهَائِم), not a singulative."
+ },
+ "ثُلَّة|ثلل": {
+  "kind": "ordinary",
+  "why": "Reviewed: ثُلَّة 'a crowd, a large group' (56:13 ثُلَّةٌ مِنَ الْأَوَّلِينَ) is an ordinary feminine noun, not a singulative."
  }
 }

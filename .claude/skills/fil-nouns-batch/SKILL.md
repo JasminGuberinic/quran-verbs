@@ -269,6 +269,21 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - Reviewer refusals: سَقْف alone reads "ceiling" (a cat sits عَلَى السَّطْحِ); bare شَأْن is unnatural as an object or with
   تَفَاصِيل (أَصْحَاب glosses "owners" — use الشَّأْنُ الْعَامُّ "public affairs", and عَظِيمَة "great", not كَبِيرَة, for importance); هَذَا شَأْنٌ makes the noun a predicate, not a subject; وُسْع lives in فِي وُسْعِ / بَذَلَ وُسْعَهُ.
 
+- Batch 11 (2026-11-06, 7 re-plan rounds, 206 sentences, 6 refused in round 1). Skipped participles/elatives (مَحْرُوم، مَسْحُور،
+  فائِز، آكِل …), always-bare-accusative lemmas (طَوْع، عُلُوّ، تَسْلِيم، تَضَرُّع، بَيات، بُشْر، جَهْرَة، عَلانِيَة، آناء), variants
+  ظالِمَة، كَلِم. HELD_BACK: عَوْرَة، مَعِين (MSA "specific")، جَيْب (Quran: neck opening; MSA pocket)، جارِيَة/جَوار (MSA maid/
+  neighbourhood)، كِفْل (mostly ذو الكفل)، كِسَف، وَقُود، هُون، بَطْش، تَحْوِيل، إِصْر، أَجْداث، أَوْثان، بارِئ، حاقَّة، غُيُوب، قُدُس، مَلَكُوت.
+- Time-savers: print `att.py` for every doubtful lemma of a round in ONE call — it decides skip vs keep at a glance (كِسَفًا×4,
+  طَوْعًا×4). A row-less plural-only lemma (مَغانِم، أَخْبار، حَدائِق) and an unanalysable masdar (إِيتاء) show `numbers: []` in
+  bs-sheet: document their whole row first (exec the ov helper's `tri()` header into a second script). Write all 200 sentences
+  as `key~role~ar~en~bs~eng~bsg` lines and convert with a script that asserts gloss counts = Arabic word count: the first
+  check then fails only on lexicon gaps (fixed in one gloss-exception script: group، knot، error، distress، owner، rite، fatigue،
+  crowd). Failed → accepted: طَرِيق path→road, الْمَحْصُول, عَالٍ loud (use قَوِيّ), أَهْدَى (قَدَّمَ offered), قِشْر, النَّبْتَة, اخْتَفَى.
+  A geographic noun with a misleading first bs/en word (بَرْزَخ "partition/pregrada") — switch to the lexicon's other sense (isthmus/
+  prevlaka) with a meanings re-import + one-entry paradigms file. Sonnet gave djeca pl gender f: it is n (njegova djeca).
+- Reviewer refusals: bare الْأَصْل reads "the origin" (say أَصْلُ الشَّجَرَةِ); إِيتَاء only with مال/حقوق/صدقة, never gifts;
+  وَقْتُ الْمَنَامِ is bedtime, not dream (polysemous noun: stay in the chosen sense); إِلَى الْأَذْقَانِ is Quranic (36:8).
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

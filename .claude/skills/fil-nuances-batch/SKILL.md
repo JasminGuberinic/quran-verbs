@@ -25,6 +25,14 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
   English Sahih International style. Content policy: respectful of God and the prophets, no depictions.
   شَرَحَ صَدْرَهُ is "proširiti/širiti grudi", not "otvoriti".
 
+## Working in an agent worktree
+- The worktree has no corpus: symlink `data/qac`, `data/quranhive`, `data/translations` to the main repo's;
+  copy (do not link) `build/nouns/*.tsv`; link the main repo's `build/{speech,recitation,compressed}-cache`.
+- The venv's editable install points at the main repo's src: run `PYTHONPATH=src
+  ~/Development/quran-verbs/.venv/bin/python -m fil.cli …` and `… -m pytest -q`.
+- Keep scratch scripts in `build/scratch/` (gitignored): the isolation guard refuses files outside the worktree
+  and Python that mentions git — save `git show HEAD:data/nuance_groups.json` to a file first.
+
 ## Steps
 1. Pick the groups (classic pairs from al-Furūq; frequent Quranic words first). A word may sit in more than
    one group; its card then links every group.
@@ -37,12 +45,23 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
    `qalb-fuad-sadr`): `title`, `shared`, `tellApart` (one line, Arabic inline), `sources`, `notes`, `members`
    (each: `arabic` with harakat, `verb` or `lemmas`, `count`, `meaning`, `nuance`, 1–3 `ayat` of
    `{"ref": "s:a", "why": {bs, en}}`). Every text has bs and en. Edit the file with a script (string
-   replacements or json), never paste it whole into the conversation.
+   replacements or json), never paste it whole into the conversation. Mechanics that save a round trip:
+   - Write the content as Python in build/scratch (helpers `T(bs,en)`, `A(ref,bs,en)`, `M(...)`, `G(...)`), then
+     a merge script: start from HEAD's file, add the groups, fill every `count` from
+     `CatalogueConcordance.from_corpus().attestation(member.corpus)` (a placeholder must be ≥ 1 to parse), and
+     write the file back in its layout — one-space indent, with `lemmas`, ayah items and `{bs,en}` texts of
+     ≤ 120 characters on one line. A dumper with those three rules round-trips the file byte for byte; plain
+     `json.dumps(indent=…)` rewrites every earlier line.
+   - Copy lemma keys from catalogue.tsv byte for byte: mark order differs (سَيِّئَة is filed with shadda before
+     kasra), and a hand-typed key is "not a word of the corpus".
+   - Before writing "always / never / only" about Quranic usage, list the member's places
+     (`fil.stages.nouns.load_occurrences()` / `service.form_occurrences()` with the ayah text) and read them all.
+   - tests/test_nuances.py pins the number of stored groups: update it with the batch.
 4. `fil nuances check` → prints only problems + one summary line: a count that is not the catalogue's, a
    cited ayah that does not hold the word, an unknown lemma. Fix until 0 problems. (The tests run the same
    gate; `fil pages` refuses to build otherwise.)
 5. `fil nuances review-export` → build/nuances/blind.json (claims en+bs with the ayat's Arabic and
-   Pickthall). Give it to a FRESH Sonnet general-purpose agent as a blind reviewer: check each nuance against
+   Pickthall; filter it to the new groups' ids — earlier batches are already reviewed). Give it to a FRESH Sonnet general-purpose agent as a blind reviewer: check each nuance against
    the cited ayat and the two lexicographers, flag misattributions, contested readings, bs/en drift, Korkut
    style, content policy; OK or FLAG + suggested rewording per claim id. Apply the flags (soften, attribute,
    or hold back and note), re-run `check`.
@@ -55,3 +74,21 @@ insan-bashar (إِنْسَان بَشَر رَجُل اِمْرُؤ نَاس) ·
 · khawf-khashya (خَوْف خَشْيَة) · qalb-fuad-sadr (قَلْب فُؤَاد صَدْر). Ayah translations are the site's free
 ones (Pickthall; Bosnian pages fall back to English — no free Bosnian translation exists); our `why` line is
 bs + en.
+
+## Batch 2 (2026-11-06): 25 groups → 30
+alima-arafa · khalaqa-jaala-fatara · arsala-baatha · qala-kallama-nataqa · samia-istamaa-ansata · anzala-nazzala
+· rajaa-ada · ata-ata-wahaba · faala-amila-sanaa · akala-taima · huzn-asaf-ghamm · farah-surur · kadhib-ifk-zur
+· dhanb-ithm-sayyia-khatia · adhab-iqab · sana-am · tariq-sabil-sirat · bayt-dar-maskan · nur-diya · matar-ghayth
+· ayn-basar · kitab-suhuf · kabir-azim · hamd-shukr · zanna-hasiba-zaama. Lessons:
+- Check a candidate exists before writing it: جَلَسَ (no verb in the corpus), آبَ (only مَآب), بَرَأَ (1×),
+  كَفّ (filed as كَفَّي, 2×) and دَانٍ were dropped for that reason.
+- Ground claims you are sure of in ar-Rāġib; when a classic distinction is really a later scholar's or a
+  modern one (آتَى/أَعْطَى by revocability; أَمْطَرَ for punishment), leave it out and say so in `notes`.
+  A group may rest on "Quranic usage — our own observation" (matar-ghayth) if every use is listed and read.
+- What the reviewer flagged most: a lexicographer's tendency of the language stated as Quranic usage (سَنَة
+  "hardship" — the Quran's سَنَة is mostly neutral); "only/always" where a counter-example exists (فَرِحَ
+  approved in 3:170 too; the noun عِقَاب is always Allah's, the verb عَاقَبَ is not; شُكْر "only for a
+  favour" vs Allah as شَاكِر); a tafsir line pinned to a named mufassir it may not be in (ضِيَاء "stronger"
+  as az-Zamaḫšarī's → "tafsir often explains"); and ayat about Allah that need the tafsir gloss beside them
+  (24:35 light, 43:55 anger). Write those safeguards in the first draft.
+- Giving tāʾ-marbūṭa headwords `spoken` up front (سَيِّئَةٌ, خَطِيئَةٌ, سَنَةٌ) let `fil pages` pass first time.

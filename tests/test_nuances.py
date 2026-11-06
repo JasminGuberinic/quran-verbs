@@ -88,8 +88,9 @@ def test_a_verb_member_is_known_by_its_root_and_form():
 
 def test_the_stored_groups_load_and_every_text_is_bilingual():
     groups = nuance_store.load_groups()
-    assert [group.slug for group in groups] == ["insan-bashar", "jaa-ata", "raa-nazara-absara", "khawf-khashya",
-                                                "qalb-fuad-sadr"]
+    assert [group.slug for group in groups][:5] == ["insan-bashar", "jaa-ata", "raa-nazara-absara", "khawf-khashya",
+                                                    "qalb-fuad-sadr"]
+    assert len(groups) == 30 and len({group.slug for group in groups}) == 30
     assert all(len(group.members) >= 2 and group.sources for group in groups)
 
 

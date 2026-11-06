@@ -33,3 +33,12 @@ where the choice of word matters. Bosnian and English only, like nouns and adjec
 insan-bashar · jaa-ata · raa-nazara-absara · khawf-khashya · qalb-fuad-sadr. Held back after review:
 al-ʿAskarī's خوف/خشية formulation (could not be verified here) and the attribution of the "breast vs heart"
 saying to ar-Rāġib (now "it has been said").
+
+## Batch 2 (25 groups, 30 in all)
+Verbs: عَلِمَ/عَرَفَ · خَلَقَ/جَعَلَ/فَطَرَ · أَرْسَلَ/بَعَثَ · قَالَ/كَلَّمَ/نَطَقَ · سَمِعَ/اِسْتَمَعَ/أَنْصَتَ · أَنْزَلَ/نَزَّلَ · رَجَعَ/عَادَ ·
+آتَى/وَهَبَ/أَعْطَى · فَعَلَ/عَمِلَ/صَنَعَ · أَكَلَ/طَعِمَ · ظَنَّ/حَسِبَ/زَعَمَ. Nouns and adjectives: حُزْن/أَسَف/غَمّ · فَرِحَ/سُرُور/مَسْرُور ·
+كَذِب/إِفْك/زُور · ذَنْب/إِثْم/سَيِّئَة/خَطِيئَة · عَذَاب/عِقَاب · سَنَة/عَام · طَرِيق/سَبِيل/صِرَاط · بَيْت/دَار/مَسْكَن · نُور/ضِيَاء ·
+مَطَر/غَيْث · عَيْن/بَصَر · كِتَاب/صُحُف · كَبِير/عَظِيم · حَمْد/شَكَرَ. Held back after review: ar-Rāġib's remark on سَنَة/عَام
+in 29:14, the attribution of "ḍiyāʾ is stronger than nūr" to az-Zamaḫšarī (now unattributed tafsir), the
+locus of the Ibn ʿAbbās fāṭir report, ar-Rāġib's "khaṭīʾa is mostly unintended" and al-ʿAskarī's entries
+(not verifiable here).

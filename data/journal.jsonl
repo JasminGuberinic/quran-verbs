@@ -6287,3 +6287,471 @@
 {"at": "2026-11-04T17:52:09+00:00", "kind": "parked", "subject": "فرط_2:imperative:anta", "detail": "skipped by policy: the command فَرِّطْ (\"neglect!\", \"squander!\") has no sensible use; Arabic uses this verb as a prohibition (لَا تُفَرِّطْ), which is a jussive, not this cell. Blind reviewer refused the only attempt.", "by": "", "outcome": null, "independent": null}
 {"at": "2026-11-04T17:52:09+00:00", "kind": "parked", "subject": "قطع_5:past:hum", "detail": "skipped by policy: with a human plural subject تَقَطَّعُوا is the Quranic \"they split into sects\" (21:93, 23:53); MSA says اِنْقَسَمُوا, so a fresh sentence either echoes the ayah or sounds unnatural (blind reviewer refused تَقَطَّعُوا أَحْزَابًا).", "by": "", "outcome": null, "independent": null}
 {"at": "2026-11-04T17:52:53+00:00", "kind": "judged", "subject": "عتو_1:#2", "detail": "OK", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T17:57:47+00:00", "kind": "drafted", "subject": "كسب_8:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:47+00:00", "kind": "gated", "subject": "كسب_8:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:47+00:00", "kind": "drafted", "subject": "كسب_8:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "gated", "subject": "كسب_8:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "drafted", "subject": "كسب_8:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "gated", "subject": "كسب_8:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "drafted", "subject": "مري_8:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "gated", "subject": "مري_8:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "drafted", "subject": "مري_8:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "gated", "subject": "مري_8:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:48+00:00", "kind": "drafted", "subject": "مري_8:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "gated", "subject": "مري_8:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "drafted", "subject": "مري_8:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "gated", "subject": "مري_8:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "drafted", "subject": "مري_8:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "gated", "subject": "مري_8:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "drafted", "subject": "نصح_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:49+00:00", "kind": "gated", "subject": "نصح_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "drafted", "subject": "نصح_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "gated", "subject": "نصح_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "drafted", "subject": "نصح_1:past:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "gated", "subject": "نصح_1:past:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "drafted", "subject": "هجر_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "gated", "subject": "هجر_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:50+00:00", "kind": "drafted", "subject": "هجر_1:present:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "gated", "subject": "هجر_1:present:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "drafted", "subject": "هلك_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "gated", "subject": "هلك_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "drafted", "subject": "وصي_6:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "gated", "subject": "وصي_6:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "drafted", "subject": "وقد_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:51+00:00", "kind": "gated", "subject": "وقد_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "drafted", "subject": "وقد_4:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "gated", "subject": "وقد_4:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "drafted", "subject": "وقد_4:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "gated", "subject": "وقد_4:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "drafted", "subject": "وقد_4:present:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "gated", "subject": "وقد_4:present:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:52+00:00", "kind": "drafted", "subject": "وهن_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "gated", "subject": "وهن_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "drafted", "subject": "وهن_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "gated", "subject": "وهن_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "drafted", "subject": "أسو_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "gated", "subject": "أسو_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "drafted", "subject": "بطل_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:53+00:00", "kind": "gated", "subject": "بطل_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:54+00:00", "kind": "drafted", "subject": "بطل_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:54+00:00", "kind": "gated", "subject": "بطل_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:54+00:00", "kind": "drafted", "subject": "بطل_4:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:54+00:00", "kind": "gated", "subject": "بطل_4:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:54+00:00", "kind": "drafted", "subject": "بطل_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:54+00:00", "kind": "gated", "subject": "بطل_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "drafted", "subject": "بطل_4:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "gated", "subject": "بطل_4:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "drafted", "subject": "بوأ_5:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "gated", "subject": "بوأ_5:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "drafted", "subject": "بوأ_5:present:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "gated", "subject": "بوأ_5:present:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:55+00:00", "kind": "drafted", "subject": "بوأ_5:imperative:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "gated", "subject": "بوأ_5:imperative:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "drafted", "subject": "بيت_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "gated", "subject": "بيت_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "drafted", "subject": "بيت_2:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "gated", "subject": "بيت_2:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "drafted", "subject": "تمم_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:56+00:00", "kind": "gated", "subject": "تمم_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "drafted", "subject": "تمم_1:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "gated", "subject": "تمم_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "drafted", "subject": "ثقل_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "gated", "subject": "ثقل_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "drafted", "subject": "ثقل_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "gated", "subject": "ثقل_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "drafted", "subject": "ثقل_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:57+00:00", "kind": "gated", "subject": "ثقل_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "drafted", "subject": "ثقل_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "gated", "subject": "ثقل_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "drafted", "subject": "ثقل_1:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "gated", "subject": "ثقل_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "drafted", "subject": "جمع_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "gated", "subject": "جمع_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:58+00:00", "kind": "drafted", "subject": "جمع_4:imperative:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "gated", "subject": "جمع_4:imperative:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "drafted", "subject": "جوز_3:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "gated", "subject": "جوز_3:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "drafted", "subject": "جوز_3:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "gated", "subject": "جوز_3:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "drafted", "subject": "جوز_3:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "gated", "subject": "جوز_3:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:57:59+00:00", "kind": "drafted", "subject": "جوز_3:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "gated", "subject": "جوز_3:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "drafted", "subject": "جوز_3:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "gated", "subject": "جوز_3:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "drafted", "subject": "حبب_10:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "gated", "subject": "حبب_10:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "drafted", "subject": "حبب_10:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "gated", "subject": "حبب_10:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:00+00:00", "kind": "drafted", "subject": "حبط_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "gated", "subject": "حبط_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "drafted", "subject": "حبط_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "gated", "subject": "حبط_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "drafted", "subject": "حدد_3:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "gated", "subject": "حدد_3:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "drafted", "subject": "حدد_3:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "gated", "subject": "حدد_3:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:01+00:00", "kind": "drafted", "subject": "حرف_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:02+00:00", "kind": "gated", "subject": "حرف_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:02+00:00", "kind": "drafted", "subject": "حرف_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:02+00:00", "kind": "gated", "subject": "حرف_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:02+00:00", "kind": "drafted", "subject": "حرف_2:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:02+00:00", "kind": "gated", "subject": "حرف_2:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:02+00:00", "kind": "drafted", "subject": "حرف_2:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "gated", "subject": "حرف_2:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "drafted", "subject": "حفظ_3:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "gated", "subject": "حفظ_3:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "drafted", "subject": "حفظ_3:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "gated", "subject": "حفظ_3:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "drafted", "subject": "حفظ_3:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "gated", "subject": "حفظ_3:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:03+00:00", "kind": "drafted", "subject": "حفظ_3:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:04+00:00", "kind": "gated", "subject": "حفظ_3:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:04+00:00", "kind": "drafted", "subject": "حفظ_3:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:04+00:00", "kind": "gated", "subject": "حفظ_3:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:04+00:00", "kind": "drafted", "subject": "حقق_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:04+00:00", "kind": "gated", "subject": "حقق_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:04+00:00", "kind": "drafted", "subject": "حلي_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "gated", "subject": "حلي_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "drafted", "subject": "حلي_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "gated", "subject": "حلي_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "drafted", "subject": "حلي_2:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "gated", "subject": "حلي_2:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "drafted", "subject": "حلي_2:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:05+00:00", "kind": "gated", "subject": "حلي_2:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "drafted", "subject": "حلي_2:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "gated", "subject": "حلي_2:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "drafted", "subject": "حيي_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "gated", "subject": "حيي_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "drafted", "subject": "حيي_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "gated", "subject": "حيي_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:06+00:00", "kind": "drafted", "subject": "حيي_2:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "gated", "subject": "حيي_2:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "drafted", "subject": "حيي_2:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "gated", "subject": "حيي_2:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "drafted", "subject": "حيي_2:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "gated", "subject": "حيي_2:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "drafted", "subject": "خرج_10:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "gated", "subject": "خرج_10:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:07+00:00", "kind": "drafted", "subject": "خرج_10:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "gated", "subject": "خرج_10:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "drafted", "subject": "خرج_10:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "gated", "subject": "خرج_10:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "drafted", "subject": "خرج_10:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "gated", "subject": "خرج_10:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "drafted", "subject": "خرج_10:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:08+00:00", "kind": "gated", "subject": "خرج_10:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "drafted", "subject": "خرص_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "gated", "subject": "خرص_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "drafted", "subject": "خرص_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "gated", "subject": "خرص_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "drafted", "subject": "خرص_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "gated", "subject": "خرص_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:09+00:00", "kind": "drafted", "subject": "خرص_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "gated", "subject": "خرص_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "drafted", "subject": "خرص_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "gated", "subject": "خرص_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "drafted", "subject": "خرق_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "gated", "subject": "خرق_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "drafted", "subject": "خوف_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "gated", "subject": "خوف_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:10+00:00", "kind": "drafted", "subject": "خيب_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:11+00:00", "kind": "gated", "subject": "خيب_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:11+00:00", "kind": "drafted", "subject": "خير_8:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:11+00:00", "kind": "gated", "subject": "خير_8:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:11+00:00", "kind": "drafted", "subject": "خير_8:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:11+00:00", "kind": "gated", "subject": "خير_8:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:11+00:00", "kind": "drafted", "subject": "دبر_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "gated", "subject": "دبر_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "drafted", "subject": "دبر_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "gated", "subject": "دبر_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "drafted", "subject": "دبر_5:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "gated", "subject": "دبر_5:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "drafted", "subject": "دبر_5:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "gated", "subject": "دبر_5:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:12+00:00", "kind": "drafted", "subject": "دبر_5:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "gated", "subject": "دبر_5:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "drafted", "subject": "دبر_5:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "gated", "subject": "دبر_5:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "drafted", "subject": "دبر_5:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "gated", "subject": "دبر_5:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "drafted", "subject": "درأ_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:13+00:00", "kind": "gated", "subject": "درأ_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "drafted", "subject": "درأ_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "gated", "subject": "درأ_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "drafted", "subject": "درأ_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "gated", "subject": "درأ_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "drafted", "subject": "درأ_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "gated", "subject": "درأ_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "drafted", "subject": "درأ_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:14+00:00", "kind": "gated", "subject": "درأ_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "drafted", "subject": "ربو_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "gated", "subject": "ربو_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "drafted", "subject": "ربو_1:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "gated", "subject": "ربو_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "drafted", "subject": "رغب_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "gated", "subject": "رغب_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:15+00:00", "kind": "drafted", "subject": "رغب_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "gated", "subject": "رغب_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "drafted", "subject": "رغب_1:present:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "gated", "subject": "رغب_1:present:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "drafted", "subject": "رقب_8:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "gated", "subject": "رقب_8:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "drafted", "subject": "رقب_8:imperative:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "gated", "subject": "رقب_8:imperative:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:16+00:00", "kind": "drafted", "subject": "زلف_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:17+00:00", "kind": "gated", "subject": "زلف_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:17+00:00", "kind": "drafted", "subject": "زلف_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:17+00:00", "kind": "gated", "subject": "زلف_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:17+00:00", "kind": "drafted", "subject": "زلف_4:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:17+00:00", "kind": "gated", "subject": "زلف_4:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:17+00:00", "kind": "drafted", "subject": "زلف_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "gated", "subject": "زلف_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "drafted", "subject": "زلف_4:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "gated", "subject": "زلف_4:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "drafted", "subject": "سرق_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "gated", "subject": "سرق_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "drafted", "subject": "سول_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "gated", "subject": "سول_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:18+00:00", "kind": "drafted", "subject": "سول_2:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:19+00:00", "kind": "gated", "subject": "سول_2:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:19+00:00", "kind": "drafted", "subject": "سوم_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:19+00:00", "kind": "gated", "subject": "سوم_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:19+00:00", "kind": "drafted", "subject": "سوم_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:19+00:00", "kind": "gated", "subject": "سوم_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:19+00:00", "kind": "drafted", "subject": "سوم_1:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "gated", "subject": "سوم_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "drafted", "subject": "سوم_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "gated", "subject": "سوم_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "drafted", "subject": "سوم_1:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "gated", "subject": "سوم_1:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "drafted", "subject": "شبه_6:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "gated", "subject": "شبه_6:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:20+00:00", "kind": "drafted", "subject": "شبه_6:past:hiya", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:21+00:00", "kind": "gated", "subject": "شبه_6:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:21+00:00", "kind": "drafted", "subject": "شري_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:21+00:00", "kind": "gated", "subject": "شري_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:21+00:00", "kind": "drafted", "subject": "شري_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:21+00:00", "kind": "gated", "subject": "شري_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:21+00:00", "kind": "drafted", "subject": "شري_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:22+00:00", "kind": "gated", "subject": "شري_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:22+00:00", "kind": "drafted", "subject": "شقو_1:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:22+00:00", "kind": "gated", "subject": "شقو_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:22+00:00", "kind": "drafted", "subject": "شقو_1:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:22+00:00", "kind": "gated", "subject": "شقو_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:22+00:00", "kind": "drafted", "subject": "صبب_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "gated", "subject": "صبب_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "drafted", "subject": "صبب_1:past:nahnu", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "gated", "subject": "صبب_1:past:nahnu", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "drafted", "subject": "صبب_1:imperative:antum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "gated", "subject": "صبب_1:imperative:antum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "drafted", "subject": "صدف_1:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:23+00:00", "kind": "gated", "subject": "صدف_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "drafted", "subject": "صدف_1:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "gated", "subject": "صدف_1:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "drafted", "subject": "صرر_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "gated", "subject": "صرر_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "drafted", "subject": "صرر_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "gated", "subject": "صرر_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:24+00:00", "kind": "drafted", "subject": "صرر_4:present:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "gated", "subject": "صرر_4:present:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "drafted", "subject": "صلب_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "gated", "subject": "صلب_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "drafted", "subject": "صلب_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "gated", "subject": "صلب_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "drafted", "subject": "صلب_2:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "gated", "subject": "صلب_2:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:25+00:00", "kind": "drafted", "subject": "صلب_2:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "gated", "subject": "صلب_2:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "drafted", "subject": "صلب_2:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "gated", "subject": "صلب_2:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "drafted", "subject": "صلي_4:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "gated", "subject": "صلي_4:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "drafted", "subject": "صلي_4:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:26+00:00", "kind": "gated", "subject": "صلي_4:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "drafted", "subject": "صلي_4:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "gated", "subject": "صلي_4:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "drafted", "subject": "صلي_4:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "gated", "subject": "صلي_4:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "drafted", "subject": "صلي_4:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "gated", "subject": "صلي_4:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:27+00:00", "kind": "drafted", "subject": "صور_2:past:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "gated", "subject": "صور_2:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "drafted", "subject": "صور_2:present:huwa", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "gated", "subject": "صور_2:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "drafted", "subject": "صور_2:present:ana", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "gated", "subject": "صور_2:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "drafted", "subject": "صور_2:past:hum", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "gated", "subject": "صور_2:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:28+00:00", "kind": "drafted", "subject": "صور_2:imperative:anta", "detail": "moved to drafted", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T17:58:29+00:00", "kind": "gated", "subject": "صور_2:imperative:anta", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T17:58:29+00:00", "kind": "parked", "subject": "حرف_2:imperative:anta", "detail": "skipped by policy: the command حَرِّفْ 'distort (words, meaning)!' has no acceptable everyday use", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "كسب_8:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "كسب_8:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "كسب_8:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "مري_8:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "مري_8:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "مري_8:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "مري_8:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "مري_8:#4", "detail": "classical verb, acceptable", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:07+00:00", "kind": "judged", "subject": "نصح_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "نصح_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "نصح_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "هجر_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "هجر_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "هلك_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "وصي_6:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "وقد_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "وقد_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:08+00:00", "kind": "judged", "subject": "وقد_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "وقد_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "وهن_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "وهن_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "أسو_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "بطل_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "بطل_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "بطل_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "بطل_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:09+00:00", "kind": "judged", "subject": "بطل_4:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "بوأ_5:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "بوأ_5:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "بوأ_5:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "بيت_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "بيت_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "تمم_1:#0", "detail": "Bosnian gloss/sentence mismatch: الْبِنَاءُ glossed 'gradnja' but sentence says 'Zgrada'; 'u ljetu' gloss vs 'ljeti'. Use 'Gradnja je završena ljeti.' (EN 'The construction was completed in summer.')", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "تمم_1:#1", "detail": "بِسَلَامٍ here means 'safely', not 'in peace'; 'Putovanje je završeno u miru' is unnatural. Use 'The journey was completed safely' / 'Putovanje je prošlo bez poteškoća (sretno)'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "ثقل_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:10+00:00", "kind": "judged", "subject": "ثقل_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:11+00:00", "kind": "judged", "subject": "ثقل_1:#2", "detail": "أَثْقُلُ بَعْدَ الْغَدَاءِ is a forced use (MSA says أَشْعُرُ بِالثِّقَلِ); EN 'feel heavy' does not match 'become heavy', and 'Postajem težak nakon ručka' is unnatural.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:11+00:00", "kind": "judged", "subject": "ثقل_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:11+00:00", "kind": "judged", "subject": "ثقل_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:11+00:00", "kind": "judged", "subject": "جمع_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:11+00:00", "kind": "judged", "subject": "جمع_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:11+00:00", "kind": "judged", "subject": "جوز_3:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "جوز_3:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "جوز_3:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "جوز_3:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "جوز_3:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "حبب_10:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "حبب_10:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "حبط_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "حبط_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:12+00:00", "kind": "judged", "subject": "حدد_3:#0", "detail": "rare/classical in MSA but attested sense", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حدد_3:#1", "detail": "rare/classical in MSA but attested sense", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حرف_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حرف_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حرف_2:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حرف_2:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حفظ_3:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حفظ_3:#1", "detail": "gloss 'nad svojom djecom' slightly mismatches sentence 'svoju djecu'", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حفظ_3:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:13+00:00", "kind": "judged", "subject": "حفظ_3:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حفظ_3:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حقق_4:#0", "detail": "يُحِقُّ الْقَاضِي الْعَدْلَ is forced: أَحَقَّ is idiomatic only in أَحَقَّ الْحَقَّ (Quranic phrase), not with العدل; a reader will also take it as يَحِقُّ 'it is permitted'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حلي_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حلي_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حلي_2:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حلي_2:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حلي_2:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حيي_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:14+00:00", "kind": "judged", "subject": "حيي_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "حيي_2:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "حيي_2:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "حيي_2:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "خرج_10:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "خرج_10:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "خرج_10:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "خرج_10:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "خرج_10:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:15+00:00", "kind": "judged", "subject": "خرص_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خرص_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خرص_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خرص_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خرص_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خرق_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خوف_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خيب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خير_8:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:16+00:00", "kind": "judged", "subject": "خير_8:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_5:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_5:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_5:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_5:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "دبر_5:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:17+00:00", "kind": "judged", "subject": "درأ_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "درأ_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "درأ_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "درأ_1:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "درأ_1:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "ربو_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "ربو_1:#1", "detail": "أَرْبَاحُ means 'profits', not 'revenues'/'prihodi'. Use 'The company's profits increased.' / 'Dobit firme je porasla.'", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "رغب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "رغب_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:18+00:00", "kind": "judged", "subject": "رغب_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "رقب_8:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "رقب_8:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "زلف_4:#0", "detail": "rare verb; قرّب more usual in MSA", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "زلف_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "زلف_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "زلف_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "زلف_4:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "سرق_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:19+00:00", "kind": "judged", "subject": "سول_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "سول_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "سوم_1:#0", "detail": "سَامَ + price as direct object (سَامَ ثَمَنًا) is not a standard collocation: classically the object of سام is the goods or the person (سَامَ السِّلْعَةَ, سَامَهُ بِكَذَا), and MSA uses سَاوَمَ/طَلَبَ ثَمَنًا. The 'demand a price' sense is forced.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "سوم_1:#1", "detail": "سَامَ + price as direct object (سَامَ ثَمَنًا) is not a standard collocation: classically the object of سام is the goods or the person (سَامَ السِّلْعَةَ, سَامَهُ بِكَذَا), and MSA uses سَاوَمَ/طَلَبَ ثَمَنًا. The 'demand a price' sense is forced.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "سوم_1:#2", "detail": "سَامَ + price as direct object (سَامَ ثَمَنًا) is not a standard collocation: classically the object of سام is the goods or the person (سَامَ السِّلْعَةَ, سَامَهُ بِكَذَا), and MSA uses سَاوَمَ/طَلَبَ ثَمَنًا. The 'demand a price' sense is forced.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "سوم_1:#3", "detail": "سَامَ + price as direct object (سَامَ ثَمَنًا) is not a standard collocation: classically the object of سام is the goods or the person (سَامَ السِّلْعَةَ, سَامَهُ بِكَذَا), and MSA uses سَاوَمَ/طَلَبَ ثَمَنًا. The 'demand a price' sense is forced.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "سوم_1:#4", "detail": "سَامَ + price as direct object (سَامَ ثَمَنًا) is not a standard collocation: classically the object of سام is the goods or the person (سَامَ السِّلْعَةَ, سَامَهُ بِكَذَا), and MSA uses سَاوَمَ/طَلَبَ ثَمَنًا. The 'demand a price' sense is forced.", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "شبه_6:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:20+00:00", "kind": "judged", "subject": "شبه_6:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "شري_1:#0", "detail": "شرى = sell (classical); MSA readers may read 'buy'", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "شري_1:#1", "detail": "شرى = sell (classical)", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "شري_1:#2", "detail": "شرى = sell (classical)", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "شقو_1:#0", "detail": "'unhappy with his money' / 'nesretan sa svojim novcem' means dissatisfied with, or in the company of; بِمَالِهِ = made miserable by his wealth. Use 'The miser is miserable because of his wealth.' / 'Škrtac je nesretan zbog svog imetka.'", "by": "claude subagent, blind reviewer (separate context)", "outcome": false, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "شقو_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "صبب_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "صبب_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "صبب_1:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:21+00:00", "kind": "judged", "subject": "صدف_1:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صدف_1:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صرر_4:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صرر_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صرر_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صلب_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صلب_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صلب_2:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:22+00:00", "kind": "judged", "subject": "صلب_2:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صلب_2:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صلي_4:#0", "detail": "classical sense (throw into fire to burn), rare in MSA", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صلي_4:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صلي_4:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صلي_4:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صلي_4:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صور_2:#0", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صور_2:#1", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صور_2:#2", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:23+00:00", "kind": "judged", "subject": "صور_2:#3", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:02:24+00:00", "kind": "judged", "subject": "صور_2:#4", "detail": "approved", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:05:17+00:00", "kind": "parked", "subject": "حقق_4:present:huwa", "detail": "skipped by policy: أَحَقَّ 'establish (the truth)' is idiomatic only in the Quranic phrase أَحَقَّ الْحَقَّ; any other object is forced, and يُحِقُّ reads as يَحِقُّ 'it is permitted'", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T18:05:17+00:00", "kind": "parked", "subject": "سوم_1:imperative:anta", "detail": "skipped by policy: the command سُمْ 'impose (hardship, a burden) on someone!' has no acceptable everyday use, and the price sense (سَامَ السِّلْعَةَ) is not current MSA", "by": "", "outcome": null, "independent": null}
+{"at": "2026-11-06T18:05:20+00:00", "kind": "gated", "subject": "تمم_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:20+00:00", "kind": "gated", "subject": "تمم_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:20+00:00", "kind": "gated", "subject": "ثقل_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:20+00:00", "kind": "gated", "subject": "ربو_1:past:hiya", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:20+00:00", "kind": "gated", "subject": "شقو_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:21+00:00", "kind": "gated", "subject": "سوم_1:past:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:21+00:00", "kind": "gated", "subject": "سوم_1:present:huwa", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:21+00:00", "kind": "gated", "subject": "سوم_1:present:ana", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:05:21+00:00", "kind": "gated", "subject": "سوم_1:past:hum", "detail": "moved to checked", "by": "", "outcome": true, "independent": null}
+{"at": "2026-11-06T18:06:42+00:00", "kind": "judged", "subject": "تمم_1:#2", "detail": "تَمَّ past/huwa, 'was completed'; natural MSA.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:42+00:00", "kind": "judged", "subject": "تمم_1:#3", "detail": "تَمَّتِ past/hiya with linking kasra; natural.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:42+00:00", "kind": "judged", "subject": "ثقل_1:#5", "detail": "ثَقُلَ يَثْقُلُ عَلَى 'be burdensome to'; أَثْقُلُ present/ana correct after أَنِّي.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:42+00:00", "kind": "judged", "subject": "ربو_1:#2", "detail": "رَبَا يَرْبُو, past/hiya رَبَتْ correct; 'increased/grew'.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:42+00:00", "kind": "judged", "subject": "سوم_1:#5", "detail": "سَامَهُ الأَمْرَ 'imposed on him (a burden)', doubly transitive; literary but genuine.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:43+00:00", "kind": "judged", "subject": "سوم_1:#6", "detail": "يَسُومُ present/huwa, two objects correct.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:43+00:00", "kind": "judged", "subject": "سوم_1:#7", "detail": "أَسُومُ present/ana; negated, 'anyone' correct.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:43+00:00", "kind": "judged", "subject": "سوم_1:#8", "detail": "سَامُوا past/hum; ضرائب diptote with fatha correct.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}
+{"at": "2026-11-06T18:06:43+00:00", "kind": "judged", "subject": "شقو_1:#2", "detail": "شَقِيَ يَشْقَى present/huwa; بِ causal, natural.", "by": "claude subagent, blind reviewer (separate context)", "outcome": true, "independent": true}

@@ -505,3 +505,7 @@ def test_the_stored_senses_and_choices_are_valid_and_fresh():
     found = [candidate for candidate in stage.candidates() if candidate.key in verbs]
     places = {candidate.form_key: {"%d:%d:%d" % location for location in candidate.form.locations} for candidate in found}
     assert stale(choices, verbs, places) == []
+
+
+def test_steal_takes_its_irregular_past():
+    assert english.cell_gloss(Cell("past", "3MS", False), EnglishVerb.from_meaning("to steal")) == "he/it stole"

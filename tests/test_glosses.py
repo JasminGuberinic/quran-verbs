@@ -134,3 +134,7 @@ def test_sinned_and_regretted_meet_their_base_forms():
 
 def test_slept_meets_its_base_form():
     assert gloss_agrees("they slept", ["sleep;lie_down+they_<verb>"]) is True
+
+
+def test_stole_meets_its_base_form():
+    assert gloss_agrees("he stole", ["steal;rob+he;it_<verb>"]) is True

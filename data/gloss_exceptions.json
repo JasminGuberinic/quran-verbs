@@ -55,9 +55,10 @@
   },
   "ح.#.#": {
     "glosses": [
-      "revive"
+      "revive",
+      "greet"
     ],
-    "why": "The lexicon reads the Form IV past أَحْيَا only as the first-person 'I live; experience' (أَحْيَا of Form I); it glosses other forms of the verb as 'enliven', so the causative sense is attested for this root. Quranic use: 2:28, 53:44 (أَمَاتَ وَأَحْيَا). Added 2026-11-03. CAMeL writes this root (ح.ي.ي) as ح.#.#."
+    "why": "The lexicon reads the Form IV past أَحْيَا only as the first-person 'I live; experience' (أَحْيَا of Form I); it glosses other forms of the verb as 'enliven', so the causative sense is attested for this root. Quranic use: 2:28, 53:44 (أَمَاتَ وَأَحْيَا). Added 2026-11-03. CAMeL writes this root (ح.ي.ي) as ح.#.#. Form II حَيَّا يُحَيِّي: the lexicon glosses it only as 'enliven; celebrate; grant a long life'; its standard sense is to greet (تَحِيَّة 'greeting', cf. 4:86 فَحَيُّوا بِأَحْسَنَ مِنْهَا). Added 2026-11-06."
   },
   "ح.س.ب": {
     "glosses": [
@@ -187,6 +188,34 @@
     "root": "ت.و.ب",
     "why": "CAMeL reads the hollow imperative تُبْ (repent!, root ت.و.ب, cf. توبوا 66:8) only as تَبَّ 'perish' (root ت.ب.ب). A root exception would have to be filed under ت.ب.ب, so it is excepted by this spelling alone. Added 2026-11-04."
   },
+  "spelling:سُمْ": {
+    "glosses": [
+      "demand",
+      "ask"
+    ],
+    "root": "س.و.م",
+    "why": "CAMeL reads the hollow imperative سُمْ (of سَامَ يَسُومُ, root س.و.م, 'demand/ask a price', سَامَ السِّلْعَةَ) only as سَمَّ 'poison' (root س.م.م). Excepted by this spelling alone. Added 2026-11-06 (verb batch a2)."
+  },
+  "د.ب.ر": {
+    "glosses": [
+      "ponder",
+      "reflect on",
+      "reflect"
+    ],
+    "why": "Form V تَدَبَّرَ: the lexicon has only 'be prepared; be arranged' and a noun 'meditation; deliberation'. Its standard MSA and Quranic sense is to ponder, reflect on (4:82 أَفَلَا يَتَدَبَّرُونَ). Added 2026-11-06 (verb batch a2)."
+  },
+  "ش.ر.#": {
+    "glosses": [
+      "sell"
+    ],
+    "why": "Form I شَرَى يَشْرِي: the lexicon glosses only 'buy; purchase'. The verb is a classical addad word meaning both buy and sell; the Quranic sense is sell (12:20 وَشَرَوْهُ بِثَمَنٍ بَخْسٍ, 2:207 يَشْرِي نَفْسَهُ). Added 2026-11-06 (verb batch a2)."
+  },
+  "ص.د.ف": {
+    "glosses": [
+      "turn away"
+    ],
+    "why": "Form I صَدَفَ عَنْ: the lexicon glosses only 'avoid'. Its standard sense is to turn away from (6:46 ثُمَّ هُمْ يَصْدِفُونَ). Added 2026-11-06 (verb batch a2)."
+  },
   "spelling:ذَرِ": {
     "glosses": [
       "leave",
@@ -223,9 +252,55 @@
     "glosses": [
       "be due",
       "become due",
-      "be binding"
+      "be binding",
+      "establish"
     ],
-    "why": "The CAMeL MSA lexicon glosses the verb حَقَّ only as 'be correct; be right'. Its other core sense — to become due, binding or incumbent (حَقَّ عَلَيْهِ, cf. فَحَقَّ عَلَيْنَا قَوْلُ رَبِّنَا 37:31, حَقَّتْ كَلِمَةُ رَبِّكَ 10:33) — is missing. Added 2026-11-04."
+    "why": "The CAMeL MSA lexicon glosses the verb حَقَّ only as 'be correct; be right'. Its other core sense — to become due, binding or incumbent (حَقَّ عَلَيْهِ, cf. فَحَقَّ عَلَيْنَا قَوْلُ رَبِّنَا 37:31, حَقَّتْ كَلِمَةُ رَبِّكَ 10:33) — is missing. Added 2026-11-04. Form IV أَحَقَّ يُحِقُّ: the lexicon glosses it only as 'enforce; make right'; its sense is to establish (the truth), to make true (cf. 8:8, 10:82). Added 2026-11-06."
+  },
+  "#.ص.#": {
+    "glosses": [
+      "urge one another",
+      "enjoin one another"
+    ],
+    "why": "The lexicon glosses Form VI تَوَاصَى only as 'bequeath; hand down'. Its standard and Quranic sense is to urge or enjoin one another (تَوَاصَوْا بِ, cf. 90:17, 103:3). Added 2026-11-06. CAMeL writes this root (و.ص.ي) as #.ص.#."
+  },
+  "ب.#.#": {
+    "glosses": [
+      "take up",
+      "settle"
+    ],
+    "why": "The lexicon glosses Form V تَبَوَّأَ only as 'hold; occupy; accede (throne)'. Its core sense is to settle in, to take up (a dwelling or a place), cf. 10:87 تَبَوَّءَا لِقَوْمِكُمَا بِمِصْرَ بُيُوتًا, 59:9. Added 2026-11-06. CAMeL writes this root (ب.و.أ) as ب.#.#."
+  },
+  "ب.#.ت": {
+    "glosses": [
+      "make by night",
+      "plan by night",
+      "decide by night"
+    ],
+    "why": "The lexicon glosses Form II بَيَّتَ only as 'plot; scheme' (and 'give overnight lodging'). Its core sense is to plan or decide by night, as in the fiqh term بَيَّتَ النِّيَّةَ 'to make the intention (of a fast) by night'; the Quran uses it of plotting by night (4:81, 4:108). Added 2026-11-06. CAMeL writes this root (ب.ي.ت) as ب.#.ت."
+  },
+  "ت.م.م": {
+    "glosses": [
+      "be complete",
+      "be completed",
+      "complete"
+    ],
+    "why": "The lexicon glosses Form I تَمَّ only as 'conclude; take place'. Its basic sense is to be complete, to be fulfilled (تَمَّ الْعَمَلُ; cf. 6:115, 7:142 فَتَمَّ مِيقَاتُ رَبِّهِ). Added 2026-11-06."
+  },
+  "ج.#.ز": {
+    "glosses": [
+      "cross",
+      "get past",
+      "pass beyond"
+    ],
+    "why": "The lexicon glosses Form III جَاوَزَ only as 'pass; exceed'. Its sense is to cross, to get past, to pass beyond (cf. 2:249 فَلَمَّا جَاوَزَهُ, 7:138). Added 2026-11-06. CAMeL writes this root (ج.و.ز) as ج.#.ز."
+  },
+  "spelling:حَلِّ": {
+    "glosses": [
+      "adorn"
+    ],
+    "root": "ح.ل.ي",
+    "why": "CAMeL reads حَلِّ only under ح.ل.ل ('begin; arrive', 'solution'), missing the Form II imperative of حَلَّى يُحَلِّي 'adorn', which it glosses so in the past. Excepted by this spelling alone. Added 2026-11-06."
   },
   "ف.ص.ل": {
     "glosses": [
@@ -596,9 +671,13 @@
   },
   "ح.ف.ظ": {
     "glosses": [
-      "memorize"
+      "memorize",
+      "keep",
+      "maintain",
+      "guard",
+      "take care"
     ],
-    "why": "The CAMeL MSA lexicon glosses ḥafiẓa only as 'preserve; protect; maintain'. Its everyday sense is also to memorize, to learn by heart (حَفِظَ الْقُرْآنَ, حَافِظ 'one who knows the Quran by heart'), standard in every Arabic dictionary. Owner-approved; added 2026-11-04."
+    "why": "The CAMeL MSA lexicon glosses ḥafiẓa only as 'preserve; protect; maintain'. Its everyday sense is also to memorize, to learn by heart (حَفِظَ الْقُرْآنَ, حَافِظ 'one who knows the Quran by heart'), standard in every Arabic dictionary. Owner-approved; added 2026-11-04. Form III حَافَظَ عَلَى: the lexicon glosses it only as 'preserve; protect'; its standard sense is to keep up, maintain, guard, take care of (حَافَظَ عَلَى وَعْدِهِ, صِحَّتِهِ; cf. 2:238 حَافِظُوا عَلَى الصَّلَوَاتِ). Added 2026-11-06."
   },
   "#.ز.ر": {
     "glosses": [

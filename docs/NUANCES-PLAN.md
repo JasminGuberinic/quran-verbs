@@ -137,3 +137,24 @@ warning differs), 12:24, 2:124, 2:256 (he gives two readings), 2:223, 4:34, 56:8
 include another sense are noted per group (دِين with yawm ad-dīn, بَعْل with the idol Baʿl, هَوَاء with 14:43);
 حِجْر (intellect only in 89:5) and rīḥ/riyāḥ (one lemma in the corpus) were not built. The new Bosnian texts spell
 Paradise Džennet throughout.
+
+## Bosnian spelling of Paradise and Hell (2026-11-06)
+Korkut writes Džennet and Džehennem (capitalised, double n), adjectives lowercase (džennetske bašče). The texts had
+drifted (Dženet, dženet, dženneta, džehennem, dženetske — 25 places in data/nuance_groups.json); all are unified, and
+tests/test_bosnian_spelling.py fails on any other spelling in data/ or the site sources.
+
+## Batch 8 (25 groups, 180 in all)
+Motion: هَبَطَ/نَزَلَ · عَرَجَ/صَعِدَ/رَقِيَ · خَرَجَ/بَرَزَ · ذَهَبَ/مَضَى. Trade, intent, keeping, strength: اشْتَرَى/شَرَى/بَيْع/تِجَارَة ·
+هَمَّ/عَزَمَ · حَفِظَ/رَعَى · قُوَّة/بَأْس/بَطْش · اسْتَطَاعَ/قَدَرَ/طَاقَة · وَجَدَ/أَلْفَى · كَرِهَ/أَبَى · نَزَعَ/خَطِفَ/سَلَبَ. Times of day:
+عَشِيّ/أَصِيل · بُكْرَة/غُدُوّ. Shaping: صَوَّرَ/سَوَّى/قَدَّرَ. Hearts: عَدَاوَة/بَغْضَاء · حَسَدَ/غِلّ. Hunger and fatigue:
+جُوع/مَخْمَصَة/مَسْغَبَة · نَصَب/لُغُوب. Kin and children: عَشِيرَة/رَهْط/فَصِيلَة · ذُرِّيَّة/نَسْل · طِفْل/صَبِيّ/غُلَام. Animals and
+light: نَاقَة/جَمَل/إِبِل/بَعِير · دَابَّة/أَنْعَام/بَهِيمَة · سِرَاج/مِصْبَاح. Drafted from the Mufradāt entries, verified (437 points:
+414 confirmed, 17 partial, 3 different, 3 not found; 23 texts changed, quotes machine-checked), reviewed blind (88 claims,
+26 flagged, every flag fixed in the texts, none held back). Allah's ascent-to-Him (70:4), baṭš (44:16), qudra, taṣwīr
+and taswiya carry "as befits Him"; 12:20 says only that Joseph is sold (who sold him is disputed). Left out on purpose:
+Adam's descent ayat (2:36, 2:38, 7:24, 20:123 — ar-Rāġib's "belittlement" reading of hubūṭ is not put on a prophet),
+12:24, 20:115, 2:34 / 15:31 / 20:116 (Iblīs, as in batch 6), 7:27, 33:72 (amāna read many ways), 27:82 (the dābba),
+27:48, 2:124, 91:7 (he argues against one reading), 15:29 and 32:9 (lead into the rūḥ), 24:31, 18:74 and 18:80, 77:33
+(camels or ropes), 25:61, 6:125, 4:34, 13:11, and 4:113, 35:8, 6:52, 18:28, 9:42 (said to or about the Prophet). Counts
+that include another sense are noted per group (غِلّ with aġlāl "fetters", قَدَرَ with "straiten / measure", عَشِيّ
+summed with عَشِيَّة); نَاقَة has no Mufradāt entry and rests on Quranic usage (all seven places read).

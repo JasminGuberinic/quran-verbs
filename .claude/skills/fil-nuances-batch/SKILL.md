@@ -249,3 +249,27 @@ passed first time. Lessons:
   tests/test_bosnian_spelling.py now fails on any variant.
 - Left out on purpose: 49:2 (scope of the warning differs; 5:5 shown), 12:24, 2:124, 2:256, 2:223, 4:34, 9:84,
   5:41, 5:49, 33:37, 15:88, 20:131, 35:8 (said to the Prophet), 39:65, 6:88, 20:121.
+
+## Batch 8 (2026-11-06): 25 groups → 180
+habata-nazala · araja-saida-raqiya · kharaja-baraza · dhahaba-mada · ishtara-bay-tijara · hamma-azama · hafiza-raa
+· quwwa-bas-batsh · ashiyy-asil · bukra-ghuduw · sawwara-sawwa-qaddara · adawa-baghda · hasad-ghill · ju-makhmasa-masghaba
+· ashira-raht-fasila · nasab-lughub · dhurriyya-nasl · tifl-sabiyy-ghulam · naqa-jamal-ibil-bair · dabba-anam-bahima
+· siraj-misbah · istataa-qadara-taqa · wajada-alfa · kariha-aba · nazaa-khatifa-salaba. Preceded by a separate commit
+unifying Džennet / Džehennem across data/ (with tests/test_bosnian_spelling.py). Same order as batch 7 (`lookup.py` +
+`xref8.py` → 3 drafter forks → `merge8.py` → `new8.py` + `packets.py` → 3 verifiers with `VBRIEF8.md` → `apply5.py` →
+2 Sonnet reviewers on `blind8.py`'s halves with `REVIEW-BRIEF8.md` → `apply_review.py` + `review_overrides.py` →
+`notes8review.py`); `check` and `fil pages` passed first time. Scratch scripts copied from an earlier worktree carry
+its path: rewrite it (`perl -pi -e s/old/new/`) before running them. Lessons:
+- Verification: 437 points, 414 confirmed, 17 partial, 3 different, 3 not found; 23 texts changed. Caught again: a verse
+  he quotes given the wrong number (his يذهبكم ويأت بخلق جديد is 35:16/14:19, not 4:133; لمن عزم الأمور is 42:43, not 31:17;
+  العداوة والبغضاء with ألقينا is 5:64, not 5:14); his limit dropped (the tool "if the act needs one"; karihtu "used of
+  both"); our inference inside his attribution (bayʿ "a single act", tiǧāra "the whole business").
+- The OpenITI text is unvowelled: where his point turns on a vowel (karh vs kurh "more frequent"), do not let a
+  verifier fill it from memory of printed editions — say less.
+- Blind review flagged 26 of 88 claims. Most common: bs/en drift inside ayah quotes and bs that says the opposite
+  (106:4 "glađu nahranio" = fed with hunger); a contested identity stated as fact (who sold Joseph, 12:20); "only once /
+  almost always" that a related form or our own cited ayah breaks (رَقِيَ vs irtaqā 38:10; qadara negated vs 5:34); a
+  member's ayah from another verb form (18:60 amḍiya on the مَضَى card); "as befits Him" on the ayah line too, not only
+  in the nuance (70:4, 44:16).
+- Bosnian ayah quotes are written to Korkut's style from memory (no Korkut text in the repo): the reviewers caught
+  ungrammatical ones (5:1, 3:97) — read every bs quote aloud before review.

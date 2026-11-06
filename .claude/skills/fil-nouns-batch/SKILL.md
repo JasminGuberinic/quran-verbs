@@ -118,7 +118,8 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - A sound-feminine-plural ACC override (الْأُمَّهَاتِ) fails the gate when the corpus files the
   plural as broken — leave that gap. data/gloss_exceptions.json is indented 2, the noun_*.json 1.
 - A Bosnian plurale tantum (grudi for صَدْر) uses the collective mechanism: sg row in the plural,
-  `"pluralForms": ["sg"]`. Re-check the Sonnet halves' first word against the sentences you
+  `"pluralForms": ["sg"]`. The reverse — a pl row whose Bosnian word is a collective singular (djeca,
+  braća, odjeća, rodbina) — gets `"singularForms": ["pl"]` and pl gender f: "njihova djeca", never "njihove djeca". Re-check the Sonnet halves' first word against the sentences you
   plan (hvala→pohvala, skupina→tim, naknada→nagrada) and fix with a small paradigms file.
 - Tell the blind reviewer to copy ids from blind.json programmatically: a retyped id (marks
   reordered in قُوَّة) imports as "unknown"; remap by the `#n` suffix. حَمْد with no agent sounds

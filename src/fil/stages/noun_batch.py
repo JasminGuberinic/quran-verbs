@@ -219,6 +219,8 @@ _SHEET_FORMAT = {
                        "phrase with dva/dvije/oba)",
               "genders": "the Bosnian gender of each number listed except du: m, ma (masculine animate), f, n — "
                          "as a possessive agrees with it (njegov narod = m, njegovi ljudi = ma, njegova ruka = f)",
+              "singularForms": "optional: [\"pl\"] when the plural's Bosnian word is a collective singular "
+                               "(djeca, braća, odjeća): what agrees with it is feminine singular (njihova djeca)",
               "prepositions": {name: f"one of {list(options)}" for name, options in bosnian_nouns.ARABIC_PREPOSITIONS.items()}},
     "prepositions": "fi = فِي (u/na + L), ala = عَلَى (na + L), bi = بِـ ('' = bare instrumental 'rukom', "
                     "s = 's narodom'), min = مِنْ (iz/od + G), ila = إِلَى (do + G, prema/k + D), li = لِـ "

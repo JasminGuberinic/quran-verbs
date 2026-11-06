@@ -84,6 +84,7 @@ _SHORT_ENDINGS = {GENITIVE: "og", DATIVE: "om", LOCATIVE: "om"}
 
 _BOSNIAN = re.compile(r"^[a-zA-ZčćžšđČĆŽŠĐ' -]+$")
 PLURAL_FORMS = "pluralForms"   # entry key: the numbers declined as Bosnian plurals (a collective's "sg": deve)
+SINGULAR_FORMS = "singularForms"   # entry key: the numbers whose Bosnian word is a collective singular (djeca)
 CELL = re.compile(r"^(sg|du|pl)\|(N|G|D|A|I|L)$")
 
 
@@ -101,9 +102,22 @@ class BosnianNoun:
     # The numbers whose Bosnian words are plurals: a collective's own row (إِبِل → "deve"),
     # so what agrees with it is plural too ("njegove deve", never "njegova deve").
     plural_numbers: frozenset[str] = frozenset()
+    # The numbers whose Bosnian word is a collective singular in form — djeca, braća, odjeća
+    # for an Arabic plural — so what agrees with it is feminine singular ("njihova djeca",
+    # "njihovoj djeci"), never plural ("njihove djeca").
+    singular_numbers: frozenset[str] = frozenset()
 
     def cell(self, number: str, case: str) -> str | None:
         return self.cells.get(f"{number}|{case}")
+
+    def agreement(self, number: str) -> tuple[str, str] | None:
+        """The gender and Bosnian number of what agrees with this number's word, if it has a gender."""
+        gender = self.genders.get(number)
+        if gender is None:
+            return None
+        if number in self.singular_numbers:
+            return FEMININE, SINGULAR
+        return gender, PLURAL if number in self.plural_numbers else number
 
 
 @dataclass(frozen=True)
@@ -184,10 +198,11 @@ def possessive_adjective(possessor: str, gender: str, number: str, case: str) ->
 def _possessive(noun: BosnianNoun, possessor: str, number: str, case: str) -> str:
     if number == DUAL:
         raise CannotSay("a possessed dual")
-    gender = noun.genders.get(number)
-    if gender is None:
+    agreement = noun.agreement(number)
+    if agreement is None:
         raise CannotSay(f"no gender for {number}")
-    return possessive_adjective(possessor, gender, PLURAL if number in noun.plural_numbers else number, case)
+    gender, agreeing_number = agreement
+    return possessive_adjective(possessor, gender, agreeing_number, case)
 
 
 # ------------------------------------------------------------------ validation on import
@@ -205,7 +220,8 @@ def validated(entries: Mapping[str, Mapping], needs: Mapping[str, tuple[str, ...
 
 def from_entry(entry: Mapping) -> BosnianNoun:
     return BosnianNoun(cells=dict(entry["cells"]), genders=dict(entry["genders"]),
-                       prepositions=dict(entry["prepositions"]), plural_numbers=frozenset(entry.get(PLURAL_FORMS, ())))
+                       prepositions=dict(entry["prepositions"]), plural_numbers=frozenset(entry.get(PLURAL_FORMS, ())),
+                       singular_numbers=frozenset(entry.get(SINGULAR_FORMS, ())))
 
 
 def _problems(key: str, entry: Mapping, numbers: tuple[str, ...]) -> list[str]:
@@ -213,8 +229,8 @@ def _problems(key: str, entry: Mapping, numbers: tuple[str, ...]) -> list[str]:
         return [f"{key}: needs cells, genders and prepositions"]
     found = [*_cell_problems(key, entry["cells"]), *_gender_problems(key, entry["genders"]),
              *_preposition_problems(key, entry["prepositions"]),
-             *(f"{key}: {PLURAL_FORMS} lists {number!r}, not a number" for number in entry.get(PLURAL_FORMS, ())
-               if number not in NUMBERS)]
+             *(f"{key}: {listing} lists {number!r}, not a number" for listing in (PLURAL_FORMS, SINGULAR_FORMS)
+               for number in entry.get(listing, ()) if number not in NUMBERS)]
     missing = [f"{number}|{case}" for number in numbers for case in CASES if f"{number}|{case}" not in entry["cells"]]
     if missing:
         found.append(f"{key}: missing {', '.join(missing)}")

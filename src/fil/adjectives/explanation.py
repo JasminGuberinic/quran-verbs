@@ -82,8 +82,8 @@ def _attribute(kind: str, meaning: AdjectiveMeaning, table: AdjectiveTable, noun
     bosnian_noun = _bosnian_noun(noun.bosnian, number)
     if not (noun_text and adjective_text and bosnian_noun):
         return None
-    word, bosnian_gender = bosnian_noun
-    adjective_bs = bosnian.attribute(meaning.bs_long, bosnian_gender, _BOSNIAN_NUMBERS[number],
+    word, bosnian_gender, bosnian_number = bosnian_noun
+    adjective_bs = bosnian.attribute(meaning.bs_long, bosnian_gender, bosnian_number,
                                      short_form=meaning.bs_short, is_definite=state == DEFINITE)
     return AgreementExample(kind, f"{noun_text} {adjective_text}",
                             english.attribute(meaning.en_first, noun.english, number, state == DEFINITE),
@@ -96,7 +96,7 @@ def _predicate(meaning: AdjectiveMeaning, table: AdjectiveTable, noun: Described
     bosnian_noun = _bosnian_noun(noun.bosnian, SINGULAR)
     if not (subject and adjective_text and bosnian_noun):
         return None
-    word, gender = bosnian_noun
+    word, gender, _number = bosnian_noun
     adjective_bs = bosnian.predicate(meaning.bs_long, meaning.bs_short, gender, bosnian_nouns.SINGULAR)
     return AgreementExample(PREDICATE, f"{subject} {adjective_text}", english.predicate(meaning.en_first, noun.english, SINGULAR),
                             f"{_capitalised(word)} {bosnian.copula(bosnian_nouns.SINGULAR)} {adjective_bs}.")
@@ -111,7 +111,7 @@ def _comparison(meaning: AdjectiveMeaning, elative: str | None, subject: Describ
     other_genitive = other.bosnian.cell(bosnian_nouns.SINGULAR, bosnian_nouns.GENITIVE)
     if not (first and second and bosnian_subject and other_genitive):
         return None
-    word, gender = bosnian_subject
+    word, gender, _number = bosnian_subject
     comparative = bosnian.attribute(meaning.elative.bs, gender, bosnian_nouns.SINGULAR)
     return AgreementExample(ELATIVE, f"{first} {elative} {_MIN_BEFORE_ARTICLE} {second}",
                             english.comparison(meaning.elative.en, subject.english, other.english),
@@ -124,14 +124,15 @@ def _agreeing(gender: str, number: str, is_human: bool) -> tuple[str, str]:
     return gender, number
 
 
-def _bosnian_noun(noun: BosnianNoun, number: str) -> tuple[str, str] | None:
-    """The Bosnian noun's nominative and the gender an adjective agrees with; None for a noun
-    whose Bosnian number differs from the Arabic one (a collective's "deve")."""
+def _bosnian_noun(noun: BosnianNoun, number: str) -> tuple[str, str, str] | None:
+    """The Bosnian noun's nominative and the gender and number an adjective agrees with
+    ("radosna djeca": a collective singular agrees in the feminine singular); None for a noun
+    whose Bosnian number is plural where the Arabic one is singular (a collective's "deve")."""
     wanted = _BOSNIAN_NUMBERS[number]
-    word, gender = noun.cell(wanted, bosnian_nouns.NOMINATIVE), noun.genders.get(wanted)
-    if not word or not gender or wanted in noun.plural_numbers:
+    word, agreement = noun.cell(wanted, bosnian_nouns.NOMINATIVE), noun.agreement(wanted)
+    if not word or not agreement or wanted in noun.plural_numbers:
         return None
-    return word, gender
+    return word, *agreement
 
 
 def _standard(text: str | None) -> str | None:

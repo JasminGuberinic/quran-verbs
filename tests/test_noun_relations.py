@@ -71,6 +71,13 @@ def test_a_collective_declined_in_the_bosnian_plural_takes_a_plural_possessive()
     assert bosnian.phrase(camels, Phrase(possessor="3MS")) == "njegove deve"
 
 
+def test_a_collective_singular_for_an_arabic_plural_takes_a_feminine_singular_possessive():
+    children = BosnianNoun(cells={"pl|N": "djeca", "pl|D": "djeci"}, genders={"pl": "f"}, prepositions={},
+                           singular_numbers=frozenset({"pl"}))
+    assert bosnian.phrase(children, Phrase(number="pl", possessor="3MP")) == "njihova djeca"
+    assert bosnian.phrase(children, Phrase(number="pl", case="D", possessor="2MP")) == "vašoj djeci"
+
+
 def test_pluralforms_must_name_a_number():
     entry = {"cells": {}, "genders": {}, "prepositions": dict.fromkeys(bosnian.ARABIC_PREPOSITIONS, "-"),
              "pluralForms": ["many"]}

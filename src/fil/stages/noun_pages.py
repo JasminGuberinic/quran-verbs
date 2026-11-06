@@ -18,17 +18,19 @@ from pathlib import Path
 from fil.languages import LANGUAGES, Language
 from fil.noun_pictures import load_categories
 from fil.nouns.pictures import NounPicture, sources_used
-from fil.pages import adjective_render, noun_render, seo
+from fil.pages import adjective_render, noun_render, nuance_render, seo
 from fil.pages.picture_credits import picture_credit
 from fil.resources import NOUN_PICTURES_DIR
 from fil.stages.noun_site import NounContent
+from fil.stages.nuance_site import groups_of_lemma
 
 PICTURE_FOLDER = "pictures"
 
 
-def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: Sequence[dict] = ()) -> list[Path]:
+def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: Sequence[dict] = (),
+          nuances: Sequence[dict] = ()) -> list[Path]:
     """Every noun page and list, the nouns' ayat files and pictures; the pages written. A noun page
-    links the studied `adjectives` (cards) of its root."""
+    links the studied `adjectives` (cards) of its root and the `nuances` (group cards) it belongs to."""
     if not nouns.cards:
         return []
     write_ayat(pages, nouns.ayat_lists)
@@ -41,14 +43,16 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: S
         written.append(_write(pages, seo.noun_index_path(language.code),
                               noun_render.noun_index(nouns.cards, language, text, categories=categories,
                                                      picture_credit=credit_for(nouns.cards),
-                                                     has_adjectives=bool(adjectives))))
+                                                     has_adjectives=bool(adjectives), has_nuances=bool(nuances))))
         for card in nouns.cards:
             related = [other for other in nouns.cards if other["root"] == card["root"] and other is not card]
             path = seo.noun_path(language.code, card["slug"])
             html = noun_render.noun_page(card, language, text, category=categories.get(card["key"]),
                                          picture_credit=credit_for([card, *related]), related=related,
                                          adjectives_of_root=adjective_render.adjectives_section(card, adjectives, language, text, path),
-                                         has_adjectives=bool(adjectives))
+                                         has_adjectives=bool(adjectives), has_nuances=bool(nuances),
+                                         similar_words=nuance_render.similar_words_section(
+                                             groups_of_lemma(card["key"], nuances), language, text, seo.to_root(path)))
             written.append(_write(pages, path, html))
     return written
 

@@ -109,7 +109,7 @@ def test_the_app_hides_the_nouns_link_in_a_language_without_noun_pages():
     sections = re.search(r"function renderSections\(ui\) \{(.*?)\n  \}", app, re.S).group(1)
     section = re.search(r"function renderSection\(link, path, label\) \{(.*?)\n  \}", app, re.S).group(1)
     assert "link.hidden = !path" in section and "paths.en" not in sections
-    assert "DATA.nounPages" in sections and "DATA.adjectivePages" in sections
+    assert "DATA.nounPages" in sections and "DATA.adjectivePages" in sections and "DATA.nuancePages" in sections
     assert '<a id="verbs-link"' in app and 'id="nouns-link" hidden' in app and 'id="adjectives-link" hidden' in app
 
 
@@ -152,8 +152,8 @@ def _parsed(page: Path) -> _Page:
 
 
 def _noun_pages() -> list[Path]:
-    """The noun and adjective pages (both are Bosnian and English only)."""
-    folders = [*seo.NOUN_FOLDERS.items(), *seo.ADJECTIVE_FOLDERS.items()]
+    """The noun, adjective and nuance pages (all Bosnian and English only)."""
+    folders = [*seo.NOUN_FOLDERS.items(), *seo.ADJECTIVE_FOLDERS.items(), *seo.NUANCE_FOLDERS.items()]
     return sorted(path for code, folder in folders for path in (PAGES_DIR / code / folder).rglob("index.html"))
 
 
@@ -162,7 +162,7 @@ def _verb_pages_sample() -> list[Path]:
     sample = []
     for language in LANGUAGES:
         folder = PAGES_DIR / language.code
-        sections = {*seo.NOUN_FOLDERS.values(), *seo.ADJECTIVE_FOLDERS.values()}
+        sections = {*seo.NOUN_FOLDERS.values(), *seo.ADJECTIVE_FOLDERS.values(), *seo.NUANCE_FOLDERS.values()}
         verbs = sorted(page for page in folder.glob("*/index.html") if page.parent.name not in sections)
         sample += [folder / "index.html", *verbs[:3]]
     return sample
@@ -193,11 +193,12 @@ def test_every_page_has_the_same_top_bar_with_its_section_marked():
         code, folder = relative.parts[0], relative.parts[1:2]
         is_noun = folder == (seo.NOUN_FOLDERS.get(code),)
         is_adjective = folder == (seo.ADJECTIVE_FOLDERS.get(code),)
+        is_nuance = folder == (seo.NUANCE_FOLDERS.get(code),)
         sections = _parsed(page).sections
-        expected = 3 if code in seo.ADJECTIVE_FOLDERS else 2 if code in seo.NOUN_FOLDERS else 1
+        expected = 1 + sum(code in folders for folders in (seo.NOUN_FOLDERS, seo.ADJECTIVE_FOLDERS, seo.NUANCE_FOLDERS))
         assert len(sections) == expected, relative
         current = [index for index, (_href, mark) in enumerate(sections) if mark]
-        assert current == [2 if is_adjective else 1 if is_noun else 0], relative
+        assert current == [3 if is_nuance else 2 if is_adjective else 1 if is_noun else 0], relative
 
 
 @built

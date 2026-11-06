@@ -289,3 +289,28 @@ its path: rewrite it (`perl -pi -e s/old/new/`) before running them. Lessons:
 - (Superseded 2026-11-06, licence fix) Bosnian ayah quotes were written to Korkut's style from memory and English
   ones in Sahih International's wording — both under copyright. Every quote was rewritten: en is Pickthall's text,
   bs our own translation from the Arabic (see "Ayah quotations"). Read every bs quote aloud before review.
+
+## Batch 9 (2026-11-06): 25 groups → 205
+kadhdhaba-jahada-ankara · sakhira-istahzaa · badaa-ansha-badi · najja-anja-anqadha · kataba-farada · tagha-ata · wad-waid
+· sabbaha-qaddasa · janna-hadaiq-rawda · libas-thiyab-sarabil · hijara-sakhra · amn-salam · asnam-awthan-tamathil · qasr-sarh
+· qaswa-ghilza-fazz · qital-harb · asrafa-badhdhara · labitha-makatha · intazara-tarabbasa · anzara-amla-mahhala · tayyib-halal
+· faqiha-shaara · ataa-ittabaa · baddala-ghayyara-harrafa · zada-daafa. First batch under the licence rule. Order: `lookup.py`
+→ 3 drafter forks with `DBRIEF9.md` → `merge9.py` → `new9.py` + `packets.py` → 3 verifiers with `VBRIEF9.md` → `apply5.py`
+→ 2 Sonnet reviewers on `blind9.py`'s halves with `REVIEW-BRIEF9.md` (now with a licence section) → `flags9.py` (each flag
+beside the current text) → `apply_review.py` + `review_overrides.py` → `notes9review.py`. Lessons:
+- Licence tooling that made it cheap: `pk.py s:a …` prints the Arabic with Pickthall's English (the only English we quote);
+  `qcheck9.py batch9X` runs the ayah-quote gate and the Džennet spelling check on a drafter's module before any merge, so
+  `check` had no quote problem at merge. `b3common.G` adds `"ayahQuotes": {"bs": "own"}`; `fmt.inline` keeps it on one line
+  (without that the dumper rewrites every earlier group's declaration).
+- Pickthall often gives two members one English word ("change", "lofty tower", "rock" for حَجَر): paraphrase that ayah
+  without quotation marks, or insert the member in [brackets] inside the quote. His text may follow another reading than
+  Ḥafṣ (29:25 مَوَدَّة): quote only the part both readings share.
+- The blind reviewer flagged twelve Bosnian quotes as close to Korkut's sentences (from its memory — a risk flag, not proof):
+  translate those again, word order and vocabulary of our own. Close Bosnian quotes with “ („…“), not ”.
+- The lemma resolver must compare marks as a set per letter: جَنَّة typed with shadda/fatḥa in the other order matched three
+  lemmas by skeleton (جَنَّة, جِنَّة, جُنَّة); `merge9.py` compares canonical mark order first.
+- `spoken` was needed for جَنَّة (جَنَّةٌ) — the build stops on it; give every tāʾ-marbūṭa headword one in the draft.
+- Verification caught verse numbers again (his wording 36:40 not 21:33, 8:37 not 3:179, 20:40 not 26:18, 10:102 not 10:20,
+  11:58/41:50 not 14:17) and a neighbour's definition (تِمْثَال given his مُمَثَّل). Review caught "always with min" broken by
+  37:12, "every prayer" broken by conditional vows (10:22, 6:63), a word added to his definition ("trap" for warṭa), 6:82 ẓulm
+  needing the Prophet's explanation (shirk), and a Name of Allah (as-Salām) left as "some say".

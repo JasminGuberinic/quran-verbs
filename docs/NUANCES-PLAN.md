@@ -172,3 +172,21 @@ translation from the Arabic (1,100 / 274 / 50; the ones that came out identical 
 again, only a few short literal formulas remain), and several hundred glosses that sat in double quotes moved to single ones.
 Reviewer notes that quoted Sahih/Korkut phrases were cut to single terms. The gate fil.ayah_quotes
 (tests/test_ayah_quotes.py, `fil nuances|particles|pronouns check`) keeps it so.
+
+## Batch 9 (25 groups, 205 in all)
+The first batch written under the ayah-quotation rule from the start. Denying and mocking: كَذَّبَ/جَحَدَ/أَنْكَرَ · سَخِرَ/اسْتَهْزَأَ.
+Allah's acts (each "as befits Him"): بَدَأَ/أَنْشَأَ/بَدِيع · نَجَّى/أَنْجَى/أَنْقَذَ · كَتَبَ/فَرَضَ · وَعْد/وَعِيد · سَبَّحَ/قَدَّسَ · أَنْظَرَ/أَمْلَى/مَهَّلَ.
+Overstepping and excess: طَغَى/عَتَا · أَسْرَفَ/بَذَّرَ · بَدَّلَ/غَيَّرَ/حَرَّفَ · زَادَ/ضَاعَفَ. Staying and waiting: لَبِثَ/مَكَثَ ·
+اِنْتَظَرَ/تَرَبَّصَ. Knowing and following: فَقِهَ/شَعَرَ · أَطَاعَ/اِتَّبَعَ. Things and places: جَنَّة/حَدَائِق/رَوْضَة · لِبَاس/ثِيَاب/سَرَابِيل ·
+حَجَر/صَخْرَة · أَمْن/سَلَام · أَصْنَام/أَوْثَان/تَمَاثِيل · قَصْر/صَرْح · قَسَا/غَلِيظ/فَظّ · قِتَال/حَرْب · حَلَال/طَيِّب. English quotes are
+Pickthall's words (checked per drafter with the gate before merging), Bosnian quotes our own translation; where Pickthall
+gives two members one English word ("change" for بَدَّلَ/غَيَّرَ/حَرَّفَ, "lofty tower" for قَصْر and صَرْح, "rock" for حَجَر),
+the ayah is paraphrased without quotation marks or the member named in [brackets]. Verified (446 points: 418 confirmed,
+26 partial, 2 different; 23 texts changed — mostly verse numbers in notes: his wording is 36:40 not 21:33, 8:37 not 3:179,
+20:40 not 26:18, 10:102 not 10:20), reviewed blind (84 claims, 41 flagged, every flag fixed in the texts; twelve Bosnian
+quotes the reviewer found close to Korkut's sentences were translated again). Counts summed and noted: حِجَارَة + حَجَر,
+صَخْرَة + صَخْر, أَمْن + أَمَنَة, غَلِيظ + غِلْظَة, طَيِّب + طَيِّبَات; كَتَبَ and أَمْلَى include 'write' / 'dictate'. Left out on purpose: 39:19,
+33:38, 33:50, 66:2, 28:85, 11:112, 25:10, 5:41, 32:30, 8:65, 74:4 as an illustration (named only with his two readings),
+53:17 (said to or about the Prophet), 18:80, 10:92, 33:33, 2:35 / 7:19 (which garden), 14:35, 77:32 as an illustration,
+66:6, 39:53 (needs 4:48 beside it), 7:14 / 15:36 / 38:79 (Iblīs), 47:25, 4:119, 25:70, 33:30, 2:10 as an illustration,
+49:2.

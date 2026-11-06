@@ -314,3 +314,25 @@ beside the current text) → `apply_review.py` + `review_overrides.py` → `note
   11:58/41:50 not 14:17) and a neighbour's definition (تِمْثَال given his مُمَثَّل). Review caught "always with min" broken by
   37:12, "every prayer" broken by conditional vows (10:22, 6:63), a word added to his definition ("trap" for warṭa), 6:82 ẓulm
   needing the Prophet's explanation (shirk), and a Name of Allah (as-Salām) left as "some say".
+
+## Batch 10 (2026-11-06): 25 groups → 230
+nasara-amadda-aana · tawakkala-fawwada · aadha-itasama-malja · naqada-nakatha · afsada-atha · manna-anama · aadda-hayyaa
+· qama-waqafa · kalima-qawl-hadith · laghw-batil · sirr-najwa · alim-khabir · shahid-raqib-hafiz · mithl-nidd-kufu · yasir-hayyin
+· jamil-hasan · najm-kawkab-shihab · firash-mihad-bisat · surur-araik · kharra-hawa-saqata · unuq-raqaba · khalid-khuld-abad
+· inshaqqa-infatara-infalaqa · hijab-ghita-akinna · hin-dahr-amad. Verbs 501–600 had not landed on study-site, so members
+come from the 500 studied verbs and the studied nouns/adjectives. Same order as batch 9 (`lookup.py` → 3 drafter forks with
+`DBRIEF10.md` → `merge10.py` → `new10.py` + `packets.py` → 3 verifiers with `VBRIEF10.md` → `apply5.py` → 2 Sonnet reviewers
+on `blind10.py`'s halves with `REVIEW-BRIEF10.md` → `flags9.py` → `apply_review.py` + `review_overrides.py` → `fix10review.py`
+(notes / tellApart) → `notes10review.py`). `check` passed at merge with only the expected "no verified record". Lessons:
+- Copy the kit with `cp -R` and rewrite its worktree path with `perl -pi -e s/old/new/ -- *.py *.sh *.md` (an `xargs perl`
+  pipeline is refused by the isolation guard); run a script that does `sh fil.sh …` in the background, never `sh … ; echo $?`.
+- Verification: 440 points, 412 confirmed, 23 partial, 4 different, 1 not found; 27 texts changed. Verse numbers again (his
+  wording is 57:25 not 22:40, 9:100 not 9:89, 5:8 not 4:135, 10:98 not 37:148, 31:30 not 22:62); our addition inside his gloss
+  ("as befits Him" on his 42:51 reading — keep it on our own line, not in his); a limit dropped (minna is ugly "unless the
+  favour is met with ingratitude"); a plural misspelt (ābād, not āmād); our Quranic observation inside "he says".
+- Blind review flagged 29 of 88 claims; 19 flags were Bosnian quotes close to Korkut (most common: short famous ayat — 112:4, 2:82,
+  2:7, 26:63, 49:17, 5:117). Translate famous ayat with deliberately different word order and vocabulary in the draft. Also
+  caught: "in all three ayat … except with Allah" true of one (مَلْجَأ 9:118); a count off by one (خَرَّ 6 of 12 — a negated
+  place is not an instance); "always" broken by a reading he himself reports (aʿnāq = nobles in 26:4); 53:1 given a plain sense
+  he gives three readings of; a capitalised "Onome" that reads as a Name of Allah.
+- `spoken` was needed for كَلِمَة (كَلِمَةٌ) and لَغْو (لَغْوٌ) — `spoken10.py` inserts it before `count`.

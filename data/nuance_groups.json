@@ -14299,5 +14299,1734 @@
     ]
    }
   ]
+ },
+ "nasara-amadda-aana": {
+  "title": {"bs": "Pomoći: dati pobjedu, opskrbiti, potpomoći", "en": "Helping: giving victory, reinforcing, assisting"},
+  "shared": {
+   "bs": "Sve tri riječi govore o pomoći koja nekome dolazi izvana. Razlikuju se po onome što pomoć donosi: prevlast nad onim ko mu se suprotstavlja, dotok onoga što mu treba, ili ruku koja radi zajedno s njim.",
+   "en": "All three words speak of help that comes to someone from outside. They differ in what the help brings: the upper hand over whoever stands against him, a supply of what he needs, or a hand that works alongside him."
+  },
+  "tellApart": {
+   "bs": "Pomoći protiv protivnika, dati pobjedu – najčešće Allah vjernicima i poslanicima → نَصَرَ; opskrbiti, pojačati dotokom (vojskom, imetkom, sinovima, plodovima) – ar-Rāġib: najčešće u onome što je drago → أَمَدَّ; potpomoći, stati uz nekoga u poslu – oba puta ljudi → أَعَانَ.",
+   "en": "Helping against an opponent, giving victory — mostly Allah to believers and messengers → نَصَرَ; reinforcing with a supply (hosts, wealth, sons, fruit) — ar-Rāġib: mostly of what is welcome → أَمَدَّ; assisting, backing someone in a task — both times people → أَعَانَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نصر, مد, عون"
+  ],
+  "notes": [
+   "ar-Rāġib (نصر): naṣr and nuṣra are ʿawn (help); cites 61:13, 110:1, 3:160, 2:250, 30:47, 40:51 and others; Allah's naṣr of the servant is evident, and the servant's naṣr of Allah is his helping His servants, keeping His limits, honouring His covenants, holding to His rulings and avoiding what He forbids (57:25, 47:7, 61:14); intiṣār and istinṣār are seeking help (42:39, 8:72, 42:41); on 54:10 fa-ntaṣir. (مد): the root sense of madd is drawing out; amdadtu l-ǧayša bi-madad and a man with food; imdād comes mostly in what is welcome (al-maḥbūb) and madd in what is disliked; cites 52:22, 23:55, 71:12, 3:125, 27:36, and for madd 19:79, 2:15, 7:202. (عون): ʿawn is muʿāwana and muẓāhara (backing); aʿantuhu; cites 18:95 and 25:4; taʿāwun is mutual backing (5:2); istiʿāna is seeking help (2:45).",
+   "Quranic usage (our observation, all 10 / 2 places read; نَصَرَ's 59 read for the examples, no 'always' claimed): أَمَدَّ (Form IV) has Allah as subject in every place but 27:36, where the Queen's envoys offer Solomon wealth; what is supplied is angels (3:124–125), wealth and sons (17:6, 23:55, 26:133, 71:12), fruit and meat in the Garden (52:22). 23:55 is a supply that is not a sign of favour (respite), which ar-Rāġib still cites in his one mixed example list after the imdād/madd remark (the unvowelled نمدهم does not show the form). أَعَانَ is only 18:95 (Dhul-Qarnayn asks the people to help him with strength) and 25:4 (the disbelievers' claim that others helped the Prophet compose the Quran). Pickthall renders both نَصَرَ (47:7) and أَعَانَ (18:95) 'help': the أَعَانَ ayat are paraphrased in English. 8:9 (مُمِدُّكُمْ) is a participle, not counted here.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 1 flag, fixed: bs gloss of أَعَانَ 'stati uz nekoga u poslu' (potpomoći was too close to نَصَرَ's pomoći).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نصر, مد, عون (2026-11-06): 16 attributed points confirmed; changed — notes/0 (reworded): The verse he quotes is wa-li-yaʿlama llāhu man yanṣuruhu = 57:25, not 22:40 (wa-la-yanṣuranna llāhu man yanṣuruhu). Plain-string claim: fix given under key 'text'; notes/1 (reworded): His examples follow 'imdād mostly in the welcome, madd in the disliked' as one undivided list (imdād and madd verses mixed); he does not label 23:55, and the unvowelled text cannot show whether it is numidd- (IV) or namudd- (I); members/1/ayat/1/why (reworded): He cites it in an unlabelled list that mixes imdād and madd verses; the classification 'in what is welcome' is our (obvious) reading, not his explicit label; members/1/ayat/2/why (reworded): Cited, but not labelled imdād; unvowelled نمدهم cannot show Form IV"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "نصر",
+     "مد",
+     "عون"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "نَصَرَ",
+    "verb": "نصر_1",
+    "count": 59,
+    "meaning": {"bs": "pomoći (protiv protivnika), dati pobjedu", "en": "to help to victory, to give victory"},
+    "nuance": {
+     "bs": "Ar-Rāġib definira naṣr kao pomoć (ʿawn). Allahova pomoć robu je očita – kako Njemu priliči; a rob ‚pomaže Allaha‘ kad pomaže Njegove robove, čuva Njegove granice i drži se Njegovih propisa. U Kur'anu je to najčešće pomoć protiv protivnika, pobjeda nad onim ko se suprotstavlja.",
+     "en": "Ar-Rāġib defines naṣr as help (ʿawn). Allah's help to the servant is evident — as befits Him; and the servant ‘helps Allah’ when he helps His servants, keeps His limits and holds to His rulings. In the Quran it is mostly help against an opponent, victory over whoever stands against."
+    },
+    "ayat": [
+     {"ref": "3:123", "why": {"bs": "„Allah vam je već dao pobjedu na Bedru, kad ste bili slabi …“ – pomoć protiv neprijatelja, kako Njemu priliči.", "en": "“Allah had already given you the victory at Badr, when ye were contemptible” — help against an enemy, as befits Him."}},
+     {"ref": "47:7", "why": {"bs": "„O vjernici, ako vi pomognete Allaha, On će pomoći vas i učvrstiti vaše korake“ – ar-Rāġib navodi ovaj ajet: rob ‚pomaže Allaha‘ pokornošću i pomaganjem Njegovih robova.", "en": "“O ye who believe! If ye help Allah, He will help you and will make your foothold firm” — ar-Rāġib cites this ayah: the servant ‘helps Allah’ by obedience and by helping His servants."}}
+    ]
+   },
+   {
+    "arabic": "أَمَدَّ",
+    "verb": "مدد_4",
+    "count": 10,
+    "meaning": {"bs": "opskrbiti, pojačati", "en": "to reinforce, to supply"},
+    "nuance": {
+     "bs": "Osnova je ‚pružiti, produžiti‘, a amadda je dati dotok onoga što treba: vojsku, hranu, imetak. Prema ar-Rāġibu, imdād se najčešće kaže za ono što je drago, a madd za ono što je mrsko. U Kur'anu je subjekt Allah (kako Njemu priliči) na svim mjestima osim 27:36.",
+     "en": "The root is ‘to draw out, to extend’, and amadda is supplying what is needed: troops, food, wealth. According to ar-Rāġib, imdād is said mostly of what is welcome, and madd of what is disliked. In the Quran the subject is Allah (as befits Him) in every place but 27:36."
+    },
+    "ayat": [
+     {"ref": "3:124", "why": {"bs": "„… zar vam nije dovoljno da vas vaš Gospodar pojača s tri hiljade spuštenih meleka?“ – pojačanje dotokom, kako Njemu priliči.", "en": "“… Is it not sufficient for you that your Lord should support you with three thousand angels sent down (to your help)?” — reinforcement by a supply, as befits Him."}},
+     {"ref": "52:22", "why": {"bs": "„I opskrbit ćemo ih voćem i mesom, kakvo god požele“ – ar-Rāġib navodi ovaj ajet među primjerima, odmah nakon što kaže da je imdād najčešće u onome što je drago.", "en": "“And We provide them with fruit and meat such as they desire” — ar-Rāġib cites this ayah among his examples, right after saying imdād is mostly in what is welcome."}},
+     {"ref": "23:55", "why": {"bs": "„Zar misle da im imetkom i sinovima kojima ih opskrbljujemo …“ – ar-Rāġib i ovaj ajet navodi u istom nizu primjera; nastavak (23:56) kaže da to nije žurba u dobru – tako da opskrba nije uvijek znak naklonosti.", "en": "“Think they that in the wealth and sons wherewith We provide them” — ar-Rāġib cites this ayah too in the same list; the next ayah (23:56) says it is not a hastening of good — so a supply is not always a sign of favour."}}
+    ]
+   },
+   {
+    "arabic": "أَعَانَ",
+    "verb": "عون_4",
+    "count": 2,
+    "meaning": {"bs": "stati uz nekoga u poslu, biti mu na ruku", "en": "to assist, to aid"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ʿawn je saradnja i podrška (muẓāhara): stati uz nekoga u poslu. Glagol je u Kur'anu samo dva puta, oba puta o ljudima koji pomažu ljude; srodni oblici su taʿāwun ‚međusobno pomaganje‘ (5:2) i istiʿāna ‚traženje pomoći‘ (1:5, 2:45).",
+     "en": "According to ar-Rāġib, ʿawn is working together and backing (muẓāhara): standing by someone in a task. The verb is in the Quran only twice, both times of people assisting people; related forms are taʿāwun ‘aiding one another’ (5:2) and istiʿāna ‘seeking aid’ (1:5, 2:45)."
+    },
+    "ayat": [
+     {"ref": "18:95", "why": {"bs": "„… pa potpomozite me snagom, napravit ću između vas i njih bedem“ – Zul-Karnejn traži od ljudi radnu snagu; ar-Rāġib navodi ovaj ajet.", "en": "Dhul-Qarnayn asks the people to aid him with strength, so that he may set a barrier between them and Gog and Magog — labour, not victory; ar-Rāġib cites this ayah."}},
+     {"ref": "25:4", "why": {"bs": "Nevjernici tvrde da je Kur'an izmišljotina i da su mu u tome pomogli drugi ljudi – Kur'an tu tvrdnju odbacuje kao nepravdu i laž; ar-Rāġib navodi ovaj ajet.", "en": "The disbelievers claim the Quran is an invention and that other folk aided him in it — the Quran rejects the claim as wrong and falsehood; ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "tawakkala-fawwada": {
+  "title": {"bs": "Osloniti se i prepustiti", "en": "Relying and committing"},
+  "shared": {
+   "bs": "Obje riječi govore o tome da čovjek svoju stvar stavlja u Allahove ruke. Razlikuju se po slici: osloniti se na nekoga kao na zastupnika koji vodi tvoj posao, ili vratiti i predati svoju stvar onome kome pripada.",
+   "en": "Both words speak of a person putting his affair into Allah's hands. They differ in the image: leaning on someone as on an agent who runs your affair, or handing your affair back to the One it belongs to."
+  },
+  "tellApart": {
+   "bs": "Osloniti se na nekoga kao na zastupnika – u Kur'anu uvijek na Allaha, s ʿalā → تَوَكَّلَ; predati, vratiti svoju stvar Allahu – samo 40:44 → فَوَّضَ.",
+   "en": "Relying on someone as on an agent — in the Quran always on Allah, with ʿalā → تَوَكَّلَ; committing, handing one's affair back to Allah — only 40:44 → فَوَّضَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries وكل, فوض"
+  ],
+  "notes": [
+   "ar-Rāġib (وكل): tawkīl is relying on another and making him your deputy (nāʾib); wakīl is faʿīl in the sense of the passive; 4:81 'wa-kafā bi-llāhi wakīlā': be content with Him to take charge of your affair; tawakkul is said two ways: tawakkaltu li-fulān = I took charge for him, and tawakkaltu ʿalayhi = I relied on him; cites 9:51, 65:3, 60:4, 5:23, 33:3, 11:123, 25:58; at the end: wakīl is sometimes explained as kafīl, but wakīl is more general — every kafīl is a wakīl, not every wakīl a kafīl. (فوض): 40:44 wa-ufawwiḍu amrī ilā llāh = I return it (arudduhu) to Him; the root is from 'fawḍā' (from the saying mā lahum fawḍā baynahum, with a line of poetry), whence šarikat al-mufāwaḍa.",
+   "Quranic usage (our observation, all 40 places of تَوَكَّلَ read): it always takes ʿalā, and the one relied on is always Allah (Allah, our Lord, Him, the Living, the Mighty the Merciful). فَوَّضَ is only 40:44, the words of the believer of Pharaoh's people. 3:159 (an instruction to the Prophet) is not used as an illustration.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries وكل, فوض (2026-11-06): 11 attributed points confirmed; changed — notes/0 (reworded): He gives no gloss of fawḍā; 'held in common, without one over another' is ours"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "وكل",
+     "فوض"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "تَوَكَّلَ",
+    "verb": "وكل_5",
+    "count": 40,
+    "meaning": {"bs": "osloniti se (na Allaha)", "en": "to rely, to put one's trust"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, osnova je tawkīl: osloniti se na drugoga i učiniti ga svojim zastupnikom; ‚tawakkaltu ʿalayhi‘ znači ‚oslonio sam se na njega‘. U Kur'anu (svih 40 mjesta) glagol ide s ʿalā i uvijek je to oslanjanje na Allaha; tako je Allah ‚al-Wakīl‘ – Onaj kome se prepušta vođenje stvari, kako Njemu priliči.",
+     "en": "According to ar-Rāġib, the base is tawkīl: relying on another and making him your agent; ‘tawakkaltu ʿalayhi’ means ‘I relied on him’. In the Quran (all 40 places) the verb takes ʿalā and it is always reliance on Allah; so Allah is ‘al-Wakīl’ — the One to whom the running of affairs is left, as befits Him."
+    },
+    "ayat": [
+     {"ref": "65:3", "why": {"bs": "„… a ko se osloni na Allaha, On mu je dovoljan …“ – ar-Rāġib navodi ovaj ajet.", "en": "“… And whosoever putteth his trust in Allah, He will suffice him” — ar-Rāġib cites this ayah."}},
+     {"ref": "14:12", "why": {"bs": "„A zašto se ne bismo oslonili na Allaha, kad nas je uputio našim putevima? …“ – riječi poslanika njihovim narodima: oslanjanje uz strpljivo podnošenje uznemiravanja.", "en": "“How should we not put our trust in Allah when He hath shown us our ways?” — the messengers' words to their peoples: reliance together with patient endurance of hurt."}}
+    ]
+   },
+   {
+    "arabic": "فَوَّضَ",
+    "verb": "فوض_2",
+    "count": 1,
+    "meaning": {"bs": "predati, prepustiti (svoju stvar)", "en": "to commit, to hand over (one's affair)"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ‚ufawwiḍu amrī ilā llāh‘ znači ‚vraćam svoju stvar Njemu‘. U Kur'anu je samo jednom, u riječima vjernika iz faraonova naroda, kad je izrekao svoj savjet i ostao sam: predaje stvar Allahu, Koji vidi robove.",
+     "en": "According to ar-Rāġib, ‘ufawwiḍu amrī ilā llāh’ means ‘I return my affair to Him’. It is in the Quran only once, in the words of the believer among Pharaoh's people, when he had given his counsel and stood alone: he hands the affair over to Allah, Who sees the servants."
+    },
+    "ayat": [
+     {"ref": "40:44", "why": {"bs": "„Pa sjetit ćete se onoga što vam govorim, a ja svoju stvar predajem Allahu – Allah, zaista, vidi robove“ – ar-Rāġib navodi ovaj ajet.", "en": "“And ye will remember what I say unto you. I confide my cause unto Allah. Lo! Allah is Seer of (His) slaves” — ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "aadha-itasama-malja": {
+  "title": {"bs": "Utočište: utjecati se, čvrsto se držati, pribježište", "en": "Refuge: seeking refuge, holding fast, a haven"},
+  "shared": {
+   "bs": "Sve tri riječi govore o traženju zaštite. Razlikuju se po slici: bijeg pod nečiju zaštitu od onoga čega se boji, čvrsto držanje za ono što spašava, ili mjesto u koje se bježi.",
+   "en": "All three words speak of seeking protection. They differ in the image: fleeing under someone's protection from what one fears, holding fast to what saves, or a place one flees into."
+  },
+  "tellApart": {
+   "bs": "Utjecati se nekome od nečega – s bi- (kome) i min / an (od čega) → عَاذَ; uhvatiti se i držati se čvrsto – Allaha i Njegova užeta → اِعْتَصَمَ; pribježište, mjesto u koje se bježi – u Kur'anu samo tri puta: osim kod samog Allaha (9:118) nigdje ga nema, ili se ne može naći (9:57, 42:47) → مَلْجَأ.",
+   "en": "Seeking refuge with someone from something — with bi- (with whom) and min / an (from what) → عَاذَ; taking hold and holding fast — to Allah and His rope → اِعْتَصَمَ; a haven, a place one flees into — in the Quran only three times: none except with Allah Himself (9:118), or none to be found (9:57, 42:47) → مَلْجَأ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries عوذ, عصم"
+  ],
+  "notes": [
+   "ar-Rāġib (عوذ): ʿawḏ is taking refuge with another and clinging to him (al-iltiǧāʾ ilā l-ġayr wa-t-taʿalluq bihi); cites 2:67, 44:20, qul aʿūḏu bi-rabbi (truncated: 113:1 or 114:1), 19:18, 3:36 (uʿīḏuhā bika); maʿāḏa llāh: we take refuge in Him and seek His help against doing it, for it is an evil we keep clear of; ʿūḏa is what one takes refuge in (amulets were called so). (عصم): ʿaṣm is holding (imsāk), iʿtiṣām is holding on (istimsāk); 11:43 lā ʿāṣima l-yawma min amri llāh; iʿtiṣām is clinging to a thing: 3:103 wa-ʿtaṣimū bi-ḥabli llāhi ǧamīʿan, 3:101 wa-man yaʿtaṣim bi-llāh; istaʿṣama (12:32): he sought what would hold him back from indecency; the ʿiṣma of the prophets is Allah's guarding of them. No Mufradāt entry for لجأ was found (the لج entry is laǧāǧ, persistence); but ar-Rāġib defines ʿawḏ itself with iltiǧāʾ, the verbal noun of this root.",
+   "Quranic usage (our observation, all 10 / 5 / 3 places read): عَاذَ is with Allah (or 'the Lord', 'the Beneficent') in every place but 72:6, where men sought refuge with men of the jinn and it increased them in folly; the feared thing follows with min (19:18, 23:97, 40:27, 113–114) or an 'that' (2:67, 11:47, 23:98, 44:20). اِعْتَصَمَ always takes bi-: Allah (3:101, 4:146, 4:175, 22:78) or the rope of Allah (3:103). مَلْجَأ: 9:57 (the hypocrites would flee to a refuge if they found one), 9:118 (no refuge from Allah but in Him), 42:47 (no refuge on that Day). Pickthall renders both عَاذَ and مَلْجَأ 'refuge'; the مَلْجَأ ayat are paraphrased in English. 11:47 (Noah) is not used as an illustration.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 4 flags, fixed: مَلْجَأ — none except with Allah only in 9:118; 9:57 is hypothetical, 42:47 has none (tellApart and nuance); 19:18 bs 'bogobojazan'; 72:6 bs re-translated from the Arabic.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عوذ, عصم, لج (2026-11-06): 15 attributed points confirmed; changed — notes/0 (reworded): He quotes only قل أعوذ برب, which opens both 113:1 and 114:1. --mentions ملجأ confirms no لجأ entry; he does use al-malǧaʾ to gloss wazar (وزر, 75:11), manāṣ (نوص, 38:3) and al-ʿaṣr"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "عوذ",
+     "عصم",
+     "لج"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "عَاذَ",
+    "verb": "عوذ_1",
+    "count": 10,
+    "meaning": {"bs": "utjecati se (nekome od nečega)", "en": "to seek refuge"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ʿawḏ je pribjeći drugome i prionuti uz njega. Uz glagol stoji kome se utječe (bi-) i od čega (min, ili ‚da ne …‘). U Kur'anu je to gotovo uvijek utjecanje Allahu; jedini izuzetak je 72:6, gdje su ljudi tražili zaštitu kod džina – i to im je samo povećalo obijest.",
+     "en": "According to ar-Rāġib, ʿawḏ is taking refuge with another and clinging to him. With the verb stand the one sought (bi-) and the thing feared (min, or ‘lest …’). In the Quran it is almost always refuge with Allah; the one exception is 72:6, where men sought protection with jinn — and it only increased them in revolt."
+    },
+    "ayat": [
+     {"ref": "113:1", "why": {"bs": "„Reci: ‚Utječem se Gospodaru svitanja‘“ – ar-Rāġib navodi formulu ‚qul aʿūḏu bi-rabbi‘.", "en": "“Say: I seek refuge in the Lord of the Daybreak” — ar-Rāġib cites the formula ‘qul aʿūḏu bi-rabbi’."}},
+     {"ref": "19:18", "why": {"bs": "„Rekla je: ‚Ja se Svemilosnom utječem od tebe, ako si bogobojazan‘“ – Merjem pred melekom koji joj je došao u liku čovjeka; ar-Rāġib navodi ovaj ajet.", "en": "“She said: Lo! I seek refuge in the Beneficent One from thee, if thou art Allah-fearing” — Mary before the angel who came to her in the form of a man; ar-Rāġib cites this ayah."}},
+     {"ref": "72:6", "why": {"bs": "„A bilo je ljudi koji su zaštitu tražili kod nekih džina, pa su ovi samo uvećali njihovu pobunu“ – jedino mjesto gdje se ne utječe Allahu.", "en": "“… individuals of humankind used to invoke the protection of individuals of the jinn, so that they increased them in revolt against Allah” — the one place where refuge is not sought with Allah."}}
+    ]
+   },
+   {
+    "arabic": "اِعْتَصَمَ",
+    "verb": "عصم_8",
+    "count": 5,
+    "meaning": {"bs": "čvrsto se držati, uhvatiti se", "en": "to hold fast"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ʿaṣm je držanje (imsāk), a iʿtiṣām držanje za nešto, prianjanje. Nije bijeg od opasnosti nego trajno držanje za ono što čuva. U Kur'anu (svih 5 mjesta) ide s bi-: drži se Allaha ili Allahova užeta.",
+     "en": "According to ar-Rāġib, ʿaṣm is holding (imsāk), and iʿtiṣām is holding on to something, clinging. It is not fleeing from a danger but a lasting hold on what keeps one safe. In the Quran (all 5 places) it takes bi-: holding fast to Allah or to the rope of Allah."
+    },
+    "ayat": [
+     {"ref": "3:103", "why": {"bs": "„I svi se čvrsto držite Allahova užeta i ne razjedinjujte se …“ – ar-Rāġib navodi ovaj ajet.", "en": "“And hold fast, all of you together, to the cable of Allah, and do not separate” — ar-Rāġib cites this ayah."}},
+     {"ref": "3:101", "why": {"bs": "„… a ko se čvrsto drži Allaha, taj je upućen na pravi put“ – ar-Rāġib navodi ‚ko se drži Allaha‘.", "en": "“He who holdeth fast to Allah, he indeed is guided unto a right path” — ar-Rāġib cites ‘who holds fast to Allah’."}}
+    ]
+   },
+   {
+    "arabic": "مَلْجَأ",
+    "lemmas": ["مَلْجَإ|لجأ"],
+    "spoken": "مَلْجَأٌ",
+    "count": 3,
+    "meaning": {"bs": "pribježište", "en": "a haven, a place to flee to"},
+    "nuance": {
+     "bs": "Mjesto u koje se bježi i sklanja. Ar-Rāġib nema posebnu natuknicu za ovaj korijen, ali samo ʿawḏ objašnjava njegovom imenicom (iltiǧāʾ – sklanjanje). U Kur'anu je riječ samo tri puta: munafici bi pohrlili u pribježište da ga nađu (9:57); od Allaha nema pribježišta osim kod Njega (9:118); a na onaj Dan ga nema (42:47).",
+     "en": "A place one flees into and shelters in. Ar-Rāġib has no entry of its own for this root, but he explains ʿawḏ itself with its verbal noun (iltiǧāʾ — taking shelter). In the Quran the word is only three times: the hypocrites would turn to a refuge if they found one (9:57); there is none from Allah except in Him (9:118); and on that Day there is none (42:47)."
+    },
+    "ayat": [
+     {"ref": "9:118", "why": {"bs": "„… i shvatili su da nema pribježišta od Allaha osim kod Njega …“ – trojica koji su izostali iz pohoda; bijeg od Allaha vodi samo Njemu.", "en": "The three who stayed behind came to see that there is no haven from Allah except in Him — flight from Allah leads only to Him."}},
+     {"ref": "42:47", "why": {"bs": "„… tog Dana nećete imati pribježišta …“ – na Sudnjem danu nema mjesta u koje bi se pobjeglo.", "en": "On that Day there will be no haven to flee to — on the Day of Judgement there is no place of escape."}}
+    ]
+   }
+  ]
+ },
+ "naqada-nakatha": {
+  "title": {"bs": "Raskinuti i pogaziti (zavjet)", "en": "Breaking and going back on (a pledge)"},
+  "shared": {
+   "bs": "Obje riječi znače ne održati preuzetu obavezu, a obje su posuđene iz rada rukama. Razlikuju se po slici: rasplesti ono što je čvrsto svezano ili sagrađeno, ili rašiti ispredeno i otkano.",
+   "en": "Both words mean failing to keep an obligation one has taken on, and both are borrowed from handiwork. They differ in the image: undoing what was tied or built firm, or unravelling what was spun and woven."
+  },
+  "tellApart": {
+   "bs": "Raskinuti, rasplesti čvrsto svezano (uže, čvor, gradnju) – suprotno od ‚učvrstiti‘; u Kur'anu ugovor, zavjet, zakletve i pređa → نَقَضَ; pogaziti, rašiti otkano – blisko prvom; u Kur'anu zakletve, prisega i obećanja data u nevolji → نَكَثَ.",
+   "en": "Breaking, undoing what was tied firm (a rope, a knot, a building) — the opposite of ‘making fast’; in the Quran a covenant, a pact, oaths, and yarn → نَقَضَ; going back on, unravelling what was woven — close to the first; in the Quran oaths, a pledge of allegiance, and promises made in distress → نَكَثَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نقض, نكث"
+  ],
+  "notes": [
+   "ar-Rāġib (نقض): naqḍ is the coming apart of what was bound, of a building, a rope and a knot, the opposite of ibrām (making fast); naqḍ al-ʿahd is borrowed from undoing the rope and the knot; cites 8:56, 2:27, 16:91; munāqaḍa in speech; 94:3 anqaḍa ẓahrak: broke it so that it creaked. (نكث): nakṯ is the unravelling of garments and yarn, close to naqḍ, and borrowed for breaking a covenant; cites 9:12 and 7:135 / 43:50; nakṯ is like naqḍ, nakīṯa like naqīḍa.",
+   "Quranic usage (our observation, all 6 / 5 places read): نَقَضَ — the covenant of Allah (2:27, 13:25), the pact (13:20), their treaty (8:56), oaths after confirming them (16:91), and the woman who undid her yarn (16:92). نَكَثَ — oaths after their treaty (9:12, 9:13), a pledge of allegiance (48:10), and Pharaoh's people going back on their word each time the plague was lifted (7:135, 43:50). 16:92 holds both: نَقَضَتْ غَزْلَهَا … أَنكَاثًا, she undid her yarn into unravelled strands. Pickthall renders both verbs 'break': the نَكَثَ ayat are paraphrased in English. 48:10 mentions 'the Hand of Allah' — not quoted here.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نقض, نكث (2026-11-06): 12 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "نقض",
+     "نكث"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "نَقَضَ",
+    "verb": "نقض_1",
+    "count": 6,
+    "meaning": {"bs": "raskinuti", "en": "to break, to undo"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, naqḍ je razvezivanje onoga što je bilo svezano – užeta, čvora, gradnje – suprotno od učvršćivanja (ibrām); odatle je posuđeno ‚raskinuti ugovor‘. Kur'an i sam pokazuje tu sliku: žena koja rasplete svoju pređu nakon što ju je čvrsto ispredla (16:92).",
+     "en": "According to ar-Rāġib, naqḍ is the undoing of what was bound — a rope, a knot, a building — the opposite of making fast (ibrām); from there ‘breaking a covenant’ is borrowed. The Quran itself shows the image: the woman who undoes her yarn after spinning it strong (16:92)."
+    },
+    "ayat": [
+     {"ref": "16:92", "why": {"bs": "„I ne budite kao ona koja je raspredala svoju pređu, nakon što ju je čvrsto ispredla, u niti …“ – osnovna slika glagola, uz zakletve u istom odlomku.", "en": "“And be not like unto her who unravelleth the thread, after she hath made it strong, to thin filaments” — the verb's basic image, beside oaths in the same passage."}},
+     {"ref": "2:27", "why": {"bs": "„Oni koji raskidaju Allahov ugovor nakon što su ga potvrdili …“ – ar-Rāġib navodi ‚koji raskidaju Allahov ugovor‘.", "en": "“Those who break the covenant of Allah after ratifying it” — ar-Rāġib cites ‘who break the covenant of Allah’."}}
+    ]
+   },
+   {
+    "arabic": "نَكَثَ",
+    "verb": "نكث_1",
+    "count": 6,
+    "meaning": {"bs": "pogaziti (zakletvu, obećanje)", "en": "to go back on (an oath, a pledge)"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, nakṯ je rašivanje otkanog ruha i pređe, blisko naqḍu, i posuđeno je za kršenje ugovora. U Kur'anu se odnosi na zakletve, na prisegu vjernosti i na riječ datu u nevolji: faraonov narod obećavao je vjerovati čim kazna prestane, pa bi to pogazio.",
+     "en": "According to ar-Rāġib, nakṯ is the unravelling of woven cloth and yarn, close to naqḍ, and borrowed for breaking a covenant. In the Quran it is used of oaths, of a pledge of allegiance, and of a word given in distress: Pharaoh's people promised to believe as soon as the punishment was lifted, and then went back on it."
+    },
+    "ayat": [
+     {"ref": "7:135", "why": {"bs": "Kad bi Allah od njih otklonio kaznu do roka do kojeg su imali stići, oni bi odmah pogazili datu riječ – ar-Rāġib navodi ovaj ajet.", "en": "When Allah lifted the punishment from them for a term they were to reach, they at once went back on their word — ar-Rāġib cites this ayah."}},
+     {"ref": "9:12", "why": {"bs": "Ako pogaze svoje zakletve nakon ugovora i napadnu vašu vjeru … – ar-Rāġib navodi ovaj ajet.", "en": "If they go back on their oaths after their treaty and assail your religion … — ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "afsada-atha": {
+  "title": {"bs": "Kvariti i bezobzirno zlo činiti", "en": "Corrupting and doing wanton evil"},
+  "shared": {
+   "bs": "Obje riječi govore o kvarenju na Zemlji. Razlikuju se po širini: jedna je opća riječ za svako izlaženje iz ravnoteže i ispravnosti, druga uži, oštriji izraz za zlo koje se prepoznaje sudom, a ne čulima.",
+   "en": "Both words speak of corruption on the earth. They differ in breadth: one is the general word for any departure from balance and soundness, the other a narrower, sharper term for evil recognised by judgement rather than by the senses."
+  },
+  "tellApart": {
+   "bs": "Pokvariti, izvesti iz ravnoteže – opća riječ, suprotna popravljanju (iṣlāḥ); u duši, tijelu, stvarima → أَفْسَدَ; bezobzirno zlo činiti – ar-Rāġib: kvarenje koje se prepoznaje sudom; u Kur'anu samo u zabrani ‚ne činite zlo na Zemlji kao smutljivci‘ → عَثَا.",
+   "en": "Corrupting, putting out of balance — the general word, the opposite of setting right (iṣlāḥ); in soul, body, things → أَفْسَدَ; doing wanton evil — ar-Rāġib: corruption recognised by judgement; in the Quran only in the ban ‘do not do evil on the earth, making mischief’ → عَثَا."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فسد, عثى"
+  ],
+  "notes": [
+   "ar-Rāġib (فسد): fasād is a thing's departure from balance (iʿtidāl), whether little or much, the opposite of ṣalāḥ; used of the soul, the body and things that leave straightness; afsadahu ġayruhu; cites 23:71, 21:22, 30:41, 2:205, 2:11, 2:12, 27:34, 10:81, 2:220. (عثى): ʿayṯ and ʿuṯiyy are close (like ǧaḏaba / ǧabaḏa), except that ʿayṯ is said mostly of corruption perceived by the senses, ʿuṯiyy of what is perceived by judgement (ḥukman); on this 'wa-lā taʿṯaw fī l-arḍi mufsidīn'; also ʿaṯā yaʿṯū ʿuṯuwwan.",
+   "Quranic usage (our observation, all 15 / 5 places read): عَثَا (Form I) is in all five places the same prohibition, لَا تَعْثَوْا فِي الْأَرْضِ مُفْسِدِينَ — to the Israelites given water (2:60), to Thamud (7:74), to Midian (11:85, 26:183, 29:36) — always paired with the participle of أَفْسَدَ. أَفْسَدَ (Form IV) mostly with fī l-arḍ; its object is named in 27:34 (kings ruin a township). The pairing shows the two are not the same word: ʿuṯiyy is said with the state of being mufsid beside it.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: Bosnian quotes of 7:56 and 11:85 re-translated from the Arabic.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فسد, عثى (2026-11-06): 9 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "فسد",
+     "عثى"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "أَفْسَدَ",
+    "verb": "فسد_4",
+    "count": 15,
+    "meaning": {"bs": "kvariti, činiti nered", "en": "to corrupt, to make mischief"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, fasād je izlaženje nečega iz ravnoteže, malo ili mnogo, a suprotnost mu je ispravnost (ṣalāḥ); kaže se za dušu, tijelo i stvari. To je opća riječ: u Kur'anu najčešće ‚kvariti na Zemlji‘, uz suprotnost ‚popraviti‘.",
+     "en": "According to ar-Rāġib, fasād is a thing's departure from balance, a little or much, and its opposite is soundness (ṣalāḥ); it is said of the soul, the body and things. It is the general word: in the Quran mostly ‘to make mischief on the earth’, against its opposite ‘to set right’."
+    },
+    "ayat": [
+     {"ref": "7:56", "why": {"bs": "„I ne kvarite na Zemlji nakon što je ona uređena …“ – kvarenje kao narušavanje uspostavljenog reda.", "en": "“Work not confusion in the earth after the fair ordering (thereof)” — corruption as the undoing of an order set right."}},
+     {"ref": "27:34", "why": {"bs": "„Rekla je: ‚Kad vladari uđu u neko naselje, unište ga, a ugledne njegove stanovnike učine poniženim …‘“ – riječi kraljice Sabe; ar-Rāġib navodi ovaj ajet.", "en": "“She said: Lo! kings, when they enter a township, ruin it and make the honour of its people shame” — the words of the Queen of Sheba; ar-Rāġib cites this ayah."}}
+    ]
+   },
+   {
+    "arabic": "عَثَا",
+    "verb": "عثو_1",
+    "count": 5,
+    "meaning": {"bs": "bezobzirno zlo činiti", "en": "to do wanton evil"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ʿayṯ i ʿuṯiyy su bliski, ali ʿayṯ se najčešće kaže za kvarenje koje se opaža čulima, a ʿuṯiyy za ono što se prepoznaje sudom. U Kur'anu je glagol svih pet puta u istoj zabrani, uvijek uz ‚kao smutljivci‘ (mufsidīn) – zabrana bezobzirnog zla, a ne samo štete.",
+     "en": "According to ar-Rāġib, ʿayṯ and ʿuṯiyy are close, but ʿayṯ is said mostly of corruption perceived by the senses, ʿuṯiyy of what is recognised by judgement. In the Quran the verb is all five times in the same prohibition, always with ‘making mischief’ (mufsidīn) — a ban on wanton evil, not merely on damage."
+    },
+    "ayat": [
+     {"ref": "11:85", "why": {"bs": "„O narode moj, dajte potpunu mjeru i tačnu vagu, po pravdi, ne oštećujte ljude u onome što im pripada i ne činite zlo na Zemlji kao smutljivci“ – Šuajb: zakidanje na mjeri je zlo koje se prepoznaje sudom.", "en": "“O my people! Give full measure and full weight in justice, and wrong not people in respect of their goods. And do not evil in the earth, causing corruption” — Shuʿayb: short measure is an evil recognised by judgement."}},
+     {"ref": "2:60", "why": {"bs": "„… jedite i pijte od Allahove opskrbe i ne činite zlo na Zemlji kao smutljivci“ – ar-Rāġib navodi ovu formulu.", "en": "“Eat and drink of that which Allah hath provided, and do not act corruptly, making mischief in the earth” — ar-Rāġib cites this formula."}}
+    ]
+   }
+  ]
+ },
+ "manna-anama": {
+  "title": {"bs": "Ukazati milost i darovati blagodat", "en": "Bestowing grace and conferring favour"},
+  "shared": {
+   "bs": "Obje riječi govore o dobru koje jedan daje drugome. Razlikuju se po težini i po onome što se čini: blagodat toliko velika da obavezuje primaoca – djelom ili, kod ljudi, prigovaranjem riječima – ili samo dobro koje se nekome uručuje.",
+   "en": "Both words speak of good that one gives to another. They differ in weight and in what is done: a favour so great that it lays an obligation on the receiver — by deed or, among people, by reminding in words — or simply good conveyed to someone."
+  },
+  "tellApart": {
+   "bs": "Ukazati veliku, ‚tešku‘ milost – djelom (pravo samo Allahovo) ili riječima, kao prebacivanje (ružno među ljudima) → مَنَّ; darovati blagodat, uručiti dobro – kaže se samo za razumna bića kao primaoce → أَنْعَمَ.",
+   "en": "Bestowing a great, ‘weighty’ grace — by deed (truly Allah's alone) or by words, as reproach (ugly among people) → مَنَّ; conferring favour, conveying good — said only when the receiver is a rational being → أَنْعَمَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries منن, نعم"
+  ],
+  "notes": [
+   "ar-Rāġib (منن): minna is a heavy favour (an-niʿma aṯ-ṯaqīla), in two ways: by deed — manna fulān ʿalā fulān when he loads him with favour (3:164, 4:94, 37:114, 14:11, 28:5), and that in truth is only Allah's; and by word — ugly among people except when the favour is denied, hence 'the reminding of favour destroys the good deed' and 'when a favour is denied, the reminding becomes good'; 49:17: their minna is by word, Allah's minna on them by deed, His guiding them; 47:4 mannan = release without ransom; 38:39 fa-mnun = spend it; 74:6 explained two ways (qīla … wa-qīla); ġayr mamnūn explained (qīla) as 'uncounted' or 'not cut off'. (نعم): niʿma is the good state; inʿām is conveying good (iṣāl al-iḥsān) to another, said only when the receiver is of the rational kind — one does not say anʿama fulān ʿalā farasihi; cites 1:7, 33:37, 43:59.",
+   "Quranic usage (our observation, all 14 / 16 places read): مَنَّ has Allah as subject except where it is reminding by word: the Bedouins (49:17), and Moses' words to Pharaoh (26:22, read in tafsir in more than one way and not used here). أَنْعَمَ has Allah as subject everywhere but once (33:37, 'and thou hast favoured him', the Prophet to Zayd — not used as an illustration); always with ʿalā and a human receiver. 74:6 (said to the Prophet, read two ways) and 20:37 are not used as illustrations. Pickthall renders both verbs 'favour' in some places: 49:17 is paraphrased in English.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 3 flags, fixed: Bosnian quotes of 49:17 and 3:164 re-translated; 1:7 bs 'Put onih' (ṣirāṭa in apposition).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries منن, نعم (2026-11-06): 13 attributed points confirmed; changed — notes/0 (reworded): These are two reported interpretations (qīla), not two readings (qirāʾāt); members/0/nuance (reworded): Dropped limit: he says reminding of a favour is ugly except when the favour is denied (kufrān an-niʿma)"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "منن",
+     "نعم"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "مَنَّ",
+    "verb": "منن_1",
+    "count": 16,
+    "meaning": {"bs": "ukazati (veliku) milost; prebaciti dobročinstvom", "en": "to bestow grace; to reproach with a favour"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, minna je ‚teška‘ blagodat, i ima dva vida: djelom – kad neko drugoga obaspe dobrom, a to je u pravom smislu samo Allahovo, kako Njemu priliči; i riječju – prebacivanje učinjenim dobrom, što je među ljudima ružno, osim kad se na blagodat uzvrati nezahvalnošću. U 49:17 su oba: njihovo je riječju, Allahovo djelom – uputa u vjeru.",
+     "en": "According to ar-Rāġib, minna is a ‘weighty’ favour, and has two sides: by deed — when one loads another with good, and that in truth is only Allah's, as befits Him; and by word — reproaching with a favour done, which is ugly among people unless the favour is met with ingratitude. In 49:17 both are present: theirs by word, Allah's by deed — guidance to faith."
+    },
+    "ayat": [
+     {"ref": "3:164", "why": {"bs": "„Allah je zaista učinio dobro vjernicima time što im je poslao Poslanika iz njihovih redova …“ – ar-Rāġib navodi ovaj ajet kao minna djelom, kako Njemu priliči.", "en": "“Allah verily hath shown grace to the believers by sending unto them a messenger of their own” — ar-Rāġib cites this ayah as minna by deed, as befits Him."}},
+     {"ref": "49:17", "why": {"bs": "„Računaju ti kao uslugu to što su prihvatili islam. Reci: ‚Ne računajte mi svoj islam kao uslugu, nego Allah vama čini dobro time što vas je uputio u iman …‘“ – ar-Rāġib: njihova minna je riječima, Allahova djelom.", "en": "They count their becoming Muslim as a favour done to the Prophet; he is told to answer that it is Allah who has shown them grace by guiding them to faith — ar-Rāġib: their minna is by word, Allah's by deed."}}
+    ]
+   },
+   {
+    "arabic": "أَنْعَمَ",
+    "verb": "نعم_4",
+    "count": 17,
+    "meaning": {"bs": "darovati blagodat", "en": "to confer favour, to bless"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, inʿām je uručiti dobro drugome, i kaže se samo kad je primalac razumno biće – ne kaže se da je neko ‚darovao blagodat‘ svome konju. U Kur'anu glagol ide s ʿalā, a darovatelj je Allah (kako Njemu priliči) na svim mjestima osim 33:37.",
+     "en": "According to ar-Rāġib, inʿām is conveying good to another, and it is said only when the receiver is a rational being — one does not say someone ‘conferred favour’ on his horse. In the Quran the verb takes ʿalā, and the giver is Allah (as befits Him) in every place but 33:37."
+    },
+    "ayat": [
+     {"ref": "1:7", "why": {"bs": "„Put onih kojima si darovao blagodat, a ne onih na koje se gnjev spustio, niti onih koji su zalutali“ – ar-Rāġib navodi ‚kojima si darovao blagodat‘.", "en": "“The path of those whom Thou hast favoured; Not the (path) of those who earn Thine anger nor of those who go astray” — ar-Rāġib cites ‘whom Thou hast favoured’."}},
+     {"ref": "27:19", "why": {"bs": "„… Gospodaru moj, nadahni me da budem zahvalan na Tvojoj blagodati koju si darovao meni i mojim roditeljima …“ – Sulejman: blagodat koju čovjek prepoznaje i na kojoj zahvaljuje.", "en": "“My Lord, arouse me to be thankful for Thy favour wherewith Thou hast favoured me and my parents” — Solomon: a favour one recognises and gives thanks for."}}
+    ]
+   }
+  ]
+ },
+ "aadda-hayyaa": {
+  "title": {"bs": "Pripremiti i urediti", "en": "Making ready and setting right"},
+  "shared": {
+   "bs": "Obje riječi znače da se nešto unaprijed postavlja za nekoga. Razlikuju se po onome što se priprema: stvar spremljena da bude na raspolaganju kad zatreba, ili stanje stvari uređeno tako da bude kako treba.",
+   "en": "Both words mean setting something up for someone beforehand. They differ in what is prepared: a thing kept ready to be at hand when needed, or a state of affairs arranged to be as it should."
+  },
+  "tellApart": {
+   "bs": "Pripremiti, spremiti da bude pri ruci – snagu za odbranu, opremu, a najčešće Džennet ili kaznu koje je Allah pripremio → أَعَدَّ; urediti, dati da se stvar dobro složi – u Kur'anu samo molitva i nada mladića iz pećine → هَيَّأَ.",
+   "en": "Making ready, keeping at hand — strength for defence, equipment, and most often the Garden or the punishment Allah has prepared → أَعَدَّ; setting right, letting an affair turn out well — in the Quran only the prayer and hope of the youths of the Cave → هَيَّأَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries عد, هيأ"
+  ],
+  "notes": [
+   "ar-Rāġib (عد): iʿdād is from ʿadd (counting), as isqāʾ from saqy: aʿdadtu hāḏā laka = I made it such that you can count on it and take it as you need it; cites 8:60, 2:24, 9:100 and aʿtadnā (4:18, 25:11); 12:31 aʿtadat lahunna muttakaʾan 'is said to be from it'; ʿudda is much that is counted of wealth and weapons (9:46). (هيأ): hayʾa is the state a thing is in, sensed or understood, more often sensed (3:49 ka-hayʾati ṭ-ṭayr); muhāyaʾa is what people make ready for and agree on by estimate; cites 18:10 and 18:16.",
+   "Quranic usage (our observation, all 20 / 2 places read): أَعَدَّ (Form IV) — Allah prepares the Garden or reward (3:133, 9:89, 9:100, 33:29, 33:35, 33:44, 57:21) or punishment and the Fire (2:24, 3:131, 4:93, 4:102, 33:8, 33:57, 33:64, 48:6, 58:15, 65:10, 76:31); people make ready force (8:60) and equipment (9:46). هَيَّأَ (Form II) is only 18:10 (the youths' prayer) and 18:16 (their hope). Pickthall renders 18:16 'prepare': that ayah is not quoted. أَعْتَدَ (root عتد) is a different verb and not counted here.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عد, هيأ (2026-11-06): 13 attributed points confirmed; changed — notes/0 (reworded): The quoted wording وأعد لهم جنات is 9:100; 9:89 reads أعد الله لهم جنات"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "عد",
+     "هيأ"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "أَعَدَّ",
+    "verb": "عدد_4",
+    "count": 20,
+    "meaning": {"bs": "pripremiti", "en": "to make ready, to prepare"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, iʿdād dolazi od brojanja: ‚pripremio sam ti ovo‘ znači učinio sam da na to možeš računati i uzeti ga kad ti zatreba. U Kur'anu ljudi pripremaju snagu i opremu, a najčešće je Allah Taj Koji priprema – Džennet ili kaznu – kako Njemu priliči.",
+     "en": "According to ar-Rāġib, iʿdād comes from counting: ‘I made this ready for you’ means I made it so that you can count on it and take it when you need it. In the Quran people make ready strength and equipment, and most often it is Allah Who prepares — the Garden or the punishment — as befits Him."
+    },
+    "ayat": [
+     {"ref": "8:60", "why": {"bs": "„I pripremite protiv njih koliko god možete snage i konja privezanih …“ – ar-Rāġib navodi ovaj ajet.", "en": "“Make ready for them all thou canst of (armed) force and of horses tethered” — ar-Rāġib cites this ayah."}},
+     {"ref": "3:133", "why": {"bs": "„I požurite ka oprostu od vašeg Gospodara i Džennetu širokom kao nebesa i Zemlja, pripremljenom za bogobojazne“ – Džennet je spreman unaprijed, kako Njemu priliči.", "en": "“And vie one with another for forgiveness from your Lord, and for a paradise as wide as are the heavens and the earth, prepared for those who ward off (evil)” — the Garden is ready beforehand, as befits Him."}}
+    ]
+   },
+   {
+    "arabic": "هَيَّأَ",
+    "verb": "هيأ_2",
+    "count": 2,
+    "meaning": {"bs": "urediti", "en": "to set right, to shape"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, hayʾa je stanje u kojem se stvar nalazi, a muhāyaʾa ono za što se ljudi spremaju i oko čega se dogovore; on navodi oba kur'anska mjesta. Riječ ne govori o spremljenoj stvari nego o uređenom stanju: da se nečija stvar složi kako treba.",
+     "en": "According to ar-Rāġib, hayʾa is the state a thing is in, and muhāyaʾa what people make ready for and agree on; he cites both Quranic places. The word speaks not of a thing kept ready but of a state set right: that someone's affair comes together as it should."
+    },
+    "ayat": [
+     {"ref": "18:10", "why": {"bs": "„… Gospodaru naš, daj nam milost od Sebe i uredi nam u našoj stvari pravi put“ – molitva mladića u pećini; ar-Rāġib navodi ovaj ajet.", "en": "“Our Lord! Give us mercy from Thy presence, and shape for us right conduct in our plight” — the prayer of the youths in the Cave; ar-Rāġib cites this ayah."}},
+     {"ref": "18:16", "why": {"bs": "Mladići se nadaju da će im Gospodar raširiti Svoju milost i urediti im u njihovoj stvari ono što olakšava – ar-Rāġib navodi ovaj ajet.", "en": "The youths hope that their Lord will spread His mercy for them and set right for them, in their plight, what eases it — ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "qama-waqafa": {
+  "title": {"bs": "Ustati, stajati i biti zaustavljen", "en": "Standing up and being made to stand"},
+  "shared": {
+   "bs": "Obje riječi govore o stajanju. Razlikuju se po tome ko stoji i zašto: ustati i stajati vlastitim kretanjem ili snagom (pa i ustati u nečemu, ostati postojan), ili biti zaustavljen i postavljen pred nekoga.",
+   "en": "Both words speak of standing. They differ in who stands and why: rising and standing by one's own movement or strength (and so standing to a task, staying steadfast), or being halted and set before someone."
+  },
+  "tellApart": {
+   "bs": "Ustati, stajati, uspraviti se – i ljudi i Čas; kod ar-Rāġiba po izboru, po potčinjenosti, i u smislu ‚brinuti se o nečemu‘ → قَامَ; zaustaviti nekoga i postaviti ga – u Kur'anu sva tri puta prijelazno, o nevjernicima na Sudnjem danu → وَقَفَ.",
+   "en": "Rising, standing, standing upright — of people and of the Hour; in ar-Rāġib by choice, by subjection, and in the sense of ‘taking care of something’ → قَامَ; halting someone and setting him in place — in the Quran all three times transitive, of the disbelievers on the Day of Judgement → وَقَفَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries قوم, وقف"
+  ],
+  "notes": [
+   "ar-Rāġib (قوم): qiyām is of several kinds: standing of a person either by subjection (taṣḫīr, 11:100 qāʾim wa-ḥaṣīd, 59:5) or by choice (39:9, 3:191, 25:64); qiyām li-š-šayʾ is watching over and keeping it (5:8, 3:18, 13:33 'qāʾim ʿalā kulli nafs' = guarding it); and qiyām as resolve (5:6 iḏā qumtum ilā ṣ-ṣalāh); qiyāma is the rising of the Hour (30:12-type yawma taqūmu s-sāʿa, 83:6), said of what happens to a man's rising all at once; 4:142 qāmū kusālā is from qiyām, not iqāma. (وقف): waqaftu l-qawma aqifuhum waqfan, and wuqūf; cites 37:24 wa-qifūhum innahum masʾūlūn; waqf of a house (endowment) is borrowed from it; mawqif is where a man stands; muwāqafa is each one making his matter stand on what the other does.",
+   "Quranic usage (our observation, all 30 / 3 places read): وَقَفَ is never intransitive in the Quran: 37:24 'halt them' (an order about the wrongdoers), 6:27 and 6:30 passive, 'when they are made to stand' before the Fire / before their Lord. قَامَ is of people (to prayer 5:6, 4:142; at night 73:2, 73:20), of the Hour (30:12, 30:14, 30:55, 40:46, 45:27), of the Reckoning (14:41), of heaven and earth standing by His command (30:25), of the Spirit and the angels (78:38), and once 'stood still' in the dark (2:20). 83:6 (people stand for the Lord) and 6:30 (they are made to stand before their Lord) show the two words side by side. 9:84, 9:108, 73:2 and 74:2 (said to the Prophet) are not used as illustrations; 18:14 (qāmū, read in tafsir in more than one way) is not used.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: 83:6 says only that the plain verb is used there, not the passive of 6:30 (the rising itself is at Allah's call, 30:25); 2:238 bs re-translated ('Allahu predani').",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries قوم, وقف (2026-11-06): 14 attributed points confirmed; changed — notes/0 (reworded): Under 'watching over' he quotes كونوا قوامين لله شهداء بالقسط = 5:8; 4:135 (قوامين بالقسط شهداء لله) he quotes later, in the qayyima passage"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "قوم",
+     "وقف"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "قَامَ",
+    "verb": "قوم_1",
+    "count": 33,
+    "meaning": {"bs": "ustati, stajati", "en": "to stand, to rise"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, qiyām je više vrsta: stajanje po potčinjenosti (biljka koja stoji) ili po izboru (čovjek u namazu), brižno održavanje nečega (‚qāʾim‘ nad nečim = onaj ko ga čuva) i odlučnost (‚kad ustanete na namaz‘). U Kur'anu ustaju ljudi, ali i ‚ustaje‘ Čas (Kijamet); jednom znači i zastati na mjestu, u mraku (2:20).",
+     "en": "According to ar-Rāġib, qiyām is of several kinds: standing by subjection (a plant that stands) or by choice (a man in prayer), keeping and caring for something (‘qāʾim’ over a thing = the one who guards it) and resolve (‘when you rise for prayer’). In the Quran people rise, but the Hour also ‘rises’ (the Qiyāma); once it means stopping in one's place, in the dark (2:20)."
+    },
+    "ayat": [
+     {"ref": "83:6", "why": {"bs": "„Dana kad će ljudi stajati pred Gospodarom svjetova“ – ovdje je običan glagol ‚stajati‘ (yaqūmu), a ne pasiv ‚biti postavljen‘ kao u 6:30.", "en": "“The day when (all) mankind stand before the Lord of the Worlds?” — here the plain verb ‘stand’ (yaqūmu) is used, not the passive ‘are made to stand’ of 6:30."}},
+     {"ref": "2:238", "why": {"bs": "„Brižno čuvajte namaze, a osobito srednji, i stanite Allahu predani“ – stajanje po izboru, u ibadetu.", "en": "“Be guardians of your prayers, and of the midmost prayer, and stand up with devotion to Allah” — standing by choice, in worship."}},
+     {"ref": "2:20", "why": {"bs": "„… kad im zasvijetli, idu u njemu, a kad se nad njima smrači, zastanu …“ – ovdje qāma znači stati na mjestu, suprotno hodanju.", "en": "“As often as it flasheth forth for them they walk therein, and when it darkeneth against them they stand still” — here qāma means stopping in place, the opposite of walking."}}
+    ]
+   },
+   {
+    "arabic": "وَقَفَ",
+    "verb": "وقف_1",
+    "count": 3,
+    "meaning": {"bs": "zaustaviti, postaviti (pred nekoga)", "en": "to halt, to make stand"},
+    "nuance": {
+     "bs": "Kod ar-Rāġiba ‚waqaftu l-qawma‘ znači ‚zaustavio sam ljude‘, a mawqif je mjesto na kojem čovjek stoji. U Kur'anu je glagol sva tri puta prijelazan: nevjernici ne stoje sami, nego bivaju zaustavljeni i postavljeni – pred Vatru, pred svoga Gospodara – da budu pitani.",
+     "en": "In ar-Rāġib ‘waqaftu l-qawma’ means ‘I halted the people’, and mawqif is the place where a man stands. In the Quran the verb is all three times transitive: the disbelievers do not stand by themselves, they are halted and set in place — before the Fire, before their Lord — to be questioned."
+    },
+    "ayat": [
+     {"ref": "37:24", "why": {"bs": "„I zaustavite ih, oni će, zaista, biti pitani“ – ar-Rāġib navodi ovaj ajet.", "en": "“And stop them, for they must be questioned” — ar-Rāġib cites this ayah."}},
+     {"ref": "6:30", "why": {"bs": "„A kad bi samo vidio kad budu postavljeni pred svoga Gospodara …“ – nisu stali sami, nego su postavljeni; usporedi 83:6, gdje ljudi stoje.", "en": "“If thou couldst see when they are set before their Lord!” — they did not stand of themselves, they were set there; compare 83:6, where people stand."}}
+    ]
+   }
+  ]
+ },
+ "kalima-qawl-hadith": {
+  "title": {"bs": "Riječ, govor i kazivanje", "en": "Word, saying and account"},
+  "shared": {
+   "bs": "Sve tri riječi označavaju ono što se izgovori ili prenese. Razlikuju se po obimu i po onome šta ističu: jednu riječ ili izreku koja ima težinu, ono što je izrečeno (pa i ono što je samo u duši), ili kazivanje koje do čovjeka dođe sluhom ili objavom.",
+   "en": "All three words name what is spoken or passed on. They differ in scope and in what they stress: a single word or a pronouncement that carries weight, what is said (even what is only in the soul), or an account that reaches a person by hearing or revelation."
+  },
+  "tellApart": {
+   "bs": "Riječ, izreka, pa i Allahova odredba (‚kelima Gospodara tvoga‘) → كَلِمَة; izrečeno uopće, i ono u duši, i ono što se nekome pripisuje → قَوْل; kazivanje, vijest koja dođe sluhom ili objavom – i Kur'an sebe tako naziva → حَدِيث.",
+   "en": "A word, a pronouncement, even Allah's decree (‘the word of your Lord’) → كَلِمَة; what is said in general, also what is in the soul, and what is ascribed to someone → قَوْل; an account, tidings that come by hearing or revelation — and the Quran calls itself so → حَدِيث."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries كلم, قول, حدث"
+  ],
+  "notes": [
+   "ar-Rāġib (كلم): kalām falls on the composed words and the meanings beneath them; for many theologians it is said only of a composed, meaningful sentence and is more specific than qawl, which they say also of single words, while kalima falls for them on each of the three kinds (noun, verb, particle); 'and the opposite has been said'. Cites 18:5 kaburat kalimatan. On 6:115 wa-tammat kalimatu rabbika: the kalima here is the decree (qaḍiyya), and every decree is called kalima, whether word or deed; other readings he reports with qīla (the Quran, the promise of reward and punishment). Jesus is called a kalima since he was brought into being by 'Be' (3:59), with other qīla readings. 4:46 yuḥarrifūna l-kalim: kalim is the plural of kalima; he prefers the reading that they distorted the meaning, not the words. (قول): qawl and qīl are one; its plainest use is the composed sounds brought out in speech, a single word or a sentence; also what is conceived in the soul before it is uttered (58:8 wa-yaqūlūna fī anfusihim), belief, inspiration (18:86); 'with their mouths' (3:167) shows it was a lie, not sound belief; 36:7 laqad ḥaqqa l-qawlu: Allah's knowledge of them and His word against them, like 'wa-tammat kalimatu rabbika'; 51:8 qawl muḫtalif: the matter of the resurrection, called qawl because what is spoken of is called qawl; 69:40 qawl rasūl: the speech is ascribed to the messenger who conveys it from the one who sent him — both ascriptions are right. (حدث): ḥudūṯ is a thing's coming to be after it was not; every speech that reaches a person by hearing or by revelation, awake or asleep, is called ḥadīṯ (66:3, 88:1, 12:101 taʾwīl al-aḥādīṯ = what one is told in sleep); Allah called His Book ḥadīṯ (52:34, 53:59, 4:87, 45:6, 6:68); 34:19 ǧaʿalnāhum aḥādīṯ = tales told of them.",
+   "Quranic usage (our observation): كَلِمَة (42) is summed with the collective plural كَلِم (4: 4:46, 5:13, 5:41, 35:10), which ar-Rāġib calls its plural; كَلَام (4) is left out of the count — in all four places (2:75, 7:144, 9:6, 48:15) it is Allah's speech. حَدِيث (all 28 places read) is the Quran in many places (7:185, 18:6, 39:23, 45:6, 52:34, 53:59, 56:81, 68:44, 77:50), and a story in the formula هَلْ أَتَاكَ حَدِيثُ (20:9, 51:24, 79:15, 85:17, 88:1). 52:34 is paraphrased: Pickthall's 'speech' is also his word for قَوْل in 69:40. Left out: 66:3 (the secret told to a wife — tafsir differs on what it was), 31:6 lahw al-ḥadīṯ (readings differ), 2:37 kalimāt of Adam (he reports several readings).",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 1 flag, fixed: 88:1 bs 'onome što sve prekriva' in lower case (al-Ġāšiya is the event, not a Name).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries كلم, قول, حدث (2026-11-06): 33 attributed points confirmed; changed — members/0/nuance (reworded): The 'single weighty pronouncement' is our observation but sits inside the 'According to ar-Rāġib' sentence; split it off"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "كلم",
+     "قول",
+     "حدث"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "كَلِمَة",
+    "lemmas": ["كَلِمَة|كلم", "كَلِم|كلم"],
+    "spoken": "كَلِمَةٌ",
+    "count": 46,
+    "meaning": {"bs": "riječ", "en": "word"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, kod mnogih teologa ‚kelima‘ se kaže za svaku vrstu riječi – imenicu, glagol, česticu. U kur'anskoj upotrebi to je često jedna izreka koja nosi težinu. ‚Kelima tvoga Gospodara‘ (6:115) on tumači kao Allahovu odredbu: svaka odredba zove se ‚kelima‘, bila riječ ili djelo – kako Njemu priliči.",
+     "en": "According to ar-Rāġib, for many theologians ‘kalima’ is said of each kind of word — noun, verb, particle. In Quranic usage it is often a single pronouncement that carries weight. ‘The word of your Lord’ (6:115) he reads as Allah's decree: every decree is called ‘kalima’, whether word or deed — as befits Him."
+    },
+    "ayat": [
+     {"ref": "18:5", "why": {"bs": "„Teška je riječ što im iz usta izlazi …“ – jedna izreka, a velika; ar-Rāġib navodi ovaj ajet.", "en": "“Dreadful is the word that cometh out of their mouths” — a single pronouncement, and a grave one; ar-Rāġib cites this ayah."}},
+     {"ref": "6:115", "why": {"bs": "„I ispunila se riječ tvoga Gospodara, istinom i pravdom …“ – ar-Rāġib: ovdje je ‚kelima‘ Allahova odredba, kako Njemu priliči.", "en": "“Perfected is the Word of thy Lord in truth and justice” — ar-Rāġib: here ‘kalima’ is Allah's decree, as befits Him."}}
+    ]
+   },
+   {
+    "arabic": "قَوْل",
+    "lemmas": ["قَوْل|قول"],
+    "count": 92,
+    "meaning": {"bs": "govor, izrečeno", "en": "saying, speech"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, qawl je najprije ono što se izgovori, jedna riječ ili rečenica; ali se kaže i za ono što je u duši prije nego se izgovori, za uvjerenje i za nadahnuće. Govor se može pripisati i onome ko ga prenosi: u 69:40 to je govor poslanika koji ga dostavlja od Onoga Koji ga je poslao.",
+     "en": "According to ar-Rāġib, qawl is first what is uttered, a single word or a sentence; but it is also said of what is in the soul before it is uttered, of a belief and of inspiration. Speech can be ascribed to the one who conveys it: in 69:40 it is the speech of the messenger who delivers it from the One Who sent him."
+    },
+    "ayat": [
+     {"ref": "69:40", "why": {"bs": "„To je, zaista, govor plemenitog poslanika“ – ar-Rāġib: govor se pripisuje poslaniku jer ga on dostavlja, a i Onome Koji ga je poslao; oboje je ispravno.", "en": "“That it is indeed the speech of an illustrious messenger” — ar-Rāġib: the speech is ascribed to the messenger because he conveys it, and also to the One Who sent him; both are right."}},
+     {"ref": "36:7", "why": {"bs": "„Već se nad većinom njih obistinio govor, pa oni ne vjeruju“ – ar-Rāġib: Allahovo znanje o njima i Njegova riječ protiv njih, kako Njemu priliči.", "en": "“Already hath the judgment … proved true of most of them, for they believe not” — ar-Rāġib: Allah's knowledge of them and His word against them, as befits Him."}}
+    ]
+   },
+   {
+    "arabic": "حَدِيث",
+    "lemmas": ["حَدِيث|حدث"],
+    "count": 28,
+    "meaning": {"bs": "kazivanje, vijest", "en": "account, tidings"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, svaki govor koji do čovjeka dođe sluhom ili objavom, na javi ili u snu, zove se hadis – kazivanje; i Allah je Svoju Knjigu nazvao tako. U Kur'anu je to često Kur'an sam, a u formuli ‚Je li ti došlo kazivanje o …‘ priča o prošlim ili budućim događajima.",
+     "en": "According to ar-Rāġib, every speech that reaches a person by hearing or revelation, awake or asleep, is called ḥadīth — an account; and Allah named His Book so. In the Quran it is often the Quran itself, and in the formula ‘Has the account of … come to you?’ a story of past or coming events."
+    },
+    "ayat": [
+     {"ref": "88:1", "why": {"bs": "„Je li ti stigla vijest o onome što sve prekriva?“ – kazivanje koje dolazi objavom; ar-Rāġib navodi ovaj ajet.", "en": "“Hath there come unto thee tidings of the Overwhelming?” — an account that comes by revelation; ar-Rāġib cites this ayah."}},
+     {"ref": "52:34", "why": {"bs": "„Neka donesu kazivanje poput njega, ako istinu govore“ – Kur'an je ovdje nazvan hadisom; ar-Rāġib navodi ovaj ajet.", "en": "They are told to bring an account like it, if they are truthful — here the Quran is called ḥadīth; ar-Rāġib cites this ayah."}},
+     {"ref": "20:9", "why": {"bs": "„A je li ti došlo kazivanje o Musau?“ – formula kojom počinje priča.", "en": "“Hath there come unto thee the story of Moses?” — the formula that opens a story."}}
+    ]
+   }
+  ]
+ },
+ "laghw-batil": {
+  "title": {"bs": "Prazna priča i neistina", "en": "Idle talk and falsehood"},
+  "shared": {
+   "bs": "Obje riječi govore o onome što nema vrijednosti. Razlikuju se po tome šta je u pitanju: govor koji se ne uzima u obzir jer je rečen bez razmišljanja, ili ono što je suprotno istini i ne opstaje kad se ispita – u riječi ili u djelu.",
+   "en": "Both words speak of what has no worth. They differ in what is meant: speech that is not counted because it was said without thought, or what is the opposite of truth and does not hold up when examined — in word or in deed."
+  },
+  "tellApart": {
+   "bs": "Govor bez razmišljanja, koji se ne računa – i prazne zakletve; u Kur'anu uvijek govor → لَغْو; suprotnost istini, ono što nema postojanosti – lažna božanstva, nepravedno uzimanje imetka → بَاطِل.",
+   "en": "Speech without thought, not counted — also idle oaths; in the Quran always speech → لَغْو; the opposite of truth, what has no firmness — false gods, wealth taken wrongly → بَاطِل."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries لغا, بطل"
+  ],
+  "notes": [
+   "ar-Rāġib (لغا): laġw is speech that is not counted, said without deliberation or thought, like laġā, the chirping of sparrows and such birds; any ugly speech may be called laġw (78:35, 28:55, 56:25, 23:3); on 25:72 'they passed by laġw with dignity': they alluded to the ugly without saying it outright, or (qīla) they did not join those engaged in it; laġw in oaths is what has no binding intent, said from habit to link speech (2:225); 88:11 lāġiya = laġw. (بطل): al-bāṭil is the opposite of al-ḥaqq, what has no firmness when it is examined (31:30); said with regard to words and deeds; baṭala, abṭalahu (7:118 wa-baṭala mā kānū yaʿmalūn); 3:71 talbisūna l-ḥaqqa bi-l-bāṭil; ibṭāl is spoiling and removing a thing, true or false (8:8); mubṭil is one who says what has no reality (30:58), or who annuls the truth (40:78).",
+   "Quranic usage (our observation, all 9 / 25 places read): لَغْو is always speech: oaths said without intent (2:225, 5:89), what the believers turn from (23:3, 25:72, 28:55), and what is not heard in Paradise (19:62, 52:23, 56:25, 78:35). بَاطِل is said of what is called on besides Allah (22:62, 31:30, 29:52, 29:67), of falsehood against truth (2:42, 17:81, 21:18), and of deeds: consuming wealth wrongly (2:188, 4:29, 4:161, 9:34). Pickthall's 'vain' (laġw) and 'vanity' (bāṭil, 2:188) are kept apart by naming the member in brackets.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 1 flag, fixed: 2:188 bs word order our own.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries لغا, بطل (2026-11-06): 18 attributed points confirmed; changed — notes/0 (reworded): The verse he quotes reads 'من دونه الباطل' without هو: that is the wording of 31:30; 22:62 has 'هو الباطل'. Definition itself confirmed; members/1/ayat/0/why (reworded): His quotation lacks هو before الباطل, i.e. 31:30, not 22:62 (only occurrence checked with --mentions)"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "لغا",
+     "بطل"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "لَغْو",
+    "lemmas": ["لَغْو|لغو"],
+    "spoken": "لَغْوٌ",
+    "count": 9,
+    "meaning": {"bs": "prazna priča", "en": "idle talk"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, laġw je govor koji se ne uzima u obzir, rečen bez razmišljanja, kao cvrkut vrabaca; a može se nazvati tako i svaki ružan govor. Takva je i zakletva bez namjere, izrečena iz navike. U Kur'anu (svih 9 mjesta) to je uvijek govor: vjernici ga se klone, a u Džennetu se ne čuje.",
+     "en": "According to ar-Rāġib, laġw is speech that is not counted, said without thought, like the chirping of sparrows; and any ugly speech may also be called so. So too is an oath without intent, said out of habit. In the Quran (all 9 places) it is always speech: the believers shun it, and in Paradise it is not heard."
+    },
+    "ayat": [
+     {"ref": "23:3", "why": {"bs": "„I koji se prazne priče klone“ – osobina vjernika; ar-Rāġib navodi ovaj ajet.", "en": "“And who shun vain conversation” — a trait of the believers; ar-Rāġib cites this ayah."}},
+     {"ref": "2:225", "why": {"bs": "„Allah vas neće kazniti za ono što je prazno u vašim zakletvama …“ – zakletva bez namjere, rečena iz navike, kako ar-Rāġib objašnjava.", "en": "“Allah will not take you to task for that which is unintentional in your oaths” — an oath without intent, said out of habit, as ar-Rāġib explains."}},
+     {"ref": "78:35", "why": {"bs": "„U njemu neće slušati prazne priče, ni laži“ – o Džennetu; ar-Rāġib navodi ovaj ajet.", "en": "“There hear they never vain discourse, nor lying” — of Paradise; ar-Rāġib cites this ayah."}}
+    ]
+   },
+   {
+    "arabic": "بَاطِل",
+    "lemmas": ["باطِل|بطل"],
+    "count": 26,
+    "meaning": {"bs": "neistina, ništavno", "en": "falsehood, the false"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, bāṭil je suprotnost istini (ḥaqq): ono što nema postojanosti kad se ispita. Kaže se i za riječi i za djela. U Kur'anu to su lažna božanstva koja se mimo Allaha prizivaju, neistina koja nestaje pred istinom, i imetak uzet na nepravedan način.",
+     "en": "According to ar-Rāġib, bāṭil is the opposite of truth (ḥaqq): what has no firmness when it is examined. It is said of words and of deeds. In the Quran it is the false gods called on besides Allah, falsehood that vanishes before truth, and wealth taken in a wrongful way."
+    },
+    "ayat": [
+     {"ref": "22:62", "why": {"bs": "„… Allah je Istina, a ono što mimo Njega prizivaju – to je neistina …“ – ar-Rāġib za značenje riječi navodi gotovo isti ajet 31:30.", "en": "“Allah, He is the True, and that whereon they call instead of Him, it is the false” — ar-Rāġib cites the near-identical 31:30 for the meaning of the word."}},
+     {"ref": "17:81", "why": {"bs": "„… Došla je istina, a neistina je nestala …“ – ono što nema postojanosti ne opstaje.", "en": "“Truth hath come and falsehood hath vanished away” — what has no firmness does not last."}},
+     {"ref": "2:188", "why": {"bs": "„I ne jedite među sobom svoje imetke na ništavan način …“ – bāṭil u djelu, ne samo u riječi.", "en": "“And eat not up your property among yourselves in vanity [bāṭil]” — bāṭil in a deed, not only in a word."}}
+    ]
+   }
+  ]
+ },
+ "sirr-najwa": {
+  "title": {"bs": "Tajna i došaptavanje", "en": "Secret and whispered counsel"},
+  "shared": {
+   "bs": "Obje riječi govore o skrivenom govoru. Razlikuju se po tome gdje je govor: tajna koju čovjek nosi u sebi ili čini skriveno, ili govor koji se vodi nasamo, među nekolicinom, da ga drugi ne čuju.",
+   "en": "Both words speak of hidden speech. They differ in where the speech is: a secret a person keeps within or does in hiding, or talk held apart, among a few, so that others do not hear it."
+  },
+  "tellApart": {
+   "bs": "Ono što je skriveno u duši, suprotno javnom – i dijeljenje imetka tajno → سِرّ; govor nasamo među dvojicom ili više njih → نَجْوَى.",
+   "en": "What is hidden in the soul, the opposite of the open — also giving wealth in secret → سِرّ; talk held apart between two or more → نَجْوَى."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries سرر, نجو"
+  ],
+  "notes": [
+   "ar-Rāġib (سرر): isrār is the opposite of iʿlān (2:274 sirran wa-ʿalāniyatan; 16:23 yaʿlamu mā yusirrūna wa-mā yuʿlinūn); it is used of things and of meanings; sirr is speech kept hidden in the soul (الحديث المكتم في النفس), citing 20:7 yaʿlamu s-sirra wa-aḫfā and 9:78 sirrahum wa-naǧwāhum; asrartu ilā fulān: confiding to someone, which is disclosure to him and hiding from others (60:1). (نجو): the root is separation; nāǧaytuhu = I spoke with him in secret, its origin being to be alone with him on a raised ground (naǧwa), or (qīla) from rescue, or that you rescue your secret from being known; naǧwā is in origin a verbal noun (58:10 innamā n-naǧwā mina š-šayṭān, 58:8, 58:12); on 21:3 wa-asarrū n-naǧwā: they did not disclose it in any way, since a naǧwā may come out later; naǧwā is also said of the people (17:47 wa-iḏ hum naǧwā).",
+   "Quranic usage (our observation, all 11 / 11 places read): سِرّ is what Allah knows (6:3, 9:78, 20:7, 25:6, 43:80), giving in secret and openly (2:274, 13:22, 14:31, 35:29, 16:75) and a secret promise (2:235). نَجْوَى is talk between people: of three or five (58:7), of conspirators (20:62, 21:3), forbidden whispering (58:8, 58:10), the talk with the Prophet (58:12–13), and 4:114 (no good in much of it). 9:78 and 43:80 hold both words side by side. 58:7 has Pickthall's 'secret conference': the member is named in brackets.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries سرر, نجو (2026-11-06): 18 attributed points confirmed; changed — notes/0 (reworded): The text prints المكتم (one t), not مكتتم; the transliteration 'muktatam' fills a form the text lacks. Give the unvowelled Arabic instead. 58:12 is cited under ناجيتم, before the verbal-noun remark"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "سرر",
+     "نجو"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "سِرّ",
+    "lemmas": ["سِرّ|سرر"],
+    "count": 11,
+    "meaning": {"bs": "tajna", "en": "secret"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, sirr je govor sakriven u duši, a isrār je suprotnost javnom (iʿlān). U Kur'anu je to ono što Allah zna i od čega je skrivenije – kako Njemu priliči – i dijeljenje imetka tajno i javno.",
+     "en": "According to ar-Rāġib, sirr is speech hidden in the soul, and isrār is the opposite of the open (iʿlān). In the Quran it is what Allah knows, and what is more hidden still — as befits Him — and giving wealth in secret and openly."
+    },
+    "ayat": [
+     {"ref": "20:7", "why": {"bs": "„… On zna tajnu i ono što je još skrivenije“ – ar-Rāġib navodi ovaj ajet.", "en": "“He knoweth the secret (thought) and (that which is yet) more hidden” — ar-Rāġib cites this ayah."}},
+     {"ref": "2:274", "why": {"bs": "„Oni koji dijele imetke svoje noću i danju, tajno i javno …“ – tajno, kao suprotnost javnom; ar-Rāġib navodi ovaj par riječi.", "en": "“Those who spend their wealth by night and day, by stealth and openly” — in secret, as the opposite of openly; ar-Rāġib cites this pair of words."}},
+     {"ref": "9:78", "why": {"bs": "„Zar ne znaju da Allah zna njihovu tajnu i njihovo došaptavanje …“ – obje riječi zajedno: ono u duši i ono nasamo rečeno.", "en": "“Allah knoweth both their secret and the thought that they confide” — both words together: what is in the soul and what is said apart."}}
+    ]
+   },
+   {
+    "arabic": "نَجْوَى",
+    "lemmas": ["نَجْوَى|نجو"],
+    "count": 11,
+    "meaning": {"bs": "došaptavanje, razgovor nasamo", "en": "whispered counsel, secret conference"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, munāǧāt je razgovor nasamo; porijeklo mu je, kaže, osamiti se s nekim na uzvišenom mjestu (naǧwa), a navodi i druga objašnjenja. Naǧwā je prvobitno glagolska imenica, a kaže se i za same ljude koji se došaptavaju (17:47). U Kur'anu to je uvijek govor među ljudima.",
+     "en": "According to ar-Rāġib, munāǧāt is talk held apart; its origin, he says, is to be alone with someone on a raised place (naǧwa), and he also gives other explanations. Naǧwā is in origin a verbal noun, and it is also said of the people who confer (17:47). In the Quran it is always talk among people."
+    },
+    "ayat": [
+     {"ref": "58:7", "why": {"bs": "„… Nema došaptavanja trojice a da On nije četvrti …“ – Allah zna i ono što se govori nasamo, kako Njemu priliči.", "en": "“There is no secret conference [najwā] of three but He is their fourth” — Allah knows even what is said apart, as befits Him."}},
+     {"ref": "21:3", "why": {"bs": "„… I nasamo su se došaptavali …“ – ar-Rāġib: nisu to ni na koji način otkrili, jer se došaptavanje ponekad kasnije otkrije.", "en": "“And they confer in secret” — ar-Rāġib: they did not disclose it in any way, since such counsel sometimes comes out later."}},
+     {"ref": "4:114", "why": {"bs": "„Nema dobra u mnogim njihovim došaptavanjima, osim kod onoga ko naređuje sadaku, dobro ili mirenje među ljudima …“", "en": "“There is no good in much of their secret conferences save (in) him who enjoineth almsgiving and kindness and peace-making among the people.”"}}
+    ]
+   }
+  ]
+ },
+ "alim-khabir": {
+  "title": {"bs": "Sveznajući i Upućeni", "en": "The Knower and the Aware"},
+  "shared": {
+   "bs": "Obje riječi su Allahova imena koja govore o Njegovom znanju, kako Njemu priliči. Razlikuju se po onome što ističu: znanje o stvari kakva jeste, ili upućenost u ono što se zbiva i u nutrinu stvari.",
+   "en": "Both words are names of Allah that speak of His knowledge, as befits Him. They differ in what they stress: knowing a thing as it truly is, or being informed of what takes place and of the inner side of things."
+  },
+  "tellApart": {
+   "bs": "Onaj Koji zna sve, svaku stvar kakva jeste; često uz ‚Mudri‘ i ‚Onaj Koji čuje‘; kaže se i za ljude (učen sihirbaz, učen dječak) → عَلِيم; Onaj Koji je upućen u vijesti o djelima i u nutrinu stvari; često ‚o onome što radite‘; u Kur'anu gotovo uvijek o Allahu → خَبِير.",
+   "en": "The One Who knows everything, each thing as it is; often beside ‘the Wise’ and ‘the Hearer’; also said of people (a learned sorcerer, a knowing boy) → عَلِيم; the One informed of the reports of deeds and of inner things; often ‘of what you do’; in the Quran almost always of Allah → خَبِير."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries علم, خبر"
+  ],
+  "notes": [
+   "ar-Rāġib (علم): ʿilm is grasping a thing as it truly is (idrāk aš-šayʾ bi-ḥaqīqatihi), of two kinds: grasping the thing itself, and judging something of it; ʿalīm is the intensive form; on 12:76 wa-fawqa kulli ḏī ʿilmin ʿalīm: ʿalīm may point to a person above another (more knowing relative to him, though not to the one above him), or to Allah, though indefinite, since the One truly described as al-ʿAlīm is He; ʿallām al-ġuyūb (5:109): nothing hidden is hidden from Him. (خبر): ḫubr is knowledge of known things by way of report (ḫabar); qīla ḫibra is knowledge of the inner side of matters; on wa-llāhu ḫabīrun bimā taʿmalūn: knowing the reports of your deeds, or (qīla) knowing the inner side of your affairs, or (qīla) ḫabīr in the sense of the one who informs (cf. 'fa-yunabbiʾukum bimā kuntum taʿmalūn').",
+   "Quranic usage (our observation, all 45 places of خَبِير and the 163 of عَلِيم listed): خَبِير is Allah in every place read (25:59 'ask about Him one who is informed' and 35:14 are read by most mufassirun of Allah too; some read 25:59 of a knowing person); 23 of its 45 places carry 'bimā taʿmalūn / yaʿmalūn / taṣnaʿūn' (of what you do), and it stands beside laṭīf in 5 (6:103, 22:63, 31:16, 33:34, 67:14). عَلِيم stands with ḥakīm in about 36 ayat and with samīʿ in about 32; only 7 carry 'of what you do'; it is said of people in 7:109, 7:112, 10:79, 26:34 (a skilled sorcerer), 12:55 (Joseph), 15:53 and 51:28 (the promised son), and 12:76 is read two ways (his two readings). 66:3 (nabbaʾaniya l-ʿalīmu l-ḫabīr, both names) is left out: tafsir differs on the secret it concerns.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries علم, خبر (2026-11-06): 13 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "علم",
+     "خبر"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "عَلِيم",
+    "lemmas": ["عَلِيم|علم"],
+    "count": 163,
+    "meaning": {"bs": "Sveznajući, onaj koji zna", "en": "Knower, all-knowing"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, znanje (ʿilm) je spoznati stvar onakvom kakva uistinu jeste, a ʿalīm je pojačani oblik. Uistinu je ‚al-ʿAlīm‘ samo Allah – kako Njemu priliči; ali Kur'an tako naziva i ljude: učene sihirbaze, Jusufa, obećanog dječaka. Često stoji uz ‚Mudri‘ i ‚Onaj Koji čuje‘.",
+     "en": "According to ar-Rāġib, knowledge (ʿilm) is grasping a thing as it truly is, and ʿalīm is the intensive form. Truly ‘al-ʿAlīm’ is Allah alone — as befits Him; but the Quran also calls people so: learned sorcerers, Joseph, the promised boy. It often stands beside ‘the Wise’ and ‘the Hearer’."
+    },
+    "ayat": [
+     {"ref": "2:29", "why": {"bs": "„… i On sve zna“ – znanje o svakoj stvari, kako Njemu priliči.", "en": "“And He is knower of all things” — knowledge of every thing, as befits Him."}},
+     {"ref": "12:76", "why": {"bs": "„… a iznad svakog onog ko ima znanje ima još učeniji“ – ar-Rāġib daje dva čitanja: čovjek učeniji od drugoga, ili Allah, Kojem jedinom uistinu pripada to ime.", "en": "“Over every lord of knowledge there is one more knowing” — ar-Rāġib gives two readings: a person more knowing than another, or Allah, to Whom alone the name truly belongs."}}
+    ]
+   },
+   {
+    "arabic": "خَبِير",
+    "lemmas": ["خَبِير|خبر"],
+    "count": 45,
+    "meaning": {"bs": "Upućeni, Obaviješteni", "en": "the Aware, the Informed"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ḫubr je znanje o stvarima koje dolazi kao vijest (ḫabar); neki kažu da je to poznavanje nutrine stvari. ‚Allah je upućen u ono što radite‘ znači, kaže on, da zna vijesti o vašim djelima – ili, prema drugima, nutrinu vaših stvari. U Kur'anu je to gotovo uvijek Allah, kako Njemu priliči; u gotovo polovini mjesta uz ‚u ono što radite‘.",
+     "en": "According to ar-Rāġib, ḫubr is knowledge of things that comes as report (ḫabar); some say it is knowing the inner side of things. ‘Allah is aware of what you do’ means, he says, that He knows the reports of your deeds — or, according to others, the inner side of your affairs. In the Quran it is almost always Allah, as befits Him; in nearly half of its places with ‘of what you do’."
+    },
+    "ayat": [
+     {"ref": "63:11", "why": {"bs": "„… a Allah je upućen u ono što radite“ – ar-Rāġib: zna vijesti o vašim djelima, kako Njemu priliči.", "en": "“And Allah is Informed of what ye do” — ar-Rāġib: He knows the reports of your deeds, as befits Him."}},
+     {"ref": "67:14", "why": {"bs": "„Zar da ne zna Onaj Koji je stvorio, a On je Blagi, Upućeni?“ – uz ‚Blagi‘ (al-Laṭīf): upućen i u ono što je najsitnije i najskrivenije, kako Njemu priliči.", "en": "“Should He not know what He created? And He is the Subtile, the Aware.” — beside ‘the Subtle’ (al-Laṭīf): aware even of what is finest and most hidden, as befits Him."}}
+    ]
+   }
+  ]
+ },
+ "shahid-raqib-hafiz": {
+  "title": {"bs": "Svjedok, nadzornik i čuvar", "en": "Witness, watcher and keeper"},
+  "shared": {
+   "bs": "Sve tri riječi govore o onome ko je nad nečim i zna šta se zbiva – i o Allahu, kako Njemu priliči, i o ljudima i melecima. Razlikuju se po tome šta ističu: prisutnost i svjedočenje, bdijenje i motrenje, ili čuvanje i staranje.",
+   "en": "All three words speak of one who is over something and knows what happens — of Allah, as befits Him, and of people and angels. They differ in what they stress: presence and testimony, watching and observing, or keeping and taking care."
+  },
+  "tellApart": {
+   "bs": "Prisutan koji vidi, okom ili uvidom, pa svjedoči; i šehid → شَهِيد; onaj koji bdije i motri nad nekim → رَقِيب; čuvar koji pazi i odgovara za nešto – ‚nisam vam ja čuvar‘ → حَفِيظ.",
+   "en": "One present who sees, by eye or insight, and so testifies; also the martyr → شَهِيد; one who keeps watch over someone → رَقِيب; a keeper who guards and is answerable for something — ‘I am not a keeper over you’ → حَفِيظ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries شهد, رقب, حفظ"
+  ],
+  "notes": [
+   "ar-Rāġib (شهد): šuhūd and šahāda are presence with witnessing, by sight or by insight; šahāda is a statement that comes from knowledge gained by such witnessing; šahīd is said of the witness and of the one who sees a thing; 50:21 sāʾiq wa-šahīd: one who testifies for or against him; 4:41 'from every nation a witness'; 50:37 wa-huwa šahīd: they witness with their hearts what they hear; 'Allah is witness over everything' and 'wa-kafā bi-llāhi šahīdan' point to 'nothing of them is hidden from Allah' (40:16); the martyr is called šahīd because the angels are present with him (41:30), or because he sees what is prepared for him, or because the souls of the martyrs are present with Allah (3:169). (رقب): raqaba is the neck; raqabtuhu = I guarded him; raqīb is the guardian (al-ḥāfiẓ), either because he watches the neck of the one guarded or because he raises his own neck; cites 11:93 'watch, I am watching with you' and 50:18 raqībun ʿatīd; marqab is the high place the watcher looks down from. (حفظ): ḥifẓ is a state of the soul that keeps what understanding brings, then any looking after, tending and care (15:9, 2:238); 4:80 fa-mā arsalnāka ʿalayhim ḥafīẓan = a keeper, like 'you are not a tyrant over them' and 'not a guardian (wakīl) over them'; 50:4 kitāb ḥafīẓ: keeping their deeds, or itself kept, nothing lost.",
+   "Quranic usage (our observation): شَهِيد (47 ayat read; the count sums the singular and šuhadāʾ) is Allah witness over all (e.g. 3:98, 5:117, 85:9), the witnesses of the nations and of contracts (2:282, 4:41, 24:4), and the martyrs (3:140, 4:69, 57:19). رَقِيب (all 5 read) is Allah in 4:1, 5:117, 33:52, Shuʿayb in 11:93, and the recording angel in 50:18. حَفِيظ (all 12 read; the count includes ḥafaẓa, the guardian angels, 6:61) is Allah (11:57, 34:21, 42:6), the prophet who is not made a keeper over people (4:80, 6:104, 6:107, 11:86, 42:48), Joseph (12:55), the Book (50:4) and the one who keeps (Allah's command) in 50:32. 5:117 holds šahīd and raqīb side by side. The ayat said to the Prophet (4:80, 6:107, 42:48) are not quoted: 11:86 (Shuʿayb) shows the same formula. 12:55 is paraphrased: Pickthall renders ḥafīẓ ʿalīm as one phrase.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: his third reason for the name šahīd added (their souls are present with Allah); 5:117 bs re-translated.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries شهد, رقب, حفظ (2026-11-06): 19 attributed points confirmed; changed — members/2/nuance (reworded): He discusses 4:80 (fa-mā arsalnāka ʿalayhim ḥafīẓan), not 'I am not a keeper over you' (6:104/11:86), and glosses it only as ḥāfiẓ; 'not answerable for you' is not his"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "شهد",
+     "رقب",
+     "حفظ"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "شَهِيد",
+    "lemmas": ["شَهِيد|شهد"],
+    "count": 56,
+    "meaning": {"bs": "svjedok", "en": "witness"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, šuhūd je biti prisutan uz viđenje, okom ili uvidom, a šahāda je izjava koja proizlazi iz takvog znanja. Kad se kaže da je Allah svjedok svega, to znači, kaže on, da Mu ništa od njih nije skriveno – kako Njemu priliči. Šehid je nazvan tako, kaže on, jer su meleki prisutni uz njega, ili jer vidi šta mu je pripremljeno, ili jer su njihove duše prisutne kod Allaha.",
+     "en": "According to ar-Rāġib, šuhūd is being present with seeing, by eye or by insight, and šahāda is a statement that comes from such knowledge. When Allah is said to be witness over everything, it means, he says, that nothing of them is hidden from Him — as befits Him. The martyr is called šahīd, he says, because the angels are present with him, or because he sees what is prepared for him, or because their souls are present with Allah."
+    },
+    "ayat": [
+     {"ref": "4:41", "why": {"bs": "„Pa kako će biti kad od svake zajednice dovedemo svjedoka …“ – ar-Rāġib navodi ovaj ajet.", "en": "“When We bring of every people a witness” — ar-Rāġib cites this ayah."}},
+     {"ref": "85:9", "why": {"bs": "„… a Allah je svemu svjedok“ – ništa Mu nije skriveno, kako Njemu priliči.", "en": "“And Allah is of all things the Witness” — nothing is hidden from Him, as befits Him."}}
+    ]
+   },
+   {
+    "arabic": "رَقِيب",
+    "lemmas": ["رَقِيب|رقب"],
+    "count": 5,
+    "meaning": {"bs": "nadzornik, onaj koji bdije", "en": "watcher, observer"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, raqīb je čuvar koji motri; riječ je od raqaba, vrat: ili zato što pazi na vrat onoga koga čuva, ili zato što podiže svoj vrat da gleda. U Kur'anu je to Allah, kako Njemu priliči, melek koji bilježi govor, i Šuajb koji sa svojim narodom čeka ishod.",
+     "en": "According to ar-Rāġib, raqīb is a guardian who keeps watch; the word is from raqaba, the neck: either because he watches over the neck of the one he guards, or because he raises his own neck to look. In the Quran it is Allah, as befits Him, the angel who records speech, and Shuʿayb waiting with his people for the outcome."
+    },
+    "ayat": [
+     {"ref": "50:18", "why": {"bs": "„Ne izgovori on nijednu riječ, a da uz njega nije nadzornik spreman“ – ar-Rāġib navodi ovaj ajet.", "en": "“He uttereth no word but there is with him an observer ready” — ar-Rāġib cites this ayah."}},
+     {"ref": "5:117", "why": {"bs": "„… Dok sam bio kod njih, bio sam njihov svjedok; a kad si me preuzeo, Ti si bio Nadzornik nad njima …“ – Isa razlikuje dvije riječi: svjedok je bio dok je bio prisutan, a Allah je nadzornik nad njima, kako Njemu priliči.", "en": "“I was a witness of them while I dwelt among them, and when Thou tookest me Thou wast the Watcher over them” — Jesus sets the two words apart: he was a witness while present, and Allah is the Watcher over them, as befits Him."}}
+    ]
+   },
+   {
+    "arabic": "حَفِيظ",
+    "lemmas": ["حَفِيظ|حفظ"],
+    "count": 12,
+    "meaning": {"bs": "čuvar", "en": "keeper, guardian"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ḥifẓ je najprije pamćenje, a zatim svako staranje, paženje i čuvanje. ‚Nismo te poslali da im budeš čuvar‘ (4:80) on poredi s ‚nisi ti nad njima silnik‘ i ‚nisi im nadglednik (wakīl)‘. U Kur'anu je to Allah, kako Njemu priliči, Jusuf nad riznicama zemlje, i Knjiga koja čuva djela.",
+     "en": "According to ar-Rāġib, ḥifẓ is first retaining in memory, then any looking after, tending and keeping. He likens ‘We have not sent you as a keeper over them’ (4:80) to ‘you are not a tyrant over them’ and ‘you are not a guardian (wakīl) over them’. In the Quran it is Allah, as befits Him, Joseph over the storehouses of the land, and the Book that keeps the deeds."
+    },
+    "ayat": [
+     {"ref": "11:86", "why": {"bs": "„… a ja vam nisam čuvar“ – Šuajbove riječi: on dostavlja poruku, a ne odgovara za njihova djela.", "en": "“And I am not a keeper over you” — Shuʿayb's words: he conveys the message, he is not answerable for their deeds."}},
+     {"ref": "12:55", "why": {"bs": "„Postavi me nad riznicama zemlje, ja sam čuvar, znalac“ – Jusuf traži da bude postavljen nad riznicama: zna ih čuvati i zna njima upravljati.", "en": "Joseph asks to be set over the storehouses of the land, saying that he is a keeper (ḥafīẓ) and knowing (ʿalīm): he can guard them and knows how to manage them."}},
+     {"ref": "50:4", "why": {"bs": "„… a kod Nas je Knjiga koja čuva“ – ar-Rāġib: Knjiga koja čuva njihova djela, ili koja je sama sačuvana, ništa se ne gubi.", "en": "“With Us is a recording Book” — ar-Rāġib: a Book that keeps their deeds, or that is itself kept, nothing lost."}}
+    ]
+   }
+  ]
+ },
+ "mithl-nidd-kufu": {
+  "title": {"bs": "Sličan, takmac i ravan", "en": "Like, rival and equal"},
+  "shared": {
+   "bs": "Sve tri riječi govore o tome da je nešto jednako nečemu drugom. Razlikuju se po tome u čemu je ta jednakost: u bilo kojem pogledu, u samoj suštini, ili u položaju i mjeri. Kur'an sve tri koristi i da zaniječe da je išta jednako Allahu.",
+   "en": "All three words speak of one thing being equal to another. They differ in what the equality lies in: in any respect at all, in the very substance, or in rank and measure. The Quran uses all three also to deny that anything is equal to Allah."
+  },
+  "tellApart": {
+   "bs": "Sličnost u bilo kojem pogledu – najopćenitija riječ; ‚ništa nije poput Njega‘ → مِثْل; takmac koji dijeli suštinu – ‚ne činite Allahu takmace‘ → أَنْدَاد; ravan po položaju i mjeri → كُفُو.",
+   "en": "Likeness in any respect — the most general word; ‘nothing is like Him’ → مِثْل; a rival sharing the substance — ‘do not set up rivals to Allah’ → أَنْدَاد; equal in rank and measure → كُفُو."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries مثل, ندد, كفؤ"
+  ],
+  "notes": [
+   "ar-Rāġib (مثل): miṯl is said in two ways: like maṯal (likeness), and as likeness to another in any meaning whatever — the most general of the words set for likeness: nidd is said of sharing in substance only, šibh in quality only, musāwī in quantity only, šakl in measure and extent only, and miṯl covers all of these; so when Allah willed to deny likeness in every respect He named it: 42:11 laysa ka-miṯlihi šayʾ (the kāf with miṯl for emphasis, or miṯl there meaning 'attribute' — both reported with qīla). (ندد): the nadīd of a thing is what shares its substance, a kind of likeness, since miṯl is said of any sharing at all: 'every nidd is a miṯl, but not every miṯl is a nidd'; cites 2:22, 2:165, 41:9. (كفؤ): kufʾ is equality in rank and measure (fī l-manzila wa-l-qadr): one is kufʾ to another in marriage or in fighting; cites 112:4 wa-lam yakun lahu kufuwan aḥad; mukāfaʾa is equality and requital in an act.",
+   "Quranic usage (our observation): أَنْدَاد (all 6 places read) is always what people set up as rivals to Allah (2:22, 2:165, 14:30, 34:33, 39:8, 41:9). كُفُو is only 112:4. مِثْل (74 ayat) is of every kind of likeness: the challenge to bring the like of the Quran (2:23, 10:38, 11:13, 17:88, 52:34), a recompense like the deed (6:160, 42:40), and 42:11. The count of مِثْل is the corpus's; ka-miṯlihi in 42:11 is the one ar-Rāġib discusses.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: Bosnian quotes of 2:165 and 112:4 re-translated from the Arabic.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries مثل, ندد, كفؤ (2026-11-06): 15 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "مثل",
+     "ندد",
+     "كفؤ"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "مِثْل",
+    "lemmas": ["مِثْل|مثل"],
+    "count": 75,
+    "meaning": {"bs": "sličan, nešto poput", "en": "like, the like of"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, miṯl je najopćenitija riječ za sličnost: obuhvata sličnost u suštini, u svojstvu, u količini i u mjeri. Zato je Allah, kad je htio zanijekati svaku sličnost s Njim, upotrijebio upravo nju: ‚ništa nije poput Njega‘ (42:11).",
+     "en": "According to ar-Rāġib, miṯl is the most general word for likeness: it covers likeness in substance, in quality, in quantity and in measure. So when Allah willed to deny every likeness to Him, He used just this word: ‘nothing is as His likeness’ (42:11)."
+    },
+    "ayat": [
+     {"ref": "42:11", "why": {"bs": "„… Ništa nije poput Njega; On je Onaj Koji čuje i vidi“ – ar-Rāġib: zanijekana je sličnost u svakom pogledu.", "en": "“Naught is as His likeness; and He is the Hearer, the Seer” — ar-Rāġib: likeness in every respect is denied."}},
+     {"ref": "17:88", "why": {"bs": "„… kad bi se ljudi i džini okupili da donesu nešto poput ovog Kur'ana, ne bi donijeli nešto poput njega …“", "en": "“Though mankind and the jinn should assemble to produce the like of this Qur'an, they could not produce the like thereof”"}}
+    ]
+   },
+   {
+    "arabic": "أَنْدَاد",
+    "lemmas": ["أَنداد|ندد"],
+    "count": 6,
+    "meaning": {"bs": "takmaci, suparnici", "en": "rivals"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, nidd je ono što s nečim dijeli samu suštinu; to je vrsta sličnosti, pa je ‚svaki nidd miṯl, a nije svaki miṯl nidd‘. U Kur'anu (svih 6 mjesta) to su uvijek takmaci koje ljudi postavljaju Allahu – kao da im pripada ono što pripada samo Njemu.",
+     "en": "According to ar-Rāġib, a nidd is what shares the very substance of a thing; it is a kind of likeness, so ‘every nidd is a miṯl, but not every miṯl is a nidd’. In the Quran (all 6 places) they are always rivals that people set up to Allah — as if what belongs to Him alone belonged to them."
+    },
+    "ayat": [
+     {"ref": "2:22", "why": {"bs": "„… zato ne činite Allahu takmace, a vi znate“ – ar-Rāġib navodi ovaj ajet.", "en": "“And do not set up rivals to Allah when ye know (better)” — ar-Rāġib cites this ayah."}},
+     {"ref": "2:165", "why": {"bs": "„Ima ljudi koji pored Allaha uzimaju sebi takmace i ljube ih ljubavlju kakvom se ljubi Allah …“ – takmac kome se daje ljubav koja pripada samo Allahu.", "en": "“Yet of mankind are some who take unto themselves (objects of worship which they set as) rivals to Allah, loving them with a love like (that which is the due) of Allah (only)” — a rival given the love that is due to Allah alone."}}
+    ]
+   },
+   {
+    "arabic": "كُفُو",
+    "lemmas": ["كُفُو|كفأ"],
+    "count": 1,
+    "meaning": {"bs": "ravan, dorastao", "en": "equal, comparable"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, kufʾ je jednakost u položaju i mjeri: kaže se da je neko ravan drugome u braku ili u borbi. U Kur'anu dolazi samo jednom, u suri al-Iḫlāṣ: niko Allahu nije ravan.",
+     "en": "According to ar-Rāġib, kufʾ is equality in rank and measure: one is said to be another's equal in marriage or in fighting. In the Quran it comes only once, in Sura al-Iḫlāṣ: no one is equal to Allah."
+    },
+    "ayat": [
+     {"ref": "112:4", "why": {"bs": "„I nema nikoga ko bi Mu bio ravan“ – ar-Rāġib navodi ovaj ajet.", "en": "“And there is none comparable unto Him” — ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "yasir-hayyin": {
+  "title": {"bs": "Lahko i lagano", "en": "Easy and light"},
+  "shared": {
+   "bs": "Obje riječi znače da nešto nije teško. Razlikuju se po slici koju nose: lahkoća kao suprotnost tegobi (pa i nešto malo), ili nešto lagano, bez težine – pa i ono što ljudi olahko shvate.",
+   "en": "Both words mean that something is not hard. They differ in the image they carry: ease as the opposite of hardship (and also something small), or something light, without weight — even what people take lightly."
+  },
+  "tellApart": {
+   "bs": "Lahko, suprotno teškom; i malo, neznatno – ‚to je Allahu lahko‘ → يَسِير; lagano, bez težine; i ono što se smatra sitnicom – ‚to je Meni lagano‘ → هَيِّن.",
+   "en": "Easy, the opposite of hard; also little, slight — ‘that is easy for Allah’ → يَسِير; light, without weight; also what is counted a trifle — ‘it is light for Me’ → هَيِّن."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries يسر, هان"
+  ],
+  "notes": [
+   "ar-Rāġib (يسر): yusr is the opposite of ʿusr (2:185, 65:7); yasīr and maysūr are what is easy (17:28 qawlan maysūran); yasīr is also said of a small thing: in the first sense 33:30 'and that is easy for Allah' and 'inna ḏālika ʿalā llāhi yasīr'; in the second 33:14 'they would have tarried in it but little'. (هان): hawān is of two kinds: a person's humbling himself in a way that brings no disgrace, which is praised (25:63 yamšūna ʿalā l-arḍi hawnan), and humiliation from one who has power and holds him light, which is blamed (46:20 ʿaḏāb al-hūn, 22:18); and 'hāna l-amru ʿalā fulān' = it was easy for him: 19:9 huwa ʿalayya hayyin, 30:27 wa-huwa ahwanu ʿalayh, 24:15 wa-taḥsabūnahu hayyinan.",
+   "Quranic usage (our observation, all 15 / 4 places read): يَسِير is mostly 'easy for Allah / for Us' (4:30, 4:169, 22:70, 29:19, 33:30, 35:11, 50:44, 57:22, 64:7), also an easy reckoning (84:8), 'not easy' (74:10), and small or short (12:65, 25:46, 33:14, 33:20). The هَيِّن member sums هَيِّن (3: 19:9, 19:21, 24:15) with the comparative أَهْوَن (30:27), which ar-Rāġib cites beside it. The link between hayyin 'easy' and the 'lowliness' of its root is not his: he only files the sense in the same entry; 'light, of no weight' is our gloss, borne out by 24:15 (thought light, but great with Allah). Pickthall gives both members 'easy': the member is named in brackets.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: 84:8 bs re-translated; bs genitive 'Jahje'.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries يسر, هان (2026-11-06): 12 attributed points confirmed; changed — members/1/nuance (reworded): He glosses hāna l-amru with سهل 'easy'; notes/1 itself says 'light' is our gloss, so it should not sit inside his gloss. bs 'lagana' covers both and can stay"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "يسر",
+     "هان"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "يَسِير",
+    "lemmas": ["يَسِير|يسر"],
+    "count": 15,
+    "meaning": {"bs": "lahko; malo", "en": "easy; slight"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, yusr je suprotnost tegobi (ʿusr), a yasīr je ono što je lahko; kaže se i za nešto malo. U Kur'anu najčešće: ‚to je Allahu lahko‘ – kako Njemu priliči; ali i lahko polaganje računa, i kratko vrijeme.",
+     "en": "According to ar-Rāġib, yusr is the opposite of hardship (ʿusr), and yasīr is what is easy; it is also said of something small. In the Quran mostly: ‘that is easy for Allah’ — as befits Him; but also an easy reckoning, and a short while."
+    },
+    "ayat": [
+     {"ref": "50:44", "why": {"bs": "„… To je Nama lahko sabiranje“ – o proživljenju; lahko, kako Njemu priliči.", "en": "“That is a gathering easy [yasīr] for Us (to make)” — of the resurrection; easy, as befits Him."}},
+     {"ref": "84:8", "why": {"bs": "„… taj će biti obračunat lahkim obračunom“ – lahkoća za čovjeka.", "en": "“He truly will receive an easy [yasīr] reckoning” — ease for a human being."}},
+     {"ref": "33:14", "why": {"bs": "„… i ne bi se u tome zadržali osim malo“ – ar-Rāġib: drugo značenje, ‚malo‘.", "en": "“And would have hesitated thereupon but little” — ar-Rāġib: the second sense, ‘little’."}}
+    ]
+   },
+   {
+    "arabic": "هَيِّن",
+    "lemmas": ["هَيِّن|هون", "أَهْوَن|هون"],
+    "count": 4,
+    "meaning": {"bs": "lagano, bez težine", "en": "light, of no weight"},
+    "nuance": {
+     "bs": "Ar-Rāġib ovo značenje (‚stvar mu je bila lagana‘) navodi u natuknici o poniznosti i poniženju (hawān), i za njega citira 19:9, 30:27 i 24:15. U Kur'anu dva puta: ‚to je Meni lagano‘ – Allahove riječi o rođenju Jahje i Isaa, kako Njemu priliči; i jednom ono što su ljudi smatrali sitnicom, a kod Allaha je veliko.",
+     "en": "Ar-Rāġib gives this sense (‘the matter was easy for him’) in his entry on humility and humiliation (hawān), and cites 19:9, 30:27 and 24:15 for it. In the Quran twice: ‘it is light for Me’ — Allah's words on the birth of John and of Jesus, as befits Him; and once what people counted a trifle, though with Allah it is great."
+    },
+    "ayat": [
+     {"ref": "19:9", "why": {"bs": "„… Gospodar tvoj kaže: ‚To je Meni lagano, a i tebe sam prije stvorio, a nisi bio ništa‘“ – ar-Rāġib navodi ovaj ajet.", "en": "“Thy Lord saith: It is easy [hayyin] for Me, even as I created thee before, when thou wast naught” — ar-Rāġib cites this ayah."}},
+     {"ref": "24:15", "why": {"bs": "„… i smatrali ste to sitnicom, a to je kod Allaha veliko“ – lagano u očima ljudi, teško kod Allaha.", "en": "“Ye counted it a trifle. In the sight of Allah it is very great.” — light in people's eyes, weighty with Allah."}},
+     {"ref": "30:27", "why": {"bs": "„On je Taj Koji stvaranje započinje, pa ga ponavlja, i to Mu je još lakše …“ – poredbeni oblik iste riječi (ahwan); ar-Rāġib ga navodi uz nju; kako Njemu priliči.", "en": "“He it is Who produceth creation, then reproduceth it, and it is easier for Him” — the comparative of the same word (ahwan); ar-Rāġib cites it beside it; as befits Him."}}
+    ]
+   }
+  ]
+ },
+ "jamil-hasan": {
+  "title": {"bs": "Lijepo i dobro", "en": "Beautiful and good"},
+  "shared": {
+   "bs": "Obje riječi znače nešto lijepo i poželjno. Razlikuju se po mjeri i po onome što opisuju: obilna ljepota, u Kur'anu uvijek ljepota postupka, ili dobro u najširem smislu – ono što razum, duša ili oko smatraju lijepim.",
+   "en": "Both words mean something fine and desirable. They differ in measure and in what they describe: abundant beauty, in the Quran always the beauty of a way of acting, or good in the widest sense — what reason, the soul or the eye find fine."
+  },
+  "tellApart": {
+   "bs": "Obilna ljepota; pridjev u Kur'anu uvijek o postupku: lijepo strpljenje, lijepo praštanje, lijepo rastajanje → جَمِيل; dobro, lijepo u bilo kojem pogledu – dobar zajam, dobra opskrba, dobro obećanje → حَسَن.",
+   "en": "Abundant beauty; the adjective in the Quran always of a way of acting: beautiful patience, beautiful forbearance, a beautiful parting → جَمِيل; good, fine in any respect — a goodly loan, good provision, a good promise → حَسَن."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries جمل, حسن"
+  ],
+  "notes": [
+   "ar-Rāġib (جمل): ǧamāl is much beauty (al-ḥusn al-kaṯīr), of two kinds: beauty proper to a person in himself, his body or his deed, and beauty that reaches others from him; he cites the hadith 'Allah is beautiful and loves beauty' as pointing to the many goods that flow from Him; cites 16:6 wa-lakum fīhā ǧamāl, 12:18 fa-ṣabrun ǧamīl, 70:5 fa-ṣbir ṣabran ǧamīlan. (حسن): ḥusn is everything delightful and desired, of three kinds: found fine by reason, by desire (hawā), and by the senses; ḥasan is said of things and of events; in common usage ḥasan is mostly what is found fine by the eye, but 'most of what comes in the Quran of ḥasan is what is found fine by insight (baṣīra)'; cites 39:18 aḥsanahu, 2:83 qūlū li-n-nāsi ḥusnan, 29:8.",
+   "Quranic usage (our observation, all 7 / 20 places read): جَمِيل is always a way of acting: patience (12:18, 12:83, 70:5), forbearance (15:85), releasing a wife (33:28, 33:49), keeping away (73:10). حَسَن is a goodly loan to Allah (2:245, 5:12, 57:11, 57:18, 64:17, 73:20), good provision (11:88, 16:67, 16:75, 22:58), a good promise (20:86, 28:61), reward (18:2), enjoyment (11:3), a good acceptance and growth (3:37), a good trial (8:17), a good share (48:16); of what is seen only in 55:70 and 55:76 (ḥisān), and in 35:8 an evil deed seen as good. 'In the Quran mostly by insight' is ar-Rāġib's own observation and agrees with these places. ḥusn, ḥasana, ḥusnā and aḥsan are other lemmas, not counted here. 73:10 and 33:28 (said to the Prophet) are not quoted.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 1 flag, fixed: 'always a way of acting' said of the adjective jamīl (the noun ǧamāl in 16:6 is of cattle).",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries جمل, حسن (2026-11-06): 12 attributed points confirmed; changed — members/1/nuance (reworded): His second kind is من جهة الهوى (desire/inclination), not 'the soul'. His Quranic examples are 39:18 aḥsanahu, 2:83 ḥusnan, 29:8 — not loan/provision/promise, which come from our notes/1"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "جمل",
+     "حسن"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "جَمِيل",
+    "lemmas": ["جَمِيل|جمل"],
+    "count": 7,
+    "meaning": {"bs": "lijep", "en": "beautiful, comely"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ǧamāl je obilna ljepota (al-ḥusn al-kaṯīr), bilo ona koja je u samom čovjeku – u duši, tijelu ili djelu – bilo ona koja od njega dolazi drugima. Pridjev jamīl u Kur'anu dolazi na 7 mjesta i uvijek opisuje postupak: strpljenje, praštanje, rastanak.",
+     "en": "According to ar-Rāġib, ǧamāl is abundant beauty (al-ḥusn al-kaṯīr), whether the beauty in a person himself — in his soul, body or deed — or the beauty that reaches others from him. The adjective jamīl comes in the Quran in 7 places, and always describes a way of acting: patience, forbearance, parting."
+    },
+    "ayat": [
+     {"ref": "12:18", "why": {"bs": "„… ‚Lijepo strpljenje!‘ …“ – Jakubove riječi kad su mu donijeli Jusufovu košulju; ar-Rāġib navodi ovaj ajet.", "en": "“(My course is) comely patience” — Jacob's words when they brought him Joseph's shirt; ar-Rāġib cites this ayah."}},
+     {"ref": "15:85", "why": {"bs": "„… pa lijepo praštaj“ – ljepota u načinu na koji se prašta.", "en": "“So forgive, (O Muhammad), with a gracious forgiveness” — beauty in the way one forgives."}}
+    ]
+   },
+   {
+    "arabic": "حَسَن",
+    "lemmas": ["حَسَن|حسن"],
+    "count": 21,
+    "meaning": {"bs": "dobar", "en": "good, goodly"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ḥusn je sve što raduje i za čim se žudi, bilo da je lijepo razumu, želji ili osjetilima. Kaže se i za stvari i za događaje; u govoru ljudi najčešće za ono što je lijepo oku, ali u Kur'anu, kaže on, najčešće za ono što je lijepo uvidu. Tako je i u kur'anskoj upotrebi: dobar zajam, dobra opskrba, dobro obećanje.",
+     "en": "According to ar-Rāġib, ḥusn is everything that delights and is desired, whether fine to reason, to desire or to the senses. It is said of things and of events; in people's speech mostly of what is fine to the eye, but in the Quran, he says, mostly of what is fine to insight. So too in Quranic usage: a goodly loan, good provision, a good promise."
+    },
+    "ayat": [
+     {"ref": "2:245", "why": {"bs": "„Ko je taj koji će Allahu dati dobar zajam, pa da mu ga On višestruko uveća …“ – dobro po uvidu, ne po izgledu.", "en": "“Who is it that will lend unto Allah a goodly loan, so that He may give it increase manifold?” — good to insight, not to the eye."}},
+     {"ref": "3:37", "why": {"bs": "„Pa ju je Gospodar njen primio dobrim prijemom i dao joj da dobro uzraste …“ – o Merjemi; dobro i u prihvatanju i u rastu.", "en": "“And her Lord … vouchsafed to her a goodly growth” — of Mary; good both in being accepted and in growing up."}}
+    ]
+   }
+  ]
+ },
+ "najm-kawkab-shihab": {
+  "title": {"bs": "Zvijezda, sjajnica i plamen", "en": "Star, shining star and flame"},
+  "shared": {
+   "bs": "Sve tri riječi govore o svjetlu na nebu ili iz vatre. Razlikuju se po tome šta ističu: zvijezdu koja izlazi i po kojoj se ravna put, nebesko tijelo kad se ukaže i zablista, ili užareni plamen koji sijevne.",
+   "en": "All three words speak of light in the sky or from a fire. They differ in what they stress: the star that rises and by which a course is set, a heavenly body as it appears and shines, or a blazing flame that flashes."
+  },
+  "tellApart": {
+   "bs": "Zvijezda koja izlazi, putokaz → نَجْم; zvijezda kad se ukaže i zablista, ukras neba → كَوْكَب; užareni plamen – iz vatre, ili onaj koji na nebu progoni → شِهَاب.",
+   "en": "The rising star, a guide on the way → نَجْم; a star as it appears and shines, the sky's ornament → كَوْكَب; a blazing flame — from a fire, or the one that pursues in the sky → شِهَاب."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries نجم, كب, شهب"
+  ],
+  "notes": [
+   "ar-Rāġib (نجم): the root of najm is the rising star (al-kawkab aṭ-ṭāliʿ), pl. nujūm; najama 'it rose', so najm is now a noun, now a verbal noun (rising); the rising of plants and of an opinion is likened to it; cites 16:16 and 37:88 ('in the science of the stars'); on 53:1 he gives three 'qīla' readings: the star (hawā named because najm itself implies rising), the Pleiades, or the Quran sent down in portions (and 56:75 is read both ways); in 55:6 najm is the plant without a stem, 'and it was said: the stars'. (كب): al-kawākib are 'the stars that appear (al-bādiya), and they are not called kawākib unless they appear'; cites 6:76, 24:35, 37:6, 82:2. (شهب): shihāb is the bright flame from a kindled fire, and of what appears in the air, as 37:10.",
+   "Quranic usage (our observation, all 13 / 5 / 5 places read): نَجْم — a guide (6:97, 16:16), subjected (16:12), prostrating (22:18), its setting (52:49), dimmed and fallen on the Last Day (77:8, 81:2), sworn by (53:1, 56:75, 86:3). كَوْكَب — 6:76, 12:4 (Joseph's dream), 24:35 (the glass 'like a shining star'), 37:6 (the sky's ornament), 82:2 (scattered). شِهَاب — a brand from a fire (27:7) and the flame that pursues the eavesdropper (15:18, 37:10, 72:9); the count sums the plural شُهُب (72:8), filed as its own lemma. Not cited: 53:1 and 55:6 (he gives several readings), 56:75, 86:3, 37:88, 6:76 (tafsir differs on Abraham's words) and 12:4.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries نجم, كب, شهب (2026-11-06): 21 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "نجم",
+     "كب",
+     "شهب"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "نَجْم",
+    "lemmas": ["نَجْم|نجم"],
+    "count": 13,
+    "meaning": {"bs": "zvijezda", "en": "star"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, osnovno značenje riječi نَجْم je zvijezda koja izlazi; ista riječ je i glagolska imenica ‚izlaženja‘, pa se tako kaže i za nicanje bilja i za misao koja se javi. U Kur'anu su zvijezde putokaz (6:97, 16:16), potčinjene Allahovoj naredbi (16:12), a na Sudnjem danu se zamrače (81:2).",
+     "en": "According to ar-Rāġib, the root sense of نَجْم is the star that rises; the same word is also the verbal noun ‘rising’, so it is said of plants that sprout and of a thought that occurs. In the Quran the stars are a guide (6:97, 16:16), subjected to Allah's command (16:12), and on the Last Day they are dimmed (81:2)."
+    },
+    "ayat": [
+     {"ref": "16:16", "why": {"bs": "„I putokaze; a po zvijezdi se oni upravljaju.“ – zvijezda kao putokaz; ar-Rāġib navodi ovaj ajet.", "en": "“And landmarks (too), and by the star they find a way.” — the star as a guide; ar-Rāġib cites this ayah."}},
+     {"ref": "6:97", "why": {"bs": "„On vam je dao zvijezde da se po njima upravljate u tminama kopna i mora …“ – zvijezde koje izlaze i zalaze služe za put.", "en": "“He it is Who hath set for you the stars that ye may guide your course by them amid the darkness of the land and the sea” — the stars that rise and set serve the way."}}
+    ]
+   },
+   {
+    "arabic": "كَوْكَب",
+    "lemmas": ["كَوْكَب|كوكب"],
+    "count": 5,
+    "meaning": {"bs": "sjajnica", "en": "shining star"},
+    "nuance": {
+     "bs": "Ar-Rāġib je spominje u natuknici كب: kawākib su zvijezde koje se ukažu, i ne zovu se tako dok se ne pokažu. U Kur'anu je كَوْكَب ono što se vidi i blista: ukras najbližeg neba (37:6), staklo koje sja ‚kao blistava sjajnica‘ (24:35), a na Sudnjem danu sjajnice se raspu (82:2).",
+     "en": "Ar-Rāġib treats it under the entry كب: kawākib are the stars that appear, and they are not called so until they show. In the Quran كَوْكَب is what is seen and shines: the ornament of the lowest heaven (37:6), the glass that gleams ‘like a shining star’ (24:35), and on the Last Day the shining stars are scattered (82:2)."
+    },
+    "ayat": [
+     {"ref": "37:6", "why": {"bs": "„Mi smo najbliže nebo ukrasili ukrasom – sjajnicama.“ – vidljive, blistave zvijezde; ar-Rāġib navodi ovaj ajet.", "en": "“Lo! We have adorned the lowest heaven with an ornament, the planets [kawākib]” — the visible, shining stars; ar-Rāġib cites this ayah."}},
+     {"ref": "82:2", "why": {"bs": "„i kad se sjajnice raspu“ – ono što je krasilo nebo rasuto je na Sudnjem danu; ar-Rāġib navodi ovaj ajet.", "en": "“When the planets [kawākib] are dispersed” — what adorned the sky is scattered on the Last Day; ar-Rāġib cites this ayah."}}
+    ]
+   },
+   {
+    "arabic": "شِهَاب",
+    "lemmas": ["شِهاب|شهب", "شُهُب|شهب"],
+    "count": 5,
+    "meaning": {"bs": "plamen", "en": "flame"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, شِهَاب je svijetli plamen iz zapaljene vatre, a i ono što se pojavi u zraku (37:10). U Kur'anu su oba: Musa obećava porodici plamen od vatre koju je ugledao (27:7), a na nebu plamen progoni onoga ko krišom prisluškuje (15:18, 37:10, 72:9).",
+     "en": "According to ar-Rāġib, شِهَاب is the bright flame from a kindled fire, and also what appears in the air (37:10). The Quran has both: Moses promises his family a flame from the fire he has seen (27:7), and in the sky a flame pursues the one who listens by stealth (15:18, 37:10, 72:9)."
+    },
+    "ayat": [
+     {"ref": "27:7", "why": {"bs": "„… ili ću vam donijeti plamen uzet od nje, da se ugrijete“ – plamen iz vatre, prvo značenje koje ar-Rāġib daje.", "en": "“or bring to you a borrowed flame that ye may warm yourselves” — a flame taken from a fire, the first sense ar-Rāġib gives."}},
+     {"ref": "37:10", "why": {"bs": "„osim onoga ko nešto ugrabi – njega progoni plamen probojni“ – plamen koji se javlja na nebu; ar-Rāġib navodi ovaj ajet.", "en": "“Save him who snatcheth a fragment, and there pursueth him a piercing flame.” — the flame that appears in the sky; ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "firash-mihad-bisat": {
+  "title": {"bs": "Postelja, ležište i prostirka", "en": "Bed, resting-place and carpet"},
+  "shared": {
+   "bs": "Sve tri riječi opisuju zemlju kao nešto na čemu se počiva i hoda – Allahovu blagodat. Razlikuju se po slici: postelja koja je prostrta i pokorna, ležište koje je pripremljeno i poravnato kao dječija kolijevka, ili prostirka rasprostrta u širinu.",
+   "en": "All three words describe the earth as something to rest and walk on — a favour from Allah. They differ in the image: a bed that is spread and made tractable, a resting-place prepared and smoothed like a child's cradle, or a carpet spread wide."
+  },
+  "tellApart": {
+   "bs": "Prostrto da se na njemu počine, zemlja ‚pokorna‘ – i postelje u Džennetu → فِرَاش; pripremljeno, poravnato ležište – zemlja, ali najčešće ‚ružno ležište‘ Džehennema → مِهَاد; nešto rasprostrto u širinu → بِسَاط.",
+   "en": "Spread to rest on, the earth made ‘tractable’ — and the couches of the Garden → فِرَاش; a prepared, smoothed resting-place — the earth, but mostly the ‘evil resting-place’ of Hell → مِهَاد; something spread out wide → بِسَاط."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries فرش, مهد, بسط"
+  ],
+  "notes": [
+   "ar-Rāġib (فرش): farsh is spreading out cloth; what is spread is called farsh and firāsh; on 2:22 'made the earth a firāsh for you': He made it tractable (ḏallalahā) and did not make it remote, so that settling on it would be impossible; pl. furush (56:34, 55:54); farsh in 6:142 is the animals that are ridden; firāsh is used of each spouse; farāš (101:4) the moth. (مهد): mahd is what is prepared for a child (19:29); mahd and mihād are the place made smooth and trodden; cites 'made the earth mahdan' and 'mihādan', 'and that is like al-arḍ firāšan'; mahhadtu 'I prepared and levelled' (74:14). (بسط): basṭ of a thing is spreading and widening it; bisāṭ is a name for everything spread out (71:19), and al-bisāṭ is also wide land.",
+   "Quranic usage (our observation, all 3 / 7 / 1 places read): فِرَاش — the earth (2:22) and, as the plural فُرُش, the couches of the Garden (55:54, 56:34). مِهَاد — the earth only in 78:6; the other six places are Hell, five of them 'an evil resting-place' (2:206, 3:12, 3:197, 13:18, 38:56) and 7:41 'a resting-place of Hell'. بِسَاط — only 71:19, in Noah's words. Left out: مَهْد (5, filed as its own lemma) is mostly the cradle of Jesus (3:46, 5:110, 19:29) and the earth only in 20:53 and 43:10, where some readings have mihādan — not summed. فَرْش (6:142, animals) and فَرَاش (101:4, moths) are other words. 56:34 is not cited (furush there is read as couches or as wives).",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries فرش, مهد, بسط (2026-11-06): 21 attributed points confirmed; changed — members/0/nuance (reworded): Our wording reads as if Allah made it so that one could NOT settle on it; he says He did not make it so remote that settling on it would be impossible; members/1/ayat/0/why (reworded): He quotes only the bare word ﴿مهادا﴾ right after 20:53/43:10 (mahdan) — possibly the variant reading of those ayat; not identifiably 78:6"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "فرش",
+     "مهد",
+     "بسط"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "فِرَاش",
+    "lemmas": ["فِراش|فرش"],
+    "count": 3,
+    "meaning": {"bs": "postelja", "en": "bed"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, farš je prostiranje odjeće, a ono što je prostrto zove se firāš. Za 2:22 kaže da je Allah zemlju učinio pokornom, a ne tako nepristupačnom da se na njoj ne bi moglo nastaniti. Množina فُرُش su postelje u Džennetu (55:54, 56:34).",
+     "en": "According to ar-Rāġib, farš is spreading out cloth, and what is spread is called firāš. On 2:22 he says Allah made the earth tractable, not so remote that one could not settle on it. The plural فُرُش is the couches of the Garden (55:54, 56:34)."
+    },
+    "ayat": [
+     {"ref": "2:22", "why": {"bs": "„Onaj koji vam je zemlju učinio posteljom, a nebo zdanjem …“ – ar-Rāġib: učinio ju je pokornom, mjestom na kojem se može nastaniti.", "en": "“Who hath appointed the earth a resting-place [a bed, firāš] for you, and the sky a canopy” — ar-Rāġib: He made it tractable, a place one can settle on."}},
+     {"ref": "55:54", "why": {"bs": "„Naslonjeni na posteljama čija je postava od debele svile …“ – množina فُرُش: prostrte postelje u Džennetu.", "en": "“Reclining upon couches [furush] lined with silk brocade” — the plural فُرُش: spread couches in the Garden."}}
+    ]
+   },
+   {
+    "arabic": "مِهَاد",
+    "lemmas": ["مِهاد|مهد"],
+    "count": 7,
+    "meaning": {"bs": "ležište", "en": "resting-place (made smooth)"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, mahd je ono što se pripremi za dijete (kolijevka), a mahd i mihād su mjesto poravnato i utabano; ‚zemlju smo učinili ležištem‘ on stavlja uz 2:22 (posteljom). U Kur'anu je zemlja mihād samo u 78:6; na ostalih šest mjesta to je Džehennem, pet puta ‚ružno ležište‘ – naše zapažanje.",
+     "en": "According to ar-Rāġib, mahd is what is prepared for a child (a cradle), and mahd and mihād are a place made smooth and trodden; he sets ‘We made the earth a resting-place’ beside 2:22 (a bed). In the Quran the earth is mihād only in 78:6; in the other six places it is Hell, five times ‘an evil resting-place’ — our observation."
+    },
+    "ayat": [
+     {"ref": "78:6", "why": {"bs": "„Zar zemlju nismo učinili ležištem?“ – pripremljeno, poravnato mjesto; ar-Rāġib navodi riječ mihādan.", "en": "“Have We not made the earth an expanse [mihād]” — a prepared, smoothed place; ar-Rāġib cites the word mihādan."}},
+     {"ref": "3:12", "why": {"bs": "„… bit ćete pobijeđeni i sakupljeni u Džehennem – a ružno je to ležište!“ – ista riječ za pripremljeno počivalište, ovdje rečena za Džehennem, kao na još pet mjesta.", "en": "“Ye shall be overcome and gathered unto Hell, an evil resting-place.” — the same word for a prepared resting-place, said here of Hell, as in five other places."}}
+    ]
+   },
+   {
+    "arabic": "بِسَاط",
+    "lemmas": ["بِساط|بسط"],
+    "count": 1,
+    "meaning": {"bs": "prostirka", "en": "carpet, spread"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, basṭ je rasprostiranje i proširivanje nečega; bisāṭ je ime za sve što je rasprostrto, a tako se zove i široka zemlja. U Kur'anu samo jednom, u Nuhovim riječima njegovom narodu (71:19).",
+     "en": "According to ar-Rāġib, basṭ is spreading a thing out and widening it; bisāṭ is the name for anything spread out, and wide land is also called so. In the Quran only once, in Noah's words to his people (71:19)."
+    },
+    "ayat": [
+     {"ref": "71:19", "why": {"bs": "„I Allah vam je zemlju učinio prostirkom“ – rasprostrta u širinu; ar-Rāġib navodi ovaj ajet.", "en": "“And Allah hath made the earth a wide expanse [bisāṭ] for you” — spread out wide; ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "surur-araik": {
+  "title": {"bs": "Divani i baldahini", "en": "Couches and canopied couches"},
+  "shared": {
+   "bs": "Obje riječi su sjedišta za odmor, gotovo uvijek u Džennetu. Razlikuju se po onome što označavaju: sam divan na kojem se sjedi i naslanja, ili divan nad kojim je nadstrešnica – baldahin.",
+   "en": "Both words are seats of rest, almost always in the Garden. They differ in what they name: the couch itself, to sit and recline on, or a couch with a canopy over it."
+  },
+  "tellApart": {
+   "bs": "Divan za sjedenje – ar-Rāġib ga veže za radost (surūr); jedni naspram drugih, poredani, uzdignuti → سُرُر; divan pod nadstrešnicom, na kojem se naslanja i s kojeg se gleda → أَرَائِك.",
+   "en": "A couch to sit on — ar-Rāġib links it to gladness (surūr); facing one another, ranged, raised → سُرُر; a couch under a canopy, to recline on and to look from → أَرَائِك."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries سرر, أريك"
+  ],
+  "notes": [
+   "ar-Rāġib (سرر): sarīr is what one sits on, from surūr (gladness), since it belonged to people of ease (ulī n-niʿma); pl. asirra and surur; cites 52:20, 88:13, 43:34; the bier is called sarīr by likeness of form and in hope of the gladness the dead finds in returning to Allah. (أريك): arīka is a ḥajala (a curtained canopy) on a sarīr, pl. arāʾik; named either because it is made of arāk wood, or as a place of staying (from aruka bi-l-makān).",
+   "Quranic usage (our observation, all 6 / 5 places read): سُرُر — the Garden in five places: facing one another (15:47, 37:44), lined (56:15), ranged (52:20), raised (88:13); 43:34 is this world: the couches Allah would have given to the houses of those who disbelieve, were it not that mankind would then become one community (43:33). The singular سَرِير is not in the Quran (the thrones of Joseph and of the Queen of Sheba are عَرْش). أَرَائِك — all 5 in the Garden: with reclining (18:31, 36:56, 76:13) or looking (83:23, 83:35). Pickthall gives 'couches' to both words (and to فُرُش): the member is named in [brackets].",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): all claims OK.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries سرر, أريك (2026-11-06): 11 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "سرر",
+     "أريك"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "سُرُر",
+    "lemmas": ["سُرُر|سرر"],
+    "count": 6,
+    "meaning": {"bs": "divani", "en": "couches"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, sarīr je ono na čemu se sjedi, a ime je od surūr – radosti, jer je to bilo za ljude blagostanja; u množini asirra i surur. U Kur'anu su to divani u Džennetu: jedni naspram drugih (15:47, 37:44), poredani (52:20), uzdignuti (88:13). Jednom su ovosvjetski (43:34).",
+     "en": "According to ar-Rāġib, sarīr is what one sits on, and the name comes from surūr — gladness, since it belonged to people of ease; its plurals are asirra and surur. In the Quran they are the couches of the Garden: facing one another (15:47, 37:44), ranged (52:20), raised (88:13). Once they belong to this world (43:34)."
+    },
+    "ayat": [
+     {"ref": "37:44", "why": {"bs": "„na divanima, jedni naspram drugih“ – stanovnici Dženneta sjede licem u lice.", "en": "“On couches [surur] facing one another” — the people of the Garden sit face to face."}},
+     {"ref": "88:13", "why": {"bs": "„U njemu su divani uzdignuti“ – ar-Rāġib navodi ovaj ajet.", "en": "“Wherein are couches [surur] raised” — ar-Rāġib cites this ayah."}}
+    ]
+   },
+   {
+    "arabic": "أَرَائِك",
+    "lemmas": ["أَرائِك|أرك"],
+    "count": 5,
+    "meaning": {"bs": "baldahini", "en": "canopied couches"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, arīka je zastrta nadstrešnica (ḥaǧala) nad divanom (sarīr); ime je dobila ili zato što se pravila od drveta arāk, ili kao mjesto boravka (od aruka bi-l-makān). U Kur'anu (svih 5 mjesta) samo u Džennetu: na njima se naslanja (18:31, 36:56, 76:13) i s njih se gleda (83:23, 83:35).",
+     "en": "According to ar-Rāġib, arīka is a curtained canopy (ḥaǧala) over a couch (sarīr); it was named either because it was made of arāk wood, or as a place of staying (from aruka bi-l-makān). In the Quran (all 5 places) only in the Garden: they recline on them (18:31, 36:56, 76:13) and look from them (83:23, 83:35)."
+    },
+    "ayat": [
+     {"ref": "36:56", "why": {"bs": "„Oni i njihove supruge u hladovinama su, na baldahinima naslonjeni.“ – divan pod nadstrešnicom.", "en": "“They and their wives, in pleasant shade, on thrones [arāʾik] reclining” — a couch under a canopy."}},
+     {"ref": "83:23", "why": {"bs": "„Na baldahinima gledaju.“ – s baldahina se gleda.", "en": "“On couches [arāʾik], gazing” — from the canopied couches they look on."}}
+    ]
+   }
+  ]
+ },
+ "kharra-hawa-saqata": {
+  "title": {"bs": "Pad: srušiti se, strmoglaviti se, pasti", "en": "Falling: to fall down, to plunge, to drop"},
+  "shared": {
+   "bs": "Sve tri riječi znače pasti s visine. Razlikuju se po tome šta ističu: pad koji se čuje – i padanje ničice, strmoglavljivanje iz visine u dubinu, ili pad s mjesta na kojem je nešto bilo.",
+   "en": "All three words mean falling from a height. They differ in what they stress: a fall that is heard — and falling prostrate, plunging from a height into the depth, or dropping from where a thing was."
+  },
+  "tellApart": {
+   "bs": "Pasti tako da se čuje, i pasti ničice → خَرَّ; strmoglaviti se iz visine nadolje – i propasti → هَوَى; pasti s mjesta – list s drveta, a i ‚pasti u iskušenje‘ → سَقَطَ.",
+   "en": "To fall so that it is heard, and to fall prostrate → خَرَّ; to plunge from a height downward — and to be ruined → هَوَى; to drop from a place — a leaf from a tree, and ‘to fall into temptation’ → سَقَطَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries خر, هوى, سقط"
+  ],
+  "notes": [
+   "ar-Rāġib (خر): cites 22:31, 34:14, 16:26; kharra is 'he fell a fall from which a kharīr is heard' — the sound of water, wind and whatever falls from a height; in 'and they fell down before him prostrate' (12:100 wording) the word points to two things together, the falling and the sound of their glorification, and 'wa-sabbaḥū bi-ḥamdi rabbihim' (32:15) shows that this sound was glorifying Allah and nothing else. (هوى): besides hawā 'desire', al-huwiyy is falling from height to low; he notes 'it was said' that desire is so named because it plunges its owner into calamity; ahwāhu is lifting it into the air and dropping it (53:53). (سقط): suqūṭ is a thing's being thrown down from a high place to a low one, as a man falls from a roof (9:49 cited), or an upright figure stoops in old age (52:44 sāqiṭan); saqaṭ is what is of little account; on 7:149 'when it was made to fall in their hands' he says it means regret.",
+   "Quranic usage (our observation, all 12 / 8 / 3 places read): خَرَّ — 6 of 12 are falling prostrate or weeping (12:100, 17:107, 17:109, 19:58, 32:15, 38:24; 25:73 negates it), the others a body or a thing falling (7:143, 16:26, 19:90, 22:31, 34:14). The corpus files under هوي_1 also hawiya 'to desire' (2:87, 5:70, 53:23) and 14:37 'incline towards'; the falling sense is in 20:81 and 22:31 (53:1 is read in different ways: he gives a star, the Pleiades, or the Quran coming down in parts) and ahwā 'overthrew' (53:53) — the count is the catalogue's for the whole key. سَقَطَ (Form I) is only 6:59, 7:149, 9:49; asqaṭa (Form IV, 'cause to fall', of pieces of the sky) and tasāqaṭa (19:25) are other forms. Not cited: 12:100 and 38:24 (prostration before Joseph; David's), 7:143, 53:1 (readings differ).",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 4 flags, fixed: خَرَّ falling prostrate or weeping is 6 of 12 (25:73 negates it); 53:1 is not given as a plain fall (he reports three readings); Bosnian quotes of 22:31 and 6:59 re-translated.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries خر, هوى, سقط (2026-11-06): 21 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "خر",
+     "هوى",
+     "سقط"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "خَرَّ",
+    "verb": "خرر_1",
+    "count": 12,
+    "meaning": {"bs": "srušiti se", "en": "to fall down"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, خَرَّ je pasti tako da se čuje zvuk (ḫarīr) – kao šum vode, vjetra i svega što pada s visine. Kad ‚padnu ničice‘, kaže on, riječ ukazuje na dvoje zajedno: na padanje i na zvuk njihovog slavljenja – a ‚i hvale svoga Gospodara‘ (32:15) pokazuje da je taj zvuk bio slavljenje Allaha. U Kur'anu je šest od dvanaest mjesta padanje na sedždu ili u plaču.",
+     "en": "According to ar-Rāġib, خَرَّ is to fall so that a sound (ḫarīr) is heard — like the sound of water, of wind, and of whatever falls from a height. When they ‘fall down prostrate’, he says, the word points to two things together: the falling and the sound of their glorifying — and ‘and hymn the praise of their Lord’ (32:15) shows that this sound was glorifying Allah. In the Quran six of the twelve places are falling in prostration or in tears."
+    },
+    "ayat": [
+     {"ref": "32:15", "why": {"bs": "„… koji, kad se njima opomenu, padnu ničice i hvale svoga Gospodara …“ – pad i zvuk slavljenja zajedno, kako ar-Rāġib objašnjava.", "en": "“who, when they are reminded of them, fall down prostrate and hymn the praise of their Lord” — the fall and the sound of glorifying together, as ar-Rāġib explains."}},
+     {"ref": "34:14", "why": {"bs": "„… pa kad se srušio, džinima je postalo jasno …“ – Sulejmanovo tijelo pada kad je štap izgrižen; ar-Rāġib navodi ovaj ajet.", "en": "“And when he fell the jinn saw clearly” — Solomon's body falls once the staff is gnawed through; ar-Rāġib cites this ayah."}}
+    ]
+   },
+   {
+    "arabic": "هَوَى",
+    "verb": "هوي_1",
+    "count": 8,
+    "meaning": {"bs": "strmoglaviti se", "en": "to plunge"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, huwiyy je pad iz visine nadolje (pored hawā – žudnje, koja je od istog korijena). U Kur'anu se ovaj glagol u značenju pada javlja u 20:81 i 22:31 (53:1 se tumači na različite načine), a ahwā ‚oborio je‘ u 53:53 – ar-Rāġib: podigao ga je u zrak pa ga bacio.",
+     "en": "According to ar-Rāġib, huwiyy is falling from a height to what is below (beside hawā — desire — from the same root). In the Quran the verb in the sense of falling is in 20:81 and 22:31 (53:1 is read in different ways), and ahwā ‘He overthrew’ in 53:53 — ar-Rāġib: He lifted it into the air and dropped it."
+    },
+    "ayat": [
+     {"ref": "22:31", "why": {"bs": "„… kao da se srušio s neba, pa ga ptice zgrabe ili ga vjetar odnese i strmoglavi na dalek kraj.“ – oba glagola u jednom ajetu: خَرَّ za pad s neba, تَهْوِي za strmoglavljivanje.", "en": "“it is as if he had fallen from the sky and the birds had snatched him or the wind had blown [tahwī] him to a far-off place” — both verbs in one ayah: خَرَّ for the fall from the sky, تَهْوِي for being swept down."}},
+     {"ref": "20:81", "why": {"bs": "„… a onaj na koga se sruči Moja srdžba – taj je propao.“ – doslovno ‚strmoglavio se‘; mnogi mufessiri: propao je; Allahova srdžba, kako Njemu priliči.", "en": "“and he on whom My wrath cometh, he is lost [hawā] indeed.” — literally ‘he has plunged’; many mufassirun: he has perished; Allah's wrath, as befits Him."}}
+    ]
+   },
+   {
+    "arabic": "سَقَطَ",
+    "verb": "سقط_1",
+    "count": 3,
+    "meaning": {"bs": "pasti", "en": "to drop"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, suqūṭ je kad nešto bude bačeno s visokog mjesta na niže, kao kad čovjek padne s krova; saqaṭ je i ono što malo vrijedi. Izraz ‚palo im je u ruke‘ (7:149) on objašnjava kao kajanje. U Kur'anu je osnovni oblik samo tri puta (6:59, 7:149, 9:49).",
+     "en": "According to ar-Rāġib, suqūṭ is a thing's being thrown down from a high place to a lower one, as a man falls from a roof; saqaṭ is also what is of little worth. The phrase ‘it fell into their hands’ (7:149) he explains as regret. In the Quran the basic form is only three times (6:59, 7:149, 9:49)."
+    },
+    "ayat": [
+     {"ref": "6:59", "why": {"bs": "„… nema lista koji opadne, a da ga On ne zna …“ – Allahovo znanje, kako Njemu priliči, obuhvata i pad jednog lista.", "en": "“Not a leaf falleth [tasquṭu] but He knoweth it” — Allah's knowledge, as befits Him, takes in even the fall of a leaf."}},
+     {"ref": "9:49", "why": {"bs": "„… Eto, u iskušenje su pali! …“ – pad kao s visine; ar-Rāġib navodi ovaj ajet.", "en": "“Surely it is into temptation that they (thus) have fallen.” — a fall as from a height; ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "unuq-raqaba": {
+  "title": {"bs": "Vrat i šija", "en": "Neck and nape"},
+  "shared": {
+   "bs": "Obje riječi znače vrat. Razlikuju se po tome šta se njima kaže: vrat kao dio tijela – mjesto okova i onoga što je čovjeku ‚pričvršćeno‘, ili vrat kao cijela osoba, pa i rob kojeg treba osloboditi.",
+   "en": "Both words mean the neck. They differ in what is said with them: the neck as a part of the body — the place of fetters and of what is ‘fastened’ to a person — or the neck standing for the whole person, even a slave to be set free."
+  },
+  "tellApart": {
+   "bs": "Vrat kao dio tijela – okovi, udes pričvršćen za vrat, ruka vezana za vrat → عُنُق; šija za cijelu osobu, najčešće rob: ‚osloboditi šiju‘ → رَقَبَة.",
+   "en": "The neck as a part of the body — fetters, the augury fastened to the neck, the hand chained to the neck → عُنُق; the nape for the whole person, mostly a slave: ‘freeing a nape’ → رَقَبَة."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries عنق, رقب"
+  ],
+  "notes": [
+   "ar-Rāġib (عنق): ʿunuq is the bodily limb, pl. aʿnāq; cites 17:13, 38:33, 40:71; 'above the necks' (8:12) means their heads; 'it was said' that the nobles of a people are called aʿnāq, and 26:4 is read so. (رقب): raqaba is the name of the known limb, then it expresses the whole person, and by convention became a name for slaves, as 'head' and 'back' are said for mounts; cites 4:92; fī r-riqāb (9:60) he reads as the mukātabūn (slaves who have contracted to buy their freedom), to whom zakāh is paid; raqīb (the guardian) from the same root.",
+   "Quranic usage (our observation, all 9 / 7 ayat read): عُنُق — mostly the bodily neck: fetters (13:5, 34:33, 36:8, 40:71), the augury (17:13), the hand (17:29), Solomon's horses (38:33), 8:12, and 26:4 (necks, or nobles). رَقَبَة (9 occurrences in 7 ayat) — a person to be freed in all but 47:4: tahrīr raqaba as expiation (4:92 thrice, 5:89, 58:3), fakk raqaba (90:13), 'for slaves' (2:177, 9:60 — ar-Rāġib: the mukātabūn; Pickthall 'captives'; mufassirun differ). Not cited: 8:12 and 47:4 (battle), 26:4 (read two ways), 38:33 (tafsir differs), 9:60.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 1 flag, fixed: عُنُق 'mostly' the bodily neck — he reads aʿnāq in 26:4 as the nobles.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries عنق, رقب (2026-11-06): 15 attributed points confirmed"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "عنق",
+     "رقب"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "عُنُق",
+    "lemmas": ["عُنُق|عنق"],
+    "count": 9,
+    "meaning": {"bs": "vrat", "en": "neck"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, عُنُق je ud tijela, u množini aʿnāq; ‚iznad vratova‘ (8:12) znači glave, a navodi i da se ugledni ljudi zovu aʿnāq, pa tako shvata 26:4. U Kur'anu (svih 9 mjesta) to je najčešće tjelesni vrat: mjesto okova (13:5, 36:8, 40:71), udes pričvršćen za vrat (17:13), ruka vezana za vrat (17:29).",
+     "en": "According to ar-Rāġib, عُنُق is the bodily limb, plural aʿnāq; ‘above the necks’ (8:12) means the heads, and he reports that the nobles of a people are called aʿnāq, taking 26:4 so. In the Quran (all 9 places) it is mostly the bodily neck: the place of fetters (13:5, 36:8, 40:71), the augury fastened to the neck (17:13), the hand chained to the neck (17:29)."
+    },
+    "ayat": [
+     {"ref": "17:13", "why": {"bs": "„Svakom čovjeku smo njegov udes pričvrstili za vrat …“ – ono što je za vrat pričvršćeno ne može se odbaciti; mnogi mufessiri: njegova djela; ar-Rāġib navodi ovaj ajet.", "en": "“And every man's augury have We fastened to his own neck” — what is fastened to the neck cannot be thrown off; many mufassirun: his deeds; ar-Rāġib cites this ayah."}},
+     {"ref": "17:29", "why": {"bs": "„I ne drži ruku vezanu za vrat, a ni ne pružaj je sasvim …“ – slika škrtosti; vrat kao dio tijela.", "en": "“And let not thy hand be chained to thy neck nor open it with a complete opening” — an image of stinginess; the neck as a part of the body."}}
+    ]
+   },
+   {
+    "arabic": "رَقَبَة",
+    "lemmas": ["رَقَبَة|رقب"],
+    "spoken": "رَقَبَةٌ",
+    "count": 9,
+    "meaning": {"bs": "šija; rob", "en": "nape; a slave"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, رَقَبَة je ime poznatog uda, zatim se njome izražava cijela osoba, a u govoru je postala ime za robove – kao što se ‚glava‘ i ‚leđa‘ kažu za jahaće životinje. U Kur'anu je na svim mjestima osim 47:4 to osoba koju treba osloboditi: kao iskup (4:92, 5:89, 58:3) ili kao dobro djelo (90:13).",
+     "en": "According to ar-Rāġib, رَقَبَة is the name of the known limb; then it expresses the whole person, and in usage it became a name for slaves — as ‘head’ and ‘back’ are said for mounts. In the Quran, in every place but 47:4, it is a person to be set free: as expiation (4:92, 5:89, 58:3) or as a good deed (90:13)."
+    },
+    "ayat": [
+     {"ref": "4:92", "why": {"bs": "„… neka oslobodi roba vjernika …“ – رَقَبَة je ovdje cijela osoba; ar-Rāġib navodi ovaj ajet.", "en": "“must set free a believing slave” — the رَقَبَة here is the whole person; ar-Rāġib cites this ayah."}},
+     {"ref": "90:13", "why": {"bs": "„osloboditi roba“ – doslovno ‚odriješiti šiju‘ (fakku raqaba).", "en": "“(It is) to free a slave,” — literally ‘to unbind a nape’ (fakku raqaba)."}}
+    ]
+   }
+  ]
+ },
+ "khalid-khuld-abad": {
+  "title": {"bs": "Trajno, besmrtnost i zauvijek", "en": "Abiding, immortality and for ever"},
+  "shared": {
+   "bs": "Sve tri riječi govore o ostajanju koje ne prestaje. Razlikuju se po tome šta ističu: ostati u istom stanju, bez promjene i kvarenja; trajnost kao ime onoga što ostaje; ili vrijeme bez granice.",
+   "en": "All three words speak of a staying that does not cease. They differ in what they stress: remaining in the same state, without change or decay; lastingness as the name of what remains; or time without a bound."
+  },
+  "tellApart": {
+   "bs": "Onaj koji trajno ostaje – ‚u njemu će trajno boraviti‘ → خَالِد; trajnost kao imenica – ‚Džennet besmrtnosti‘, a nijednom čovjeku na ovom svijetu nije data → خُلْد; ‚zauvijek / nikad‘ – vrijeme bez granice, koje naglašava da trajanju nema kraja → أَبَدًا.",
+   "en": "The one who abides — ‘they will abide therein’ → خَالِد; lastingness as a noun — ‘the Garden of Immortality’, given to no human in this world → خُلْد; ‘for ever / never’ — time without a bound, stressing that the stay has no end → أَبَدًا."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries خلد, أبد"
+  ],
+  "notes": [
+   "ar-Rāġib (خلد): ḫulūd is a thing's being free from the onset of corruption and remaining in the state it is in; the Arabs call anything that change and decay are slow to reach ḫālid — the hearth-stones are ḫawālid, for their long stay, not for lasting for ever; ḫuld is the name of the part of a man that stays unchanged while he lives; muḫallad was at root what stays a long time, then was borrowed for what is kept for ever; ḫulūd in the Garden is things remaining in their state with no corruption coming upon them (cites 2:82, 2:39 wording, 4:93); 56:17 wildān muḫalladūn: 'kept in their state' or 'wearing earrings'; 7:176 aḫlada ilā l-arḍ: he leaned to it, thinking he would last in it. (أبد): cites 'ḫālidīna fīhā abadan'; abad expresses an extended span of time that is not divided as time is — one says 'the time of such-and-such' but not 'the abad of such-and-such'; it should have no dual or plural, though ābād is said (some call it post-classical); ta'abbada 'it remained for ever', and it is also said of what remains a long time.",
+   "Quranic usage (our observation, all 74 / 6 / 28 places read): خَالِد — almost always 'abiding therein', of the Garden or the Fire; 11 places add أَبَدًا — the Garden 8 (4:57, 4:122, 5:119, 9:22, 9:100, 64:9, 65:11, 98:8), the Fire 3 (4:169, 33:65, 72:23); 18:3 has mākiṯīna fīhi abadan. خُلْد — in a construct naming the hereafter's Garden (25:15), abode (41:28) and punishment (10:52, 32:14), and the lasting life given to no one in this world (21:34; Satan's 'tree of immortality', 20:120). أَبَدًا with a negation is 'never' (2:95, 5:24, 9:83, 24:4 …). Whether ḫālid alone means without end in every place (4:14, 4:93 for a believer who sins) is a question on which the scholars of creed differ; those ayat are not cited, and ar-Rāġib's 'long stay' remark is given only as what he says of the Arabs' usage. 20:120 (Adam) is not cited. خُلُود (50:34) and مُخَلَّد (2) are other lemmas.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: Bosnian quotes of 2:82 and 9:100 re-translated from the Arabic.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries خلد, أبد (2026-11-06): 18 attributed points confirmed; changed — notes/0 (reworded): The plural he names is آباد (ābād), not āmād (which is the plural of amad)"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "خلد",
+     "أبد"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "خَالِد",
+    "lemmas": ["خالِد|خلد"],
+    "count": 74,
+    "meaning": {"bs": "koji trajno boravi", "en": "abiding"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ḫulūd je kad je nešto pošteđeno kvarenja i ostaje u stanju u kojem jeste; Arapi su ḫālid zvali i ono do čega promjena sporo dolazi – zbog dugog ostanka, ne zbog vječnog trajanja. Ḫulūd u Džennetu je, kaže on, kad stvari ostaju kakve jesu, a kvarenje ih ne dotiče. U Kur'anu je to gotovo uvijek ‚u njemu će trajno boraviti‘.",
+     "en": "According to ar-Rāġib, ḫulūd is a thing's being spared decay and remaining in the state it is in; the Arabs also called ḫālid what change is slow to reach — for its long stay, not for lasting for ever. Ḫulūd in the Garden, he says, is things remaining as they are, untouched by decay. In the Quran it is almost always ‘they will abide therein’."
+    },
+    "ayat": [
+     {"ref": "2:82", "why": {"bs": "„… takvi pripadaju Džennetu i u njemu će trajno ostati.“ – ar-Rāġib navodi ovaj ajet: u Džennetu stvari ostaju kakve jesu, bez kvarenja.", "en": "“such are rightful owners of the Garden. They will abide therein.” — ar-Rāġib cites this ayah: in the Garden things remain as they are, without decay."}}
+    ]
+   },
+   {
+    "arabic": "خُلْد",
+    "lemmas": ["خُلْد|خلد"],
+    "count": 6,
+    "meaning": {"bs": "besmrtnost", "en": "immortality"},
+    "nuance": {
+     "bs": "Imenica istog korijena. U Kur'anu (6 mjesta) najčešće u spoju koji imenuje ono što ostaje: ‚Džennet besmrtnosti‘ (25:15), ‚kuća‘ i ‚kazna‘ besmrtnosti na ahiretu (41:28, 10:52, 32:14) – i ostanak koji na ovom svijetu nije dat nijednom čovjeku (21:34). Ar-Rāġibov primjer za ḫuld (dio čovjeka koji se ne mijenja dok je živ) nije kur'anska upotreba, pa se na njega ne oslanjamo.",
+     "en": "A noun of the same root. In the Quran (6 places) mostly in a construct naming what lasts: ‘the Garden of Immortality’ (25:15), the ‘abode’ and the ‘punishment’ of immortality in the hereafter (41:28, 10:52, 32:14) — and the lasting life given to no human in this world (21:34). Ar-Rāġib's example for ḫuld (the part of a man that does not change while he lives) is not a Quranic use, so we do not rest on it."
+    },
+    "ayat": [
+     {"ref": "21:34", "why": {"bs": "„Nijednom čovjeku prije tebe nismo dali besmrtnost …“ – na ovom svijetu niko ne ostaje.", "en": "“We appointed immortality for no mortal before thee.” — in this world no one remains."}},
+     {"ref": "25:15", "why": {"bs": "„… ili Džennet besmrtnosti koji je obećan bogobojaznima …“ – trajnost kao ime Dženneta.", "en": "“or the Garden of Immortality which is promised unto those who ward off (evil)” — lastingness as the Garden's name."}}
+    ]
+   },
+   {
+    "arabic": "أَبَدًا",
+    "lemmas": ["أَبَدًا|أبد"],
+    "count": 28,
+    "meaning": {"bs": "zauvijek; nikad", "en": "for ever; never"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, abad izražava protegnuto vrijeme koje se ne dijeli kao što se dijeli vrijeme: kaže se ‚vrijeme toga i toga‘, ali ne ‚abad toga i toga‘. U Kur'anu na 11 mjesta dolazi iza ‚u njemu će trajno boraviti‘ – 8 puta o Džennetu, 3 puta o Vatri – i tako kaže da boravku nema kraja; uz negaciju znači ‚nikad‘ (5:24, 18:35).",
+     "en": "According to ar-Rāġib, abad expresses an extended span of time that is not divided as time is divided: one says ‘the time of such-and-such’, but not ‘the abad of such-and-such’. In the Quran it follows ‘abiding therein’ in 11 places — 8 of the Garden, 3 of the Fire — and so says that the stay has no end; with a negation it means ‘never’ (5:24, 18:35)."
+    },
+    "ayat": [
+     {"ref": "9:100", "why": {"bs": "„… i pripremio im je vrtove ispod kojih teku rijeke; u njima će ostajati, i to zauvijek …“ – خَالِد i أَبَدًا zajedno: boravak, i to da mu nema kraja.", "en": "“He hath made ready for them Gardens underneath which rivers flow, wherein they will abide for ever.” — خَالِد and أَبَدًا together: the stay, and that it has no end."}},
+     {"ref": "18:35", "why": {"bs": "„… Ne mislim da će ovo ikada propasti.“ – uz negaciju: vlasnik bašče mislio je da je njegovo dobro trajno, a ono je uništeno (18:42).", "en": "“I think not that all this will ever perish.” — with a negation: the owner of the garden thought his wealth would last, and it was destroyed (18:42)."}}
+    ]
+   }
+  ]
+ },
+ "inshaqqa-infatara-infalaqa": {
+  "title": {"bs": "Rascijepiti se: raspuknuti se, rasjeći se, razdvojiti se", "en": "Splitting: to split, to be cleft, to part"},
+  "shared": {
+   "bs": "Sve tri riječi znače da se nešto rascijepi. Razlikuju se po slici: pukotina koja se otvori u nečemu, rascjep po dužini, ili cijepanje kojim se dijelovi odvoje jedan od drugog.",
+   "en": "All three words mean that something splits. They differ in the image: a breach that opens in a thing, a cleft along its length, or a splitting by which the parts move apart from one another."
+  },
+  "tellApart": {
+   "bs": "Pukotina u nečemu, raspolućivanje – nebo, Mjesec, zemlja → اِنْشَقَّ; rascjep po dužini – nebo na Sudnjem danu (82:1) → اِنْفَطَرَ; rascijepiti se tako da se dijelovi razdvoje – more pred Musaom → اِنْفَلَقَ.",
+   "en": "A breach in a thing, splitting in two — the sky, the moon, the earth → اِنْشَقَّ; a cleft along the length — the sky on the Last Day (82:1) → اِنْفَطَرَ; splitting so that the parts stand apart — the sea before Moses → اِنْفَلَقَ."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries شق, فطر, فلق"
+  ],
+  "notes": [
+   "ar-Rāġib (شق): šaqq is the breach (ḫurm) that occurs in a thing — 'I split it in two halves'; cites 80:26, 50:44, 69:16, 84:1, 54:1; on 54:1 three views: it split in the Prophet's time, or it is a splitting that comes near the Hour, or 'the matter became clear'. (فطر): the root of faṭr is splitting lengthwise (aš-šaqq ṭūlan); fuṭūr (67:3) is flaw and weakness, which may be by way of corruption or of soundness (73:18); from it Allah's faṭr of creation — bringing it into being in a form disposed to an act. (فلق): falq is splitting a thing and separating parts of it from one another — falaqtuhu fa-nfalaqa; cites 6:96, 6:95 and 26:63.",
+   "Quranic usage (our observation, all 5 / 1 / 1 places read): اِنْشَقَّ (Form VII) — the sky (55:37, 69:16, 84:1), the moon (54:1), the earth (19:90). اِنْفَطَرَ — only 82:1; the same image is in munfaṭir (73:18) and tafaṭṭara (19:90, 42:5), which the verb catalogue does not file as Form VII. اِنْفَلَقَ — only 26:63; Allah as fāliq (6:95, 6:96) is the participle. 19:90 holds tafaṭṭara and inšaqqa together. 54:1: most mufassirun hold the moon split as a sign in the Prophet's time; ar-Rāġib also reports the other views.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: the verb اِنْفَطَرَ is only in 82:1, the participle munfaṭir in 73:18; 26:63 bs re-translated.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries شق, فطر, فلق (2026-11-06): 17 attributed points confirmed; changed — members/1/ayat/0/why (reworded): He gives the root sense but neither cites 82:1 nor applies 'lengthwise' to it; our wording reads his root sense into this ayah"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "شق",
+     "فطر",
+     "فلق"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "اِنْشَقَّ",
+    "verb": "شقق_7",
+    "count": 5,
+    "meaning": {"bs": "raspuknuti se", "en": "to split"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, šaqq je pukotina koja nastane u nečemu – ‚raspolovio sam ga‘. U Kur'anu se raspukne nebo (55:37, 69:16, 84:1), Mjesec (54:1) i zemlja (19:90).",
+     "en": "According to ar-Rāġib, šaqq is the breach that comes about in a thing — ‘I split it in two halves’. In the Quran the sky splits (55:37, 69:16, 84:1), the moon (54:1) and the earth (19:90)."
+    },
+    "ayat": [
+     {"ref": "84:1", "why": {"bs": "„Kad se nebo raspukne“ – ar-Rāġib navodi ovaj ajet.", "en": "“When the heaven is split asunder” — ar-Rāġib cites this ayah."}},
+     {"ref": "54:1", "why": {"bs": "„Približio se Čas i Mjesec se raspuknuo.“ – većina mufessira: znak u Poslanikovo vrijeme; ar-Rāġib navodi i druga mišljenja.", "en": "“The hour drew nigh and the moon was rent in twain.” — most mufassirun: a sign in the Prophet's time; ar-Rāġib also reports other views."}}
+    ]
+   },
+   {
+    "arabic": "اِنْفَطَرَ",
+    "verb": "فطر_7",
+    "count": 1,
+    "meaning": {"bs": "rasjeći se", "en": "to be cleft"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, osnovno značenje korijena faṭr je cijepanje po dužini; fuṭūr (67:3) je pukotina i slabost. Od istog korijena je i Allahovo stvaranje (faṭara) – ali to nije ovo značenje. U Kur'anu je glagol u ovom obliku samo u 82:1 (particip munfaṭir u 73:18).",
+     "en": "According to ar-Rāġib, the root sense of faṭr is splitting lengthwise; fuṭūr (67:3) is a flaw and weakness. Allah's originating of creation (faṭara) is from the same root — but that is not this sense. In the Quran the verb in this form is only in 82:1 (the participle munfaṭir is in 73:18)."
+    },
+    "ayat": [
+     {"ref": "82:1", "why": {"bs": "„Kad se nebo rasiječe“ – rascjep; ar-Rāġib kao osnovno značenje korijena daje cijepanje po dužini.", "en": "“When the heaven is cleft asunder” — a cleaving; ar-Rāġib gives the root sense as splitting along the length."}}
+    ]
+   },
+   {
+    "arabic": "اِنْفَلَقَ",
+    "verb": "فلق_7",
+    "count": 1,
+    "meaning": {"bs": "razdvojiti se", "en": "to part"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, falq je rascijepiti nešto i odvojiti mu dijelove jedan od drugog. U Kur'anu je ovaj oblik samo u 26:63 – more se razdvojilo pred Musaom.",
+     "en": "According to ar-Rāġib, falq is splitting a thing and separating its parts from one another. In the Quran this form is only in 26:63 — the sea parted before Moses."
+    },
+    "ayat": [
+     {"ref": "26:63", "why": {"bs": "„… Udari more svojim štapom! I ono se razdvojilo, a svaki dio bio je poput ogromnog brda.“ – dijelovi stoje odvojeni; ar-Rāġib navodi ovaj ajet.", "en": "“Smite the sea with thy staff. And it parted, and each part was as a mountain vast.” — the parts stand apart; ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "hijab-ghita-akinna": {
+  "title": {"bs": "Zastor, pokrivač, omotači i koprena", "en": "Veil, cover, sheaths and overlay"},
+  "shared": {
+   "bs": "Sve četiri riječi znače nešto što zaklanja. Razlikuju se po tome kako zaklanja i šta: pregrada između dvoga, pokrivač stavljen odozgo, omotač u kojem je nešto zatvoreno, ili koprena preko očiju.",
+   "en": "All four words mean something that screens. They differ in how it screens and what: a barrier between two, a cover laid on top, a sheath in which a thing is enclosed, or an overlay on the eyes."
+  },
+  "tellApart": {
+   "bs": "Ono što sprečava da se do nečega dođe, pregrada između dvoga → حِجَاب; pokrivač stavljen preko, kao poklopac – i nemar koji se skida → غِطَاء; omotači u kojima je nešto zatvoreno – uvijek na srcima → أَكِنَّة; koprena na očima i pogledu → غِشَاوَة.",
+   "en": "What keeps one from reaching a thing, a barrier between two → حِجَاب; a cover laid over, like a lid — and the heedlessness that is lifted → غِطَاء; sheaths in which a thing is enclosed — always on hearts → أَكِنَّة; an overlay on the eyes and the sight → غِشَاوَة."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries حجب, غطا, كن, غشى"
+  ],
+  "notes": [
+   "ar-Rāġib (حجب): ḥaǧb and ḥiǧāb are preventing from reaching; on 7:46 the ḥiǧāb is not what blocks the sight, but what keeps the delight of the people of the Garden from reaching the people of the Fire and their harm from reaching the people of the Garden, like the wall of 57:13; 42:51 'from behind a veil': from where the one spoken to does not see Him; 38:32 the sun hidden in setting; 83:15 maḥǧūbūn: kept from the light. (غطا): ġiṭāʾ is what is put over a thing, a lid (ṭabaq) and the like, as ġišāʾ is what is put over a thing like clothing; it is borrowed for ignorance (al-ǧahāla): 50:22. (كن): kinn is that in which a thing is kept; kinān is the cover in which a thing is kept, pl. akinna, like ġiṭāʾ / aġṭiya; cites 'upon their hearts akinna lest they understand it' (6:25 / 17:46 wording) and 41:5, 'it was said: in a cover against understanding what you bring us', like 11:91. (غشى): ġišāwa is what a thing is covered with; cites 2:7 and 45:23.",
+   "Quranic usage (our observation, all 7 / 2 / 4 / 2 places read): حِجَاب — between the Garden and the Fire (7:46), between the Prophet reciting and the deniers (17:45, 'a hidden barrier'), Mary's seclusion (19:17), 33:53, 38:32, 41:5, 42:51. غِطَاء — both of sight: eyes 'in a cover' from Allah's reminder (18:101), and the cover removed (50:22). أَكِنَّة — all 4 on hearts (6:25, 17:46, 18:57, 41:5). غِشَاوَة — both on the eyes / sight, beside the sealing of hearing and heart (2:7, 45:23). 41:5 holds akinna and ḥiǧāb together, in the deniers' own words. Not cited: 38:32 (what was hidden — the sun or the horses — is read two ways), 33:53, 17:45. مَحْجُوب, أَكْنَان, غَاشِيَة are other lemmas.",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 2 flags, fixed: Bosnian quotes of 50:22 and 2:7 re-translated from the Arabic.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries حجب, غطا, كن, غشى (2026-11-06): 24 attributed points confirmed; changed — notes/0 (reworded): His wording وجعلنا على قلوبهم أكنة أن يفقهوه matches 6:25 and 17:46; 18:57 reads إنا جعلنا … أكنة; members/0/nuance (reworded): 'as befits Him' is not in his text (he adds 'and the one to whom it is conveyed', مبلغه); members/0/ayat/1/why (reworded): Same addition as in the nuance"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "حجب",
+     "غطا",
+     "كن",
+     "غشى"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "حِجَاب",
+    "lemmas": ["حِجاب|حجب"],
+    "count": 7,
+    "meaning": {"bs": "zastor", "en": "veil, barrier"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ḥiǧāb je ono što sprečava da se do nečega dođe. O 7:46 kaže: to nije ono što zaklanja pogled, nego ono što sprečava da užitak stanovnika Dženneta dopre do stanovnika Vatre i da njihova muka dopre do stanovnika Dženneta. A ‚iza zastora‘ (42:51) znači: tako da Ga onaj kome se obraća ne vidi.",
+     "en": "According to ar-Rāġib, ḥiǧāb is what keeps one from reaching a thing. On 7:46 he says it is not what blocks the sight, but what keeps the delight of the people of the Garden from reaching the people of the Fire, and their torment from reaching the people of the Garden. And ‘from behind a veil’ (42:51) means: so that the one spoken to does not see Him."
+    },
+    "ayat": [
+     {"ref": "7:46", "why": {"bs": "„Između njih je zastor …“ – ar-Rāġib: pregrada koja sprečava da stanje jednih dopre do drugih.", "en": "“Between them is a veil.” — ar-Rāġib: a barrier that keeps the state of each from reaching the other."}},
+     {"ref": "42:51", "why": {"bs": "„Nijednom čovjeku nije dato da mu Allah govori osim objavom, ili iza zastora …“ – ar-Rāġib: tako da Ga onaj kome se obraća ne vidi.", "en": "“it was not (vouchsafed) to any mortal that Allah should speak to him unless (it be) by revelation or from behind a veil” — ar-Rāġib: so that the one spoken to does not see Him."}}
+    ]
+   },
+   {
+    "arabic": "غِطَاء",
+    "lemmas": ["غِطاء|غطو"],
+    "count": 2,
+    "meaning": {"bs": "pokrivač", "en": "cover"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ġiṭāʾ je ono što se stavi preko nečega, poklopac i slično – kao što je ġišāʾ ono što se stavi preko nečega kao odjeća; prenosi se i na neznanje, i navodi 50:22. U Kur'anu (2 mjesta) oba puta o očima i pogledu.",
+     "en": "According to ar-Rāġib, ġiṭāʾ is what is put over a thing, a lid and the like — as ġišāʾ is what is put over a thing like clothing; it is also carried over to ignorance, and he cites 50:22. In the Quran (2 places) both times of the eyes and the sight."
+    },
+    "ayat": [
+     {"ref": "50:22", "why": {"bs": "„Bio si u nemaru prema ovome, a sada smo s tebe odmakli tvoj pokrivač, pa ti je pogled danas prodoran.“ – pokrivač neznanja je skinut; ar-Rāġib navodi ovaj ajet.", "en": "“Thou wast in heedlessness of this. Now We have removed from thee thy covering [ġiṭāʾ], and piercing is thy sight this day.” — the cover of ignorance is lifted; ar-Rāġib cites this ayah."}},
+     {"ref": "18:101", "why": {"bs": "„one čije su oči bile pod pokrivačem od sjećanja na Mene …“ – pokrivač preko očiju.", "en": "“Those whose eyes were hoodwinked [in a cover, ġiṭāʾ] from My reminder” — a cover over the eyes."}}
+    ]
+   },
+   {
+    "arabic": "أَكِنَّة",
+    "lemmas": ["أَكِنَّة|كنن"],
+    "spoken": "أَكِنَّةٌ",
+    "count": 4,
+    "meaning": {"bs": "omotači", "en": "sheaths"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, kinn je ono u čemu se nešto čuva, a kinān je pokrivač u kojem je nešto zatvoreno, u množini akinna. U Kur'anu (svih 4 mjesta) akinna su uvijek na srcima ili su srca u njima.",
+     "en": "According to ar-Rāġib, kinn is that in which a thing is kept, and kinān is the cover in which a thing is enclosed, plural akinna. In the Quran (all 4 places) the akinna are always upon hearts, or the hearts are in them."
+    },
+    "ayat": [
+     {"ref": "41:5", "why": {"bs": "„I govore: ‚Naša srca su u omotačima od onoga čemu nas pozivaš, u ušima nam je gluhoća, a između nas i tebe je zastor …‘“ – riječi poricatelja: omotači na srcima i zastor između njih u jednom ajetu; ar-Rāġib navodi ovaj ajet.", "en": "“Our hearts are protected [in sheaths, akinna] from that unto which thou (O Muhammad) callest us, and in our ears there is a deafness, and between us and thee there is a veil.” — the deniers' words: sheaths on the hearts and a veil between them in one ayah; ar-Rāġib cites this ayah."}},
+     {"ref": "6:25", "why": {"bs": "„… a Mi smo na njihova srca stavili omotače da ga ne bi razumjeli …“ – ar-Rāġib navodi ove riječi.", "en": "“We have placed upon their hearts veils [akinna], lest they should understand” — ar-Rāġib cites these words."}}
+    ]
+   },
+   {
+    "arabic": "غِشَاوَة",
+    "lemmas": ["غِشاوَة|غشو"],
+    "spoken": "غِشَاوَةٌ",
+    "count": 2,
+    "meaning": {"bs": "koprena", "en": "overlay"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ġišāwa je ono čime se nešto prekrije. U Kur'anu (oba mjesta) je na očima i pogledu, uz pečat na sluhu i srcu (2:7, 45:23).",
+     "en": "According to ar-Rāġib, ġišāwa is that with which a thing is covered. In the Quran (both places) it is on the eyes and the sight, beside the seal on hearing and heart (2:7, 45:23)."
+    },
+    "ayat": [
+     {"ref": "2:7", "why": {"bs": "„Allah je stavio pečat na njihova srca i na njihov sluh, a preko njihovih očiju je koprena …“ – o onima opisanim u 2:6; ar-Rāġib navodi ovaj ajet.", "en": "“Allah hath sealed their hearing and their hearts, and on their eyes there is a covering [ġišāwa].” — of those described in 2:6; ar-Rāġib cites this ayah."}}
+    ]
+   }
+  ]
+ },
+ "hin-dahr-amad": {
+  "title": {"bs": "Vrijeme: neko vrijeme, vijek i razdoblje", "en": "Time: a while, an age and a span"},
+  "shared": {
+   "bs": "Sve tri riječi znače odsječak vremena. Razlikuju se po dužini i po tome šta ističu: neodređeno vrijeme koje se određuje onim uz šta stoji, dugo doba – izvorno vijek svijeta, ili razdoblje gledano prema svom kraju.",
+   "en": "All three words mean a stretch of time. They differ in length and in what they stress: an indefinite time fixed by what it stands with, a long age — at root the age of the world — or a span seen with regard to its end."
+  },
+  "tellApart": {
+   "bs": "Neko vrijeme, neodređeno – ‚do nekog vremena‘, ‚u vrijeme kad‘ → حِين; dugo doba, vijek – izvorno trajanje svijeta → دَهْر; razdoblje s granicom, gledano prema kraju → أَمَد.",
+   "en": "A while, indefinite — ‘for a while’, ‘at the time when’ → حِين; a long age — at root the duration of the world → دَهْر; a span with a limit, seen with regard to its end → أَمَد."
+  },
+  "ayahQuotes": {"bs": "own"},
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries حين, دهر, أمد"
+  ],
+  "notes": [
+   "ar-Rāġib (حين): ḥīn is the time of a thing's coming about; its meaning is vague and is made specific by what it is annexed to (38:3); it comes in several senses: a term (10:98 wording 'wa-mattaʿnāhum ilā ḥīn'; 37:148 has fa-mattaʿnāhum), a year (14:25), an hour (30:17), time at large (76:1, 38:88) — 'it was explained according to what it was found tied to'; also used of the time of death. (دهر): dahr is at root the name of the world's duration from the beginning of its existence to its end (76:1); then any long span; unlike zamān, which falls on short and long; 'dahr of so-and-so' is his lifetime; on the hadith 'do not curse ad-dahr' he prefers 'Allah is the doer of what is ascribed to time'; on 45:24 'it was said: time (zamān) is meant'. (أمد): cites 3:30; amad and abad are close, but abad is a span of time with no bound and is not restricted ('abad of such' is not said), while amad is a span whose bound is unknown when said alone, and can be bounded ('the amad of such'), as one says 'the time of such'; amad is said with regard to the end (ġāya), zamān covers both start and end.",
+   "Quranic usage (our observation, all 33 / 2 / 4 ayat read): حِين — 'for a while' / 'until a while' (ilā ḥīn, ḥattā ḥīn: 2:36, 7:24, 12:35, 21:111, 23:25, 23:54, 36:44, 37:148, 37:174, 37:178, 51:43), 'when …' (ḥīna: 5:106, 16:6, 26:218, 30:17, 30:18, 39:42 …), 'every season' (14:25), 'after a while' (38:88); the count includes ḥīnaʾiḏin (56:84). دَهْر — 76:1 and the deniers' words in 45:24. أَمَد — 3:30, 18:12, 57:16, 72:25. Not cited: 14:25 (he says a year; mufassirun differ: a year, six months, morning and evening), 2:36 / 7:24 (Adam's descent, left out as in batch 8), 72:25 (said by the Prophet).",
+   "Blind review (2026-11-06, fresh Sonnet reviewer, claims checked against the cited ayat and the Mufradāt): 1 flag, fixed: 57:16 bs re-translated from the Arabic.",
+   "al-ʿAskarī's al-Furūq is not used: its wording on this pair could not be verified here.",
+   "ar-Rāġib verified against OpenITI 0502RaghibIsbahani.Mufradat.JK001150-ara1, entries حين, دهر, أمد (2026-11-06): 21 attributed points confirmed; changed — notes/0 (reworded): ومتعناهم إلى حين with wa- is exactly 10:98; 37:148 reads فمتعناهم. On the hadith he gives both views and says والأول أظهر, so 'prefers' is right; members/0/ayat/0/why (reworded): Card is 37:148 (fa-mattaʿnāhum); his wa-mattaʿnāhum ilā ḥīn is 10:98. Alternative: swap the card to 10:98; members/1/ayat/0/why (reworded): He files ḥīn in 76:1 under 'time at large', not a short time; bs 'kratko' says more than en 'a while' and than he does"
+  ],
+  "verified": [
+   {
+    "source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
+    "entries": [
+     "حين",
+     "دهر",
+     "أمد"
+    ]
+   }
+  ],
+  "members": [
+   {
+    "arabic": "حِين",
+    "lemmas": ["حِين|حين"],
+    "count": 35,
+    "meaning": {"bs": "neko vrijeme", "en": "a while, a time"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, ḥīn je vrijeme kad se nešto zbude; značenje mu je neodređeno i određuje se onim čemu je pridodato. Javlja se kao rok, godina, sat ili vrijeme uopće – a, kaže on, tumačeno je prema onome uz šta je stajalo. U Kur'anu najčešće ‚do nekog vremena‘ i ‚u vrijeme kad …‘.",
+     "en": "According to ar-Rāġib, ḥīn is the time when a thing comes about; its meaning is vague and is fixed by what it is joined to. It comes as a term, a year, an hour or time at large — and, he says, it was explained by what it stood with. In the Quran mostly ‘for a while’ and ‘at the time when …’."
+    },
+    "ayat": [
+     {"ref": "37:148", "why": {"bs": "„I povjerovali su, pa smo im dali da uživaju do nekog vremena.“ – ḥīn kao rok; ar-Rāġib navodi iste riječi iz 10:98.", "en": "“And they believed, therefor We gave them comfort for a while.” — ḥīn as a term; ar-Rāġib cites the same words from 10:98."}},
+     {"ref": "30:17", "why": {"bs": "„Pa slavljen neka je Allah kad zanoćite i kad osvanete“ – ḥīn kao doba dana; ar-Rāġib navodi ovaj ajet.", "en": "“So glory be to Allah when ye enter the night and when ye enter the morning” — ḥīn as an hour of the day; ar-Rāġib cites this ayah."}}
+    ]
+   },
+   {
+    "arabic": "دَهْر",
+    "lemmas": ["دَهْر|دهر"],
+    "count": 2,
+    "meaning": {"bs": "vijek", "en": "age"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, dahr je izvorno ime za trajanje svijeta od početka do kraja, a zatim za svako dugo razdoblje – za razliku od zamān, koje se kaže i za kratko i za dugo. U Kur'anu samo dva puta (76:1, 45:24).",
+     "en": "According to ar-Rāġib, dahr is at root the name for the duration of the world from its beginning to its end, and then for any long span — unlike zamān, which is said of short and long alike. In the Quran only twice (76:1, 45:24)."
+    },
+    "ayat": [
+     {"ref": "76:1", "why": {"bs": "„Zar nije nad čovjekom prošlo neko vrijeme od vijeka kad nije bio ništa spomena vrijedno?“ – ḥīn iz dahra: neko vrijeme iz dugog vijeka; ar-Rāġib navodi ovaj ajet za obje riječi.", "en": "“Hath there come upon man (ever) any period of time in which he was a thing unremembered?” — a ḥīn out of the dahr: a while out of the long age; ar-Rāġib cites this ayah for both words."}},
+     {"ref": "45:24", "why": {"bs": "„… i ništa nas ne uništava osim vijeka …“ – riječi poricatelja; ar-Rāġib: rečeno je da se misli na vrijeme.", "en": "“naught destroyeth us save time [ad-dahr]” — the deniers' words; ar-Rāġib: it was said that time is meant."}}
+    ]
+   },
+   {
+    "arabic": "أَمَد",
+    "lemmas": ["أَمَد|أمد"],
+    "count": 4,
+    "meaning": {"bs": "razdoblje", "en": "span"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, amad i abad su bliski, ali abad je vrijeme bez granice, a amad razdoblje čija je granica nepoznata kad se kaže samo, a može se i odrediti; amad se kaže s obzirom na kraj (ġāya). U Kur'anu 4 puta.",
+     "en": "According to ar-Rāġib, amad and abad are close, but abad is time without a bound, while amad is a span whose bound is unknown when it is said alone, and it can also be bounded; amad is said with regard to the end (ġāya). In the Quran 4 times."
+    },
+    "ayat": [
+     {"ref": "3:30", "why": {"bs": "„… poželjet će da između nje i toga bude dugo razdoblje …“ – razdoblje mjereno do kraja; ar-Rāġib navodi ovaj ajet.", "en": "“will long that there might be a mighty space of distance between it and that (evil)” — a span measured to its end; ar-Rāġib cites this ayah."}},
+     {"ref": "57:16", "why": {"bs": "„… pa im je razdoblje dugo potrajalo i srca su im okorjela …“ – dugo razdoblje do kraja koji im nije bio poznat.", "en": "“but the term was prolonged for them and so their hearts were hardened” — a long span to an end they did not know."}}
+    ]
+   }
+  ]
  }
 }

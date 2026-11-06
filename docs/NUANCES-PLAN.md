@@ -190,3 +190,20 @@ quotes the reviewer found close to Korkut's sentences were translated again). Co
 53:17 (said to or about the Prophet), 18:80, 10:92, 33:33, 2:35 / 7:19 (which garden), 14:35, 77:32 as an illustration,
 66:6, 39:53 (needs 4:48 beside it), 7:14 / 15:36 / 38:79 (Iblīs), 47:25, 4:119, 25:70, 33:30, 2:10 as an illustration,
 49:2.
+
+## Batch 10 (25 groups, 230 in all)
+Help, trust, refuge, covenants: نَصَرَ/أَمَدَّ/أَعَانَ · تَوَكَّلَ/فَوَّضَ · عَاذَ/اعْتَصَمَ/مَلْجَأ · نَقَضَ/نَكَثَ. Acts: أَفْسَدَ/عَثَا · مَنَّ/أَنْعَمَ ·
+أَعَدَّ/هَيَّأَ · قَامَ/وَقَفَ · خَرَّ/هَوَى/سَقَطَ · انْشَقَّ/انْفَطَرَ/انْفَلَقَ. Speech: كَلِمَة/قَوْل/حَدِيث · لَغْو/بَاطِل · سِرّ/نَجْوَى. Allah's Names and
+witnesses (each "as befits Him"): عَلِيم/خَبِير · شَهِيد/رَقِيب/حَفِيظ · مِثْل/أَنْدَاد/كُفُو. Qualities: يَسِير/هَيِّن · جَمِيل/حَسَن. Things and
+time: نَجْم/كَوْكَب/شِهَاب · فِرَاش/مِهَاد/بِسَاط · سُرُر/أَرَائِك · عُنُق/رَقَبَة · خَالِد/خُلْد/أَبَدًا · حِجَاب/غِطَاء/أَكِنَّة/غِشَاوَة · حِين/دَهْر/أَمَد.
+Drafted from the Mufradāt entries, verified (440 points: 412 confirmed, 23 partial, 4 different, 1 not found; 27 texts changed —
+mostly verse numbers in notes and one gloss we had widened), reviewed blind (88 claims, 29 flagged, every flag fixed in the
+texts, none held back; nineteen Bosnian quotes the reviewers found close to Korkut's sentences were translated again).
+English quotes are Pickthall's words; where he gives two members one English word ("help", "break", "refuge", "couches",
+"veil", "covering") the ayah is paraphrased or the member named in [brackets]. مَلْجَأ has no Mufradāt entry and rests on Quranic usage (all three places read); thin members kept as
+well-known pairs: فَوَّضَ, بِسَاط, اِنْفَطَرَ, اِنْفَلَقَ, كُفُو (1× each), هَيَّأَ (2×). Counts summed and noted: كَلِمَة + كَلِم, شِهَاب +
+شُهُب, هَيِّن + أَهْوَن; هَوَى includes 'to desire', حَفِيظ includes حَفَظَة, حِين includes حِينَئِذٍ. مَهْد (cradle) was left out of the
+bed group. Left out on purpose: 3:159, 33:37, 74:6, 9:84, 9:108, 73:2, 74:2, 4:80, 6:107, 42:48, 73:10, 33:28, 72:25 (said to or
+by the Prophet), 26:22, 18:14, 66:3, 31:6, 2:37, 14:25, 38:32, 26:4 and 53:1 as illustrations, 53:1 / 55:6 / 56:75 / 86:3
+(several readings), 6:76, 12:4, 37:88, 56:34, 12:100, 38:24, 7:143, 8:12, 47:4, 38:33, 4:14, 4:93, 20:120, 2:36, 7:24, 11:47,
+20:37, 33:53, 17:45; 48:10 is paraphrased, not quoted.

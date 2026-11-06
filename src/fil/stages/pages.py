@@ -1,7 +1,9 @@
 """Build the public site for GitHub Pages: the app, plus a readable page per verb per language.
 
     fil pages                →  build/pages/
-    fil pages --deploy       →  build, then publish build/pages to the gh-pages branch
+    fil pages --deploy       →  build, publish build/pages to the gh-pages branch, then ping IndexNow
+                                with the changed pages (fil.pages.indexnow.news; --no-ping: don't;
+                                --ping-all: every sitemap page)
     fil pages --share-image  →  redraw site/share.png (the link-preview picture)
 
     build/pages/
@@ -18,13 +20,16 @@
       bs/vjezbe/, en/exercises/      the exercises (fil.stages.exercise_pages), their questions in exercises/*.json
       pictures/<slug>.svg            the noun pictures the noun pages show
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
+      <IndexNow key>.txt             proves our IndexNow pings are ours (fil.pages.indexnow)
 
 The cards are the ones `fil site` builds (site.assemble) with their sound published as
 files instead of embedded; the pages are rendered from those same cards. Files placed in
 site/verification/ (a search engine's ownership file) are copied to the site root as is.
 
 Every page is built and linked, but only translated pages are offered to search engines
-(fil.pages.indexing): the others say noindex and are left out of sitemap.xml.
+(fil.pages.indexing): the others say noindex and are left out of sitemap.xml. Each
+sitemap page's <lastmod> is the day its content last really changed, kept in the committed
+data/page_versions.json (fil.pages.freshness), which every build brings up to date.
 
 The build refuses to finish if any page links a sound that is not in audio/ — except an
 ayah's recitation, which is streamed from its source and never shipped (fil.recitation).
@@ -35,15 +40,17 @@ from __future__ import annotations
 import argparse
 import re
 import shutil
-from collections.abc import Collection, Iterable, Sequence
-from dataclasses import replace
+from collections.abc import Callable, Collection, Iterable, Sequence
+from dataclasses import dataclass, replace
+from datetime import datetime, timezone
 from pathlib import Path
+from xml.etree import ElementTree
 
-from fil import noun_store, service
+from fil import noun_store, page_version_store, service
 from fil.languages import LANGUAGES
 from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
-from fil.pages import (adjective_render, deploy, exercise_render, indexing, interface_text, nuance_render, particle_render,
-                       render, seo, share_image)
+from fil.pages import (adjective_render, deploy, exercise_render, freshness, indexing, indexnow, interface_text,
+                       nuance_render, particle_render, render, seo, share_image, web)
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
@@ -67,32 +74,67 @@ class BrokenAudioLink(RuntimeError):
     """A page would offer a play button with no sound behind it."""
 
 
+@dataclass(frozen=True)
+class BuiltSite:
+    entries: tuple[seo.SitemapEntry, ...]    # every page in the sitemap, with its <lastmod>
+    changed_urls: tuple[str, ...]            # those this build changed or added
+
+    @property
+    def urls(self) -> tuple[str, ...]:
+        return tuple(entry.url for entry in self.entries)
+
+
 def main(arguments: list[str] | None = None) -> None:
     options = _parse(arguments or [])
     if options.share_image:
         print(f"Drew {share_image.draw()}")
         return
-    if not build(PAGES_DIR):
+    built = build(PAGES_DIR)
+    if built is None or not options.deploy:
         return
-    if options.deploy:
-        deploy.publish(PAGES_DIR, REPOSITORY_DIR, _DEPLOY_MESSAGE)
-        print(f"Published to the {deploy.BRANCH} branch → {seo.SITE_URL}")
+    published = None if options.no_ping else published_dates(web.get)   # read before the deploy replaces it
+    deploy.publish(PAGES_DIR, REPOSITORY_DIR, _DEPLOY_MESSAGE)
+    print(f"Published to the {deploy.BRANCH} branch → {seo.SITE_URL}")
+    if options.no_ping:
+        return
+    announce(built.urls if options.ping_all else indexnow.news(built.entries, built.changed_urls, published), web.post)
+
+
+def published_dates(get: Callable[[str], str]) -> dict[str, str] | None:
+    """The live sitemap's address → lastmod, or None (said, not raised) when it cannot be read."""
+    try:
+        return seo.sitemap_dates(get(seo.absolute("sitemap.xml")))
+    except (OSError, ElementTree.ParseError) as error:
+        print(f"IndexNow: the live sitemap could not be read ({error}); announcing only this build's changes")
+        return None
+
+
+def announce(urls: Sequence[str], post: indexnow.HttpPost) -> bool:
+    """Ping IndexNow with the changed pages; a failure is printed, never raised — the site is already live."""
+    if not urls:
+        print("IndexNow: no page changed, nothing to announce")
+        return True
+    return indexnow.ping(urls, post, print)
 
 
 def _parse(arguments: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(prog="fil pages", description="build the public GitHub Pages site")
-    parser.add_argument("--deploy", action="store_true", help="publish build/pages to the gh-pages branch")
+    parser.add_argument("--deploy", action="store_true",
+                        help="publish build/pages to the gh-pages branch, then ping IndexNow with the changed pages")
+    parser.add_argument("--no-ping", action="store_true", help="with --deploy: do not ping IndexNow")
+    parser.add_argument("--ping-all", action="store_true",
+                        help="with --deploy: announce every sitemap page to IndexNow, not only the changed ones")
     parser.add_argument("--share-image", action="store_true", help="redraw site/share.png and stop")
     return parser.parse_args(arguments)
 
 
-def build(pages: Path) -> bool:
+def build(pages: Path) -> BuiltSite | None:
     texts = interface_text.load()          # fail before the long part if Node is missing
     site.reset(pages)
     sink = PublishedAudio(pages)
     content = site.assemble(sink)
     if content is None:
-        return False
+        return None
     verbs = published_verbs(content.cards, [verb.lemma for verb in service.list_verbs()])
     nouns = _assemble_nouns(sink, verbs)
     adjectives = _assemble_adjectives(sink, verbs)
@@ -130,15 +172,18 @@ def build(pages: Path) -> bool:
     written += particle_pages.write(pages, particles, texts, published, practice=practice_link(PARTICLE_WORD))
     written += particle_pages.write(pages, pronouns, texts, published, particle_render.PRONOUNS)
     written += exercise_pages.write(pages, practice, texts, published)
-    _write_site_files(pages, verbs, texts, nouns.cards, adjectives.cards, nuances, particles, pronouns,
-                      exercise_pages.page_paths(practice, texts))
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
                              {"exercises": exercises.sounds(practice)}])
+    # Dated only once the gates passed: a build that fails them must not move a single <lastmod>.
+    built = _date_pages(pages, _sitemap_paths(verbs, nouns.cards, adjectives.cards, nuances, particles, pronouns,
+                                              exercise_pages.page_paths(practice, texts)))
+    _write_site_files(pages, verbs, texts, built.entries)
     site.report(pages, content)
     _report_size(pages, len(written))
     _report_indexing(verbs)
-    return True
+    print(f"Sitemap: {len(built.entries)} pages, {len(built.changed_urls)} changed in this build")
+    return built
 
 
 def published_verbs(cards: Iterable[dict], catalogue_lemmas: list[str]) -> list[PublishedVerb]:
@@ -235,13 +280,38 @@ def _write(pages: Path, path: str, html: str) -> Path:
     return target
 
 
-def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict], nouns: Sequence[dict] = (),
-                      adjectives: Sequence[dict] = (), nuances: Sequence[dict] = (), particles: Sequence[dict] = (),
-                      pronouns: Sequence[dict] = (), exercise_paths: Sequence[str] = ()) -> None:
-    paths = [*page_paths(verbs), *noun_pages.page_paths(nouns), *adjective_pages.page_paths(adjectives),
-             *nuance_pages.page_paths(nuances), *particle_pages.page_paths(particles),
-             *particle_pages.page_paths(pronouns, particle_render.PRONOUNS), *exercise_paths]
-    (pages / "sitemap.xml").write_text(seo.sitemap(paths), encoding="utf-8")
+def _sitemap_paths(verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives: Sequence[dict],
+                   nuances: Sequence[dict], particles: Sequence[dict], pronouns: Sequence[dict],
+                   exercise_paths: Sequence[str]) -> list[str]:
+    return [*page_paths(verbs), *noun_pages.page_paths(nouns), *adjective_pages.page_paths(adjectives),
+            *nuance_pages.page_paths(nuances), *particle_pages.page_paths(particles),
+            *particle_pages.page_paths(pronouns, particle_render.PRONOUNS), *exercise_paths]
+
+
+def _date_pages(pages: Path, paths: Sequence[str]) -> BuiltSite:
+    """Date every sitemap page by its last real change, and record the dates (fil.pages.freshness)."""
+    fingerprints = {seo.absolute(path): freshness.fingerprint(page_file(pages, path).read_text(encoding="utf-8"))
+                    for path in paths}
+    recorded = page_version_store.load()
+    current = freshness.update(recorded, fingerprints, _today())
+    page_version_store.save(current)
+    entries = tuple(seo.SitemapEntry(url, current[url].modified) for url in map(seo.absolute, paths))
+    return BuiltSite(entries, freshness.changed(recorded, current))
+
+
+def page_file(pages: Path, path: str) -> Path:
+    """The file a site path is served from: a folder path ("bs/qala/", or "" for the root) serves its index.html."""
+    return pages / path / "index.html" if path == "" or path.endswith("/") else pages / path
+
+
+def _today() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
+                      sitemap: Sequence[seo.SitemapEntry]) -> None:
+    (pages / "sitemap.xml").write_text(seo.sitemap(sitemap), encoding="utf-8")
+    (pages / indexnow.key_file_name()).write_text(indexnow.key_file_text(), encoding="utf-8")
     (pages / "robots.txt").write_text(seo.robots(), encoding="utf-8")
     listed = [seo.ListedVerb(verb.card["lemma"], verb.slug, verb.card["meaning"]["en"], verb.card["count"]) for verb in verbs]
     names = {language.code: language.name for language in LANGUAGES}

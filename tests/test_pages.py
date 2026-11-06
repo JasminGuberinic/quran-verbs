@@ -75,13 +75,31 @@ def test_the_sitemap_lists_every_indexable_page_once_as_valid_xml():
     verbs = [PublishedVerb(_card(), "qala"), PublishedVerb(_translated_card(CODES), "kana")]
     paths = pages.page_paths(verbs)
 
-    root = ElementTree.fromstring(seo.sitemap(paths).encode())
+    entries = [seo.SitemapEntry(seo.absolute(path), "2026-11-06") for path in paths]
+    root = ElementTree.fromstring(seo.sitemap(entries).encode())
     locations = [element.text for element in root.iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
 
     # qala is translated into en + bs only; kana into all; every list has at least half translated
     assert len(locations) == len(set(locations)) == 1 + len(LANGUAGES) * 2 + 2
     assert seo.SITE_URL in locations and seo.absolute("fa/kana/") in locations
     assert seo.absolute("fa/qala/") not in locations and seo.absolute("bs/qala/") in locations
+
+
+def test_each_sitemap_address_carries_its_own_lastmod():
+    entries = [seo.SitemapEntry(seo.absolute(""), "2026-11-01"), seo.SitemapEntry(seo.absolute("bs/qala/"), "2026-11-06")]
+
+    assert seo.sitemap(entries) == (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"<url><loc>{seo.SITE_URL}</loc><lastmod>2026-11-01</lastmod></url>\n"
+        f"<url><loc>{seo.SITE_URL}bs/qala/</loc><lastmod>2026-11-06</lastmod></url>\n"
+        "</urlset>\n")
+
+
+def test_a_site_path_is_served_from_its_folder_index_or_as_a_file(tmp_path):
+    assert pages.page_file(tmp_path, "") == tmp_path / "index.html"
+    assert pages.page_file(tmp_path, "bs/qala/") == tmp_path / "bs" / "qala" / "index.html"
+    assert pages.page_file(tmp_path, "llms.txt") == tmp_path / "llms.txt"
 
 
 def test_robots_points_to_the_sitemap():

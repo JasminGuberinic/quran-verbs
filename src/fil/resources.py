@@ -26,6 +26,7 @@ COMPOSED_AYAH_GLOSSES_JSON = DATA_DIR / "composed_ayah_glosses.json"  # places w
 POLYSEMOUS_VERBS_JSON = DATA_DIR / "polysemous_verbs.json"  # verbs one sense would mislead on: verb → its senses
 POLYSEMOUS_SENSE_CHOICES_JSON = DATA_DIR / "polysemous_sense_choices.json"  # the sense of each place they stand in
 MEANINGS_JSON = DATA_DIR / "meanings.json"   # what each studied verb means, per language
+PAGE_VERSIONS_JSON = DATA_DIR / "page_versions.json"  # each public page's fingerprint and last real change (fil.pages.freshness)
 SITE_DIR = BUILD_DIR / "site"               # the static study site (fil site)
 PAGES_DIR = BUILD_DIR / "pages"             # the public GitHub Pages site (fil pages)
 REPOSITORY_DIR = _ROOT

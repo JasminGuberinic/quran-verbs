@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
+from xml.etree import ElementTree
 from xml.sax.saxutils import escape
 
 from fil.languages import CODES
@@ -183,12 +184,26 @@ def _alternates(path_in, languages: Sequence[str]) -> list[Alternate]:
     return [*listed, *default]
 
 
-def sitemap(paths: Iterable[str]) -> str:
+@dataclass(frozen=True)
+class SitemapEntry:
+    url: str
+    modified: str        # YYYY-MM-DD: when the page last really changed (fil.pages.freshness)
+
+
+def sitemap(entries: Iterable[SitemapEntry]) -> str:
     """A sitemaps.org sitemap of the given (indexable) pages (one file holds up to 50 000 addresses)."""
-    entries = "".join(f"<url><loc>{escape(absolute(path))}</loc></url>\n" for path in paths)
+    entries = "".join(f"<url><loc>{escape(entry.url)}</loc><lastmod>{entry.modified}</lastmod></url>\n"
+                      for entry in entries)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             f"{entries}</urlset>\n")
+
+
+def sitemap_dates(xml: str) -> dict[str, str]:
+    """Each address in a sitemap with its <lastmod> ("" when it has none); raises ParseError on a broken one."""
+    namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+    return {url.findtext(f"{namespace}loc", ""): url.findtext(f"{namespace}lastmod", "")
+            for url in ElementTree.fromstring(xml.encode("utf-8")).iter(f"{namespace}url")}
 
 
 def robots() -> str:

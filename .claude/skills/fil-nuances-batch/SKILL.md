@@ -25,7 +25,9 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
   wording was held back).
 - Our own observation of Quranic usage is said as such, not put in a lexicographer's mouth.
 - Where tafsir differs on an ayah, say so in the `why` (7:198: idols or idolaters; 28:10 فارغًا).
-- Bosnian follows Korkut's conventions (Allah, ajet, Kur'an, Poslanik, Musa, Ibrahim, Jusuf, dženet);
+- Bosnian follows Korkut's conventions (Allah, ajet, Kur'an, Poslanik, Musa, Ibrahim, Jusuf, Džennet,
+  Džehennem — capitalised, double n; adjectives džennetski, džehennemski; tests/test_bosnian_spelling.py fails on
+  any other spelling);
   English Sahih International style. Content policy: respectful of God and the prophets, no depictions.
   شَرَحَ صَدْرَهُ is "proširiti/širiti grudi", not "otvoriti".
 
@@ -196,7 +198,8 @@ agents) → apply → notes. Lessons:
 - What the blind reviewers caught most: one Bosnian word for two members (htjeti, drijemež, bolestan, ući,
   zavjet, dobročinstvo, uspjeh, narod) — choose distinct bs words in the draft; "always/only" true of one form
   only (مَرَض noun vs the verb 26:80; أَحْلَام as dreams vs 52:32 minds); an ayah gloss that adds to the ayah
-  (10:27 "faces covered", 2:7 "after they refused"); and Korkut spelling Dženet.
+  (10:27 "faces covered", 2:7 "after they refused"); and Korkut's spelling Džennet
+  (this lesson first said "Dženet" — wrong: Korkut writes Džennet, Džehennem; unified in batch 8).
 
 ## Batch 6 (2026-11-06): 25 groups → 130
 abda-azhara-alana · hizb-fariq-taifa · nima-fadl · mulk-sultan · abada-ataa · bukhl-shuhh · sharr-su · khayr-hasana
@@ -241,7 +244,8 @@ passed first time. Lessons:
   and نَادِم, griješnik for فَاسِق and فَاجِر); his example sentence taken as Quranic usage (isqāʾ "a river").
 - Count caveats belong in `notes`: دِين includes yawm ad-dīn, بَعْل the idol Baʿl (37:125), the هَوًى member sums
   هَوَاء (14:43 "empty" included) with أَهْوَاء, حِجْر (intellect only in 89:5) was left out of albab-nuha.
-- One Bosnian spelling of Paradise inside a batch: the new texts mixed Dženet / Džennet / dženet; `fix7review.py`
-  normalises the new groups' bs to Dženet (earlier batches still mix — a later pass may unify them).
+- One Bosnian spelling of Paradise: the new texts mixed Dženet / Džennet / dženet. Korkut's is Džennet / Džehennem
+  (capitalised, double n; adjectives lowercase džennetski) — all of data/ was unified before batch 8 and
+  tests/test_bosnian_spelling.py now fails on any variant.
 - Left out on purpose: 49:2 (scope of the warning differs; 5:5 shown), 12:24, 2:124, 2:256, 2:223, 4:34, 9:84,
   5:41, 5:49, 33:37, 15:88, 20:131, 35:8 (said to the Prophet), 39:65, 6:88, 20:121.

@@ -136,4 +136,4 @@ warning differs), 12:24, 2:124, 2:256 (he gives two readings), 2:223, 4:34, 56:8
 (conditionals about prophets), and 9:84, 5:41, 5:49, 33:37, 15:88, 20:131, 35:8 (said to the Prophet). Counts that
 include another sense are noted per group (دِين with yawm ad-dīn, بَعْل with the idol Baʿl, هَوَاء with 14:43);
 حِجْر (intellect only in 89:5) and rīḥ/riyāḥ (one lemma in the corpus) were not built. The new Bosnian texts spell
-Paradise Dženet throughout.
+Paradise Džennet throughout.

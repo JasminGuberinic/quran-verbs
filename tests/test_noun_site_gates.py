@@ -107,8 +107,10 @@ def test_no_nouns_link_before_the_nouns_are_published():
 def test_the_app_hides_the_nouns_link_in_a_language_without_noun_pages():
     app = (Path(render.__file__).parents[1] / "site" / "index.html").read_text(encoding="utf-8")
     sections = re.search(r"function renderSections\(ui\) \{(.*?)\n  \}", app, re.S).group(1)
-    assert "link.hidden = !path" in sections and "paths.en" not in sections and "DATA.nounPages" in sections
-    assert '<a id="verbs-link"' in app and 'id="nouns-link" hidden' in app
+    section = re.search(r"function renderSection\(link, path, label\) \{(.*?)\n  \}", app, re.S).group(1)
+    assert "link.hidden = !path" in section and "paths.en" not in sections
+    assert "DATA.nounPages" in sections and "DATA.adjectivePages" in sections
+    assert '<a id="verbs-link"' in app and 'id="nouns-link" hidden' in app and 'id="adjectives-link" hidden' in app
 
 
 # ---------------------------------------------------------------- the built site
@@ -150,8 +152,9 @@ def _parsed(page: Path) -> _Page:
 
 
 def _noun_pages() -> list[Path]:
-    return sorted(path for code, folder in seo.NOUN_FOLDERS.items()
-                  for path in (PAGES_DIR / code / folder).rglob("index.html"))
+    """The noun and adjective pages (both are Bosnian and English only)."""
+    folders = [*seo.NOUN_FOLDERS.items(), *seo.ADJECTIVE_FOLDERS.items()]
+    return sorted(path for code, folder in folders for path in (PAGES_DIR / code / folder).rglob("index.html"))
 
 
 def _verb_pages_sample() -> list[Path]:
@@ -159,7 +162,8 @@ def _verb_pages_sample() -> list[Path]:
     sample = []
     for language in LANGUAGES:
         folder = PAGES_DIR / language.code
-        verbs = sorted(page for page in folder.glob("*/index.html") if page.parent.name not in seo.NOUN_FOLDERS.values())
+        sections = {*seo.NOUN_FOLDERS.values(), *seo.ADJECTIVE_FOLDERS.values()}
+        verbs = sorted(page for page in folder.glob("*/index.html") if page.parent.name not in sections)
         sample += [folder / "index.html", *verbs[:3]]
     return sample
 
@@ -186,12 +190,14 @@ def test_every_internal_link_of_the_noun_pages_and_some_verb_pages_resolves():
 def test_every_page_has_the_same_top_bar_with_its_section_marked():
     for page in [*_noun_pages(), *_verb_pages_sample()]:
         relative = page.relative_to(PAGES_DIR)
-        code, is_noun = relative.parts[0], relative.parts[1:2] == (seo.NOUN_FOLDERS.get(relative.parts[0]),)
+        code, folder = relative.parts[0], relative.parts[1:2]
+        is_noun = folder == (seo.NOUN_FOLDERS.get(code),)
+        is_adjective = folder == (seo.ADJECTIVE_FOLDERS.get(code),)
         sections = _parsed(page).sections
-        expected = 2 if code in seo.NOUN_FOLDERS else 1
+        expected = 3 if code in seo.ADJECTIVE_FOLDERS else 2 if code in seo.NOUN_FOLDERS else 1
         assert len(sections) == expected, relative
         current = [index for index, (_href, mark) in enumerate(sections) if mark]
-        assert current == [1 if is_noun else 0], relative
+        assert current == [2 if is_adjective else 1 if is_noun else 0], relative
 
 
 @built

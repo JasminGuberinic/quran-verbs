@@ -428,9 +428,65 @@
       picture: (m) => `Picture: ${m}`,
     },
   };
+  // The adjective pages (phase 3b) exist in Bosnian and English only for now, like the nouns.
+  const ADJECTIVE_PAGE = {
+    bs: {
+      nav: "Pridjevi", indexTitle: "Pridjevi u Kur'anu",
+      indexIntro: "Najčešći pridjevi Kur'ana: značenje, slaganje s imenicom u rodu, broju, padežu i određenosti, s izgovorom, rečenice za vježbu i gdje su u Kur'anu.",
+      title: (lemma, meaning) => `${lemma} – ${meaning} · pridjev u Kur'anu`,
+      description: (lemma, meaning, n) => `${lemma} (${meaning}): slaganje s imenicom, primjeri i ${n} mjesta u Kur'anu, s izgovorom.`,
+      pattern: "obrazac", feminine: "ženski rod", elativeLabel: "komparativ (أَفْعَلُ مِنْ)",
+      allCategories: "Svi", filterBy: "Kategorije",
+      categories: { size_quantity: "veličina i količina", people_qualities: "osobine ljudi", condition: "stanje", moral: "dobro i loše", intensity: "jačina", time_distance: "vrijeme i udaljenost", knowledge_clarity: "znanje i jasnoća", colours: "boje", other: "ostalo" },
+      genders: { M: "muški rod", F: "ženski rod" },
+      table: "Slaganje: rod, broj, padež, određenost",
+      tableIntro: "Pridjev ima oblik za svaki rod (muški, ženski), broj (jednina, dvojina, množina), padež i određenost — isti kao imenica koju opisuje. Klikni oblik da ga čuješ.",
+      agreement: "Kako se pridjev slaže s imenicom",
+      agreementIntro: "Pravila, pa ovaj pridjev s našim imenicama:",
+      rules: [
+        "<b>Atribut</b> (opis) dolazi <b>iza</b> imenice i slaže se s njom u svemu: rodu, broju, padežu i određenosti — بَيْتٌ كَبِيرٌ „velika kuća“, الْبَيْتُ الْكَبِيرُ „ta velika kuća“.",
+        "<b>Predikat</b> je neodređen i u nominativu (iza كَانَ u akuzativu): الْبَيْتُ كَبِيرٌ „kuća je velika“ — samo član razlikuje „kuća je velika“ od „velika kuća“.",
+        "<b>Množina ljudi</b> uzima množinu pridjeva istog roda: رِجَالٌ كِبَارٌ. <b>Množina stvari i životinja</b> uzima <b>ženski rod jednine</b>: بُيُوتٌ كَبِيرَةٌ „velike kuće“.",
+        "<b>Dvojina</b> uzima dvojinu istog roda: بَيْتَانِ كَبِيرَانِ „dvije velike kuće“.",
+      ],
+      kinds: { indefinite: "neodređeno: imenica i pridjev s tenvinom", definite: "određeno: oba s članom al-", feminine: "ženski rod", humanPlural: "množina ljudi: množina pridjeva", thingPlural: "množina stvari: ženski rod jednine", predicate: "predikat: „… je …“", elative: "poređenje: أَفْعَلُ مِنْ „…-iji od“" },
+      noExamples: "Primjeri slaganja za ovaj pridjev još nisu pregledani.",
+      noSentences: "Rečenice za ovaj pridjev još nisu gotove.",
+      sentenceRoles: { masculine: "uz imenicu muškog roda", feminine: "uz imenicu ženskog roda", predicate: "predikat („… je …“)", plural: "uz množinu (ili dvojinu)" },
+      formsNote: "Riječ kako stoji u Kur'anu. Klikni riječ da je čuješ od učača. Značenje je sastavljeno po pravilima (AI) u nominativu; padež pridjev dobija od svoje imenice i stoji pored.",
+      adjectivesOfRoot: "Pridjevi od ovog korijena",
+    },
+    en: {
+      nav: "Adjectives", indexTitle: "Adjectives of the Quran",
+      indexIntro: "The most frequent adjectives of the Quran: meaning, agreement with the noun in gender, number, case and definiteness, with audio, practice sentences and where they occur.",
+      title: (lemma, meaning) => `${lemma} – ${meaning} · adjective in the Quran`,
+      description: (lemma, meaning, n) => `${lemma} (${meaning}): agreement with the noun, examples and ${n} places in the Quran, with audio.`,
+      pattern: "pattern", feminine: "feminine", elativeLabel: "comparative (أَفْعَلُ مِنْ)",
+      allCategories: "All", filterBy: "Categories",
+      categories: { size_quantity: "size and quantity", people_qualities: "qualities of people", condition: "condition", moral: "good and bad", intensity: "intensity", time_distance: "time and distance", knowledge_clarity: "knowledge and clarity", colours: "colours", other: "other" },
+      genders: { M: "masculine", F: "feminine" },
+      table: "Agreement: gender, number, case, definiteness",
+      tableIntro: "An adjective has a form for each gender (masculine, feminine), number (singular, dual, plural), case and definiteness — those of the noun it describes. Tap a form to hear it.",
+      agreement: "How the adjective agrees with its noun",
+      agreementIntro: "The rules, then this adjective with our nouns:",
+      rules: [
+        "An <b>attribute</b> comes <b>after</b> its noun and agrees with it in everything: gender, number, case and definiteness — بَيْتٌ كَبِيرٌ “a big house”, الْبَيْتُ الْكَبِيرُ “the big house”.",
+        "A <b>predicate</b> is indefinite and nominative (accusative after كَانَ): الْبَيْتُ كَبِيرٌ “the house is big” — the article alone tells “the house is big” from “the big house”.",
+        "A <b>plural of people</b> takes the adjective's plural of the same gender: رِجَالٌ كِبَارٌ. A <b>plural of things and animals</b> takes the <b>feminine singular</b>: بُيُوتٌ كَبِيرَةٌ “big houses”.",
+        "A <b>dual</b> takes the dual of its gender: بَيْتَانِ كَبِيرَانِ “two big houses”.",
+      ],
+      kinds: { indefinite: "indefinite: noun and adjective with nunation", definite: "definite: both with the article al-", feminine: "feminine", humanPlural: "plural of people: the adjective's plural", thingPlural: "plural of things: feminine singular", predicate: "predicate: “… is …”", elative: "comparison: أَفْعَلُ مِنْ “…-er than”" },
+      noExamples: "The agreement examples of this adjective have not been reviewed yet.",
+      noSentences: "Sentences for this adjective are not ready yet.",
+      sentenceRoles: { masculine: "with a masculine noun", feminine: "with a feminine noun", predicate: "predicate (“… is …”)", plural: "with a plural (or dual)" },
+      formsNote: "The word as it stands in the Quran. Tap the word to hear it recited. The meaning is composed by rule (AI) in the nominative; the adjective takes its case from its noun, shown beside it.",
+      adjectivesOfRoot: "Adjectives of this root",
+    },
+  };
   for (const code of Object.keys(UI)) {
     UI[code].page = PAGE[code];
     UI[code].nounPage = NOUN_PAGE[code] || NOUN_PAGE.en;
+    UI[code].adjectivePage = ADJECTIVE_PAGE[code] || ADJECTIVE_PAGE.en;
     UI[code].forms = FORMS[code] || FORMS.en;
     UI[code].footer = [...credits(SOURCES[code] || SOURCES.en), ...UI[code].footer];
   }

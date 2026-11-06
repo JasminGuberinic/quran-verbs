@@ -11,6 +11,7 @@
       <language>/index.html          the verb list in that language
       <language>/<slug>/index.html   one verb: meaning, forms, conjugation, ayat, sentences
       bs/imenica/, en/noun/          the studied nouns (fil.stages.noun_pages), Bosnian and English only
+      bs/pridjev/, en/adjective/     the studied adjectives (fil.stages.adjective_pages), Bosnian and English only
       pictures/<slug>.svg            the noun pictures the noun pages show
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
 
@@ -36,13 +37,14 @@ from pathlib import Path
 
 from fil import noun_store, service
 from fil.languages import LANGUAGES
-from fil.pages import deploy, indexing, interface_text, render, seo, share_image
+from fil.pages import adjective_render, deploy, indexing, interface_text, render, seo, share_image
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
-from fil.stages import noun_pages, site
+from fil.stages import adjective_pages, noun_pages, site
+from fil.stages.adjective_site import AdjectiveContent, assemble_adjectives
 from fil.stages.noun_site import NounContent, assemble_nouns, check_voiced
 
 _SOURCES = Path(__file__).resolve().parents[1] / "site"
@@ -84,15 +86,19 @@ def build(pages: Path) -> bool:
         return False
     verbs = published_verbs(content.cards, [verb.lemma for verb in service.list_verbs()])
     nouns = _assemble_nouns(sink, verbs)
-    check_voiced(nouns.cards, noun_store.load_unvoiced())
-    content = replace(content, payload={**content.payload, "nounPages": noun_pages.app_paths() if nouns.cards else {}})
+    adjectives = _assemble_adjectives(sink, verbs)
+    check_voiced([*nouns.cards, *adjectives.cards], noun_store.load_unvoiced())
+    content = replace(content, payload={**content.payload,
+                                        "nounPages": noun_pages.app_paths() if nouns.cards else {},
+                                        "adjectivePages": adjective_pages.app_paths() if adjectives.cards else {}})
     site.write_app(pages, content)
     _write_app_page(pages, texts)
-    written = [*_write_language_pages(pages, verbs, texts, nouns)]
-    written += noun_pages.write(pages, nouns, texts)
-    _write_site_files(pages, verbs, texts, nouns.cards)
+    written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards)]
+    written += noun_pages.write(pages, nouns, texts, adjectives.cards)
+    written += adjective_pages.write(pages, adjectives, nouns.cards, texts)
+    _write_site_files(pages, verbs, texts, nouns.cards, adjectives.cards)
     check_audio_links(pages, written)
-    check_card_audio(pages, [*content.cards, *nouns.cards])
+    check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards])
     site.report(pages, content)
     _report_size(pages, len(written))
     _report_indexing(verbs)
@@ -135,20 +141,29 @@ def _assemble_nouns(sink, verbs: list[PublishedVerb]):
     return assemble_nouns(sound, site.read_corpus().ayat, verb_slugs)
 
 
+def _assemble_adjectives(sink, verbs: list[PublishedVerb]) -> AdjectiveContent:
+    sound = site.Sound(sink)
+    verb_slugs = {f"{verb.card['root']}_{verb.card['form']}": verb.slug for verb in verbs}
+    return assemble_adjectives(sound, site.read_corpus().ayat, verb_slugs)
+
+
 def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
-                          nouns: NounContent) -> Iterable[Path]:
+                          nouns: NounContent, adjectives: Sequence[dict] = ()) -> Iterable[Path]:
     credit_for = noun_pages.credits(nouns.pictures)
-    has_nouns = bool(nouns.cards)
+    has_nouns, has_adjectives = bool(nouns.cards), bool(adjectives)
     for language in LANGUAGES:
         text = texts[language.code]
         yield _write(pages, seo.language_index_path(language.code),
-                     render.language_index(verbs, language, text, has_nouns=has_nouns))
+                     render.language_index(verbs, language, text, has_nouns=has_nouns, has_adjectives=has_adjectives))
         for verb in verbs:
             related = noun_pages.nouns_of_verb(verb.card, nouns.cards)
             section = noun_pages.nouns_of_verb_section(related, language, text)
             credit = credit_for(related) if section else ""
-            yield _write(pages, seo.verb_path(language.code, verb.slug),
-                         render.verb_page(verb, language, text, section, has_nouns=has_nouns, picture_credit=credit))
+            path = seo.verb_path(language.code, verb.slug)
+            adjectives_section = adjective_render.adjectives_section(verb.card, adjectives, language, text, path)
+            yield _write(pages, path, render.verb_page(verb, language, text, section, has_nouns=has_nouns,
+                                                       has_adjectives=has_adjectives, picture_credit=credit,
+                                                       adjectives_of_root=adjectives_section))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:
@@ -158,8 +173,10 @@ def _write(pages: Path, path: str, html: str) -> Path:
     return target
 
 
-def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict], nouns: Sequence[dict] = ()) -> None:
-    (pages / "sitemap.xml").write_text(seo.sitemap([*page_paths(verbs), *noun_pages.page_paths(nouns)]), encoding="utf-8")
+def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict], nouns: Sequence[dict] = (),
+                      adjectives: Sequence[dict] = ()) -> None:
+    paths = [*page_paths(verbs), *noun_pages.page_paths(nouns), *adjective_pages.page_paths(adjectives)]
+    (pages / "sitemap.xml").write_text(seo.sitemap(paths), encoding="utf-8")
     (pages / "robots.txt").write_text(seo.robots(), encoding="utf-8")
     listed = [seo.ListedVerb(verb.card["lemma"], verb.slug, verb.card["meaning"]["en"], verb.card["count"]) for verb in verbs]
     names = {language.code: language.name for language in LANGUAGES}

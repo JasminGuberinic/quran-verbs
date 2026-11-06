@@ -61,6 +61,24 @@ def noun_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(NOUN_FOLDERS))
 
 
+# The adjective pages likewise (Bosnian and English only, for now).
+ADJECTIVE_FOLDERS = {"bs": "pridjev", "en": "adjective"}
+
+
+def adjective_index_path(language: str) -> str:
+    return f"{language}/{ADJECTIVE_FOLDERS[language]}/"
+
+
+def adjective_path(language: str, slug: str) -> str:
+    return f"{adjective_index_path(language)}{slug}/"
+
+
+def adjective_alternates(slug: str | None) -> list[Alternate]:
+    """An adjective page (or, with no slug, the adjective list) in each language it is built in."""
+    path_in = (lambda language: adjective_path(language, slug)) if slug else adjective_index_path
+    return _alternates(path_in, tuple(ADJECTIVE_FOLDERS))
+
+
 def to_root(path: str) -> str:
     """The relative way back to the site root from a page at `path`."""
     return "../" * path.count("/")

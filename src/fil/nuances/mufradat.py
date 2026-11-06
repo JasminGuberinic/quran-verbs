@@ -29,6 +29,9 @@ _FIRST_LETTER = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ء": "ا"})
 _WEAK = str.maketrans({letter: "ء" for letter in "اأإآءؤئوىية"})
 _LETTER_BOOK = re.compile(r"(?:^|=)\s*كتاب\s+ال(" + "|".join(LETTER_NAMES) + r")\s*=?")
 _HEAD = re.compile(r"(?:^|(?<=[.﴾] ))([ء-ي]{2,5}) (: )?(?=(?:ال(.))?)")
+# Entries the OpenITI text runs on mid-line with no mark at all (no colon, no defining article); found by
+# their exact opening words, so no ordinary sentence can be taken for them.
+_UNMARKED_HEADS = re.compile(r"(?:^|(?<=[.)] ))(ذبح|وثق) ()(?=اصل الذبح|وثقت به)")
 _HARAKAT = re.compile(r"[\u064B-\u0652\u0670\u0640]")
 _PAGE_MARK = re.compile(r"\s*(PageV\d+P\d+|ms\d+|\|)\s*")
 
@@ -128,7 +131,8 @@ def _heads(piece: str, letter: str) -> list[re.Match]:
 
     Mostly "أتى : …" opening the paragraph. The OpenITI text also runs an entry on mid-line after a
     full stop ("… . كلم : الكلم …") or drops its colon ("نزل النزول …"); those count only when the
-    definition names the headword with the article, so "… . قال : ﴿ …" stays inside its entry.
+    definition names the headword with the article, so "… . قال : ﴿ …" stays inside its entry. Two run on
+    with no mark at all (ذبح inside ذب, وثق inside وتر) and are listed by their opening words.
     """
     def is_head(found: re.Match) -> bool:
         first = _headword(found, letter)[0].translate(_FIRST_LETTER)
@@ -139,7 +143,9 @@ def _heads(piece: str, letter: str) -> list[re.Match]:
         if opens_paragraph:
             return has_colon or defines_it
         return has_colon and defines_it
-    return [found for found in _HEAD.finditer(piece) if is_head(found)]
+    marked = [found for found in _HEAD.finditer(piece) if is_head(found)]
+    unmarked = [found for found in _UNMARKED_HEADS.finditer(piece) if found.group(1)[0] == letter]
+    return sorted(marked + unmarked, key=lambda found: found.start())
 
 
 def _headword(found: re.Match, letter: str) -> str:

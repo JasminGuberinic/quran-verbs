@@ -3,7 +3,9 @@
   - every member is a word of the corpus, and its stated count is the corpus's count;
   - every ayah cited to illustrate a member really holds that member's word;
   - a group that speaks in ar-Rāġib's name (its texts or its sources) records that it was checked
-    against his Mufradāt (`verified`), so no attribution made from memory reaches a page.
+    against his Mufradāt (`verified`), so no attribution made from memory reaches a page; and every
+    Mufradāt entry its `sources` cite is one that record lists — the headwords read, as the book spells
+    them (أبا, the father, not أب, the pasture).
 
 The corpus is behind a port (`Concordance`), so the rule is tested without the corpus
 and the stages wire in the verb and noun catalogues (fil.stages.nuances).
@@ -20,6 +22,7 @@ from fil.nuances.model import CorpusWord, NuanceGroup, Text
 from fil.nuances.mufradat import BOOK_URI
 
 _NAMES_RAGHIB = re.compile(r"R[āa]ġib|Mufrad[āa]t")
+_CITED_ENTRIES = re.compile(r"\bentr(?:y|ies) (.+)$")
 Location = tuple[int, int, int]      # (surah, ayah, word)
 
 
@@ -68,10 +71,19 @@ def _group_problems(group: NuanceGroup, concordance: Concordance) -> list[str]:
 def _unverified_attribution(group: NuanceGroup) -> list[str]:
     if not any(_NAMES_RAGHIB.search(text) for text in _published_texts(group)):
         return []
-    if any(record.source.startswith(BOOK_URI) for record in group.verified):
-        return []
-    return [f"{group.slug}: speaks in ar-Rāġib's name but records no check against the Mufradāt "
-            f"(`verified`: {BOOK_URI}…, `fil nuances mufradat ROOT`)"]
+    read = {entry for record in group.verified if record.source.startswith(BOOK_URI) for entry in record.entries}
+    if not read:
+        return [f"{group.slug}: speaks in ar-Rāġib's name but records no check against the Mufradāt "
+                f"(`verified`: {BOOK_URI}…, `fil nuances mufradat ROOT`)"]
+    return [f"{group.slug}: its sources cite the Mufradāt entry {entry}, which `verified` does not list "
+            f"(name the entries read, spelled as the book does)"
+            for entry in _cited_mufradat_entries(group) if entry not in read]
+
+
+def _cited_mufradat_entries(group: NuanceGroup) -> list[str]:
+    """The headwords a `sources` line names in the Mufradāt: "… Mufradāt … — entries خوف, خشى"."""
+    cited = (_CITED_ENTRIES.search(line) for line in group.sources if _NAMES_RAGHIB.search(line))
+    return [entry.strip() for match in cited if match for entry in match.group(1).split(",")]
 
 
 def _published_texts(group: NuanceGroup) -> list[str]:

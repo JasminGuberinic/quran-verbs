@@ -85,3 +85,25 @@ three kinds of ẓulm and the "breast" saying are quoted by him from "some sages
 through (not "two openings"); naẓar "look and not see" is his (al-ʿAskarī no longer cited); the 6:1 note
 gives his reading of خلق/جعل instead of az-Zamaḫšarī's (al-Kaššāf could not be checked). Recovered from
 "held back": ḵaṭīʾa mostly unintended, 9:128 for raḥīm, 29:14 sana/ʿām, saḵaṭ, muzn, ḫuḍūʿ, ṣadāqa.
+
+## Review of the verification pass, and sources as the book spells them (2026-11-06)
+The 59 texts changed by the verification were given to a blind reviewer (who could read the cited entries):
+36 claims, 16 flagged, 15 fixed (99:7 "uradio" kept: Korkut's wording). Notable: 23:4 now shows ar-Rāġib's own
+reading (lām of purpose) beside most mufassirun's; ḍiyāʾ is his "more specific", not "stronger"; ijtibāʾ "with
+hudā" only for Adam and Abraham; the "ransom" in 2:48 is the mufassirun's, not his; قَرْيَة is "town / naselje"
+throughout, keeping "city / grad" for مَدِينَة. Every `sources` line now names the Mufradāt entries as the book
+spells them (أبا the father, not أب the pasture; شكك, جاء, سرر, بلى …), and every entry it names is in `verified`
+— the gate now refuses a cited entry the record does not list. Twelve cited-but-unlisted entries were read and
+added (consistent; no attributed point rests on them alone).
+
+## Batch 5 (25 groups, 105 in all)
+Mostly pairs ar-Rāġib himself sets side by side (`fil nuances mufradat --mentions WORD`): أَرَادَ/شَاءَ · حَكَمَ/قَضَى ·
+نَسِيَ/غَافِل · ضَحِكَ/تَبَسَّمَ · كَتَمَ/أَخْفَى/أَسَرَّ · أَعْرَضَ/تَوَلَّى · نَوْم/سِنَة/نُعَاس/رُقُود · وَلَد/ابْن · مَرَض/مَرِيض/سَقِيم ·
+دَخَلَ/وَلَجَ · خَتَمَ/طَبَعَ · وَهَنَ/ضَعِيف · أُمَّة/قَوْم · رَسُول/نَبِيّ · فَاحِشَة/مُنكَر · بِرّ/إِحْسَان · ضُرّ/أَذًى · ذِلَّة/ذُلّ/خِزْي ·
+رُؤْيَا/حُلُم · قَتَلَ/ذَبَحَ · عَهْد/مِيثَاق · سَاحِر/كَاهِن/شَاعِر · جَاهِل/سَفِيه · عَجِلَ/اسْتَعْجَلَ/سَارَعَ · فَوْز/أَفْلَحَ.
+Verification first (three verifiers, quotes machine-checked): 380 points, 344 confirmed, 35 partial, 1 different
+(Moses called sāḥir in the sense of illusion, not of transformation); 34 texts changed. Then the blind review:
+82 claims, 42 flagged, 75 fixes, all in the texts (none held back). Left out on purpose: the "rasūl brings a new
+law" distinction (not ar-Rāġib's; scholars differ), 2:213 and 2:124 (tafsir differs), 42:24 and 80:1 (said to the
+Prophet), 20:115 (nasiya there is read two ways). ذبح and وثق open with no heading mark in the OpenITI
+text; the parser now lists them by their opening words (fil.nuances.mufradat), so they are entries of their own.

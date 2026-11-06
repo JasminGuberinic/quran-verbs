@@ -72,7 +72,7 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
    re-attribute / drop. Then give the group `"verified": [{"source": "0502RaghibIsbahani.Mufradat.JK001150-ara1",
    "entries": ["<headwords as he spells them>"]}]` and a note "ar-Rāġib verified against OpenITI <URI>,
    entries …: what was confirmed / changed". The gate refuses a group that names ar-Rāġib (texts or sources)
-   without that record. (Parser: fil.nuances.mufradat; the few entries the OpenITI text does not mark as
+   without that record, and a `sources` entry the record does not list (spell entries as the book does). (Parser: fil.nuances.mufradat; the few entries the OpenITI text does not mark as
    "root :" are still found with --mentions.) Splitting the claims into per-group packets (claims + entries
    of the member roots) for 2–4 parallel verifier agents, with verbatim quotes machine-checked against the
    text afterwards, worked well (scratch: a packet builder and an apply script with exact-string fixes).
@@ -171,3 +171,29 @@ three kinds of ẓulm, the qalb etymology); examples he does not give (Mecca as 
 the text (ḵaṭīʾa, 9:128, 29:14, saḵaṭ, muzn, ṣadāqa). Headwords differ from corpus roots: سنة not سنا, جزاء not
 جزء, آل is its own entry, the testing sense of بلاء is the second بلى entry — `entries_for` lists every
 candidate; read them all.
+
+## Batch 5 (2026-11-06): 25 groups → 105
+arada-shaa · hakama-qada · nasiya-ghafala · dahika-tabassama · katama-akhfa-asarra · aarada-tawalla · nawm-sina-nuas
+· walad-ibn · marad-saqam · dakhala-walaja · khatama-tabaa · wahn-daf · umma-qawm · rasul-nabi · fahisha-munkar
+· birr-ihsan · darr-adha · dhilla-khizy · ruya-hulm · qatala-dhabaha · ahd-mithaq · sahir-kahin-shair · jahl-safah
+· ajila-saraa · fawz-falah. Order that worked: draft → merge → verify (3 agents) → apply → blind review (2 Sonnet
+agents) → apply → notes. Lessons:
+- Find groups in the book first: `build/scratch/xref.py` (candidate roots → does one member's entry name the
+  other's word?) gave ar-Rāġib's own contrasts (سقم/مرض, ولج/دخل, ختم/طبع, وهن/ضعف, نعاس/رقاد/سنة, القتل أعم من الذبح).
+  Read the entries before drafting (`snip.py ROOT[:WORD]` prints an entry or a window of it): the draft then
+  needed 34 verifier fixes for 380 points.
+- `sources` name entries exactly as the book prints them, and every one must be in `verified` (the gate checks):
+  أبا (father) not أب (pasture), شكك not شك, جاء not جيأ. Two entries open with no mark at all (ذبح, وثق):
+  the parser lists them by their opening words (`_UNMARKED_HEADS`); add any further such entry there, with a test,
+  rather than recording a headword the parser cannot find (the golden test refuses it).
+- After merging, the data file is the source: apply verifier and reviewer fixes to it (`v/apply.py` style for
+  verdicts, `apply_review.py` for whole-field review fixes with `review_overrides.py`), never re-run the merge.
+- The worktree guard refuses shell lines it cannot parse (heredocs to python, `$VAR` commands, `cd && a; b`
+  chains with sh): write scripts with the Write tool and run `sh build/scratch/fil.sh [py] …` one per call.
+- What the verifiers caught most: a view he reports from "some" / "qīla" / Abū l-Ḥasan given as his (mašīʾa vs
+  irāda, walad = son or daughter, aḥlām = minds); his definition shifted (qaḍāʾ "settling, cutting off", not
+  "ending"; sina = ġafla, not heaviness; birr of Allah = reward); a verse number from memory (9:71 for 9:112).
+- What the blind reviewers caught most: one Bosnian word for two members (htjeti, drijemež, bolestan, ući,
+  zavjet, dobročinstvo, uspjeh, narod) — choose distinct bs words in the draft; "always/only" true of one form
+  only (مَرَض noun vs the verb 26:80; أَحْلَام as dreams vs 52:32 minds); an ayah gloss that adds to the ayah
+  (10:27 "faces covered", 2:7 "after they refused"); and Korkut spelling Dženet.

@@ -95,7 +95,7 @@ def test_the_stored_groups_load_and_every_text_is_bilingual():
     groups = nuance_store.load_groups()
     assert [group.slug for group in groups][:5] == ["insan-bashar", "jaa-ata", "raa-nazara-absara", "khawf-khashya",
                                                     "qalb-fuad-sadr"]
-    assert len(groups) == 80 and len({group.slug for group in groups}) == 80
+    assert len(groups) == 105 and len({group.slug for group in groups}) == 105
     assert all(len(group.members) >= 2 and group.sources for group in groups)
 
 
@@ -136,6 +136,16 @@ def test_the_gate_refuses_words_put_in_ar_raghibs_mouth_unchecked():
         "(`verified`: 0502RaghibIsbahani.Mufradat…, `fil nuances mufradat ROOT`)"]
     unattributed = parse_groups({"qalb": _entry(verified=[], sources=["Quranic usage — our own observation"])})
     assert gate.problems(unattributed, concordance) == []
+
+
+def test_the_gate_wants_the_cited_entries_spelled_as_the_ones_read():
+    concordance = _Concordance({"قَلْب|قلب": _attested(132, (22, 46, 14)), "فُؤاد|فأد": _attested(16, (28, 10, 2))})
+    as_read = parse_groups({"qalb": _entry(sources=["ar-Rāġib al-Iṣfahānī, Mufradāt — entries قلب, فأد"])})
+    assert gate.problems(as_read, concordance) == []
+    misspelled = parse_groups({"qalb": _entry(sources=["ar-Rāġib al-Iṣfahānī, Mufradāt — entries قلب, فؤاد"])})
+    assert gate.problems(misspelled, concordance) == [
+        "qalb: its sources cite the Mufradāt entry فؤاد, which `verified` does not list "
+        "(name the entries read, spelled as the book does)"]
 
 
 def test_an_attestation_knows_the_words_of_an_ayah():

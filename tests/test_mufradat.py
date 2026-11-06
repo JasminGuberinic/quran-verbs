@@ -56,6 +56,13 @@ def test_an_entry_run_on_mid_line_or_without_its_colon_is_found_by_its_definitio
     assert book.entries_for("ولد")[0].text == "الولد المولود ."
 
 
+def test_the_two_entries_run_on_without_any_mark_are_found_by_their_opening_words():
+    book = parse("######OpenITI#\n# | كتاب الذال\n# ذب : الذباب يقع . ( يذبب ورد )\n# ذبح اصل الذبح شق الحلق .\n"
+                 "# | كتاب الواو\n# وتر : الوتر الفرد . وثق وثقت به أثق ثقة . والوثقى تأنيث الأوثق .\n")
+    assert [entry.headword for entry in book.entries] == ["ذب", "ذبح", "وتر", "وثق"]
+    assert book.entries[1].text == "اصل الذبح شق الحلق ." and book.entries[2].text == "الوتر الفرد ."
+
+
 def test_a_letters_first_entry_runs_on_after_the_letters_title():
     assert parse(_BOOK).entries_for("جيأ")[0].text == "المجيء كالإتيان لكن المجيء أعم ."
 

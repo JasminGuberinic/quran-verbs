@@ -38,7 +38,7 @@ def kind_path(language: str, kind: str, texts: Mapping[str, dict]) -> str:
 # ---------- the hub ----------
 
 def hub_page(language: Language, texts: Mapping[str, dict], counts: Mapping[str, int], shards: Mapping[str, int], *,
-             published: Collection[str]) -> str:
+             published: Collection[str], picture_credit: str = "") -> str:
     """Every kind with its count and page, and a mixed practice of all of them (or, with ?w=, of one word)."""
     text = texts[language.code]
     words = text["exercisePage"]
@@ -56,7 +56,7 @@ def hub_page(language: Language, texts: Mapping[str, dict], counts: Mapping[str,
         f'<h2>{escape(words["allKinds"])}</h2><p class="note">{escape(words["allKindsIntro"])}</p>',
         _practice(kinds, shards, words, language, root),
         f'<ul class="verb-list exercise-kinds">{cards}</ul></main>',
-        render._footer(text),
+        render._footer(text, picture_credit),
     ))
     head = render._head(title=f'{words["indexTitle"]} · {seo.SITE_NAME}', description=words["indexIntro"], path=path,
                         root=root, indexed_in=EXERCISE_LANGUAGES, language=language.code,
@@ -70,7 +70,7 @@ def hub_page(language: Language, texts: Mapping[str, dict], counts: Mapping[str,
 # ---------- one kind ----------
 
 def kind_page(kind: str, language: Language, texts: Mapping[str, dict], counts: Mapping[str, int],
-              shards: Mapping[str, int], *, published: Collection[str]) -> str:
+              shards: Mapping[str, int], *, published: Collection[str], picture_credit: str = "") -> str:
     text = texts[language.code]
     words = text["exercisePage"]
     about = words["kinds"][kind]
@@ -85,7 +85,7 @@ def kind_page(kind: str, language: Language, texts: Mapping[str, dict], counts: 
         _practice([kind], shards, words, language, root),
         f'<p class="cta"><a class="button quiet" href="{root}{seo.exercise_index_path(language.code)}">'
         f'{escape(words["allExercises"])} →</a></p></main>',
-        render._footer(text),
+        render._footer(text, picture_credit),
     ))
     head = render._head(title=title, description=about["intro"], path=path, root=root, indexed_in=EXERCISE_LANGUAGES,
                         language=language.code,

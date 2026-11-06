@@ -9,28 +9,50 @@ Bosnian and English only for now (docs/EXERCISES-PLAN.md): both are indexed and 
 
 from __future__ import annotations
 
-from collections.abc import Collection, Mapping
-from pathlib import Path
+from collections.abc import Collection, Mapping, Sequence
+from pathlib import Path, PurePosixPath
 
+from fil.exercises.model import PICTURE
 from fil.languages import LANGUAGES, Language
+from fil.nouns.pictures import NounPicture, sources_used
 from fil.pages import exercise_render, seo
+from fil.pages.picture_credits import picture_credit
 from fil.stages import exercises
 
 
-def write(pages: Path, sets: exercises.ExerciseSets, texts: Mapping[str, dict], published: Collection[str]) -> list[Path]:
-    """The questions' shards, the hub and a page per kind; the pages written."""
+class UncreditedPicture(ValueError):
+    """A picture question shows a picture whose source the credit line could not name."""
+
+
+def write(pages: Path, sets: exercises.ExerciseSets, texts: Mapping[str, dict], published: Collection[str],
+          pictures: Sequence[NounPicture]) -> list[Path]:
+    """The questions' shards, the hub and a page per kind; the pages written. `pictures` are the noun
+    pictures the picture questions may show: the pages that ask them credit their sets."""
     if not sets.kinds():
         return []
     counts = sets.counts()
     shards = exercises.write(pages, sets)
+    credit = pictures_credit(sets, pictures)
     written = []
     for language in _languages():
         written.append(_write(pages, seo.exercise_index_path(language.code),
-                              exercise_render.hub_page(language, texts, counts, shards, published=published)))
+                              exercise_render.hub_page(language, texts, counts, shards, published=published,
+                                                       picture_credit=credit)))
         written += [_write(pages, exercise_render.kind_path(language.code, kind, texts),
-                           exercise_render.kind_page(kind, language, texts, counts, shards, published=published))
+                           exercise_render.kind_page(kind, language, texts, counts, shards, published=published,
+                                                     picture_credit=credit if kind == PICTURE else ""))
                     for kind in sets.kinds()]
     return written
+
+
+def pictures_credit(sets: exercises.ExerciseSets, pictures: Sequence[NounPicture]) -> str:
+    """The footer credit owed for the pictures the picture questions show (the hub mixes them in too)."""
+    by_file = {picture.file_name: picture for picture in pictures}
+    shown = [exercise.picture for exercise in sets.by_kind.get(PICTURE, ()) if exercise.picture]
+    unknown = sorted({picture for picture in shown if PurePosixPath(picture).name not in by_file})
+    if unknown:
+        raise UncreditedPicture(f"{len(unknown)} picture questions show a picture of no known source, e.g. {unknown[:3]}")
+    return picture_credit(sources_used(by_file[PurePosixPath(picture).name] for picture in shown))
 
 
 def app_paths() -> dict[str, str]:

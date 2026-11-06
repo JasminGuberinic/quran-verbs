@@ -203,7 +203,7 @@ def build(pages: Path) -> BuiltSite | None:
     written += nuance_pages.write(pages, nuances, texts, published, practice_link(NUANCE_WORD))
     written += particle_pages.write(pages, particles, texts, published, practice=practice_link(PARTICLE_WORD))
     written += particle_pages.write(pages, pronouns, texts, published, particle_render.PRONOUNS)
-    written += exercise_pages.write(pages, practice, texts, published)
+    written += exercise_pages.write(pages, practice, texts, published, nouns.pictures)
     written += root_pages.write(pages, roots, texts, published, nuances, practice.words())
     written += surah_pages.write(pages, surahs, texts, published, practice.words(),
                                   root_path=_root_page(root_slugs))

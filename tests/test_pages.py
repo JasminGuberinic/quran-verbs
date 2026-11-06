@@ -287,6 +287,22 @@ def test_the_404_page_links_absolutely_because_it_is_served_at_any_depth():
     assert 'href="/quran-verbs/bs/"' in html and 'noindex' in html
 
 
+_APP_PAGE = Path(pages.__file__).resolve().parents[1] / "site" / "index.html"
+
+
+def test_no_page_sends_the_browser_asking_the_host_for_a_favicon():
+    # A project site's host answers /favicon.ico with 404: an error in the console of every page.
+    texts = {language.code: _text() for language in LANGUAGES}
+    for html in (render.verb_page(PublishedVerb(_card(), "qala"), _language("en"), _text()),
+                 render.not_found_page(texts, "/quran-verbs/"), _APP_PAGE.read_text(encoding="utf-8")):
+        assert render.NO_ICON in html.split("</head>")[0]
+
+
+def test_the_app_top_bar_lets_its_tabs_scroll_instead_of_widening_a_phone_page():
+    bar = re.search(r"\.topbar-inner \{([^}]*)\}", _APP_PAGE.read_text(encoding="utf-8")).group(1)
+    assert "min-width: 0" in bar and "width: 100%" in bar
+
+
 def test_templates_fill_their_numbered_holes():
     assert fill("{0} of {1}", 3, 5) == "3 of 5"
 

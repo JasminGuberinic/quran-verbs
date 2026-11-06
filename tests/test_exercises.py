@@ -14,7 +14,7 @@ from fil.exercises.agreement import AdjectiveForm, AdjectiveSentence, agreement_
 from fil.exercises.ayat import (AyahWord, CitedAyah, NuanceGroup, NuanceMember, ParticleUse, nuance_exercises,
                                 particle_exercises)
 from fil.exercises.cases import NounSentence, SentenceWord, case_exercises
-from fil.exercises.model import (CASE, KINDS, LISTEN, Bilingual, Exercise, InvalidExercise, Option, Segment,
+from fil.exercises.model import (CASE, KINDS, LISTEN, PICTURE, Bilingual, Exercise, InvalidExercise, Option, Segment,
                                  word_id)
 from fil.exercises.prepositions import NounForms, QuranicForm, TableRow, preposition_exercises
 from fil.exercises.shards import shard_of, shards
@@ -24,7 +24,9 @@ from fil.exercises.vocabulary import (Word, could_be_pictured_alike, is_fair_dis
 from fil.languages import LANGUAGES
 from fil.nouns.model import ACCUSATIVE, DEFINITE, FEMININE, GENITIVE, INDEFINITE, MASCULINE, NOMINATIVE, PLURAL, SINGULAR, Cell
 from fil.nouns.spelling import spelling_key
+from fil.nouns.pictures import OPENMOJI, OWN_DRAWING, TWEMOJI, NounPicture
 from fil.pages import exercise_render
+from fil.stages import exercise_pages
 from fil.stages.exercises import ExerciseSets
 
 B = Bilingual
@@ -347,6 +349,38 @@ def test_the_hub_and_a_kind_page_carry_the_script_settings(texts):
     settings = json.loads(re.search(r'data-shards="([^"]+)"', page).group(1).replace("&quot;", '"'))
     assert settings == {"case": 2}
     assert 'hreflang="bs" href="https://jasminguberinic.github.io/quran-verbs/bs/vjezbe/koji-padez/"' in page
+
+
+def _picture_question(slug: str) -> Exercise:
+    return Exercise(kind=PICTURE, key=slug, words=(f"noun:{slug}",), picture=f"pictures/{slug}.svg",
+                    options=(Option(True, arabic="أ"), Option(False, arabic="ب")))
+
+
+def _picture(slug: str, source) -> NounPicture:
+    return NounPicture(lemma=slug, root=slug, slug=slug, bosnian=slug, codepoint="1F42A", source=source)
+
+
+def test_the_pages_that_ask_picture_questions_credit_the_sets_of_their_pictures(texts):
+    sets = ExerciseSets({PICTURE: (_picture_question("jamal"), _picture_question("bayt"))})
+    pictures = [_picture("jamal", OPENMOJI), _picture("bayt", TWEMOJI), _picture("ard", OWN_DRAWING)]
+    credit = exercise_pages.pictures_credit(sets, pictures)
+    assert "https://openmoji.org" in credit and "https://github.com/jdecked/twemoji" in credit
+    counts, shard_counts = {PICTURE: 2, CASE: 1}, {PICTURE: 1, CASE: 1}
+    assert credit in exercise_render.hub_page(BS_EN["bs"], texts, counts, shard_counts, published={"exercises"},
+                                              picture_credit=credit)
+    assert credit in exercise_render.kind_page(PICTURE, BS_EN["en"], texts, counts, shard_counts,
+                                               published={"exercises"}, picture_credit=credit)
+
+
+def test_no_picture_question_no_picture_credit():
+    assert exercise_pages.pictures_credit(ExerciseSets({}), [_picture("jamal", OPENMOJI)]) == ""
+    own_drawing_only = ExerciseSets({PICTURE: (_picture_question("ard"),)})
+    assert exercise_pages.pictures_credit(own_drawing_only, [_picture("ard", OWN_DRAWING)]) == ""
+
+
+def test_a_picture_question_whose_picture_no_source_names_fails_the_build():
+    with pytest.raises(exercise_pages.UncreditedPicture):
+        exercise_pages.pictures_credit(ExerciseSets({PICTURE: (_picture_question("jamal"),)}), [])
 
 
 def test_a_word_page_links_its_exercises_only_when_there_are_some(texts):

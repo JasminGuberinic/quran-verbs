@@ -33,6 +33,9 @@ _CURRENT = ' aria-current="page"'
 VERBS, NOUNS, ADJECTIVES, NUANCES, PARTICLES, PRONOUNS = "verbs", "nouns", "adjectives", "nuances", "particles", "pronouns"
 EXERCISES, ROOTS, SURAHS = "exercises", "roots", "surahs"
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
+# The site has no icon of its own; saying so stops every browser asking the host for /favicon.ico,
+# which is not ours on a project site and answers 404 into the console of every page.
+NO_ICON = '<link rel="icon" href="data:,">'
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
           '&amp;family=Noto+Naskh+Arabic&amp;family=Space+Grotesk:wght@600;700'
@@ -466,6 +469,7 @@ def not_found_page(texts: dict[str, dict], base_path: str) -> str:
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<meta name="robots" content="noindex"><title>{escape(english["notFound"])} · {seo.SITE_NAME}</title>'
+            f'{NO_ICON}'
             f'<link rel="stylesheet" href="{base_path}{STYLESHEET}"></head><body>'
             + untranslated.protect(f'<main class="wrap"><h1>{escape(english["notFound"])}</h1>'
                                    f'<p class="lead" lang="bs">{escape(texts["bs"]["page"]["notFound"])}</p>'
@@ -497,7 +501,7 @@ def _head(*, title: str, description: str, path: str, root: str, indexed_in: Seq
     links = "".join(f'<link rel="alternate" hreflang="{item.hreflang}" href="{item.url}">\n'
                     for item in (alternates(indexed_in) if is_indexed else ()))
     return (f'<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-            f'<title>{escape(title)}</title>\n{"" if is_indexed else _NOT_INDEXED}'
+            f'<title>{escape(title)}</title>\n{NO_ICON}\n{"" if is_indexed else _NOT_INDEXED}'
             + _meta(title=title, description=description, url=url, page_type=page_type)
             + f'<link rel="canonical" href="{url}">\n{links}'
             f'{_FONTS}<link rel="stylesheet" href="{root}{STYLESHEET}">\n'

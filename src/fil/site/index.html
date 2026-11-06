@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fiʿl</title>
+<link rel="icon" href="data:,">
 <!-- pages:head -->
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,7 +219,9 @@ footer p { margin: 0; }
 /* ---- app shell: sticky top bar, verb list beside the card on wide screens ---- */
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
 .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
-.topbar-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 16px; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); flex-wrap: wrap; }
+/* The header is a grid and this bar sits in it with auto margins: without min-width 0 and width 100%
+   it would take the tab strip's whole width and widen a phone's page instead of letting the tabs scroll. */
+.topbar-inner { min-width: 0; width: 100%; max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 16px; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); flex-wrap: wrap; }
 .topbar .brand h1 { font-size: 1.35rem; }
 .topbar nav.tabs { flex: 1 1 420px; min-width: 0; }
 .status { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 20px; align-items: center; }

@@ -509,3 +509,9 @@ def test_the_stored_senses_and_choices_are_valid_and_fresh():
 
 def test_steal_takes_its_irregular_past():
     assert english.cell_gloss(Cell("past", "3MS", False), EnglishVerb.from_meaning("to steal")) == "he/it stole"
+
+
+def test_tear_takes_its_irregular_past_and_participle():
+    verb = EnglishVerb.from_meaning("to tear (lengthwise)")
+    assert english.cell_gloss(Cell("past", "3FS", False), verb) == "she/it tore (lengthwise)"
+    assert english.cell_gloss(Cell("past", "3MS", True), verb) == "he/it was torn (lengthwise)"

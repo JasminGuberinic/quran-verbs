@@ -616,5 +616,117 @@
    "unused": true,
    "why": "تَمَّ 'to be complete' is intransitive and states that something came to its end; its mechanical command اِتْمِمْ is not in use (one says أَتِمَّ, the Form IV 'complete it!')."
   }
+ },
+ "أفل_1": {
+  "imperative:*": {
+   "unused": true,
+   "why": "أَفَلَ 'to set' is said of a star, the moon or the sun going down (6:76–78); no one can be told to set, so its mechanical command اُؤْفُلْ is not in use."
+  }
+ },
+ "نفد_1": {
+  "imperative:*": {
+   "unused": true,
+   "why": "نَفِدَ 'to run out, to be used up' is said of a supply coming to its end (18:109, 16:96); it is not an act, so its mechanical command اِنْفَدْ is not in use."
+  }
+ },
+ "ألم_1": {
+  "imperative:*": {
+   "unused": true,
+   "why": "أَلِمَ 'to feel pain, to suffer' is a state that befalls someone, not an act anyone can be told to do; its mechanical command اِئْلَمْ is not in use."
+  }
+ },
+ "عتب_10": {
+  "past:huwa": {
+   "spellings": [
+    "اِسْتَعْتَبَ"
+   ],
+   "why": "The analyzer has no entry for the Form X اِسْتَعْتَبَ 'to ask to be pardoned, to seek someone's goodwill again' (16:84, 41:24, 45:35); the regular Form X spelling is documented so the gate can confirm it by the table."
+  },
+  "present:huwa": {
+   "spellings": [
+    "يَسْتَعْتِبُ"
+   ],
+   "why": "The analyzer has no entry for the Form X يَسْتَعْتِبُ (cf. the passive يُسْتَعْتَبُونَ, 16:84); the regular spelling is documented so the gate can confirm it by the table."
+  },
+  "present:ana": {
+   "spellings": [
+    "أَسْتَعْتِبُ"
+   ],
+   "why": "The analyzer has no entry for the Form X اِسْتَعْتَبَ; the regular first-person present is documented so the gate can confirm it by the table."
+  },
+  "past:hum": {
+   "spellings": [
+    "اِسْتَعْتَبُوا"
+   ],
+   "why": "The analyzer has no entry for the Form X اِسْتَعْتَبَ; the regular past plural (cf. يَسْتَعْتِبُوا, 41:24) is documented so the gate can confirm it by the table."
+  },
+  "imperative:anta": {
+   "spellings": [
+    "اِسْتَعْتِبْ"
+   ],
+   "why": "The analyzer has no entry for the Form X اِسْتَعْتَبَ; the regular command is documented so the gate can confirm it by the table."
+  }
+ },
+ "عوذ_10": {
+  "imperative:anta": {
+   "spellings": [
+    "اِسْتَعِذْ"
+   ],
+   "why": "The analyzer cannot read the hollow Form X command اِسْتَعِذْ (the Quran's فَٱسْتَعِذْ, 7:200); the standard spelling is documented so the gate can confirm it by the table."
+  }
+ },
+ "غوث_10": {
+  "imperative:anta": {
+   "spellings": [
+    "اِسْتَغِثْ"
+   ],
+   "why": "The analyzer cannot read the hollow Form X command اِسْتَغِثْ of اِسْتَغَاثَ 'to call for help'; the standard spelling is documented so the gate can confirm it by the table."
+  }
+ },
+ "نزغ_1": {
+  "present:huwa": {
+   "spellings": [
+    "يَنْزَغُ"
+   ],
+   "why": "The analyzer cannot read يَنْزَغُ 'he sows discord' (17:53 يَنزَغُ بَيْنَهُمْ); the standard spelling is documented so the gate can confirm it by the table."
+  }
+ },
+ "نحت_1": {
+  "past:ana": {
+   "spellings": [
+    "نَحَتُّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (نَحَتْتُ); the two merge into one doubled ت, written نَحَتُّ in standard spelling (as بَيَّتُّ, أَثْبَتُّ)."
+  },
+  "past:anta": {
+   "spellings": [
+    "نَحَتَّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (نَحَتْتُ); the two merge into one doubled ت, written نَحَتُّ in standard spelling (as بَيَّتُّ, أَثْبَتُّ)."
+  },
+  "past:anti": {
+   "spellings": [
+    "نَحَتِّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (نَحَتْتُ); the two merge into one doubled ت, written نَحَتُّ in standard spelling (as بَيَّتُّ, أَثْبَتُّ)."
+  },
+  "past:antum": {
+   "spellings": [
+    "نَحَتُّمْ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (نَحَتْتُ); the two merge into one doubled ت, written نَحَتُّ in standard spelling (as بَيَّتُّ, أَثْبَتُّ)."
+  },
+  "past:antunna": {
+   "spellings": [
+    "نَحَتُّنَّ"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (نَحَتْتُ); the two merge into one doubled ت, written نَحَتُّ in standard spelling (as بَيَّتُّ, أَثْبَتُّ)."
+  },
+  "past:antuma": {
+   "spellings": [
+    "نَحَتُّمَا"
+   ],
+   "why": "The generator writes the suffix ت after the stem's own ت without assimilating them (نَحَتْتُ); the two merge into one doubled ت, written نَحَتُّ in standard spelling (as بَيَّتُّ, أَثْبَتُّ)."
+  }
  }
 }

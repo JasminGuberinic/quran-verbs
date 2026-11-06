@@ -138,3 +138,8 @@ def test_slept_meets_its_base_form():
 
 def test_stole_meets_its_base_form():
     assert gloss_agrees("he stole", ["steal;rob+he;it_<verb>"]) is True
+
+
+def test_committed_meets_its_base_form():
+    # The doubled final consonant defeats the suffix stemmer ("committ").
+    assert gloss_agrees("they committed", ["commit;perpetrate+they_<verb>"]) is True

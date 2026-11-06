@@ -157,9 +157,54 @@
   "#.ذ.ن": {
     "glosses": [
       "permit",
-      "allow"
+      "allow",
+      "call to prayer",
+      "call the adhan"
     ],
-    "why": "The lexicon glosses adhina as 'authorize; listen' and 'announce'; its noun gloss for the root is 'permission; authorization'. In the Quran adhina li means to permit (9:43, 22:39). Added 2026-11-04."
+    "why": "The lexicon glosses adhina as 'authorize; listen' and 'announce'; its noun gloss for the root is 'permission; authorization'. In the Quran adhina li means to permit (9:43, 22:39). Added 2026-11-04. Form II adhdhana means to call to prayer (give the adhan), its everyday MSA sense (muʾadhdhin); the lexicon has only 'announce; foresee' (cf. 22:27). Added 2026-11-06."
+  },
+  "م.ض.#": {
+    "glosses": [
+      "pass",
+      "go on"
+    ],
+    "why": "The lexicon glosses maḍā as 'elapse; expire', 'continue; proceed' and 'spend'; the common English for time going by (maḍā al-waqt) is 'pass', and the command imḍū is 'go on'. Quranic use: 15:65, 43:8. Added 2026-11-06. CAMeL writes this root (م.ض.ي) as م.ض.#."
+  },
+  "ن.ف.د": {
+    "glosses": [
+      "run out"
+    ],
+    "why": "The lexicon glosses nafida only as 'be depleted; dwindle'; the natural English for supplies ending (nafida al-khubz) is 'run out'. Quranic use: 18:109, 38:54. Added 2026-11-06."
+  },
+  "ن.ق.م": {
+    "glosses": [
+      "resent"
+    ],
+    "why": "The lexicon glosses naqama only as 'take revenge; be hostile'; naqama ʿalā / min also means to resent, to find fault with (5:59, 7:126, 85:8). Added 2026-11-06."
+  },
+  "ن.ز.غ": {
+    "glosses": [
+      "sow discord",
+      "incite"
+    ],
+    "why": "The lexicon knows nazagha only as the noun 'incitement to evil'; the verb nazagha bayna means to sow discord between (12:100, 17:53). Added 2026-11-06."
+  },
+  "spelling:أَلْهِ": {
+    "glosses": [
+      "entertain",
+      "distract",
+      "divert"
+    ],
+    "root": "ل.ه.#",
+    "why": "CAMeL reads the Form IV imperative أَلْهِ (distract! keep amused!, root ل.ه.ي) only as nouns (god, family) or as آلَ 'lead'; it glosses the verb أَلْهَى as 'entertain; delight; distract'. Excepted by this spelling alone. Added 2026-11-06."
+  },
+  "spelling:أَهْلِلْ": {
+    "glosses": [
+      "begin",
+      "appear"
+    ],
+    "root": "ه.ل.ل",
+    "why": "CAMeL reads the Form IV imperative أَهْلِلْ (begin the pilgrimage with the talbiya!, root ه.ل.ل) only as Form II 'I rejoice'; it glosses the verb أَهَلَّ as 'begin; appear'. Excepted by this spelling alone. Added 2026-11-06."
   },
   "ج.#.ب": {
     "glosses": [
@@ -833,9 +878,54 @@
   "ق.ر.ر": {
     "glosses": [
       "delighted",
-      "comforted"
+      "comforted",
+      "acknowledge",
+      "admit"
     ],
-    "why": "The lexicon has قَرَّ only as 'settle down, remain'. The idiom قَرَّ عَيْنًا / قَرَّتْ عَيْنُهُ 'to be delighted, comforted' (lit. 'his eye was cooled'; 20:40 كَيْ تَقَرَّ عَيْنُهَا, 19:26 وَقَرِّي عَيْنًا), the sense this verb teaches, is missing. Added 2026-11-04."
+    "why": "The lexicon has قَرَّ only as 'settle down, remain'. The idiom قَرَّ عَيْنًا / قَرَّتْ عَيْنُهُ 'to be delighted, comforted' (lit. 'his eye was cooled'; 20:40 كَيْ تَقَرَّ عَيْنُهَا, 19:26 وَقَرِّي عَيْنًا), the sense this verb teaches, is missing. Added 2026-11-04. It glosses Form IV أَقَرَّ only as 'ratify; accept', missing أَقَرَّ بِـ 'to acknowledge, to admit' (2:84 ثُمَّ أَقْرَرْتُمْ, 3:81 أَأَقْرَرْتُمْ), the sense that verb teaches. Added 2026-11-06 (verb batch b1)."
+  },
+  "ع.ج.ز": {
+    "glosses": [
+      "frustrate",
+      "baffle",
+      "defeat"
+    ],
+    "why": "The lexicon glosses Form IV أَعْجَزَ only as 'incapacitate; immobilize'. Its sense 'to frustrate, to be beyond someone's power, to baffle' (أَعْجَزَهُ الْأَمْرُ; 8:59 إِنَّهُمْ لَا يُعْجِزُونَ, 'they cannot frustrate'), the sense this verb teaches, is missing. Added 2026-11-06 (verb batch b1)."
+  },
+  "ق.د.د": {
+    "glosses": [
+      "tear",
+      "cut lengthwise"
+    ],
+    "why": "The lexicon glosses the present أَقُدُّ 'cut lengthwise; cut into strips' but reads the past قَدَّ only as nouns (size, codfish) and the particle قَدْ; the verb قَدَّ يَقُدُّ 'to tear, cut lengthwise' (12:25-28 قُدَّ مِنْ قُبُلٍ) is missing in the past. Added 2026-11-06 (verb batch b1)."
+  },
+  "spelling:قَدُّوا": {
+    "glosses": [
+      "tear",
+      "cut lengthwise"
+    ],
+    "root": "ق.د.د",
+    "why": "CAMeL reads قَدُّوا only as قَدَا 'be tasty' (root ق.د.#), missing the past plural of قَدَّ يَقُدُّ 'tear, cut lengthwise' (root ق.د.د), so it is excepted by this spelling alone. Added 2026-11-06 (verb batch b1)."
+  },
+  "غ.ض.ض": {
+    "glosses": [
+      "lower",
+      "overlook"
+    ],
+    "why": "The lexicon glosses يَغُضُّونَ 'lower; overlook' but reads the unassimilated imperative اُغْضُضْ (31:19 وَٱغْضُضْ) only as 'frustrate'; 'lower' is this verb's own sense. Added 2026-11-06 (verb batch b1)."
+  },
+  "ق.ف.#": {
+    "glosses": [
+      "follow up",
+      "send after"
+    ],
+    "why": "The lexicon glosses Form II قَفَّى only as 'send; rhyme'. Its sense 'to send after, to follow up' (قَفَّى عَلَى أَثَرِهِ; 2:87 وَقَفَّيْنَا مِنْ بَعْدِهِ بِالرُّسُلِ), the sense this verb teaches, is missing. CAMeL writes this root (ق.ف.و) as ق.ف.#. Added 2026-11-06 (verb batch b1)."
+  },
+  "ق.د.م": {
+    "glosses": [
+      "bring in"
+    ],
+    "why": "The lexicon glosses Form X اِسْتَقْدَمَ 'invite; summon'; its everyday MSA sense 'to bring in, to send for' (اِسْتَقْدَمَ خَبِيرًا 'brought in an expert'; اِسْتِقْدَامُ الْعُمَّالِ) is missing. Added 2026-11-06 (verb batch b1)."
   },
   "spelling:أَفْتِ": {
     "glosses": [

@@ -70,8 +70,8 @@ passive cells). Shards grow until no file is far over budget (a heavy word gets 
 picture 98 · listen 1,100 (600 nouns + 500 verbs) · case 2,382 · preposition 291 · agreement 303 · nuance 699 (105 groups) ·
 particle 98. Ayat whose note names another reading are left out (80:4, 2:254 for particles).
 
-Verb forms: form-meaning 1,249 (190 verbs) · meaning-form 1,604 (271 verbs) · quran-form 3,633 (375 verbs; polysemous verbs asked place by place). Fewer verbs
-than 500 because a cell is asked only with a composed meaning (the Bosnian paradigms hold the cells the Quran uses).
+Verb forms (600 verbs studied): form-meaning 1,254 (192 verbs) · meaning-form 1,643 (284 verbs) · quran-form 3,680 (391 verbs; polysemous verbs asked place by place). Fewer verbs
+than 600 because a cell is asked only with a composed meaning (the Bosnian paradigms hold the cells the Quran uses).
 
 ## Next
 - Verb forms: more Bosnian paradigm cells (fil compose sheets) → more verbs asked; the app's "Ajet" and "Rečenica" kinds.

@@ -92,13 +92,13 @@ _IRREGULAR = {
     "broke": "break", "broken": "break", "overcame": "overcome",
     "fled": "flee", "rose": "rise", "risen": "rise",
     "drove": "drive", "driven": "drive",
-    "bore": "bear", "borne": "bear", "caught": "catch", "lent": "lend", "slept": "sleep", "stole": "steal", "stolen": "steal",
+    "bore": "bear", "borne": "bear", "caught": "catch", "lent": "lend", "slept": "sleep", "stole": "steal", "stolen": "steal", "tore": "tear", "torn": "tear",
     "lied": "lie",  # too short for the suffix rules, so it would stay "lied"
     # Regular, but the doubled final consonant defeats the suffix stemmer ("preferr").
     "preferred": "prefer", "preferring": "prefer", "stopped": "stop", "stopping": "stop",
     "incurred": "incur", "incurring": "incur",
     "excelled": "excel", "excelling": "excel",
-    "sinned": "sin", "sinning": "sin", "regretted": "regret", "regretting": "regret",
+    "sinned": "sin", "sinning": "sin", "committed": "commit", "committing": "commit", "regretted": "regret", "regretting": "regret",
 }
 
 _SUFFIXES = ("ing", "es", "ed", "s")

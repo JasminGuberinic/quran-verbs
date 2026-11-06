@@ -41,7 +41,7 @@ IRREGULAR = {
     "undo": ("undid", "undone"), "foresee": ("foresaw", "foreseen"), "befall": ("befell", "befallen"),
     "outrun": ("outran", "outrun"), "burn": ("burned", "burned"), "lie": ("lied", "lied"),
     "draw": ("drew", "drawn"), "overtake": ("overtook", "overtaken"), "split": ("split", "split"),
-    "weep": ("wept", "wept"), "steal": ("stole", "stolen"), "hamstring": ("hamstrung", "hamstrung"), "breast-feed": ("breast-fed", "breast-fed"),
+    "weep": ("wept", "wept"), "steal": ("stole", "stolen"), "tear": ("tore", "torn"), "hamstring": ("hamstrung", "hamstrung"), "breast-feed": ("breast-fed", "breast-fed"),
 }
 # Regular, but the final consonant doubles before "-ed" (stress on the last syllable; British "travelled").
 _DOUBLING = frozenset("admit commit compel fulfil permit plot prefer stir stop submit worship travel "

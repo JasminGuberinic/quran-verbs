@@ -1,6 +1,6 @@
 ---
 name: fil-batch
-description: Add the next batch of 25 verbs to the Fiʿl study site, token-efficiently. Use when the user says "/fil-batch 26-50", "next batch", "dodaj još glagola", or asks to add verbs to the site.
+description: Add the next batch of verbs (25–50) to the Fiʿl study site, token-efficiently. Use when the user says "/fil-batch 26-50", "next batch", "dodaj još glagola", or asks to add verbs to the site.
 ---
 
 # Add a batch of verbs (Arabic + English + Bosnian)
@@ -14,7 +14,7 @@ the compact files and read only what a step needs.
 - Use `.venv/bin/fil batch …` only. It prints failures and one-line summaries; never `cat` large files.
 - Only **bs + en** in a batch. The other 14 languages fall back to English until a bulk
   translation pass (see "Later" below).
-- Don't make product decisions alone; ask the user (in Bosnian, briefly).
+- Never ask the owner linguistic questions: decide by the references and write the reason down (in the commit and the data `why`).
 - Commit when the batch is done, then `git push` (branch study-site only; never main).
 - Licence: Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation. Any ayah a text quotes follows fil.ayah_quotes (double marks = ayah quote, named ayah).
 
@@ -92,6 +92,40 @@ and the site says reviews are by AI. Never park a job "for a human".
   paradigms` → `fil compose build`. A form in one sense gets that gloss; in several, its row lists them ("he/it
   decreed; he/it fulfilled") and each place shows its own (`data/composed_ayah_glosses.json`). A choice whose
   form or place is gone fails the build.
+
+## Batches of 50 (verbs 500–601, 2026-11-06): what worked
+600 verbs are on the site; ranks past 600 occur 3 times each. One agent ran two batches of 50, one commit each.
+- **Worktree:** symlink `data/{qac,quranhive,translations}` and `build/{speech,recitation,compressed}-cache` to the
+  main repo, copy `build/nouns/*.tsv`; scratch scripts in `build/scratch/` (a `fil.sh` that runs
+  `PYTHONPATH=src …/.venv/bin/python -m fil.cli "$@"` keeps commands plain for the sandbox). Never commit the
+  symlinks (`git add -u`) or `data/page_versions.json` (`fil pages` rewrites it; the coordinator owns it).
+- **Before `plan`:** print each rank's lemma, generatability and key cells; fix every lemma the citation-form test
+  would refuse (`_LEMMA_CORRECTIONS` + golden test), record present vowels for NOGEN Form I verbs
+  (`data/present_vowels.json` + golden test), mark commands of state/event verbs unused (ثَقُلَ, تَمَّ, أَفَلَ,
+  نَفِدَ, أَلِمَ). A plan row whose form column is `-` has no analyzable spelling: document one in
+  `conjugation_overrides.json` (hollow Form X commands اِسْتَعِذْ, اِسْتَغِثْ; unknown verbs like اِسْتَعْتَبَ) or park it.
+  The generator does not assimilate a stem-final ت before the suffix ت (نَحَتْتُ): document نَحَتُّ… per cell.
+- **Hold back** a verb with no past or present to head a card (هَاتِ, imperative only): park its job with the reason,
+  write no meaning, and take the next rank instead.
+- **Meanings are composition input:** the first sense's head is conjugated and its rest follows the object —
+  "to reflect on" (→ "reflect on it"), "to pierce, to make a hole in", "to afflict (with)"; never "to make a hole"
+  (→ "made it a hole") or a comma inside brackets ("(the gaze, the voice)" splits). When the sentences use another
+  real MSA sense (صَلَّبَ harden, خَرَقَ breach), add it after ";" so card and sentences agree.
+- **Drafting:** two parallel agents (25 verbs each) with `build/scratch/drafting-brief.md`; they run only `check`
+  and add documented exceptions with small Edit insertions; the caller runs `draft`, parks, exports. ~100k tokens
+  each, 95–100% of lines pass the reviewer first time. Gate traps: a sukun-final command before a linking kasra
+  + الْ is refused (give it an object without الْ); every word's gloss must be a CAMeL gloss (أَرْبَاح = revenues,
+  أَحَدًا = someone); doubled-consonant pasts need `glosses._IRREGULAR` (committed, sinned).
+- **Reviewer refusals** were forced collocations (سَامَ ثَمَنًا, يُحِقُّ الْعَدْلَ, أَثْقُلُ بَعْدَ الْغَدَاءِ) and gloss/sentence
+  mismatches; a form whose only natural use is the Quran's own phrase (أَحَقَّ الْحَقَّ, يُبْدِئُ وَيُعِيدُ) is parked.
+- **Composed glosses:** `fil compose sheets` → fill the Bosnian cells (literal, not one ayah's sense) → `paradigms`
+  → `build`; export every place of the new verbs with its ayah and Pickthall (scratch `review_composed.py`) for one
+  agent with `build/scratch/composed-review-brief.md`; apply its `form`/`place` rows, and fix a mis-tag at the
+  source (59:9 تَبَوَّءُو past, 21:45 يُنذَرُونَ Form IV). An agent's hand-typed key differs in mark order from the
+  generated one and is refused as stale: re-key by NFC against the candidates before `build`. ~25–35% of the new
+  forms needed a correction (referents: it/him, Bosnian gender of the noun; senses: رَغِبَ عَنْ, جَاوَزْنَا بِـ).
+- **Other languages:** en + bs only. `fil pages` prints "Indexable verb pages"; the six translated languages must
+  stay at the old count (FOCUS_ONLY keeps en/bs-only glosses from blocking them).
 
 ## Later: the other 14 languages (several batches at once)
 Build a translation memory (each unique word glossed once per language), export compact

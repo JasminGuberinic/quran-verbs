@@ -31,6 +31,7 @@ _NUMBERS = {SINGULAR: bosnian_nouns.SINGULAR, PLURAL: bosnian_nouns.PLURAL}
 class AdjectiveGlossing:
     en: str          # "painful" — the first English sense
     bs_long: str     # "bolni" — the long masculine nominative
+    bs_short: str    # "bolan" — the short form, for an indefinite masculine singular
 
 
 def compose(occurrences: Sequence[NounOccurrence], adjective: AdjectiveGlossing) -> Composed | Skipped:
@@ -51,6 +52,7 @@ def _composed(occurrence: NounOccurrence, adjective: AdjectiveGlossing) -> Compo
     if others:
         raise BeyondTheRules(f"proclitic {others[0]}")
     conjunction = next((_CONJUNCTIONS[name] for name in parts.proclitics if name in _CONJUNCTIONS), (None, None))
-    bosnian_word = bosnian.attribute(adjective.bs_long, _GENDERS[occurrence.gender], _NUMBERS[occurrence.number])
+    bosnian_word = bosnian.attribute(adjective.bs_long, _GENDERS[occurrence.gender], _NUMBERS[occurrence.number],
+                                     short_form=adjective.bs_short, is_definite=occurrence.state == DEFINITE)
     return Composed(english.phrase(adjective.en, occurrence.state == DEFINITE, conjunction[0]),
                     " ".join(word for word in (conjunction[1], bosnian_word) if word), bosnian_nouns.NOMINATIVE)

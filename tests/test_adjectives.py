@@ -96,6 +96,14 @@ def test_only_a_masculine_singular_predicate_takes_the_short_form():
     assert bosnian.predicate("veliki", "velik", "m", "pl") == "veliki"
 
 
+def test_an_indefinite_masculine_singular_attribute_takes_the_short_form() -> None:
+    assert bosnian.attribute("jasni", "m", "sg", "N", short_form="jasan", is_definite=False) == "jasan"
+    assert bosnian.attribute("jasni", "m", "sg", "N", short_form="jasan", is_definite=True) == "jasni"
+    assert bosnian.attribute("jasni", "f", "sg", "N", short_form="jasan", is_definite=False) == "jasna"
+    assert bosnian.attribute("jasni", "m", "sg", "G", short_form="jasan", is_definite=False) == "jasnog"
+    assert bosnian.attribute("jasni", "m", "pl", "N", short_form="jasan", is_definite=False) == "jasni"
+
+
 def test_a_bosnian_long_form_must_be_one_word_in_i():
     with pytest.raises(bosnian.InvalidBosnianAdjective):
         bosnian.validated_long_form("velik")
@@ -251,11 +259,11 @@ def occurrence(gender: str, number: str, state: str, case: str, proclitics=(), p
     return NounOccurrence(1, 1, 1, "x", "x", "أَلِيم", "ألم", ADJECTIVE, gender, number, case, state, None, parts)
 
 
-PAINFUL = AdjectiveGlossing("painful", "bolni")
+PAINFUL = AdjectiveGlossing("painful", "bolni", "bolan")
 
 
 def test_a_quranic_form_is_glossed_in_its_gender_and_number():
-    assert compose([occurrence(MASCULINE, SINGULAR, INDEFINITE, ACCUSATIVE)], PAINFUL) == Composed("painful", "bolni", "N")
+    assert compose([occurrence(MASCULINE, SINGULAR, INDEFINITE, ACCUSATIVE)], PAINFUL) == Composed("painful", "bolan", "N")
     assert compose([occurrence(FEMININE, SINGULAR, DEFINITE, GENITIVE, ("and",))], PAINFUL) == \
         Composed("and the painful", "i bolna", "N")
 

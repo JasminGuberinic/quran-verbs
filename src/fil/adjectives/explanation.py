@@ -83,7 +83,8 @@ def _attribute(kind: str, meaning: AdjectiveMeaning, table: AdjectiveTable, noun
     if not (noun_text and adjective_text and bosnian_noun):
         return None
     word, bosnian_gender = bosnian_noun
-    adjective_bs = bosnian.attribute(meaning.bs_long, bosnian_gender, _BOSNIAN_NUMBERS[number])
+    adjective_bs = bosnian.attribute(meaning.bs_long, bosnian_gender, _BOSNIAN_NUMBERS[number],
+                                     short_form=meaning.bs_short, is_definite=state == DEFINITE)
     return AgreementExample(kind, f"{noun_text} {adjective_text}",
                             english.attribute(meaning.en_first, noun.english, number, state == DEFINITE),
                             f"{adjective_bs} {word}")

@@ -97,7 +97,7 @@ class AdjectiveCardBuilder(NounCardBuilder):
         # a noun's glossing and case-table explanation have no meaning here.
         self.lemma, self.meaning, self.adjective_table, self.sound, self.ayat = lemma, meaning, table, sound, ayat
         self.occurrences = occurrences
-        self.glossing = composing.AdjectiveGlossing(meaning.en_first, meaning.bs_long)
+        self.glossing = composing.AdjectiveGlossing(meaning.en_first, meaning.bs_long, meaning.bs_short)
         self.forms = quran_forms(occurrences)
         self.unvoiced: list[str] = []
 

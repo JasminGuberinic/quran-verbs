@@ -4,8 +4,10 @@ Unlike the nouns, Bosnian adjectives decline regularly from their long masculine
 ("veliki"): the ending follows the gender, number and case of the noun they agree with —
 the gender of the *Bosnian* noun, which is not always the Arabic one (شَجَرَة is feminine,
 "drvo" neuter). A soft stem (č, ć, š, ž, đ, j, lj, nj, c) takes -e- where a hard one takes -o-
-("vrućeg", "vrućem"). Only a masculine singular predicate takes the short form ("grad je
-velik"), which is stored with the adjective; every other predicate equals the long form.
+("vrućeg", "vrućem"). The short form, stored with the adjective, is used where Bosnian keeps it
+alive: a masculine singular predicate ("grad je velik") and an indefinite masculine singular
+attribute in the nominative ("jasan govor" for كَلَامٌ مُبِينٌ, as Korkut's "Knjiga jasna"); the
+definite "jasni govor" and every other cell take the long form.
 
 Comparatives decline the same way from their masculine ("veći" → "veća", "veće").
 
@@ -58,9 +60,16 @@ def declined(long_form: str, gender: str, number: str, case: str) -> str:
     return stem + endings[CASES.index(case)]
 
 
-def attribute(long_form: str, gender: str, number: str, case: str = NOMINATIVE) -> str:
-    """"velika" in "velika kuća"."""
+def attribute(long_form: str, gender: str, number: str, case: str = NOMINATIVE,
+              short_form: str = "", is_definite: bool = True) -> str:
+    """"velika" in "velika kuća"; "velik" in the indefinite "velik grad" when the short form is given."""
+    if short_form and not is_definite and _takes_short_form(gender, number, case):
+        return short_form
     return declined(long_form, gender, number, case)
+
+
+def _takes_short_form(gender: str, number: str, case: str) -> bool:
+    return number == SINGULAR and case == NOMINATIVE and gender in (MASCULINE, MASCULINE_ANIMATE)
 
 
 def predicate(long_form: str, short_form: str, gender: str, number: str) -> str:

@@ -565,3 +565,10 @@ def test_every_active_language_names_the_moods_and_the_links_in_its_own_words():
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not installed")
 def test_the_interface_speaks_exactly_the_offered_languages():
     assert set(interface_text.load()) == set(CODES)
+
+
+def test_the_app_page_is_described_in_the_language_it_declares() -> None:
+    from fil.stages.pages import _page_language
+    assert _page_language('<!doctype html><html lang="bs" dir="ltr">') == "bs"
+    with pytest.raises(ValueError):
+        _page_language("<html>")

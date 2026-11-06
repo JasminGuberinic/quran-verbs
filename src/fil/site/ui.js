@@ -180,14 +180,14 @@
   const PAGE = {
     bs: {
       indexTitle: "Glagoli Kur'ana — nauči najčešće glagole Kur'ana",
-      indexIntro: "Svaki glagol s cijelom konjugacijom, ajetima u kojima se javlja, s prijevodom, i rečenicama za vježbu — sve sa zvukom. Besplatno.",
+      indexIntro: "Glagoli, imenice, pridjevi, čestice, nijanse značenja, korijeni i rječnik svake sure iz Kur'ana — s ajetima, prijevodom, vježbama i zvukom. Besplatno.",
       verbTitle: (l, m) => `${l} – ${m} · glagol u Kur'anu`,
       verbDescription: (l, m, n) => `Kur'anski glagol ${l} (${m}): ${n}× u Kur'anu. Konjugacija sa zvukom, primjeri ajeta s prijevodom i rečenice za vježbu.`,
       openInApp: "Vježbaj ovaj glagol u aplikaciji", allVerbs: "Svi glagoli", nav: "Glagoli", notFound: "Stranica nije pronađena.",
     },
     en: {
       indexTitle: "Verbs of the Quran — learn the Quran's most frequent verbs",
-      indexIntro: "Every verb with its full conjugation, the ayat it occurs in with translation, and practice sentences — all with audio. Free.",
+      indexIntro: "The Quran's verbs, nouns, adjectives, particles, near-synonyms, roots and every surah's vocabulary — with ayat, translation, exercises and audio. Free.",
       verbTitle: (l, m) => `${l} – ${m} · Quranic Arabic verb`,
       verbDescription: (l, m, n) => `The Quranic Arabic verb ${l} (${m}): ${n}× in the Quran. Conjugation with audio, example ayat with translation, and practice sentences.`,
       openInApp: "Practice this verb in the app", allVerbs: "All verbs", nav: "Verbs", notFound: "Page not found.",

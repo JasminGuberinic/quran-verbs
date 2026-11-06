@@ -241,9 +241,17 @@ def page_paths(verbs: Iterable[PublishedVerb]) -> list[str]:
 def _write_app_page(pages: Path, texts: dict[str, dict]) -> None:
     page = pages / "index.html"
     html = page.read_text(encoding="utf-8")
-    html = _replace_once(html, "<!-- pages:head -->", render.app_head(texts[seo.DEFAULT_LANGUAGE]))
+    html = _replace_once(html, "<!-- pages:head -->", render.app_head(texts[_page_language(html)]))
     html = _replace_once(html, "<!-- pages:links -->", render.app_links(texts))
     page.write_text(html, encoding="utf-8")
+
+
+def _page_language(html: str) -> str:
+    """The language the app page declares on <html lang>; its description must be written in it."""
+    found = re.search(r'<html[^>]*\blang="([a-z]{2})"', html)
+    if found is None:
+        raise ValueError("site/index.html must declare <html lang>")
+    return found.group(1)
 
 
 def _replace_once(html: str, marker: str, replacement: str) -> str:

@@ -441,7 +441,7 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
 # ---------- the app's root page and the 404 ----------
 
 def app_head(text: dict) -> str:
-    """What the app's own page tells search engines and link previews (it is in English)."""
+    """What the app's own page tells search engines and link previews, in the page's own language."""
     page = text["page"]
     return _meta(title=f'{seo.SITE_NAME} — {page["indexTitle"]}', description=page["indexIntro"],
                  url=seo.SITE_URL, page_type="website") + f'<link rel="canonical" href="{seo.SITE_URL}">\n'

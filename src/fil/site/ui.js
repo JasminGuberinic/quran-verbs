@@ -535,6 +535,8 @@
         emphasis: "naglašavanje", equalization: "izjednačavanje", vocative: "dozivanje", retraction: "ispravka (iḍrāb)",
         amendment: "ograda (istidrāk)", inceptive: "početak nove rečenice", future: "budućnost", exhortation: "podsticanje",
         detail: "raščlanjivanje", attention: "skretanje pažnje", aversion: "odvraćanje", answer: "odgovor", accompaniment: "pratnja",
+        defectiveVerb: "nepotpuni glagol (iz porodice كَانَ)", quantity: "količina („koliko li…“)", alternative: "izbor (ili… ili)",
+        personalPronoun: "lična zamjenica", objectPronoun: "odvojena zamjenica objekta", demonstrative: "pokazna zamjenica",
       },
       effects: {
         NOM: "Riječ iza je u nominativu.", ACC: "Riječ iza je u akuzativu.", GEN: "Imenica iza je u genitivu.",
@@ -564,6 +566,8 @@
         emphasis: "emphasis", equalization: "equalization", vocative: "vocative", retraction: "correction (iḍrāb)",
         amendment: "qualification (istidrāk)", inceptive: "opening a new sentence", future: "future", exhortation: "urging",
         detail: "setting out", attention: "drawing attention", aversion: "deterring", answer: "answer", accompaniment: "accompaniment",
+        defectiveVerb: "defective verb (of the كَانَ family)", quantity: "quantity (“how many a…”)", alternative: "alternative (either… or)",
+        personalPronoun: "personal pronoun", objectPronoun: "detached object pronoun", demonstrative: "demonstrative",
       },
       effects: {
         NOM: "The word after it is nominative.", ACC: "The word after it is accusative.", GEN: "The noun after it is genitive.",
@@ -573,8 +577,30 @@
       sourcesNote: "The explanations are in our own words, following the classical grammar named here; where grammarians differ, a view is attributed to its author. Counts and the tags of each use are from the Quranic Arabic Corpus: a use's count is how often the corpus tags it so.",
     },
   };
+  // The pronouns (fil.pages.particle_render, PRONOUNS): the particle pages' shape and words, their own titles.
+  const PRONOUN_PAGE = {
+    bs: {
+      ...PARTICLE_PAGE.bs,
+      nav: "Zamjenice", indexTitle: "Zamjenice: on, ovo, onaj koji…",
+      indexIntro: "Lične, pokazne i odnosne zamjenice Kur'ana: na koga ili šta upućuju, kako se slažu s riječju na koju se odnose i ajeti koji to pokazuju.",
+      title: (arabic, meaning) => `${arabic} (${meaning}) · zamjenice u Kur'anu`,
+      description: (arabic, meaning) => `${arabic} – ${meaning}: na koga upućuje, kako se koristi i ajeti za svaku upotrebu, s izgovorom.`,
+      whatItDoes: "Šta je i na šta upućuje",
+      sourcesNote: "Objašnjenja su napisana našim riječima prema klasičnoj gramatici navedenoj ovdje. Brojevi su iz Quranic Arabic Corpusa: koliko puta korpus bilježi zamjenicu kao samostalnu riječ (ne kao nastavak).",
+    },
+    en: {
+      ...PARTICLE_PAGE.en,
+      nav: "Pronouns", indexTitle: "Pronouns: he, this, the one who…",
+      indexIntro: "The personal, demonstrative and relative pronouns of the Quran: whom or what they point to, how they agree with the word they stand for, and the ayat that show it.",
+      title: (arabic, meaning) => `${arabic} (${meaning}) · pronouns in the Quran`,
+      description: (arabic, meaning) => `${arabic} – ${meaning}: whom it points to, how it is used, and ayat for each use, with audio.`,
+      whatItDoes: "What it is and what it points to",
+      sourcesNote: "The explanations are in our own words, following the classical grammar named here. Counts are from the Quranic Arabic Corpus: how often it files the pronoun as a word of its own (not as a suffix).",
+    },
+  };
   for (const code of Object.keys(UI)) {
     UI[code].particlePage = PARTICLE_PAGE[code] || PARTICLE_PAGE.en;
+    UI[code].pronounPage = PRONOUN_PAGE[code] || PRONOUN_PAGE.en;
     UI[code].page = PAGE[code];
     UI[code].nounPage = NOUN_PAGE[code] || NOUN_PAGE.en;
     UI[code].adjectivePage = ADJECTIVE_PAGE[code] || ADJECTIVE_PAGE.en;

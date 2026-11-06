@@ -89,6 +89,33 @@ Basrans against al-Kisāʾī on كَلَّا; qirāʾāt at 20:63, 86:4 and 2:25
 where they are named (the school attributions were later re-checked against the Muġnī and al-Inṣāf dropped — see
 "Verifying attributions"). 13 new kinds (emphasis, vocative, future, answer, …), each named in bs and en.
 
-Still held back: the article ال; the corpus's DIST lām, ATT hā (هَٰذَا) and EMPH nūn (parts of other words); كَيْفَ,
-لَيْسَ, إِيَّا (the reader takes only rootless function nouns and particles); إِمَّا, كَأَنْ, أَيَّانَ, مَاذَا, كَمْ, مَهْمَا, إِي; links
-to verb-mood sections (the verb pages have none yet).
+## Batch 3 (12 particles, 64 in all) and the pronouns (Zamjenice, 17)
+- Reader: `fil.corpus.particles` also reads three function words by name (`NAMED_FUNCTION_WORDS`): كَيْفَ (a rooted noun),
+  كَمْ (sometimes untagged) and لَيْسَ (a verb). Where the corpus gives no tag of use the occurrence is filed under its part of
+  speech: كَيْفَ `N` (the indirect "see how…" and كَيْفَ يَشَآءُ), كَمْ `N` (the كَمْ of report), لَيْسَ `V|FAM:كَان`. لَيْسَ keeps its
+  type on the page: kind `defectiveVerb` ("nepotpuni glagol (iz porodice كَانَ)"), and Ibn Hišām's proof that it is a verb.
+- Particles added: كَيْفَ · لَيْسَ · إِمَّا · كَأَنْ · أَيَّانَ · مَاذَا · كَمْ · مَهْمَا · إِي · تَـ (oath) · ٱللَّهُمَّ (the vocative mīm) · هُنَالِكَ, and
+  the أَلَا of offer as a use of أَ (the corpus files it as hamza + لَا; Ibn Hišām's fifth meaning of أَلَا). New kinds:
+  defectiveVerb, quantity, alternative. 142 uses, 265 cited ayat.
+- Pronouns: a section of their own, "Zamjenice / Pronouns" (`/bs/zamjenica/`, `/en/pronoun/`, top bar, app link, sitemap),
+  built by the same engine: `fil.corpus.pronouns` names each independent pronoun by its citation form (the corpus gives the
+  personal pronouns no lemma, every demonstrative ذا and every relative الَّذِي): person-gender-number → هُوَ…نَحْنُ; ذا + the
+  هَا of attention → near (هَٰذَا، هَٰذِهِ، هَٰؤُلَاءِ), + the كَ of address → far (ذَٰلِكَ، تِلْكَ، أُولَٰئِكَ); الَّذِي by gender and number;
+  إِيَّا keeps its lemma. A pronoun after a preposition (لَهُمْ) or a suffix is not read. Data `data/pronouns.json`, same schema
+  and gate; `fil pronouns frequency|find|check|review-export`. The section is a `WordSection` (fil.pages.particle_render) and a
+  `WordList` (fil.stages.particles); ui.js `pronounPage` spreads `particlePage` and overrides its titles. New kinds:
+  personalPronoun, objectPronoun, demonstrative. Pages: هُوَ · هِيَ · هُمْ · أَنْتَ · أَنْتُمْ · أَنَا · نَحْنُ · إِيَّا · هَٰذَا · ذَٰلِكَ · هَٰذِهِ ·
+  تِلْكَ · هَٰؤُلَاءِ · أُولَٰئِكَ · الَّذِي · الَّتِي · الَّذِينَ — 23 uses, 49 cited ayat; the pronoun of separation (Muġnī, chapter 4) on
+  هُوَ/هُمْ/أَنْتَ/أَنَا/نَحْنُ with Ibn Hišām's own examples (2:5, 37:165, 5:117, 18:39).
+- Verified against the Muġnī: كيف, ليس, إما, كم, مهما, إي, التاء, ألا (5th), the ماذا فصل (in ما), ها, the non-governing كاف (ذلك،
+  إياك) and ضمير الفصل; against al-Kitāb: أيان = متى (Sībawayh), اللهم (Sībawayh: يا dropped, the mīm in its place; al-Ḫalīl: the
+  mīm at the end is يا at the beginning; 39:46 فاطر "على يا"). No Muġnī entry for أيان, the lightened كأن or the mīm of اللهم: those
+  pages attribute only what al-Kitāb says or nothing.
+- Blind review (two Sonnet reviewers, particles and pronouns): no grammar errors; flags were translation drift (tenses, Korkut
+  wording), overstatements (the article rule after هَٰذَا – 52:14 هَٰذِهِ ٱلنَّارُ ٱلَّتِى is "this is the Fire which"; أَنْتَ "addressed
+  only to the Prophet"; "the answer is بَلَى"; "only with Allah's name, rarely…") and two wrong notes (89:8 ٱلَّتِى is Iram; 95:3
+  هَٰذَا is only in the place of the genitive). All applied.
+
+Still held back: the article ال; the corpus's DIST lām, ATT hā and EMPH nūn (parts of other words); the pronouns هُنَّ (7),
+هُمَا, أَنْتُمَا, أَنْتِ, the relatives اللَّاتِي/اللَّذَانِ and مَن ذَا's ذَا (small, or not one form); لِكَيْلَا (NEG/SUB drift); إِنْ like لَيْسَ
+(4:159 is tagged so but reads as plain negation); links to verb-mood sections (the verb pages have none yet).

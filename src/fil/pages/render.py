@@ -29,7 +29,8 @@ STYLESHEET = "pages.css"
 _ENGLISH = "en"
 _ENGLISH_STOP = "Stop"   # the label of a playing button in a language that has no word for it yet
 _CURRENT = ' aria-current="page"'
-VERBS, NOUNS, ADJECTIVES, NUANCES, PARTICLES = "verbs", "nouns", "adjectives", "nuances", "particles"   # the sections of the site
+# the sections of the site
+VERBS, NOUNS, ADJECTIVES, NUANCES, PARTICLES, PRONOUNS = "verbs", "nouns", "adjectives", "nuances", "particles", "pronouns"
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
@@ -491,7 +492,7 @@ def _meta(*, title: str, description: str, url: str, page_type: str) -> str:
 def top_bar(text: dict, root: str, language: Language, switcher: str, *, section: str,
             is_section_list: bool = False, published: Collection[str] = frozenset()) -> str:
     """The one top bar of every static page: the brand, the site's sections (verbs, then the
-    `published` ones of nouns, adjectives, nuances, particles) with the current one marked, and the
+    `published` ones of nouns, adjectives, nuances, particles, pronouns) with the current one marked, and the
     language switcher. A section appears only in the languages it is written in, so no link leads
     to a missing page."""
     sections = [(VERBS, seo.language_index_path(language.code), text["page"]["nav"]),
@@ -510,7 +511,8 @@ def top_bar(text: dict, root: str, language: Language, switcher: str, *, section
 _SECTIONS = ((NOUNS, seo.NOUN_FOLDERS, seo.noun_index_path, "nounPage"),
              (ADJECTIVES, seo.ADJECTIVE_FOLDERS, seo.adjective_index_path, "adjectivePage"),
              (NUANCES, seo.NUANCE_FOLDERS, seo.nuance_index_path, "nuancePage"),
-             (PARTICLES, seo.PARTICLE_FOLDERS, seo.particle_index_path, "particlePage"))
+             (PARTICLES, seo.PARTICLE_FOLDERS, seo.particle_index_path, "particlePage"),
+             (PRONOUNS, seo.PRONOUN_FOLDERS, seo.pronoun_index_path, "pronounPage"))
 
 
 def _section_mark(is_current: bool, is_section_list: bool) -> str:

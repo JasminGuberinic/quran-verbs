@@ -115,6 +115,24 @@ def particle_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(PARTICLE_FOLDERS))
 
 
+# The pronoun pages likewise (Bosnian and English only, for now): built by the particle engine.
+PRONOUN_FOLDERS = {"bs": "zamjenica", "en": "pronoun"}
+
+
+def pronoun_index_path(language: str) -> str:
+    return f"{language}/{PRONOUN_FOLDERS[language]}/"
+
+
+def pronoun_path(language: str, slug: str) -> str:
+    return f"{pronoun_index_path(language)}{slug}/"
+
+
+def pronoun_alternates(slug: str | None) -> list[Alternate]:
+    """A pronoun's page (or, with no slug, the list of pronouns) in each language it is built in."""
+    path_in = (lambda language: pronoun_path(language, slug)) if slug else pronoun_index_path
+    return _alternates(path_in, tuple(PRONOUN_FOLDERS))
+
+
 def to_root(path: str) -> str:
     """The relative way back to the site root from a page at `path`."""
     return "../" * path.count("/")
@@ -190,11 +208,11 @@ def nuance_structured_data(*, title: str, description: str, language: str, path:
                                        resource_type="vocabulary")
 
 
-def particle_structured_data(*, title: str, description: str, language: str, path: str, index_title: str) -> str:
-    """schema.org: a free learning resource on one particle's grammar, in the list of particles."""
+def grammar_structured_data(*, title: str, description: str, language: str, path: str, index_title: str,
+                            index_path: str) -> str:
+    """schema.org: a free learning resource on one small word's grammar (a particle, a pronoun), in its list."""
     return listed_page_structured_data(title=title, description=description, language=language, path=path,
-                                       index_title=index_title, index_path=particle_index_path(language),
-                                       resource_type="grammar")
+                                       index_title=index_title, index_path=index_path, resource_type="grammar")
 
 
 def listed_page_structured_data(*, title: str, description: str, language: str, path: str, index_title: str,

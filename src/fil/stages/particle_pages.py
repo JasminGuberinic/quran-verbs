@@ -1,10 +1,11 @@
-"""Write the particle pages of the public site (part of `fil pages`).
+"""Write the particle pages of the public site (part of `fil pages`), and the pronoun pages alike.
 
     bs/cestica/index.html, en/particle/index.html     the particles, most frequent first
     bs/cestica/<slug>/, en/particle/<slug>/           one particle: what it does, its uses, their ayat
+    bs/zamjenica/, en/pronoun/  (and <slug>/)         the pronouns, built the same way (PRONOUNS)
 
 Bosnian and English only for now (docs/PARTICLES-PLAN.md): both are indexed and in the sitemap.
-The list sits in the particle folder itself, as the nouns' and adjectives' lists do.
+The list sits in the section's folder itself, as the nouns' and adjectives' lists do.
 """
 
 from __future__ import annotations
@@ -13,38 +14,41 @@ from collections.abc import Collection, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
-from fil.pages import particle_render, seo
+from fil.pages import particle_render
+from fil.pages.particle_render import PARTICLES, WordSection
 
 
-def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published: Collection[str]) -> list[Path]:
-    """Every particle page and the list of particles; the pages written."""
+def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published: Collection[str],
+          section: WordSection = PARTICLES) -> list[Path]:
+    """Every page of the section and its list; the pages written."""
     if not cards:
         return []
     written = []
-    for language in _languages():
+    for language in _languages(section):
         text = texts[language.code]
-        written.append(_write(pages, seo.particle_index_path(language.code),
-                              particle_render.particle_index(cards, language, text, published=published)))
-        written += [_write(pages, seo.particle_path(language.code, card["slug"]),
-                           particle_render.particle_page(card, language, text, published=published))
+        written.append(_write(pages, section.index_path(language.code),
+                              particle_render.particle_index(cards, language, text, published=published,
+                                                             section=section)))
+        written += [_write(pages, section.path(language.code, card["slug"]),
+                           particle_render.particle_page(card, language, text, published=published, section=section))
                     for card in cards]
     return written
 
 
-def app_paths() -> dict[str, str]:
-    """Where the app's "Particles" link leads, per language (hidden in the others)."""
-    return {code: seo.particle_index_path(code) for code in particle_render.PARTICLE_LANGUAGES}
+def app_paths(section: WordSection = PARTICLES) -> dict[str, str]:
+    """Where the app's link to the section leads, per language (hidden in the others)."""
+    return {code: section.index_path(code) for code in section.languages}
 
 
-def page_paths(cards: Sequence[dict]) -> list[str]:
+def page_paths(cards: Sequence[dict], section: WordSection = PARTICLES) -> list[str]:
     if not cards:
         return []
-    return [path for code in particle_render.PARTICLE_LANGUAGES
-            for path in (seo.particle_index_path(code), *(seo.particle_path(code, card["slug"]) for card in cards))]
+    return [path for code in section.languages
+            for path in (section.index_path(code), *(section.path(code, card["slug"]) for card in cards))]
 
 
-def _languages() -> list[Language]:
-    return [language for language in LANGUAGES if language.code in particle_render.PARTICLE_LANGUAGES]
+def _languages(section: WordSection) -> list[Language]:
+    return [language for language in LANGUAGES if language.code in section.languages]
 
 
 def _write(pages: Path, path: str, html: str) -> Path:

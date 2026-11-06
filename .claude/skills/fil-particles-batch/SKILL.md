@@ -1,6 +1,6 @@
 ---
 name: fil-particles-batch
-description: Add the next batch of Quranic particles ("Čestice / Particles": what each does, its effect on the next word, its uses with corpus-tagged ayat) to the Fiʿl study site, mechanically and token-efficiently. Use when the user says "/fil-particles-batch", "next particles", "dodaj još čestica", or asks to add particles.
+description: Add the next batch of Quranic particles (or pronouns, `fil pronouns`) ("Čestice / Particles": what each does, its effect on the next word, its uses with corpus-tagged ayat) to the Fiʿl study site, mechanically and token-efficiently. Use when the user says "/fil-particles-batch", "next particles", "dodaj još čestica", or asks to add particles.
 ---
 
 # Add a batch of particles (bs + en)
@@ -99,6 +99,20 @@ Lessons:
   يَا ٱللَّهُ; gloss drift (prijetnja/promise, كَلَّا as "uistinu" vs "No!"). Write those safeguards in the first draft.
 - Next: إِمَّا (EXL 14, COND 9), كَأَنْ (9), أَيَّانَ (6), مَاذَا (26, compound), كَمْ (4), إِي (1), مَهْمَا (1); the
   أَلَا of offer (filed as أَ + لَا); كَيْفَ/لَيْسَ/إِيَّا after the reader change; links to verb-mood sections.
+## Batch 3 (2026-11-06): 12 particles + the pronouns section
+كَيْفَ · لَيْسَ · إِمَّا · كَأَنْ · أَيَّانَ · مَاذَا · كَمْ · مَهْمَا · إِي · تَـ · ٱللَّهُمَّ · هُنَالِكَ (+ the أَلَا of offer as a use of أَ), and
+"Zamjenice / Pronouns": 17 pages (personal, demonstrative, relative, إِيَّا) on the same engine — `fil pronouns …`,
+data/pronouns.json, fil.corpus.pronouns, section PRONOUNS. A pronoun batch is the same workflow with `fil pronouns`.
+Lessons:
+- Type no corpus lemma by hand, not even in code: the corpus writes الَّذِي with the shadda before the fatḥa (the reader spells
+  it with escapes). Check every new reader constant against `frequency`.
+- Untagged corpus words (كَيْفَ after ٱنظُرْ, كَمْ of report) are filed under their part of speech (N, V|FAM:كَان): a use may cite
+  them as `N`; when two uses share N, neither is counted.
+- Verbs after the conditional إِمَّا carry the emphatic nūn and the corpus tags them IND: claim no mood there.
+- What the reviewers flagged: Korkut tense drift (stvaramo/stvorili), quoted renderings that change the speech act (Zašto…?
+  for أَفَلَا), "the article decides" after هَٰذَا (52:14), "only" lists (أَنْتَ, إِيَّا, أَنَا), an indeclinable word "in the genitive"
+  (say "in the place of"), the antecedent of a relative outside the cited ayah (89:8 → Iram). Write those safeguards first.
+- Next: هُنَّ/هُمَا/أَنْتِ/أَنْتُمَا (small), mood links.
 ## Muġnī verification (2026-11-06): all 52 particles
 Every attribution checked against OpenITI 0761JamalDinIbnHisham.MughniLabib.JK001131-ara1 (+ al-Kitāb for Sībawayh).
 Lessons: model memory put "the Basrans" on views the Muġnī gives as Ibn Hišām's or the majority's against named Kufans

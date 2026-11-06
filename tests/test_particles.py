@@ -112,6 +112,19 @@ def test_the_reader_finds_particles_and_function_nouns_but_not_the_article():
         ("و", "REM"), ("مِن", "P"), ("ما", "REL")]
 
 
+def test_the_reader_finds_the_function_words_the_corpus_files_as_a_rooted_noun_or_a_verb():
+    found = list(iter_particle_occurrences(_segments(
+        "2:28:1:1\tكَيْفَ\tN\tINTG|ROOT:كيف|LEM:كَيْف",
+        "2:259:52:1\tكَيْفَ\tN\tROOT:كيف|LEM:كَيْف",
+        "6:6:3:1\tكَمْ\tN\tLEM:كَم|ACC",
+        "2:177:1:1\tلَّيْسَ\tV\tPERF|VF:1|ROOT:ليس|LEM:لَيْسَ|FAM:كَان|3MS",
+        "2:177:2:1\tقَالَ\tV\tPERF|ROOT:قول|LEM:قالَ|3MS",
+        "2:177:3:1\tيَوْمَ\tN\tT|ROOT:يوم|LEM:يَوْم|M|ACC",
+    )))
+    assert [(occurrence.lemma, str(occurrence.corpus_tag)) for occurrence in found] == [
+        ("كَيْف", "INTG"), ("كَيْف", "N"), ("كَم", "N"), ("لَيْسَ", "V|FAM:كَان")]   # كَيْفَ, كَمْ, لَيْسَ only by name
+
+
 @pytest.mark.parametrize(("following", "marker"), [
     (["1:2:2:2\tلَّهِ\tN\tPN|ROOT:أله|LEM:اللَّه|GEN"], "GEN"),
     (["1:1:3:1\tٱل\tP\tDET|PREF|LEM:ال", "1:1:3:2\tرَّحْمَٰنِ\tN\tROOT:رحم|LEM:رَحْمٰن|MS|GEN|ADJ"], "GEN"),   # article skipped
@@ -178,7 +191,7 @@ def test_a_use_is_counted_only_when_no_other_use_shares_its_tags():
 
 def test_the_stored_particles_load_and_every_text_is_bilingual():
     particles = particle_store.load_particles()
-    assert len(particles) == 52 and particles[0].slug == "wa"
+    assert len(particles) == 64 and particles[0].slug == "wa"
     assert [particle.count for particle in particles] == sorted((particle.count for particle in particles), reverse=True)
     assert all(particle.sources and particle.uses for particle in particles)
 
@@ -199,6 +212,7 @@ def test_every_stored_particle_passes_the_corpus_gate(corpus):
     ("مِن", "P", 3226), ("فِي", "P", 1701), ("ب", "P", 2544), ("لَم", "NEG", 348), ("لَن", "NEG", 106),
     ("إِنّ", "ACC|FAM:إِنّ", 1682), ("لا", "PRO", 332), ("لا", "NEG|FAM:إِنّ", 57), ("ما", "REL", 1475),
     ("ل", "EMPH", 1001), ("أ", "INTG", 507), ("ي", "VOC", 361), ("مَن", "COND", 184), ("س", "FUT", 119),
+    ("كَيْف", "INTG", 30), ("كَيْف", "N", 53), ("لَيْسَ", "V|FAM:كَان", 89), ("كَم", "N", 17),
 ])
 def test_golden_counts_come_from_the_corpus(corpus, lemma, tag, count):
     assert len(corpus.occurrences(lemma, CorpusTag.parse(tag))) == count

@@ -1,4 +1,5 @@
-"""Assemble the particle cards: everything a particle page shows, with its sound.
+"""Assemble the particle cards: everything a particle page shows, with its sound (and the pronoun
+cards alike: the pronouns are another word list of the same engine, fil.stages.particles.PRONOUNS).
 
 The composition root of the particle pages, like fil.stages.nuance_site for the nuances. The
 particles (fil.particle_store) pass the corpus gate first (fil.particles.gate) — a count that is
@@ -19,12 +20,12 @@ from __future__ import annotations
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 
-from fil import particle_store
 from fil.nouns.bosnian import renderings
 from fil.particles import gate
 from fil.particles.gate import ParticleConcordance
 from fil.particles.model import Example, Particle, Text, Use
 from fil.stages.nuance_site import ADJECTIVE, NOUN, VERB, StudiedCards, checked_voice
+from fil.stages.particles import PARTICLES, WordList
 from fil.stages.site import Sound
 from fil.study import QuranWord
 
@@ -80,20 +81,19 @@ def _lemma_card(key: str, studied: StudiedCards) -> dict | None:
 
 
 def assemble_particles(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord, ...]], studied: StudiedWords,
-                       concordance: ParticleConcordance | None = None) -> tuple[dict, ...]:
-    """Every particle's card, gated; none when no particle is written yet."""
-    particles = particle_store.load_particles()
+                       words: WordList = PARTICLES, concordance: ParticleConcordance | None = None) -> tuple[dict, ...]:
+    """Every card of the word list (the particles, the pronouns), gated; none when none is written yet."""
+    particles = words.load()
     if not particles:
         return ()
     if concordance is None:
-        from fil.stages.particles import CorpusParticleConcordance   # reads the corpus: only when there are particles
-        concordance = CorpusParticleConcordance.from_corpus()
+        concordance = words.concordance()   # reads the corpus: only when there are words to check
     problems = gate.problems(particles, concordance)
     if problems:
-        raise ParticleGateFailed(f"{len(problems)} particle claims the corpus does not bear out (`fil particles check`): "
-                                 f"{problems[:5]}")
+        raise ParticleGateFailed(f"{len(problems)} {words.name} claims the corpus does not bear out "
+                                 f"(`fil {words.name} check`): {problems[:5]}")
     cards = tuple(ParticleCardBuilder(particle, concordance, sound, ayat, studied).card() for particle in particles)
-    print(f"  particles: {' · '.join(card['arabic'] for card in cards)}", flush=True)
+    print(f"  {words.name}: {' · '.join(card['arabic'] for card in cards)}", flush=True)
     return cards
 
 

@@ -45,3 +45,4 @@ ADJECTIVE_SENTENCES_JSON = DATA_DIR / "adjective_sentences.json"  # practice sen
 ADJECTIVE_EXAMPLE_REVIEWS_JSON = DATA_DIR / "adjective_example_reviews.json"  # blind verdicts on the cards' agreement examples
 NUANCE_GROUPS_JSON = DATA_DIR / "nuance_groups.json"  # Quranic near-synonyms: shared meaning, nuances, illustrating ayat (fil nuances)
 PARTICLES_JSON = DATA_DIR / "particles.json"  # the particles: what each does, its uses by corpus tag, cited ayat (fil particles)
+PRONOUNS_JSON = DATA_DIR / "pronouns.json"  # the pronouns (Zamjenice): the particle pages' shape, by corpus tag (fil pronouns)

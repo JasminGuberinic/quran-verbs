@@ -111,6 +111,7 @@ def test_the_app_hides_the_nouns_link_in_a_language_without_noun_pages():
     assert "link.hidden = !path" in section and "paths.en" not in sections
     assert "DATA.nounPages" in sections and "DATA.adjectivePages" in sections and "DATA.nuancePages" in sections
     assert "DATA.particlePages" in sections and 'id="particles-link" hidden' in app
+    assert "DATA.pronounPages" in sections and 'id="pronouns-link" hidden' in app
     assert '<a id="verbs-link"' in app and 'id="nouns-link" hidden' in app and 'id="adjectives-link" hidden' in app
 
 
@@ -197,7 +198,7 @@ def test_every_page_has_the_same_top_bar_with_its_section_marked():
         is_nuance = folder == (seo.NUANCE_FOLDERS.get(code),)
         sections = _parsed(page).sections
         expected = 1 + sum(code in folders for folders in (seo.NOUN_FOLDERS, seo.ADJECTIVE_FOLDERS, seo.NUANCE_FOLDERS,
-                                                           seo.PARTICLE_FOLDERS))
+                                                           seo.PARTICLE_FOLDERS, seo.PRONOUN_FOLDERS))
         assert len(sections) == expected, relative
         current = [index for index, (_href, mark) in enumerate(sections) if mark]
         assert current == [3 if is_nuance else 2 if is_adjective else 1 if is_noun else 0], relative

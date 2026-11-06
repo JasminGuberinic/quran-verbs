@@ -9,8 +9,11 @@
                                      the marked word, Pickthall's English), English and Bosnian, for a
                                      blind reviewer — no notes, no reasons
 
+    fil pronouns …                   the same over data/pronouns.json (Zamjenice), read from the
+                                     corpus by fil.corpus.pronouns; the review goes to build/pronouns/
+
 This stage is the composition root of the particle engine: it reads the corpus
-(fil.corpus.particles) and wires it in as the gate's ParticleConcordance.
+(fil.corpus.particles, fil.corpus.pronouns) and wires it in as the gate's ParticleConcordance.
 """
 
 from __future__ import annotations
@@ -18,16 +21,19 @@ from __future__ import annotations
 import json
 import sys
 from collections import Counter, defaultdict
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Callable, Iterable, Iterator, Mapping, Sequence
+from dataclasses import dataclass
+from pathlib import Path
 
 from fil import particle_store
-from fil.corpus.parse import iter_segments
+from fil.corpus.parse import Segment, iter_segments
 from fil.corpus.particles import iter_particle_occurrences
+from fil.corpus.pronouns import iter_pronoun_occurrences
 from fil.particles import gate
 from fil.particles.model import CorpusTag, Particle, ParticleOccurrence, Text
-from fil.resources import BUILD_DIR, QAC_MORPHOLOGY
+from fil.resources import BUILD_DIR, PARTICLES_JSON, PRONOUNS_JSON, QAC_MORPHOLOGY
 
-OUT = BUILD_DIR / "particles"
+Reader = Callable[[Iterable[Segment]], Iterator[ParticleOccurrence]]
 CANDIDATES_SHOWN = 25
 SHORT_AYAH = 10          # words: `find` lists ayat up to this long first
 
@@ -41,9 +47,9 @@ class CorpusParticleConcordance:
             self._by_key[(occurrence.lemma, occurrence.corpus_tag)].append(occurrence)
 
     @classmethod
-    def from_corpus(cls) -> CorpusParticleConcordance:
+    def from_corpus(cls, read: Reader = iter_particle_occurrences) -> CorpusParticleConcordance:
         with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
-            return cls(iter_particle_occurrences(iter_segments(lines)))
+            return cls(read(iter_segments(lines)))
 
     def occurrences(self, lemma: str, tag: CorpusTag) -> Sequence[ParticleOccurrence]:
         return self._by_key.get((lemma, tag), ())
@@ -52,19 +58,39 @@ class CorpusParticleConcordance:
         return Counter({key: len(found) for key, found in self._by_key.items()})
 
 
+@dataclass(frozen=True)
+class WordList:
+    """A data file of small words the particle engine holds to the corpus, and how the corpus is read
+    for it: the particles, the pronouns."""
+
+    name: str        # the command, and build/<name>/ for the review
+    data: Path
+    read: Reader
+
+    def load(self) -> tuple[Particle, ...]:
+        return particle_store.load_particles(self.data)
+
+    def concordance(self) -> CorpusParticleConcordance:
+        return CorpusParticleConcordance.from_corpus(self.read)
+
+
+PARTICLES = WordList("particles", PARTICLES_JSON, iter_particle_occurrences)
+PRONOUNS = WordList("pronouns", PRONOUNS_JSON, iter_pronoun_occurrences)
+
+
 # ---------------------------------------------------------------- commands
 
-def frequency() -> None:
-    for (lemma, tag), count in CorpusParticleConcordance.from_corpus().counts().most_common():
+def frequency(words: WordList = PARTICLES) -> None:
+    for (lemma, tag), count in words.concordance().counts().most_common():
         print(f"{count:6}  {lemma}\t{tag}")
 
 
-def find(lemma: str, tag: str, shown: int = CANDIDATES_SHOWN) -> None:
+def find(lemma: str, tag: str, shown: int = CANDIDATES_SHOWN, words: WordList = PARTICLES) -> None:
     """The shortest ayat holding the particle under the tag: «the word», its number, the next word's marker."""
     from fil.stages.site import read_corpus
 
     ayat = read_corpus().ayat
-    found = CorpusParticleConcordance.from_corpus().occurrences(lemma, CorpusTag.parse(tag))
+    found = words.concordance().occurrences(lemma, CorpusTag.parse(tag))
     markers = Counter(occurrence.marker for occurrence in found)
     print(f"{lemma} {tag}: {len(found)} — next word shows {dict(markers.most_common())}")
     for occurrence in sorted(found, key=lambda occurrence: len(ayat[(occurrence.surah, occurrence.ayah)]))[:shown]:
@@ -73,30 +99,31 @@ def find(lemma: str, tag: str, shown: int = CANDIDATES_SHOWN) -> None:
         print(f"  {occurrence.surah}:{occurrence.ayah}:{occurrence.word} [{occurrence.marker}] {text}")
 
 
-def check() -> list[str]:
-    """The gate over the stored particles; the problems found (printed), none when they may ship."""
-    particles = particle_store.load_particles()
-    found = gate.problems(particles, CorpusParticleConcordance.from_corpus())
+def check(words: WordList = PARTICLES) -> list[str]:
+    """The gate over the stored words; the problems found (printed), none when they may ship."""
+    particles = words.load()
+    found = gate.problems(particles, words.concordance())
     print("\n".join(found) if found else "", end="\n" if found else "")
     uses = sum(len(particle.uses) for particle in particles)
     ayat = sum(len(use.ayat) for particle in particles for use in particle.uses)
-    print(f"particles: {len(particles)} particles, {uses} uses, {ayat} cited ayat — {len(found)} problems")
+    print(f"{words.name}: {len(particles)} {words.name}, {uses} uses, {ayat} cited ayat — {len(found)} problems")
     return found
 
 
-def review_export(slugs: Sequence[str] = ()) -> None:
+def review_export(slugs: Sequence[str] = (), words: WordList = PARTICLES) -> None:
     """The claims a blind reviewer checks against the ayat — what we say, never why we decided it."""
     from fil.ayah_translations import AyahTranslations
     from fil.stages.site import read_corpus
 
-    particles = [particle for particle in particle_store.load_particles() if not slugs or particle.slug in slugs]
-    concordance = CorpusParticleConcordance.from_corpus()
+    particles = [particle for particle in words.load() if not slugs or particle.slug in slugs]
+    concordance = words.concordance()
     ayat, translations = read_corpus().ayat, AyahTranslations()
     claims = [claim for particle in particles for claim in _claims(particle, concordance, ayat, translations)]
-    OUT.mkdir(parents=True, exist_ok=True)
-    target = OUT / "blind.json"
+    out = BUILD_DIR / words.name
+    out.mkdir(parents=True, exist_ok=True)
+    target = out / "blind.json"
     target.write_text(json.dumps(claims, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"particles: {len(claims)} claims → {target}")
+    print(f"{words.name}: {len(claims)} claims → {target}")
 
 
 def _claims(particle: Particle, concordance, ayat: Mapping, translations) -> list[dict]:
@@ -121,20 +148,25 @@ def _both(text: Text) -> dict[str, str]:
     return {"en": text.en, "bs": text.bs}
 
 
-def main(argv: list[str] | None = None) -> None:
+def main(argv: list[str] | None = None, words: WordList = PARTICLES) -> None:
     args = argv if argv is not None else sys.argv[2:]
     if args == ["frequency"]:
-        frequency()
+        frequency(words)
         return
     if args[:1] == ["find"] and len(args) in (3, 4):
-        find(args[1], args[2], int(args[3]) if len(args) == 4 else CANDIDATES_SHOWN)
+        find(args[1], args[2], int(args[3]) if len(args) == 4 else CANDIDATES_SHOWN, words)
         return
     if args == ["check"]:
-        if check():
+        if check(words):
             raise SystemExit(1)
         return
     if args[:1] == ["review-export"]:
-        review_export(args[1:])
+        review_export(args[1:], words)
         return
     print(__doc__)
     raise SystemExit(2)
+
+
+def pronouns_main(argv: list[str] | None = None) -> None:
+    """`fil pronouns …`: the particle commands over the pronouns."""
+    main(argv, PRONOUNS)

@@ -26,7 +26,8 @@ KINDS = ("preposition", "conjunction", "resumption", "circumstantial", "oath", "
          "subordinator", "interpretive", "interrogative", "relative", "restriction", "exception",
          "certainty", "purpose", "command", "timeAdverb", "surprise", "emphasis", "equalization", "vocative",
          "retraction", "amendment", "inceptive", "future", "exhortation", "detail", "attention", "aversion",
-         "answer", "accompaniment")
+         "answer", "accompaniment", "defectiveVerb", "quantity", "alternative", "personalPronoun", "objectPronoun",
+         "demonstrative")
 # What the next word shows because of the particle: a case or a mood, as the corpus tags them.
 EFFECTS = ("NOM", "ACC", "GEN", "IND", "SUBJ", "JUS")
 _SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")

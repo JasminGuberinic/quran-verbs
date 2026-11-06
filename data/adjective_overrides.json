@@ -1,0 +1,179 @@
+{
+ "_about": "Documented adjective cells the generators cannot make (per gender: number|state|case → text, why); gated like any other, never over a Quranic cell.",
+ "آخَر|أخر": {
+  "F": {
+   "S|indefinite|NOM": {
+    "text": "أُخْرَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "S|indefinite|ACC": {
+    "text": "أُخْرَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "S|indefinite|GEN": {
+    "text": "أُخْرَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "P|indefinite|NOM": {
+    "text": "أُخَرُ",
+    "why": "the Quran's plural (2:184 أُخَرَ), a diptote; the corpus tags it construct"
+   },
+   "P|indefinite|ACC": {
+    "text": "أُخَرَ",
+    "why": "the Quran's plural (2:184 أُخَرَ), a diptote; the corpus tags it construct"
+   },
+   "P|indefinite|GEN": {
+    "text": "أُخَرَ",
+    "why": "the Quran's plural (2:184 أُخَرَ), a diptote; the corpus tags it construct"
+   }
+  }
+ },
+ "أَعْمَى|عمي": {
+  "M": {
+   "S|definite|ACC": {
+    "text": "الْأَعْمَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "S|indefinite|NOM": {
+    "text": "أَعْمَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "S|indefinite|ACC": {
+    "text": "أَعْمَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "S|indefinite|GEN": {
+    "text": "أَعْمَى",
+    "why": "ends in alif maqṣūra: no case shows; the corpus tags the Quran's indefinite (no nunation) as construct, and neither CAMeL nor the rule declines it"
+   },
+   "D|definite|NOM": {
+    "text": "الْأَعْمَيَانِ",
+    "why": "the dual of a defective أَفْعَل: alif maqṣūra opens to yāʾ"
+   },
+   "D|definite|ACC": {
+    "text": "الْأَعْمَيَيْنِ",
+    "why": "the dual of a defective أَفْعَل: alif maqṣūra opens to yāʾ"
+   },
+   "D|definite|GEN": {
+    "text": "الْأَعْمَيَيْنِ",
+    "why": "the dual of a defective أَفْعَل: alif maqṣūra opens to yāʾ"
+   },
+   "D|indefinite|NOM": {
+    "text": "أَعْمَيَانِ",
+    "why": "the dual of a defective أَفْعَل: alif maqṣūra opens to yāʾ"
+   },
+   "D|indefinite|ACC": {
+    "text": "أَعْمَيَيْنِ",
+    "why": "the dual of a defective أَفْعَل: alif maqṣūra opens to yāʾ"
+   },
+   "D|indefinite|GEN": {
+    "text": "أَعْمَيَيْنِ",
+    "why": "the dual of a defective أَفْعَل: alif maqṣūra opens to yāʾ"
+   }
+  }
+ },
+ "بَرِيء|برأ": {
+  "M": {
+   "S|definite|NOM": {
+    "text": "الْبَرِيءُ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "S|definite|ACC": {
+    "text": "الْبَرِيءَ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "S|definite|GEN": {
+    "text": "الْبَرِيءِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "S|indefinite|GEN": {
+    "text": "بَرِيءٍ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|definite|NOM": {
+    "text": "الْبَرِيئَانِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|definite|ACC": {
+    "text": "الْبَرِيئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|definite|GEN": {
+    "text": "الْبَرِيئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|indefinite|NOM": {
+    "text": "بَرِيئَانِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|indefinite|ACC": {
+    "text": "بَرِيئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|indefinite|GEN": {
+    "text": "بَرِيئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "P|definite|NOM": {
+    "text": "الْبَرِيئُونَ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "P|definite|ACC": {
+    "text": "الْبَرِيئِينَ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "P|definite|GEN": {
+    "text": "الْبَرِيئِينَ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "P|indefinite|ACC": {
+    "text": "بَرِيئِينَ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "P|indefinite|GEN": {
+    "text": "بَرِيئِينَ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   }
+  }
+ },
+ "سَيِّئ|سوأ": {
+  "M": {
+   "S|indefinite|NOM": {
+    "text": "سَيِّئٌ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "S|indefinite|ACC": {
+    "text": "سَيِّئًا",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "S|indefinite|GEN": {
+    "text": "سَيِّئٍ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|definite|NOM": {
+    "text": "السَّيِّئَانِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|definite|ACC": {
+    "text": "السَّيِّئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|definite|GEN": {
+    "text": "السَّيِّئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|indefinite|NOM": {
+    "text": "سَيِّئَانِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|indefinite|ACC": {
+    "text": "سَيِّئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   },
+   "D|indefinite|GEN": {
+    "text": "سَيِّئَيْنِ",
+    "why": "ends in hamza, whose seat changes before an ending (بَرِيئًا); CAMeL lacks the lexeme and the rule refuses hamza stems"
+   }
+  }
+ }
+}

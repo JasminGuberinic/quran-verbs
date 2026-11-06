@@ -41,6 +41,12 @@ linked to their verb page. Proper names (prophets, places) get a simple list, no
 الْكَبِيرَةُ — gender, number, case and definiteness follow the noun; non-human plurals
 take feminine singular.
 
+*Adjectives pilot (2026-11-06, 50 adjectives, bs + en):* engine src/fil/adjectives/ (two-gender tables —
+Quranic first, CAMeL one gender at a time, then a gated rule for the regular cells; agreement rule and
+sentence gate; agreement examples composed from our nouns' cells and blind-reviewed), pages
+/bs/pridjev/ and /en/adjective/, `fil adjectives batch …` and the /fil-adjectives-batch skill. Elatives
+show on their positive's card; Divine-Name adjectives with no human sense (غَفُور, سَمِيع, بَصِير) are held back.
+
 ## Categories and pictures
 
 - Every lemma gets one category from a fixed list: voće i povrće · hrana i piće ·

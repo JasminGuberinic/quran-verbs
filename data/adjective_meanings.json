@@ -1,0 +1,809 @@
+{
+ "_about": "The studied adjectives (lemma|root): meaning in English and Bosnian (bsShort/bsLong: the short and long masculine nominative), the feminine, the pattern, the category, the nouns the agreement examples use. Merged by `fil adjectives batch meanings`.",
+ "عَلِيم|علم": {
+  "en": "knowledgeable, all-knowing",
+  "bs": "upućen, sveznajući",
+  "bsShort": "upućen",
+  "bsLong": "upućeni",
+  "feminine": "عَلِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "عُلَمَاء"
+ },
+ "مُبِين|بين": {
+  "en": "clear, evident",
+  "bs": "jasan, očigledan",
+  "bsShort": "jasan",
+  "bsLong": "jasni",
+  "feminine": "مُبِينَة",
+  "feminineLemma": false,
+  "pattern": "مُفْعِل",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "كَلام|كلم",
+   "feminine": "كَلِمَة|كلم",
+   "thingPlural": "كَلِمَة|كلم"
+  },
+  "masculinePlural": "-"
+ },
+ "رَحِيم|رحم": {
+  "en": "merciful, compassionate",
+  "bs": "milostiv, samilostan",
+  "bsShort": "milostiv",
+  "bsLong": "milostivi",
+  "feminine": "رَحِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "أَب|أبو",
+   "feminine": "أُمّ|أمم",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "رُحَمَاء"
+ },
+ "عَظِيم|عظم": {
+  "en": "great, magnificent",
+  "bs": "veličanstven, velik",
+  "bsShort": "veličanstven",
+  "bsLong": "veličanstveni",
+  "feminine": "عَظِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "intensity",
+  "nouns": {
+   "masculine": "قَصْر|قصر",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "جَبَل|جبل"
+  },
+  "masculinePlural": "عُظَمَاء"
+ },
+ "عَزِيز|عزز": {
+  "en": "dear, precious, mighty",
+  "bs": "drag, mio, moćan",
+  "bsShort": "drag",
+  "bsLong": "dragi",
+  "feminine": "عَزِيزَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "خَلِيل|خلل",
+   "feminine": "أُخْت|أخو"
+  },
+  "masculinePlural": "أَعِزَّة"
+ },
+ "حَكِيم|حكم": {
+  "en": "wise",
+  "bs": "mudar",
+  "bsShort": "mudar",
+  "bsLong": "mudri",
+  "feminine": "حَكِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "حُكَمَاء"
+ },
+ "خالِد|خلد": {
+  "en": "eternal, immortal",
+  "bs": "vječan, besmrtan",
+  "bsShort": "vječan",
+  "bsLong": "vječni",
+  "feminine": "خالِدَة",
+  "feminineLemma": false,
+  "pattern": "فاعِل",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "اسْم|سمو",
+   "feminine": "كَلِمَة|كلم",
+   "thingPlural": "كَلِمَة|كلم"
+  },
+  "masculinePlural": "-"
+ },
+ "كَثِير|كثر": {
+  "en": "plentiful, many, much",
+  "bs": "obilan, brojan",
+  "bsShort": "obilan",
+  "bsLong": "obilni",
+  "feminine": "كَثِيرَة",
+  "feminineLemma": true,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "مَطَر|مطر",
+   "feminine": "فاكِهَة|فكه",
+   "thingPlural": "ثَمَرَة|ثمر"
+  },
+  "masculinePlural": "-"
+ },
+ "أَلِيم|ألم": {
+  "en": "painful",
+  "bs": "bolan",
+  "bsShort": "bolan",
+  "bsLong": "bolni",
+  "feminine": "أَلِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "intensity",
+  "nouns": {
+   "masculine": "مَرَض|مرض",
+   "feminine": "مُصِيبَة|صوب"
+  },
+  "masculinePlural": "-"
+ },
+ "قَلِيل|قلل": {
+  "en": "scant, little, few",
+  "bs": "oskudan, malobrojan",
+  "bsShort": "oskudan",
+  "bsLong": "oskudni",
+  "feminine": "قَلِيلَة",
+  "feminineLemma": true,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "طَعام|طعم",
+   "feminine": "فاكِهَة|فكه",
+   "thingPlural": "ثَمَرَة|ثمر"
+  },
+  "masculinePlural": "-"
+ },
+ "آخَر|أخر": {
+  "en": "other, another",
+  "bs": "drugi",
+  "bsShort": "drugi",
+  "bsLong": "drugi",
+  "feminine": "أُخْرَى",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "other",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "سَنَة|سنو",
+   "thingPlural": "بَيْت|بيت",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "سَيِّئ|سوأ": {
+  "en": "bad, evil",
+  "bs": "loš, zao",
+  "bsShort": "loš",
+  "bsLong": "loši",
+  "feminine": "سَيِّئَة",
+  "feminineLemma": false,
+  "pattern": "فَيْعِل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "طَعام|طعم",
+   "feminine": "طَرِيقَة|طرق",
+   "thingPlural": "كَلِمَة|كلم"
+  },
+  "masculinePlural": "-"
+ },
+ "شَدِيد|شدد": {
+  "en": "severe, intense, strong",
+  "bs": "žestok, jak",
+  "bsShort": "žestok",
+  "bsLong": "žestoki",
+  "feminine": "شَدِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "intensity",
+  "nouns": {
+   "masculine": "حَرّ|حرر",
+   "feminine": "رِيح|روح",
+   "thingPlural": "رِيح|روح"
+  },
+  "masculinePlural": "شِدَاد"
+ },
+ "حَسَن|حسن": {
+  "en": "good, fine, beautiful",
+  "bs": "dobar, lijep",
+  "bsShort": "dobar",
+  "bsLong": "dobri",
+  "feminine": "حَسَنَة",
+  "feminineLemma": false,
+  "pattern": "فَعَل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "اسْم|سمو",
+   "feminine": "كَلِمَة|كلم",
+   "thingPlural": "اسْم|سمو"
+  },
+  "masculinePlural": "حِسَان"
+ },
+ "كَبِير|كبر": {
+  "en": "large, big, great",
+  "bs": "velik",
+  "bsShort": "velik",
+  "bsLong": "veliki",
+  "feminine": "كَبِيرَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "شَجَرَة|شجر",
+   "thingPlural": "بَيْت|بيت"
+  },
+  "masculinePlural": "كِبَار",
+  "elative": {
+   "en": "bigger",
+   "bs": "veći"
+  }
+ },
+ "طَيِّب|طيب": {
+  "en": "pleasant, good, wholesome",
+  "bs": "fin, ugodan, dobar",
+  "bsShort": "fin",
+  "bsLong": "fini",
+  "feminine": "طَيِّبَة",
+  "feminineLemma": true,
+  "pattern": "فَيْعِل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "طَعام|طعم",
+   "feminine": "ثَمَرَة|ثمر",
+   "thingPlural": "ثَمَرَة|ثمر"
+  },
+  "masculinePlural": "-"
+ },
+ "خَبِير|خبر": {
+  "en": "expert, well-informed",
+  "bs": "stručan, upućen",
+  "bsShort": "stručan",
+  "bsLong": "stručni",
+  "feminine": "خَبِيرَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "خُبَرَاء"
+ },
+ "قَدِير|قدر": {
+  "en": "capable, all-powerful",
+  "bs": "sposoban, svemoćan",
+  "bsShort": "sposoban",
+  "bsLong": "sposobni",
+  "feminine": "قَدِيرَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ"
+  },
+  "masculinePlural": "-"
+ },
+ "مَيِّت|موت": {
+  "en": "dead",
+  "bs": "mrtav",
+  "bsShort": "mrtav",
+  "bsLong": "mrtvi",
+  "feminine": "مَيِّتَة",
+  "feminineLemma": false,
+  "pattern": "فَيْعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "طائِر|طير",
+   "feminine": "شَجَرَة|شجر"
+  },
+  "masculinePlural": "-"
+ },
+ "مُسْتَقِيم|قوم": {
+  "en": "straight, upright",
+  "bs": "ravan, prav",
+  "bsShort": "ravan",
+  "bsLong": "ravni",
+  "feminine": "مُسْتَقِيمَة",
+  "feminineLemma": false,
+  "pattern": "مُسْتَفْعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "طَرِيق|طرق",
+   "feminine": "شَجَرَة|شجر"
+  },
+  "masculinePlural": "-"
+ },
+ "جَمِيل|جمل": {
+  "en": "beautiful",
+  "bs": "lijep",
+  "bsShort": "lijep",
+  "bsLong": "lijepi",
+  "feminine": "جَمِيلَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "مَسْجِد|سجد",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "مَسْجِد|سجد"
+  },
+  "masculinePlural": "-"
+ },
+ "كَرِيم|كرم": {
+  "en": "generous, noble",
+  "bs": "plemenit, darežljiv",
+  "bsShort": "plemenit",
+  "bsLong": "plemeniti",
+  "feminine": "كَرِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "كِرَام"
+ },
+ "غافِل|غفل": {
+  "en": "negligent, heedless",
+  "bs": "nemaran, nepažljiv",
+  "bsShort": "nemaran",
+  "bsLong": "nemarni",
+  "feminine": "غافِلَة",
+  "feminineLemma": true,
+  "pattern": "فاعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "قَرِيب|قرب": {
+  "en": "nearby, near, close",
+  "bs": "obližnji, blizak",
+  "bsShort": "obližnji",
+  "bsLong": "obližnji",
+  "feminine": "قَرِيبَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "قَرْيَة|قري",
+   "thingPlural": "بَيْت|بيت"
+  },
+  "masculinePlural": "-",
+  "elative": {
+   "en": "closer",
+   "bs": "bliži"
+  }
+ },
+ "بَعِيد|بعد": {
+  "en": "distant, far",
+  "bs": "dalek",
+  "bsShort": "dalek",
+  "bsLong": "daleki",
+  "feminine": "بَعِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "بَلَد|بلد",
+   "feminine": "قَرْيَة|قري",
+   "thingPlural": "بَلَد|بلد"
+  },
+  "masculinePlural": "-"
+ },
+ "حَيّ|حيي": {
+  "en": "living, alive",
+  "bs": "živ",
+  "bsShort": "živ",
+  "bsLong": "živi",
+  "feminine": "حَيَّة",
+  "feminineLemma": false,
+  "pattern": "فَيْعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "طائِر|طير",
+   "feminine": "شَجَرَة|شجر"
+  },
+  "masculinePlural": "-"
+ },
+ "غَنِيّ|غني": {
+  "en": "rich, wealthy",
+  "bs": "bogat",
+  "bsShort": "bogat",
+  "bsLong": "bogati",
+  "feminine": "غَنِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "thingPlural": "بَلَد|بلد",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "أَغْنِيَاء"
+ },
+ "صابِر|صبر": {
+  "en": "patient, steadfast",
+  "bs": "strpljiv",
+  "bsShort": "strpljiv",
+  "bsLong": "strpljivi",
+  "feminine": "صابِرَة",
+  "feminineLemma": true,
+  "pattern": "فاعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "أَب|أبو",
+   "feminine": "أُمّ|أمم",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "أَعْمَى|عمي": {
+  "en": "blind",
+  "bs": "slijep",
+  "bsShort": "slijep",
+  "bsLong": "slijepi",
+  "feminine": "عَمْيَاء",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "حَمِيد|حمد": {
+  "en": "praiseworthy, laudable",
+  "bs": "pohvalan",
+  "bsShort": "pohvalan",
+  "bsLong": "pohvalni",
+  "feminine": "حَمِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "سَعْي|سعي",
+   "feminine": "طَرِيقَة|طرق"
+  },
+  "masculinePlural": "-"
+ },
+ "آمِن|أمن": {
+  "en": "safe, secure",
+  "bs": "siguran",
+  "bsShort": "siguran",
+  "bsLong": "sigurni",
+  "feminine": "آمِنَة",
+  "feminineLemma": true,
+  "pattern": "فاعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "مَكان|كون",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "بَلَد|بلد"
+  },
+  "masculinePlural": "-"
+ },
+ "حَلِيم|حلم": {
+  "en": "forbearing, gentle",
+  "bs": "blag, strpljiv",
+  "bsShort": "blag",
+  "bsLong": "blagi",
+  "feminine": "حَلِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "أَب|أبو",
+   "feminine": "أُمّ|أمم",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "حُلَمَاء"
+ },
+ "يَسِير|يسر": {
+  "en": "easy, slight",
+  "bs": "lahak, jednostavan",
+  "bsShort": "lahak",
+  "bsLong": "lahki",
+  "feminine": "يَسِيرَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "سَفَر|سفر",
+   "feminine": "طَرِيقَة|طرق"
+  },
+  "masculinePlural": "-"
+ },
+ "خَبِيث|خبث": {
+  "en": "foul, wicked",
+  "bs": "pokvaren, zao",
+  "bsShort": "pokvaren",
+  "bsLong": "pokvareni",
+  "feminine": "خَبِيثَة",
+  "feminineLemma": true,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "طَعام|طعم",
+   "feminine": "ثَمَرَة|ثمر",
+   "thingPlural": "ثَمَرَة|ثمر"
+  },
+  "masculinePlural": "-"
+ },
+ "أَمِين|أمن": {
+  "en": "trustworthy, faithful",
+  "bs": "pouzdan, povjerljiv",
+  "bsShort": "pouzdan",
+  "bsLong": "pouzdani",
+  "feminine": "أَمِينَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "أُمَنَاء"
+ },
+ "شاكِر|شكر": {
+  "en": "grateful, thankful",
+  "bs": "zahvalan",
+  "bsShort": "zahvalan",
+  "bsLong": "zahvalni",
+  "feminine": "شاكِرَة",
+  "feminineLemma": false,
+  "pattern": "فاعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "وَلَد|ولد",
+   "feminine": "بِنْت|بني",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "ضالّ|ضلل": {
+  "en": "lost, astray",
+  "bs": "zalutao",
+  "bsShort": "zalutao",
+  "bsLong": "zalutali",
+  "feminine": "ضالَّة",
+  "feminineLemma": false,
+  "pattern": "فاعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "طِفْل|طفل",
+   "feminine": "ناقَة|نوق"
+  },
+  "masculinePlural": "-"
+ },
+ "قادِر|قدر": {
+  "en": "able, capable",
+  "bs": "kadar, sposoban",
+  "bsShort": "sposoban",
+  "bsLong": "sposobni",
+  "feminine": "قادِرَة",
+  "feminineLemma": false,
+  "pattern": "فاعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "مَعْلُوم|علم": {
+  "en": "known, fixed",
+  "bs": "određen, poznat",
+  "bsShort": "određen",
+  "bsLong": "određeni",
+  "feminine": "مَعْلُومَة",
+  "feminineLemma": true,
+  "pattern": "مَفْعُول",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "مَكان|كون",
+   "feminine": "ساعَة|سوع",
+   "thingPlural": "يَوْم|يوم"
+  },
+  "masculinePlural": "-"
+ },
+ "واسِع|وسع": {
+  "en": "spacious, wide",
+  "bs": "prostran, širok",
+  "bsShort": "prostran",
+  "bsLong": "prostrani",
+  "feminine": "واسِعَة",
+  "feminineLemma": true,
+  "pattern": "فاعِل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "غُرْفَة|غرف",
+   "thingPlural": "بَيْت|بيت"
+  },
+  "masculinePlural": "-"
+ },
+ "بَرِيء|برأ": {
+  "en": "innocent",
+  "bs": "nevin",
+  "bsShort": "nevin",
+  "bsLong": "nevini",
+  "feminine": "بَرِيئَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "مُبارَك|برك": {
+  "en": "blessed",
+  "bs": "blagoslovljen",
+  "bsShort": "blagoslovljen",
+  "bsLong": "blagoslovljeni",
+  "feminine": "مُبارَكَة",
+  "feminineLemma": true,
+  "pattern": "مُفَاعَل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "يَوْم|يوم",
+   "feminine": "سَنَة|سنو",
+   "thingPlural": "يَوْم|يوم"
+  },
+  "masculinePlural": "-"
+ },
+ "قَوِيّ|قوي": {
+  "en": "strong, powerful",
+  "bs": "jak, snažan",
+  "bsShort": "jak",
+  "bsLong": "jaki",
+  "feminine": "قَوِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "رِيح|روح",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "أَقْوِيَاء"
+ },
+ "مُخْلِص|خلص": {
+  "en": "sincere, devoted",
+  "bs": "odan, iskren",
+  "bsShort": "odan",
+  "bsLong": "odani",
+  "feminine": "مُخْلِصَة",
+  "feminineLemma": false,
+  "pattern": "مُفْعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "خَلِيل|خلل",
+   "feminine": "أُخْت|أخو",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "-"
+ },
+ "عَرَبِيّ|عرب": {
+  "en": "Arabic, Arab",
+  "bs": "arapski",
+  "bsShort": "arapski",
+  "bsLong": "arapski",
+  "feminine": "عَرَبِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعَلِيّ",
+  "category": "other",
+  "nouns": {
+   "masculine": "كِتاب|كتب",
+   "feminine": "كَلِمَة|كلم",
+   "thingPlural": "كِتاب|كتب"
+  },
+  "masculinePlural": "-"
+ },
+ "سَرِيع|سرع": {
+  "en": "fast, quick",
+  "bs": "brz",
+  "bsShort": "brz",
+  "bsLong": "brzi",
+  "feminine": "سَرِيعَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "طائِر|طير",
+   "feminine": "سَفِينَة|سفن",
+   "thingPlural": "نَهَر|نهر"
+  },
+  "masculinePlural": "-"
+ },
+ "أَبْيَض|بيض": {
+  "en": "white",
+  "bs": "bijel",
+  "bsShort": "bijel",
+  "bsLong": "bijeli",
+  "feminine": "بَيْضَاء",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "colours",
+  "nouns": {
+   "masculine": "لَبَن|لبن",
+   "feminine": "ناقَة|نوق",
+   "thingPlural": "بَيْت|بيت"
+  },
+  "masculinePlural": "-"
+ },
+ "جَدِيد|جدد": {
+  "en": "new",
+  "bs": "nov",
+  "bsShort": "nov",
+  "bsLong": "novi",
+  "feminine": "جَدِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "سَفِينَة|سفن",
+   "thingPlural": "كِتاب|كتب"
+  },
+  "masculinePlural": "-"
+ },
+ "ضَعِيف|ضعف": {
+  "en": "weak",
+  "bs": "slab",
+  "bsShort": "slab",
+  "bsLong": "slabi",
+  "feminine": "ضَعِيفَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "ضُعَفَاء"
+ },
+ "صَغِير|صغر": {
+  "en": "small, little",
+  "bs": "malen, mali",
+  "bsShort": "malen",
+  "bsLong": "mali",
+  "feminine": "صَغِيرَة",
+  "feminineLemma": true,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "شَجَرَة|شجر",
+   "thingPlural": "بَيْت|بيت",
+   "humanPlural": "طِفْل|طفل"
+  },
+  "masculinePlural": "صِغَار",
+  "elative": {
+   "en": "smaller",
+   "bs": "manji"
+  }
+ }
+}

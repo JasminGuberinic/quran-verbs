@@ -362,6 +362,18 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   Round 2 (42 drawn): any pair of short arcs on a rounded shape reads as a sleeping face (clay lump, clay block) —
   use straight strokes; pegs with a band read as pencils/cups until a mallet strikes them. Left undrawn: طِين clay
   (lump/block/wheel all read as something else), حَرِير silk (a curtain, i.e. حِجاب), أَذْقان chins (only as a face profile).
+  Policy since 2026-11-06 (owner): "no faces" became **faceless silhouettes only** — people, heads, faces as plain
+  silhouettes without eyes, mouth or expression, modest (a woman in a headscarf and long dress); a body part that is
+  the noun itself (eye, ear, tongue) is drawn as the part. Sacred things only as plain silhouettes (mosque, miḥrāb,
+  statues on a pedestal, an angel as wings and light); never God, the Throne, prophets (`NEVER_PICTURED_LEMMAS`) or
+  the rest of the unseen — `is_never_pictured` enforces it. Round 3 (47): figures are a head circle + body in local
+  units placed by `translate/scale` (one-decimal scales — the minifier rounds 1.05 to 1.0); the second person in a
+  relation (the parent of ابن، the child of أب) is an outline "ghost", the noun is solid; children need a scale cue
+  (a ball, or an adult beside them) or two children read as a couple. Clay finally reads as a pot on a wheel between
+  two hands; silk as a bolt with diagonal sheen. Still undrawn: newborn (وَلِيد، مَوْلُود — every swaddle read as a
+  caterpillar or log), siblings/aunts/uncles/friends (indistinguishable from "children"/"people"), groups (فَوْج، فِئَة …
+  — the grouping, not the people; ناس/قَوْم already show people), بَصَر/سَمْع (faculties; would repeat eye/ear),
+  جَسَد (in the Quran the calf idol's or prophets' bodies), مَلِك/مالِك/سَيِّد/مَوْلَى (also Divine Names).
 
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.

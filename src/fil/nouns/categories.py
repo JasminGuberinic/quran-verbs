@@ -2,9 +2,9 @@
 
 Every lemma gets one category from a fixed list (docs/NOUNS-PLAN.md, "Categories and
 pictures"); a learner browses nouns by it. `is_picturable` marks the concrete things a
-small flat icon can show — fruit, animals, body parts, sky, objects — and never people,
-prophets, angels or anything sacred: the content policy is decided here, once, so no
-picture can be attached to a lemma that is not marked picturable.
+small flat icon can show — fruit, animals, body parts, sky, objects, and people as plain
+faceless silhouettes — and never God, a prophet, or the unseen: the content policy is decided
+here, once, so no picture can be attached to a lemma that is not marked picturable.
 
 Pure: parsing and validation only; the file is read at the edge.
 """
@@ -33,12 +33,32 @@ CATEGORIES: Mapping[str, str] = {
     "abstract": "apstraktno",
 }
 
+LemmaKey = tuple[str, str]   # (lemma, root): three lemmas share their spelling across roots
+
 # Categories whose members are never pictured, whatever an entry says. People and time may be
-# (owner, 2026-11-05: "narod", "ljudi", "dan", "rob" are not abstract) — people only as faceless
-# figures or by an object (a slave by shackles), never a face, never a prophet.
+# (owner, 2026-11-05: "narod", "ljudi", "dan", "rob" are not abstract). Owner, 2026-11-06:
+# people, heads and faces only as plain silhouettes without facial features (no eyes, mouth or
+# expression); a body part that is the noun itself (eye, ear, tongue) is drawn as that part.
 NEVER_PICTURED = frozenset({"faith_hereafter", "qualities_feelings", "abstract", "numbers_quantities"})
 
-LemmaKey = tuple[str, str]   # (lemma, root): three lemmas share their spelling across roots
+# The few sacred things the owner allows (2026-11-06) as plain silhouettes in our greens despite
+# their category: an angel only as wings and light, never a figure or a face. (A mosque, a
+# miḥrāb and statues are places and objects, so their categories already allow them; the Quran as
+# a closed book and the Kaaba as a plain cube are allowed too, but neither is a catalogued noun.)
+SILHOUETTES_OF_THE_SACRED: frozenset[LemmaKey] = frozenset({("مَلَك", "ملك")})
+
+# Never pictured, whatever their category or an entry says: God, His Throne, and the prophets.
+NEVER_PICTURED_LEMMAS: frozenset[LemmaKey] = frozenset({
+    ("رَبّ", "ربب"), ("إِلٰه", "أله"), ("عَرْش", "عرش"), ("كُرْسِيّ", "كرس"),
+    ("نَبِيّ", "نبأ"), ("نُبُوَّة", "نبأ"), ("رَسُول", "رسل"), ("مُرْسَل", "رسل"),
+})
+
+
+def is_never_pictured(category: str, key: LemmaKey) -> bool:
+    """The content policy: whether no picture may ever show this lemma."""
+    if key in NEVER_PICTURED_LEMMAS:
+        return True
+    return category in NEVER_PICTURED and key not in SILHOUETTES_OF_THE_SACRED
 
 
 @dataclass(frozen=True)
@@ -64,7 +84,7 @@ def parse_categories(raw: Sequence[Mapping]) -> dict[LemmaKey, NounCategory]:
     """`[{"lemma", "root", "gloss_en", "category", "picturable"}, ...]` → by (lemma, root).
 
     Fails fast on a missing field, an unknown category, a duplicate lemma, or a picturable
-    entry in a category that is never pictured.
+    entry the content policy never pictures.
     """
     entries: dict[LemmaKey, NounCategory] = {}
     for item in raw:
@@ -95,8 +115,8 @@ def _entry(item: Mapping) -> NounCategory:
         raise NounCategoryFormatError(f"{entry.lemma}: unknown category {entry.category!r}")
     if not isinstance(entry.is_picturable, bool):
         raise NounCategoryFormatError(f"{entry.lemma}: picturable must be true or false")
-    if entry.is_picturable and entry.category in NEVER_PICTURED:
-        raise NounCategoryFormatError(f"{entry.lemma}: {entry.category} is never pictured")
+    if entry.is_picturable and is_never_pictured(entry.category, entry.key):
+        raise NounCategoryFormatError(f"{entry.lemma}: the content policy never pictures it ({entry.category})")
     if not entry.lemma or not entry.gloss_en.strip():
         raise NounCategoryFormatError(f"{entry.lemma!r}: empty lemma or gloss")
     return entry

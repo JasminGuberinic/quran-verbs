@@ -56,7 +56,13 @@ other candidate is held back or refused with a recorded reason (fil.adjectives.s
   odjeća · ljudi i porodica · vrijeme · mjesta · brojevi i količine · vjera i ahiret ·
   osobine i osjećanja · apstraktno. Browse by category in the app.
 - **Pictures only for concrete things** (fruit, animals, body parts, nature, objects).
-  Content policy: no people's faces, no prophets, angels or anything sacred depicted.
+  Content policy (owner, 2026-11-06): people, heads and faces only as plain faceless
+  silhouettes (no eyes, mouth or expression; a chin as a profile); a body part that is the noun
+  itself (eye, ear, tongue) as that part; nothing immodest. The sacred only as plain silhouettes:
+  a mosque (dome and minaret), a miḥrāb, statues (a featureless figure on a pedestal), an angel
+  (wings and light, never a figure); the Quran as a closed book and the Kaaba as a cube if they
+  are ever catalogued. Never God, His Throne, the prophets, or the rest of the unseen
+  (`fil.nouns.categories.is_never_pictured`).
 - **Style:** flat, 2–3 tones of the site's green, one object, recognisable at 64 px.
   Cheapest options, to be compared on a sample page before choosing:
   (a) open-licence icon sets (OpenMoji, Twemoji, Noto Emoji…) recoloured by a script

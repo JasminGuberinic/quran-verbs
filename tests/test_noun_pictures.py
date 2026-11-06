@@ -9,7 +9,8 @@ from __future__ import annotations
 import pytest
 
 from fil.noun_pictures import load_categories, load_pictures
-from fil.nouns.categories import CATEGORIES, NEVER_PICTURED, NounCategoryFormatError, parse_categories, picturable
+from fil.nouns.categories import (CATEGORIES, NEVER_PICTURED_LEMMAS, NounCategoryFormatError, is_never_pictured,
+                                  parse_categories, picturable)
 from fil.nouns.palette import SITE_PALETTE, Palette, fill_colours, lightness, normalised, recolour, tone_map
 from fil.nouns.picture_gate import MAX_BYTES, minified, picture_problems
 from fil.nouns.pictures import OPENMOJI, TWEMOJI, PictureManifestError, parse_manifest, shown, sources_used
@@ -119,15 +120,31 @@ def test_a_lemma_listed_twice_fails_fast():
         parse_categories([CATEGORY, CATEGORY])
 
 
-def test_every_catalogued_lemma_has_a_known_category_and_people_are_never_pictured():
+def test_a_prophet_is_never_pictured_even_as_a_silhouette_of_a_person():
+    prophet = {"lemma": "نَبِيّ", "root": "نبأ", "gloss_en": "prophet", "category": "people_family", "picturable": True}
+    with pytest.raises(NounCategoryFormatError, match="never pictures"):
+        parse_categories([prophet])
+
+
+def test_an_angel_may_be_pictured_as_a_silhouette_though_the_rest_of_faith_may_not():
+    angel = {"lemma": "مَلَك", "root": "ملك", "gloss_en": "angel", "category": "faith_hereafter", "picturable": True}
+    assert parse_categories([angel])[("مَلَك", "ملك")].is_picturable
+    with pytest.raises(NounCategoryFormatError):
+        parse_categories([{**angel, "lemma": "جَنَّة", "root": "جنن", "gloss_en": "garden"}])
+
+
+def test_every_catalogued_lemma_has_a_known_category_and_the_policy_holds():
     entries = load_categories()
     assert len(entries) >= 3000
     assert {entry.category for entry in entries.values()} == set(CATEGORIES)
-    assert not any(entry.category in NEVER_PICTURED for entry in picturable(entries.values()))
+    assert not any(is_never_pictured(entry.category, entry.key) for entry in picturable(entries.values()))
+    assert NEVER_PICTURED_LEMMAS <= set(entries)   # a typo would silently lift the ban
 
 
-@pytest.mark.parametrize("lemma, is_picturable", [("عِنَب", True), ("جَبَل", True), ("يَد", True),
-                                                   ("عَرْش", False), ("رَبّ", False), ("صُور", False)])
+@pytest.mark.parametrize("lemma, is_picturable", [("عِنَب", True), ("جَبَل", True), ("يَد", True), ("وَجْه", True),
+                                                   ("رَجُل", True), ("مَلَك", True), ("مَسْجِد", True),
+                                                   ("عَرْش", False), ("رَبّ", False), ("صُور", False),
+                                                   ("نَبِيّ", False), ("رَسُول", False), ("إِلٰه", False)])
 def test_golden_picturability(lemma, is_picturable):
     found = [entry for entry in load_categories().values() if entry.lemma == lemma]
     assert found and all(entry.is_picturable is is_picturable for entry in found), lemma

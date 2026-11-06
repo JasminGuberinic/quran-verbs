@@ -1683,5 +1683,221 @@
    "text": "شُعَرَاءَ",
    "why": "شُعَرَاء (pattern فُعَلَاء, plural of شَاعِر) is diptote: no tanwīn, genitive in -a when indefinite (Quran وَالشُّعَرَاءُ 26:224)"
   }
+ },
+ "مُصْلِح|صلح": {
+  "S|definite|NOM": {
+   "text": "الْمُصْلِحُ",
+   "why": "مُصْلِح is a regular triptote participle (Quran مِنَ الْمُصْلِحِ 2:220); CAMeL generates only the attested cell"
+  },
+  "S|definite|ACC": {
+   "text": "الْمُصْلِحَ",
+   "why": "مُصْلِح is a regular triptote participle (Quran مِنَ الْمُصْلِحِ 2:220); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|NOM": {
+   "text": "مُصْلِحٌ",
+   "why": "مُصْلِح is a regular triptote participle (Quran مِنَ الْمُصْلِحِ 2:220); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|ACC": {
+   "text": "مُصْلِحًا",
+   "why": "مُصْلِح is a regular triptote participle (Quran مِنَ الْمُصْلِحِ 2:220); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|GEN": {
+   "text": "مُصْلِحٍ",
+   "why": "مُصْلِح is a regular triptote participle (Quran مِنَ الْمُصْلِحِ 2:220); CAMeL generates only the attested cell"
+  },
+  "P|definite|NOM": {
+   "text": "الْمُصْلِحُونَ",
+   "why": "sound masculine plural of مُصْلِح (Quran مُصْلِحُونَ 2:11, الْمُصْلِحِينَ 7:170): -ūna in the nominative, -īna otherwise"
+  },
+  "P|definite|ACC": {
+   "text": "الْمُصْلِحِينَ",
+   "why": "sound masculine plural of مُصْلِح (Quran مُصْلِحُونَ 2:11, الْمُصْلِحِينَ 7:170): -ūna in the nominative, -īna otherwise"
+  },
+  "P|indefinite|ACC": {
+   "text": "مُصْلِحِينَ",
+   "why": "sound masculine plural of مُصْلِح (Quran مُصْلِحُونَ 2:11, الْمُصْلِحِينَ 7:170): -ūna in the nominative, -īna otherwise"
+  },
+  "P|indefinite|GEN": {
+   "text": "مُصْلِحِينَ",
+   "why": "sound masculine plural of مُصْلِح (Quran مُصْلِحُونَ 2:11, الْمُصْلِحِينَ 7:170): -ūna in the nominative, -īna otherwise"
+  }
+ },
+ "نُفُور|نفر": {
+  "S|definite|NOM": {
+   "text": "النُّفُورُ",
+   "why": "نُفُور 'aversion' is a regular triptote (Quran نُفُورًا 17:41, وَنُفُورٍ 67:21); CAMeL generates only the attested cells"
+  },
+  "S|definite|ACC": {
+   "text": "النُّفُورَ",
+   "why": "نُفُور 'aversion' is a regular triptote (Quran نُفُورًا 17:41, وَنُفُورٍ 67:21); CAMeL generates only the attested cells"
+  },
+  "S|definite|GEN": {
+   "text": "النُّفُورِ",
+   "why": "نُفُور 'aversion' is a regular triptote (Quran نُفُورًا 17:41, وَنُفُورٍ 67:21); CAMeL generates only the attested cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "نُفُورٌ",
+   "why": "نُفُور 'aversion' is a regular triptote (Quran نُفُورًا 17:41, وَنُفُورٍ 67:21); CAMeL generates only the attested cells"
+  }
+ },
+ "أَمَد|أمد": {
+  "S|definite|ACC": {
+   "text": "الْأَمَدَ",
+   "why": "أَمَد 'term, span' is a regular triptote (Quran الْأَمَدُ 57:16, أَمَدًا 18:12)"
+  },
+  "S|definite|GEN": {
+   "text": "الْأَمَدِ",
+   "why": "أَمَد 'term, span' is a regular triptote (Quran الْأَمَدُ 57:16, أَمَدًا 18:12)"
+  },
+  "S|indefinite|NOM": {
+   "text": "أَمَدٌ",
+   "why": "أَمَد 'term, span' is a regular triptote (Quran الْأَمَدُ 57:16, أَمَدًا 18:12)"
+  },
+  "S|indefinite|GEN": {
+   "text": "أَمَدٍ",
+   "why": "أَمَد 'term, span' is a regular triptote (Quran الْأَمَدُ 57:16, أَمَدًا 18:12)"
+  }
+ },
+ "بَأْساء|بأس": {
+  "S|definite|ACC": {
+   "text": "الْبَأْسَاءَ",
+   "why": "بَأْسَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَأْسَاءُ 2:214)"
+  },
+  "S|indefinite|NOM": {
+   "text": "بَأْسَاءُ",
+   "why": "بَأْسَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَأْسَاءُ 2:214)"
+  },
+  "S|indefinite|ACC": {
+   "text": "بَأْسَاءَ",
+   "why": "بَأْسَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَأْسَاءُ 2:214)"
+  },
+  "S|indefinite|GEN": {
+   "text": "بَأْسَاءَ",
+   "why": "بَأْسَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَأْسَاءُ 2:214)"
+  }
+ },
+ "ضَعْف|ضعف": {
+  "S|definite|NOM": {
+   "text": "الضَّعْفُ",
+   "why": "ضَعْف 'weakness' is a regular triptote (Quran ضَعْفًا 8:66, مِنْ ضَعْفٍ 30:54); CAMeL reads the bare word as ضِعْف 'double'"
+  },
+  "S|definite|ACC": {
+   "text": "الضَّعْفَ",
+   "why": "ضَعْف 'weakness' is a regular triptote (Quran ضَعْفًا 8:66, مِنْ ضَعْفٍ 30:54); CAMeL reads the bare word as ضِعْف 'double'"
+  },
+  "S|definite|GEN": {
+   "text": "الضَّعْفِ",
+   "why": "ضَعْف 'weakness' is a regular triptote (Quran ضَعْفًا 8:66, مِنْ ضَعْفٍ 30:54); CAMeL reads the bare word as ضِعْف 'double'"
+  },
+  "S|indefinite|NOM": {
+   "text": "ضَعْفٌ",
+   "why": "ضَعْف 'weakness' is a regular triptote (Quran ضَعْفًا 8:66, مِنْ ضَعْفٍ 30:54); CAMeL reads the bare word as ضِعْف 'double'"
+  }
+ },
+ "أَكْواب|كوب": {
+  "P|definite|NOM": {
+   "text": "الْأَكْوَابُ",
+   "why": "أَكْوَاب (pattern أَفْعَال, plural of كُوب 'cup') is a triptote (Quran وَأَكْوَابٌ 88:14, بِأَكْوَابٍ 56:18)"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَكْوَابَ",
+   "why": "أَكْوَاب (pattern أَفْعَال, plural of كُوب 'cup') is a triptote (Quran وَأَكْوَابٌ 88:14, بِأَكْوَابٍ 56:18)"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَكْوَابِ",
+   "why": "أَكْوَاب (pattern أَفْعَال, plural of كُوب 'cup') is a triptote (Quran وَأَكْوَابٌ 88:14, بِأَكْوَابٍ 56:18)"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَكْوَابًا",
+   "why": "أَكْوَاب (pattern أَفْعَال, plural of كُوب 'cup') is a triptote (Quran وَأَكْوَابٌ 88:14, بِأَكْوَابٍ 56:18)"
+  }
+ },
+ "بُرُوج|برج": {
+  "P|definite|NOM": {
+   "text": "الْبُرُوجُ",
+   "why": "بُرُوج (pattern فُعُول, plural of بُرْج 'tower') is a triptote (Quran بُرُوجًا 15:16, الْبُرُوجِ 85:1)"
+  },
+  "P|definite|ACC": {
+   "text": "الْبُرُوجَ",
+   "why": "بُرُوج (pattern فُعُول, plural of بُرْج 'tower') is a triptote (Quran بُرُوجًا 15:16, الْبُرُوجِ 85:1)"
+  },
+  "P|indefinite|NOM": {
+   "text": "بُرُوجٌ",
+   "why": "بُرُوج (pattern فُعُول, plural of بُرْج 'tower') is a triptote (Quran بُرُوجًا 15:16, الْبُرُوجِ 85:1)"
+  }
+ },
+ "أَسِير|أسر": {
+  "P|definite|NOM": {
+   "text": "الْأَسْرَى",
+   "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَسْرَى",
+   "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَسْرَى",
+   "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَسْرَى",
+   "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَسْرَى",
+   "why": "أَسْرَى (pattern فَعْلَى, plural of أَسِير) ends in alif maqṣūra and is diptote: one spelling for every case, no tanwīn (Quran الْأَسْرَى 8:70, أَسْرَى 8:67)"
+  }
+ },
+ "مَكانَت|كون": {
+  "S|definite|NOM": {
+   "text": "الْمَكَانَةُ",
+   "why": "مَكَانَة 'position, standing' is a regular triptote; the Quran has it only with a possessive (اعْمَلُوا عَلَى مَكَانَتِكُمْ 6:135), so the bare cells are documented"
+  },
+  "S|definite|ACC": {
+   "text": "الْمَكَانَةَ",
+   "why": "مَكَانَة 'position, standing' is a regular triptote; the Quran has it only with a possessive (اعْمَلُوا عَلَى مَكَانَتِكُمْ 6:135), so the bare cells are documented"
+  },
+  "S|definite|GEN": {
+   "text": "الْمَكَانَةِ",
+   "why": "مَكَانَة 'position, standing' is a regular triptote; the Quran has it only with a possessive (اعْمَلُوا عَلَى مَكَانَتِكُمْ 6:135), so the bare cells are documented"
+  },
+  "S|indefinite|NOM": {
+   "text": "مَكَانَةٌ",
+   "why": "مَكَانَة 'position, standing' is a regular triptote; the Quran has it only with a possessive (اعْمَلُوا عَلَى مَكَانَتِكُمْ 6:135), so the bare cells are documented"
+  },
+  "S|indefinite|ACC": {
+   "text": "مَكَانَةً",
+   "why": "مَكَانَة 'position, standing' is a regular triptote; the Quran has it only with a possessive (اعْمَلُوا عَلَى مَكَانَتِكُمْ 6:135), so the bare cells are documented"
+  },
+  "S|indefinite|GEN": {
+   "text": "مَكَانَةٍ",
+   "why": "مَكَانَة 'position, standing' is a regular triptote; the Quran has it only with a possessive (اعْمَلُوا عَلَى مَكَانَتِكُمْ 6:135), so the bare cells are documented"
+  }
+ },
+ "أَسْلِحَت|سلح": {
+  "P|definite|NOM": {
+   "text": "الْأَسْلِحَةُ",
+   "why": "أَسْلِحَة (pattern أَفْعِلَة, plural of سِلَاح 'weapon') is a regular triptote; the Quran has it only with a possessive (وَأَسْلِحَتَهُمْ 4:102), so the bare cells are documented"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَسْلِحَةَ",
+   "why": "أَسْلِحَة (pattern أَفْعِلَة, plural of سِلَاح 'weapon') is a regular triptote; the Quran has it only with a possessive (وَأَسْلِحَتَهُمْ 4:102), so the bare cells are documented"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَسْلِحَةِ",
+   "why": "أَسْلِحَة (pattern أَفْعِلَة, plural of سِلَاح 'weapon') is a regular triptote; the Quran has it only with a possessive (وَأَسْلِحَتَهُمْ 4:102), so the bare cells are documented"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَسْلِحَةٌ",
+   "why": "أَسْلِحَة (pattern أَفْعِلَة, plural of سِلَاح 'weapon') is a regular triptote; the Quran has it only with a possessive (وَأَسْلِحَتَهُمْ 4:102), so the bare cells are documented"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَسْلِحَةً",
+   "why": "أَسْلِحَة (pattern أَفْعِلَة, plural of سِلَاح 'weapon') is a regular triptote; the Quran has it only with a possessive (وَأَسْلِحَتَهُمْ 4:102), so the bare cells are documented"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَسْلِحَةٍ",
+   "why": "أَسْلِحَة (pattern أَفْعِلَة, plural of سِلَاح 'weapon') is a regular triptote; the Quran has it only with a possessive (وَأَسْلِحَتَهُمْ 4:102), so the bare cells are documented"
+  }
  }
 }

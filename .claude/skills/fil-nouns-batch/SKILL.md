@@ -256,6 +256,19 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   preposition gets "-" or merges into the verb gloss (اقْتَرَبَ مِنْ، احْتَفَلَ بِـ); الْخُرُوج is "going out" (exit reads
   مَخْرَج); يَرْكَبُ عَلَى is colloquial (رَكِبَ takes an object).
 
+- Batch 10 (2026-11-06, 6 re-plan rounds, 198 sentences, 7+1+1 refused in 4 rounds; وُسْع keeps only subject + preposition). Skipped ~45 participles/elatives (مُنزِل،
+  مُهْلِك، مُسْتَضْعَف، أَرْحَم، أَقْوَم …), adverbs غَد، غُدُوّ، كَرْه (always غَدًا/بِالْغُدُوِّ/كَرْهًا), كافَّة، idioms بال، دابِر، دَأْب
+  (كَدَأْبِ), feminines مُنافِقَة، صاحِبَة as "variant (on X's card)". HELD_BACK: شِرْك، مُشْرِكَة، مَرْضات، مِرْيَة، نَكِير، نُبُوَّة،
+  نُشُور، بَعْث، انتِقام، أَكِنَّة، ثُبُور، حاصِب، رَجْفَة، قارِعَة، مَحِيص، حُور، خَزَنَت، داعِي، زُلْفَى، شَعائِر (God/Hell/unseen/
+  revelation), عَلَقَة (MSA leech), أَحْبار (MSA inks), جِهاد، نِكاح (vulgar in dialect), دَعْوَى (lawsuit), صَعِيد (MSA level).
+- Gloss-exception root keys use CAMeL's root, where a hollow wāw is `#` (فَوْج is ف.#.ج, لَوْح ل.#.ح): print `gl.py` BEFORE
+  writing the exception. A possessive-only Quranic noun (مَكانَت، أَسْلِحَت) gets no sheet numbers until its whole row is
+  documented — check `bs-sheet` numbers for `[]` before splitting. Failed → accepted: يَدُورُ goes around, بِهُدُوءٍ/بِبُطْءٍ
+  (use an adjective: الْبَطِيء slow), الْإِنْسَان human being, يَحْتَفِظُ preserves, أَصَابَ afflicted, ارْتِفَاع (elevation),
+  شِدَّة intensity, مَمْلُوء full, أَشْعَلَ ignited; تُؤْلِمُ، حَافَظَ، نَاقَشَ، اجْتَمَعَ (met)، شَكَّلَ fail.
+- Reviewer refusals: سَقْف alone reads "ceiling" (a cat sits عَلَى السَّطْحِ); bare شَأْن is unnatural as an object or with
+  تَفَاصِيل (أَصْحَاب glosses "owners" — use الشَّأْنُ الْعَامُّ "public affairs", and عَظِيمَة "great", not كَبِيرَة, for importance); هَذَا شَأْنٌ makes the noun a predicate, not a subject; وُسْع lives in فِي وُسْعِ / بَذَلَ وُسْعَهُ.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

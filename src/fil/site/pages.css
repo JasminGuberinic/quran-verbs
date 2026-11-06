@@ -30,6 +30,12 @@ a { color: var(--accent); }
 .languages { position: relative; }
 .languages summary { cursor: pointer; color: var(--muted); }
 .languages[open] > a { display: inline-block; margin: 4px 10px 0 0; }
+/* "Not your language? …" — shown once (site/translation.js), quiet, and gone with one tap. */
+.translate-hint { display: flex; align-items: flex-start; gap: 8px; max-width: 760px; margin: 0 auto 4px; padding: 0 16px; font-size: 0.85rem; color: var(--muted); }
+.translate-hint[hidden] { display: none; }
+.translate-hint p { margin: 0; flex: 1; }
+.translate-hint-close { border: 0; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; padding: 2px 6px; cursor: pointer; border-radius: 6px; }
+.translate-hint-close:hover { color: var(--ink); background: var(--accent-soft); }
 .notice { background: var(--gold-soft); border-radius: 10px; padding: 10px 14px; font-size: 0.9rem; }
 .lead { color: var(--muted); }
 h1 { font-size: 1.6rem; margin: 18px 0 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }

@@ -59,6 +59,10 @@ header { display: grid; gap: 12px; }
 .lang select { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 8px; }
 .notice { font-size: 0.82rem; color: var(--muted); background: var(--gold-soft); border-radius: 10px; padding: 10px 12px; }
 .notice b { color: var(--ink); }
+.translate-hint { display: flex; align-items: flex-start; gap: 8px; max-width: 1180px; margin: 8px auto 0; padding: 0 16px; font-size: 0.82rem; color: var(--muted); }
+.translate-hint[hidden] { display: none; }
+.translate-hint p { margin: 0; flex: 1; }
+.translate-hint-close { border: 0; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; padding: 2px 6px; cursor: pointer; border-radius: 6px; }
 .progress { display: grid; gap: 6px; }
 .progress-label { display: flex; justify-content: space-between; gap: 12px; font-size: 0.84rem; color: var(--muted); flex-wrap: wrap; }
 .progress-label strong { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -470,12 +474,14 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><h1>Fiʿl <span class="ar">فِعْل</span></h1></div>
+    <div class="brand"><h1><span lang="ar-Latn" translate="no" class="notranslate">Fiʿl</span> <span class="ar notranslate" lang="ar" dir="rtl" translate="no">فِعْل</span></h1></div>
     <nav class="tabs" role="tablist" id="tabs"></nav>
     <nav class="sections"><a id="verbs-link" href="./" aria-current="page"></a><a id="nouns-link" hidden></a><a id="adjectives-link" hidden></a><a id="nuances-link" hidden></a><a id="particles-link" hidden></a><a id="pronouns-link" hidden></a><a id="exercises-link" hidden></a></nav>
-    <label class="lang"><span class="note" id="lang-label"></span> <select id="language"></select></label>
+    <label class="lang"><span class="note" id="lang-label"></span> <select id="language" translate="no" class="notranslate"></select></label>
   </div>
 </header>
+<!-- Shown once, in the languages that have the words for it (renderTranslateHint, site/translation.js). -->
+<aside class="translate-hint" id="translate-hint" hidden><p><span id="translate-hint-text"></span> <a id="translate-hint-link" href="?lang=en" hreflang="en" lang="en"></a></p><button type="button" class="translate-hint-close" data-translate-hint-close id="translate-hint-close"><span aria-hidden="true">×</span></button></aside>
 <div class="wrap">
   <div class="status">
     <p class="brand-sub" id="subtitle"></p>
@@ -507,6 +513,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
 <script src="practice.js"></script>
 <script src="ayat.js"></script>
 <script src="player.js"></script>
+<script src="translation.js"></script>
 <script>
 (() => {
   // Where "report a mistake" sends a learner. Empty until the site is public: the page then
@@ -598,6 +605,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     $("notice").innerHTML = ui.notice;
     $("footer").innerHTML = ui.footer.map((line) => `<p>${line}</p>`).join("");
     renderSections(ui);
+    renderTranslateHint(ui);
     $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");
     renderProgress();
   }
@@ -617,6 +625,21 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     if (!path) return;
     link.href = path;
     link.textContent = label;
+  }
+  // "Not your language? …": only in a language with the words for it, and only once per visitor.
+  let isHintOffered = false;
+  function renderTranslateHint(ui) {
+    const hint = $("translate-hint");
+    if (!ui.translateHint) { hint.hidden = true; return; }
+    $("translate-hint-text").textContent = ui.translateHint;
+    $("translate-hint-link").textContent = ui.translateHintLink;
+    $("translate-hint-link").hidden = language === "en";
+    $("translate-hint-close").setAttribute("aria-label", ui.close);
+    if (isHintOffered) return;
+    isHintOffered = true;
+    let storage = null;
+    try { storage = window.localStorage; } catch { storage = null; }
+    FilTranslation.showHintOnce(hint, storage);
   }
   function renderLanguagePicker() {
     $("language").innerHTML = DATA.languages.map((entry) => `<option value="${entry.code}" ${entry.code === language ? "selected" : ""}>${escapeHtml(entry.name)}</option>`).join("");
@@ -678,7 +701,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
 
   function tile({ arabic, spoken, label, detail, recited, quran }) {
     const tag = recited
-      ? `<button class="quran-tag" data-file="${recited}"><span class="play-icon" aria-hidden="true">▶</span> ${escapeHtml(t().recited)}</button>`
+      ? `<button class="quran-tag" data-file="${recited}"><span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span> ${escapeHtml(t().recited)}</button>`
       : (quran ? `<span class="quran-tag">${escapeHtml(t().inQuran)}</span>` : "");
     return `<div class="tile">
       ${playButton({ file: spoken, label: arabic })}
@@ -719,7 +742,8 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
       const translation = own || ayah.translation?.en;
       const fallbackNote = !own && language !== "en" ? ` · ${t().noFreeTranslation}` : "";
       const translationHtml = translation
-        ? `<p class="ayah-translation" dir="${own && language === "ur" ? "rtl" : "ltr"}">${escapeHtml(translation.text)}<small>${escapeHtml(translation.by)}${escapeHtml(fallbackNote)}</small></p>`
+        // A published translation of the Quran: a browser translating it would make a new one nobody made.
+        ? `<p class="ayah-translation notranslate" lang="${own ? language : "en"}" dir="${own && language === "ur" ? "rtl" : "ltr"}" translate="no">${escapeHtml(translation.text)}<small>${escapeHtml(translation.by)}${escapeHtml(fallbackNote)}</small></p>`
         : "";
       return `<div class="ayah">
         <div class="ayah-head"><span class="tense-chip">${escapeHtml(FilAyat.grammarLabel([ayah.category], t()))}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a>${FilAyat.ayahLinksHtml(ayah.ref, language, t().forms.links)}</div>
@@ -796,7 +820,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
       const cell = find(tense, pronoun);
       if (!cell) return `<td data-col="${tense}"><span class="note">–</span></td>`;
       if (cell.notUsed) return `<td data-col="${tense}"><span class="conj-cell not-used" title="${escapeHtml(t().notUsedNote)}">${cell.plain}<small>${escapeHtml(t().notUsed)}</small></span></td>`;
-      const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}"><span class="play-icon" aria-hidden="true">▶</span> ${escapeHtml(t().recited)}</button>` : "";
+      const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}"><span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span> ${escapeHtml(t().recited)}</button>` : "";
       return `<td data-col="${tense}"><button class="conj-cell ${cell.quran ? "attested" : ""}" data-file="${cell.spoken}">${cell.plain}</button>${recited}</td>`;
     }).join("")}</tr>`).join("");
     const attested = verb.cells.filter((cell) => cell.quran).length;

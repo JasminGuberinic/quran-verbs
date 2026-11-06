@@ -203,10 +203,15 @@
       if (content) made.textContent = content;
       return made;
     };
-    const arabic = (tag, content, extra = {}) => make(tag, { lang: "ar", dir: "rtl", class: "ar", ...extra }, content);
+    // Arabic is never handed to the browser's page translation (site/translation.js says why).
+    const arabic = (tag, content, extra = {}) => {
+      const made = make(tag, { lang: "ar", dir: "rtl", class: "ar", ...extra, translate: "no" }, content);
+      made.classList.add("notranslate");
+      return made;
+    };
     const soundButton = (path, label) => {
       const button = make("button", { type: "button", class: "play", "data-audio": root + path, "aria-label": label });
-      button.innerHTML = '<span class="play-icon" aria-hidden="true">▶</span>';
+      button.innerHTML = '<span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span>';
       return button;
     };
 
@@ -333,7 +338,9 @@
       }
       for (const line of explanationLines(kind, item, words, language)) box.append(make("p", {}, line));
       if (item.quranTranslation) {
-        box.append(make("p", { class: "translation", lang: "en" }, `${item.quranTranslation.text} — ${item.quranTranslation.by}`));
+        // A published translation of the Quran: never machine-translated into a new one.
+        box.append(make("p", { class: "translation notranslate", lang: "en", translate: "no" },
+                        `${item.quranTranslation.text} — ${item.quranTranslation.by}`));
       }
       const next = make("button", { type: "button", class: "button exercise-next" }, position + 1 < queue.length ? words.next : words.finish);
       next.addEventListener("click", advance);

@@ -294,7 +294,7 @@ def _language(code: str):
 @needs_node
 def test_a_particle_page_shows_what_it_does_its_uses_and_their_ayat(texts):
     html = particle_render.particle_page(_card(), _language("bs"), texts["bs"], published={render.NOUNS})
-    assert '<span class="ar lemma" lang="ar" dir="rtl">فِي</span>' in html and "1701× u Kur&#x27;anu" in html
+    assert '<span class="ar lemma notranslate" lang="ar" dir="rtl" translate="no">فِي</span>' in html and "1701× u Kur&#x27;anu" in html
     assert 'data-audio="../../../audio/f.m4a"' in html                       # the headword's voice
     assert '<mark data-audio="../../../audio/w.m4a"' in html                 # the particle in the ayah, recited
     assert "u + lokativ · na + lokativ" in html                               # as the noun glosses render it
@@ -321,5 +321,5 @@ def test_the_list_of_particles_links_every_particle(texts):
 @needs_node
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES])
 def test_the_top_bar_leads_to_the_particles_only_in_bosnian_and_english(texts, code):
-    bar = render.top_bar(texts[code], "../", _language(code), "", section=render.VERBS, published={render.PARTICLES})
+    bar = render.top_bar(texts[code], "../", _language(code), seo.language_index_path, section=render.VERBS, published={render.PARTICLES})
     assert (f'href="../{code}/{seo.PARTICLE_FOLDERS.get(code)}/"' in bar) == (code in seo.PARTICLE_FOLDERS)

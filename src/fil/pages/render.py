@@ -18,7 +18,7 @@ from html import escape
 
 from fil.ayah_links import ayah_links
 from fil.languages import LANGUAGES, Language
-from fil.pages import indexing, seo
+from fil.pages import indexing, seo, untranslated
 from fil.pages.interface_text import fill
 from fil.recitation import AYAH_STREAM, is_streamed
 
@@ -40,6 +40,12 @@ _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
 
 # One shared player (site/player.js): a tap on any [data-audio] plays it, or stops it if it is playing.
 _PLAYER_SCRIPT = "player.js"
+# Marks what the scripts draw later the way fil.pages.untranslated marks the page, and shows the hint once.
+_TRANSLATION_SCRIPT = "translation.js"
+# A play symbol is not a word: browser translation must leave it as it is.
+_PLAY_SYMBOL = f'<span {untranslated.NO_TRANSLATE}>▶</span>'
+# Languages are named in their own words; a browser must not translate "Bosanski" into "Bosnian".
+_OWN_NAME = f'{untranslated.NO_TRANSLATE} class="{untranslated.NO_TRANSLATE_CLASS}"'
 
 
 class EmbeddedAudioOnPublicPage(ValueError):
@@ -78,8 +84,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         title=title, description=description, language=language.code, path=path,
         lemma=card["lemma"], meaning=meaning, index_title=text["page"]["indexTitle"])
     body = "".join((
-        top_bar(text, root, language, _language_links(root, lambda code: seo.verb_path(code, verb.slug), language),
-                section=VERBS, published=published),
+        top_bar(text, root, language, lambda code: seo.verb_path(code, verb.slug), section=VERBS, published=published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article>',
         _hero(card, meaning, language, text, root),
         _main_forms(card, text, root),
@@ -103,7 +108,12 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
 
 def meaning_in(card: dict, language: str) -> str:
     """The verb's meaning in the page's language — English until it is translated, as in the app."""
-    return card["meaning"].get(language) or card["meaning"][_ENGLISH]
+    return card["meaning"][meaning_language(card, language)]
+
+
+def meaning_language(card: dict, language: str) -> str:
+    """The language the verb's meaning is shown in on a page in `language`."""
+    return language if card["meaning"].get(language) else _ENGLISH
 
 
 def audio_link(reference: str | None, root: str) -> str | None:
@@ -118,9 +128,9 @@ def audio_link(reference: str | None, root: str) -> str | None:
 
 
 def _hero(card: dict, meaning: str, language: Language, text: dict, root: str) -> str:
-    meaning_language = language.code if card["meaning"].get(language.code) else _ENGLISH
+    shown_in = meaning_language(card, language.code)
     english = (f'<span class="meaning-en" lang="en" dir="ltr">{escape(card["meaning"][_ENGLISH])}</span>'
-               if meaning_language != _ENGLISH else "")
+               if shown_in != _ENGLISH else "")
     stats = " · ".join((fill(text["times"], card["count"]), fill(text["inAyat"], card["ayahCount"]),
                         fill(text["ofAll"], f'{card["share"]:.1f}')))
     return (f'<header class="hero"><p class="eyebrow">#{card["rank"]} · {escape(text["root"])} '
@@ -128,7 +138,7 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str) -
             f'{escape(text["form"])} {FORM_NAMES[card["form"]]}</p>'
             f'<h1><span class="ar lemma" lang="ar" dir="rtl">{card["lemma"]}</span>'
             f'{_play(card.get("lemmaSpoken"), root, text["listen"])}'
-            f'<span class="meaning" lang="{meaning_language}">{escape(meaning)}</span>{english}</h1>'
+            f'<span class="meaning" lang="{shown_in}">{escape(meaning)}</span>{english}</h1>'
             f'<p class="stats">{stats}</p></header>')
 
 
@@ -154,7 +164,7 @@ def _form_item(arabic: str, spoken: str | None, label: str, tag: str, root: str,
 
 def _recited_tag(cell: dict, text: dict, root: str) -> str:
     if cell.get("recited"):
-        return f'<button class="tag" type="button" data-audio="{audio_link(cell["recited"], root)}">▶ {escape(text["recited"])}</button>'
+        return f'<button class="tag" type="button" data-audio="{audio_link(cell["recited"], root)}">{_PLAY_SYMBOL} {escape(text["recited"])}</button>'
     if cell["quran"]:
         return f'<span class="tag">{escape(text["inQuran"])}</span>'
     return ""
@@ -193,7 +203,7 @@ def _table_cell(cell: dict | None, root: str, text: dict) -> str:
                 f'{cell["plain"]}</span><small>{escape(text["notUsed"])}</small></td>')
     mark = ' class="attested"' if cell["quran"] else ""
     recited = (f' <button class="tag" type="button" data-audio="{audio_link(cell["recited"], root)}" '
-               f'aria-label="{escape(text["recited"])}">▶</button>') if cell.get("recited") else ""
+               f'aria-label="{escape(text["recited"])}">{_PLAY_SYMBOL}</button>') if cell.get("recited") else ""
     return (f'<td{mark}><button class="cell ar" type="button" lang="ar" dir="rtl" '
             f'data-audio="{audio_link(cell["spoken"], root)}">{cell["plain"]}</button>{recited}</td>')
 
@@ -311,7 +321,7 @@ def _ayah(ayah: dict, language: Language, text: dict, root: str) -> str:
 
 def _verb_gloss(word: dict, language: Language, text: dict) -> str:
     """The marked verb's meaning in this ayah — or, until it is glossed, its grammar."""
-    meaning = (f'{escape(_in_language(word["gloss"], language.code))} <span class="ai">AI</span>' if word.get("gloss")
+    meaning = (f'{_in_language_html(word["gloss"], language)} <span class="ai">AI</span>' if word.get("gloss")
                else f'<span class="grammar">{escape(grammar_label(word["grammar"], text))}</span>')
     return f'<p class="gloss"><span class="qr" lang="ar" dir="rtl">{word["text"]}</span> = {meaning}</p>'
 
@@ -349,7 +359,9 @@ def _translation(ayah: dict, language: Language, text: dict) -> str:
     shown_language = language.code if own else _ENGLISH
     direction = "rtl" if own and language.is_rtl else "ltr"
     fallback = f' · {escape(text["noFreeTranslation"])}' if not own and language.code != _ENGLISH and text["noFreeTranslation"] else ""
-    return (f'<figcaption class="translation" lang="{shown_language}" dir="{direction}">{escape(shown["text"])}'
+    # A published translation of the Quran: a browser translating it would make a new one nobody made.
+    return (f'<figcaption class="translation" lang="{shown_language}" dir="{direction}" {untranslated.NO_TRANSLATE}>'
+            f'{escape(shown["text"])}'
             f'<small>{escape(shown["by"])}{fallback}</small></figcaption>')
 
 
@@ -359,7 +371,7 @@ def _sentences(card: dict, language: Language, text: dict, root: str) -> str:
     items = "".join(
         f'<li><p class="sentence">{_play(sentence["spoken"], root, text["listen"])}'
         f'<span class="ar" lang="ar" dir="rtl">{_sentence_arabic(sentence)}</span></p>'
-        f'<p>{escape(_in_language(sentence["translation"], language.code))}</p></li>'
+        f'<p>{_in_language_html(sentence["translation"], language)}</p></li>'
         for sentence in card["sentences"]
     )
     return (f'<section><h2>{escape(text["sentences"])}</h2><ul class="sentences">{items}</ul>'
@@ -370,8 +382,15 @@ def _sentence_arabic(sentence: dict) -> str:
     return " ".join(f"<b>{word['arabic']}</b>" if word["target"] else word["arabic"] for word in sentence["words"])
 
 
-def _in_language(translations: dict[str, str], language: str) -> str:
-    return translations.get(language) or translations.get(_ENGLISH, "")
+def _in_language_html(translations: dict[str, str], language: Language) -> str:
+    """The text in the page's language, else in English — then said to be English, to the browser and screen readers."""
+    shown = _in_language_or_english(translations, language.code)
+    if shown is None:
+        return ""
+    shown_language, words = shown
+    if shown_language == language.code:
+        return escape(words)
+    return f'<span lang="{shown_language}">{escape(words)}</span>'
 
 
 def _app_link(card: dict, language: Language, text: dict, root: str) -> str:
@@ -395,13 +414,13 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
     rows = "".join(
         f'<li><a href="{verb.slug}/"><span class="rank">{verb.card["rank"]}</span>'
         f'<span class="ar" lang="ar" dir="rtl">{verb.card["lemma"]}</span>'
-        f'<span class="meaning">{escape(meaning_in(verb.card, language.code))}</span>'
+        f'<span class="meaning"{_lang_if_other(meaning_language(verb.card, language.code), language)}>'
+        f'{escape(meaning_in(verb.card, language.code))}</span>'
         f'<span class="count">{escape(fill(text["times"], verb.card["count"]))}</span></a></li>'
         for verb in verbs
     )
     body = "".join((
-        top_bar(text, root, language, _language_links(root, seo.language_index_path, language),
-                section=VERBS, is_section_list=True, published=published),
+        top_bar(text, root, language, seo.language_index_path, section=VERBS, is_section_list=True, published=published),
         f'<main class="wrap"><h1>{escape(text["page"]["indexTitle"])}</h1><p class="lead">{escape(description)}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         f'<p class="cta"><a class="button" href="{root}index.html?lang={language.code}">{escape(text["tabs"][0])} · {seo.SITE_NAME} →</a></p>',
@@ -427,7 +446,7 @@ def app_head(text: dict) -> str:
 def app_links(texts: dict[str, dict]) -> str:
     """Plain links from the app to every verb list, so the static pages are found from the start."""
     links = " · ".join(
-        f'<a href="{seo.language_index_path(language.code)}" hreflang="{language.code}" lang="{language.code}">'
+        f'<a href="{seo.language_index_path(language.code)}" hreflang="{language.code}" lang="{language.code}" {_OWN_NAME}>'
         f'{escape(texts[language.code]["page"]["allVerbs"])}</a>'
         for language in LANGUAGES
     )
@@ -438,7 +457,7 @@ def app_links(texts: dict[str, dict]) -> str:
 def not_found_page(texts: dict[str, dict], base_path: str) -> str:
     """Served by GitHub for any unknown address, at any depth — so its links are absolute."""
     links = "".join(
-        f'<li><a href="{base_path}{seo.language_index_path(language.code)}" lang="{language.code}">'
+        f'<li><a href="{base_path}{seo.language_index_path(language.code)}" lang="{language.code}" {_OWN_NAME}>'
         f'{escape(language.name)} · {escape(texts[language.code]["page"]["allVerbs"])}</a></li>'
         for language in LANGUAGES
     )
@@ -447,18 +466,21 @@ def not_found_page(texts: dict[str, dict], base_path: str) -> str:
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<meta name="robots" content="noindex"><title>{escape(english["notFound"])} · {seo.SITE_NAME}</title>'
             f'<link rel="stylesheet" href="{base_path}{STYLESHEET}"></head><body>'
-            f'<main class="wrap"><h1>{escape(english["notFound"])}</h1>'
-            f'<p class="lead" lang="bs">{escape(texts["bs"]["page"]["notFound"])}</p>'
-            f'<p class="cta"><a class="button" href="{base_path}">{seo.SITE_NAME} →</a></p>'
-            f'<ul class="language-list">{links}</ul></main></body></html>\n')
+            + untranslated.protect(f'<main class="wrap"><h1>{escape(english["notFound"])}</h1>'
+                                   f'<p class="lead" lang="bs">{escape(texts["bs"]["page"]["notFound"])}</p>'
+                                   f'<p class="cta"><a class="button" href="{base_path}">{seo.SITE_NAME} →</a></p>'
+                                   f'<ul class="language-list">{links}</ul></main>', _ENGLISH)
+            + '</body></html>\n')
 
 
 # ---------- shared parts ----------
 
 def _document(language: Language, head: str, body: str, *, root: str, text: dict) -> str:
+    """The whole page, its body marked for browser translation (fil.pages.untranslated)."""
     direction = "rtl" if language.is_rtl else "ltr"
     return (f'<!doctype html>\n<html lang="{language.code}" dir="{direction}">\n<head>\n{head}</head>\n'
-            f'<body>\n{body}\n{_player(root, text)}\n</body>\n</html>\n')
+            f'<body>\n{untranslated.protect(body, language.code)}\n{_player(root, text)}\n'
+            f'<script src="{root}{_TRANSLATION_SCRIPT}" defer></script>\n</body>\n</html>\n')
 
 
 def _player(root: str, text: dict) -> str:
@@ -493,12 +515,13 @@ def _meta(*, title: str, description: str, url: str, page_type: str) -> str:
             f'<meta name="twitter:description" content="{description}">\n<meta name="twitter:image" content="{image}">\n')
 
 
-def top_bar(text: dict, root: str, language: Language, switcher: str, *, section: str,
-            is_section_list: bool = False, published: Collection[str] = frozenset()) -> str:
+def top_bar(text: dict, root: str, language: Language, path_in: Callable[[str], str], *, section: str,
+            languages: Sequence[Language] = LANGUAGES, is_section_list: bool = False,
+            published: Collection[str] = frozenset()) -> str:
     """The one top bar of every static page: the brand, the site's sections (verbs, then the
     `published` ones of nouns, adjectives, nuances, particles, pronouns, exercises) with the current one marked, and the
-    language switcher. A section appears only in the languages it is written in, so no link leads
-    to a missing page."""
+    switcher to this page (`path_in` a language) in each of the `languages` it is written in. A section appears only
+    in the languages it is written in, so no link leads to a missing page. Under it, the translation hint."""
     sections = [(VERBS, seo.language_index_path(language.code), text["page"]["nav"]),
                 *((name, index_path(language.code), text[words]["nav"])
                   for name, folders, index_path, words in _SECTIONS
@@ -507,7 +530,23 @@ def top_bar(text: dict, root: str, language: Language, switcher: str, *, section
                     for name, path, label in sections)
     return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>'
             f'<nav class="sections">{links}</nav>'
-            f'<details class="languages"><summary>{escape(text["language"])}</summary>{switcher}</details></header>')
+            f'<details class="languages"><summary>{escape(text["language"])}</summary>'
+            f'{_language_links(root, path_in, language, languages)}</details></header>'
+            f'{translation_hint(text, root, path_in, language)}')
+
+
+def translation_hint(text: dict, root: str, path_in: Callable[[str], str], language: Language) -> str:
+    """For a reader whose language we do not write: the browser can translate the page — best
+    from English. Hidden until site/translation.js shows it, once per visitor; only languages
+    with the words for it (Bosnian, English) show it, the others are read in their own."""
+    hint = text.get("translateHint")
+    if not hint:
+        return ""
+    english = (f' <a href="{root}{path_in(_ENGLISH)}" hreflang="{_ENGLISH}" lang="{_ENGLISH}">{escape(text["translateHintLink"])}</a>'
+               if language.code != _ENGLISH else "")
+    return (f'<aside class="translate-hint" data-translate-hint hidden><p>{escape(hint)}{english}</p>'
+            f'<button type="button" class="translate-hint-close" data-translate-hint-close '
+            f'aria-label="{escape(text["close"])}"><span aria-hidden="true">×</span></button></aside>')
 
 
 # The sections after the verbs, in top-bar order: name, the languages they are written in, the
@@ -526,11 +565,15 @@ def _section_mark(is_current: bool, is_section_list: bool) -> str:
     return _CURRENT if is_section_list else ' aria-current="true"'
 
 
-def _language_links(root: str, path_in, current: Language) -> str:
+# The sections written only in Bosnian and English (nouns, adjectives, nuances, particles, exercises).
+BOSNIAN_AND_ENGLISH: tuple[Language, ...] = tuple(language for language in LANGUAGES if language.code in ("bs", "en"))
+
+
+def _language_links(root: str, path_in: Callable[[str], str], current: Language, languages: Sequence[Language]) -> str:
     return "".join(
-        f'<a href="{root}{path_in(language.code)}" hreflang="{language.code}" lang="{language.code}"'
+        f'<a href="{root}{path_in(language.code)}" hreflang="{language.code}" lang="{language.code}" {_OWN_NAME}'
         f'{_CURRENT if language == current else ""}>{escape(language.name)}</a>'
-        for language in LANGUAGES
+        for language in languages
     )
 
 
@@ -543,4 +586,4 @@ def _play(reference: str | None, root: str, label: str) -> str:
     link = audio_link(reference, root)
     if not link:
         return ""
-    return f'<button class="play" type="button" data-audio="{link}" aria-label="{escape(label)}"><span class="play-icon" aria-hidden="true">▶</span></button>'
+    return f'<button class="play" type="button" data-audio="{link}" aria-label="{escape(label)}"><span class="play-icon" aria-hidden="true" {untranslated.NO_TRANSLATE}>▶</span></button>'

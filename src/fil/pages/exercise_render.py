@@ -146,10 +146,5 @@ def _practice(kinds: Sequence[str], shards: Mapping[str, int], words: dict, lang
 
 def _top_bar(text: dict, root: str, language: Language, path_in, published: Collection[str],
              is_section_list: bool = False) -> str:
-    switcher = "".join(
-        f'<a href="{root}{path_in(code)}" hreflang="{code}" lang="{code}"'
-        f'{render._CURRENT if code == language.code else ""}>{escape(name)}</a>'
-        for code, name in (("bs", "Bosanski"), ("en", "English"))
-    )
-    return render.top_bar(text, root, language, switcher, section=render.EXERCISES, is_section_list=is_section_list,
+    return render.top_bar(text, root, language, path_in, languages=render.BOSNIAN_AND_ENGLISH, section=render.EXERCISES, is_section_list=is_section_list,
                           published=published)

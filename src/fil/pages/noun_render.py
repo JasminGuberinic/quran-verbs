@@ -410,12 +410,7 @@ def _thumbnail(card: dict, root: str) -> str:
 def _top_bar(text: dict, root: str, language: Language, path_in, is_section_list: bool = False,
              published: Collection[str] = frozenset()) -> str:
     """The site's top bar (render.top_bar), switching only between the languages nouns are written in."""
-    switcher = "".join(
-        f'<a href="{root}{path_in(code)}" hreflang="{code}" lang="{code}"'
-        f'{render._CURRENT if code == language.code else ""}>{escape(name)}</a>'
-        for code, name in (("bs", "Bosanski"), ("en", "English"))
-    )
-    return render.top_bar(text, root, language, switcher, section=render.NOUNS, is_section_list=is_section_list,
+    return render.top_bar(text, root, language, path_in, languages=render.BOSNIAN_AND_ENGLISH, section=render.NOUNS, is_section_list=is_section_list,
                           published=published)
 
 

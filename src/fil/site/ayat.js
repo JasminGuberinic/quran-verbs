@@ -68,13 +68,14 @@
     const words = ayah.text.split(" ")
       .map((word, index) => (ayah.hits.includes(index) ? `<mark>${escapeHtml(word)}</mark>` : escapeHtml(word))).join(" ");
     const translated = translation?.text?.[ayah.ref];
+    // A published translation of the Quran: a browser translating it would make a new one nobody made.
     const translationHtml = translated
-      ? `<p class="ayah-translation" lang="${options.translationLanguage}" dir="${options.translationDir}">${escapeHtml(translated)}<small>${escapeHtml(translation.by)}${escapeHtml(options.fallbackNote)}</small></p>`
+      ? `<p class="ayah-translation notranslate" lang="${options.translationLanguage}" dir="${options.translationDir}" translate="no">${escapeHtml(translated)}<small>${escapeHtml(translation.by)}${escapeHtml(options.fallbackNote)}</small></p>`
       : "";
     return `<article class="ayah"><p class="ayah-head"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${ayah.ref} ↗</a>`
-      + `<button type="button" class="play small" ${options.audioAttribute}="${escapeHtml(ayahAudioUrl(options.audioSource, ayah))}" aria-label="${escapeHtml(`${ayah.ref} · ${options.recitedAyah}`)}"><span class="play-icon" aria-hidden="true">▶</span></button>`
+      + `<button type="button" class="play small" ${options.audioAttribute}="${escapeHtml(ayahAudioUrl(options.audioSource, ayah))}" aria-label="${escapeHtml(`${ayah.ref} · ${options.recitedAyah}`)}"><span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span></button>`
       + `${ayahLinksHtml(ayah.ref, options.language, options.text.links)}</p>`
-      + `<p class="qr ayah-text" lang="ar" dir="rtl">${words}</p>${translationHtml}</article>`;
+      + `<p class="qr ayah-text notranslate" lang="ar" dir="rtl" translate="no">${words}</p>${translationHtml}</article>`;
   }
 
   // ---------- the button and its list ----------

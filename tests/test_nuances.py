@@ -251,7 +251,7 @@ def test_a_group_page_shows_each_word_its_voice_its_card_and_its_ayat(texts):
     assert 'data-audio="../../../audio/q.m4a"' in html                       # the headword's voice
     assert '<mark data-audio="../../../audio/w.m4a"' in html                 # the word in the ayah, recited
     assert 'href="../../../bs/imenica/qalb/"' in html and "Stranica imenice" in html
-    assert '<span class="ar" lang="ar" dir="rtl">قَلْب</span>' in html       # Arabic inside a Bosnian text
+    assert '<span class="ar notranslate" lang="ar" dir="rtl" translate="no">قَلْب</span>' in html       # Arabic inside a Bosnian text
     assert 'hreflang="en" href="https://jasminguberinic.github.io/quran-verbs/en/nuances/qalb-fuad/"' in html
     assert html.count("Nijanse") >= 2                                        # top bar and eyebrow
 
@@ -274,6 +274,6 @@ def test_similar_words_link_the_group_only_where_nuance_pages_exist(texts):
 @needs_node
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES])
 def test_the_top_bar_leads_to_the_nuances_only_in_bosnian_and_english(texts, code):
-    bar = render.top_bar(texts[code], "../", _language(code), "", section=render.VERBS,
+    bar = render.top_bar(texts[code], "../", _language(code), seo.language_index_path, section=render.VERBS,
                          published={render.NOUNS, render.ADJECTIVES, render.NUANCES})
     assert (f'href="../{code}/{seo.NUANCE_FOLDERS.get(code)}/"' in bar) == (code in seo.NUANCE_FOLDERS)

@@ -224,7 +224,7 @@ def test_every_page_plays_through_the_shared_toggling_player_in_its_language():
 
     assert '<script src="../../player.js" data-attribute="data-audio" data-stop-label="Zaustavi" defer></script>' in html
     assert 'data-stop-label="Stop"' in untranslated
-    assert '<span class="play-icon" aria-hidden="true">▶</span>' in html
+    assert '<span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span>' in html
 
 
 def test_a_page_in_a_language_without_a_meaning_falls_back_to_english_and_says_so():
@@ -395,9 +395,9 @@ def test_a_page_lists_every_form_with_its_count_gloss_and_first_ayah():
     html = render.verb_page(PublishedVerb(_card(), "qala"), _language("bs"), _text())
 
     assert "Every form (2)" in html
-    assert ('<button class="form-play" type="button" lang="ar" dir="rtl" data-audio="../../audio/form.m4a">قَالَ</button>'
+    assert ('<button class="form-play notranslate" type="button" lang="ar" dir="rtl" data-audio="../../audio/form.m4a" translate="no">قَالَ</button>'
             '<small>412×</small>') in html
-    assert '<b lang="ar" dir="rtl">قَالُوهَا</b><small>1×</small>' in html   # no recitation: shown, not playable
+    assert '<b lang="ar" dir="rtl" translate="no" class="notranslate">قَالُوهَا</b><small>1×</small>' in html   # no recitation: shown, not playable
     assert "rekao je <span class=\"ai\">AI</span>" in html
     assert 'href="https://quran.com/9/74"' in html
 

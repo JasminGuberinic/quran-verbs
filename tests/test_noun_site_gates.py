@@ -83,24 +83,24 @@ def _sections(html: str) -> list[tuple[str, str]]:
 
 
 def test_a_verb_page_leads_to_the_verbs_as_its_section_and_to_the_nouns():
-    bar = render.top_bar(_text(), "../../", _language("bs"), "", section=render.VERBS, published={render.NOUNS})
+    bar = render.top_bar(_text(), "../../", _language("bs"), seo.language_index_path, section=render.VERBS, published={render.NOUNS})
     assert _sections(bar) == [("../../bs/", ' aria-current="true"'), ("../../bs/imenica/", "")]
 
 
 def test_a_list_page_is_the_current_page_of_its_section():
-    bar = render.top_bar(_text(), "../../", _language("en"), "", section=render.NOUNS, is_section_list=True,
+    bar = render.top_bar(_text(), "../../", _language("en"), seo.language_index_path, section=render.NOUNS, is_section_list=True,
                          published={render.NOUNS})
     assert _sections(bar) == [("../../en/", ""), ("../../en/noun/", ' aria-current="page"')]
 
 
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES if language.code not in seo.NOUN_FOLDERS])
 def test_a_language_without_noun_pages_has_no_nouns_link(code):
-    bar = render.top_bar(_text(), "../", _language(code), "", section=render.VERBS, published={render.NOUNS})
+    bar = render.top_bar(_text(), "../", _language(code), seo.language_index_path, section=render.VERBS, published={render.NOUNS})
     assert [path for path, _mark in _sections(bar)] == [f"../{code}/"]
 
 
 def test_no_nouns_link_before_the_nouns_are_published():
-    bar = render.top_bar(_text(), "../", _language("bs"), "", section=render.VERBS, published=())
+    bar = render.top_bar(_text(), "../", _language("bs"), seo.language_index_path, section=render.VERBS, published=())
     assert len(_sections(bar)) == 1
 
 

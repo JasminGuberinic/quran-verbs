@@ -131,5 +131,5 @@ def test_the_list_of_pronouns_links_every_pronoun(texts):
 @needs_node
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES])
 def test_the_top_bar_leads_to_the_pronouns_only_in_bosnian_and_english(texts, code):
-    bar = render.top_bar(texts[code], "../", _language(code), "", section=render.VERBS, published={render.PRONOUNS})
+    bar = render.top_bar(texts[code], "../", _language(code), seo.language_index_path, section=render.VERBS, published={render.PRONOUNS})
     assert (f'href="../{code}/{seo.PRONOUN_FOLDERS.get(code)}/"' in bar) == (code in seo.PRONOUN_FOLDERS)

@@ -5,7 +5,8 @@ is fully determined by its cell: the article by the state, the last vowel by the
 the shape of the ending by the number and the kind of plural. A form whose ending says
 another cell than the one it was generated for is refused — and so is the one ending
 Arabic never writes, a case vowel on the yāʾ of a defective noun (الأَيْدِيُ), and a letter
-written with two vowels (حَيََّاتٌ: a fatḥa left over when an ending was joined on).
+written with two vowels (حَيََّاتٌ: a fatḥa left over when an ending was joined on) or a
+doubled letter without its vowel (جَبّارٌ: the Quran writes جَبَّارٌ).
 
 Pure: a form and a cell in, the list of problems out (empty = it passes).
 """
@@ -41,8 +42,8 @@ _SOUND_ENDINGS = {(PLURAL, NOMINATIVE): "ون" + _FATHA, (PLURAL, ACCUSATIVE): "
 def problems(form: str, cell: Cell, lemma: str) -> tuple[str, ...]:
     """Every way `form` fails to be the `cell` of `lemma`; empty when it passes."""
     text = spelling_key(form)
-    found = [_state_problem(form, cell), _two_vowels_problem(form), _defective_problem(text), _long_alif_problem(text),
-             _ending_problem(text, form, cell, lemma)]
+    found = [_state_problem(form, cell), _two_vowels_problem(form), _bare_shadda_problem(form), _defective_problem(text),
+             _long_alif_problem(text), _ending_problem(text, form, cell, lemma)]
     return tuple(problem for problem in found if problem)
 
 
@@ -81,6 +82,13 @@ def _two_vowels_problem(form: str) -> str | None:
     marks = _letter_marks(unicodedata.normalize("NFD", form))
     is_doubled = any(sum(mark in _VOWELS_AND_SUKUN for mark in letter) > 1 for letter in marks)
     return "two vowels on one letter" if is_doubled else None
+
+
+def _bare_shadda_problem(form: str) -> str | None:
+    """A doubled letter is written with its vowel (or nunation) beside the shadda."""
+    marks = _letter_marks(unicodedata.normalize("NFD", form))
+    is_bare = any(_SHADDA in letter and not set(letter) & _ALL_VOWELS for letter in marks)
+    return "a doubled letter without its vowel" if is_bare else None
 
 
 def _letter_marks(text: str) -> list[str]:

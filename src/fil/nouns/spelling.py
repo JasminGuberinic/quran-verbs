@@ -56,10 +56,31 @@ def spelling_key(form: str) -> str:
     text = text.replace(_SILENT_ALEF_AFTER_SEAT, _ALEF)
     text = "".join(_OPEN_TANWIN.get(char, char) for char in text)
     text = _DAGGER_AFTER_FATHA.sub(_ALEF, text)
-    text = orthographic_key(text).replace(_ALEF + _FATHATAN, _FATHATAN + _ALEF)
+    # Nunation moved onto the letter before its seat alif joins that letter's marks in canonical
+    # order: CAMeL's شَكّاً and the Quran's شَكًّا are one form.
+    text = unicodedata.normalize("NFD", orthographic_key(text).replace(_ALEF + _FATHATAN, _FATHATAN + _ALEF))
     text = text.replace(_FATHA + _SHADDA + _ALEF, _SHADDA + _ALEF)   # NFD puts fatḥa before shadda
     text = text.replace(_FATHA + _ALEF, _ALEF).replace(_SUKUN, "")
     return "ال" + text[len(_ARTICLE_BEFORE_LAM):] if text.startswith(_ARTICLE_BEFORE_LAM) else text
+
+
+# A shadda written straight on its letter, no vowel beside it, before a long ā — or before
+# nunation's seat alif, the fatḥatān written after it (شَكّاً).
+_BARE_SHADDA = "(?<![" + chr(0x064B) + "-" + chr(0x0652) + "])" + _SHADDA
+_BARE_SHADDA_BEFORE_SEAT = re.compile(_BARE_SHADDA + _ALEF + _FATHATAN)
+_BARE_SHADDA_BEFORE_ALEF = re.compile(_BARE_SHADDA + "(?=" + _ALEF + ")")
+
+
+def with_voweled_shadda(form: str) -> str:
+    """A doubled letter written with its vowel: جَبّارٌ → جَبَّارٌ, الصّابِرُ → الصَّابِرُ, شَكّاً → شَكًّا.
+
+    Before a long ā the fatḥa says nothing the alif does not, so CAMeL and the corpus's lemmas
+    (صابِر, جَبّار) leave it out, and the shadda then stands alone; CAMeL also writes nunation
+    after its seat alif (شَكّاً), not on the doubled letter. The Quran writes the doubled
+    letter's vowel (جَبَّارٌ, ٱلصَّٰبِرِينَ, حَقًّا), and a learner reads it from the letter, so a
+    table writes it too — the same form `spelling_key` already says it is."""
+    text = _BARE_SHADDA_BEFORE_SEAT.sub(_FATHATAN + _SHADDA + _ALEF, unicodedata.normalize("NFC", form))
+    return unicodedata.normalize("NFC", _BARE_SHADDA_BEFORE_ALEF.sub(_FATHA + _SHADDA, text))
 
 
 def skeleton(form: str) -> str:

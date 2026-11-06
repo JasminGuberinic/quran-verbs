@@ -9,6 +9,8 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
+import unicodedata
+
 import pytest
 
 from fil.composition.decomposition import AND
@@ -20,7 +22,7 @@ from fil.nouns.model import (ACCUSATIVE, ACTIVE_PARTICIPLE, ATTESTED, BROKEN, CA
                              GENERATED, GENITIVE, INDEFINITE, MISSING, NOMINATIVE, PLURAL, SINGULAR, SOUND_FEMININE,
                              SOUND_MASCULINE, STATES, Cell, NounLemma, NounOccurrence, PluralForm)
 from fil.nouns.paradigm import build_paradigm, generated_cell, has_quranic_vowels
-from fil.nouns.spelling import skeleton, spelling_key, standalone
+from fil.nouns.spelling import skeleton, spelling_key, standalone, with_voweled_shadda
 from fil.resources import QAC_MORPHOLOGY
 
 
@@ -167,6 +169,26 @@ def test_uthmani_silent_waw_and_dropped_article_lam_fold_to_imlai():
     assert spelling_key("كَفَرُوا۟") == spelling_key("كَفَرُوا")   # a silent alif after a voweled wāw stays
 
 
+@pytest.mark.parametrize("bare, voweled", [
+    ("جَبّارٌ", "جَبَّارٌ"), ("أَيّامٌ", "أَيَّامٌ"), ("شَكّاً", "شَكًّا"), ("الصّابِرُ", "الصَّابِرُ"), ("الْحَيّانِ", "الْحَيَّانِ"),
+    ("حَيًّا", "حَيًّا"), ("رَبٌّ", "رَبٌّ"), ("جَنَّاتٌ", "جَنَّاتٌ"),   # a voweled shadda is left as it is
+])
+def test_a_doubled_letter_before_a_long_a_is_written_with_its_fatha(bare, voweled):
+    """CAMeL and the corpus lemmas write جَبّارٌ; the Quran and the tables جَبَّارٌ — one spoken form."""
+    assert with_voweled_shadda(bare) == unicodedata.normalize("NFC", voweled)
+    assert spelling_key(bare) == spelling_key(voweled)
+    assert "a doubled letter without its vowel" not in gate.problems(with_voweled_shadda(bare),
+                                                                      Cell(SINGULAR, INDEFINITE, NOMINATIVE), "x")
+
+
+def test_camel_forms_are_mended_at_the_edge():
+    from fil.camel_nouns import _mended
+
+    assert _mended("الصابِرُ") == unicodedata.normalize("NFC", "الصَّابِرُ")   # article and shadda vowel
+    assert _mended("أَيّامٌ") == unicodedata.normalize("NFC", "أَيَّامٌ")
+    assert _mended("الأَيْدِيُ") == "الْأَيْدِي"
+
+
 def test_skeleton_and_standalone():
     assert skeleton("ءَايَٰتِ") == skeleton("ـَٔايَٰتِ") == skeleton("آيات")
     assert skeleton("أَيَّىٰمٍ") == "ءيام"
@@ -200,6 +222,8 @@ def test_the_gate_passes_well_formed_cells(form, cell):
     ("ٱلْأَيْدِى", Cell(PLURAL, DEFINITE, ACCUSATIVE), "ACC ending expected, found no vowel"),
     ("ٱلْجَنَّتَيْنِ", Cell(DUAL, DEFINITE, NOMINATIVE), "NOM D must end in -انِ"),
     ("حَيََّاتٌ", Cell(PLURAL, INDEFINITE, NOMINATIVE), "two vowels on one letter"),
+    ("جَبّارٌ", Cell(SINGULAR, INDEFINITE, NOMINATIVE), "a doubled letter without its vowel"),
+    ("الصّابِرُ", Cell(SINGULAR, DEFINITE, NOMINATIVE), "a doubled letter without its vowel"),
 ])
 def test_the_gate_refuses_what_says_another_cell(form, cell, problem):
     found = gate.problems(form, cell, "أَلِيم" if problem is None else "يَد")

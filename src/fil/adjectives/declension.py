@@ -23,7 +23,7 @@ from __future__ import annotations
 import unicodedata
 
 from fil.nouns.model import ACCUSATIVE, CASES, DEFINITE, DUAL, GENITIVE, INDEFINITE, NOMINATIVE, SINGULAR
-from fil.nouns.spelling import skeleton
+from fil.nouns.spelling import skeleton, with_voweled_shadda
 
 _DAMMA, _FATHA, _KASRA = "ُ", "َ", "ِ"
 _DAMMATAN, _FATHATAN, _KASRATAN = "ٌ", "ً", "ٍ"
@@ -68,8 +68,10 @@ def declined_number(singular: str, number: str, plural: str | None = None, is_di
 
 
 def _nfc(forms: Forms) -> Forms:
-    """One spelling for one form: marks in canonical order (حَيًّا, not حَيًّا with shadda last)."""
-    return {cell: unicodedata.normalize("NFC", text) for cell, text in forms.items()}
+    """One spelling for one form: marks in canonical order (حَيًّا, not حَيًّا with shadda last),
+    and a doubled letter with its vowel — a lemma written without the fatḥa before a long ā
+    (صابِر) would otherwise give الصّابِرُ, not the Quran's الصَّابِرُ."""
+    return {cell: with_voweled_shadda(text) for cell, text in forms.items()}
 
 
 def dual(singular: str) -> Forms:

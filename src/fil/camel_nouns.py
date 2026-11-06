@@ -6,11 +6,13 @@ the noun/adjective analyses whose lex is spelled like it), and our cell to CAMeL
 features. Participles and adjectives exist in both genders under one lex, so the
 lemma's gender is passed when the corpus knows it.
 
-Two habits of CAMeL's spelling are mended here, at the edge. It writes the underlying
+Three habits of CAMeL's spelling are mended here, at the edge. It writes the underlying
 case vowel on the final yāʾ of a defective noun (الأَيْدِيُ), which Arabic never writes —
 the yāʾ is silent in the nominative and genitive (الْأَيْدِي); the gate would refuse it.
-And it leaves the article bare (السَعْيُ, الكِتابُ), where a learner reads the sun letter
-doubled and the lām of a moon letter silent: السَّعْيُ, الْكِتابُ.
+It leaves the article bare (السَعْيُ, الكِتابُ), where a learner reads the sun letter
+doubled and the lām of a moon letter silent: السَّعْيُ, الْكِتابُ. And before a long ā it
+writes a doubled letter without its fatḥa (جَبّارٌ, أَيّامٌ), where the Quran writes both:
+جَبَّارٌ, أَيَّامٌ (fil.nouns.spelling.with_voweled_shadda).
 """
 
 from __future__ import annotations
@@ -20,7 +22,7 @@ from functools import cached_property
 
 from fil.camel import _DB
 from fil.nouns.model import DEFINITE, FEMININE, MASCULINE, Cell, NounLemma
-from fil.nouns.spelling import skeleton, spelling_key
+from fil.nouns.spelling import skeleton, spelling_key, with_voweled_shadda
 
 _NUMBERS = {"S": "s", "D": "d", "P": "p"}
 _CASES = {"NOM": "n", "ACC": "a", "GEN": "g"}
@@ -67,7 +69,7 @@ class CamelNounGenerator:
         for lex, pos in self.lexemes(lemma.lemma):
             forms = self._declined(lex, pos, lemma, cell)
             if forms:
-                return tuple(dict.fromkeys(_with_voweled_article(_without_defective_vowel(form)) for form in forms))
+                return tuple(dict.fromkeys(_mended(form) for form in forms))
         return ()
 
     def lexemes(self, lemma: str) -> tuple[tuple[str, str], ...]:
@@ -104,6 +106,11 @@ class CamelNounGenerator:
 
 def _state(cell: Cell) -> dict[str, str]:
     return {"stt": "d", "prc0": "Al_det"} if cell.state == DEFINITE else {"stt": "i"}
+
+
+def _mended(form: str) -> str:
+    """CAMeL's form in the spelling the Quran and a learner read (see the module's docstring)."""
+    return with_voweled_shadda(_with_voweled_article(_without_defective_vowel(form)))
 
 
 def _without_defective_vowel(form: str) -> str:

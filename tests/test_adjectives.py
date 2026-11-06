@@ -63,6 +63,13 @@ def test_a_doubled_letter_before_the_feminine_ending_keeps_one_fatha():
     assert declension.sound_plural("عَرَبِيَّة")[(DEFINITE, GENITIVE)] == unicodedata.normalize("NFC", "الْعَرَبِيَّاتِ")
 
 
+def test_a_lemma_without_the_fatha_before_a_long_a_still_gets_its_doubled_letters_vowel():
+    """The corpus writes صابِر and جَبّار; the rule's cells write the Quran's الصَّابِرُونَ, جَبَّارٌ."""
+    assert declension.sound_plural("صابِر")[(DEFINITE, NOMINATIVE)] == nfc("الصَّابِرُونَ")
+    assert declension.declined("جَبّار")[(INDEFINITE, NOMINATIVE)] == nfc("جَبَّارٌ")
+    assert declension.dual("ضالّ")[(DEFINITE, GENITIVE)] == nfc("الضَّالَّيْنِ")
+
+
 def test_a_doubled_ya_is_a_consonant_but_a_hamza_or_long_vowel_is_refused():
     assert declension.declined("حَيّ")[(INDEFINITE, ACCUSATIVE)] == "حَيًّا"
     for stem in ("بَرِيء", "أَعْمَى", "مَوْتَى"):

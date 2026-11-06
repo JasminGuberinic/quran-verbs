@@ -12,8 +12,9 @@ relative, asking, …), each with 1–3 ayat. Bosnian and English only, like nou
   copied. A view one grammarian holds is attributed (Ibn Hišām on لَنْ against az-Zamaḫšarī; the Basrans on
   the implied أَنْ after لِـ and فَـ, on لَا of the kind, on إِلَى = maʿa); contested readings are named
   (80:4 Ḥafṣ's subjunctive; 24:14 فِي of cause).
-- Bosnian follows Korkut's conventions, English Sahih International; ayah translations on the page are
-  the site's free ones (Pickthall; Bosnian pages fall back to English).
+- Bosnian follows Korkut's conventions for single terms; ayah translations on the page are the site's free
+  ones (Pickthall; Bosnian pages fall back to English). Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation. Double marks quote an ayah and name it;
+  glosses take single ones; Bosnian quotes are declared `"ayahQuotes": {"bs": "own"}` (gate: fil.ayah_quotes).
 - Every view put in a named grammarian's (or school's) mouth is checked against the text of the *Muġnī*, not
   against memory or a model (see "Verifying attributions" below). A blind Sonnet reviewer then checks grammar,
   overstatement, the cited ayat and bs/en drift (`fil particles review-export`) — it is not a source for who said

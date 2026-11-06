@@ -4,7 +4,8 @@
     fil particles find LEMMA TAG [N] short ayat that hold LEMMA as TAG ("NEG|FAM:إِنّ"), with the word
                                      numbers and what the next word shows — candidates for a use's ayat
     fil particles check              run the corpus gate over data/particles.json (counts, cited ayat,
-                                     effects); prints only problems and a one-line summary, exits 1 on any
+                                     effects) and the ayah-quotation gate (fil.ayah_quotes); prints
+                                     only problems and a one-line summary, exits 1 on any
     fil particles review-export      build/particles/blind.json: every claim with its cited ayat (Arabic,
                                      the marked word, Pickthall's English), English and Bosnian, for a
                                      blind reviewer — no notes, no reasons
@@ -32,6 +33,7 @@ from fil.corpus.pronouns import iter_pronoun_occurrences
 from fil.particles import gate
 from fil.particles.model import CorpusTag, Particle, ParticleOccurrence, Text
 from fil.resources import BUILD_DIR, PARTICLES_JSON, PRONOUNS_JSON, QAC_MORPHOLOGY
+from fil.stages import quotations
 
 Reader = Callable[[Iterable[Segment]], Iterator[ParticleOccurrence]]
 CANDIDATES_SHOWN = 25
@@ -102,7 +104,7 @@ def find(lemma: str, tag: str, shown: int = CANDIDATES_SHOWN, words: WordList = 
 def check(words: WordList = PARTICLES) -> list[str]:
     """The gate over the stored words; the problems found (printed), none when they may ship."""
     particles = words.load()
-    found = gate.problems(particles, words.concordance())
+    found = gate.problems(particles, words.concordance()) + quotations.problems_in(words.data)
     print("\n".join(found) if found else "", end="\n" if found else "")
     uses = sum(len(particle.uses) for particle in particles)
     ayat = sum(len(use.ayat) for particle in particles for use in particle.uses)

@@ -18,6 +18,9 @@ fails the build if one goes missing).
 | alquran.cloud / Islamic Network CDN | whole-ayah recitation, Mishary Rashid Alafasy | alquran.cloud terms | **no** — streamed at play time |
 | OpenMoji 15.1 | noun pictures (emoji), recoloured | CC BY-SA 4.0 | yes, recoloured SVGs |
 | Twemoji 15.1 (jdecked fork) | noun pictures (emoji), recoloured | CC BY 4.0 | yes, recoloured SVGs |
+| tts_arabic (nipponjo) | the synthetic voice of practice words and sentences | code MIT; model non-commercial (see below) | yes, generated clips |
+| Google Fonts (Amiri Quran, Noto Naskh Arabic, Literata, Space Grotesk, Inter, IBM Plex) | typefaces | SIL Open Font License 1.1 | **no** — loaded from fonts.googleapis.com |
+| Qutrub, CAMeL Tools (calima-msa-r13), PyArabic | build-time conjugation, declension and lexicon checks | GPL / MIT, database GPL-2.0 | no (tools; only their checked outputs) |
 | islam.ba, quranwbw.com, quran.com | outbound links only | — | no content copied |
 
 ---
@@ -195,6 +198,38 @@ as the site joins them (`fil.study.words_of`):
 - How we comply: every page that shows a picture carries the credit line of
   `fil.pages.picture_credits` — set, author, licence link, "recoloured" — naming only the
   sets that page uses. Pages without pictures do not carry it.
+
+## Synthetic voice: tts_arabic
+
+- Every practice word, form and sentence is spoken by tts_arabic, https://github.com/nipponjo/tts_arabic
+  (pinned commit in `pyproject.toml`), driven by our own phoneme reading (`fil.speech`). The clips are generated at
+  build time and shipped re-encoded (`build/pages/audio/`).
+- Terms, from the package's own NOTICE.md: the code is MIT; the multi-speaker FastPitch model was trained on the
+  Arabic Speech Corpus by Nawar Halabi (**CC BY 4.0**, https://en.arabicspeechcorpus.com/) and on synthetic speech
+  from Coqui XTTS-v2 (Coqui Public Model License, **non-commercial**), so the model is offered "for noncommercial use
+  only"; its Buckwalter phonetiser (from Halabi's Arabic-Phonetiser) is **CC BY-NC 4.0**.
+- How we comply: the site is free and non-commercial; every page credits the voice, the Arabic Speech Corpus and
+  its licence, and says "non-commercial use" (`credits` in `src/fil/site/ui.js`). These terms are not permissive:
+  the site may not be used commercially while it ships these clips.
+
+## Typefaces: Google Fonts
+
+- Amiri Quran, Noto Naskh Arabic, Literata, Space Grotesk, Inter and IBM Plex Sans/Mono, all under the SIL Open
+  Font License 1.1. No font file is copied: the browser loads them from fonts.googleapis.com.
+
+## Build-time tools
+
+- Qutrub (libqutrub, GPL) and CAMeL Tools (MIT) with its morphology database calima-msa-r13 (derived from
+  Buckwalter's Aramorph, GPL-2.0) generate and cross-check conjugation and declension tables; PyArabic (GPL) helps
+  with spelling. None of their code or databases is shipped — only the forms that pass our gates.
+
+## Translations used as references only
+
+Sahih International (English) and Besim Korkut (Bosnian) are under copyright and are not shipped. They serve
+only as references for single standard terms (Džennet, emanet). Ayah quotations in our own texts are in
+Pickthall's words (English, shipped above) or our own translation from the Arabic (Bosnian); `fil.ayah_quotes`
+fails the build otherwise. Reviewer-only `notes` in the data files may cite a classical text in a few Arabic
+words; they are never rendered on a page.
 
 ## Links only
 

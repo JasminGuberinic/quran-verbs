@@ -12,6 +12,7 @@ stage src/fil/stages/exercises.py (cards → generators → gate → shards), pa
 fil.pages.exercise_render, script src/fil/site/exercises.js, interface text site/ui.js `EXERCISE_PAGE`.
 
 ## Content rules (sacred)
+- Licence: Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation. Any ayah a text quotes follows fil.ayah_quotes (double marks = ayah quote, named ayah).
 - Never generate Arabic for an exercise. Every form shown is a checked table cell, a word of a reviewed sentence, or a
   word of the Quran from a card. Run-time JS only shuffles, shows and grades.
 - Exactly one right answer — by a rule you can state, not by luck. A distractor must be wrong under every reading the

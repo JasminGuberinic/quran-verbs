@@ -8,6 +8,10 @@ where the choice of word matters. Bosnian and English only, like nouns and adjec
 - Our own words, grounded in classical public-domain lexicography: ar-Rāġib al-Iṣfahānī, *Mufradāt alfāẓ
   al-Qurʾān*, and Abū Hilāl al-ʿAskarī, *al-Furūq al-luġawiyya*, cited by name per group. No modern
   edition's text or copyrighted translation is copied.
+- Ayah quotations: Sahih International / Korkut are terminology and style references only; never quote or closely
+  paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are
+  our own translation. Double marks quote an ayah and name it, glosses take single ones, and a group with Bosnian
+  quotes declares `"ayahQuotes": {"bs": "own"}` — fil.ayah_quotes fails the tests and `fil nuances check` otherwise.
 - A view one scholar holds is attributed to him; a tendency is stated as a tendency, with a counter-example
   when the Quran has one; contested tafsir readings are named in the ayah's note.
 - Every claim in ar-Rāġib's name is checked against his text before review: the OpenITI corpus's
@@ -158,3 +162,13 @@ Adam's descent ayat (2:36, 2:38, 7:24, 20:123 — ar-Rāġib's "belittlement" re
 (camels or ropes), 25:61, 6:125, 4:34, 13:11, and 4:113, 35:8, 6:52, 18:28, 9:42 (said to or about the Prophet). Counts
 that include another sense are noted per group (غِلّ with aġlāl "fetters", قَدَرَ with "straiten / measure", عَشِيّ
 summed with عَشِيَّة); نَاقَة has no Mufradāt entry and rests on Quranic usage (all seven places read).
+
+## Licence fix: ayah quotations (2026-11-06)
+Earlier batches quoted ayat in English in Sahih International's wording and in Bosnian "in Korkut's wording from
+memory" — both under copyright. Every quotation in data/nuance_groups.json, particles.json and pronouns.json was
+rewritten: en quotes are now Pickthall's shipped text word for word (nuances 1,091, particles 270, pronouns 50; about
+two dozen became our own unquoted paraphrase where his reading does not serve the point), bs quotes our own
+translation from the Arabic (1,100 / 274 / 50; the ones that came out identical to the old text were translated
+again, only a few short literal formulas remain), and several hundred glosses that sat in double quotes moved to single ones.
+Reviewer notes that quoted Sahih/Korkut phrases were cut to single terms. The gate fil.ayah_quotes
+(tests/test_ayah_quotes.py, `fil nuances|particles|pronouns check`) keeps it so.

@@ -1,14 +1,15 @@
 {
- "_about": "The pronouns (Zamjenice): personal, demonstrative and relative pronouns and إِيَّا, built by the particle engine (the same shape and gate) — docs/PARTICLES-PLAN.md. Read from the corpus by fil.corpus.pronouns; `fil pronouns check` holds counts and ayat to the corpus.",
+ "_about": "The pronouns (Zamjenice): personal, demonstrative and relative pronouns and إِيَّا, built by the particle engine (the same shape and gate) — docs/PARTICLES-PLAN.md. Read from the corpus by fil.corpus.pronouns; `fil pronouns check` holds counts and ayat to the corpus. Ayah quotations: double quotation marks quote an ayah (en “…”, bs „…“) and name it (the item's `ref`, or s:a in the text); glosses take single ones (‘…’, ‚…‘). English quotes only the shipped Pickthall text, word for word; Bosnian quotes are our own translation from the Arabic, declared by `\"ayahQuotes\": {\"bs\": \"own\"}` — never Sahih International's or Korkut's wording (fil.ayah_quotes, run by the tests and `check`).",
  "alladhina": {
   "arabic": "الَّذِينَ",
   "lemma": "الَّذِينَ",
   "count": 1080,
   "meaning": {"bs": "koji (mn.)", "en": "who (pl.)"},
   "grammar": {
-   "bs": "Odnosna zamjenica, muški rod množine (i za mješovitu skupinu): „oni koji“. U Kur'anu ima isti oblik u svakom padežu. Najčešća je odnosna riječ Kur'ana: ٱلَّذِينَ ءَامَنُوا۟ – „oni koji vjeruju“.",
-   "en": "The relative pronoun, masculine plural (also for a mixed group): “those who”. In the Quran it has the same form in every case. It is the Quran's most frequent relative word: ٱلَّذِينَ ءَامَنُوا۟ – “those who believe”."
+   "bs": "Odnosna zamjenica, muški rod množine (i za mješovitu skupinu): ‚oni koji‘. U Kur'anu ima isti oblik u svakom padežu. Najčešća je odnosna riječ Kur'ana: ٱلَّذِينَ ءَامَنُوا۟ – ‚oni koji vjeruju‘.",
+   "en": "The relative pronoun, masculine plural (also for a mixed group): ‘those who’. In the Quran it has the same form in every case. It is the Quran's most frequent relative word: ٱلَّذِينَ ءَامَنُوا۟ – ‘those who believe’."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -22,7 +23,7 @@
     "key": "who",
     "kind": "relative",
     "tags": ["REL"],
-    "title": {"bs": "„Oni koji…“", "en": "“Those who…”"},
+    "title": {"bs": "‚Oni koji…‘", "en": "‘Those who…’"},
     "explanation": {
      "bs": "Isti oblik bez obzira da li opisuje imenicu, dolazi iza imenice u genitivnom odnosu (put onih koji…) ili iza إِلَّا.",
      "en": "The same form whether it describes a noun, follows a noun in annexation (the path of those who…), or comes after إِلَّا."
@@ -31,22 +32,22 @@
      {
       "ref": "2:3",
       "why": {
-       "bs": "„koji u nevidljivi svijet vjeruju…“ – ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ.",
-       "en": "“Who believe in the unseen…” – ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ."
+       "bs": "„koji vjeruju u nevidljivo…“ – ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ.",
+       "en": "“Who believe in the Unseen…” – ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ."
       }
      },
      {
       "ref": "1:7",
       "why": {
-       "bs": "„na Put onih kojima si milost Svoju darovao…“ – ـهِمْ u عَلَيْهِمْ se vraća na ٱلَّذِينَ.",
-       "en": "“The path of those upon whom You have bestowed favour…” – ـهِمْ in عَلَيْهِمْ returns to ٱلَّذِينَ."
+       "bs": "„put onih kojima si blagodat dao…“ – ـهِمْ u عَلَيْهِمْ se vraća na ٱلَّذِينَ.",
+       "en": "“The path of those whom Thou hast favoured…” – ـهِمْ in عَلَيْهِمْ returns to ٱلَّذِينَ."
       }
      },
      {
       "ref": "103:3",
       "why": {
-       "bs": "„osim onih koji su vjerovali i dobra djela činili…“ – iza إِلَّا, isti oblik.",
-       "en": "“Except for those who have believed and done righteous deeds…” – after إِلَّا, the same form."
+       "bs": "„osim onih koji vjeruju i čine dobra djela…“ – iza إِلَّا, isti oblik.",
+       "en": "“Save those who believe and do good works…” – after إِلَّا, the same form."
       }
      }
     ]
@@ -62,6 +63,7 @@
    "bs": "Lična zamjenica trećeg lica muškog roda jednine, samostalna riječ (ne nastavak). Upućuje na nekoga ili nešto muškog roda, i na Allaha. Stoji kao subjekat, a između subjekta i predikata kao zamjenica razdvajanja.",
    "en": "The personal pronoun of the third person, masculine singular, a word of its own (not a suffix). It points to someone or something masculine, and to Allah. It stands as a subject, and between a subject and its predicate as the pronoun of separation."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -76,7 +78,7 @@
     "key": "subject",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "Subjekat: „On je…“", "en": "Subject: “He is…”"},
+    "title": {"bs": "Subjekat: ‚On je…‘", "en": "Subject: ‘He is…’"},
     "explanation": {
      "bs": "Kao subjekat imeničke rečenice, ili ispred glagola kad se naglašava ko radnju čini.",
      "en": "As the subject of a nominal sentence, or before a verb when who does the deed is stressed."
@@ -85,15 +87,15 @@
      {
       "ref": "85:14",
       "why": {
-       "bs": "„On prašta i mnogo voli“ – هُوَ je subjekat, a ٱلْغَفُورُ ٱلْوَدُودُ predikat.",
-       "en": "“And He is the Forgiving, the Affectionate” – هُوَ is the subject, ٱلْغَفُورُ ٱلْوَدُودُ the predicate."
+       "bs": "„I On je Onaj Koji prašta, Koji voli“ – هُوَ je subjekat, a ٱلْغَفُورُ ٱلْوَدُودُ predikat.",
+       "en": "“And He is the Forgiving, the Loving” – هُوَ is the subject, ٱلْغَفُورُ ٱلْوَدُودُ the predicate."
       }
      },
      {
       "ref": "26:80",
       "why": {
-       "bs": "„i koji me, kad se razbolim, iscjeljuje“ – فَهُوَ يَشْفِينِ: Ibrahim ističe da On, a ne drugi, liječi.",
-       "en": "“And when I am ill, it is He who cures me” – فَهُوَ يَشْفِينِ: Abraham stresses that it is He, not another, who cures."
+       "bs": "„A kad se razbolim, On me liječi“ – فَهُوَ يَشْفِينِ: Ibrahim ističe da On, a ne drugi, liječi.",
+       "en": "“And when I sicken, then He healeth me” – فَهُوَ يَشْفِينِ: Abraham stresses that it is He, not another, who cures."
       }
      }
     ]
@@ -104,15 +106,15 @@
     "tags": ["PRON"],
     "title": {"bs": "Zamjenica razdvajanja (ḍamīr al-faṣl)", "en": "The pronoun of separation (ḍamīr al-faṣl)"},
     "explanation": {
-     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove „razdvajanje“ (faṣl), a i „oslonac“ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – „oni, i samo oni“ (o هُمْ u 2:5).",
-     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name “separation” (faṣl), and also “support” (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – “they, and they alone” (of هُمْ in 2:5)."
+     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove ‚razdvajanje‘ (faṣl), a i ‚oslonac‘ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – ‚oni, i samo oni‘ (o هُمْ u 2:5).",
+     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name ‘separation’ (faṣl), and also ‘support’ (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – ‘they, and they alone’ (of هُمْ in 2:5)."
     },
     "ayat": [
      {
       "ref": "26:220",
       "why": {
-       "bs": "„On, uistinu, sve čuje i sve zna“ – إِنَّهُۥ هُوَ ٱلسَّمِيعُ: هُوَ razdvaja subjekat (nastavak uz إِنَّ) od predikata.",
-       "en": "“Indeed, He is the Hearing, the Knowing” – إِنَّهُۥ هُوَ ٱلسَّمِيعُ: هُوَ separates the subject (the pronoun on إِنَّ) from the predicate."
+       "bs": "„Uistinu, On je Onaj Koji čuje i zna“ – إِنَّهُۥ هُوَ ٱلسَّمِيعُ: هُوَ razdvaja subjekat (nastavak uz إِنَّ) od predikata.",
+       "en": "“Lo! He, only He, is the Hearer, the Knower” – إِنَّهُۥ هُوَ ٱلسَّمِيعُ: هُوَ separates the subject (the pronoun on إِنَّ) from the predicate."
       }
      }
     ]
@@ -125,9 +127,10 @@
   "count": 479,
   "meaning": {"bs": "taj, to", "en": "that"},
   "grammar": {
-   "bs": "Pokazna zamjenica za daljinu, muški rod jednine: ذَا + lām udaljenosti + كَ obraćanja. Ibn Hišām kaže da je to كَ čestica obraćanja bez mjesta u rečenici; zato se mijenja prema onome kome se govori (ذَٰلِكُمْ „to, vama“). S كَـ poređenja daje كَذَٰلِكَ – „tako“. Ženski rod je تِلْكَ, množina أُولَٰئِكَ.",
-   "en": "The demonstrative of the far, masculine singular: ذَا + the lām of distance + the كَ of address. Ibn Hišām says this كَ is a particle of address with no place in the sentence; so it changes with who is addressed (ذَٰلِكُمْ “that, to you all”). With the كَـ of likeness it gives كَذَٰلِكَ – “thus”. The feminine is تِلْكَ, the plural أُولَٰئِكَ."
+   "bs": "Pokazna zamjenica za daljinu, muški rod jednine: ذَا + lām udaljenosti + كَ obraćanja. Ibn Hišām kaže da je to كَ čestica obraćanja bez mjesta u rečenici; zato se mijenja prema onome kome se govori (ذَٰلِكُمْ ‚to, vama‘). S كَـ poređenja daje كَذَٰلِكَ – ‚tako‘. Ženski rod je تِلْكَ, množina أُولَٰئِكَ.",
+   "en": "The demonstrative of the far, masculine singular: ذَا + the lām of distance + the كَ of address. Ibn Hišām says this كَ is a particle of address with no place in the sentence; so it changes with who is addressed (ذَٰلِكُمْ ‘that, to you all’). With the كَـ of likeness it gives كَذَٰلِكَ – ‘thus’. The feminine is تِلْكَ, the plural أُولَٰئِكَ."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -142,31 +145,31 @@
     "key": "that",
     "kind": "demonstrative",
     "tags": ["DEM"],
-    "title": {"bs": "„Taj …“, „to je …“ i كَذَٰلِكَ „tako“", "en": "“That …”, “that is …” and كَذَٰلِكَ “thus”"},
+    "title": {"bs": "‚Taj …‘, ‚to je …‘ i كَذَٰلِكَ ‚tako‘", "en": "‘That …’, ‘that is …’ and كَذَٰلِكَ ‘thus’"},
     "explanation": {
-     "bs": "Upućuje na ono što je spomenuto ili prisutno; i Korkut i Sahih International ga ponekad prevode s „ovo / this“ (2:2).",
-     "en": "It points to something mentioned or present; Korkut and Sahih International sometimes render it “ovo / this” (2:2)."
+     "bs": "Upućuje na ono što je spomenuto ili prisutno; prevodioci ga ponekad prevode s ‚ovo‘ (2:2).",
+     "en": "It points to something mentioned or present; translators sometimes render it ‘this’ (2:2)."
     },
     "ayat": [
      {
       "ref": "2:2",
       "why": {
-       "bs": "„Ova Knjiga, u koju nema nikakve sumnje…“ – ذَٰلِكَ ٱلْكِتَٰبُ; i Korkut i Sahih International ovdje kažu „ova / this“.",
-       "en": "“This is the Book about which there is no doubt…” – ذَٰلِكَ ٱلْكِتَٰبُ; Korkut and Sahih International both say “this” here."
+       "bs": "„Ta Knjiga – u nju nema sumnje…“ – ذَٰلِكَ ٱلْكِتَٰبُ; i Korkut i Sahih International ovdje kažu ‚ova / this‘.",
+       "en": "“This is the Scripture whereof there is no doubt…” – ذَٰلِكَ ٱلْكِتَٰبُ; Pickthall, like Korkut and Sahih International, says ‘this’ here."
       }
      },
      {
       "ref": "50:3",
       "why": {
-       "bs": "„…to je povratak nemoguć!“ – ذَٰلِكَ upućuje na oživljenje o kojem govore.",
-       "en": "“…That is a distant return.” – ذَٰلِكَ points to the raising they speak of."
+       "bs": "„…to je dalek povratak!“ – ذَٰلِكَ upućuje na oživljenje o kojem govore.",
+       "en": "“…That would be a far return!” – ذَٰلِكَ points to the raising they speak of."
       }
      },
      {
       "ref": "37:110",
       "why": {
-       "bs": "„Eto, tako Mi nagrađujemo one koji dobra djela čine“ – كَذَٰلِكَ: „tako“.",
-       "en": "“Indeed, We thus reward the doers of good” – كَذَٰلِكَ: “thus”."
+       "bs": "„Tako Mi nagrađujemo one koji čine dobro“ – كَذَٰلِكَ: ‚tako‘.",
+       "en": "“Thus do We reward the good” – كَذَٰلِكَ: ‘thus’."
       }
      }
     ]
@@ -182,6 +185,7 @@
    "bs": "Lična zamjenica trećeg lica muškog roda množine (i za mješovitu skupinu). Ispred hemzet al-wasla se izgovara هُمُ (هُمُ ٱلْمُفْلِحُونَ).",
    "en": "The personal pronoun of the third person, masculine plural (also for a mixed group). Before a connecting hamza it is said هُمُ (هُمُ ٱلْمُفْلِحُونَ)."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -196,7 +200,7 @@
     "key": "subject",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "Subjekat: „oni…“", "en": "Subject: “they…”"},
+    "title": {"bs": "Subjekat: ‚oni…‘", "en": "Subject: ‘they…’"},
     "explanation": {
      "bs": "Često u opisu neke skupine, ispred glagola ili predikata.",
      "en": "Often in describing a group, before a verb or a predicate."
@@ -205,15 +209,15 @@
      {
       "ref": "51:18",
       "why": {
-       "bs": "„i u praskozorje oprost molili“ – وَبِٱلْأَسْحَارِ هُمْ يَسْتَغْفِرُونَ.",
-       "en": "“And in the hours before dawn they would ask forgiveness” – وَبِٱلْأَسْحَارِ هُمْ يَسْتَغْفِرُونَ."
+       "bs": "„i u praskozorje su oprost tražili“ – وَبِٱلْأَسْحَارِ هُمْ يَسْتَغْفِرُونَ.",
+       "en": "“And ere the dawning of each day [they] would seek forgiveness” – وَبِٱلْأَسْحَارِ هُمْ يَسْتَغْفِرُونَ."
       }
      },
      {
       "ref": "37:42",
       "why": {
-       "bs": "„voće, i biće poštovani“ – وَهُم مُّكْرَمُونَ: subjekat i predikat.",
-       "en": "“Fruits; and they will be honoured” – وَهُم مُّكْرَمُونَ: subject and predicate."
+       "bs": "„voće, i oni će biti počašćeni“ – وَهُم مُّكْرَمُونَ: subjekat i predikat.",
+       "en": "“Fruits. And they will be honoured” – وَهُم مُّكْرَمُونَ: subject and predicate."
       }
      }
     ]
@@ -224,22 +228,22 @@
     "tags": ["PRON"],
     "title": {"bs": "Zamjenica razdvajanja (ḍamīr al-faṣl)", "en": "The pronoun of separation (ḍamīr al-faṣl)"},
     "explanation": {
-     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove „razdvajanje“ (faṣl), a i „oslonac“ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – „oni, i samo oni“ (o هُمْ u 2:5).",
-     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name “separation” (faṣl), and also “support” (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – “they, and they alone” (of هُمْ in 2:5)."
+     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove ‚razdvajanje‘ (faṣl), a i ‚oslonac‘ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – ‚oni, i samo oni‘ (o هُمْ u 2:5).",
+     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name ‘separation’ (faṣl), and also ‘support’ (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – ‘they, and they alone’ (of هُمْ in 2:5)."
     },
     "ayat": [
      {
       "ref": "2:5",
       "why": {
-       "bs": "„Oni su na pravom putu, od Gospodara njihova, i oni će postići ono što žele“ – وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ.",
-       "en": "“Those are upon [right] guidance from their Lord, and it is those who are the successful” – وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ."
+       "bs": "„Oni su na uputi od svoga Gospodara, i upravo su oni uspješni“ – وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ.",
+       "en": "“These depend on guidance from their Lord. These [– they, and they alone –] are the successful” – وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ."
       }
      },
      {
       "ref": "23:10",
       "why": {
-       "bs": "„Oni su ti koji će naslijediti“ – أُو۟لَٰٓئِكَ هُمُ ٱلْوَٰرِثُونَ.",
-       "en": "“Those are the inheritors” – أُو۟لَٰٓئِكَ هُمُ ٱلْوَٰرِثُونَ."
+       "bs": "„Upravo su oni nasljednici“ – أُو۟لَٰٓئِكَ هُمُ ٱلْوَٰرِثُونَ.",
+       "en": "“These are [they who are] the heirs” – أُو۟لَٰٓئِكَ هُمُ ٱلْوَٰرِثُونَ."
       }
      }
     ]
@@ -252,9 +256,10 @@
   "count": 304,
   "meaning": {"bs": "koji", "en": "who, which (m.)"},
   "grammar": {
-   "bs": "Odnosna zamjenica, muški rod jednine: „koji, onaj koji“. Iza nje dolazi rečenica (ṣila) u kojoj je zamjenica što se na nju vraća – izgovorena ili podrazumijevana. Kao pridjev slijedi određenu imenicu (رَبَّكُمُ ٱلَّذِى خَلَقَكُمْ), a može stajati i sama: „Onaj koji…“. Ženski rod je الَّتِي, množina الَّذِينَ.",
-   "en": "The relative pronoun, masculine singular: “who, which, the one who”. A sentence follows it (the ṣila) holding a pronoun that returns to it – spoken or understood. As an adjective it follows a definite noun (رَبَّكُمُ ٱلَّذِى خَلَقَكُمْ), and it can stand alone: “the One who…”. The feminine is الَّتِي, the plural الَّذِينَ."
+   "bs": "Odnosna zamjenica, muški rod jednine: ‚koji, onaj koji‘. Iza nje dolazi rečenica (ṣila) u kojoj je zamjenica što se na nju vraća – izgovorena ili podrazumijevana. Kao pridjev slijedi određenu imenicu (رَبَّكُمُ ٱلَّذِى خَلَقَكُمْ), a može stajati i sama: ‚Onaj koji…‘. Ženski rod je الَّتِي, množina الَّذِينَ.",
+   "en": "The relative pronoun, masculine singular: ‘who, which, the one who’. A sentence follows it (the ṣila) holding a pronoun that returns to it – spoken or understood. As an adjective it follows a definite noun (رَبَّكُمُ ٱلَّذِى خَلَقَكُمْ), and it can stand alone: ‘the One who…’. The feminine is الَّتِي, the plural الَّذِينَ."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -268,31 +273,31 @@
     "key": "who",
     "kind": "relative",
     "tags": ["REL"],
-    "title": {"bs": "„Koji…“, „Onaj koji…“", "en": "“Who…”, “the One who…”"},
+    "title": {"bs": "‚Koji…‘, ‚Onaj koji…‘", "en": "‘Who…’, ‘the One who…’"},
     "explanation": {
-     "bs": "U Kur'anu često opisuje Allaha Njegovim djelima: ٱلَّذِى خَلَقَ – „Onaj koji je stvorio“.",
-     "en": "In the Quran it often describes Allah by His deeds: ٱلَّذِى خَلَقَ – “the One who created”."
+     "bs": "U Kur'anu često opisuje Allaha Njegovim djelima: ٱلَّذِى خَلَقَ – ‚Onaj koji je stvorio‘.",
+     "en": "In the Quran it often describes Allah by His deeds: ٱلَّذِى خَلَقَ – ‘the One who created’."
     },
     "ayat": [
      {
       "ref": "2:21",
       "why": {
-       "bs": "„O ljudi, klanjajte se Gospodaru svome, koji je stvorio vas…“ – ٱلَّذِى kao pridjev od رَبَّكُمُ.",
-       "en": "“O mankind, worship your Lord, who created you…” – ٱلَّذِى as an adjective of رَبَّكُمُ."
+       "bs": "„O ljudi, obožavajte svoga Gospodara, Koji je stvorio vas…“ – ٱلَّذِى kao pridjev od رَبَّكُمُ.",
+       "en": "“O mankind! worship your Lord, Who hath created you…” – ٱلَّذِى as an adjective of رَبَّكُمُ."
       }
      },
      {
       "ref": "87:2",
       "why": {
-       "bs": "„koji je stvorio i skladnim učinio“ – ٱلَّذِى خَلَقَ فَسَوَّىٰ.",
-       "en": "“Who created and proportioned” – ٱلَّذِى خَلَقَ فَسَوَّىٰ."
+       "bs": "„Koji je stvorio pa uskladio“ – ٱلَّذِى خَلَقَ فَسَوَّىٰ.",
+       "en": "“Who createth, then disposeth” – ٱلَّذِى خَلَقَ فَسَوَّىٰ."
       }
      },
      {
       "ref": "96:4",
       "why": {
-       "bs": "„koji je poučio peru“ – ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ.",
-       "en": "“Who taught by the pen” – ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ."
+       "bs": "„Koji je perom poučio“ – ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ.",
+       "en": "“Who teacheth by the pen” – ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ."
       }
      }
     ]
@@ -305,9 +310,10 @@
   "count": 226,
   "meaning": {"bs": "ovaj, ovo", "en": "this"},
   "grammar": {
-   "bs": "Pokazna zamjenica za blizinu, muški rod jednine: هَا pažnje + ذَا. Kad iza nje dođe imenica s članom, to je obično „ovaj …“ (هَٰذَا ٱلْبَلَدِ) i imenica ima padež njenog mjesta; kad dođe imenica bez člana, rečenica je „ovo je …“ (هَٰذَا يَوْمُ). Ženski rod je هَٰذِهِ, množina هَٰؤُلَاءِ. Ibn Hišām: هَا pažnje stavlja se ispred pokazne riječi koja nije za daljinu.",
-   "en": "The demonstrative of the near, masculine singular: the هَا of attention + ذَا. When a noun with the article follows, it is usually “this …” (هَٰذَا ٱلْبَلَدِ) and the noun has the case of its place; when a noun without the article follows, the sentence is “this is …” (هَٰذَا يَوْمُ). The feminine is هَٰذِهِ, the plural هَٰؤُلَاءِ. Ibn Hišām: the هَا of attention is put before a demonstrative that is not for the far."
+   "bs": "Pokazna zamjenica za blizinu, muški rod jednine: هَا pažnje + ذَا. Kad iza nje dođe imenica s članom, to je obično ‚ovaj …‘ (هَٰذَا ٱلْبَلَدِ) i imenica ima padež njenog mjesta; kad dođe imenica bez člana, rečenica je ‚ovo je …‘ (هَٰذَا يَوْمُ). Ženski rod je هَٰذِهِ, množina هَٰؤُلَاءِ. Ibn Hišām: هَا pažnje stavlja se ispred pokazne riječi koja nije za daljinu.",
+   "en": "The demonstrative of the near, masculine singular: the هَا of attention + ذَا. When a noun with the article follows, it is usually ‘this …’ (هَٰذَا ٱلْبَلَدِ) and the noun has the case of its place; when a noun without the article follows, the sentence is ‘this is …’ (هَٰذَا يَوْمُ). The feminine is هَٰذِهِ, the plural هَٰؤُلَاءِ. Ibn Hišām: the هَا of attention is put before a demonstrative that is not for the far."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -322,24 +328,24 @@
     "key": "this",
     "kind": "demonstrative",
     "tags": ["DEM"],
-    "title": {"bs": "„Ovaj …“ i „ovo je …“", "en": "“This …” and “this is …”"},
+    "title": {"bs": "‚Ovaj …‘ i ‚ovo je …‘", "en": "‘This …’ and ‘this is …’"},
     "explanation": {
-     "bs": "Obično imenica s članom iza nje opisuje ono na što se pokazuje („ovaj grad“), a imenica bez člana je predikat („ovo je dan“); ali i određena imenica, često s odnosnom rečenicom, može biti predikat („ovo je vatra koju…“, 52:14). Sama pokazna zamjenica se ne mijenja: ima samo mjesto padeža.",
-     "en": "Usually a noun with the article after it names what is pointed at (“this city”), and a noun without it is the predicate (“this is a day”); but a definite noun, often followed by a relative clause, can also be the predicate (“this is the Fire which…”, 52:14). The demonstrative itself does not change: it only stands in the place of a case."
+     "bs": "Obično imenica s članom iza nje opisuje ono na što se pokazuje (‚ovaj grad‘), a imenica bez člana je predikat (‚ovo je dan‘); ali i određena imenica, često s odnosnom rečenicom, može biti predikat („Ovo je Vatra koju…“, 52:14). Sama pokazna zamjenica se ne mijenja: ima samo mjesto padeža.",
+     "en": "Usually a noun with the article after it names what is pointed at (‘this city’), and a noun without it is the predicate (‘this is a day’); but a definite noun, often followed by a relative clause, can also be the predicate (“This is the Fire which…”, 52:14). The demonstrative itself does not change: it only stands in the place of a case."
     },
     "ayat": [
      {
       "ref": "95:3",
       "why": {
-       "bs": "„i grada ovog sigurnog“ – وَهَٰذَا ٱلْبَلَدِ: imenica s članom je u genitivu, a هَٰذَا je na mjestu genitiva (zakletva).",
-       "en": "“And [by] this secure city” – وَهَٰذَا ٱلْبَلَدِ: the noun with the article is genitive, and هَٰذَا is in the place of the genitive (an oath)."
+       "bs": "„i ovog sigurnog grada“ – وَهَٰذَا ٱلْبَلَدِ: imenica s članom je u genitivu, a هَٰذَا je na mjestu genitiva (zakletva).",
+       "en": "“And by this land made safe” – وَهَٰذَا ٱلْبَلَدِ: the noun with the article is genitive, and هَٰذَا is in the place of the genitive (an oath)."
       }
      },
      {
       "ref": "77:35",
       "why": {
-       "bs": "„Ovo je Dan kada oni neće govoriti“ – هَٰذَا يَوْمُ: bez člana, „ovo je“.",
-       "en": "“This is a Day they will not speak” – هَٰذَا يَوْمُ: no article, “this is”."
+       "bs": "„Ovo je Dan u kojem neće govoriti“ – هَٰذَا يَوْمُ: bez člana, ‚ovo je‘.",
+       "en": "“This is a day wherein they speak not” – هَٰذَا يَوْمُ: no article, ‘this is’."
       }
      }
     ]
@@ -352,9 +358,10 @@
   "count": 206,
   "meaning": {"bs": "oni, ti", "en": "those"},
   "grammar": {
-   "bs": "Pokazna zamjenica za daljinu, množina za oba roda (أُولَاءِ + كَ obraćanja). U Kur'anu najčešće počinje rečenicu koja kaže kakvi su oni koji su upravo opisani: أُو۟لَٰٓئِكَ عَلَىٰ هُدًى – „oni su na pravom putu“.",
-   "en": "The demonstrative of the far, plural for both genders (أُولَاءِ + the كَ of address). In the Quran it mostly opens a sentence saying what those just described are: أُو۟لَٰٓئِكَ عَلَىٰ هُدًى – “those are upon guidance”."
+   "bs": "Pokazna zamjenica za daljinu, množina za oba roda (أُولَاءِ + كَ obraćanja). U Kur'anu najčešće počinje rečenicu koja kaže kakvi su oni koji su upravo opisani: أُو۟لَٰٓئِكَ عَلَىٰ هُدًى – ‚oni su na uputi‘.",
+   "en": "The demonstrative of the far, plural for both genders (أُولَاءِ + the كَ of address). In the Quran it mostly opens a sentence saying what those just described are: أُو۟لَٰٓئِكَ عَلَىٰ هُدًى – ‘those are upon guidance’."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -368,24 +375,24 @@
     "key": "those",
     "kind": "demonstrative",
     "tags": ["DEM"],
-    "title": {"bs": "„Oni …“ – o onima upravo opisanim", "en": "“Those …” – of those just described"},
+    "title": {"bs": "‚Oni …‘ – o onima upravo opisanim", "en": "‘Those …’ – of those just described"},
     "explanation": {
-     "bs": "Često uz zamjenicu razdvajanja: أُو۟لَٰٓئِكَ هُمُ… – „oni su ti koji…“.",
-     "en": "Often with the pronoun of separation: أُو۟لَٰٓئِكَ هُمُ… – “it is those who…”."
+     "bs": "Često uz zamjenicu razdvajanja: أُو۟لَٰٓئِكَ هُمُ… – ‚upravo su oni…‘.",
+     "en": "Often with the pronoun of separation: أُو۟لَٰٓئِكَ هُمُ… – ‘it is those who…’."
     },
     "ayat": [
      {
       "ref": "2:5:1",
       "why": {
-       "bs": "„Oni su na pravom putu, od Gospodara njihova…“ – o onima opisanim u 2:3–4.",
-       "en": "“Those are upon [right] guidance from their Lord…” – of those described in 2:3–4."
+       "bs": "„Oni su na uputi od svoga Gospodara…“ – o onima opisanim u 2:3–4.",
+       "en": "“These depend on guidance from their Lord…” – of those described in 2:3–4."
       }
      },
      {
       "ref": "56:11",
       "why": {
-       "bs": "„Oni će Allahu najbliži biti“ – أُو۟لَٰٓئِكَ ٱلْمُقَرَّبُونَ.",
-       "en": "“Those are the ones brought near [to Allah]” – أُو۟لَٰٓئِكَ ٱلْمُقَرَّبُونَ."
+       "bs": "„Oni su ti približeni“ – أُو۟لَٰٓئِكَ ٱلْمُقَرَّبُونَ.",
+       "en": "“Those are they who will be brought nigh” – أُو۟لَٰٓئِكَ ٱلْمُقَرَّبُونَ."
       }
      }
     ]
@@ -398,9 +405,10 @@
   "count": 135,
   "meaning": {"bs": "vi", "en": "you (pl.)"},
   "grammar": {
-   "bs": "Lična zamjenica drugog lica muškog roda množine (i za mješovitu skupinu). Često u rečenici stanja s وَ: وَأَنتُمْ – „a vi…, dok vi…“.",
-   "en": "The personal pronoun of the second person, masculine plural (also for a mixed group). Often in a clause of state with وَ: وَأَنتُمْ – “while you…”."
+   "bs": "Lična zamjenica drugog lica muškog roda množine (i za mješovitu skupinu). Često u rečenici stanja s وَ: وَأَنتُمْ – ‚a vi…, dok vi…‘.",
+   "en": "The personal pronoun of the second person, masculine plural (also for a mixed group). Often in a clause of state with وَ: وَأَنتُمْ – ‘while you…’."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -415,7 +423,7 @@
     "key": "you",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "„Vi“", "en": "“You”"},
+    "title": {"bs": "‚Vi‘", "en": "‘You’"},
     "explanation": {
      "bs": "Zamjenica drugog lica množine, kao subjekat ili u rečenici stanja. Ibn Hišām navodi da se هَا pažnje stavlja i ispred zamjenice u nominativu čiji je predikat pokazna riječ: هَٰٓأَنتُمْ أُو۟لَآءِ.",
      "en": "The pronoun of the second person plural, as a subject or in a clause of state. Ibn Hišām notes that the هَا of attention is also put before a pronoun in the nominative whose predicate is a demonstrative: هَٰٓأَنتُمْ أُو۟لَآءِ."
@@ -424,22 +432,22 @@
      {
       "ref": "53:61",
       "why": {
-       "bs": "„i zabavljate se“ – وَأَنتُمْ سَٰمِدُونَ: rečenica stanja.",
-       "en": "“While you are proudly sporting?” – وَأَنتُمْ سَٰمِدُونَ: a clause of state."
+       "bs": "„dok se vi zabavljate?“ – وَأَنتُمْ سَٰمِدُونَ: rečenica stanja.",
+       "en": "“While ye amuse yourselves?” – وَأَنتُمْ سَٰمِدُونَ: a clause of state."
       }
      },
      {
       "ref": "37:54",
       "why": {
-       "bs": "„Hoćete li da pogledate?“, upitaće on – هَلْ أَنتُم مُّطَّلِعُونَ.",
-       "en": "“He will say: ‘Would you [care to] look?’” – هَلْ أَنتُم مُّطَّلِعُونَ."
+       "bs": "„Reče: Hoćete li vi pogledati?“ – هَلْ أَنتُم مُّطَّلِعُونَ.",
+       "en": "“He saith: Will ye look?” – هَلْ أَنتُم مُّطَّلِعُونَ."
       }
      },
      {
       "ref": "3:119",
       "why": {
-       "bs": "„Eto, vi njih volite, a oni vas ne vole…“ – هَٰٓأَنتُمْ أُو۟لَآءِ: هَا pažnje ispred أَنتُمْ.",
-       "en": "“Here you are loving them but they are not loving you…” – هَٰٓأَنتُمْ أُو۟لَآءِ: the هَا of attention before أَنتُمْ."
+       "bs": "„Eto, vi ste ti koji ih volite, a oni vas ne vole…“ – هَٰٓأَنتُمْ أُو۟لَآءِ: هَا pažnje ispred أَنتُمْ.",
+       "en": "“Lo! ye are those who love them though they love you not…” – هَٰٓأَنتُمْ أُو۟لَآءِ: the هَا of attention before أَنتُمْ."
       }
      }
     ]
@@ -455,6 +463,7 @@
    "bs": "Lična zamjenica prvog lica množine. U Kur'anu njome često govori Allah o Sebi – množina veličine, ne broja – a i ljudi o sebi.",
    "en": "The personal pronoun of the first person plural. In the Quran Allah often speaks of Himself with it – the plural of majesty, not of number – and people of themselves."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -469,24 +478,24 @@
     "key": "subject",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "Subjekat: „Mi…“", "en": "Subject: “We…”"},
+    "title": {"bs": "Subjekat: ‚Mi…‘", "en": "Subject: ‘We…’"},
     "explanation": {
-     "bs": "Ispred glagola naglašava ko radnju čini; iza إِنَّا ponavlja i osnažuje „Mi“.",
-     "en": "Before a verb it stresses who does the deed; after إِنَّا it repeats and strengthens “We”."
+     "bs": "Ispred glagola naglašava ko radnju čini; iza إِنَّا ponavlja i osnažuje ‚Mi‘.",
+     "en": "Before a verb it stresses who does the deed; after إِنَّا it repeats and strengthens ‘We’."
     },
     "ayat": [
      {
       "ref": "56:57",
       "why": {
-       "bs": "„Mi smo vas stvorili, pa zašto ne vjerujete?“ – نَحْنُ خَلَقْنَٰكُمْ.",
-       "en": "“We have created you, so why do you not believe?” – نَحْنُ خَلَقْنَٰكُمْ."
+       "bs": "„Mi smo vas stvorili, pa zašto onda ne priznajete istinu?“ – نَحْنُ خَلَقْنَٰكُمْ.",
+       "en": "“We created you. Will ye then admit the truth?” – نَحْنُ خَلَقْنَٰكُمْ."
       }
      },
      {
       "ref": "15:9",
       "why": {
-       "bs": "„Mi, uistinu, Kur'an objavljujemo i zaista ćemo Mi nad njim bdjeti“ – إِنَّا نَحْنُ: „Mi“ dvaput.",
-       "en": "“Indeed, it is We who sent down the message, and indeed, We will be its guardian” – إِنَّا نَحْنُ: “We” twice."
+       "bs": "„Uistinu, Mi, upravo Mi objavljujemo Opomenu, i Mi ćemo je, zaista, čuvati“ – إِنَّا نَحْنُ: ‚Mi‘ dvaput.",
+       "en": "“Lo! We, even We, reveal the Reminder, and lo! We verily are its Guardian” – إِنَّا نَحْنُ: ‘We’ twice."
       }
      }
     ]
@@ -497,15 +506,15 @@
     "tags": ["PRON"],
     "title": {"bs": "Zamjenica razdvajanja (ḍamīr al-faṣl)", "en": "The pronoun of separation (ḍamīr al-faṣl)"},
     "explanation": {
-     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove „razdvajanje“ (faṣl), a i „oslonac“ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – „oni, i samo oni“ (o هُمْ u 2:5).",
-     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name “separation” (faṣl), and also “support” (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – “they, and they alone” (of هُمْ in 2:5)."
+     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove ‚razdvajanje‘ (faṣl), a i ‚oslonac‘ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – ‚oni, i samo oni‘ (o هُمْ u 2:5).",
+     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name ‘separation’ (faṣl), and also ‘support’ (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – ‘they, and they alone’ (of هُمْ in 2:5)."
     },
     "ayat": [
      {
       "ref": "37:165",
       "why": {
-       "bs": "„Mi smo, zaista, u redove poredani“ – وَإِنَّا لَنَحْنُ ٱلصَّآفُّونَ: Ibn Hišām navodi ovaj ajet; ovdje govore meleki.",
-       "en": "“And indeed, we are those who line up [for prayer]” – وَإِنَّا لَنَحْنُ ٱلصَّآفُّونَ: Ibn Hišām cites this ayah; here the angels speak."
+       "bs": "„I mi smo, zaista, oni koji se u redove postrojavaju“ – وَإِنَّا لَنَحْنُ ٱلصَّآفُّونَ: Ibn Hišām navodi ovaj ajet; ovdje govore meleki.",
+       "en": "“Lo! we, even we are they who set the ranks” – وَإِنَّا لَنَحْنُ ٱلصَّآفُّونَ: Ibn Hišām cites this ayah; here the angels speak."
       }
      }
     ]
@@ -521,6 +530,7 @@
    "bs": "Lična zamjenica drugog lica muškog roda jednine. U Kur'anu se njome Allah često obraća Poslaniku, poslanici i meleki njome se obraćaju Allahu u dovi i hvali, a koristi se i među ljudima.",
    "en": "The personal pronoun of the second person, masculine singular. In the Quran Allah often addresses the Prophet with it, prophets and angels address Allah with it in supplication and praise, and it is used between people as well."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -535,17 +545,17 @@
     "key": "subject",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "Subjekat: „ti si…“", "en": "Subject: “you are…”"},
+    "title": {"bs": "Subjekat: ‚ti si…‘", "en": "Subject: ‘you are…’"},
     "explanation": {
-     "bs": "Kao subjekat imeničke rečenice; s إِنَّمَا ograničava: „ti si samo…“.",
-     "en": "As the subject of a nominal sentence; with إِنَّمَا it restricts: “you are only…”."
+     "bs": "Kao subjekat imeničke rečenice; s إِنَّمَا ograničava: ‚ti si samo…‘.",
+     "en": "As the subject of a nominal sentence; with إِنَّمَا it restricts: ‘you are only…’."
     },
     "ayat": [
      {
       "ref": "88:21",
       "why": {
-       "bs": "„Zato ti opominji, ti si samo opominjač“ – إِنَّمَآ أَنتَ مُذَكِّرٌ.",
-       "en": "“So remind, [O Muhammad]; you are only a reminder” – إِنَّمَآ أَنتَ مُذَكِّرٌ."
+       "bs": "„Zato opominji, ti si samo onaj koji opominje“ – إِنَّمَآ أَنتَ مُذَكِّرٌ.",
+       "en": "“Remind them, for thou art but a remembrancer” – إِنَّمَآ أَنتَ مُذَكِّرٌ."
       }
      }
     ]
@@ -556,22 +566,22 @@
     "tags": ["PRON"],
     "title": {"bs": "Zamjenica razdvajanja (ḍamīr al-faṣl)", "en": "The pronoun of separation (ḍamīr al-faṣl)"},
     "explanation": {
-     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove „razdvajanje“ (faṣl), a i „oslonac“ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – „oni, i samo oni“ (o هُمْ u 2:5). Može stajati i iza كَانَ, kad je predikat u akuzativu.",
-     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name “separation” (faṣl), and also “support” (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – “they, and they alone” (of هُمْ in 2:5). It can also stand after كَانَ, when the predicate is accusative."
+     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove ‚razdvajanje‘ (faṣl), a i ‚oslonac‘ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – ‚oni, i samo oni‘ (o هُمْ u 2:5). Može stajati i iza كَانَ, kad je predikat u akuzativu.",
+     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name ‘separation’ (faṣl), and also ‘support’ (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – ‘they, and they alone’ (of هُمْ in 2:5). It can also stand after كَانَ, when the predicate is accusative."
     },
     "ayat": [
      {
       "ref": "2:32",
       "why": {
-       "bs": "„…Ti si Sveznajući i Mudri“ – إِنَّكَ أَنتَ ٱلْعَلِيمُ ٱلْحَكِيمُ.",
-       "en": "“…Indeed, it is You who are the Knowing, the Wise” – إِنَّكَ أَنتَ ٱلْعَلِيمُ ٱلْحَكِيمُ."
+       "bs": "„…Uistinu, samo si Ti Onaj Koji sve zna, Mudri“ – إِنَّكَ أَنتَ ٱلْعَلِيمُ ٱلْحَكِيمُ.",
+       "en": "“…Lo! Thou, only Thou, art the Knower, the Wise” – إِنَّكَ أَنتَ ٱلْعَلِيمُ ٱلْحَكِيمُ."
       }
      },
      {
       "ref": "5:117:22",
       "why": {
-       "bs": "„…a kad si me k Sebi uzeo, Ti si nad njima bdio…“ – prvo أَنتَ, u كُنتَ أَنتَ ٱلرَّقِيبَ: Ibn Hišām navodi ovaj ajet; ٱلرَّقِيبَ je predikat od كَانَ, u akuzativu.",
-       "en": "“…but when You took me up, You were the Observer over them…” – the first أَنتَ, in كُنتَ أَنتَ ٱلرَّقِيبَ: Ibn Hišām cites this ayah; ٱلرَّقِيبَ is the predicate of كَانَ, accusative."
+       "bs": "„…a kad si me uzeo, Ti si bio Onaj Koji nad njima bdi…“ – prvo أَنتَ, u كُنتَ أَنتَ ٱلرَّقِيبَ: Ibn Hišām navodi ovaj ajet; ٱلرَّقِيبَ je predikat od كَانَ, u akuzativu.",
+       "en": "“…and when Thou tookest me Thou wast the Watcher over them…” – the first أَنتَ, in كُنتَ أَنتَ ٱلرَّقِيبَ: Ibn Hišām cites this ayah; ٱلرَّقِيبَ is the predicate of كَانَ, accusative."
       }
      }
     ]
@@ -584,9 +594,10 @@
   "count": 68,
   "meaning": {"bs": "ja", "en": "I"},
   "grammar": {
-   "bs": "Lična zamjenica prvog lica jednine, za muški i ženski rod. U Mushafu se piše s elifom na kraju (أَنَا۠), ali se u Ḥafṣovom čitanju elif izgovara samo kad se na riječi stane; u nastavku se kaže „ana“ s kratkim a.",
-   "en": "The personal pronoun of the first person singular, masculine and feminine alike. In the Mushaf it is written with a final alif (أَنَا۠), but in Ḥafṣ's reading the alif is said only when one stops on the word; in connected reading it is “ana” with a short a."
+   "bs": "Lična zamjenica prvog lica jednine, za muški i ženski rod. U Mushafu se piše s elifom na kraju (أَنَا۠), ali se u Ḥafṣovom čitanju elif izgovara samo kad se na riječi stane; u nastavku se kaže ‚ana‘ s kratkim a.",
+   "en": "The personal pronoun of the first person singular, masculine and feminine alike. In the Mushaf it is written with a final alif (أَنَا۠), but in Ḥafṣ's reading the alif is said only when one stops on the word; in connected reading it is ‘ana’ with a short a."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -601,7 +612,7 @@
     "key": "subject",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "Subjekat: „ja…“", "en": "Subject: “I…”"},
+    "title": {"bs": "Subjekat: ‚ja…‘", "en": "Subject: ‘I…’"},
     "explanation": {
      "bs": "Često u govoru poslanika i u Allahovom govoru o Sebi, a i u govoru drugih.",
      "en": "Often in the speech of the prophets and in Allah's speech about Himself, and in the speech of others too."
@@ -610,8 +621,8 @@
      {
       "ref": "109:4",
       "why": {
-       "bs": "„i ja se neću klanjati onima kojima se vi klanjate“ – وَلَآ أَنَا۠ عَابِدٌ.",
-       "en": "“Nor will I be a worshipper of what you worship” – وَلَآ أَنَا۠ عَابِدٌ."
+       "bs": "„niti sam ja obožavalac onoga što vi obožavate“ – وَلَآ أَنَا۠ عَابِدٌ.",
+       "en": "“And I shall not worship that which ye worship” – وَلَآ أَنَا۠ عَابِدٌ."
       }
      }
     ]
@@ -622,22 +633,22 @@
     "tags": ["PRON"],
     "title": {"bs": "Zamjenica razdvajanja (ḍamīr al-faṣl)", "en": "The pronoun of separation (ḍamīr al-faṣl)"},
     "explanation": {
-     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove „razdvajanje“ (faṣl), a i „oslonac“ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – „oni, i samo oni“ (o هُمْ u 2:5). Može stajati i između dva objekta glagola mišljenja i viđenja (18:39).",
-     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name “separation” (faṣl), and also “support” (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – “they, and they alone” (of هُمْ in 2:5). It can also stand between the two objects of a verb of thinking or seeing (18:39)."
+     "bs": "Između subjekta i određenog predikata zamjenica kazuje da je ono iza nje predikat, a ne pridjev ili dodatak – zato se zove ‚razdvajanje‘ (faṣl), a i ‚oslonac‘ (ʿimād). Ibn Hišām navodi još dvije koristi, naglašavanje i ograničavanje, a az-Zamaḫšarī za 2:5 kaže sve troje – ‚oni, i samo oni‘ (o هُمْ u 2:5). Može stajati i između dva objekta glagola mišljenja i viđenja (18:39).",
+     "en": "Between a subject and a definite predicate the pronoun says that what follows is the predicate, not an adjective or a follower – hence its name ‘separation’ (faṣl), and also ‘support’ (ʿimād). Ibn Hišām names two more benefits, emphasis and restriction, and az-Zamaḫšarī says all three on 2:5 – ‘they, and they alone’ (of هُمْ in 2:5). It can also stand between the two objects of a verb of thinking or seeing (18:39)."
     },
     "ayat": [
      {
       "ref": "15:49",
       "why": {
-       "bs": "„Obavijesti robove Moje da sam Ja – Onaj koji prašta i milostiv“ – أَنِّىٓ أَنَا ٱلْغَفُورُ.",
-       "en": "“[O Muhammad], inform My servants that it is I who am the Forgiving, the Merciful” – أَنِّىٓ أَنَا ٱلْغَفُورُ."
+       "bs": "„Obavijesti Moje robove da sam Ja, uistinu, Onaj Koji prašta, Milostivi“ – أَنِّىٓ أَنَا ٱلْغَفُورُ.",
+       "en": "“Announce, (O Muhammad) unto My slaves that verily I am the Forgiving, the Merciful” – أَنِّىٓ أَنَا ٱلْغَفُورُ."
       }
      },
      {
       "ref": "18:39",
       "why": {
-       "bs": "„…Ako vidiš da sam ja od tebe siromašniji i da imam manje djece“ – تَرَنِ أَنَا۠ أَقَلَّ: Ibn Hišām navodi ovaj ajet; أَقَلَّ je drugi objekat glagola.",
-       "en": "“…if you see me less than you in wealth and children” – تَرَنِ أَنَا۠ أَقَلَّ: Ibn Hišām cites this ayah; أَقَلَّ is the verb's second object."
+       "bs": "„…ako smatraš da sam ja siromašniji od tebe imetkom i djecom“ – تَرَنِ أَنَا۠ أَقَلَّ: Ibn Hišām navodi ovaj ajet; أَقَلَّ je drugi objekat glagola.",
+       "en": "“…Though thou seest me as less than thee in wealth and children” – تَرَنِ أَنَا۠ أَقَلَّ: Ibn Hišām cites this ayah; أَقَلَّ is the verb's second object."
       }
      }
     ]
@@ -650,9 +661,10 @@
   "count": 68,
   "meaning": {"bs": "koja", "en": "who, which (f.)"},
   "grammar": {
-   "bs": "Odnosna zamjenica, ženski rod jednine. Kao الَّذِي, iza nje dolazi rečenica sa zamjenicom koja se na nju vraća; ta zamjenica se može izostaviti kad je objekat (نِعْمَتِىَ ٱلَّتِىٓ أَنْعَمْتُ – „blagodat koju sam (je) dao“).",
-   "en": "The relative pronoun, feminine singular. As with الَّذِي, a sentence follows it with a pronoun returning to it; that pronoun may be left out when it is an object (نِعْمَتِىَ ٱلَّتِىٓ أَنْعَمْتُ – “My favour which I bestowed”)."
+   "bs": "Odnosna zamjenica, ženski rod jednine. Kao الَّذِي, iza nje dolazi rečenica sa zamjenicom koja se na nju vraća; ta zamjenica se može izostaviti kad je objekat (نِعْمَتِىَ ٱلَّتِىٓ أَنْعَمْتُ – ‚blagodat koju sam (je) dao‘).",
+   "en": "The relative pronoun, feminine singular. As with الَّذِي, a sentence follows it with a pronoun returning to it; that pronoun may be left out when it is an object (نِعْمَتِىَ ٱلَّتِىٓ أَنْعَمْتُ – ‘My favour which I bestowed’)."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -666,28 +678,28 @@
     "key": "who",
     "kind": "relative",
     "tags": ["REL"],
-    "title": {"bs": "„Koja…“", "en": "“Which…”"},
+    "title": {"bs": "‚Koja…‘", "en": "‘Which…’"},
     "explanation": {"bs": "Slaže se s imenicom ženskog roda na koju se odnosi.", "en": "It agrees with the feminine noun it refers to."},
     "ayat": [
      {
       "ref": "3:131",
       "why": {
-       "bs": "„i čuvajte se vatre koja je pripremljena za nevjernike“ – ٱلنَّارَ ٱلَّتِىٓ أُعِدَّتْ.",
-       "en": "“And fear the Fire, which has been prepared for the disbelievers” – ٱلنَّارَ ٱلَّتِىٓ أُعِدَّتْ."
+       "bs": "„I klonite se Vatre koja je spremljena nevjernicima“ – ٱلنَّارَ ٱلَّتِىٓ أُعِدَّتْ.",
+       "en": "“And ward off (from yourselves) the Fire [which is] prepared for disbelievers” – ٱلنَّارَ ٱلَّتِىٓ أُعِدَّتْ."
       }
      },
      {
       "ref": "89:8",
       "why": {
-       "bs": "„kojem sličnog nije bilo stvoreno ni u jednoj zemlji“ – ٱلَّتِى se odnosi na إِرَمَ (89:7), a ـهَا u مِثْلُهَا se vraća na الَّتِي.",
-       "en": "“The like of which had never been created in the land” – ٱلَّتِى refers to إِرَمَ (89:7), and ـهَا in مِثْلُهَا returns to الَّتِي."
+       "bs": "„kojem ravnog nije stvoreno u zemljama“ – ٱلَّتِى se odnosi na إِرَمَ (89:7), a ـهَا u مِثْلُهَا se vraća na الَّتِي.",
+       "en": "“The like of which was not created in the lands” – ٱلَّتِى refers to إِرَمَ (89:7), and ـهَا in مِثْلُهَا returns to الَّتِي."
       }
      },
      {
       "ref": "2:40",
       "why": {
-       "bs": "„…sjetite se blagodati Moje koju sam vam podario…“ – ٱلَّتِىٓ أَنْعَمْتُ: zamjenica objekta je izostavljena.",
-       "en": "“…remember My favour which I have bestowed upon you…” – ٱلَّتِىٓ أَنْعَمْتُ: the object pronoun is left out."
+       "bs": "„…sjetite se Moje blagodati koju sam vam darovao…“ – ٱلَّتِىٓ أَنْعَمْتُ: zamjenica objekta je izostavljena.",
+       "en": "“…Remember My favour wherewith I favoured you…” – ٱلَّتِىٓ أَنْعَمْتُ: the object pronoun is left out."
       }
      }
     ]
@@ -703,6 +715,7 @@
    "bs": "Lična zamjenica trećeg lica ženskog roda jednine. Slaže se s gramatičkim rodom riječi na koju upućuje: zato se u Kur'anu odnosi i na Musaov štap (عَصًا), Džehennem ili noć Kadr – riječi ženskog roda, iako ih bosanski i engleski izriču drugačije.",
    "en": "The personal pronoun of the third person, feminine singular. It agrees with the grammatical gender of the word it points to: so in the Quran it also points to Moses' staff (عَصًا), Hellfire or the Night of Decree – feminine words, though Bosnian and English say them otherwise."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -716,31 +729,31 @@
     "key": "she",
     "kind": "personalPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "„Ona“ – po gramatičkom rodu", "en": "“She, it” – by grammatical gender"},
+    "title": {"bs": "‚Ona‘ – po gramatičkom rodu", "en": "‘She, it’ – by grammatical gender"},
     "explanation": {
-     "bs": "Bosanski prijevod često kaže „on“ ili „to“, engleski „it“, gdje arapski ima هِيَ.",
-     "en": "The Bosnian translation often says “on” or “to”, the English “it”, where the Arabic has هِيَ."
+     "bs": "Bosanski prijevod često kaže ‚on‘ ili ‚to‘, engleski ‚it‘, gdje arapski ima هِيَ.",
+     "en": "The Bosnian translation often says ‘on’ or ‘to’, the English ‘it’, where the Arabic has هِيَ."
     },
     "ayat": [
      {
       "ref": "20:20",
       "why": {
-       "bs": "„I on ga baci, kad on – zmija koja se kreće“ – هِيَ upućuje na štap (عَصًا, ženski rod), Korkut kaže „on“.",
-       "en": "“So he threw it down, and thereupon it was a snake, moving swiftly” – هِيَ points to the staff (عَصًا, feminine)."
+       "bs": "„Pa ga baci, kad ono – zmija koja gmiže“ – هِيَ upućuje na štap (عَصًا, ženski rod), Korkut kaže ‚on‘.",
+       "en": "“So he cast it down, and lo! it was a serpent, gliding” – هِيَ points to the staff (عَصًا, feminine)."
       }
      },
      {
       "ref": "97:5",
       "why": {
-       "bs": "„Ona je mir, sve dok zora ne svane!“ – هِيَ je noć Kadr.",
-       "en": "“Peace it is until the emergence of dawn.” – هِيَ is the Night of Decree."
+       "bs": "„Ona je mir sve do pojave zore“ – هِيَ je noć Kadr.",
+       "en": "“(The night is) Peace until the rising of the dawn” – هِيَ is the Night of Decree."
       }
      },
      {
       "ref": "79:39",
       "why": {
-       "bs": "„Džehennem će prebivalište biti“ – فَإِنَّ ٱلْجَحِيمَ هِىَ ٱلْمَأْوَىٰ: هِيَ ponavlja ٱلْجَحِيمَ.",
-       "en": "“Then indeed, Hellfire will be [his] refuge” – فَإِنَّ ٱلْجَحِيمَ هِىَ ٱلْمَأْوَىٰ: هِيَ takes up ٱلْجَحِيمَ again."
+       "bs": "„Džehennem će, uistinu, biti prebivalište“ – فَإِنَّ ٱلْجَحِيمَ هِىَ ٱلْمَأْوَىٰ: هِيَ ponavlja ٱلْجَحِيمَ.",
+       "en": "“Lo! hell will be his home” – فَإِنَّ ٱلْجَحِيمَ هِىَ ٱلْمَأْوَىٰ: هِيَ takes up ٱلْجَحِيمَ again."
       }
      }
     ]
@@ -756,6 +769,7 @@
    "bs": "Pokazna zamjenica za blizinu, ženski rod jednine (هَا + ذِهِ). Koristi se i za množinu stvari i životinja, koja se u arapskom slaže kao ženski rod jednine.",
    "en": "The demonstrative of the near, feminine singular (هَا + ذِهِ). It is also used for a plural of things and animals, which in Arabic agrees as a feminine singular."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -769,7 +783,7 @@
     "key": "this",
     "kind": "demonstrative",
     "tags": ["DEM"],
-    "title": {"bs": "„Ova …“, „ovo je …“", "en": "“This …”, “this is …”"},
+    "title": {"bs": "‚Ova …‘, ‚ovo je …‘", "en": "‘This …’, ‘this is …’"},
     "explanation": {
      "bs": "Kao kod هَٰذَا: imenica s članom iza nje obično opisuje ono na što se pokazuje, a imenica bez člana je predikat; ali i određena imenica s odnosnom rečenicom može biti predikat (52:14).",
      "en": "As with هَٰذَا: a noun with the article after it usually names what is pointed at, a noun without it is the predicate; but a definite noun with a relative clause can also be the predicate (52:14)."
@@ -778,22 +792,22 @@
      {
       "ref": "52:14",
       "why": {
-       "bs": "„Ovo je vatra koju ste vi poricali“ – هَٰذِهِ ٱلنَّارُ ٱلَّتِى.",
-       "en": "“This is the Fire which you used to deny” – هَٰذِهِ ٱلنَّارُ ٱلَّتِى."
+       "bs": "„Ovo je Vatra koju ste poricali“ – هَٰذِهِ ٱلنَّارُ ٱلَّتِى.",
+       "en": "“This is the Fire which ye were wont to deny” – هَٰذِهِ ٱلنَّارُ ٱلَّتِى."
       }
      },
      {
       "ref": "26:155",
       "why": {
-       "bs": "„‘Evo, ovo je kamila’, reče on…“ – هَٰذِهِۦ نَاقَةٌ: imenica bez člana, predikat.",
-       "en": "“He said: ‘This is a she-camel…’” – هَٰذِهِۦ نَاقَةٌ: a noun without the article, the predicate."
+       "bs": "„Reče: Ovo je kamila…“ – هَٰذِهِۦ نَاقَةٌ: imenica bez člana, predikat.",
+       "en": "“He said: (Behold) this [is a] she-camel…” – هَٰذِهِۦ نَاقَةٌ: a noun without the article, the predicate."
       }
      },
      {
       "ref": "2:35",
       "why": {
-       "bs": "„…a ovom drvetu se ne približujte…“ – هَٰذِهِ ٱلشَّجَرَةَ: هَٰذِهِ je na mjestu akuzativa (objekat), ٱلشَّجَرَةَ u akuzativu.",
-       "en": "“…But do not approach this tree…” – هَٰذِهِ ٱلشَّجَرَةَ: هَٰذِهِ is in the place of the accusative (the object), ٱلشَّجَرَةَ accusative."
+       "bs": "„…a ne približujte se ovom drvetu…“ – هَٰذِهِ ٱلشَّجَرَةَ: هَٰذِهِ je na mjestu akuzativa (objekat), ٱلشَّجَرَةَ u akuzativu.",
+       "en": "“…but come not nigh this tree…” – هَٰذِهِ ٱلشَّجَرَةَ: هَٰذِهِ is in the place of the accusative (the object), ٱلشَّجَرَةَ accusative."
       }
      }
     ]
@@ -809,6 +823,7 @@
    "bs": "Pokazna zamjenica za blizinu, množina za oba roda (هَا + أُولَاءِ). Ne mijenja se: u svakom padežu završava na -i.",
    "en": "The demonstrative of the near, plural for both genders (هَا + أُولَاءِ). It does not change: in every case it ends in -i."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -822,7 +837,7 @@
     "key": "these",
     "kind": "demonstrative",
     "tags": ["DEM"],
-    "title": {"bs": "„Ovi …“", "en": "“These …”"},
+    "title": {"bs": "‚Ovi …‘", "en": "‘These …’"},
     "explanation": {
      "bs": "Isti oblik kao subjekat i iza prijedloga ili riječi u genitivu.",
      "en": "The same form as a subject and after a preposition or a word in the genitive."
@@ -831,15 +846,15 @@
      {
       "ref": "15:71",
       "why": {
-       "bs": "„‘Evo vam kćeri mojih’, reče on…“ – هَٰٓؤُلَآءِ kao subjekat.",
-       "en": "“[Lot] said: ‘These are my daughters…’” – هَٰٓؤُلَآءِ as the subject."
+       "bs": "„Reče: Ovo su moje kćeri…“ – هَٰٓؤُلَآءِ kao subjekat.",
+       "en": "“He said: Here are my daughters…” – هَٰٓؤُلَآءِ as the subject."
       }
      },
      {
       "ref": "2:31",
       "why": {
-       "bs": "„…‘Kažite Mi nazive ovih…’“ – بِأَسْمَآءِ هَٰٓؤُلَآءِ: na mjestu genitiva, isti oblik.",
-       "en": "“…‘Inform Me of the names of these…’” – بِأَسْمَآءِ هَٰٓؤُلَآءِ: in the place of the genitive, the same form."
+       "bs": "„…Obavijestite Me o imenima ovih…“ – بِأَسْمَآءِ هَٰٓؤُلَآءِ: na mjestu genitiva, isti oblik.",
+       "en": "“…Inform Me of the names of these…” – بِأَسْمَآءِ هَٰٓؤُلَآءِ: in the place of the genitive, the same form."
       }
      }
     ]
@@ -852,9 +867,10 @@
   "count": 43,
   "meaning": {"bs": "ta, to", "en": "that (f.)"},
   "grammar": {
-   "bs": "Pokazna zamjenica za daljinu, ženski rod jednine: تِـ + lām udaljenosti + كَ obraćanja. Kao هَٰذِهِ, koristi se i za množinu stvari: تِلْكَ ءَايَٰتُ – „to su ajeti“.",
-   "en": "The demonstrative of the far, feminine singular: تِـ + the lām of distance + the كَ of address. Like هَٰذِهِ, it is also used for a plural of things: تِلْكَ ءَايَٰتُ – “those are the verses”."
+   "bs": "Pokazna zamjenica za daljinu, ženski rod jednine: تِـ + lām udaljenosti + كَ obraćanja. Kao هَٰذِهِ, koristi se i za množinu stvari: تِلْكَ ءَايَٰتُ – ‚to su ajeti‘.",
+   "en": "The demonstrative of the far, feminine singular: تِـ + the lām of distance + the كَ of address. Like هَٰذِهِ, it is also used for a plural of things: تِلْكَ ءَايَٰتُ – ‘those are the verses’."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -868,31 +884,31 @@
     "key": "that",
     "kind": "demonstrative",
     "tags": ["DEM"],
-    "title": {"bs": "„Ta …“, „to su …“", "en": "“That …”, “those are …”"},
+    "title": {"bs": "‚Ta …‘, ‚to su …‘", "en": "‘That …’, ‘those are …’"},
     "explanation": {
-     "bs": "Na početku nekih sura upućuje na ajete Knjige („to su / ovo su“); uz osobe i stvari ženskog roda znači „ta“.",
-     "en": "At the start of some surahs it points to the verses of the Book (“those / these are”); with persons and things in the feminine it means “that”."
+     "bs": "Na početku nekih sura upućuje na ajete Knjige (‚to su / ovo su‘); uz osobe i stvari ženskog roda znači ‚ta‘.",
+     "en": "At the start of some surahs it points to the verses of the Book (‘those / these are’); with persons and things in the feminine it means ‘that’."
     },
     "ayat": [
      {
       "ref": "26:2",
       "why": {
-       "bs": "„Ovo su ajeti Knjige jasne“ – ءَايَٰتُ je množina, ali تِلْكَ je jednina ženskog roda.",
-       "en": "“These are the verses of the clear Book” – ءَايَٰتُ is plural, but تِلْكَ is feminine singular."
+       "bs": "„To su ajeti Knjige koja jasno kazuje“ – ءَايَٰتُ je množina, ali تِلْكَ je jednina ženskog roda.",
+       "en": "“These are revelations of the Scripture that maketh plain” – ءَايَٰتُ is plural, but تِلْكَ is feminine singular."
       }
      },
      {
       "ref": "20:17",
       "why": {
-       "bs": "„A šta ti je to u desnoj ruci, o Musa?“ – تِلْكَ upućuje na štap (عَصًا, ženski rod).",
-       "en": "“And what is that in your right hand, O Moses?” – تِلْكَ points to the staff (عَصًا, feminine)."
+       "bs": "„A šta je to u tvojoj desnoj ruci, o Musa?“ – تِلْكَ upućuje na štap (عَصًا, ženski rod).",
+       "en": "“And what is that in thy right hand, O Moses?” – تِلْكَ points to the staff (عَصًا, feminine)."
       }
      },
      {
       "ref": "2:134",
       "why": {
-       "bs": "„Taj narod je bio i nestao…“ – تِلْكَ أُمَّةٌ.",
-       "en": "“That was a nation which has passed on…” – تِلْكَ أُمَّةٌ."
+       "bs": "„To je zajednica koja je prošla…“ – تِلْكَ أُمَّةٌ.",
+       "en": "“Those are a people who have passed away…” – تِلْكَ أُمَّةٌ."
       }
      }
     ]
@@ -905,9 +921,10 @@
   "count": 24,
   "meaning": {"bs": "(samo) tebe, njega, mene…", "en": "you, him, me (as object)"},
   "grammar": {
-   "bs": "Samostalna zamjenica objekta: إِيَّا s nastavkom lica – إِيَّاكَ „tebe“, إِيَّاهُ „njega“, إِيَّايَ „mene“, إِيَّاكُمْ „vas“. Koristi se kad objekat ne može biti nastavak na glagolu: npr. kad je stavljen ispred glagola, povezan veznikom ili iza إِلَّا. Ibn Hišām kaže da je كَ u إِيَّاكَ čestica obraćanja bez mjesta u rečenici – „to je ispravno“ – kao كَ u ذَٰلِكَ.",
-   "en": "The detached object pronoun: إِيَّا with a person ending – إِيَّاكَ “you”, إِيَّاهُ “him”, إِيَّايَ “me”, إِيَّاكُمْ “you (pl.)”. It is used when the object cannot be a suffix on the verb: for example when it is put before the verb, joined by a conjunction, or after إِلَّا. Ibn Hišām says that the كَ in إِيَّاكَ is a particle of address with no place in the sentence – “that is the correct view” – like the كَ in ذَٰلِكَ."
+   "bs": "Samostalna zamjenica objekta: إِيَّا s nastavkom lica – إِيَّاكَ ‚tebe‘, إِيَّاهُ ‚njega‘, إِيَّايَ ‚mene‘, إِيَّاكُمْ ‚vas‘. Koristi se kad objekat ne može biti nastavak na glagolu: npr. kad je stavljen ispred glagola, povezan veznikom ili iza إِلَّا. Ibn Hišām kaže da je كَ u إِيَّاكَ čestica obraćanja bez mjesta u rečenici – ‚to je ispravno‘ – kao كَ u ذَٰلِكَ.",
+   "en": "The detached object pronoun: إِيَّا with a person ending – إِيَّاكَ ‘you’, إِيَّاهُ ‘him’, إِيَّايَ ‘me’, إِيَّاكُمْ ‘you (pl.)’. It is used when the object cannot be a suffix on the verb: for example when it is put before the verb, joined by a conjunction, or after إِلَّا. Ibn Hišām says that the كَ in إِيَّاكَ is a particle of address with no place in the sentence – ‘that is the correct view’ – like the كَ in ذَٰلِكَ."
   },
+  "ayahQuotes": {"bs": "own"},
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
@@ -922,25 +939,22 @@
     "key": "object",
     "kind": "objectPronoun",
     "tags": ["PRON"],
-    "title": {"bs": "Objekat ispred glagola: „samo Tebe…“", "en": "The object before the verb: “You alone…”"},
+    "title": {"bs": "Objekat ispred glagola: ‚samo Tebe…‘", "en": "The object before the verb: ‘You alone…’"},
     "explanation": {
-     "bs": "Objekat stavljen ispred glagola se naglašava i ograničava: i Korkut i Sahih International to prenose kao „samo Tebi“ / „It is You…“.",
-     "en": "An object put before the verb is stressed and restricted: both Korkut and Sahih International render it as “samo Tebi” / “It is You…”."
+     "bs": "Objekat stavljen ispred glagola se naglašava i ograničava: i Korkut i Sahih International to prenose kao ‚samo Tebi‘ / ‚It is You…‘, a Pickthall dodaje ‚(alone)‘.",
+     "en": "An object put before the verb is stressed and restricted: both Korkut and Sahih International render it as ‘samo Tebi’ / ‘It is You…’, and Pickthall adds ‘(alone)’."
     },
     "ayat": [
      {
       "ref": "1:5:1",
       "why": {
-       "bs": "„Samo Tebi se klanjamo i samo od Tebe pomoć tražimo!“ – إِيَّاكَ ispred نَعْبُدُ.",
-       "en": "“It is You we worship and You we ask for help.” – إِيَّاكَ before نَعْبُدُ."
+       "bs": "„Samo Tebe obožavamo i samo od Tebe pomoć tražimo.“ – إِيَّاكَ ispred نَعْبُدُ.",
+       "en": "“Thee (alone) we worship; Thee (alone) we ask for help.” – إِيَّاكَ before نَعْبُدُ."
       }
      },
      {
       "ref": "2:40",
-      "why": {
-       "bs": "„…i samo se Mene bojte!“ – وَإِيَّٰىَ فَٱرْهَبُونِ.",
-       "en": "“…and be afraid of [only] Me.” – وَإِيَّٰىَ فَٱرْهَبُونِ."
-      }
+      "why": {"bs": "„…i samo Mene se bojte!“ – وَإِيَّٰىَ فَٱرْهَبُونِ.", "en": "“…and fear [only] Me.” – وَإِيَّٰىَ فَٱرْهَبُونِ."}
      }
     ]
    },
@@ -957,8 +971,8 @@
      {
       "ref": "17:31",
       "why": {
-       "bs": "„…Mi opskrbljujemo i njih i vas…“ – نَرْزُقُهُمْ وَإِيَّاكُمْ: „njih“ je nastavak, „vas“ je إِيَّاكُمْ.",
-       "en": "“…We provide for them and for you…” – نَرْزُقُهُمْ وَإِيَّاكُمْ: “them” is a suffix, “you” is إِيَّاكُمْ."
+       "bs": "„…Mi ih opskrbljujemo, a i vas…“ – نَرْزُقُهُمْ وَإِيَّاكُمْ: ‚ih‘ je nastavak, ‚vas‘ je إِيَّاكُمْ.",
+       "en": "“…We shall provide for them and for you…” – نَرْزُقُهُمْ وَإِيَّاكُمْ: ‘them’ is a suffix, ‘you’ is إِيَّاكُمْ."
       }
      }
     ]

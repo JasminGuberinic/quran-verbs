@@ -16,6 +16,7 @@ the compact files and read only what a step needs.
   translation pass (see "Later" below).
 - Don't make product decisions alone; ask the user (in Bosnian, briefly).
 - Commit when the batch is done, then `git push` (branch study-site only; never main).
+- Licence: Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation. Any ayah a text quotes follows fil.ayah_quotes (double marks = ayah quote, named ayah).
 
 ## Content policy (practice sentences)
 There is **no human reviewer**: the strict blind reviewer agent (step 6) stands in for one,

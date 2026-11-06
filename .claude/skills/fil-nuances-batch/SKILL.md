@@ -28,8 +28,23 @@ corpus Concordance), cards fil.stages.nuance_site, pages fil.stages.nuance_pages
 - Bosnian follows Korkut's conventions (Allah, ajet, Kur'an, Poslanik, Musa, Ibrahim, Jusuf, Džennet,
   Džehennem — capitalised, double n; adjectives džennetski, džehennemski; tests/test_bosnian_spelling.py fails on
   any other spelling);
-  English Sahih International style. Content policy: respectful of God and the prophets, no depictions.
+  English plain and modern. Content policy: respectful of God and the prophets, no depictions.
   شَرَحَ صَدْرَهُ is "proširiti/širiti grudi", not "otvoriti".
+
+## Ayah quotations (licence — non-negotiable)
+- Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation.
+- Double quotation marks quote an ayah (en “…”, bs „…“) and name it — the item's `ref`, or `s:a` written in the
+  same text (“…”, 52:21; a quote running into the next ayah carries “… (107:5) …” inside it). Glosses, meanings,
+  terms and labels take single marks (en ‘…’, bs ‚…‘).
+- English: Pickthall's words exactly (print them with `fil nuances review-export` / `fil particles review-export`
+  or data/translations/en.pickthall.txt); "…" for elision, our own insertions in [square brackets]. When his
+  wording does not serve the point, paraphrase in our own words without quotation marks. Never from memory of
+  any modern translation.
+- Bosnian: translate the Arabic afresh (plain, accurate, ijekavica) — do not recall Korkut's sentence; his
+  single standard terms (Džennet, emanet, faraon…) stay. An entry with Bosnian quotes carries
+  `"ayahQuotes": {"bs": "own"}`.
+- The gate fil.ayah_quotes (tests/test_ayah_quotes.py, and `check`) fails on an English quote that is not
+  Pickthall's text of the named ayah, on double quotes without an ayah, and on undeclared Bosnian quotes.
 
 ## Working in an agent worktree
 - The Mufradāt text (verification only, never copied): OpenITI `0502RaghibIsbahani.Mufradat.JK001150-ara1`
@@ -133,8 +148,8 @@ rahman-rahim-rauf · kafara-mushrik-munafiq · amana-aslama-ayqana · daa-nada �
 - What the reviewers flagged most this time: a later tafsir point put under ar-Rāġib's name (iktasaba
   "stresses effort"); "tafsir says" where it is "many / some mufassirun"; a definition that takes one side of a
   named dispute (faqīr/miskīn tellApart); conditionals about the Prophet (10:94) and ayat about forgiveness
-  (39:53 with 4:48) that need the majority reading beside them; bs/en drift inside quoted ayat (Korkut vs
-  Sahih wording, e.g. 6:60 "uspavljuje" vs "takes your souls"); and ayat cited for what the next ayah says
+  (39:53 with 4:48) that need the majority reading beside them; bs/en drift inside quoted ayat (6:60:
+  the bs quote said one thing, the en another); and ayat cited for what the next ayah says
   (96:9 vs 96:10, 20:59 vs 20:60). "bijednik" is pejorative for مِسْكِين: use "nevoljnik, potrebit".
 - بَغْي needed `spoken` بَغْيٌ (a final yāʾ with sukūn, like the tāʾ marbūṭa cases).
 
@@ -271,5 +286,6 @@ its path: rewrite it (`perl -pi -e s/old/new/`) before running them. Lessons:
   almost always" that a related form or our own cited ayah breaks (رَقِيَ vs irtaqā 38:10; qadara negated vs 5:34); a
   member's ayah from another verb form (18:60 amḍiya on the مَضَى card); "as befits Him" on the ayah line too, not only
   in the nuance (70:4, 44:16).
-- Bosnian ayah quotes are written to Korkut's style from memory (no Korkut text in the repo): the reviewers caught
-  ungrammatical ones (5:1, 3:97) — read every bs quote aloud before review.
+- (Superseded 2026-11-06, licence fix) Bosnian ayah quotes were written to Korkut's style from memory and English
+  ones in Sahih International's wording — both under copyright. Every quote was rewritten: en is Pickthall's text,
+  bs our own translation from the Arabic (see "Ayah quotations"). Read every bs quote aloud before review.

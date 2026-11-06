@@ -507,7 +507,9 @@ def test_every_page_credits_every_source_as_its_terms_ask():
                          'href="https://tanzil.net"', 'href="https://tanzil.net/trans/"',
                          "QuranHive Word-by-Word Audio Dataset — © QuranHive, licensed under ",
                          'href="https://quranhive.com"', 'href="https://creativecommons.org/licenses/by/4.0/"',
-                         "Recitation: Mishary Rashid Alafasy, streamed from ", 'href="https://alquran.cloud"'):
+                         "Recitation: Mishary Rashid Alafasy, streamed from ", 'href="https://alquran.cloud"',
+                         'href="https://github.com/nipponjo/tts_arabic"', "by Nawar Halabi (",
+                         'href="https://en.arabicspeechcorpus.com/"'):
             assert required in footer, (code, required)
         assert "everyayah" not in footer and "quran.com." not in footer, code
         assert "mustafa0x" not in footer, code          # the modification notice lives in THIRD_PARTY_NOTICES.md

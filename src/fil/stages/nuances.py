@@ -1,6 +1,7 @@
 """The Quran's near-synonyms (docs/NUANCES-PLAN.md): check the groups, export them for review.
 
-    fil nuances check           run the corpus gate over data/nuance_groups.json (counts, cited ayat);
+    fil nuances check           run the corpus gate over data/nuance_groups.json (counts, cited ayat)
+                                and the ayah-quotation gate (fil.ayah_quotes);
                                 prints only problems and a one-line summary, exits 1 on any problem
     fil nuances review-export   build/nuances/blind.json: every nuance claim with its cited ayat
                                 (Arabic, Pickthall's English), English and Bosnian, for a blind reviewer — no notes, no reasons
@@ -30,7 +31,8 @@ from fil.nuances import gate
 from fil.nuances.gate import Attestation, Location
 from fil.nuances import mufradat
 from fil.nuances.model import CorpusWord, NuanceGroup, Text
-from fil.resources import BUILD_DIR
+from fil.resources import BUILD_DIR, NUANCE_GROUPS_JSON
+from fil.stages import quotations
 
 OUT = BUILD_DIR / "nuances"
 MUFRADAT_URI = f"{mufradat.BOOK_URI}.JK001150-ara1"   # the primary OpenITI version
@@ -85,7 +87,7 @@ def _noun_locations(occurrences) -> dict[tuple[str, str], list[Location]]:
 def check() -> list[str]:
     """The gate over the stored groups; the problems found (printed), none when they may ship."""
     groups = nuance_store.load_groups()
-    found = gate.problems(groups, CatalogueConcordance.from_corpus())
+    found = gate.problems(groups, CatalogueConcordance.from_corpus()) + quotations.problems_in(NUANCE_GROUPS_JSON)
     print("\n".join(found) if found else "", end="\n" if found else "")
     members = sum(len(group.members) for group in groups)
     ayat = sum(len(group.cited_ayat) for group in groups)

@@ -21,9 +21,24 @@ fil.stages.particle_pages + fil.pages.particle_render.
   surprise iḏā is not only after فَ; لَمْ also negates timelessly — 112:3).
 - Name contested readings (qirāʾāt: 80:4 فَتَنفَعَهُ is Ḥafṣ's subjunctive) and grammarians' disagreements
   (لَا of the kind: Basrans "fixed on fatḥa in the place of the accusative").
-- Bosnian per Korkut (Allah, ajet, Kur'an, Musa, Ibrahim; ijekavica); English Sahih International style. bs and
+- Bosnian terms per Korkut (Allah, ajet, Kur'an, Musa, Ibrahim; ijekavica); English plain and modern. bs and
   en must say the same thing — the reviewer flags every drift (lišće/straw, pogledao/considered).
 - Content policy: respectful of Allah and the prophets.
+
+## Ayah quotations (licence — non-negotiable)
+- Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation.
+- Double quotation marks quote an ayah (en “…”, bs „…“) and name it — the item's `ref`, or `s:a` written in the
+  same text (“…”, 52:21; a quote running into the next ayah carries “… (107:5) …” inside it). Glosses, meanings,
+  terms and labels take single marks (en ‘…’, bs ‚…‘).
+- English: Pickthall's words exactly (print them with `fil nuances review-export` / `fil particles review-export`
+  or data/translations/en.pickthall.txt); "…" for elision, our own insertions in [square brackets]. When his
+  wording does not serve the point, paraphrase in our own words without quotation marks. Never from memory of
+  any modern translation.
+- Bosnian: translate the Arabic afresh (plain, accurate, ijekavica) — do not recall Korkut's sentence; his
+  single standard terms (Džennet, emanet, faraon…) stay. An entry with Bosnian quotes carries
+  `"ayahQuotes": {"bs": "own"}`.
+- The gate fil.ayah_quotes (tests/test_ayah_quotes.py, and `check`) fails on an English quote that is not
+  Pickthall's text of the named ayah, on double quotes without an ayah, and on undeclared Bosnian quotes.
 
 ## Working in an agent worktree
 - Symlink `data/qac`, `data/quranhive`, `data/translations` to the main repo's; copy `build/nouns/*.tsv`; link

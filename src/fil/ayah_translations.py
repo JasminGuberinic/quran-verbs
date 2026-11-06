@@ -66,6 +66,10 @@ class AyahTranslations:
     def credit(self, language: str) -> str:
         return self._credits[language]
 
+    def texts(self, language: str) -> dict[tuple[int, int], str]:
+        """{(surah, ayah): text} of one language's translation, every ayah it has."""
+        return dict(self._verses[language])
+
     def of(self, surah: int, ayah: int) -> dict[str, dict[str, str]]:
         """{language: {"text", "by"}} for this ayah, in every language that has one."""
         return {

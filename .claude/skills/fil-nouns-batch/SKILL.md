@@ -11,6 +11,8 @@ compact files, `fil nouns batch …` prints only failures and one-line summaries
 large files, ask the owner (in Bosnian, briefly) before any product decision, commit and push
 to study-site when done (never main, never deploy).
 
+- Licence: Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation. Any ayah a text quotes follows fil.ayah_quotes (double marks = ayah quote, named ayah).
+
 ## Steps
 1. `fil nouns batch plan next 50` → `build/nouns/batch/{batch.txt, plan.tsv, todo-meanings.tsv}`.
    It skips adverbs (بَيْن، عِند، قَبْل، بَعْد، دُون), quantifiers/pronoun-like words (كُلّ، بَعْض،
@@ -323,7 +325,7 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   is the generic use) — Bosnian sg row in the plural (skakavci, suze, jagodice, muhe) + `pluralForms`; حَطَب is a mass noun
   whose Bosnian word is plurale tantum (drva) → same mechanism. A singular whose plural is studied as its own lemma
   (حَجَر → حِجارَة, بَعِير → إِبِل) is a `singulative` with that `collective`.
-- Wording decided by Sahih International / Korkut (owner: never escalate): emanet (Korkut 33:72), daidža, neimaština, vreća
+- Wording decided by Sahih International / Korkut as term references (owner: never escalate; never their ayah sentences): emanet (Korkut 33:72), daidža, neimaština, vreća
   (وِعاء, Sahih "bag"), bunar, pregrada, gorušica, tuga/grief, žalost/sorrow (أَسَف), samilost/compassion (رَأْفَة); دَهْر is
   en "age" / bs "doba" (Sahih "time" would collide with وَقْت); ذِراع is "forearm"/podlaktica, polysemous (cubit, 69:32).
   Root exceptions added for each (bag، sorrow، secrecy، poverty، following، fingertips، stinginess، well، barrier، grief، lowing،

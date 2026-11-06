@@ -305,14 +305,14 @@
   // says why each line reads as it does, and holds the corpus's full notice and what we changed).
   // The credits themselves stay in English, word for word; only the words around them are translated.
   const SOURCES = {
-    bs: { heading: "Izvori.", corpus: "Glagoli, oblici, ajeti i imenice", quranText: "Tekst Kur'ana", translations: "Prijevodi ajeta", recitation: "Učenje.", words: "Pojedinačne riječi", ayat: "Ajeti" },
-    en: { heading: "Sources.", corpus: "Verbs, forms, ayat and nouns", quranText: "Quran text", translations: "Ayah translations", recitation: "Recitation.", words: "Single words", ayat: "Whole ayat" },
-    tr: { heading: "Kaynaklar.", corpus: "Fiiller, biçimler, ayetler ve isimler", quranText: "Kur'an metni", translations: "Ayet mealleri", recitation: "Tilavet.", words: "Tek kelimeler", ayat: "Ayetler" },
-    fr: { heading: "Sources.", corpus: "Verbes, formes, versets et noms", quranText: "Texte du Coran", translations: "Traductions des versets", recitation: "Récitation.", words: "Mots isolés", ayat: "Versets entiers" },
-    id: { heading: "Sumber.", corpus: "Kata kerja, bentuk, ayat, dan kata benda", quranText: "Teks Al-Qur'an", translations: "Terjemahan ayat", recitation: "Bacaan.", words: "Kata per kata", ayat: "Ayat utuh" },
-    ur: { heading: "ماخذ:", corpus: "افعال، صیغے، آیات اور اسماء", quranText: "متنِ قرآن", translations: "آیات کے تراجم", recitation: "تلاوت:", words: "الگ الفاظ", ayat: "پوری آیات" },
-    bn: { heading: "উৎস।", corpus: "ক্রিয়া, রূপ, আয়াত ও বিশেষ্য", quranText: "কুরআনের পাঠ", translations: "আয়াতের অনুবাদ", recitation: "তিলাওয়াত।", words: "একক শব্দ", ayat: "পূর্ণ আয়াত" },
-    fa: { heading: "منابع.", corpus: "فعل‌ها، صیغه‌ها، آیات و اسم‌ها", quranText: "متن قرآن", translations: "ترجمه‌های آیات", recitation: "قرائت.", words: "واژه‌های تکی", ayat: "آیات کامل" },
+    bs: { heading: "Izvori.", corpus: "Glagoli, oblici, ajeti i imenice", quranText: "Tekst Kur'ana", translations: "Prijevodi ajeta", recitation: "Učenje.", words: "Pojedinačne riječi", ayat: "Ajeti", voice: "Sintetički glas" },
+    en: { heading: "Sources.", corpus: "Verbs, forms, ayat and nouns", quranText: "Quran text", translations: "Ayah translations", recitation: "Recitation.", words: "Single words", ayat: "Whole ayat", voice: "Synthetic voice" },
+    tr: { heading: "Kaynaklar.", corpus: "Fiiller, biçimler, ayetler ve isimler", quranText: "Kur'an metni", translations: "Ayet mealleri", recitation: "Tilavet.", words: "Tek kelimeler", ayat: "Ayetler", voice: "Sentetik ses" },
+    fr: { heading: "Sources.", corpus: "Verbes, formes, versets et noms", quranText: "Texte du Coran", translations: "Traductions des versets", recitation: "Récitation.", words: "Mots isolés", ayat: "Versets entiers", voice: "Voix de synthèse" },
+    id: { heading: "Sumber.", corpus: "Kata kerja, bentuk, ayat, dan kata benda", quranText: "Teks Al-Qur'an", translations: "Terjemahan ayat", recitation: "Bacaan.", words: "Kata per kata", ayat: "Ayat utuh", voice: "Suara sintetis" },
+    ur: { heading: "ماخذ:", corpus: "افعال، صیغے، آیات اور اسماء", quranText: "متنِ قرآن", translations: "آیات کے تراجم", recitation: "تلاوت:", words: "الگ الفاظ", ayat: "پوری آیات", voice: "مصنوعی آواز" },
+    bn: { heading: "উৎস।", corpus: "ক্রিয়া, রূপ, আয়াত ও বিশেষ্য", quranText: "কুরআনের পাঠ", translations: "আয়াতের অনুবাদ", recitation: "তিলাওয়াত।", words: "একক শব্দ", ayat: "পূর্ণ আয়াত", voice: "কৃত্রিম কণ্ঠ" },
+    fa: { heading: "منابع.", corpus: "فعل‌ها، صیغه‌ها، آیات و اسم‌ها", quranText: "متن قرآن", translations: "ترجمه‌های آیات", recitation: "قرائت.", words: "واژه‌های تکی", ayat: "آیات کامل", voice: "صدای مصنوعی" },
   };
   const link = (href, text) => `<a href="${href}" rel="noopener">${text}</a>`;
   function credits(words) {
@@ -322,7 +322,10 @@
       `<b>${words.recitation}</b> ${words.words}: QuranHive Word-by-Word Audio Dataset — © QuranHive, licensed under `
         + `${link("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")} (${link("https://quranhive.com", "quranhive.com")}; `
         + "re-encoded; report a clip to qh@quranhive.com). "
-        + `${words.ayat}: Recitation: Mishary Rashid Alafasy, streamed from ${link("https://alquran.cloud", "alquran.cloud")} (Islamic Network).`,
+        + `${words.ayat}: Recitation: Mishary Rashid Alafasy, streamed from ${link("https://alquran.cloud", "alquran.cloud")} (Islamic Network). `
+        + `${words.voice}: ${link("https://github.com/nipponjo/tts_arabic", "tts_arabic")} (nipponjo), a model trained in part on the `
+        + `${link("https://en.arabicspeechcorpus.com/", "Arabic Speech Corpus")} by Nawar Halabi (`
+        + `${link("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")}); non-commercial use.`,
     ];
   }
   // The noun pages (phase 3) exist in Bosnian and English only for now; other languages link to English.

@@ -8,9 +8,11 @@ description: Add the next batch of 50 Quranic adjectives to the Fiʿl study site
 Goal: the Quran's adjectives (428 QAC ADJ lemmas + adjective-like participles/intensives), 50 per batch,
 one batch per conversation (docs/NOUNS-PLAN.md, "Adjectives"). Same rules as the nouns (/fil-nouns-batch):
 bs + en only, compact files, `fil adjectives batch …` prints only failures and one-line summaries, never
-`cat` large files, decide wording and translation yourself (Korkut, Sahih International) and report it, hold back only content-policy cases (God-only senses) for the owner, commit and push to
+`cat` large files, decide wording and translation yourself (Korkut, Sahih International as references for single terms only) and report it, hold back only content-policy cases (God-only senses) for the owner, commit and push to
 study-site when done (never main, never deploy). Engine: src/fil/adjectives/ (pure), stage
 src/fil/stages/adjectives.py, pages fil.stages.adjective_site/adjective_pages + fil.pages.adjective_render.
+
+- Licence: Sahih International / Korkut are terminology and style references only; never quote or closely paraphrase their ayah translations; ayah quotes in en come only from the shipped Pickthall text; bs ayah quotes are our own translation. Any ayah a text quotes follows fil.ayah_quotes (double marks = ayah quote, named ayah).
 
 ## Steps
 1. `fil adjectives batch plan next 50` (or `plan FILE`, one lemma or lemma|root per line) →
@@ -22,7 +24,8 @@ src/fil/stages/adjectives.py, pages fil.stages.adjective_site/adjective_pages + 
    one you refuse to `NOT_TAUGHT_AS_ADJECTIVES` (elative, circumstance, substantive, takes an object,
    Quranic phrase, a plural/feminine lemma, a near-synonym on another card, `FA_UL`) and re-plan until
    all 50 are teachable (batch 2 took 9 rounds; `plan next 140` previews the tail at once). Decide
-   wording yourself (Korkut for bs, Sahih International for en); only a God-only sense is held back.
+   wording yourself (Korkut for bs, Sahih International for en — single terms only, never their ayah sentences);
+   only a God-only sense is held back.
    فَعُول adjectives (شَكُور, كَفُور, رَءُوف, فَخُور) have one form for both genders (امْرَأَةٌ شَكُورٌ) and
    are refused (`FA_UL`), as are women-only invariables (عَاقِر, عَقِيم). Read
    plan.tsv's feminine-lemma and feminine-forms columns: a feminine lemma that is a noun in use

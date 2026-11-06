@@ -159,6 +159,25 @@ def pronoun_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(PRONOUN_FOLDERS))
 
 
+# The surah pages likewise (Bosnian and English only, for now): a list, and a page per surah
+# whose slug starts with its number ("2-al-baqara", fil.surahs.model.Surah.slug).
+SURAH_FOLDERS = {"bs": "sura", "en": "surah"}
+
+
+def surah_index_path(language: str) -> str:
+    return f"{language}/{SURAH_FOLDERS[language]}/"
+
+
+def surah_path(language: str, slug: str) -> str:
+    return f"{surah_index_path(language)}{slug}/"
+
+
+def surah_alternates(slug: str | None) -> list[Alternate]:
+    """A surah's page (or, with no slug, the list of surahs) in each language it is built in."""
+    path_in = (lambda language: surah_path(language, slug)) if slug else surah_index_path
+    return _alternates(path_in, tuple(SURAH_FOLDERS))
+
+
 # The exercises likewise (Bosnian and English only, for now): a hub, and a page per kind whose
 # slug is said in each language (fil.pages.exercise_render).
 EXERCISE_FOLDERS = {"bs": "vjezbe", "en": "exercises"}

@@ -646,6 +646,51 @@
       found: (n) => `Roots found: ${n}`, noneFound: "No root matches.",
     },
   };
+  // The surahs (fil.pages.surah_render): Bosnian and English only, like the nouns.
+  const SURAH_PAGE = {
+    bs: {
+      nav: "Sure", indexTitle: "Sure: riječi svake sure",
+      indexIntro: "Pripremaš suru? Za svaku od 114 sura: koliko njenih riječi ovdje već učiš, i sve njene riječi – značenje, broj, izgovor i ajet gdje se prvi put javljaju.",
+      title: (name, arabic) => `Sura ${name} (${arabic}): riječi i značenja`,
+      description: (name, percent, count) => `Sve riječi sure ${name} sa značenjem i izgovorom: na Fiʿlu učiš ${percent}% njenih ${count} riječi.`,
+      number: (n) => `Sura ${n}`, ayat: (n) => `${n} ajeta`, words: (n) => `${n} riječi`, distinct: (n) => `${n} različitih`,
+      revelation: { meccan: "mekanska", medinan: "medinska" },
+      coverage: (percent, covered, total) => `Ovdje učiš ${percent}% riječi ove sure: ${covered} od ${total}.`,
+      coverageShort: (percent) => `${percent}% poznato`,
+      coverageNote: "Riječ se broji kao poznata kad imamo karticu za njen glavni dio: u وَلَمْ je to لَمْ, u لَهُ prijedlog لِـ, u فَقَالُوا glagol قَالَ. Nastavci i prefiksi (وَ, ـهُ) se ne broje posebno.",
+      taught: (n) => `Riječi koje ovdje učiš (${n})`, untaught: (n) => `Riječi koje ovdje još ne učiš (${n})`,
+      untaughtNote: "Za ove riječi još nemamo karticu ni provjereno značenje; broj kaže koliko puta su u suri.",
+      order: "Poredaj:", byFirst: "kako se javljaju", byFrequency: "po učestalosti",
+      inSurah: (n) => `${n}× u suri`, moreWords: (n) => `Još ${n} riječi`, first: "prvi put", root: "korijen", moreForms: (n) => `+${n}`,
+      family: { verb: "glagol", noun: "imenica", adjective: "pridjev", particle: "čestica", pronoun: "zamjenica" },
+      practise: "Vježbaj riječi ove sure",
+      ayatTitle: "Ajeti sure", ayatNote: "Označene su riječi koje ovdje učiš, tamo gdje se u suri javljaju prvi put.",
+      showAll: (n) => `Prikaži ajete (${n})`,
+      source: "Nazivi sura i podjela na mekanske i medinske: Tanzil Quran metadata (CC BY 3.0). Riječi i njihovi dijelovi: Quranic Arabic Corpus.",
+      list: { number: "Br.", ayat: "ajeta", coverage: "poznato" },
+    },
+    en: {
+      nav: "Surahs", indexTitle: "Surahs: the words of each surah",
+      indexIntro: "Preparing a surah? For each of the 114: how many of its words you already learn here, and all of its words — meaning, count, recitation and the ayah where each first appears.",
+      title: (name, arabic) => `Surah ${name} (${arabic}): its words and their meanings`,
+      description: (name, percent, count) => `Every word of Surah ${name} with its meaning and recitation: Fiʿl teaches ${percent}% of its ${count} words.`,
+      number: (n) => `Surah ${n}`, ayat: (n) => `${n} ayat`, words: (n) => `${n} words`, distinct: (n) => `${n} distinct`,
+      revelation: { meccan: "Meccan", medinan: "Medinan" },
+      coverage: (percent, covered, total) => `Fiʿl teaches ${percent}% of this surah's words: ${covered} of ${total}.`,
+      coverageShort: (percent) => `${percent}% known`,
+      coverageNote: "A word counts as known when its main part has a card: in وَلَمْ that is لَمْ, in لَهُ the preposition لِـ, in فَقَالُوا the verb قَالَ. Prefixes and suffixes (وَ, ـهُ) are not counted on their own.",
+      taught: (n) => `Words we teach (${n})`, untaught: (n) => `Words we do not teach yet (${n})`,
+      untaughtNote: "These words have no card and no checked meaning here yet; the count is how often the surah uses them.",
+      order: "Order:", byFirst: "as they appear", byFrequency: "by frequency",
+      inSurah: (n) => `${n}× in the surah`, moreWords: (n) => `${n} more words`, first: "first", root: "root", moreForms: (n) => `+${n}`,
+      family: { verb: "verb", noun: "noun", adjective: "adjective", particle: "particle", pronoun: "pronoun" },
+      practise: "Practise this surah's words",
+      ayatTitle: "The ayat of the surah", ayatNote: "The words we teach are marked where the surah first uses them.",
+      showAll: (n) => `Show the ayat (${n})`,
+      source: "Surah names and the Meccan/Medinan classification: Tanzil Quran metadata (CC BY 3.0). Words and their parts: Quranic Arabic Corpus.",
+      list: { number: "No.", ayat: "ayat", coverage: "known" },
+    },
+  };
   // The exercises (fil.pages.exercise_render, site/exercises.js): Bosnian and English only, like the nouns.
   const EXERCISE_PAGE = {
     bs: {
@@ -653,7 +698,7 @@
       indexIntro: "Kratke vježbe iz onoga što sajt već uči: slika i riječ, slušanje, glagolski oblici, padeži, prijedlozi, slaganje pridjeva, nijanse i čestice. Svako pitanje ima tačno jedan tačan odgovor, a pogrešno odgovorena pitanja vraćaju se ranije.",
       title: (name) => `${name} · vježbe arapskog jezika Kur'ana`,
       allKinds: "Sve vrste izmiješano", allKindsIntro: "Po deset pitanja iz svih vrsta vježbi.",
-      count: (n) => `${n} pitanja`, open: "Vježbaj", practiseWord: "Vježbaj ovu riječ", practiseVerb: "Vježbaj ovaj glagol", practiseRoot: "Vježbaj ovaj korijen", wordOnly: "Samo pitanja o jednoj riječi.", rootOnly: "Samo pitanja o riječima ovog korijena.", allExercises: "Sve vježbe",
+      count: (n) => `${n} pitanja`, open: "Vježbaj", practiseWord: "Vježbaj ovu riječ", practiseVerb: "Vježbaj ovaj glagol", practiseRoot: "Vježbaj ovaj korijen", wordOnly: "Samo pitanja o jednoj riječi.", rootOnly: "Samo pitanja o riječima ovog korijena.", surahOnly: "Samo pitanja o riječima ove sure.", allExercises: "Sve vježbe",
       questionOf: (n, t) => `Pitanje ${n} / ${t}`, right: "Tačno.", wrong: "Netačno.", rightAnswer: "Tačan odgovor:",
       next: "Sljedeće pitanje", finish: "Završi rundu", done: "Runda je gotova.", sessionScore: (a, t) => `${a} od ${t} tačno.`, again: "Nova runda",
       score: (right, answered, streak, best) => `Tačno ${right} od ${answered} · niz ${streak} · najbolji niz ${best}`,
@@ -705,7 +750,7 @@
       indexIntro: "Short exercises on what the site already teaches: picture and word, listening, verb forms, cases, prepositions, adjective agreement, nuances and particles. Every question has exactly one right answer, and the ones you miss come back sooner.",
       title: (name) => `${name} · exercises in Quranic Arabic`,
       allKinds: "All kinds, mixed", allKindsIntro: "Ten questions at a time from every kind of exercise.",
-      count: (n) => `${n} questions`, open: "Practise", practiseWord: "Practise this word", practiseVerb: "Practise this verb", practiseRoot: "Practise this root", wordOnly: "Only the questions about one word.", rootOnly: "Only the questions about the words of this root.", allExercises: "All exercises",
+      count: (n) => `${n} questions`, open: "Practise", practiseWord: "Practise this word", practiseVerb: "Practise this verb", practiseRoot: "Practise this root", wordOnly: "Only the questions about one word.", rootOnly: "Only the questions about the words of this root.", surahOnly: "Only the questions about the words of this surah.", allExercises: "All exercises",
       questionOf: (n, t) => `Question ${n} / ${t}`, right: "Right.", wrong: "Not right.", rightAnswer: "The right answer:",
       next: "Next question", finish: "Finish the round", done: "Round finished.", sessionScore: (a, t) => `${a} of ${t} right.`, again: "New round",
       score: (right, answered, streak, best) => `${right} of ${answered} right · streak ${streak} · best streak ${best}`,
@@ -757,6 +802,7 @@
     UI[code].exercisePage = EXERCISE_PAGE[code] || EXERCISE_PAGE.en;
     UI[code].particlePage = PARTICLE_PAGE[code] || PARTICLE_PAGE.en;
     UI[code].pronounPage = PRONOUN_PAGE[code] || PRONOUN_PAGE.en;
+    UI[code].surahPage = SURAH_PAGE[code] || SURAH_PAGE.en;
     UI[code].page = PAGE[code];
     UI[code].nounPage = NOUN_PAGE[code] || NOUN_PAGE.en;
     UI[code].adjectivePage = ADJECTIVE_PAGE[code] || ADJECTIVE_PAGE.en;

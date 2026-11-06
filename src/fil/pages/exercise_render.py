@@ -127,18 +127,25 @@ def practice_link(word: str, kinds: Sequence[str], language: Language, text: dic
 _LINK_LABELS = {VERB_WORD: "practiseVerb"}   # every other family: "practiseWord"
 
 
+# A surah's link names its most frequent practised words only: each one loads its own shard of every kind.
+MAX_SURAH_WORDS = 24
+
+
 def words_practice_link(words: Sequence[str], kinds_of_word: Mapping[str, Sequence[str]], language: Language, text: dict,
-                        root: str) -> str:
+                        root: str, *, for_surah: bool = False) -> str:
     """"Vježbaj ovaj korijen →" on a root's page: the hub, practising only the root's studied words (ids
-    "verb:qala,noun:qawl") in every kind that asks about any of them; "" when none is practised."""
-    practised = [word for word in words if kinds_of_word.get(word)]
+    "verb:qala,noun:qawl") in every kind that asks about any of them; "" when none is practised. With
+    `for_surah`, "Vježbaj riječi ove sure →": the first MAX_SURAH_WORDS practised of `words` (the surah's
+    most frequent first), and the hub told so (&s=surah)."""
+    practised = [word for word in words if kinds_of_word.get(word)][:MAX_SURAH_WORDS if for_surah else None]
     kinds = [kind for kind in KINDS if any(kind in kinds_of_word[word] for word in practised)]
     if language.code not in EXERCISE_LANGUAGES or not kinds:
         return ""
     asked = ",".join(quote(word, safe=":") for word in practised)
-    address = f'{root}{seo.exercise_index_path(language.code)}?w={asked}&amp;t={",".join(kinds)}'
-    return (f'<p class="cta"><a class="button quiet" href="{address}">'
-            f'{escape(text["exercisePage"]["practiseRoot"])} →</a></p>')
+    scope = "&amp;s=surah" if for_surah else ""
+    address = f'{root}{seo.exercise_index_path(language.code)}?w={asked}&amp;t={",".join(kinds)}{scope}'
+    label = text["surahPage"]["practise"] if for_surah else text["exercisePage"]["practiseRoot"]
+    return f'<p class="cta"><a class="button quiet" href="{address}">{escape(label)} →</a></p>'
 
 
 # ---------- shared ----------

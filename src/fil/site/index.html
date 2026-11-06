@@ -476,7 +476,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   <div class="topbar-inner">
     <div class="brand"><h1><span lang="ar-Latn" translate="no" class="notranslate">Fiʿl</span> <span class="ar notranslate" lang="ar" dir="rtl" translate="no">فِعْل</span></h1></div>
     <nav class="tabs" role="tablist" id="tabs"></nav>
-    <nav class="sections"><a id="verbs-link" href="./" aria-current="page"></a><a id="nouns-link" hidden></a><a id="adjectives-link" hidden></a><a id="nuances-link" hidden></a><a id="particles-link" hidden></a><a id="pronouns-link" hidden></a><a id="roots-link" hidden></a><a id="exercises-link" hidden></a></nav>
+    <nav class="sections"><a id="verbs-link" href="./" aria-current="page"></a><a id="nouns-link" hidden></a><a id="adjectives-link" hidden></a><a id="nuances-link" hidden></a><a id="particles-link" hidden></a><a id="pronouns-link" hidden></a><a id="roots-link" hidden></a><a id="surahs-link" hidden></a><a id="exercises-link" hidden></a></nav>
     <label class="lang"><span class="note" id="lang-label"></span> <select id="language" translate="no" class="notranslate"></select></label>
   </div>
 </header>
@@ -619,6 +619,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     renderSection($("particles-link"), (DATA.particlePages || {})[language], ui.particlePage.nav);
     renderSection($("pronouns-link"), (DATA.pronounPages || {})[language], ui.pronounPage.nav);
     renderSection($("roots-link"), (DATA.rootPages || {})[language], ui.rootPage.nav);
+    renderSection($("surahs-link"), (DATA.surahPages || {})[language], ui.surahPage.nav);
     renderSection($("exercises-link"), (DATA.exercisePages || {})[language], ui.exercisePage.nav);
   }
   function renderSection(link, path, label) {

@@ -13,7 +13,7 @@ fails the build if one goes missing).
 | Quranic Arabic Corpus | morphology: verbs, forms, words of each ayah | GNU GPL v3 + QAC terms of use | derived data (cards, ayat lists) |
 | Tanzil Quran text | the Arabic text (inside the corpus) | CC BY 3.0 + Tanzil terms of use | yes, verbatim words |
 | Tanzil translations | ayah translations (en, tr, ur, id, ru) | Tanzil translation terms (non-commercial) | yes, per ayah, credited |
-| Tanzil Quran metadata | surah lengths (ayah numbering) | CC BY 3.0 | no (used to compute numbers) |
+| Tanzil Quran metadata | surah lengths (ayah numbering); surah names, transliterations, English names, Meccan/Medinan | CC BY 3.0 | yes, on the surah pages, credited there |
 | QuranHive Word-by-Word Audio | single recited words | CC BY 4.0 | yes, re-encoded |
 | alquran.cloud / Islamic Network CDN | whole-ayah recitation, Mishary Rashid Alafasy | alquran.cloud terms | **no** — streamed at play time |
 | OpenMoji 15.1 | noun pictures (emoji), recoloured | CC BY-SA 4.0 | yes, recoloured SVGs |
@@ -127,6 +127,11 @@ Please check updates at: http://tanzil.net/updates/
   Copyright (C) 2008-2009 Tanzil.info, License: Creative Commons Attribution 3.0".
 - We use the 114 surah lengths to number each ayah 1–6236 (`src/fil/quran_numbering.py`,
   credited there), which is how the streamed recitation is addressed.
+- The surah pages (Sure / Surahs) show each surah's name as Tanzil writes it (Arabic, its
+  transliteration, and in English the English name) and its Meccan/Medinan classification, copied
+  verbatim into `data/surahs.json` (its `_about` names the source and licence). Every surah page and
+  the list of surahs credit "Tanzil Quran metadata (CC BY 3.0)"; the classification is Tanzil's,
+  shown as theirs.
 
 ## QuranHive Word-by-Word Audio Dataset
 

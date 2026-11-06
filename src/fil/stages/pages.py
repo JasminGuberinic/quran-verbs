@@ -19,6 +19,7 @@
       bs/zamjenica/, en/pronoun/     the pronouns, built by the particle engine, Bosnian and English only
       bs/korijen/, en/root/          the roots (fil.stages.root_pages): every word of a root we teach a word of
       bs/vjezbe/, en/exercises/      the exercises (fil.stages.exercise_pages), their questions in exercises/*.json
+      bs/sura/, en/surah/            the 114 surahs' vocabulary and coverage (fil.stages.surah_pages), their ayat in ayat/sura-*.json
       pictures/<slug>.svg            the noun pictures the noun pages show
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
       <IndexNow key>.txt             proves our IndexNow pings are ours (fil.pages.indexnow)
@@ -48,7 +49,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree
 
-from fil import noun_store, page_version_store, service
+from fil import noun_store, page_version_store, service, surah_store
+from fil.corpus.parse import iter_segments
 from fil.languages import LANGUAGES
 from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
 from fil.pages import (adjective_render, deploy, exercise_render, freshness, indexing, indexnow, interface_text,
@@ -56,10 +58,10 @@ from fil.pages import (adjective_render, deploy, exercise_render, freshness, ind
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
-from fil.resources import PAGES_DIR, REPOSITORY_DIR
+from fil.resources import PAGES_DIR, QAC_MORPHOLOGY, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
 from fil.stages import (adjective_pages, exercise_pages, exercises, noun_pages, nuance_pages, nuance_site, particle_pages,
-                        particle_site, root_pages, site)
+                        particle_site, root_pages, site, surah_pages, surah_site)
 from fil.stages import roots as root_stage
 from fil.stages import particles as word_lists
 from fil.stages.adjective_site import AdjectiveContent, assemble_adjectives
@@ -174,9 +176,11 @@ def build(pages: Path) -> BuiltSite | None:
     root_slugs = root_pages.slugs_by_root(roots)
     practice = exercises.assemble([(verb.slug, verb.card) for verb in verbs], nouns.cards, adjectives.cards, nuances,
                                   particles, exercises.read_sources())
+    surahs = _assemble_surahs(sink, verbs, nouns.cards, adjectives.cards, particles, pronouns, catalogue,
+                              practice.words())
     published = frozenset(name for name, cards in ((render.NOUNS, nouns.cards), (render.ADJECTIVES, adjectives.cards),
                                                    (render.NUANCES, nuances), (render.PARTICLES, particles),
-                                                   (render.PRONOUNS, pronouns), (render.ROOTS, roots),
+                                                   (render.PRONOUNS, pronouns), (render.ROOTS, roots), (render.SURAHS, surahs.pages),
                                                    (render.EXERCISES, practice.kinds())) if cards)
     practice_link = _practice_links(practice, texts)
     content = replace(content, payload={**content.payload,
@@ -186,6 +190,7 @@ def build(pages: Path) -> BuiltSite | None:
                                         "particlePages": particle_pages.app_paths() if particles else {},
                                         "pronounPages": particle_pages.app_paths(particle_render.PRONOUNS) if pronouns else {},
                                         "rootPages": root_pages.app_paths() if roots else {},
+                                        "surahPages": surah_pages.app_paths() if surahs.pages else {},
                                         "exercisePages": exercise_pages.app_paths() if render.EXERCISES in published else {}})
     site.write_app(pages, content)
     _write_app_page(pages, texts)
@@ -200,13 +205,15 @@ def build(pages: Path) -> BuiltSite | None:
     written += particle_pages.write(pages, pronouns, texts, published, particle_render.PRONOUNS)
     written += exercise_pages.write(pages, practice, texts, published)
     written += root_pages.write(pages, roots, texts, published, nuances, practice.words())
+    written += surah_pages.write(pages, surahs, texts, published, practice.words(),
+                                  root_path=_root_page(root_slugs))
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
-                             {"exercises": exercises.sounds(practice)}])
+                             *surahs.pages, {"exercises": exercises.sounds(practice)}])
     # Dated only once the gates passed: a build that fails them must not move a single <lastmod>.
     built = _date_pages(pages, _sitemap_paths(verbs, nouns.cards, adjectives.cards, nuances, particles, pronouns,
                                               [*exercise_pages.page_paths(practice, texts),
-                                               *root_pages.page_paths(roots)]))
+                                               *root_pages.page_paths(roots), *surah_pages.page_paths(surahs)]))
     _write_site_files(pages, verbs, texts, built.entries)
     site.report(pages, content)
     _report_size(pages, len(written))
@@ -282,6 +289,35 @@ def _assemble_roots(verbs: list[PublishedVerb], nouns: Sequence[dict], adjective
     return root_stage.assemble_roots(corpus, root_stage.studied_pages(cards, corpus), nuances)
 
 
+def _assemble_surahs(sink, verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives: Sequence[dict],
+                     particles: Sequence[dict], pronouns: Sequence[dict], catalogue: CatalogueConcordance,
+                     practised) -> surah_site.SurahContent:
+    """Each surah's vocabulary against the published cards (fil.stages.surah_site)."""
+    teaching = surah_site.SiteTeaching.of(
+        verbs=[(verb.slug, verb.card) for verb in verbs], nouns=nouns, adjectives=adjectives,
+        particles=_with_cards(word_lists.PARTICLES.load(), particles),
+        pronouns=_with_cards(word_lists.PRONOUNS.load(), pronouns))
+    with QAC_MORPHOLOGY.open(encoding="utf-8") as lines:
+        tokens = surah_site.read_tokens(iter_segments(lines), {f"{root}_{form}": locations for (root, form), locations
+                                                                in catalogue.verb_locations.items()})
+    return surah_site.assemble_surahs(surah_store.load_surahs(), tokens, teaching, site.Sound(sink),
+                                      {verb.slug: verb.card for verb in verbs}, practised)
+
+
+def _root_page(root_slugs: Mapping[str, str]):
+    """A root's page by its letters, in the languages the roots are written in; None where there is none."""
+    def path(language: str, root: str) -> str | None:
+        slug = root_slugs.get(root)
+        return seo.root_path(language, slug) if slug and language in seo.ROOT_FOLDERS else None
+    return path
+
+
+def _with_cards(words, cards: Sequence[dict]) -> list:
+    """Each word of a particle-engine list with its published card (a word without one is not taught)."""
+    by_slug = {card["slug"]: card for card in cards}
+    return [(word, by_slug[word.slug]) for word in words if word.slug in by_slug]
+
+
 def _practice_links(practice: exercises.ExerciseSets, texts: dict[str, dict]):
     """For each word family, the "Vježbaj ovu riječ" link of its pages (fil.pages.exercise_render)."""
     kinds_of_word = practice.words()
@@ -325,7 +361,7 @@ def _sitemap_paths(verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives
                    section_paths: Sequence[str]) -> list[str]:
     return [*page_paths(verbs), *noun_pages.page_paths(nouns), *adjective_pages.page_paths(adjectives),
             *nuance_pages.page_paths(nuances), *particle_pages.page_paths(particles),
-            *particle_pages.page_paths(pronouns, particle_render.PRONOUNS), *section_paths]   # exercise and root pages
+            *particle_pages.page_paths(pronouns, particle_render.PRONOUNS), *section_paths]   # exercise, root and surah pages
 
 
 def _date_pages(pages: Path, paths: Sequence[str]) -> BuiltSite:

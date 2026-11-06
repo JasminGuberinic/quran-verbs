@@ -240,9 +240,11 @@
           if (!response.ok) throw new Error(response.statusText);
           return response.json();
         }))).then((loaded) => uniqueById(aboutWord(loaded.flat(), word)).map((item) => ({ kind, item }))));
+      // A surah's link says so (&s=surah); several words are otherwise a root's.
+      const severalOnly = (params.get("s") === "surah" ? words.surahOnly : words.rootOnly) || words.wordOnly;
       Promise.all(files).then((loaded) => {
         const questions = loaded.flat();
-        $(".exercise-status").textContent = !questions.length ? words.empty : askedWords(word).length > 1 ? words.rootOnly || words.wordOnly : word ? words.wordOnly : "";
+        $(".exercise-status").textContent = !questions.length ? words.empty : askedWords(word).length > 1 ? severalOnly : word ? words.wordOnly : "";
         if (questions.length) begin(questions);
       }).catch(() => { $(".exercise-status").textContent = words.loadFailed; });
     }

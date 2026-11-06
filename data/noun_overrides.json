@@ -2465,5 +2465,305 @@
    "text": "مَوَاضِعَ",
    "why": "مَوَاضِع (pattern مَفَاعِل, plural of مَوْضِع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (عَنْ مَوَاضِعِهِ 4:46)"
   }
+ },
+ "وِعاء|وعي": {
+  "S|indefinite|NOM": {
+   "text": "وِعَاءٌ",
+   "why": "وِعَاء is a regular triptote (Quran 12:76 وِعَاءِ أَخِيهِ); CAMeL does not generate its indefinite cells"
+  },
+  "S|indefinite|ACC": {
+   "text": "وِعَاءً",
+   "why": "وِعَاء is a regular triptote (Quran 12:76 وِعَاءِ أَخِيهِ); CAMeL does not generate its indefinite cells"
+  },
+  "S|indefinite|GEN": {
+   "text": "وِعَاءٍ",
+   "why": "وِعَاء is a regular triptote (Quran 12:76 وِعَاءِ أَخِيهِ); CAMeL does not generate its indefinite cells"
+  }
+ },
+ "أَصابِع|صبع": {
+  "P|definite|NOM": {
+   "text": "الْأَصَابِعُ",
+   "why": "أَصَابِع (pattern أَفَاعِل, plural of إِصْبَع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (أَصَابِعَهُمْ 2:19, 71:7)"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَصَابِعَ",
+   "why": "أَصَابِع (pattern أَفَاعِل, plural of إِصْبَع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (أَصَابِعَهُمْ 2:19, 71:7)"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَصَابِعِ",
+   "why": "أَصَابِع (pattern أَفَاعِل, plural of إِصْبَع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (أَصَابِعَهُمْ 2:19, 71:7)"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَصَابِعُ",
+   "why": "أَصَابِع (pattern أَفَاعِل, plural of إِصْبَع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (أَصَابِعَهُمْ 2:19, 71:7)"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَصَابِعَ",
+   "why": "أَصَابِع (pattern أَفَاعِل, plural of إِصْبَع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (أَصَابِعَهُمْ 2:19, 71:7)"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَصَابِعَ",
+   "why": "أَصَابِع (pattern أَفَاعِل, plural of إِصْبَع) is diptote: no tanwīn, genitive in -a when indefinite; the Quran has it only with a possessive (أَصَابِعَهُمْ 2:19, 71:7)"
+  }
+ },
+ "أَمانَت|أمن": {
+  "S|definite|NOM": {
+   "text": "الْأَمَانَةُ",
+   "why": "أَمَانَة is a regular triptote (Quran 33:72 الْأَمَانَةَ; 2:283 أَمَانَتَهُ); the corpus spells the lemma أَمَانَت and CAMeL does not generate it"
+  },
+  "S|definite|GEN": {
+   "text": "الْأَمَانَةِ",
+   "why": "أَمَانَة is a regular triptote (Quran 33:72 الْأَمَانَةَ; 2:283 أَمَانَتَهُ); the corpus spells the lemma أَمَانَت and CAMeL does not generate it"
+  },
+  "S|indefinite|NOM": {
+   "text": "أَمَانَةٌ",
+   "why": "أَمَانَة is a regular triptote (Quran 33:72 الْأَمَانَةَ; 2:283 أَمَانَتَهُ); the corpus spells the lemma أَمَانَت and CAMeL does not generate it"
+  },
+  "S|indefinite|ACC": {
+   "text": "أَمَانَةً",
+   "why": "أَمَانَة is a regular triptote (Quran 33:72 الْأَمَانَةَ; 2:283 أَمَانَتَهُ); the corpus spells the lemma أَمَانَت and CAMeL does not generate it"
+  },
+  "S|indefinite|GEN": {
+   "text": "أَمَانَةٍ",
+   "why": "أَمَانَة is a regular triptote (Quran 33:72 الْأَمَانَةَ; 2:283 أَمَانَتَهُ); the corpus spells the lemma أَمَانَت and CAMeL does not generate it"
+  }
+ },
+ "إِسْرار|سرر": {
+  "S|definite|NOM": {
+   "text": "الْإِسْرَارُ",
+   "why": "إِسْرَار (verbal noun of أَسَرَّ, Quran 71:9 إِسْرَارًا) is a regular triptote; CAMeL reads it only as 'secrets' and does not generate these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الْإِسْرَارَ",
+   "why": "إِسْرَار (verbal noun of أَسَرَّ, Quran 71:9 إِسْرَارًا) is a regular triptote; CAMeL reads it only as 'secrets' and does not generate these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الْإِسْرَارِ",
+   "why": "إِسْرَار (verbal noun of أَسَرَّ, Quran 71:9 إِسْرَارًا) is a regular triptote; CAMeL reads it only as 'secrets' and does not generate these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "إِسْرَارٌ",
+   "why": "إِسْرَار (verbal noun of أَسَرَّ, Quran 71:9 إِسْرَارًا) is a regular triptote; CAMeL reads it only as 'secrets' and does not generate these cells"
+  },
+  "S|indefinite|GEN": {
+   "text": "إِسْرَارٍ",
+   "why": "إِسْرَار (verbal noun of أَسَرَّ, Quran 71:9 إِسْرَارًا) is a regular triptote; CAMeL reads it only as 'secrets' and does not generate these cells"
+  }
+ },
+ "إِسْراف|سرف": {
+  "S|definite|NOM": {
+   "text": "الْإِسْرَافُ",
+   "why": "إِسْرَاف (verbal noun of أَسْرَفَ, Quran 4:6 إِسْرَافًا) is a regular triptote; CAMeL does not generate these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الْإِسْرَافَ",
+   "why": "إِسْرَاف (verbal noun of أَسْرَفَ, Quran 4:6 إِسْرَافًا) is a regular triptote; CAMeL does not generate these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الْإِسْرَافِ",
+   "why": "إِسْرَاف (verbal noun of أَسْرَفَ, Quran 4:6 إِسْرَافًا) is a regular triptote; CAMeL does not generate these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "إِسْرَافٌ",
+   "why": "إِسْرَاف (verbal noun of أَسْرَفَ, Quran 4:6 إِسْرَافًا) is a regular triptote; CAMeL does not generate these cells"
+  },
+  "S|indefinite|GEN": {
+   "text": "إِسْرَافٍ",
+   "why": "إِسْرَاف (verbal noun of أَسْرَفَ, Quran 4:6 إِسْرَافًا) is a regular triptote; CAMeL does not generate these cells"
+  }
+ },
+ "إِمْلاق|ملق": {
+  "S|definite|NOM": {
+   "text": "الْإِمْلَاقُ",
+   "why": "إِمْلَاق (poverty, verbal noun of أَمْلَقَ, Quran 6:151 مِنْ إِمْلَاقٍ) is a regular triptote; CAMeL glosses it only as 'leagues' and does not generate these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الْإِمْلَاقَ",
+   "why": "إِمْلَاق (poverty, verbal noun of أَمْلَقَ, Quran 6:151 مِنْ إِمْلَاقٍ) is a regular triptote; CAMeL glosses it only as 'leagues' and does not generate these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الْإِمْلَاقِ",
+   "why": "إِمْلَاق (poverty, verbal noun of أَمْلَقَ, Quran 6:151 مِنْ إِمْلَاقٍ) is a regular triptote; CAMeL glosses it only as 'leagues' and does not generate these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "إِمْلَاقٌ",
+   "why": "إِمْلَاق (poverty, verbal noun of أَمْلَقَ, Quran 6:151 مِنْ إِمْلَاقٍ) is a regular triptote; CAMeL glosses it only as 'leagues' and does not generate these cells"
+  },
+  "S|indefinite|ACC": {
+   "text": "إِمْلَاقًا",
+   "why": "إِمْلَاق (poverty, verbal noun of أَمْلَقَ, Quran 6:151 مِنْ إِمْلَاقٍ) is a regular triptote; CAMeL glosses it only as 'leagues' and does not generate these cells"
+  }
+ },
+ "ابْنَت|بني": {
+  "S|definite|NOM": {
+   "text": "الِابْنَةُ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "S|definite|ACC": {
+   "text": "الِابْنَةَ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "S|definite|GEN": {
+   "text": "الِابْنَةِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "S|indefinite|NOM": {
+   "text": "ابْنَةٌ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "S|indefinite|ACC": {
+   "text": "ابْنَةً",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "S|indefinite|GEN": {
+   "text": "ابْنَةٍ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "D|definite|NOM": {
+   "text": "الِابْنَتَانِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "D|definite|ACC": {
+   "text": "الِابْنَتَيْنِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "D|definite|GEN": {
+   "text": "الِابْنَتَيْنِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "D|indefinite|NOM": {
+   "text": "ابْنَتَانِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "D|indefinite|ACC": {
+   "text": "ابْنَتَيْنِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  },
+  "D|indefinite|GEN": {
+   "text": "ابْنَتَيْنِ",
+   "why": "ابْنَة (daughter, Quran 66:12 ابْنَتَ عِمْرَانَ; 28:27 ابْنَتَيَّ) is a regular triptote with the dual ابْنَتَانِ; the corpus spells the lemma ابْنَت and CAMeL does not generate it. The definite is spelled like the table's other hamzat-waṣl nouns (الِابْنَة, the lām carrying the kasra of the hamzat waṣl)"
+  }
+ },
+ "اسْتِكْبار|كبر": {
+  "S|definite|NOM": {
+   "text": "الِاسْتِكْبَارُ",
+   "why": "اسْتِكْبَار (verbal noun of اسْتَكْبَرَ, Quran 35:43 اسْتِكْبَارًا) is a regular triptote; CAMeL cannot analyze it"
+  },
+  "S|definite|ACC": {
+   "text": "الِاسْتِكْبَارَ",
+   "why": "اسْتِكْبَار (verbal noun of اسْتَكْبَرَ, Quran 35:43 اسْتِكْبَارًا) is a regular triptote; CAMeL cannot analyze it"
+  },
+  "S|definite|GEN": {
+   "text": "الِاسْتِكْبَارِ",
+   "why": "اسْتِكْبَار (verbal noun of اسْتَكْبَرَ, Quran 35:43 اسْتِكْبَارًا) is a regular triptote; CAMeL cannot analyze it"
+  },
+  "S|indefinite|NOM": {
+   "text": "اسْتِكْبَارٌ",
+   "why": "اسْتِكْبَار (verbal noun of اسْتَكْبَرَ, Quran 35:43 اسْتِكْبَارًا) is a regular triptote; CAMeL cannot analyze it"
+  },
+  "S|indefinite|GEN": {
+   "text": "اسْتِكْبَارٍ",
+   "why": "اسْتِكْبَار (verbal noun of اسْتَكْبَرَ, Quran 35:43 اسْتِكْبَارًا) is a regular triptote; CAMeL cannot analyze it"
+  }
+ },
+ "بِناء|بني": {
+  "S|indefinite|NOM": {
+   "text": "بِنَاءٌ",
+   "why": "بِنَاء is a regular triptote (Quran 2:22 بِنَاءً); CAMeL does not generate its indefinite nominative and genitive"
+  },
+  "S|indefinite|GEN": {
+   "text": "بِنَاءٍ",
+   "why": "بِنَاء is a regular triptote (Quran 2:22 بِنَاءً); CAMeL does not generate its indefinite nominative and genitive"
+  }
+ },
+ "تَماثِيل|مثل": {
+  "P|definite|ACC": {
+   "text": "التَّمَاثِيلَ",
+   "why": "تَمَاثِيل (pattern تَفَاعِيل, plural of تِمْثَال) is diptote: no tanwīn, genitive in -a when indefinite (Quran 21:52 التَّمَاثِيلُ; 34:13 وَتَمَاثِيلَ)"
+  },
+  "P|definite|GEN": {
+   "text": "التَّمَاثِيلِ",
+   "why": "تَمَاثِيل (pattern تَفَاعِيل, plural of تِمْثَال) is diptote: no tanwīn, genitive in -a when indefinite (Quran 21:52 التَّمَاثِيلُ; 34:13 وَتَمَاثِيلَ)"
+  },
+  "P|indefinite|NOM": {
+   "text": "تَمَاثِيلُ",
+   "why": "تَمَاثِيل (pattern تَفَاعِيل, plural of تِمْثَال) is diptote: no tanwīn, genitive in -a when indefinite (Quran 21:52 التَّمَاثِيلُ; 34:13 وَتَمَاثِيلَ)"
+  },
+  "P|indefinite|ACC": {
+   "text": "تَمَاثِيلَ",
+   "why": "تَمَاثِيل (pattern تَفَاعِيل, plural of تِمْثَال) is diptote: no tanwīn, genitive in -a when indefinite (Quran 21:52 التَّمَاثِيلُ; 34:13 وَتَمَاثِيلَ)"
+  },
+  "P|indefinite|GEN": {
+   "text": "تَمَاثِيلَ",
+   "why": "تَمَاثِيل (pattern تَفَاعِيل, plural of تِمْثَال) is diptote: no tanwīn, genitive in -a when indefinite (Quran 21:52 التَّمَاثِيلُ; 34:13 وَتَمَاثِيلَ)"
+  }
+ },
+ "حَناجِر|حنجر": {
+  "P|definite|NOM": {
+   "text": "الْحَنَاجِرُ",
+   "why": "حَنَاجِر (pattern فَعَالِل, plural of حَنْجَرَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran 33:10 الْحَنَاجِرَ; 40:18)"
+  },
+  "P|indefinite|NOM": {
+   "text": "حَنَاجِرُ",
+   "why": "حَنَاجِر (pattern فَعَالِل, plural of حَنْجَرَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran 33:10 الْحَنَاجِرَ; 40:18)"
+  },
+  "P|indefinite|ACC": {
+   "text": "حَنَاجِرَ",
+   "why": "حَنَاجِر (pattern فَعَالِل, plural of حَنْجَرَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran 33:10 الْحَنَاجِرَ; 40:18)"
+  },
+  "P|indefinite|GEN": {
+   "text": "حَنَاجِرَ",
+   "why": "حَنَاجِر (pattern فَعَالِل, plural of حَنْجَرَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran 33:10 الْحَنَاجِرَ; 40:18)"
+  }
+ },
+ "خَطَأ|خطأ": {
+  "S|indefinite|NOM": {
+   "text": "خَطَأٌ",
+   "why": "خَطَأ is a regular triptote (Quran 4:92 خَطَأً); CAMeL does not generate its indefinite nominative and genitive"
+  },
+  "S|indefinite|GEN": {
+   "text": "خَطَأٍ",
+   "why": "خَطَأ is a regular triptote (Quran 4:92 خَطَأً); CAMeL does not generate its indefinite nominative and genitive"
+  }
+ },
+ "خُلُق|خلق": {
+  "S|definite|NOM": {
+   "text": "الْخُلُقُ",
+   "why": "خُلُق (character, Quran 68:4 خُلُقٍ عَظِيمٍ) is a regular triptote; CAMeL vowels it as خَلْق 'creation' and does not generate these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الْخُلُقَ",
+   "why": "خُلُق (character, Quran 68:4 خُلُقٍ عَظِيمٍ) is a regular triptote; CAMeL vowels it as خَلْق 'creation' and does not generate these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الْخُلُقِ",
+   "why": "خُلُق (character, Quran 68:4 خُلُقٍ عَظِيمٍ) is a regular triptote; CAMeL vowels it as خَلْق 'creation' and does not generate these cells"
+  },
+  "S|indefinite|NOM": {
+   "text": "خُلُقٌ",
+   "why": "خُلُق (character, Quran 68:4 خُلُقٍ عَظِيمٍ) is a regular triptote; CAMeL vowels it as خَلْق 'creation' and does not generate these cells"
+  },
+  "S|indefinite|ACC": {
+   "text": "خُلُقًا",
+   "why": "خُلُق (character, Quran 68:4 خُلُقٍ عَظِيمٍ) is a regular triptote; CAMeL vowels it as خَلْق 'creation' and does not generate these cells"
+  }
+ },
+ "دُخان|دخن": {
+  "S|definite|NOM": {
+   "text": "الدُّخَانُ",
+   "why": "دُخَان is a regular triptote (Quran 41:11 دُخَانٌ; 44:10 بِدُخَانٍ); CAMeL does not generate these cells"
+  },
+  "S|definite|ACC": {
+   "text": "الدُّخَانَ",
+   "why": "دُخَان is a regular triptote (Quran 41:11 دُخَانٌ; 44:10 بِدُخَانٍ); CAMeL does not generate these cells"
+  },
+  "S|definite|GEN": {
+   "text": "الدُّخَانِ",
+   "why": "دُخَان is a regular triptote (Quran 41:11 دُخَانٌ; 44:10 بِدُخَانٍ); CAMeL does not generate these cells"
+  },
+  "S|indefinite|ACC": {
+   "text": "دُخَانًا",
+   "why": "دُخَان is a regular triptote (Quran 41:11 دُخَانٌ; 44:10 بِدُخَانٍ); CAMeL does not generate these cells"
+  }
  }
 }

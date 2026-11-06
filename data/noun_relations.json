@@ -1208,5 +1208,137 @@
  "عَمَد|عمد": {
   "kind": "ordinary",
   "why": "Reviewed: عَمَد 'columns, pillars' (13:2 بِغَيْرِ عَمَدٍ تَرَوْنَهَا) is a plural (pattern فَعَل) of عَمُود/عِمَاد with no singulative; adjectives agree in the feminine (104:9 فِي عَمَدٍ مُمَدَّدَةٍ). Taught as a plural in sense."
+ },
+ "أَصابِع|صبع": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَصَابِع is the broken plural of إِصْبَع (finger), which the Quran does not use (2:19 يَجْعَلُونَ أَصَابِعَهُمْ فِي آذَانِهِمْ); a plural with a singular is not a collective. Taught in the plural, as the Quran has it."
+ },
+ "تَماثِيل|مثل": {
+  "kind": "ordinary",
+  "why": "Reviewed: تَمَاثِيل is the broken plural of تِمْثَال (statue), which the Quran does not use (21:52 مَا هَٰذِهِ التَّمَاثِيلُ; 34:13); a plural with a singular is not a collective."
+ },
+ "حَناجِر|حنجر": {
+  "kind": "ordinary",
+  "why": "Reviewed: حَنَاجِر is the broken plural of حَنْجَرَة (throat), which the Quran does not use (33:10 وَبَلَغَتِ الْقُلُوبُ الْحَنَاجِرَ); a plural with a singular is not a collective."
+ },
+ "جَراد|جرد": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: locusts as a swarm; one locust is جَرَادَة (not in the Quran). The Quran agrees with it in the masculine singular: كَأَنَّهُمْ جَرَادٌ مُنْتَشِرٌ (54:7).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "جَرَادَةٌ",
+    "gender": "F",
+    "en": "a locust",
+    "bs": "skakavac"
+   }
+  ]
+ },
+ "دَمْع|دمع": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس: tears as a flow (5:83 تَفِيضُ مِنَ الدَّمْعِ; 9:92), with the singulative دَمْعَة 'a tear' (not in the Quran). Masculine in Arabic (الدَّمْعُ يَسِيلُ); the Quran has no verb agreeing with it. Its plural دُمُوع is not Quranic.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "دَمْعَةٌ",
+    "gender": "F",
+    "en": "a tear",
+    "bs": "suza"
+   }
+  ]
+ },
+ "بَنان|بنن": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: fingertips (8:12 كُلَّ بَنَانٍ; 75:4 نُسَوِّيَ بَنَانَهُ), with the singulative بَنَانَة 'a fingertip' (not in the Quran); masculine in Arabic (الْبَنَانُ الْمُخَضَّبُ). The Quran has no verb agreeing with it.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "بَنَانَةٌ",
+    "gender": "F",
+    "en": "a fingertip",
+    "bs": "jagodica"
+   }
+  ]
+ },
+ "بَعِير|بعر": {
+  "kind": "singulative",
+  "why": "One camel, male or female, of the herd إِبِل (12:65 كَيْلَ بَعِيرٍ; 12:72 حِمْلُ بَعِيرٍ). Its plural أَبَاعِر/بُعْرَان is not Quranic.",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "إِبِلٌ",
+    "gender": "F",
+    "en": "camels",
+    "bs": "deve",
+    "lemma": "إِبِل|أبل"
+   }
+  ]
+ },
+ "حَجَر|حجر": {
+  "kind": "singulative",
+  "why": "One stone (2:60 اضْرِبْ بِعَصَاكَ الْحَجَرَ), of the collective plural حِجَارَة 'stones', which the corpus files as its own lemma (2:74). حُجْرَة (a room) and حِجْر (forbidden) are other words.",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "حِجَارَةٌ",
+    "gender": "F",
+    "en": "stones",
+    "bs": "kamenje",
+    "lemma": "حِجارَة|حجر"
+   }
+  ]
+ },
+ "خال|خول": {
+  "kind": "pair",
+  "why": "The female of خَال (maternal uncle) is خَالَة (maternal aunt); the Quran names both: بُيُوتِ أَخْوَالِكُمْ أَوْ بُيُوتِ خَالَاتِكُمْ (24:61). خَال 'a mole' is another word.",
+  "related": [
+   {
+    "role": "female",
+    "ar": "خَالَةٌ",
+    "gender": "F",
+    "en": "maternal aunt",
+    "bs": "tetka",
+    "lemma": "خالَة|خول"
+   }
+  ]
+ },
+ "ابْنَت|بني": {
+  "kind": "pair",
+  "why": "The male of ابْنَة (daughter) is ابْن (son) (28:27 إِحْدَى ابْنَتَيَّ هَاتَيْنِ; 66:12 ابْنَتَ عِمْرَانَ). بِنْت is the same word in another spelling, studied as its own lemma.",
+  "related": [
+   {
+    "role": "male",
+    "ar": "ابْنٌ",
+    "gender": "M",
+    "en": "son",
+    "bs": "sin",
+    "lemma": "ابْن|بني"
+   }
+  ]
+ },
+ "ذُباب|ذبب": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: flies, with the singulative ذُبَابَة 'a fly' (not in the Quran; الذُّبَابُ وَاحِدَتُهُ ذُبَابَةٌ). The Quran agrees with it in the masculine singular (22:73 وَإِنْ يَسْلُبْهُمُ الذُّبَابُ شَيْئًا), and its generic use there (لَنْ يَخْلُقُوا ذُبَابًا) reads 'a fly' in translation. Its plurals ذِبَّان/أَذِبَّة are not Quranic.",
+  "related": [
+   {
+    "role": "one",
+    "ar": "ذُبَابَةٌ",
+    "gender": "F",
+    "en": "a fly",
+    "bs": "muha"
+   }
+  ]
+ },
+ "حَطَب|حطب": {
+  "kind": "ordinary",
+  "why": "Reviewed: firewood, a mass noun with no singulative in use (72:15 فَكَانُوا لِجَهَنَّمَ حَطَبًا; 111:4); not a collective of countable things. Bosnian says it in the plural (drva)."
+ },
+ "خَرْدَل|خردل": {
+  "kind": "ordinary",
+  "why": "Reviewed: mustard, a mass noun (21:47 مِثْقَالَ حَبَّةٍ مِنْ خَرْدَلٍ); one seed is حَبَّة, not a singulative of its own."
  }
 }

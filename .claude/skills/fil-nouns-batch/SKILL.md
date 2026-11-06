@@ -304,6 +304,34 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   sentences after 3 rounds: حُسْبان (MSA lives in فِي الْحُسْبَانِ "taken into account"; no natural preposition frame) and
   مَعِيشَة possession (مُسْتَوَى/تَكَالِيفُ الْمَعِيشَةِ need the gloss "of living", which the gate refuses; bs život ≠ livelihood).
 
+- Batch 13 (2026-11-06, 4 re-plan rounds, 206 sentences, 6 refused in round 1, 0 in round 2). The tail is now count 2–3:
+  most candidates are elatives (أَتْقَى، أَسْرَع، أَصْدَق …), participles and always-bare-accusative masdars (تَدْمِير، تَفْجِير،
+  تَتْبِير، تَرْتِيل، تَفْضِيل — مفعول مطلق only; افْتِراء، حَذَر، جَدَل), so preview with `plan next 80–90` and decide all in one
+  skiphold file. Feminine participles of studied nouns (والِدَة) are "variant (on X's card)". HELD_BACK: واق، وَهّاب، آزِفَة، خَلّاق،
+  جَلال، تَسْبِيح، تَوْفِيق، تَصْدِيق، خِيَرَة، حَشْر، حُطَمَة (God/Hereafter/revelation only); آنِيَة (corpus merges vessels with
+  "boiling"), أَسْفار (journeys/books merged), أَيْيد (merged with hands); MSA-misleading أَعْراف (customs)، أَعْلام (flags)، أَكْمام
+  (sleeves)، أَعْجاز (buttocks)، أَقْطار (countries)، بَراءَة (innocence)، بَرِيَّة (wilderness)، جَهاز (device)، دَخَل، دَفْع (payment)،
+  ذِمَّة، حَمِيَّة (diet)، خَرْج، بِطانَة (lining)، تَصْرِيف، تَكاثُر; content أَخْدان، بَغِيّ، أَمَة، أَنفال، أَزْلام، أَصْفاد (Hell's
+  chains, like سِلْسِلَة)، جَلْدَة، دِيَة; rare/archaic إِلّ، خَبال، خُسْر، خَوْض، ذَنُوب، بَصطَة، بَطْشَة، تَأْثِيم، تَبَع، جُنَّة، جِبِلَّة، حُرُمَة، حِطَّة، خَوالِف.
+- The skiphold script must find the END of the HELD_BACK tuple (`text.index(")\n", text.index("HELD_BACK = ("))`), not a fixed
+  last entry — the second round otherwise crashes after writing the skips (rerun holds only).
+- Hamzat-waṣl definites: write the lām with kasra and a bare alif (الِابْنَةُ، الِاسْتِكْبَارُ) — the reviewer refused CAMeL's
+  الْاِ… (sukūn + kasra) 5/5. Overrides take the right spelling and pass the gate; for a CAMeL-generated waṣl noun
+  (اتِّبَاع's الْاِتِّباعُ) use the construct or indefinite in sentences.
+- An unanalysable masdar (اسْتِكْبار) passes the gloss gate once its documented cells exist — no `spelling:` exceptions needed.
+- Collectives decided here: جَراد، دَمْع، بَنان، ذُباب (اسم جنس جمعي, singulative in -ة, M; ذُباب is "flies", Sahih's "a fly"
+  is the generic use) — Bosnian sg row in the plural (skakavci, suze, jagodice, muhe) + `pluralForms`; حَطَب is a mass noun
+  whose Bosnian word is plurale tantum (drva) → same mechanism. A singular whose plural is studied as its own lemma
+  (حَجَر → حِجارَة, بَعِير → إِبِل) is a `singulative` with that `collective`.
+- Wording decided by Sahih International / Korkut (owner: never escalate): emanet (Korkut 33:72), daidža, neimaština, vreća
+  (وِعاء, Sahih "bag"), bunar, pregrada, gorušica, tuga/grief, žalost/sorrow (أَسَف), samilost/compassion (رَأْفَة); دَهْر is
+  en "age" / bs "doba" (Sahih "time" would collide with وَقْت); ذِراع is "forearm"/podlaktica, polysemous (cubit, 69:32).
+  Root exceptions added for each (bag، sorrow، secrecy، poverty، following، fingertips، stinginess، well، barrier، grief، lowing،
+  age، forearm، compassion). Failed → accepted: stayed → remained, keeping (حِفْظ) → guarding, tip (طَرَف) → none (party; use
+  شَكْل), trade → commerce, shivered → trembled, colored/dyed → dyes (present), designed (صَمَّمَ) fails, تَعَب "fatigue" fails
+  for the noun (trouble), على "down" fails.
+- Reviewer refusals: a plural target glossed/translated as a singular (الْحَنَاجِر "throat"), أَلَمُ الْحَنَاجِرِ unidiomatic.
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

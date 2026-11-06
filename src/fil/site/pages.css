@@ -219,3 +219,10 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .ayah .why { margin: 8px 0; }
 .nuance-list .ar { margin-left: auto; }
 .sources ul { padding-left: 20px; }
+/* Čestice / Particles (fil.pages.particle_render) */
+.particle-use { scroll-margin-top: 72px; margin-top: 28px; }
+.particle-use h3 { margin-bottom: 4px; }
+.particle .effect { margin: 8px 0; padding: 8px 14px; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 8px; }
+.use-list { padding-left: 20px; margin: 4px 0 0; }
+.studied-words a { white-space: nowrap; }
+.particle-list .ar { min-width: 3.5em; }

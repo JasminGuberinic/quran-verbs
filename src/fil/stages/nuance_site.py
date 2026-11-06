@@ -100,15 +100,9 @@ class GroupCardBuilder:
                 "ayat": [self._ayah(illustration, attestation) for illustration in member.ayat]}
 
     def _spoken(self, text: str) -> str | None:
-        """The checked voice: a text whose two readings disagree is never voiced."""
-        try:
-            reference = self.sound.spoken(text)
-        except ValueError:
+        reference = checked_voice(self.sound, text)
+        if reference is None:
             self.unvoiced.append(text)
-            return None
-        if not self.sound.speech.verdicts[text].is_faithful:
-            self.unvoiced.append(text)
-            return None
         return reference
 
     def _ayah(self, illustration: Illustration, attestation: Attestation) -> dict:
@@ -121,6 +115,15 @@ class GroupCardBuilder:
                 "translation": {language: text for language, text in self.sound.translations.of(surah, number).items()
                                 if language in PAGE_LANGUAGES},
                 "words": words}
+
+
+def checked_voice(sound: Sound, text: str) -> str | None:
+    """The text's synthetic voice, checked: a text whose two readings disagree is never voiced (None)."""
+    try:
+        reference = sound.spoken(text)
+    except ValueError:
+        return None
+    return reference if sound.speech.verdicts[text].is_faithful else None
 
 
 def _texts(text: Text) -> dict[str, str]:

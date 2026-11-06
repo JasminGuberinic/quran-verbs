@@ -8,14 +8,14 @@ Bosnian and English only for now (docs/NUANCES-PLAN.md): both are indexed and in
 
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
+from collections.abc import Collection, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
 from fil.pages import nuance_render, seo
 
 
-def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], studied_sections: Mapping[str, bool]) -> list[Path]:
+def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published: Collection[str]) -> list[Path]:
     """Every group page and the list of groups; the pages written."""
     if not cards:
         return []
@@ -23,9 +23,9 @@ def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], studied_se
     for language in _languages():
         text = texts[language.code]
         written.append(_write(pages, seo.nuance_index_path(language.code),
-                              nuance_render.nuance_index(cards, language, text, studied_sections=studied_sections)))
+                              nuance_render.nuance_index(cards, language, text, published=published)))
         written += [_write(pages, seo.nuance_path(language.code, card["slug"]),
-                           nuance_render.nuance_page(card, language, text, studied_sections=studied_sections))
+                           nuance_render.nuance_page(card, language, text, published=published))
                     for card in cards]
     return written
 

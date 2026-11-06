@@ -97,6 +97,24 @@ def nuance_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(NUANCE_FOLDERS))
 
 
+# The particle pages likewise (Bosnian and English only, for now).
+PARTICLE_FOLDERS = {"bs": "cestica", "en": "particle"}
+
+
+def particle_index_path(language: str) -> str:
+    return f"{language}/{PARTICLE_FOLDERS[language]}/"
+
+
+def particle_path(language: str, slug: str) -> str:
+    return f"{particle_index_path(language)}{slug}/"
+
+
+def particle_alternates(slug: str | None) -> list[Alternate]:
+    """A particle's page (or, with no slug, the list of particles) in each language it is built in."""
+    path_in = (lambda language: particle_path(language, slug)) if slug else particle_index_path
+    return _alternates(path_in, tuple(PARTICLE_FOLDERS))
+
+
 def to_root(path: str) -> str:
     """The relative way back to the site root from a page at `path`."""
     return "../" * path.count("/")
@@ -167,11 +185,26 @@ def verb_structured_data(*, title: str, description: str, language: str, path: s
 
 def nuance_structured_data(*, title: str, description: str, language: str, path: str, index_title: str) -> str:
     """schema.org: a free learning resource on one group of near-synonyms, in the list of groups."""
-    index = absolute(nuance_index_path(language))
+    return listed_page_structured_data(title=title, description=description, language=language, path=path,
+                                       index_title=index_title, index_path=nuance_index_path(language),
+                                       resource_type="vocabulary")
+
+
+def particle_structured_data(*, title: str, description: str, language: str, path: str, index_title: str) -> str:
+    """schema.org: a free learning resource on one particle's grammar, in the list of particles."""
+    return listed_page_structured_data(title=title, description=description, language=language, path=path,
+                                       index_title=index_title, index_path=particle_index_path(language),
+                                       resource_type="grammar")
+
+
+def listed_page_structured_data(*, title: str, description: str, language: str, path: str, index_title: str,
+                                index_path: str, resource_type: str) -> str:
+    """schema.org: a free learning resource, the page of one item in a section's list."""
+    index = absolute(index_path)
     graph = [
         {"@type": "LearningResource", "@id": absolute(path), "name": title, "description": description,
          "url": absolute(path), "inLanguage": language, "isAccessibleForFree": True,
-         "learningResourceType": "vocabulary", "educationalUse": "self-study", "image": absolute(SHARE_IMAGE),
+         "learningResourceType": resource_type, "educationalUse": "self-study", "image": absolute(SHARE_IMAGE),
          "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": SITE_NAME, "item": SITE_URL},

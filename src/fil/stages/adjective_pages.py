@@ -9,7 +9,7 @@ Bosnian and English only for now (docs/NOUNS-PLAN.md): both are indexed and in t
 
 from __future__ import annotations
 
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Collection, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
@@ -20,7 +20,8 @@ from fil.stages.nuance_site import groups_of_lemma
 
 
 def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], texts: dict[str, dict],
-          credit_for: Callable[[Sequence[dict]], str] = lambda _cards: "", nuances: Sequence[dict] = ()) -> list[Path]:
+          credit_for: Callable[[Sequence[dict]], str] = lambda _cards: "", nuances: Sequence[dict] = (),
+          published: Collection[str] = frozenset()) -> list[Path]:
     """Every adjective page and list and the adjectives' ayat files; the pages written. `credit_for`
     gives the picture credit owed for the noun cards a page links (fil.stages.noun_pages.credits);
     `nuances` are the group cards an adjective page links when its word is a member."""
@@ -31,7 +32,7 @@ def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], text
     for language in _languages():
         text = texts[language.code]
         written.append(_write(pages, seo.adjective_index_path(language.code),
-                              adjective_render.adjective_index(adjectives.cards, language, text, has_nuances=bool(nuances))))
+                              adjective_render.adjective_index(adjectives.cards, language, text, published=published)))
         for card in adjectives.cards:
             nouns_of_root = adjective_render.of_root(card, nouns)
             path = seo.adjective_path(language.code, card["slug"])
@@ -39,7 +40,7 @@ def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], text
                                                           seo.to_root(path))
             html = adjective_render.adjective_page(card, language, text, related=adjective_render.of_root(card, adjectives.cards),
                                                    nouns_of_root=nouns_of_root, picture_credit=credit_for(nouns_of_root),
-                                                   has_nuances=bool(nuances), similar_words=similar)
+                                                   published=published, similar_words=similar)
             written.append(_write(pages, path, html))
     return written
 

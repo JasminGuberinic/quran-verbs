@@ -11,7 +11,7 @@ Interface text is ours and may carry markup; everything from the content is esca
 from __future__ import annotations
 
 import re
-from collections.abc import Mapping, Sequence
+from collections.abc import Collection, Sequence
 from html import escape
 
 from fil.languages import Language
@@ -27,9 +27,9 @@ _ARABIC_RUN = re.compile(r"[؀-ۿݐ-ݿࢠ-ࣿ]+(?:\s+[؀-ۿݐ-ݿࢠ-ࣿ]+)*")
 
 # ---------- a group's page ----------
 
-def nuance_page(card: dict, language: Language, text: dict, *, studied_sections: Mapping[str, bool]) -> str:
-    """One group's page. `studied_sections` says which sections are published ({"nouns": True, ...}),
-    so the top bar and the links to verb, noun and adjective cards lead only to pages that exist."""
+def nuance_page(card: dict, language: Language, text: dict, *, published: Collection[str]) -> str:
+    """One group's page. `published` names the sections whose pages are published (render.NOUNS, …),
+    so the top bar leads only to pages that exist."""
     words = text["nuancePage"]
     path = seo.nuance_path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -38,7 +38,7 @@ def nuance_page(card: dict, language: Language, text: dict, *, studied_sections:
     page_title = fill(words["title"], title, arabic)
     description = fill(words["description"], title, arabic)
     body = "".join((
-        _top_bar(text, root, language, lambda code: seo.nuance_path(code, card["slug"]), studied_sections),
+        _top_bar(text, root, language, lambda code: seo.nuance_path(code, card["slug"]), published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="nuance">',
         _hero(card, title, words, root, language),
         _shared(card, language, words),
@@ -69,9 +69,9 @@ def _hero(card: dict, title: str, words: dict, root: str, language: Language) ->
 
 
 def _shared(card: dict, language: Language, words: dict) -> str:
-    return (f'<section><h2>{escape(words["shared"])}</h2><p class="lead">{_marked(card["shared"][language.code])}</p>'
+    return (f'<section><h2>{escape(words["shared"])}</h2><p class="lead">{marked_text(card["shared"][language.code])}</p>'
             f'<div class="tell-apart"><h3>{escape(words["tellApart"])}</h3>'
-            f'<p>{_marked(card["tellApart"][language.code])}</p></div></section>')
+            f'<p>{marked_text(card["tellApart"][language.code])}</p></div></section>')
 
 
 def _member(member: dict, position: int, language: Language, text: dict, root: str) -> str:
@@ -84,7 +84,7 @@ def _member(member: dict, position: int, language: Language, text: dict, root: s
             f'{render._play(member["audio"], root, text["listen"])} '
             f'<span class="meaning">{escape(member["meaning"][language.code])}</span>{english}</h2>'
             f'<p class="stats">{escape(fill(text["times"], member["count"]))}{_card_link(member, language, words, root)}</p>'
-            f'<p>{_marked(member["nuance"][language.code])}</p><div class="ayat">{ayat}</div></section>')
+            f'<p>{marked_text(member["nuance"][language.code])}</p><div class="ayat">{ayat}</div></section>')
 
 
 def _card_link(member: dict, language: Language, words: dict, root: str) -> str:
@@ -103,26 +103,26 @@ def _ayah(ayah: dict, language: Language, text: dict, root: str) -> str:
             f'<a href="https://quran.com/{surah}/{number}" rel="noopener">{surah}:{number} ↗</a>'
             f'{render.ayah_links_html(ayah["ref"], language.code, text["forms"]["links"])}</p>'
             f'<blockquote class="qr" lang="ar" dir="rtl">{quran_words}</blockquote>'
-            f'<p class="gloss why"><b>{escape(text["nuancePage"]["why"])}:</b> {_marked(ayah["why"][language.code])}</p>'
+            f'<p class="gloss why"><b>{escape(text["nuancePage"]["why"])}:</b> {marked_text(ayah["why"][language.code])}</p>'
             f'{render._translation(ayah, language, text)}'
             f'<p class="ayah-foot">{render._play(ayah["audio"], root, text["recitedAyah"])} {escape(text["recitedAyah"])}</p>'
             f'</figure>')
 
 
 def _sources(card: dict, words: dict) -> str:
-    listed = "".join(f"<li>{_marked(source)}</li>" for source in card["sources"])
+    listed = "".join(f"<li>{marked_text(source)}</li>" for source in card["sources"])
     return (f'<section class="sources"><h2>{escape(words["sources"])}</h2><ul>{listed}</ul>'
             f'<p class="note">{escape(words["sourcesNote"])}</p></section>')
 
 
-def _marked(content: str) -> str:
+def marked_text(content: str) -> str:
     """Content text, escaped, its Arabic runs set as Arabic."""
     return _ARABIC_RUN.sub(lambda found: f'<span class="ar" lang="ar" dir="rtl">{found.group(0)}</span>', escape(content))
 
 
 # ---------- the list of groups ----------
 
-def nuance_index(cards: Sequence[dict], language: Language, text: dict, *, studied_sections: Mapping[str, bool]) -> str:
+def nuance_index(cards: Sequence[dict], language: Language, text: dict, *, published: Collection[str]) -> str:
     words = text["nuancePage"]
     path = seo.nuance_index_path(language.code)
     root = seo.to_root(path)
@@ -133,7 +133,7 @@ def nuance_index(cards: Sequence[dict], language: Language, text: dict, *, studi
         for position, card in enumerate(cards, start=1)
     )
     body = "".join((
-        _top_bar(text, root, language, seo.nuance_index_path, studied_sections, is_section_list=True),
+        _top_bar(text, root, language, seo.nuance_index_path, published, is_section_list=True),
         f'<main class="wrap"><h1>{escape(words["indexTitle"])}</h1><p class="lead">{escape(words["indexIntro"])}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         f'<ol class="verb-list nuance-list">{rows}</ol></main>',
@@ -167,7 +167,7 @@ def similar_words_section(groups: Sequence[dict], language: Language, text: dict
 
 # ---------- shared ----------
 
-def _top_bar(text: dict, root: str, language: Language, path_in, studied_sections: Mapping[str, bool],
+def _top_bar(text: dict, root: str, language: Language, path_in, published: Collection[str],
              is_section_list: bool = False) -> str:
     switcher = "".join(
         f'<a href="{root}{path_in(code)}" hreflang="{code}" lang="{code}"'
@@ -175,5 +175,4 @@ def _top_bar(text: dict, root: str, language: Language, path_in, studied_section
         for code, name in (("bs", "Bosanski"), ("en", "English"))
     )
     return render.top_bar(text, root, language, switcher, section=render.NUANCES, is_section_list=is_section_list,
-                          has_nouns=studied_sections.get(render.NOUNS, False),
-                          has_adjectives=studied_sections.get(render.ADJECTIVES, False), has_nuances=True)
+                          published=published)

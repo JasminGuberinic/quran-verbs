@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import json
 import shutil
-from collections.abc import Sequence
+from collections.abc import Collection, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
@@ -28,9 +28,10 @@ PICTURE_FOLDER = "pictures"
 
 
 def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: Sequence[dict] = (),
-          nuances: Sequence[dict] = ()) -> list[Path]:
+          nuances: Sequence[dict] = (), published: Collection[str] = frozenset()) -> list[Path]:
     """Every noun page and list, the nouns' ayat files and pictures; the pages written. A noun page
-    links the studied `adjectives` (cards) of its root and the `nuances` (group cards) it belongs to."""
+    links the studied `adjectives` (cards) of its root and the `nuances` (group cards) it belongs to;
+    `published` names the sections the top bar leads to (fil.pages.render)."""
     if not nouns.cards:
         return []
     write_ayat(pages, nouns.ayat_lists)
@@ -43,14 +44,14 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: S
         written.append(_write(pages, seo.noun_index_path(language.code),
                               noun_render.noun_index(nouns.cards, language, text, categories=categories,
                                                      picture_credit=credit_for(nouns.cards),
-                                                     has_adjectives=bool(adjectives), has_nuances=bool(nuances))))
+                                                     published=published)))
         for card in nouns.cards:
             related = [other for other in nouns.cards if other["root"] == card["root"] and other is not card]
             path = seo.noun_path(language.code, card["slug"])
             html = noun_render.noun_page(card, language, text, category=categories.get(card["key"]),
                                          picture_credit=credit_for([card, *related]), related=related,
                                          adjectives_of_root=adjective_render.adjectives_section(card, adjectives, language, text, path),
-                                         has_adjectives=bool(adjectives), has_nuances=bool(nuances),
+                                         published=published,
                                          similar_words=nuance_render.similar_words_section(
                                              groups_of_lemma(card["key"], nuances), language, text, seo.to_root(path)))
             written.append(_write(pages, path, html))

@@ -10,7 +10,7 @@ Interface text is ours and may carry markup; everything from the content is esca
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Collection, Sequence
 from html import escape
 
 from fil.languages import Language
@@ -26,7 +26,7 @@ _STATE_ORDER = ("definite", "indefinite")
 # ---------- adjective page ----------
 
 def adjective_page(card: dict, language: Language, text: dict, *, related: Sequence[dict] = (),
-                   nouns_of_root: Sequence[dict] = (), picture_credit: str = "", has_nuances: bool = False,
+                   nouns_of_root: Sequence[dict] = (), picture_credit: str = "", published: Collection[str] = frozenset(),
                    similar_words: str = "") -> str:
     """One adjective's page. `related` are the other studied adjectives of its root, `nouns_of_root`
     the studied nouns of its root (cards); `picture_credit` the footer line owed for their pictures;
@@ -40,7 +40,7 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
     structured = seo.verb_structured_data(title=title, description=description, language=language.code, path=path,
                                           lemma=card["lemma"], meaning=meaning, index_title=words["indexTitle"])
     body = "".join((
-        _top_bar(text, root, language, lambda code: seo.adjective_path(code, card["slug"]), has_nuances=has_nuances),
+        _top_bar(text, root, language, lambda code: seo.adjective_path(code, card["slug"]), published=published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun adjective">',
         _hero(card, meaning, language, text, root),
         _table(card, text, root),
@@ -225,7 +225,8 @@ def _adjective_link(adjective: dict, language: Language, root: str) -> str:
 
 # ---------- the list of adjectives ----------
 
-def adjective_index(cards: Sequence[dict], language: Language, text: dict, *, has_nuances: bool = False) -> str:
+def adjective_index(cards: Sequence[dict], language: Language, text: dict, *,
+                    published: Collection[str] = frozenset()) -> str:
     words = text["adjectivePage"]
     path = seo.adjective_index_path(language.code)
     root = seo.to_root(path)
@@ -242,7 +243,7 @@ def adjective_index(cards: Sequence[dict], language: Language, text: dict, *, ha
     )
     categories = {card["key"]: card["category"] for card in cards}
     body = "".join((
-        _top_bar(text, root, language, seo.adjective_index_path, is_section_list=True, has_nuances=has_nuances),
+        _top_bar(text, root, language, seo.adjective_index_path, is_section_list=True, published=published),
         f'<main class="wrap"><h1>{escape(words["indexTitle"])}</h1><p class="lead">{escape(words["indexIntro"])}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         noun_render._category_filter(cards, words, categories),
@@ -262,11 +263,11 @@ def _category_anchor(category: str) -> str:
 
 
 def _top_bar(text: dict, root: str, language: Language, path_in, is_section_list: bool = False,
-             has_nuances: bool = False) -> str:
+             published: Collection[str] = frozenset()) -> str:
     switcher = "".join(
         f'<a href="{root}{path_in(code)}" hreflang="{code}" lang="{code}"'
         f'{render._CURRENT if code == language.code else ""}>{escape(name)}</a>'
         for code, name in (("bs", "Bosanski"), ("en", "English"))
     )
     return render.top_bar(text, root, language, switcher, section=render.ADJECTIVES, is_section_list=is_section_list,
-                          has_nouns=True, has_adjectives=True, has_nuances=has_nuances)
+                          published={*published, render.NOUNS})

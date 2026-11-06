@@ -512,7 +512,63 @@
       inGroup: (title) => `Nuances: ${title}`,
     },
   };
+  // The particles (fil.pages.particle_render): Bosnian and English only, for now.
+  const PARTICLE_PAGE = {
+    bs: {
+      nav: "Čestice", indexTitle: "Čestice: male riječi Kur'ana",
+      indexIntro: "Najčešće riječi Kur'ana su male: prijedlozi, veznici, negacije. Za svaku: šta radi, šta mijenja na riječi iza sebe i njene upotrebe s ajetima.",
+      title: (arabic, meaning) => `${arabic} (${meaning}) · čestice u Kur'anu`,
+      description: (arabic, meaning) => `${arabic} – ${meaning}: šta radi u rečenici, kako mijenja riječ iza sebe i ajeti za svaku upotrebu, s izgovorom.`,
+      whatItDoes: "Šta radi", uses: "Upotrebe",
+      inBosnian: "U bosanskom", bareCase: "bez prijedloga",
+      caseNoun: "Padeže imenice, i genitiv iza prijedloga, vidi na primjeru:",
+      corpusCount: (n) => `korpus: ${n}×`,
+      why: "Šta ovdje pokazuje", studied: "Riječi ovog ajeta na stranici",
+      card: { verb: "glagol", noun: "imenica", adjective: "pridjev" },
+      kinds: {
+        preposition: "prijedlog", conjunction: "veznik", resumption: "veznik nove rečenice", circumstantial: "veznik stanja",
+        oath: "zakletva", result: "veznik odgovora", cause: "veznik posljedice", negation: "negacija", prohibition: "zabrana",
+        absoluteNegation: "negacija roda", innaFamily: "čestica iz porodice إِنَّ", preventive: "čestica koja sprečava",
+        conditional: "uvjet", subordinator: "veznik (glagolska imenica)", interpretive: "veznik tumačenja",
+        interrogative: "upitna riječ", relative: "odnosna zamjenica", restriction: "ograničenje", exception: "izuzetak",
+        certainty: "čestica potvrde", purpose: "namjera", command: "naredba", timeAdverb: "vremenski prilog", surprise: "iznenađenje",
+      },
+      effects: {
+        NOM: "Riječ iza je u nominativu.", ACC: "Riječ iza je u akuzativu.", GEN: "Imenica iza je u genitivu.",
+        IND: "Glagol iza ostaje u indikativu.", SUBJ: "Glagol iza je u subjunktivu.", JUS: "Glagol iza je u jusivu.",
+      },
+      sources: "Izvori",
+      sourcesNote: "Objašnjenja su napisana našim riječima prema klasičnoj gramatici navedenoj ovdje; gdje se gramatičari razilaze, mišljenje se pripisuje autoru. Brojevi i oznake upotreba su iz Quranic Arabic Corpusa: broj upotrebe je onoliko puta koliko je korpus tako označi.",
+    },
+    en: {
+      nav: "Particles", indexTitle: "Particles: the small words of the Quran",
+      indexIntro: "The most frequent words of the Quran are small: prepositions, conjunctions, negations. For each: what it does, what it changes in the word after it, and its uses with ayat.",
+      title: (arabic, meaning) => `${arabic} (${meaning}) · particles in the Quran`,
+      description: (arabic, meaning) => `${arabic} – ${meaning}: what it does in a sentence, how it changes the word after it, and ayat for each use, with audio.`,
+      whatItDoes: "What it does", uses: "Uses",
+      inBosnian: "In Bosnian", bareCase: "no preposition",
+      caseNoun: "See a noun's cases, the genitive after a preposition among them, on:",
+      corpusCount: (n) => `corpus: ${n}×`,
+      why: "What it shows here", studied: "Words of this ayah with a page",
+      card: { verb: "verb", noun: "noun", adjective: "adjective" },
+      kinds: {
+        preposition: "preposition", conjunction: "conjunction", resumption: "resuming conjunction", circumstantial: "circumstantial wāw",
+        oath: "oath", result: "answer of a condition", cause: "conjunction of consequence", negation: "negation", prohibition: "prohibition",
+        absoluteNegation: "negation of the kind", innaFamily: "particle of the إِنَّ family", preventive: "restraining particle",
+        conditional: "condition", subordinator: "conjunction (verbal noun)", interpretive: "explaining particle",
+        interrogative: "question word", relative: "relative pronoun", restriction: "restriction", exception: "exception",
+        certainty: "particle of certainty", purpose: "purpose", command: "command", timeAdverb: "time adverb", surprise: "surprise",
+      },
+      effects: {
+        NOM: "The word after it is nominative.", ACC: "The word after it is accusative.", GEN: "The noun after it is genitive.",
+        IND: "The verb after it stays indicative.", SUBJ: "The verb after it is subjunctive.", JUS: "The verb after it is jussive.",
+      },
+      sources: "Sources",
+      sourcesNote: "The explanations are in our own words, following the classical grammar named here; where grammarians differ, a view is attributed to its author. Counts and the tags of each use are from the Quranic Arabic Corpus: a use's count is how often the corpus tags it so.",
+    },
+  };
   for (const code of Object.keys(UI)) {
+    UI[code].particlePage = PARTICLE_PAGE[code] || PARTICLE_PAGE.en;
     UI[code].page = PAGE[code];
     UI[code].nounPage = NOUN_PAGE[code] || NOUN_PAGE.en;
     UI[code].adjectivePage = ADJECTIVE_PAGE[code] || ADJECTIVE_PAGE.en;

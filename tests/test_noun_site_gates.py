@@ -83,24 +83,24 @@ def _sections(html: str) -> list[tuple[str, str]]:
 
 
 def test_a_verb_page_leads_to_the_verbs_as_its_section_and_to_the_nouns():
-    bar = render.top_bar(_text(), "../../", _language("bs"), "", section=render.VERBS, has_nouns=True)
+    bar = render.top_bar(_text(), "../../", _language("bs"), "", section=render.VERBS, published={render.NOUNS})
     assert _sections(bar) == [("../../bs/", ' aria-current="true"'), ("../../bs/imenica/", "")]
 
 
 def test_a_list_page_is_the_current_page_of_its_section():
     bar = render.top_bar(_text(), "../../", _language("en"), "", section=render.NOUNS, is_section_list=True,
-                         has_nouns=True)
+                         published={render.NOUNS})
     assert _sections(bar) == [("../../en/", ""), ("../../en/noun/", ' aria-current="page"')]
 
 
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES if language.code not in seo.NOUN_FOLDERS])
 def test_a_language_without_noun_pages_has_no_nouns_link(code):
-    bar = render.top_bar(_text(), "../", _language(code), "", section=render.VERBS, has_nouns=True)
+    bar = render.top_bar(_text(), "../", _language(code), "", section=render.VERBS, published={render.NOUNS})
     assert [path for path, _mark in _sections(bar)] == [f"../{code}/"]
 
 
 def test_no_nouns_link_before_the_nouns_are_published():
-    bar = render.top_bar(_text(), "../", _language("bs"), "", section=render.VERBS, has_nouns=False)
+    bar = render.top_bar(_text(), "../", _language("bs"), "", section=render.VERBS, published=())
     assert len(_sections(bar)) == 1
 
 
@@ -110,6 +110,7 @@ def test_the_app_hides_the_nouns_link_in_a_language_without_noun_pages():
     section = re.search(r"function renderSection\(link, path, label\) \{(.*?)\n  \}", app, re.S).group(1)
     assert "link.hidden = !path" in section and "paths.en" not in sections
     assert "DATA.nounPages" in sections and "DATA.adjectivePages" in sections and "DATA.nuancePages" in sections
+    assert "DATA.particlePages" in sections and 'id="particles-link" hidden' in app
     assert '<a id="verbs-link"' in app and 'id="nouns-link" hidden' in app and 'id="adjectives-link" hidden' in app
 
 
@@ -195,7 +196,8 @@ def test_every_page_has_the_same_top_bar_with_its_section_marked():
         is_adjective = folder == (seo.ADJECTIVE_FOLDERS.get(code),)
         is_nuance = folder == (seo.NUANCE_FOLDERS.get(code),)
         sections = _parsed(page).sections
-        expected = 1 + sum(code in folders for folders in (seo.NOUN_FOLDERS, seo.ADJECTIVE_FOLDERS, seo.NUANCE_FOLDERS))
+        expected = 1 + sum(code in folders for folders in (seo.NOUN_FOLDERS, seo.ADJECTIVE_FOLDERS, seo.NUANCE_FOLDERS,
+                                                           seo.PARTICLE_FOLDERS))
         assert len(sections) == expected, relative
         current = [index for index, (_href, mark) in enumerate(sections) if mark]
         assert current == [3 if is_nuance else 2 if is_adjective else 1 if is_noun else 0], relative

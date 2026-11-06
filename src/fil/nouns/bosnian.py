@@ -157,6 +157,13 @@ def case_of(noun: BosnianNoun, wanted: Phrase) -> str:
     return _preposition_and_case(noun, wanted)[1]
 
 
+def renderings(arabic_preposition: str) -> tuple[tuple[str, str], ...]:
+    """Every way a gloss renders an Arabic preposition (an ARABIC_PREPOSITIONS name): each Bosnian
+    preposition ("" = the bare case) with the case it takes — فِي: ("u", L), ("na", L)."""
+    return tuple((chosen, _CASE_OF.get(chosen) or DEFAULT_CASE[arabic_preposition])
+                 for chosen in ARABIC_PREPOSITIONS[arabic_preposition])
+
+
 def _preposition_and_case(noun: BosnianNoun, wanted: Phrase) -> tuple[str, str]:
     if wanted.oath:
         return "", GENITIVE

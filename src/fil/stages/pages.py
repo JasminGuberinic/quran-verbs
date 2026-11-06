@@ -13,6 +13,7 @@
       bs/imenica/, en/noun/          the studied nouns (fil.stages.noun_pages), Bosnian and English only
       bs/pridjev/, en/adjective/     the studied adjectives (fil.stages.adjective_pages), Bosnian and English only
       bs/nijanse/, en/nuances/       the groups of near-synonyms (fil.stages.nuance_pages), Bosnian and English only
+      bs/cestica/, en/particle/      the particles (fil.stages.particle_pages), Bosnian and English only
       pictures/<slug>.svg            the noun pictures the noun pages show
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
 
@@ -32,7 +33,7 @@ from __future__ import annotations
 import argparse
 import re
 import shutil
-from collections.abc import Iterable, Sequence
+from collections.abc import Collection, Iterable, Sequence
 from dataclasses import replace
 from pathlib import Path
 
@@ -44,9 +45,10 @@ from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
 from fil.resources import PAGES_DIR, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
-from fil.stages import adjective_pages, noun_pages, nuance_pages, nuance_site, site
+from fil.stages import adjective_pages, noun_pages, nuance_pages, nuance_site, particle_pages, particle_site, site
 from fil.stages.adjective_site import AdjectiveContent, assemble_adjectives
 from fil.stages.noun_site import NounContent, assemble_nouns, check_voiced
+from fil.stages.nuances import CatalogueConcordance
 
 _SOURCES = Path(__file__).resolve().parents[1] / "site"
 _VERIFICATION = _SOURCES / "verification"
@@ -88,24 +90,32 @@ def build(pages: Path) -> bool:
     verbs = published_verbs(content.cards, [verb.lemma for verb in service.list_verbs()])
     nouns = _assemble_nouns(sink, verbs)
     adjectives = _assemble_adjectives(sink, verbs)
-    nuances = _assemble_nuances(sink, verbs, nouns.cards, adjectives.cards)
+    studied = _studied_cards(verbs, nouns.cards, adjectives.cards)
+    catalogue = CatalogueConcordance.from_corpus()
+    nuances = nuance_site.assemble_nuances(site.Sound(sink), site.read_corpus().ayat, studied, catalogue)
+    particles = _assemble_particles(sink, studied, catalogue)
     unvoiced = noun_store.load_unvoiced()
     check_voiced([*nouns.cards, *adjectives.cards], unvoiced)
     nuance_site.check_voiced(nuances, unvoiced)
+    particle_site.check_voiced(particles, unvoiced)
+    published = frozenset(name for name, cards in ((render.NOUNS, nouns.cards), (render.ADJECTIVES, adjectives.cards),
+                                                   (render.NUANCES, nuances), (render.PARTICLES, particles)) if cards)
     content = replace(content, payload={**content.payload,
                                         "nounPages": noun_pages.app_paths() if nouns.cards else {},
                                         "adjectivePages": adjective_pages.app_paths() if adjectives.cards else {},
-                                        "nuancePages": nuance_pages.app_paths() if nuances else {}})
+                                        "nuancePages": nuance_pages.app_paths() if nuances else {},
+                                        "particlePages": particle_pages.app_paths() if particles else {}})
     site.write_app(pages, content)
     _write_app_page(pages, texts)
-    written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances)]
-    written += noun_pages.write(pages, nouns, texts, adjectives.cards, nuances)
-    written += adjective_pages.write(pages, adjectives, nouns.cards, texts, noun_pages.credits(nouns.pictures), nuances)
-    written += nuance_pages.write(pages, nuances, texts, {render.NOUNS: bool(nouns.cards),
-                                                          render.ADJECTIVES: bool(adjectives.cards)})
-    _write_site_files(pages, verbs, texts, nouns.cards, adjectives.cards, nuances)
+    written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances, published)]
+    written += noun_pages.write(pages, nouns, texts, adjectives.cards, nuances, published)
+    written += adjective_pages.write(pages, adjectives, nouns.cards, texts, noun_pages.credits(nouns.pictures), nuances,
+                                     published)
+    written += nuance_pages.write(pages, nuances, texts, published)
+    written += particle_pages.write(pages, particles, texts, published)
+    _write_site_files(pages, verbs, texts, nouns.cards, adjectives.cards, nuances, particles)
     check_audio_links(pages, written)
-    check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances])
+    check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles])
     site.report(pages, content)
     _report_size(pages, len(written))
     _report_indexing(verbs)
@@ -154,22 +164,29 @@ def _assemble_adjectives(sink, verbs: list[PublishedVerb]) -> AdjectiveContent:
     return assemble_adjectives(sound, site.read_corpus().ayat, verb_slugs)
 
 
-def _assemble_nuances(sink, verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives: Sequence[dict]) -> tuple[dict, ...]:
-    studied = nuance_site.StudiedCards(verbs={f"{verb.card['root']}_{verb.card['form']}": verb.slug for verb in verbs},
-                                       nouns={card["key"]: card["slug"] for card in nouns},
-                                       adjectives={card["key"]: card["slug"] for card in adjectives})
-    return nuance_site.assemble_nuances(site.Sound(sink), site.read_corpus().ayat, studied)
+def _studied_cards(verbs: list[PublishedVerb], nouns: Sequence[dict], adjectives: Sequence[dict]) -> nuance_site.StudiedCards:
+    return nuance_site.StudiedCards(verbs={f"{verb.card['root']}_{verb.card['form']}": verb.slug for verb in verbs},
+                                    nouns={card["key"]: card["slug"] for card in nouns},
+                                    adjectives={card["key"]: card["slug"] for card in adjectives})
+
+
+def _assemble_particles(sink, studied: nuance_site.StudiedCards, catalogue: CatalogueConcordance) -> tuple[dict, ...]:
+    """The particle cards, their ayat linking the words we teach (where the catalogues place them)."""
+    words = particle_site.StudiedWords.of(
+        verb_locations={f"{root}_{form}": locations for (root, form), locations in catalogue.verb_locations.items()},
+        lemma_locations={f"{lemma}|{root}": locations for (lemma, root), locations in catalogue.noun_locations.items()},
+        studied=studied)
+    return particle_site.assemble_particles(site.Sound(sink), site.read_corpus().ayat, words)
 
 
 def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict],
-                          nouns: NounContent, adjectives: Sequence[dict] = (), nuances: Sequence[dict] = ()) -> Iterable[Path]:
+                          nouns: NounContent, adjectives: Sequence[dict] = (), nuances: Sequence[dict] = (),
+                          published: Collection[str] = frozenset()) -> Iterable[Path]:
     credit_for = noun_pages.credits(nouns.pictures)
-    has_nouns, has_adjectives, has_nuances = bool(nouns.cards), bool(adjectives), bool(nuances)
     for language in LANGUAGES:
         text = texts[language.code]
         yield _write(pages, seo.language_index_path(language.code),
-                     render.language_index(verbs, language, text, has_nouns=has_nouns, has_adjectives=has_adjectives,
-                                           has_nuances=has_nuances))
+                     render.language_index(verbs, language, text, published=published))
         for verb in verbs:
             related = noun_pages.nouns_of_verb(verb.card, nouns.cards)
             section = noun_pages.nouns_of_verb_section(related, language, text)
@@ -178,8 +195,7 @@ def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[s
             adjectives_section = adjective_render.adjectives_section(verb.card, adjectives, language, text, path)
             groups = nuance_site.groups_of_verb(f"{verb.card['root']}_{verb.card['form']}", nuances)
             similar = nuance_render.similar_words_section(groups, language, text, seo.to_root(path))
-            yield _write(pages, path, render.verb_page(verb, language, text, section, has_nouns=has_nouns,
-                                                       has_adjectives=has_adjectives, has_nuances=has_nuances,
+            yield _write(pages, path, render.verb_page(verb, language, text, section, published=published,
                                                        picture_credit=credit, adjectives_of_root=adjectives_section,
                                                        similar_words=similar))
 
@@ -192,9 +208,9 @@ def _write(pages: Path, path: str, html: str) -> Path:
 
 
 def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, dict], nouns: Sequence[dict] = (),
-                      adjectives: Sequence[dict] = (), nuances: Sequence[dict] = ()) -> None:
+                      adjectives: Sequence[dict] = (), nuances: Sequence[dict] = (), particles: Sequence[dict] = ()) -> None:
     paths = [*page_paths(verbs), *noun_pages.page_paths(nouns), *adjective_pages.page_paths(adjectives),
-             *nuance_pages.page_paths(nuances)]
+             *nuance_pages.page_paths(nuances), *particle_pages.page_paths(particles)]
     (pages / "sitemap.xml").write_text(seo.sitemap(paths), encoding="utf-8")
     (pages / "robots.txt").write_text(seo.robots(), encoding="utf-8")
     listed = [seo.ListedVerb(verb.card["lemma"], verb.slug, verb.card["meaning"]["en"], verb.card["count"]) for verb in verbs]

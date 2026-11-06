@@ -221,7 +221,7 @@ def _language(code: str):
 @needs_node
 def test_a_group_page_shows_each_word_its_voice_its_card_and_its_ayat(texts):
     html = nuance_render.nuance_page(_group_card(), _language("bs"), texts["bs"],
-                                     studied_sections={render.NOUNS: True, render.ADJECTIVES: True})
+                                     published={render.NOUNS, render.ADJECTIVES})
     assert "<h1>Srce</h1>" in html and "Kako ih razlikovati" in html and "Zašto ova riječ ovdje" in html
     assert 'data-audio="../../../audio/q.m4a"' in html                       # the headword's voice
     assert '<mark data-audio="../../../audio/w.m4a"' in html                 # the word in the ayah, recited
@@ -234,7 +234,7 @@ def test_a_group_page_shows_each_word_its_voice_its_card_and_its_ayat(texts):
 @needs_node
 def test_the_list_of_groups_links_every_group(texts):
     html = nuance_render.nuance_index([_group_card(), _group_card("jaa")], _language("en"), texts["en"],
-                                      studied_sections={})
+                                      published=())
     assert 'href="qalb-fuad/"' in html and 'href="jaa/"' in html and "Nuances: near-synonyms" in html
 
 
@@ -249,6 +249,6 @@ def test_similar_words_link_the_group_only_where_nuance_pages_exist(texts):
 @needs_node
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES])
 def test_the_top_bar_leads_to_the_nuances_only_in_bosnian_and_english(texts, code):
-    bar = render.top_bar(texts[code], "../", _language(code), "", section=render.VERBS, has_nouns=True,
-                         has_adjectives=True, has_nuances=True)
+    bar = render.top_bar(texts[code], "../", _language(code), "", section=render.VERBS,
+                         published={render.NOUNS, render.ADJECTIVES, render.NUANCES})
     assert (f'href="../{code}/{seo.NUANCE_FOLDERS.get(code)}/"' in bar) == (code in seo.NUANCE_FOLDERS)

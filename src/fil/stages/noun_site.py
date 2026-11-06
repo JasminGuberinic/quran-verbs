@@ -71,7 +71,7 @@ def assemble_nouns(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord,
     cards, lists = [], []
     for meaning in meanings:
         lemma = by_key[meaning.key]
-        builder = _CardBuilder(lemma, meaning, tables[meaning.key], bosnian[meaning.key],
+        builder = NounCardBuilder(lemma, meaning, tables[meaning.key], bosnian[meaning.key],
                                by_lemma[(lemma.lemma, lemma.root)], sound, ayat)
         card = {**builder.card(slugs[(lemma.lemma, lemma.root)], verb_pages,
                                [sentence for sentence in sentences if sentence.key == meaning.key],
@@ -108,7 +108,7 @@ def _shown_pictures() -> list[NounPicture]:
         return []
 
 
-class _CardBuilder:
+class NounCardBuilder:
     """One noun's card; holds what its parts share (its glossing, its occurrences, the sound)."""
 
     def __init__(self, lemma: NounLemma, meaning: NounMeaning, table: NounTable, bosnian, occurrences: Sequence[NounOccurrence],
@@ -119,8 +119,12 @@ class _CardBuilder:
             english=EnglishNoun(meaning.en_first, meaning.en_plural_first, meaning.is_countable),
             bosnian=bosnian, is_accusative_adverbial=meaning.is_accusative_adverbial, is_polysemous=meaning.is_polysemous,
             lemma=lemma.lemma, main_plural=lemma.plurals[0].text if lemma.plurals else None)
-        self.forms = _forms(occurrences)
+        self.forms = quran_forms(occurrences)
         self.unvoiced: list[str] = []
+
+    def compose(self, occurrences: Sequence[NounOccurrence]):
+        """A form's gloss, or why it keeps its label; the adjectives' builder composes its own way."""
+        return compose(occurrences, self.glossing)
 
     def card(self, slug: str, verb_pages: Mapping[str, str], sentences: Sequence[NounSentence],
              picture: NounPicture | None) -> dict:
@@ -189,7 +193,7 @@ class _CardBuilder:
     def _related(self, word: RelatedNoun, occurrences_of: Mapping[tuple[str, str], Sequence[NounOccurrence]],
                  pages_of: Mapping[str, str]) -> dict:
         found = occurrences_of.get(tuple(word.lemma.split("|")), ()) if word.lemma else ()
-        location = _recited_locations(found).get(spelling_key(word.arabic))
+        location = recited_locations(found).get(spelling_key(word.arabic))
         recited = self.sound.word(*location) if location else None
         return {"role": word.role, "arabic": word.arabic, "gender": word.gender, "meaning": {"en": word.en, "bs": word.bs},
                 "audio": recited or self._spoken(word.arabic), "recited": bool(recited), "quranCount": len(found),
@@ -198,7 +202,7 @@ class _CardBuilder:
     # ---------------------------------------------------------------- the case table
 
     def _row(self, row) -> dict:
-        recited = _recited_locations(self.occurrences)
+        recited = recited_locations(self.occurrences)
         return {"row": row.row, "number": row.number, "plural": row.plural,
                 "cells": [self._cell(found, recited) for found in row.cells]}
 
@@ -232,7 +236,7 @@ class _CardBuilder:
             first = found[0]
             if preposition or not first.parts or first.parts.possessive is None or first.parts.proclitics:
                 continue
-            gloss = compose(found, self.glossing)
+            gloss = self.compose(found)
             if isinstance(gloss, Composed):
                 return explaining.QuranicPossessive(text, gloss, (first.surah, first.ayah, first.word))
         return None
@@ -252,10 +256,10 @@ class _CardBuilder:
     def _form(self, form) -> dict:
         (preposition, text), found = form
         first = found[0]
-        view = {"preposition": _written(preposition, text), "arabic": text,
+        view = {"preposition": written_preposition(preposition, text), "arabic": text,
                 "count": len(found), "first": f"{first.surah}:{first.ayah}",
-                "audio": self.sound.word(first.surah, first.ayah, first.word), "grammar": _grammar(first)}
-        gloss = compose(found, self.glossing)
+                "audio": self.sound.word(first.surah, first.ayah, first.word), "grammar": grammar_of(first)}
+        gloss = self.compose(found)
         if isinstance(gloss, Composed):
             view["gloss"] = {"en": gloss.en, "bs": gloss.bs}
         else:
@@ -263,7 +267,7 @@ class _CardBuilder:
         return view
 
     def _example_ayat(self) -> list[dict]:
-        return [self._ayah_view(surah, ayah) for surah, ayah in _example_places(self.occurrences, self.ayat)]
+        return [self._ayah_view(surah, ayah) for surah, ayah in example_places(self.occurrences, self.ayat)]
 
     def _ayah_view(self, surah: int, ayah: int) -> dict:
         hits = {occurrence.word: occurrence for occurrence in self.occurrences if (occurrence.surah, occurrence.ayah) == (surah, ayah)}
@@ -273,12 +277,12 @@ class _CardBuilder:
             if occurrence is None:
                 words.append({"text": word.text, "hit": False})
                 continue
-            gloss = compose((occurrence,), self.glossing)
+            gloss = self.compose((occurrence,))
             preposition = separate_preposition(occurrence)
             words.append({"text": word.text, "hit": True, "audio": self.sound.word(surah, ayah, word.number),
-                          "preposition": _written(preposition, word.text),
+                          "preposition": written_preposition(preposition, word.text),
                           "gloss": {"en": gloss.en, "bs": gloss.bs} if isinstance(gloss, Composed) else None,
-                          "grammar": _grammar(occurrence)})
+                          "grammar": grammar_of(occurrence)})
         first_hit = next(occurrence for occurrence in hits.values())
         return {"ref": f"{surah}:{ayah}", "audio": self.sound.ayah(surah, ayah),
                 "category": {"case": first_hit.case, "number": first_hit.number},
@@ -337,7 +341,7 @@ def check_voiced(cards: Iterable[dict], documented: Mapping[str, str]) -> None:
 FormKey = tuple[str | None, str]   # (the preposition standing before, the word as written)
 
 
-def _forms(occurrences: Sequence[NounOccurrence]) -> list[tuple[FormKey, list[NounOccurrence]]]:
+def quran_forms(occurrences: Sequence[NounOccurrence]) -> list[tuple[FormKey, list[NounOccurrence]]]:
     """Every form, commonest first: a word with the preposition standing before it, if any."""
     grouped: dict[FormKey, list[NounOccurrence]] = defaultdict(list)
     for occurrence in occurrences:
@@ -345,7 +349,7 @@ def _forms(occurrences: Sequence[NounOccurrence]) -> list[tuple[FormKey, list[No
     return sorted(grouped.items(), key=lambda item: (-len(item[1]), item[1][0].surah, item[1][0].ayah))
 
 
-def _written(preposition: str | None, word: str) -> str:
+def written_preposition(preposition: str | None, word: str) -> str:
     """The preposition as it is said before this word: مِنَ before the article, else مِنْ."""
     if not preposition:
         return ""
@@ -354,14 +358,14 @@ def _written(preposition: str | None, word: str) -> str:
     return _WRITTEN.get(preposition, preposition)
 
 
-def _grammar(occurrence: NounOccurrence) -> dict:
+def grammar_of(occurrence: NounOccurrence) -> dict:
     parts = occurrence.parts
     return {"case": occurrence.case, "number": occurrence.number, "state": occurrence.state,
             "possessor": parts.possessive if parts else None,
             "proclitics": list(parts.proclitics) if parts else []}
 
 
-def _recited_locations(occurrences: Iterable[NounOccurrence]) -> dict[str, tuple[int, int, int]]:
+def recited_locations(occurrences: Iterable[NounOccurrence]) -> dict[str, tuple[int, int, int]]:
     """Where the Quran says a cell as a word of its own — nothing attached before or after."""
     found: dict[str, tuple[int, int, int]] = {}
     for occurrence in occurrences:
@@ -370,7 +374,7 @@ def _recited_locations(occurrences: Iterable[NounOccurrence]) -> dict[str, tuple
     return found
 
 
-def _example_places(occurrences: Sequence[NounOccurrence],
+def example_places(occurrences: Sequence[NounOccurrence],
                     ayat: Mapping[tuple[int, int], tuple[QuranWord, ...]]) -> list[tuple[int, int]]:
     """Up to EXAMPLE_AYAT ayat showing different cases and numbers: per (case, number), the
     shortest ayah that has it, the commonest uses first."""

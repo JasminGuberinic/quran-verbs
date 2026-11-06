@@ -60,7 +60,7 @@ class Skipped:
     reason: str
 
 
-class _Beyond(ValueError):
+class BeyondTheRules(ValueError):
     """The form holds something the rules do not cover."""
 
 
@@ -86,9 +86,9 @@ def compose(occurrences: Sequence[NounOccurrence], noun: NounGlossing) -> Compos
     if noun.is_polysemous:
         return Skipped("polysemous noun")
     try:
-        occurrence = _single_reading(occurrences)
+        occurrence = single_reading(occurrences)
         return _composed(occurrence, noun)
-    except (_Beyond, CannotSay) as reason:
+    except (BeyondTheRules, CannotSay) as reason:
         return Skipped(str(reason))
 
 
@@ -96,15 +96,15 @@ def compose_one(occurrence: NounOccurrence, noun: NounGlossing) -> Composed | Sk
     return compose((occurrence,), noun)
 
 
-def _single_reading(occurrences: Sequence[NounOccurrence]) -> NounOccurrence:
+def single_reading(occurrences: Sequence[NounOccurrence]) -> NounOccurrence:
     if not occurrences:
-        raise _Beyond("no occurrence")
+        raise BeyondTheRules("no occurrence")
     unclean = next((occurrence for occurrence in occurrences if not occurrence.is_clean), None)
     if unclean is not None:
-        raise _Beyond(unclean.skip_reason or "not decomposed")
+        raise BeyondTheRules(unclean.skip_reason or "not decomposed")
     readings = {_reading(occurrence) for occurrence in occurrences}
     if len(readings) != 1:
-        raise _Beyond("readings differ")
+        raise BeyondTheRules("readings differ")
     return occurrences[0]
 
 
@@ -122,7 +122,7 @@ def _follows(occurrence: NounOccurrence) -> str | None:
 def _composed(occurrence: NounOccurrence, noun: NounGlossing) -> Composed:
     parts = occurrence.parts
     if occurrence.case is None:
-        raise _Beyond("no case")
+        raise BeyondTheRules("no case")
     _require_main_plural(occurrence, noun)
     conjunction = _conjunction(parts)
     is_oath = OATH in parts.proclitics
@@ -146,13 +146,13 @@ def _require_main_plural(occurrence: NounOccurrence, noun: NounGlossing) -> None
         return
     pattern = plural_pattern(plural_kind(noun.lemma, occurrence.stem), occurrence.stem)
     if pattern != plural_pattern(plural_kind(noun.lemma, noun.main_plural), noun.main_plural):
-        raise _Beyond("second plural")
+        raise BeyondTheRules("second plural")
 
 
 def _conjunction(parts: NounParts) -> tuple[str | None, str | None]:
     others = [name for name in parts.proclitics if name not in (*_CONJUNCTIONS, *_ATTACHED_PREPOSITIONS, OATH)]
     if others:
-        raise _Beyond(f"proclitic {others[0]}")
+        raise BeyondTheRules(f"proclitic {others[0]}")
     found = next((name for name in parts.proclitics if name in _CONJUNCTIONS), None)
     return _CONJUNCTIONS[found] if found else (None, None)
 
@@ -166,7 +166,7 @@ def _preposition(occurrence: NounOccurrence) -> str | None:
         return None
     name = SEPARATE_PREPOSITIONS.get(parts.governing_preposition)
     if name is None:
-        raise _Beyond(f"preposition {parts.governing_preposition}")
+        raise BeyondTheRules(f"preposition {parts.governing_preposition}")
     return name
 
 
@@ -178,6 +178,6 @@ def _require_object_if_accusative(occurrence: NounOccurrence, preposition: str |
     if occurrence.case != ACCUSATIVE or preposition:
         return
     if occurrence.parts.follows:
-        raise _Beyond(f"accusative after {occurrence.parts.follows}")
+        raise BeyondTheRules(f"accusative after {occurrence.parts.follows}")
     if noun.is_accusative_adverbial:
-        raise _Beyond("adverbial accusative")
+        raise BeyondTheRules("adverbial accusative")

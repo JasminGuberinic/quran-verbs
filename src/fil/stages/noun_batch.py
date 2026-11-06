@@ -30,7 +30,7 @@ import json
 import sys
 import unicodedata
 from collections import Counter
-from collections.abc import Iterator, Sequence
+from collections.abc import Callable, Iterator, Sequence
 from dataclasses import dataclass, replace
 from pathlib import Path
 
@@ -84,7 +84,7 @@ def plan(arguments: Sequence[str]) -> None:
     if arguments[:1] == ["next"]:
         chosen, skipped = next_nouns(lemmas, int(arguments[1]), studied, HELD_BACK)
     else:
-        chosen, skipped = _listed(lemmas, Path(arguments[0])), []
+        chosen, skipped = listed_lemmas(lemmas, Path(arguments[0])), []
     OUT.mkdir(parents=True, exist_ok=True)
     BATCH.write_text("".join(f"{_key(lemma)}\n" for lemma in chosen), encoding="utf-8")
     _write_tsv(OUT / "plan.tsv", ("key", "rank", "kind", "gender", "count", "numbers", "plurals", "verb"),
@@ -110,7 +110,7 @@ def _unreviewed_collectives(chosen: Sequence[NounLemma], catalogue: Sequence[Nou
             for why in [likely_collective(lemma, catalogue)] if why]
 
 
-def _listed(lemmas: Sequence[NounLemma], path: Path) -> list[NounLemma]:
+def listed_lemmas(lemmas: Sequence[NounLemma], path: Path) -> list[NounLemma]:
     wanted = [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
               and not line.startswith("#")]
     exact = {_key(lemma): lemma for lemma in lemmas}
@@ -131,12 +131,12 @@ def _listed(lemmas: Sequence[NounLemma], path: Path) -> list[NounLemma]:
 
 def _write_todo_meanings(lemmas: Sequence[NounLemma]) -> None:
     analyze = service.camel_analyzer()
-    rows = [(_key(lemma), str(lemma.count), "; ".join(_lexicon_glosses(lemma.lemma, analyze))[:120])
+    rows = [(_key(lemma), str(lemma.count), "; ".join(lexicon_glosses(lemma.lemma, analyze))[:120])
             for lemma in lemmas]
     _write_tsv(OUT / "todo-meanings.tsv", ("key", "count", "lexicon glosses"), rows)
 
 
-def _lexicon_glosses(arabic: str, analyze) -> list[str]:
+def lexicon_glosses(arabic: str, analyze) -> list[str]:
     return list(dict.fromkeys(analysis.get("gloss", "") for analysis in analyze(arabic)
                               if analysis.get("pos") in ("noun", "adj", "noun_prop") and analysis.get("gloss")))
 
@@ -259,15 +259,18 @@ def wordbank() -> None:
     print(f"wordbank: {len(bank)} accepted words → {OUT}/wordbank.tsv")
 
 
-def parse_draft_line(line: str, keys_by_lemma: dict[str, str]) -> SentenceDraft:
+def parse_draft_line(line: str, keys_by_lemma: dict[str, str], roles: Sequence[str] = sentence_gate.ROLES,
+                     as_catalogued: Callable[[str], str] | None = None) -> SentenceDraft:
+    """One drafted line; `roles` and `as_catalogued` (a typed key → the stored one) let the
+    adjectives' batch (fil.stages.adjectives) read the same format."""
     columns = [column.strip() for column in line.rstrip("\n").split("\t")]
     if len(columns) != 7:
         raise DraftLineError(f"expected 7 tab-separated columns, got {len(columns)}")
     key, role, arabic, en, bs, en_glosses, bs_glosses = columns
-    key = keys_by_lemma.get(unicodedata.normalize("NFD", key), _as_catalogued(key))
+    key = keys_by_lemma.get(unicodedata.normalize("NFD", key), (as_catalogued or _as_catalogued)(key))
     tokens, en_words, bs_words = arabic.split(), en_glosses.split("|"), bs_glosses.split("|")
-    if role not in sentence_gate.ROLES:
-        raise DraftLineError(f"role must be one of {', '.join(sentence_gate.ROLES)}")
+    if role not in roles:
+        raise DraftLineError(f"role must be one of {', '.join(roles)}")
     if not (len(tokens) == len(en_words) == len(bs_words)):
         raise DraftLineError(f"{len(tokens)} Arabic words but {len(en_words)} en / {len(bs_words)} bs glosses")
     if not 2 <= len(tokens) <= MAX_WORDS:

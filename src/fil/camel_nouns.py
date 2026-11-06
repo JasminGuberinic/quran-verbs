@@ -55,8 +55,12 @@ class CamelNounGenerator:
 
         return Generator(self._database)
 
-    def __init__(self) -> None:
+    def __init__(self, is_gender_strict: bool = False) -> None:
+        """`is_gender_strict`: never fall back to an ungendered request. A noun's gender is a
+        hint (CAMeL files some nouns without one); an adjective's is the cell asked for — asked
+        for a masculine plural it does not know, CAMeL would answer with the feminine one."""
         self._lexemes: dict[str, tuple[tuple[str, str], ...]] = {}
+        self._is_gender_strict = is_gender_strict
 
     def generate(self, lemma: NounLemma, cell: Cell) -> tuple[str, ...]:
         """Every form CAMeL gives for the cell, trying each part of speech the lex has."""
@@ -86,7 +90,8 @@ class CamelNounGenerator:
     def _declined(self, lex: str, pos: str, lemma: NounLemma, cell: Cell) -> tuple[str, ...]:
         features = {"pos": pos, "num": _NUMBERS[cell.number], "cas": _CASES[cell.case], **_state(cell)}
         if lemma.gender in _GENDERS:
-            return self._forms(lex, {**features, "gen": _GENDERS[lemma.gender]}) or self._forms(lex, features)
+            gendered = self._forms(lex, {**features, "gen": _GENDERS[lemma.gender]})
+            return gendered if gendered or self._is_gender_strict else self._forms(lex, features)
         return self._forms(lex, features)
 
     def _forms(self, lex: str, features: dict[str, str]) -> tuple[str, ...]:

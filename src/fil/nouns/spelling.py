@@ -28,11 +28,12 @@ _UTHMANI_MARKS = {chr(code) for code in range(0x06D6, 0x06EE)} | {chr(0x0653)}
 # Inside a word, yāʾ-shaped ى under a dagger alif is only its seat: أَيَّىٰم is أيّام.
 _SEATED_DAGGER_ALEF = re.compile(chr(0x0649) + chr(0x0670) + "(?=[" + chr(0x0621) + "-" + chr(0x064A) + "])")
 # Inside a word, Uthmani آ is a long alif with a madd sign (قَآئِم, ٱلضَّآلِّينَ); it writes
-# hamza + alif as ءَا. Only at the start (a lemma's آيَة) is آ hamza + alif.
+# hamza + alif as ءَا. At the start (a lemma's آيَة) and right after the article (imlāʾī الْآخَرُونَ,
+# Uthmani ٱلْءَاخَرِينَ) آ is hamza + alif.
 # A dagger alif after fatḥa is the long ā itself, even over a doubled yāʾ (ذُرِّيَّٰت);
 # folded before `orthographic_key`, which reads one over yāʾ as a mere reading aid.
 _DAGGER_AFTER_FATHA = re.compile("(?<=[" + chr(0x064E) + chr(0x0651) + "])" + chr(0x0670))
-_MEDIAL_MADD = re.compile("(?<=.)آ")
+_MEDIAL_MADD = re.compile("(?<=.)(?<!ال)(?<!ٱل)(?<!ال" + _SUKUN + ")(?<!ٱل" + _SUKUN + ")آ")
 # Uthmani writes some long ā on a silent wāw (ٱلصَّلَوٰة, ٱلْحَيَوٰة, ٱلزَّكَوٰة): a wāw carrying the
 # dagger alif directly, with no vowel of its own, is only the alif's seat — imlāʾī الصَّلَاة.
 _SILENT_WAW_SEAT = "و" + chr(0x0670)
@@ -94,3 +95,31 @@ def standalone(stem: str) -> str:
     marks_end = next((index for index, char in enumerate(text[1:], 1) if not unicodedata.combining(char)), len(text))
     text = text[0] + text[1:marks_end].replace(_SHADDA, "") + text[marks_end:]
     return text.replace(_IQLAB_MARKS[0], "").replace(_IQLAB_MARKS[1], "")
+
+
+# ------------------------------------------------------------------ Uthmani → standard spelling
+
+_DAGGER_ALEF = chr(0x0670)
+_ALEF_WASLA = "ٱ"
+_ALEF_MAQSURA = "ى"
+_VOWEL_MARKS = "[" + chr(0x064B) + "-" + chr(0x0652) + "]*"
+_UTHMANI_HAMZA_ALEF = re.compile("(?:(?<=ل" + _SUKUN + ")|^)" + _HAMZA + _FATHA + _ALEF)   # ٱلْءَاخَرُ → الْآخَرُ
+# Uthmani writes yāʾ undotted at a word's end; one carrying a vowel or shadda (عَرَبِىٌّ, عُمْىٌ), seating a
+# hamza (بَرِىٓءٌ) or after kasra is the consonant or long ī — written ي; alif maqṣūra never carries a vowel.
+_YA_SHAPED = re.compile(_ALEF_MAQSURA + "(?=[" + chr(0x064B) + "-" + chr(0x0651) + "]|" + _VOWEL_MARKS + _HAMZA + ")|(?<="
+                        + chr(0x0650) + ")" + _ALEF_MAQSURA)
+_HAMZA_ON_TATWEEL_AFTER_YA = re.compile("(?<=ي)" + _TATWEEL + "(" + _VOWEL_MARKS + ")" + _HAMZA_ABOVE)
+
+
+def imlai(form: str) -> str:
+    """The form in the standard (imlāʾī) spelling a learner reads in a modern sentence: the Quran's
+    Uthmani ٱلْكِتَٰبُ → الْكِتَابُ, ٱلْءَاخَرُ → الْآخَرُ, بَرِىٓءٌ → بَرِيءٌ, عَرَبِىٌّ → عَرَبِيٌّ. Only folds
+    `spelling_key` already treats as the same word; a form whose fold would change it is returned as it is."""
+    text = unicodedata.normalize("NFC", form)
+    standard = _UTHMANI_HAMZA_ALEF.sub("آ", text.replace(_ALEF_WASLA, _ALEF))
+    standard = _DAGGER_AFTER_FATHA.sub(_ALEF, standard).replace(_ALEF_MAQSURA + _DAGGER_ALEF, _ALEF_MAQSURA)
+    standard = "".join(char for char in standard if char not in _UTHMANI_MARKS)
+    standard = _YA_SHAPED.sub("ي", standard)
+    standard = _HAMZA_ON_TATWEEL_AFTER_YA.sub(lambda found: "ئ" + found.group(1), standard)
+    standard = _MEDIAL_MADD.sub(_ALEF, unicodedata.normalize("NFC", standard))   # أَسْمَآءٌ → أَسْمَاءٌ
+    return standard if spelling_key(standard) == spelling_key(form) else form

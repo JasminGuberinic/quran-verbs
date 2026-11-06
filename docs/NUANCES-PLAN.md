@@ -42,3 +42,12 @@ Verbs: عَلِمَ/عَرَفَ · خَلَقَ/جَعَلَ/فَطَرَ · أ
 in 29:14, the attribution of "ḍiyāʾ is stronger than nūr" to az-Zamaḫšarī (now unattributed tafsir), the
 locus of the Ibn ʿAbbās fāṭir report, ar-Rāġib's "khaṭīʾa is mostly unintended" and al-ʿAskarī's entries
 (not verifiable here).
+
+## Batch 3 (25 groups, 55 in all)
+Verbs: آمَنَ/أَسْلَمَ/أَيْقَنَ · دَعَا/نَادَى · مَاتَ/تَوَفَّى · سَأَلَ/اِسْتَفْتَى · أَمَرَ/وَصَّى · نَهَى/حَرَّمَ · تَرَكَ/وَذَرَ · جَمَعَ/حَشَرَ ·
+أَهْلَكَ/دَمَّرَ · كَسَبَ/اِكْتَسَبَ · غَفَرَ/عَفَا/كَفَّرَ · تَابَ/أَنَابَ. Nouns and adjectives: رَحْمٰن/رَحِيم/رَءُوف · كَفَرَ/مُشْرِك/مُنَافِق ·
+هُدًى/رُشْد · ضَلَال/غَيّ · ظُلْم/بَغْي/عُدْوَان · عَدْل/قِسْط · جَزَاء/أَجْر/ثَوَاب · نَار/جَحِيم/سَعِير · قَرْيَة/مَدِينَة · فَقِير/مِسْكِين ·
+وَلِيّ/نَصِير · شَكّ/رَيْب · أَب/وَالِد. Held back after review: the claim that ar-Rāġib cites 9:128 for raḥīm, ar-Rāġib's own
+wording on rayb (now tafsir on 2:2), "Form VIII stresses effort" as his (now "many mufassirun", with the dissent),
+and al-ʿAskarī throughout. Not built: a Paradise-names group (فِرْدَوْس, عَدْن and جَهَنَّم are outside the noun
+catalogue). The faqīr/miskīn dispute is shown with both sides' proof ayat, neither chosen.

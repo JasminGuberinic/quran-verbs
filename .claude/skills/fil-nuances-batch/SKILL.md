@@ -92,3 +92,26 @@ alima-arafa · khalaqa-jaala-fatara · arsala-baatha · qala-kallama-nataqa · s
   as az-Zamaḫšarī's → "tafsir often explains"); and ayat about Allah that need the tafsir gloss beside them
   (24:35 light, 43:55 anger). Write those safeguards in the first draft.
 - Giving tāʾ-marbūṭa headwords `spoken` up front (سَيِّئَةٌ, خَطِيئَةٌ, سَنَةٌ) let `fil pages` pass first time.
+
+## Batch 3 (2026-11-06): 25 groups → 55
+rahman-rahim-rauf · kafara-mushrik-munafiq · amana-aslama-ayqana · daa-nada · huda-rushd · dalal-ghayy
+· zulm-baghy-udwan · adl-qist · jaza-ajr-thawab · nar-jahim-sair · qarya-madina · mata-tawaffa · saala-istafta
+· amara-wassa · naha-harrama · taraka-wadhara · jamaa-hashara · ahlaka-dammara · kasaba-iktasaba · faqir-miskin
+· wali-nasir · shakk-rayb · ghafara-afa-kaffara · taba-anaba · ab-walid. Lessons:
+- Check the catalogue before planning a group: جَهَنَّم, فِرْدَوْس, عَدْن are proper names outside the noun catalogue
+  (so no Paradise-names group; Hell is نَار/جَحِيم/سَعِير); رَأْفَة is 2× (use the adjective رَءُوف); the corpus
+  splits وَالِد / وَالِدَي and أَب / آبَاء / أَبَوَان, رُشْد / رَشَد, مَدِينَة / مَدَائِن — sum and note.
+- Let the merge script resolve lemma keys against catalogue.tsv by (root, consonant skeleton) and fail on
+  ambiguity: no hand-typed key reached the file, and `check` passed first time.
+- A member ayah must hold the member's own lemma: a verb member cannot be illustrated by an ayah with only
+  its verbal noun (دَعَا with 2:171 دُعَاءً وَنِدَاءً) — `check` catches it, but pick right in the draft.
+- A `build/scratch/forms.py` listing (service.form_occurrences with tense/pronoun/passive) settles
+  grammar claims fast: وَذَرَ never in the past (45/45), أَنَابَ never with Allah as subject, تَوَفَّى's subject
+  always Allah / angels / death or passive.
+- What the reviewers flagged most this time: a later tafsir point put under ar-Rāġib's name (iktasaba
+  "stresses effort"); "tafsir says" where it is "many / some mufassirun"; a definition that takes one side of a
+  named dispute (faqīr/miskīn tellApart); conditionals about the Prophet (10:94) and ayat about forgiveness
+  (39:53 with 4:48) that need the majority reading beside them; bs/en drift inside quoted ayat (Korkut vs
+  Sahih wording, e.g. 6:60 "uspavljuje" vs "takes your souls"); and ayat cited for what the next ayah says
+  (96:9 vs 96:10, 20:59 vs 20:60). "bijednik" is pejorative for مِسْكِين: use "nevoljnik, potrebit".
+- بَغْي needed `spoken` بَغْيٌ (a final yāʾ with sukūn, like the tāʾ marbūṭa cases).

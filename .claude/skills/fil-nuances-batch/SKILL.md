@@ -336,3 +336,29 @@ on `blind10.py`'s halves with `REVIEW-BRIEF10.md` → `flags9.py` → `apply_rev
   place is not an instance); "always" broken by a reading he himself reports (aʿnāq = nobles in 26:4); 53:1 given a plain sense
   he gives three readings of; a capitalised "Onome" that reads as a Name of Allah.
 - `spoken` was needed for كَلِمَة (كَلِمَةٌ) and لَغْو (لَغْوٌ) — `spoken10.py` inserts it before `count`.
+
+## Batch 11 (2026-11-06): 25 groups → 255 — the planned set is complete
+wahid-ahad · malik-maalik-maliik · ghafur-ghaffar-afuww · qadir-muqtadir · khaliq-bari-musawwir · saa-qiyama-qaria · jinn-jann
+· dhikr-dhikra-tadhkira · ama-akmah · sam-udhun · rijl-qadam · alqa-nabadha-taraha · tafarraqa-ikhtalafa · qaddama-aslafa
+· ibtagha-talaba · dayn-qard · nahr-ayn-yanbu · adhb-furat-milh-ujaj · waswasa-nazagha-sawwala · adalla-aghwa · gharra-khadaa
+· hajara-itazala · farrata-adaa · mala-sayyid-kubara · tamanna-umniyya-amal. Verbs 500–601 landed on study-site only while the batch was being finished (rebased onto them, retested).
+Same order as batch 10 (`lookup.py` → 3 drafter forks with `DBRIEF11.md` → `merge11.py` → `new11.py` + `packets.py` → 3 verifiers
+with `VBRIEF11.md` → `apply5.py` → 2 Sonnet reviewers on `blind11.py`'s halves with `REVIEW-BRIEF11.md` → `flags9.py` →
+`apply_review.py` + `review_overrides.py` → `fix11.py fixes11r` (exact-string fixes from a module of (slug, old, new)) →
+`notes11review.py`). `check` passed at merge with only the expected "no verified record"; `fil pages` passed first time (every
+tāʾ-marbūṭa / sukūn-final headword had `spoken` in the draft). Lessons:
+- One drafter wrote a ninth group (26 in all): set the weakest aside (sarafa-radda, kept in build/scratch as a spare) rather
+  than overshoot the planned count.
+- Verification: 417 points, 384 confirmed, 30 partial, 2 different, 1 not found; 31 texts changed. Caught: a verse he quotes
+  given the wrong number again (his ﴿وقال الملأ من قومه﴾ is 23:33 not 7:60; his عفوا غفورا wording is 4:43 not 4:99; والذين هاجروا
+  وجاهدوا is 2:218 not 8:74); "كما فسره بقوله" read as his explanation when it is Allah's own words (83:6); one of his two answers
+  dropped (23:14; Allah's iḍlāl "of two kinds"); a vowel filled from memory (1:4 malik/mālik, ṭirḥ, nahar) — say less.
+- Blind review flagged 36 of 92 claims; 29 flags were Bosnian quotes close to Korkut — still the most common flag, above all for
+  Names-of-Allah ayat (54:55, 67:1, 42:50, 15:49, 4:99, 6:102, 23:14). Also: "in all N places" where the reviewer counted other
+  forms (keep a count only when the point needs it, and say whether it counts verses or occurrences); "mostly in regret" broken
+  by 6:38 / 6:61; "these are claims without proof" broken by 2:78; a commentators' reading ("the second word strengthens the
+  first") stated as fact; Allah as subject of خَادَعَ quoted bare in bs (4:142) — paraphrase it with both of his readings.
+- Remaining good candidates for any future batch (not built): صَرَفَ/رَدَّ (drafted, set aside), نُطْفَة/مَنِيّ (مَنِيّ 1×), ظَهْر/صُلْب,
+  بَطْن/جَوْف (جَوْف 1×), حَيَاة/مَعِيشَة, اِقْتَدَى/أُسْوَة/إِمَام, عَزِيز/قَوِيّ/مَتِين, أَكْرَمَ/أَعَزَّ; the verbs 501–600
+  (landed after this batch was drafted); particle groups (لَنْ/لَا, إِنْ/إِذَا) once fil.nuances.model has a particle identity. Not buildable
+  from the catalogue: Paradise names (فِرْدَوْس, عَدْن), شَيْطَان/إِبْلِيس, رِيح/رِيَاح (one lemma), حِجْر as intellect (1×).

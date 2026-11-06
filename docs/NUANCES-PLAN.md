@@ -207,3 +207,28 @@ bed group. Left out on purpose: 3:159, 33:37, 74:6, 9:84, 9:108, 73:2, 74:2, 4:8
 by the Prophet), 26:22, 18:14, 66:3, 31:6, 2:37, 14:25, 38:32, 26:4 and 53:1 as illustrations, 53:1 / 55:6 / 56:75 / 86:3
 (several readings), 6:76, 12:4, 37:88, 56:34, 12:100, 38:24, 7:143, 8:12, 47:4, 38:33, 4:14, 4:93, 20:120, 2:36, 7:24, 11:47,
 20:37, 33:53, 17:45; 48:10 is paraphrased, not quoted.
+
+## Batch 11 (25 groups, 255 in all) — the planned set is complete
+The planned final batch. Allah's Names (each "as befits Him"): وَاحِد/أَحَد · مَلِك/مَالِك/مَلِيك · غَفُور/غَفَّار/عَفُوّ · قَدِير/قَادِر/مُقْتَدِر ·
+خَالِق/بَارِئ/مُصَوِّر. The unseen and the Day: سَاعَة/قِيَامَة/قَارِعَة/حَاقَّة · جِنّ/جَانّ/جِنَّة. Reminding and sight: ذِكْر/ذِكْرَى/تَذْكِرَة ·
+أَعْمَى/أَكْمَه. The body: سَمْع/أُذُن · رِجْل/قَدَم. Acts: أَلْقَى/نَبَذَ/طَرَحَ · تَفَرَّقَ/اخْتَلَفَ · قَدَّمَ/أَسْلَفَ · اِبْتَغَى/طَلَبَ · هَجَرَ/هَاجَرَ/اِعْتَزَلَ ·
+فَرَّطَ/أَضَاعَ. Misleading: وَسْوَسَ/نَزَغَ/سَوَّلَ · أَضَلَّ/أَغْوَى · غَرَّ/خَدَعَ/خَادَعَ. People, wishes, money, water: مَلَأ/سَيِّد/كُبَرَاء ·
+تَمَنَّى/أُمْنِيَّة/أَمَل · دَيْن/قَرْض · نَهَر/عَيْن/يَنْبُوع · عَذْب/فُرَات/مِلْح/أُجَاج. Verbs 500–601 landed on study-site only while the batch was finished, so members come
+from the studied verbs and the noun catalogue. Drafted from the Mufradāt entries, verified (417 points: 384 confirmed, 30 partial,
+2 different, 1 not found; 31 texts changed — verse numbers of wordings he quotes (23:33 not 7:60, 4:43 not 4:99, 2:218 not 8:74),
+one of his two answers restored (23:14, Allah's iḍlāl), vowels he does not give left open (1:4)), reviewed blind (92 claims,
+36 flagged, every flag fixed in the texts, none held back; 29 Bosnian quotes the reviewers found close to Korkut's sentences were
+translated again). English quotes are Pickthall's words; where he gives two members one English word ("beguile", "deceive",
+"led astray", "sent on before", "demon") the ayah is paraphrased or the member named in [brackets]. أَمَل and كُبَرَاء have no
+Mufradāt entry of their own and rest on Quranic usage (all places read; كُبَرَاء is cited by him under أبا); thin members kept as
+well-known pairs: مَلِيك, مُصَوِّر, طَرَحَ, طَلَبَ (1× each), أَسْلَفَ, أَكْمَه, عَذْب, مِلْح, يَنْبُوع (2×). Counts that include another sense are
+noted per group: أَحَد with 'anyone', سَاعَة with 'hour', عَيْن with 'eye', جِنَّة with 'madness', مَالِك with the keeper of the Fire
+(43:77). Left out on purpose: 18:110, 72:20, 79:42, 33:63, 80:2, 80:4, 6:68, 7:184, 7:200, 41:36, 3:196, 40:4, 73:10, 74:5, 38:69,
+66:1, 33:51, 6:35 (said to or about the Prophet), 7:20, 20:120, 20:121 (Adam), 7:16, 15:39, 38:82, 18:50 (Iblīs), 11:34, 4:34,
+23:67, 22:52, 12:24, 38:33, 5:6, 18:86, 2:223 (readings differ), 37:145 and 68:49 (his "of little account" is not put on Yunus),
+39:53 (needs 4:48 beside it), 47:25 and 46:29 (named only), 33:50.
+
+**The planned set is complete at 255 groups.** Good candidates for any future batch (not built): صَرَفَ/رَدَّ (drafted for batch 11
+and set aside as the 26th), نُطْفَة/مَنِيّ, ظَهْر/صُلْب, بَطْن/جَوْف, حَيَاة/مَعِيشَة, اِقْتَدَى/أُسْوَة/إِمَام, عَزِيز/قَوِيّ/مَتِين, أَكْرَمَ/أَعَزَّ; pairs among
+the verbs 500–601 (landed after this batch was drafted); particle groups (لَنْ/لَا, إِنْ/إِذَا) once fil.nuances.model has a particle identity.
+Not buildable from the catalogue: Paradise names (فِرْدَوْس, عَدْن), شَيْطَان/إِبْلِيس, رِيح/رِيَاح (one lemma), حِجْر as intellect (1×).

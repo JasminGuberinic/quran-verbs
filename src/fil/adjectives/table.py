@@ -117,7 +117,8 @@ def with_rule_cells(table: NounTable, singular: str, numbers: Sequence[str], plu
     for number in numbers:
         if number == PLURAL and plural is None:
             continue
-        row = rows.get(number) or TableRow(number, number, _row_plural(plural), _empty(number))
+        row = rows.get(number) or TableRow(number, number, _row_plural(plural) if number == PLURAL else None,
+                                           _empty(number))
         rows[number] = _filled(row, singular, plural, is_diptote_singular)
     kept = tuple(row for row in rows.values() if any(found.text for found in row.cells))
     return in_reading_order(replace(table, rows=kept))

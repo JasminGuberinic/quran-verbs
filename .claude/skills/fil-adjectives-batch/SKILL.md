@@ -8,7 +8,7 @@ description: Add the next batch of 50 Quranic adjectives to the Fiʿl study site
 Goal: the Quran's adjectives (428 QAC ADJ lemmas + adjective-like participles/intensives), 50 per batch,
 one batch per conversation (docs/NOUNS-PLAN.md, "Adjectives"). Same rules as the nouns (/fil-nouns-batch):
 bs + en only, compact files, `fil adjectives batch …` prints only failures and one-line summaries, never
-`cat` large files, ask the owner (in Bosnian, briefly) before any product decision, commit and push to
+`cat` large files, decide wording and translation yourself (Korkut, Sahih International) and report it, hold back only content-policy cases (God-only senses) for the owner, commit and push to
 study-site when done (never main, never deploy). Engine: src/fil/adjectives/ (pure), stage
 src/fil/stages/adjectives.py, pages fil.stages.adjective_site/adjective_pages + fil.pages.adjective_render.
 
@@ -17,7 +17,14 @@ src/fil/stages/adjectives.py, pages fil.stages.adjective_site/adjective_pages + 
    build/adjectives/batch/{batch.txt, plan.tsv, todo-meanings.tsv}. The planner merges a separately
    lemmatised feminine (كَثِيرَة) into its masculine's count, skips elatives (أَكْبَر → shown on كَبِير's
    card), ordinals/numbers, idioms, ḥāl-only participles and lemmas taught as nouns
-   (`NOT_TAUGHT_AS_ADJECTIVES`, fil/adjectives/selection.py) and HELD_BACK (God-only senses). Read
+   (`NOT_TAUGHT_AS_ADJECTIVES`, fil/adjectives/selection.py) and HELD_BACK (God-only senses).
+   Past ~rank 350 most candidates are not teachable: read every planned lemma, add a reason for each
+   one you refuse to `NOT_TAUGHT_AS_ADJECTIVES` (elative, circumstance, substantive, takes an object,
+   Quranic phrase, a plural/feminine lemma, a near-synonym on another card, `FA_UL`) and re-plan until
+   all 50 are teachable (batch 2 took 9 rounds; `plan next 140` previews the tail at once). Decide
+   wording yourself (Korkut for bs, Sahih International for en); only a God-only sense is held back.
+   فَعُول adjectives (شَكُور, كَفُور, رَءُوف, فَخُور) have one form for both genders (امْرَأَةٌ شَكُورٌ) and
+   are refused (`FA_UL`), as are women-only invariables (عَاقِر, عَقِيم). Read
    plan.tsv's feminine-lemma and feminine-forms columns: a feminine lemma that is a noun in use
    (بَيِّنَة, حَسَنَة "good deed", سَيِّئَة "misdeed", طائِفَة, مَيْتَة "carrion", حَيَّة "snake", كَبَائِر) gets
    feminine_lemma n.
@@ -48,17 +55,26 @@ src/fil/stages/adjectives.py, pages fil.stages.adjective_site/adjective_pages + 
    adjectives whose rows are not SDP on both sides. Hamza- and alif-maqṣūra-final stems (بَرِيء, سَيِّئ, أَعْمَى,
    أُخْرَى) are refused by the rule: document their cells in data/adjective_overrides.json
    (`{key: {"M"|"F": {"S|indefinite|NOM": {text, why}}}}`, one script with a `row()` helper). The corpus
-   tags indeclinable/diptote indefinites (أُخْرَىٰ, أَعْمَىٰ) as construct, so their indefinite cells are never
-   "attested".
+   reader (fil.corpus.nouns) reads an alif-maqṣūra or -āʾ noun without a possessor, and a genitive in
+   fatḥa, as indefinite (أُخْرَىٰ, أَعْمَىٰ, أَوْلِيَآءَ, أُخَرَ are attested); a fuʿal diptote's nominative /
+   accusative (أُخَرُ) still reads as construct and needs a documented cell. A broken plural stem the
+   rule declines is a triptote unless it ends in -āʾ: never give a mafāʿīl stem (مَجَانِين) — use "-".
+   An elative ending in alif maqṣūra (أَعْلَى) is not shown: give no elative for it.
 4. `fil adjectives batch examples` prints each card's agreement examples (Bosnian) and which kinds are
-   missing — fix nouns in meanings before review.
+   missing — fix nouns in meanings before review. A noun whose cell is missing drops its example
+   (عَصَا, دُعَاء indefinite; شَيْء definite; ثَمَرَة, مِصْبَاح indefinite plural): pick another. A Bosnian
+   collective plural (djeca, braća, odjeća) needs `"singularForms": ["pl"]` in noun_bs_paradigms.json
+   so it agrees in the feminine singular ("radosna djeca").
 5. Sentences: `fil adjectives batch wordbank`, then write `~` lines `key~role~ar(*target)~en~bs~en|glosses~bs|glosses`,
    4 per adjective: masculine, feminine (attribute right after its noun), predicate (after a nominative
    subject; accusative after كَانَ/صَارَ), plural (people → plural, things → feminine singular). The
    described noun must be a cell of a studied noun (construct allowed for a predicate's subject:
    اسْمُ الشَّاعِرِ خَالِدٌ). Convert with a script asserting word count = gloss counts, `check` until clean, `draft`.
    Divine-Name adjectives get human senses (a wise man, a merciful mother); "X is other" has no predicate
-   (آخَر keeps 3 sentences).
+   (آخَر keeps 3 sentences). Bosnian: an indefinite masculine singular nominative attribute takes the
+   short form ("star grad", "Vidio sam dug put"); the definite the long one ("stari grad").
+   Drafting can go to two general-purpose agents (25 adjectives each, own output file, `check` only);
+   fill in every placeholder of the brief before sending it.
 6. `fil adjectives batch review-export` → blind.json holds sentences (`s:` ids) and agreement examples
    (`e:` ids); split it in two and give each to a FRESH opus general-purpose agent (sentences: grammar_ok,
    translation_ok, usage_ok, approved, note; examples: approved, note), ids copied programmatically.

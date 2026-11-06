@@ -222,6 +222,7 @@ def test_without_a_generator_the_rule_and_the_drafters_plural_fill_the_table():
     assert {cell.source for cell in rows[(MASCULINE, "P")].cells} == {DOCUMENTED}
     assert rows[(FEMININE, "P")].text(DEFINITE, GENITIVE) == "الْكَبِيرَاتِ"
     assert {cell.source for cell in rows[(FEMININE, "S")].cells} == {RULE}
+    assert rows[(MASCULINE, "P")].plural == "كِبَار" and rows[(MASCULINE, "D")].plural is None   # only a plural row names its stem
 
 
 def test_a_meaning_needs_its_nouns_and_a_known_category():
@@ -292,6 +293,12 @@ def test_elatives_and_held_back_wait_and_a_separate_feminine_counts_with_its_mas
     assert [found.lemma for found in chosen] == ["كَبِير", "صَغِير"]          # 40 + 50 of its feminine
     assert {found.lemma: reason for found, reason in skipped} == {"أَكْبَر": ELATIVE, "غَفُور": "held back for the owner"}
     assert skip_reason(lemma("كَبِير", 1), studied_nouns=["كَبِير|كبر"]) == "taught as a noun"
+
+
+def test_a_held_back_key_matches_whatever_order_the_corpus_writes_its_marks_in():
+    corpus_order = "قَيّ" + "\u064f" + "وم"            # shadda before damma, as the corpus writes it
+    chosen, skipped = next_adjectives([lemma(corpus_order, 9, root="قوم")], 1, studied=(), held_back=("قَيُّوم|قوم",))
+    assert chosen == [] and skipped[0][1] == "held back for the owner"
 
 
 # ---------------------------------------------------------------- spelling

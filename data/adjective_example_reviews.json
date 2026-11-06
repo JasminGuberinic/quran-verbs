@@ -1065,11 +1065,6 @@
   "note": "",
   "by": "claude subagent, blind reviewer (separate context)"
  },
- "الْبَيْتُ آخَرُ": {
-  "approved": false,
-  "note": "Meaningless predicate: \"The house is other.\" / \"Kuća je druga.\" is unnatural in English and Bosnian (and الْبَيْتُ آخَرُ is odd Arabic); آخَر is not a natural predicate adjective - drop this example.",
-  "by": "claude subagent, blind reviewer (separate context)"
- },
  "طَعَامٌ سَيِّئٌ": {
   "approved": true,
   "note": "",
@@ -1095,11 +1090,6 @@
   "note": "",
   "by": "claude subagent, blind reviewer (separate context)"
  },
- "الرَّجُلُ خَبِيرٌ": {
-  "approved": false,
-  "note": "English \"The man is expert.\" is ungrammatical; needs \"The man is an expert.\" (Arabic and Bosnian fine).",
-  "by": "claude subagent, blind reviewer (separate context)"
- },
  "بَيْتٌ قَرِيبٌ": {
   "approved": true,
   "note": "",
@@ -1118,16 +1108,6 @@
  "بُيُوتٌ قَرِيبَةٌ": {
   "approved": true,
   "note": "",
-  "by": "claude subagent, blind reviewer (separate context)"
- },
- "الْبَيْتُ قَرِيبٌ": {
-  "approved": false,
-  "note": "Bosnian \"Kuća je obližnja.\" is unnatural as a predicate; use \"Kuća je blizu.\"",
-  "by": "claude subagent, blind reviewer (separate context)"
- },
- "الطّائِرُ حَيٌّ": {
-  "approved": false,
-  "note": "English \"The bird is living.\" is unnatural; use \"The bird is alive.\" (Arabic and Bosnian fine).",
   "by": "claude subagent, blind reviewer (separate context)"
  },
  "سَعْيٌ حَمِيدٌ": {
@@ -1185,16 +1165,6 @@
   "note": "",
   "by": "claude subagent, blind reviewer (separate context)"
  },
- "ساعَةٌ مَعْلُومَةٌ": {
-  "approved": false,
-  "note": "English \"a known hour\" is unnatural and does not match Bosnian \"određeni sat\"; meaning here is fixed/appointed: \"a fixed (set) hour\".",
-  "by": "claude subagent, blind reviewer (separate context)"
- },
- "أَيّامٌ مَعْلُومَةٌ": {
-  "approved": false,
-  "note": "English \"known days\" does not match Bosnian \"određeni dani\" and is unidiomatic; use \"fixed/set days\". Also close to the Quranic phrase أَيَّامٍ مَعْلُومَاتٍ (22:28) - consider another noun.",
-  "by": "claude subagent, blind reviewer (separate context)"
- },
  "بَيْتٌ وَاسِعٌ": {
   "approved": true,
   "note": "",
@@ -1216,6 +1186,1266 @@
   "by": "claude subagent, blind reviewer (separate context)"
  },
  "الْبَيْتُ وَاسِعٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ أَصَمُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْأَصَمُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ صَمَّاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ صُمٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ أَصَمُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ تَوَّابٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ التَّوَّابُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ تَوّابَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ تَوّابُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ تَوَّابٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "مَكانٌ عَلِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْمَكانُ الْعَلِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "دَرَجَةٌ عَلِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "دَرَجَاتٌ عَلِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْمَكانُ عَلِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ مَجْنُونٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْمَجْنُونُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ مَجْنُونَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ مَجْنُونٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ قَانِتٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْقانِتُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ قانِتَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ قَانِتُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ قَانِتٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "لَوْنٌ مُخْتَلِفٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللَّوْنُ الْمُخْتَلِفُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقَةٌ مُخْتَلِفَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَلْوانٌ مُخْتَلِفَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللَّوْنُ مُخْتَلِفٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كَلِمَةٌ غَلِيظَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ غِلَاظٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كَلِماتٌ غَلِيظَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَثَرٌ ظاهِرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْأَثَرُ الظَّاهِرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "آيَةٌ ظاهِرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "آيَاتٌ ظاهِرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْأَثَرُ ظاهِرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ أَثِيمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْأَثِيمُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ أَثِيمَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ أَثِيمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ لَطِيفٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ اللَّطِيفُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ لَطِيفَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ لُطَفَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ لَطِيفٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ مُتَكَبِّرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْمُتَكَبِّرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ مُتَكَبِّرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ مُتَكَبِّرُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ مُتَكَبِّرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ أَبْكَمُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْأَبْكَمُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ بَكْمَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ بُكْمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ أَبْكَمُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "وَلَدٌ فَرِحٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْوَلَدُ الْفَرِحُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بِنْتٌ فَرِحَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَوْلادٌ فَرِحُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْوَلَدُ فَرِحٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "لَوْنٌ مُتَشابِهٌ": {
+  "approved": false,
+  "note": "مُتَشابِه is reciprocal ('resembling one another'); a single لَوْن مُتَشابِه / 'similar color' with no comparand is unnatural in Arabic, English and Bosnian.",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللَّوْنُ الْمُتَشابِهُ": {
+  "approved": false,
+  "note": "مُتَشابِه is reciprocal ('resembling one another'); a single لَوْن مُتَشابِه / 'similar color' with no comparand is unnatural in Arabic, English and Bosnian.",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "ثَمَرَةٌ مُتَشابِهَةٌ": {
+  "approved": false,
+  "note": "Singular ثَمَرَة مُتَشابِهَة unnatural (مُتَشابِه needs plurality/comparand); 'a similar fruit' / 'sličan plod' dangle.",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَلْوانٌ مُتَشابِهَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللَّوْنُ مُتَشابِهٌ": {
+  "approved": false,
+  "note": "مُتَشابِه is reciprocal ('resembling one another'); a single لَوْن مُتَشابِه / 'similar color' with no comparand is unnatural in Arabic, English and Bosnian.",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "قَمَرٌ مُنِيرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْقَمَرُ الْمُنِيرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "شَمْسٌ مُنِيرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "نُجُومٌ مُنِيرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْقَمَرُ مُنِيرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حِمْلٌ ثَقِيلٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحِمْلُ الثَّقِيلُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بِضاعَةٌ ثَقِيلَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كُتُبٌ ثَقِيلَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحِمْلُ ثَقِيلٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "سَاحِرٌ كَذَّابٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "السَّاحِرُ الْكَذَّابُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ كَذّابَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ كَذّابُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "السَّاحِرُ كَذَّابٌ": {
+  "approved": false,
+  "note": "'The magician is lying.' means he is telling a lie now; كَذّاب / 'lažljiv' = is a liar — use 'The magician is a liar.'",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ تَقِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ التَّقِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ تَقِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ أَتْقِيَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ تَقِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ شَقِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الشَّقِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ شَقِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ أَشْقِيَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ شَقِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ صَبّارٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الصَّبّارُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ صَبَّارَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ صَبّارُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ صَبّارٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ عَنِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْعَنِيدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ عَنِيدَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ عَنِيدُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ عَنِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "يَوْمٌ مَجِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْيَوْمُ الْمَجِيدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أُمَّةٌ مَجِيدَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَيّامٌ مَجِيدَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْيَوْمُ مَجِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ مَسْحُورٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْمَسْحُورُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ مَسْحُورَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ مَسْحُورُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ مَسْحُورٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كَنزٌ مَكْنُونٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْكَنْزُ الْمَكْنُونُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كُنُوزٌ مَكْنُونَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْكَنْزُ مَكْنُونٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ مَهِينٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْمَهِينُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ مَهِينَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ مَهِينٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "لِسَانٌ أَعْجَمِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللِّسانُ الْأَعْجَمِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كَلِمَةٌ أَعْجَمِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كَلِماتٌ أَعْجَمِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللِّسانُ أَعْجَمِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ رَشِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الرَّشِيدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ رَشِيدَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ رَشِيدُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ رَشِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "عِجْلٌ سَمِينٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْعِجْلُ السَّمِينُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "نَعْجَةٌ سَمِينَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بَقَرَاتٌ سَمِينَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْعِجْلُ سَمِينٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَخٌ غائِبٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْأَخُ الْغائِبُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أُخْتٌ غائِبَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "إِخْوَانٌ غائِبُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْأَخُ غائِبٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بَيْتٌ قَدِيمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْبَيْتُ الْقَدِيمُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "مَدِينَةٌ قَدِيمَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كُتُبٌ قَدِيمَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْبَيْتُ قَدِيمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حَبْلٌ مَتِينٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحَبْلُ الْمَتِينُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "عُقْدَةٌ مَتِينَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حِبالٌ مَتِينَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحَبْلُ مَتِينٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَمْرٌ هَيِّنٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْأَمْرُ الْهَيِّنُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقَةٌ هَيِّنَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أُمُورٌ هَيِّنَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْأَمْرُ هَيِّنٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حِمْلٌ خَفِيفٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحِمْلُ الْخَفِيفُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِيحٌ خَفِيفَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "ثِيَابٌ خَفِيفَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحِمْلُ خَفِيفٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "غُرْفَةٌ خَفِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقَةٌ سَدِيدَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "لَحْمٌ طَرِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللَّحْمُ الطَّرِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "ثَمَرَةٌ طَرِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "اللَّحْمُ طَرِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقٌ طَوِيلٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطَّرِيقُ الطَّوِيلُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "لَيْلَةٌ طَوِيلَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حِبالٌ طَوِيلَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطَّرِيقُ طَوِيلٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "يَوْمٌ عَسِيرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْيَوْمُ الْعَسِيرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "سَنَةٌ عَسِيرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَيّامٌ عَسِيرَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْيَوْمُ عَسِيرٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "وَلَدٌ عَصِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْوَلَدُ الْعَصِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بِنْتٌ عَصِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْوَلَدُ عَصِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "زَرْعٌ أَخْضَرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الزَّرْعُ الْأَخْضَرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "شَجَرَةٌ خَضْرَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "ثِيَابٌ خَضْرَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كَلْبٌ أَسْوَدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْكَلْبُ الْأَسْوَدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بَقَرَةٌ سَوْدَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "جِبالٌ سَوْدَاءُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْكَلْبُ أَسْوَدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "غُلَامٌ زَكِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْغُلَامُ الزَّكِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "نَفْسٌ زَكِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْغُلَامُ زَكِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "مَدِينَةٌ شَرْقِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بِلادٌ شَرْقِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقٌ عَرِيضٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطَّرِيقُ الْعَرِيضُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَنْهَارٌ عَرِيضَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطَّرِيقُ عَرِيضٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بَحْرٌ عَمِيقٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْبَحْرُ الْعَمِيقُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حِكْمَةٌ عَمِيقَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بِحارٌ عَمِيقَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْبَحْرُ عَمِيقٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْبَيْتُ آخَرُ": {
+  "approved": false,
+  "note": "Meaningless predicate: \"The house is other.\" / \"Kuća je druga.\" is unnatural in English and Bosnian (and الْبَيْتُ آخَرُ is odd Arabic); آخَر is not a natural predicate adjective - drop this example.",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ خَبِيرٌ": {
+  "approved": false,
+  "note": "English \"The man is expert.\" is ungrammatical; needs \"The man is an expert.\" (Arabic and Bosnian fine).",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْبَيْتُ قَرِيبٌ": {
+  "approved": false,
+  "note": "Bosnian \"Kuća je obližnja.\" is unnatural as a predicate; use \"Kuća je blizu.\"",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطّائِرُ حَيٌّ": {
+  "approved": false,
+  "note": "English \"The bird is living.\" is unnatural; use \"The bird is alive.\" (Arabic and Bosnian fine).",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "ساعَةٌ مَعْلُومَةٌ": {
+  "approved": false,
+  "note": "English \"a known hour\" is unnatural and does not match Bosnian \"određeni sat\"; meaning here is fixed/appointed: \"a fixed (set) hour\".",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَيّامٌ مَعْلُومَةٌ": {
+  "approved": false,
+  "note": "English \"known days\" does not match Bosnian \"određeni dani\" and is unidiomatic; use \"fixed/set days\". Also close to the Quranic phrase أَيَّامٍ مَعْلُومَاتٍ (22:28) - consider another noun.",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "مَلِكٌ جَبّارٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْمَلِكُ الْجَبَّارُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ جَبّارَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "مُلُوكٌ جَبّارُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْمَلِكُ جَبّارٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "صَوْتٌ غَلِيظٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الصَّوْتُ الْغَلِيظُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الصَّوْتُ غَلِيظٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كِتَابٌ قَيِّمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْكِتَابُ الْقَيِّمُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "بِضاعَةٌ قَيِّمَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "كُتُبٌ قَيِّمَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْكِتَابُ قَيِّمٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طِفْلٌ مَحْرُومٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطِّفْلُ الْمَحْرُومُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ مَحْرُومَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَطْفالٌ مَحْرُومُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطِّفْلُ مَحْرُومٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حِكْمَةٌ مَكْنُونَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رَجُلٌ مُخْتالٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ الْمُخْتالُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "امْرَأَةٌ مُخْتالَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "رِجَالٌ مُخْتالُونَ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الرَّجُلُ مُخْتالٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقٌ خَفِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطَّرِيقُ الْخَفِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "غُرَفٌ خَفِيَّةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الطَّرِيقُ خَفِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "جَوابٌ سَدِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْجَوابُ السَّدِيدُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْجَوابُ سَدِيدٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "حُلُمٌ عَجِيبٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحُلُمُ الْعَجِيبُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "طَرِيقَةٌ عَجِيبَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "أَحْلَامٌ عَجِيبَةٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْحُلُمُ عَجِيبٌ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "قَمِيصٌ أَخْضَرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْقَمِيصُ الْأَخْضَرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "الْقَمِيصُ أَخْضَرُ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "سُوقٌ شَرْقِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "السُّوقُ الشَّرْقِيُّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "السُّوقُ شَرْقِيٌّ": {
+  "approved": true,
+  "note": "",
+  "by": "claude subagent, blind reviewer (separate context)"
+ },
+ "سَفِينَةٌ عَرِيضَةٌ": {
   "approved": true,
   "note": "",
   "by": "claude subagent, blind reviewer (separate context)"

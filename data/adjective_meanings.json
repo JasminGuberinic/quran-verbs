@@ -805,5 +805,799 @@
    "en": "smaller",
    "bs": "manji"
   }
+ },
+ "أَصَمّ|صمم": {
+  "en": "deaf",
+  "bs": "gluh",
+  "bsShort": "gluh",
+  "bsLong": "gluhi",
+  "feminine": "صَمَّاء",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "صُمّ"
+ },
+ "تَوّاب|توب": {
+  "en": "repentant",
+  "bs": "pokajan",
+  "bsShort": "pokajan",
+  "bsLong": "pokajani",
+  "feminine": "تَوَّابَة",
+  "feminineLemma": false,
+  "pattern": "فَعَّال",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "عَلِيّ|علو": {
+  "en": "high, exalted",
+  "bs": "visok, uzvišen",
+  "bsShort": "visok",
+  "bsLong": "visoki",
+  "feminine": "عَلِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "مَكان|كون",
+   "feminine": "دَرَجَة|درج",
+   "thingPlural": "دَرَجَة|درج"
+  },
+  "masculinePlural": "-"
+ },
+ "مَجْنُون|جنن": {
+  "en": "mad, insane",
+  "bs": "lud",
+  "bsShort": "lud",
+  "bsLong": "ludi",
+  "feminine": "مَجْنُونَة",
+  "feminineLemma": false,
+  "pattern": "مَفْعُول",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ"
+  },
+  "masculinePlural": "-"
+ },
+ "قانِت|قنت": {
+  "en": "devoutly obedient",
+  "bs": "poslušan, pokoran",
+  "bsShort": "poslušan",
+  "bsLong": "poslušni",
+  "feminine": "قانِتَة",
+  "feminineLemma": true,
+  "pattern": "فاعِل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "جَبّار|جبر": {
+  "en": "tyrannical",
+  "bs": "osion, silan",
+  "bsShort": "osion",
+  "bsLong": "osioni",
+  "feminine": "جَبَّارَة",
+  "feminineLemma": false,
+  "pattern": "فَعَّال",
+  "category": "moral",
+  "nouns": {
+   "masculine": "مَلِك|ملك",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "مَلِك|ملك"
+  },
+  "masculinePlural": "sound"
+ },
+ "مُخْتَلِف|خلف": {
+  "en": "different, various",
+  "bs": "različit",
+  "bsShort": "različit",
+  "bsLong": "različiti",
+  "feminine": "مُخْتَلِفَة",
+  "feminineLemma": false,
+  "pattern": "مُفْتَعِل",
+  "category": "other",
+  "nouns": {
+   "masculine": "لَوْن|لون",
+   "feminine": "طَرِيقَة|طرق",
+   "thingPlural": "لَوْن|لون"
+  },
+  "masculinePlural": "sound"
+ },
+ "غَلِيظ|غلظ": {
+  "en": "harsh, severe",
+  "bs": "grub, strog",
+  "bsShort": "grub",
+  "bsLong": "grubi",
+  "feminine": "غَلِيظَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "intensity",
+  "nouns": {
+   "masculine": "صَوْت|صوت",
+   "feminine": "كَلِمَة|كلم",
+   "thingPlural": "كَلِمَة|كلم",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "غِلَاظ"
+ },
+ "ظاهِر|ظهر": {
+  "en": "apparent, evident",
+  "bs": "vidljiv, očit",
+  "bsShort": "vidljiv",
+  "bsLong": "vidljivi",
+  "feminine": "ظاهِرَة",
+  "feminineLemma": true,
+  "pattern": "فاعِل",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "أَثَر|أثر",
+   "feminine": "آيَة|أيي",
+   "thingPlural": "آيَة|أيي"
+  },
+  "masculinePlural": "-"
+ },
+ "أَثِيم|أثم": {
+  "en": "sinful",
+  "bs": "grješan",
+  "bsShort": "grješan",
+  "bsLong": "grješni",
+  "feminine": "أَثِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ"
+  },
+  "masculinePlural": "-"
+ },
+ "لَطِيف|لطف": {
+  "en": "kind, gentle",
+  "bs": "ljubazan, blag",
+  "bsShort": "ljubazan",
+  "bsLong": "ljubazni",
+  "feminine": "لَطِيفَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "لُطَفَاء"
+ },
+ "مُتَكَبِّر|كبر": {
+  "en": "arrogant",
+  "bs": "ohol",
+  "bsShort": "ohol",
+  "bsLong": "oholi",
+  "feminine": "مُتَكَبِّرَة",
+  "feminineLemma": false,
+  "pattern": "مُتَفَعِّل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "قَيِّم|قوم": {
+  "en": "valuable, upright",
+  "bs": "vrijedan, ispravan",
+  "bsShort": "vrijedan",
+  "bsLong": "vrijedni",
+  "feminine": "قَيِّمَة",
+  "feminineLemma": true,
+  "pattern": "فَيْعِل",
+  "category": "other",
+  "nouns": {
+   "masculine": "كِتاب|كتب",
+   "feminine": "بِضاعَة|بضع",
+   "thingPlural": "كِتاب|كتب"
+  },
+  "masculinePlural": "-"
+ },
+ "أَبْكَم|بكم": {
+  "en": "mute, dumb",
+  "bs": "nijem",
+  "bsShort": "nijem",
+  "bsLong": "nijemi",
+  "feminine": "بَكْمَاء",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "بُكْم"
+ },
+ "فَرِح|فرح": {
+  "en": "happy, exultant",
+  "bs": "radostan",
+  "bsShort": "radostan",
+  "bsLong": "radosni",
+  "feminine": "فَرِحَة",
+  "feminineLemma": false,
+  "pattern": "فَعِل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "وَلَد|ولد",
+   "feminine": "بِنْت|بني",
+   "humanPlural": "وَلَد|ولد"
+  },
+  "masculinePlural": "sound"
+ },
+ "مُتَشابِه|شبه": {
+  "en": "similar, alike",
+  "bs": "sličan",
+  "bsShort": "sličan",
+  "bsLong": "slični",
+  "feminine": "مُتَشابِهَة",
+  "feminineLemma": false,
+  "pattern": "مُتَفَاعِل",
+  "category": "other",
+  "nouns": {
+   "masculine": "لَوْن|لون",
+   "feminine": "ثَمَرَة|ثمر",
+   "thingPlural": "لَوْن|لون"
+  },
+  "masculinePlural": "-"
+ },
+ "مُنِير|نور": {
+  "en": "luminous, illuminating",
+  "bs": "svijetao",
+  "bsShort": "svijetao",
+  "bsLong": "svijetli",
+  "feminine": "مُنِيرَة",
+  "feminineLemma": false,
+  "pattern": "مُفْعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "قَمَر|قمر",
+   "feminine": "شَمْس|شمس",
+   "thingPlural": "نَجْم|نجم"
+  },
+  "masculinePlural": "-"
+ },
+ "ثَقِيل|ثقل": {
+  "en": "heavy",
+  "bs": "težak",
+  "bsShort": "težak",
+  "bsLong": "teški",
+  "feminine": "ثَقِيلَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "حِمْل|حمل",
+   "feminine": "بِضاعَة|بضع",
+   "thingPlural": "كِتاب|كتب"
+  },
+  "masculinePlural": "ثِقَال"
+ },
+ "كَذّاب|كذب": {
+  "en": "lying",
+  "bs": "lažljiv",
+  "bsShort": "lažljiv",
+  "bsLong": "lažljivi",
+  "feminine": "كَذَّابَة",
+  "feminineLemma": false,
+  "pattern": "فَعَّال",
+  "category": "moral",
+  "nouns": {
+   "masculine": "ساحِر|سحر",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "تَقِيّ|وقي": {
+  "en": "pious, God-fearing",
+  "bs": "bogobojazan",
+  "bsShort": "bogobojazan",
+  "bsLong": "bogobojazni",
+  "feminine": "تَقِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "أَتْقِيَاء"
+ },
+ "شَقِيّ|شقو": {
+  "en": "wretched",
+  "bs": "nesretan",
+  "bsShort": "nesretan",
+  "bsLong": "nesretni",
+  "feminine": "شَقِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "أَشْقِيَاء"
+ },
+ "صَبّار|صبر": {
+  "en": "patient, steadfast",
+  "bs": "strpljiv, postojan",
+  "bsShort": "strpljiv",
+  "bsLong": "strpljivi",
+  "feminine": "صَبَّارَة",
+  "feminineLemma": false,
+  "pattern": "فَعَّال",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "عَنِيد|عند": {
+  "en": "obstinate",
+  "bs": "tvrdoglav",
+  "bsShort": "tvrdoglav",
+  "bsLong": "tvrdoglavi",
+  "feminine": "عَنِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "مَجِيد|مجد": {
+  "en": "glorious, honoured",
+  "bs": "slavan",
+  "bsShort": "slavan",
+  "bsLong": "slavni",
+  "feminine": "مَجِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "يَوْم|يوم",
+   "feminine": "أُمَّة|أمم",
+   "thingPlural": "يَوْم|يوم"
+  },
+  "masculinePlural": "-"
+ },
+ "مَحْرُوم|حرم": {
+  "en": "deprived",
+  "bs": "zakinut, uskraćen",
+  "bsShort": "zakinut",
+  "bsLong": "zakinuti",
+  "feminine": "مَحْرُومَة",
+  "feminineLemma": false,
+  "pattern": "مَفْعُول",
+  "category": "condition",
+  "nouns": {
+   "masculine": "طِفْل|طفل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "طِفْل|طفل"
+  },
+  "masculinePlural": "sound"
+ },
+ "مَسْحُور|سحر": {
+  "en": "bewitched",
+  "bs": "opčinjen",
+  "bsShort": "opčinjen",
+  "bsLong": "opčinjeni",
+  "feminine": "مَسْحُورَة",
+  "feminineLemma": false,
+  "pattern": "مَفْعُول",
+  "category": "condition",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "مَكْنُون|كنن": {
+  "en": "hidden, well-protected",
+  "bs": "skriven",
+  "bsShort": "skriven",
+  "bsLong": "skriveni",
+  "feminine": "مَكْنُونَة",
+  "feminineLemma": false,
+  "pattern": "مَفْعُول",
+  "category": "condition",
+  "nouns": {
+   "masculine": "كَنز|كنز",
+   "feminine": "حِكْمَة|حكم",
+   "thingPlural": "كَنز|كنز"
+  },
+  "masculinePlural": "-"
+ },
+ "مَهِين|مهن": {
+  "en": "despised, worthless",
+  "bs": "prezren",
+  "bsShort": "prezren",
+  "bsLong": "prezreni",
+  "feminine": "مَهِينَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ"
+  },
+  "masculinePlural": "-"
+ },
+ "أَعْجَمِيّ|عجم": {
+  "en": "foreign, non-Arabic",
+  "bs": "nearapski, strani",
+  "bsShort": "nearapski",
+  "bsLong": "nearapski",
+  "feminine": "أَعْجَمِيَّة",
+  "feminineLemma": false,
+  "pattern": "أَفْعَلِيّ",
+  "category": "other",
+  "nouns": {
+   "masculine": "لِسان|لسن",
+   "feminine": "كَلِمَة|كلم",
+   "thingPlural": "كَلِمَة|كلم"
+  },
+  "masculinePlural": "-"
+ },
+ "رَشِيد|رشد": {
+  "en": "discerning, right-minded",
+  "bs": "razborit",
+  "bsShort": "razborit",
+  "bsLong": "razboriti",
+  "feminine": "رَشِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "people_qualities",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "سَمِين|سمن": {
+  "en": "fat",
+  "bs": "debeo",
+  "bsShort": "debeo",
+  "bsLong": "debeli",
+  "feminine": "سَمِينَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "عِجْل|عجل",
+   "feminine": "نَعْجَة|نعج",
+   "thingPlural": "بَقَرَة|بقر"
+  },
+  "masculinePlural": "سِمَان"
+ },
+ "غائِب|غيب": {
+  "en": "absent",
+  "bs": "odsutan",
+  "bsShort": "odsutan",
+  "bsLong": "odsutni",
+  "feminine": "غائِبَة",
+  "feminineLemma": false,
+  "pattern": "فاعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "أَخ|أخو",
+   "feminine": "أُخْت|أخو",
+   "humanPlural": "أَخ|أخو"
+  },
+  "masculinePlural": "sound"
+ },
+ "قَدِيم|قدم": {
+  "en": "old, ancient",
+  "bs": "star",
+  "bsShort": "star",
+  "bsLong": "stari",
+  "feminine": "قَدِيمَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "بَيْت|بيت",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "كِتاب|كتب"
+  },
+  "masculinePlural": "-"
+ },
+ "مَتِين|متن": {
+  "en": "firm, strong",
+  "bs": "čvrst",
+  "bsShort": "čvrst",
+  "bsLong": "čvrsti",
+  "feminine": "مَتِينَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "حَبْل|حبل",
+   "feminine": "عُقْدَة|عقد",
+   "thingPlural": "حَبْل|حبل"
+  },
+  "masculinePlural": "-"
+ },
+ "مُخْتال|خيل": {
+  "en": "conceited, self-deluded",
+  "bs": "uobražen",
+  "bsShort": "uobražen",
+  "bsLong": "uobraženi",
+  "feminine": "مُخْتالَة",
+  "feminineLemma": false,
+  "pattern": "مُفْتَعِل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "رَجُل|رجل",
+   "feminine": "امْرَأَت|مرأ",
+   "humanPlural": "رِجال|رجل"
+  },
+  "masculinePlural": "sound"
+ },
+ "هَيِّن|هون": {
+  "en": "easy, insignificant",
+  "bs": "jednostavan, beznačajan",
+  "bsShort": "jednostavan",
+  "bsLong": "jednostavni",
+  "feminine": "هَيِّنَة",
+  "feminineLemma": false,
+  "pattern": "فَيْعِل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "أَمْر|أمر",
+   "feminine": "طَرِيقَة|طرق",
+   "thingPlural": "أَمْر|أمر"
+  },
+  "masculinePlural": "-"
+ },
+ "خَفِيف|خفف": {
+  "en": "light",
+  "bs": "lagan",
+  "bsShort": "lagan",
+  "bsLong": "lagani",
+  "feminine": "خَفِيفَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "حِمْل|حمل",
+   "feminine": "رِيح|روح",
+   "thingPlural": "ثِياب|ثوب"
+  },
+  "masculinePlural": "خِفَاف"
+ },
+ "خَفِيّ|خفي": {
+  "en": "secret, hidden",
+  "bs": "tajan, skriven",
+  "bsShort": "tajan",
+  "bsLong": "tajni",
+  "feminine": "خَفِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "طَرِيق|طرق",
+   "feminine": "غُرْفَة|غرف",
+   "thingPlural": "غُرْفَة|غرف"
+  },
+  "masculinePlural": "-"
+ },
+ "سَدِيد|سدد": {
+  "en": "sound, right",
+  "bs": "pravilan, ispravan",
+  "bsShort": "pravilan",
+  "bsLong": "pravilni",
+  "feminine": "سَدِيدَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "knowledge_clarity",
+  "nouns": {
+   "masculine": "جَواب|جوب",
+   "feminine": "طَرِيقَة|طرق"
+  },
+  "masculinePlural": "-"
+ },
+ "طَرِيّ|طرو": {
+  "en": "fresh, tender",
+  "bs": "svjež",
+  "bsShort": "svjež",
+  "bsLong": "svježi",
+  "feminine": "طَرِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "لَحْم|لحم",
+   "feminine": "ثَمَرَة|ثمر"
+  },
+  "masculinePlural": "-"
+ },
+ "طَوِيل|طول": {
+  "en": "long",
+  "bs": "dug",
+  "bsShort": "dug",
+  "bsLong": "dugi",
+  "feminine": "طَوِيلَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "طَرِيق|طرق",
+   "feminine": "لَيْلَة|ليل",
+   "thingPlural": "حَبْل|حبل"
+  },
+  "masculinePlural": "-"
+ },
+ "عَجِيب|عجب": {
+  "en": "amazing, strange",
+  "bs": "čudesan, čudan",
+  "bsShort": "čudesan",
+  "bsLong": "čudesni",
+  "feminine": "عَجِيبَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "other",
+  "nouns": {
+   "masculine": "حُلُم|حلم",
+   "feminine": "طَرِيقَة|طرق",
+   "thingPlural": "حُلُم|حلم"
+  },
+  "masculinePlural": "-"
+ },
+ "عَسِير|عسر": {
+  "en": "difficult, hard",
+  "bs": "mučan, težak",
+  "bsShort": "mučan",
+  "bsLong": "mučni",
+  "feminine": "عَسِيرَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "condition",
+  "nouns": {
+   "masculine": "يَوْم|يوم",
+   "feminine": "سَنَة|سنو",
+   "thingPlural": "يَوْم|يوم"
+  },
+  "masculinePlural": "-"
+ },
+ "عَصِيّ|عصي": {
+  "en": "disobedient",
+  "bs": "neposlušan",
+  "bsShort": "neposlušan",
+  "bsLong": "neposlušni",
+  "feminine": "عَصِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "وَلَد|ولد",
+   "feminine": "بِنْت|بني"
+  },
+  "masculinePlural": "-"
+ },
+ "أَخْضَر|خضر": {
+  "en": "green",
+  "bs": "zelen",
+  "bsShort": "zelen",
+  "bsLong": "zeleni",
+  "feminine": "خَضْرَاء",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "colours",
+  "nouns": {
+   "masculine": "قَمِيص|قمص",
+   "feminine": "شَجَرَة|شجر",
+   "thingPlural": "ثِياب|ثوب"
+  },
+  "masculinePlural": "-"
+ },
+ "أَسْوَد|سود": {
+  "en": "black",
+  "bs": "crn",
+  "bsShort": "crn",
+  "bsLong": "crni",
+  "feminine": "سَوْدَاء",
+  "feminineLemma": false,
+  "pattern": "أَفْعَل",
+  "category": "colours",
+  "nouns": {
+   "masculine": "كَلْب|كلب",
+   "feminine": "بَقَرَة|بقر",
+   "thingPlural": "جَبَل|جبل"
+  },
+  "masculinePlural": "-"
+ },
+ "زَكِيّ|زكو": {
+  "en": "pure",
+  "bs": "čist",
+  "bsShort": "čist",
+  "bsLong": "čisti",
+  "feminine": "زَكِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "moral",
+  "nouns": {
+   "masculine": "غُلام|غلم",
+   "feminine": "نَفْس|نفس"
+  },
+  "masculinePlural": "-"
+ },
+ "شَرْقِيّ|شرق": {
+  "en": "eastern",
+  "bs": "istočni",
+  "bsShort": "istočni",
+  "bsLong": "istočni",
+  "feminine": "شَرْقِيَّة",
+  "feminineLemma": false,
+  "pattern": "فَعْلِيّ",
+  "category": "time_distance",
+  "nouns": {
+   "masculine": "سُوق|سوق",
+   "feminine": "مَدِينَة|مدن",
+   "thingPlural": "بَلَد|بلد"
+  },
+  "masculinePlural": "-"
+ },
+ "عَرِيض|عرض": {
+  "en": "broad, wide",
+  "bs": "širok",
+  "bsShort": "širok",
+  "bsLong": "široki",
+  "feminine": "عَرِيضَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "طَرِيق|طرق",
+   "feminine": "سَفِينَة|سفن",
+   "thingPlural": "نَهَر|نهر"
+  },
+  "masculinePlural": "-"
+ },
+ "عَمِيق|عمق": {
+  "en": "deep",
+  "bs": "dubok",
+  "bsShort": "dubok",
+  "bsLong": "duboki",
+  "feminine": "عَمِيقَة",
+  "feminineLemma": false,
+  "pattern": "فَعِيل",
+  "category": "size_quantity",
+  "nouns": {
+   "masculine": "بَحْر|بحر",
+   "feminine": "حِكْمَة|حكم",
+   "thingPlural": "بَحْر|بحر"
+  },
+  "masculinePlural": "-"
  }
 }

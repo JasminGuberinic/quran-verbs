@@ -107,3 +107,18 @@ Verification first (three verifiers, quotes machine-checked): 380 points, 344 co
 law" distinction (not ar-Rāġib's; scholars differ), 2:213 and 2:124 (tafsir differs), 42:24 and 80:1 (said to the
 Prophet), 20:115 (nasiya there is read two ways). ذبح and وثق open with no heading mark in the OpenITI
 text; the parser now lists them by their opening words (fil.nuances.mufradat), so they are entries of their own.
+
+## Batch 6 (25 groups, 130 in all)
+Showing and hiding, people and groups: أَبْدَى/أَظْهَرَ/أَعْلَنَ · حِزْب/فَرِيق/طَائِفَة/شِيعَة. Gifts, power, worship: نِعْمَة/فَضْل ·
+مُلْك/سُلْطَان · عَبَدَ/أَطَاعَ · بَخِلَ/بُخْل/شُحّ. Good, evil, truth: شَرّ/سُوء · خَيْر/حَسَنَة · حَقّ/صِدْق. Revelation and its
+recitation: تَلَا/قَرَأَ/رَتَّلَ · بَيَّنَ/فَصَّلَ · سَجَدَ/رَكَعَ. Purity: طَهَّرَ/زَكَّى · رِجْس/نَجَس. Creation of man: تُرَاب/طِين/صَلْصَال/حَمَأ.
+Presence, hindrance, counting: شَهِدَ/حَضَرَ · صَدَّ/مَنَعَ · أَحْصَى/عَدَّ. This world: لَهْو/لَعِب · زِينَة/زُخْرُف · كَيْد/مَكْر ·
+ضَاقَ/حَرَج · رَجْفَة/صَيْحَة/صَاعِقَة · رَمَى/قَذَفَ · وِزْر/ثَقَل. Drafted from the Mufradāt entries, then verified (463 points:
+435 confirmed, 27 partial, 1 not found; 28 texts changed, quotes machine-checked), then reviewed blind (83 claims,
+49 flagged, every flag fixed in the texts, none held back). Allah's كَيْد and مَكْر are given only with a gloss and
+"as befits Him": respite (7:183, ar-Rāġib's) and requital (27:50, the mufassirun's), no fixed split between them.
+Left out on purpose: 69:29 (سُلْطَان there is power or proof, he gives both), 18:86 حَمِئَة, 74:4 and 2:125 as
+طَهَّرَ ayat (readings differ), 73:20 (lan tuḥṣūhu read two ways), 21:17 and 31:6 لَهْو (tafsir differs), 7:2 and
+6:125 حَرَج, 86:15–16 and 7:99, 2:34, 38:24, 94:2, and 28:87, 20:16, 2:147 (said to the Prophet). 107:7 al-māʿūn is
+cited only for his "opposite of giving", its meaning left open. Not built yet: particle groups (لَنْ/لَا, إِنْ/إِذَا) —
+members are verbs or noun lemmas only.

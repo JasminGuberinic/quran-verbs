@@ -197,3 +197,27 @@ agents) → apply → notes. Lessons:
   zavjet, dobročinstvo, uspjeh, narod) — choose distinct bs words in the draft; "always/only" true of one form
   only (مَرَض noun vs the verb 26:80; أَحْلَام as dreams vs 52:32 minds); an ayah gloss that adds to the ayah
   (10:27 "faces covered", 2:7 "after they refused"); and Korkut spelling Dženet.
+
+## Batch 6 (2026-11-06): 25 groups → 130
+abda-azhara-alana · hizb-fariq-taifa · nima-fadl · mulk-sultan · abada-ataa · bukhl-shuhh · sharr-su · khayr-hasana
+· haqq-sidq · tala-qaraa-rattala · tahhara-zakka · turab-tin-salsal · shahida-hadara · sadda-manaa · ahsa-adda
+· lahw-laib · zina-zukhruf · rijs-najas · kayd-makr · dayq-haraj · bayyana-fassala · rajfa-sayha-saiqa · sajada-rakaa
+· rama-qadhafa · wizr-thiql. Order that worked: candidates (`lookup.py`, `xref6.py`) → 3 parallel drafters (forks,
+8–9 groups each, entries read first) → `merge6.py` (`check`: only the expected "no verified record") → packets
+(`packets.py` on the new groups only) → 3 verifiers → `apply5.py` → 2 blind Sonnet reviewers → `apply_review.py`
+(single-ayah flags) + `fix6review.py` (flags naming several ayat in one field: `apply_review` cannot target them)
+→ `notes6review.py` (one review note per group, before the al-ʿAskarī note). Lessons:
+- Verification: 463 points, 435 confirmed, 27 partial, 1 not found — drafting from the entries keeps it cheap.
+  Caught: a verse number from memory (6:32 for 29:64, 15:97 for 11:12), a gloss sharpened ("gilded" for his
+  مزوق "embellished"; "requital" put in his mouth for Allah's makr — his is "both kinds", requital is the
+  mufassirun's), our inference phrased as his ("so tafṣīl is part by part").
+- Blind review flagged 49 of 83 claims. Most common: (1) two members sharing one word, now also inside the
+  ayah quotes (učiti for تَلَا/قَرَأَ/رَتَّلَ, glina for طِين/صَلْصَال, teret for وِزْر/ثَقَل, "amusement" for لَعِب) —
+  pick the distinct bs + en word per member in the draft and use it in every quote of that member;
+  (2) a `why` that adds (9:118 "of remorse", 13:13 "natural event", 105:4 "Birds" from 105:3); (3) a limit he
+  sets dropped (سُلْطَان mostly over believers of knowledge; qirāʾa "fī t-tartīl"; شُهُود bare presence);
+  (4) tafsir readings stated as fact (2:43, 2:201, 24:61, 25:72, 7:78, 9:28) — give "many mufassirun";
+  (5) a contested ayah (107:7 al-māʿūn) — keep only what he cites it for.
+- `spoken` was needed for لَهْو (sukūn-final like بَغْي); حَمَأ, رِجْس, وِزْر, حَرَج voiced without one.
+- Particles are not nuance members yet (members are catalogue verbs or noun lemmas): a particle group would
+  need a third corpus identity in fil.nuances.model.

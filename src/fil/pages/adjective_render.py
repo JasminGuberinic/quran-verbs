@@ -26,9 +26,9 @@ _STATE_ORDER = ("definite", "indefinite")
 # ---------- adjective page ----------
 
 def adjective_page(card: dict, language: Language, text: dict, *, related: Sequence[dict] = (),
-                   nouns_of_root: Sequence[dict] = ()) -> str:
+                   nouns_of_root: Sequence[dict] = (), picture_credit: str = "") -> str:
     """One adjective's page. `related` are the other studied adjectives of its root, `nouns_of_root`
-    the studied nouns of its root (cards)."""
+    the studied nouns of its root (cards); `picture_credit` the footer line owed for their pictures."""
     words = text["adjectivePage"]
     path = seo.adjective_path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -47,7 +47,7 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
         _in_quran(card, language, text, root),
         _links(card, language, text, root, related, nouns_of_root),
         "</article></main>",
-        render._footer(text),
+        render._footer(text, picture_credit),
     ))
     head = render._head(title=title, description=description, path=path, root=root, indexed_in=ADJECTIVE_LANGUAGES,
                         language=language.code, alternates=lambda _languages: seo.adjective_alternates(card["slug"]),

@@ -9,7 +9,7 @@ Bosnian and English only for now (docs/NOUNS-PLAN.md): both are indexed and in t
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
@@ -18,8 +18,10 @@ from fil.stages.adjective_site import AdjectiveContent
 from fil.stages.noun_pages import write_ayat
 
 
-def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], texts: dict[str, dict]) -> list[Path]:
-    """Every adjective page and list and the adjectives' ayat files; the pages written."""
+def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], texts: dict[str, dict],
+          credit_for: Callable[[Sequence[dict]], str] = lambda _cards: "") -> list[Path]:
+    """Every adjective page and list and the adjectives' ayat files; the pages written. `credit_for`
+    gives the picture credit owed for the noun cards a page links (fil.stages.noun_pages.credits)."""
     if not adjectives.cards:
         return []
     write_ayat(pages, adjectives.ayat_lists)
@@ -29,8 +31,9 @@ def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], text
         written.append(_write(pages, seo.adjective_index_path(language.code),
                               adjective_render.adjective_index(adjectives.cards, language, text)))
         for card in adjectives.cards:
+            nouns_of_root = adjective_render.of_root(card, nouns)
             html = adjective_render.adjective_page(card, language, text, related=adjective_render.of_root(card, adjectives.cards),
-                                                   nouns_of_root=adjective_render.of_root(card, nouns))
+                                                   nouns_of_root=nouns_of_root, picture_credit=credit_for(nouns_of_root))
             written.append(_write(pages, seo.adjective_path(language.code, card["slug"]), html))
     return written
 

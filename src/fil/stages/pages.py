@@ -95,7 +95,7 @@ def build(pages: Path) -> bool:
     _write_app_page(pages, texts)
     written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards)]
     written += noun_pages.write(pages, nouns, texts, adjectives.cards)
-    written += adjective_pages.write(pages, adjectives, nouns.cards, texts)
+    written += adjective_pages.write(pages, adjectives, nouns.cards, texts, noun_pages.credits(nouns.pictures))
     _write_site_files(pages, verbs, texts, nouns.cards, adjectives.cards)
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards])

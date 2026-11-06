@@ -874,5 +874,107 @@
     "lemma": "جَمَل|جمل"
    }
   ]
+ },
+ "سَكِينَة|سكن": {
+  "kind": "ordinary",
+  "why": "Reviewed: سَكِينَة 'tranquillity' (2:248, 48:4) is not the singulative of anything; سِكِّين 'knife' is an unrelated word."
+ },
+ "ظُلَّة|ظلل": {
+  "kind": "ordinary",
+  "why": "Reviewed: ظُلَّة 'canopy, covering' (26:189) has its own broken plural ظُلَل (2:210, 31:32); ظِلّ 'shade' is a separate noun, not its collective."
+ },
+ "غَمّ|غمم": {
+  "kind": "ordinary",
+  "why": "Reviewed: غَمّ 'distress' is a verbal noun (3:153 فَأَثَابَكُمْ غَمًّا بِغَمٍّ); غُمَّة 'obscurity' (10:71) is a separate word, not its singulative."
+ },
+ "مَوْج|موج": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: 'waves' as a mass; one wave is مَوْجَة (standard Arabic, not in the Quran). It agrees masculine singular: وَإِذَا غَشِيَهُمْ مَوْجٌ كَالظُّلَلِ (31:32), يَغْشَاهُ مَوْجٌ مِنْ فَوْقِهِ مَوْجٌ (24:40).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "مَوْجَةٌ",
+    "gender": "F",
+    "en": "a wave",
+    "bs": "val"
+   }
+  ]
+ },
+ "أَرائِك|أرك": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَرَائِك is the regular broken plural (فَعَائِل) of أَرِيكَة 'couch' (standard Arabic; only the plural is Quranic, 18:31, 36:56), not an اسم جمع."
+ },
+ "أَمْن|أمن": {
+  "kind": "ordinary",
+  "why": "Reviewed: أَمْن 'safety' is a verbal noun; أَمَنَة (3:154, 8:11) is a separate verbal noun 'security, calm', not its singulative."
+ },
+ "بَلْدَة|بلد": {
+  "kind": "ordinary",
+  "why": "Reviewed: بَلْدَة 'town' (25:49, 34:15) and بَلَد 'land, town' are two nouns of the same root; بَلَد is not a collective of بَلْدَة."
+ },
+ "ثَمَر|ثمر": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: fruit as a kind; one fruit is ثَمَرَة. It agrees masculine singular: كُلُوا مِنْ ثَمَرِهِ إِذَا أَثْمَرَ (6:141).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "ثَمَرَةٌ",
+    "gender": "F",
+    "en": "a fruit",
+    "bs": "plod",
+    "lemma": "ثَمَرَة|ثمر"
+   }
+  ]
+ },
+ "حَبَّة|حبب": {
+  "kind": "singulative",
+  "why": "اسم الوحدة: one grain, of the collective حَبّ 'grain' (2:261 كَمَثَلِ حَبَّةٍ أَنْبَتَتْ سَبْعَ سَنَابِلَ; 55:12 وَالْحَبُّ ذُو الْعَصْفِ).",
+  "related": [
+   {
+    "role": "collective",
+    "ar": "حَبٌّ",
+    "gender": "M",
+    "en": "grain",
+    "bs": "zrnje",
+    "lemma": "حَبّ|حبب"
+   }
+  ]
+ },
+ "خَيْل|خيل": {
+  "kind": "collective",
+  "agreement": "F",
+  "why": "اسم جمع: 'horses' as a herd, no singular of its own; one horse is فَرَس or حِصَان (standard Arabic, not in the Quran). Treated as feminine: وَالْخَيْلَ وَالْبِغَالَ وَالْحَمِيرَ لِتَرْكَبُوهَا (16:8).",
+  "related": [
+   {
+    "role": "male",
+    "ar": "حِصَانٌ",
+    "gender": "M",
+    "en": "horse (stallion)",
+    "bs": "konj"
+   },
+   {
+    "role": "female",
+    "ar": "فَرَسٌ",
+    "gender": "F",
+    "en": "mare",
+    "bs": "kobila"
+   }
+  ]
+ },
+ "لُؤْلُؤ|لؤلؤ": {
+  "kind": "collective",
+  "agreement": "M",
+  "why": "اسم جنس جمعي: pearls as a kind; one pearl is لُؤْلُؤَة (standard Arabic, not in the Quran). It agrees masculine singular: كَأَنَّهُمْ لُؤْلُؤٌ مَكْنُونٌ (52:24).",
+  "related": [
+   {
+    "role": "one",
+    "ar": "لُؤْلُؤَةٌ",
+    "gender": "F",
+    "en": "a pearl",
+    "bs": "biser"
+   }
+  ]
  }
 }

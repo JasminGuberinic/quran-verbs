@@ -1411,5 +1411,277 @@
    "text": "بَصَائِرَ",
    "why": "بَصَائِر (pattern فَعَائِل) is diptote (no tanwīn, genitive in -a); CAMeL generates only the definite forms (Quran بَصَائِرُ 6:104)"
   }
+ },
+ "حُلُم|حلم": {
+  "P|definite|NOM": {
+   "text": "الْأَحْلَامُ",
+   "why": "أَحْلَام, regular triptote plural of حُلُم 'dream' (Quran أَضْغَاثُ أَحْلَامٍ 12:44); CAMeL generates no plural cells for it"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَحْلَامَ",
+   "why": "أَحْلَام, regular triptote plural of حُلُم 'dream' (Quran أَضْغَاثُ أَحْلَامٍ 12:44); CAMeL generates no plural cells for it"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَحْلَامٌ",
+   "why": "أَحْلَام, regular triptote plural of حُلُم 'dream' (Quran أَضْغَاثُ أَحْلَامٍ 12:44); CAMeL generates no plural cells for it"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَحْلَامًا",
+   "why": "أَحْلَام, regular triptote plural of حُلُم 'dream' (Quran أَضْغَاثُ أَحْلَامٍ 12:44); CAMeL generates no plural cells for it"
+  }
+ },
+ "ضُحًى|ضحو": {
+  "S|definite|NOM": {
+   "text": "الضُّحَى",
+   "why": "ضُحًى ends in alif maqṣūra: the case vowel is never written, so every case of a state has one spelling (Quran وَالضُّحَى 93:1, ضُحًى 7:98)"
+  },
+  "S|definite|ACC": {
+   "text": "الضُّحَى",
+   "why": "ضُحًى ends in alif maqṣūra: the case vowel is never written, so every case of a state has one spelling (Quran وَالضُّحَى 93:1, ضُحًى 7:98)"
+  },
+  "S|indefinite|GEN": {
+   "text": "ضُحًى",
+   "why": "ضُحًى ends in alif maqṣūra: the case vowel is never written, so every case of a state has one spelling (Quran وَالضُّحَى 93:1, ضُحًى 7:98)"
+  },
+  "S|indefinite|NOM": {
+   "text": "ضُحًى",
+   "why": "ضُحًى ends in alif maqṣūra: the case vowel is never written, so every case of a state has one spelling (Quran وَالضُّحَى 93:1, ضُحًى 7:98)"
+  }
+ },
+ "قَرْض|قرض": {
+  "S|definite|NOM": {
+   "text": "الْقَرْضُ",
+   "why": "قَرْض 'loan' is a regular triptote (Quran قَرْضًا حَسَنًا 2:245); CAMeL generates only the attested cell"
+  },
+  "S|definite|ACC": {
+   "text": "الْقَرْضَ",
+   "why": "قَرْض 'loan' is a regular triptote (Quran قَرْضًا حَسَنًا 2:245); CAMeL generates only the attested cell"
+  },
+  "S|definite|GEN": {
+   "text": "الْقَرْضِ",
+   "why": "قَرْض 'loan' is a regular triptote (Quran قَرْضًا حَسَنًا 2:245); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|NOM": {
+   "text": "قَرْضٌ",
+   "why": "قَرْض 'loan' is a regular triptote (Quran قَرْضًا حَسَنًا 2:245); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|GEN": {
+   "text": "قَرْضٍ",
+   "why": "قَرْض 'loan' is a regular triptote (Quran قَرْضًا حَسَنًا 2:245); CAMeL generates only the attested cell"
+  }
+ },
+ "كاتِب|كتب": {
+  "P|definite|NOM": {
+   "text": "الْكَاتِبُونَ",
+   "why": "sound masculine plural of كَاتِب (Quran كَاتِبِينَ 82:11, لَكَاتِبُونَ 21:94): -ūna in the nominative, -īna otherwise"
+  },
+  "P|definite|ACC": {
+   "text": "الْكَاتِبِينَ",
+   "why": "sound masculine plural of كَاتِب (Quran كَاتِبِينَ 82:11, لَكَاتِبُونَ 21:94): -ūna in the nominative, -īna otherwise"
+  },
+  "P|definite|GEN": {
+   "text": "الْكَاتِبِينَ",
+   "why": "sound masculine plural of كَاتِب (Quran كَاتِبِينَ 82:11, لَكَاتِبُونَ 21:94): -ūna in the nominative, -īna otherwise"
+  },
+  "P|indefinite|GEN": {
+   "text": "كَاتِبِينَ",
+   "why": "sound masculine plural of كَاتِب (Quran كَاتِبِينَ 82:11, لَكَاتِبُونَ 21:94): -ūna in the nominative, -īna otherwise"
+  }
+ },
+ "لُؤْلُؤ|لؤلؤ": {
+  "S|indefinite|GEN": {
+   "text": "لُؤْلُؤٍ",
+   "why": "لُؤْلُؤ is a triptote (Quran لُؤْلُؤٌ 52:24, لُؤْلُؤًا 22:23); the genitive is لُؤْلُؤٍ"
+  }
+ },
+ "ناصِح|نصح": {
+  "P|definite|NOM": {
+   "text": "النَّاصِحُونَ",
+   "why": "sound masculine plural of نَاصِح (Quran النَّاصِحِينَ 7:21, نَاصِحُونَ 12:11): -ūna in the nominative, -īna otherwise"
+  },
+  "P|indefinite|ACC": {
+   "text": "نَاصِحِينَ",
+   "why": "sound masculine plural of نَاصِح (Quran النَّاصِحِينَ 7:21, نَاصِحُونَ 12:11): -ūna in the nominative, -īna otherwise"
+  },
+  "P|indefinite|GEN": {
+   "text": "نَاصِحِينَ",
+   "why": "sound masculine plural of نَاصِح (Quran النَّاصِحِينَ 7:21, نَاصِحُونَ 12:11): -ūna in the nominative, -īna otherwise"
+  }
+ },
+ "أَرائِك|أرك": {
+  "P|definite|NOM": {
+   "text": "الْأَرَائِكُ",
+   "why": "أَرَائِك (pattern فَعَائِل, plural of أَرِيكَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran عَلَى الْأَرَائِكِ 18:31)"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَرَائِكَ",
+   "why": "أَرَائِك (pattern فَعَائِل, plural of أَرِيكَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran عَلَى الْأَرَائِكِ 18:31)"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَرَائِكُ",
+   "why": "أَرَائِك (pattern فَعَائِل, plural of أَرِيكَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran عَلَى الْأَرَائِكِ 18:31)"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَرَائِكَ",
+   "why": "أَرَائِك (pattern فَعَائِل, plural of أَرِيكَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran عَلَى الْأَرَائِكِ 18:31)"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَرَائِكَ",
+   "why": "أَرَائِك (pattern فَعَائِل, plural of أَرِيكَة) is diptote: no tanwīn, genitive in -a when indefinite (Quran عَلَى الْأَرَائِكِ 18:31)"
+  }
+ },
+ "امْرِئ|مرأ": {
+  "S|indefinite|NOM": {
+   "text": "امْرُؤٌ",
+   "why": "امْرُؤ moves its middle vowel with the case ending (إِتْبَاع): امْرُؤٌ امْرَأً امْرِئٍ (Quran إِنِ امْرُؤٌ هَلَكَ 4:176, امْرَأَ سَوْءٍ 19:28); its definite is the different word الْمَرْء"
+  },
+  "S|indefinite|ACC": {
+   "text": "امْرَأً",
+   "why": "امْرُؤ moves its middle vowel with the case ending (إِتْبَاع): امْرُؤٌ امْرَأً امْرِئٍ (Quran إِنِ امْرُؤٌ هَلَكَ 4:176, امْرَأَ سَوْءٍ 19:28); its definite is the different word الْمَرْء"
+  }
+ },
+ "بَغْضاء|بغض": {
+  "S|definite|GEN": {
+   "text": "الْبَغْضَاءِ",
+   "why": "بَغْضَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَغْضَاءُ 3:118)"
+  },
+  "S|indefinite|NOM": {
+   "text": "بَغْضَاءُ",
+   "why": "بَغْضَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَغْضَاءُ 3:118)"
+  },
+  "S|indefinite|ACC": {
+   "text": "بَغْضَاءَ",
+   "why": "بَغْضَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَغْضَاءُ 3:118)"
+  },
+  "S|indefinite|GEN": {
+   "text": "بَغْضَاءَ",
+   "why": "بَغْضَاء (pattern فَعْلَاء) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْبَغْضَاءُ 3:118)"
+  }
+ },
+ "حَبَّة|حبب": {
+  "S|definite|NOM": {
+   "text": "الْحَبَّةُ",
+   "why": "حَبَّة 'a grain' is a regular triptote (Quran حَبَّةٍ 2:261); CAMeL generates only the attested cell"
+  },
+  "S|definite|ACC": {
+   "text": "الْحَبَّةَ",
+   "why": "حَبَّة 'a grain' is a regular triptote (Quran حَبَّةٍ 2:261); CAMeL generates only the attested cell"
+  },
+  "S|definite|GEN": {
+   "text": "الْحَبَّةِ",
+   "why": "حَبَّة 'a grain' is a regular triptote (Quran حَبَّةٍ 2:261); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|NOM": {
+   "text": "حَبَّةٌ",
+   "why": "حَبَّة 'a grain' is a regular triptote (Quran حَبَّةٍ 2:261); CAMeL generates only the attested cell"
+  },
+  "S|indefinite|ACC": {
+   "text": "حَبَّةً",
+   "why": "حَبَّة 'a grain' is a regular triptote (Quran حَبَّةٍ 2:261); CAMeL generates only the attested cell"
+  }
+ },
+ "خِنزِير|خنزر": {
+  "P|indefinite|NOM": {
+   "text": "خَنَازِيرُ",
+   "why": "خَنَازِير (pattern فَعَالِيل) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْخَنَازِيرَ 5:60)"
+  },
+  "P|indefinite|ACC": {
+   "text": "خَنَازِيرَ",
+   "why": "خَنَازِير (pattern فَعَالِيل) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْخَنَازِيرَ 5:60)"
+  },
+  "P|indefinite|GEN": {
+   "text": "خَنَازِيرَ",
+   "why": "خَنَازِير (pattern فَعَالِيل) is diptote: no tanwīn, genitive in -a when indefinite (Quran الْخَنَازِيرَ 5:60)"
+  }
+ },
+ "أَساوِر|سور": {
+  "P|definite|NOM": {
+   "text": "الْأَسَاوِرُ",
+   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
+  },
+  "P|definite|ACC": {
+   "text": "الْأَسَاوِرَ",
+   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
+  },
+  "P|definite|GEN": {
+   "text": "الْأَسَاوِرِ",
+   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
+  },
+  "P|indefinite|NOM": {
+   "text": "أَسَاوِرُ",
+   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
+  },
+  "P|indefinite|ACC": {
+   "text": "أَسَاوِرَ",
+   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
+  },
+  "P|indefinite|GEN": {
+   "text": "أَسَاوِرَ",
+   "why": "أَسَاوِر (pattern فَعَالِل, plural of سِوَار 'bracelet') is diptote: no tanwīn, genitive in -a when indefinite (Quran مِنْ أَسَاوِرَ 18:31); the Quran has only plurals, so CAMeL makes no row"
+  }
+ },
+ "خُطُوَة|خطو": {
+  "P|definite|NOM": {
+   "text": "الْخُطُوَاتُ",
+   "why": "خُطُوَات, sound feminine plural of خُطْوَة 'step' (Quran خُطُوَاتِ 2:168): -ātun, and -ātin in the accusative and genitive; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "P|definite|ACC": {
+   "text": "الْخُطُوَاتِ",
+   "why": "خُطُوَات, sound feminine plural of خُطْوَة 'step' (Quran خُطُوَاتِ 2:168): -ātun, and -ātin in the accusative and genitive; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "P|definite|GEN": {
+   "text": "الْخُطُوَاتِ",
+   "why": "خُطُوَات, sound feminine plural of خُطْوَة 'step' (Quran خُطُوَاتِ 2:168): -ātun, and -ātin in the accusative and genitive; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "P|indefinite|NOM": {
+   "text": "خُطُوَاتٌ",
+   "why": "خُطُوَات, sound feminine plural of خُطْوَة 'step' (Quran خُطُوَاتِ 2:168): -ātun, and -ātin in the accusative and genitive; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "P|indefinite|ACC": {
+   "text": "خُطُوَاتٍ",
+   "why": "خُطُوَات, sound feminine plural of خُطْوَة 'step' (Quran خُطُوَاتِ 2:168): -ātun, and -ātin in the accusative and genitive; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "P|indefinite|GEN": {
+   "text": "خُطُوَاتٍ",
+   "why": "خُطُوَات, sound feminine plural of خُطْوَة 'step' (Quran خُطُوَاتِ 2:168): -ātun, and -ātin in the accusative and genitive; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "S|definite|NOM": {
+   "text": "الْخُطْوَةُ",
+   "why": "خُطْوَة 'a step', the singular of the Quranic plural خُطُوَات (2:168), a regular triptote; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "S|definite|ACC": {
+   "text": "الْخُطْوَةَ",
+   "why": "خُطْوَة 'a step', the singular of the Quranic plural خُطُوَات (2:168), a regular triptote; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "S|definite|GEN": {
+   "text": "الْخُطْوَةِ",
+   "why": "خُطْوَة 'a step', the singular of the Quranic plural خُطُوَات (2:168), a regular triptote; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "S|indefinite|NOM": {
+   "text": "خُطْوَةٌ",
+   "why": "خُطْوَة 'a step', the singular of the Quranic plural خُطُوَات (2:168), a regular triptote; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "S|indefinite|ACC": {
+   "text": "خُطْوَةً",
+   "why": "خُطْوَة 'a step', the singular of the Quranic plural خُطُوَات (2:168), a regular triptote; the Quran has only the plural, so CAMeL makes no row"
+  },
+  "S|indefinite|GEN": {
+   "text": "خُطْوَةٍ",
+   "why": "خُطْوَة 'a step', the singular of the Quranic plural خُطُوَات (2:168), a regular triptote; the Quran has only the plural, so CAMeL makes no row"
+  }
+ },
+ "شاعِر|شعر": {
+  "P|indefinite|NOM": {
+   "text": "شُعَرَاءُ",
+   "why": "شُعَرَاء (pattern فُعَلَاء, plural of شَاعِر) is diptote: no tanwīn, genitive in -a when indefinite (Quran وَالشُّعَرَاءُ 26:224)"
+  },
+  "P|indefinite|ACC": {
+   "text": "شُعَرَاءَ",
+   "why": "شُعَرَاء (pattern فُعَلَاء, plural of شَاعِر) is diptote: no tanwīn, genitive in -a when indefinite (Quran وَالشُّعَرَاءُ 26:224)"
+  },
+  "P|indefinite|GEN": {
+   "text": "شُعَرَاءَ",
+   "why": "شُعَرَاء (pattern فُعَلَاء, plural of شَاعِر) is diptote: no tanwīn, genitive in -a when indefinite (Quran وَالشُّعَرَاءُ 26:224)"
+  }
  }
 }

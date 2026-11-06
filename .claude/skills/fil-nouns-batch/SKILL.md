@@ -237,6 +237,25 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
 - A relation's `lemma` typed by hand (حَبَّة|حبب, shadda/vowel order) stops `fil pages` ("names what is not
   studied"): copy it from the catalogue keys (`nb._key(l)` over `noun_stage.catalogue`), NFC-matched.
 
+- Batch 9 (2026-11-06, 9 re-plan rounds). Skipped participles/adjectives (حَلال، راحِم، رازِق، طاغي، عاد، غاوي، فَرِح،
+  ظَهِير، مَيْتَة، مُنِير، واقِع، خاطِئ، خَصِيم، شارِب …), bare-accusative/idiom lemmas (خِلاف مِنْ خِلَافٍ، خِيفَة، فَرِيضَة،
+  جَهْد جَهْدَ أَيْمَانِهِمْ، خَطْب مَا خَطْبُكُمْ، جَرَم، وَحْد) and رَشَد (variant of رُشْد). HELD_BACK: خَلاق، خُلْد، عُقْبَى، فاطِر،
+  حاكِم (always الْحَاكِمِينَ = God), رَقِيب، مَقْت، مَرَدّ، وَحْى، وَعِيد، حَرِيق، تَقْدِير، تَفْصِيل، أَصْنام، and MSA-misleading
+  سِيما (لَا سِيَّمَا)، طَرْف، عَرَض، كَرَّة (ball)، سُرُر (navels)، قَصَص (MSA plural of قِصَّة)، سَلَم (forward sale)، تَقَلُّب،
+  أَسْباط، حَوارِيّ، حِجْر، مَنّ، وَقْر، سُجُود (merges ساجِد's plural). Run `att.py` on every new lemma in each re-plan round.
+- Scratch helpers that paid off (rewrite each session, ~15 lines each): `skiphold.py skip L=reason … | hold L …`
+  (NFC-matched to batch.txt), `att.py`, `gl.py` (CAMeL root:gloss), `tab.py --gaps` (batch table gaps), `ov.py tri()`.
+  The Sonnet halves type keys with shadda/vowel swapped (ذَرَّة، ظُلَّة، فِضَّة، حَبَّة → "no case table"): remap their
+  keys NFC → batch.txt before `paradigms`. zsh does not word-split `$VAR` — use `${=VAR}`.
+- Glosses that failed → accepted: shone (لَمَعَ: use present يَلْمَعُ shines), تَجْرِي run (→ تَرْكُضُ), فارِس knight,
+  مَخْزَن storehouse, عَرُوس bridegroom only, ثَوْب garment, لَبِسَ put on, الْأَرْض earth, حَرَام sin, بَرِّيّ land,
+  سِنّ (age) fails, تَصَرَّفَ behaved, اسْتَعَدَّ got ready, مَنَعَ/نَهَى fail as prohibited (امْتَنَعَ عَنْ abstained),
+  British "tranquillity" is the accepted spelling for سَكِينَة. Root exceptions added: wine خ.م.ر، grave ق.ب.ر،
+  old age ك.ب.ر، town ب.ل.د، shelter ظ.ل.ل.
+- Reviewer refusals: a gloss must carry the tense/number (انْتَظَرَ "waited for", خَافَ الطِّفْلُ "was afraid"); a verb's own
+  preposition gets "-" or merges into the verb gloss (اقْتَرَبَ مِنْ، احْتَفَلَ بِـ); الْخُرُوج is "going out" (exit reads
+  مَخْرَج); يَرْكَبُ عَلَى is colloquial (رَكِبَ takes an object).
+
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.
 - Form glosses: the composer skips what it cannot know — readings that differ, عَن, vocatives,

@@ -59,6 +59,14 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
     "صَفّ": "adverb",
     "ثُلُث": "quantifier",
     "جاعِل": "adjective-like",
+    "حَلال": "adjective-like", "خَبِيثَة": "adjective-like", "راحِم": "adjective-like", "رازِق": "adjective-like", "طاغي": "adjective-like", "عاد": "adjective-like", "غاوي": "adjective-like", "فَرِح": "adjective-like", "ظَهِير": "adjective-like", "خِلاف": "adverb", "خِيفَة": "adverb", "فَرِيضَة": "adverb",
+    "مَعْدُودَة": "adjective-like", "مَيْتَة": "adjective-like", "مُبَيِّنَة": "adjective-like", "مُتَشابِه": "adjective-like", "مُدَّكِر": "adjective-like", "مُسْتَكْبِر": "adjective-like", "مُعْتَدي": "adjective-like", "مُنتَظِر": "adjective-like", "مُنظَر": "adjective-like", "مُنِير": "adjective-like", "واقِع": "adjective-like", "وَحْد": "adverb",
+    "تِسْع": "quantifier", "جاثِم": "adjective-like", "جَرَم": "idiom",
+    "جَهْد": "idiom", "حِلّ": "adjective-like",
+    "خاطِئ": "adjective-like", "خالِصَة": "adjective-like", "خاوِيَة": "adjective-like", "خَصِيم": "adjective-like", "خَطْب": "idiom",
+    "خُضْر": "adjective",
+    "رَشَد": "variant (on رُشْد's card)",
+    "شارِب": "adjective-like",
     # ابْتِغَاءَ is in the Quran always a bare accusative of purpose ("seeking …"), learned as a construction.
     "ابْتِغاء": "adverb",
 }

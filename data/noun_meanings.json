@@ -4430,5 +4430,557 @@
    "en": "piece",
    "bs": "komad"
   }
+ },
+ "حُلُم|حلم": {
+  "en": "dream",
+  "enPlural": "dreams",
+  "bs": "san",
+  "countable": true,
+  "polysemous": true,
+  "idafa": {
+   "ar": "تَفْسِيرُ",
+   "en": "explanation",
+   "bs": "tumačenje"
+  }
+ },
+ "خَمْر|خمر": {
+  "en": "wine",
+  "enPlural": "wines",
+  "bs": "vino",
+  "countable": false,
+  "idafa": {
+   "ar": "زُجَاجَةُ",
+   "en": "bottle",
+   "bs": "boca"
+  }
+ },
+ "دَعْوَة|دعو": {
+  "en": "call",
+  "enPlural": "calls",
+  "bs": "poziv",
+  "countable": true,
+  "idafa": {
+   "ar": "قَبُولُ",
+   "en": "acceptance",
+   "bs": "prihvatanje"
+  }
+ },
+ "ذَرَّة|ذرر": {
+  "en": "atom",
+  "enPlural": "atoms",
+  "bs": "atom",
+  "countable": true,
+  "idafa": {
+   "ar": "وَزْنُ",
+   "en": "weight",
+   "bs": "težina"
+  }
+ },
+ "رُشْد|رشد": {
+  "en": "maturity",
+  "enPlural": "maturities",
+  "bs": "zrelost",
+  "countable": false,
+  "idafa": {
+   "ar": "سِنُّ",
+   "en": "age",
+   "bs": "dob"
+  }
+ },
+ "سَبْت|سبت": {
+  "en": "Saturday",
+  "enPlural": "Saturdays",
+  "bs": "subota",
+  "countable": true,
+  "idafa": {
+   "ar": "يَوْمُ",
+   "en": "day",
+   "bs": "dan"
+  }
+ },
+ "سَعَة|وسع": {
+  "en": "capacity",
+  "enPlural": "capacities",
+  "bs": "kapacitet",
+  "countable": false,
+  "idafa": {
+   "ar": "قَدْرُ",
+   "en": "measure",
+   "bs": "mjera"
+  }
+ },
+ "سَكِينَة|سكن": {
+  "en": "tranquillity",
+  "enPlural": "tranquillities",
+  "bs": "smirenost",
+  "countable": false,
+  "idafa": {
+   "ar": "لَحْظَةُ",
+   "en": "moment",
+   "bs": "trenutak"
+  }
+ },
+ "سِجْن|سجن": {
+  "en": "prison",
+  "enPlural": "prisons",
+  "bs": "zatvor",
+  "countable": true,
+  "idafa": {
+   "ar": "بَابُ",
+   "en": "door",
+   "bs": "vrata"
+  }
+ },
+ "ضُحًى|ضحو": {
+  "en": "forenoon",
+  "enPlural": "forenoons",
+  "bs": "prijepodne",
+  "countable": false,
+  "accusativeAdverbial": true,
+  "idafa": {
+   "ar": "وَقْتُ",
+   "en": "time",
+   "bs": "vrijeme"
+  }
+ },
+ "ظُلَّة|ظلل": {
+  "en": "shelter",
+  "enPlural": "shelters",
+  "bs": "nadstrešnica",
+  "countable": true,
+  "idafa": {
+   "ar": "ظِلُّ",
+   "en": "shade",
+   "bs": "hlad"
+  }
+ },
+ "عَداوَة|عدو": {
+  "en": "hostility",
+  "enPlural": "hostilities",
+  "bs": "neprijateljstvo",
+  "countable": false,
+  "idafa": {
+   "ar": "سَبَبُ",
+   "en": "cause",
+   "bs": "uzrok"
+  }
+ },
+ "عَدَد|عدد": {
+  "en": "number",
+  "enPlural": "numbers",
+  "bs": "broj",
+  "countable": true,
+  "idafa": {
+   "ar": "زِيَادَةُ",
+   "en": "increase",
+   "bs": "povećanje"
+  }
+ },
+ "عِبْرَة|عبر": {
+  "en": "lesson",
+  "enPlural": "lessons",
+  "bs": "pouka",
+  "countable": true,
+  "idafa": {
+   "ar": "أَهَمِّيَّةُ",
+   "en": "importance",
+   "bs": "važnost"
+  }
+ },
+ "غَمّ|غمم": {
+  "en": "distress",
+  "enPlural": "distresses",
+  "bs": "tuga",
+  "countable": false,
+  "idafa": {
+   "ar": "سَبَبُ",
+   "en": "cause",
+   "bs": "uzrok"
+  }
+ },
+ "غَيْظ|غيظ": {
+  "en": "anger",
+  "enPlural": "angers",
+  "bs": "bijes",
+  "countable": false,
+  "idafa": {
+   "ar": "شِدَّةُ",
+   "en": "intensity",
+   "bs": "jačina"
+  }
+ },
+ "فَجْر|فجر": {
+  "en": "dawn",
+  "enPlural": "dawns",
+  "bs": "zora",
+  "countable": true,
+  "idafa": {
+   "ar": "ضَوْءُ",
+   "en": "light",
+   "bs": "svjetlo"
+  }
+ },
+ "فِضَّة|فضض": {
+  "en": "silver",
+  "enPlural": "silvers",
+  "bs": "srebro",
+  "countable": false,
+  "idafa": {
+   "ar": "لَوْنُ",
+   "en": "color",
+   "bs": "boja"
+  }
+ },
+ "قَبْر|قبر": {
+  "en": "grave",
+  "enPlural": "graves",
+  "bs": "grob",
+  "countable": true,
+  "idafa": {
+   "ar": "زِيَارَةُ",
+   "en": "visit",
+   "bs": "posjeta"
+  }
+ },
+ "قَرْض|قرض": {
+  "en": "loan",
+  "enPlural": "loans",
+  "bs": "zajam",
+  "countable": true,
+  "idafa": {
+   "ar": "قِيمَةُ",
+   "en": "value",
+   "bs": "vrijednost"
+  }
+ },
+ "قَمِيص|قمص": {
+  "en": "shirt",
+  "enPlural": "shirts",
+  "bs": "košulja",
+  "countable": true,
+  "idafa": {
+   "ar": "لَوْنُ",
+   "en": "color",
+   "bs": "boja"
+  }
+ },
+ "كاتِب|كتب": {
+  "en": "writer",
+  "enPlural": "writers",
+  "bs": "pisac",
+  "countable": true,
+  "idafa": {
+   "ar": "قَلَمُ",
+   "en": "pen",
+   "bs": "olovka"
+  }
+ },
+ "كَأْس|كأس": {
+  "en": "cup",
+  "enPlural": "cups",
+  "bs": "čaša",
+  "countable": true,
+  "idafa": {
+   "ar": "حَجْمُ",
+   "en": "size",
+   "bs": "veličina"
+  }
+ },
+ "كَنز|كنز": {
+  "en": "treasure",
+  "enPlural": "treasures",
+  "bs": "blago",
+  "countable": true,
+  "idafa": {
+   "ar": "مَكَانُ",
+   "en": "place",
+   "bs": "mjesto"
+  }
+ },
+ "كَهْف|كهف": {
+  "en": "cave",
+  "enPlural": "caves",
+  "bs": "pećina",
+  "countable": true,
+  "idafa": {
+   "ar": "مَدْخَلُ",
+   "en": "entrance",
+   "bs": "ulaz"
+  }
+ },
+ "كِبَر|كبر": {
+  "en": "old age",
+  "enPlural": "old ages",
+  "bs": "starost",
+  "countable": false,
+  "idafa": {
+   "ar": "سِنُّ",
+   "en": "age",
+   "bs": "dob"
+  }
+ },
+ "لُؤْلُؤ|لؤلؤ": {
+  "en": "pearls",
+  "enPlural": "pearls",
+  "bs": "biseri",
+  "countable": false,
+  "idafa": {
+   "ar": "لَوْنُ",
+   "en": "color",
+   "bs": "boja"
+  }
+ },
+ "مَوْج|موج": {
+  "en": "waves",
+  "enPlural": "waves",
+  "bs": "valovi",
+  "countable": false,
+  "idafa": {
+   "ar": "صَوْتُ",
+   "en": "sound",
+   "bs": "zvuk"
+  }
+ },
+ "مِيعاد|وعد": {
+  "en": "appointment",
+  "enPlural": "appointments",
+  "bs": "termin",
+  "countable": true,
+  "idafa": {
+   "ar": "وَقْتُ",
+   "en": "time",
+   "bs": "vrijeme"
+  }
+ },
+ "ناصِح|نصح": {
+  "en": "advisor",
+  "enPlural": "advisors",
+  "bs": "savjetnik",
+  "countable": true,
+  "idafa": {
+   "ar": "صَوْتُ",
+   "en": "voice",
+   "bs": "glas"
+  }
+ },
+ "أَرائِك|أرك": {
+  "en": "sofa",
+  "enPlural": "sofas",
+  "bs": "kauč",
+  "countable": true,
+  "idafa": {
+   "ar": "لَوْنُ",
+   "en": "color",
+   "bs": "boja"
+  }
+ },
+ "أَساوِر|سور": {
+  "en": "bracelet",
+  "enPlural": "bracelets",
+  "bs": "narukvica",
+  "countable": true,
+  "idafa": {
+   "ar": "ثَمَنُ",
+   "en": "price",
+   "bs": "cijena"
+  }
+ },
+ "أَمْن|أمن": {
+  "en": "security",
+  "enPlural": "securities",
+  "bs": "sigurnost",
+  "countable": false,
+  "idafa": {
+   "ar": "أَهَمِّيَّةُ",
+   "en": "importance",
+   "bs": "važnost"
+  }
+ },
+ "امْرِئ|مرأ": {
+  "en": "man",
+  "enPlural": "men",
+  "bs": "čovjek",
+  "countable": true,
+  "idafa": {
+   "ar": "اسْمُ",
+   "en": "name",
+   "bs": "ime"
+  }
+ },
+ "بَرْق|برق": {
+  "en": "lightning",
+  "enPlural": "lightnings",
+  "bs": "munja",
+  "countable": false,
+  "idafa": {
+   "ar": "ضَوْءُ",
+   "en": "light",
+   "bs": "svjetlo"
+  }
+ },
+ "بَغْضاء|بغض": {
+  "en": "hatred",
+  "enPlural": "hatreds",
+  "bs": "mržnja",
+  "countable": false,
+  "idafa": {
+   "ar": "سَبَبُ",
+   "en": "cause",
+   "bs": "uzrok"
+  }
+ },
+ "بَلْدَة|بلد": {
+  "en": "town",
+  "enPlural": "towns",
+  "bs": "gradić",
+  "countable": true,
+  "idafa": {
+   "ar": "سُوقُ",
+   "en": "market",
+   "bs": "pijaca"
+  }
+ },
+ "بِضاعَة|بضع": {
+  "en": "merchandise",
+  "enPlural": "merchandise",
+  "bs": "roba",
+  "countable": false,
+  "idafa": {
+   "ar": "ثَمَنُ",
+   "en": "price",
+   "bs": "cijena"
+  }
+ },
+ "تَحْرِير|حرر": {
+  "en": "liberation",
+  "enPlural": "liberations",
+  "bs": "oslobađanje",
+  "countable": false,
+  "idafa": {
+   "ar": "يَوْمُ",
+   "en": "day",
+   "bs": "dan"
+  }
+ },
+ "ثَمَر|ثمر": {
+  "en": "fruit",
+  "enPlural": "fruit",
+  "bs": "plodovi",
+  "countable": false,
+  "idafa": {
+   "ar": "طَعْمُ",
+   "en": "taste",
+   "bs": "okus"
+  }
+ },
+ "حَبَّة|حبب": {
+  "en": "grain",
+  "enPlural": "grains",
+  "bs": "zrno",
+  "countable": true,
+  "idafa": {
+   "ar": "حَجْمُ",
+   "en": "size",
+   "bs": "veličina"
+  }
+ },
+ "حُوت|حوت": {
+  "en": "whale",
+  "enPlural": "whales",
+  "bs": "kit",
+  "countable": true,
+  "idafa": {
+   "ar": "حَجْمُ",
+   "en": "size",
+   "bs": "veličina"
+  }
+ },
+ "حِمار|حمر": {
+  "en": "donkey",
+  "enPlural": "donkeys",
+  "bs": "magarac",
+  "countable": true,
+  "idafa": {
+   "ar": "صَاحِبُ",
+   "en": "owner",
+   "bs": "vlasnik"
+  }
+ },
+ "خَيْل|خيل": {
+  "en": "horses",
+  "enPlural": "horses",
+  "bs": "konji",
+  "countable": false,
+  "idafa": {
+   "ar": "إِسْطَبْلُ",
+   "en": "stable",
+   "bs": "štala"
+  }
+ },
+ "خُرُوج|خرج": {
+  "en": "departure",
+  "enPlural": "departures",
+  "bs": "izlazak",
+  "countable": false,
+  "idafa": {
+   "ar": "وَقْتُ",
+   "en": "time",
+   "bs": "vrijeme"
+  }
+ },
+ "خُطُوَة|خطو": {
+  "en": "step",
+  "enPlural": "steps",
+  "bs": "korak",
+  "countable": true,
+  "idafa": {
+   "ar": "صَوْتُ",
+   "en": "sound",
+   "bs": "zvuk"
+  }
+ },
+ "خِنزِير|خنزر": {
+  "en": "pig",
+  "enPlural": "pigs",
+  "bs": "svinja",
+  "countable": true,
+  "idafa": {
+   "ar": "لَحْمُ",
+   "en": "meat",
+   "bs": "meso"
+  }
+ },
+ "دَيْن|دين": {
+  "en": "debt",
+  "enPlural": "debts",
+  "bs": "dug",
+  "countable": true,
+  "idafa": {
+   "ar": "قِيمَةُ",
+   "en": "value",
+   "bs": "vrijednost"
+  }
+ },
+ "رُعْب|رعب": {
+  "en": "terror",
+  "enPlural": "terrors",
+  "bs": "strah",
+  "countable": false,
+  "idafa": {
+   "ar": "شُعُورُ",
+   "en": "feeling",
+   "bs": "osjećaj"
+  }
+ },
+ "شاعِر|شعر": {
+  "en": "poet",
+  "enPlural": "poets",
+  "bs": "pjesnik",
+  "countable": true,
+  "idafa": {
+   "ar": "دِيوَانُ",
+   "en": "collection of poems",
+   "bs": "zbirka pjesama"
+  }
  }
 }

@@ -29,7 +29,7 @@ STYLESHEET = "pages.css"
 _ENGLISH = "en"
 _ENGLISH_STOP = "Stop"   # the label of a playing button in a language that has no word for it yet
 _CURRENT = ' aria-current="page"'
-VERBS, NOUNS, ADJECTIVES = "verbs", "nouns", "adjectives"     # the sections of the site, in its top bar
+VERBS, NOUNS, ADJECTIVES, NUANCES = "verbs", "nouns", "adjectives", "nuances"   # the sections of the site, in its top bar
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran'
@@ -58,11 +58,12 @@ class PublishedVerb:
 # ---------- verb page ----------
 
 def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "", *,
-              has_nouns: bool = False, has_adjectives: bool = False, picture_credit: str = "",
-              adjectives_of_root: str = "") -> str:
+              has_nouns: bool = False, has_adjectives: bool = False, has_nuances: bool = False,
+              picture_credit: str = "", adjectives_of_root: str = "", similar_words: str = "") -> str:
     """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render);
     `adjectives_of_root`: the same for the studied adjectives (fil.pages.adjective_render);
-    `has_nouns`, `has_adjectives`: those pages are published, so the top bar leads to them;
+    `similar_words`: the section linking the near-synonym groups the verb belongs to (fil.pages.nuance_render);
+    `has_nouns`, `has_adjectives`, `has_nuances`: those pages are published, so the top bar leads to them;
     `picture_credit`: the footer line owed for the pictures the nouns' section shows."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
@@ -75,7 +76,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         lemma=card["lemma"], meaning=meaning, index_title=text["page"]["indexTitle"])
     body = "".join((
         top_bar(text, root, language, _language_links(root, lambda code: seo.verb_path(code, verb.slug), language),
-                section=VERBS, has_nouns=has_nouns, has_adjectives=has_adjectives),
+                section=VERBS, has_nouns=has_nouns, has_adjectives=has_adjectives, has_nuances=has_nuances),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article>',
         _hero(card, meaning, language, text, root),
         _main_forms(card, text, root),
@@ -84,6 +85,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         _sentences(card, language, text, root),
         nouns_of_root,
         adjectives_of_root,
+        similar_words,
         _app_link(card, language, text, root),
         "</article></main>",
         _footer(text, picture_credit),
@@ -381,7 +383,7 @@ def app_link(rank: int, language: str, root: str) -> str:
 # ---------- language index ----------
 
 def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dict, *, has_nouns: bool = False,
-                   has_adjectives: bool = False) -> str:
+                   has_adjectives: bool = False, has_nuances: bool = False) -> str:
     path = seo.language_index_path(language.code)
     root = seo.to_root(path)
     title = f'{text["page"]["indexTitle"]} · {seo.SITE_NAME}'
@@ -395,7 +397,8 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
     )
     body = "".join((
         top_bar(text, root, language, _language_links(root, seo.language_index_path, language),
-                section=VERBS, is_section_list=True, has_nouns=has_nouns, has_adjectives=has_adjectives),
+                section=VERBS, is_section_list=True, has_nouns=has_nouns, has_adjectives=has_adjectives,
+                has_nuances=has_nuances),
         f'<main class="wrap"><h1>{escape(text["page"]["indexTitle"])}</h1><p class="lead">{escape(description)}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         f'<p class="cta"><a class="button" href="{root}index.html?lang={language.code}">{escape(text["tabs"][0])} · {seo.SITE_NAME} →</a></p>',
@@ -488,15 +491,18 @@ def _meta(*, title: str, description: str, url: str, page_type: str) -> str:
 
 
 def top_bar(text: dict, root: str, language: Language, switcher: str, *, section: str,
-            is_section_list: bool = False, has_nouns: bool = False, has_adjectives: bool = False) -> str:
+            is_section_list: bool = False, has_nouns: bool = False, has_adjectives: bool = False,
+            has_nuances: bool = False) -> str:
     """The one top bar of every static page: the brand, the site's sections (verbs, nouns,
-    adjectives) with the current one marked, and the language switcher. Nouns and adjectives
-    appear only in the languages they are written in, so no link leads to a missing page."""
+    adjectives, nuances) with the current one marked, and the language switcher. Nouns, adjectives
+    and nuances appear only in the languages they are written in, so no link leads to a missing page."""
     sections = [(VERBS, seo.language_index_path(language.code), text["page"]["nav"])]
     if has_nouns and language.code in seo.NOUN_FOLDERS:
         sections.append((NOUNS, seo.noun_index_path(language.code), text["nounPage"]["nav"]))
     if has_adjectives and language.code in seo.ADJECTIVE_FOLDERS:
         sections.append((ADJECTIVES, seo.adjective_index_path(language.code), text["adjectivePage"]["nav"]))
+    if has_nuances and language.code in seo.NUANCE_FOLDERS:
+        sections.append((NUANCES, seo.nuance_index_path(language.code), text["nuancePage"]["nav"]))
     links = "".join(f'<a href="{root}{path}"{_section_mark(name == section, is_section_list)}>{escape(label)}</a>'
                     for name, path, label in sections)
     return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>'

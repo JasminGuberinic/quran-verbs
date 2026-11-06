@@ -208,3 +208,14 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .noun-hero .eyebrow a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .noun-links a { display: inline-flex; align-items: center; gap: 8px; }
 .noun-links .thumb { width: 24px; height: 24px; border-radius: 6px; background: var(--accent-soft); padding: 2px; }
+/* Nijanse / Nuances: groups of near-synonyms (fil.pages.nuance_render) */
+.nuance-words { font-size: 1.6rem; line-height: 1.9; margin: 4px 0 0; }
+.nuance-words a { text-decoration: none; }
+.tell-apart { margin: 16px 0 0; padding: 12px 16px; border-left: 4px solid var(--gold); background: var(--gold-soft); border-radius: 8px; }
+.tell-apart h3 { margin: 0 0 6px; font-size: 1rem; }
+.tell-apart p { margin: 0; }
+.nuance-word { scroll-margin-top: 72px; }
+.nuance-word h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.ayah .why { margin: 8px 0; }
+.nuance-list .ar { margin-left: auto; }
+.sources ul { padding-left: 20px; }

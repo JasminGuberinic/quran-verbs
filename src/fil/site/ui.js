@@ -483,10 +483,40 @@
       adjectivesOfRoot: "Adjectives of this root",
     },
   };
+  // The near-synonym groups (fil.pages.nuance_render): Bosnian and English only, for now.
+  const NUANCE_PAGE = {
+    bs: {
+      nav: "Nijanse", indexTitle: "Nijanse: slične riječi u Kur'anu",
+      indexIntro: "Riječi sličnog značenja – zašto baš ova riječ, a ne neka druga? Za svaku grupu: šta riječi dijele, po čemu se razlikuju i ajeti koji to pokazuju, prema klasičnim leksikografima.",
+      title: (title, words) => `${title}: ${words} · nijanse u Kur'anu`,
+      description: (title, words) => `${title} (${words}): šta ove riječi dijele, po čemu se razlikuju i ajeti koji to pokazuju, s izgovorom.`,
+      shared: "Šta im je zajedničko", tellApart: "Kako ih razlikovati",
+      card: { verb: "Stranica glagola", noun: "Stranica imenice", adjective: "Stranica pridjeva" },
+      why: "Zašto ova riječ ovdje",
+      sources: "Izvori",
+      sourcesNote: "Objašnjenja su napisana našim riječima prema klasičnim djelima navedenim ovdje; gdje se učenjaci razilaze, mišljenje se pripisuje autoru. Broj pojavljivanja je iz Quranic Arabic Corpusa.",
+      similarWords: "Slične riječi",
+      inGroup: (title) => `Nijanse: ${title}`,
+    },
+    en: {
+      nav: "Nuances", indexTitle: "Nuances: near-synonyms in the Quran",
+      indexIntro: "Words of similar meaning — why this word and not another? For each group: what the words share, how they differ, and the ayat that show it, following the classical lexicographers.",
+      title: (title, words) => `${title}: ${words} · nuances in the Quran`,
+      description: (title, words) => `${title} (${words}): what these words share, how they differ, and the ayat that show it, with audio.`,
+      shared: "What they share", tellApart: "How to tell them apart",
+      card: { verb: "Verb page", noun: "Noun page", adjective: "Adjective page" },
+      why: "Why this word here",
+      sources: "Sources",
+      sourcesNote: "The explanations are in our own words, following the classical works named here; where scholars differ, a view is attributed to its author. Counts are from the Quranic Arabic Corpus.",
+      similarWords: "Similar words",
+      inGroup: (title) => `Nuances: ${title}`,
+    },
+  };
   for (const code of Object.keys(UI)) {
     UI[code].page = PAGE[code];
     UI[code].nounPage = NOUN_PAGE[code] || NOUN_PAGE.en;
     UI[code].adjectivePage = ADJECTIVE_PAGE[code] || ADJECTIVE_PAGE.en;
+    UI[code].nuancePage = NUANCE_PAGE[code] || NUANCE_PAGE.en;
     UI[code].forms = FORMS[code] || FORMS.en;
     UI[code].footer = [...credits(SOURCES[code] || SOURCES.en), ...UI[code].footer];
   }

@@ -79,6 +79,24 @@ def adjective_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(ADJECTIVE_FOLDERS))
 
 
+# The near-synonym groups likewise (Bosnian and English only, for now).
+NUANCE_FOLDERS = {"bs": "nijanse", "en": "nuances"}
+
+
+def nuance_index_path(language: str) -> str:
+    return f"{language}/{NUANCE_FOLDERS[language]}/"
+
+
+def nuance_path(language: str, slug: str) -> str:
+    return f"{nuance_index_path(language)}{slug}/"
+
+
+def nuance_alternates(slug: str | None) -> list[Alternate]:
+    """A group's page (or, with no slug, the list of groups) in each language it is built in."""
+    path_in = (lambda language: nuance_path(language, slug)) if slug else nuance_index_path
+    return _alternates(path_in, tuple(NUANCE_FOLDERS))
+
+
 def to_root(path: str) -> str:
     """The relative way back to the site root from a page at `path`."""
     return "../" * path.count("/")
@@ -143,6 +161,23 @@ def verb_structured_data(*, title: str, description: str, language: str, path: s
                 {"@type": "ListItem", "position": 3, "name": lemma, "item": absolute(path)},
             ],
         },
+    ]
+    return _json_ld({"@context": "https://schema.org", "@graph": graph})
+
+
+def nuance_structured_data(*, title: str, description: str, language: str, path: str, index_title: str) -> str:
+    """schema.org: a free learning resource on one group of near-synonyms, in the list of groups."""
+    index = absolute(nuance_index_path(language))
+    graph = [
+        {"@type": "LearningResource", "@id": absolute(path), "name": title, "description": description,
+         "url": absolute(path), "inLanguage": language, "isAccessibleForFree": True,
+         "learningResourceType": "vocabulary", "educationalUse": "self-study", "image": absolute(SHARE_IMAGE),
+         "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": SITE_NAME, "item": SITE_URL},
+            {"@type": "ListItem", "position": 2, "name": index_title, "item": index},
+            {"@type": "ListItem", "position": 3, "name": title, "item": absolute(path)},
+        ]},
     ]
     return _json_ld({"@context": "https://schema.org", "@graph": graph})
 

@@ -30,9 +30,11 @@ _ATTESTED, _QURAN_MARK, _STANDARD_MARK = "attested", "●", "◦"
 # ---------- noun page ----------
 
 def noun_page(card: dict, language: Language, text: dict, *, category: str | None, picture_credit: str = "",
-              related: Sequence[dict] = (), adjectives_of_root: str = "", has_adjectives: bool = False) -> str:
+              related: Sequence[dict] = (), adjectives_of_root: str = "", has_adjectives: bool = False,
+              has_nuances: bool = False, similar_words: str = "") -> str:
     """One noun's page. `related` are the other studied nouns of its root (cards);
-    `adjectives_of_root` the section linking the studied adjectives of its root."""
+    `adjectives_of_root` the section linking the studied adjectives of its root; `similar_words`
+    the section linking the near-synonym groups it belongs to (fil.pages.nuance_render)."""
     words = text["nounPage"]
     path = seo.noun_path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -42,7 +44,8 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
     structured = seo.verb_structured_data(title=title, description=description, language=language.code, path=path,
                                           lemma=card["lemma"], meaning=meaning, index_title=words["indexTitle"])
     body = "".join((
-        _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"]), has_adjectives=has_adjectives),
+        _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"]), has_adjectives=has_adjectives,
+                 has_nuances=has_nuances),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun">',
         _hero(card, meaning, language, text, root, category),
         _related(card, language, text, root),
@@ -52,6 +55,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
         _in_quran(card, language, text, root),
         _links(card, language, text, root, related),
         adjectives_of_root,
+        similar_words,
         "</article></main>",
         _footer(text, picture_credit),
     ))
@@ -326,7 +330,7 @@ def _noun_link(noun: dict, language: Language, root: str) -> str:
 # ---------- the list of nouns ----------
 
 def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categories: dict[str, str],
-               picture_credit: str = "", has_adjectives: bool = False) -> str:
+               picture_credit: str = "", has_adjectives: bool = False, has_nuances: bool = False) -> str:
     words = text["nounPage"]
     path = seo.noun_index_path(language.code)
     root = seo.to_root(path)
@@ -344,7 +348,8 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
         for position, card in enumerate(cards, start=1)
     )
     body = "".join((
-        _top_bar(text, root, language, seo.noun_index_path, is_section_list=True, has_adjectives=has_adjectives),
+        _top_bar(text, root, language, seo.noun_index_path, is_section_list=True, has_adjectives=has_adjectives,
+                 has_nuances=has_nuances),
         f'<main class="wrap"><h1>{escape(words["indexTitle"])}</h1><p class="lead">{escape(words["indexIntro"])}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         _category_filter(cards, words, categories),
@@ -402,7 +407,7 @@ def _thumbnail(card: dict, root: str) -> str:
 # ---------- shared ----------
 
 def _top_bar(text: dict, root: str, language: Language, path_in, is_section_list: bool = False,
-             has_adjectives: bool = False) -> str:
+             has_adjectives: bool = False, has_nuances: bool = False) -> str:
     """The site's top bar (render.top_bar), switching only between the languages nouns are written in."""
     switcher = "".join(
         f'<a href="{root}{path_in(code)}" hreflang="{code}" lang="{code}"'
@@ -410,7 +415,7 @@ def _top_bar(text: dict, root: str, language: Language, path_in, is_section_list
         for code, name in (("bs", "Bosanski"), ("en", "English"))
     )
     return render.top_bar(text, root, language, switcher, section=render.NOUNS, is_section_list=is_section_list,
-                          has_nouns=True, has_adjectives=has_adjectives)
+                          has_nouns=True, has_adjectives=has_adjectives, has_nuances=has_nuances)
 
 
 def _footer(text: dict, picture_credit: str) -> str:

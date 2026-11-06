@@ -1,0 +1,333 @@
+{
+ "_about": "Quranic near-synonyms (Nijanse / Nuances): per group what the words share, how each differs, and ayat that show why the word was chosen there. Keyed by the group's page slug. Each member names its corpus identity: `verb` (root_form, the verb catalogue) or `lemmas` (lemma|root of the noun catalogue, summed when the corpus files one word under several lemmas); `count` must equal the corpus count and every cited ayah must hold the member's lemma (fil.nuances.gate, run by the tests and `fil nuances check`). An optional `spoken` is the headword as voiced where the two speech readers disagree on how it is shown. Explanations are our own words, grounded in the classical works named in `sources`; `notes` record the decisions taken. Validated on load (fil.nuances.model).",
+ "insan-bashar": {
+  "title": {"bs": "Čovjek", "en": "Human being"},
+  "shared": {
+   "bs": "Svih pet riječi govore o čovjeku ili ljudima, ali svaka ističe drugu stranu: narav, tjelesnu i vidljivu pojavu, muški spol, pojedinca ili zajednicu ljudi.",
+   "en": "All five words speak of a human being or of people, but each looks from a different angle: human nature, the visible bodily creature, the male, the single individual, or people as a community."
+  },
+  "tellApart": {
+   "bs": "Ljudska narav → إِنْسَان; tjelesno, vidljivo biće → بَشَر; muškarac (nasuprot ženi ili meleku) → رَجُل; svaki pojedinac za sebe → اِمْرُؤ; ljudi kao zajednica → نَاس.",
+   "en": "Human nature → إِنْسَان; the visible, bodily creature → بَشَر; the male (as against a woman or an angel) → رَجُل; each individual on his own → اِمْرُؤ; people as a community → نَاس."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries أنس, بشر, رجل, مرأ"
+  ],
+  "notes": [
+   "اِمْرُؤ: the corpus files this one word under four lemmas (امْرِئ 5, مَرْء 4, امْرُؤٌا 1, امْرَأ 1); with the article it is الْمَرْء. Counted together (11), as ar-Rāġib treats them as one word.",
+   "رَجُل: the corpus lemmatises the broken plural رِجَال separately (28); counted together with the singular (29). Two of the plural's places (2:239, 22:27) mean 'on foot' (plural of رَاجِل) but are filed under the same lemma by the corpus; the count follows the corpus.",
+   "نَاس: the sense 'people of virtue' (2:13) is ar-Rāġib's reading and is attributed to him.",
+   "اِمْرُؤ: the lexicons define it as a person, a (male) human being; 'the individual' is our observation of its Quranic use, stated as such and not attributed to ar-Rāġib (blind review)."
+  ],
+  "members": [
+   {
+    "arabic": "إِنْسَان",
+    "lemmas": ["إِنسان|أنس"],
+    "count": 71,
+    "meaning": {"bs": "čovjek, ljudsko biće", "en": "human being, man"},
+    "nuance": {
+     "bs": "Čovjek kao vrsta, sa svojom naravi i slabostima. Ar-Rāġib riječ veže za uns – bliskost i druženje, jer čovjek ne može opstati bez drugih – a navodi i mišljenje da dolazi od nisjān (zaborav). Kur'an je najčešće koristi kada kazuje kakav je čovjek.",
+     "en": "Man as a species, with his nature and his weaknesses. Ar-Rāġib links the word to uns — familiarity and company, since man cannot survive without others — and also mentions the view that it comes from nisyān (forgetting). The Quran mostly uses it when it says what man is like."
+    },
+    "ayat": [
+     {"ref": "70:19", "why": {"bs": "Opisuje se ljudska narav – nestrpljivost s kojom je čovjek stvoren.", "en": "Human nature is described — the restlessness man was created with."}},
+     {"ref": "4:28", "why": {"bs": "Slabost kao crta ljudske prirode.", "en": "Weakness as a trait of human nature."}},
+     {"ref": "17:11", "why": {"bs": "Brzopletost – još jedna osobina koju Kur'an pripisuje čovjeku kao takvom.", "en": "Haste — another trait the Quran ascribes to man as such."}}
+    ]
+   },
+   {
+    "arabic": "بَشَر",
+    "lemmas": ["بَشَر|بشر"],
+    "count": 37,
+    "meaning": {"bs": "čovjek, smrtnik", "en": "human being, mortal"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, riječ je od bašara (koža): čovjek onakav kakav se vidi izvana, biće od tijela i kože. Kur'an je koristi kad je riječ o tjelesnom stvaranju čovjeka ili kad se kaže da je poslanik čovjek kao i drugi. Isti oblik služi za jedninu i množinu.",
+     "en": "According to ar-Rāġib, the word comes from bashara (skin): man as he appears outwardly, a creature of body and skin. The Quran uses it where man's bodily creation is meant, or where a messenger is said to be a man like others. The same form serves for one and for many."
+    },
+    "ayat": [
+     {"ref": "15:28", "why": {"bs": "Stvaranje čovjekova tijela od ilovače – tjelesna strana, zato بَشَر.", "en": "The creation of man's body from clay — the bodily side, hence bashar."}},
+     {"ref": "18:110", "why": {"bs": "Poslanik je čovjek, smrtnik kao i oni kojima se obraća; razlikuje ga objava koja mu dolazi.", "en": "The Prophet is a man, mortal like those he addresses; what sets him apart is the revelation he receives."}},
+     {"ref": "30:20", "why": {"bs": "Od zemlje stvoreni, ljudi postaju tjelesna bića koja se rasprostiru po zemlji.", "en": "Created from dust, people become bodily beings spreading over the earth."}}
+    ]
+   },
+   {
+    "arabic": "رَجُل",
+    "lemmas": ["رَجُل|رجل", "رِجال|رجل"],
+    "count": 57,
+    "meaning": {"bs": "muškarac, čovjek", "en": "man (male)"},
+    "nuance": {
+     "bs": "Muška osoba. Ar-Rāġib kaže da je riječ svojstvena muškarcu među ljudima; u Kur'anu stoji nasuprot ženi, ali i nasuprot meleku. U množini (رِجَال) često hvali ljude čvrstog karaktera.",
+     "en": "A male person. Ar-Rāġib says the word belongs to the male among people; in the Quran it stands against woman, and also against angel. In the plural (رِجَال) it often praises men of firm character."
+    },
+    "ayat": [
+     {"ref": "4:1", "why": {"bs": "Muškarci i žene od jednog para – رِجَال nasuprot نِسَاء.", "en": "Men and women from one pair — rijāl as against nisāʾ."}},
+     {"ref": "6:9", "why": {"bs": "Da je poslan melek, imao bi lik čovjeka-muškarca: رَجُل kao suprotnost meleku.", "en": "Had an angel been sent, he would have been made a man: rajul as the opposite of an angel."}},
+     {"ref": "24:37", "why": {"bs": "Ljudi koje trgovina ne odvraća od sjećanja na Allaha – množina koja hvali karakter.", "en": "Men whom trade does not distract from remembering Allah — a plural that praises character."}}
+    ]
+   },
+   {
+    "arabic": "اِمْرُؤ",
+    "lemmas": ["امْرِئ|مرأ", "مَرْء|مرأ", "امْرُؤٌا|مرأ", "امْرَأ|مرأ"],
+    "count": 11,
+    "meaning": {"bs": "osoba, čovjek (pojedinac)", "en": "a person, an individual"},
+    "nuance": {
+     "bs": "Osoba, čovjek (muškog roda; ženski oblik je imra'a). U Kur'anu se javlja uglavnom gdje se govori o pojedincu: o ličnoj odgovornosti i o propisima koji se tiču jedne osobe.",
+     "en": "A person, a human being (a man; the feminine is imraʾa). In the Quran it appears mainly where the individual is in view: personal accountability and rulings about one person."
+    },
+    "ayat": [
+     {"ref": "80:34", "why": {"bs": "Na Sudnjem danu svako bježi od svoga brata – čovjek kao pojedinac.", "en": "On the Day each one flees from his brother — man as an individual."}},
+     {"ref": "52:21", "why": {"bs": "Svaki je čovjek zalog onoga što je zaradio – lična odgovornost.", "en": "Every person is pledged for what he has earned — personal accountability."}},
+     {"ref": "4:176", "why": {"bs": "Propis o nasljedstvu jedne osobe koja umre bez djeteta.", "en": "A ruling on the inheritance of one person who dies without a child."}}
+    ]
+   },
+   {
+    "arabic": "نَاس",
+    "lemmas": ["ناس|أنس"],
+    "count": 241,
+    "meaning": {"bs": "ljudi", "en": "people, mankind"},
+    "nuance": {
+     "bs": "Ljudi kao skupina, čovječanstvo u cjelini; riječ obraćanja svim ljudima („O ljudi”). Ar-Rāġib napominje da ponekad znači samo vrijedne ljude, kao u 2:13.",
+     "en": "People as a group, mankind as a whole; the word of address to all people (“O mankind”). Ar-Rāġib notes that it sometimes means only people of worth, as in 2:13."
+    },
+    "ayat": [
+     {"ref": "49:13", "why": {"bs": "Obraćanje cijelom čovječanstvu, stvorenom od muškarca i žene.", "en": "An address to all mankind, created from a male and a female."}},
+     {"ref": "114:1", "why": {"bs": "Gospodar svih ljudi – ljudi kao cjelina.", "en": "The Lord of mankind — people as a whole."}},
+     {"ref": "2:13", "why": {"bs": "„Vjerujte kao što su vjerovali ljudi”: prema ar-Rāġibu, ovdje su to vjernici, ljudi od vrijednosti.", "en": "“Believe as the people have believed”: according to ar-Rāġib, here these are the believers, people of worth."}}
+    ]
+   }
+  ]
+ },
+ "jaa-ata": {
+  "title": {"bs": "Doći", "en": "To come"},
+  "shared": {
+   "bs": "Oba glagola znače „doći” i često se mogu zamijeniti; klasični leksikografi ipak bilježe razliku u naglasku.",
+   "en": "Both verbs mean “to come” and are often interchangeable; the classical lexicographers nevertheless record a difference of emphasis."
+  },
+  "tellApart": {
+   "bs": "Naglasak na stvarnom dolasku (stizanju) → جَاءَ; dolazak s lahkoćom, ili dolazak sagledan kao usmjeren ka cilju, bez naglaska na stizanju → أَتَى. Razlika je u naglasku, ne strogo pravilo: oba se kažu i za ono što tek treba doći.",
+   "en": "Stress on actual arrival → جَاءَ; a coming with ease, or a coming seen as directed toward its goal without stressing arrival → أَتَى. A difference of emphasis, not a strict rule: both are used of events still to come."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries أتى, جيأ"
+  ],
+  "notes": [
+   "The distinction is ar-Rāġib's (al-ityān is a coming with ease and may be said by intention before arrival; al-majīʾ is more general and said with regard to arrival) and is attributed to him.",
+   "Later scholars' view that جَاءَ is used for weightier matters and أَتَى for lighter ones is not used: it is not in the two classical works this section relies on.",
+   "Only Form I أَتَى is a member; Form IV آتَى 'to give' is a different verb."
+  ],
+  "members": [
+   {
+    "arabic": "جَاءَ",
+    "verb": "جيأ_1",
+    "count": 278,
+    "meaning": {"bs": "doći", "en": "to come"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, općenitija riječ, koja se kaže s obzirom na stvarni dolazak – stizanje (ḥuṣūl).",
+     "en": "According to ar-Rāġib, the more general word, said with regard to actual arrival (ḥuṣūl)."
+    },
+    "ayat": [
+     {"ref": "17:81", "why": {"bs": "Istina je došla i neistina je nestala – dolazak s vidljivom posljedicom.", "en": "Truth has come and falsehood has vanished — an arrival with a visible result."}},
+     {"ref": "7:34", "why": {"bs": "Kad dođe njihov rok, ne može se odgoditi – stvarni, odlučujući dolazak.", "en": "When their term comes it cannot be delayed — a real, decisive arrival."}},
+     {"ref": "110:1", "why": {"bs": "Kad stigne Allahova pomoć i pobjeda – dolazak predstavljen kao stizanje.", "en": "When the help of Allah and the victory come — the coming presented as an arrival."}}
+    ]
+   },
+   {
+    "arabic": "أَتَى",
+    "verb": "أتي_1",
+    "count": 264,
+    "meaning": {"bs": "doći, nastupiti", "en": "to come"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, „dolazak s lahkoćom”; može se reći i za ono što je na putu, prije nego što je potpuno stiglo.",
+     "en": "According to ar-Rāġib, “a coming with ease”; it may also be said of what is on its way, before it has fully arrived."
+    },
+    "ayat": [
+     {"ref": "16:1", "why": {"bs": "Allahova odredba „je došla”, a ipak se kaže „ne požurujte je”; tefsir prošlo vrijeme tumači sigurnošću onoga što dolazi. Primjer dolaska koji je tek na putu.", "en": "The command of Allah “has come”, yet they are told “do not hasten it”; tafsir explains the past tense as the certainty of what is coming. An example of a coming still on its way."}},
+     {"ref": "76:1", "why": {"bs": "Vrijeme je prošlo nad čovjekom dok još nije bio spomena vrijedan.", "en": "A period of time came upon man when he was not yet a thing worth mentioning."}},
+     {"ref": "20:9", "why": {"bs": "Vijest o Musau koja do slušaoca stiže.", "en": "The story of Moses, reaching the listener."}}
+    ]
+   }
+  ]
+ },
+ "raa-nazara-absara": {
+  "title": {"bs": "Vidjeti i gledati", "en": "To see and to look"},
+  "shared": {
+   "bs": "Sve tri riječi su o vidu, ali jedna je čin gledanja, druga samo viđenje, a treća jasno opažanje – i očima i pronicljivošću.",
+   "en": "All three words are about sight, but one is the act of looking, one is seeing itself, and one is clear perception — by the eyes and by insight."
+  },
+  "tellApart": {
+   "bs": "نَظَرَ je usmjeravanje pogleda (i misli) i može ostati bez viđenja; رَأَى je samo viđenje – očima, u snu ili razumom; أَبْصَرَ je jasno opažanje, često i uviđanje istine. U 7:198 je razlika na jednom mjestu: gledaju (يَنْظُرُونَ), a ne vide (لَا يُبْصِرُونَ).",
+   "en": "نَظَرَ is directing the gaze (and the mind) and may stop short of seeing; رَأَى is seeing itself — with the eyes, in a dream or with the mind; أَبْصَرَ is clear perception, often grasping the truth. 7:198 holds the difference in one place: they look (يَنْظُرُونَ) but do not see (لَا يُبْصِرُونَ)."
+  },
+  "sources": [
+   "Abū Hilāl al-ʿAskarī, al-Furūq al-luġawiyya — the difference between an-naẓar and ar-ruʾya",
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries رأى, نظر, بصر"
+  ],
+  "notes": [
+   "أَبْصَرَ is the Form IV verb (29); the rare Form I بَصُرَ (3) is not a member.",
+   "105:1 أَلَمْ تَرَ: the Prophet was not an eyewitness of the event, so the seeing is read as knowing (ar-Rāġib's 'seeing by the mind'); stated as a reading."
+  ],
+  "members": [
+   {
+    "arabic": "رَأَى",
+    "verb": "رأي_1",
+    "count": 271,
+    "meaning": {"bs": "vidjeti", "en": "to see"},
+    "nuance": {
+     "bs": "Viđenje kao opažaj. Ar-Rāġib navodi viđenje osjetilom, maštom (u snu), razmišljanjem i razumom – zato رَأَى znači i „vidjeti očima” i „znati sa sigurnošću”.",
+     "en": "Seeing as perception. Ar-Rāġib lists seeing by the senses, by imagination (in a dream), by reflection and by the intellect — so رَأَى means both “to see with the eyes” and “to know for certain”."
+    },
+    "ayat": [
+     {"ref": "6:76", "why": {"bs": "Ibrahim je ugledao zvijezdu – viđenje očima.", "en": "Abraham saw a star — sight with the eyes."}},
+     {"ref": "12:4", "why": {"bs": "Jusuf je vidio jedanaest zvijezda u snu – viđenje u snu.", "en": "Joseph saw eleven stars in a dream — seeing in a dream."}},
+     {"ref": "105:1", "why": {"bs": "„Zar nisi vidio…” o događaju koji Poslanik nije gledao očima: viđenje kao sigurno znanje.", "en": "“Have you not seen…” of an event the Prophet did not witness with his eyes: seeing as certain knowledge."}}
+    ]
+   },
+   {
+    "arabic": "نَظَرَ",
+    "verb": "نظر_1",
+    "count": 87,
+    "meaning": {"bs": "gledati, pogledati; razmotriti", "en": "to look; to consider"},
+    "nuance": {
+     "bs": "Al-ʿAskarī: nazar je okretanje oka prema nečemu da bi se vidjelo, a ru'ja je samo viđenje – pa se može gledati, a ne vidjeti. Ar-Rāġib dodaje da znači i razmatranje i ispitivanje razumom.",
+     "en": "Al-ʿAskarī: naẓar is turning the eye toward something in order to see it, while ruʾya is the seeing itself — so one may look and not see. Ar-Rāġib adds that it also means considering and examining with the mind."
+    },
+    "ayat": [
+     {"ref": "7:198", "why": {"bs": "Gledaju prema tebi, a ne vide (jedni tumače: kipovi s izrezanim očima, drugi: mnogobošci) – gledanje bez viđenja.", "en": "They look toward you but do not see (some say the idols, whose carved eyes seem to look; others, the idolaters) — looking without seeing."}},
+     {"ref": "88:17", "why": {"bs": "Poziv da se pogled zadrži na devi i razmisli kako je stvorena.", "en": "A call to rest the gaze on the camel and reflect on how it was created."}},
+     {"ref": "86:5", "why": {"bs": "„Neka čovjek razmisli od čega je stvoren” – gledanje kao razmišljanje.", "en": "“Let man consider from what he was created” — looking as reflection."}}
+    ]
+   },
+   {
+    "arabic": "أَبْصَرَ",
+    "verb": "بصر_4",
+    "count": 29,
+    "meaning": {"bs": "vidjeti (jasno), uvidjeti", "en": "to see clearly, to perceive"},
+    "nuance": {
+     "bs": "Od baṣar – vid kao moć opažanja; ar-Rāġib kaže da se ista riječ odnosi na oko i na pronicljivost srca (baṣīra). U Kur'anu أَبْصَرَ često upućuje na uvid – uviđanje istine.",
+     "en": "From baṣar — sight as a power of perception; ar-Rāġib says the same word is used for the eye and for the insight of the heart (baṣīra). In the Quran أَبْصَرَ often points to insight — grasping the truth."
+    },
+    "ayat": [
+     {"ref": "7:198", "why": {"bs": "Pogled je tu, ali viđenja nema: „a ne vide” – prema jednom tumačenju, ne uviđaju istinu.", "en": "The gaze is there, but no seeing: “but they do not see” — on one reading, they do not perceive the truth."}},
+     {"ref": "32:12", "why": {"bs": "Na Sudnjem danu grešnici kažu „sad smo vidjeli” – istina im je postala jasna.", "en": "On the Day the wrongdoers say “now we have seen” — the truth has become clear to them."}},
+     {"ref": "10:43", "why": {"bs": "Gledaju u Poslanika, a nemaju uvida; one koji ne uviđaju, slijepe srcem, puko gledanje ne upućuje.", "en": "They look at the Prophet yet have no insight; the blind of heart are not guided by looking alone."}}
+    ]
+   }
+  ]
+ },
+ "khawf-khashya": {
+  "title": {"bs": "Strah", "en": "Fear"},
+  "shared": {
+   "bs": "Obje riječi znače strah od nečega što može nauditi; خَشْيَة tom strahu dodaje poštovanje i znanje o veličini onoga od koga se strahuje.",
+   "en": "Both words mean fear of something that may harm; خَشْيَة adds to that fear reverence and knowledge of the greatness of the one who is feared."
+  },
+  "tellApart": {
+   "bs": "Strah od bilo čega opasnog → خَوْف; strah sa strahopoštovanjem, najčešće prema Allahu → خَشْيَة. U 13:21 stoje oba glagola: „boje se (يَخْشَوْنَ) svoga Gospodara i strahuju (يَخَافُونَ) od teškog obračuna.”",
+   "en": "Fear of anything dangerous → خَوْف; fear joined with awe, most often toward Allah → خَشْيَة. 13:21 holds both verbs: “they fear (يَخْشَوْنَ) their Lord and are afraid (يَخَافُونَ) of the evil reckoning.”"
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries خوف, خشي"
+  ],
+  "notes": [
+   "ar-Rāġib says khashya is 'most often' (akṯaru mā yakūnu) born of knowledge; 17:31 (fear of poverty) shows the word is also used of fear of a thing itself, so the page states a tendency and shows that ayah.",
+   "al-ʿAskarī's distinction between the two is held back: the blind reviewer recalled a different formulation of it, and it could not be checked against the text here. 13:21 uses the verbs, not these nouns, so it is quoted in the summary, not as an illustration."
+  ],
+  "members": [
+   {
+    "arabic": "خَوْف",
+    "lemmas": ["خَوْف|خوف"],
+    "count": 26,
+    "meaning": {"bs": "strah", "en": "fear"},
+    "nuance": {
+     "bs": "Opća riječ za strah. Ar-Rāġib je opisuje kao očekivanje nečeg neželjenog na osnovu znaka koji se pretpostavlja ili zna. Strah od opasnosti, gladi, neprijatelja; suprotnost sigurnosti (أَمْن).",
+     "en": "The general word for fear. Ar-Rāġib describes it as expecting something unwanted from a sign that is supposed or known. Fear of danger, hunger, an enemy; the opposite of security (أَمْن)."
+    },
+    "ayat": [
+     {"ref": "106:4", "why": {"bs": "Sigurnost od straha: خَوْف kao suprotnost sigurnosti.", "en": "Security from fear: khawf as the opposite of safety."}},
+     {"ref": "2:155", "why": {"bs": "Iskušenje strahom i glađu – strah od ovosvjetskih nedaća.", "en": "A trial of fear and hunger — fear of worldly hardship."}},
+     {"ref": "2:38", "why": {"bs": "„Neće se ničega bojati” – opća riječ, zanijekana u cijelosti.", "en": "“No fear will there be concerning them” — the general word, negated entirely."}}
+    ]
+   },
+   {
+    "arabic": "خَشْيَة",
+    "spoken": "خَشْيَةٌ",
+    "lemmas": ["خَشْيَة|خشي"],
+    "count": 8,
+    "meaning": {"bs": "strahopoštovanje, strah", "en": "awe, reverent fear"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, strah pomiješan s poštovanjem, koji najčešće proizlazi iz znanja o onome čega se boji. Ipak, riječ se kaže i za strah od same stvari (17:31), pa je ovo težnja, a ne pravilo.",
+     "en": "According to ar-Rāġib, fear mixed with reverence, most often born of knowledge of what is feared. Yet the word is also said of fear of a thing itself (17:31), so this is a tendency, not a rule."
+    },
+    "ayat": [
+     {"ref": "59:21", "why": {"bs": "Brdo bi se rascijepilo od strahopoštovanja prema Allahu – strah koji dolazi uz spoznaju Njegove veličine.", "en": "A mountain would split from awe of Allah — fear that comes with knowing His greatness."}},
+     {"ref": "23:57", "why": {"bs": "Vjernici zabrinuti iz strahopoštovanja prema svome Gospodaru.", "en": "Believers apprehensive out of awe of their Lord."}},
+     {"ref": "17:31", "why": {"bs": "„Iz straha od siromaštva” – iznimka: خَشْيَة i za strah od same nevolje.", "en": "“For fear of poverty” — the exception: khashya also for fear of the hardship itself."}}
+    ]
+   }
+  ]
+ },
+ "qalb-fuad-sadr": {
+  "title": {"bs": "Srce i grudi", "en": "Heart and breast"},
+  "shared": {
+   "bs": "Sve tri riječi imenuju unutrašnjost čovjeka u kojoj su razumijevanje, vjerovanje i osjećanja; razlikuju se po tome koja je strana u prvom planu.",
+   "en": "All three words name the inner seat of understanding, faith and feeling; they differ in which side of it is in view."
+  },
+  "tellApart": {
+   "bs": "Srce koje razumije i vjeruje → قَلْب; srce u žaru osjećanja → فُؤَاد; grudi koje srce nose – širenje, stezanje i ono što je skriveno → صَدْر.",
+   "en": "The heart that understands and believes → قَلْب; the heart aflame with feeling → فُؤَاد; the breast that holds the heart — expansion, constriction and what is hidden → صَدْر."
+  },
+  "sources": [
+   "ar-Rāġib al-Iṣfahānī, Mufradāt alfāẓ al-Qurʾān — entries قلب, فأد, صدر"
+  ],
+  "notes": [
+   "The fuʾād-as-glowing link (faʾada, to roast) is ar-Rāġib's etymology and is attributed to him.",
+   "The saying that 'breast' covers the heart's understanding and the other inner forces (desire, anger) is given as 'it has been said', without naming ar-Rāġib: the attribution could not be checked here (blind review)."
+  ],
+  "members": [
+   {
+    "arabic": "قَلْب",
+    "lemmas": ["قَلْب|قلب"],
+    "count": 132,
+    "meaning": {"bs": "srce", "en": "heart"},
+    "nuance": {
+     "bs": "Ar-Rāġib kaže da je srce tako nazvano zbog čestog prevrtanja (taqallub) i da se njime izražava ono što mu pripada: duša, znanje, hrabrost. U Kur'anu je sjedište razumijevanja, vjerovanja i sjećanja na Allaha.",
+     "en": "Ar-Rāġib says the heart is so named for its frequent turning (taqallub) and that it expresses what belongs to it: spirit, knowledge, courage. In the Quran it is the seat of understanding, faith and remembrance of Allah."
+    },
+    "ayat": [
+     {"ref": "22:46", "why": {"bs": "Srca kojima se razumije – قَلْب kao sjedište razuma.", "en": "Hearts with which to understand — qalb as the seat of reason."}},
+     {"ref": "13:28", "why": {"bs": "Srca se smiruju spominjanjem Allaha – srce vjere.", "en": "Hearts find rest in the remembrance of Allah — the heart of faith."}},
+     {"ref": "50:37", "why": {"bs": "Pouka za onoga ko ima srce – sposobnost da shvati.", "en": "A reminder for whoever has a heart — the capacity to understand."}}
+    ]
+   },
+   {
+    "arabic": "فُؤَاد",
+    "lemmas": ["فُؤاد|فأد"],
+    "count": 16,
+    "meaning": {"bs": "srce (u žaru osjećanja)", "en": "heart (aflame with feeling)"},
+    "nuance": {
+     "bs": "Prema ar-Rāġibu, isto što i قَلْب, ali se zove fu'ād kad je u pitanju značenje žara i gorenja (od fa'ada – peći). Srce kao mjesto snažnog osjećanja i unutrašnjeg doživljaja; Kur'an فُؤَاد navodi i uz sluh i vid, kao organ spoznaje (17:36).",
+     "en": "According to ar-Rāġib, the same as قَلْب, but called fuʾād when the sense of glowing and burning is in view (from faʾada — to roast). The heart as the place of strong feeling and inner experience; the Quran also names the fuʾād beside hearing and sight, as an organ of perception (17:36)."
+    },
+    "ayat": [
+     {"ref": "28:10", "why": {"bs": "Srce (فُؤَاد) Musaove majke ostalo je „prazno” (tefsir se razilazi: bez strpljenja, ili bez svega osim misli na sina), a u istom ajetu Allah učvršćuje njeno قَلْب: unutrašnji nemir je فُؤَاد, postojanost قَلْب.", "en": "The heart (fuʾād) of Moses' mother became “void” (tafsir differs: of patience, or of all but her son), and in the same ayah Allah fortifies her qalb: the inner upheaval is named fuʾād, the steadfastness qalb."}},
+     {"ref": "53:11", "why": {"bs": "Srce nije poreklo ono što je vidjelo – unutrašnji doživljaj.", "en": "The heart did not deny what it saw — inner experience."}},
+     {"ref": "104:7", "why": {"bs": "Vatra koja se diže do srca – ar-Rāġib ovdje vidi vezu riječi s gorenjem.", "en": "The fire that mounts up to the hearts — ar-Rāġib sees here the word's link with burning."}}
+    ]
+   },
+   {
+    "arabic": "صَدْر",
+    "lemmas": ["صَدْر|صدر"],
+    "count": 44,
+    "meaning": {"bs": "grudi, prsa", "en": "breast, chest"},
+    "nuance": {
+     "bs": "Grudi, koje obuhvataju srce (22:46). Rečeno je da se, kad se spominje srce, misli na razum i znanje, a kad se spominju grudi, i na to i na ostale unutrašnje sile – želju, strast, srdžbu. Riječ za širenje i stezanje i za ono što čovjek skriva u sebi.",
+     "en": "The breast, which holds the heart (22:46). It has been said that when the heart is mentioned, intellect and knowledge are meant; when the breast is mentioned, these and the other inner forces too — desire, passion, anger. The word for expansion and constriction, and for what a person hides within."
+    },
+    "ayat": [
+     {"ref": "94:1", "why": {"bs": "„Zar ti nismo grudi proširili” – širenje grudi.", "en": "“Did We not expand for you your breast” — the breast expanded."}},
+     {"ref": "6:125", "why": {"bs": "Grudi se šire za islam ili postaju tijesne – širenje i stezanje.", "en": "The breast opens to Islam or becomes tight — expansion and constriction."}},
+     {"ref": "22:46", "why": {"bs": "„Srca koja su u grudima” – صَدْر kao ono što obuhvata قَلْب.", "en": "“The hearts which are within the breasts” — ṣadr as what holds the qalb."}}
+    ]
+   }
+  ]
+ }
+}

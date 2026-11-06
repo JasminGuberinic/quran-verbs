@@ -43,3 +43,4 @@ ADJECTIVE_TABLES_JSON = DATA_DIR / "adjective_tables.json"  # each studied adjec
 ADJECTIVE_OVERRIDES_JSON = DATA_DIR / "adjective_overrides.json"  # documented adjective cells the generator cannot make
 ADJECTIVE_SENTENCES_JSON = DATA_DIR / "adjective_sentences.json"  # practice sentences per adjective and role, gated and reviewed
 ADJECTIVE_EXAMPLE_REVIEWS_JSON = DATA_DIR / "adjective_example_reviews.json"  # blind verdicts on the cards' agreement examples
+NUANCE_GROUPS_JSON = DATA_DIR / "nuance_groups.json"  # Quranic near-synonyms: shared meaning, nuances, illustrating ayat (fil nuances)

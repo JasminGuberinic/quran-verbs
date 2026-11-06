@@ -165,3 +165,9 @@ synthetic voice, gated like every noun text) and a link when it is a studied nou
 **Batch check:** `fil nouns batch plan` writes `collectives.tsv` — lemmas that are known
 collectives, only ever plural with no pattern of their own, or have a same-root sibling with or
 without -ة — and `fil nouns batch status` lists each as lacking `relation` until it has an entry.
+
+## Nuances (2026-11-06)
+
+Near-synonym groups (Nijanse / Nuances: why this word and not another) build on the noun, adjective and
+verb cards and link back from them ("Slične riječi"). Plan, sources and rules: docs/NUANCES-PLAN.md;
+batches: the `/fil-nuances-batch` skill.

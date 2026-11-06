@@ -532,6 +532,9 @@
         conditional: "uvjet", subordinator: "veznik (glagolska imenica)", interpretive: "veznik tumačenja",
         interrogative: "upitna riječ", relative: "odnosna zamjenica", restriction: "ograničenje", exception: "izuzetak",
         certainty: "čestica potvrde", purpose: "namjera", command: "naredba", timeAdverb: "vremenski prilog", surprise: "iznenađenje",
+        emphasis: "naglašavanje", equalization: "izjednačavanje", vocative: "dozivanje", retraction: "ispravka (iḍrāb)",
+        amendment: "ograda (istidrāk)", inceptive: "početak nove rečenice", future: "budućnost", exhortation: "podsticanje",
+        detail: "raščlanjivanje", attention: "skretanje pažnje", aversion: "odvraćanje", answer: "odgovor", accompaniment: "pratnja",
       },
       effects: {
         NOM: "Riječ iza je u nominativu.", ACC: "Riječ iza je u akuzativu.", GEN: "Imenica iza je u genitivu.",
@@ -558,6 +561,9 @@
         conditional: "condition", subordinator: "conjunction (verbal noun)", interpretive: "explaining particle",
         interrogative: "question word", relative: "relative pronoun", restriction: "restriction", exception: "exception",
         certainty: "particle of certainty", purpose: "purpose", command: "command", timeAdverb: "time adverb", surprise: "surprise",
+        emphasis: "emphasis", equalization: "equalization", vocative: "vocative", retraction: "correction (iḍrāb)",
+        amendment: "qualification (istidrāk)", inceptive: "opening a new sentence", future: "future", exhortation: "urging",
+        detail: "setting out", attention: "drawing attention", aversion: "deterring", answer: "answer", accompaniment: "accompaniment",
       },
       effects: {
         NOM: "The word after it is nominative.", ACC: "The word after it is accusative.", GEN: "The noun after it is genitive.",

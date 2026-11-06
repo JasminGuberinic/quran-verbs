@@ -3,7 +3,7 @@
  "wa": {
   "arabic": "وَ",
   "lemma": "و",
-  "count": 9532,
+  "count": 9594,
   "meaning": {"bs": "i; a; tako mi…", "en": "and; while; by…!"},
   "grammar": {
    "bs": "Najčešća riječ Kur'ana. Piše se spojeno s riječju iza sebe (وَقَالُوا). Kao veznik samo povezuje i ne mijenja padež: riječ iza nje uzima padež riječi s kojom se povezuje. Kao zakletva (وَٱلْعَصْرِ) je prijedlog i traži genitiv.",
@@ -11,10 +11,13 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Uses shown: CONJ, REM, CIRC, P (oath); the corpus's SUP (59) and COM (3) wāw are left for a later batch.",
+   "Uses shown: CONJ, REM, CIRC, P (oath), SUP (after the question hamza) and COM (accompaniment).",
+   "SUP: 51 of the 59 SUP wāws stand after the question hamza, 7 before لَٰكِنْ; the use says 'most often'.",
+   "COM: the corpus's three COM wāws (3:142, 10:71, 5:36); 5:36 is not cited. The Basran/Kufan view on the subjunctive is the one al-Inṣāf records.",
    "The corpus tags some oath wāws at the head of a surah as CONJ (52:1, 51:1); examples are taken from P only."
   ],
   "uses": [
@@ -113,6 +116,69 @@
      {"ref": "93:1", "why": {"bs": "„Tako mi jutra!“", "en": "“By the morning brightness!”"}}
     ],
     "effect": "GEN"
+   },
+   {
+    "key": "after-question",
+    "kind": "conjunction",
+    "tags": ["SUP"],
+    "title": {"bs": "أَوَ: iza hemze pitanja", "en": "أَوَ: after the question hamza"},
+    "explanation": {
+     "bs": "Korpus ovako (SUP) bilježi وَ koja najčešće stoji iza hemze pitanja: أَوَلَمْ، أَوَلَوْ. Prema većini gramatičara, to je veznik rečenice koja slijedi, a hemza je stavljena ispred njega jer pitanje ide na početak (vidi أَ).",
+     "en": "The corpus files so (SUP) a وَ that most often stands after the question hamza: أَوَلَمْ، أَوَلَوْ. According to most grammarians it is the conjunction of the sentence that follows, and the hamza is put before it because a question goes first (see أَ)."
+    },
+    "ayat": [
+     {
+      "ref": "15:70",
+      "why": {
+       "bs": "„Rekoše: ‘Zar ti nismo zabranili (da štitiš) svjetove?’“ – أَوَلَمْ.",
+       "en": "“They said: ‘Have we not forbidden you from (protecting) people?’” – أَوَلَمْ."
+      }
+     },
+     {
+      "ref": "37:17",
+      "why": {"bs": "„Zar i naši preci?“ – أَوَءَابَآؤُنَا.", "en": "“And our forefathers (as well)?” – أَوَءَابَآؤُنَا."}
+     }
+    ]
+   },
+   {
+    "key": "with",
+    "kind": "accompaniment",
+    "tags": ["COM"],
+    "title": {"bs": "„Zajedno s“: wāw pratnje", "en": "“Together with”: the wāw of accompaniment"},
+    "explanation": {
+     "bs": "Imenica iza ove وَ je u akuzativu jer znači „zajedno s“ (al-mafʿūl maʿahu). U 10:71 tako je čita korpus; drugi je čitaju kao objekat podrazumijevanog glagola („i pozovite“).",
+     "en": "The noun after this وَ is accusative because it means “together with” (al-mafʿūl maʿahu). In 10:71 the corpus reads it so; others read it as the object of an understood verb (“and call”)."
+    },
+    "ayat": [
+     {
+      "ref": "10:71:22",
+      "why": {
+       "bs": "„…pa odlučite o svom planu zajedno s vašim ortacima“ – وَشُرَكَآءَكُمْ u akuzativu.",
+       "en": "“…so resolve upon your plan together with your partners” – وَشُرَكَآءَكُمْ is accusative."
+      }
+     }
+    ],
+    "effect": "ACC"
+   },
+   {
+    "key": "with-verb",
+    "kind": "accompaniment",
+    "tags": ["COM"],
+    "title": {"bs": "Uz glagol: subjunktiv", "en": "With a verb: the subjunctive"},
+    "explanation": {
+     "bs": "Kad ova وَ veže glagol uz prethodni u smislu „a da ujedno…“, glagol je u subjunktivu. Prema basrijskim gramatičarima subjunktiv daje podrazumijevano أَنْ; prema kufskim, „skretanje“ (aṣ-ṣarf) od povezivanja.",
+     "en": "When this وَ ties a verb to the one before in the sense “while at the same time…”, the verb is subjunctive. According to the Basran grammarians an understood أَنْ makes it so; according to the Kufans, the “turning away” (aṣ-ṣarf) from joining."
+    },
+    "ayat": [
+     {
+      "ref": "3:142:12",
+      "why": {
+       "bs": "„…a Allah još nije ukazao na one među vama koji se bore i, ujedno, na one koji su strpljivi“ – وَيَعْلَمَ u subjunktivu.",
+       "en": "“…while Allah has not yet made evident those of you who strive and, at the same time, those who are steadfast” – وَيَعْلَمَ is subjunctive."
+      }
+     }
+    ],
+    "effect": "SUBJ"
    }
   ]
  },
@@ -211,109 +277,10 @@
    }
   ]
  },
- "li": {
-  "arabic": "لِـ",
-  "lemma": "ل",
-  "count": 2848,
-  "meaning": {"bs": "za, radi; da bi; neka", "en": "for, belongs to; so that; let"},
-  "grammar": {
-   "bs": "Piše se spojeno s riječju iza sebe. Ispred imenice je prijedlog (genitiv). Ispred glagola u sadašnjem obliku znači „da bi“ (subjunktiv) ili, kao لِ naredbe, „neka“ (jusiv).",
-   "en": "It is written joined to the word after it. Before a noun it is a preposition (genitive). Before a present-tense verb it means “so that” (subjunctive) or, as the lām of command, “let” (jussive)."
-  },
-  "preposition": "li",
-  "spoken": "لِ",
-  "sources": [
-   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
-  ],
-  "notes": [
-   "Counted: the corpus's P, PRP and IMPV lām. Its EMPH lām (لَـ of emphasis, 1001) is a different particle and its DIST lām (in ذَٰلِكَ) belongs to the demonstrative; both are left out."
-  ],
-  "uses": [
-   {
-    "key": "for",
-    "kind": "preposition",
-    "tags": ["P"],
-    "title": {"bs": "„za, pripada“: prijedlog", "en": "“for, belongs to”: the preposition"},
-    "explanation": {
-     "bs": "Pripadanje, posjed, namjena: „hvala pripada Allahu“. Imenica iza je u genitivu. Sa zamjenicom: لَهُ „njemu, za njega“.",
-     "en": "Belonging, possession, purpose: “praise belongs to Allah”. The noun after it is genitive. With a pronoun: لَهُ “his, for him”."
-    },
-    "ayat": [
-     {
-      "ref": "1:2",
-      "why": {
-       "bs": "„Hvala Allahu“ – ٱلْحَمْدُ لِلَّهِ: hvala pripada Allahu.",
-       "en": "“All praise is due to Allah” – ٱلْحَمْدُ لِلَّهِ: praise belongs to Allah."
-      }
-     },
-     {
-      "ref": "2:284:1",
-      "why": {
-       "bs": "„Allahovo je sve što je na nebesima…“ – لِلَّهِ: posjed.",
-       "en": "“To Allah belongs whatever is in the heavens…” – لِلَّهِ: possession."
-      }
-     }
-    ],
-    "effect": "GEN"
-   },
-   {
-    "key": "so-that",
-    "kind": "purpose",
-    "tags": ["PRP"],
-    "title": {"bs": "„da bi“: namjera", "en": "“so that”: purpose"},
-    "explanation": {
-     "bs": "Ispred glagola kaže svrhu (lām at-taʿlīl ili lām kay); glagol je u subjunktivu. Prema basranskim gramatičarima, subjunktiv čini skriveno أَنْ iza nje.",
-     "en": "Before a verb it gives the purpose (lām at-taʿlīl, or lām kay); the verb is subjunctive. According to the Basran grammarians, an implied أَنْ after it makes it so."
-    },
-    "ayat": [
-     {
-      "ref": "48:2",
-      "why": {
-       "bs": "„…da ti Allah oprosti…“ – يَغْفِرَ u subjunktivu.",
-       "en": "“That Allah may forgive you…” – يَغْفِرَ is subjunctive."
-      }
-     },
-     {
-      "ref": "51:56",
-      "why": {
-       "bs": "„Džinne i ljude sam stvorio samo zato da Me obožavaju“.",
-       "en": "“I did not create the jinn and mankind except to worship Me”."
-      }
-     }
-    ],
-    "effect": "SUBJ"
-   },
-   {
-    "key": "let",
-    "kind": "command",
-    "tags": ["IMPV"],
-    "title": {"bs": "„neka“: naredba (lām al-amr)", "en": "“let”: the command (lām al-amr)"},
-    "explanation": {
-     "bs": "Ispred glagola u sadašnjem obliku daje naredbu trećem licu: „neka…“; glagol je u jusivu. Iza وَ ili فَ izgovara se bez vokala: فَلْيَعْبُدُوا.",
-     "en": "Before a present-tense verb it gives a command to a third person: “let…”; the verb is jussive. After وَ or فَ it is said without a vowel: فَلْيَعْبُدُوا."
-    },
-    "ayat": [
-     {
-      "ref": "106:3",
-      "why": {
-       "bs": "„Neka zato obožavaju Gospodara ovog Hrama“ – يَعْبُدُوا u jusivu.",
-       "en": "“Let them worship the Lord of this House” – يَعْبُدُوا is jussive."
-      }
-     },
-     {
-      "ref": "65:7:1",
-      "why": {"bs": "„Neka imućni troši prema svom imetku“.", "en": "“Let a man of wealth spend from his wealth”."}
-     }
-    ],
-    "effect": "JUS"
-   }
-  ]
- },
  "fa": {
   "arabic": "فَـ",
   "lemma": "ف",
-  "count": 2846,
+  "count": 3001,
   "meaning": {"bs": "pa, i (odmah); zato", "en": "so, then (at once); therefore"},
   "grammar": {
    "bs": "Piše se spojeno s riječju iza sebe. Kao veznik povezuje uz redoslijed i neposredno slijeđenje: prvo jedno, odmah zatim drugo (za razliku od ثُمَّ, uz razmak). Uvodi i odgovor uvjetne rečenice, a kad izražava uzrok iza naredbe ili zabrane, glagol iza nje je u subjunktivu.",
@@ -325,7 +292,8 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Uses shown: CONJ, REM, RSLT, CAUS; the corpus's SUP fāʾ (155) is left for a later batch.",
+   "Uses shown: CONJ, REM, RSLT, CAUS and SUP (after the question hamza).",
+   "SUP: 130 of the 155 SUP fāʾs stand after the question hamza; the rest are scattered; the use says 'most often'.",
    "Review: 80:4 فَتَنفَعَهُ is Ḥafṣ's reading (others: indicative) — said in the ayah's note."
   ],
   "uses": [
@@ -426,6 +394,331 @@
      }
     ],
     "effect": "SUBJ"
+   },
+   {
+    "key": "after-question",
+    "kind": "conjunction",
+    "tags": ["SUP"],
+    "title": {"bs": "أَفَ: iza hemze pitanja", "en": "أَفَ: after the question hamza"},
+    "explanation": {
+     "bs": "Korpus ovako (SUP) bilježi فَ koja najčešće stoji iza hemze pitanja: أَفَلَا تَعْقِلُونَ „pa zar ne shvatate?“. Kao i kod أَوَ, prema većini gramatičara veznik pripada rečenici iza, a hemza stoji ispred jer pitanje ide na početak.",
+     "en": "The corpus files so (SUP) a فَ that most often stands after the question hamza: أَفَلَا تَعْقِلُونَ “will you not then reason?”. As with أَوَ, according to most grammarians the conjunction belongs to the sentence after it, and the hamza stands first because a question goes first."
+    },
+    "ayat": [
+     {
+      "ref": "37:155",
+      "why": {"bs": "„Pa zar se ne opominjete?“ – أَفَلَا.", "en": "“Then will you not be reminded?” – أَفَلَا."}
+     },
+     {
+      "ref": "37:58",
+      "why": {"bs": "„Pa zar mi nećemo više umirati?“ – أَفَمَا.", "en": "“Then are we not to die?” – أَفَمَا."}
+     }
+    ]
+   }
+  ]
+ },
+ "li": {
+  "arabic": "لِـ",
+  "lemma": "ل",
+  "count": 2848,
+  "meaning": {"bs": "za, radi; da bi; neka", "en": "for, belongs to; so that; let"},
+  "grammar": {
+   "bs": "Piše se spojeno s riječju iza sebe. Ispred imenice je prijedlog (genitiv). Ispred glagola u sadašnjem obliku znači „da bi“ (subjunktiv) ili, kao لِ naredbe, „neka“ (jusiv).",
+   "en": "It is written joined to the word after it. Before a noun it is a preposition (genitive). Before a present-tense verb it means “so that” (subjunctive) or, as the lām of command, “let” (jussive)."
+  },
+  "preposition": "li",
+  "spoken": "لِ",
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: the corpus's P, PRP and IMPV lām. Its EMPH lām (لَـ of emphasis, 1001) has its own page (la-2) and its DIST lām (in ذَٰلِكَ) belongs to the demonstrative; both are left out."
+  ],
+  "uses": [
+   {
+    "key": "for",
+    "kind": "preposition",
+    "tags": ["P"],
+    "title": {"bs": "„za, pripada“: prijedlog", "en": "“for, belongs to”: the preposition"},
+    "explanation": {
+     "bs": "Pripadanje, posjed, namjena: „hvala pripada Allahu“. Imenica iza je u genitivu. Sa zamjenicom: لَهُ „njemu, za njega“.",
+     "en": "Belonging, possession, purpose: “praise belongs to Allah”. The noun after it is genitive. With a pronoun: لَهُ “his, for him”."
+    },
+    "ayat": [
+     {
+      "ref": "1:2",
+      "why": {
+       "bs": "„Hvala Allahu“ – ٱلْحَمْدُ لِلَّهِ: hvala pripada Allahu.",
+       "en": "“All praise is due to Allah” – ٱلْحَمْدُ لِلَّهِ: praise belongs to Allah."
+      }
+     },
+     {
+      "ref": "2:284:1",
+      "why": {
+       "bs": "„Allahovo je sve što je na nebesima…“ – لِلَّهِ: posjed.",
+       "en": "“To Allah belongs whatever is in the heavens…” – لِلَّهِ: possession."
+      }
+     }
+    ],
+    "effect": "GEN"
+   },
+   {
+    "key": "so-that",
+    "kind": "purpose",
+    "tags": ["PRP"],
+    "title": {"bs": "„da bi“: namjera", "en": "“so that”: purpose"},
+    "explanation": {
+     "bs": "Ispred glagola kaže svrhu (lām at-taʿlīl ili lām kay); glagol je u subjunktivu. Prema basranskim gramatičarima, subjunktiv čini skriveno أَنْ iza nje.",
+     "en": "Before a verb it gives the purpose (lām at-taʿlīl, or lām kay); the verb is subjunctive. According to the Basran grammarians, an implied أَنْ after it makes it so."
+    },
+    "ayat": [
+     {
+      "ref": "48:2",
+      "why": {
+       "bs": "„…da ti Allah oprosti…“ – يَغْفِرَ u subjunktivu.",
+       "en": "“That Allah may forgive you…” – يَغْفِرَ is subjunctive."
+      }
+     },
+     {
+      "ref": "51:56",
+      "why": {
+       "bs": "„Džinne i ljude sam stvorio samo zato da Me obožavaju“.",
+       "en": "“I did not create the jinn and mankind except to worship Me”."
+      }
+     }
+    ],
+    "effect": "SUBJ"
+   },
+   {
+    "key": "let",
+    "kind": "command",
+    "tags": ["IMPV"],
+    "title": {"bs": "„neka“: naredba (lām al-amr)", "en": "“let”: the command (lām al-amr)"},
+    "explanation": {
+     "bs": "Ispred glagola u sadašnjem obliku daje naredbu trećem licu: „neka…“; glagol je u jusivu. Iza وَ ili فَ izgovara se bez vokala: فَلْيَعْبُدُوا.",
+     "en": "Before a present-tense verb it gives a command to a third person: “let…”; the verb is jussive. After وَ or فَ it is said without a vowel: فَلْيَعْبُدُوا."
+    },
+    "ayat": [
+     {
+      "ref": "106:3",
+      "why": {
+       "bs": "„Neka zato obožavaju Gospodara ovog Hrama“ – يَعْبُدُوا u jusivu.",
+       "en": "“Let them worship the Lord of this House” – يَعْبُدُوا is jussive."
+      }
+     },
+     {
+      "ref": "65:7:1",
+      "why": {"bs": "„Neka imućni troši prema svom imetku“.", "en": "“Let a man of wealth spend from his wealth”."}
+     }
+    ],
+    "effect": "JUS"
+   }
+  ]
+ },
+ "ma": {
+  "arabic": "مَا",
+  "lemma": "ما",
+  "count": 2565,
+  "meaning": {"bs": "ne; ono što; šta?", "en": "not; what (that which); what?"},
+  "grammar": {
+   "bs": "Jedna riječ s više uloga. Kao čestica negira (مَا ضَلَّ „nije zalutao“), uz إِنَّ je sprečava da djeluje (إِنَّمَا „samo“), a s glagolom tvori glagolsku imenicu. Kao imenica znači „ono što“, „šta?“ ili „što god“. Ibn Hišām ih dijeli upravo tako: mā imenica i mā čestica.",
+   "en": "One word with many roles. As a particle it negates (مَا ضَلَّ “he has not strayed”), stops إِنَّ from working (إِنَّمَا “only”) and turns a verb into a verbal noun. As a noun it means “what (that which)”, “what?” or “whatever”. Ibn Hišām divides it exactly so: mā the noun and mā the particle."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: NEG (with its كَان family), REL, INTG, PREV, SUB, COND and SUP; the two SUP uses share the tag.",
+   "The corpus tags إِنَّمَا تُوعَدُونَ as PREV in 51:5 but REL in 77:7; neither is cited."
+  ],
+  "uses": [
+   {
+    "key": "not",
+    "kind": "negation",
+    "tags": ["NEG", "NEG|FAM:كَان"],
+    "title": {"bs": "„ne“: negacija", "en": "“not”: negation"},
+    "explanation": {
+     "bs": "Negira glagol u prošlom vremenu (مَا ضَلَّ) ili imensku rečenicu (مَا هُوَ „on nije“). Kad negira imensku rečenicu kao لَيْسَ, korpus je stavlja u porodicu كَانَ; predikat tada često dolazi s بِـ.",
+     "en": "It negates a past verb (مَا ضَلَّ) or a nominal sentence (مَا هُوَ “he is not”). When it negates a nominal sentence like لَيْسَ, the corpus puts it in the family of كَانَ; the predicate then often comes with بِـ."
+    },
+    "ayat": [
+     {
+      "ref": "53:2:1",
+      "why": {
+       "bs": "„Drug vaš nije zalutao niti je u zabludi“ – dvaput مَا s glagolom u prošlom vremenu.",
+       "en": "“Your companion has not strayed, nor has he erred” – مَا twice, with a past verb."
+      }
+     },
+     {
+      "ref": "81:22",
+      "why": {
+       "bs": "„A drug vaš nije lud“ – مَا kao لَيْسَ, predikat s بِـ.",
+       "en": "“And your companion is not mad” – مَا like لَيْسَ, its predicate with بِـ."
+      }
+     }
+    ]
+   },
+   {
+    "key": "what-which",
+    "kind": "relative",
+    "tags": ["REL"],
+    "title": {"bs": "„ono što“: odnosna zamjenica", "en": "“what, that which”: relative"},
+    "explanation": {
+     "bs": "Imenica: „ono što“. Uvodi rečenicu koja je opisuje. Najčešća upotreba ove riječi u Kur'anu, prema korpusu.",
+     "en": "A noun: “what, that which”. It introduces the clause that describes it. The most frequent use of this word in the Quran, as the corpus counts it."
+    },
+    "ayat": [
+     {"ref": "109:2", "why": {"bs": "„Ja ne obožavam ono što vi obožavate“.", "en": "“I do not worship what you worship”."}},
+     {
+      "ref": "2:3",
+      "why": {
+       "bs": "„…i dijele od onoga čime smo ih opskrbili“ – مِمَّا = مِنْ + مَا.",
+       "en": "“…and spend out of what We have provided for them” – مِمَّا = مِنْ + مَا."
+      }
+     }
+    ]
+   },
+   {
+    "key": "what",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "„šta?“: pitanje", "en": "“what?”: the question"},
+    "explanation": {
+     "bs": "Imenica u pitanju: „šta?“. U Kur'anu često pita da bi istakla veličinu nečega.",
+     "en": "A noun asking “what?”. In the Quran it often asks to stress how great something is."
+    },
+    "ayat": [
+     {
+      "ref": "69:2",
+      "why": {
+       "bs": "„Šta je Neminovni čas?“ – pitanje koje ističe strahotu.",
+       "en": "“What is the Inevitable Reality?” – a question that stresses its terror."
+      }
+     },
+     {
+      "ref": "20:17",
+      "why": {"bs": "„A šta je to u tvojoj desnici, o Musa?“", "en": "“And what is that in your right hand, O Moses?”"}
+     }
+    ]
+   },
+   {
+    "key": "only",
+    "kind": "preventive",
+    "tags": ["PREV"],
+    "title": {"bs": "إِنَّمَا „samo“: sprečava إِنَّ", "en": "إِنَّمَا “only”: it stops إِنَّ"},
+    "explanation": {
+     "bs": "Spojena s إِنَّ, مَا je sprečava da djeluje (mā al-kāffa): imenica iza više nije u akuzativu. Zajedno znače „samo, zaista samo“.",
+     "en": "Joined to إِنَّ, مَا stops it from working (mā al-kāffa): the noun after it is no longer accusative. Together they mean “only, indeed only”."
+    },
+    "ayat": [
+     {
+      "ref": "49:10",
+      "why": {
+       "bs": "„Vjernici su samo braća“ – ٱلْمُؤْمِنُونَ je u nominativu, ne u akuzativu.",
+       "en": "“The believers are but brothers” – ٱلْمُؤْمِنُونَ is nominative, not accusative."
+      }
+     },
+     {
+      "ref": "64:15",
+      "why": {
+       "bs": "„Imeci vaši i djeca vaša su samo iskušenje“ – أَمْوَٰلُكُمْ u nominativu.",
+       "en": "“Your wealth and your children are but a trial” – أَمْوَٰلُكُمْ nominative."
+      }
+     }
+    ],
+    "effect": "NOM"
+   },
+   {
+    "key": "verbal-noun",
+    "kind": "subordinator",
+    "tags": ["SUB"],
+    "title": {"bs": "Glagolska imenica: „kao što“", "en": "Making a verbal noun: “as”"},
+    "explanation": {
+     "bs": "S glagolom iza sebe čini cjelinu koja vrijedi kao imenica (mā al-maṣdariyya); često u كَمَا „kao što“.",
+     "en": "With the verb after it, it makes a whole that stands as a noun (mā al-maṣdariyya); often in كَمَا “as”."
+    },
+    "ayat": [
+     {
+      "ref": "17:24:10",
+      "why": {
+       "bs": "„…kao što su me oni odgojili“ – كَمَا: kao (njihov) odgoj mene.",
+       "en": "“…as they brought me up” – كَمَا: like (their) bringing me up."
+      }
+     }
+    ]
+   },
+   {
+    "key": "whatever",
+    "kind": "conditional",
+    "tags": ["COND"],
+    "title": {"bs": "„što god“: uvjet", "en": "“whatever”: condition"},
+    "explanation": {
+     "bs": "Uvjetna riječ (imenica): „što god“. Glagoli uvjeta i odgovora su u jusivu.",
+     "en": "A noun of condition: “whatever”. The verbs of the condition and its answer are jussive."
+    },
+    "ayat": [
+     {
+      "ref": "2:106",
+      "why": {"bs": "„Što god dokinemo od ajeta…“ – نَنسَخْ u jusivu.", "en": "“Whatever verse We abrogate…” – نَنسَخْ is jussive."}
+     },
+     {"ref": "3:92:8", "why": {"bs": "„A što god udijelite…“", "en": "“And whatever you spend…”"}}
+    ],
+    "effect": "JUS"
+   },
+   {
+    "key": "added-preposition",
+    "kind": "emphasis",
+    "tags": ["SUP"],
+    "title": {"bs": "Između prijedloga i imenice: naglašavanje", "en": "Between a preposition and its noun: emphasis"},
+    "explanation": {
+     "bs": "مَا koja se dodaje radi naglašavanja (zāʾida): prema Ibn Hišāmu ne ukida djelovanje, pa je imenica iza prijedloga i dalje u genitivu: فَبِمَا رَحْمَةٍ „samo zbog milosti“.",
+     "en": "A مَا added for emphasis (zāʾida): according to Ibn Hišām it does not cancel the governing, so the noun after the preposition is still genitive: فَبِمَا رَحْمَةٍ “it is by mercy”."
+    },
+    "ayat": [
+     {
+      "ref": "3:159",
+      "why": {
+       "bs": "„Samo zbog Allahove milosti ti si blag prema njima“ – رَحْمَةٍ u genitivu.",
+       "en": "“So by mercy from Allah, you were lenient with them” – رَحْمَةٍ is genitive."
+      }
+     },
+     {
+      "ref": "4:155",
+      "why": {
+       "bs": "„Zbog toga što su prekršili svoj zavjet…“ – نَقْضِهِم u genitivu.",
+       "en": "“And because of their breaking of the covenant…” – نَقْضِهِم is genitive."
+      }
+     }
+    ],
+    "effect": "GEN"
+   },
+   {
+    "key": "added-condition",
+    "kind": "emphasis",
+    "tags": ["SUP"],
+    "title": {"bs": "Uz uvjet: إِمَّا، أَيْنَمَا، إِذَا مَا", "en": "With a condition: إِمَّا، أَيْنَمَا، إِذَا مَا"},
+    "explanation": {
+     "bs": "Dodana مَا često stoji uz riječi uvjeta i naglašava ih: إِنْ + مَا = إِمَّا, أَيْنَ + مَا = أَيْنَمَا.",
+     "en": "The added مَا often stands with words of condition and stresses them: إِنْ + مَا = إِمَّا, أَيْنَ + مَا = أَيْنَمَا."
+    },
+    "ayat": [
+     {
+      "ref": "7:200",
+      "why": {
+       "bs": "„A ako te šejtan nečim podstakne…“ – وَإِمَّا.",
+       "en": "“And if an evil suggestion comes to you from Satan…” – وَإِمَّا."
+      }
+     },
+     {
+      "ref": "4:78",
+      "why": {
+       "bs": "„Ma gdje bili, stići će vas smrt“ – أَيْنَمَا.",
+       "en": "“Wherever you may be, death will overtake you” – أَيْنَمَا."
+      }
+     }
+    ]
    }
   ]
  },
@@ -526,169 +819,10 @@
    }
   ]
  },
- "ma": {
-  "arabic": "مَا",
-  "lemma": "ما",
-  "count": 2542,
-  "meaning": {"bs": "ne; ono što; šta?", "en": "not; what (that which); what?"},
-  "grammar": {
-   "bs": "Jedna riječ s više uloga. Kao čestica negira (مَا ضَلَّ „nije zalutao“), uz إِنَّ je sprečava da djeluje (إِنَّمَا „samo“), a s glagolom tvori glagolsku imenicu. Kao imenica znači „ono što“, „šta?“ ili „što god“. Ibn Hišām ih dijeli upravo tako: mā imenica i mā čestica.",
-   "en": "One word with many roles. As a particle it negates (مَا ضَلَّ “he has not strayed”), stops إِنَّ from working (إِنَّمَا “only”) and turns a verb into a verbal noun. As a noun it means “what (that which)”, “what?” or “whatever”. Ibn Hišām divides it exactly so: mā the noun and mā the particle."
-  },
-  "sources": [
-   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
-   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
-  ],
-  "notes": [
-   "Counted: NEG (with its كَان family), REL, INTG, PREV, SUB, COND. The corpus's SUP mā (23) is left out.",
-   "The corpus tags إِنَّمَا تُوعَدُونَ as PREV in 51:5 but REL in 77:7; neither is cited."
-  ],
-  "uses": [
-   {
-    "key": "not",
-    "kind": "negation",
-    "tags": ["NEG", "NEG|FAM:كَان"],
-    "title": {"bs": "„ne“: negacija", "en": "“not”: negation"},
-    "explanation": {
-     "bs": "Negira glagol u prošlom vremenu (مَا ضَلَّ) ili imensku rečenicu (مَا هُوَ „on nije“). Kad negira imensku rečenicu kao لَيْسَ, korpus je stavlja u porodicu كَانَ; predikat tada često dolazi s بِـ.",
-     "en": "It negates a past verb (مَا ضَلَّ) or a nominal sentence (مَا هُوَ “he is not”). When it negates a nominal sentence like لَيْسَ, the corpus puts it in the family of كَانَ; the predicate then often comes with بِـ."
-    },
-    "ayat": [
-     {
-      "ref": "53:2:1",
-      "why": {
-       "bs": "„Drug vaš nije zalutao niti je u zabludi“ – dvaput مَا s glagolom u prošlom vremenu.",
-       "en": "“Your companion has not strayed, nor has he erred” – مَا twice, with a past verb."
-      }
-     },
-     {
-      "ref": "81:22",
-      "why": {
-       "bs": "„A drug vaš nije lud“ – مَا kao لَيْسَ, predikat s بِـ.",
-       "en": "“And your companion is not mad” – مَا like لَيْسَ, its predicate with بِـ."
-      }
-     }
-    ]
-   },
-   {
-    "key": "what-which",
-    "kind": "relative",
-    "tags": ["REL"],
-    "title": {"bs": "„ono što“: odnosna zamjenica", "en": "“what, that which”: relative"},
-    "explanation": {
-     "bs": "Imenica: „ono što“. Uvodi rečenicu koja je opisuje. Najčešća upotreba ove riječi u Kur'anu, prema korpusu.",
-     "en": "A noun: “what, that which”. It introduces the clause that describes it. The most frequent use of this word in the Quran, as the corpus counts it."
-    },
-    "ayat": [
-     {
-      "ref": "109:2",
-      "why": {"bs": "„Ja ne obožavam ono što vi obožavate“.", "en": "“I do not worship what you worship”."}
-     },
-     {
-      "ref": "2:3",
-      "why": {
-       "bs": "„…i dijele od onoga čime smo ih opskrbili“ – مِمَّا = مِنْ + مَا.",
-       "en": "“…and spend out of what We have provided for them” – مِمَّا = مِنْ + مَا."
-      }
-     }
-    ]
-   },
-   {
-    "key": "what",
-    "kind": "interrogative",
-    "tags": ["INTG"],
-    "title": {"bs": "„šta?“: pitanje", "en": "“what?”: the question"},
-    "explanation": {
-     "bs": "Imenica u pitanju: „šta?“. U Kur'anu često pita da bi istakla veličinu nečega.",
-     "en": "A noun asking “what?”. In the Quran it often asks to stress how great something is."
-    },
-    "ayat": [
-     {
-      "ref": "69:2",
-      "why": {
-       "bs": "„Šta je Neminovni čas?“ – pitanje koje ističe strahotu.",
-       "en": "“What is the Inevitable Reality?” – a question that stresses its terror."
-      }
-     },
-     {
-      "ref": "20:17",
-      "why": {"bs": "„A šta je to u tvojoj desnici, o Musa?“", "en": "“And what is that in your right hand, O Moses?”"}
-     }
-    ]
-   },
-   {
-    "key": "only",
-    "kind": "preventive",
-    "tags": ["PREV"],
-    "title": {"bs": "إِنَّمَا „samo“: sprečava إِنَّ", "en": "إِنَّمَا “only”: it stops إِنَّ"},
-    "explanation": {
-     "bs": "Spojena s إِنَّ, مَا je sprečava da djeluje (mā al-kāffa): imenica iza više nije u akuzativu. Zajedno znače „samo, zaista samo“.",
-     "en": "Joined to إِنَّ, مَا stops it from working (mā al-kāffa): the noun after it is no longer accusative. Together they mean “only, indeed only”."
-    },
-    "ayat": [
-     {
-      "ref": "49:10",
-      "why": {
-       "bs": "„Vjernici su samo braća“ – ٱلْمُؤْمِنُونَ je u nominativu, ne u akuzativu.",
-       "en": "“The believers are but brothers” – ٱلْمُؤْمِنُونَ is nominative, not accusative."
-      }
-     },
-     {
-      "ref": "64:15",
-      "why": {
-       "bs": "„Imeci vaši i djeca vaša su samo iskušenje“ – أَمْوَٰلُكُمْ u nominativu.",
-       "en": "“Your wealth and your children are but a trial” – أَمْوَٰلُكُمْ nominative."
-      }
-     }
-    ],
-    "effect": "NOM"
-   },
-   {
-    "key": "verbal-noun",
-    "kind": "subordinator",
-    "tags": ["SUB"],
-    "title": {"bs": "Glagolska imenica: „kao što“", "en": "Making a verbal noun: “as”"},
-    "explanation": {
-     "bs": "S glagolom iza sebe čini cjelinu koja vrijedi kao imenica (mā al-maṣdariyya); često u كَمَا „kao što“.",
-     "en": "With the verb after it, it makes a whole that stands as a noun (mā al-maṣdariyya); often in كَمَا “as”."
-    },
-    "ayat": [
-     {
-      "ref": "17:24:10",
-      "why": {
-       "bs": "„…kao što su me oni odgojili“ – كَمَا: kao (njihov) odgoj mene.",
-       "en": "“…as they brought me up” – كَمَا: like (their) bringing me up."
-      }
-     }
-    ]
-   },
-   {
-    "key": "whatever",
-    "kind": "conditional",
-    "tags": ["COND"],
-    "title": {"bs": "„što god“: uvjet", "en": "“whatever”: condition"},
-    "explanation": {
-     "bs": "Uvjetna riječ (imenica): „što god“. Glagoli uvjeta i odgovora su u jusivu.",
-     "en": "A noun of condition: “whatever”. The verbs of the condition and its answer are jussive."
-    },
-    "ayat": [
-     {
-      "ref": "2:106",
-      "why": {
-       "bs": "„Što god dokinemo od ajeta…“ – نَنسَخْ u jusivu.",
-       "en": "“Whatever verse We abrogate…” – نَنسَخْ is jussive."
-      }
-     },
-     {"ref": "3:92:8", "why": {"bs": "„A što god udijelite…“", "en": "“And whatever you spend…”"}}
-    ],
-    "effect": "JUS"
-   }
-  ]
- },
  "la": {
   "arabic": "لَا",
   "lemma": "لا",
-  "count": 1734,
+  "count": 1742,
   "meaning": {"bs": "ne; nemoj; nema nikakvog", "en": "not; do not; there is no"},
   "grammar": {
    "bs": "Najčešća negacija u Kur'anu. Ispred glagola u sadašnjem obliku negira ne mijenjajući ga (indikativ ostaje). Kao zabrana („nemoj“) stavlja glagol u jusiv. Kao لَا koja negira cijeli rod djeluje kao إِنَّ: imenica iza nje ima fethu bez nunacije.",
@@ -699,7 +833,9 @@
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
   "notes": [
-   "Counted: NEG, PRO and NEG|FAM:إِنّ. The corpus's NEG|FAM:كَان lā (8, like لَيْسَ) is left out.",
+   "Counted: NEG, PRO, NEG|FAM:إِنّ and NEG|FAM:كَان.",
+   "NEG|FAM:كَان: the corpus tags 5:109 لَا عِلْمَ لَنَآ (an accusative, the لَا of the kind) under it; not cited. The non-governing reading of لَا خَوْفٌ is named beside the corpus's.",
+   "Review: 2:254 بَيْعٌ is Ḥafṣ's reading; Ibn Kaṯīr and Abū ʿAmr read the fatḥa (لَا of the kind) — said in the ayah's note.",
    "The corpus files some prohibitions as NEG (31:13, 9:40: NEG with a jussive verb) and some لَا إِلَٰهَ as NEG (37:35), so the per-use counts are the corpus's tags, not a full count of each use; examples are taken only where the corpus tags the use as claimed.",
    "Review: the none-at-all use claims no effect — for a simple noun the Basrans say it is fixed on the fatḥa in the place of an accusative, while the corpus tags ACC; the text says both."
   ],
@@ -716,10 +852,7 @@
     "ayat": [
      {
       "ref": "109:2",
-      "why": {
-       "bs": "„Ja ne obožavam…“ – أَعْبُدُ ostaje u indikativu.",
-       "en": "“I do not worship…” – أَعْبُدُ stays indicative."
-      }
+      "why": {"bs": "„Ja ne obožavam…“ – أَعْبُدُ ostaje u indikativu.", "en": "“I do not worship…” – أَعْبُدُ stays indicative."}
      },
      {"ref": "2:6", "why": {"bs": "„…oni neće vjerovati“.", "en": "“…they will not believe”."}}
     ],
@@ -777,6 +910,33 @@
       }
      }
     ]
+   },
+   {
+    "key": "like-laysa",
+    "kind": "negation",
+    "tags": ["NEG|FAM:كَان"],
+    "title": {"bs": "Kao لَيْسَ: „nema“", "en": "Like لَيْسَ: “there is no”"},
+    "explanation": {
+     "bs": "Korpus ovako bilježi لَا koja radi kao لَيْسَ: imenica iza nje ostaje u nominativu, s tenvinom. Drugi je čitaju kao لَا koja ništa ne mijenja, a imenica je subjekat; u oba čitanja imenica je u nominativu. Uporedi لَا roda (لَا رَيْبَ), iza koje je imenica s fethom.",
+     "en": "The corpus files so a لَا that works like لَيْسَ: the noun after it stays nominative, with tanwīn. Others read it as a لَا that changes nothing, the noun being the subject; in either reading the noun is nominative. Compare the لَا of the kind (لَا رَيْبَ), after which the noun has a fatḥa."
+    },
+    "ayat": [
+     {
+      "ref": "2:38:12",
+      "why": {
+       "bs": "„…nikakva straha za njih neće biti, niti će oni tugovati“ – خَوْفٌ u nominativu.",
+       "en": "“…there will be no fear concerning them, nor will they grieve” – خَوْفٌ is nominative."
+      }
+     },
+     {
+      "ref": "2:254:12",
+      "why": {
+       "bs": "„…prije nego što dođe dan kad neće biti ni trgovine…“ – بَيْعٌ u nominativu u Ḥafṣovom čitanju; Ibn Kaṯīr i Abū ʿAmr čitaju لَا بَيْعَ, s fethom (لَا roda).",
+       "en": "“…before there comes a Day in which there is no exchange…” – بَيْعٌ is nominative in Ḥafṣ's reading; Ibn Kaṯīr and Abū ʿAmr read لَا بَيْعَ, with a fatḥa (the لَا of the kind)."
+      }
+     }
+    ],
+    "effect": "NOM"
    }
   ]
  },
@@ -975,6 +1135,258 @@
    }
   ]
  },
+ "la-2": {
+  "arabic": "لَـ",
+  "lemma": "ل",
+  "count": 1001,
+  "meaning": {"bs": "zaista, sigurno", "en": "indeed, surely"},
+  "grammar": {
+   "bs": "لَـ s fethom (lām al-ibtidāʾ i lām odgovora na zakletvu) je druga riječ od لِـ s kesrom: ne mijenja padež ni način, nego naglašava. Najčešće stoji u predikatu iza إِنَّ (إِنَّ رَبَّكَ لَبِٱلْمِرْصَادِ), u odgovoru na zakletvu, u odgovoru na لَوْ i iza olakšanog إِنْ.",
+   "en": "لَـ with a fatḥa (lām al-ibtidāʾ and the lām answering an oath) is a different word from لِـ with a kasra: it changes no case or mood, it stresses. It mostly stands on the predicate after إِنَّ (إِنَّ رَبَّكَ لَبِٱلْمِرْصَادِ), in the answer to an oath, in the answer to لَوْ and after the lightened إِنْ."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: the corpus's EMPH lām (1001). Its uses share one tag, so the page cannot count them apart; examples are taken where the context shows the use.",
+   "The corpus also files the ـنَّ of emphasis on verbs as its own EMPH particle (lemma ن, 243); it is named here, not given a page.",
+   "The corpus files إِنْ before لَـ as CERT in 26:97/26:186 but as COND in 37:167 and 17:73; only CERT ayat are cited for the lightened إِنْ."
+  ],
+  "uses": [
+   {
+    "key": "with-inna",
+    "kind": "emphasis",
+    "tags": ["EMPH"],
+    "title": {"bs": "Uz إِنَّ: dvostruko naglašavanje", "en": "With إِنَّ: a double emphasis"},
+    "explanation": {
+     "bs": "Lām naglašavanja po pravilu stoji na početku rečenice, ali kad rečenicu otvara إِنَّ, dvije riječi naglašavanja se ne stavljaju jednu do druge, pa se lām pomjera na predikat ili na subjekat koji je odgođen (al-lām al-muzaḥlaqa). Lām ne mijenja padež: riječ zadržava padež koji ima u rečenici.",
+     "en": "The lām of emphasis belongs at the head of the sentence, but when إِنَّ opens it the two words of emphasis are not put side by side, so the lām moves to the predicate, or to the subject when that comes late (al-lām al-muzaḥlaqa). The lām changes no case: the word keeps the case it has in the sentence."
+    },
+    "ayat": [
+     {
+      "ref": "37:4",
+      "why": {
+       "bs": "„Vaš Bog je zaista Jedan“ – لَوَٰحِدٌ je predikat od إِنَّ, u nominativu.",
+       "en": "“Indeed, your God is One” – لَوَٰحِدٌ is the predicate of إِنَّ, nominative."
+      }
+     },
+     {
+      "ref": "82:10",
+      "why": {
+       "bs": "„A nad vama su zaista čuvari“ – لَحَٰفِظِينَ je subjekat od إِنَّ koji dolazi poslije, zato u akuzativu.",
+       "en": "“And indeed, over you are keepers” – لَحَٰفِظِينَ is the subject of إِنَّ coming late, hence accusative."
+      }
+     }
+    ]
+   },
+   {
+    "key": "oath",
+    "kind": "emphasis",
+    "tags": ["EMPH"],
+    "title": {"bs": "Odgovor na zakletvu: „sigurno ćete…“", "en": "Answering an oath: “you will surely…”"},
+    "explanation": {
+     "bs": "Kad se Allah zakune ili je zakletva podrazumijevana, glagol odgovora dobiva لَـ, a u sadašnjem obliku najčešće i ـنَّ naglašavanja (لَتَرَوُنَّ). Isti lām stoji u لَقَدْ.",
+     "en": "When Allah swears, or an oath is understood, the verb of the answer takes لَـ, and in the present tense most often also the ـنَّ of emphasis (لَتَرَوُنَّ). The same lām stands in لَقَدْ."
+    },
+    "ayat": [
+     {
+      "ref": "102:6",
+      "why": {
+       "bs": "„Sigurno ćete vidjeti Džehennem!“ – لَـ i ـنَّ odgovaraju na podrazumijevanu zakletvu.",
+       "en": "“You will surely see the Hellfire!” – لَـ and ـنَّ answer an oath that is understood."
+      }
+     },
+     {
+      "ref": "64:7:10",
+      "why": {
+       "bs": "„Reci: ‘Hoćete, tako mi Gospodara moga, sigurno ćete biti oživljeni!’“ – zakletva وَرَبِّى i njen odgovor لَتُبْعَثُنَّ.",
+       "en": "“Say: ‘Yes, by my Lord, you will surely be resurrected!’” – the oath وَرَبِّى and its answer لَتُبْعَثُنَّ."
+      }
+     },
+     {
+      "ref": "95:4",
+      "why": {
+       "bs": "„Mi smo zaista stvorili čovjeka u najljepšem obliku“ – لَقَدْ: lām odgovora na zakletve iz ajeta 1–3 i قَدْ.",
+       "en": "“We have certainly created man in the best of stature” – لَقَدْ: the lām answering the oaths of ayat 1–3, with قَدْ."
+      }
+     }
+    ]
+   },
+   {
+    "key": "law-answer",
+    "kind": "emphasis",
+    "tags": ["EMPH"],
+    "title": {"bs": "Odgovor na لَوْ i لَوْلَا", "en": "The answer to لَوْ and لَوْلَا"},
+    "explanation": {
+     "bs": "Glagol u prošlom obliku koji odgovara na لَوْ ili لَوْلَا često dobiva لَـ; ponekad ga nema (لَوْ نَشَآءُ جَعَلْنَٰهُ أُجَاجًا, 56:70).",
+     "en": "A past-tense verb answering لَوْ or لَوْلَا often takes لَـ; sometimes it does not (لَوْ نَشَآءُ جَعَلْنَٰهُ أُجَاجًا, 56:70)."
+    },
+    "ayat": [
+     {
+      "ref": "56:65",
+      "why": {
+       "bs": "„Da hoćemo, učinili bismo ga smrvljenim“ – لَجَعَلْنَٰهُ odgovara na لَوْ.",
+       "en": "“If We willed, We could make it crumbled debris” – لَجَعَلْنَٰهُ answers لَوْ."
+      }
+     },
+     {
+      "ref": "37:57",
+      "why": {
+       "bs": "„Da nije blagodati Gospodara moga, i ja bih bio među dovedenima“ – لَكُنتُ odgovara na لَوْلَا.",
+       "en": "“If not for the favour of my Lord, I would have been of those brought in” – لَكُنتُ answers لَوْلَا."
+      }
+     }
+    ]
+   },
+   {
+    "key": "start",
+    "kind": "emphasis",
+    "tags": ["EMPH"],
+    "title": {"bs": "Na početku rečenice", "en": "At the head of a sentence"},
+    "explanation": {
+     "bs": "Bez إِنَّ lām naglašavanja stoji na početku imenske rečenice (lām al-ibtidāʾ): „zaista je…“. Subjekat iza njega ostaje u nominativu.",
+     "en": "Without إِنَّ the lām of emphasis heads a nominal sentence (lām al-ibtidāʾ): “surely…”. The subject after it stays nominative."
+    },
+    "ayat": [
+     {
+      "ref": "59:13",
+      "why": {
+       "bs": "„Vi zaista izazivate veći strah u njihovim srcima nego Allah“ – لَأَنتُمْ.",
+       "en": "“You are more fearful in their breasts than Allah” – لَأَنتُمْ."
+      }
+     },
+     {
+      "ref": "40:57",
+      "why": {
+       "bs": "„Stvaranje nebesa i Zemlje je zaista veće od stvaranja ljudi“ – لَخَلْقُ u nominativu.",
+       "en": "“The creation of the heavens and the earth is greater than the creation of mankind” – لَخَلْقُ is nominative."
+      }
+     }
+    ]
+   },
+   {
+    "key": "after-in",
+    "kind": "emphasis",
+    "tags": ["EMPH"],
+    "title": {"bs": "Iza olakšanog إِنْ", "en": "After the lightened إِنْ"},
+    "explanation": {
+     "bs": "Iza إِنْ olakšanog od إِنَّ dolazi لَـ. Basrijski gramatičari kažu da ovaj lām razlikuje potvrdno إِنْ od negacije (al-lām al-fāriqa); kufski kažu da je إِنْ tu negacija, a لَـ znači إِلَّا. Vidi إِنْ.",
+     "en": "After إِنْ lightened from إِنَّ comes لَـ. The Basran grammarians say this lām tells the affirming إِنْ apart from the negating one (al-lām al-fāriqa); the Kufans say إِنْ is a negation there and لَـ means إِلَّا. See إِنْ."
+    },
+    "ayat": [
+     {
+      "ref": "26:97",
+      "why": {
+       "bs": "„Tako nam Allaha, bili smo zaista u očitoj zabludi“ – إِن كُنَّا لَفِى.",
+       "en": "“By Allah, we were indeed in manifest error” – إِن كُنَّا لَفِى."
+      }
+     },
+     {
+      "ref": "26:186:8",
+      "why": {
+       "bs": "„…i mi zaista mislimo da si ti od lažaca“ – إِن نَّظُنُّكَ لَمِنَ.",
+       "en": "“…and indeed, we think you are among the liars” – إِن نَّظُنُّكَ لَمِنَ."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "man": {
+  "arabic": "مَنْ",
+  "lemma": "مَن",
+  "count": 871,
+  "meaning": {"bs": "ko; onaj koji; ko god", "en": "who; the one who; whoever"},
+  "grammar": {
+   "bs": "Riječ za osobe (ono što ima razum), kao što je مَا za stvari. Korpus je bilježi kao imenicu bez korijena. Ima tri uloge: odnosna („onaj koji“), uvjetna („ko god“, stavlja glagole u jusiv) i upitna („ko?“). Sama se ne mijenja po padežima.",
+   "en": "The word for persons (beings with reason), as مَا is for things. The corpus files it as a rootless noun. It has three roles: relative (“the one who”), conditional (“whoever”, putting the verbs in the jussive) and interrogative (“who?”). It does not change for case itself."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: REL (650), COND (184) and INTG (37).",
+   "The corpus tags 20:49 فَمَن رَّبُّكُمَا as REL though it is a question; it is not cited."
+  ],
+  "uses": [
+   {
+    "key": "who-relative",
+    "kind": "relative",
+    "tags": ["REL"],
+    "title": {"bs": "„Onaj koji…“", "en": "“The one who…”"},
+    "explanation": {
+     "bs": "Uvodi rečenicu koja opisuje osobu; glagol iza ostaje u svom načinu.",
+     "en": "It introduces a clause describing a person; the verb after it keeps its own mood."
+    },
+    "ayat": [
+     {
+      "ref": "87:10",
+      "why": {"bs": "„Poruku će primiti onaj koji se boji“ – مَن يَخْشَىٰ.", "en": "“He who fears will be reminded” – مَن يَخْشَىٰ."}
+     },
+     {
+      "ref": "55:26",
+      "why": {
+       "bs": "„Svako ko je na njoj prolazan je“ – كُلُّ مَنْ عَلَيْهَا.",
+       "en": "“Everyone upon it will perish” – كُلُّ مَنْ عَلَيْهَا."
+      }
+     }
+    ]
+   },
+   {
+    "key": "whoever",
+    "kind": "conditional",
+    "tags": ["COND"],
+    "title": {"bs": "„Ko god…“: uvjet", "en": "“Whoever…”: condition"},
+    "explanation": {
+     "bs": "Kao uvjet stavlja glagol uvjeta i glagol odgovora u sadašnjem obliku u jusiv.",
+     "en": "As a condition it puts the present-tense verbs of the condition and of the answer in the jussive."
+    },
+    "ayat": [
+     {
+      "ref": "99:7",
+      "why": {
+       "bs": "„Pa ko bude uradio koliko trun dobra, vidjet će ga“ – يَعْمَلْ i يَرَهُ u jusivu.",
+       "en": "“So whoever does an atom's weight of good will see it” – يَعْمَلْ and يَرَهُ are jussive."
+      }
+     },
+     {
+      "ref": "99:8",
+      "why": {
+       "bs": "„A ko bude uradio koliko trun zla, vidjet će ga.“",
+       "en": "“And whoever does an atom's weight of evil will see it.”"
+      }
+     }
+    ],
+    "effect": "JUS"
+   },
+   {
+    "key": "who-asking",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "„Ko?“: pitanje", "en": "“Who?”: asking"},
+    "explanation": {
+     "bs": "Pita o osobi. Često pitanje znači poricanje: مَن ذَا ٱلَّذِى يَشْفَعُ „ko je taj koji će se zauzimati…?“ – niko, osim s Njegovom dozvolom.",
+     "en": "It asks about a person. A question is often a denial: مَن ذَا ٱلَّذِى يَشْفَعُ “who is it that can intercede…?” – no one, except by His permission."
+    },
+    "ayat": [
+     {
+      "ref": "75:27",
+      "why": {"bs": "„I reći će se: ‘Ko je vidar?’“ – مَنْ رَاقٍ.", "en": "“And it is said: ‘Who will cure him?’” – مَنْ رَاقٍ."}
+     },
+     {
+      "ref": "2:255:20",
+      "why": {
+       "bs": "„Ko se može zauzimati kod Njega osim s Njegovim dopuštenjem?“",
+       "en": "“Who is it that can intercede with Him except by His permission?”"
+      }
+     }
+    ]
+   }
+  ]
+ },
  "ila": {
   "arabic": "إِلَى",
   "lemma": "إِلَى",
@@ -1048,7 +1460,7 @@
  "in": {
   "arabic": "إِنْ",
   "lemma": "إِن",
-  "count": 693,
+  "count": 702,
   "meaning": {"bs": "ako; ne", "en": "if; not"},
   "grammar": {
    "bs": "Dvije česte uloge. Kao uvjet („ako“) stavlja glagole uvjeta i odgovora u sadašnjem obliku u jusiv. Kao negacija znači „ne“, najčešće uz إِلَّا: إِنْ هُوَ إِلَّا… „to nije ništa drugo nego…“.",
@@ -1056,9 +1468,13 @@
   },
   "sources": [
    "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
    "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
   ],
-  "notes": ["Counted: COND and NEG. The corpus's CERT إِنْ (9, the lightened إِنَّ) is left for a later batch."],
+  "notes": [
+   "Counted: COND, NEG and CERT (the lightened إِنَّ). The corpus files the same lightened إِنْ as COND in 37:167 and 17:73; only CERT ayat are cited.",
+   "The Basran/Kufan disagreement is the one al-Inṣāf records. 20:63 is a qirāʾa question, named without listing the readers."
+  ],
   "uses": [
    {
     "key": "if",
@@ -1098,6 +1514,29 @@
       }
      },
      {"ref": "35:23", "why": {"bs": "„Ti si samo opominjač“.", "en": "“You are not but a warner”."}}
+    ]
+   },
+   {
+    "key": "lightened",
+    "kind": "innaFamily",
+    "tags": ["CERT"],
+    "title": {"bs": "Olakšano إِنَّ: „zaista“", "en": "The lightened إِنَّ: “indeed”"},
+    "explanation": {
+     "bs": "إِنْ olakšano od إِنَّ (al-muḫaffafa) potvrđuje, a predikat mu dobiva لَـ. Basrijski gramatičari kažu da je to إِنَّ olakšano i da لَـ razlikuje potvrdu od negacije; kufski kažu da je إِنْ tu negacija, a لَـ znači إِلَّا („nismo bili nego u zabludi“). Smisao je u oba čitanja isti.",
+     "en": "إِنْ lightened from إِنَّ (al-muḫaffafa) affirms, and its predicate takes لَـ. The Basran grammarians say it is the lightened إِنَّ and لَـ tells affirming from negating; the Kufans say إِنْ is a negation there and لَـ means إِلَّا (“we were nothing but in error”). The sense is the same either way."
+    },
+    "ayat": [
+     {
+      "ref": "26:97",
+      "why": {"bs": "„Tako nam Allaha, bili smo zaista u očitoj zabludi.“", "en": "“By Allah, we were indeed in manifest error.”"}
+     },
+     {
+      "ref": "20:63",
+      "why": {
+       "bs": "„Ova dvojica su zaista čarobnjaci“ – u Ḥafṣovom čitanju إِنْ هَٰذَٰنِ لَسَٰحِرَٰنِ; neki drugi učači čitaju إِنَّ (Abū ʿAmr: إِنَّ هَٰذَيْنِ).",
+       "en": "“Indeed, these are two magicians” – in Ḥafṣ's reading إِنْ هَٰذَٰنِ لَسَٰحِرَٰنِ; some other readers read إِنَّ (Abū ʿAmr: إِنَّ هَٰذَيْنِ)."
+      }
+     }
     ]
    }
   ]
@@ -1216,6 +1655,104 @@
      {
       "ref": "23:27:3",
       "why": {"bs": "„I Mi mu objavismo: ‘Gradi lađu…’“", "en": "“So We inspired to him, ‘Construct the ship…’”"}
+     }
+    ]
+   }
+  ]
+ },
+ "a": {
+  "arabic": "أَ",
+  "lemma": "أ",
+  "count": 513,
+  "meaning": {"bs": "zar, da li", "en": "is it…?, do…?"},
+  "grammar": {
+   "bs": "Hemza pitanja otvara pitanje i ne mijenja padež ni način. Prema Ibn Hišāmu, razlikuje se od هَلْ jer može pitati i „ovo ili ono“ (s أَمْ), stoji ispred negacije (أَلَمْ، أَفَلَا) i ispred veznika: أَفَلَا، أَوَلَمْ.",
+   "en": "The question hamza opens a question and changes no case or mood. According to Ibn Hišām it differs from هَلْ in that it can also ask “this or that” (with أَمْ), stands before a negation (أَلَمْ، أَفَلَا) and before a conjunction: أَفَلَا، أَوَلَمْ."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: INTG (507) and EQ (6). The two INTG uses share one tag, so the page cannot count them apart.",
+   "Review: the view that the conjunction after the hamza belongs to the following sentence is given as the majority's (al-jumhūr), not Sībawayh's by name; the left-out sentence is az-Zamaḫšarī's — both as Ibn Hišām reports them."
+  ],
+  "uses": [
+   {
+    "key": "question",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "Pitanje „da li…?“", "en": "Asking “is it…?”"},
+    "explanation": {
+     "bs": "Pita da li je nešto tako; kad pita o osobi ili stvari, ta riječ dolazi odmah iza hemze (ءَأَنتَ فَعَلْتَ – „jesi li ti to učinio?“).",
+     "en": "It asks whether something is so; when it asks about a person or thing, that word comes right after the hamza (ءَأَنتَ فَعَلْتَ – “was it you who did this?”)."
+    },
+    "ayat": [
+     {
+      "ref": "21:62",
+      "why": {
+       "bs": "„Jesi li ti to učinio s našim božanstvima, Ibrahime?“ – pitanje je o osobi, zato أَنتَ odmah iza hemze.",
+       "en": "“Have you done this to our gods, O Abraham?” – the question is about the person, so أَنتَ comes right after the hamza."
+      }
+     },
+     {
+      "ref": "56:59",
+      "why": {
+       "bs": "„Da li ga vi stvarate ili smo Mi Stvaratelji?“ – hemza i أَمْ pitaju „ovo ili ono“.",
+       "en": "“Is it you who creates it, or are We the Creator?” – the hamza and أَمْ ask “this or that”."
+      }
+     }
+    ]
+   },
+   {
+    "key": "affirming",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "Pitanje koje potvrđuje ili kori", "en": "A question that affirms or rebukes"},
+    "explanation": {
+     "bs": "Pitanje često ne traži obavijest (a u Allahovom govoru nikad ne traži ono što On ne zna): ili navodi slušaoca da potvrdi (taqrīr – أَلَمْ „zar nije?“), ili kori i poriče (inkār, tawbīḫ). Hemza stoji ispred وَ i فَ: أَوَلَمْ، أَفَلَا. Prema većini gramatičara (al-jumhūr), veznik pripada rečenici iza, a hemza je samo stavljena ispred jer pitanje ide na početak; az-Zamaḫšarī je smatrao da je između njih izostavljena rečenica (Ibn Hišām navodi oba mišljenja).",
+     "en": "A question often does not ask for information (and in Allah's speech it never seeks what He does not know): it leads the listener to admit (taqrīr – أَلَمْ “have We not?”), or it rebukes and denies (inkār, tawbīḫ). The hamza stands before وَ and فَ: أَوَلَمْ، أَفَلَا. According to most grammarians (al-jumhūr) the conjunction belongs to the sentence after it, and the hamza is put before it because a question goes first; az-Zamaḫšarī held that a sentence is left out between them (Ibn Hišām gives both views)."
+    },
+    "ayat": [
+     {
+      "ref": "94:1",
+      "why": {
+       "bs": "„Zar ti nismo grudi tvoje prostranim učinili?“ – pitanje koje potvrđuje: jesmo.",
+       "en": "“Did We not expand for you your breast?” – a question that affirms: We did."
+      }
+     },
+     {
+      "ref": "37:95",
+      "why": {
+       "bs": "„Zar se klanjate onome što sami klešete?“ – Ibrahimovo pitanje kori i poriče.",
+       "en": "“Do you worship that which you yourselves carve?” – Abraham's question rebukes and denies."
+      }
+     }
+    ]
+   },
+   {
+    "key": "equal",
+    "kind": "equalization",
+    "tags": ["EQ"],
+    "title": {"bs": "„Svejedno je da li… ili…“", "en": "“It is the same whether… or…”"},
+    "explanation": {
+     "bs": "Iza سَوَآءٌ hemza više ne pita: s أَمْ izjednačava dvije mogućnosti (hamzat at-taswiya), a rečenica se razumije kao glagolska imenica: „svejedno im je tvoje opominjanje ili neopominjanje“.",
+     "en": "After سَوَآءٌ the hamza no longer asks: with أَمْ it makes two choices equal (hamzat at-taswiya), and the clause is understood as a verbal noun: “your warning them or not warning them is the same to them”."
+    },
+    "ayat": [
+     {
+      "ref": "2:6",
+      "why": {
+       "bs": "„Svejedno im je opominjao ih ti ili ne opominjao, oni neće vjerovati.“",
+       "en": "“It is all the same for them whether you warn them or do not warn them – they will not believe.”"
+      }
+     },
+     {
+      "ref": "63:6",
+      "why": {
+       "bs": "„Svejedno im je molio ti oprost za njih ili ne molio, Allah im neće oprostiti.“",
+       "en": "“It is all the same for them whether you ask forgiveness for them or do not ask – Allah will never forgive them.”"
+      }
      }
     ]
    }
@@ -1433,6 +1970,116 @@
    }
   ]
  },
+ "ya": {
+  "arabic": "يَا",
+  "lemma": "ي",
+  "count": 361,
+  "meaning": {"bs": "o!", "en": "O!"},
+  "grammar": {
+   "bs": "Riječ dozivanja: يَٰمُوسَىٰ „O Musa“. Oblik onoga koji se doziva zavisi od vrste imenice: vlastito ime ili jedan određeni dozvani dobiva dammu, a izraz u genitivnoj vezi akuzativ. Imenica s ٱلْ se doziva preko أَيُّهَا. Često se doziva i bez يَا: رَبَّنَا „Gospodaru naš“.",
+   "en": "The word of calling: يَٰمُوسَىٰ “O Moses”. The form of the one called depends on the kind of noun: a proper name, or one particular person called, takes a ḍamma, a phrase in a genitive construction the accusative. A noun with ٱلْ is called through أَيُّهَا. A call often comes without يَا: رَبَّنَا “Our Lord”."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: VOC (361). The corpus's case on the called noun is not consistent (يَٰفِرْعَوْنُ 7:104 is ACC, يَٰٓأَبَانَا 12:97 NOM), so only the annexed use claims an effect, checked on its ayat.",
+   "The ḍamma of a called name is given as the grammarians' 'built on the ḍamma in the place of an accusative' and the corpus's NOM, without naming a school.",
+   "The corpus's VOC mīm (اللَّهُمَّ, 5) is not a word of its own and is left out."
+  ],
+  "uses": [
+   {
+    "key": "name",
+    "kind": "vocative",
+    "tags": ["VOC"],
+    "title": {"bs": "Dozivanje imenom: „O Merjema!“", "en": "Calling by name: “O Mary!”"},
+    "explanation": {
+     "bs": "Ime ili jedan određeni dozvani dobiva dammu bez tenvina: يَٰمَرْيَمُ. Gramatičari kažu da je „građeno na dammi na mjestu akuzativa“; korpus ga označava kao nominativ.",
+     "en": "A name, or one particular person called, takes a ḍamma without tanwīn: يَٰمَرْيَمُ. The grammarians say it is “built on the ḍamma in the place of an accusative”; the corpus tags it nominative."
+    },
+    "ayat": [
+     {
+      "ref": "3:43",
+      "why": {
+       "bs": "„O Merjema, budi pokorna svome Gospodaru…“ – يَٰمَرْيَمُ s dammom.",
+       "en": "“O Mary, be devoutly obedient to your Lord…” – يَٰمَرْيَمُ with a ḍamma."
+      }
+     },
+     {
+      "ref": "20:92",
+      "why": {"bs": "„O Harune, šta te spriječilo…“ – يَٰهَٰرُونُ.", "en": "“O Aaron, what prevented you…” – يَٰهَٰرُونُ."}
+     }
+    ]
+   },
+   {
+    "key": "annexed",
+    "kind": "vocative",
+    "tags": ["VOC"],
+    "title": {"bs": "Dozivanje izraza: „O sinovi Ademovi!“", "en": "Calling a phrase: “O children of Adam!”"},
+    "explanation": {
+     "bs": "Kad je dozvani prvi član genitivne veze, u akuzativu je: يَٰبَنِىٓ ءَادَمَ، يَٰٓأَهْلَ ٱلْكِتَٰبِ.",
+     "en": "When the one called is the first term of a genitive construction, it is accusative: يَٰبَنِىٓ ءَادَمَ، يَٰٓأَهْلَ ٱلْكِتَٰبِ."
+    },
+    "ayat": [
+     {
+      "ref": "3:70",
+      "why": {
+       "bs": "„O sljedbenici Knjige, zašto ne vjerujete u Allahove ajete…“ – يَٰٓأَهْلَ u akuzativu.",
+       "en": "“O People of the Scripture, why do you disbelieve in the verses of Allah…” – يَٰٓأَهْلَ is accusative."
+      }
+     },
+     {
+      "ref": "7:31",
+      "why": {
+       "bs": "„O sinovi Ademovi, uljepšajte se kod svake mesdžide…“ – يَٰبَنِىٓ, akuzativ množine.",
+       "en": "“O children of Adam, take your adornment at every masjid…” – يَٰبَنِىٓ, the accusative plural."
+      }
+     }
+    ],
+    "effect": "ACC"
+   },
+   {
+    "key": "ayyuha",
+    "kind": "vocative",
+    "tags": ["VOC"],
+    "title": {"bs": "يَٰٓأَيُّهَا: „O vi koji…“", "en": "يَٰٓأَيُّهَا: “O you who…”"},
+    "explanation": {
+     "bs": "Imenica s ٱلْ se, osim imena Allah, ne doziva izravno: između nje i يَا stoji أَيُّهَا (أَيَّتُهَا za ženski rod), a sama imenica je u nominativu. Najčešće dozivanje u Kur'anu.",
+     "en": "A noun with ٱلْ, apart from the name Allah, is not called directly: أَيُّهَا (أَيَّتُهَا for the feminine) stands between it and يَا, and the noun itself is nominative. The most frequent call of the Quran."
+    },
+    "ayat": [
+     {
+      "ref": "2:21:1",
+      "why": {
+       "bs": "„O ljudi, ibadet činite svome Gospodaru…“ – ٱلنَّاسُ u nominativu.",
+       "en": "“O mankind, worship your Lord…” – ٱلنَّاسُ is nominative."
+      }
+     },
+     {"ref": "73:1", "why": {"bs": "„O ti umotani!“ – ٱلْمُزَّمِّلُ.", "en": "“O you who wraps himself!” – ٱلْمُزَّمِّلُ."}}
+    ]
+   },
+   {
+    "key": "before-layta",
+    "kind": "vocative",
+    "tags": ["VOC"],
+    "title": {"bs": "يَا ispred لَيْتَ: „Kamo sreće…“", "en": "يَا before لَيْتَ: “Oh, I wish…”"},
+    "explanation": {
+     "bs": "يَا stoji i ispred riječi koja nije imenica (يَٰلَيْتَنِى). Prema Ibn Hišāmu tu se ili podrazumijeva onaj koji se doziva, ili يَا samo skreće pažnju (tanbīh).",
+     "en": "يَا also stands before a word that is not a noun (يَٰلَيْتَنِى). According to Ibn Hišām either the one called is understood there, or يَا only draws attention (tanbīh)."
+    },
+    "ayat": [
+     {
+      "ref": "78:40:13",
+      "why": {
+       "bs": "„…i nevjernik će reći: ‘Kamo sreće da sam zemlja!’“",
+       "en": "“…and the disbeliever will say: ‘Oh, I wish that I were dust!’”"
+      }
+     }
+    ]
+   }
+  ]
+ },
  "lam": {
   "arabic": "لَمْ",
   "lemma": "لَم",
@@ -1511,6 +2158,75 @@
    }
   ]
  },
+ "idh": {
+  "arabic": "إِذْ",
+  "lemma": "إِذ",
+  "count": 309,
+  "meaning": {"bs": "kad (u prošlosti)", "en": "when (in the past)"},
+  "grammar": {
+   "bs": "Prilog vremena za prošlost: „kad“. Iza njega dolazi cijela rečenica (glagolska ili imenska), koja ostaje kakva jest. Na početku priče (وَإِذْ قَالَ…) mufessiri ga obično objašnjavaju s podrazumijevanim „spomeni (kad)…“. U يَوْمَئِذٍ i حِينَئِذٍ tenvin zamjenjuje izostavljenu rečenicu.",
+   "en": "An adverb of past time: “when”. A whole sentence (verbal or nominal) follows it and stays as it is. At the head of a story (وَإِذْ قَالَ…) commentators usually explain it with an understood “remember (when)…”. In يَوْمَئِذٍ and حِينَئِذٍ the tanwīn stands in for a sentence left out."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: T (309), which includes the إِذْ inside يَوْمَئِذٍ and حِينَئِذٍ; the two uses share the tag.",
+   "The إِذْ of cause (43:39 إِذ ظَّلَمْتُمْ) is filed under the same T tag and is not shown as a use of its own."
+  ],
+  "uses": [
+   {
+    "key": "when",
+    "kind": "timeAdverb",
+    "tags": ["T"],
+    "title": {"bs": "„Kad…“: u priči o prošlosti", "en": "“When…”: telling of the past"},
+    "explanation": {
+     "bs": "Najčešće uvodi događaj iz prošlosti, često na početku priče o vjerovjesniku.",
+     "en": "It most often introduces an event of the past, often at the start of a prophet's story."
+    },
+    "ayat": [
+     {
+      "ref": "2:30",
+      "why": {
+       "bs": "„A kad Gospodar tvoj reče melekima…“ – وَإِذْ otvara priču o Ademu.",
+       "en": "“And when your Lord said to the angels…” – وَإِذْ opens the story of Adam."
+      }
+     },
+     {
+      "ref": "19:3",
+      "why": {
+       "bs": "„Kad je Gospodara svoga tiho zazvao“ – إِذْ i glagolska rečenica.",
+       "en": "“When he called to his Lord a private supplication” – إِذْ and a verbal sentence."
+      }
+     }
+    ]
+   },
+   {
+    "key": "that-day",
+    "kind": "timeAdverb",
+    "tags": ["T"],
+    "title": {"bs": "يَوْمَئِذٍ: „tog dana“", "en": "يَوْمَئِذٍ: “that Day”"},
+    "explanation": {
+     "bs": "U يَوْمَئِذٍ („dan kad…“) tenvin na إِذٍ zamjenjuje rečenicu koja je rečena prije (tanwīn al-ʿiwaḍ): „tog dana“, najčešće o Sudnjem danu.",
+     "en": "In يَوْمَئِذٍ (“the day when…”) the tanwīn on إِذٍ stands in for the sentence said before (tanwīn al-ʿiwaḍ): “that Day”, most often of the Day of Judgement."
+    },
+    "ayat": [
+     {
+      "ref": "99:4",
+      "why": {
+       "bs": "„Tog dana će ona (Zemlja) vijesti svoje kazivati“ – tog dana kad se Zemlja potrese (99:1).",
+       "en": "“That Day, it will report its news” – the day when the earth is shaken (99:1)."
+      }
+     },
+     {
+      "ref": "75:22",
+      "why": {"bs": "„Neka lica će tog dana blistava biti.“", "en": "“Some faces, that Day, will be radiant.”"}
+     }
+    ]
+   }
+  ]
+ },
  "ka": {
   "arabic": "كَـ",
   "lemma": "ك",
@@ -1562,6 +2278,580 @@
    }
   ]
  },
+ "aw": {
+  "arabic": "أَوْ",
+  "lemma": "أَو",
+  "count": 280,
+  "meaning": {"bs": "ili", "en": "or"},
+  "grammar": {
+   "bs": "Veznik izbora: „ili“. Riječ iza njega dijeli padež ili način riječi s kojom je povezana. Prema Ibn Hišāmu značenja mu se razlikuju: u naredbi daje izbor, u tvrdnji izražava neizvjesnost, nejasnoću ili raspodjelu.",
+   "en": "A conjunction of choice: “or”. The word after it shares the case or mood of the word it is joined to. According to Ibn Hišām its meanings differ: in a command it gives a choice, in a statement it expresses doubt, vagueness or division."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: CONJ (280). The two uses share it.",
+   "37:147: the Kufan reading as بَلْ is given as Ibn Hišām reports it, with al-Farrāʾ named; the other side is not given a school."
+  ],
+  "uses": [
+   {
+    "key": "or",
+    "kind": "conjunction",
+    "tags": ["CONJ"],
+    "title": {"bs": "„ili“", "en": "“or”"},
+    "explanation": {
+     "bs": "Povezuje dvije mogućnosti; druga riječ ima isti padež kao prva.",
+     "en": "It joins two possibilities; the second word has the same case as the first."
+    },
+    "ayat": [
+     {
+      "ref": "77:6",
+      "why": {
+       "bs": "„…da opravda ili da opomene“ – عُذْرًا أَوْ نُذْرًا, obje u akuzativu.",
+       "en": "“…as justification or warning” – عُذْرًا أَوْ نُذْرًا, both accusative."
+      }
+     },
+     {
+      "ref": "17:50",
+      "why": {
+       "bs": "„Reci: ‘Budite kamenje ili željezo’“ – حَدِيدًا u akuzativu kao حِجَارَةً.",
+       "en": "“Say: ‘Be you stones or iron’” – حَدِيدًا is accusative like حِجَارَةً."
+      }
+     }
+    ]
+   },
+   {
+    "key": "or-rather",
+    "kind": "conjunction",
+    "tags": ["CONJ"],
+    "title": {"bs": "„ili (čak)…“: 37:147", "en": "“or (even)…”: 37:147"},
+    "explanation": {
+     "bs": "U „poslali smo ga stotini hiljada ili više“ gramatičari se razilaze: kufski, među njima al-Farrāʾ, čitaju أَوْ kao بَلْ („čak i više“); drugi zadržavaju „ili“, gledano očima onoga ko bi ih vidio. Ibn Hišām navodi ova mišljenja.",
+     "en": "In “We sent him to a hundred thousand or more” the grammarians differ: the Kufans, al-Farrāʾ among them, read أَوْ as بَلْ (“rather, more”); others keep “or”, as it would look to one who saw them. Ibn Hišām gives these views."
+    },
+    "ayat": [
+     {
+      "ref": "37:147",
+      "why": {
+       "bs": "„I poslali smo ga stotini hiljada ili više“ – أَوْ يَزِيدُونَ.",
+       "en": "“And We sent him to a hundred thousand or more” – أَوْ يَزِيدُونَ."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "law": {
+  "arabic": "لَوْ",
+  "lemma": "لَو",
+  "count": 201,
+  "meaning": {"bs": "da (je), kad bi; čak i da; (želi) da", "en": "if (it were), had…; even if; (wish) that"},
+  "grammar": {
+   "bs": "Uvjet onoga što se nije desilo ili se ne očekuje: „da hoćemo, učinili bismo“. Ne mijenja način glagola. Odgovor mu često ima لَـ (لَجَعَلْنَٰهُ). Iza وَدَّ „želi“ znači „da“ i uvodi želju.",
+   "en": "The condition of what did not happen or is not expected: “if We willed, We would have made”. It does not change the verb's mood. Its answer often has لَـ (لَجَعَلْنَٰهُ). After وَدَّ “wishes” it means “that” and introduces a wish."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: COND (189) and SUB (12). The two COND uses share their tag.",
+   "Ibn Hišām's refinement of 'imtināʿ li-imtināʿ' is given in our words; the maṣdariyya view is attributed to al-Farrāʾ and Ibn Mālik as Ibn Hišām names them."
+  ],
+  "uses": [
+   {
+    "key": "if",
+    "kind": "conditional",
+    "tags": ["COND"],
+    "title": {"bs": "„Da je…, bilo bi…“", "en": "“If it were…, it would…”"},
+    "explanation": {
+     "bs": "Gramatičari je zovu riječju „nečega što se nije desilo jer se nije desilo drugo“; Ibn Hišām to preciznije kaže: لَوْ sama govori samo da se uvjet nije desio; ne kaže da se odgovor nije desio, jer on može postojati i iz drugog razloga.",
+     "en": "Grammarians call it the word “of a thing not happening because another did not happen”; Ibn Hišām puts it more precisely: لَوْ by itself says only that the condition did not happen; it does not say the answer did not happen, for that may hold by another cause."
+    },
+    "ayat": [
+     {
+      "ref": "56:65",
+      "why": {"bs": "„Da hoćemo, učinili bismo ga smrvljenim.“", "en": "“If We willed, We could make it crumbled debris.”"}
+     },
+     {
+      "ref": "69:44",
+      "why": {
+       "bs": "„A da je on o Nama neke riječi izmislio…“ – odgovor dolazi u 69:45: لَأَخَذْنَا.",
+       "en": "“And if he had made up about Us some sayings…” – the answer comes in 69:45: لَأَخَذْنَا."
+      }
+     }
+    ]
+   },
+   {
+    "key": "even-if",
+    "kind": "conditional",
+    "tags": ["COND"],
+    "title": {"bs": "وَلَوْ: „čak i da“", "en": "وَلَوْ: “even if”"},
+    "explanation": {
+     "bs": "S وَ ispred sebe لَوْ znači „čak i da“: ono što slijedi važi i u tom slučaju.",
+     "en": "With وَ before it, لَوْ means “even if”: what is said holds in that case too."
+    },
+    "ayat": [
+     {
+      "ref": "12:103",
+      "why": {
+       "bs": "„A većina ljudi, čak i da ti to žarko želiš, nisu vjernici.“",
+       "en": "“And most of the people, although you strive, are not believers.”"
+      }
+     }
+    ]
+   },
+   {
+    "key": "wish",
+    "kind": "subordinator",
+    "tags": ["SUB"],
+    "title": {"bs": "Iza „željeti“: „da…“", "en": "After “wish”: “that…”"},
+    "explanation": {
+     "bs": "Iza وَدَّ i يَوَدُّ لَوْ uvodi ono što se želi i ne mijenja način glagola. Ibn Hišām navodi da je neki gramatičari, među njima al-Farrāʾ i Ibn Mālik, smatraju veznikom glagolske imenice poput أَنْ; drugi je čitaju kao uvjet čiji je odgovor izostavljen.",
+     "en": "After وَدَّ and يَوَدُّ, لَوْ introduces what is wished for and does not change the verb's mood. Ibn Hišām reports that some grammarians, al-Farrāʾ and Ibn Mālik among them, take it as a verbal-noun subordinator like أَنْ; others read it as a condition whose answer is left out."
+    },
+    "ayat": [
+     {
+      "ref": "68:9",
+      "why": {
+       "bs": "„Oni bi željeli da ti popustiš, pa da i oni popuste“ – تُدْهِنُ ostaje u indikativu.",
+       "en": "“They wish that you would soften, so they would soften” – تُدْهِنُ stays indicative."
+      }
+     },
+     {
+      "ref": "2:96:11",
+      "why": {
+       "bs": "„…svaki od njih bi želio da živi hiljadu godina“.",
+       "en": "“…one of them wishes that he could be granted life a thousand years”."
+      }
+     }
+    ],
+    "effect": "IND"
+   }
+  ]
+ },
+ "lamma": {
+  "arabic": "لَمَّا",
+  "lemma": "لَمّا",
+  "count": 165,
+  "meaning": {"bs": "kad; još ne; (osim)", "en": "when; not yet; (but)"},
+  "grammar": {
+   "bs": "Tri različite riječi istog oblika. Ispred prošlog glagola znači „kad“ (jedno se desilo jer se desilo drugo). Ispred sadašnjeg oblika je negacija „još ne“ i stavlja glagol u jusiv, kao لَمْ. U rijetkim ajetima znači „osim“.",
+   "en": "Three different words of one form. Before a past verb it means “when” (one thing happened because another did). Before a present form it is the negation “not yet” and puts the verb in the jussive, like لَمْ. In a few ayat it means “but, only”."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Sībawayh, al-Kitāb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: T (154), NEG (8), EXP (3).",
+   "The corpus tags 62:3 لَمَّا يَلْحَقُوا۟ as followed by a subjunctive; it is not cited.",
+   "86:4 is a qirāʾa question (لَمَّا / لَمَا); the readers are not named one by one.",
+   "Sībawayh's 'wujūd li-wujūd' and the adverb view of Ibn as-Sarrāj and al-Fārisī are given as Ibn Hišām reports them."
+  ],
+  "uses": [
+   {
+    "key": "when",
+    "kind": "timeAdverb",
+    "tags": ["T"],
+    "title": {"bs": "„Kad…“", "en": "“When…”"},
+    "explanation": {
+     "bs": "Prema Sībawayhu, ova لَمَّا je riječ koja kaže da se jedno desilo zato što se desilo drugo; Ibn as-Sarrāj i al-Fārisī je smatraju prilogom „kad“, a korpus je bilježi kao prilog vremena. Ibn Hišām navodi oba mišljenja.",
+     "en": "According to Sībawayh this لَمَّا is a word saying that one thing happened because another did; Ibn as-Sarrāj and al-Fārisī hold it is an adverb, “when”, and the corpus files it as an adverb of time. Ibn Hišām gives both views."
+    },
+    "ayat": [
+     {
+      "ref": "20:11",
+      "why": {"bs": "„Pa kad dođe do nje, bi pozvan: ‘O Musa!’“", "en": "“And when he came to it, he was called: ‘O Moses!’”"}
+     },
+     {
+      "ref": "37:103",
+      "why": {
+       "bs": "„I kad se obojica predadoše i on ga čelom prema zemlji položi…“",
+       "en": "“And when they had both submitted and he put him down upon his forehead…”"
+      }
+     }
+    ]
+   },
+   {
+    "key": "not-yet",
+    "kind": "negation",
+    "tags": ["NEG"],
+    "title": {"bs": "„Još ne“", "en": "“Not yet”"},
+    "explanation": {
+     "bs": "Kao لَمْ, stavlja glagol u jusiv i negira prošlost, ali prema Ibn Hišāmu negacija traje do trenutka govora i očekuje se da se ono negirano desi.",
+     "en": "Like لَمْ it puts the verb in the jussive and negates the past, but according to Ibn Hišām the negation lasts up to the moment of speaking and what is negated is expected to happen."
+    },
+    "ayat": [
+     {
+      "ref": "49:14",
+      "why": {
+       "bs": "„…a vjerovanje još nije ušlo u vaša srca“ – يَدْخُلِ u jusivu.",
+       "en": "“…for faith has not yet entered your hearts” – يَدْخُلِ is jussive."
+      }
+     },
+     {
+      "ref": "3:142",
+      "why": {
+       "bs": "„…a Allah još nije ukazao na one među vama koji se bore“ – يَعْلَمِ u jusivu.",
+       "en": "“…while Allah has not yet made evident those of you who fight” – يَعْلَمِ is jussive."
+      }
+     }
+    ],
+    "effect": "JUS"
+   },
+   {
+    "key": "but",
+    "kind": "exception",
+    "tags": ["EXP"],
+    "title": {"bs": "„Osim, samo“ (86:4)", "en": "“But, only” (86:4)"},
+    "explanation": {
+     "bs": "Iza إِنْ negacije لَمَّا znači إِلَّا: „nema duše a da nad njom nije čuvar“. Tako je u Ḥafṣovom čitanju (لَمَّا sa šeddom); neki drugi učači čitaju لَمَا, s إِنْ olakšanim od إِنَّ.",
+     "en": "After the negating إِنْ, لَمَّا means إِلَّا: “there is no soul but that it has over it a protector”. So it is in Ḥafṣ's reading (لَمَّا with a shadda); some other readers read لَمَا, with إِنْ lightened from إِنَّ."
+    },
+    "ayat": [
+     {
+      "ref": "86:4",
+      "why": {
+       "bs": "„Nema nijedne duše a da nad njom nema čuvara.“",
+       "en": "“There is no soul but that it has over it a protector.”"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "hatta": {
+  "arabic": "حَتَّى",
+  "lemma": "حَتَّى",
+  "count": 142,
+  "meaning": {"bs": "do; dok (ne); sve dok", "en": "until; till; up to"},
+  "grammar": {
+   "bs": "Označava granicu: „do“, „dok ne“. Ispred imenice je prijedlog (genitiv), ispred glagola u sadašnjem obliku stavlja ga u subjunktiv, a može i otvoriti novu rečenicu (najčešće حَتَّىٰٓ إِذَا), kad ništa ne mijenja.",
+   "en": "It marks a limit: “until”, “up to”. Before a noun it is a preposition (genitive); before a present-tense verb it puts it in the subjunctive; and it can open a new sentence (most often حَتَّىٰٓ إِذَا), when it changes nothing."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: P (95) and INC (47). The two P uses share the tag.",
+   "The Basran/Kufan disagreement on the subjunctive after حَتَّى is the one al-Inṣāf records; 2:214 حَتَّىٰ يَقُولَ is read with an indicative by Nāfiʿ, so it is not cited."
+  ],
+  "uses": [
+   {
+    "key": "until-noun",
+    "kind": "preposition",
+    "tags": ["P"],
+    "title": {"bs": "„Do“ s imenicom", "en": "“Until” with a noun"},
+    "explanation": {
+     "bs": "Kao prijedlog traži genitiv i označava kraj vremena.",
+     "en": "As a preposition it takes the genitive and marks the end of a time."
+    },
+    "ayat": [
+     {
+      "ref": "97:5",
+      "why": {
+       "bs": "„Mir je ona, sve do pojave zore“ – مَطْلَعِ u genitivu.",
+       "en": "“Peace it is until the emergence of dawn” – مَطْلَعِ is genitive."
+      }
+     },
+     {
+      "ref": "37:174",
+      "why": {
+       "bs": "„Zato se okreni od njih do jednog vremena“ – حِينٍ u genitivu.",
+       "en": "“So turn away from them for a time” – حِينٍ is genitive."
+      }
+     }
+    ],
+    "effect": "GEN"
+   },
+   {
+    "key": "until-verb",
+    "kind": "preposition",
+    "tags": ["P"],
+    "title": {"bs": "„Dok ne…“ s glagolom", "en": "“Until…” with a verb"},
+    "explanation": {
+     "bs": "Glagol u sadašnjem obliku iza nje je u subjunktivu. Prema basrijskim gramatičarima subjunktiv daje podrazumijevano أَنْ, a حَتَّى ostaje prijedlog; prema kufskim, sama حَتَّى daje subjunktiv.",
+     "en": "A present-tense verb after it is subjunctive. According to the Basran grammarians an understood أَنْ makes it subjunctive and حَتَّى stays a preposition; according to the Kufans حَتَّى itself makes it subjunctive."
+    },
+    "ayat": [
+     {
+      "ref": "15:99",
+      "why": {
+       "bs": "„I ibadet čini Gospodaru svome dok ti ne dođe ono što je izvjesno“ – يَأْتِيَكَ u subjunktivu.",
+       "en": "“And worship your Lord until there comes to you the certainty” – يَأْتِيَكَ is subjunctive."
+      }
+     },
+     {
+      "ref": "26:201",
+      "why": {
+       "bs": "„Neće vjerovati u njega dok ne vide bolnu kaznu“ – يَرَوُا u subjunktivu.",
+       "en": "“They will not believe in it until they see the painful punishment” – يَرَوُا is subjunctive."
+      }
+     }
+    ],
+    "effect": "SUBJ"
+   },
+   {
+    "key": "start",
+    "kind": "inceptive",
+    "tags": ["INC"],
+    "title": {"bs": "Otvara novu rečenicu: „sve dok, kad…“", "en": "Opening a new sentence: “until, when…”"},
+    "explanation": {
+     "bs": "Prema Ibn Hišāmu, حَتَّى može biti riječ početka (ibtidāʾiyya): iza nje dolazi cijela rečenica, koju ne mijenja, a značenje granice ostaje.",
+     "en": "According to Ibn Hišām, حَتَّى can be a word of beginning (ibtidāʾiyya): a whole sentence follows it, which it does not change, and the sense of a limit remains."
+    },
+    "ayat": [
+     {
+      "ref": "102:2",
+      "why": {
+       "bs": "„…sve dok ne posjetite grobove“ – prošli oblik زُرْتُمُ, ništa se ne mijenja.",
+       "en": "“…until you visit the graveyards” – the past form زُرْتُمُ, nothing changes."
+      }
+     },
+     {
+      "ref": "23:99",
+      "why": {
+       "bs": "„Sve dok, kad smrt dođe nekom od njih, on reče: ‘Gospodaru moj, vratite me!’“ – حَتَّىٰٓ إِذَا.",
+       "en": "“Until, when death comes to one of them, he says: ‘My Lord, send me back!’” – حَتَّىٰٓ إِذَا."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "am": {
+  "arabic": "أَمْ",
+  "lemma": "أَم",
+  "count": 137,
+  "meaning": {"bs": "ili; zar (možda)", "en": "or; or is it that…?"},
+  "grammar": {
+   "bs": "Veznik pitanja. Kad uz hemzu pita „ovo ili ono“, povezuje dvije mogućnosti (muttaṣila); kad stoji sama, otvara novo pitanje: „ili zar…?“ (munqaṭiʿa).",
+   "en": "A conjunction of questions. When with the hamza it asks “this or that”, it joins two choices (muttaṣila); when it stands alone, it opens a new question: “or is it that…?” (munqaṭiʿa)."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: CONJ (137); the corpus does not tell the two kinds apart, so the page cannot count them apart.",
+   "Review: the munqaṭiʿa is given as بَلْ (mostly with the hamza) / بَلْ alone without naming schools — the reviewer could not vouch for a Basran-vs-al-Kisāʾī split."
+  ],
+  "uses": [
+   {
+    "key": "or",
+    "kind": "conjunction",
+    "tags": ["CONJ"],
+    "title": {"bs": "„Ili“: ovo ili ono", "en": "“Or”: this or that"},
+    "explanation": {
+     "bs": "Iza hemze pitanja pita koja je od dvije mogućnosti; iza hemze izjednačavanja izjednačava ih. Riječ iza nje dijeli padež s onom s kojom je povezana.",
+     "en": "After the question hamza it asks which of two choices; after the hamza of equalization it makes them equal. The word after it shares the case of the word it is joined to."
+    },
+    "ayat": [
+     {
+      "ref": "37:62",
+      "why": {
+       "bs": "„Je li to bolje kao gozba ili drvo zekkum?“ – شَجَرَةُ je u nominativu, povezana sa subjektom ذَٰلِكَ.",
+       "en": "“Is that better as accommodation or the tree of zaqqūm?” – شَجَرَةُ is nominative, joined to the subject ذَٰلِكَ."
+      }
+     },
+     {
+      "ref": "56:59",
+      "why": {"bs": "„Da li ga vi stvarate ili smo Mi Stvaratelji?“", "en": "“Is it you who creates it, or are We the Creator?”"}
+     }
+    ]
+   },
+   {
+    "key": "or-is-it",
+    "kind": "conjunction",
+    "tags": ["CONJ"],
+    "title": {"bs": "„Ili zar…?“: novo pitanje", "en": "“Or is it that…?”: a new question"},
+    "explanation": {
+     "bs": "Bez hemze prije sebe أَمْ prekida prethodno i otvara novo pitanje, najčešće prijekorno. Gramatičari je razumiju kao بَلْ, najčešće s hemzom pitanja (بَلْ أَ…), a neki kao samo بَلْ; Ibn Hišām navodi oba mišljenja.",
+     "en": "With no hamza before it, أَمْ breaks off and opens a new question, mostly a reproachful one. Grammarians understand it as بَلْ, mostly with the question hamza (بَلْ أَ…), and some as بَلْ alone; Ibn Hišām gives both views."
+    },
+    "ayat": [
+     {
+      "ref": "52:39",
+      "why": {"bs": "„Zar On da ima kćeri, a vi sinove?“", "en": "“Or does He have daughters while you have sons?”"}
+     },
+     {
+      "ref": "52:35:1",
+      "why": {
+       "bs": "„Zar su oni bez ičega stvoreni, ili su oni stvoritelji?“",
+       "en": "“Or were they created by nothing, or were they the creators?”"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "laalla": {
+  "arabic": "لَعَلَّ",
+  "lemma": "لَعَلّ",
+  "count": 129,
+  "meaning": {"bs": "možda; da biste (možda)", "en": "perhaps; so that (perhaps)"},
+  "grammar": {
+   "bs": "Iz porodice إِنَّ: imenicu iza sebe stavlja u akuzativ, predikat ostaje u nominativu. Izražava nadu ili strah od nečega mogućeg. U Kur'anu iza nje najčešće dolazi zamjenica: لَعَلَّكُمْ تَتَّقُونَ.",
+   "en": "Of the إِنَّ family: it puts the noun after it in the accusative, the predicate stays nominative. It expresses hope for, or fear of, something possible. In the Quran a pronoun most often follows it: لَعَلَّكُمْ تَتَّقُونَ."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: ACC|FAM:إِنّ (129); the uses share the tag. The ta‘līl view is attributed to al-Aḫfaš and al-Kisāʾī as Ibn Hišām names them."
+  ],
+  "uses": [
+   {
+    "key": "hope",
+    "kind": "innaFamily",
+    "tags": ["ACC|FAM:إِنّ"],
+    "title": {"bs": "„Da biste…“: nada", "en": "“So that you may…”: hope"},
+    "explanation": {
+     "bs": "Allah ne nada se kao čovjek. Ibn Hišām navodi dva objašnjenja: da je nada na strani onih kojima se govori, i, prema al-Aḫfašu i al-Kisāʾīju, da tu لَعَلَّ znači svrhu: „da biste“.",
+     "en": "Allah does not hope as a man hopes. Ibn Hišām gives two explanations: that the hope is on the side of those addressed, and, according to al-Aḫfaš and al-Kisāʾī, that لَعَلَّ means purpose here: “so that you may”."
+    },
+    "ayat": [
+     {
+      "ref": "2:21:10",
+      "why": {
+       "bs": "„O ljudi, ibadet činite svome Gospodaru… da biste bogobojazni bili“ – لَعَلَّكُمْ تَتَّقُونَ.",
+       "en": "“O mankind, worship your Lord… that you may become righteous” – لَعَلَّكُمْ تَتَّقُونَ."
+      }
+     },
+     {
+      "ref": "20:44",
+      "why": {
+       "bs": "„Pa mu blago recite, ne bi li razmislio ili se pobojao“ – Musau i Harunu o faraonu.",
+       "en": "“And speak to him with gentle speech that perhaps he may be reminded or fear” – to Moses and Aaron about Pharaoh."
+      }
+     }
+    ]
+   },
+   {
+    "key": "noun",
+    "kind": "innaFamily",
+    "tags": ["ACC|FAM:إِنّ"],
+    "title": {"bs": "Imenica iza nje u akuzativu", "en": "The noun after it is accusative"},
+    "explanation": {
+     "bs": "Kad iza لَعَلَّ dođe imenica, a ne zamjenica, vidi se akuzativ.",
+     "en": "When a noun rather than a pronoun follows لَعَلَّ, the accusative shows."
+    },
+    "ayat": [
+     {
+      "ref": "42:17",
+      "why": {
+       "bs": "„…a šta ti znaš, možda je Čas blizu“ – ٱلسَّاعَةَ u akuzativu, قَرِيبٌ u nominativu.",
+       "en": "“…and what will make you perceive? Perhaps the Hour is near” – ٱلسَّاعَةَ is accusative, قَرِيبٌ nominative."
+      }
+     }
+    ],
+    "effect": "ACC"
+   }
+  ]
+ },
+ "bal": {
+  "arabic": "بَلْ",
+  "lemma": "بَل",
+  "count": 127,
+  "meaning": {"bs": "nego, naprotiv, štaviše", "en": "rather, nay, but"},
+  "grammar": {
+   "bs": "Riječ ispravke i prelaska (iḍrāb): odbacuje ono što je rečeno ili prelazi na nešto važnije. Iza nje najčešće dolazi cijela rečenica, koju ne mijenja.",
+   "en": "A word of turning away (iḍrāb): it sets aside what was said, or moves on to something weightier. A whole sentence most often follows it, and it does not change it."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: RET (122), INC (4) and CONJ (1): the corpus files the same turning-away بَلْ under three tags (3:169 INC, 85:21 CONJ); all are one use here."
+  ],
+  "uses": [
+   {
+    "key": "rather",
+    "kind": "retraction",
+    "tags": ["RET", "INC", "CONJ"],
+    "title": {"bs": "„Nego…“: ispravka i prelazak", "en": "“Rather…”: correcting and moving on"},
+    "explanation": {
+     "bs": "Ibn Hišām razlikuje dvije vrste: kad odbacuje rečeno („nisu djeca, nego robovi“) i kad samo prelazi na novu, važniju misao, a prethodno ostaje istina.",
+     "en": "Ibn Hišām tells two kinds apart: when it cancels what was said (“not a son, but servants”) and when it only moves on to a new, weightier point while the first still stands."
+    },
+    "ayat": [
+     {
+      "ref": "21:26",
+      "why": {
+       "bs": "„I govore: ‘Milostivi je uzeo dijete.’ Slavljen neka je On! Nego, oni su robovi poštovani“ – odbacuje njihovu tvrdnju.",
+       "en": "“And they say: ‘The Most Merciful has taken a son.’ Exalted is He! Rather, they are honoured servants” – it cancels their claim."
+      }
+     },
+     {
+      "ref": "87:16",
+      "why": {
+       "bs": "„Ali vi više volite život na ovom svijetu“ – prelazi na novu misao.",
+       "en": "“But you prefer the worldly life” – it moves on to a new point."
+      }
+     },
+     {
+      "ref": "3:169",
+      "why": {
+       "bs": "„I nikako ne misli da su mrtvi oni koji su na Allahovom putu poginuli. Ne, oni su živi…“ – أَحْيَآءٌ u nominativu, kao predikat nove rečenice.",
+       "en": "“And never think of those who have been killed in the cause of Allah as dead. Rather, they are alive…” – أَحْيَآءٌ is nominative, the predicate of a new sentence."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "sa": {
+  "arabic": "سَـ",
+  "lemma": "س",
+  "count": 119,
+  "meaning": {"bs": "će (uskoro)", "en": "will (soon)"},
+  "grammar": {
+   "bs": "Spaja se s glagolom u sadašnjem obliku i daje mu značenje budućnosti: سَيَعْلَمُونَ „znat će“. Glagol ostaje u indikativu.",
+   "en": "It joins a present-tense verb and gives it a future meaning: سَيَعْلَمُونَ “they will know”. The verb stays indicative."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: FUT (119). Ibn Hišām's line against both schools is given as his (Muġnī, the entry on السين); the reviewer could not confirm it, it is kept as his own statement, not as the schools' own words."
+  ],
+  "uses": [
+   {
+    "key": "will",
+    "kind": "future",
+    "tags": ["FUT"],
+    "title": {"bs": "Budućnost", "en": "The future"},
+    "explanation": {
+     "bs": "Ibn Hišām kaže da سَـ nije skraćeno od سَوْفَ, protiv kufskih gramatičara, i da budućnost s njom nije bliža nego sa سَوْفَ, protiv basrijskih.",
+     "en": "Ibn Hišām says that سَـ is not cut short from سَوْفَ, against the Kufan grammarians, and that the future with it is not nearer than with سَوْفَ, against the Basrans."
+    },
+    "ayat": [
+     {
+      "ref": "78:4",
+      "why": {"bs": "„Ne, znat će!“ – كَلَّا سَيَعْلَمُونَ.", "en": "“No! They are going to know.” – كَلَّا سَيَعْلَمُونَ."}
+     },
+     {
+      "ref": "92:7",
+      "why": {
+       "bs": "„Njemu ćemo put dobra olakšati“ – فَسَنُيَسِّرُهُۥ.",
+       "en": "“We will ease him toward ease” – فَسَنُيَسِّرُهُۥ."
+      }
+     }
+    ],
+    "effect": "IND"
+   }
+  ]
+ },
  "lan": {
   "arabic": "لَنْ",
   "lemma": "لَن",
@@ -1597,6 +2887,818 @@
      {"ref": "2:24:4", "why": {"bs": "„…a nećete to učiniti“.", "en": "“…and you will not do it”."}}
     ],
     "effect": "SUBJ"
+   }
+  ]
+ },
+ "hal": {
+  "arabic": "هَلْ",
+  "lemma": "هَل",
+  "count": 93,
+  "meaning": {"bs": "da li, zar", "en": "is…?, has…?"},
+  "grammar": {
+   "bs": "Riječ pitanja na koje se odgovara „da“ ili „ne“. Za razliku od hemze, prema Ibn Hišāmu ne pita „ovo ili ono“ i ne stoji ispred negacije. Ne mijenja padež ni način.",
+   "en": "A word asking a yes-or-no question. Unlike the hamza, according to Ibn Hišām it does not ask “this or that” and does not stand before a negation. It changes no case or mood."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: INTG (93); the three uses share it.",
+   "76:1: the قَدْ reading is attributed to Ibn ʿAbbās and al-Kisāʾī as Ibn Hišām lists them; the Bosnian keeps both readings in the gloss."
+  ],
+  "uses": [
+   {
+    "key": "question",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "„Da li…?“", "en": "“Has…?”, “Is…?”"},
+    "explanation": {
+     "bs": "Pita o cijeloj rečenici. U „Da li ti je stigla vijest…“ pitanje budi pažnju na priču koja slijedi.",
+     "en": "It asks about the whole sentence. In “Has there reached you the story…” the question draws attention to the story that follows."
+    },
+    "ayat": [
+     {
+      "ref": "79:15",
+      "why": {"bs": "„Je li ti stigla vijest o Musau?“", "en": "“Has there reached you the story of Moses?”"}
+     },
+     {
+      "ref": "7:44:13",
+      "why": {
+       "bs": "„…pa jeste li vi našli istinitim ono što je vama Gospodar vaš obećao?“ – odgovor je نَعَمْ.",
+       "en": "“…have you found what your Lord promised to be true?” – the answer is نَعَمْ."
+      }
+     }
+    ]
+   },
+   {
+    "key": "not",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "Pitanje u značenju negacije: „zar je … osim…?“", "en": "A question meaning a denial: “is … anything but…?”"},
+    "explanation": {
+     "bs": "S إِلَّا pitanje znači negaciju: „nema drugog nego…“.",
+     "en": "With إِلَّا the question means a negation: “there is nothing but…”."
+    },
+    "ayat": [
+     {
+      "ref": "55:60",
+      "why": {"bs": "„Zar je nagrada za dobro išta drugo osim dobro?“", "en": "“Is the reward for good anything but good?”"}
+     }
+    ]
+   },
+   {
+    "key": "qad",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "U značenju قَدْ (76:1)", "en": "Meaning قَدْ (76:1)"},
+    "explanation": {
+     "bs": "Ibn Hišām navodi da su neki, među njima Ibn ʿAbbās i al-Kisāʾī, هَلْ u 76:1 objasnili kao قَدْ: „zaista je prošlo…“, a ne kao pitanje.",
+     "en": "Ibn Hišām reports that some, Ibn ʿAbbās and al-Kisāʾī among them, explained هَلْ in 76:1 as قَدْ: “there has indeed come…”, rather than as a question."
+    },
+    "ayat": [
+     {
+      "ref": "76:1",
+      "why": {
+       "bs": "„Je li prošlo (zaista je prošlo) nad čovjekom vrijeme kada nije bio ništa spomena vrijedno?“",
+       "en": "“Has there (indeed) come upon man a period of time when he was not a thing worth mentioning?”"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "lawla": {
+  "arabic": "لَوْلَا",
+  "lemma": "لَوْلا",
+  "count": 75,
+  "meaning": {"bs": "da nije; zašto ne", "en": "if not for; why not"},
+  "grammar": {
+   "bs": "Dvije riječi istog oblika. Ispred imenice znači „da nije…“: imenica je u nominativu, a ono što se nije desilo dolazi u odgovoru. Ispred glagola podstiče ili kori: „zašto ne…?“",
+   "en": "Two words of one form. Before a noun it means “if not for…”: the noun is nominative, and what did not happen comes in the answer. Before a verb it urges or reproaches: “why do you not…?”"
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Ibn al-Anbārī, al-Inṣāf fī masāʾil al-ḫilāf (the Basran and Kufan views)",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: COND (34) and EXH (41).", "The Basran/Kufan view of the noun after لَوْلَا is the one al-Inṣāf records."],
+  "uses": [
+   {
+    "key": "if-not",
+    "kind": "conditional",
+    "tags": ["COND"],
+    "title": {"bs": "„Da nije…“", "en": "“If not for…”"},
+    "explanation": {
+     "bs": "Imenica iza je u nominativu. Prema basrijskim gramatičarima to je subjekat čiji je predikat izostavljen („da nije blagodati – postojeće“); prema kufskim, nominativ joj daje sama لَوْلَا.",
+     "en": "The noun after it is nominative. According to the Basran grammarians it is a subject whose predicate is left out (“were it not for the favour – being there”); according to the Kufans, لَوْلَا itself makes it nominative."
+    },
+    "ayat": [
+     {
+      "ref": "37:57",
+      "why": {
+       "bs": "„Da nije blagodati Gospodara moga, i ja bih bio među dovedenima.“",
+       "en": "“If not for the favour of my Lord, I would have been of those brought in.”"
+      }
+     },
+     {
+      "ref": "24:10",
+      "why": {
+       "bs": "„A da nije Allahove dobrote prema vama i milosti Njegove…“ – فَضْلُ u nominativu.",
+       "en": "“And if not for the favour of Allah upon you and His mercy…” – فَضْلُ is nominative."
+      }
+     }
+    ],
+    "effect": "NOM"
+   },
+   {
+    "key": "why-not",
+    "kind": "exhortation",
+    "tags": ["EXH"],
+    "title": {"bs": "„Zašto ne…?“: podsticanje", "en": "“Why do you not…?”: urging"},
+    "explanation": {
+     "bs": "Ispred glagola u sadašnjem obliku podstiče, a ispred prošlog kori za propušteno.",
+     "en": "Before a present-tense verb it urges; before a past one it reproaches for what was missed."
+    },
+    "ayat": [
+     {
+      "ref": "56:57",
+      "why": {"bs": "„Mi smo vas stvorili, pa zašto ne vjerujete?“", "en": "“We have created you, so why do you not believe?”"}
+     },
+     {
+      "ref": "68:28",
+      "why": {
+       "bs": "„…‘Zar vam nisam govorio: zašto Allaha ne veličate?’“",
+       "en": "“…‘Did I not say to you: why do you not exalt Allah?’”"
+      }
+     }
+    ],
+    "effect": "IND"
+   }
+  ]
+ },
+ "lakinna": {
+  "arabic": "لَٰكِنَّ",
+  "lemma": "لٰكِنّ",
+  "count": 65,
+  "meaning": {"bs": "ali, međutim", "en": "but, however"},
+  "grammar": {
+   "bs": "Iz porodice إِنَّ: imenicu iza sebe stavlja u akuzativ, a predikat ostaje u nominativu. Ispravlja ili dopunjuje ono što se moglo pomisliti iz rečenog (istidrāk). Najčešće dolazi kao وَلَٰكِنَّ.",
+   "en": "Of the إِنَّ family: it puts the noun after it in the accusative, while the predicate stays nominative. It corrects or completes what one might think from what was said (istidrāk). It mostly comes as وَلَٰكِنَّ."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [],
+  "uses": [
+   {
+    "key": "but",
+    "kind": "innaFamily",
+    "tags": ["ACC|FAM:إِنّ"],
+    "title": {"bs": "„Ali…“", "en": "“But…”"},
+    "explanation": {
+     "bs": "Imenica iza nje je u akuzativu: وَلَٰكِنَّ أَكْثَرَهُمْ „ali većina njih…“.",
+     "en": "The noun after it is accusative: وَلَٰكِنَّ أَكْثَرَهُمْ “but most of them…”."
+    },
+    "ayat": [
+     {
+      "ref": "10:44",
+      "why": {
+       "bs": "„Allah zaista nimalo ne čini nepravdu ljudima, ali ljudi sami sebi nepravdu čine“ – ٱلنَّاسَ u akuzativu.",
+       "en": "“Indeed, Allah does not wrong the people at all, but it is the people who are wronging themselves” – ٱلنَّاسَ is accusative."
+      }
+     },
+     {
+      "ref": "43:78",
+      "why": {
+       "bs": "„Mi smo vam istinu donijeli, ali većina vas istinu prezire“ – أَكْثَرَكُمْ u akuzativu.",
+       "en": "“We had certainly brought you the truth, but most of you, to the truth, were averse” – أَكْثَرَكُمْ is accusative."
+      }
+     }
+    ],
+    "effect": "ACC"
+   }
+  ]
+ },
+ "lakin": {
+  "arabic": "لَٰكِنْ",
+  "lemma": "لٰكِن",
+  "count": 65,
+  "meaning": {"bs": "ali, nego", "en": "but, rather"},
+  "grammar": {
+   "bs": "Laka لَٰكِنْ (sa sukunom) također ispravlja rečeno (istidrāk), ali ništa ne mijenja: iza nje može doći cijela rečenica ili jedna riječ.",
+   "en": "The light لَٰكِنْ (with a sukūn) also corrects what was said (istidrāk), but changes nothing: a whole sentence or a single word may follow it."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: AMD (65). The corpus files the وَ before it as SUP (see وَ)."],
+  "uses": [
+   {
+    "key": "but",
+    "kind": "amendment",
+    "tags": ["AMD"],
+    "title": {"bs": "„Ali…“", "en": "“But…”"},
+    "explanation": {
+     "bs": "Prema Ibn Hišāmu, kad iza nje dođe rečenica, لَٰكِنْ samo uvodi ispravku i nije veznik; kad uz nju stoji وَ, povezuje وَ.",
+     "en": "According to Ibn Hišām, when a sentence follows it, لَٰكِنْ only introduces the correction and is not a conjunction; when وَ stands with it, it is the وَ that joins."
+    },
+    "ayat": [
+     {
+      "ref": "2:12",
+      "why": {
+       "bs": "„Oni su, zaista, smutljivci, ali ne opažaju.“",
+       "en": "“Unquestionably, it is they who are the corrupters, but they perceive it not.”"
+      }
+     },
+     {"ref": "75:32", "why": {"bs": "„…nego je poricao i okretao se.“", "en": "“But he denied and turned away.”"}}
+    ]
+   }
+  ]
+ },
+ "amma": {
+  "arabic": "أَمَّا",
+  "lemma": "أَمّا",
+  "count": 55,
+  "meaning": {"bs": "što se tiče…, a", "en": "as for…"},
+  "grammar": {
+   "bs": "Riječ raščlanjivanja: „što se tiče…“. Ono što slijedi kao odgovor redovno se veže s فَـ. Sībawayh je objašnjava kao „šta god da bude, (onda)…“ (مَهْمَا يَكُن مِن شَىْءٍ).",
+   "en": "A word of setting out: “as for…”. What follows as its answer is regularly bound with فَـ. Sībawayh explains it as “whatever be the case, (then)…” (مَهْمَا يَكُن مِن شَىْءٍ)."
+  },
+  "sources": [
+   "Sībawayh, al-Kitāb",
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: EXL (55). Sībawayh's gloss is named as his.",
+   "Review: 'regularly' bound with فَـ, not 'always' — the فَ is dropped with an understood 'it will be said' (3:106)."
+  ],
+  "uses": [
+   {
+    "key": "as-for",
+    "kind": "detail",
+    "tags": ["EXL"],
+    "title": {"bs": "„Što se tiče…, (pa)…“", "en": "“As for…, (then)…”"},
+    "explanation": {
+     "bs": "Često dolazi u parovima: فَأَمَّا… وَأَمَّا… Sama ne mijenja padež; riječ iza nje ima padež koji joj daje ostatak rečenice.",
+     "en": "It often comes in pairs: فَأَمَّا… وَأَمَّا… It changes no case itself; the word after it has the case the rest of the sentence gives it."
+    },
+    "ayat": [
+     {
+      "ref": "92:5",
+      "why": {
+       "bs": "„Što se tiče onoga ko udijeli i boji se…“ – فَأَمَّا مَنْ أَعْطَىٰ, a odgovor فَسَنُيَسِّرُهُۥ (92:7).",
+       "en": "“As for he who gives and fears Allah…” – فَأَمَّا مَنْ أَعْطَىٰ, and the answer فَسَنُيَسِّرُهُۥ (92:7)."
+      }
+     },
+     {
+      "ref": "93:9",
+      "why": {
+       "bs": "„Što se tiče siročeta, ne ugnjetavaj ga“ – ٱلْيَتِيمَ je u akuzativu kao objekat glagola تَقْهَرْ iza فَـ.",
+       "en": "“So as for the orphan, do not oppress him” – ٱلْيَتِيمَ is accusative, the object of the verb تَقْهَرْ after فَـ."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "sawfa": {
+  "arabic": "سَوْفَ",
+  "lemma": "سَوْف",
+  "count": 42,
+  "meaning": {"bs": "će", "en": "will"},
+  "grammar": {
+   "bs": "Riječ budućnosti kao سَـ, ali kao zasebna riječ: سَوْفَ تَعْلَمُونَ „znat ćete“. Glagol iza nje ostaje u indikativu. Često je uz nju لَـ naglašavanja: وَلَسَوْفَ.",
+   "en": "A word of the future like سَـ, but standing alone: سَوْفَ تَعْلَمُونَ “you will know”. The verb after it stays indicative. It often has the لَـ of emphasis: وَلَسَوْفَ."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: FUT (42)."],
+  "uses": [
+   {
+    "key": "will",
+    "kind": "future",
+    "tags": ["FUT"],
+    "title": {"bs": "Budućnost", "en": "The future"},
+    "explanation": {
+     "bs": "Basrijski gramatičari su smatrali da je budućnost sa سَوْفَ dalja nego sa سَـ; Ibn Hišām to ne prihvata (vidi سَـ).",
+     "en": "The Basran grammarians held that the future with سَوْفَ is further off than with سَـ; Ibn Hišām does not accept this (see سَـ)."
+    },
+    "ayat": [
+     {
+      "ref": "102:3",
+      "why": {"bs": "„Ne, znat ćete vi!“ – سَوْفَ تَعْلَمُونَ.", "en": "“No! You are going to know.” – سَوْفَ تَعْلَمُونَ."}
+     },
+     {
+      "ref": "93:5",
+      "why": {
+       "bs": "„A Gospodar tvoj će ti sigurno dati, pa ćeš zadovoljan biti“ – وَلَسَوْفَ: لَـ naglašavanja i سَوْفَ.",
+       "en": "“And your Lord is going to give you, and you will be satisfied” – وَلَسَوْفَ: the لَـ of emphasis and سَوْفَ."
+      }
+     }
+    ],
+    "effect": "IND"
+   }
+  ]
+ },
+ "ala-2": {
+  "arabic": "أَلَا",
+  "lemma": "أَلا",
+  "count": 39,
+  "meaning": {"bs": "eto!, zaista!, pazite!", "en": "unquestionably!, behold!"},
+  "grammar": {
+   "bs": "Riječ kojom se otvara rečenica da bi se skrenula pažnja (istiftāḥ, tanbīh). Ne mijenja ništa; إِنَّ iza nje je s kesrom, kao na početku rečenice.",
+   "en": "A word that opens a sentence to draw attention (istiftāḥ, tanbīh). It changes nothing; إِنَّ after it has a kasra, as at the start of a sentence."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: ATT (39). The أَلَا of offer and urging (24:22 أَلَا تُحِبُّونَ) is filed by the corpus as the question hamza with لَا and is not part of this page."
+  ],
+  "uses": [
+   {
+    "key": "behold",
+    "kind": "attention",
+    "tags": ["ATT"],
+    "title": {"bs": "„Eto! Pazite!“", "en": "“Unquestionably!”"},
+    "explanation": {
+     "bs": "Najavljuje važnu tvrdnju; najčešće iza nje dolazi إِنَّ.",
+     "en": "It announces a weighty statement; إِنَّ most often follows it."
+    },
+    "ayat": [
+     {
+      "ref": "10:62",
+      "why": {
+       "bs": "„Allahovi prijatelji, zaista, nikakva straha nemaju…“ – أَلَآ إِنَّ.",
+       "en": "“Unquestionably, the allies of Allah – there will be no fear concerning them…” – أَلَآ إِنَّ."
+      }
+     },
+     {
+      "ref": "13:28",
+      "why": {
+       "bs": "„…zaista, srca se Allahovim spominjanjem smiruju!“",
+       "en": "“…Unquestionably, by the remembrance of Allah hearts are assured.”"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "kalla": {
+  "arabic": "كَلَّا",
+  "lemma": "كَلّا",
+  "count": 33,
+  "meaning": {"bs": "nikako!, ne!; uistinu", "en": "no!, nay!; truly"},
+  "grammar": {
+   "bs": "Riječ odvraćanja i prijekora: „nikako!“ – odbacuje ono što je rečeno ili pomišljeno. Ne mijenja ništa.",
+   "en": "A word of deterring and rebuke: “no!” – it rejects what was said or thought. It changes nothing."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Sībawayh, al-Kitāb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: AVR (33). The schools' views are given as Ibn Hišām reports them; the views of Abū Ḥātim and al-Farrāʾ he also lists are left out."
+  ],
+  "uses": [
+   {
+    "key": "no",
+    "kind": "aversion",
+    "tags": ["AVR"],
+    "title": {"bs": "„Nikako!“: odvraćanje", "en": "“No!”: deterring"},
+    "explanation": {
+     "bs": "Prema Ibn Hišāmu, Sībawayh, al-Ḫalīl i većina basrijskih gramatičara kažu da كَلَّا znači odvraćanje i prijekor. al-Kisāʾī je dodao značenje „uistinu“ (ḥaqqan) za mjesta gdje odvraćanje ne odgovara; zato se kod nje nekad stane, a nekad se njome počne.",
+     "en": "According to Ibn Hišām, Sībawayh, al-Ḫalīl and most Basran grammarians say كَلَّا means deterring and rebuke. al-Kisāʾī added the meaning “truly” (ḥaqqan) for places where deterring does not fit; that is why a reciter sometimes stops at it and sometimes begins with it."
+    },
+    "ayat": [
+     {
+      "ref": "96:6",
+      "why": {
+       "bs": "„Nikako! Čovjek se zaista uzobijesti“ – iza كَلَّآ dolazi إِنَّ s kesrom, kao na početku rečenice.",
+       "en": "“No! Indeed, man transgresses” – after كَلَّآ comes إِنَّ with a kasra, as at the start of a sentence."
+      }
+     },
+     {
+      "ref": "78:4",
+      "why": {
+       "bs": "„Ne, znat će oni!“ – odbacuje njihovo prepiranje.",
+       "en": "“No! They are going to know.” – it rejects their dispute."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "kaanna": {
+  "arabic": "كَأَنَّ",
+  "lemma": "كَأَنّ",
+  "count": 31,
+  "meaning": {"bs": "kao da, kao", "en": "as if, as though"},
+  "grammar": {
+   "bs": "Iz porodice إِنَّ: imenicu iza sebe stavlja u akuzativ, a predikat ostaje u nominativu. Izražava poređenje: „kao da su…“. U Kur'anu iza nje najčešće dolazi zamjenica.",
+   "en": "Of the إِنَّ family: it puts the noun after it in the accusative, while the predicate stays nominative. It expresses likeness: “as if they were…”. In the Quran a pronoun most often follows it."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: ACC|FAM:إِنّ (31). The lightened كَأَنْ is a lemma of its own in the corpus (9) and is left for a later batch."
+  ],
+  "uses": [
+   {
+    "key": "as-if",
+    "kind": "innaFamily",
+    "tags": ["ACC|FAM:إِنّ"],
+    "title": {"bs": "„Kao da…“: poređenje", "en": "“As if…”: likeness"},
+    "explanation": {
+     "bs": "Zamjenica je njena imenica, a ono s čime se poredi je predikat u nominativu.",
+     "en": "The pronoun is its noun, and what it is likened to is the predicate, in the nominative."
+    },
+    "ayat": [
+     {
+      "ref": "77:33",
+      "why": {
+       "bs": "„…kao da su kamile žute“ – جِمَٰلَتٌ صُفْرٌ u nominativu.",
+       "en": "“As if they were yellowish camels” – جِمَٰلَتٌ صُفْرٌ is nominative."
+      }
+     },
+     {
+      "ref": "54:20",
+      "why": {
+       "bs": "„…čupa ljude kao da su stabla palmi iščupanih“ – أَعْجَازُ u nominativu.",
+       "en": "“Extracting the people as if they were trunks of palm trees uprooted” – أَعْجَازُ is nominative."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "idhan": {
+  "arabic": "إِذًا",
+  "lemma": "إِذًا",
+  "count": 31,
+  "meaning": {"bs": "onda, u tom slučaju", "en": "then, in that case"},
+  "grammar": {
+   "bs": "Riječ odgovora i posljedice: „onda (je tako)…“. Sībawayh kaže da znači odgovor i nagradu (al-jawāb wa-l-jazāʾ). Gramatičari kažu da glagol u sadašnjem obliku stavlja u subjunktiv kad je na početku svoje rečenice, kad glagol znači budućnost i kad ih ništa ne razdvaja; u ajetima koji su ovdje navedeni ona ništa ne mijenja.",
+   "en": "A word of answer and consequence: “then (it is so)…”. Sībawayh says it means answer and requital (al-jawāb wa-l-jazāʾ). Grammarians say it puts a present-tense verb in the subjunctive when it heads its clause, the verb means the future and nothing stands between them; in the ayat cited here it changes nothing."
+  },
+  "sources": [
+   "Sībawayh, al-Kitāb",
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: ANS (31). No ayah tagged ANS is followed by a subjunctive in the corpus; the governing rule is stated as the grammarians' and not claimed for an ayah."
+  ],
+  "uses": [
+   {
+    "key": "then",
+    "kind": "answer",
+    "tags": ["ANS"],
+    "title": {"bs": "„Onda…“: odgovor", "en": "“Then…”: answering"},
+    "explanation": {"bs": "Izvodi zaključak iz onoga što je rečeno prije.", "en": "It draws the conclusion of what was said before."},
+    "ayat": [
+     {
+      "ref": "53:22",
+      "why": {
+       "bs": "„To je onda podjela nepravedna!“ – o tome da sebi pripisuju sinove, a Allahu kćeri.",
+       "en": "“That, then, is an unjust division” – of their giving themselves sons and Allah daughters."
+      }
+     },
+     {
+      "ref": "17:73",
+      "why": {
+       "bs": "„…i tada bi te oni za prijatelja uzeli“ – وَإِذًا i لَـ u odgovoru.",
+       "en": "“…and then they would have taken you as a friend” – وَإِذًا and لَـ in the answer."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "anna-2": {
+  "arabic": "أَنَّى",
+  "lemma": "أَنَّى",
+  "count": 28,
+  "meaning": {"bs": "kako?; otkud?", "en": "how?; from where?"},
+  "grammar": {
+   "bs": "Upitna riječ s više značenja: „kako?“ i „otkud?“ (Ibn Hišām navodi i „kada?“). Ne mijenja padež ni način. Često izražava čuđenje ili poricanje.",
+   "en": "A question word with more than one meaning: “how?” and “from where?” (Ibn Hišām also lists “when?”). It changes no case or mood. It often expresses wonder or denial."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: INTG (28). 2:223 is not cited."],
+  "uses": [
+   {
+    "key": "how",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "„Kako?“, „otkud?“", "en": "“How?”, “From where?”"},
+    "explanation": {
+     "bs": "Pita o načinu ili porijeklu; ponekad čudi i odbacuje: „kako se onda odvraćate?“",
+     "en": "It asks about the way or the origin; sometimes it wonders and rejects: “how, then, are you deluded?”"
+    },
+    "ayat": [
+     {
+      "ref": "3:37",
+      "why": {
+       "bs": "„O Merjema, otkud ti ovo?“ – Zekerijja pita o porijeklu hrane.",
+       "en": "“O Mary, from where is this to you?” – Zechariah asks where the provision came from."
+      }
+     },
+     {
+      "ref": "2:259",
+      "why": {
+       "bs": "„Kako će Allah oživiti ovo (naselje) nakon što je zamrlo?“",
+       "en": "“How will Allah bring this (town) to life after its death?”"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "bala": {
+  "arabic": "بَلَى",
+  "lemma": "بَلَى",
+  "count": 22,
+  "meaning": {"bs": "jeste!, da, hoće!", "en": "yes (indeed)!"},
+  "grammar": {
+   "bs": "Riječ odgovora koja potvrđuje ono što je negirano: odgovara na negativno pitanje ili negaciju i pretvara je u potvrdu. Za razliku od نَعَمْ, koja potvrđuje ono što je rečeno.",
+   "en": "A word of answer that affirms what was negated: it answers a negative question or a denial and turns it into an affirmation. Unlike نَعَمْ, which confirms what was said."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: ANS (22)."],
+  "uses": [
+   {
+    "key": "yes-indeed",
+    "kind": "answer",
+    "tags": ["ANS"],
+    "title": {"bs": "„Jeste!“ na negativno pitanje", "en": "“Yes!” to a negative question"},
+    "explanation": {
+     "bs": "Na „Zar Ja nisam vaš Gospodar?“ odgovor بَلَىٰ znači „Jesi!“.",
+     "en": "To “Am I not your Lord?” the answer بَلَىٰ means “Yes, You are!”."
+    },
+    "ayat": [
+     {
+      "ref": "7:172",
+      "why": {
+       "bs": "„‘Zar Ja nisam vaš Gospodar?’ ‘Jesi’, odgovorili su, ‘mi svjedočimo’.“",
+       "en": "“‘Am I not your Lord?’ They said: ‘Yes, we have testified.’”"
+      }
+     },
+     {
+      "ref": "64:7",
+      "why": {
+       "bs": "„Oni koji ne vjeruju tvrde da neće biti oživljeni. Reci: ‘Hoćete, tako mi Gospodara moga…’“ – بَلَىٰ odbacuje njihovo negiranje.",
+       "en": "“Those who disbelieve have claimed that they will never be resurrected. Say: ‘Yes, by my Lord…’” – بَلَىٰ overturns their denial."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "ayna": {
+  "arabic": "أَيْنَ",
+  "lemma": "أَيْن",
+  "count": 17,
+  "meaning": {"bs": "gdje?; gdje god", "en": "where?; wherever"},
+  "grammar": {
+   "bs": "Pita o mjestu: „gdje?“. S مَا (أَيْنَمَا) je uvjet „gdje god“ i stavlja glagole u jusiv. Sama se ne mijenja.",
+   "en": "It asks about place: “where?”. With مَا (أَيْنَمَا) it is the condition “wherever” and puts the verbs in the jussive. It does not change itself."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: INTG (10) and COND (7). In 4:78 the corpus places the next-word marker on the مَا of أَيْنَمَا, so the conditional use claims no effect; the jussive is said in the notes of the ayat."
+  ],
+  "uses": [
+   {
+    "key": "where",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "„Gdje?“", "en": "“Where?”"},
+    "explanation": {
+     "bs": "Pitanje o mjestu, u Kur'anu često prijekorno ili očajno.",
+     "en": "A question about place, in the Quran often reproachful or despairing."
+    },
+    "ayat": [
+     {"ref": "81:26", "why": {"bs": "„Pa kuda idete?“", "en": "“So where are you going?”"}},
+     {
+      "ref": "75:10",
+      "why": {
+       "bs": "„…čovjek će reći: ‘Kuda da se bježi?’“ – ٱلْمَفَرُّ u nominativu.",
+       "en": "“Man will say: ‘Where is the escape?’” – ٱلْمَفَرُّ is nominative."
+      }
+     }
+    ]
+   },
+   {
+    "key": "wherever",
+    "kind": "conditional",
+    "tags": ["COND"],
+    "title": {"bs": "أَيْنَمَا: „gdje god“", "en": "أَيْنَمَا: “wherever”"},
+    "explanation": {
+     "bs": "Kao uvjet stavlja glagol uvjeta i glagol odgovora u jusiv.",
+     "en": "As a condition it puts the verb of the condition and that of the answer in the jussive."
+    },
+    "ayat": [
+     {
+      "ref": "4:78",
+      "why": {
+       "bs": "„Ma gdje bili, stići će vas smrt“ – تَكُونُوا i يُدْرِككُّمُ u jusivu.",
+       "en": "“Wherever you may be, death will overtake you” – تَكُونُوا and يُدْرِككُّمُ are jussive."
+      }
+     },
+     {
+      "ref": "2:115",
+      "why": {
+       "bs": "„…pa kud god se okrenete, tamo je Allahovo lice“ – تُوَلُّوا u jusivu.",
+       "en": "“…so wherever you turn, there is the Face of Allah” – تُوَلُّوا is jussive."
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "layta": {
+  "arabic": "لَيْتَ",
+  "lemma": "لَيْت",
+  "count": 14,
+  "meaning": {"bs": "kamo sreće da, da je bar", "en": "if only, I wish"},
+  "grammar": {
+   "bs": "Iz porodice إِنَّ: imenicu iza sebe stavlja u akuzativ, predikat ostaje u nominativu. Izražava želju, prema Ibn Hišāmu najčešće za nečim nemogućim ili teškim. U Kur'anu je najčešće يَٰلَيْتَنِى „kamo sreće da sam ja…“, na Sudnjem danu.",
+   "en": "Of the إِنَّ family: it puts the noun after it in the accusative, the predicate stays nominative. It expresses a wish, according to Ibn Hišām mostly for the impossible or the hard. In the Quran it is mostly يَٰلَيْتَنِى “oh, I wish that I…”, on the Day of Judgement."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: ACC|FAM:إِنّ (14)."],
+  "uses": [
+   {
+    "key": "if-only",
+    "kind": "innaFamily",
+    "tags": ["ACC|FAM:إِنّ"],
+    "title": {"bs": "„Kamo sreće…“: želja", "en": "“If only…”: a wish"},
+    "explanation": {
+     "bs": "Zamjenica ـنِى je njena imenica, a glagolska rečenica predikat.",
+     "en": "The pronoun ـنِى is its noun, and the verbal clause its predicate."
+    },
+    "ayat": [
+     {
+      "ref": "89:24",
+      "why": {
+       "bs": "„…i reći će: ‘Kamo sreće da sam za život svoj unaprijed nešto poslao!’“",
+       "en": "“He will say: ‘Oh, I wish I had sent ahead for my life.’”"
+      }
+     },
+     {"ref": "78:40:13", "why": {"bs": "„…‘Kamo sreće da sam zemlja!’“", "en": "“…‘Oh, I wish that I were dust!’”"}}
+    ]
+   }
+  ]
+ },
+ "mata": {
+  "arabic": "مَتَى",
+  "lemma": "مَتَى",
+  "count": 9,
+  "meaning": {"bs": "kada?", "en": "when?"},
+  "grammar": {
+   "bs": "Pita o vremenu: „kada?“. Ne mijenja padež; iza nje u Kur'anu dolazi imenska rečenica.",
+   "en": "It asks about time: “when?”. It changes no case; in the Quran a nominal sentence follows it."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: INTG (9)."],
+  "uses": [
+   {
+    "key": "when",
+    "kind": "interrogative",
+    "tags": ["INTG"],
+    "title": {"bs": "„Kada?“", "en": "“When?”"},
+    "explanation": {
+     "bs": "Nevjernici je koriste ismijavajući obećanje; vjernici u nevolji pitaju za pomoć.",
+     "en": "Disbelievers use it mocking the promise; believers in hardship ask about help."
+    },
+    "ayat": [
+     {
+      "ref": "36:48",
+      "why": {
+       "bs": "„I govore: ‘Kada će se ispuniti to obećanje, ako istinu govorite?’“",
+       "en": "“And they say: ‘When is this promise, if you should be truthful?’”"
+      }
+     },
+     {
+      "ref": "2:214",
+      "why": {
+       "bs": "„…‘Kada će Allahova pomoć?’ Allahova pomoć je, zaista, blizu!“",
+       "en": "“…‘When is the help of Allah?’ Unquestionably, the help of Allah is near.”"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "kay": {
+  "arabic": "كَيْ",
+  "lemma": "كَي",
+  "count": 7,
+  "meaning": {"bs": "da, kako bi", "en": "so that"},
+  "grammar": {
+   "bs": "Riječ svrhe: „da bi“. Glagol u sadašnjem obliku iza nje je u subjunktivu. Često dolazi kao لِكَيْ i كَيْ لَا / لِكَيْلَا „da ne bi“.",
+   "en": "A word of purpose: “so that”. A present-tense verb after it is subjunctive. It often comes as لِكَيْ, and as كَيْ لَا / لِكَيْلَا “so that… not”."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": [
+   "Counted: SUB (7). The corpus files three لِكَيْلَا as NEG (57:23, 33:50, 22:5) and one as SUB (3:153); the NEG ones are left out of the count."
+  ],
+  "uses": [
+   {
+    "key": "so-that",
+    "kind": "purpose",
+    "tags": ["SUB"],
+    "title": {"bs": "„Da bi…“", "en": "“So that…”"},
+    "explanation": {
+     "bs": "Iza لِـ (لِكَيْ) je veznik koji glagol stavlja u subjunktiv. Kad stoji sama, Ibn Hišām navodi da može biti i to, i riječ svrhe poput lāma (prijedlog) iza koje se podrazumijeva أَنْ.",
+     "en": "After لِـ (لِكَيْ) it is the subordinator that puts the verb in the subjunctive. When it stands alone, Ibn Hišām says it may be that, or a word of purpose like the lām (a preposition) with an understood أَنْ after it."
+    },
+    "ayat": [
+     {
+      "ref": "20:33",
+      "why": {
+       "bs": "„…da Te mnogo hvalimo“ – نُسَبِّحَكَ u subjunktivu.",
+       "en": "“That we may exalt You much” – نُسَبِّحَكَ is subjunctive."
+      }
+     },
+     {
+      "ref": "28:13",
+      "why": {
+       "bs": "„I tako ga Mi vratismo majci njegovoj da bi se oko njeno radovalo“ – تَقَرَّ u subjunktivu.",
+       "en": "“So We restored him to his mother that she might be content” – تَقَرَّ is subjunctive."
+      }
+     }
+    ],
+    "effect": "SUBJ"
+   }
+  ]
+ },
+ "naam": {
+  "arabic": "نَعَمْ",
+  "lemma": "نَعَم",
+  "count": 4,
+  "meaning": {"bs": "da", "en": "yes"},
+  "grammar": {
+   "bs": "Riječ odgovora koja potvrđuje ono što je rečeno ili pitano: na „da li…?“ odgovara „da“. Na negativno pitanje ona bi potvrdila negaciju; zato se tu kaže بَلَى.",
+   "en": "A word of answer confirming what was said or asked: to “did…?” it answers “yes”. To a negative question it would confirm the negation; that is why بَلَى is said there."
+  },
+  "sources": [
+   "Ibn Hišām al-Anṣārī, Muġnī al-labīb ʿan kutub al-aʿārīb",
+   "Quranic Arabic Corpus (corpus.quran.com): the tag of each use"
+  ],
+  "notes": ["Counted: ANS (4)."],
+  "uses": [
+   {
+    "key": "yes",
+    "kind": "answer",
+    "tags": ["ANS"],
+    "title": {"bs": "„Da“", "en": "“Yes”"},
+    "explanation": {"bs": "Potvrđuje pitanje u cjelini.", "en": "It confirms the question as a whole."},
+    "ayat": [
+     {
+      "ref": "7:44",
+      "why": {
+       "bs": "„‘Jeste li vi našli istinitim ono što je vama Gospodar vaš obećao?’ ‘Jesmo’, reći će.“",
+       "en": "“‘Have you found what your Lord promised to be true?’ They will say: ‘Yes.’”"
+      }
+     },
+     {
+      "ref": "26:42",
+      "why": {
+       "bs": "„‘Da’, reče, ‘i bit ćete tada meni bliski.’“ – faraon odgovara čarobnjacima.",
+       "en": "“He said: ‘Yes, and indeed you will then be of those near to me.’” – Pharaoh answers the magicians."
+      }
+     }
+    ]
    }
   ]
  }

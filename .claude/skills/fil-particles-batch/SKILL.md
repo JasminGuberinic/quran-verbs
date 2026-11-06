@@ -63,5 +63,25 @@ Lessons:
   لَا of the kind "accusative" (Basrans: fixed on fatḥa); fāʾ of consequence also after a hope (لَعَلَّ) and 80:4 is a
   qirāʾa question; إِلَى = maʿa is Ibn Hišām's, the Basrans read taḍmīn; "never" in English glosses of لَنْ while
   the page says لَنْ is not "never"; bs/en drift in quoted renderings. Write those safeguards in the first draft.
-- Next by frequency: أَ (INTG 507), يَا (VOC 361), إِذْ (T 309), أَوْ (280), لَوْ (189+12), لَـ EMPH (1001), بَلْ (127),
-  مَنْ (REL/COND/INTG), حَتَّى (142), لَعَلَّ (129), هَلْ (93), لَٰكِنَّ/لَٰكِنْ (130), سَ/سَوْفَ (161), لَمَّا, أَمْ (137).
+## Batch 2 (2026-11-06): 30 particles + 7 held-back uses
+لَـ · مَنْ · أَ · يَا · إِذْ · أَوْ · لَوْ · لَمَّا · حَتَّى · أَمْ · لَعَلَّ · بَلْ · سَـ · هَلْ · لَوْلَا · لَٰكِنَّ · لَٰكِنْ · أَمَّا · سَوْفَ · أَلَا ·
+كَلَّا · كَأَنَّ · إِذًا · أَنَّى · بَلَى · أَيْنَ · لَيْتَ · مَتَى · كَيْ · نَعَمْ; added uses: وَ SUP (after the question hamza) and COM
+(accompaniment, noun ACC / verb SUBJ), فَ SUP, مَا SUP (between preposition and noun; with a condition), لَا like لَيْسَ
+(NEG|FAM:كَان), lightened إِنْ (CERT). 52 particles, 121 uses, 214 cited ayat. 13 new kinds (model KINDS + site/ui.js).
+Lessons:
+- Type no lemma by hand: Arabic lemmas differ in mark order (حَتَّى); resolve the exact corpus string by skeleton +
+  tag in the merge script (keep shadda: كَأَنّ vs كَأَنْ are two lemmas). `build/scratch/at.py s:a …` (every particle
+  the corpus files in an ayah, with word numbers and markers) was the fastest way to pick and pin ayat.
+- Keep untouched particles' JSON text as stored (block-preserving merge), so the diff shows only what changed.
+- Corpus tags drift inside one particle: بَلْ is RET/INC/CONJ for one use (all counted); the vocative's case marker is
+  inconsistent (يَٰفِرْعَوْنُ ACC, يَٰٓأَبَانَا NOM) so only the annexed use claims ACC; إِنْ before لَـ is CERT in 26:97
+  but COND in 37:167; لِكَيْلَا is NEG three times, SUB once; 62:3 لَمَّا يَلْحَقُوا۟ is tagged SUBJ. Cite only clean tags.
+- A tag the corpus uses as a bag (SUP wāw/fāʾ) gets a "most often" use, with the counted share in notes (51/59, 130/155).
+- Function words the reader cannot see: كَيْفَ (rooted INTG noun), لَيْسَ (a verb), إِيَّا (a pronoun) are outside
+  fil.corpus.particles; adding them needs the reader to take rooted INTG nouns / named lemmas first.
+- What the reviewer flagged: Sībawayh named for the hamza-before-conjunction view (now "most grammarians"); a Basran
+  vs al-Kisāʾī split on أَمْ (now unattributed); "always" فَـ after أَمَّا (3:106 drops it); لَوْ paraphrase of Ibn Hišām;
+  37:62 أَمْ joins ذَٰلِكَ, not خَيْرٌ; qirāʾāt at 2:254 (لَا بَيْعَ) and 86:4; إِذًا's three conditions; the exception
+  يَا ٱللَّهُ; gloss drift (prijetnja/promise, كَلَّا as "uistinu" vs "No!"). Write those safeguards in the first draft.
+- Next: إِمَّا (EXL 14, COND 9), كَأَنْ (9), أَيَّانَ (6), مَاذَا (26, compound), كَمْ (4), إِي (1), مَهْمَا (1); the
+  أَلَا of offer (filed as أَ + لَا); كَيْفَ/لَيْسَ/إِيَّا after the reader change; links to verb-mood sections.

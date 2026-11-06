@@ -18,7 +18,7 @@ from fil.corpus.particles import iter_particle_occurrences, marker_after
 from fil.languages import LANGUAGES
 from fil.nouns.bosnian import renderings
 from fil.particles import gate
-from fil.particles.model import (CorpusTag, InvalidParticleData, ParticleOccurrence, parse_particle,
+from fil.particles.model import (KINDS, CorpusTag, InvalidParticleData, ParticleOccurrence, parse_particle,
                                  parse_particles)
 from fil.pages import particle_render, render, seo
 from fil.resources import QAC_MORPHOLOGY
@@ -178,7 +178,7 @@ def test_a_use_is_counted_only_when_no_other_use_shares_its_tags():
 
 def test_the_stored_particles_load_and_every_text_is_bilingual():
     particles = particle_store.load_particles()
-    assert len(particles) == 22 and particles[0].slug == "wa"
+    assert len(particles) == 52 and particles[0].slug == "wa"
     assert [particle.count for particle in particles] == sorted((particle.count for particle in particles), reverse=True)
     assert all(particle.sources and particle.uses for particle in particles)
 
@@ -198,6 +198,7 @@ def test_every_stored_particle_passes_the_corpus_gate(corpus):
 @pytest.mark.parametrize(("lemma", "tag", "count"), [
     ("مِن", "P", 3226), ("فِي", "P", 1701), ("ب", "P", 2544), ("لَم", "NEG", 348), ("لَن", "NEG", 106),
     ("إِنّ", "ACC|FAM:إِنّ", 1682), ("لا", "PRO", 332), ("لا", "NEG|FAM:إِنّ", 57), ("ما", "REL", 1475),
+    ("ل", "EMPH", 1001), ("أ", "INTG", 507), ("ي", "VOC", 361), ("مَن", "COND", 184), ("س", "FUT", 119),
 ])
 def test_golden_counts_come_from_the_corpus(corpus, lemma, tag, count):
     assert len(corpus.occurrences(lemma, CorpusTag.parse(tag))) == count
@@ -209,6 +210,9 @@ def test_golden_counts_come_from_the_corpus(corpus, lemma, tag, count):
     ("لَن", "NEG", "SUBJ", 1.0),
     ("ل", "IMPV", "JUS", 1.0),
     ("ل", "PRP", "SUBJ", 0.98),
+    ("س", "FUT", "IND", 0.98),          # 117 of 119
+    ("سَوْف", "FUT", "IND", 0.97),       # 41 of 42
+    ("لَمّا", "NEG", "JUS", 0.87),       # 7 of 8 (62:3 is tagged SUBJ)
 ])
 def test_what_the_grammar_says_a_particle_does_holds_across_the_corpus(corpus, lemma, tag, mood, share):
     found = corpus.occurrences(lemma, CorpusTag.parse(tag))
@@ -261,6 +265,12 @@ def test_a_silent_headword_stops_the_build_unless_documented():
 def texts():
     from fil.pages import interface_text
     return interface_text.load()
+
+
+@needs_node
+def test_every_kind_of_use_is_named_in_both_languages_of_the_section(texts):
+    for code in particle_render.PARTICLE_LANGUAGES:
+        assert set(KINDS) <= set(texts[code]["particlePage"]["kinds"]), code
 
 
 def _language(code: str):

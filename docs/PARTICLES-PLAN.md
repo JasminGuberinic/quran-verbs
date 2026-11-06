@@ -49,6 +49,18 @@ relative, asking, …), each with 1–3 ayat. Bosnian and English only, like nou
 
 ## Pilot (22 particles)
 وَ · مِنْ · لِـ · فَـ · بِـ · مَا · لَا · فِي · إِنَّ · عَلَى · إِلَى · إِنْ · إِلَّا · أَنْ · عَنْ · إِذَا · قَدْ · أَنَّ · لَمْ · ثُمَّ · كَـ · لَنْ —
-58 uses, 95 cited ayat. Held back: the article ال (taught with the nouns' definiteness), لَـ of emphasis (EMPH,
-1,001), the SUP wāw/fāʾ/mā and COM wāw, إِنْ lightened (CERT), لَا like لَيْسَ; links to verb-mood sections
-(the verb pages have none yet); next by frequency: أَ, يَا, إِذْ, أَوْ, لَوْ, بَلْ, هَلْ, حَتَّى, لَعَلَّ, لَٰكِنَّ, سَ/سَوْفَ, لَمَّا, أَمْ.
+58 uses, 95 cited ayat.
+
+## Batch 2 (30 particles, 52 in all)
+لَـ (emphasis) · مَنْ · أَ · يَا · إِذْ · أَوْ · لَوْ · لَمَّا · حَتَّى · أَمْ · لَعَلَّ · بَلْ · سَـ · هَلْ · لَوْلَا · لَٰكِنَّ · لَٰكِنْ · أَمَّا · سَوْفَ ·
+أَلَا · كَلَّا · كَأَنَّ · إِذًا · أَنَّى · بَلَى · أَيْنَ · لَيْتَ · مَتَى · كَيْ · نَعَمْ, and the uses held back from the pilot: وَ after the
+question hamza (SUP) and of accompaniment (COM), فَ after the question hamza, مَا added for emphasis, لَا like لَيْسَ, the
+lightened إِنْ (CERT) with لَـ. 121 uses, 214 cited ayat. Named disagreements: the Basrans and Kufans on the subjunctive
+after حَتَّى and the wāw of accompaniment, the noun after لَوْلَا, the lightened إِنْ and its لَـ; most grammarians and az-Zamaḫšarī
+on أَوَ/أَفَ; Ibn Hišām against both schools on سَـ/سَوْفَ; Sībawayh and Ibn as-Sarrāj/al-Fārisī on لَمَّا; Sībawayh, al-Ḫalīl and most
+Basrans against al-Kisāʾī on كَلَّا; qirāʾāt at 20:63, 86:4 and 2:254. Sources add Sībawayh's *al-Kitāb* and Ibn al-Anbārī's *al-Inṣāf*
+where they are named. 13 new kinds (emphasis, vocative, future, answer, …), each named in bs and en.
+
+Still held back: the article ال; the corpus's DIST lām, ATT hā (هَٰذَا) and EMPH nūn (parts of other words); كَيْفَ,
+لَيْسَ, إِيَّا (the reader takes only rootless function nouns and particles); إِمَّا, كَأَنْ, أَيَّانَ, مَاذَا, كَمْ, مَهْمَا, إِي; links
+to verb-mood sections (the verb pages have none yet).

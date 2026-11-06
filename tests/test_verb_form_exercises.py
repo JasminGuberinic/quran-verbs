@@ -276,3 +276,41 @@ def test_a_verb_page_links_its_own_exercises_as_a_verb():
     bosnian = link("qala", languages["bs"], "../../")
     assert "Vježbaj ovaj glagol" in bosnian and 'href="../../bs/vjezbe/?w=verb:qala&amp;t=form-meaning"' in bosnian
     assert "Practise this verb" in link("qala", languages["en"], "../../") and link("qala", languages["fr"], "../../") == ""
+
+
+# ---------------------------------------------------------------- a referent or a sense the ayah decides
+
+_SAID_HIM_OR_IT = _form("قَالَهُ", "past", "huwa", B("rekao ga je", "he said him/it"), objects=("huwa",), reference="9:9")
+
+
+def test_a_gloss_that_leaves_its_object_open_is_never_asked_from_the_quran():
+    """سَخَّرَهَا is the camels in 22:37 and the wind in 69:7: "he subjected her/it" is not what either ayah says."""
+    exercises = quran_form_exercises([QuranicVerb(_table(), (*_QURANIC, _SAID_HIM_OR_IT))])
+    assert not any(exercise.answer_word == "قَالَهُ" for exercise in exercises)
+    resolved = AttestedForm("قَالَهُ", _SAID_HIM_OR_IT.grammar, B("rekao ga je", "he said it"), _SAID_HIM_OR_IT.ayah)
+    asked = [exercise for exercise in quran_form_exercises([QuranicVerb(_table(), (*_QURANIC, resolved))])
+             if exercise.answer_word == "قَالَهُ"]
+    assert [exercise.correct[0].meaning.en for exercise in asked] == ["he said it"]
+
+
+def test_a_form_is_asked_with_the_gloss_of_the_place_it_is_shown_in():
+    """A polysemous verb's form in two senses, or a referent resolved place by place: the question shows one
+    ayah, so its answer is that place's gloss, not the form's row."""
+    card = _card()
+    card["forms"][2]["gloss"] = {"bs": "rekli smo; kazali smo", "en": "we said; we told"}
+    sources = stage.Sources(emoji={}, categories={}, noun_readings={}, bosnian={},
+                            paradigms={"قول|1": {"past|act|3MS|-": "rekao je"}},
+                            ayat={"2:34": ("وَإِذْ", "قُلْنَا", "لِلْمَلَٰٓئِكَةِ")},
+                            place_glosses={("2:34", "قُلْنَا"): B("kazali smo", "we told")})
+    word = stage._verb_word("qala", {**card, "lemma": "قَالَ", "rank": 1})
+    verb = stage._quranic_verb(stage._verb_table(word, card, sources), card, sources)
+    assert verb.forms[1].gloss == B("kazali smo", "we told") and verb.forms[1].ayah.reference == "2:34"
+
+
+def test_a_word_glossed_two_ways_in_one_ayah_has_no_place_gloss():
+    from fil.study import QuranWord
+    ayat = {(2, 34): (QuranWord(2, 34, 1, "قُلْنَا"), QuranWord(2, 34, 2, "x"), QuranWord(2, 34, 3, "قُلْنَا")),
+            (2, 35): (QuranWord(2, 35, 1, "قُلْنَا"),)}
+    glosses = {"2:34:1": {"en": "we said", "bs": "rekli smo"}, "2:34:3": {"en": "we told", "bs": "kazali smo"},
+               "2:35:1": {"en": "we told", "bs": "kazali smo"}}
+    assert stage.place_glosses(glosses, ayat) == {("2:35", "قُلْنَا"): B("kazali smo", "we told")}

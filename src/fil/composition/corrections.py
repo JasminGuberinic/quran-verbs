@@ -8,6 +8,11 @@ clitic words, the same command or question — with the sense its ayat need, and
 Stored in data/composed_gloss_corrections.json as {"root|form|arabic": {"en", "bs", "why"}} and checked
 against the rule's own gloss on every build: a correction of a form the rules no longer compose, or one
 that changes the gloss's shape, fails the build rather than reaching a learner.
+
+Where one form's ayat need different words — سَخَّرَهَا is "subjected it" of the sun and "subjected them"
+of the winds — the correction is made per place instead, in data/composed_place_corrections.json as
+{"root|form|arabic": {"surah:ayah:word": {"en", "bs", "why"}}}: the place shows its own gloss, the form's
+row keeps the rule's. It is checked in the same way, against the rule's gloss at that place.
 """
 
 from __future__ import annotations
@@ -44,6 +49,17 @@ def read(entries: Mapping[str, Mapping[str, str]]) -> dict[str, Correction]:
     if malformed:
         raise InvalidCorrection("; ".join(malformed))
     return {key: Correction(entry["en"], entry["bs"], entry["why"]) for key, entry in entries.items()}
+
+
+def place_key(form: str, location: str) -> str:
+    """How a correction of one place is named in lookups and messages: "سخر|2|سَخَّرَهَا 13:2:14"."""
+    return f"{form} {location}"
+
+
+def read_by_place(entries: Mapping[str, Mapping[str, Mapping[str, str]]]) -> dict[str, Correction]:
+    """The stored per-place corrections by `place_key`, or InvalidCorrection naming every malformed entry."""
+    return read({place_key(form, location): entry for form, by_location in entries.items()
+                 for location, entry in by_location.items()})
 
 
 def problems(key: str, correction: Correction, rule_en: str | None, rule_bs: str | None) -> list[str]:

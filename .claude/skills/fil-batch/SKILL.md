@@ -79,6 +79,18 @@ and the site says reviews are by AI. Never park a job "for a human".
   `data/bs_paradigms.json`, an English rule in `fil.composition.english` (golden test); only a
   verb-specific sense or referent goes to `data/composed_gloss_corrections.json` (en, bs, why; same
   clitic words and "!"/"?" as the rule's gloss — the build refuses anything else).
+  When one form's ayat need different words (سَخَّرَهَا: the camels in 22:37, the wind in 69:7), correct it
+  per place instead: `data/composed_place_corrections.json` (form → surah:ayah:word → en, bs, why; same
+  shape check). Type keys by copying them from a generated file: the corpus writes shadda before the vowel,
+  so a hand-typed key may differ in Unicode order and is refused as stale.
+- Polysemous verbs (`data/polysemous_verbs.json`: verb → senses, the first its own first sense) are composed
+  place by place: `fil compose sense-sheets DIR` (each unchosen place with its ayah and English, every sense's
+  gloss) → Sonnet chooses `sense` + `why` per row (re-check the non-first senses and every NONE) →
+  `fil compose senses DIR` (validated, all or nothing; a missing sense is added to the verb's list first) →
+  `fil compose sheets` writes the cells of each sense's own paradigm `root|form@sense` → `fil compose
+  paradigms` → `fil compose build`. A form in one sense gets that gloss; in several, its row lists them ("he/it
+  decreed; he/it fulfilled") and each place shows its own (`data/composed_ayah_glosses.json`). A choice whose
+  form or place is gone fails the build.
 
 ## Later: the other 14 languages (several batches at once)
 Build a translation memory (each unique word glossed once per language), export compact

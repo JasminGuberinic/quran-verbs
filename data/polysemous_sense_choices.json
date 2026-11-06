@@ -1,0 +1,5429 @@
+{
+ "_about": "For each place a form of a polysemous verb (data/polysemous_verbs.json) stands in, the sense its ayah needs and why: root|form|arabic → surah:ayah:word → {sense, why}. Chosen against the ayah, the site's English (Bosnian worded after Korkut, English after Sahih International) through `fil compose sense-sheets/senses`; `fil compose build` refuses a choice whose form or place is gone.",
+ "أتي|1|ءَاتِيكَ": {
+  "27:39:6": {
+   "sense": "bring",
+   "why": "bi-hi: I will bring it to you"
+  },
+  "27:40:8": {
+   "sense": "bring",
+   "why": "bi-hi: I will bring it to you"
+  }
+ },
+ "أتي|1|ءَاتِيكُم": {
+  "20:10:11": {
+   "sense": "bring",
+   "why": "bi-: bring you a brand/tidings/flame"
+  },
+  "27:7:12": {
+   "sense": "bring",
+   "why": "bi-: bring you a brand/tidings/flame"
+  },
+  "28:29:19": {
+   "sense": "bring",
+   "why": "bi-: bring you a brand/tidings/flame"
+  },
+  "44:19:7": {
+   "sense": "bring",
+   "why": "bi-: bring a clear warrant"
+  }
+ },
+ "أتي|1|أَتَأْتُونَ": {
+  "26:165:1": {
+   "sense": "approach",
+   "why": "a-ta'tuna dh-dhukran: do you approach males"
+  },
+  "27:54:5": {
+   "sense": "commit",
+   "why": "al-fahisha as object: commit abomination"
+  },
+  "7:80:5": {
+   "sense": "commit",
+   "why": "al-fahisha as object: commit abomination"
+  }
+ },
+ "أتي|1|أَتَتْ": {
+  "51:42:5": {
+   "sense": "come",
+   "why": "the wind that came upon anything it passed over"
+  }
+ },
+ "أتي|1|أَتَتْكَ": {
+  "20:126:3": {
+   "sense": "come",
+   "why": "Our signs came to you"
+  }
+ },
+ "أتي|1|أَتَتْكُمُ": {
+  "6:40:8": {
+   "sense": "come",
+   "why": "the punishment or the Hour comes upon them"
+  }
+ },
+ "أتي|1|أَتَتْهُمْ": {
+  "9:70:16": {
+   "sense": "come",
+   "why": "messengers came to them with clear proofs"
+  }
+ },
+ "أتي|1|أَتَوا۟": {
+  "3:188:6": {
+   "sense": "commit",
+   "why": "what they have done: an act they take pride in"
+  }
+ },
+ "أتي|1|أَتَوْا۟": {
+  "25:40:2": {
+   "sense": "come",
+   "why": "they passed by/came to the township; no bi-"
+  },
+  "27:18:3": {
+   "sense": "come",
+   "why": "they reached the Valley of the Ants"
+  }
+ },
+ "أتي|1|أَتَوْكَ": {
+  "9:92:6": {
+   "sense": "come",
+   "why": "they came to you asking to be carried"
+  }
+ },
+ "أتي|1|أَتَوْهُ": {
+  "27:87:17": {
+   "sense": "come",
+   "why": "all will come to Him humbled"
+  }
+ },
+ "أتي|1|أَتَى": {
+  "26:89:3": {
+   "sense": "bring",
+   "why": "bi-qalb: brings Allah a sound heart"
+  },
+  "51:52:3": {
+   "sense": "come",
+   "why": "no messenger came to those before; no bi-"
+  }
+ },
+ "أتي|1|أَتَىٰ": {
+  "20:60:6": {
+   "sense": "come",
+   "why": "Pharaoh came to the appointed place"
+  },
+  "20:69:16": {
+   "sense": "come",
+   "why": "wherever the magician comes; arrival"
+  },
+  "76:1:2": {
+   "sense": "come",
+   "why": "time passed upon man; come upon"
+  }
+ },
+ "أتي|1|أَتَىٰكَ": {
+  "20:9:2": {
+   "sense": "come",
+   "why": "story came to you; no bi-"
+  },
+  "38:21:2": {
+   "sense": "come",
+   "why": "story came to you; no bi-"
+  },
+  "51:24:2": {
+   "sense": "come",
+   "why": "story came to you; no bi-"
+  },
+  "79:15:2": {
+   "sense": "come",
+   "why": "story came to you; no bi-"
+  },
+  "85:17:2": {
+   "sense": "come",
+   "why": "story came to you; no bi-"
+  },
+  "88:1:2": {
+   "sense": "come",
+   "why": "story came to you; no bi-"
+  }
+ },
+ "أتي|1|أَتَىٰكُمْ": {
+  "10:50:4": {
+   "sense": "come",
+   "why": "the punishment comes upon you"
+  },
+  "6:40:4": {
+   "sense": "come",
+   "why": "the punishment comes upon you"
+  },
+  "6:47:4": {
+   "sense": "come",
+   "why": "the punishment comes upon you"
+  }
+ },
+ "أتي|1|أَتَىٰهَا": {
+  "20:11:2": {
+   "sense": "come",
+   "why": "when he reached it (the fire); arrival"
+  },
+  "28:30:2": {
+   "sense": "come",
+   "why": "when he reached it (the fire); arrival"
+  }
+ },
+ "أتي|1|أَتَىٰهَآ": {
+  "10:24:28": {
+   "sense": "come",
+   "why": "Our command came upon it by night or day"
+  }
+ },
+ "أتي|1|أَتَىٰهُم": {
+  "28:46:14": {
+   "sense": "come",
+   "why": "a warner never came to them"
+  },
+  "32:3:12": {
+   "sense": "come",
+   "why": "a warner never came to them"
+  }
+ },
+ "أتي|1|أَتَىٰهُمْ": {
+  "40:35:8": {
+   "sense": "come",
+   "why": "succour/warrant reached them; no bi-"
+  },
+  "40:56:9": {
+   "sense": "come",
+   "why": "succour/warrant reached them; no bi-"
+  },
+  "6:34:12": {
+   "sense": "come",
+   "why": "succour/warrant reached them; no bi-"
+  }
+ },
+ "أتي|1|أَتَىٰٓ": {
+  "16:1:1": {
+   "sense": "come",
+   "why": "the command of Allah has come"
+  }
+ },
+ "أتي|1|أَتَيَآ": {
+  "18:77:4": {
+   "sense": "come",
+   "why": "they came to the people of a town"
+  }
+ },
+ "أتي|1|أَتَيْتَ": {
+  "2:145:2": {
+   "sense": "bring",
+   "why": "with بِكُلِّ آيَةٍ: you bring every sign"
+  }
+ },
+ "أتي|1|أَتَيْنَ": {
+  "4:25:38": {
+   "sense": "commit",
+   "why": "with بِفَاحِشَةٍ but meaning if they commit lewdness"
+  }
+ },
+ "أتي|1|أَتَيْنَا": {
+  "21:47:16": {
+   "sense": "bring",
+   "why": "bi-ha: We bring it (the mustard seed) forth"
+  },
+  "41:11:15": {
+   "sense": "come",
+   "why": "we come obedient (heaven and earth)"
+  }
+ },
+ "أتي|1|أَتَيْنَٰهُم": {
+  "23:71:11": {
+   "sense": "bring",
+   "why": "bi-: We brought them their Reminder/Truth"
+  },
+  "23:90:2": {
+   "sense": "bring",
+   "why": "bi-: We brought them their Reminder/Truth"
+  }
+ },
+ "أتي|1|تَأْتُوا۟": {
+  "2:189:12": {
+   "sense": "come",
+   "why": "coming to houses (entering), a physical approach"
+  }
+ },
+ "أتي|1|تَأْتُونَنَا": {
+  "37:28:4": {
+   "sense": "come",
+   "why": "you used to come at us from the right"
+  }
+ },
+ "أتي|1|تَأْتُونِى": {
+  "12:60:3": {
+   "sense": "bring",
+   "why": "with بِهِ/بِهِمْ: bring him/them to me"
+  }
+ },
+ "أتي|1|سَـَٔاتِيكُم": {
+  "27:7:8": {
+   "sense": "bring",
+   "why": "with بِ: bring news / proof / throne"
+  }
+ },
+ "أتي|1|فَأَتَتْ": {
+  "19:27:1": {
+   "sense": "bring",
+   "why": "with بِهِ: she came to her people carrying him"
+  }
+ },
+ "أتي|1|فَأَتَوْا۟": {
+  "7:138:5": {
+   "sense": "come",
+   "why": "they came upon a people devoted to idols"
+  }
+ },
+ "أتي|1|فَأَتَى": {
+  "16:26:6": {
+   "sense": "come",
+   "why": "Allah came at their structure from the foundations"
+  }
+ },
+ "أتي|1|فَأَتَىٰهُمُ": {
+  "39:25:5": {
+   "sense": "come",
+   "why": "the punishment came upon them"
+  },
+  "59:2:23": {
+   "sense": "come",
+   "why": "Allah's decree reached them from where they did not expect"
+  }
+ },
+ "أتي|1|فَأْتُوا۟": {
+  "10:38:5": {
+   "sense": "bring",
+   "why": "bi-: produce a surah"
+  },
+  "11:13:5": {
+   "sense": "bring",
+   "why": "bi-: produce a surah"
+  },
+  "21:61:2": {
+   "sense": "bring",
+   "why": "bi-hi: bring him"
+  },
+  "28:49:2": {
+   "sense": "bring",
+   "why": "bi-: produce a surah"
+  },
+  "2:223:4": {
+   "sense": "come",
+   "why": "go to your tilth: approach, no bi-"
+  },
+  "2:23:9": {
+   "sense": "bring",
+   "why": "bi-: produce a surah"
+  },
+  "37:157:1": {
+   "sense": "bring",
+   "why": "bi-: produce a surah"
+  },
+  "3:93:19": {
+   "sense": "bring",
+   "why": "bi-: produce a surah"
+  },
+  "44:36:1": {
+   "sense": "bring",
+   "why": "bring back our fathers, bi-"
+  }
+ },
+ "أتي|1|فَأْتُونَا": {
+  "14:10:31": {
+   "sense": "bring",
+   "why": "with بِسُلْطَانٍ: bring us clear authority"
+  }
+ },
+ "أتي|1|فَأْتُوهُنَّ": {
+  "2:222:17": {
+   "sense": "come",
+   "why": "approach your wives (lawful approach), not a wrongful deed"
+  }
+ },
+ "أتي|1|فَأْتِ": {
+  "26:154:6": {
+   "sense": "bring",
+   "why": "bi-: produce it / bring a sign"
+  },
+  "26:31:2": {
+   "sense": "bring",
+   "why": "bi-: produce it / bring a sign"
+  },
+  "2:258:32": {
+   "sense": "bring",
+   "why": "bi-ha: bring it from the west"
+  },
+  "7:106:6": {
+   "sense": "bring",
+   "why": "bi-: produce it / bring a sign"
+  }
+ },
+ "أتي|1|فَأْتِنَا": {
+  "11:32:7": {
+   "sense": "bring",
+   "why": "bi-: bring upon us what you threaten"
+  },
+  "46:22:6": {
+   "sense": "bring",
+   "why": "bi-: bring upon us what you threaten"
+  },
+  "7:70:11": {
+   "sense": "bring",
+   "why": "bi-: bring upon us what you threaten"
+  }
+ },
+ "أتي|1|فَتَأْتُونَ": {
+  "78:18:5": {
+   "sense": "come",
+   "why": "you will come forth in crowds"
+  }
+ },
+ "أتي|1|فَسَيَأْتِيهِمْ": {
+  "26:6:3": {
+   "sense": "come",
+   "why": "news of what they mocked will come to them"
+  }
+ },
+ "أتي|1|فَلْيَأْتُوا۟": {
+  "52:34:1": {
+   "sense": "bring",
+   "why": "with بِحَدِيثٍ: let them bring/produce a like speech"
+  },
+  "68:41:4": {
+   "sense": "bring",
+   "why": "with بِشُرَكَائِهِمْ: let them bring their partner-gods"
+  }
+ },
+ "أتي|1|فَلْيَأْتِ": {
+  "52:38:6": {
+   "sense": "bring",
+   "why": "with بِسُلْطَانٍ: let him bring clear proof"
+  }
+ },
+ "أتي|1|فَيَأْتِيَهُم": {
+  "26:202:1": {
+   "sense": "come",
+   "why": "it will come upon them suddenly"
+  }
+ },
+ "أتي|1|لَتَأْتُنَّنِى": {
+  "12:66:10": {
+   "sense": "bring",
+   "why": "with بِهِ/بِهِمْ: bring him/them to me"
+  }
+ },
+ "أتي|1|لَتَأْتُونَ": {
+  "27:55:2": {
+   "sense": "approach",
+   "why": "la-ta'tuna r-rijala: you approach men with desire"
+  },
+  "29:28:6": {
+   "sense": "commit",
+   "why": "al-fahisha as object: commit abomination"
+  },
+  "29:29:2": {
+   "sense": "approach",
+   "why": "la-ta'tuna r-rijala: you approach men"
+  },
+  "7:81:2": {
+   "sense": "approach",
+   "why": "la-ta'tuna r-rijala: you approach men with desire"
+  }
+ },
+ "أتي|1|لَيَأْتِيَنِّى": {
+  "27:21:7": {
+   "sense": "bring",
+   "why": "with بِ: bring news / proof / throne"
+  }
+ },
+ "أتي|1|نَأْتِ": {
+  "2:106:7": {
+   "sense": "bring",
+   "why": "with بِخَيْرٍ: We bring better"
+  }
+ },
+ "أتي|1|نَأْتِى": {
+  "13:41:4": {
+   "sense": "come",
+   "why": "We come to the land, reaching it to diminish"
+  },
+  "21:44:12": {
+   "sense": "come",
+   "why": "We come to the land, reaching it to diminish"
+  }
+ },
+ "أتي|1|نَّأْتِيَكُم": {
+  "14:11:21": {
+   "sense": "bring",
+   "why": "with بِسُلْطَانٍ: bring you authority"
+  }
+ },
+ "أتي|1|وَأَتَىٰهُمُ": {
+  "16:26:16": {
+   "sense": "come",
+   "why": "the punishment came upon them unaware"
+  }
+ },
+ "أتي|1|وَأَتَيْنَٰكَ": {
+  "15:64:1": {
+   "sense": "bring",
+   "why": "with بِالْحَقِّ: we bring you the truth"
+  }
+ },
+ "أتي|1|وَأُتُوا۟": {
+  "2:25:25": {
+   "sense": "bring",
+   "why": "passive with بِهِ: they were brought/given it"
+  }
+ },
+ "أتي|1|وَأْتُوا۟": {
+  "2:189:20": {
+   "sense": "come",
+   "why": "coming to houses (entering), a physical approach"
+  }
+ },
+ "أتي|1|وَتَأْتُونَ": {
+  "29:29:6": {
+   "sense": "commit",
+   "why": "you commit the wrongdoing in your gatherings"
+  }
+ },
+ "أتي|1|وَيَأْتُوكُم": {
+  "3:125:5": {
+   "sense": "come",
+   "why": "the enemy comes upon you in haste"
+  }
+ },
+ "أتي|1|وَيَأْتِ": {
+  "14:19:12": {
+   "sense": "bring",
+   "why": "bi-: and produce others/a new creation"
+  },
+  "35:16:4": {
+   "sense": "bring",
+   "why": "bi-: and produce others/a new creation"
+  },
+  "4:133:6": {
+   "sense": "bring",
+   "why": "bi-: and produce others/a new creation"
+  }
+ },
+ "أتي|1|وَيَأْتِينَا": {
+  "19:80:4": {
+   "sense": "come",
+   "why": "he will come to Us alone"
+  }
+ },
+ "أتي|1|وَيَأْتِيهِ": {
+  "14:17:5": {
+   "sense": "come",
+   "why": "death comes to him from every side"
+  }
+ },
+ "أتي|1|يَأْتُوا۟": {
+  "17:88:8": {
+   "sense": "bring",
+   "why": "bi-mithl: produce the like of this Quran"
+  },
+  "24:13:8": {
+   "sense": "bring",
+   "why": "bi-: bring four witnesses/witnesses"
+  },
+  "24:4:6": {
+   "sense": "bring",
+   "why": "bi-: bring four witnesses/witnesses"
+  },
+  "5:108:4": {
+   "sense": "bring",
+   "why": "bi-sh-shahada: bring the testimony"
+  }
+ },
+ "أتي|1|يَأْتُوكُمْ": {
+  "2:85:16": {
+   "sense": "come",
+   "why": "captives come to you, no object brought"
+  }
+ },
+ "أتي|1|يَأْتُونَ": {
+  "17:88:13": {
+   "sense": "bring",
+   "why": "bi-mithl: produce the like of this Quran"
+  },
+  "18:15:8": {
+   "sense": "bring",
+   "why": "bi-: bring a clear warrant"
+  },
+  "33:18:11": {
+   "sense": "come",
+   "why": "they come not to the battle; arriving"
+  },
+  "9:54:13": {
+   "sense": "come",
+   "why": "they come to prayer lazily; arriving at a place"
+  }
+ },
+ "أتي|1|يَأْتُونَكَ": {
+  "25:33:2": {
+   "sense": "bring",
+   "why": "with بِمَثَلٍ: they bring no parable"
+  }
+ },
+ "أتي|1|يَأْتُونَنَا": {
+  "19:38:5": {
+   "sense": "come",
+   "why": "the day they come to Us"
+  }
+ },
+ "أتي|1|يَأْتُونِى": {
+  "27:38:9": {
+   "sense": "come",
+   "why": "before they come to me in submission"
+  }
+ },
+ "أتي|1|يَأْتُوٓا۟": {
+  "24:49:5": {
+   "sense": "come",
+   "why": "they come to him submissively"
+  }
+ },
+ "أتي|1|يَأْتِ": {
+  "11:105:2": {
+   "sense": "come",
+   "why": "the Day itself comes; nothing brought"
+  },
+  "12:93:8": {
+   "sense": "become",
+   "why": "ya'ti basiran: he will become seeing (regain sight)"
+  },
+  "16:76:18": {
+   "sense": "bring",
+   "why": "bi- khayr: brings no good"
+  },
+  "20:74:3": {
+   "sense": "come",
+   "why": "comes to his Lord guilty; arriving"
+  },
+  "23:68:8": {
+   "sense": "come",
+   "why": "what came to them: a matter coming, no bi-"
+  },
+  "2:148:10": {
+   "sense": "bring",
+   "why": "bi- after it: Allah will bring you all together"
+  },
+  "31:16:18": {
+   "sense": "bring",
+   "why": "bi-ha: Allah will bring it forth"
+  },
+  "33:20:6": {
+   "sense": "come",
+   "why": "the clans come again; arrival, no bi-"
+  },
+  "33:30:4": {
+   "sense": "commit",
+   "why": "with manifest immorality: whoever commits it (Sahih Intl: commits)"
+  },
+  "3:161:8": {
+   "sense": "bring",
+   "why": "bi-: brings what he embezzled"
+  }
+ },
+ "أتي|1|يَأْتِكَ": {
+  "19:43:9": {
+   "sense": "come",
+   "why": "knowledge that has not come to you"
+  }
+ },
+ "أتي|1|يَأْتِكُم": {
+  "2:214:7": {
+   "sense": "come",
+   "why": "the like of earlier peoples had not yet come to you"
+  }
+ },
+ "أتي|1|يَأْتِكُمْ": {
+  "14:9:2": {
+   "sense": "come",
+   "why": "news/story reached you; no bi-"
+  },
+  "39:71:16": {
+   "sense": "come",
+   "why": "messengers came to you; no bi-"
+  },
+  "64:5:2": {
+   "sense": "come",
+   "why": "news/story reached you; no bi-"
+  },
+  "67:8:12": {
+   "sense": "come",
+   "why": "messengers came to you; no bi-"
+  },
+  "6:130:5": {
+   "sense": "come",
+   "why": "messengers came to you; no bi-"
+  }
+ },
+ "أتي|1|يَأْتِهِمْ": {
+  "10:39:8": {
+   "sense": "come",
+   "why": "an offer/news/interpretation comes to them; no bi-"
+  },
+  "7:169:15": {
+   "sense": "come",
+   "why": "an offer/news/interpretation comes to them; no bi-"
+  },
+  "9:70:2": {
+   "sense": "come",
+   "why": "an offer/news/interpretation comes to them; no bi-"
+  }
+ },
+ "أتي|1|يَأْتِهِۦ": {
+  "20:75:2": {
+   "sense": "come",
+   "why": "whoever comes to Him as a believer"
+  }
+ },
+ "أتي|1|يَأْتِى": {
+  "12:48:2": {
+   "sense": "come",
+   "why": "seven years come after; no bi-"
+  },
+  "12:49:2": {
+   "sense": "come",
+   "why": "a year comes after that; no bi-"
+  },
+  "2:258:28": {
+   "sense": "bring",
+   "why": "bi- ash-shams: brings the sun from the east"
+  },
+  "5:54:10": {
+   "sense": "bring",
+   "why": "bi-qawm: brings a people"
+  },
+  "61:6:20": {
+   "sense": "come",
+   "why": "a messenger who comes after me"
+  },
+  "6:158:16": {
+   "sense": "come",
+   "why": "a portent of the Lord comes on that day"
+  },
+  "7:53:6": {
+   "sense": "come",
+   "why": "its fulfilment comes on that day"
+  }
+ },
+ "أتي|1|يَأْتِىَ": {
+  "13:31:44": {
+   "sense": "come",
+   "why": "the promise of Allah comes; no bi-"
+  },
+  "13:38:14": {
+   "sense": "bring",
+   "why": "bi-āya after it: bring a sign"
+  },
+  "14:31:15": {
+   "sense": "come",
+   "why": "a day comes upon them"
+  },
+  "16:33:8": {
+   "sense": "come",
+   "why": "the command of your Lord comes"
+  },
+  "2:109:25": {
+   "sense": "bring",
+   "why": "bi-amrihi after it: Allah brings His command"
+  },
+  "2:254:10": {
+   "sense": "come",
+   "why": "a day comes; nothing brought"
+  },
+  "30:43:8": {
+   "sense": "come",
+   "why": "a day comes; no bi-"
+  },
+  "40:78:19": {
+   "sense": "bring",
+   "why": "bi-āya after it: bring a sign"
+  },
+  "42:47:6": {
+   "sense": "come",
+   "why": "a day comes from Allah"
+  },
+  "5:52:16": {
+   "sense": "bring",
+   "why": "bi-l-fatḥ after it: brings the victory"
+  },
+  "63:10:8": {
+   "sense": "come",
+   "why": "death comes to one of you"
+  },
+  "6:158:11": {
+   "sense": "come",
+   "why": "a sign of your Lord comes to them"
+  },
+  "6:158:8": {
+   "sense": "come",
+   "why": "your Lord comes; no bi-"
+  },
+  "9:24:26": {
+   "sense": "bring",
+   "why": "bi-amrihi after it: Allah brings His command"
+  }
+ },
+ "أتي|1|يَأْتِىٓ": {
+  "41:40:16": {
+   "sense": "come",
+   "why": "whoever comes secure on the Day of Resurrection"
+  }
+ },
+ "أتي|1|يَأْتِيكُم": {
+  "11:33:3": {
+   "sense": "bring",
+   "why": "bi-hi: who could bring it back"
+  },
+  "28:71:16": {
+   "sense": "bring",
+   "why": "bi-: who could bring you light, night, water"
+  },
+  "28:72:16": {
+   "sense": "bring",
+   "why": "bi-: who could bring you light, night, water"
+  },
+  "67:30:8": {
+   "sense": "bring",
+   "why": "bi-: who could bring you light, night, water"
+  },
+  "6:46:15": {
+   "sense": "bring",
+   "why": "bi-hi: who could bring it back"
+  }
+ },
+ "أتي|1|يَأْتِيكُمَا": {
+  "12:37:3": {
+   "sense": "come",
+   "why": "no food comes to you two"
+  }
+ },
+ "أتي|1|يَأْتِينَ": {
+  "22:27:10": {
+   "sense": "come",
+   "why": "they come on foot and on camels to the pilgrimage"
+  },
+  "4:15:2": {
+   "sense": "commit",
+   "why": "women commit lewdness (al-fahisha as object)"
+  },
+  "4:19:19": {
+   "sense": "commit",
+   "why": "bi-fahisha: commit manifest immorality"
+  },
+  "60:12:21": {
+   "sense": "bring",
+   "why": "bi-buhtan: bring forth a slander (Sahih Intl)"
+  },
+  "65:1:21": {
+   "sense": "commit",
+   "why": "bi-fahisha: commit manifest immorality"
+  }
+ },
+ "أتي|1|يَأْتِينَا": {
+  "20:133:3": {
+   "sense": "bring",
+   "why": "with بِآيَةٍ: why does he not bring a sign"
+  }
+ },
+ "أتي|1|يَأْتِينَكَ": {
+  "2:260:33": {
+   "sense": "come",
+   "why": "the birds will come to you hastening"
+  }
+ },
+ "أتي|1|يَأْتِينِى": {
+  "27:38:5": {
+   "sense": "bring",
+   "why": "with بِ: bring news / proof / throne"
+  }
+ },
+ "أتي|1|يَأْتِيهَا": {
+  "16:112:8": {
+   "sense": "come",
+   "why": "its provision came to it in abundance"
+  }
+ },
+ "أتي|1|يَأْتِيهِ": {
+  "11:39:4": {
+   "sense": "come",
+   "why": "a punishment comes upon him"
+  },
+  "11:93:10": {
+   "sense": "come",
+   "why": "a punishment comes upon him"
+  },
+  "39:40:2": {
+   "sense": "come",
+   "why": "a punishment comes upon him"
+  },
+  "41:42:2": {
+   "sense": "come",
+   "why": "falsehood cannot come at it"
+  }
+ },
+ "أتي|1|يَأْتِيهِم": {
+  "15:11:2": {
+   "sense": "come",
+   "why": "a messenger/reminder comes to them; no bi-"
+  },
+  "21:2:2": {
+   "sense": "come",
+   "why": "a messenger/reminder comes to them; no bi-"
+  },
+  "26:5:2": {
+   "sense": "come",
+   "why": "a messenger/reminder comes to them; no bi-"
+  },
+  "36:30:5": {
+   "sense": "come",
+   "why": "a messenger/reminder comes to them; no bi-"
+  },
+  "43:7:2": {
+   "sense": "come",
+   "why": "a messenger/reminder comes to them; no bi-"
+  }
+ },
+ "أتي|1|يَأْتِيهِمُ": {
+  "14:44:4": {
+   "sense": "come",
+   "why": "the day the punishment comes upon them"
+  }
+ },
+ "أتي|1|يَأْتِيهِمْ": {
+  "11:8:13": {
+   "sense": "come",
+   "why": "tidings/doom/wrath comes to them"
+  },
+  "6:5:7": {
+   "sense": "come",
+   "why": "tidings/doom/wrath comes to them"
+  }
+ },
+ "أتي|1|يَأْتِيَكَ": {
+  "15:99:4": {
+   "sense": "come",
+   "why": "until certainty (death) comes to you"
+  }
+ },
+ "أتي|1|يَأْتِيَكُمَا": {
+  "12:37:11": {
+   "sense": "come",
+   "why": "before it comes to you"
+  }
+ },
+ "أتي|1|يَأْتِيَكُمُ": {
+  "2:248:8": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  },
+  "39:54:9": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  },
+  "39:55:11": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  }
+ },
+ "أتي|1|يَأْتِيَنَا": {
+  "3:183:11": {
+   "sense": "bring",
+   "why": "with بِقُرْبَانٍ: until he brings an offering"
+  }
+ },
+ "أتي|1|يَأْتِيَنِى": {
+  "12:83:12": {
+   "sense": "bring",
+   "why": "with بِهِ/بِهِمْ: bring him/them to me"
+  }
+ },
+ "أتي|1|يَأْتِيَهُم": {
+  "7:97:5": {
+   "sense": "come",
+   "why": "tidings/doom/wrath comes to them"
+  },
+  "7:98:5": {
+   "sense": "come",
+   "why": "tidings/doom/wrath comes to them"
+  }
+ },
+ "أتي|1|يَأْتِيَهُمُ": {
+  "16:45:11": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  },
+  "18:55:17": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  },
+  "2:210:5": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  }
+ },
+ "أتي|1|يَأْتِيَهُمْ": {
+  "22:55:13": {
+   "sense": "come",
+   "why": "Allah/punishment/ark/doom comes to them or you"
+  },
+  "71:1:12": {
+   "sense": "come",
+   "why": "tidings/doom/wrath comes to them"
+  }
+ },
+ "أتي|1|يَأْتِيَٰنِهَا": {
+  "4:16:2": {
+   "sense": "commit",
+   "why": "the two who commit the lewd act (it is the object)"
+  }
+ },
+ "أتي|1|ٱئْتُوا۟": {
+  "20:64:4": {
+   "sense": "come",
+   "why": "come in a line; no bi-"
+  },
+  "45:25:12": {
+   "sense": "bring",
+   "why": "bi-: bring back our fathers"
+  }
+ },
+ "أتي|1|ٱئْتُونِى": {
+  "10:79:3": {
+   "sense": "bring",
+   "why": "bi-: bring (him/a book) to me"
+  },
+  "12:50:3": {
+   "sense": "bring",
+   "why": "bi-: bring (him/a book) to me"
+  },
+  "12:54:3": {
+   "sense": "bring",
+   "why": "bi-: bring (him/a book) to me"
+  },
+  "12:59:5": {
+   "sense": "bring",
+   "why": "bi-: bring (him/a book) to me"
+  },
+  "46:4:18": {
+   "sense": "bring",
+   "why": "bi-: bring (him/a book) to me"
+  }
+ },
+ "أتي|1|ٱئْتِ": {
+  "10:15:11": {
+   "sense": "bring",
+   "why": "bi-: bring a Quran other than this"
+  },
+  "26:10:6": {
+   "sense": "come",
+   "why": "go/come to the wrongdoing folk; a place, no bi-"
+  }
+ },
+ "أتي|1|ٱئْتِنَا": {
+  "29:29:17": {
+   "sense": "bring",
+   "why": "bi-: bring upon us what you threaten"
+  },
+  "6:71:29": {
+   "sense": "come",
+   "why": "come to us: call to join, no bi-"
+  },
+  "7:77:9": {
+   "sense": "bring",
+   "why": "bi-: bring upon us what you threaten"
+  },
+  "8:32:17": {
+   "sense": "bring",
+   "why": "bi-: bring upon us what you threaten"
+  }
+ },
+ "بعث|1|أَبَعَثَ": {
+  "17:94:12": {
+   "sense": "send",
+   "why": "'Has Allah sent a human being as messenger?'"
+  }
+ },
+ "بعث|1|أُبْعَثُ": {
+  "19:33:8": {
+   "sense": "resurrect",
+   "why": "the day he/I/you are raised alive: resurrection"
+  }
+ },
+ "بعث|1|بَعَثَ": {
+  "25:41:9": {
+   "sense": "send",
+   "why": "Allah sent a messenger/prophets"
+  },
+  "2:247:7": {
+   "sense": "send",
+   "why": "Allah has sent/appointed Talut as king"
+  },
+  "3:164:7": {
+   "sense": "send",
+   "why": "Allah sent a messenger/prophets"
+  },
+  "62:2:3": {
+   "sense": "send",
+   "why": "Allah sent a messenger/prophets"
+  }
+ },
+ "بعث|1|بَعَثَنَا": {
+  "36:52:4": {
+   "sense": "resurrect",
+   "why": "'who raised us from our place of sleep': the grave"
+  }
+ },
+ "بعث|1|بَعَثَهُۥ": {
+  "2:259:22": {
+   "sense": "resurrect",
+   "why": "Allah caused him to die a hundred years then raised him"
+  }
+ },
+ "بعث|1|بَعَثْنَا": {
+  "10:74:2": {
+   "sense": "send",
+   "why": "We sent messengers/Moses after them"
+  },
+  "10:75:2": {
+   "sense": "send",
+   "why": "We sent messengers/Moses after them"
+  },
+  "16:36:2": {
+   "sense": "send",
+   "why": "We sent messengers/Moses after them"
+  },
+  "17:5:5": {
+   "sense": "send",
+   "why": "We sent against you servants of Ours of great might"
+  },
+  "7:103:2": {
+   "sense": "send",
+   "why": "We sent messengers/Moses after them"
+  }
+ },
+ "بعث|1|بَعَثْنَٰهُمْ": {
+  "18:12:2": {
+   "sense": "awaken",
+   "why": "We roused the cave sleepers after their long sleep"
+  },
+  "18:19:2": {
+   "sense": "awaken",
+   "why": "We roused the cave sleepers after their long sleep"
+  }
+ },
+ "بعث|1|تُبْعَثُونَ": {
+  "23:16:5": {
+   "sense": "resurrect",
+   "why": "the day he/I/you are raised alive: resurrection"
+  }
+ },
+ "بعث|1|فَبَعَثَ": {
+  "2:213:5": {
+   "sense": "send",
+   "why": "Allah sent a messenger/prophets"
+  },
+  "5:31:1": {
+   "sense": "send",
+   "why": "Allah sent a raven to Qabil"
+  }
+ },
+ "بعث|1|فَٱبْعَثُوا۟": {
+  "4:35:5": {
+   "sense": "send",
+   "why": "send an arbiter from his family and from hers"
+  }
+ },
+ "بعث|1|فَٱبْعَثُوٓا۟": {
+  "18:19:21": {
+   "sense": "send",
+   "why": "send one of you to the city with this silver"
+  }
+ },
+ "بعث|1|لَتُبْعَثُنَّ": {
+  "64:7:10": {
+   "sense": "resurrect",
+   "why": "the day he/I/you are raised alive: resurrection"
+  }
+ },
+ "بعث|1|لَيَبْعَثَنَّ": {
+  "7:167:4": {
+   "sense": "send",
+   "why": "your Lord declared He would raise against them one who afflicts them"
+  }
+ },
+ "بعث|1|نَبْعَثَ": {
+  "17:15:20": {
+   "sense": "send",
+   "why": "until We send a messenger"
+  }
+ },
+ "بعث|1|نَبْعَثُ": {
+  "16:84:2": {
+   "sense": "resurrect",
+   "why": "on the Day We raise up a witness from every nation"
+  },
+  "16:89:2": {
+   "sense": "resurrect",
+   "why": "on the Day We raise up a witness from every nation"
+  }
+ },
+ "بعث|1|وَبَعَثْنَا": {
+  "5:12:7": {
+   "sense": "send",
+   "why": "We appointed/sent twelve leaders from them"
+  }
+ },
+ "بعث|1|يَبْعَثَكَ": {
+  "17:79:9": {
+   "sense": "resurrect",
+   "why": "your Lord will raise you to a praised station (on the Day)"
+  }
+ },
+ "بعث|1|يَبْعَثُ": {
+  "16:38:6": {
+   "sense": "resurrect",
+   "why": "Allah will raise the dead / those in the graves"
+  },
+  "22:7:9": {
+   "sense": "resurrect",
+   "why": "Allah will raise the dead / those in the graves"
+  }
+ },
+ "بعث|1|يَبْعَثُكُمْ": {
+  "6:60:10": {
+   "sense": "awaken",
+   "why": "He takes you by night then raises you in it from sleep"
+  }
+ },
+ "بعث|1|يَبْعَثُهُمُ": {
+  "58:18:2": {
+   "sense": "resurrect",
+   "why": "the dead, Allah raises them / the Day He raises them all"
+  },
+  "58:6:2": {
+   "sense": "resurrect",
+   "why": "the dead, Allah raises them / the Day He raises them all"
+  },
+  "6:36:6": {
+   "sense": "resurrect",
+   "why": "the dead, Allah raises them / the Day He raises them all"
+  }
+ },
+ "بعث|1|يُبْعَثُ": {
+  "19:15:8": {
+   "sense": "resurrect",
+   "why": "the day he/I/you are raised alive: resurrection"
+  }
+ },
+ "بعث|1|يُبْعَثُوا۟": {
+  "64:7:6": {
+   "sense": "resurrect",
+   "why": "the day he/I/you are raised alive: resurrection"
+  }
+ },
+ "بعث|1|يُبْعَثُونَ": {
+  "15:36:6": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "16:21:7": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "23:100:16": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "26:87:4": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "27:65:14": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "37:144:6": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "38:79:6": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  },
+  "7:14:5": {
+   "sense": "resurrect",
+   "why": "'the day they are raised': resurrection of the dead"
+  }
+ },
+ "بعث|1|ٱبْعَثْ": {
+  "2:246:15": {
+   "sense": "send",
+   "why": "'appoint/send us a king': request for a king"
+  }
+ },
+ "بغي|1|أَبْغِى": {
+  "6:164:4": {
+   "sense": "seek",
+   "why": "seeking another Lord than God"
+  }
+ },
+ "بغي|1|أَبْغِيكُمْ": {
+  "7:140:4": {
+   "sense": "seek",
+   "why": "seeking another god for you"
+  }
+ },
+ "بغي|1|بَغَتْ": {
+  "49:9:9": {
+   "sense": "transgress",
+   "why": "one party wrongs the other"
+  }
+ },
+ "بغي|1|بَغَىٰ": {
+  "38:22:11": {
+   "sense": "transgress",
+   "why": "one litigant wronged the other"
+  }
+ },
+ "بغي|1|بُغِىَ": {
+  "22:60:9": {
+   "sense": "wrong",
+   "why": "thumma bughiya alayhi: he is then wronged"
+  }
+ },
+ "بغي|1|تَبْغُوا۟": {
+  "4:34:33": {
+   "sense": "seek",
+   "why": "seek no way against wives who obey"
+  }
+ },
+ "بغي|1|تَبْغُونَهَا": {
+  "3:99:11": {
+   "sense": "seek",
+   "why": "seeking to make God's path crooked"
+  }
+ },
+ "بغي|1|فَبَغَىٰ": {
+  "28:76:7": {
+   "sense": "transgress",
+   "why": "Korah oppressed his people"
+  }
+ },
+ "بغي|1|لَيَبْغِى": {
+  "38:24:12": {
+   "sense": "transgress",
+   "why": "partners wrong one another"
+  }
+ },
+ "بغي|1|نَبْغِ": {
+  "18:64:5": {
+   "sense": "seek",
+   "why": "this is what we were seeking"
+  }
+ },
+ "بغي|1|نَبْغِى": {
+  "12:65:11": {
+   "sense": "desire",
+   "why": "what more could we desire (want)"
+  }
+ },
+ "بغي|1|وَتَبْغُونَهَا": {
+  "7:86:13": {
+   "sense": "seek",
+   "why": "seeking to make God's path crooked"
+  }
+ },
+ "بغي|1|وَيَبْغُونَ": {
+  "42:42:7": {
+   "sense": "transgress",
+   "why": "those who oppress and rebel wrongfully on earth"
+  }
+ },
+ "بغي|1|وَيَبْغُونَهَا": {
+  "11:19:6": {
+   "sense": "seek",
+   "why": "seeking to make God's path crooked"
+  },
+  "14:3:11": {
+   "sense": "seek",
+   "why": "seeking to make God's path crooked"
+  },
+  "7:45:6": {
+   "sense": "seek",
+   "why": "seeking to make God's path crooked"
+  }
+ },
+ "بغي|1|يَبْغُونَ": {
+  "10:23:5": {
+   "sense": "transgress",
+   "why": "they act wrongfully/rebel on earth after rescue"
+  },
+  "18:108:4": {
+   "sense": "desire",
+   "why": "no desire to leave Paradise"
+  },
+  "3:83:4": {
+   "sense": "desire",
+   "why": "desiring a religion other than God's"
+  },
+  "5:50:3": {
+   "sense": "desire",
+   "why": "desiring the judgment of ignorance"
+  }
+ },
+ "بغي|1|يَبْغُونَكُمُ": {
+  "9:47:10": {
+   "sense": "seek",
+   "why": "seeking to cause you discord"
+  }
+ },
+ "توب|1|أَتُوبُ": {
+  "2:160:7": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|تَابَ": {
+  "11:112:5": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "19:60:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "20:82:4": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "25:70:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "25:71:2": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "28:67:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "5:39:2": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "5:71:8": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "6:54:21": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "9:117:22": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "9:118:24": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|تَابَا": {
+  "4:16:6": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|تَابُوا۟": {
+  "16:119:9": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "24:5:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "2:160:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "3:89:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "40:7:22": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "4:146:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "5:34:3": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "7:153:5": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "9:11:2": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "9:5:16": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|تُبْتُ": {
+  "46:15:41": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "4:18:13": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "7:143:37": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|تُبْتُمْ": {
+  "2:279:10": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "9:3:17": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|تَّابَ": {
+  "9:117:2": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|لِيَتُوبُوٓا۟": {
+  "9:118:26": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|وَتَابَ": {
+  "58:13:11": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|وَتُبْ": {
+  "2:128:12": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|وَتُوبُوٓا۟": {
+  "24:31:71": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|وَيَتُوبَ": {
+  "33:73:7": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "4:26:10": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|وَيَتُوبُ": {
+  "9:15:4": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|يَتُبْ": {
+  "49:11:36": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "توب|1|يَتُوبَ": {
+  "33:24:10": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "3:128:7": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "4:27:4": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "9:102:12": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|يَتُوبُ": {
+  "25:71:6": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "4:17:14": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "5:39:9": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "9:106:8": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  },
+  "9:27:2": {
+   "sense": "accept-repentance",
+   "why": "God is subject, tāba ʿalā: He turned to them / accepted repentance"
+  }
+ },
+ "توب|1|يَتُوبُوا۟": {
+  "85:10:8": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  },
+  "9:74:26": {
+   "sense": "repent",
+   "why": "a person turns back to God in repentance"
+  }
+ },
+ "حصن|4|أُحْصِنَّ": {
+  "4:25:36": {
+   "sense": "marry",
+   "why": "After they are married, penalty for adultery is half"
+  }
+ },
+ "حصن|4|تُحْصِنُونَ": {
+  "12:48:15": {
+   "sense": "store",
+   "why": "mimma tuhsinun: the grain you store up"
+  }
+ },
+ "حلل|1|حَلَلْتُمْ": {
+  "5:2:25": {
+   "sense": "untie",
+   "why": "When released from ihram, you may hunt; ihram bond undone"
+  }
+ },
+ "حلل|1|يَحِلَّ": {
+  "20:86:20": {
+   "sense": "alight",
+   "why": "Wrath from your Lord descending upon you"
+  }
+ },
+ "حلل|1|يَحِلُّ": {
+  "2:228:7": {
+   "sense": "be-lawful",
+   "why": "Not lawful for them to conceal; legal ruling"
+  },
+  "2:229:9": {
+   "sense": "be-lawful",
+   "why": "Not lawful to take back what was given"
+  },
+  "33:52:2": {
+   "sense": "be-lawful",
+   "why": "Women are not lawful to you beyond these"
+  },
+  "4:19:5": {
+   "sense": "be-lawful",
+   "why": "Not lawful to inherit women against their will"
+  }
+ },
+ "حلل|1|يَحِلُّونَ": {
+  "60:10:25": {
+   "sense": "be-lawful",
+   "why": "Neither women lawful to disbelievers nor they to them"
+  }
+ },
+ "حلل|1|يَحْلِلْ": {
+  "20:81:13": {
+   "sense": "alight",
+   "why": "Divine wrath alighting/descending upon whoever transgresses"
+  }
+ },
+ "حيي|10|فَيَسْتَحْىِۦ": {
+  "33:53:32": {
+   "sense": "be-ashamed",
+   "why": "The Prophet is shy of asking guests to leave"
+  }
+ },
+ "حيي|10|وَنَسْتَحْىِۦ": {
+  "7:127:17": {
+   "sense": "keep-alive",
+   "why": "Kill their sons and let women live"
+  }
+ },
+ "حيي|10|وَيَسْتَحْىِۦ": {
+  "28:4:14": {
+   "sense": "keep-alive",
+   "why": "Slaughtering sons while sparing women"
+  }
+ },
+ "حيي|10|وَيَسْتَحْيُونَ": {
+  "14:6:19": {
+   "sense": "keep-alive",
+   "why": "Slaughtered sons and let women live"
+  },
+  "2:49:11": {
+   "sense": "keep-alive",
+   "why": "Pharaoh slaughtered sons, let women live"
+  },
+  "7:141:11": {
+   "sense": "keep-alive",
+   "why": "Pharaoh killed sons, kept women alive"
+  }
+ },
+ "حيي|10|وَٱسْتَحْيُوا۟": {
+  "40:25:12": {
+   "sense": "keep-alive",
+   "why": "Kill sons, let their women live"
+  }
+ },
+ "حيي|10|يَسْتَحْىِۦ": {
+  "33:53:36": {
+   "sense": "be-ashamed",
+   "why": "Allah is not shy of the truth"
+  }
+ },
+ "حيي|10|يَسْتَحْىِۦٓ": {
+  "2:26:4": {
+   "sense": "be-ashamed",
+   "why": "Allah is not ashamed to strike a parable"
+  }
+ },
+ "خلو|1|خَلَا": {
+  "2:76:8": {
+   "sense": "be-alone",
+   "why": "going apart in private to their devils"
+  },
+  "35:24:10": {
+   "sense": "pass-away",
+   "why": "a warner passed in every nation"
+  }
+ },
+ "خلو|1|خَلَتِ": {
+  "46:17:10": {
+   "sense": "pass-away",
+   "why": "generations passed before me"
+  },
+  "46:21:9": {
+   "sense": "pass-away",
+   "why": "warners passed before him"
+  }
+ },
+ "خلو|1|خَلَوْا۟": {
+  "10:102:7": {
+   "sense": "pass-away",
+   "why": "those who passed before you"
+  },
+  "24:34:9": {
+   "sense": "pass-away",
+   "why": "those who passed before you"
+  },
+  "2:14:8": {
+   "sense": "be-alone",
+   "why": "going apart in private to their devils"
+  },
+  "2:214:10": {
+   "sense": "pass-away",
+   "why": "those who passed before you"
+  },
+  "33:38:15": {
+   "sense": "pass-away",
+   "why": "those who passed before you"
+  },
+  "33:62:5": {
+   "sense": "pass-away",
+   "why": "those who passed before you"
+  },
+  "3:119:14": {
+   "sense": "be-alone",
+   "why": "going apart in private to their devils"
+  }
+ },
+ "خلو|1|يَخْلُ": {
+  "12:9:6": {
+   "sense": "be-free",
+   "why": "yakhlu lakum wajhu abikum: your father's attention will be free for you"
+  }
+ },
+ "دفع|1|دَفَعْتُمْ": {
+  "4:6:30": {
+   "sense": "hand-over",
+   "why": "When you hand over their property, call witnesses"
+  }
+ },
+ "دفع|1|فَٱدْفَعُوٓا۟": {
+  "4:6:11": {
+   "sense": "hand-over",
+   "why": "Hand over their property to them"
+  }
+ },
+ "دفع|1|ٱدْفَعُوا۟": {
+  "3:167:12": {
+   "sense": "repel",
+   "why": "Fight in Allah's way or repel the enemy"
+  }
+ },
+ "ذهب|1|تَذْهَبُوا۟": {
+  "12:13:5": {
+   "sense": "take-away",
+   "why": "ذهب بـ: take away/carry off the object"
+  }
+ },
+ "ذهب|1|تَذْهَبُونَ": {
+  "81:26:2": {
+   "sense": "go",
+   "why": "plain going/departing"
+  }
+ },
+ "ذهب|1|ذَهَبَتْ": {
+  "60:11:11": {
+   "sense": "go",
+   "why": "plain going/departing"
+  }
+ },
+ "ذهب|1|ذَهَبُوا۟": {
+  "12:15:2": {
+   "sense": "take-away",
+   "why": "ذهب بـ: take away/carry off the object"
+  }
+ },
+ "ذهب|1|ذَهَبْنَا": {
+  "12:17:4": {
+   "sense": "go",
+   "why": "plain going/departing"
+  }
+ },
+ "ذهب|1|ذَّهَبَ": {
+  "21:87:4": {
+   "sense": "go",
+   "why": "plain going/departing"
+  }
+ },
+ "ذهب|1|فَيَذْهَبُ": {
+  "13:17:30": {
+   "sense": "go",
+   "why": "the froth goes away as scum"
+  }
+ },
+ "ذهب|1|فَٱذْهَبْ": {
+  "20:97:2": {
+   "sense": "go",
+   "why": "plain going/departing"
+  },
+  "5:24:10": {
+   "sense": "go",
+   "why": "plain going/departing"
+  }
+ },
+ "ذهب|1|لَنَذْهَبَنَّ": {
+  "17:86:3": {
+   "sense": "take-away",
+   "why": "ذهب بـ: take away/carry off the object"
+  }
+ },
+ "ذهب|1|لِتَذْهَبُوا۟": {
+  "4:19:13": {
+   "sense": "take-away",
+   "why": "ذهب بـ: take away/carry off the object"
+  }
+ },
+ "ذهب|1|وَيَذْهَبَا": {
+  "20:63:11": {
+   "sense": "take-away",
+   "why": "ذهب بـ: take away/carry off the object"
+  }
+ },
+ "ذهب|1|يَذْهَبُ": {
+  "24:43:37": {
+   "sense": "take-away",
+   "why": "ذهب بـ: take away/carry off the object"
+  }
+ },
+ "ذهب|1|يَذْهَبُوا۟": {
+  "24:62:14": {
+   "sense": "go",
+   "why": "plain going/departing"
+  },
+  "33:20:4": {
+   "sense": "go",
+   "why": "plain going/departing"
+  }
+ },
+ "ذهب|1|ٱذْهَب": {
+  "27:28:1": {
+   "sense": "take",
+   "why": "idhhab bi-kitabi: take this letter of mine"
+  }
+ },
+ "ذهب|1|ٱذْهَبُوا۟": {
+  "12:87:2": {
+   "sense": "go",
+   "why": "plain going/departing"
+  },
+  "12:93:1": {
+   "sense": "take",
+   "why": "idhhabu bi-qamisi: take my shirt (to my father)"
+  }
+ },
+ "رمي|1|رَمَىٰ": {
+  "8:17:12": {
+   "sense": "throw",
+   "why": "Allah's act in the throw of dust"
+  }
+ },
+ "رمي|1|رَمَيْتَ": {
+  "8:17:7": {
+   "sense": "throw",
+   "why": "You threw the handful of dust at Badr"
+  },
+  "8:17:9": {
+   "sense": "throw",
+   "why": "When you threw the dust"
+  }
+ },
+ "رمي|1|يَرْمُونَ": {
+  "24:23:3": {
+   "sense": "accuse",
+   "why": "Those who accuse chaste believing women"
+  },
+  "24:4:2": {
+   "sense": "accuse",
+   "why": "Those who accuse chaste women without four witnesses"
+  },
+  "24:6:2": {
+   "sense": "accuse",
+   "why": "Those who accuse their spouses without witnesses"
+  }
+ },
+ "رمي|1|يَرْمِ": {
+  "4:112:7": {
+   "sense": "accuse",
+   "why": "Casts blame on an innocent person, a slander"
+  }
+ },
+ "سلم|2|سَلَّمَ": {
+  "8:43:16": {
+   "sense": "save",
+   "why": "Allah saved you from failure and dispute"
+  }
+ },
+ "سلم|2|سَلَّمْتُم": {
+  "2:233:53": {
+   "sense": "hand-over",
+   "why": "Hand over what you gave to wet-nurses"
+  }
+ },
+ "سلم|2|فَسَلِّمُوا۟": {
+  "24:61:61": {
+   "sense": "greet",
+   "why": "Greet each other when entering houses"
+  }
+ },
+ "سلم|2|وَتُسَلِّمُوا۟": {
+  "24:27:11": {
+   "sense": "greet",
+   "why": "Greet the people of the house"
+  }
+ },
+ "سلم|2|وَسَلِّمُوا۟": {
+  "33:56:12": {
+   "sense": "greet",
+   "why": "Invoke peace on him with salutation"
+  }
+ },
+ "سلم|2|وَيُسَلِّمُوا۟": {
+  "4:65:18": {
+   "sense": "submit",
+   "why": "And submit fully to your judgment"
+  }
+ },
+ "سوي|8|لِتَسْتَوُۥا۟": {
+  "43:13:1": {
+   "sense": "settle",
+   "why": "sitting firmly upon the mounts"
+  }
+ },
+ "سوي|8|وَٱسْتَوَتْ": {
+  "11:44:11": {
+   "sense": "settle",
+   "why": "ark came to rest on al-Judi"
+  }
+ },
+ "سوي|8|وَٱسْتَوَىٰٓ": {
+  "28:14:4": {
+   "sense": "mature",
+   "why": "Moses reached full strength and maturity"
+  }
+ },
+ "سوي|8|يَسْتَوُۥنَ": {
+  "16:75:21": {
+   "sense": "be-equal",
+   "why": "\"are they equal?\" comparing two parties"
+  },
+  "32:18:8": {
+   "sense": "be-equal",
+   "why": "\"are they equal?\" comparing two parties"
+  },
+  "9:19:17": {
+   "sense": "be-equal",
+   "why": "\"are they equal?\" comparing two parties"
+  }
+ },
+ "سوي|8|يَسْتَوِىٓ": {
+  "59:20:2": {
+   "sense": "be-equal",
+   "why": "\"are they equal?\" comparing two parties"
+  }
+ },
+ "سوي|8|يَسْتَوِيَانِ": {
+  "11:24:8": {
+   "sense": "be-equal",
+   "why": "\"are they equal?\" comparing two parties"
+  },
+  "39:29:12": {
+   "sense": "be-equal",
+   "why": "\"are they equal?\" comparing two parties"
+  }
+ },
+ "سوي|8|ٱسْتَوَىٰ": {
+  "10:3:12": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  },
+  "13:2:9": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  },
+  "20:5:4": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  },
+  "25:59:11": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  },
+  "32:4:12": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  },
+  "57:4:10": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  },
+  "7:54:12": {
+   "sense": "rise",
+   "why": "istawa over the Throne: rose/ascended above it"
+  }
+ },
+ "سوي|8|ٱسْتَوَىٰٓ": {
+  "2:29:10": {
+   "sense": "rise",
+   "why": "God rose/turned towards the heaven"
+  },
+  "41:11:2": {
+   "sense": "rise",
+   "why": "God rose/turned towards the heaven"
+  }
+ },
+ "سوي|8|ٱسْتَوَيْتَ": {
+  "23:28:2": {
+   "sense": "settle",
+   "why": "settling aboard the ark"
+  }
+ },
+ "سوي|8|ٱسْتَوَيْتُمْ": {
+  "43:13:9": {
+   "sense": "settle",
+   "why": "sitting firmly upon the mounts"
+  }
+ },
+ "صدق|1|صَدَقَ": {
+  "3:95:2": {
+   "sense": "tell-truth",
+   "why": "Allah declares His word true, not a promise kept"
+  },
+  "48:27:2": {
+   "sense": "fulfil",
+   "why": "Allah made the vision come true for His messenger"
+  }
+ },
+ "صدق|1|صَدَقَكُمُ": {
+  "3:152:2": {
+   "sense": "fulfil",
+   "why": "Allah made good His promise (wa'dahu) to you at Uhud"
+  }
+ },
+ "صدق|1|صَدَقَنَا": {
+  "39:74:5": {
+   "sense": "fulfil",
+   "why": "Allah made good His promise to them, with wa'dahu"
+  }
+ },
+ "صدق|1|صَدَقُوا۟": {
+  "29:3:9": {
+   "sense": "tell-truth",
+   "why": "those who spoke truth vs liars"
+  },
+  "2:177:48": {
+   "sense": "tell-truth",
+   "why": "the truthful ones (sincere in faith)"
+  },
+  "33:23:4": {
+   "sense": "fulfil",
+   "why": "true to the covenant with God"
+  },
+  "47:21:8": {
+   "sense": "fulfil",
+   "why": "if they had been true to God"
+  },
+  "9:43:11": {
+   "sense": "tell-truth",
+   "why": "those who spoke truth vs liars"
+  }
+ },
+ "صدق|1|صَدَقْتَنَا": {
+  "5:113:11": {
+   "sense": "tell-truth",
+   "why": "Disciples want to know Jesus has told them the truth"
+  }
+ },
+ "صدق|1|صَدَقْنَٰهُمُ": {
+  "21:9:2": {
+   "sense": "fulfil",
+   "why": "Allah made good the promise (al-wa'd), then saved them"
+  }
+ },
+ "صدق|1|فَصَدَقَتْ": {
+  "12:26:16": {
+   "sense": "tell-truth",
+   "why": "If shirt torn from front, she spoke truth versus lying"
+  }
+ },
+ "صدق|1|وَصَدَقَ": {
+  "33:22:11": {
+   "sense": "tell-truth",
+   "why": "Believers affirm Allah and His Messenger spoke truth about the clans"
+  },
+  "36:52:11": {
+   "sense": "tell-truth",
+   "why": "The messengers spoke truth about resurrection; parallel to promise"
+  }
+ },
+ "صدق|2|صَدَّقْتَ": {
+  "37:105:2": {
+   "sense": "fulfil",
+   "why": "Abraham has carried out the vision"
+  }
+ },
+ "صدق|2|وَصَدَّقَ": {
+  "37:37:4": {
+   "sense": "confirm",
+   "why": "He brought the truth and confirmed the earlier messengers"
+  },
+  "39:33:4": {
+   "sense": "believe",
+   "why": "One who brought truth and he who believes in it"
+  },
+  "92:6:1": {
+   "sense": "believe",
+   "why": "Believes in the best reward (al-husna)"
+  }
+ },
+ "صدق|2|وَصَدَّقَتْ": {
+  "66:12:11": {
+   "sense": "believe",
+   "why": "Mary believed in the words of her Lord and His books"
+  }
+ },
+ "صدق|2|يُصَدِّقُنِىٓ": {
+  "28:34:10": {
+   "sense": "confirm",
+   "why": "Moses asks for Aaron as helper to confirm him"
+  }
+ },
+ "صدق|2|يُصَدِّقُونَ": {
+  "70:26:2": {
+   "sense": "believe",
+   "why": "Those who believe in the Day of Judgment"
+  }
+ },
+ "صلو|2|صَلَّىٰ": {
+  "75:31:4": {
+   "sense": "pray",
+   "why": "Neither believed nor prayed"
+  }
+ },
+ "صلو|2|صَلُّوا۟": {
+  "33:56:10": {
+   "sense": "pray",
+   "why": "Believers are told to invoke prayer on him; their salat is du'a"
+  }
+ },
+ "صلو|2|فَصَلَّىٰ": {
+  "87:15:4": {
+   "sense": "pray",
+   "why": "Remembered his Lord's name and prayed"
+  }
+ },
+ "صلو|2|فَلْيُصَلُّوا۟": {
+  "4:102:23": {
+   "sense": "pray",
+   "why": "Let them pray with you in fear prayer"
+  }
+ },
+ "صلو|2|وَصَلِّ": {
+  "9:103:8": {
+   "sense": "pray",
+   "why": "Prophet is told to pray for them; his salat is comfort"
+  }
+ },
+ "صلو|2|يُصَلُّوا۟": {
+  "4:102:22": {
+   "sense": "pray",
+   "why": "Group that has not yet prayed"
+  }
+ },
+ "صلو|2|يُصَلُّونَ": {
+  "33:56:4": {
+   "sense": "bless",
+   "why": "Allah and angels send blessings on the Prophet"
+  }
+ },
+ "صلو|2|يُصَلِّى": {
+  "33:43:3": {
+   "sense": "bless",
+   "why": "Allah and His angels send blessings on believers to bring them to light"
+  },
+  "3:39:5": {
+   "sense": "pray",
+   "why": "Zechariah standing praying in the sanctuary"
+  }
+ },
+ "ضرب|1|تَضْرِبُوا۟": {
+  "16:74:2": {
+   "sense": "set-forth",
+   "why": "do not coin similitudes for Allah"
+  }
+ },
+ "ضرب|1|ضَرَبَ": {
+  "14:24:4": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "16:75:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "30:28:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "39:29:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "43:17:5": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "66:10:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  }
+ },
+ "ضرب|1|ضَرَبُوا۟": {
+  "17:48:3": {
+   "sense": "set-forth",
+   "why": "they coin similitudes (al-amthal) for you"
+  },
+  "25:9:3": {
+   "sense": "set-forth",
+   "why": "they coin similitudes (al-amthal) for you"
+  },
+  "3:156:11": {
+   "sense": "travel",
+   "why": "'in the land / in the way of Allah': journeying, travelling"
+  }
+ },
+ "ضرب|1|ضَرَبُوهُ": {
+  "43:58:7": {
+   "sense": "set-forth",
+   "why": "they only put forward him (Isa) as an example for argument"
+  }
+ },
+ "ضرب|1|ضَرَبْتُمْ": {
+  "4:101:2": {
+   "sense": "travel",
+   "why": "'in the land / in the way of Allah': journeying, travelling"
+  },
+  "4:94:5": {
+   "sense": "travel",
+   "why": "'in the land / in the way of Allah': journeying, travelling"
+  },
+  "5:106:22": {
+   "sense": "travel",
+   "why": "'in the land / in the way of Allah': journeying, travelling"
+  }
+ },
+ "ضرب|1|ضَرَبْنَا": {
+  "25:39:2": {
+   "sense": "set-forth",
+   "why": "We have set forth examples/parables for mankind"
+  },
+  "30:58:2": {
+   "sense": "set-forth",
+   "why": "We have set forth examples/parables for mankind"
+  },
+  "39:27:2": {
+   "sense": "set-forth",
+   "why": "We have set forth examples/parables for mankind"
+  }
+ },
+ "ضرب|1|ضُرِبَ": {
+  "22:73:3": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth"
+  },
+  "43:57:2": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth"
+  }
+ },
+ "ضرب|1|ضُرِبَتْ": {
+  "3:112:1": {
+   "sense": "impose",
+   "why": "duribat alayhim adh-dhillah: humiliation was imposed on them"
+  }
+ },
+ "ضرب|1|فَضُرِبَ": {
+  "57:13:16": {
+   "sense": "set-up",
+   "why": "duriba baynahum bi-surin: a wall is set up between them"
+  }
+ },
+ "ضرب|1|فَٱضْرِب": {
+  "38:44:4": {
+   "sense": "strike",
+   "why": "strike with the bundle of grass (Ayyub's oath)"
+  }
+ },
+ "ضرب|1|فَٱضْرِبُوا۟": {
+  "8:12:17": {
+   "sense": "strike",
+   "why": "strike above the necks and every fingertip in battle"
+  }
+ },
+ "ضرب|1|فَٱضْرِبْ": {
+  "20:77:8": {
+   "sense": "strike",
+   "why": "strike a dry path for them through the sea"
+  }
+ },
+ "ضرب|1|نَضْرِبُهَا": {
+  "29:43:3": {
+   "sense": "set-forth",
+   "why": "these parables We set forth for mankind"
+  },
+  "59:21:15": {
+   "sense": "set-forth",
+   "why": "these parables We set forth for mankind"
+  }
+ },
+ "ضرب|1|وَضَرَبَ": {
+  "16:112:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "16:76:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "36:78:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  },
+  "66:11:1": {
+   "sense": "set-forth",
+   "why": "a parable/example is set forth (mathal)"
+  }
+ },
+ "ضرب|1|وَضَرَبْنَا": {
+  "14:45:12": {
+   "sense": "set-forth",
+   "why": "We set forth examples for you"
+  }
+ },
+ "ضرب|1|وَضُرِبَتْ": {
+  "2:61:37": {
+   "sense": "impose",
+   "why": "duribat alayhim adh-dhillah: humiliation was imposed on them"
+  },
+  "3:112:18": {
+   "sense": "impose",
+   "why": "duribat alayhim adh-dhillah: humiliation was imposed on them"
+  }
+ },
+ "ضرب|1|وَلْيَضْرِبْنَ": {
+  "24:31:15": {
+   "sense": "draw",
+   "why": "let them draw their head-coverings over their bosoms"
+  }
+ },
+ "ضرب|1|وَيَضْرِبُ": {
+  "14:25:7": {
+   "sense": "set-forth",
+   "why": "Allah sets forth parables for mankind"
+  },
+  "24:35:41": {
+   "sense": "set-forth",
+   "why": "Allah sets forth parables for mankind"
+  }
+ },
+ "ضرب|1|وَٱضْرِبُوا۟": {
+  "8:12:20": {
+   "sense": "strike",
+   "why": "strike above the necks and every fingertip in battle"
+  }
+ },
+ "ضرب|1|وَٱضْرِبُوهُنَّ": {
+  "4:34:29": {
+   "sense": "strike",
+   "why": "strike the disobedient wives (light, last resort)"
+  }
+ },
+ "ضرب|1|يَضْرِبَ": {
+  "2:26:6": {
+   "sense": "set-forth",
+   "why": "Allah is not ashamed to set forth a parable"
+  }
+ },
+ "ضرب|1|يَضْرِبُ": {
+  "13:17:24": {
+   "sense": "set-forth",
+   "why": "Allah sets forth truth/falsehood, parables, for mankind"
+  },
+  "13:17:40": {
+   "sense": "set-forth",
+   "why": "Allah sets forth truth/falsehood, parables, for mankind"
+  },
+  "47:3:15": {
+   "sense": "set-forth",
+   "why": "Allah sets forth truth/falsehood, parables, for mankind"
+  }
+ },
+ "ضرب|1|يَضْرِبْنَ": {
+  "24:31:64": {
+   "sense": "strike",
+   "why": "do not stamp/strike their feet to reveal hidden adornment"
+  }
+ },
+ "ضرب|1|ٱضْرِب": {
+  "26:63:5": {
+   "sense": "strike",
+   "why": "Moses told to strike the sea with his staff"
+  },
+  "2:60:6": {
+   "sense": "strike",
+   "why": "Moses told to strike the rock with his staff"
+  },
+  "7:160:13": {
+   "sense": "strike",
+   "why": "Moses told to strike the rock with his staff"
+  }
+ },
+ "ضرب|1|ٱضْرِبُوهُ": {
+  "2:73:2": {
+   "sense": "strike",
+   "why": "strike the dead man with part of the cow"
+  }
+ },
+ "ظهر|1|ظَهَرَ": {
+  "24:31:13": {
+   "sense": "appear",
+   "why": "Adornment that is apparent of itself"
+  },
+  "30:41:1": {
+   "sense": "appear",
+   "why": "Corruption has become evident on land and sea"
+  },
+  "6:151:26": {
+   "sense": "appear",
+   "why": "Indecencies that are open versus hidden"
+  },
+  "7:33:7": {
+   "sense": "appear",
+   "why": "Open versus hidden indecencies"
+  }
+ },
+ "ظهر|1|وَظَهَرَ": {
+  "9:48:12": {
+   "sense": "appear",
+   "why": "The command of Allah became manifest"
+  }
+ },
+ "ظهر|1|يَظْهَرُوا۟": {
+  "18:20:3": {
+   "sense": "prevail",
+   "why": "If they gain mastery over you they will stone you"
+  },
+  "24:31:59": {
+   "sense": "be-aware",
+   "why": "lam yazharu ala awrat: not yet aware of women's privacy"
+  },
+  "9:8:3": {
+   "sense": "prevail",
+   "why": "If they gain the upper hand over you"
+  }
+ },
+ "ظهر|1|يَظْهَرُونَ": {
+  "43:33:17": {
+   "sense": "scale",
+   "why": "Stairways on which they ascend"
+  }
+ },
+ "ظهر|3|تُظَٰهِرُونَ": {
+  "33:4:13": {
+   "sense": "zihar",
+   "why": "Wives you pronounce zihar upon, not mothers"
+  }
+ },
+ "ظهر|3|ظَٰهَرُوهُم": {
+  "33:26:3": {
+   "sense": "back",
+   "why": "People of the Book who backed them"
+  }
+ },
+ "ظهر|3|وَظَٰهَرُوا۟": {
+  "60:9:12": {
+   "sense": "back",
+   "why": "Supported the expulsion"
+  }
+ },
+ "ظهر|3|يُظَٰهِرُوا۟": {
+  "9:4:11": {
+   "sense": "back",
+   "why": "Did not support anyone against you"
+  }
+ },
+ "ظهر|3|يُظَٰهِرُونَ": {
+  "58:2:2": {
+   "sense": "zihar",
+   "why": "Pronouncing mothers' backs on their wives"
+  },
+  "58:3:2": {
+   "sense": "zihar",
+   "why": "Men pronouncing zihar from wives, then retracting"
+  }
+ },
+ "ظهر|4|تُظْهِرُونَ": {
+  "30:18:8": {
+   "sense": "reach-noon",
+   "why": "hina tuzhirun: when you enter the noon, beside the evening"
+  }
+ },
+ "ظهر|4|لِيُظْهِرَهُۥ": {
+  "48:28:8": {
+   "sense": "make-prevail",
+   "why": "So He may make it prevail over all religion"
+  },
+  "61:9:8": {
+   "sense": "make-prevail",
+   "why": "So He may make it prevail over all religion"
+  },
+  "9:33:8": {
+   "sense": "make-prevail",
+   "why": "So He may make it prevail over all religion"
+  }
+ },
+ "ظهر|4|وَأَظْهَرَهُ": {
+  "66:3:11": {
+   "sense": "show",
+   "why": "Allah made the Prophet aware of her disclosure; closest is show"
+  }
+ },
+ "ظهر|4|يُظْهِرَ": {
+  "40:26:15": {
+   "sense": "show",
+   "why": "Fears he will cause corruption to appear in the land"
+  }
+ },
+ "عدل|1|تَعْدِلُوا۟": {
+  "4:129:4": {
+   "sense": "be-just",
+   "why": "Cannot be just between wives"
+  },
+  "4:135:27": {
+   "sense": "be-just",
+   "why": "Do not follow desire so as not to be just"
+  },
+  "4:3:19": {
+   "sense": "be-just",
+   "why": "Fear not being just among wives, so marry one"
+  },
+  "5:8:15": {
+   "sense": "be-just",
+   "why": "Hatred of a people must not stop you being just"
+  }
+ },
+ "عدل|1|فَٱعْدِلُوا۟": {
+  "6:152:23": {
+   "sense": "be-just",
+   "why": "When you speak, be just even to kin"
+  }
+ },
+ "عدل|1|لِأَعْدِلَ": {
+  "42:15:17": {
+   "sense": "be-just",
+   "why": "Commanded to be just among you"
+  }
+ },
+ "عدل|1|ٱعْدِلُوا۟": {
+  "5:8:16": {
+   "sense": "be-just",
+   "why": "Command: be just, nearer to piety"
+  }
+ },
+ "عرض|1|تُعْرَضُونَ": {
+  "69:18:2": {
+   "sense": "present",
+   "why": "You are presented for reckoning; nothing hidden"
+  }
+ },
+ "عرض|1|عَرَضَهُمْ": {
+  "2:31:6": {
+   "sense": "present",
+   "why": "Allah presented the named things before the angels"
+  }
+ },
+ "عرض|1|عَرَضْنَا": {
+  "33:72:2": {
+   "sense": "offer",
+   "why": "Allah offered the trust to heavens and earth, who declined"
+  }
+ },
+ "عرض|1|عُرِضَ": {
+  "38:31:2": {
+   "sense": "present",
+   "why": "Swift steeds were displayed/presented before Solomon in the evening"
+  }
+ },
+ "عرض|1|وَعُرِضُوا۟": {
+  "18:48:1": {
+   "sense": "present",
+   "why": "All are presented before your Lord in rows"
+  }
+ },
+ "عرض|1|يُعْرَضُ": {
+  "46:20:2": {
+   "sense": "present",
+   "why": "Disbelievers presented to the Fire"
+  },
+  "46:34:2": {
+   "sense": "present",
+   "why": "Disbelievers presented to the Fire"
+  }
+ },
+ "عرض|1|يُعْرَضُونَ": {
+  "11:18:9": {
+   "sense": "present",
+   "why": "Liars are presented before their Lord for judgment"
+  },
+  "40:46:2": {
+   "sense": "present",
+   "why": "Pharaoh's people are presented to the Fire morning and evening"
+  },
+  "42:45:2": {
+   "sense": "present",
+   "why": "Wrongdoers presented to the Fire, humbled"
+  }
+ },
+ "غني|4|أَغْنَتْ": {
+  "11:101:7": {
+   "sense": "avail",
+   "why": "their gods did not avail them"
+  }
+ },
+ "غني|4|أَغْنَىٰ": {
+  "111:2:2": {
+   "sense": "avail",
+   "why": "his wealth will not benefit him when he perishes"
+  },
+  "15:84:2": {
+   "sense": "avail",
+   "why": "what they earned did not benefit them"
+  },
+  "26:207:2": {
+   "sense": "avail",
+   "why": "what they earned did not benefit them"
+  },
+  "39:50:7": {
+   "sense": "avail",
+   "why": "what they earned did not benefit them"
+  },
+  "40:82:21": {
+   "sense": "avail",
+   "why": "what they earned did not benefit them"
+  },
+  "46:26:13": {
+   "sense": "avail",
+   "why": "their hearing and sight did not benefit them"
+  },
+  "53:48:3": {
+   "sense": "enrich",
+   "why": "\"it is He who enriches and gives contentment\""
+  },
+  "69:28:2": {
+   "sense": "avail",
+   "why": "his wealth will not benefit him when he perishes"
+  },
+  "7:48:9": {
+   "sense": "avail",
+   "why": "their multitude did not benefit them"
+  }
+ },
+ "غني|4|أُغْنِى": {
+  "12:67:13": {
+   "sense": "avail",
+   "why": "\"I cannot avail you against God at all\""
+  }
+ },
+ "غني|4|يُغْنُوا۟": {
+  "45:19:3": {
+   "sense": "avail",
+   "why": "they can avail you nothing against God"
+  }
+ },
+ "غني|4|يُغْنِ": {
+  "4:130:3": {
+   "sense": "enrich",
+   "why": "God will enrich each from His abundance"
+  }
+ },
+ "غني|4|يُغْنِهِمُ": {
+  "24:32:11": {
+   "sense": "enrich",
+   "why": "if poor, God will enrich them from His bounty"
+  }
+ },
+ "غني|4|يُغْنِى": {
+  "10:36:9": {
+   "sense": "avail",
+   "why": "not avail: conjecture gives no benefit against truth"
+  },
+  "12:68:9": {
+   "sense": "avail",
+   "why": "would not have availed against God's decree"
+  },
+  "19:42:13": {
+   "sense": "avail",
+   "why": "idol cannot benefit the worshipper at all"
+  },
+  "44:41:3": {
+   "sense": "avail",
+   "why": "friend cannot avail friend on that Day"
+  },
+  "45:10:5": {
+   "sense": "avail",
+   "why": "their earnings will not benefit them in Hell"
+  },
+  "52:46:3": {
+   "sense": "avail",
+   "why": "their scheming will not benefit them that Day"
+  },
+  "53:28:13": {
+   "sense": "avail",
+   "why": "not avail: conjecture gives no benefit against truth"
+  },
+  "77:31:4": {
+   "sense": "avail",
+   "why": "no relief from the flame"
+  },
+  "88:7:4": {
+   "sense": "avail",
+   "why": "does not relieve hunger"
+  },
+  "92:11:2": {
+   "sense": "avail",
+   "why": "his wealth will not benefit him when he perishes"
+  }
+ },
+ "غني|4|يُغْنِيكُمُ": {
+  "9:28:18": {
+   "sense": "enrich",
+   "why": "God will enrich you from His bounty"
+  }
+ },
+ "غني|4|يُغْنِيهِ": {
+  "80:37:6": {
+   "sense": "occupy",
+   "why": "sha'nun yughnihi: a concern enough to occupy him"
+  }
+ },
+ "غني|4|يُغْنِيَا": {
+  "66:10:18": {
+   "sense": "avail",
+   "why": "the two wives did not avail them against God"
+  }
+ },
+ "غني|4|يُغْنِيَهُمُ": {
+  "24:33:7": {
+   "sense": "enrich",
+   "why": "until God enriches them from His bounty"
+  }
+ },
+ "فتح|1|فَتَحَ": {
+  "2:76:15": {
+   "sense": "open",
+   "why": "what God has disclosed/opened to you"
+  }
+ },
+ "فتح|1|فَتَحُوا۟": {
+  "12:65:2": {
+   "sense": "open",
+   "why": "they opened their baggage"
+  }
+ },
+ "فتح|1|فَفَتَحْنَآ": {
+  "54:11:1": {
+   "sense": "open",
+   "why": "We opened the gates of heaven"
+  }
+ },
+ "فتح|1|فُتِحَتْ": {
+  "21:96:3": {
+   "sense": "open",
+   "why": "Gog and Magog opened/let loose"
+  },
+  "39:71:10": {
+   "sense": "open",
+   "why": "gates opened"
+  }
+ },
+ "فتح|1|وَفُتِحَتِ": {
+  "78:19:1": {
+   "sense": "open",
+   "why": "the heaven is opened"
+  }
+ },
+ "فتح|1|وَفُتِحَتْ": {
+  "39:73:11": {
+   "sense": "open",
+   "why": "gates opened"
+  }
+ },
+ "فتح|1|يَفْتَحِ": {
+  "35:2:2": {
+   "sense": "open",
+   "why": "what God opens of mercy"
+  }
+ },
+ "فتح|1|ٱفْتَحْ": {
+  "7:89:35": {
+   "sense": "judge",
+   "why": "\"decide between us and our people\""
+  }
+ },
+ "فتن|1|تُفْتَنُونَ": {
+  "27:47:13": {
+   "sense": "test",
+   "why": "you are a people being tested"
+  }
+ },
+ "فتن|1|فَتَنتُمْ": {
+  "57:14:8": {
+   "sense": "tempt",
+   "why": "you led yourselves astray (hypocrites)"
+  }
+ },
+ "فتن|1|فَتَنُوا۟": {
+  "85:10:3": {
+   "sense": "persecute",
+   "why": "those who persecute believers to turn them back"
+  }
+ },
+ "فتن|1|فَتَنَّٰهُ": {
+  "38:24:27": {
+   "sense": "test",
+   "why": "David realised We had tried him"
+  }
+ },
+ "فتن|1|فُتِنتُم": {
+  "20:90:9": {
+   "sense": "tempt",
+   "why": "Samiri seduced them with the calf"
+  }
+ },
+ "فتن|1|فُتِنُوا۟": {
+  "16:110:9": {
+   "sense": "persecute",
+   "why": "persecuted for faith before emigrating"
+  }
+ },
+ "فتن|1|لَيَفْتِنُونَكَ": {
+  "17:73:3": {
+   "sense": "tempt",
+   "why": "nearly seduced you away from revelation"
+  }
+ },
+ "فتن|1|لِنَفْتِنَهُمْ": {
+  "20:131:13": {
+   "sense": "test",
+   "why": "test them with worldly splendour"
+  }
+ },
+ "فتن|1|وَفَتَنَّٰكَ": {
+  "20:40:23": {
+   "sense": "test",
+   "why": "We tried you with trials"
+  }
+ },
+ "فتن|1|يَفْتِنَكُمُ": {
+  "4:101:15": {
+   "sense": "persecute",
+   "why": "disbelievers harassing believers during prayer"
+  }
+ },
+ "فتن|1|يَفْتِنَهُمْ": {
+  "10:83:14": {
+   "sense": "persecute",
+   "why": "fear Pharaoh would persecute them for faith"
+  }
+ },
+ "فتن|1|يَفْتِنُوكَ": {
+  "5:49:12": {
+   "sense": "tempt",
+   "why": "lest they lead you away from part of revelation"
+  }
+ },
+ "فتن|1|يُفْتَنُونَ": {
+  "29:2:10": {
+   "sense": "test",
+   "why": "believers will be tried"
+  },
+  "51:13:5": {
+   "sense": "torment",
+   "why": "tormented over the Fire"
+  },
+  "9:126:4": {
+   "sense": "test",
+   "why": "tested every year"
+  }
+ },
+ "فصل|1|فَصَلَ": {
+  "2:249:2": {
+   "sense": "set-out",
+   "why": "Saul set out with the army"
+  }
+ },
+ "فيض|4|أَفَضْتُم": {
+  "2:198:10": {
+   "sense": "depart",
+   "why": "When you pour out from Arafat"
+  }
+ },
+ "فيض|4|أَفَضْتُمْ": {
+  "24:14:12": {
+   "sense": "engage",
+   "why": "The matter you plunged into (the slander)"
+  }
+ },
+ "فيض|4|تُفِيضُونَ": {
+  "10:61:19": {
+   "sense": "engage",
+   "why": "You are absorbed in the deed"
+  },
+  "46:8:16": {
+   "sense": "engage",
+   "why": "Allah knows what you immerse yourselves in"
+  }
+ },
+ "قبض|1|فَقَبَضْتُ": {
+  "20:96:7": {
+   "sense": "seize",
+   "why": "I took a handful from the Messenger's track"
+  }
+ },
+ "قبض|1|وَيَقْبِضُونَ": {
+  "9:67:11": {
+   "sense": "withhold",
+   "why": "They close their hands from spending"
+  }
+ },
+ "قبض|1|وَيَقْبِضْنَ": {
+  "67:19:7": {
+   "sense": "close",
+   "why": "Birds spread and fold their wings"
+  }
+ },
+ "قبض|1|يَقْبِضُ": {
+  "2:245:13": {
+   "sense": "withhold",
+   "why": "Allah withholds and extends provision"
+  }
+ },
+ "قدر|1|تَقْدِرُوا۟": {
+  "48:21:3": {
+   "sense": "be-able",
+   "why": "gains you were not able to achieve"
+  },
+  "5:34:7": {
+   "sense": "be-able",
+   "why": "before you gain power over them"
+  }
+ },
+ "قدر|1|فَقَدَرَ": {
+  "89:16:5": {
+   "sense": "restrict",
+   "why": "He restricts his provision"
+  }
+ },
+ "قدر|1|قَدَرُوا۟": {
+  "22:74:2": {
+   "sense": "appraise",
+   "why": "they did not appraise God with true appraisal"
+  },
+  "39:67:2": {
+   "sense": "appraise",
+   "why": "they did not appraise God with true appraisal"
+  },
+  "6:91:2": {
+   "sense": "appraise",
+   "why": "they did not appraise God with true appraisal"
+  }
+ },
+ "قدر|1|قُدِرَ": {
+  "54:12:9": {
+   "sense": "decree",
+   "why": "amrin qad qudir: a matter already decreed"
+  },
+  "65:7:7": {
+   "sense": "restrict",
+   "why": "whose provision is restricted"
+  }
+ },
+ "قدر|1|نَّقْدِرَ": {
+  "21:87:9": {
+   "sense": "decree",
+   "why": "an lan naqdira alayhi: that We would not decree (hardship) upon him"
+  }
+ },
+ "قدر|1|وَيَقْدِرُ": {
+  "13:26:6": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "17:30:7": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "28:82:15": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "29:62:8": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "30:37:9": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "34:36:8": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "34:39:10": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "39:52:9": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  },
+  "42:12:9": {
+   "sense": "restrict",
+   "why": "God expands and restricts provision"
+  }
+ },
+ "قدر|1|يَقْدِرُ": {
+  "16:75:7": {
+   "sense": "be-able",
+   "why": "slave/dumb man has no power over anything"
+  },
+  "16:76:8": {
+   "sense": "be-able",
+   "why": "slave/dumb man has no power over anything"
+  }
+ },
+ "قدر|1|يَقْدِرُونَ": {
+  "14:18:14": {
+   "sense": "be-able",
+   "why": "they have no power over what they earned"
+  },
+  "2:264:29": {
+   "sense": "be-able",
+   "why": "they have no power over what they earned"
+  },
+  "57:29:6": {
+   "sense": "be-able",
+   "why": "they control nothing of God's bounty"
+  }
+ },
+ "قرب|2|قَرَّبَا": {
+  "5:27:8": {
+   "sense": "offer",
+   "why": "Both offered a sacrifice, one accepted"
+  }
+ },
+ "قرب|2|لِيُقَرِّبُونَآ": {
+  "39:3:13": {
+   "sense": "bring-near",
+   "why": "To bring us nearer to Allah"
+  }
+ },
+ "قرب|2|وَقَرَّبْنَٰهُ": {
+  "19:52:6": {
+   "sense": "bring-near",
+   "why": "We brought him near in intimate converse"
+  }
+ },
+ "قضي|1|فَقَضَىٰ": {
+  "28:15:28": {
+   "sense": "kill",
+   "why": "fa-qada alayhi: Musa's blow killed him"
+  }
+ },
+ "قضي|1|فَقَضَىٰهُنَّ": {
+  "41:12:1": {
+   "sense": "decree",
+   "why": "He ordained them as seven heavens"
+  }
+ },
+ "قضي|1|فَٱقْضِ": {
+  "20:72:11": {
+   "sense": "decree",
+   "why": "decree what you will decree (Pharaoh to magicians)"
+  }
+ },
+ "قضي|1|قَضَوْا۟": {
+  "33:37:42": {
+   "sense": "fulfil",
+   "why": "when they have fulfilled their need of them"
+  }
+ },
+ "قضي|1|قَضَى": {
+  "33:36:7": {
+   "sense": "decree",
+   "why": "God and His Messenger decreed a matter"
+  }
+ },
+ "قضي|1|قَضَىٰ": {
+  "28:29:2": {
+   "sense": "fulfil",
+   "why": "Musa fulfilled the term"
+  },
+  "33:23:11": {
+   "sense": "fulfil",
+   "why": "fulfilled his vow (nahb) by death"
+  },
+  "33:37:27": {
+   "sense": "fulfil",
+   "why": "Zayd fulfilled his need of her"
+  },
+  "39:42:13": {
+   "sense": "decree",
+   "why": "God decreed death upon that soul"
+  }
+ },
+ "قضي|1|قَضَىٰهَا": {
+  "12:68:20": {
+   "sense": "fulfil",
+   "why": "Yaqub fulfilled a need of his soul"
+  }
+ },
+ "قضي|1|قَضَىٰٓ": {
+  "19:35:10": {
+   "sense": "decree",
+   "why": "God decrees a thing, \"Be!\""
+  },
+  "2:117:5": {
+   "sense": "decree",
+   "why": "God decrees a thing, \"Be!\""
+  },
+  "3:47:17": {
+   "sense": "decree",
+   "why": "God decrees a thing, \"Be!\""
+  },
+  "40:68:6": {
+   "sense": "decree",
+   "why": "God decrees a thing, \"Be!\""
+  },
+  "6:2:7": {
+   "sense": "decree",
+   "why": "God decreed a term"
+  }
+ },
+ "قضي|1|قَضَيْتَ": {
+  "4:65:17": {
+   "sense": "judge",
+   "why": "what you judged between them (Prophet as judge)"
+  }
+ },
+ "قضي|1|قَضَيْتُ": {
+  "28:28:7": {
+   "sense": "fulfil",
+   "why": "whichever term I fulfil"
+  }
+ },
+ "قضي|1|قَضَيْتُم": {
+  "2:200:2": {
+   "sense": "finish",
+   "why": "when you finish your rites"
+  }
+ },
+ "قضي|1|قَضَيْتُمُ": {
+  "4:103:2": {
+   "sense": "finish",
+   "why": "when you finish the prayer"
+  }
+ },
+ "قضي|1|قَضَيْنَا": {
+  "34:14:2": {
+   "sense": "decree",
+   "why": "We decreed death for Sulayman"
+  }
+ },
+ "قضي|1|قَضَيْنَآ": {
+  "28:44:6": {
+   "sense": "decree",
+   "why": "We decreed/commissioned the command to Musa"
+  }
+ },
+ "قضي|1|قُضِىَ": {
+  "10:47:7": {
+   "sense": "judge",
+   "why": "judged between them with justice"
+  },
+  "12:41:15": {
+   "sense": "decree",
+   "why": "the matter was decreed/settled"
+  },
+  "14:22:4": {
+   "sense": "decree",
+   "why": "the matter has been decreed"
+  },
+  "19:39:5": {
+   "sense": "decree",
+   "why": "the matter was decreed on the Day of Anguish"
+  },
+  "40:78:28": {
+   "sense": "judge",
+   "why": "judgment with truth when God command comes"
+  },
+  "46:29:14": {
+   "sense": "finish",
+   "why": "when the recitation was finished"
+  }
+ },
+ "قضي|1|قُضِيَتِ": {
+  "62:10:2": {
+   "sense": "finish",
+   "why": "when the prayer is concluded"
+  }
+ },
+ "قضي|1|لِيَقْضِ": {
+  "43:77:3": {
+   "sense": "kill",
+   "why": "li-yaqdi alayna rabbuk: let your Lord put an end to us"
+  }
+ },
+ "قضي|1|لِيَقْضِىَ": {
+  "8:44:11": {
+   "sense": "decree",
+   "why": "God decrees a matter to be done"
+  }
+ },
+ "قضي|1|لِيُقْضَىٰٓ": {
+  "6:60:12": {
+   "sense": "fulfil",
+   "why": "the appointed term is fulfilled"
+  }
+ },
+ "قضي|1|لِّيَقْضِىَ": {
+  "8:42:17": {
+   "sense": "decree",
+   "why": "God decrees a matter to be done"
+  }
+ },
+ "قضي|1|لْيَقْضُوا۟": {
+  "22:29:2": {
+   "sense": "finish",
+   "why": "let them finish their rites (taqfath)"
+  }
+ },
+ "قضي|1|وَقَضَىٰ": {
+  "17:23:1": {
+   "sense": "decree",
+   "why": "your Lord decreed worshipping none but Him"
+  }
+ },
+ "قضي|1|وَقُضِىَ": {
+  "10:54:16": {
+   "sense": "judge",
+   "why": "judged between them with justice"
+  },
+  "11:44:9": {
+   "sense": "decree",
+   "why": "the command was decreed/executed"
+  },
+  "2:210:12": {
+   "sense": "decree",
+   "why": "the matter is decreed/settled by God"
+  },
+  "39:69:10": {
+   "sense": "judge",
+   "why": "judged between them with truth"
+  },
+  "39:75:10": {
+   "sense": "judge",
+   "why": "judged between them with truth"
+  }
+ },
+ "قضي|1|يَقْضُونَ": {
+  "40:20:9": {
+   "sense": "judge",
+   "why": "idols judge nothing"
+  }
+ },
+ "قضي|1|يَقْضِى": {
+  "10:93:17": {
+   "sense": "judge",
+   "why": "Lord judges between them on Resurrection"
+  },
+  "27:78:3": {
+   "sense": "judge",
+   "why": "Lord judges between them"
+  },
+  "40:20:2": {
+   "sense": "judge",
+   "why": "God judges with truth"
+  },
+  "45:17:17": {
+   "sense": "judge",
+   "why": "Lord judges between them"
+  }
+ },
+ "قضي|1|يُقْضَىٰ": {
+  "35:36:7": {
+   "sense": "decree",
+   "why": "death not decreed upon them in Hell"
+  }
+ },
+ "قضي|1|يُقْضَىٰٓ": {
+  "20:114:11": {
+   "sense": "finish",
+   "why": "before its revelation is completed to you"
+  }
+ },
+ "قضي|1|ٱقْضُوٓا۟": {
+  "10:71:30": {
+   "sense": "carry-out",
+   "why": "thumma qdu ilayya: carry out (your plan) against me"
+  }
+ },
+ "كبر|1|كَبُرَتْ": {
+  "18:5:8": {
+   "sense": "be-grievous",
+   "why": "A grievous word issuing from their mouths"
+  }
+ },
+ "كبر|1|يَكْبَرُوا۟": {
+  "4:6:19": {
+   "sense": "grow-up",
+   "why": "Do not hurry to consume orphans' wealth before they grow up"
+  }
+ },
+ "كبر|1|يَكْبُرُ": {
+  "17:51:4": {
+   "sense": "be-grievous",
+   "why": "Something great/hard in your minds"
+  }
+ },
+ "كتب|1|تَكْتُبُوهَا": {
+  "2:282:107": {
+   "sense": "write",
+   "why": "writing the debt contract"
+  }
+ },
+ "كتب|1|تَكْتُبُوهُ": {
+  "2:282:81": {
+   "sense": "write",
+   "why": "writing the debt contract"
+  }
+ },
+ "كتب|1|سَنَكْتُبُ": {
+  "19:79:2": {
+   "sense": "write",
+   "why": "Allah records what they say/do"
+  },
+  "3:181:12": {
+   "sense": "write",
+   "why": "Allah records what they say/do"
+  }
+ },
+ "كتب|1|فَسَأَكْتُبُهَا": {
+  "7:156:22": {
+   "sense": "decree",
+   "why": "'I shall ordain My mercy for those who fear Me'"
+  }
+ },
+ "كتب|1|فَلْيَكْتُبْ": {
+  "2:282:23": {
+   "sense": "write",
+   "why": "writing the debt contract"
+  }
+ },
+ "كتب|1|فَٱكْتُبُوهُ": {
+  "2:282:10": {
+   "sense": "write",
+   "why": "writing the debt contract"
+  }
+ },
+ "كتب|1|كَتَبَتْ": {
+  "2:79:19": {
+   "sense": "write",
+   "why": "what their hands wrote (forged scripture)"
+  }
+ },
+ "كتب|1|كَتَبْتَ": {
+  "4:77:30": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  }
+ },
+ "كتب|1|كَتَبْنَا": {
+  "21:105:2": {
+   "sense": "write",
+   "why": "We wrote in the Psalms"
+  },
+  "4:66:3": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "5:32:4": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  }
+ },
+ "كتب|1|كَتَبْنَٰهَا": {
+  "57:27:22": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  }
+ },
+ "كتب|1|كُتِبَ": {
+  "22:4:1": {
+   "sense": "decree",
+   "why": "it has been decreed for him (the devil's fate)"
+  },
+  "2:178:4": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "2:180:1": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "2:183:4": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "2:183:8": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "2:216:1": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "2:246:26": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "2:246:45": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "3:154:58": {
+   "sense": "decree",
+   "why": "those for whom slaying was decreed by Allah"
+  },
+  "4:127:20": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "4:77:14": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "9:120:42": {
+   "sense": "write",
+   "why": "a righteous deed is recorded for them"
+  },
+  "9:121:11": {
+   "sense": "write",
+   "why": "a righteous deed is recorded for them"
+  }
+ },
+ "كتب|1|وَكَتَبْنَا": {
+  "5:45:1": {
+   "sense": "prescribe",
+   "why": "prescribed as a duty/law upon them"
+  },
+  "7:145:1": {
+   "sense": "write",
+   "why": "We inscribed for him on the tablets"
+  }
+ },
+ "كتب|1|وَلْيَكْتُب": {
+  "2:282:11": {
+   "sense": "write",
+   "why": "writing the debt contract"
+  }
+ },
+ "كتب|1|وَنَكْتُبُ": {
+  "36:12:5": {
+   "sense": "write",
+   "why": "Allah records what they say/do"
+  }
+ },
+ "كتب|1|وَٱكْتُبْ": {
+  "7:156:1": {
+   "sense": "decree",
+   "why": "'ordain for us good in this world': Musa's supplication"
+  }
+ },
+ "كتب|1|يَكْتُبَ": {
+  "2:282:19": {
+   "sense": "write",
+   "why": "writing the debt contract"
+  }
+ },
+ "كتب|1|يَكْتُبُ": {
+  "4:81:14": {
+   "sense": "write",
+   "why": "Allah records what they say/do"
+  }
+ },
+ "كفر|1|أَكَفَرْتَ": {
+  "18:37:6": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|أَكَفَرْتُم": {
+  "3:106:10": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|أَكْفُرُ": {
+  "27:40:27": {
+   "sense": "be-ungrateful",
+   "why": "a-ashkuru am akfur: be thankful or ungrateful"
+  }
+ },
+ "كفر|1|تَكْفُرُوا۟": {
+  "39:7:2": {
+   "sense": "be-ungrateful",
+   "why": "set against tashkuru: ungrateful, Allah is free of need of you"
+  },
+  "4:131:20": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "4:170:13": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|تَكْفُرُونِ": {
+  "2:152:6": {
+   "sense": "be-ungrateful",
+   "why": "wa-shkuru li wa-la takfurun: thanks against ingratitude"
+  }
+ },
+ "كفر|1|تَكْفُرُوٓا۟": {
+  "14:8:4": {
+   "sense": "be-ungrateful",
+   "why": "set against praise: Allah is Self-sufficient, ingratitude"
+  }
+ },
+ "كفر|1|سَيَكْفُرُونَ": {
+  "19:82:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|فَتَكْفُرُونَ": {
+  "40:10:15": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|فَكَفَرَتْ": {
+  "16:112:14": {
+   "sense": "be-ungrateful",
+   "why": "kafarat bi-anʿumi llah: ungrateful for Allah's favours"
+  }
+ },
+ "كفر|1|فَلْيَكْفُرْ": {
+  "18:29:10": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|كَفَرَ": {
+  "16:106:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "19:77:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "24:55:33": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "27:40:34": {
+   "sense": "be-ungrateful",
+   "why": "man kafara contrasts with shakara: ingratitude for Allah's favour"
+  },
+  "2:102:9": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:126:21": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:253:42": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:258:38": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "30:44:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "31:12:14": {
+   "sense": "be-ungrateful",
+   "why": "wa-man kafara contrasts with shakara (gratitude to Allah)"
+  },
+  "31:23:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "35:39:8": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:97:20": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "59:16:8": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "5:12:38": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "5:17:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "5:72:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "5:73:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|كَفَرُوا۟": {
+  "10:4:19": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "11:27:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "11:60:11": {
+   "sense": "disbelieve",
+   "why": "Aad disbelieved in their Lord: rejected prophet Hud"
+  },
+  "11:68:8": {
+   "sense": "disbelieve",
+   "why": "Thamud disbelieved in their Lord: rejected prophet Salih"
+  },
+  "13:27:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "13:31:33": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "13:32:8": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "13:33:28": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "13:43:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "13:5:14": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "13:7:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "14:13:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "14:18:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "15:2:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "16:84:11": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "16:88:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "17:98:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "18:105:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "18:106:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "18:56:9": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "19:37:7": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "19:73:8": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "21:39:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "21:97:9": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "22:19:7": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "22:25:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "22:55:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "22:57:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "22:72:10": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "22:72:27": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "23:24:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "23:33:6": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "24:57:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "25:32:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "29:12:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "29:23:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:102:13": {
+   "sense": "disbelieve",
+   "why": "devils disbelieved by teaching magic; opposed to Solomon not disbelieving"
+  },
+  "2:105:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:161:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:171:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:212:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:26:22": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:39:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:6:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "2:89:16": {
+   "sense": "disbelieve",
+   "why": "those who disbelieved: the unbelieving opponents of the Jews, faith context"
+  },
+  "2:89:21": {
+   "sense": "disbelieve",
+   "why": "they disbelieved in what they recognised: the Qur'an, rejection of faith"
+  },
+  "30:16:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "33:25:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "34:17:4": {
+   "sense": "be-ungrateful",
+   "why": "ingratitude for Saba's blessings; followed by \"do We punish any but the ungrateful\""
+  },
+  "34:31:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "34:33:28": {
+   "sense": "disbelieve",
+   "why": "commanded us to disbelieve in Allah and set up rivals"
+  },
+  "34:3:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "34:43:26": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "34:53:2": {
+   "sense": "disbelieve",
+   "why": "they disbelieved in it (the Hereafter/Qur'an) of old"
+  },
+  "34:7:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "35:26:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "35:36:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "35:7:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "36:47:10": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "38:27:11": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "38:27:14": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "38:2:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "39:63:6": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:10:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:116:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:12:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:149:7": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:151:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:156:7": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:196:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:4:9": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:55:12": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:56:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "3:86:5": {
+   "sense": "disbelieve",
+   "why": "disbelieved after having believed: apostasy from faith"
+  },
+  "3:90:3": {
+   "sense": "disbelieve",
+   "why": "disbelief after belief, growing in disbelief"
+  },
+  "3:91:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "40:10:3": {
+   "sense": "disbelieve",
+   "why": "called to faith but refused: disbelief"
+  },
+  "40:4:8": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "41:26:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "41:27:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "41:29:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "41:41:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "41:50:26": {
+   "sense": "disbelieve",
+   "why": "denies the Hour and returns to the Lord: disbelief"
+  },
+  "45:11:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "46:11:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "46:20:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "46:34:4": {
+   "sense": "disbelieve",
+   "why": "doom for disbelieving, in the Fire: faith context"
+  },
+  "46:3:12": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "46:7:8": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:12:14": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:1:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:32:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:34:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:3:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:4:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "47:8:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "48:22:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "48:25:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "48:25:37": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "48:26:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:102:30": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:137:5": {
+   "sense": "disbelieve",
+   "why": "believing then disbelieving: apostasy, faith context"
+  },
+  "4:137:9": {
+   "sense": "disbelieve",
+   "why": "believing then disbelieving: apostasy, faith context"
+  },
+  "4:167:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:168:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:42:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:51:14": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:56:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:76:8": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:84:17": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "4:89:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "51:60:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "52:42:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "57:15:9": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "57:19:15": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "59:11:9": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "59:2:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:103:14": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:10:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:110:57": {
+   "sense": "disbelieve",
+   "why": "those who disbelieved among them said the miracles were mere magic"
+  },
+  "5:36:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:3:34": {
+   "sense": "disbelieve",
+   "why": "unbelievers have despaired of your religion"
+  },
+  "5:73:22": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:78:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:80:6": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "5:86:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "60:1:13": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "60:5:6": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "63:3:5": {
+   "sense": "disbelieve",
+   "why": "believed then disbelieved, hearts sealed: hypocrites, faith context"
+  },
+  "64:10:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "64:5:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "66:10:5": {
+   "sense": "disbelieve",
+   "why": "example for disbelievers: wives of Noah and Lot betrayed their faith"
+  },
+  "66:7:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "67:27:7": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "67:6:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "68:51:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "6:1:12": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "70:36:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "74:31:13": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "7:66:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "7:90:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "84:22:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "85:19:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:12:15": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:15:7": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:30:5": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:36:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:50:6": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:52:7": {
+   "sense": "disbelieve",
+   "why": "Pharaoh's folk disbelieved Allah's signs, denial of revelation"
+  },
+  "8:55:7": {
+   "sense": "disbelieve",
+   "why": "worst of creatures are those who disbelieve, so they do not believe; faith context"
+  },
+  "8:59:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:65:22": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "8:73:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "90:19:2": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "98:1:4": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "98:6:3": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "9:26:15": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "9:30:17": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "9:37:9": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "9:3:30": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  },
+  "9:40:35": {
+   "sense": "disbelieve",
+   "why": "disbelievers drove him out: the Quraysh idolaters"
+  },
+  "9:40:9": {
+   "sense": "disbelieve",
+   "why": "disbelievers drove him out: the Quraysh idolaters"
+  },
+  "9:54:9": {
+   "sense": "disbelieve",
+   "why": "they disbelieved in Allah and His messenger"
+  },
+  "9:80:18": {
+   "sense": "disbelieve",
+   "why": "they disbelieved in Allah and His messenger"
+  },
+  "9:84:13": {
+   "sense": "disbelieve",
+   "why": "they disbelieved in Allah and His messenger"
+  },
+  "9:90:14": {
+   "sense": "disbelieve",
+   "why": "those who disbelieve: unbelief in faith/revelation, not ingratitude for favours"
+  }
+ },
+ "كفر|1|كَفَرُوٓا۟": {
+  "11:7:26": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "16:39:8": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "18:102:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "21:30:4": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "21:36:4": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "24:39:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "25:4:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "27:67:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:257:11": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "30:58:15": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "32:29:7": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "39:71:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:127:5": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:178:4": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:55:18": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "40:6:7": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "45:31:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "4:101:17": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "64:7:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "6:25:27": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "6:7:11": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "8:36:18": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "8:38:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|كَفَرْتُ": {
+  "14:22:35": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|كَفَرْتُم": {
+  "41:52:9": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "9:66:4": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|كَفَرْتُمْ": {
+  "14:7:8": {
+   "sense": "be-ungrateful",
+   "why": "lain shakartum vs lain kafartum: ingratitude for favours"
+  },
+  "17:69:15": {
+   "sense": "be-ungrateful",
+   "why": "drowned for bima kafartum after rescue at sea: ingratitude (Pickthall: thanklessness)"
+  },
+  "40:12:7": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "73:17:4": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|كَفَرْنَا": {
+  "14:9:27": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "60:4:21": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|لَتَكْفُرُونَ": {
+  "41:9:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|لِأَكْفُرَ": {
+  "40:42:2": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|لِيَكْفُرُوا۟": {
+  "16:55:1": {
+   "sense": "be-ungrateful",
+   "why": "liyakfuru bi-ma ataynahum: ungrateful for what We gave them"
+  },
+  "29:66:1": {
+   "sense": "be-ungrateful",
+   "why": "liyakfuru bi-ma ataynahum: ungrateful for what We gave them"
+  },
+  "30:34:1": {
+   "sense": "be-ungrateful",
+   "why": "liyakfuru bi-ma ataynahum: ungrateful for what We gave them"
+  }
+ },
+ "كفر|1|نَّكْفُرَ": {
+  "34:33:13": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَتَكْفُرُونَ": {
+  "2:85:26": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَكَفَرَ": {
+  "88:23:4": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَكَفَرَت": {
+  "61:14:27": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَكَفَرُوا۟": {
+  "29:52:15": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "9:74:9": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَكَفَرْتُم": {
+  "46:10:8": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَكَفَرْنَا": {
+  "40:84:8": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَنَكْفُرُ": {
+  "4:150:15": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَيَكْفُرُونَ": {
+  "2:91:13": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|وَٱكْفُرُوٓا۟": {
+  "3:72:14": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|يَكْفُرُ": {
+  "29:25:16": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:99:7": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "43:33:9": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|يَكْفُرُوا۟": {
+  "28:48:14": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:90:6": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "4:60:23": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|يَكْفُرُونَ": {
+  "10:4:28": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "10:70:13": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "13:30:16": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "16:72:21": {
+   "sense": "be-ungrateful",
+   "why": "bi-niʿmati llah hum yakfurun: ingratitude for Allah's blessing"
+  },
+  "29:67:15": {
+   "sense": "be-ungrateful",
+   "why": "bi-niʿmati llah yakfurun: ingratitude for His blessing"
+  },
+  "2:61:48": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "30:51:9": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "35:14:13": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:112:24": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:21:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "4:150:3": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "6:70:45": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|يَكْفُرْ": {
+  "11:17:20": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:121:11": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "2:256:11": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "3:19:20": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "4:136:18": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "5:115:7": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "5:5:34": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  },
+  "6:89:8": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "كفر|1|ٱكْفُرْ": {
+  "59:16:6": {
+   "sense": "disbelieve",
+   "why": "disbelief in Allah, His signs, messengers or the truth"
+  }
+ },
+ "لقي|4|أَءُلْقِىَ": {
+  "54:25:1": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|أَلْقَوْا۟": {
+  "10:81:2": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "7:116:4": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|أَلْقَى": {
+  "20:87:14": {
+   "sense": "throw",
+   "why": "Samiri threw what he held into the fire"
+  },
+  "22:52:12": {
+   "sense": "cast",
+   "why": "Satan casts suggestions into the recitation/wish"
+  },
+  "50:37:10": {
+   "sense": "give-ear",
+   "why": "lends ear (أَلْقَى السَّمْعَ)"
+  }
+ },
+ "لقي|4|أَلْقَىٰهَآ": {
+  "4:171:21": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|أَلْقَىٰهُ": {
+  "12:96:5": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|أَلْقَىٰٓ": {
+  "4:94:13": {
+   "sense": "offer",
+   "why": "offering peace/submission (salam, salam)"
+  }
+ },
+ "لقي|4|أَلْقُوا۟": {
+  "10:80:7": {
+   "sense": "throw",
+   "why": "magicians told to throw ropes and staffs"
+  },
+  "20:66:3": {
+   "sense": "throw",
+   "why": "magicians told to throw ropes and staffs"
+  },
+  "26:43:4": {
+   "sense": "throw",
+   "why": "magicians told to throw ropes and staffs"
+  },
+  "7:116:2": {
+   "sense": "throw",
+   "why": "magicians told to throw ropes and staffs"
+  }
+ },
+ "لقي|4|أَلْقِ": {
+  "28:31:2": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "7:117:5": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|أُلْقُوا۟": {
+  "25:13:2": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "67:7:2": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|أُلْقِىَ": {
+  "27:29:5": {
+   "sense": "throw",
+   "why": "a letter was dropped to her, a physical thing"
+  },
+  "43:53:2": {
+   "sense": "throw",
+   "why": "gold bracelets would be put upon him, physical objects"
+  },
+  "67:8:6": {
+   "sense": "throw",
+   "why": "a throng is thrown into the Fire"
+  }
+ },
+ "لقي|4|تُلْقُوا۟": {
+  "2:195:6": {
+   "sense": "throw",
+   "why": "do not throw yourselves into ruin (physical-like \"throw\")"
+  }
+ },
+ "لقي|4|تُلْقُونَ": {
+  "60:1:9": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|سَأُلْقِى": {
+  "8:12:11": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|سَنُلْقِى": {
+  "3:151:1": {
+   "sense": "cast",
+   "why": "We will cast terror into the disbelievers' hearts"
+  },
+  "73:5:2": {
+   "sense": "cast",
+   "why": "We will cast on you a weighty word (revelation)"
+  }
+ },
+ "لقي|4|فَأَلْقَوُا۟": {
+  "16:28:6": {
+   "sense": "offer",
+   "why": "offering peace/submission (salam, salam)"
+  }
+ },
+ "لقي|4|فَأَلْقَوْا۟": {
+  "16:86:15": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  },
+  "26:44:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|فَأَلْقَىٰ": {
+  "26:32:1": {
+   "sense": "throw",
+   "why": "Musa threw down his staff"
+  },
+  "26:45:1": {
+   "sense": "throw",
+   "why": "Musa threw down his staff"
+  },
+  "7:107:1": {
+   "sense": "throw",
+   "why": "Musa threw down his staff"
+  }
+ },
+ "لقي|4|فَأَلْقَىٰهَا": {
+  "20:20:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|فَأَلْقُوهُ": {
+  "12:93:4": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "37:97:5": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|فَأَلْقِهْ": {
+  "27:28:4": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|فَأَلْقِيهِ": {
+  "28:7:10": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|فَأُلْقِىَ": {
+  "20:70:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "26:46:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|وَأَلْقَتْ": {
+  "84:4:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|وَأَلْقَوْا۟": {
+  "16:87:1": {
+   "sense": "offer",
+   "why": "offering peace/submission (السَّلَمَ)"
+  },
+  "4:90:28": {
+   "sense": "offer",
+   "why": "offering peace/submission (السَّلَمَ)"
+  }
+ },
+ "لقي|4|وَأَلْقَى": {
+  "7:150:16": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|وَأَلْقَىٰ": {
+  "16:15:1": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  },
+  "31:10:6": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|وَأَلْقَيْتُ": {
+  "20:39:16": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|وَأَلْقَيْنَا": {
+  "15:19:3": {
+   "sense": "throw",
+   "why": "We threw (set) firm mountains on the earth, physical"
+  },
+  "38:34:4": {
+   "sense": "throw",
+   "why": "We placed a body on his throne, physical"
+  },
+  "50:7:3": {
+   "sense": "throw",
+   "why": "We threw (set) firm mountains on the earth, physical"
+  },
+  "5:64:27": {
+   "sense": "cast",
+   "why": "We cast enmity and hatred among them"
+  }
+ },
+ "لقي|4|وَأَلْقُوهُ": {
+  "12:10:7": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|وَأَلْقِ": {
+  "20:69:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "27:10:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|وَأُلْقِىَ": {
+  "7:120:1": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|وَيُلْقُوٓا۟": {
+  "4:91:18": {
+   "sense": "offer",
+   "why": "offering peace/submission (salam, salam)"
+  }
+ },
+ "لقي|4|يُلْقَىٰ": {
+  "41:40:10": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  }
+ },
+ "لقي|4|يُلْقَىٰٓ": {
+  "25:8:2": {
+   "sense": "throw",
+   "why": "physical thing thrown (ropes, staff, shirt, people into fire)"
+  },
+  "28:86:5": {
+   "sense": "cast",
+   "why": "abstract/created thing cast: mountains, saying, revelation, fear, love, reminder"
+  }
+ },
+ "لقي|4|يُلْقِى": {
+  "22:52:19": {
+   "sense": "cast",
+   "why": "Satan casts suggestions into the recitation/wish"
+  },
+  "22:53:3": {
+   "sense": "cast",
+   "why": "Satan casts suggestions into the recitation/wish"
+  },
+  "40:15:5": {
+   "sense": "cast",
+   "why": "He casts the Spirit (revelation) on whom He wills"
+  }
+ },
+ "ملو|4|أَمْلَيْتُ": {
+  "22:48:4": {
+   "sense": "grant-respite",
+   "why": "Many a town I gave respite then seized"
+  }
+ },
+ "ملو|4|نُمْلِى": {
+  "3:178:11": {
+   "sense": "grant-respite",
+   "why": "Allah grants respite so they increase in sin"
+  },
+  "3:178:6": {
+   "sense": "grant-respite",
+   "why": "Disbelievers' respite is not good for them"
+  }
+ },
+ "ملو|4|وَأَمْلَىٰ": {
+  "47:25:15": {
+   "sense": "grant-respite",
+   "why": "Satan beguiled them and Allah gave them respite/prolonged hope"
+  }
+ },
+ "هوي|1|أَهْوَىٰ": {
+  "53:53:2": {
+   "sense": "fall",
+   "why": "The overturned cities were hurled down"
+  }
+ },
+ "وصل|1|يَصِلُ": {
+  "6:136:19": {
+   "sense": "arrive",
+   "why": "Portion of partners does not reach Allah"
+  },
+  "6:136:26": {
+   "sense": "arrive",
+   "why": "Portion of Allah reaches their partners"
+  }
+ },
+ "وصل|1|يَصِلُونَ": {
+  "13:21:2": {
+   "sense": "join",
+   "why": "Those who join what Allah ordered joined"
+  },
+  "28:35:9": {
+   "sense": "arrive",
+   "why": "They will not reach you two"
+  },
+  "4:90:3": {
+   "sense": "arrive",
+   "why": "Those who reach a people with whom you have a treaty"
+  }
+ },
+ "وصل|1|يَصِلُوٓا۟": {
+  "11:81:7": {
+   "sense": "arrive",
+   "why": "They will never reach you, Lot"
+  }
+ },
+ "وصل|1|يُوصَلَ": {
+  "13:21:8": {
+   "sense": "join",
+   "why": "What Allah commanded to be joined"
+  },
+  "13:25:14": {
+   "sense": "join",
+   "why": "Breaking what Allah ordered to be joined"
+  },
+  "2:27:14": {
+   "sense": "join",
+   "why": "Ties Allah commanded to be joined"
+  }
+ },
+ "وضع|1|تَضَعُونَ": {
+  "24:58:20": {
+   "sense": "remove",
+   "why": "putting off clothes at noon"
+  }
+ },
+ "وضع|1|تَضَعُوٓا۟": {
+  "4:102:53": {
+   "sense": "remove",
+   "why": "laying down arms"
+  }
+ },
+ "وضع|1|وَضَعَتْ": {
+  "3:36:11": {
+   "sense": "give-birth",
+   "why": "Mary's mother gave birth"
+  }
+ },
+ "وضع|1|وَضَعَتْهَا": {
+  "3:36:2": {
+   "sense": "give-birth",
+   "why": "Mary's mother gave birth"
+  }
+ },
+ "وضع|1|وَضَعْتُهَآ": {
+  "3:36:6": {
+   "sense": "give-birth",
+   "why": "Mary's mother gave birth"
+  }
+ },
+ "وضع|1|وَنَضَعُ": {
+  "21:47:1": {
+   "sense": "put",
+   "why": "setting up the balances"
+  }
+ },
+ "وضع|1|وَوَضَعَ": {
+  "55:7:3": {
+   "sense": "put",
+   "why": "He set up the balance"
+  }
+ },
+ "وضع|1|وَوَضَعَتْهُ": {
+  "46:15:8": {
+   "sense": "give-birth",
+   "why": "Mary's mother gave birth"
+  }
+ },
+ "وضع|1|وَوَضَعْنَا": {
+  "94:2:1": {
+   "sense": "remove",
+   "why": "We lifted your burden"
+  }
+ },
+ "وضع|1|وَوُضِعَ": {
+  "18:49:1": {
+   "sense": "put",
+   "why": "the Book is placed before them"
+  },
+  "39:69:5": {
+   "sense": "put",
+   "why": "the Book is placed before them"
+  }
+ },
+ "وضع|1|وَيَضَعُ": {
+  "7:157:24": {
+   "sense": "remove",
+   "why": "removes their burdens and shackles"
+  }
+ },
+ "وضع|1|وُضِعَ": {
+  "3:96:4": {
+   "sense": "put",
+   "why": "first house set up for mankind"
+  }
+ },
+ "وضع|1|يَضَعْنَ": {
+  "24:60:12": {
+   "sense": "remove",
+   "why": "laying aside outer garments"
+  },
+  "65:4:19": {
+   "sense": "give-birth",
+   "why": "pregnant women until delivering their burden"
+  },
+  "65:6:18": {
+   "sense": "give-birth",
+   "why": "pregnant women until delivering their burden"
+  }
+ },
+ "ولي|5|تَتَوَلَّوْا۟": {
+  "11:52:16": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "47:38:22": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "48:16:21": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "60:13:5": {
+   "sense": "befriend",
+   "why": "do not take as allies a people Allah is angry with"
+  }
+ },
+ "ولي|5|تَوَلَّ": {
+  "27:28:7": {
+   "sense": "turn-away",
+   "why": "withdraw from them after delivering the letter"
+  }
+ },
+ "ولي|5|تَوَلَّاهُ": {
+  "22:4:5": {
+   "sense": "befriend",
+   "why": "takes him (Satan) as ally; object pronoun is Satan"
+  }
+ },
+ "ولي|5|تَوَلَّوا۟": {
+  "9:92:14": {
+   "sense": "turn-away",
+   "why": "they went back with eyes flowing with tears"
+  }
+ },
+ "ولي|5|تَوَلَّوْهُمْ": {
+  "60:9:16": {
+   "sense": "befriend",
+   "why": "taking them as allies; object is the people"
+  }
+ },
+ "ولي|5|تَوَلَّىٰ": {
+  "24:11:23": {
+   "sense": "take-charge",
+   "why": "whoever took upon himself the greater share of it"
+  },
+  "2:205:2": {
+   "sense": "turn-away",
+   "why": "on turning away (leaving) he works corruption"
+  },
+  "3:82:2": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "4:115:16": {
+   "sense": "turn-to",
+   "why": "nuwallihi ma tawalla: the path he turned to and chose"
+  },
+  "4:80:8": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "53:29:4": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "53:33:3": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "88:23:3": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|تَوَلَّىٰٓ": {
+  "28:24:4": {
+   "sense": "turn-away",
+   "why": "Musa withdrew to the shade"
+  }
+ },
+ "ولي|5|تَوَلَّيْتُم": {
+  "2:64:2": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "48:16:23": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|تَوَلَّيْتُمْ": {
+  "10:72:2": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "2:83:24": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "47:22:4": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "5:92:7": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "64:12:6": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "9:3:22": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|فَتَوَلَّىٰ": {
+  "20:60:1": {
+   "sense": "turn-away",
+   "why": "Pharaoh went away and gathered his scheme"
+  },
+  "51:39:1": {
+   "sense": "turn-away",
+   "why": "Pharaoh turned away with his supporters"
+  },
+  "7:79:1": {
+   "sense": "turn-away",
+   "why": "the prophet turned away from the destroyed people"
+  },
+  "7:93:1": {
+   "sense": "turn-away",
+   "why": "the prophet turned away from the destroyed people"
+  }
+ },
+ "ولي|5|وَتَوَلَّ": {
+  "37:178:1": {
+   "sense": "turn-away",
+   "why": "turn away from them for a time"
+  }
+ },
+ "ولي|5|وَتَوَلَّوا۟": {
+  "64:6:11": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "9:76:7": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|وَتَوَلَّىٰ": {
+  "12:84:1": {
+   "sense": "turn-away",
+   "why": "he turned away from his sons, grieving for Yusuf"
+  },
+  "20:48:10": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "70:17:4": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "75:32:3": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "92:16:3": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|وَتَوَلَّىٰٓ": {
+  "80:1:2": {
+   "sense": "turn-away",
+   "why": "he frowned and turned away"
+  },
+  "96:13:4": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|وَيَتَوَلَّوا۟": {
+  "9:50:14": {
+   "sense": "turn-away",
+   "why": "they turn away while rejoicing"
+  }
+ },
+ "ولي|5|يَتَوَلَّ": {
+  "48:17:24": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "57:24:7": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  },
+  "5:56:2": {
+   "sense": "befriend",
+   "why": "whoever takes Allah, His Messenger and believers as allies"
+  },
+  "60:6:14": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|يَتَوَلَّهُم": {
+  "5:51:13": {
+   "sense": "befriend",
+   "why": "taking them as allies; object is the people"
+  },
+  "9:23:15": {
+   "sense": "befriend",
+   "why": "taking them as allies; object is the people"
+  }
+ },
+ "ولي|5|يَتَوَلَّهُمْ": {
+  "60:9:18": {
+   "sense": "befriend",
+   "why": "taking them as allies; object is the people"
+  }
+ },
+ "ولي|5|يَتَوَلَّوْا۟": {
+  "9:74:31": {
+   "sense": "turn-away",
+   "why": "turning away from truth, obedience or a person"
+  }
+ },
+ "ولي|5|يَتَوَلَّوْنَ": {
+  "5:43:9": {
+   "sense": "turn-away",
+   "why": "a party turns away from the judgment, averse"
+  },
+  "5:80:4": {
+   "sense": "befriend",
+   "why": "they take the disbelievers as allies"
+  }
+ },
+ "ولي|5|يَتَوَلَّوْنَهُۥ": {
+  "16:100:5": {
+   "sense": "befriend",
+   "why": "takes him (Satan) as ally; object pronoun is Satan"
+  }
+ },
+ "ولي|5|يَتَوَلَّىٰ": {
+  "24:47:7": {
+   "sense": "turn-away",
+   "why": "a party turns away from the judgment, averse"
+  },
+  "3:23:16": {
+   "sense": "turn-away",
+   "why": "a party turns away from the judgment, averse"
+  }
+ }
+}

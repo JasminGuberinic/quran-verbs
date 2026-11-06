@@ -1,5 +1,5 @@
 {
- "_about": "Per verb (root|form), the Bosnian of each cell the Quran uses it in: tense|voice|subject|objects → the cell as it opens a sentence. Filled through `fil compose sheets/paradigms`.",
+ "_about": "Per verb (root|form), the Bosnian of each cell the Quran uses it in: tense|voice|subject|objects → the cell as it opens a sentence. A polysemous verb's other sense has its own paradigm, root|form@sense (data/polysemous_verbs.json). Filled through `fil compose sheets/paradigms`.",
  "أبي|1": {
   "past|act|3MS|-": "odbio je",
   "present|act|3MS|-": "odbija",
@@ -69,6 +69,51 @@
   "past|act|3MP|3MS": "došli su mu",
   "future|act|3FS|2MP": "doći će vam",
   "present|act|2MP|1P": "dolazite nam"
+ },
+ "أتي|1@approach": {
+  "present|act|2MP|-": "prilazite"
+ },
+ "أتي|1@become": {
+  "present|act|3MS|-": "postaje"
+ },
+ "أتي|1@bring": {
+  "present|act|3MS|-": "donosi",
+  "imperative|act|2MP|-": "donesite!",
+  "present|act|3FP|-": "donose",
+  "present|act|3MS|2MP": "donosi vam",
+  "imperative|act|2MP|1S": "donesite mi!",
+  "imperative|act|2MS|-": "donesi!",
+  "present|act|3MP|-": "donose",
+  "imperative|act|2MS|1P": "donesi nam!",
+  "present|act|1S|2MP": "donosim vam",
+  "past|act|1P|-": "donijeli smo",
+  "past|act|1P|3MP": "donijeli smo im",
+  "past|act|3MS|-": "donio je",
+  "present|act|1S|2MS": "donosim ti",
+  "perfective|act|3MP|-": "donesu",
+  "past|pass|3MP|-": "doneseni su",
+  "present|act|1P|-": "donosimo",
+  "past|act|2MS|-": "donio si",
+  "present|act|3MS|1P": "donosi nam",
+  "present|act|2MP|1S": "donosite mi",
+  "future|act|2MP|1S": "donijet ćete mi",
+  "present|act|3MS|1S": "donosi mi",
+  "imperative|act|2MP|1P": "donesite nam!",
+  "present|act|1P|2MP": "donosimo vam",
+  "past|act|1P|2MS": "donijeli smo ti",
+  "past|act|3FS|-": "donijela je",
+  "present|act|3MP|2MS": "donose ti",
+  "future|act|1S|2MP": "donijet ću vam",
+  "future|act|3MS|1S": "donijet će mi",
+  "perfective|act|3MS|-": "donese"
+ },
+ "أتي|1@commit": {
+  "present|act|3MS|-": "čini",
+  "present|act|3FP|-": "čine",
+  "present|act|2MP|-": "činite",
+  "past|act|3MP|-": "počinili su",
+  "present|act|3MD|3FS": "čine ju",
+  "past|act|3FP|-": "počinile su"
  },
  "أتي|4": {
   "past|pass|3MP|-": "dato im je",
@@ -529,6 +574,23 @@
   "past|act|3MS|1P": "poslao nas je",
   "future|pass|2MP|-": "bit ćete poslani"
  },
+ "بعث|1@awaken": {
+  "past|act|1P|3MP": "probudili smo ih",
+  "present|act|3MS|2MP": "budi vas"
+ },
+ "بعث|1@resurrect": {
+  "present|pass|3MP|-": "bivaju oživljeni",
+  "present|act|3MS|3MP": "oživljava ih",
+  "present|act|3MS|-": "oživljava",
+  "present|act|1P|-": "oživljavamo",
+  "past|act|3MS|3MS": "oživio ga je",
+  "present|act|3MS|2MS": "oživljava te",
+  "present|pass|3MS|-": "biva oživljen",
+  "present|pass|1S|-": "bivam oživljen",
+  "present|pass|2MP|-": "bivate oživljeni",
+  "past|act|3MS|1P": "oživio nas je",
+  "future|pass|2MP|-": "bit ćete oživljeni"
+ },
  "بغي|1": {
   "present|act|3MP|-": "čine nasilje",
   "present|act|3MP|3FS": "čine joj nasilje",
@@ -544,6 +606,22 @@
   "present|act|3MS|-": "čini nasilje",
   "past|act|3FS|-": "učinila je nasilje",
   "present|act|3FS|-": "čini nasilje"
+ },
+ "بغي|1@desire": {
+  "present|act|3MP|-": "žele",
+  "present|act|1P|-": "želimo"
+ },
+ "بغي|1@seek": {
+  "present|act|3MP|3FS": "traže ju",
+  "present|act|2MP|3FS": "tražite ju",
+  "present|act|2MP|-": "tražite",
+  "present|act|1S|-": "tražim",
+  "present|act|1S|2MP": "tražim vas",
+  "present|act|3MP|2MP": "traže vas",
+  "present|act|1P|-": "tražimo"
+ },
+ "بغي|1@wrong": {
+  "past|pass|3MS|-": "nasilje je učinjeno nad njim"
  },
  "بغي|8": {
   "present|act|3MP|-": "traže",
@@ -773,7 +851,14 @@
   "present|act|1S|-": "kajem se",
   "past|act|3MD|-": "pokajali su se",
   "imperative|act|2MP|-": "pokajte se!",
-  "present|act|2D|-": "kajete se"
+  "present|act|2D|-": "kajete se",
+  "perfective|act|3MP|-": "kaju se"
+ },
+ "توب|1@accept-repentance": {
+  "past|act|3MS|-": "primio je pokajanje",
+  "present|act|3MS|-": "prima pokajanje",
+  "imperative|act|2MS|-": "primi pokajanje!",
+  "present|act|1S|-": "primam pokajanje"
  },
  "ثبت|2": {
   "imperative|act|2MS|-": "učvrsti!",
@@ -1099,6 +1184,12 @@
   "past|pass|3FP|-": "utvrđene su",
   "present|act|2MP|-": "štitite"
  },
+ "حصن|4@marry": {
+  "past|pass|3FP|-": "udane su"
+ },
+ "حصن|4@store": {
+  "present|act|2MP|-": "pohranjujete"
+ },
  "حصي|4": {
   "past|act|1P|3MS": "izbrojali smo ga",
   "past|act|3MS|3FS": "izbrojao ju je",
@@ -1147,6 +1238,13 @@
   "present|act|3FS|-": "silazi",
   "past|act|2MP|-": "sišli ste",
   "present|act|3MP|-": "silaze"
+ },
+ "حلل|1@be-lawful": {
+  "present|act|3MS|-": "dozvoljen je",
+  "present|act|3MP|-": "dozvoljeni su"
+ },
+ "حلل|1@untie": {
+  "past|act|2MP|-": "odriješili ste"
  },
  "حلل|4": {
   "past|pass|3MS|-": "dozvoljeno je",
@@ -1220,6 +1318,12 @@
   "present|act|3MS|-": "stidi se",
   "present|act|1P|-": "stidimo se",
   "imperative|act|2MP|-": "stidite se!"
+ },
+ "حيي|10@keep-alive": {
+  "present|act|3MP|-": "ostavljaju u životu",
+  "present|act|1P|-": "ostavljamo u životu",
+  "present|act|3MS|-": "ostavlja u životu",
+  "imperative|act|2MP|-": "ostavite u životu!"
  },
  "حيي|4": {
   "present|act|3MS|-": "oživljava",
@@ -1432,6 +1536,13 @@
   "past|act|3FS|-": "prošla je",
   "present|act|3MS|-": "prolazi"
  },
+ "خلو|1@be-alone": {
+  "past|act|3MP|-": "osamili su se",
+  "past|act|3MS|-": "osamio se"
+ },
+ "خلو|1@be-free": {
+  "present|act|3MS|-": "slobodan je"
+ },
  "خوض|1": {
   "present|act|3MP|-": "upuštaju se",
   "past|act|2MP|-": "upustili ste se",
@@ -1579,6 +1690,13 @@
   "imperative|act|2MP|-": "gurnite!",
   "past|act|2MP|-": "gurnuli ste"
  },
+ "دفع|1@hand-over": {
+  "imperative|act|2MP|-": "predajte!",
+  "past|act|2MP|-": "predali ste"
+ },
+ "دفع|1@repel": {
+  "imperative|act|2MP|-": "odbijte!"
+ },
  "دلل|1": {
   "present|act|1S|2MS": "pokazujem ti put",
   "present|act|1P|2MP": "pokazujemo vam put",
@@ -1662,6 +1780,18 @@
   "present|act|3MD|3D": "idu k njima",
   "past|act|3MS|-": "otišao je",
   "past|act|3FS|-": "otišla je"
+ },
+ "ذهب|1@take": {
+  "imperative|act|2MP|-": "odnesite!",
+  "imperative|act|2MS|-": "odnesi!"
+ },
+ "ذهب|1@take-away": {
+  "present|act|2MP|-": "odnosite",
+  "perfective|act|2MP|-": "odnesete",
+  "past|act|3MP|-": "odnijeli su",
+  "future|act|1P|-": "odnijet ćemo",
+  "present|act|3MD|-": "odnose",
+  "present|act|3MS|-": "odnosi"
  },
  "ذهب|4": {
   "present|act|3MS|-": "uklanja",
@@ -1943,6 +2073,10 @@
   "present|act|3MS|-": "baca",
   "past|act|3MS|-": "bacio je",
   "present|act|3FS|3MP": "baca ih"
+ },
+ "رمي|1@accuse": {
+  "present|act|3MP|-": "potvaraju",
+  "present|act|3MS|-": "potvara"
  },
  "رهق|1": {
   "present|act|3MS|-": "obuzima",
@@ -2232,6 +2366,15 @@
   "present|act|2MP|-": "pozdravljate",
   "imperative|act|2MP|-": "pozdravite!"
  },
+ "سلم|2@hand-over": {
+  "past|act|2MP|-": "predali ste"
+ },
+ "سلم|2@save": {
+  "past|act|3MS|-": "spasio je"
+ },
+ "سلم|2@submit": {
+  "present|act|3MP|-": "pokoravaju se"
+ },
  "سلم|4": {
   "past|act|3MS|-": "predao se",
   "past|act|3MP|-": "predali su se",
@@ -2311,6 +2454,24 @@
   "present|act|2MP|-": "uzdižete se",
   "past|act|2MP|-": "uzdigli ste se",
   "present|act|3MS|-": "uzdiže se"
+ },
+ "سوي|8@be-equal": {
+  "present|act|3MP|-": "jednaki su",
+  "present|act|3MD|-": "jednaki su",
+  "present|act|3MS|-": "jednak je"
+ },
+ "سوي|8@mature": {
+  "past|act|3MS|-": "dostigao je zrelost"
+ },
+ "سوي|8@rise": {
+  "past|act|3MS|-": "uzdigao se"
+ },
+ "سوي|8@settle": {
+  "past|act|3FS|-": "ustalila se",
+  "past|act|2MS|-": "ustalio si se",
+  "present|act|2MP|-": "ustaljujete se",
+  "perfective|act|2MP|-": "ustalite se",
+  "past|act|2MP|-": "ustalili ste se"
  },
  "سير|1": {
   "present|act|3MP|-": "putuju",
@@ -2475,12 +2636,26 @@
   "past|act|1P|3MP": "rekli smo im istinu",
   "past|act|3MS|1P": "rekao nam je istinu"
  },
+ "صدق|1@fulfil": {
+  "past|act|3MP|-": "ispunili su",
+  "past|act|3MS|-": "ispunio je",
+  "past|act|3MS|2MP": "ispunio vas je",
+  "past|act|1P|3MP": "ispunili smo ih",
+  "past|act|3MS|1P": "ispunio nas je"
+ },
  "صدق|2": {
   "past|act|3MS|-": "povjerovao je",
   "present|act|3MS|1S": "vjeruje mi",
   "past|act|2MS|-": "povjerovao si",
   "past|act|3FS|-": "povjerovala je",
   "present|act|3MP|-": "vjeruju"
+ },
+ "صدق|2@confirm": {
+  "past|act|3MS|-": "potvrdio je",
+  "present|act|3MS|1S": "potvrđuje me"
+ },
+ "صدق|2@fulfil": {
+  "past|act|2MS|-": "ispunio si"
  },
  "صدق|5": {
   "present|act|2MP|-": "udjeljujete sadaku",
@@ -2539,7 +2714,12 @@
   "present|act|3FS|-": "klanja",
   "imperative|act|2MS|-": "klanjaj!",
   "imperative|act|2MP|-": "klanjajte!",
-  "past|act|3MS|-": "klanjao je"
+  "past|act|3MS|-": "klanjao je",
+  "perfective|act|3MP|-": "klanjaju"
+ },
+ "صلو|2@bless": {
+  "present|act|3MS|-": "blagosilja",
+  "present|act|3MP|-": "blagosiljaju"
  },
  "صلي|1": {
   "future|act|3MP|-": "gorjet će",
@@ -2605,6 +2785,30 @@
   "present|act|2MP|-": "udarate",
   "present|act|3FP|-": "udaraju",
   "past|act|3MP|3MS": "udarili su ga"
+ },
+ "ضرب|1@draw": {
+  "present|act|3FP|-": "spuštaju",
+  "perfective|act|3FP|-": "spuste"
+ },
+ "ضرب|1@impose": {
+  "past|pass|3FS|-": "nametnuta je"
+ },
+ "ضرب|1@set-forth": {
+  "past|act|3MS|-": "naveo je",
+  "past|act|3MP|-": "naveli su",
+  "present|act|3MS|-": "navodi",
+  "past|act|1P|-": "naveli smo",
+  "past|pass|3MS|-": "navedeno je",
+  "present|act|1P|3FS": "navodimo ju",
+  "present|act|2MP|-": "navodite",
+  "past|act|3MP|3MS": "naveli su ga"
+ },
+ "ضرب|1@set-up": {
+  "past|pass|3MS|-": "postavljen je"
+ },
+ "ضرب|1@travel": {
+  "past|act|3MP|-": "putovali su",
+  "past|act|2MP|-": "putovali ste"
  },
  "ضرر|1": {
   "present|act|3MS|3MP": "šteti im",
@@ -2840,17 +3044,37 @@
   "past|act|3MS|-": "pojavio se",
   "present|act|3MP|-": "pojavljuju se"
  },
+ "ظهر|1@be-aware": {
+  "present|act|3MP|-": "znaju"
+ },
+ "ظهر|1@prevail": {
+  "present|act|3MP|-": "nadvladavaju"
+ },
+ "ظهر|1@scale": {
+  "present|act|3MP|-": "penju se"
+ },
  "ظهر|3": {
   "present|act|3MP|-": "podržavaju",
   "present|act|2MP|-": "podržavate",
   "past|act|3MP|3MP": "podržali su ih",
   "past|act|3MP|-": "podržali su"
  },
+ "ظهر|3@zihar": {
+  "present|act|3MP|-": "izriču zihar",
+  "present|act|2MP|-": "izričete zihar"
+ },
  "ظهر|4": {
   "present|act|3MS|3MS": "pokazuje mu",
   "present|act|2MP|-": "pokazujete",
   "present|act|3MS|-": "pokazuje",
   "past|act|3MS|3MS": "pokazao mu je"
+ },
+ "ظهر|4@make-prevail": {
+  "present|act|3MS|3MS": "čini ga nadmoćnim",
+  "perfective|act|3MS|3MS": "učini ga nadmoćnim"
+ },
+ "ظهر|4@reach-noon": {
+  "present|act|2MP|-": "ulazite u podne"
  },
  "عبد|1": {
   "imperative|act|2MP|-": "obožavajte!",
@@ -2932,7 +3156,8 @@
   "present|act|2MP|-": "postupate pravedno",
   "imperative|act|2MP|-": "postupajte pravedno!",
   "present|act|3FS|-": "postupa pravedno",
-  "present|act|1S|-": "postupam pravedno"
+  "present|act|1S|-": "postupam pravedno",
+  "perfective|act|1S|-": "postupim pravedno"
  },
  "عدو|8": {
   "past|act|3MS|-": "prekoračio je granice",
@@ -2978,6 +3203,17 @@
   "past|act|1P|-": "pokazali smo",
   "past|pass|3MS|-": "pokazano je",
   "present|pass|2MP|-": "pokazujete se"
+ },
+ "عرض|1@offer": {
+  "past|act|1P|-": "ponudili smo"
+ },
+ "عرض|1@present": {
+  "present|pass|3MP|-": "izloženi su",
+  "present|pass|3MS|-": "izložen je",
+  "past|act|3MS|3MP": "izložio ih je",
+  "past|pass|3MP|-": "bili su izloženi",
+  "past|pass|3MS|-": "bio je izložen",
+  "present|pass|2MP|-": "izloženi ste"
  },
  "عرض|4": {
   "past|act|3MS|-": "okrenuo se",
@@ -3278,7 +3514,17 @@
   "present|act|3MS|3MP": "koristi im",
   "present|act|3MP|-": "koriste",
   "present|act|3MD|3D": "koriste im",
-  "present|act|3MS|3MS": "koristi mu"
+  "present|act|3MS|3MS": "koristi mu",
+  "present|act|3MD|-": "koriste"
+ },
+ "غني|4@enrich": {
+  "past|act|3MS|-": "obogatio je",
+  "present|act|3MS|-": "obogaćuje",
+  "present|act|3MS|2MP": "obogaćuje vas",
+  "present|act|3MS|3MP": "obogaćuje ih"
+ },
+ "غني|4@occupy": {
+  "present|act|3MS|3MS": "zaokuplja ga"
  },
  "غوي|4": {
   "past|act|2MS|1S": "zaveo si me",
@@ -3294,6 +3540,9 @@
   "present|act|3MS|-": "otvara",
   "past|act|1P|-": "otvorili smo"
  },
+ "فتح|1@judge": {
+  "imperative|act|2MS|-": "presudi!"
+ },
  "فتن|1": {
   "present|pass|3MP|-": "bivaju iskušani",
   "present|act|3MS|2MP": "iskušava vas",
@@ -3308,6 +3557,23 @@
   "past|act|1P|3MS": "iskušali smo ga",
   "past|act|2MP|-": "iskušali ste",
   "past|act|3MP|-": "iskušali su"
+ },
+ "فتن|1@persecute": {
+  "present|act|3MS|2MP": "progoni vas",
+  "present|act|3MS|3MP": "progoni ih",
+  "past|pass|3MP|-": "progonjeni su",
+  "past|act|3MP|-": "progonili su"
+ },
+ "فتن|1@test": {
+  "present|pass|3MP|-": "iskušavani su",
+  "past|act|1P|2MS": "iskušali smo te",
+  "present|act|1P|3MP": "iskušavamo ih",
+  "perfective|act|1P|3MP": "iskušamo ih",
+  "present|pass|2MP|-": "iskušavani ste",
+  "past|act|1P|3MS": "iskušali smo ga"
+ },
+ "فتن|1@torment": {
+  "present|pass|3MP|-": "mučeni su"
  },
  "فتي|10": {
   "present|act|3MP|2MS": "pitaju te za mišljenje",
@@ -3461,11 +3727,25 @@
   "present|act|2MP|-": "izlijevate se",
   "past|act|2MP|-": "izlili ste se"
  },
+ "فيض|4@depart": {
+  "past|act|2MP|-": "krenuli ste"
+ },
+ "فيض|4@engage": {
+  "present|act|2MP|-": "upuštate se",
+  "past|act|2MP|-": "upustili ste se"
+ },
  "قبض|1": {
   "present|act|3MS|-": "uzima",
   "present|act|3MP|-": "uzimaju",
   "past|act|1S|-": "uzeo sam",
   "present|act|3FP|-": "uzimaju"
+ },
+ "قبض|1@close": {
+  "present|act|3FP|-": "stišću"
+ },
+ "قبض|1@withhold": {
+  "present|act|3MS|-": "uskraćuje",
+  "present|act|3MP|-": "uskraćuju"
  },
  "قبل|1": {
   "present|pass|3MS|-": "biva prihvaćen",
@@ -3553,6 +3833,18 @@
   "present|act|1P|-": "možemo",
   "past|act|3MS|-": "mogao je"
  },
+ "قدر|1@appraise": {
+  "past|act|3MP|-": "cijenili su"
+ },
+ "قدر|1@decree": {
+  "past|pass|3MS|-": "određeno je",
+  "present|act|1P|-": "određujemo"
+ },
+ "قدر|1@restrict": {
+  "present|act|3MS|-": "sužava",
+  "past|pass|3MS|-": "sužen je",
+  "past|act|3MS|-": "suzio je"
+ },
  "قدر|2": {
   "past|act|3MS|-": "odmjerio je",
   "past|act|3MS|3MS": "odmjerio ga je",
@@ -3598,7 +3890,11 @@
   "past|act|3MD|-": "približili su",
   "past|act|1P|3MS": "približili smo ga",
   "present|act|3FS|2MP": "približava vas",
-  "present|act|3MP|1P": "približavaju nas"
+  "present|act|3MP|1P": "približavaju nas",
+  "perfective|act|3MP|1P": "približe nas"
+ },
+ "قرب|2@offer": {
+  "past|act|3MD|-": "prinijeli su"
  },
  "قرب|8": {
   "past|act|3MS|-": "približio se"
@@ -3644,7 +3940,38 @@
   "past|act|1P|-": "odredili smo",
   "past|act|3MP|-": "odredili su",
   "past|act|3MS|3FP": "odredio ih je",
-  "past|pass|3FS|-": "određeno je"
+  "past|pass|3FS|-": "određeno je",
+  "perfective|act|3MS|-": "odredi"
+ },
+ "قضي|1@carry-out": {
+  "imperative|act|2MP|-": "izvršite!"
+ },
+ "قضي|1@finish": {
+  "past|pass|3MS|-": "završeno je",
+  "past|act|2MP|-": "završili ste",
+  "present|pass|3MS|-": "završava se",
+  "present|act|3MP|-": "završavaju",
+  "perfective|act|3MP|-": "završe",
+  "past|pass|3FS|-": "završena je"
+ },
+ "قضي|1@fulfil": {
+  "past|act|3MS|-": "ispunio je",
+  "present|pass|3MS|-": "ispunjava se",
+  "perfective|pass|3MS|-": "ispuni se",
+  "past|act|3MS|3FS": "ispunio ju je",
+  "past|act|1S|-": "ispunio sam",
+  "past|act|3MP|-": "ispunili su"
+ },
+ "قضي|1@judge": {
+  "past|pass|3MS|-": "presuđeno je",
+  "present|act|3MS|-": "presuđuje",
+  "past|act|2MS|-": "presudio si",
+  "present|act|3MP|-": "presuđuju"
+ },
+ "قضي|1@kill": {
+  "past|act|3MS|-": "ubio je",
+  "present|act|3MS|-": "ubija",
+  "perfective|act|3MS|-": "ubije"
  },
  "قطع|1": {
   "present|act|3MP|-": "presijecaju",
@@ -3770,6 +4097,10 @@
   "past|act|3MS|-": "uzoholio se",
   "past|act|2MS|-": "uzoholio si se"
  },
+ "كبر|1@be-grievous": {
+  "present|act|3MS|-": "težak je",
+  "past|act|3FS|-": "bila je teška"
+ },
  "كتب|1": {
   "past|pass|3MS|-": "napisano je",
   "past|act|1P|-": "napisali smo",
@@ -3784,7 +4115,19 @@
   "future|act|1S|3FS": "napisat ću je",
   "present|act|1P|-": "pišemo",
   "future|pass|3FS|-": "bit će napisano",
-  "past|act|1P|3FS": "napisali smo je"
+  "past|act|1P|3FS": "napisali smo je",
+  "perfective|act|3MS|-": "piše"
+ },
+ "كتب|1@decree": {
+  "past|pass|3MS|-": "određeno je",
+  "imperative|act|2MS|-": "odredi!",
+  "future|act|1S|3FS": "odredit ću ju"
+ },
+ "كتب|1@prescribe": {
+  "past|pass|3MS|-": "propisano je",
+  "past|act|1P|-": "propisali smo",
+  "past|act|2MS|-": "propisao si",
+  "past|act|1P|3FS": "propisali smo ju"
  },
  "كتم|1": {
   "present|act|2MP|-": "skrivate",
@@ -3876,7 +4219,19 @@
   "future|act|3MP|-": "neće vjerovati",
   "present|act|1S|-": "ne vjerujem",
   "past|pass|3MS|-": "nije se vjerovalo",
-  "imperative|act|2MS|-": "ne vjeruj!"
+  "imperative|act|2MS|-": "ne vjeruj!",
+  "perfective|act|3MS|-": "ne vjeruje",
+  "perfective|act|1S|-": "ne vjerujem"
+ },
+ "كفر|1@be-ungrateful": {
+  "past|act|3MP|-": "bili su nezahvalni",
+  "past|act|3MS|-": "bio je nezahvalan",
+  "present|act|3MP|-": "nezahvalni su",
+  "past|act|2MP|-": "bili ste nezahvalni",
+  "present|act|2MP|-": "nezahvalni ste",
+  "perfective|act|3MP|-": "budu nezahvalni",
+  "past|act|3FS|-": "bila je nezahvalna",
+  "present|act|1S|-": "nezahvalan sam"
  },
  "كفر|2": {
   "present|act|3MS|-": "briše grijehe",
@@ -4033,6 +4388,27 @@
   "imperative|act|2D|2D": "bacite vas!",
   "past|act|3FS|-": "bacila je"
  },
+ "لقي|4@cast": {
+  "past|act|1P|-": "bacili smo",
+  "past|act|3MS|-": "bacio je",
+  "present|act|3MS|-": "baca",
+  "future|act|1P|-": "bacit ćemo",
+  "past|act|3MP|-": "bacili su",
+  "present|pass|3MS|-": "bacan je",
+  "past|act|3MS|3FS": "bacio ju je",
+  "future|act|1S|-": "bacit ću",
+  "past|act|1S|-": "bacio sam",
+  "past|pass|3MS|-": "bačen je",
+  "present|act|2MP|-": "bacate"
+ },
+ "لقي|4@give-ear": {
+  "past|act|3MS|-": "saslušao je"
+ },
+ "لقي|4@offer": {
+  "past|act|3MP|-": "ponudili su",
+  "present|act|3MP|-": "nude",
+  "past|act|3MS|-": "ponudio je"
+ },
  "لقي|8": {
   "past|act|3FD|-": "srele su se",
   "past|act|2MP|-": "sreli ste se",
@@ -4163,6 +4539,11 @@
   "past|act|1S|-": "diktirao sam",
   "present|pass|3FS|-": "diktira se",
   "past|act|3MS|-": "diktirao je"
+ },
+ "ملو|4@grant-respite": {
+  "present|act|1P|-": "dajemo odgodu",
+  "past|act|1S|-": "dao sam odgodu",
+  "past|act|3MS|-": "dao je odgodu"
  },
  "منع|1": {
   "past|act|3MS|-": "spriječio je",
@@ -4786,6 +5167,10 @@
   "present|act|3MS|-": "stiže",
   "present|act|3FS|-": "stiže"
  },
+ "وصل|1@join": {
+  "present|pass|3MS|-": "spojen je",
+  "present|act|3MP|-": "spajaju"
+ },
  "وصي|2": {
   "past|act|3MS|2MP": "oporučio vam je",
   "past|act|1P|-": "oporučili smo",
@@ -4811,6 +5196,19 @@
   "past|act|3FS|3MS": "stavila ga je",
   "past|act|3MS|-": "stavio je",
   "past|act|1P|-": "stavili smo"
+ },
+ "وضع|1@give-birth": {
+  "present|act|3FP|-": "rađaju",
+  "past|act|3FS|3FS": "rodila ju je",
+  "past|act|1S|3FS": "rodila sam ju",
+  "past|act|3FS|-": "rodila je",
+  "past|act|3FS|3MS": "rodila ga je"
+ },
+ "وضع|1@remove": {
+  "present|act|3FP|-": "skidaju",
+  "present|act|2MP|-": "skidate",
+  "present|act|3MS|-": "skida",
+  "past|act|1P|-": "skinuli smo"
  },
  "وعد|1": {
   "present|pass|2MP|-": "obećava vam se",
@@ -4948,6 +5346,21 @@
   "past|act|3MS|3MS": "okrenuo ga je",
   "imperative|act|2MS|-": "okreni se!",
   "present|act|2MP|3MP": "okrećete ih"
+ },
+ "ولي|5@befriend": {
+  "present|act|3MS|-": "uzima za prijatelja",
+  "present|act|2MP|-": "uzimate za prijatelja",
+  "present|act|3MP|-": "uzimaju za prijatelja",
+  "present|act|3MS|3MP": "uzima ih za prijatelje",
+  "present|act|3MP|3MS": "uzimaju ga za prijatelja",
+  "past|act|3MS|3MS": "uzeo ga je za prijatelja",
+  "present|act|2MP|3MP": "uzimate ih za prijatelje"
+ },
+ "ولي|5@take-charge": {
+  "past|act|3MS|-": "preuzeo je na sebe"
+ },
+ "ولي|5@turn-to": {
+  "past|act|3MS|-": "priklonio se"
  },
  "وهب|1": {
   "imperative|act|2MS|-": "daruj!",

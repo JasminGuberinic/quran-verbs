@@ -74,7 +74,8 @@ _AMBIGUOUS_SENSES = frozenset({"to will"})
 # خُلِقَ ٱلْإِنسَٰنُ, "man was created" (21:37, 4:28), is as often a person.
 _IMPERSONAL_PASSIVES = frozenset({"say", "decree", "write", "permit", "command", "forbid", "send down", "inspire",
                                   "promise", "blow", "recite", "make", "do", "open", "throw", "put",
-                                  "set in motion", "explain in detail", "take", "show"})
+                                  "set in motion", "explain in detail", "take", "show", "judge", "finish", "fulfil",
+                                  "set forth", "set up", "prescribe", "impose", "join", "carry out"})
 # A passive English says with another verb: "I was born", not "I was given birth"; "you are
 # shown mercy", not "you are had mercy"; "they are taken in death", not "taken the soul".
 _PASSIVE_PHRASES = {"give birth": "born", "have mercy": "shown mercy", "take the soul": "taken in death",

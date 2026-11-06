@@ -11,7 +11,9 @@ gate over everything (a problem stops the build) and writes each kind in shards 
 
 The verb forms' meanings are composed here, cell by cell, by the rules that gloss the Quran's forms
 (fil.composition.compose.compose_cell, from the verb's Bosnian paradigm); a Quranic form is asked in
-the example ayah that shows it with the same gloss, else in the first ayah it stands in.
+the example ayah that shows it with the same gloss, else in the first ayah it stands in — with the gloss
+of that very place where it has one of its own (a polysemous verb's form in more than one sense, a
+referent resolved place by place: data/composed_ayah_glosses.json).
 """
 
 from __future__ import annotations
@@ -45,9 +47,11 @@ from fil.exercises.vocabulary import Word, listen_exercises, picture_exercises
 from fil.noun_pictures import load_categories, load_pictures
 from fil.nouns import bosnian as bosnian_nouns
 from fil.nouns.model import Cell
-from fil.stages import site
+from fil.resources import COMPOSED_AYAH_GLOSSES_JSON
+from fil.stages import forms, site
 from fil.stages.adjectives import Corpus, noun_readings
 from fil.stages.compose import read_paradigms, read_polysemous
+from fil.study import QuranWord
 
 FOLDER = "exercises"
 # How the cards' notes name another canonical reading ("in Ḥafṣ's reading; other readings have…").
@@ -68,6 +72,8 @@ class Sources:
     polysemous: frozenset[str] = frozenset()      # verbs one sense would mislead on: never composed
     ayat: Mapping[str, tuple[str, ...]] = field(default_factory=dict)          # "2:30" → the ayah's words
     translations: Mapping[str, QuranTranslation] = field(default_factory=dict)  # "2:30" → its English translation
+    # ("2:30", arabic) → the gloss the form has at that place, where it is not its form's gloss
+    place_glosses: Mapping[tuple[str, str], Bilingual] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -95,14 +101,29 @@ class ExerciseSets:
 def read_sources() -> Sources:
     """Read what the exercises need beyond the cards (the pictures' emoji, the categories, the
     studied nouns' readings, the Bosnian nouns, the verbs' Bosnian paradigms, the Quran's ayat and their English)."""
-    ayat = {f"{surah}:{ayah}": tuple(word.text for word in words) for (surah, ayah), words in site.read_corpus().ayat.items()}
+    corpus_ayat = site.read_corpus().ayat
+    ayat = {f"{surah}:{ayah}": tuple(word.text for word in words) for (surah, ayah), words in corpus_ayat.items()}
     english = AyahTranslations()
     return Sources(emoji={picture.key: picture.codepoint for picture in load_pictures() if picture.has_picture},
                    categories={key: entry.category for key, entry in load_categories().items()},
                    noun_readings=noun_readings(Corpus()), bosnian=noun_store.bosnian_entries(),
                    paradigms=read_paradigms(), polysemous=read_polysemous(), ayat=ayat,
                    translations={reference: translation for reference in ayat
-                                 for translation in (_english(english, reference),) if translation})
+                                 for translation in (_english(english, reference),) if translation},
+                   place_glosses=place_glosses(forms.read_store(COMPOSED_AYAH_GLOSSES_JSON), corpus_ayat))
+
+
+def place_glosses(glosses: Mapping[str, Mapping[str, str]],
+                  ayat: Mapping[tuple[int, int], Sequence[QuranWord]]) -> dict[tuple[str, str], Bilingual]:
+    """("surah:ayah", the word as written) → its own gloss there. A word written twice in one ayah with two
+    different glosses is left out: the question marks every place the word stands, so it could not say which."""
+    found: dict[tuple[str, str], set[Bilingual]] = {}
+    for (surah, ayah), words in ayat.items():
+        for word in words:
+            gloss = glosses.get(f"{surah}:{ayah}:{word.number}")
+            if gloss:
+                found.setdefault((f"{surah}:{ayah}", word.text), set()).add(_bilingual(gloss))
+    return {key: next(iter(meanings)) for key, meanings in found.items() if len(meanings) == 1}
 
 
 def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjectives: Sequence[dict],
@@ -206,7 +227,7 @@ def _attested(form: dict, card: dict, sources: Sources) -> AttestedForm | None:
     gloss = form.get("gloss") or {}
     if len(form["grammar"]) != 1 or not (gloss.get("bs") and gloss.get("en")):
         return None
-    meaning = _bilingual(gloss)
+    meaning = sources.place_glosses.get((form["first"], form["arabic"])) or _bilingual(gloss)
     ayah = _example_ayah(form["arabic"], meaning, card) or _first_ayah(form, sources)
     if ayah is None:
         return None

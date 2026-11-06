@@ -1,0 +1,371 @@
+{
+ "_about": "Composed glosses corrected at one place, where a form's ayat need different words (سَخَّرَهَا: the camels in 22:37, the wind in 69:7): root|form|arabic → surah:ayah:word → {en, bs, why}. The place shows this gloss; the form's row keeps the rule's. Checked by `fil compose build` like data/composed_gloss_corrections.json.",
+ "جعل|1|جَعَلْنَٰهَا": {
+  "22:36:2": {
+   "en": "we made them",
+   "bs": "učinili smo ih",
+   "why": "22:36: the sacrificial camels (budn)"
+  },
+  "37:63:2": {
+   "en": "we made it",
+   "bs": "učinili smo ga",
+   "why": "37:63: the tree of Zaqqum (drvo)"
+  },
+  "56:73:2": {
+   "en": "we made it",
+   "bs": "učinili smo je",
+   "why": "56:73: the fire (vatra), a reminder"
+  }
+ },
+ "جعل|1|جَعَلْنَٰهُ": {
+  "22:25:11": {
+   "en": "we made it",
+   "bs": "učinili smo ga",
+   "why": "22:25: the Sacred Mosque (hram)"
+  },
+  "23:13:2": {
+   "en": "we made him",
+   "bs": "učinili smo ga",
+   "why": "23:13: man, placed as a drop"
+  },
+  "41:44:2": {
+   "en": "we made it",
+   "bs": "učinili smo ga",
+   "why": "41:44: the Quran (Kur'an)"
+  },
+  "42:52:15": {
+   "en": "we made it",
+   "bs": "učinili smo ga",
+   "why": "42:52: the revelation, made a light"
+  },
+  "43:3:2": {
+   "en": "we made it",
+   "bs": "učinili smo ga",
+   "why": "43:3: the Quran, an Arabic Quran"
+  },
+  "56:70:3": {
+   "en": "we made it",
+   "bs": "učinili smo je",
+   "why": "56:70: the water (voda), made bitter"
+  },
+  "6:9:2": {
+   "en": "we made him",
+   "bs": "učinili smo ga",
+   "why": "6:9: the messenger, had he been made an angel"
+  }
+ },
+ "جعل|1|فَجَعَلَهُۥ": {
+  "25:54:7": {
+   "en": "so he made him",
+   "bs": "pa ga je učinio",
+   "why": "25:54: man, created from water"
+  },
+  "68:50:3": {
+   "en": "so he made him",
+   "bs": "pa ga je učinio",
+   "why": "68:50: Jonah, made of the righteous"
+  },
+  "87:5:1": {
+   "en": "so he made it",
+   "bs": "pa ga je učinio",
+   "why": "87:5: the pasture, made dark stubble"
+  }
+ },
+ "جعل|1|فَجَعَلْنَٰهُ": {
+  "25:23:7": {
+   "en": "so we made them",
+   "bs": "pa smo ih učinili",
+   "why": "25:23: the deeds they did, made scattered dust"
+  },
+  "76:2:8": {
+   "en": "so we made him",
+   "bs": "pa smo ga učinili",
+   "why": "76:2: man, made hearing and seeing"
+  },
+  "77:21:1": {
+   "en": "so we placed it",
+   "bs": "pa smo je smjestili",
+   "why": "77:21: the despised fluid (tekućina), placed in a firm lodging"
+  }
+ },
+ "جعل|1|وَجَعَلْنَٰهَا": {
+  "21:91:8": {
+   "en": "and we made her",
+   "bs": "i učinili smo je",
+   "why": "21:91: Mary (and her son), a sign"
+  },
+  "67:5:6": {
+   "en": "and we made them",
+   "bs": "i učinili smo ih",
+   "why": "67:5: the lamps (stars), missiles against devils"
+  }
+ },
+ "جعل|1|وَجَعَلْنَٰهُ": {
+  "17:2:4": {
+   "en": "and we made it",
+   "bs": "i učinili smo je",
+   "why": "17:2: the Scripture (Knjiga), a guidance"
+  },
+  "32:23:11": {
+   "en": "and we made it",
+   "bs": "i učinili smo je",
+   "why": "32:23: the Scripture given to Moses, a guidance"
+  },
+  "43:59:7": {
+   "en": "and we made him",
+   "bs": "i učinili smo ga",
+   "why": "43:59: Jesus, an example"
+  }
+ },
+ "جعل|1|يَجْعَلُهُۥ": {
+  "24:43:11": {
+   "en": "he makes them",
+   "bs": "čini ih",
+   "why": "24:43: the clouds, made into a mass"
+  },
+  "39:21:24": {
+   "en": "he makes it",
+   "bs": "čini ga",
+   "why": "39:21: the vegetation, made debris"
+  }
+ },
+ "جيأ|1|جَآءَهُۥ": {
+  "24:39:11": {
+   "en": "he came to it",
+   "bs": "došao je do njega",
+   "why": "24:39: the thirsty man reaches the mirage"
+  },
+  "28:25:16": {
+   "en": "he came to him",
+   "bs": "došao mu je",
+   "why": "28:25: Moses came to the old man"
+  },
+  "2:275:27": {
+   "en": "it came to him",
+   "bs": "došla mu je",
+   "why": "2:275: an admonition (pouka) from his Lord"
+  }
+ },
+ "خلق|1|خَلَقَهُۥ": {
+  "32:7:5": {
+   "en": "he created it",
+   "bs": "stvorio ga je",
+   "why": "32:7: everything He created"
+  },
+  "3:59:8": {
+   "en": "he created him",
+   "bs": "stvorio ga je",
+   "why": "3:59: Adam, created from dust"
+  },
+  "80:18:4": {
+   "en": "he created him",
+   "bs": "stvorio ga je",
+   "why": "80:18: man"
+  },
+  "80:19:3": {
+   "en": "he created him",
+   "bs": "stvorio ga je",
+   "why": "80:19: man, from a drop"
+  }
+ },
+ "خلق|1|خَلَقْنَٰهُ": {
+  "15:27:2": {
+   "en": "we created them",
+   "bs": "stvorili smo ih",
+   "why": "15:27: the jinn (džini), from fire"
+  },
+  "19:67:5": {
+   "en": "we created him",
+   "bs": "stvorili smo ga",
+   "why": "19:67: man, when he was nothing"
+  },
+  "36:77:5": {
+   "en": "we created him",
+   "bs": "stvorili smo ga",
+   "why": "36:77: man, from a drop"
+  },
+  "54:49:4": {
+   "en": "we created it",
+   "bs": "stvorili smo ga",
+   "why": "54:49: everything, by measure"
+  }
+ },
+ "دخل|4|وَيُدْخِلْهُ": {
+  "64:9:16": {
+   "en": "and he admits him",
+   "bs": "i uvodi ga",
+   "why": "64:9: Allah admits the believer to gardens"
+  }
+ },
+ "ذكر|1|وَٱذْكُرُوهُ": {
+  "2:198:18": {
+   "en": "and (you all) remember him!",
+   "bs": "i spominjite ga!",
+   "why": "2:198: Allah, who guided you"
+  }
+ },
+ "رأي|1|تَرَوْنَهَا": {
+  "13:2:7": {
+   "en": "you (all) see them",
+   "bs": "vidite ih",
+   "why": "13:2: pillars (stubovi) you can see"
+  },
+  "22:2:2": {
+   "en": "you (all) see it",
+   "bs": "vidite ga",
+   "why": "22:2: the quake of the Hour (potres)"
+  },
+  "31:10:5": {
+   "en": "you (all) see them",
+   "bs": "vidite ih",
+   "why": "31:10: pillars (stubovi) you can see"
+  }
+ },
+ "رأي|1|رَءَاهُ": {
+  "27:40:16": {
+   "en": "he saw it",
+   "bs": "vidio ga je",
+   "why": "27:40: Solomon saw the throne (prijesto)"
+  },
+  "53:13:2": {
+   "en": "he saw him",
+   "bs": "vidio ga je",
+   "why": "53:13: the Prophet saw Gabriel"
+  },
+  "81:23:2": {
+   "en": "he saw him",
+   "bs": "vidio ga je",
+   "why": "81:23: the Prophet saw Gabriel on the horizon"
+  }
+ },
+ "رأي|1|فَرَءَاهُ": {
+  "35:8:6": {
+   "en": "so he saw it",
+   "bs": "pa ga je vidio",
+   "why": "35:8: his evil deed (djelo), seen as good"
+  },
+  "37:55:2": {
+   "en": "so he saw him",
+   "bs": "pa ga je vidio",
+   "why": "37:55: his companion in the Fire"
+  }
+ },
+ "رأي|4|فَأَرَىٰهُ": {
+  "79:20:1": {
+   "en": "so he showed him",
+   "bs": "pa mu je pokazao",
+   "why": "79:20: Moses showed Pharaoh the great sign"
+  }
+ },
+ "سخر|2|سَخَّرَهَا": {
+  "22:37:12": {
+   "en": "he subjected them",
+   "bs": "potčinio ih je",
+   "why": "22:37: the sacrificial camels"
+  },
+  "69:7:1": {
+   "en": "he imposed it",
+   "bs": "nametnuo ga je",
+   "why": "69:7: the wind (vjetar), imposed on Ad seven nights"
+  }
+ },
+ "سمع|1|سَمِعَهُۥ": {
+  "2:181:4": {
+   "en": "he heard it",
+   "bs": "čuo ju je",
+   "why": "2:181: the bequest (oporuka)"
+  }
+ },
+ "شري|8|ٱشْتَرَىٰهُ": {
+  "12:21:3": {
+   "en": "he bought him",
+   "bs": "kupio ga je",
+   "why": "12:21: Joseph"
+  },
+  "2:102:60": {
+   "en": "he bought it",
+   "bs": "kupio ga je",
+   "why": "2:102: magic (sihir)"
+  }
+ },
+ "طوع|4|تُطِيعُوهُ": {
+  "24:54:16": {
+   "en": "you (all) obey him",
+   "bs": "slušate ga",
+   "why": "24:54: the Messenger"
+  }
+ },
+ "طوع|4|فَأَطَاعُوهُ": {
+  "43:54:3": {
+   "en": "so they obeyed him",
+   "bs": "pa su ga poslušali",
+   "why": "43:54: Pharaoh"
+  }
+ },
+ "عرف|1|يَعْرِفُونَهُۥ": {
+  "2:146:4": {
+   "en": "they know him",
+   "bs": "znaju ga",
+   "why": "2:146: the Prophet, known as they know their sons"
+  },
+  "6:20:4": {
+   "en": "they know him",
+   "bs": "znaju ga",
+   "why": "6:20: the Prophet, known as they know their sons"
+  }
+ },
+ "عمل|1|عَمِلَتْهُ": {
+  "36:35:5": {
+   "en": "they made it",
+   "bs": "napravile su ga",
+   "why": "36:35: their hands (ruke) did not make the fruit"
+  }
+ },
+ "غشو|1|يَغْشَىٰهُ": {
+  "24:40:6": {
+   "en": "it covers it",
+   "bs": "prekriva ga",
+   "why": "24:40: a wave covers the deep sea (more)"
+  }
+ },
+ "قدر|2|فَقَدَّرَهُۥ": {
+  "25:2:18": {
+   "en": "so he determined it",
+   "bs": "pa ga je odredio",
+   "why": "25:2: everything, given its measure"
+  },
+  "80:19:4": {
+   "en": "so he proportioned him",
+   "bs": "pa mu je dao razmjer",
+   "why": "80:19: man, created from a drop"
+  }
+ },
+ "كره|1|فَكَرِهْتُمُوهُ": {
+  "49:12:25": {
+   "en": "so you (all) detested it",
+   "bs": "pa ste se toga gnušali",
+   "why": "49:12: eating a dead brother's flesh"
+  }
+ },
+ "لقي|4|يُلْقَىٰٓ": {
+  "28:86:5": {
+   "en": "it is sent down",
+   "bs": "biva objavljena",
+   "why": "28:86: the Book (Knjiga), sent down to you"
+  }
+ },
+ "نسي|4|نُنسِهَا": {
+  "2:106:6": {
+   "en": "we cause it to be forgotten",
+   "bs": "činimo da se zaboravi",
+   "why": "2:106: a verse (ajet), caused to be forgotten"
+  }
+ },
+ "ولي|5|تَوَلَّىٰ": {
+  "24:11:23": {
+   "en": "he/it took it upon himself",
+   "bs": "preuzeo je na sebe",
+   "why": "24:11: the greater share of the slander"
+  }
+ }
+}

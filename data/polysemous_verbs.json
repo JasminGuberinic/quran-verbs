@@ -1,43 +1,803 @@
 {
- "_about": "Verbs whose first sense (data/meanings.json) would be wrong in more than about a tenth of their Quranic ayat; fil compose never glosses their forms by rule. verb → its other common senses. Judged by an AI reviewer of Quranic usage; revise by hand.",
- "أتي|1": "bring (with bi-); commit (an act)",
- "بعث|1": "raise (from the dead), resurrect",
- "بغي|1": "seek, desire",
- "توب|1": "of God: accept repentance, turn in mercy",
- "حصن|4": "guard chastity; be married",
- "حلل|1": "be lawful; untie",
- "حيي|10": "spare, keep alive (women)",
- "خلو|1": "be alone (with someone)",
- "دفع|1": "repel; hand over (property)",
- "ذهب|1": "take away (with bi-)",
- "رمي|1": "accuse (of adultery), slander",
- "سلم|2": "hand over/pay; submit; save",
- "سوي|8": "be equal; rise over/establish (on the Throne); settle",
- "صدق|1": "fulfil, be true to (a promise)",
- "صدق|2": "confirm; fulfil (a vision)",
- "صلو|2": "send blessings (upon)",
- "ضرب|1": "set forth (a parable); travel (in the land)",
- "ظهر|1": "prevail over; climb/scale",
- "ظهر|3": "pronounce ẓihār (divorce)",
- "ظهر|4": "make prevail; disclose",
- "عدل|1": "set up equals (to God); deviate; offer ransom",
- "عرض|1": "present, offer",
- "غني|4": "enrich",
- "فتح|1": "judge/decide between; grant victory",
- "فتن|1": "persecute, torment; test",
- "فصل|1": "judge between; set out",
- "فيض|4": "plunge into (talk); depart in a throng",
- "قبض|1": "withhold, restrict (provision)",
- "قدر|1": "measure/esteem (God's worth); restrict (provision)",
- "قرب|2": "offer (a sacrifice)",
- "قضي|1": "fulfil, complete, finish; judge",
- "كبر|1": "be grievous/hard (upon); be monstrous",
- "كتب|1": "prescribe, ordain",
- "كفر|1": "be ungrateful (for favours)",
- "لقي|4": "cast/deliver (message); offer (peace); give ear",
- "ملو|4": "grant respite",
- "هوي|1": "desire, incline to; perish",
- "وصل|1": "join (ties), connect",
- "وضع|1": "give birth; lay down (burden), remove",
- "ولي|5": "take as ally/protector; take charge"
+ "_about": "Verbs whose first sense (data/meanings.json) would be wrong in more than about a tenth of their Quranic ayat: verb → its senses, the first being the verb's own first sense. A form of such a verb is composed only from the sense chosen for each ayah it stands in (data/polysemous_sense_choices.json); a sense other than the first takes its Bosnian from the paradigm \"root|form@sense\" in data/bs_paradigms.json. en is a plain \"to …\" meaning the English rules conjugate; bs the Bosnian infinitive, a hint for the paradigm's writer.",
+ "أتي|1": {
+  "senses": [
+   {
+    "id": "come",
+    "en": "to come",
+    "bs": "doći"
+   },
+   {
+    "id": "bring",
+    "en": "to bring",
+    "bs": "donijeti"
+   },
+   {
+    "id": "commit",
+    "en": "to commit",
+    "bs": "počiniti"
+   },
+   {
+    "id": "approach",
+    "en": "to approach",
+    "bs": "prilaziti"
+   },
+   {
+    "id": "become",
+    "en": "to become",
+    "bs": "postati"
+   }
+  ]
+ },
+ "بعث|1": {
+  "senses": [
+   {
+    "id": "send",
+    "en": "to send",
+    "bs": "poslati"
+   },
+   {
+    "id": "resurrect",
+    "en": "to resurrect",
+    "bs": "oživjeti, proživjeti"
+   },
+   {
+    "id": "awaken",
+    "en": "to awaken",
+    "bs": "probuditi"
+   }
+  ]
+ },
+ "بغي|1": {
+  "senses": [
+   {
+    "id": "transgress",
+    "en": "to transgress",
+    "bs": "činiti nasilje"
+   },
+   {
+    "id": "seek",
+    "en": "to seek",
+    "bs": "tražiti"
+   },
+   {
+    "id": "desire",
+    "en": "to desire",
+    "bs": "željeti"
+   },
+   {
+    "id": "wrong",
+    "en": "to wrong",
+    "bs": "nasilje učiniti"
+   }
+  ]
+ },
+ "توب|1": {
+  "senses": [
+   {
+    "id": "repent",
+    "en": "to repent",
+    "bs": "pokajati se"
+   },
+   {
+    "id": "accept-repentance",
+    "en": "to accept repentance",
+    "bs": "primiti pokajanje, oprostiti"
+   }
+  ]
+ },
+ "حصن|4": {
+  "senses": [
+   {
+    "id": "fortify",
+    "en": "to fortify",
+    "bs": "utvrditi"
+   },
+   {
+    "id": "guard-chastity",
+    "en": "to guard chastity",
+    "bs": "sačuvati čednost"
+   },
+   {
+    "id": "marry",
+    "en": "to marry",
+    "bs": "udati se, oženiti se"
+   },
+   {
+    "id": "store",
+    "en": "to store",
+    "bs": "sačuvati, pohraniti"
+   }
+  ]
+ },
+ "حلل|1": {
+  "senses": [
+   {
+    "id": "alight",
+    "en": "to alight",
+    "bs": "sići, nastaniti se"
+   },
+   {
+    "id": "befall",
+    "en": "to befall",
+    "bs": "snaći, zadesiti"
+   },
+   {
+    "id": "be-lawful",
+    "en": "to be lawful",
+    "bs": "biti dozvoljen"
+   },
+   {
+    "id": "untie",
+    "en": "to untie",
+    "bs": "odriješiti"
+   }
+  ]
+ },
+ "حيي|10": {
+  "senses": [
+   {
+    "id": "be-ashamed",
+    "en": "to be ashamed",
+    "bs": "stidjeti se"
+   },
+   {
+    "id": "keep-alive",
+    "en": "to keep alive",
+    "bs": "ostaviti u životu"
+   }
+  ]
+ },
+ "خلو|1": {
+  "senses": [
+   {
+    "id": "pass-away",
+    "en": "to pass away",
+    "bs": "proći, nestati"
+   },
+   {
+    "id": "be-alone",
+    "en": "to be alone",
+    "bs": "osamiti se, biti nasamo"
+   },
+   {
+    "id": "be-free",
+    "en": "to be free",
+    "bs": "biti slobodan"
+   }
+  ]
+ },
+ "دفع|1": {
+  "senses": [
+   {
+    "id": "push",
+    "en": "to push",
+    "bs": "gurnuti"
+   },
+   {
+    "id": "repel",
+    "en": "to repel",
+    "bs": "odbiti"
+   },
+   {
+    "id": "hand-over",
+    "en": "to deliver",
+    "bs": "predati"
+   }
+  ]
+ },
+ "ذهب|1": {
+  "senses": [
+   {
+    "id": "go",
+    "en": "to go",
+    "bs": "otići"
+   },
+   {
+    "id": "take-away",
+    "en": "to take away",
+    "bs": "odnijeti, oduzeti"
+   },
+   {
+    "id": "take",
+    "en": "to take",
+    "bs": "odnijeti"
+   }
+  ]
+ },
+ "رمي|1": {
+  "senses": [
+   {
+    "id": "throw",
+    "en": "to throw",
+    "bs": "baciti"
+   },
+   {
+    "id": "accuse",
+    "en": "to accuse",
+    "bs": "potvoriti, optužiti"
+   }
+  ]
+ },
+ "سلم|2": {
+  "senses": [
+   {
+    "id": "greet",
+    "en": "to greet",
+    "bs": "pozdraviti"
+   },
+   {
+    "id": "hand-over",
+    "en": "to deliver",
+    "bs": "predati, isplatiti"
+   },
+   {
+    "id": "submit",
+    "en": "to submit",
+    "bs": "pokoriti se"
+   },
+   {
+    "id": "save",
+    "en": "to save",
+    "bs": "spasiti, sačuvati"
+   }
+  ]
+ },
+ "سوي|8": {
+  "senses": [
+   {
+    "id": "be-level",
+    "en": "to be level",
+    "bs": "biti ravan"
+   },
+   {
+    "id": "be-equal",
+    "en": "to be equal",
+    "bs": "biti jednak"
+   },
+   {
+    "id": "rise",
+    "en": "to rise",
+    "bs": "uzdići se"
+   },
+   {
+    "id": "settle",
+    "en": "to settle",
+    "bs": "pristati, ustaliti se"
+   },
+   {
+    "id": "mature",
+    "en": "to reach maturity",
+    "bs": "dostići zrelost, ojačati"
+   }
+  ]
+ },
+ "صدق|1": {
+  "senses": [
+   {
+    "id": "tell-truth",
+    "en": "to tell the truth",
+    "bs": "govoriti istinu"
+   },
+   {
+    "id": "fulfil",
+    "en": "to fulfil",
+    "bs": "ispuniti"
+   }
+  ]
+ },
+ "صدق|2": {
+  "senses": [
+   {
+    "id": "believe",
+    "en": "to believe",
+    "bs": "vjerovati"
+   },
+   {
+    "id": "confirm",
+    "en": "to confirm",
+    "bs": "potvrditi"
+   },
+   {
+    "id": "fulfil",
+    "en": "to fulfil",
+    "bs": "ispuniti"
+   }
+  ]
+ },
+ "صلو|2": {
+  "senses": [
+   {
+    "id": "pray",
+    "en": "to pray",
+    "bs": "klanjati, moliti se"
+   },
+   {
+    "id": "bless",
+    "en": "to send blessings",
+    "bs": "blagosiljati"
+   }
+  ]
+ },
+ "ضرب|1": {
+  "senses": [
+   {
+    "id": "strike",
+    "en": "to strike",
+    "bs": "udariti"
+   },
+   {
+    "id": "set-forth",
+    "en": "to set forth",
+    "bs": "navesti"
+   },
+   {
+    "id": "travel",
+    "en": "to travel",
+    "bs": "putovati"
+   },
+   {
+    "id": "impose",
+    "en": "to impose",
+    "bs": "nametnuti"
+   },
+   {
+    "id": "draw",
+    "en": "to draw",
+    "bs": "spustiti, prebaciti"
+   },
+   {
+    "id": "set-up",
+    "en": "to set up",
+    "bs": "postaviti"
+   }
+  ]
+ },
+ "ظهر|1": {
+  "senses": [
+   {
+    "id": "appear",
+    "en": "to appear",
+    "bs": "pojaviti se"
+   },
+   {
+    "id": "prevail",
+    "en": "to prevail",
+    "bs": "nadvladati"
+   },
+   {
+    "id": "scale",
+    "en": "to scale",
+    "bs": "popeti se"
+   },
+   {
+    "id": "be-aware",
+    "en": "to be aware",
+    "bs": "znati"
+   }
+  ]
+ },
+ "ظهر|3": {
+  "senses": [
+   {
+    "id": "back",
+    "en": "to back",
+    "bs": "pomagati, podržati"
+   },
+   {
+    "id": "zihar",
+    "en": "to pronounce ẓihār",
+    "bs": "izreći zihar"
+   }
+  ]
+ },
+ "ظهر|4": {
+  "senses": [
+   {
+    "id": "show",
+    "en": "to show",
+    "bs": "pokazati"
+   },
+   {
+    "id": "make-prevail",
+    "en": "to make prevail",
+    "bs": "učiniti nadmoćnim"
+   },
+   {
+    "id": "reach-noon",
+    "en": "to reach noon",
+    "bs": "ući u podne"
+   }
+  ]
+ },
+ "عدل|1": {
+  "senses": [
+   {
+    "id": "be-just",
+    "en": "to be just",
+    "bs": "biti pravedan"
+   },
+   {
+    "id": "set-up-equals",
+    "en": "to set up equals",
+    "bs": "izjednačavati"
+   },
+   {
+    "id": "deviate",
+    "en": "to deviate",
+    "bs": "skrenuti"
+   },
+   {
+    "id": "proportion",
+    "en": "to proportion",
+    "bs": "skladno oblikovati"
+   },
+   {
+    "id": "ransom",
+    "en": "to offer ransom",
+    "bs": "dati otkup"
+   }
+  ]
+ },
+ "عرض|1": {
+  "senses": [
+   {
+    "id": "show",
+    "en": "to show",
+    "bs": "pokazati"
+   },
+   {
+    "id": "present",
+    "en": "to present",
+    "bs": "izvesti, izložiti"
+   },
+   {
+    "id": "offer",
+    "en": "to offer",
+    "bs": "ponuditi"
+   }
+  ]
+ },
+ "غني|4": {
+  "senses": [
+   {
+    "id": "avail",
+    "en": "to avail",
+    "bs": "koristiti"
+   },
+   {
+    "id": "enrich",
+    "en": "to enrich",
+    "bs": "obogatiti"
+   },
+   {
+    "id": "occupy",
+    "en": "to occupy",
+    "bs": "zaokupiti"
+   }
+  ]
+ },
+ "فتح|1": {
+  "senses": [
+   {
+    "id": "open",
+    "en": "to open",
+    "bs": "otvoriti"
+   },
+   {
+    "id": "judge",
+    "en": "to judge",
+    "bs": "presuditi"
+   },
+   {
+    "id": "grant-victory",
+    "en": "to grant victory",
+    "bs": "dati pobjedu"
+   }
+  ]
+ },
+ "فتن|1": {
+  "senses": [
+   {
+    "id": "tempt",
+    "en": "to tempt",
+    "bs": "zavesti"
+   },
+   {
+    "id": "test",
+    "en": "to test",
+    "bs": "iskušati"
+   },
+   {
+    "id": "persecute",
+    "en": "to persecute",
+    "bs": "progoniti, mučiti"
+   },
+   {
+    "id": "torment",
+    "en": "to torment",
+    "bs": "mučiti"
+   }
+  ]
+ },
+ "فصل|1": {
+  "senses": [
+   {
+    "id": "set-out",
+    "en": "to set out",
+    "bs": "krenuti"
+   },
+   {
+    "id": "judge",
+    "en": "to judge",
+    "bs": "presuditi"
+   }
+  ]
+ },
+ "فيض|4": {
+  "senses": [
+   {
+    "id": "pour-forth",
+    "en": "to pour forth",
+    "bs": "izliti"
+   },
+   {
+    "id": "depart",
+    "en": "to depart",
+    "bs": "krenuti"
+   },
+   {
+    "id": "engage",
+    "en": "to engage",
+    "bs": "upustiti se"
+   }
+  ]
+ },
+ "قبض|1": {
+  "senses": [
+   {
+    "id": "seize",
+    "en": "to seize",
+    "bs": "uzeti, zgrabiti"
+   },
+   {
+    "id": "withhold",
+    "en": "to withhold",
+    "bs": "uskratiti"
+   },
+   {
+    "id": "close",
+    "en": "to close",
+    "bs": "stisnuti"
+   }
+  ]
+ },
+ "قدر|1": {
+  "senses": [
+   {
+    "id": "be-able",
+    "en": "to be able",
+    "bs": "moći"
+   },
+   {
+    "id": "appraise",
+    "en": "to appraise",
+    "bs": "cijeniti, pojmiti"
+   },
+   {
+    "id": "restrict",
+    "en": "to restrict",
+    "bs": "suziti, odmjeriti"
+   },
+   {
+    "id": "decree",
+    "en": "to decree",
+    "bs": "odrediti"
+   }
+  ]
+ },
+ "قرب|2": {
+  "senses": [
+   {
+    "id": "bring-near",
+    "en": "to bring near",
+    "bs": "približiti"
+   },
+   {
+    "id": "offer",
+    "en": "to offer",
+    "bs": "prinijeti"
+   }
+  ]
+ },
+ "قضي|1": {
+  "senses": [
+   {
+    "id": "decree",
+    "en": "to decree",
+    "bs": "odrediti"
+   },
+   {
+    "id": "judge",
+    "en": "to judge",
+    "bs": "presuditi"
+   },
+   {
+    "id": "fulfil",
+    "en": "to fulfil",
+    "bs": "ispuniti"
+   },
+   {
+    "id": "finish",
+    "en": "to finish",
+    "bs": "završiti, obaviti"
+   },
+   {
+    "id": "carry-out",
+    "en": "to carry out",
+    "bs": "izvršiti"
+   },
+   {
+    "id": "kill",
+    "en": "to kill",
+    "bs": "ubiti"
+   }
+  ]
+ },
+ "كبر|1": {
+  "senses": [
+   {
+    "id": "grow-up",
+    "en": "to grow up",
+    "bs": "odrasti"
+   },
+   {
+    "id": "be-grievous",
+    "en": "to be grievous",
+    "bs": "biti težak"
+   }
+  ]
+ },
+ "كتب|1": {
+  "senses": [
+   {
+    "id": "write",
+    "en": "to write",
+    "bs": "pisati"
+   },
+   {
+    "id": "prescribe",
+    "en": "to prescribe",
+    "bs": "propisati"
+   },
+   {
+    "id": "decree",
+    "en": "to decree",
+    "bs": "odrediti"
+   }
+  ]
+ },
+ "كفر|1": {
+  "senses": [
+   {
+    "id": "disbelieve",
+    "en": "to disbelieve",
+    "bs": "ne vjerovati"
+   },
+   {
+    "id": "be-ungrateful",
+    "en": "to be ungrateful",
+    "bs": "biti nezahvalan"
+   }
+  ]
+ },
+ "لقي|4": {
+  "senses": [
+   {
+    "id": "throw",
+    "en": "to throw",
+    "bs": "baciti"
+   },
+   {
+    "id": "cast",
+    "en": "to cast",
+    "bs": "ubaciti, spustiti"
+   },
+   {
+    "id": "offer",
+    "en": "to offer",
+    "bs": "ponuditi"
+   },
+   {
+    "id": "give-ear",
+    "en": "to give ear",
+    "bs": "saslušati"
+   }
+  ]
+ },
+ "ملو|4": {
+  "senses": [
+   {
+    "id": "dictate",
+    "en": "to dictate",
+    "bs": "diktirati"
+   },
+   {
+    "id": "grant-respite",
+    "en": "to grant respite",
+    "bs": "dati odgodu"
+   }
+  ]
+ },
+ "هوي|1": {
+  "senses": [
+   {
+    "id": "fall",
+    "en": "to fall",
+    "bs": "pasti"
+   },
+   {
+    "id": "desire",
+    "en": "to desire",
+    "bs": "željeti"
+   }
+  ]
+ },
+ "وصل|1": {
+  "senses": [
+   {
+    "id": "arrive",
+    "en": "to arrive",
+    "bs": "stići"
+   },
+   {
+    "id": "join",
+    "en": "to join",
+    "bs": "spajati, održavati"
+   }
+  ]
+ },
+ "وضع|1": {
+  "senses": [
+   {
+    "id": "put",
+    "en": "to put",
+    "bs": "staviti"
+   },
+   {
+    "id": "give-birth",
+    "en": "to give birth",
+    "bs": "roditi"
+   },
+   {
+    "id": "remove",
+    "en": "to remove",
+    "bs": "skinuti"
+   }
+  ]
+ },
+ "ولي|5": {
+  "senses": [
+   {
+    "id": "turn-away",
+    "en": "to turn away",
+    "bs": "okrenuti se"
+   },
+   {
+    "id": "befriend",
+    "en": "to befriend",
+    "bs": "prijateljevati"
+   },
+   {
+    "id": "take-charge",
+    "en": "to take charge of",
+    "bs": "preuzeti na sebe"
+   },
+   {
+    "id": "turn-to",
+    "en": "to turn to",
+    "bs": "prikloniti se"
+   }
+  ]
+ }
 }

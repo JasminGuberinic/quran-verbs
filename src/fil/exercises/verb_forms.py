@@ -29,13 +29,17 @@ Iz Kur'ana: a form as the Quran writes it, marked in an ayah where it stands; it
 verb's page shows: written in context, or composed by rule) among glosses of other forms of the same
 verb with another person, tense, voice or object — never a form differing from it only by a "and"/"so"
 in front. A present that may be "you" or "she" (تَقُولُ, تَقُولَانِ) is not asked: the corpus itself
-does not always tell them apart (fil.composition.compose).
+does not always tell them apart (fil.composition.compose). Nor is a gloss whose object is still "him/it" or
+"her/it": the ayah shown names who or what it is (سَخَّرَهَا: the camels in 22:37, the wind in 69:7), so an
+answer that leaves it open is not what the ayah says — such a place is asked once its referent is resolved
+(data/composed_place_corrections.json).
 
 Pure.
 """
 
 from __future__ import annotations
 
+import re
 from collections.abc import Collection, Iterable, Sequence
 from dataclasses import dataclass
 
@@ -57,6 +61,8 @@ MAX_AYAH_WORDS = 30
 # merge the duals, so a feminine dual present hides behind huma (fil.corpus.oracle.pronoun_key).
 _PRESENT_TENSES = frozenset({"present", "future"})
 _YOU_OR_SHE = frozenset({"anta", "hiya", "antuma", "huma"})
+# The rules' object for a third person singular that may be a person or a thing (fil.composition.english).
+_OPEN_REFERENT = re.compile(r"\b(him|her)/it\b")
 
 
 @dataclass(frozen=True)
@@ -284,12 +290,20 @@ def _standing_alone(verb: QuranicVerb) -> QuranicVerb:
 
 def is_askable(answer: AttestedForm, table: VerbTable) -> bool:
     """Not a present that may be "you" or "she", nor a form whose cell the table writes like another (قُلْنَ),
-    nor one the ayah does not mark or another canonical reading reads otherwise."""
+    nor one the ayah does not mark or another canonical reading reads otherwise, nor a gloss that leaves
+    open whom or what its object is."""
     if not any(word.is_hit for word in answer.ayah.words) or answer.ayah.has_other_reading:
+        return False
+    if leaves_referent_open(answer.gloss):
         return False
     if answer.grammar.tense in _PRESENT_TENSES and answer.grammar.person in _YOU_OR_SHE:
         return False
     return not any(are_spelled_alike(answer.grammar, form.grammar, table) for form in table.used)
+
+
+def leaves_referent_open(gloss: Bilingual) -> bool:
+    """"he/it subjected her/it": the ayah says whether it is the camels or the wind; this gloss does not."""
+    return bool(_OPEN_REFERENT.search(gloss.en))
 
 
 def is_wrong_gloss(candidate: AttestedForm, answer: AttestedForm, table: VerbTable) -> bool:

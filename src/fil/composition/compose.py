@@ -7,13 +7,15 @@ is skipped with a named reason — a grammar label is never wrong, a composed gl
 
 from __future__ import annotations
 
+from collections import Counter
 from collections.abc import Collection, Mapping, Sequence
 from dataclasses import dataclass
 
-from fil.attested_forms import AttestedForm
+from fil.attested_forms import AttestedForm, Location
 from fil.composition import bosnian, english
 from fil.composition.decomposition import CannotCompose, Cell, Decomposition, decompose
 from fil.composition.english import EnglishVerb
+from fil.composition.senses import PolysemousVerb
 from fil.corpus.parse import Segment, VerbOccurrence
 
 Reading = tuple[VerbOccurrence, Sequence[Segment]]   # one occurrence and the word it stands in
@@ -44,6 +46,31 @@ class Composed:
 @dataclass(frozen=True)
 class Skipped:
     reason: str
+
+
+# A form standing in more than one sense lists them, the commonest first: "he/it decreed; he/it fulfilled".
+SENSES_JOINED = "; "
+
+
+@dataclass(frozen=True)
+class ComposedBySense:
+    """A form of a polysemous verb, glossed place by place in the sense chosen for each ayah."""
+
+    by_location: Mapping[Location, Composed]
+
+    @property
+    def is_mixed(self) -> bool:
+        """The form stands in more than one sense: no one gloss is right in every ayah."""
+        return len(set(self.by_location.values())) > 1
+
+    @property
+    def form_gloss(self) -> Composed:
+        """What the form's row shows: its one gloss, or each sense's, the commonest first — each wording once
+        per language ("bacio je" is both "threw" and "cast")."""
+        counted = Counter(self.by_location.values())
+        glosses = sorted(counted, key=lambda gloss: -counted[gloss])
+        return Composed(SENSES_JOINED.join(dict.fromkeys(gloss.en for gloss in glosses)),
+                        SENSES_JOINED.join(dict.fromkeys(gloss.bs for gloss in glosses)))
 
 
 def plan(verb: str, form: AttestedForm, readings: Sequence[Reading], meaning: str,
@@ -85,6 +112,23 @@ def compose(verb: str, form: AttestedForm, readings: Sequence[Reading], meaning:
         return Composed(planned.english, bosnian.gloss(proclitics, cell, cell_text))
     except CannotCompose as reason:
         return Skipped(reason.reason)
+
+
+def compose_by_sense(verb: PolysemousVerb, form: AttestedForm, readings: Sequence[Reading],
+                     chosen: Mapping[Location, str], paradigms: Mapping[str, Mapping[str, str]]) -> ComposedBySense | Skipped:
+    """A polysemous verb's form, each place in its chosen sense (`chosen`: location → sense id; `paradigms`
+    by paradigm key, fil.composition.senses.PolysemousVerb.paradigm_key) — or why it keeps its label.
+    Every place needs a sense, and every sense the form takes must compose: a form is glossed whole or not at all."""
+    if any(location not in chosen for location in form.locations):
+        return Skipped("sense not chosen")
+    by_sense: dict[str, Composed] = {}
+    for sense_id in dict.fromkeys(chosen[location] for location in form.locations):
+        composed = compose(verb.key, form, readings, verb.sense(sense_id).en,
+                           paradigms.get(verb.paradigm_key(sense_id), {}))
+        if isinstance(composed, Skipped):
+            return composed
+        by_sense[sense_id] = composed
+    return ComposedBySense({location: by_sense[chosen[location]] for location in form.locations})
 
 
 def compose_cell(verb: str, cell: Cell, meaning: str, paradigm: Mapping[str, str],

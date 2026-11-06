@@ -1,5 +1,15 @@
 {
  "_about": "Composed glosses (data/composed_form_glosses.json) corrected in context: the rule's gloss of the form is wrong for the ayat it stands in (another sense of the verb, an object that is plainly a thing or a person). Key: root|form|arabic → en, bs, why (the ayah). Same shape as the rule's gloss (clitic words, command, question); checked on every `fil compose build`. Reviewed by AI against the ayah and its translation (2026-11-06); English per Sahih International, Bosnian per Korkut.",
+ "أتي|1|وَأُتُوا۟": {
+  "en": "and it was given to them",
+  "bs": "i davano im je",
+  "why": "2:25: the fruit of Paradise, given to them in likeness"
+ },
+ "أتي|1|يَأْتِيَٰنِهَا": {
+  "en": "they (two) commit it",
+  "bs": "čine to",
+  "why": "4:16: the immorality (fāḥisha)"
+ },
  "أتي|4|ءَاتَوْهُ": {
   "en": "they gave him",
   "bs": "dali su mu",
@@ -439,6 +449,26 @@
   "en": "how well he/it sees!",
   "bs": "kako dobro vidi!",
   "why": "18:26, wonder form 'how clear of sight is He', not 'see!'"
+ },
+ "بعث|1|بَعَثَهُۥ": {
+  "en": "he/it resurrected him",
+  "bs": "oživio ga je",
+  "why": "2:259: the man Allah caused to die a hundred years"
+ },
+ "بغي|1|تَبْغُونَهَا": {
+  "en": "you (all) seek it",
+  "bs": "tražite ga",
+  "why": "3:99: the way of Allah (put), sought crooked"
+ },
+ "بغي|1|وَتَبْغُونَهَا": {
+  "en": "and you (all) seek it",
+  "bs": "i tražite ga",
+  "why": "7:86: the way of Allah (put), sought crooked"
+ },
+ "بغي|1|وَيَبْغُونَهَا": {
+  "en": "and they seek it",
+  "bs": "i traže ga",
+  "why": "the way of Allah (put), sought crooked"
  },
  "بلغ|4|أَبْلِغْهُ": {
   "en": "convey him!",
@@ -2130,6 +2160,21 @@
   "bs": "dižu viku",
   "why": "43:57 yasiddun (kasra) means they clamour or laugh out, not turn away"
  },
+ "صدق|1|صَدَقَكُمُ": {
+  "en": "he/it fulfilled his promise to you (all)",
+  "bs": "ispunio vam je obećanje",
+  "why": "3:152: Allah fulfilled His promise (waʿdahu) to you"
+ },
+ "صدق|1|صَدَقَنَا": {
+  "en": "he/it fulfilled his promise to us",
+  "bs": "ispunio nam je obećanje",
+  "why": "39:74: Who fulfilled His promise (waʿdahu) to us"
+ },
+ "صدق|1|صَدَقْنَٰهُمُ": {
+  "en": "we fulfilled our promise to them",
+  "bs": "ispunili smo im obećanje",
+  "why": "21:9: We fulfilled the promise (al-waʿd) to them"
+ },
  "صرف|1|صَرَفْنَآ": {
   "en": "we directed",
   "bs": "usmjerili smo",
@@ -2250,6 +2295,16 @@
   "bs": "dotiče",
   "why": "10:107: He touches with it (bounty) whom He wills, not strike"
  },
+ "ضرب|1|ضَرَبُوهُ": {
+  "en": "they set him forth",
+  "bs": "naveli su ga",
+  "why": "43:58: Jesus, put forth as an example for argument"
+ },
+ "ضرب|1|نَضْرِبُهَا": {
+  "en": "we set them forth",
+  "bs": "navodimo ih",
+  "why": "29:43, 59:21: these parables (al-amthāl)"
+ },
  "ضرر|1|تَضُرُّونَهُۥ": {
   "en": "you (all) harm him",
   "bs": "štetite mu",
@@ -2369,6 +2424,16 @@
   "en": "and they were certain",
   "bs": "i bili su sigurni",
   "why": "41:48: they realize they have no place of escape"
+ },
+ "ظهر|4|لِيُظْهِرَهُۥ": {
+  "en": "so that he/it may make it prevail",
+  "bs": "da ga učini nadmoćnim",
+  "why": "9:33, 48:28, 61:9: the religion of truth (din) made to prevail"
+ },
+ "ظهر|4|وَأَظْهَرَهُ": {
+  "en": "and he/it made it known to him",
+  "bs": "i obznanio mu je",
+  "why": "66:3: Allah showed it (the disclosure) to him"
  },
  "عبد|1|فَٱعْبُدُوهُ": {
   "en": "so (you all) worship him!",
@@ -2645,6 +2710,16 @@
   "bs": "pa ga okujte!",
   "why": "69:30 take him and fetter him"
  },
+ "غني|4|يُغْنِيهِ": {
+  "en": "he/it occupies him",
+  "bs": "zaokuplja ga",
+  "why": "80:37: a concern enough to occupy him (each man)"
+ },
+ "فتن|1|فَتَنَّٰهُ": {
+  "en": "we tested him",
+  "bs": "iskušali smo ga",
+  "why": "38:24: David"
+ },
  "فرض|1|تَفْرِضُوا۟": {
   "en": "you (all) appoint",
   "bs": "određujete",
@@ -2835,10 +2910,25 @@
   "bs": "prilazite im",
   "why": "2:187 refers to Allah's limits (hudud), plural: 'approach them not'"
  },
+ "قرب|2|وَقَرَّبْنَٰهُ": {
+  "en": "and we brought him near",
+  "bs": "i približili smo ga",
+  "why": "19:52: Moses, brought near in confidential talk"
+ },
  "قصص|1|نَقُصُّهُۥ": {
   "en": "we narrate it",
   "bs": "kazujemo ga",
   "why": "11:100 tidings, \"it\""
+ },
+ "قضي|1|فَقَضَىٰهُنَّ": {
+  "en": "so he/it completed them",
+  "bs": "pa ih je dovršio",
+  "why": "41:12: He completed them as seven heavens"
+ },
+ "قضي|1|قَضَىٰهَا": {
+  "en": "he/it fulfilled it",
+  "bs": "ispunio ju je",
+  "why": "12:68: a need (potreba) in Jacob's soul"
  },
  "قطع|1|يَقْطَعُونَ": {
   "en": "they cross",
@@ -2924,6 +3014,31 @@
   "en": "they (two) keep",
   "bs": "održavaju",
   "why": "2:229, 2:230 keep within the limits of God"
+ },
+ "كتب|1|تَكْتُبُوهَا": {
+  "en": "you (all) write it",
+  "bs": "pišete je",
+  "why": "2:282: the trade (trgovina) on the spot"
+ },
+ "كتب|1|تَكْتُبُوهُ": {
+  "en": "you (all) write it",
+  "bs": "pišete ga",
+  "why": "2:282: the debt (dug)"
+ },
+ "كتب|1|فَسَأَكْتُبُهَا": {
+  "en": "so I will decree it",
+  "bs": "pa ću je odrediti",
+  "why": "7:156: My mercy (milost)"
+ },
+ "كتب|1|فَٱكْتُبُوهُ": {
+  "en": "so (you all) write it!",
+  "bs": "pa ga napišite!",
+  "why": "2:282: the debt (dug)"
+ },
+ "كتب|1|كَتَبْنَٰهَا": {
+  "en": "we prescribed it",
+  "bs": "propisali smo ga",
+  "why": "57:27: monasticism (monaštvo), which We did not prescribe"
  },
  "كتم|1|تَكْتُمُونَهُۥ": {
   "en": "you (all) conceal it",
@@ -3054,6 +3169,11 @@
   "en": "he/it finds it",
   "bs": "nalazi je",
   "why": "17:13 a book he will find open (knjiga f)"
+ },
+ "لقي|4|أَءُلْقِىَ": {
+  "en": "was it sent down?",
+  "bs": "zar je objavljena?",
+  "why": "54:25: the message (opomena), sent down to him alone"
  },
  "متع|2|أُمَتِّعْكُنَّ": {
   "en": "I provide for you (all)",
@@ -3520,6 +3640,11 @@
   "bs": "pa ga je uništila",
   "why": "3:117 the harvest (hartha)"
  },
+ "هوي|1|أَهْوَىٰ": {
+  "en": "he/it hurled down",
+  "bs": "strmoglavio je",
+  "why": "53:53: the overturned towns He hurled down (causative)"
+ },
  "وجد|1|تَجِدُوهُ": {
   "en": "you (all) find it",
   "bs": "nalazite ga",
@@ -3614,6 +3739,21 @@
   "en": "they bequeath",
   "bs": "oporučuju",
   "why": "4:12 legacy bequeathed"
+ },
+ "وضع|1|وَضَعَتْهَا": {
+  "en": "she/it gave birth to her",
+  "bs": "rodila ju je",
+  "why": "3:36: Mary's mother, of Mary"
+ },
+ "وضع|1|وَضَعْتُهَآ": {
+  "en": "I gave birth to her",
+  "bs": "rodila sam je",
+  "why": "3:36: Mary's mother, of Mary"
+ },
+ "وضع|1|وَوَضَعَتْهُ": {
+  "en": "and she/it gave birth to him",
+  "bs": "i rodila ga je",
+  "why": "46:15: his mother, of man"
  },
  "وعد|1|وَعَدَهَا": {
   "en": "he/it promised it",
@@ -3744,6 +3884,16 @@
   "en": "he/it turns (his back) to them",
   "bs": "okreće im leđa",
   "why": "8:16, turns his back to them"
+ },
+ "ولي|5|تَوَلَّاهُ": {
+  "en": "he/it befriended him",
+  "bs": "uzeo ga je za prijatelja",
+  "why": "22:4: Satan"
+ },
+ "ولي|5|يَتَوَلَّوْنَهُۥ": {
+  "en": "they befriend him",
+  "bs": "uzimaju ga za prijatelja",
+  "why": "16:100: Satan"
  },
  "يسر|2|فَسَنُيَسِّرُهُۥ": {
   "en": "so we will ease him",

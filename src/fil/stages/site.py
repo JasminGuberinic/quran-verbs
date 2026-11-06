@@ -42,8 +42,8 @@ from fil.examples import Example
 from fil.languages import CODES, LANGUAGES, only_active
 from fil.quran_numbering import ayah_number
 from fil.recitation import AYAH_STREAM, QuranHiveArchive, RecitationMissing, WordRecitations, ayah_stream
-from fil.resources import (AYAH_VERB_GLOSSES_JSON, BUILD_DIR, QAC_MORPHOLOGY, QURANHIVE_WORD_AUDIO, RECITATION_CACHE,
-                           SITE_DIR, SPEECH_CACHE)
+from fil.resources import (AYAH_VERB_GLOSSES_JSON, BUILD_DIR, COMPOSED_AYAH_GLOSSES_JSON, QAC_MORPHOLOGY,
+                           QURANHIVE_WORD_AUDIO, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE)
 from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
 from fil.stages import forms
@@ -350,8 +350,8 @@ def _ayah_word_view(word: QuranWord, verb: study.VerbKey, forms: dict[study.Loca
 
 
 def _verb_glosses() -> dict[str, dict[str, str]]:
-    entries = json.loads(AYAH_VERB_GLOSSES_JSON.read_text(encoding="utf-8"))
-    return {key: glosses for key, glosses in entries.items() if not key.startswith("_")}
+    """Each example place's own gloss: written in context, else composed for that place (fil compose)."""
+    return {**forms.read_store(COMPOSED_AYAH_GLOSSES_JSON), **forms.read_store(AYAH_VERB_GLOSSES_JSON)}
 
 
 def _sentence_view(example: Example, sound: Sound | None = None) -> dict:

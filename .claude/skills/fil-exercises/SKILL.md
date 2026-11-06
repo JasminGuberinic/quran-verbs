@@ -26,6 +26,10 @@ fil.pages.exercise_render, script src/fil/site/exercises.js, interface text site
   either language (`text.same_gloss`), not on a shared word; each question passes its kind's `*_problems` validator
   (fail fast in the generator) before the gate. Meanings only where `compose_cell` composes them; never a you/she
   present in Iz Kur'ana, never active/passive twins, never a same-cell form differing by "and/so".
+- Iz Kur'ana answers with the gloss of the place it shows: a place's own gloss (`Sources.place_glosses`, from
+  data/composed_ayah_glosses.json — a polysemous verb's form in several senses, or a per-place correction) wins
+  over the form's row. A gloss whose object is still "him/it"/"her/it" is never asked (`leaves_referent_open`):
+  resolve the shown ayah in data/composed_place_corrections.json to bring it back.
 
 ## Working in an agent worktree
 - Symlink `data/qac`, `data/quranhive`, `data/translations` to the main repo's; copy `build/nouns/*.tsv`; link
@@ -48,7 +52,7 @@ fil.pages.exercise_render, script src/fil/site/exercises.js, interface text site
    skipped) and JS tests if the script changed. `fil pages` runs the gate over every real item.
 6. Update the counts in docs/EXERCISES-PLAN.md.
 
-## Verb forms (2026-11-06): form-meaning 1,249 · meaning-form 1,604 · quran-form 3,302
+## Verb forms (2026-11-06): form-meaning 1,249 · meaning-form 1,604 · quran-form 3,633
 Lessons:
 - `same_spelling` (nouns' `spelling_key`) is broad: it folds hamza seats and a silent final alif, so أَدْعُو ≈ اُدْعُوا. Fine
   for "never offer both", wrong for "is one spelling with two readings" — that is `is_read_alike`.

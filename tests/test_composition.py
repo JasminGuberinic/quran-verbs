@@ -7,11 +7,13 @@ import pytest
 from fil import glosses
 from fil.attested_forms import AttestedForm, Grammar
 from fil.composition import bosnian, english
-from fil.composition.compose import Composed, Skipped, compose
+from fil.composition.compose import Composed, Skipped, compose, compose_by_sense
 from fil.composition.decomposition import AND, EMPHATIC, LET, PURPOSE, QUESTION, SO, CannotCompose, Cell, decompose
 from fil.composition.english import IRREGULAR, EnglishVerb
 from fil.composition.corrections import Correction, InvalidCorrection
+from fil.composition.corrections import place_key, read_by_place
 from fil.composition.corrections import read as read_corrections
+from fil.composition.senses import InvalidSenses, PolysemousVerb, Sense, read_choices, read_verbs, stale
 from fil.composition.corrections import validated as validated_corrections
 from fil.composition.paradigms import SHEET_COLUMNS, InvalidParadigm, from_sheet, validated
 from fil.corpus.parse import iter_segments, iter_verb_occurrences
@@ -409,3 +411,97 @@ def test_every_stored_correction_is_in_the_composed_glosses():
     composed = _stored(COMPOSED_FORM_GLOSSES_JSON)
     for key, correction in read_corrections(_stored(COMPOSED_GLOSS_CORRECTIONS_JSON)).items():
         assert composed.get(key) == {"en": correction.en, "bs": correction.bs}, key
+
+
+def test_a_correction_of_one_place_is_checked_against_the_rule_there():
+    place = place_key("سخر|2|سَخَّرَهَا", "69:7:1")
+    rule = {place: ("he/it subjected her/it", "potčinio ju je")}
+    fixed = read_by_place({"سخر|2|سَخَّرَهَا": {"69:7:1": {"en": "he imposed it", "bs": "nametnuo ga je",
+                                                           "why": "69:7: the wind"}}})
+    assert validated_corrections(fixed, rule) == fixed
+    with pytest.raises(InvalidCorrection, match="no longer compose"):
+        validated_corrections(fixed, {place_key("سخر|2|سَخَّرَهَا", "22:37:12"): rule[place]})
+
+
+def test_every_stored_place_correction_is_in_the_ayah_glosses():
+    from fil.resources import COMPOSED_AYAH_GLOSSES_JSON, COMPOSED_PLACE_CORRECTIONS_JSON
+    at_places = _stored(COMPOSED_AYAH_GLOSSES_JSON)
+    for key, correction in read_by_place(_stored(COMPOSED_PLACE_CORRECTIONS_JSON)).items():
+        assert at_places.get(key.split(" ")[1]) == {"en": correction.en, "bs": correction.bs}, key
+
+
+# ---------------------------------------------------------------- polysemous verbs, place by place
+
+DECREE = PolysemousVerb("قضي|1", (Sense("decree", "to decree", "odrediti"), Sense("fulfil", "to fulfil", "ispuniti")))
+QADAW = reading("قَضَوْ V PERF|VF:1|ROOT:قضي|LEM:قَضَى|3MP", "ا۟ N PRON|SUFF|3MP")
+BOTH_SENSES = {"قضي|1": {"past|act|3MP|-": "odredili su"}, "قضي|1@fulfil": {"past|act|3MP|-": "ispunili su"}}
+
+
+def _qadaw(count: int = 2) -> AttestedForm:
+    return AttestedForm("قَضَوْا", tuple((2, 1, n) for n in range(1, count + 1)), (Grammar("past", "hum", False, ()),))
+
+
+def test_a_polysemous_form_is_glossed_place_by_place_in_its_chosen_senses():
+    composed = compose_by_sense(DECREE, _qadaw(), (QADAW, QADAW), {(2, 1, 1): "fulfil", (2, 1, 2): "decree"}, BOTH_SENSES)
+    assert composed.by_location == {(2, 1, 1): Composed("they fulfilled", "ispunili su"),
+                                    (2, 1, 2): Composed("they decreed", "odredili su")}
+    assert composed.is_mixed and composed.form_gloss.en in ("they fulfilled; they decreed", "they decreed; they fulfilled")
+
+
+def test_a_polysemous_form_in_one_sense_has_that_gloss():
+    composed = compose_by_sense(DECREE, _qadaw(), (QADAW, QADAW), {(2, 1, 1): "fulfil", (2, 1, 2): "fulfil"}, BOTH_SENSES)
+    assert not composed.is_mixed and composed.form_gloss == Composed("they fulfilled", "ispunili su")
+
+
+def test_a_polysemous_form_is_glossed_whole_or_not_at_all():
+    assert compose_by_sense(DECREE, _qadaw(), (QADAW, QADAW), {(2, 1, 1): "fulfil"}, BOTH_SENSES) \
+        == Skipped("sense not chosen")
+    assert compose_by_sense(DECREE, _qadaw(), (QADAW, QADAW), {(2, 1, 1): "fulfil", (2, 1, 2): "decree"},
+                            {"قضي|1@fulfil": BOTH_SENSES["قضي|1@fulfil"]}) == Skipped("no paradigm cell")
+
+
+def test_what_is_judged_or_set_forth_is_a_thing():
+    """قُضِيَ بَيْنَهُم "it was judged between them" (39:69), ضُرِبَ مَثَلٌ "a parable is set forth" (22:73)."""
+    qudiya = reading("قُضِىَ V PERF|PASS|VF:1|ROOT:قضي|LEM:قَضَى|3MS")
+    assert english.gloss(decompose(*qudiya), EnglishVerb.from_meaning("to judge")) == "it was judged"
+    assert english.gloss(decompose(*qudiya), EnglishVerb.from_meaning("to set forth")) == "it was set forth"
+
+
+def test_a_sense_other_than_the_first_has_a_paradigm_of_its_own():
+    assert DECREE.paradigm_key("decree") == "قضي|1" and DECREE.paradigm_key("fulfil") == "قضي|1@fulfil"
+
+
+@pytest.mark.parametrize("entry", [
+    {"senses": [{"id": "fulfil", "en": "to fulfil", "bs": "ispuniti"}, {"id": "decree", "en": "to decree", "bs": "odrediti"}]},
+    {"senses": [{"id": "decree", "en": "to decree", "bs": "odrediti"}]},
+    {"senses": [{"id": "decree", "en": "to decree", "bs": "odrediti"}, {"id": "fulfil", "en": "fulfil", "bs": "ispuniti"}]},
+    {"senses": [{"id": "decree", "en": "to decree", "bs": "odrediti"}, {"id": "Fulfil", "en": "to fulfil", "bs": "ispuniti"}]},
+])
+def test_a_sense_list_that_cannot_gloss_is_refused(entry):
+    """The first sense must be the verb's own, there must be another, each a plain "to …" with a lowercase name."""
+    with pytest.raises(InvalidSenses):
+        read_verbs({"قضي|1": entry}, {"قضي|1": "to decree, to carry out"})
+
+
+def test_a_stale_sense_choice_is_refused():
+    choices = read_choices({"قضي|1|قَضَوْا": {"2:1:1": {"sense": "fulfil", "why": "a promise"},
+                                              "9:9:9": {"sense": "fulfil", "why": "a place the form left"},
+                                              "2:1:2": {"sense": "judge", "why": "a sense not in the list"}},
+                            "قضي|1|قَضَى": {"2:5:1": {"sense": "decree", "why": "a form glossed by hand since"}}})
+    problems = " ".join(stale(choices, {"قضي|1": DECREE}, {"قضي|1|قَضَوْا": {"2:1:1", "2:1:2"}}))
+    assert "9:9:9" in problems and "'judge'" in problems and "قضي|1|قَضَى:" in problems and "2:1:1" not in problems
+
+
+def test_a_sense_choice_without_a_reason_is_refused():
+    with pytest.raises(InvalidSenses):
+        read_choices({"قضي|1|قَضَوْا": {"2:1:1": {"sense": "fulfil", "why": " "}}})
+
+
+def test_the_stored_senses_and_choices_are_valid_and_fresh():
+    """`fil compose build` refuses a stale choice; a stale file fails here first."""
+    from fil.stages import compose as stage
+    verbs = stage.read_polysemous_verbs()
+    choices = stage.read_sense_choices()
+    found = [candidate for candidate in stage.candidates() if candidate.key in verbs]
+    places = {candidate.form_key: {"%d:%d:%d" % location for location in candidate.form.locations} for candidate in found}
+    assert stale(choices, verbs, places) == []

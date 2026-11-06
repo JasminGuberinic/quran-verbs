@@ -41,7 +41,8 @@ forms of one verb share it: "rekao je" / "rekli su"). Verb pages get "Vježbaj o
 
 Decisions: only meanings that are composed by rule (a cell without Bosnian in its paradigm, a polysemous or idiomatic
 verb, is not asked); Iz Kur'ana takes the gloss the verb's page shows (in context, or composed) and only forms with one
-reading; options are fully voweled, so forms one skeleton apart in the table (قُلْتُ / قُلْتَ) are fair — the meaning
+reading — the gloss of the very place it shows where that place has its own (a polysemous verb's form in several
+senses, a referent resolved per place), and never a gloss whose object is still "him/it"/"her/it"; options are fully voweled, so forms one skeleton apart in the table (قُلْتُ / قُلْتَ) are fair — the meaning
 names person and tense; active/passive twins are never offered against each other in Iz Kur'ana (the tables have no
 passive cells). Shards grow until no file is far over budget (a heavy word gets fewer neighbours).
 
@@ -69,7 +70,7 @@ passive cells). Shards grow until no file is far over budget (a heavy word gets 
 picture 98 · listen 1,100 (600 nouns + 500 verbs) · case 2,382 · preposition 291 · agreement 303 · nuance 699 (105 groups) ·
 particle 98. Ayat whose note names another reading are left out (80:4, 2:254 for particles).
 
-Verb forms: form-meaning 1,249 (190 verbs) · meaning-form 1,604 (271 verbs) · quran-form 3,302 (341 verbs). Fewer verbs
+Verb forms: form-meaning 1,249 (190 verbs) · meaning-form 1,604 (271 verbs) · quran-form 3,633 (375 verbs; polysemous verbs asked place by place). Fewer verbs
 than 500 because a cell is asked only with a composed meaning (the Bosnian paradigms hold the cells the Quran uses).
 
 ## Next

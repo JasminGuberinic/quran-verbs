@@ -19,6 +19,7 @@ from fil.languages import LANGUAGES, Language
 from fil.noun_pictures import load_categories
 from fil.nouns.pictures import NounPicture, sources_used
 from fil.pages import adjective_render, noun_render, nuance_render, seo
+from fil.pages.exercise_render import PracticeLink, no_practice
 from fil.pages.picture_credits import picture_credit
 from fil.resources import NOUN_PICTURES_DIR
 from fil.stages.noun_site import NounContent
@@ -28,7 +29,8 @@ PICTURE_FOLDER = "pictures"
 
 
 def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: Sequence[dict] = (),
-          nuances: Sequence[dict] = (), published: Collection[str] = frozenset()) -> list[Path]:
+          nuances: Sequence[dict] = (), published: Collection[str] = frozenset(),
+          practice: PracticeLink = no_practice) -> list[Path]:
     """Every noun page and list, the nouns' ayat files and pictures; the pages written. A noun page
     links the studied `adjectives` (cards) of its root and the `nuances` (group cards) it belongs to;
     `published` names the sections the top bar leads to (fil.pages.render)."""
@@ -53,7 +55,8 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: S
                                          adjectives_of_root=adjective_render.adjectives_section(card, adjectives, language, text, path),
                                          published=published,
                                          similar_words=nuance_render.similar_words_section(
-                                             groups_of_lemma(card["key"], nuances), language, text, seo.to_root(path)))
+                                             groups_of_lemma(card["key"], nuances), language, text, seo.to_root(path)),
+                                         practice=practice(card["slug"], language, seo.to_root(path)))
             written.append(_write(pages, path, html))
     return written
 

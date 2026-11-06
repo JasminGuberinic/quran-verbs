@@ -133,6 +133,33 @@ def pronoun_alternates(slug: str | None) -> list[Alternate]:
     return _alternates(path_in, tuple(PRONOUN_FOLDERS))
 
 
+# The exercises likewise (Bosnian and English only, for now): a hub, and a page per kind whose
+# slug is said in each language (fil.pages.exercise_render).
+EXERCISE_FOLDERS = {"bs": "vjezbe", "en": "exercises"}
+
+
+def exercise_index_path(language: str) -> str:
+    return f"{language}/{EXERCISE_FOLDERS[language]}/"
+
+
+def exercise_path(language: str, slug: str) -> str:
+    return f"{exercise_index_path(language)}{slug}/"
+
+
+def exercise_alternates(path_in) -> list[Alternate]:
+    """An exercise page in each language it is built in; `path_in(language)` is its address there."""
+    return _alternates(path_in, tuple(EXERCISE_FOLDERS))
+
+
+def exercise_structured_data(*, title: str, description: str, language: str, path: str) -> str:
+    return _json_ld({
+        "@context": "https://schema.org", "@type": "LearningResource", "learningResourceType": "Quiz",
+        "name": title, "description": description, "inLanguage": language, "url": absolute(path),
+        "educationalLevel": "beginner", "teaches": "Quranic Arabic",
+        "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL},
+    })
+
+
 def to_root(path: str) -> str:
     """The relative way back to the site root from a page at `path`."""
     return "../" * path.count("/")

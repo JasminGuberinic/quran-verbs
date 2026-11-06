@@ -13,9 +13,11 @@ from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
 from fil.pages import nuance_render, seo
+from fil.pages.exercise_render import PracticeLink, no_practice
 
 
-def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published: Collection[str]) -> list[Path]:
+def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published: Collection[str],
+          practice: PracticeLink = no_practice) -> list[Path]:
     """Every group page and the list of groups; the pages written."""
     if not cards:
         return []
@@ -24,9 +26,9 @@ def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published:
         text = texts[language.code]
         written.append(_write(pages, seo.nuance_index_path(language.code),
                               nuance_render.nuance_index(cards, language, text, published=published)))
-        written += [_write(pages, seo.nuance_path(language.code, card["slug"]),
-                           nuance_render.nuance_page(card, language, text, published=published))
-                    for card in cards]
+        written += [_write(pages, path, nuance_render.nuance_page(card, language, text, published=published,
+                                                                  practice=practice(card["slug"], language, seo.to_root(path))))
+                    for card in cards for path in [seo.nuance_path(language.code, card["slug"])]]
     return written
 
 

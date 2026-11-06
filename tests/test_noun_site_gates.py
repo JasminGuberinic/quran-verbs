@@ -198,7 +198,7 @@ def test_every_page_has_the_same_top_bar_with_its_section_marked():
         is_nuance = folder == (seo.NUANCE_FOLDERS.get(code),)
         sections = _parsed(page).sections
         expected = 1 + sum(code in folders for folders in (seo.NOUN_FOLDERS, seo.ADJECTIVE_FOLDERS, seo.NUANCE_FOLDERS,
-                                                           seo.PARTICLE_FOLDERS, seo.PRONOUN_FOLDERS))
+                                                           seo.PARTICLE_FOLDERS, seo.PRONOUN_FOLDERS, seo.EXERCISE_FOLDERS))
         assert len(sections) == expected, relative
         current = [index for index, (_href, mark) in enumerate(sections) if mark]
         assert current == [3 if is_nuance else 2 if is_adjective else 1 if is_noun else 0], relative

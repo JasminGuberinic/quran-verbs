@@ -27,9 +27,9 @@ _ARABIC_RUN = re.compile(r"[؀-ۿݐ-ݿࢠ-ࣿ]+(?:\s+[؀-ۿݐ-ݿࢠ-ࣿ]+)*")
 
 # ---------- a group's page ----------
 
-def nuance_page(card: dict, language: Language, text: dict, *, published: Collection[str]) -> str:
+def nuance_page(card: dict, language: Language, text: dict, *, published: Collection[str], practice: str = "") -> str:
     """One group's page. `published` names the sections whose pages are published (render.NOUNS, …),
-    so the top bar leads only to pages that exist."""
+    so the top bar leads only to pages that exist; `practice` is the link to the group's exercises."""
     words = text["nuancePage"]
     path = seo.nuance_path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -44,6 +44,7 @@ def nuance_page(card: dict, language: Language, text: dict, *, published: Collec
         _shared(card, language, words),
         "".join(_member(member, position, language, text, root) for position, member in enumerate(card["members"], 1)),
         _sources(card, words),
+        practice,
         "</article></main>",
         render._footer(text),
     ))

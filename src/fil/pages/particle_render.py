@@ -53,10 +53,10 @@ _SEPARATOR = " · "
 # ---------- a particle's page ----------
 
 def particle_page(card: dict, language: Language, text: dict, *, published: Collection[str],
-                  section: WordSection = PARTICLES) -> str:
+                  section: WordSection = PARTICLES, practice: str = "") -> str:
     """One particle's (or, in PRONOUNS, one pronoun's) page. `published` names the sections whose pages
     are published (render.NOUNS, …), so the top bar and the links to verb and noun cards lead only to
-    pages that exist."""
+    pages that exist; `practice` is the link to the particle's exercises."""
     words = text[section.words]
     path = section.path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -70,6 +70,7 @@ def particle_page(card: dict, language: Language, text: dict, *, published: Coll
         _what_it_does(card, language, text, root, published, words),
         _uses(card, language, text, root, published, words),
         _sources(card, words),
+        practice,
         "</article></main>",
         render._footer(text),
     ))

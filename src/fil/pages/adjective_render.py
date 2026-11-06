@@ -27,8 +27,8 @@ _STATE_ORDER = ("definite", "indefinite")
 
 def adjective_page(card: dict, language: Language, text: dict, *, related: Sequence[dict] = (),
                    nouns_of_root: Sequence[dict] = (), picture_credit: str = "", published: Collection[str] = frozenset(),
-                   similar_words: str = "") -> str:
-    """One adjective's page. `related` are the other studied adjectives of its root, `nouns_of_root`
+                   similar_words: str = "", practice: str = "") -> str:
+    """One adjective's page (`practice`: the link to its exercises, fil.pages.exercise_render). `related` are the other studied adjectives of its root, `nouns_of_root`
     the studied nouns of its root (cards); `picture_credit` the footer line owed for their pictures;
     `similar_words` the section linking the near-synonym groups it belongs to (fil.pages.nuance_render)."""
     words = text["adjectivePage"]
@@ -49,6 +49,7 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
         _in_quran(card, language, text, root),
         _links(card, language, text, root, related, nouns_of_root),
         similar_words,
+        practice,
         "</article></main>",
         render._footer(text, picture_credit),
     ))

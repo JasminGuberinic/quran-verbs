@@ -31,10 +31,11 @@ _ATTESTED, _QURAN_MARK, _STANDARD_MARK = "attested", "●", "◦"
 
 def noun_page(card: dict, language: Language, text: dict, *, category: str | None, picture_credit: str = "",
               related: Sequence[dict] = (), adjectives_of_root: str = "", published: Collection[str] = frozenset(),
-              similar_words: str = "") -> str:
+              similar_words: str = "", practice: str = "") -> str:
     """One noun's page. `related` are the other studied nouns of its root (cards);
     `adjectives_of_root` the section linking the studied adjectives of its root; `similar_words`
-    the section linking the near-synonym groups it belongs to (fil.pages.nuance_render)."""
+    the section linking the near-synonym groups it belongs to (fil.pages.nuance_render); `practice`
+    the link to the exercises about the noun (fil.pages.exercise_render)."""
     words = text["nounPage"]
     path = seo.noun_path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -55,6 +56,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
         _links(card, language, text, root, related),
         adjectives_of_root,
         similar_words,
+        practice,
         "</article></main>",
         _footer(text, picture_credit),
     ))

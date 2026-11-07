@@ -163,6 +163,11 @@ def test_golden_symbolic_pictures(gloss):
     assert keys and keys <= {picture.key for picture in shown(load_pictures())}, gloss
 
 
+def test_the_pilgrimage_the_umrah_and_their_rites_are_pictured_by_the_kaaba():
+    kaaba = {picture.slug for picture in shown(load_pictures()) if picture.codepoint == "1F54B"}
+    assert kaaba == {"hajj", "umra", "mansak"}
+
+
 @pytest.mark.parametrize("lemma, is_picturable", [("عِنَب", True), ("جَبَل", True), ("يَد", True), ("وَجْه", True),
                                                    ("رَجُل", True), ("مَلَك", True), ("مَسْجِد", True),
                                                    ("عَرْش", False), ("رَبّ", False), ("صُور", False),

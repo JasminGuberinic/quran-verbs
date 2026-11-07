@@ -62,7 +62,8 @@ other candidate is held back or refused with a recorded reason (fil.adjectives.s
   God or His names). A symbol is never asked in a picture question (`is_symbolic`). Never the
   soul, death, killing or war, which `NEVER_PICTURED_LEMMAS` bans outright; worship, Paradise and
   the unseen only through objects and places (`SYMBOLS_OF_THE_SACRED`: prayer mat and a faceless
-  prostrating silhouette, a garden, open palms, a curtain, a compass for the qiblah).
+  prostrating silhouette, a garden, open palms, a curtain, a compass for the qiblah, and the
+  Kaaba itself for the pilgrimage, the Umrah and their rites).
   Content policy (owner, 2026-11-06): people, heads and faces only as plain faceless
   silhouettes (no eyes, mouth or expression; a chin as a profile); a body part that is the noun
   itself (eye, ear, tongue) as that part; nothing immodest. The sacred only as plain silhouettes:

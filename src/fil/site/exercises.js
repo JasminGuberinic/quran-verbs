@@ -93,6 +93,42 @@
     return items.filter((item) => !seen.has(item.id) && seen.add(item.id));
   }
 
+  // ---------- loading: one shard that fails must not cost the learner the session ----------
+
+  const SHARD_ATTEMPTS = 2;
+
+  /** A shard's questions, asked for again once before it is given up on. */
+  async function fetchWithRetry(fetchShard, path, attempts = SHARD_ATTEMPTS) {
+    try {
+      return await fetchShard(path);
+    } catch (error) {
+      if (attempts <= 1) throw error;
+      return fetchWithRetry(fetchShard, path, attempts - 1);
+    }
+  }
+
+  /**
+   * The shards that loaded, as { kind, items }; a shard that keeps failing is skipped and the
+   * session goes on with the others. Rejects only when not one shard loads.
+   */
+  async function loadShards(requests, fetchShard) {
+    const settled = await Promise.allSettled(requests.map(({ path }) => fetchWithRetry(fetchShard, path)));
+    const loaded = requests
+      .map(({ kind }, index) => ({ kind, outcome: settled[index] }))
+      .filter(({ outcome }) => outcome.status === "fulfilled")
+      .map(({ kind, outcome }) => ({ kind, items: outcome.value }));
+    if (requests.length && !loaded.length) throw new Error("no exercise shard loaded");
+    return loaded;
+  }
+
+  /** The questions of each wanted kind, in the order the kinds are wanted, each question once. */
+  function questionsOf(loaded, wanted, word) {
+    return wanted.flatMap((kind) => {
+      const items = loaded.filter((shard) => shard.kind === kind).flatMap((shard) => shard.items);
+      return uniqueById(aboutWord(items, word)).map((item) => ({ kind, item }));
+    });
+  }
+
   // ---------- progress ----------
 
   function emptyProgress() {
@@ -235,15 +271,16 @@
 
     function load() {
       $(".exercise-status").textContent = words.loading;
-      const files = wanted.map((kind) => Promise.all(shardsFor(word, shards[kind], random).map((number) =>
-        fetch(`${root}exercises/${shardFile(kind, number)}`).then((response) => {
-          if (!response.ok) throw new Error(response.statusText);
-          return response.json();
-        }))).then((loaded) => uniqueById(aboutWord(loaded.flat(), word)).map((item) => ({ kind, item }))));
+      const requests = wanted.flatMap((kind) => shardsFor(word, shards[kind], random)
+        .map((number) => ({ kind, path: `${root}exercises/${shardFile(kind, number)}` })));
+      const fetchShard = (path) => fetch(path).then((response) => {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      });
       // A surah's link says so (&s=surah); several words are otherwise a root's.
       const severalOnly = (params.get("s") === "surah" ? words.surahOnly : words.rootOnly) || words.wordOnly;
-      Promise.all(files).then((loaded) => {
-        const questions = loaded.flat();
+      loadShards(requests, fetchShard).then((loaded) => {
+        const questions = questionsOf(loaded, wanted, word);
         $(".exercise-status").textContent = !questions.length ? words.empty : askedWords(word).length > 1 ? severalOnly : word ? words.wordOnly : "";
         if (questions.length) begin(questions);
       }).catch(() => { $(".exercise-status").textContent = words.loadFailed; });
@@ -429,7 +466,7 @@
 
   return {
     SESSION_SIZE, AGAIN_AFTER, BOX_DAYS, DAY, STORAGE_KEY,
-    shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, askedWords, shardsFor, uniqueById, emptyProgress, record, sessionOrder, askAgain,
+    shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, askedWords, shardsFor, uniqueById, SHARD_ATTEMPTS, fetchWithRetry, loadShards, questionsOf, emptyProgress, record, sessionOrder, askAgain,
     readProgress, writeProgress, explanationLines, optionLabel, withTemplates, cellNames, VERB_FORM_KINDS,
   };
 });

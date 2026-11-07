@@ -132,3 +132,48 @@ test("a verb form's explanation names every reading of it and its verb", () => {
   assert.deepEqual(E.explanationLines("quran-form", quranic, WORDS, "en"), ["Glagol: قَالَ – to say"]);
   assert.deepEqual(E.VERB_FORM_KINDS, ["form-meaning", "meaning-form", "quran-form"]);
 });
+
+// ---------- one shard that fails must not cost the session ----------
+
+/** A fetch that fails for the paths it is told to (as often as it is told to) and counts its calls. */
+function flakyFetch(shards, failures) {
+  const calls = {};
+  const fetchShard = async (path) => {
+    calls[path] = (calls[path] || 0) + 1;
+    if (calls[path] <= (failures[path] || 0)) throw new Error(`${path} failed`);
+    return shards[path];
+  };
+  return { fetchShard, calls };
+}
+
+test("a shard that fails once is asked for again and its questions are used", async () => {
+  const { fetchShard, calls } = flakyFetch({ "case-0.json": [item("a")] }, { "case-0.json": 1 });
+  const loaded = await E.loadShards([{ kind: "case", path: "case-0.json" }], fetchShard);
+  assert.deepEqual(loaded, [{ kind: "case", items: [item("a")] }]);
+  assert.equal(calls["case-0.json"], 2);
+});
+
+test("a shard that keeps failing is skipped and the session goes on with the shards that loaded", async () => {
+  const shards = { "case-0.json": [item("a")], "case-1.json": [item("b")], "agreement-0.json": [item("c")] };
+  const { fetchShard, calls } = flakyFetch(shards, { "case-1.json": Infinity });
+  const requests = [
+    { kind: "case", path: "case-0.json" }, { kind: "case", path: "case-1.json" }, { kind: "agreement", path: "agreement-0.json" },
+  ];
+  const loaded = await E.loadShards(requests, fetchShard);
+  assert.equal(calls["case-1.json"], E.SHARD_ATTEMPTS);
+  const questions = E.questionsOf(loaded, ["case", "agreement"], "");
+  assert.deepEqual(questions.map(({ kind, item: one }) => `${kind}:${one.id}`), ["case:a", "agreement:c"]);
+});
+
+test("only when no shard loads does loading fail", async () => {
+  const { fetchShard } = flakyFetch({}, { "case-0.json": Infinity, "case-1.json": Infinity });
+  await assert.rejects(E.loadShards([{ kind: "case", path: "case-0.json" }, { kind: "case", path: "case-1.json" }], fetchShard));
+});
+
+test("questions from two shards are each kept once and only about the asked word", () => {
+  const loaded = [
+    { kind: "case", items: [item("a"), item("b", ["noun:sama"])] },
+    { kind: "case", items: [item("a")] },
+  ];
+  assert.deepEqual(E.questionsOf(loaded, ["case"], "noun:ard").map(({ item: one }) => one.id), ["a"]);
+});

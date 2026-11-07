@@ -29,13 +29,12 @@ from __future__ import annotations
 
 import json
 import shutil
-import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
 from fil import attested_forms, example_store, meanings, service, study
 from fil.attested_forms import FormOccurrence, Grammar, VerbAyah
-from fil.audio import RECITATION_BITRATE, compact_aac_command, compact_clip_name
+from fil.audio import RECITATION_BITRATE, compact_clip_name, encode_compact
 from fil.ayah_translations import AyahTranslations
 from fil.corpus.parse import iter_segments
 from fil.examples import Example
@@ -115,9 +114,7 @@ class Sound:
         """Word clips arrive as stereo 64 kb/s MP3s; ship them as compact mono AAC."""
         compact = _COMPRESSED / compact_clip_name(f"quranhive/{clip.name}", RECITATION_BITRATE)
         if not compact.exists():
-            compact.parent.mkdir(parents=True, exist_ok=True)
-            subprocess.run(compact_aac_command(clip, compact, RECITATION_BITRATE),
-                           check=True, capture_output=True)
+            encode_compact(clip, compact, RECITATION_BITRATE)
         return self.sink.reference(compact)
 
 

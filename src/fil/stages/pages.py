@@ -34,7 +34,9 @@ sitemap page's <lastmod> is the day its content last really changed, kept in the
 data/page_versions.json (fil.pages.freshness), which every build brings up to date.
 
 The build refuses to finish if any page links a sound that is not in audio/ — except an
-ayah's recitation, which is streamed from its source and never shipped (fil.recitation).
+ayah's recitation, which is streamed from its source and never shipped (fil.recitation) —
+or if any clip in audio/ fails the audio gate: it must decode, speak, be long enough and
+never clip (fil.clip_gate; each clip's measurement is cached by its content-named file).
 """
 
 from __future__ import annotations
@@ -49,7 +51,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree
 
-from fil import noun_store, page_version_store, service, surah_store
+from fil import clip_gate, noun_store, page_version_store, service, surah_store
 from fil.corpus.parse import iter_segments
 from fil.languages import LANGUAGES
 from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
@@ -58,7 +60,7 @@ from fil.pages import (adjective_render, deploy, exercise_render, freshness, ind
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
-from fil.resources import PAGES_DIR, QAC_MORPHOLOGY, REPOSITORY_DIR
+from fil.resources import AUDIO_QA_CACHE, PAGES_DIR, QAC_MORPHOLOGY, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
 from fil.stages import (adjective_pages, exercise_pages, exercises, noun_pages, nuance_pages, nuance_site, particle_pages,
                         particle_site, root_pages, site, surah_pages, surah_site)
@@ -210,6 +212,7 @@ def build(pages: Path) -> BuiltSite | None:
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
                              *surahs.pages, {"exercises": exercises.sounds(practice)}])
+    _check_clips(pages)
     # Dated only once the gates passed: a build that fails them must not move a single <lastmod>.
     built = _date_pages(pages, _sitemap_paths(verbs, nouns.cards, adjectives.cards, nuances, particles, pronouns,
                                               [*exercise_pages.page_paths(practice, texts),
@@ -418,6 +421,13 @@ def check_audio_links(pages: Path, written: Iterable[Path]) -> None:
     })
     if missing:
         raise BrokenAudioLink(f"{len(missing)} play buttons lead nowhere, e.g. {missing[:3]}")
+
+
+def _check_clips(pages: Path) -> None:
+    """The gate behind the links: every published clip decodes, speaks, and never clips."""
+    measured = clip_gate.check_clips((path for path in (pages / AUDIO_FOLDER).iterdir() if path.is_file()),
+                                     AUDIO_QA_CACHE)
+    print(f"Audio gate: every clip passes ({measured} newly measured)")
 
 
 def check_card_audio(pages: Path, cards: Iterable[dict]) -> None:

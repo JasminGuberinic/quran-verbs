@@ -23,13 +23,12 @@ clean is a separate question for a human ear.
 from __future__ import annotations
 
 import re
-import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from unittest import mock
 
-from fil.audio import SPEECH_BITRATE, compact_aac_command, compact_clip_name
+from fil.audio import SPEECH_BITRATE, compact_clip_name, encode_compact
 
 FATHA, DAMMA, KASRA, SUKUN, SHADDA = "َ", "ُ", "ِ", "ْ", "ّ"
 FATHATAN, DAMMATAN, KASRATAN = "ً", "ٌ", "ٍ"
@@ -440,9 +439,7 @@ class TtsArabicVoice:
             wave = Path(folder) / "clip.wav"
             tts(vocalized_text, speaker=self._speaker, pace=self._pace,
                 save_to=str(wave), bits_per_sample=16)
-            out_path.parent.mkdir(parents=True, exist_ok=True)
-            subprocess.run(compact_aac_command(wave, out_path, SPEECH_BITRATE),
-                           check=True, capture_output=True)
+            encode_compact(wave, out_path, SPEECH_BITRATE)
 
 
 class SpeechLibrary:

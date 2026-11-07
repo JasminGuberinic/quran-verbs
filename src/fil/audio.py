@@ -17,10 +17,13 @@ from __future__ import annotations
 
 import hashlib
 import re
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
 from typing import Protocol
+
+from fil.pcm import FULL_SCALE_DB, FloatWave, read_float_wave, scaled, write_float_wave
 
 
 class VoiceProvider(Protocol):
@@ -70,6 +73,77 @@ def compact_aac_command(source: Path, target: Path, bitrate: int) -> list[str]:
     """The afconvert call that encodes a clip as mono AAC at this bitrate."""
     return ["afconvert", "-f", "m4af", "-d", "aac", "-c", "1", "-b", str(bitrate),
             str(source), str(target)]
+
+
+class DecodeFailed(RuntimeError):
+    """afconvert could not decode a clip: it is corrupt, empty, or not audio."""
+
+
+def decode_command(source: Path, target: Path) -> list[str]:
+    """The afconvert call that decodes any clip to a 32-bit float WAV."""
+    return ["afconvert", "-f", "WAVE", "-d", "LEF32", str(source), str(target)]
+
+
+def decoded_wave(clip: Path) -> bytes:
+    """The clip decoded to a 32-bit float WAV (fil.pcm reads it)."""
+    with tempfile.TemporaryDirectory() as folder:
+        wave = Path(folder) / "decoded.wav"
+        result = subprocess.run(decode_command(clip, wave), capture_output=True, text=True)
+        if result.returncode != 0 or not wave.is_file():
+            raise DecodeFailed(f"afconvert could not decode {clip.name}: {result.stderr.strip()[-200:]}")
+        return wave.read_bytes()
+
+
+# Speech comes from the model and recitation from its source at their own levels, and an
+# AAC encode can push a peak near full scale past it. A clip whose decoded peak reaches
+# full scale would clip (the audio gate refuses it), so it is turned down to this peak;
+# every other clip is left exactly as it is, so the rule never touches a clip that is fine.
+TURNED_DOWN_PEAK_DB = -1.0
+# The codec and the mono downmix move the peak a little, so the turned-down clip is
+# measured again; it settles in one pass, rarely two.
+_TURN_DOWN_PASSES = 3
+
+
+def clipping_gain_db(peak_db: float) -> float:
+    """The gain that brings a clipping peak down to TURNED_DOWN_PEAK_DB: zero for a clip that does not clip."""
+    return 0.0 if peak_db < FULL_SCALE_DB else TURNED_DOWN_PEAK_DB - peak_db
+
+
+def encode_compact(source: Path, target: Path, bitrate: int) -> None:
+    """Encode the clip as compact mono AAC that never clips once decoded.
+
+    The clip is made aside and moved into place only once it passes, so a cache never
+    keeps a half-made or clipping clip.
+    """
+    with tempfile.TemporaryDirectory() as folder:
+        encoded = Path(folder) / target.name
+        _encode(source, encoded, bitrate)
+        _turn_down_if_clipping(source, encoded, bitrate, Path(folder) / "quieter.wav")
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(encoded, target)
+
+
+def _turn_down_if_clipping(source: Path, encoded: Path, bitrate: int, quieter: Path) -> None:
+    """Re-encode a clip that clips from its source, turned down, until it no longer does."""
+    gain_db = clipping_gain_db(_decoded(encoded).peak_db)
+    total_gain_db = 0.0
+    for _ in range(_TURN_DOWN_PASSES):
+        if gain_db == 0.0:
+            return
+        total_gain_db += gain_db
+        quieter.write_bytes(write_float_wave(scaled(_decoded(source), total_gain_db)))
+        _encode(quieter, encoded, bitrate)
+        gain_db = clipping_gain_db(_decoded(encoded).peak_db)
+    if gain_db != 0.0:
+        raise RuntimeError(f"{encoded.name} still clips after {_TURN_DOWN_PASSES} passes")
+
+
+def _encode(source: Path, target: Path, bitrate: int) -> None:
+    subprocess.run(compact_aac_command(source, target, bitrate), check=True, capture_output=True)
+
+
+def _decoded(clip: Path) -> FloatWave:
+    return read_float_wave(decoded_wave(clip))
 
 
 def compact_clip_name(content_key: str, bitrate: int) -> str:

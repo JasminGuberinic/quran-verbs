@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes mrs{from{transform:rotate(-24deg)}}
+@keyframes mrt{from{transform:rotate(24deg)}}
+@keyframes mrm{from{transform:translateX(-86px)}}
+& .ll{transform:rotate(24deg);animation:mrs .5s ease-in-out 7 alternate both}
+& .rl{transform:rotate(-24deg);animation:mrt .5s ease-in-out 7 alternate both}
+& .ra{transform:rotate(24deg);animation:mrs .5s ease-in-out 7 alternate both}
+& .la{transform:rotate(-24deg);animation:mrt .5s ease-in-out 7 alternate both}
+& .fig{animation:mrm 3.5s linear both}
+
+</style><path class="p" d="M6 61H114"/><path class="p" d="M60 61V40"/><circle class="q" cx="60" cy="30" r="10"/><rig x="100" y="44"/></svg>

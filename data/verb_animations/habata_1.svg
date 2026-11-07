@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes hbs{from{transform:rotate(-24deg)}}@keyframes hbt{from{transform:rotate(24deg)}}@keyframes hbm{from{transform:translate(-66px,-24px)}}
+& .ll,& .ra{transform:rotate(24deg);animation:hbs .5s ease-in-out 5 alternate both}& .rl,& .la{transform:rotate(-24deg);animation:hbt .5s ease-in-out 5 alternate both}
+& .fig{animation:hbm 2.5s linear both}
+
+</style><path class="p" d="M6 37H20L86 61H114"/><rig x="86" y="44"/></svg>

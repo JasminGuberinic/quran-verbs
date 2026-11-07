@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes bdx{from{transform:translateX(-40px)}}@keyframes bdy{from{transform:translateY(0)}50%{transform:translateY(-14px)}}@keyframes bdz{from{transform:translateX(40px)}}@keyframes bdw{from{transform:translateY(0)}50%{transform:translateY(12px)}}
+& .x1{animation:bdx 1.6s ease-in-out both}& .y1{animation:bdy 1.6s ease-in-out both}& .x2{animation:bdz 1.6s ease-in-out both}& .y2{animation:bdw 1.6s ease-in-out both}
+
+</style><path class="p" d="M6 61H114"/><g class="x1"><g class="y1"><rect class="q" x="75" y="45" width="10" height="10" rx="1.5"/></g></g><g class="x2"><g class="y2"><circle class="q" cx="38" cy="49" r="5.5"/></g></g></svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes fx{from{transform:translateX(var(--dx))}}
+& .b{animation:fx 1.4s ease-out both}& .b1{--dx:36px}& .b2{--dx:14px}& .b3{--dx:-14px}& .b4{--dx:-36px}
+
+</style><path class="p" d="M6 61H114"/><g class="q"><circle class="b b1" cx="24" cy="56.5" r="4.5"/><circle class="b b2" cx="48" cy="56.5" r="4.5"/><circle class="b b3" cx="72" cy="56.5" r="4.5"/><circle class="b b4" cx="96" cy="56.5" r="4.5"/></g></svg>

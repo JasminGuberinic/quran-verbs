@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes qrs{from{transform:rotate(-24deg)}}
+@keyframes qrt{from{transform:rotate(24deg)}}
+@keyframes qrm{from{transform:translateX(-44px)}}
+& .ll{transform:rotate(24deg);animation:qrs .5s ease-in-out 4 alternate both}
+& .rl{transform:rotate(-24deg);animation:qrt .5s ease-in-out 4 alternate both}
+& .fig{animation:qrm 2s linear both}
+& .ra{transform:rotate(-90deg)}
+
+</style><path class="p" d="M6 61H114"/><path class="p" d="M96 61V24"/><rig x="76" y="44"/></svg>

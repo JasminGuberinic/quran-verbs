@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes ats{from{transform:rotate(-24deg)}}
+@keyframes att{from{transform:rotate(24deg)}}
+@keyframes atm{from{transform:translateX(-50px)}}
+& .ll{transform:rotate(24deg);animation:ats .5s ease-in-out 5 alternate both}
+& .rl{transform:rotate(-24deg);animation:att .5s ease-in-out 5 alternate both}
+& .fig{animation:atm 2.5s linear both}
+& .ra{transform:rotate(-90deg)}
+
+</style><path class="p" d="M6 61H114"/><path class="p" d="M92 40h22M103 40v21"/><rig x="64" y="44"><in at="ra"><circle class="q" cy="17" r="3.6"/></in></rig></svg>

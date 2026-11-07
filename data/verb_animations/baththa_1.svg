@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes bt{from{transform:translate(var(--dx),-22px)}}
+& .ra{transform:rotate(-60deg)}& .s{animation:bt .9s ease-out both}
+& .s1{--dx:-16px}& .s2{--dx:-26px;animation-delay:.15s}& .s3{--dx:-38px;animation-delay:.3s}& .s4{--dx:-50px;animation-delay:.45s}
+
+</style><path class="p" d="M6 61H114"/><g class="q"><circle class="s s1" cx="54" cy="59" r="1.8"/><circle class="s s2" cx="66" cy="59" r="1.8"/><circle class="s s3" cx="76" cy="59" r="1.8"/><circle class="s s4" cx="88" cy="59" r="1.8"/></g><rig x="26" y="44"/></svg>

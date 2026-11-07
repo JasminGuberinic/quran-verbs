@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes qlx{from{transform:scaleX(1)}50%,to{transform:scaleX(0)}}@keyframes qly{from{transform:scaleX(0)}50%{transform:scaleX(0)}}
+& .fa,& .fb{transform-origin:60px 0}& .fa{transform:scaleX(0);animation:qlx 1.2s ease-in-out both}& .fb{animation:qly 1.2s ease-in-out both}
+
+</style><path class="p" d="M6 61H114"/><path class="q fa" d="M46 30h28v31H46z"/><path class="p fb" d="M46 30h28v31H46zM52 40h16M52 48h16"/></svg>

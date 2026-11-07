@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes sq{from{transform:rotate(0)}}@keyframes sqd{from{stroke-dashoffset:100}}
+& .ra{transform:rotate(-90deg)}& .jg{transform-origin:66px 26px;transform:rotate(36deg);animation:sq 1s ease-in-out both}& .ws{stroke-dasharray:100;animation:sqd .8s linear 1s both}
+
+</style><path class="p" d="M6 61H114"/><path class="p" d="M60 46h28M72 46v15"/><path class="p" d="M74 38h10l-1 8H75z"/><path class="p ws" pathLength="100" d="M80 28V37"/><path class="q jg" d="M56 24h10v12H56z"/><rig x="34" y="44"/></svg>

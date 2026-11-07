@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes wzs{from{transform:rotate(-24deg)}}
+@keyframes wzt{from{transform:rotate(24deg)}}
+@keyframes wzm{from{transform:translateX(-40px)}}
+& .ll{transform:rotate(24deg);animation:wzs .5s ease-in-out 6 alternate both}
+& .rl{transform:rotate(-24deg);animation:wzt .5s ease-in-out 6 alternate both}
+& .fig{animation:wzm 3s linear both}
+& .tr{transform:rotate(14deg)}
+
+</style><path class="p" d="M6 61H114"/><rig x="76" y="44"><in at="tr"><ellipse class="q" cx="-9" cy="-14" rx="9" ry="8"/></in></rig></svg>

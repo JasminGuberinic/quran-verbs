@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes nhs{from{transform:rotate(-24deg)}}@keyframes nht{from{transform:rotate(24deg)}}@keyframes nhm{from{transform:translateX(-36px)}}@keyframes nhr{from{transform:rotate(24deg)}}
+& .ll{transform:rotate(24deg);animation:nhs .5s ease-in-out 4 alternate both}& .rl{transform:rotate(-24deg);animation:nht .5s ease-in-out 4 alternate both}
+& .ra{transform:rotate(-90deg);animation:nhr 2s ease-in-out both}& .fig{animation:nhm 2s ease-out both}
+
+</style><path class="p" d="M6 61H114"/><path class="p" d="M96 61V28M88 36h16"/><rig x="70" y="44"/></svg>

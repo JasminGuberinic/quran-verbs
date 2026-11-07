@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes qtm{from{opacity:1}}@keyframes qtr{from{transform:rotate(0)}}@keyframes qtu{from{transform:rotate(-24deg)}}@keyframes qtl{from{transform:rotate(24deg)}}
+& .md{opacity:0;animation:qtm .3s step-end .6s both}& .rh{transform-origin:112px 30px;transform:rotate(20deg);animation:qtr .6s ease-in .6s both}
+& .b1,& .b2{transform-origin:64px 30px}& .b1{animation:qtu .6s ease-in-out both}& .b2{animation:qtl .6s ease-in-out both}
+
+</style><path class="p" d="M8 30H62"/><path class="p md" d="M62 30h4"/><path class="p rh" d="M66 30H112"/><path class="p b1" d="M44 21l20 9"/><path class="p b2" d="M44 39l20-9"/></svg>

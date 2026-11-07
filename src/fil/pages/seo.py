@@ -333,6 +333,28 @@ def _json_ld(document: dict) -> str:
     return json.dumps(document, ensure_ascii=False).replace("</", "<\\/")
 
 
+# The About page (with its Privacy section) is written in every site language, so all are indexed.
+ABOUT_FOLDER = "about"
+PRIVACY_ANCHOR = "privacy"
+
+
+def about_path(language: str) -> str:
+    return f"{language}/{ABOUT_FOLDER}/"
+
+
+def about_alternates() -> list[Alternate]:
+    return _alternates(about_path, CODES)
+
+
+def about_structured_data(*, title: str, description: str, language: str) -> str:
+    return _json_ld({
+        "@context": "https://schema.org", "@type": "AboutPage",
+        "name": title, "description": description, "inLanguage": language,
+        "url": absolute(about_path(language)),
+        "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL},
+    })
+
+
 @dataclass(frozen=True)
 class ListedVerb:
     lemma: str

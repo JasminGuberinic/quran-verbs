@@ -18,7 +18,8 @@ from html import escape
 
 from fil.ayah_links import ayah_links
 from fil.languages import LANGUAGES, Language
-from fil.pages import indexing, seo, untranslated
+from fil.pages import indexing, pwa, seo, untranslated
+from fil.pages.pwa import PWA_SCRIPT
 from fil.pages.interface_text import fill
 from fil.recitation import AYAH_STREAM, is_streamed
 
@@ -42,6 +43,7 @@ _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
           '&amp;family=Inter:wght@400;500;600&amp;display=swap">\n')
 
 # One shared player (site/player.js): a tap on any [data-audio] plays it, or stops it if it is playing.
+_ABOUT_LINKS = "<!--about-links-->"    # where _footer leaves the About and Privacy links for _document to fill
 _PLAYER_SCRIPT = "player.js"
 # Marks what the scripts draw later the way fil.pages.untranslated marks the page, and shows the hint once.
 _TRANSLATION_SCRIPT = "translation.js"
@@ -450,7 +452,8 @@ def app_head(text: dict) -> str:
     """What the app's own page tells search engines and link previews, in the page's own language."""
     page = text["page"]
     return _meta(title=f'{seo.SITE_NAME} — {page["indexTitle"]}', description=page["indexIntro"],
-                 url=seo.SITE_URL, page_type="website") + f'<link rel="canonical" href="{seo.SITE_URL}">\n'
+                 url=seo.SITE_URL, page_type="website") + (f'<link rel="canonical" href="{seo.SITE_URL}">\n'
+                                                           f'{pwa.head_links("")}<script src="{PWA_SCRIPT}" defer></script>\n')
 
 
 def app_links(texts: dict[str, dict]) -> str:
@@ -475,12 +478,14 @@ def not_found_page(texts: dict[str, dict], base_path: str) -> str:
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<meta name="robots" content="noindex"><title>{escape(english["notFound"])} · {seo.SITE_NAME}</title>'
-            f'{NO_ICON}'
+            f'{NO_ICON}{pwa.head_links(base_path)}'
             f'<link rel="stylesheet" href="{base_path}{STYLESHEET}"></head><body>'
             + untranslated.protect(f'<main class="wrap"><h1>{escape(english["notFound"])}</h1>'
                                    f'<p class="lead" lang="bs">{escape(texts["bs"]["page"]["notFound"])}</p>'
                                    f'<p class="cta"><a class="button" href="{base_path}">{seo.SITE_NAME} →</a></p>'
-                                   f'<ul class="language-list">{links}</ul></main>', _ENGLISH)
+                                   f'<ul class="language-list">{links}</ul>'
+                                   f'<footer><p>{footer_links(_ENGLISH, base_path, texts[_ENGLISH]["aboutNav"])}</p></footer></main>',
+                                   _ENGLISH)
             + '</body></html>\n')
 
 
@@ -489,9 +494,11 @@ def not_found_page(texts: dict[str, dict], base_path: str) -> str:
 def _document(language: Language, head: str, body: str, *, root: str, text: dict) -> str:
     """The whole page, its body marked for browser translation (fil.pages.untranslated)."""
     direction = "rtl" if language.is_rtl else "ltr"
+    body = body.replace(_ABOUT_LINKS, footer_links(language.code, root, text["aboutNav"]))
     return (f'<!doctype html>\n<html lang="{language.code}" dir="{direction}">\n<head>\n{head}</head>\n'
             f'<body>\n{untranslated.protect(body, language.code)}\n{_player(root, text)}\n'
-            f'<script src="{root}{_TRANSLATION_SCRIPT}" defer></script>\n</body>\n</html>\n')
+            f'<script src="{root}{_TRANSLATION_SCRIPT}" defer></script>\n'
+            f'<script src="{root}{PWA_SCRIPT}" defer></script>\n</body>\n</html>\n')
 
 
 def _player(root: str, text: dict) -> str:
@@ -510,7 +517,7 @@ def _head(*, title: str, description: str, path: str, root: str, indexed_in: Seq
             f'<title>{escape(title)}</title>\n{NO_ICON}\n{"" if is_indexed else _NOT_INDEXED}'
             + _meta(title=title, description=description, url=url, page_type=page_type)
             + f'<link rel="canonical" href="{url}">\n{links}'
-            f'{_FONTS}<link rel="stylesheet" href="{root}{STYLESHEET}">\n'
+            f'{_FONTS}<link rel="stylesheet" href="{root}{STYLESHEET}">\n{pwa.head_links(root)}'
             f'<script type="application/ld+json">{structured}</script>\n')
 
 
@@ -599,8 +606,16 @@ def _language_links(root: str, path_in: Callable[[str], str], current: Language,
 
 
 def _footer(text: dict, picture_credit: str = "") -> str:
+    """The credits, then the links to About and Privacy — left as a marker for `_document`, which knows the page's root and language."""
     lines = [*text["footer"], picture_credit] if picture_credit else text["footer"]
-    return f'<footer class="wrap">{"".join(f"<p>{line}</p>" for line in lines)}</footer>'
+    return f'<footer class="wrap">{"".join(f"<p>{line}</p>" for line in lines)}<p>{_ABOUT_LINKS}</p></footer>'
+
+
+def footer_links(language_code: str, root: str, labels: dict[str, str]) -> str:
+    """The two links every page's footer carries: About, and Privacy (the section of it)."""
+    about = f"{root}{seo.about_path(language_code)}"
+    return (f'<a href="{about}">{escape(labels["about"])}</a> · '
+            f'<a href="{about}#{seo.PRIVACY_ANCHOR}">{escape(labels["privacy"])}</a>')
 
 
 def _play(reference: str | None, root: str, label: str) -> str:

@@ -21,6 +21,8 @@
       bs/vjezbe/, en/exercises/      the exercises (fil.stages.exercise_pages), their questions in exercises/*.json
       bs/sura/, en/surah/            the 114 surahs' vocabulary and coverage (fil.stages.surah_pages), their ayat in ayat/sura-*.json
       pictures/<slug>.svg            the noun pictures the noun pages show
+      bs/about/, en/about/           About and Privacy (fil.stages.about_pages), every site language
+      manifest.webmanifest, sw.js, sw-routing.js, pwa.js, icons/    the installable, offline-capable app (fil.pages.pwa)
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
       <IndexNow key>.txt             proves our IndexNow pings are ours (fil.pages.indexnow)
 
@@ -56,13 +58,13 @@ from fil.corpus.parse import iter_segments
 from fil.languages import LANGUAGES
 from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
 from fil.pages import (adjective_render, deploy, exercise_render, freshness, indexing, indexnow, interface_text,
-                       nuance_render, particle_render, render, seo, share_image, web)
+                       nuance_render, particle_render, pwa, pwa_icons, render, seo, share_image, web)
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
 from fil.resources import AUDIO_QA_CACHE, PAGES_DIR, QAC_MORPHOLOGY, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
-from fil.stages import (adjective_pages, exercise_pages, exercises, noun_pages, nuance_pages, nuance_site, particle_pages,
+from fil.stages import (about_pages, adjective_pages, exercise_pages, exercises, noun_pages, nuance_pages, nuance_site, particle_pages,
                         particle_site, root_pages, site, surah_pages, surah_site)
 from fil.stages import roots as root_stage
 from fil.stages import particles as word_lists
@@ -95,6 +97,9 @@ def main(arguments: list[str] | None = None) -> None:
     options = _parse(arguments or [])
     if options.share_image:
         print(f"Drew {share_image.draw()}")
+        return
+    if options.pwa_icons:
+        print(f"Drew {', '.join(path.name for path in pwa_icons.draw())}")
         return
     built = build(PAGES_DIR)
     if built is None or not options.deploy:
@@ -152,6 +157,7 @@ def _parse(arguments: list[str]) -> argparse.Namespace:
     parser.add_argument("--ping-all", action="store_true",
                         help="with --deploy: announce every sitemap page to IndexNow, not only the changed ones")
     parser.add_argument("--share-image", action="store_true", help="redraw site/share.png and stop")
+    parser.add_argument("--pwa-icons", action="store_true", help="redraw the app icons in site/icons and stop")
     return parser.parse_args(arguments)
 
 
@@ -209,6 +215,7 @@ def build(pages: Path) -> BuiltSite | None:
     written += root_pages.write(pages, roots, texts, published, nuances, practice.words())
     written += surah_pages.write(pages, surahs, texts, published, practice.words(),
                                   root_path=_root_page(root_slugs))
+    written += about_pages.write(pages, texts)
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
                              *surahs.pages, {"exercises": exercises.sounds(practice)}])
@@ -216,7 +223,8 @@ def build(pages: Path) -> BuiltSite | None:
     # Dated only once the gates passed: a build that fails them must not move a single <lastmod>.
     built = _date_pages(pages, _sitemap_paths(verbs, nouns.cards, adjectives.cards, nuances, particles, pronouns,
                                               [*exercise_pages.page_paths(practice, texts),
-                                               *root_pages.page_paths(roots), *surah_pages.page_paths(surahs)]))
+                                               *root_pages.page_paths(roots), *surah_pages.page_paths(surahs),
+                                               *about_pages.page_paths()]))
     _write_site_files(pages, verbs, texts, built.entries)
     site.report(pages, content)
     _report_size(pages, len(written))
@@ -409,6 +417,7 @@ def _write_site_files(pages: Path, verbs: list[PublishedVerb], texts: dict[str, 
     shutil.copyfile(share_image.SHARE_PNG, pages / seo.SHARE_IMAGE)
     for proof in sorted(_VERIFICATION.glob("*")) if _VERIFICATION.is_dir() else ():
         shutil.copyfile(proof, pages / proof.name)
+    pwa.write(pages)   # last: the worker's build id and shell are read from the finished site
 
 
 def check_audio_links(pages: Path, written: Iterable[Path]) -> None:

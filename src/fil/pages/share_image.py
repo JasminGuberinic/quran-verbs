@@ -15,7 +15,7 @@ from pathlib import Path
 from fil.languages import LANGUAGES
 
 SHARE_PNG = Path(__file__).resolve().parents[1] / "site" / "share.png"
-_CHROME_CANDIDATES = (
+CHROME_CANDIDATES = (
     Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"),
     Path("/usr/bin/google-chrome"),
     Path("/usr/bin/chromium"),
@@ -46,7 +46,7 @@ class NoBrowser(RuntimeError):
 
 
 def draw(target: Path = SHARE_PNG) -> Path:
-    chrome = next((path for path in _CHROME_CANDIDATES if path.exists()), None)
+    chrome = next((path for path in CHROME_CANDIDATES if path.exists()), None)
     if chrome is None:
         raise NoBrowser("install Google Chrome or Chromium to draw the share image")
     with tempfile.TemporaryDirectory() as folder:

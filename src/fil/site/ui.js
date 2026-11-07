@@ -838,8 +838,20 @@
       },
     },
   };
+  // The footer's two links to the About page (fil.pages.about_render writes the page itself).
+  const ABOUT_NAV = {
+    bs: { about: "O stranici", privacy: "Privatnost" },
+    en: { about: "About", privacy: "Privacy" },
+    tr: { about: "Hakkında", privacy: "Gizlilik" },
+    fr: { about: "À propos", privacy: "Confidentialité" },
+    id: { about: "Tentang", privacy: "Privasi" },
+    ur: { about: "تعارف", privacy: "رازداری" },
+    bn: { about: "সম্পর্কে", privacy: "গোপনীয়তা" },
+    fa: { about: "درباره", privacy: "حریم خصوصی" },
+  };
   for (const code of Object.keys(UI)) {
-    UI[code].exercisePage = EXERCISE_PAGE[code] || EXERCISE_PAGE.en;
+    UI[code].aboutNav = ABOUT_NAV[code] || ABOUT_NAV.en;
+    UI[code].exercisePage =EXERCISE_PAGE[code] || EXERCISE_PAGE.en;
     UI[code].particlePage = PARTICLE_PAGE[code] || PARTICLE_PAGE.en;
     UI[code].pronounPage = PRONOUN_PAGE[code] || PRONOUN_PAGE.en;
     UI[code].surahPage = SURAH_PAGE[code] || SURAH_PAGE.en;

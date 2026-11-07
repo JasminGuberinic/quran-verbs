@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiʿl</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="The Quran&#x27;s verbs, nouns, adjectives, particles, near-synonyms, roots and every surah&#x27;s vocabulary — with ayat, translation, exercises and audio. Free.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fiʿl">
+<meta property="og:title" content="Fiʿl — Verbs of the Quran — learn the Quran&#x27;s most frequent verbs">
+<meta property="og:description" content="The Quran&#x27;s verbs, nouns, adjectives, particles, near-synonyms, roots and every surah&#x27;s vocabulary — with ayat, translation, exercises and audio. Free.">
+<meta property="og:url" content="https://jasminguberinic.github.io/quran-verbs/">
+<meta property="og:image" content="https://jasminguberinic.github.io/quran-verbs/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fiʿl — Verbs of the Quran — learn the Quran&#x27;s most frequent verbs">
+<meta name="twitter:description" content="The Quran&#x27;s verbs, nouns, adjectives, particles, near-synonyms, roots and every surah&#x27;s vocabulary — with ayat, translation, exercises and audio. Free.">
+<meta name="twitter:image" content="https://jasminguberinic.github.io/quran-verbs/share.png">
+<link rel="canonical" href="https://jasminguberinic.github.io/quran-verbs/">
+
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Naskh+Arabic:wght@400;600&family=Literata:opsz,wght@7..72,500;7..72,650&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow study column; progress on top; six practice modes behind a scrolling tab strip. */
+:root {
+  --paper: #f2f5f3; --surface: #ffffff; --ink: #15241f; --muted: #5b6b65; --line: #d5ddd9;
+  --accent: #0f6b5c; --accent-soft: #e1efeb; --gold: #a7781f; --gold-soft: #f6ecd6;
+  --bad: #a3372c; --bad-soft: #f8e4e1;
+  --font-arabic: "Noto Naskh Arabic", "Geeza Pro", "Arial", serif;
+  --font-quran: "Amiri Quran", "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font-display: "Literata", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1714; --surface: #15211d; --ink: #e5ede9; --muted: #95a8a0; --line: #2a3a34;
+    --accent: #52c2a6; --accent-soft: #183630; --gold: #d9b064; --gold-soft: #3a2f19;
+    --bad: #ef8a7d; --bad-soft: #3d201c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1714; --surface: #15211d; --ink: #e5ede9; --muted: #95a8a0; --line: #2a3a34;
+  --accent: #52c2a6; --accent-soft: #183630; --gold: #d9b064; --gold-soft: #3a2f19;
+  --bad: #ef8a7d; --bad-soft: #3d201c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+[hidden] { display: none !important; }
+.wrap {
+  max-width: 1180px; margin: 0 auto; display: grid; gap: 16px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+.ar { font-family: var(--font-arabic); direction: rtl; }
+.qr { font-family: var(--font-quran); direction: rtl; }
+button, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, summary:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+header { display: grid; gap: 12px; }
+.brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand h1 { font-family: var(--font-display); font-weight: 650; font-size: 1.75rem; margin: 0; letter-spacing: -0.01em; }
+.brand h1 .ar { font-size: 1.5rem; color: var(--accent); margin-inline-start: 6px; }
+.brand-sub { margin: 0; color: var(--muted); font-size: 0.86rem; }
+.lang select { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 8px; }
+.notice { font-size: 0.82rem; color: var(--muted); background: var(--gold-soft); border-radius: 10px; padding: 10px 12px; }
+.notice b { color: var(--ink); }
+.translate-hint { display: flex; align-items: flex-start; gap: 8px; max-width: 1180px; margin: 8px auto 0; padding: 0 16px; font-size: 0.82rem; color: var(--muted); }
+.translate-hint[hidden] { display: none; }
+.translate-hint p { margin: 0; flex: 1; }
+.translate-hint-close { border: 0; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; padding: 2px 6px; cursor: pointer; border-radius: 6px; }
+.progress { display: grid; gap: 6px; }
+.progress-label { display: flex; justify-content: space-between; gap: 12px; font-size: 0.84rem; color: var(--muted); flex-wrap: wrap; }
+.progress-label strong { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s ease; }
+
+nav.tabs { display: flex; gap: 4px; background: var(--line); padding: 4px; border-radius: 10px; overflow-x: auto; scrollbar-width: none; }
+nav.tabs button { flex: 1 0 auto; border: 0; background: transparent; padding: 8px 12px; border-radius: 7px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+nav.tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.chip { flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 2px 12px; font-family: var(--font-arabic); font-size: 1.05rem; direction: rtl; position: relative; }
+.chip[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.chip.learned::after { content: ""; position: absolute; top: 3px; right: 4px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+.stack { display: grid; gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 18px; min-width: 0; }
+.eyebrow { font-family: var(--font-data); font-size: 0.74rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; justify-content: space-between; }
+.eyebrow > span { display: flex; gap: 10px; flex-wrap: wrap; }
+.headword { display: grid; gap: 4px; }
+.lemma { font-size: 3rem; line-height: 1.35; margin: 0; font-weight: 600; text-align: right; }
+.meaning { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; margin: 0; text-wrap: balance; }
+.meaning small { display: block; font-family: var(--font-body); font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+.root-line { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 0.86rem; color: var(--muted); }
+.root-letters { font-family: var(--font-arabic); font-size: 1.3rem; color: var(--ink); direction: rtl; letter-spacing: 0.3em; }
+
+.section-title { font-family: var(--font-data); font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.forms { display: grid; gap: 8px; }
+.form-row { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 8px 10px; border-radius: 10px; background: var(--paper); }
+.form-label { font-size: 0.84rem; color: var(--muted); display: grid; }
+.form-label b { color: var(--ink); font-weight: 500; }
+.form-ar { font-size: 1.7rem; line-height: 1.4; }
+.form-side { display: grid; justify-items: end; gap: 4px; }
+.quran-tag { font-family: var(--font-data); font-size: 0.68rem; letter-spacing: 0.03em; color: var(--gold); background: var(--gold-soft); padding: 1px 7px; border-radius: 999px; white-space: nowrap; border: 0; }
+button.quran-tag { cursor: pointer; }
+button.quran-tag.playing { background: var(--gold); color: var(--surface); }
+
+.play { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--accent); color: var(--surface); display: grid; place-items: center; flex: none; }
+.play.small { width: 32px; height: 32px; }
+.play.gold { background: var(--gold); }
+.play svg { width: 15px; height: 15px; fill: currentColor; }
+.play.playing { opacity: .6; }
+.play:disabled { background: var(--line); color: var(--muted); }
+
+.nouns { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.noun { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 10px; background: var(--paper); }
+.noun span { font-size: 0.82rem; color: var(--muted); }
+.noun .ar { font-size: 1.4rem; color: var(--ink); }
+
+.ayat { display: grid; gap: 10px; }
+.ayah { background: var(--paper); border-radius: 12px; padding: 12px 14px; display: grid; gap: 6px; border-inline-start: 3px solid var(--gold); }
+.ayah-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 0.8rem; }
+.tense-chip { font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold); background: var(--gold-soft); padding: 2px 8px; border-radius: 999px; }
+.ayah-head a { color: var(--muted); text-decoration: none; font-family: var(--font-data); font-size: 0.75rem; }
+.ayah-head a:hover { color: var(--accent); text-decoration: underline; }
+.ayah-links { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; }
+.attested .first { display: inline-flex; flex-wrap: wrap; gap: 0 8px; justify-content: end; }
+.ayah-text { font-size: 1.65rem; line-height: 2; margin: 0; text-align: right; }
+.verb-gloss { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; font-size: 0.95rem; font-weight: 500; }
+.verb-gloss .qr { font-size: 1.3rem; color: var(--gold); }
+.ai-tag { font-family: var(--font-data); font-size: 0.62rem; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+.ayah-translation { padding-top: 6px; border-top: 1px dashed var(--line); margin: 0; font-size: 0.92rem; color: var(--ink); }
+.ayah-translation small { display: block; color: var(--muted); font-size: 0.72rem; margin-top: 2px; }
+.ayah-foot { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--muted); }
+.word-play { font: inherit; background: var(--gold-soft); color: inherit; border: 0; border-bottom: 2px solid var(--gold); border-radius: 4px; padding: 0 4px; }
+.word-play.playing { background: var(--gold); color: var(--surface); }
+.word-play.playing::after, .conj-cell.playing::after { content: "■"; font-size: 0.6em; margin-inline-start: 4px; vertical-align: middle; }
+.play-icon { display: inline-grid; place-items: center; }
+.verb-gloss .grammar { color: var(--muted); font-weight: 400; font-size: 0.88rem; }
+.listen-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.ayah a, .link { color: var(--accent); font-size: 0.86rem; }
+.ayah-text mark { background: var(--gold-soft); color: inherit; border-radius: 4px; padding: 0 3px; }
+.forms-head { font-size: 1rem; margin: 18px 0 2px; }
+.attested { list-style: none; padding: 0; margin: 8px 0 0; }
+.attested li { display: grid; grid-template-columns: minmax(6em, auto) 3.5em 1fr auto; gap: 2px 12px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.attested b, .form-play { font-family: var(--font-quran); font-weight: 400; font-size: 1.45rem; justify-self: start; }
+.form-play { color: inherit; background: none; border: 0; border-bottom: 2px dotted color-mix(in srgb, var(--gold) 70%, transparent); border-radius: 4px; padding: 0 4px; line-height: inherit; cursor: pointer; }
+.form-play:hover { background: color-mix(in srgb, var(--gold) 14%, transparent); }
+.form-play.playing { background: var(--gold); color: var(--surface); border-bottom-color: var(--gold); }
+.form-play.playing::after { content: "■"; font-size: 0.45em; margin-inline-start: 4px; vertical-align: middle; }
+.attested small, .attested a { color: var(--muted); font-family: var(--font-data); font-size: 0.78rem; }
+.attested .grammar, .attested .form-translation { color: var(--muted); font-size: 0.88rem; }
+.attested .form-meaning { display: flex; flex-direction: column; gap: 1px; }
+.attested .form-meaning .grammar { font-size: 0.8rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-meaning { grid-column: 1 / -1; grid-row: 2; } }
+/* Contrast themes keep the pattern but paint a backplate behind every text run; drop the pattern. */
+@media (forced-colors: active) { body { background: Canvas; } }
+.all-ayat { margin-top: 16px; display: grid; gap: 12px; }
+.all-ayat-list { display: grid; gap: 10px; }
+.all-ayat-list .ayah-head .play { width: 32px; height: 32px; }
+
+.sentence { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--line); }
+.sentence:first-of-type { border-top: 0; padding-top: 0; }
+.sentence-line { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.sentence-line .ar { font-size: 1.4rem; margin: 0; text-align: right; }
+.sentence .ar b { color: var(--accent); font-weight: 600; }
+.sentence p { margin: 0; }
+.gloss { display: flex; flex-wrap: wrap; gap: 6px; direction: rtl; }
+.gloss span { display: grid; justify-items: center; background: var(--paper); border-radius: 8px; padding: 2px 8px; }
+.gloss .ar { font-size: 1.05rem; }
+.gloss small { direction: ltr; font-size: 0.75rem; color: var(--muted); }
+.gloss span.target { background: var(--accent-soft); }
+.note { font-size: 0.8rem; color: var(--muted); }
+
+details summary { cursor: pointer; font-weight: 500; color: var(--accent); }
+.table-scroll { overflow-x: auto; margin-top: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 0.86rem; }
+th, td { padding: 4px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { font-weight: 500; color: var(--muted); text-align: left; white-space: nowrap; }
+thead th { text-align: right; font-family: var(--font-data); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+td { text-align: right; }
+.cell-btn { border: 0; background: transparent; border-radius: 6px; padding: 2px 6px; font-family: var(--font-arabic); font-size: 1.2rem; direction: rtl; }
+.cell-btn:hover { background: var(--accent-soft); }
+.cell-btn.attested::after { content: "●"; color: var(--gold); font-size: 0.6rem; margin-inline-start: 4px; vertical-align: super; }
+td.empty { color: var(--line); }
+
+.pager { display: flex; justify-content: space-between; gap: 8px; }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 10px 16px; font-weight: 500; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.btn.good { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.btn.bad { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+.btn.quiet { border-color: transparent; background: transparent; color: var(--muted); padding: 6px 8px; font-size: 0.84rem; }
+.btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.segmented { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+.segmented button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 12px; font-size: 0.84rem; }
+.segmented button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+.center { text-align: center; justify-items: center; }
+.flash { min-height: 340px; align-content: center; }
+.flash .lemma { text-align: center; }
+.big-meaning { font-family: var(--font-display); font-size: 1.8rem; margin: 0; text-wrap: balance; }
+.box-dots { display: flex; gap: 4px; justify-content: center; }
+.box-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.box-dots i.on { background: var(--accent); }
+
+.options { display: grid; gap: 8px; }
+.options button { text-align: start; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 12px 14px; }
+.options button.ar { text-align: right; font-size: 1.5rem; padding: 6px 14px; }
+.options button.right { border-color: var(--accent); background: var(--accent-soft); }
+.options button.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.score { font-variant-numeric: tabular-nums; }
+.blank { display: inline-block; min-width: 3em; border-bottom: 2px dashed var(--accent); }
+.find-word { font: inherit; background: transparent; border: 0; border-radius: 4px; padding: 0 3px; }
+.find-word:hover { background: var(--accent-soft); }
+.find-word.right { background: var(--accent-soft); outline: 2px solid var(--accent); }
+.find-word.wrong { background: var(--bad-soft); }
+
+.report { display: grid; gap: 8px; background: var(--paper); border-radius: 10px; padding: 12px; }
+.report textarea { width: 100%; min-height: 90px; font: inherit; font-size: 0.86rem; border: 1px solid var(--line); border-radius: 8px; padding: 8px; background: var(--surface); color: var(--ink); }
+
+footer { font-size: 0.8rem; color: var(--muted); display: grid; gap: 6px; }
+footer p { margin: 0; }
+.loading { text-align: center; color: var(--muted); padding: 40px 0; }
+[dir="rtl"] .meaning, [dir="rtl"] .big-meaning { font-family: var(--font-arabic); }
+/* ---- app shell: sticky top bar, verb list beside the card on wide screens ---- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+/* The header is a grid and this bar sits in it with auto margins: without min-width 0 and width 100%
+   it would take the tab strip's whole width and widen a phone's page instead of letting the tabs scroll. */
+.topbar-inner { min-width: 0; width: 100%; max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 16px; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); flex-wrap: wrap; }
+.topbar .brand h1 { font-size: 1.35rem; }
+.topbar nav.tabs { flex: 1 1 420px; min-width: 0; }
+.status { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 20px; align-items: center; }
+.status .notice { grid-column: 1 / -1; margin: 0; }
+.layout { display: grid; gap: 20px; align-items: start; }
+.verb-list { display: none; }
+@media (min-width: 960px) {
+  .layout { grid-template-columns: 260px minmax(0, 1fr); }
+  .verb-list { display: grid; gap: 2px; position: sticky; top: 76px; max-height: calc(100vh - 96px); overflow-y: auto; padding: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+  .chips { display: none; }
+  .layout.no-list { grid-template-columns: minmax(0, 760px); justify-content: center; }
+  .layout.no-list .verb-list { display: none; }
+}
+.verb-item { display: grid; grid-template-columns: 1.8em minmax(0, 1fr) auto 7px; align-items: center; gap: 10px; border: 0; background: transparent; border-radius: 9px; padding: 7px 10px; text-align: start; min-height: 46px; }
+.verb-item:hover { background: var(--paper); }
+.verb-item[aria-current="true"] { background: var(--accent-soft); }
+.verb-item .rank { font-family: var(--font-data); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.verb-item .gloss-text { font-size: 0.86rem; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.verb-item .ar { font-size: 1.3rem; line-height: 1; text-align: right; }
+.verb-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); transition: box-shadow .2s ease; }
+.verb-item.learned .dot { background: var(--accent); }
+.verb-item[aria-current="true"] .dot { background: var(--gold); box-shadow: 0 0 0 3px var(--gold-soft), 0 0 8px var(--gold); }
+.verb-list { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.verb-list::-webkit-scrollbar { width: 6px; }
+.verb-list::-webkit-scrollbar-track { background: transparent; }
+.verb-list::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.verb-list::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ---- verb card ---- */
+.verb-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 20px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.hero-nav { display: flex; gap: 6px; }
+.icon-btn { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; font-size: 1rem; }
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+.hero-word { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap-reverse; }
+.hero-word .lemma { font-size: 3.4rem; line-height: 1.2; }
+.stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.stat { background: var(--paper); border-radius: 10px; padding: 8px 12px; display: grid; }
+.stat b { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.74rem; color: var(--muted); }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.section-head .section-title { margin: 0; }
+.section-head .note { margin: 0; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.tile { background: var(--paper); border-radius: 12px; padding: 10px 12px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 10px; align-items: center; }
+.tile .tile-ar { font-size: 1.75rem; line-height: 1.3; text-align: right; }
+.tile .tile-label { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 8px; font-size: 0.76rem; color: var(--muted); }
+.tile .tile-label b { color: var(--ink); font-weight: 500; }
+.conj { width: 100%; border-collapse: separate; border-spacing: 0 4px; min-width: 0; font-size: 0.86rem; }
+.conj th { text-align: start; font-weight: 500; color: var(--muted); padding: 0 8px; white-space: nowrap; }
+.conj thead th { font-family: var(--font-data); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; text-align: center; }
+.conj td { padding: 0 3px; text-align: center; }
+.conj-cell { width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid transparent; background: var(--paper); border-radius: 9px; padding: 4px 8px; font-family: var(--font-arabic); font-size: 1.25rem; direction: rtl; min-height: 40px; }
+.conj-cell:hover { border-color: var(--accent); }
+.conj-cell.attested { box-shadow: inset 0 -2px 0 var(--gold); }
+.conj-cell.playing { background: var(--accent-soft); }
+.conj-cell.not-used { flex-direction: column; gap: 0; color: var(--muted); background: transparent; border: 1px dashed var(--line); cursor: default; opacity: 0.75; }
+.conj-cell.not-used small { font-family: var(--font-body); font-size: 0.65rem; direction: ltr; }
+.conj td .quran-tag { margin-top: 2px; display: inline-block; }
+.conj-switch { display: none; }
+.conj-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.76rem; color: var(--muted); margin-top: 8px; }
+.conj-legend i { display: inline-block; width: 14px; height: 3px; background: var(--gold); vertical-align: middle; margin-inline-end: 4px; }
+@media (max-width: 720px) {
+  .conj-switch { display: flex; }
+  .conj.show-past [data-col]:not([data-col="past"]),
+  .conj.show-present [data-col]:not([data-col="present"]),
+  .conj.show-imperative [data-col]:not([data-col="imperative"]) { display: none; }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero-word .lemma { font-size: 2.8rem; }
+}
+.card-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; flex-wrap: wrap; }
+.practice { gap: 14px; }
+.round-head { display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.76rem; color: var(--muted); letter-spacing: 0.03em; }
+.round-bar { height: 4px; }
+.prompt { margin: 0; font-family: var(--font-display); font-size: 1.15rem; }
+.stage { display: grid; justify-items: center; gap: 8px; padding: 18px 12px; background: var(--paper); border-radius: 12px; text-align: center; }
+.stage p { margin: 0; }
+.stage-word { font-size: 2.8rem; line-height: 1.35; }
+.stage-sentence { font-size: 1.7rem; line-height: 1.8; }
+.play.big { width: 64px; height: 64px; }
+.play.big svg { width: 22px; height: 22px; }
+.ayah-text.find { text-align: center; }
+.feedback:empty { display: none; }
+.feedback { display: grid; gap: 10px; }
+.feedback-line { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.feedback-line .ok { color: var(--accent); }
+.feedback-line .no { color: var(--bad); }
+.next-btn { width: 100%; }
+.summary { display: grid; gap: 14px; justify-items: center; text-align: center; }
+.summary-score { margin: 0; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.mistakes { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.mistakes .ar { font-size: 1.3rem; }
+.summary .btn-row { width: 100%; }
+@media (prefers-reduced-motion: reduce) { .bar span { transition: none; } }
+
+/* ---- modern layer: same palette, a contemporary surface. Geometry (the eight-pointed
+   star of Islamic ornament) and soft light carry the religious and the technical at once. ---- */
+:root {
+  --font-display: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+  --font-body: "Inter", "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --radius: 18px;
+  --glow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), 0 8px 30px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+  --shadow: 0 1px 2px rgb(16 40 34 / .05), 0 10px 30px -14px rgb(16 40 34 / .18);
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%230f6b5c' stroke-opacity='.07'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='7'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #08110f; --surface: #101b18; --line: #22332d;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 12px 34px -14px rgb(0 0 0 / .7);
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%2352c2a6' stroke-opacity='.06'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='7'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #08110f; --surface: #101b18; --line: #22332d;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 12px 34px -14px rgb(0 0 0 / .7);
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%2352c2a6' stroke-opacity='.06'%3E%3Crect x='18' y='18' width='28' height='28'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='7'/%3E%3C/g%3E%3C/svg%3E");
+}
+body {
+  background:
+    radial-gradient(900px 520px at 8% -10%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(760px 480px at 100% 0%, color-mix(in srgb, var(--gold) 13%, transparent), transparent 70%),
+    var(--pattern), var(--paper);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01";
+}
+::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
+
+/* glass top bar */
+.topbar {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(16px); backdrop-filter: saturate(160%) blur(16px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+.brand h1, .topbar .brand h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; }
+.brand h1 .ar {
+  background: linear-gradient(120deg, var(--accent), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+nav.tabs { background: color-mix(in srgb, var(--line) 55%, transparent); border-radius: 999px; padding: 4px; }
+nav.tabs button { border-radius: 999px; transition: color .2s ease, background .2s ease; }
+nav.tabs button:hover { color: var(--ink); }
+nav.tabs button[aria-selected="true"] {
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, var(--gold)));
+  color: #fff; box-shadow: var(--glow);
+}
+
+/* cards: soft depth, a hairline of light along the top edge */
+.card, .verb-list {
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, transparent), transparent 140px),
+    color-mix(in srgb, var(--surface) 92%, transparent);
+}
+.card { position: relative; }
+.card::before {
+  content: ""; position: absolute; inset: 0 24px auto; height: 1px; border-radius: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 60%, transparent), transparent);
+}
+.verb-hero { position: relative; border-bottom-color: color-mix(in srgb, var(--line) 70%, transparent); }
+.verb-hero::after {
+  content: ""; position: absolute; inset: -20px -20px auto auto; width: 220px; height: 220px; pointer-events: none;
+  background: var(--pattern); background-size: 44px; opacity: .9;
+  -webkit-mask-image: radial-gradient(circle at 70% 30%, #000, transparent 70%); mask-image: radial-gradient(circle at 70% 30%, #000, transparent 70%);
+}
+.meaning, .big-meaning, .prompt { font-family: var(--font-display); letter-spacing: -0.015em; }
+.eyebrow, .section-title { color: color-mix(in srgb, var(--accent) 65%, var(--muted)); }
+
+/* tiles and rows: quiet surfaces that light up on hover */
+.tile, .form-row, .noun, .stat, .stage, .ayah, .report, .conj-cell:not(.not-used), .gloss span {
+  background: color-mix(in srgb, var(--paper) 70%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.tile, .stat, .conj-cell, .options button, .verb-item, .btn, .icon-btn, .chip { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease, background .2s ease; }
+.tile:hover, .conj-cell:not(.not-used):hover, .options button:not(:disabled):hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: var(--glow); }
+.stat b { font-family: var(--font-display); font-size: 1.35rem; background: linear-gradient(120deg, var(--accent), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ayah { border-inline-start: 3px solid var(--gold); }
+
+/* buttons */
+.play {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--accent) 80%, #fff 0%), color-mix(in srgb, var(--accent) 65%, var(--gold)));
+  box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--accent) 80%, transparent);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.play:not(:disabled):hover { transform: translateY(-1px) scale(1.04); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent), 0 8px 22px -8px var(--accent); }
+.play.gold { background: linear-gradient(140deg, var(--gold), color-mix(in srgb, var(--gold) 70%, #fff)); }
+.play.playing { opacity: 1; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); } 50% { box-shadow: 0 0 0 8px transparent; } }
+.btn { border-radius: 12px; }
+.btn:not(:disabled):hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+.btn.primary { background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, var(--gold))); border-color: transparent; box-shadow: var(--glow); }
+.icon-btn { border-radius: 12px; }
+.icon-btn:hover { box-shadow: var(--glow); }
+
+/* progress: a gradient line with a little light */
+.bar { height: 6px; border-radius: 999px; background: color-mix(in srgb, var(--line) 70%, transparent); }
+.bar span { background: linear-gradient(90deg, var(--accent), var(--gold)); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 60%, transparent); border-radius: 999px; }
+
+/* verb list */
+.verb-item { border-radius: 12px; }
+.verb-item[aria-current="true"] { background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent); box-shadow: inset 2px 0 0 var(--accent); }
+.notice { background: color-mix(in srgb, var(--gold) 10%, var(--surface)); border: 1px solid color-mix(in srgb, var(--gold) 25%, transparent); border-radius: 14px; }
+/* language picker: label and pill on one centre line, same height as the tab strip */
+.lang { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
+.lang .note { font-size: 0.8rem; line-height: 1; }
+.lang select {
+  -webkit-appearance: none; appearance: none; height: 40px; line-height: 1; margin: 0;
+  border-radius: 999px; padding: 0 34px 0 14px; font-size: 0.9rem; font-weight: 500;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%2395a8a0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 13px center,
+    color-mix(in srgb, var(--surface) 80%, transparent);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.lang select:hover { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: var(--glow); }
+nav.tabs button { min-height: 32px; }
+/* the site's sections (verbs, nouns): the same pills as the static pages' top bar */
+nav.sections { display: flex; flex-wrap: wrap; gap: 4px; }
+nav.sections a { display: inline-flex; align-items: center; min-height: 32px; padding: 8px 14px; border-radius: 999px; font-weight: 500; color: var(--muted); text-decoration: none; white-space: nowrap; background: color-mix(in srgb, var(--line) 55%, transparent); }
+nav.sections a:hover { color: var(--ink); }
+nav.sections a[aria-current] { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); font-weight: 600; }
+nav.sections a[hidden] { display: none; }
+/* status line: on a phone the caption and the progress stack instead of squeezing */
+@media (max-width: 720px) {
+  .status { grid-template-columns: minmax(0, 1fr); }
+  .progress-label { justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .play.playing { animation: none; }
+  .play:not(:disabled):hover, .btn:not(:disabled):hover { transform: none; }
+}
+/* A word that speaks says so: on hover (where there is one) or keyboard focus it takes a tint
+   and a small speaker appears. Nothing depends on hover — a tap plays it on a phone — and the
+   playing state (site/player.js) stays the stronger, solid one. */
+.form-play, .word-play, button.conj-cell { position: relative; cursor: pointer; transition: background-color .15s ease, border-color .15s ease; }
+.form-play::before, .word-play::before, button.conj-cell::before {
+  content: ""; position: absolute; inset-block-start: -0.45rem; inset-inline-end: -0.45rem; width: 0.8rem; height: 0.8rem;
+  background: var(--accent); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 6h3l4-3.5v11L5 10H2z'/%3E%3Cpath d='M11 5.2a4 4 0 0 1 0 5.6M12.9 3.4a6.5 6.5 0 0 1 0 9.2' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 6h3l4-3.5v11L5 10H2z'/%3E%3Cpath d='M11 5.2a4 4 0 0 1 0 5.6M12.9 3.4a6.5 6.5 0 0 1 0 9.2' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0; transform: scale(0.7); transition: opacity .15s ease, transform .15s ease; pointer-events: none;
+}
+button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /* inside its box: the table scrolls */
+@media (hover: hover) {
+  :is(.form-play, .word-play, button.conj-cell):hover:not(.playing)::before { opacity: 1; transform: none; }
+  :is(.form-play, .word-play):hover:not(.playing) { background: color-mix(in srgb, var(--gold) 26%, var(--gold-soft)); border-bottom-color: var(--accent); }
+}
+:is(.form-play, .word-play, button.conj-cell):focus-visible:not(.playing)::before { opacity: 1; transform: none; }
+:is(.form-play, .word-play, button.conj-cell):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .form-play::before, .word-play::before, button.conj-cell::before { transition: none; transform: none; }
+  .form-play, .word-play, button.conj-cell { transition: none; }
+}
+@media (forced-colors: active) { .form-play::before, .word-play::before, button.conj-cell::before { background: ButtonText; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><h1><span lang="ar-Latn" translate="no" class="notranslate">Fiʿl</span> <span class="ar notranslate" lang="ar" dir="rtl" translate="no">فِعْل</span></h1></div>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <nav class="sections"><a id="verbs-link" href="./" aria-current="page"></a><a id="nouns-link" hidden></a><a id="adjectives-link" hidden></a><a id="nuances-link" hidden></a><a id="particles-link" hidden></a><a id="pronouns-link" hidden></a><a id="roots-link" hidden></a><a id="surahs-link" hidden></a><a id="exercises-link" hidden></a></nav>
+    <label class="lang"><span class="note" id="lang-label"></span> <select id="language" translate="no" class="notranslate"></select></label>
+  </div>
+</header>
+<!-- Shown once, in the languages that have the words for it (renderTranslateHint, site/translation.js). -->
+<aside class="translate-hint" id="translate-hint" hidden><p><span id="translate-hint-text"></span> <a id="translate-hint-link" href="?lang=en" hreflang="en" lang="en"></a></p><button type="button" class="translate-hint-close" data-translate-hint-close id="translate-hint-close"><span aria-hidden="true">×</span></button></aside>
+<div class="wrap">
+  <div class="status">
+    <p class="brand-sub" id="subtitle"></p>
+    <div class="progress" style="min-width: min(360px, 100%)">
+      <div class="progress-label"><span id="learned-text"></span><span id="share-text"></span></div>
+      <div class="bar" aria-hidden="true"><span id="learned-bar"></span></div>
+    </div>
+    <p class="notice" id="notice"></p>
+  </div>
+
+  <p class="loading" id="loading">…</p>
+
+  <div class="layout" id="layout">
+    <aside class="verb-list" id="verb-list" aria-label="Verbs"></aside>
+    <div class="stack" style="min-width:0">
+      <main id="view-learn" class="stack" hidden>
+        <div class="chips" id="chips"></div>
+        <article class="card" id="verb-card"></article>
+      </main>
+      <main id="view-cards" class="stack" hidden><article class="card center flash" id="flash"></article></main>
+      <main id="view-practice" class="stack" hidden><article class="card practice" id="practice"></article></main>
+    </div>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script src="ui.js"></script>
+<script src="practice.js"></script>
+<script src="ayat.js"></script>
+<script src="player.js"></script>
+<script src="translation.js"></script>
+<script>
+(() => {
+  // Where "report a mistake" sends a learner. Empty until the site is public: the page then
+  // offers the text to copy instead of a link that leads nowhere.
+  const REPORT_URL = "";
+  const LEARNED_BOX = 3;
+  const STORE = { boxes: "fil-boxes-v2", language: "fil-language" };
+
+  const UI = window.FilUI;
+  const TAB_IDS = ["learn", "cards", "meaning", "form", "listen", "ayah", "sentence", "mix"];
+  const PRACTICE_TYPES = ["meaning", "form", "listen", "ayah", "sentence", "mix"];
+  const PRONOUN_ORDER = ["huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma", "antum", "antunna", "ana", "nahnu"];
+  const TENSE_ORDER = ["past", "present", "imperative"];
+  const FORM_NAMES = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+  const PLAY = '<span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></span>';
+
+  let DATA = null, VERBS = [];
+  let language = new URLSearchParams(location.search).get("lang") || readStore(STORE.language, "") || browserLanguage();
+  let boxes = readJson(STORE.boxes);
+
+  // ---------- small helpers ----------
+  // A first visit opens in the browser's language; the site shows English where it has none.
+  // Croatian, Serbian and Montenegrin readers read the Bosnian text.
+  function browserLanguage() {
+    const BOSNIAN_READERS = ["bs", "hr", "sr", "sh", "cnr"];
+    const preferred = (navigator.languages || [navigator.language || "en"]).map((tag) => tag.toLowerCase().split("-")[0]);
+    const first = preferred.find(Boolean) || "en";
+    return BOSNIAN_READERS.includes(first) ? "bs" : first;
+  }
+
+  function readStore(key, fallback) { try { return localStorage.getItem(key) || fallback; } catch { return fallback; } }
+  function readJson(key) { try { return JSON.parse(localStorage.getItem(key) || "{}") || {}; } catch { return {}; } }
+  function writeStore(key, value) { try { localStorage.setItem(key, value); } catch {} }
+  const t = () => UI[language] || UI.en;
+  const escapeHtml = (text) => String(text ?? "").replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+  const keyOf = (verb) => `${verb.root}_${verb.form}`;
+  const meaningOf = (verb) => verb.meaning[language] || verb.meaning.en;
+  const inLanguage = (map) => map[language] || map.en || "";
+  const randomOf = (items) => items[Math.floor(Math.random() * items.length)];
+  const $ = (id) => document.getElementById(id);
+  function shuffle(items) {
+    const copy = [...items];
+    for (let i = copy.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; }
+    return copy;
+  }
+
+  // ---------- sound: every clip is a file (embedded); recitation and checked speech ----------
+  // Every play control toggles (site/player.js): pressed again, or when another starts, it stops.
+  const player = FilPlayer.createPlayer({ makeAudio: (path) => new Audio(path), stopLabel: () => t().stop || UI.en.stop });
+  const stopAll = () => player.stop();
+  const playFile = (path, button) => player.play(button, path);
+  function playButton({ file, label, extra = "" }) {
+    if (!file) return "";
+    return `<button class="play ${extra}" data-file="${file}" aria-label="${escapeHtml(label || t().listen)}">${PLAY}</button>`;
+  }
+  FilPlayer.attach(document, "data-file", player);
+
+  // ---------- cards are loaded per verb, on demand ----------
+  const cards = {};
+  const ready = [];
+  function loadCard(index) {
+    if (!cards[index]) {
+      cards[index] = fetch(VERBS[index].file).then((response) => response.json()).then((card) => { ready[index] = card; return card; });
+    }
+    return cards[index];
+  }
+  /** The cards to practise with now: whatever has loaded, but never fewer than five. */
+  async function practiceCards() {
+    const minimum = Math.min(5, VERBS.length);
+    await Promise.all(Array.from({ length: minimum }, (_, i) => loadCard(i)));
+    return ready.filter(Boolean);
+  }
+  async function preloadAll() { for (let i = 0; i < VERBS.length; i++) { try { await loadCard(i); } catch {} } }
+
+  // ---------- progress ----------
+  const boxOf = (verb) => boxes[keyOf(verb)] || 0;
+  const isLearned = (verb) => boxOf(verb) >= LEARNED_BOX;
+  function setBox(verb, value) { boxes[keyOf(verb)] = value; writeStore(STORE.boxes, JSON.stringify(boxes)); renderProgress(); }
+  function renderProgress() {
+    const learned = VERBS.filter(isLearned);
+    const share = learned.reduce((sum, verb) => sum + verb.count, 0) / DATA.totalOccurrences * 100;
+    const full = VERBS.reduce((sum, verb) => sum + verb.count, 0) / DATA.totalOccurrences * 100;
+    $("learned-text").innerHTML = t().learned(learned.length, VERBS.length);
+    $("share-text").innerHTML = t().share(share.toFixed(0));
+    $("learned-bar").style.width = `${full ? share / full * 100 : 0}%`;
+    document.querySelectorAll(".chip").forEach((chip, index) => chip.classList.toggle("learned", isLearned(VERBS[index])));
+    document.querySelectorAll(".verb-item").forEach((item, index) => item.classList.toggle("learned", isLearned(VERBS[index])));
+  }
+
+  // ---------- chrome: language, tabs, notice, footer ----------
+  function renderChrome() {
+    const ui = t();
+    const meta = DATA.languages.find((entry) => entry.code === language);
+    document.documentElement.lang = language;
+    document.documentElement.dir = meta?.rtl ? "rtl" : "ltr";
+    $("subtitle").textContent = ui.subtitle(VERBS.length);
+    $("lang-label").textContent = ui.language;
+    $("notice").innerHTML = ui.notice;
+    $("footer").innerHTML = ui.footer.map((line) => `<p>${line}</p>`).join("");
+    renderSections(ui);
+    renderTranslateHint(ui);
+    $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");
+    renderProgress();
+  }
+  // The site's sections, as on every static page. The noun and adjective pages are written in
+  // Bosnian and English only: in other languages their links are hidden rather than leading elsewhere.
+  function renderSections(ui) {
+    $("verbs-link").textContent = ui.page.nav;
+    renderSection($("nouns-link"), (DATA.nounPages || {})[language], ui.nounPage.nav);
+    renderSection($("adjectives-link"), (DATA.adjectivePages || {})[language], ui.adjectivePage.nav);
+    renderSection($("nuances-link"), (DATA.nuancePages || {})[language], ui.nuancePage.nav);
+    renderSection($("particles-link"), (DATA.particlePages || {})[language], ui.particlePage.nav);
+    renderSection($("pronouns-link"), (DATA.pronounPages || {})[language], ui.pronounPage.nav);
+    renderSection($("roots-link"), (DATA.rootPages || {})[language], ui.rootPage.nav);
+    renderSection($("surahs-link"), (DATA.surahPages || {})[language], ui.surahPage.nav);
+    renderSection($("exercises-link"), (DATA.exercisePages || {})[language], ui.exercisePage.nav);
+  }
+  function renderSection(link, path, label) {
+    link.hidden = !path;
+    if (!path) return;
+    link.href = path;
+    link.textContent = label;
+  }
+  // "Not your language? …": only in a language with the words for it, and only once per visitor.
+  let isHintOffered = false;
+  function renderTranslateHint(ui) {
+    const hint = $("translate-hint");
+    if (!ui.translateHint) { hint.hidden = true; return; }
+    $("translate-hint-text").textContent = ui.translateHint;
+    $("translate-hint-link").textContent = ui.translateHintLink;
+    $("translate-hint-link").hidden = language === "en";
+    $("translate-hint-close").setAttribute("aria-label", ui.close);
+    if (isHintOffered) return;
+    isHintOffered = true;
+    let storage = null;
+    try { storage = window.localStorage; } catch { storage = null; }
+    FilTranslation.showHintOnce(hint, storage);
+  }
+  function renderLanguagePicker() {
+    $("language").innerHTML = DATA.languages.map((entry) => `<option value="${entry.code}" ${entry.code === language ? "selected" : ""}>${escapeHtml(entry.name)}</option>`).join("");
+  }
+  $("language").addEventListener("change", (event) => {
+    language = event.target.value;
+    writeStore(STORE.language, language);
+    renderChrome();
+    renderActive();
+  });
+
+  let activeTab = "learn";
+  $("tabs").addEventListener("click", (event) => {
+    const tab = event.target.closest("[data-tab]");
+    if (!tab) return;
+    activeTab = tab.dataset.tab;
+    document.querySelectorAll("[data-tab]").forEach((button) => button.setAttribute("aria-selected", String(button.dataset.tab === activeTab)));
+    stopAll();
+    renderActive();
+  });
+  function renderActive() {
+    $("view-learn").hidden = activeTab !== "learn";
+    $("view-cards").hidden = activeTab !== "cards";
+    $("view-practice").hidden = !PRACTICE_TYPES.includes(activeTab);
+    $("layout").classList.toggle("no-list", activeTab !== "learn");
+    if (activeTab === "learn") return showVerb(current);
+    if (activeTab === "cards") return startFlash();
+    return startPractice(activeTab);
+  }
+
+  // ---------- learn ----------
+  let current = 0;
+  function renderChips() {
+    $("chips").innerHTML = VERBS.map((verb, index) => `<button class="chip" data-index="${index}">${verb.lemma}</button>`).join("");
+    $("verb-list").innerHTML = VERBS.map((verb, index) => `<button class="verb-item" data-index="${index}">
+      <span class="rank">${verb.rank}</span>
+      <span class="gloss-text">${escapeHtml(meaningOf(verb))}</span>
+      <span class="ar">${verb.lemma}</span>
+      <span class="dot" aria-hidden="true"></span></button>`).join("");
+  }
+  for (const list of ["chips", "verb-list"]) {
+    $(list).addEventListener("click", (event) => {
+      const item = event.target.closest("[data-index]");
+      if (item) showVerb(Number(item.dataset.index));
+    });
+  }
+  document.addEventListener("click", (event) => {
+    const step = event.target.closest("[data-step]");
+    if (step) showVerb(current + Number(step.dataset.step));
+    const tense = event.target.closest("[data-show-tense]");
+    if (tense) {
+      const table = document.querySelector(".conj");
+      table.className = `conj show-${tense.dataset.showTense}`;
+      document.querySelectorAll("[data-show-tense]").forEach((b) => b.setAttribute("aria-pressed", String(b === tense)));
+    }
+  });
+
+  const formLabel = (cell) => `${t().tenses[cell.tense]} · ${t().pronouns[cell.pronoun]}`;
+
+  function tile({ arabic, spoken, label, detail, recited, quran }) {
+    const tag = recited
+      ? `<button class="quran-tag" data-file="${recited}"><span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span> ${escapeHtml(t().recited)}</button>`
+      : (quran ? `<span class="quran-tag">${escapeHtml(t().inQuran)}</span>` : "");
+    return `<div class="tile">
+      ${playButton({ file: spoken, label: arabic })}
+      <span class="ar tile-ar">${arabic}</span>
+      <span class="tile-label"><span><b>${escapeHtml(label)}</b> · ${escapeHtml(detail)}</span>${tag}</span>
+    </div>`;
+  }
+
+  function keyFormsBlock(verb) {
+    const forms = verb.principal.map((cell) => tile({
+      arabic: cell.plain, spoken: cell.spoken, label: t().tenses[cell.tense],
+      detail: t().pronouns[cell.pronoun], recited: cell.recited, quran: cell.quran,
+    }));
+    const nouns = [["participle", t().participle], ["verbal_noun", t().verbalNoun]]
+      .filter(([kind]) => verb.nouns[kind])
+      .map(([kind, label]) => tile({
+        arabic: verb.nouns[kind].lemma, spoken: verb.nouns[kind].spoken, label,
+        detail: `${verb.nouns[kind].count}× ${t().inQuran.toLowerCase()}`,
+      }));
+    return `<section><div class="section-head"><h3 class="section-title">${escapeHtml(t().mainForms)}</h3></div>
+      <div class="tiles">${[...forms, ...nouns].join("")}</div></section>`;
+  }
+
+  // The marked verb's meaning in its ayah — or, until it is glossed, its grammar.
+  function verbGlossHtml(word) {
+    const meaning = word.gloss
+      ? `<span>= ${escapeHtml(inLanguage(word.gloss))}</span><span class="ai-tag">AI</span>`
+      : `<span>= <span class="grammar">${escapeHtml(FilAyat.grammarLabel(word.grammar, t()))}</span></span>`;
+    return `<p class="verb-gloss"><span class="qr">${word.text}</span>${meaning}</p>`;
+  }
+
+  function ayatBlock(verb) {
+    if (!verb.ayat.length && !verb.forms.length) return "";
+    const items = verb.ayat.map((ayah) => {
+      const [surah, number] = ayah.ref.split(":");
+      const text = ayah.words.map((word) => word.hit ? (word.audio ? `<button class="word-play" data-file="${word.audio}">${word.text}</button>` : `<mark>${word.text}</mark>`) : word.text).join(" ");
+      const own = ayah.translation?.[language];
+      const translation = own || ayah.translation?.en;
+      const fallbackNote = !own && language !== "en" ? ` · ${t().noFreeTranslation}` : "";
+      const translationHtml = translation
+        // A published translation of the Quran: a browser translating it would make a new one nobody made.
+        ? `<p class="ayah-translation notranslate" lang="${own ? language : "en"}" dir="${own && language === "ur" ? "rtl" : "ltr"}" translate="no">${escapeHtml(translation.text)}<small>${escapeHtml(translation.by)}${escapeHtml(fallbackNote)}</small></p>`
+        : "";
+      return `<div class="ayah">
+        <div class="ayah-head"><span class="tense-chip">${escapeHtml(FilAyat.grammarLabel([ayah.category], t()))}</span><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener">${surah}:${number} ↗</a>${FilAyat.ayahLinksHtml(ayah.ref, language, t().forms.links)}</div>
+        <p class="qr ayah-text">${text}</p>
+        ${ayah.words.filter((word) => word.hit).map(verbGlossHtml).join("")}
+        ${translationHtml}
+        <div class="ayah-foot">${playButton({ file: ayah.audio, extra: "small gold" })}<span>${escapeHtml(t().recitedAyah)}</span></div>
+      </div>`;
+    }).join("");
+    const examples = items ? `<p class="note" style="margin:0 0 10px">${escapeHtml(t().listenAyah)}</p><div class="ayat">${items}</div>` : "";
+    return `<section><h3 class="section-title">${escapeHtml(t().inQuran)}</h3>${examples}${attestedFormsBlock(verb)}${allAyatBlock(verb)}</section>`;
+  }
+
+  // Every word the Quran uses the verb in, playable as recited at its first occurrence.
+  function attestedFormsBlock(verb) {
+    const words = t().forms;
+    const rows = verb.forms.map((form) => {
+      const word = form.audio
+        ? `<button class="form-play" type="button" lang="ar" dir="rtl" data-file="${form.audio}">${form.arabic}</button>`
+        : `<b lang="ar" dir="rtl">${form.arabic}</b>`;
+      const [surah, number] = form.first.split(":");
+      return `<li>${word}<small>${form.count}×</small>${formMeaningHtml(form)}<span class="first"><a href="https://quran.com/${surah}/${number}" target="_blank" rel="noopener" title="${escapeHtml(words.firstAyah)} ${form.first}">${form.first}</a> ${FilAyat.ayahLinksHtml(form.first, language, words.links, true)}</span></li>`;
+    }).join("");
+    return `<h4 class="forms-head">${escapeHtml(words.allForms(verb.forms.length))}</h4><p class="note">${escapeHtml(words.formsNote)}</p><ol class="attested">${rows}</ol>`;
+  }
+
+  // The meaning (our own gloss, else a word-by-word translation) beside the grammar, always (as pages/render.py).
+  function formMeaningHtml(form) {
+    const grammar = `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
+    return `<span class="form-meaning">${formTranslationHtml(form)}${grammar}</span>`;
+  }
+
+  function formTranslationHtml(form) {
+    const gloss = form.gloss?.[language] || form.gloss?.en;
+    if (gloss) return `<span class="form-gloss">${escapeHtml(gloss)} <span class="ai-tag">AI</span></span>`;
+    const translation = form.wordTranslation?.[language] || form.wordTranslation?.en;
+    if (translation) return `<span class="form-translation">${escapeHtml(translation)}</span>`;
+    return "";
+  }
+
+  // The button that fetches every ayah of the verb (ayat.js), in the reader's language or English.
+  function allAyatBlock(verb) {
+    const words = t().forms;
+    const own = verb.ayatTranslations[language];
+    const translatedIn = own ? language : "en";
+    const rtl = own && DATA.languages.find((entry) => entry.code === language)?.rtl;
+    const text = {
+      showAll: words.showAll(verb.ayahCount), hideAll: words.hideAll, showMore: words.showMore,
+      loading: words.loading, loadFailed: words.loadFailed, recitedAyah: t().recitedAyah, links: words.links,
+      fallbackNote: !own && language !== "en" && t().noFreeTranslation ? ` · ${t().noFreeTranslation}` : "",
+    };
+    return `<div class="all-ayat" data-all-ayat data-ayat="${verb.ayatFile}" data-language="${language}" data-translation="${verb.ayatTranslations[translatedIn]}"
+      data-translation-language="${translatedIn}" data-translation-dir="${rtl ? "rtl" : "ltr"}" data-audio-source="${escapeHtml(DATA.ayahAudio)}"
+      data-audio-attribute="data-file" data-text="${escapeHtml(JSON.stringify(text))}">
+      <button type="button" class="btn" data-all-ayat-toggle aria-expanded="false" aria-controls="all-ayat-${verb.rank}">${escapeHtml(text.showAll)}</button>
+      <div class="all-ayat-list" id="all-ayat-${verb.rank}" hidden></div></div>`;
+  }
+
+  function sentenceHtml(sentence) {
+    const arabic = sentence.words.map((word) => word.target ? `<b>${word.arabic}</b>` : word.arabic).join(" ");
+    const gloss = sentence.words.map((word) => `<span class="${word.target ? "target" : ""}"><span class="ar">${word.arabic}</span><small>${escapeHtml(inLanguage(word.translation))}</small></span>`).join("");
+    return `<div class="sentence">
+      <div class="sentence-line">${playButton({ file: sentence.spoken, extra: "small" })}<p class="ar">${arabic}</p></div>
+      <p>${escapeHtml(inLanguage(sentence.translation))}</p>
+      <div class="gloss">${gloss}</div>
+    </div>`;
+  }
+
+  function sentencesBlock(verb) {
+    const body = verb.sentences.length
+      ? verb.sentences.map(sentenceHtml).join("") + `<p class="note">${escapeHtml(t().sentencesNote)}</p>`
+      : `<p class="note">${escapeHtml(t().noSentences)}</p>`;
+    return `<section><h3 class="section-title">${escapeHtml(t().sentences)}</h3>${body}</section>`;
+  }
+
+  function conjugationBlock(verb) {
+    const find = (tense, pronoun) => verb.cells.find((cell) => cell.tense === tense && cell.pronoun === pronoun);
+    const rows = PRONOUN_ORDER.map((pronoun) => `<tr><th>${escapeHtml(t().pronouns[pronoun])}</th>${TENSE_ORDER.map((tense) => {
+      const cell = find(tense, pronoun);
+      if (!cell) return `<td data-col="${tense}"><span class="note">–</span></td>`;
+      if (cell.notUsed) return `<td data-col="${tense}"><span class="conj-cell not-used" title="${escapeHtml(t().notUsedNote)}">${cell.plain}<small>${escapeHtml(t().notUsed)}</small></span></td>`;
+      const recited = cell.recited ? ` <button class="quran-tag" data-file="${cell.recited}" aria-label="${escapeHtml(t().recited)}"><span class="play-icon notranslate" aria-hidden="true" translate="no">▶</span> ${escapeHtml(t().recited)}</button>` : "";
+      return `<td data-col="${tense}"><button class="conj-cell ${cell.quran ? "attested" : ""}" data-file="${cell.spoken}">${cell.plain}</button>${recited}</td>`;
+    }).join("")}</tr>`).join("");
+    const attested = verb.cells.filter((cell) => cell.quran).length;
+    const switcher = `<div class="segmented conj-switch">${TENSE_ORDER.map((tense, i) => `<button data-show-tense="${tense}" aria-pressed="${i === 0}">${escapeHtml(t().tenses[tense])}</button>`).join("")}</div>`;
+    return `<section>
+      <div class="section-head"><h3 class="section-title">${escapeHtml(t().conjugation)}</h3><span class="note">${escapeHtml(t().fullTable(attested, verb.cells.length))}</span></div>
+      ${switcher}
+      <table class="conj show-past"><thead><tr><th></th>${TENSE_ORDER.map((tense) => `<th data-col="${tense}">${escapeHtml(t().tenses[tense])}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>
+      <p class="conj-legend"><span><i></i>${escapeHtml(t().tableNote)}</span>${verb.cells.some((cell) => cell.notUsed) ? `<span>${escapeHtml(t().notUsedNote)}</span>` : ""}</p>
+    </section>`;
+  }
+
+  function reportBlock(verb) {
+    return `<div><button class="btn quiet" data-report>⚑ ${escapeHtml(t().report)}</button>
+      <div class="report" data-report-box hidden>
+        <p class="note" style="margin:0">${escapeHtml(t().reportHint)}</p>
+        <textarea id="report-text">Fiʿl · ${verb.lemma} (${verb.root}, ${FORM_NAMES[verb.form]}) · ${language}\n\n</textarea>
+        <div class="btn-row"><button class="btn" data-copy-report>${escapeHtml(t().copy)}</button>${REPORT_URL ? `<a class="btn primary" href="${REPORT_URL}" target="_blank" rel="noopener">${escapeHtml(t().report)}</a>` : `<button class="btn" data-close-report>${escapeHtml(t().close)}</button>`}</div>
+      </div></div>`;
+  }
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("[data-report]")) { const box = document.querySelector("[data-report-box]"); box.hidden = !box.hidden; }
+    if (event.target.closest("[data-close-report]")) document.querySelector("[data-report-box]").hidden = true;
+    const copy = event.target.closest("[data-copy-report]");
+    if (copy) {
+      const area = $("report-text");
+      navigator.clipboard?.writeText(area.value).then(() => { copy.textContent = t().copied; }).catch(() => { area.select(); });
+      if (!navigator.clipboard) area.select();
+    }
+  });
+
+  // A link like index.html#verb-12 (from a verb's own page) opens that verb, by its rank.
+  function verbFromHash() {
+    const rank = Number((location.hash.match(/^#verb-(\d+)$/) || [])[1]);
+    const found = VERBS.findIndex((verb) => verb.rank === rank);
+    return found < 0 ? current : found;
+  }
+
+  async function showVerb(index) {
+    current = (index + VERBS.length) % VERBS.length;
+    const shown = current;
+    const verb = await loadCard(shown);
+    if (shown !== current) return;
+    const ui = t();
+    const english = language === "en" ? "" : `<small>${escapeHtml(verb.meaning.en)}</small>`;
+    $("verb-card").innerHTML = `
+      <header class="verb-hero">
+        <div class="eyebrow"><span>#${verb.rank} · ${escapeHtml(ui.root)} <span class="root-letters">${verb.root.split("").join(" ")}</span> · ${escapeHtml(ui.form)} ${FORM_NAMES[verb.form]}</span></div>
+        <div class="hero-nav"><button class="icon-btn" data-step="-1" aria-label="${escapeHtml(ui.prev)}">‹</button><button class="icon-btn" data-step="1" aria-label="${escapeHtml(ui.next)}">›</button></div>
+        <div class="hero-word"><p class="meaning">${escapeHtml(meaningOf(verb))}${english}</p><p class="ar lemma">${verb.lemma}</p></div>
+        <div class="stats">
+          <div class="stat"><b>${verb.count}×</b><span>${escapeHtml(ui.inQuran)}</span></div>
+          <div class="stat"><b>${verb.share.toFixed(1)}%</b><span>${escapeHtml(ui.statShare)}</span></div>
+          <div class="stat"><b>${verb.ayahCount}</b><span>${escapeHtml(ui.statAyat)}</span></div>
+        </div>
+      </header>
+      ${keyFormsBlock(verb)}
+      ${conjugationBlock(verb)}
+      ${ayatBlock(verb)}
+      ${sentencesBlock(verb)}
+      <div class="card-foot">${reportBlock(verb)}<div class="hero-nav"><button class="btn" data-step="-1">${escapeHtml(ui.prev)}</button><button class="btn primary" data-step="1">${escapeHtml(ui.next)}</button></div></div>`;
+    document.querySelectorAll(".chip").forEach((chip, i) => chip.setAttribute("aria-current", String(i === current)));
+    document.querySelectorAll(".verb-item").forEach((item, i) => item.setAttribute("aria-current", String(i === current)));
+    $("chips").children[current]?.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+
+  // ---------- practice: every exercise is a round of fair questions (see practice.js) ----------
+  const MAX_BOX = 5;
+  const P = window.FilPractice;
+  let round = null;   // { type, questions, index, right, mistakes, answered }
+
+  function grade(card, correct) {
+    setBox(card, correct ? Math.min(MAX_BOX, boxOf(card) + 1) : Math.max(0, boxOf(card) - 1));
+  }
+
+  function roundHeader(ui) {
+    const total = round.questions.length;
+    return `<div class="round-head">
+      <span>${escapeHtml(ui.questionOf(round.index + 1, total))}</span>
+      <span class="score">${escapeHtml(ui.correct(round.right, round.index + (round.answered ? 1 : 0)))}</span>
+    </div>
+    <div class="bar round-bar"><span style="width:${(round.index + (round.answered ? 1 : 0)) / total * 100}%"></span></div>`;
+  }
+
+  async function startPractice(type, questions = null) {
+    $("practice").innerHTML = `<p class="loading">…</p>`;
+    const pool = await practiceCards();
+    const asked = questions || P.session(type, pool, { language, boxOf });
+    round = { type, questions: asked, index: 0, right: 0, mistakes: [], answered: false };
+    if (!asked.length) { $("practice").innerHTML = `<p class="note">${escapeHtml(t().noSentences)}</p>`; return; }
+    showQuestion();
+  }
+
+  function showQuestion() {
+    const ui = t();
+    const question = round.questions[round.index];
+    round.answered = false;
+    round.missedOnce = false;
+    stopAll();
+    const body = {
+      meaning: () => `<p class="prompt">${escapeHtml(ui.whatMeans)}</p>
+        <div class="stage"><p class="ar stage-word">${question.cell.plain}</p><p class="note">${escapeHtml(formLabel(question.cell))}</p>${playButton({ file: question.cell.spoken })}</div>`,
+      form: () => `<p class="prompt">${escapeHtml(ui.whoWhen)}</p>
+        <div class="stage"><p class="ar stage-word">${question.cell.plain}</p><p class="note">${question.card.lemma} · ${escapeHtml(meaningOf(question.card))}</p>${playButton({ file: question.cell.spoken })}</div>`,
+      listen: () => `<p class="prompt">${escapeHtml(ui.whichHeard)}</p>
+        <div class="stage">${playButton({ file: question.cell.spoken, extra: "big" })}<p class="note">${question.card.lemma} · ${escapeHtml(meaningOf(question.card))}</p></div>`,
+      ayah: () => `<p class="prompt">${escapeHtml(ui.findVerb)}</p>
+        <div class="stage">${playButton({ file: question.ayah.audio, extra: "gold big" })}<p class="note">${question.card.lemma} · ${escapeHtml(meaningOf(question.card))} · ${question.ayah.ref}</p></div>
+        <p class="qr ayah-text find">${question.ayah.words.map((word, i) => `<button class="find-word" data-word="${i}">${word.text}</button>`).join(" ")}</p>`,
+      sentence: () => `<p class="prompt">${escapeHtml(ui.fillIn)}</p>
+        <div class="stage"><p class="ar stage-sentence">${question.sentence.words.map((word) => word.target ? '<span class="blank">&nbsp;</span>' : word.arabic).join(" ")}</p>
+        <p>${escapeHtml(inLanguage(question.sentence.translation))}</p></div>`,
+    }[question.type]();
+    const options = question.type === "ayah" ? "" : `<div class="options">${question.options.map((option, i) => {
+      const label = question.type === "form" ? escapeHtml(formLabel(option.cell)) : (question.type === "meaning" ? escapeHtml(option.label) : option.label);
+      const arabic = ["listen", "sentence"].includes(question.type);
+      return `<button class="${arabic ? "ar" : ""}" data-option="${i}">${label}</button>`;
+    }).join("")}</div>`;
+    $("practice").innerHTML = `${roundHeader(ui)}${body}${options}<div class="feedback" data-after></div>`;
+    // A listening question starts by sounding; it follows a click, so the browser allows it.
+    if (question.type === "listen" || question.type === "ayah") {
+      const button = document.querySelector("#practice .stage [data-file]");
+      if (button) playFile(button.dataset.file, button);
+    }
+  }
+
+  function feedbackFor(question, correct) {
+    const ui = t();
+    const verdict = `<b class="${correct ? "ok" : "no"}">${escapeHtml(correct ? ui.right : ui.wrong)}</b>`;
+    const detail = {
+      meaning: () => `<span class="ar">${question.card.lemma}</span> = ${escapeHtml(meaningOf(question.card))}`,
+      form: () => {
+        const others = question.readings.filter((reading) => reading !== question.cell);
+        const also = others.length ? ` · ${escapeHtml(ui.alsoReads)} ${others.map((reading) => escapeHtml(formLabel(reading))).join(", ")}` : "";
+        return `<span class="ar">${question.cell.plain}</span> = ${escapeHtml(formLabel(question.cell))}${also}`;
+      },
+      listen: () => `<span class="ar">${question.cell.plain}</span> = ${escapeHtml(formLabel(question.cell))}`,
+      ayah: () => {
+        const word = question.ayah.words.find((w) => w.hit);
+        return `${playButton({ file: word.audio, extra: "small gold" })} <span class="qr">${word.text}</span>${word.gloss ? ` = ${escapeHtml(inLanguage(word.gloss))}` : ""}`;
+      },
+      sentence: () => `${playButton({ file: question.sentence.spoken, extra: "small" })} <span class="ar">${question.sentence.arabic}</span>`,
+    }[question.type]();
+    const last = round.index === round.questions.length - 1;
+    return `<p class="feedback-line">${verdict} ${detail}</p>
+      <button class="btn primary next-btn" data-next>${escapeHtml(last ? ui.sessionDone : ui.nextQ)}</button>`;
+  }
+
+  function answer(correct) {
+    if (round.answered) return;
+    round.answered = true;
+    const question = round.questions[round.index];
+    if (correct) round.right += 1; else round.mistakes.push(question);
+    grade(question.card, correct);
+    const after = document.querySelector("#practice [data-after]");
+    after.innerHTML = feedbackFor(question, correct);
+    document.querySelector("#practice .round-head").outerHTML = "";
+    document.querySelector("#practice .round-bar").outerHTML = "";
+    $("practice").insertAdjacentHTML("afterbegin", roundHeader(t()));
+    after.querySelector("[data-next]").focus();
+  }
+
+  $("practice").addEventListener("click", (event) => {
+    if (!round) return;
+    const question = round.questions[round.index];
+    const option = event.target.closest("[data-option]");
+    if (option && !round.answered) {
+      const chosen = question.options[Number(option.dataset.option)];
+      document.querySelectorAll("#practice [data-option]").forEach((button, i) => {
+        button.disabled = true;
+        if (question.options[i].correct) button.classList.add("right");
+      });
+      if (!chosen.correct) option.classList.add("wrong");
+      return answer(chosen.correct);
+    }
+    const word = event.target.closest("[data-word]");
+    if (word && !round.answered) {
+      const hit = question.ayah.words[Number(word.dataset.word)].hit;
+      if (!hit) { word.classList.add("wrong"); round.missedOnce = true; return; }
+      word.classList.add("right");
+      const firstTry = !round.missedOnce;
+      round.missedOnce = false;
+      return answer(firstTry);
+    }
+    if (event.target.closest("[data-next]")) {
+      if (round.index < round.questions.length - 1) { round.index += 1; return showQuestion(); }
+      return showSummary();
+    }
+    if (event.target.closest("[data-retry]")) return startPractice(round.type, round.mistakes);
+    if (event.target.closest("[data-new-round]")) return startPractice(round.type);
+  });
+
+  function showSummary() {
+    const ui = t();
+    const total = round.questions.length;
+    const mistakes = round.mistakes.map((question) => `<li><span class="ar">${question.card.lemma}</span> · ${escapeHtml(meaningOf(question.card))}</li>`).join("");
+    $("practice").innerHTML = `<div class="summary">
+      <p class="big-meaning">${escapeHtml(ui.sessionDone)}</p>
+      <p class="summary-score">${escapeHtml(ui.scoreLine(round.right, total))}</p>
+      ${mistakes ? `<div><p class="section-title">${escapeHtml(ui.mistakesTitle)}</p><ul class="mistakes">${mistakes}</ul></div>` : ""}
+      <div class="btn-row">${round.mistakes.length ? `<button class="btn" data-retry>${escapeHtml(ui.retryMistakes)}</button>` : "<span></span>"}<button class="btn primary" data-new-round>${escapeHtml(ui.newSession)}</button></div>
+    </div>`;
+  }
+
+  // ---------- cards: a round of ten, Arabic → meaning (reverse only where the meaning is unique) ----------
+  let flash = null, flashDirection = 0;
+  async function startFlash() {
+    const pool = await practiceCards();
+    const reversible = flashDirection === 1 ? P.uniquelyMeant(pool, language) : pool;
+    const deck = [];
+    const random = Math.random;
+    const candidates = [...reversible].sort((a, b) => boxOf(a) - boxOf(b) || random() - 0.5);
+    for (const card of candidates) { if (deck.length < P.SESSION_SIZE) deck.push(card); }
+    flash = { deck, index: 0, right: 0, mistakes: [] };
+    showFlash();
+  }
+  function showFlash() {
+    const ui = t();
+    const card = flash.deck[flash.index];
+    stopAll();
+    const directions = `<div class="segmented">${ui.direction.map((label, i) => `<button data-direction="${i}" aria-pressed="${i === flashDirection}">${escapeHtml(label)}</button>`).join("")}</div>`;
+    const present = card.principal.find((cell) => cell.tense === "present");
+    const front = flashDirection === 0
+      ? `<p class="ar lemma">${card.lemma}</p>${present ? `<p class="ar" style="font-size:1.6rem;color:var(--muted);margin:0">${present.plain}</p>` : ""}${playButton({ file: card.lemmaSpoken })}`
+      : `<p class="big-meaning">${escapeHtml(meaningOf(card))}</p>`;
+    $("flash").innerHTML = `${directions}
+      <div class="round-head" style="width:100%"><span>${escapeHtml(ui.questionOf(flash.index + 1, flash.deck.length))}</span><span class="score">${escapeHtml(ui.correct(flash.right, flash.index))}</span></div>
+      ${front}<button class="btn primary" data-reveal>${escapeHtml(ui.reveal)}</button><p class="note" style="margin:0">${escapeHtml(ui.cardsHint)}</p>`;
+  }
+  function revealFlash() {
+    const ui = t();
+    const card = flash.deck[flash.index];
+    const back = flashDirection === 0
+      ? `<p class="big-meaning">${escapeHtml(meaningOf(card))}</p>`
+      : `<p class="ar lemma">${card.lemma}</p>${playButton({ file: card.lemmaSpoken })}`;
+    document.querySelector("#flash [data-reveal]").outerHTML = `<div class="stack center">${back}<p class="note" style="margin:0">${escapeHtml(ui.times(card.count))}</p></div>
+      <div class="btn-row" style="width:100%"><button class="btn bad" data-knew="0">${escapeHtml(ui.missed)}</button><button class="btn good" data-knew="1">${escapeHtml(ui.knew)}</button></div>`;
+  }
+  $("flash").addEventListener("click", (event) => {
+    const direction = event.target.closest("[data-direction]");
+    if (direction) { flashDirection = Number(direction.dataset.direction); return startFlash(); }
+    if (event.target.closest("[data-reveal]")) return revealFlash();
+    const knew = event.target.closest("[data-knew]");
+    if (knew) {
+      const card = flash.deck[flash.index];
+      const correct = knew.dataset.knew === "1";
+      if (correct) flash.right += 1; else flash.mistakes.push(card);
+      setBox(card, correct ? Math.min(MAX_BOX, boxOf(card) + 1) : 0);
+      if (flash.index < flash.deck.length - 1) { flash.index += 1; return showFlash(); }
+      const ui = t();
+      $("flash").innerHTML = `<div class="summary"><p class="big-meaning">${escapeHtml(ui.sessionDone)}</p>
+        <p class="summary-score">${escapeHtml(ui.scoreLine(flash.right, flash.deck.length))}</p>
+        ${flash.mistakes.length ? `<ul class="mistakes">${flash.mistakes.map((c) => `<li><span class="ar">${c.lemma}</span> · ${escapeHtml(meaningOf(c))}</li>`).join("")}</ul>` : ""}
+        <button class="btn primary" data-flash-again>${escapeHtml(ui.newSession)}</button></div>`;
+    }
+    if (event.target.closest("[data-flash-again]")) return startFlash();
+  });
+
+  // ---------- start ----------
+  fetch("data.json").then((response) => response.json()).then((data) => {
+    DATA = data;
+    VERBS = data.verbs;
+    if (!data.languages.some((entry) => entry.code === language)) language = "en";
+    current = verbFromHash();
+    $("loading").hidden = true;
+    renderLanguagePicker();
+    renderChips();
+    renderChrome();
+    renderActive();
+    preloadAll();
+    window.addEventListener("hashchange", () => {
+      current = verbFromHash();
+      document.querySelector('[data-tab="learn"]')?.click();
+    });
+  }).catch(() => { $("loading").textContent = "data.json could not be loaded."; });
+})();
+</script>
+<nav class="pages-links" style="max-width:760px;margin:0 auto 32px;padding:0 16px;font-size:13px;line-height:1.9;color:var(--muted)"><a href="bs/" hreflang="bs" lang="bs" translate="no" class="notranslate">Svi glagoli</a> · <a href="en/" hreflang="en" lang="en" translate="no" class="notranslate">All verbs</a> · <a href="tr/" hreflang="tr" lang="tr" translate="no" class="notranslate">Tüm fiiller</a> · <a href="fr/" hreflang="fr" lang="fr" translate="no" class="notranslate">Tous les verbes</a> · <a href="id/" hreflang="id" lang="id" translate="no" class="notranslate">Semua kata kerja</a> · <a href="ur/" hreflang="ur" lang="ur" translate="no" class="notranslate">تمام افعال</a> · <a href="bn/" hreflang="bn" lang="bn" translate="no" class="notranslate">সব ক্রিয়া</a> · <a href="fa/" hreflang="fa" lang="fa" translate="no" class="notranslate">همهٔ فعل‌ها</a></nav>
+
+</body>
+</html>

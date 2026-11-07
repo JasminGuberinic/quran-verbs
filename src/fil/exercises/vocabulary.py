@@ -18,7 +18,7 @@ from __future__ import annotations
 from collections.abc import Collection, Sequence
 from dataclasses import dataclass
 
-from fil.exercises.model import LISTEN, PICTURE, Bilingual, Exercise, Option
+from fil.exercises.model import LISTEN, PICTURE, WORD_MEANING, Bilingual, Exercise, Option
 from fil.exercises.text import first_distinct, in_one_style, meanings_overlap, same_spelling, stable_order
 
 OPTION_COUNT = 4
@@ -58,6 +58,22 @@ def listen_exercises(words: Sequence[Word], synonyms: Collection[frozenset[str]]
     return [exercise for exercise in (_listen_exercise(word, voiced, synonyms) for word in voiced) if exercise]
 
 
+def word_meaning_exercises(words: Sequence[Word], synonyms: Collection[frozenset[str]] = ()) -> list[Exercise]:
+    """For each word: the Arabic written, and its meaning among three meanings of words of its family.
+
+    The same rules as listening (`_meaning_exercise`); nothing is heard before answering, so a learner
+    who cannot yet read the word has only the spelling to go on. The word's voice plays after answering."""
+    return [exercise for exercise in (_word_meaning_exercise(word, words, synonyms) for word in words) if exercise]
+
+
+def _word_meaning_exercise(answer: Word, words: Sequence[Word], synonyms: Collection[frozenset[str]]) -> Exercise | None:
+    options = _meaning_options(answer, words, synonyms)
+    if options is None:
+        return None
+    return Exercise(kind=WORD_MEANING, key=answer.id.replace(":", "-"), words=(answer.id,), options=options,
+                    lead=in_one_style(answer.arabic), answer_sound=answer.sound)
+
+
 def _picture_exercise(answer: Word, pictured: Sequence[Word], synonyms: Collection[frozenset[str]]) -> Exercise | None:
     candidates = [word for word in stable_order(pictured, lambda word: word.id, salt=answer.id)
                   if not could_be_pictured_alike(answer, word)]
@@ -70,14 +86,21 @@ def _picture_exercise(answer: Word, pictured: Sequence[Word], synonyms: Collecti
                     picture=answer.picture, answer_word=answer.arabic, answer_sound=answer.sound, gloss=answer.meaning)
 
 
-def _listen_exercise(answer: Word, voiced: Sequence[Word], synonyms: Collection[frozenset[str]]) -> Exercise | None:
-    family = [word for word in voiced if word.family == answer.family]
+def _meaning_options(answer: Word, words: Sequence[Word], synonyms: Collection[frozenset[str]]) -> tuple[Option, ...] | None:
+    """The answer's meaning among meanings of words of its family about as frequent, or None when too few are fair."""
+    family = [word for word in words if word.family == answer.family]
     candidates = stable_order(family, lambda word: word.id, salt=answer.id)
     candidates.sort(key=lambda word: abs(word.rank - answer.rank) // 25)   # stable: words about as frequent first
     distractors = _distractors(answer, candidates, synonyms)
     if len(distractors) < OPTION_COUNT - 1:
         return None
-    options = (Option(True, meaning=answer.meaning), *(Option(False, meaning=word.meaning) for word in distractors))
+    return (Option(True, meaning=answer.meaning), *(Option(False, meaning=word.meaning) for word in distractors))
+
+
+def _listen_exercise(answer: Word, voiced: Sequence[Word], synonyms: Collection[frozenset[str]]) -> Exercise | None:
+    options = _meaning_options(answer, voiced, synonyms)
+    if options is None:
+        return None
     return Exercise(kind=LISTEN, key=answer.id.replace(":", "-"), words=(answer.id,), options=options,
                     sound=answer.sound, answer_word=answer.arabic, answer_sound=answer.sound)
 

@@ -36,15 +36,16 @@ from fil.exercises import gate
 from fil.exercises.agreement import AdjectiveForm, AdjectiveSentence, agreement_exercises
 from fil.exercises.ayat import AyahWord, CitedAyah, NuanceGroup, NuanceMember, ParticleUse, nuance_exercises, particle_exercises
 from fil.exercises.cases import NounSentence, SentenceWord, case_exercises
-from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, FORM_MEANING, HEAR_RECITER, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
-                                 NUANCE_WORD, PARTICLE, PARTICLE_WORD, PICTURE, PREPOSITION, QURAN_FORM, VERB_WORD, Bilingual,
-                                 Exercise, QuranTranslation, word_id)
+from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, FORM_MEANING, FORM_VERB, HEAR_RECITER, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
+                                 NUANCE_WORD, PARTICLE, PARTICLE_WORD, PICTURE, PREPOSITION, QURAN_FORM, VERB_FORM, VERB_WORD, WORD_MEANING, Bilingual,
+                                 Exercise, InvalidExercise, QuranTranslation, word_id)
 from fil.exercises.prepositions import NounForms, QuranicForm, TableRow, preposition_exercises
 from fil.exercises.recited import hear_reciter_exercises
 from fil.exercises.shards import shards
 from fil.exercises.verb_forms import (AttestedForm, Grammar, QuranicVerb, TableForm, VerbTable, form_meaning_exercises,
                                       meaning_form_exercises, quran_form_exercises)
-from fil.exercises.vocabulary import Word, listen_exercises, picture_exercises
+from fil.exercises.verb_patterns import FormVerb, form_verb_exercises, verb_form_exercises
+from fil.exercises.vocabulary import Word, listen_exercises, picture_exercises, word_meaning_exercises
 from fil.noun_pictures import load_categories, load_pictures
 from fil.nouns import bosnian as bosnian_nouns
 from fil.nouns.model import Cell
@@ -130,18 +131,24 @@ def place_glosses(glosses: Mapping[str, Mapping[str, str]],
 def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjectives: Sequence[dict],
              nuances: Sequence[dict], particles: Sequence[dict], sources: Sources) -> ExerciseSets:
     """Every exercise of every kind, gated. `verbs`: (page slug, card) of each published verb."""
-    synonyms = _synonym_groups(nuances, nouns, verbs)
+    synonyms = _synonym_groups(nuances, nouns, adjectives, verbs)
     noun_words = [_noun_word(card, sources) for card in nouns]
+    adjective_words = [_adjective_word(card) for card in adjectives]
     verb_words = [_verb_word(slug, card) for slug, card in verbs]
     tables = [_verb_table(word, card, sources) for word, (_slug, card) in zip(verb_words, verbs)]
+    form_verbs = [FormVerb(word, card["root"], card["form"]) for word, (_slug, card) in zip(verb_words, verbs)]
     quranic = [_quranic_verb(table, card, sources) for table, (_slug, card) in zip(tables, verbs)]
     built = {
         PICTURE: picture_exercises(noun_words, synonyms),
-        LISTEN: listen_exercises([*noun_words, *verb_words], synonyms),
+        LISTEN: _every_voiced_word_listened_to(listen_exercises([*noun_words, *adjective_words, *verb_words], synonyms),
+                                               [*noun_words, *adjective_words, *verb_words]),
+        WORD_MEANING: word_meaning_exercises([*noun_words, *adjective_words], synonyms),
         FORM_MEANING: form_meaning_exercises(tables),
         MEANING_FORM: meaning_form_exercises(tables, synonyms),
         QURAN_FORM: quran_form_exercises(quranic),
         HEAR_RECITER: hear_reciter_exercises(quranic, synonyms),
+        VERB_FORM: verb_form_exercises(form_verbs),
+        FORM_VERB: form_verb_exercises(form_verbs),
         CASE: case_exercises([sentence for card in nouns for sentence in _noun_sentences(card)]),
         PREPOSITION: preposition_exercises([_noun_forms(card, sources.bosnian) for card in nouns]),
         AGREEMENT: agreement_exercises([sentence for card in adjectives for sentence in _adjective_sentences(card)],
@@ -187,14 +194,31 @@ def _noun_word(card: dict, sources: Sources) -> Word:
                 picture=card.get("picture"), emoji=sources.emoji.get(key) or None, category=sources.categories.get(key))
 
 
+def _adjective_word(card: dict) -> Word:
+    return Word(id=word_id(ADJECTIVE_WORD, card["slug"]), arabic=card["lemma"], root=card["root"],
+                meaning=_bilingual(card["meaning"]), rank=card["rank"], sound=card.get("lemmaSpoken"))
+
+
+def _every_voiced_word_listened_to(listening: list[Exercise], words: Sequence[Word]) -> list[Exercise]:
+    """Listening covers every published voiced word: a word left out (too few fair meanings) stops the build,
+    so a new batch of nouns never silently falls out of the exercise."""
+    asked = {exercise.words[0] for exercise in listening}
+    missing = sorted(word.id for word in words if word.sound and word.id not in asked)
+    if missing:
+        raise InvalidExercise(f"{len(missing)} voiced words have no listening question, e.g. {missing[:5]}")
+    return listening
+
+
 def _verb_word(slug: str, card: dict) -> Word:
     return Word(id=word_id(VERB_WORD, slug), arabic=card["lemma"], root=card["root"], meaning=_bilingual(card["meaning"]),
                 rank=card["rank"], sound=card.get("lemmaSpoken"))
 
 
-def _synonym_groups(nuances: Iterable[dict], nouns: Sequence[dict], verbs: Sequence[tuple[str, dict]]) -> list[frozenset[str]]:
+def _synonym_groups(nuances: Iterable[dict], nouns: Sequence[dict], adjectives: Sequence[dict],
+                    verbs: Sequence[tuple[str, dict]]) -> list[frozenset[str]]:
     """Each near-synonym group as the word ids of its studied words: never offered against each other."""
     noun_ids = {card["key"]: word_id(NOUN_WORD, card["slug"]) for card in nouns}
+    noun_ids.update({card["key"]: word_id(ADJECTIVE_WORD, card["slug"]) for card in adjectives})
     verb_ids = {f"{card['root']}_{card['form']}": word_id(VERB_WORD, slug) for slug, card in verbs}
     return [frozenset(found for member in group["members"] for found in (
                 *(noun_ids.get(key) for key in member.get("lemmaKeys") or ()), verb_ids.get(member.get("verbKey") or ""))

@@ -26,7 +26,11 @@ FORM_MEANING = "form-meaning" # a verb form of the table, heard → its meaning 
 MEANING_FORM = "meaning-form" # a meaning → the verb form that says it
 QURAN_FORM = "quran-form"     # a verb form marked in an ayah → its gloss
 HEAR_RECITER = "hear-reciter" # a verb form as a real reciter says it → its meaning
-KINDS = (PICTURE, LISTEN, FORM_MEANING, MEANING_FORM, QURAN_FORM, HEAR_RECITER, CASE, PREPOSITION, AGREEMENT, NUANCE, PARTICLE)
+WORD_MEANING = "word-meaning" # a noun or adjective written → its meaning
+VERB_FORM = "verb-form"       # a verb's lemma → which of the ten forms it is
+FORM_VERB = "form-verb"       # a form (number and pattern) → which of four verbs is in it
+KINDS = (PICTURE, LISTEN, WORD_MEANING, FORM_MEANING, MEANING_FORM, QURAN_FORM, HEAR_RECITER, VERB_FORM, FORM_VERB, CASE,
+         PREPOSITION, AGREEMENT, NUANCE, PARTICLE)
 # The kinds whose meaning options are forms of one verb: they differ by person and tense ("rekao je" /
 # "rekli su"), so they may share words; two of them that are the same meaning may not be offered.
 ONE_VERB_MEANINGS = (FORM_MEANING, QURAN_FORM, HEAR_RECITER)
@@ -83,7 +87,8 @@ class Option:
 
     def as_json(self) -> dict[str, str]:
         if self.arabic is not None:
-            return {"ar": self.arabic}
+            # A verb form is offered as its pattern, with the form it is the pattern of.
+            return {"ar": self.arabic, "code": self.code} if self.code else {"ar": self.arabic}
         if self.meaning is not None:
             return self.meaning.as_json()
         return {"code": self.code or ""}

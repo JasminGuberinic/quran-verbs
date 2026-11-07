@@ -22,7 +22,10 @@ Bosnian and English only, like nouns, adjectives, nuances and particles.
 | kind | from | right answer | distractors |
 |---|---|---|---|
 | Slika → riječ / Picture → word | noun cards with a picture | the noun's lemma | other pictured nouns, same category first; never the same root, the same emoji, an overlapping meaning, or a member of the same nuance group (قَلْب/فُؤَاد/صَدْر) |
-| Čuj i izaberi / Listen and choose | noun and verb cards' checked voice | the word's meaning | meanings of words of the same family and about the same frequency, under the same exclusions |
+| Čuj i izaberi / Listen and choose | noun, adjective and verb cards' checked voice | the word's meaning | meanings of words of the same family and about the same frequency, under the same exclusions; every voiced word must get a question or the build stops (`_every_voiced_word_listened_to`) |
+| Riječ → značenje / Word → meaning | noun and adjective cards (the Arabic written, voice only after answering) | the word's meaning | the same as listening: same family, about the same frequency, no overlapping meaning, no same root, no nuance-group sibling |
+| Koji oblik? / Which verb form? | the verb cards' lemma (checked voice) and root; the form is the card's own | the form I–X (a four-letter root: its three forms), shown as number + pattern on ف ع ل (`fil.roots.model.verb_pattern`) | other forms, dropped when a reader could take the lemma for them (`verb_patterns.could_be_in`: the pattern on the verb's root is spelled like the lemma, or the lemma has the letters the form's shape asks for); closest-looking first. After answering: a fixed sentence on what the form usually adds (ui.js `formNotes`, bs and en, general grammar, no ayah) |
+| Oblik → glagol / Form → verb | the same cards, three-letter roots | the verb of the asked form | three verbs of three other, pairwise different forms, none that could be taken for the asked form |
 | Oblik → značenje / Form → meaning | the verbs' checked tables (the cells Arabic uses), with the checked voice | the cell's meaning composed by the rules that gloss the Quran's forms (`compose_cell`: English from the verb's first sense, Bosnian from its paradigm); a spelling with two readings (تَقُولُ, قُلْنَ) is asked once, with both as its one answer ("kažeš / kaže") | meanings of other cells of the same verb (the same person in another tense first, then the same tense); never a reading of the shown spelling, never two meanings that are one in Bosnian or in English ("you said": قُلْتَ / قُلْتِ) |
 | Značenje → oblik / Meaning → form | the same composed meanings | the cell's form, heard after answering | two other cells of the same verb and the same cell of another verb of the same pattern (fair by `vocabulary.is_fair_distractor`: not the same root, not a near-synonym, no shared content word); never a form any reading of whose spelling has the asked meaning in either language |
 | Iz Kur'ana / From the Quran | the "U Kur'anu" forms with one reading and a bs+en gloss, in the card's example ayah glossed alike, else their first ayah (≤ 30 words); 20 commonest forms a verb | the form's gloss | glosses of other forms of the same verb with another cell (tense, person, voice or object) — never the same cell with another "and/so", never the other voice (قَتَلَ/قُتِلَ), never a cell the table spells alike, never the same gloss. A present that may be "you" or "she" (تَقُولُ, تَقُولَانِ) is not asked; a gloss opening with an enclitic ("smo je prostrli") is neither asked nor offered. After answering: the word recited (QuranHive), the translation, quran.com |
@@ -73,6 +76,12 @@ particle 98. Ayat whose note names another reading are left out (80:4, 2:254 for
 
 Verb forms (600 verbs studied): form-meaning 1,254 (192 verbs) · meaning-form 1,643 (284 verbs) · quran-form 3,680 (391 verbs; polysemous verbs asked place by place). Hear-reciter 2,475 (596 verbs). Fewer verbs
 than 600 because a cell is asked only with a composed meaning (the Bosnian paradigms hold the cells the Quran uses).
+
+Current counts (2026-11-07, 700 nouns · 105 adjectives · 600 verbs): picture 217 · listen 1,405 (700 nouns + 105 adjectives + 600 verbs; the
+earlier "600 nouns" was a typo: all 700 were already asked, and the build now fails if a voiced word ever is not) · word-meaning 805 (700 nouns + 105
+adjectives) · verb-form 600 (598 with four options, the two four-letter roots with three) · form-verb 598 (the two four-letter roots have no pattern
+to pick among four verbs) · form-meaning 1,254 · meaning-form 1,643 · quran-form 3,680 · hear-reciter 2,475 · case 2,782 · preposition 313 ·
+agreement 303 · nuance 1,568 · particle 97.
 
 ## Next
 - Verb forms: more Bosnian paradigm cells (fil compose sheets) → more verbs asked; the app's "Ajet" and "Rečenica" kinds.

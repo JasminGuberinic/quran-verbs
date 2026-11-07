@@ -253,6 +253,12 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 @media (min-width: 560px) { .exercise-options { grid-template-columns: 1fr 1fr; } }
 .exercise-option { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); font: inherit; text-align: start; cursor: pointer; }
 .exercise-option.ar { font-family: var(--font-arabic); font-size: 1.5rem; }
+.form-option { direction: ltr; }
+.form-option .ar { font-family: var(--font-arabic); font-size: 1.5rem; }
+.form-number { min-width: 3.2ch; font-weight: 700; color: var(--accent); }
+.form-lead { direction: ltr; font-size: 1.8rem; }
+.form-lead .ar { font-family: var(--font-arabic); }
+.exercise-root { font-family: var(--font-arabic); font-size: 1.2rem; letter-spacing: 0.15em; }
 .exercise-option .key { flex: none; display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font: 600 0.75rem var(--font-body); }
 .exercise-option:hover:not(:disabled), .exercise-option:focus-visible { border-color: var(--accent); }
 .exercise-option:disabled { cursor: default; opacity: 0.85; }

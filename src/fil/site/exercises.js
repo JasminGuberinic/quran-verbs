@@ -194,6 +194,20 @@
   // The kinds about a verb's forms: their facts name the verb and the cells (tense:person) a form is.
   const VERB_FORM_KINDS = ["form-meaning", "meaning-form", "quran-form", "hear-reciter"];
 
+  // The kinds about which of the ten forms a verb is in: a form's code is its number ("4"), or "q4" for a four-letter root.
+  const FORM_KINDS = ["verb-form", "form-verb"];
+  const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+
+  /** "4" and "q4" → "IV": the number a form is known by. */
+  function formNumber(code) {
+    return ROMAN[Number(String(code).replace("q", ""))] || "";
+  }
+
+  /** "4" → "IV · أَفْعَلَ": a form as a learner names it, its number and its pattern. */
+  function formName(code, pattern) {
+    return `${formNumber(code)} · ${pattern}`;
+  }
+
   /** "present:anta,present:hiya" → "sadašnje · ti (m.) / sadašnje · ona": every reading of the form. */
   function cellNames(readings, words) {
     return readings.split(",").map((cell) => {
@@ -224,7 +238,11 @@
     if (kind === "particle" && item.gloss) lines.push(`${words.use}: ${text(item.gloss)}`);
     if (facts.readings) lines.push(words.formIs(cellNames(facts.readings, words)));
     if (VERB_FORM_KINDS.includes(kind) && item.gloss) lines.push(`${words.verb}: ${facts.verb} – ${text(item.gloss)}`);
-    if ((kind === "picture" || kind === "nuance") && item.gloss) lines.push(`${words.meaning}: ${text(item.gloss)}`);
+    if ((kind === "picture" || kind === "nuance" || FORM_KINDS.includes(kind)) && item.gloss) lines.push(`${words.meaning}: ${text(item.gloss)}`);
+    if (FORM_KINDS.includes(kind) && facts.form) {
+      const pattern = kind === "form-verb" ? item.lead : item.options[0].ar;
+      lines.push(`${formName(facts.form, pattern)} – ${words.formNotes[facts.form]}`);
+    }
     if (item.explanation) lines.push(`${kind === "nuance" ? words.why : words.inThisAyah}: ${text(item.explanation)}`);
     return lines.filter(Boolean);
   }
@@ -303,7 +321,7 @@
       const options = make("div", { class: "exercise-options", role: "group", "aria-labelledby": "exercise-question" });
       shuffledOptions(item, random).forEach(({ option, isCorrect }, index) => {
         const label = optionLabel(kind, option, words, language);
-        const button = option.ar ? arabic("button", label, { type: "button" }) : make("button", { type: "button" }, label);
+        const button = optionButton(kind, option, label);
         button.classList.add("exercise-option");
         button.dataset.correct = String(isCorrect);
         button.prepend(make("span", { class: "key", "aria-hidden": "true" }, String(index + 1)));
@@ -315,12 +333,27 @@
       renderScore();
     }
 
+    /** An option as a button: Arabic, a form's number and pattern, or a meaning. */
+    function optionButton(kind, option, label) {
+      if (option.ar && option.code && kind === "verb-form") {
+        const button = make("button", { type: "button", class: "form-option" });
+        button.append(make("span", { class: "form-number" }, formNumber(option.code)), arabic("span", label));
+        return button;
+      }
+      return option.ar ? arabic("button", label, { type: "button" }) : make("button", { type: "button" }, label);
+    }
+
     function prompt(kind, item) {
       const box = make("div", { class: "exercise-prompt" });
       if (item.picture) box.append(make("img", { src: root + item.picture, alt: words.pictureAlt, width: "160", height: "160", class: "exercise-picture" }));
       if (item.sound) box.append(soundButton(item.sound, words.listen), make("span", { class: "note" }, words.listen));
       if (item.passage) box.append(passage(item));
-      if (item.lead) box.append(lead(kind, item.lead));
+      if (item.lead) box.append(lead(kind, item.lead, item));
+      if (item.facts && item.facts.root && FORM_KINDS.includes(kind)) {
+        const root = make("p", { class: "note" }, `${words.root}: `);
+        root.append(arabic("span", item.facts.root, { class: "ar exercise-root" }));
+        box.append(root);
+      }
       // Značenje → oblik: the meaning is the question itself, not a hint beside it.
       if (item.translation) {
         box.append(make("p", { class: kind === "meaning-form" ? "lead exercise-meaning" : "note" }, item.translation[language] || item.translation.en));
@@ -329,7 +362,12 @@
     }
 
     /** The preposition with the blank its noun fills, or the particle the question is about. */
-    function lead(kind, text) {
+    function lead(kind, text, item) {
+      if (kind === "form-verb") {
+        const named = make("p", { class: "exercise-lead form-lead" }, `${formNumber(item.facts.form)} · `);
+        named.append(arabic("span", text));
+        return named;
+      }
       const line = arabic("p", "", { class: "ar exercise-lead" });
       line.append(make("span", {}, text));
       if (kind === "preposition") line.append(" ", make("span", { class: "blank", "aria-label": words.blank }, "____"));
@@ -373,6 +411,7 @@
       if (!isCorrect) {
         const line = make("p", {}, `${words.rightAnswer} `);
         const label = optionLabel(kind, right, words, language);
+        if (right.ar && right.code && kind === "verb-form") line.append(`${formNumber(right.code)} · `);
         line.append(right.ar ? arabic("span", label) : make("b", {}, label));
         box.append(line);
       }
@@ -467,6 +506,6 @@
   return {
     SESSION_SIZE, AGAIN_AFTER, BOX_DAYS, DAY, STORAGE_KEY,
     shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, askedWords, shardsFor, uniqueById, SHARD_ATTEMPTS, fetchWithRetry, loadShards, questionsOf, emptyProgress, record, sessionOrder, askAgain,
-    readProgress, writeProgress, explanationLines, optionLabel, withTemplates, cellNames, VERB_FORM_KINDS,
+    readProgress, writeProgress, explanationLines, optionLabel, withTemplates, cellNames, VERB_FORM_KINDS, FORM_KINDS, formNumber, formName,
   };
 });

@@ -4,18 +4,20 @@ from __future__ import annotations
 
 import re
 import shutil
+from pathlib import Path
 
 import pytest
 
 from fil.languages import CODES, LANGUAGES
-from fil.pages import gallery_render, interface_text, render, seo
+from fil.pages import gallery_render, interface_text, noun_render, render, seo
 from fil.pages.animation_render import OWN_DRAWINGS_CREDIT
 from fil.pages.gallery_render import ANIMATION_GALLERY, GalleryItem
 from fil.pages.render import PublishedVerb
 from fil.resources import PAGES_DIR
-from fil.stages import gallery_pages
+from fil.stages import gallery_pages, site
 from fil.stages.gallery_pages import GalleryContent
 
+SITE_SOURCES = Path(site.__file__).resolve().parents[1] / "site"
 built = pytest.mark.skipif(not (PAGES_DIR / "index.html").exists(), reason="run `fil pages` first")
 _SVG = '<svg class="va va-qala_1" viewBox="0 0 120 72"><path d="M0 0"/></svg>'
 _PICTURE_CREDIT = "<b>Pictures.</b> OpenMoji, CC BY-SA 4.0."
@@ -40,6 +42,12 @@ def _verb(rank: int = 1, slug: str = "qala", meaning: dict | None = None) -> Pub
 def _noun(slug: str = "ard", picture: str | None = "pictures/ard.svg") -> dict:
     return {"slug": slug, "lemma": "أَرْض", "key": "أَرْض|أرض", "meaning": {"en": "earth", "bs": "zemlja"},
             "lemmaSpoken": "audio/ard.m4a", "picture": picture}
+
+
+def _full_verb(rank: int) -> PublishedVerb:
+    """A verb as complete as a page needs (the card of tests/test_pages.py)."""
+    from test_pages import _card
+    return PublishedVerb({**_card(), "rank": rank}, "qala")
 
 
 def _verb_gallery(*verbs: PublishedVerb) -> list[GalleryItem]:
@@ -144,6 +152,43 @@ def test_the_footer_of_every_page_links_both_galleries(texts):
     assert 'href="/quran-verbs/en/animations/"' in not_found and 'href="/quran-verbs/en/noun-pictures/"' in not_found
 
 
+def test_a_verb_page_links_its_drawing_to_its_own_card_in_the_gallery(texts):
+    verb = _full_verb(12)
+    html = render.verb_page(verb, _language("bs"), texts["bs"], animation=_SVG)
+    link = '<a class="gallery-jump" href="../../bs/animations/#verb-12">Sve animacije →</a>'
+    assert link in html and html.index("verb-anim") < html.index(link)
+    assert "gallery-jump" not in render.verb_page(verb, _language("bs"), texts["bs"])
+    card = gallery_render.gallery_page(ANIMATION_GALLERY, _verb_gallery(_verb(1)), _language("bs"), texts["bs"])
+    assert '<li class="gallery-card" id="verb-1">' in card
+
+
+def test_a_noun_card_in_the_gallery_is_the_target_of_its_page(texts):
+    items = gallery_render.noun_items([_noun()])
+    html = gallery_render.gallery_page(gallery_render.picture_gallery(_PICTURE_CREDIT), items, _language("en"), texts["en"])
+    assert '<li class="gallery-card" id="noun-ard">' in html
+
+
+def test_the_verb_and_noun_lists_lead_to_their_gallery_near_the_top(texts):
+    verbs = render.language_index([_full_verb(1)], _language("fr"), texts["fr"])
+    link = '<a class="gallery-jump" href="../fr/animations/">Toutes les animations →</a>'
+    assert link in verbs and verbs.index(link) < verbs.index('class="verb-list"')
+    noun = {**_noun(), "rank": 1, "count": 461}
+    nouns = noun_render.noun_index([noun], _language("bs"), texts["bs"], categories={})
+    link = '<a class="gallery-jump" href="../../bs/noun-pictures/">Sve slike →</a>'
+    assert link in nouns and nouns.index(link) < nouns.index("noun-list")
+
+
+def test_the_app_home_offers_both_galleries_as_tiles_it_fills_in_the_readers_language():
+    tiles = gallery_render.app_tiles(_SVG, ["pictures/ard.svg", "pictures/yawm.svg"])
+    assert 'data-gallery-tile="animations" href="en/animations/"' in tiles and _SVG in tiles
+    assert 'data-gallery-tile="pictures" href="en/noun-pictures/"' in tiles and '<img src="pictures/yawm.svg"' in tiles
+    assert 'data-gallery="animations"' in tiles               # gallery.js loops its drawing
+    app = (SITE_SOURCES / "index.html").read_text(encoding="utf-8")
+    assert app.count("<!-- pages:galleries -->") == 1 and '<script src="gallery.js">' in app
+    assert "function renderGalleryTiles(ui)" in app and "renderGalleryTiles(ui);" in app
+    assert "animations/#verb-${verb.rank}" in app             # the app's verb card links its drawing too
+
+
 # ---------- the built site ----------
 
 @built
@@ -159,3 +204,16 @@ def test_the_built_galleries_show_every_animation_and_play_only_real_clips():
     for source in re.findall(r'<img src="([^"]+)"', pictures):
         assert (PAGES_DIR / "en" / "noun-pictures" / source).resolve().is_file(), source
     assert (PAGES_DIR / gallery_render.GALLERY_SCRIPT).is_file()
+
+
+@built
+def test_every_built_link_into_a_gallery_lands_on_a_card():
+    targets = {folder: set(re.findall(r'class="gallery-card" id="([^"]+)"',
+                                      (PAGES_DIR / "en" / folder / "index.html").read_text(encoding="utf-8")))
+               for folder in ("animations", "noun-pictures")}
+    pages = [*(PAGES_DIR / "en").glob("*/index.html"), *(PAGES_DIR / "en" / "noun").glob("*/index.html")]
+    links = [(folder, anchor) for page in pages
+             for folder, anchor in re.findall(r'href="[./]*en/(animations|noun-pictures)/#([^"]+)"', page.read_text(encoding="utf-8"))]
+    assert links
+    assert not [link for link in links if link[1] not in targets[link[0]]]
+    assert 'data-gallery-tile="animations"' in (PAGES_DIR / "index.html").read_text(encoding="utf-8")

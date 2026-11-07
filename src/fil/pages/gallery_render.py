@@ -23,6 +23,7 @@ from html import escape
 from fil.languages import CODES, Language
 from fil.pages import noun_render, render, seo
 from fil.pages.animation_render import OWN_DRAWINGS_CREDIT, REPLAY_SCRIPT
+from fil.pages.gallery_links import noun_anchor, verb_anchor
 from fil.pages.indexing import SOURCE_LANGUAGE
 
 GALLERY_SCRIPT = "gallery.js"
@@ -37,6 +38,7 @@ class GalleryItem:
     sound: str | None
     figure: str                                 # an inline SVG (animation) or a picture's path from the site root
     page_path: Callable[[str], str | None]
+    anchor: str                                 # the card's id, which the word's own page links to
 
 
 @dataclass(frozen=True)
@@ -52,7 +54,8 @@ class Gallery:
 def verb_items(verbs: Sequence[render.PublishedVerb], animation_of: Callable[[dict], str]) -> list[GalleryItem]:
     """Every published verb that has an animation, most frequent first."""
     return [GalleryItem(lemma=verb.card["lemma"], meanings=verb.card["meaning"], sound=verb.card.get("lemmaSpoken"),
-                        figure=animation, page_path=lambda language, slug=verb.slug: seo.verb_path(language, slug))
+                        figure=animation, page_path=lambda language, slug=verb.slug: seo.verb_path(language, slug),
+                        anchor=verb_anchor(verb.card["rank"]))
             for verb in sorted(verbs, key=lambda verb: verb.card["rank"])
             if (animation := animation_of(verb.card))]
 
@@ -60,7 +63,8 @@ def verb_items(verbs: Sequence[render.PublishedVerb], animation_of: Callable[[di
 def noun_items(nouns: Sequence[dict]) -> list[GalleryItem]:
     """Every studied noun that has a picture, in the order of the noun list."""
     return [GalleryItem(lemma=card["lemma"], meanings=card["meaning"], sound=card.get("lemmaSpoken"),
-                        figure=card["picture"], page_path=lambda language, slug=card["slug"]: _noun_page(language, slug))
+                        figure=card["picture"], page_path=lambda language, slug=card["slug"]: _noun_page(language, slug),
+                        anchor=noun_anchor(card["slug"]))
             for card in nouns if card.get("picture")]
 
 
@@ -75,6 +79,23 @@ ANIMATION_GALLERY = Gallery(ANIMATIONS, seo.animations_path, seo.pictures_path, 
 
 def picture_gallery(credit: str) -> Gallery:
     return Gallery(PICTURES, seo.pictures_path, seo.animations_path, credit)
+
+
+# ---------- the links into a gallery, from the other pages ----------
+
+def app_tiles(preview_animation: str, preview_pictures: Sequence[str]) -> str:
+    """The two tiles on the app's home: a drawing that loops, a row of pictures. Their words and
+    addresses are the reader's language, so the app fills them in (site/index.html, renderGalleryTiles);
+    English until it does."""
+    pictures = "".join(f'<img src="{path}" width="40" height="40" alt="" loading="lazy">' for path in preview_pictures)
+    return ('<nav class="gallery-tiles" id="gallery-tiles">'
+            f'<a class="gallery-tile" data-gallery="{ANIMATIONS}" data-gallery-tile="{ANIMATIONS}" href="{seo.animations_path("en")}">'
+            f'<span class="tile-figure" aria-hidden="true">{preview_animation}</span>'
+            '<span class="tile-text"><b class="tile-title">Verb animations</b><span class="tile-line"></span></span></a>'
+            f'<a class="gallery-tile" data-gallery-tile="{PICTURES}" href="{seo.pictures_path("en")}">'
+            f'<span class="tile-figure tile-pictures" aria-hidden="true">{pictures}</span>'
+            '<span class="tile-text"><b class="tile-title">Noun pictures</b><span class="tile-line"></span></span></a>'
+            '</nav>')
 
 
 # ---------- indexing ----------
@@ -128,7 +149,7 @@ def _card(item: GalleryItem, kind: str, language: Language, text: dict, root: st
     page = item.page_path(language.code)
     link = (f'<a class="gallery-link" href="{root}{page}">{escape(text["galleryPage"]["openPage"])} →</a>'
             if page else "")
-    return (f'<li class="gallery-card">{_figure_button(item, kind, meaning, text, root)}'
+    return (f'<li class="gallery-card" id="{item.anchor}">{_figure_button(item, kind, meaning, text, root)}'
             f'<p class="gallery-caption"><span class="ar" lang="ar" dir="rtl">{escape(item.lemma)}</span>'
             f'<span class="meaning"{other_language}>{escape(meaning)}</span></p>{link}</li>')
 

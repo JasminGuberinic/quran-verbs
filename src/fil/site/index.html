@@ -476,6 +476,26 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   .form-play, .word-play, button.conj-cell { transition: none; }
 }
 @media (forced-colors: active) { .form-play::before, .word-play::before, button.conj-cell::before { background: ButtonText; } }
+/* The two tiles into the galleries, under the progress (fil.pages.gallery_render.app_tiles). */
+.gallery-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0 4px; }
+.gallery-tile { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 10px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; color: var(--ink); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+.gallery-tile:hover { border-color: var(--accent); transform: translateY(-1px); }
+.gallery-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tile-figure { flex: 0 0 auto; width: 96px; aspect-ratio: 120 / 72; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 10px; background: var(--accent-soft); line-height: 0; }
+.tile-figure svg { width: 100%; height: auto; }
+.tile-pictures { gap: 2px; padding: 4px; }
+.tile-pictures img { width: 28px; height: 28px; }
+.tile-text { display: flex; flex-direction: column; min-width: 0; }
+.tile-title { font-family: var(--font-display); font-size: 1rem; }
+.tile-line { color: var(--accent); font-size: .85rem; }
+.verb-hero .gallery-jump { grid-column: 1 / -1; justify-self: start; margin-top: -6px; font-size: .86rem; font-weight: 500; color: var(--accent); }
+@media (max-width: 560px) {
+  .gallery-tiles { gap: 8px; }
+  .gallery-tile { flex-direction: column; align-items: stretch; text-align: start; padding: 8px; gap: 8px; }
+  .tile-figure { width: 100%; }
+  .tile-pictures img { width: 26%; height: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .gallery-tile, .gallery-tile:hover { transition: none; transform: none; } }
 </style>
 </head>
 <body>
@@ -498,6 +518,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     </div>
     <p class="notice" id="notice"></p>
   </div>
+  <!-- pages:galleries -->
 
   <p class="loading" id="loading">…</p>
 
@@ -521,6 +542,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
 <script src="ayat.js"></script>
 <script src="player.js"></script>
 <script src="animation.js"></script>
+<script src="gallery.js"></script>
 <script src="translation.js"></script>
 <script>
 (() => {
@@ -624,6 +646,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
       + `<p><a href="${language}/about/">${ui.aboutNav.about}</a> · <a href="${language}/about/#privacy">${ui.aboutNav.privacy}</a>`
       + ` · <a href="${language}/animations/">${ui.aboutNav.animations}</a> · <a href="${language}/noun-pictures/">${ui.aboutNav.pictures}</a></p>`;
     renderSections(ui);
+    renderGalleryTiles(ui);
     renderTranslateHint(ui);
     $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");
     renderProgress();
@@ -649,6 +672,18 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   }
   // "Not your language? …": only in a language with the words for it, and only once per visitor.
   let isHintOffered = false;
+  // The two tiles into the galleries (written by `fil pages`, fil.pages.gallery_render.app_tiles): in the reader's language.
+  function renderGalleryTiles(ui) {
+    const words = ui.galleryPage;
+    const paths = { animations: `${language}/animations/`, pictures: `${language}/noun-pictures/` };
+    document.querySelectorAll("[data-gallery-tile]").forEach((tile) => {
+      const kind = tile.dataset.galleryTile;
+      tile.href = paths[kind];
+      tile.querySelector(".tile-title").textContent = words[`${kind}Title`];
+      tile.querySelector(".tile-line").textContent = `${words[`${kind}Line`]} →`;
+    });
+  }
+
   function renderTranslateHint(ui) {
     const hint = $("translate-hint");
     if (!ui.translateHint) { hint.hidden = true; return; }
@@ -886,7 +921,11 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   }
 
   // The verb's own drawing, when it has one: decorative, the meaning stands beside it (site/animation.js replays it on tap).
-  const animationHtml = (verb) => (verb.animation ? `<div class="verb-anim" aria-hidden="true">${verb.animation}</div>` : "");
+  // Under it, the way to all the drawings, landing on this one (fil.pages.gallery_links).
+  const animationHtml = (verb) => (verb.animation
+    ? `<div class="verb-anim" aria-hidden="true">${verb.animation}</div>`
+      + `<a class="gallery-jump" href="${language}/animations/#verb-${verb.rank}">${escapeHtml(t().galleryPage.allAnimations)} →</a>`
+    : "");
 
   async function showVerb(index) {
     current = (index + VERBS.length) % VERBS.length;

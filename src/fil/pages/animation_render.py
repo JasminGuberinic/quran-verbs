@@ -11,9 +11,12 @@ REPLAY_SCRIPT = "animation.js"
 OWN_DRAWINGS_CREDIT = "<b>Animations.</b> The drawings of verbs are the site's own."
 
 
-def animation_block(svg: str) -> str:
-    """The figure for the verb's hero, or "" when the verb has no animation."""
-    return f'<div class="verb-anim" aria-hidden="true">{svg}</div>' if svg else ""
+def animation_block(svg: str, gallery_link: str = "") -> str:
+    """The figure for the verb's hero, then the link to all the drawings; "" when the verb has no animation."""
+    if not svg:
+        return ""
+    return f'<div class="verb-anim" aria-hidden="true">{svg}</div>{gallery_link}'
+
 
 
 def replay_script(svg: str, root: str) -> str:

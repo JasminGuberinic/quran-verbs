@@ -203,7 +203,8 @@ def build(pages: Path) -> BuiltSite | None:
                                         "surahPages": surah_pages.app_paths() if surahs.pages else {},
                                         "exercisePages": exercise_pages.app_paths() if render.EXERCISES in published else {}})
     site.write_app(pages, content)
-    _write_app_page(pages, texts)
+    galleries = _galleries(verbs, nouns)
+    _write_app_page(pages, texts, _app_tiles(galleries))
     written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances, published,
                                       practice_link(VERB_WORD), root_slugs)]
     written += noun_pages.write(pages, nouns, texts, adjectives.cards, nuances, published, practice_link(NOUN_WORD),
@@ -218,7 +219,6 @@ def build(pages: Path) -> BuiltSite | None:
     written += surah_pages.write(pages, surahs, texts, published, practice.words(),
                                   root_path=_root_page(root_slugs))
     written += about_pages.write(pages, texts)
-    galleries = _galleries(verbs, nouns)
     written += gallery_pages.write(pages, galleries, texts)
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
@@ -246,6 +246,18 @@ def _galleries(verbs: list[PublishedVerb], nouns: NounContent) -> tuple[gallery_
             gallery_pages.GalleryContent(gallery_render.picture_gallery(credit), tuple(pictured)))
 
 
+PREVIEW_PICTURES = 3
+
+
+def _app_tiles(galleries: Sequence[gallery_pages.GalleryContent]) -> str:
+    """The app home's way into the galleries, previewed by the most frequent drawn verb and pictured nouns."""
+    by_kind = {content.gallery.kind: content.items for content in galleries}
+    animations, pictures = by_kind[gallery_render.ANIMATIONS], by_kind[gallery_render.PICTURES]
+    if not animations or not pictures:
+        return ""
+    return gallery_render.app_tiles(animations[0].figure, [item.figure for item in pictures[:PREVIEW_PICTURES]])
+
+
 def published_verbs(cards: Iterable[dict], catalogue_lemmas: list[str]) -> list[PublishedVerb]:
     """Each studied card with its page name, decided over the whole catalogue (see fil.pages.slugs)."""
     slugs = assign_slugs(catalogue_lemmas)
@@ -262,10 +274,11 @@ def page_paths(verbs: Iterable[PublishedVerb]) -> list[str]:
     ))]
 
 
-def _write_app_page(pages: Path, texts: dict[str, dict]) -> None:
+def _write_app_page(pages: Path, texts: dict[str, dict], tiles: str) -> None:
     page = pages / "index.html"
     html = page.read_text(encoding="utf-8")
     html = _replace_once(html, "<!-- pages:head -->", render.app_head(texts[_page_language(html)]))
+    html = _replace_once(html, "<!-- pages:galleries -->", tiles)
     html = _replace_once(html, "<!-- pages:links -->", render.app_links(texts))
     page.write_text(html, encoding="utf-8")
 

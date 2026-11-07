@@ -17,7 +17,7 @@ from html import escape
 
 from fil.languages import Language
 from fil.nouns.relations import COLLECTIVE
-from fil.pages import render, seo
+from fil.pages import gallery_links, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import audio_link
 
@@ -78,8 +78,9 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, c
     if category:
         listing = f'{root}{seo.noun_index_path(language.code)}#{_category_anchor(category)}'
         facts.append(f'<a href="{listing}">{escape(words["categories"].get(category, category))}</a>')
-    picture = (f'<img class="noun-picture" src="{root}{card["picture"]}" width="96" height="96" '
-               f'alt="{escape(fill(words["picture"], meaning))}">') if card.get("picture") else ""
+    picture = (f'<div class="noun-figure"><img class="noun-picture" src="{root}{card["picture"]}" width="96" height="96" '
+               f'alt="{escape(fill(words["picture"], meaning))}">'
+               f'{gallery_links.picture_link(language.code, root, text, card["slug"])}</div>') if card.get("picture") else ""
     stats = " · ".join((fill(text["times"], card["count"]), fill(text["inAyat"], card["ayahCount"])))
     return (f'<header class="hero noun-hero">{picture}<div><p class="eyebrow">{" · ".join(facts)}</p>'
             f'<h1><span class="ar lemma" lang="ar" dir="rtl">{card["lemma"]}</span>'
@@ -353,6 +354,7 @@ def noun_index(cards: Sequence[dict], language: Language, text: dict, *, categor
     body = "".join((
         _top_bar(text, root, language, seo.noun_index_path, is_section_list=True, published=published),
         f'<main class="wrap"><h1>{escape(words["indexTitle"])}</h1><p class="lead">{escape(words["indexIntro"])}</p>',
+        f'<p class="gallery-jump-row">{gallery_links.picture_link(language.code, root, text)}</p>',
         f'<p class="notice">{text["notice"]}</p>',
         _category_filter(cards, words, categories),
         f'<ol class="verb-list noun-list">{rows}</ol></main>',

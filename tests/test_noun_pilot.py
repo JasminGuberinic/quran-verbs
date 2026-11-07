@@ -313,5 +313,6 @@ def test_a_noun_page_shows_table_cases_sentences_and_forms():
             "ayat": [], "ayatFile": "ayat/noun-ard.json", "ayatTranslations": {"en": "ayat/noun-ard.en.json"}}
     html = noun_render.noun_page(card, bosnian_language, texts["bs"], category="nature_sky")
     for expected in ("Padeži", 'data-audio="../../../audio/a.m4a"', "standardni pravopis", "na zemlji",
-                     "bosanski nominativ", "<b>الْأَرْضَ</b>", "priroda i nebo", 'hreflang="en"', "../../../pictures/ard.svg"):
+                     "bosanski nominativ", "<b>الْأَرْضَ</b>", "priroda i nebo", 'hreflang="en"', "../../../pictures/ard.svg",
+                     '<a class="gallery-jump" href="../../../bs/noun-pictures/#noun-ard">Sve slike →</a>'):
         assert expected in html

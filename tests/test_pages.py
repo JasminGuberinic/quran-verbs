@@ -142,6 +142,7 @@ def _text() -> dict:
             "verbDescription": "{0} ({1}): {2}×", "openInApp": "Practice", "allVerbs": "All verbs", "nav": "Verbs", "notFound": "Not found"}
     return {
         "notice": "<b>AI content</b>", "footer": ["<b>Sources.</b>"], "aboutNav": {"about": "About", "privacy": "Privacy", "animations": "Animations", "pictures": "Noun pictures"},
+        "galleryPage": {"allAnimations": "All animations", "allPictures": "All pictures"},
         "language": "Language", "listen": "Listen",
         "root": "root", "form": "form", "times": "{0}× in the Quran", "inAyat": "in {0} ayat", "ofAll": "{0}% of all",
         "tenses": {"past": "past", "present": "present", "imperative": "command"},

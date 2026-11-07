@@ -18,7 +18,7 @@ from html import escape
 
 from fil.ayah_links import ayah_links
 from fil.languages import LANGUAGES, Language
-from fil.pages import animation_render, indexing, pwa, seo, untranslated
+from fil.pages import animation_render, gallery_links, indexing, pwa, seo, untranslated
 from fil.pages.pwa import PWA_SCRIPT
 from fil.pages.interface_text import fill
 from fil.recitation import AYAH_STREAM, is_streamed
@@ -147,7 +147,13 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, r
             f'<h1><span class="ar lemma" lang="ar" dir="rtl">{card["lemma"]}</span>'
             f'{_play(card.get("lemmaSpoken"), root, text["listen"])}'
             f'<span class="meaning" lang="{shown_in}">{escape(meaning)}</span>{english}</h1>'
-            f'{animation_render.animation_block(animation)}<p class="stats">{stats}</p></header>')
+            f'{animation_render.animation_block(animation, _animation_link(card, language, text, root, animation))}'
+            f'<p class="stats">{stats}</p></header>')
+
+
+def _animation_link(card: dict, language: Language, text: dict, root: str, animation: str) -> str:
+    """Under a verb's drawing, the way to all of them, landing on this one."""
+    return gallery_links.animation_link(language.code, root, text, card["rank"]) if animation else ""
 
 
 def _main_forms(card: dict, text: dict, root: str) -> str:
@@ -437,7 +443,8 @@ def language_index(verbs: Sequence[PublishedVerb], language: Language, text: dic
         top_bar(text, root, language, seo.language_index_path, section=VERBS, is_section_list=True, published=published),
         f'<main class="wrap"><h1>{escape(text["page"]["indexTitle"])}</h1><p class="lead">{escape(description)}</p>',
         f'<p class="notice">{text["notice"]}</p>',
-        f'<p class="cta"><a class="button" href="{root}index.html?lang={language.code}">{escape(text["tabs"][0])} · {seo.SITE_NAME} →</a></p>',
+        f'<p class="cta"><a class="button" href="{root}index.html?lang={language.code}">{escape(text["tabs"][0])} · {seo.SITE_NAME} →</a> '
+        f'{gallery_links.animation_link(language.code, root, text)}</p>',
         f'<ol class="verb-list">{rows}</ol></main>',
         _footer(text),
     ))

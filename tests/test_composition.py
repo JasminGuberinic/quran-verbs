@@ -336,7 +336,9 @@ def test_every_composed_gloss_has_both_languages_and_never_shadows_an_authored_o
     from fil.resources import COMPOSED_FORM_GLOSSES_JSON, FORM_GLOSSES_JSON
     composed = _stored(COMPOSED_FORM_GLOSSES_JSON)
     assert all(set(gloss) == {"en", "bs"} and all(gloss.values()) for gloss in composed.values())
-    assert not set(composed) & set(_stored(FORM_GLOSSES_JSON))
+    authored = _stored(FORM_GLOSSES_JSON)
+    # An authored entry may translate a composed form into other languages, never rewrite its en/bs.
+    assert not [key for key in set(composed) & set(authored) if {"en", "bs"} & set(authored[key])]
 
 
 def test_skips_a_polysemous_verb():

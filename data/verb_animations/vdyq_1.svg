@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vdyq_1-0{from{transform:rotate(-35deg)}}
+@keyframes vdyq_1-1{from{transform:rotate(35deg)}}
+@keyframes vdyq_1-2{from{transform:translateX(-20px)}}
+@keyframes vdyq_1-3{from{transform:translateX(20px)}}
+& .ra{transform:rotate(0deg);animation:vdyq_1-0 1.4s ease-in-out both}
+& .la{transform:rotate(0deg);animation:vdyq_1-1 1.4s ease-in-out both}
+& .wl{animation:vdyq_1-2 1.4s ease-in-out both}
+& .wr{animation:vdyq_1-3 1.4s ease-in-out both}
+</style><path class="p" d="M6 61H114"/><rig x="60" y="44"/><rect class="q wl" x="23" y="12" width="30" height="49" rx="1"/><rect class="q wr" x="67" y="12" width="30" height="49" rx="1"/></svg>

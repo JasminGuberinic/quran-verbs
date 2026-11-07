@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vetw_4-0{from{transform:rotate(-15deg)}35%{transform:rotate(-90deg)}}
+@keyframes vetw_4-1{from{transform:rotate(-15deg)}35%{transform:rotate(-15deg)}60%{transform:rotate(-90deg)}}
+@keyframes vetw_4-2{from{opacity:1}60%{opacity:1}61%{opacity:0}}
+@keyframes vetw_4-3{from{opacity:0}60%{opacity:0}61%{opacity:1}}
+& .a .ra{transform:rotate(-90deg);animation:vetw_4-0 2s ease-in-out both}
+& .b .ra{transform:rotate(-45deg);animation:vetw_4-1 2s ease-in-out both}
+& .bl{opacity:0;animation:vetw_4-2 2s linear both}
+& .br{opacity:1;animation:vetw_4-3 2s linear both}
+</style><path class="p" d="M6 61H114"/><g class="a"><rig x="40" y="44"><in at="ra"><circle class="q bl" cy="17" r="3.6"/></in></rig></g><g class="b"><g transform="matrix(-1 0 0 1 148 0)"><rig x="74" y="44"><in at="ra"><circle class="q br" cy="17" r="3.6"/></in></rig></g></g></svg>

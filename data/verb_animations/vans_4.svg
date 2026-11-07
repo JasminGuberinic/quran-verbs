@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vans_4-0{from{transform:rotate(-24deg)}}
+@keyframes vans_4-1{from{transform:rotate(24deg)}}
+@keyframes vans_4-2{from{transform:translateX(-30px)}}
+@keyframes vans_4-3{from{transform:rotate(0deg)}}
+& .ll{transform:rotate(24deg);animation:vans_4-0 0.53s ease-in-out 3 alternate both}
+& .rl{transform:rotate(-24deg);animation:vans_4-1 0.53s ease-in-out 3 alternate both}
+& .fig{animation:vans_4-2 1.6s linear both}
+& .ra{transform:rotate(-152deg);animation:vans_4-3 0.5s ease-in-out 1.6s both}
+</style><path class="p" d="M6 61H114"/><path class="q" d="M92 61c-2-8 4-10 3-17c5 4 5 9 6 12c1-6 3-10 2-17c6 6 7 14 7 22zM110 61c-1-6 3-8 3-13c4 4 4 9 3 13z"/><rig x="48" y="44"/></svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vtme_1-0{from{transform:rotate(0deg)}}
+@keyframes vtme_1-1{from{opacity:0}}
+& .ra{transform:rotate(-140deg);animation:vtme_1-0 1s ease-in-out both}
+& .la{transform:rotate(-150deg);animation:vtme_1-0 1s ease-in-out both}
+& .gl{animation:vtme_1-1 0.5s ease-out 0.8s 3 both}
+</style><path class="p" d="M6 61H114"/><path class="q" d="M86 8l1.8 4.2 4.2 1.8-4.2 1.8-1.8 4.2-1.8-4.2-4.2-1.8 4.2-1.8z"/><rig x="54" y="44"/><path class="p gl" d="M86 2v3M96 14h3M86 26v-3M76 14h-3"/></svg>

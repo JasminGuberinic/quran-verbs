@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vejb_1-0{from{transform:rotate(0deg)}}
+@keyframes vejb_1-1{from{opacity:0}}
+& .tr{transform:rotate(-12deg);animation:vejb_1-0 0.5s ease-in-out 0.3s both}
+& .ra{transform:rotate(-140deg);animation:vejb_1-0 0.5s ease-in-out 0.3s both}
+& .la{transform:rotate(140deg);animation:vejb_1-0 0.5s ease-in-out 0.3s both}
+& .bu{animation:vejb_1-1 0.3s ease-out 0.7s 3 both}
+</style><path class="p" d="M6 61H114"/><rig x="56" y="44"/><path class="p bu" d="M70 8l3 4M76 16l4 1M70 24l4-1"/></svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vtman_4-0{25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
+@keyframes vtman_4-1{from{transform:rotate(14deg)}}
+@keyframes vtman_4-2{from{transform:rotate(-40deg)}}
+@keyframes vtman_4-3{from{transform:rotate(-35deg)}}
+& .fig{animation:vtman_4-0 0.2s linear 5 both}
+& .tr{transform:rotate(0deg);animation:vtman_4-1 1s ease-in-out 1s both}
+& .ra{transform:rotate(0deg);animation:vtman_4-2 1s ease-in-out 1s both}
+& .la{transform:rotate(0deg);animation:vtman_4-3 1s ease-in-out 1s both}
+</style><path class="p" d="M6 61H114"/><rig x="60" y="44"><in at="tr"><path class="q" transform="translate(5 -10) scale(0.9)" d="M0 4C-7-1-4-7 0-3.5C4-7 7-1 0 4z"/></in></rig></svg>

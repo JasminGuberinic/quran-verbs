@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vdbr_4-0{from{transform:rotate(-24deg)}}
+@keyframes vdbr_4-1{from{transform:rotate(24deg)}}
+@keyframes vdbr_4-2{from{transform:translateX(44px)}18%{transform:translateX(44px)}}
+@keyframes vdbr_4-3{from{transform:none}}
+& .ll{transform:rotate(24deg);animation:vdbr_4-0 0.52s ease-in-out 5 alternate both}
+& .rl{transform:rotate(-24deg);animation:vdbr_4-1 0.52s ease-in-out 5 alternate both}
+& .ra{transform:rotate(24deg);animation:vdbr_4-0 0.52s ease-in-out 5 alternate both}
+& .la{transform:rotate(-24deg);animation:vdbr_4-1 0.52s ease-in-out 5 alternate both}
+& .mv{animation:vdbr_4-2 2.6s linear both}
+& .tn{transform-origin:30px 0;transform:scaleX(-1);animation:vdbr_4-3 0.5s ease-in-out both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M96 61V30"/><circle class="q" cx="96" cy="27" r="4"/><g class="mv"><g class="tn"><rig x="30" y="44"/></g></g></svg>

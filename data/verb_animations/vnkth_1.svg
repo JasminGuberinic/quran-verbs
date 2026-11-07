@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vnkth_1-0{from{transform:rotate(-90deg)}}
+@keyframes vnkth_1-1{from{transform:rotate(-90deg)}50%{transform:rotate(-90deg)}}
+@keyframes vnkth_1-2{from{transform:none}70%{transform:none}}
+& .a .ra{transform:rotate(-90deg);animation:vnkth_1-0 1s ease-in-out both}
+& .b .ra{transform:rotate(0deg);animation:vnkth_1-1 1.6s ease-in-out both}
+& .tn{transform-origin:74px 0;transform:scaleX(-1);animation:vnkth_1-2 2s ease-in-out both}
+</style><path class="p" d="M6 61H114"/><g class="a"><rig x="46" y="44"/></g><g class="b"><g class="tn"><g transform="matrix(-1 0 0 1 148 0)"><rig x="74" y="44"/></g></g></g></svg>

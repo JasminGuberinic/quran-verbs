@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vsbq_8-0{from{transform:rotate(-45deg)}}
+@keyframes vsbq_8-1{from{transform:rotate(45deg)}}
+@keyframes vsbq_8-2{from{transform:translateX(-80px)}}
+@keyframes vsbq_8-3{from{transform:translateX(-30px)}}
+& .a .ll{transform:rotate(45deg);animation:vsbq_8-0 0.44s ease-in-out 5 alternate both}
+& .a .rl{transform:rotate(-45deg);animation:vsbq_8-1 0.44s ease-in-out 5 alternate both}
+& .a .ra{transform:rotate(45deg);animation:vsbq_8-0 0.44s ease-in-out 5 alternate both}
+& .a .la{transform:rotate(-45deg);animation:vsbq_8-1 0.44s ease-in-out 5 alternate both}
+& .a .fig{animation:vsbq_8-2 2.2s ease-out both}
+& .b .ll{transform:rotate(45deg);animation:vsbq_8-0 0.44s ease-in-out 5 alternate both}
+& .b .rl{transform:rotate(-45deg);animation:vsbq_8-1 0.44s ease-in-out 5 alternate both}
+& .b .ra{transform:rotate(45deg);animation:vsbq_8-0 0.44s ease-in-out 5 alternate both}
+& .b .la{transform:rotate(-45deg);animation:vsbq_8-1 0.44s ease-in-out 5 alternate both}
+& .b .fig{animation:vsbq_8-3 2.2s ease-out both}
+& .tr{transform:rotate(12deg)}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M110 61V24"/><path class="q" d="M110 24l-9 4 9 4z"/><g class="a"><rig x="92" y="44"/></g><g class="b"><rig x="62" y="44"/></g></svg>

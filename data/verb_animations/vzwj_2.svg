@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vzwj_2-0{from{transform:rotate(-24deg)}}
+@keyframes vzwj_2-1{from{transform:rotate(24deg)}}
+@keyframes vzwj_2-2{from{transform:translateX(-26px)}}
+@keyframes vzwj_2-3{from{opacity:0}}
+& .a .ll{transform:rotate(24deg);animation:vzwj_2-0 0.50s ease-in-out 3 alternate both}
+& .a .rl{transform:rotate(-24deg);animation:vzwj_2-1 0.50s ease-in-out 3 alternate both}
+& .a .ra{transform:rotate(24deg);animation:vzwj_2-0 0.50s ease-in-out 3 alternate both}
+& .a .la{transform:rotate(-24deg);animation:vzwj_2-1 0.50s ease-in-out 3 alternate both}
+& .a .fig{animation:vzwj_2-2 1.5s linear both}
+& .b .ll{transform:rotate(24deg);animation:vzwj_2-0 0.50s ease-in-out 3 alternate both}
+& .b .rl{transform:rotate(-24deg);animation:vzwj_2-1 0.50s ease-in-out 3 alternate both}
+& .b .ra{transform:rotate(24deg);animation:vzwj_2-0 0.50s ease-in-out 3 alternate both}
+& .b .la{transform:rotate(-24deg);animation:vzwj_2-1 0.50s ease-in-out 3 alternate both}
+& .b .fig{animation:vzwj_2-2 1.5s linear both}
+& .ht{animation:vzwj_2-3 0.5s ease-out 1.5s both}
+</style><path class="p" d="M6 61H114"/><g class="a"><rig x="46" y="44"/></g><g class="b"><g transform="matrix(-1 0 0 1 148 0)"><rig x="74" y="44"/></g></g><g class="ht"><path class="q" transform="translate(60 10) scale(1.2)" d="M0 4C-7-1-4-7 0-3.5C4-7 7-1 0 4z"/></g></svg>

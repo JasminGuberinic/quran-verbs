@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vghdb_1-0{from{transform:rotate(-30deg)}}
+@keyframes vghdb_1-1{from{opacity:0}}
+& .ra{transform:rotate(-18deg)}
+& .la{transform:rotate(18deg)}
+& .rl{transform:rotate(0deg);animation:vghdb_1-0 0.25s ease-in-out 7 alternate both}
+& .zz{animation:vghdb_1-1 0.25s ease-out 6 both}
+</style><path class="p" d="M6 61H114"/><rig x="58" y="44"/><path class="p zz" d="M48 6l3 3 3-3 3 3 3-3 3 3 3-3 3 3"/></svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vhzz_8-0{25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+@keyframes vhzz_8-1{from{transform:translateX(-10px);opacity:0}}
+& .sp{transform-origin:60px 61px;animation:vhzz_8-0 0.4s linear 5 both}
+& .wd{animation:vhzz_8-1 0.5s linear 4 both}
+</style><path class="p" d="M6 61H114"/><path class="p sp" d="M60 61V46M60 54q-7-1-8-7q6 0 8 7M60 50q7-1 8-7q-6 0-8 7"/><path class="p wd" d="M14 30h20M20 40h16"/></svg>

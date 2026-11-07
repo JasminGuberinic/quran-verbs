@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vblw_8-0{from{transform:none}40%{transform:none}70%{transform:rotate(-16deg)}}
+@keyframes vblw_8-1{from{transform:translateY(-24px)}}
+& .bm{transform-origin:60px 24px;transform:rotate(-12deg);animation:vblw_8-0 1.8s ease-in-out both}
+& .bl{animation:vblw_8-1 0.7s ease-in both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M60 61V24M52 61h16"/><g class="bm"><path class="p" d="M36 24H84M36 24v8M30 32h12M84 24v8M78 32h12"/><circle class="q bl" cx="36" cy="28.4" r="3.6"/></g></svg>

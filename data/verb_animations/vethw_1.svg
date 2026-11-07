@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vethw_1-0{from{transform:rotate(0deg)}}
+@keyframes vethw_1-1{from{transform:none}}
+& .rl{transform:rotate(-60deg);animation:vethw_1-0 0.3s ease-in-out 0.3s both}
+& .k0{transform-origin:60px 56px;transform:translate(14px,-20px) rotate(60deg);animation:vethw_1-1 0.7s ease-out 0.5s both}
+& .k1{transform-origin:72px 56px;transform:translate(30px,-10px) rotate(-40deg);animation:vethw_1-1 0.7s ease-out 0.5s both}
+& .k2{transform-origin:84px 56px;transform:translate(34px,0px) rotate(90deg);animation:vethw_1-1 0.7s ease-out 0.5s both}
+</style><path class="p" d="M6 61H114"/><rig x="36" y="44"/><rect class="q k0" x="56" y="52" width="9" height="9"/><rect class="q k1" x="68" y="52" width="9" height="9"/><rect class="q k2" x="80" y="52" width="9" height="9"/></svg>

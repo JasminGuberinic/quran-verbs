@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vakhr_5-0{from{transform:rotate(-40deg)}}
+@keyframes vakhr_5-1{from{transform:rotate(40deg)}}
+@keyframes vakhr_5-2{from{transform:translateX(-40px)}}
+& .a .ll{transform:rotate(40deg);animation:vakhr_5-0 0.40s ease-in-out 5 alternate both}
+& .a .rl{transform:rotate(-40deg);animation:vakhr_5-1 0.40s ease-in-out 5 alternate both}
+& .a .ra{transform:rotate(40deg);animation:vakhr_5-0 0.40s ease-in-out 5 alternate both}
+& .a .la{transform:rotate(-40deg);animation:vakhr_5-1 0.40s ease-in-out 5 alternate both}
+& .a .fig{animation:vakhr_5-2 2s linear both}
+& .a .tr{transform:rotate(10deg)}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M110 61V24"/><path class="q" d="M110 24l-10 4 10 4z"/><g class="b"><rig x="96" y="44"/></g><g class="a"><rig x="54" y="44"/></g></svg>

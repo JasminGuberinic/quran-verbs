@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vsrq_1-0{from{transform:rotate(-18deg)}}
+@keyframes vsrq_1-1{from{transform:rotate(18deg)}}
+@keyframes vsrq_1-2{from{transform:translateX(-30px)}}
+@keyframes vsrq_1-3{from{transform:rotate(-20deg)}}
+& .tr{transform:rotate(18deg)}
+& .ll{transform:rotate(18deg);animation:vsrq_1-0 0.40s ease-in-out 3 alternate both}
+& .rl{transform:rotate(-18deg);animation:vsrq_1-1 0.40s ease-in-out 3 alternate both}
+& .fig{animation:vsrq_1-2 1.2s linear both}
+& .ra{transform:rotate(-70deg);animation:vsrq_1-3 1s ease-in-out 1.2s both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M76 44H104M80 44V61M100 44V61"/><rig x="56" y="44"><in at="ra"><path class="q" d="M-4 15h8l2 9h-12z"/></in></rig></svg>

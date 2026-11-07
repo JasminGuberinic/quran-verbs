@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vnzl_2-0{from{transform:translateY(-8px);opacity:0}50%{opacity:1}}
+@keyframes vnzl_2-1{from{transform:scale(0)}}
+& .rn,& .rn2{stroke-width:2}
+& .rn{animation:vnzl_2-0 0.6s linear 4 both}
+& .rn2{animation:vnzl_2-0 .6s linear .3s 4 both}
+& .pl{transform-origin:60px 61px;animation:vnzl_2-1 2.2s ease-in-out 0.3s both}
+</style><path class="p" d="M6 61H114"/><path class="q" d="M44 8a5 5 0 0 1 6-6a7 7 0 0 1 13 1a5 5 0 0 1 2 10H45a4 4 0 0 1-1-5z"/><path class="p rn" d="M46 16v4M54 22v4M56 16v4M64 22v4M66 16v4M74 22v4"/><g transform="translate(0 12)"><path class="p rn2" d="M46 16v4M54 22v4M56 16v4M64 22v4M66 16v4M74 22v4"/></g><path class="q pl" d="M32 60q28 10 56 0z"/></svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vswb_4-0{from{transform:translateY(-8px);opacity:0}50%{opacity:1}}
+@keyframes vswb_4-1{from{transform:rotate(0deg)}}
+& .rn,& .rn2{stroke-width:2}
+& .rn{animation:vswb_4-0 0.6s linear 4 both}
+& .rn2{animation:vswb_4-0 .6s linear .3s 4 both}
+& .tr{transform:rotate(18deg);animation:vswb_4-1 0.6s ease-in-out 0.3s both}
+& .ra{transform:rotate(-165deg);animation:vswb_4-1 0.6s ease-in-out 0.3s both}
+& .la{transform:rotate(-150deg);animation:vswb_4-1 0.6s ease-in-out 0.3s both}
+</style><path class="p" d="M6 61H114"/><path class="q" d="M52 6a5 5 0 0 1 6-6a7 7 0 0 1 13 1a5 5 0 0 1 2 10H53a4 4 0 0 1-1-5z"/><path class="p rn" d="M50 14v4M58 20v4M61 14v4M70 20v4M72 14v4M80 20v4M83 14v4M92 20v4"/><g transform="translate(0 6)"><path class="p rn2" d="M50 14v4M58 20v4M61 14v4M70 20v4M72 14v4M80 20v4M83 14v4M92 20v4"/></g><rig x="74" y="44"/></svg>

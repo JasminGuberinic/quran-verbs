@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vrhm_1-0{from{transform:translateY(-8px);opacity:0}50%{opacity:1}}
+@keyframes vrhm_1-1{from{transform:scale(0)}}
+& .rn,& .rn2{stroke-width:2}
+& .rn{animation:vrhm_1-0 0.6s linear 4 both}
+& .rn2{animation:vrhm_1-0 .6s linear .3s 4 both}
+& .s0{transform-origin:36px 61px;animation:vrhm_1-1 0.8s ease-in-out 1.2s both}
+& .s1{transform-origin:60px 61px;animation:vrhm_1-1 0.8s ease-in-out 1.5s both}
+& .s2{transform-origin:84px 61px;animation:vrhm_1-1 0.8s ease-in-out 1.7999999999999998s both}
+</style><path class="p" d="M6 61H114"/><path class="q" d="M44 6a5 5 0 0 1 6-6a7 7 0 0 1 13 1a5 5 0 0 1 2 10H45a4 4 0 0 1-1-5z"/><path class="p ck" d="M30 64l4-3 3 3M80 64l4-3 3 3"/><path class="p rn" d="M46 14v4M54 20v4M56 14v4M64 20v4M66 14v4M74 20v4"/><g transform="translate(0 10)"><path class="p rn2" d="M46 14v4M54 20v4M56 14v4M64 20v4M66 14v4M74 20v4"/></g><path class="p s0" d="M36 61v-8M36 56q-4-1-5-5M36 55q4-1 5-5"/><path class="p s1" d="M60 61v-8M60 56q-4-1-5-5M60 55q4-1 5-5"/><path class="p s2" d="M84 61v-8M84 56q-4-1-5-5M84 55q4-1 5-5"/></svg>

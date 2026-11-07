@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vslw_2-0{from{transform:rotate(0deg)}35%{transform:rotate(-160deg)}55%{transform:rotate(-160deg)}}
+@keyframes vslw_2-1{from{transform:rotate(0deg)}35%{transform:rotate(160deg)}55%{transform:rotate(160deg)}}
+& .ra{transform:rotate(-40deg);animation:vslw_2-0 2s ease-in-out both}
+& .la{transform:rotate(-30deg);animation:vslw_2-1 2s ease-in-out both}
+</style><path class="p" d="M6 61H114"/><rect class="q" x="42" y="57" width="36" height="4" rx="1"/><rig x="60" y="40"/></svg>

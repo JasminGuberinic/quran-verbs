@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vrqb_8-0{from{transform:translateY(14px)}}
+@keyframes vrqb_8-1{from{transform:translateX(24px)}}
+@keyframes vrqb_8-2{from{opacity:0}}
+& .ra{transform:rotate(-150deg)}
+& .fig{animation:vrqb_8-0 0.8s ease-in-out both}
+& .bl{animation:vrqb_8-1 2.4s linear both}
+& .ln{animation:vrqb_8-2 0.4s ease-out 0.8s both}
+</style><path class="p" d="M6 61H114"/><rig x="46" y="44"/><rect class="q" x="30" y="27" width="32" height="36" rx="1"/><circle class="q bl" cx="92" cy="57" r="4"/><path class="p ln" d="M54 18L90 50" stroke-dasharray="3 4"/></svg>

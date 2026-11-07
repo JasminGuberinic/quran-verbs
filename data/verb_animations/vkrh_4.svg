@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vkrh_4-0{from{transform:rotate(-24deg)}}
+@keyframes vkrh_4-1{from{transform:rotate(24deg)}}
+@keyframes vkrh_4-2{from{transform:translateX(-24px)}}
+& .a .ll{transform:rotate(24deg);animation:vkrh_4-0 0.40s ease-in-out 5 alternate both}
+& .a .rl{transform:rotate(-24deg);animation:vkrh_4-1 0.40s ease-in-out 5 alternate both}
+& .a .ra{transform:rotate(24deg);animation:vkrh_4-0 0.40s ease-in-out 5 alternate both}
+& .a .la{transform:rotate(80deg)}
+& .a .fig{animation:vkrh_4-2 2s linear both}
+& .b .ll{transform:rotate(24deg);animation:vkrh_4-0 0.40s ease-in-out 5 alternate both}
+& .b .rl{transform:rotate(-24deg);animation:vkrh_4-1 0.40s ease-in-out 5 alternate both}
+& .b .ra{transform:rotate(-90deg)}
+& .b .la{transform:rotate(-24deg);animation:vkrh_4-1 0.40s ease-in-out 5 alternate both}
+& .b .fig{animation:vkrh_4-2 2s linear both}
+& .b .tr{transform:rotate(-14deg)}
+</style><path class="p" d="M6 61H114"/><g class="a"><g transform="matrix(-1 0 0 1 100 0)"><rig x="50" y="44"/></g></g><g class="b"><g transform="matrix(-1 0 0 1 156 0)"><rig x="78" y="44"/></g></g></svg>

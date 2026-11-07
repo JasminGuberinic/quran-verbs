@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vjzy_1-0{from{transform:translateY(-14px)}}
+@keyframes vjzy_1-1{from{transform:translateY(-30px)}}
+& .ra{transform:rotate(-80deg)}
+& .bk{animation:vjzy_1-0 0.6s ease-in-out both}
+& .c0{animation:vjzy_1-1 0.5s ease-in 0.8s both}
+& .c1{animation:vjzy_1-1 0.5s ease-in 1.15s both}
+& .c2{animation:vjzy_1-1 0.5s ease-in 1.5s both}
+</style><path class="p" d="M6 61H114"/><path class="q" d="M66 49h30v12H66zM66 37h14v11H66z"/><rect class="q bk" x="82" y="37" width="14" height="11"/><rig x="50" y="44"/><circle class="q c0" cx="64" cy="30" r="2.4"/><circle class="q c1" cx="64" cy="28" r="2.4"/><circle class="q c2" cx="64" cy="26" r="2.4"/></svg>

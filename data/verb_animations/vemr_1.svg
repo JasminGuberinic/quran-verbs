@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vemr_1-0{from{opacity:0}}
+@keyframes vemr_1-1{from{transform:rotate(-10deg)}}
+& .sm{animation:vemr_1-0 0.6s ease-out 4 both}
+& .ra{transform:rotate(20deg);animation:vemr_1-1 0.5s ease-in-out 5 alternate both}
+& .tr{transform:rotate(14deg)}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M10 60V30h30v30M7 32l18-14 18 14"/><path class="p" d="M30 21v-6"/><path class="p sm" d="M30 12q3-3 0-6"/><rig x="70" y="44"><in at="ra"><path class="p" d="M0 8l-4 20"/></in></rig></svg>

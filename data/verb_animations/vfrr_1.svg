@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vfrr_1-0{from{transform:rotate(-50deg)}}
+@keyframes vfrr_1-1{from{transform:rotate(50deg)}}
+@keyframes vfrr_1-2{from{transform:translateX(-50px)}}
+@keyframes vfrr_1-3{from{transform:translateX(-24px)}}
+& .ll{transform:rotate(50deg);animation:vfrr_1-0 0.53s ease-in-out 3 alternate both}
+& .rl{transform:rotate(-50deg);animation:vfrr_1-1 0.53s ease-in-out 3 alternate both}
+& .ra{transform:rotate(50deg);animation:vfrr_1-0 0.53s ease-in-out 3 alternate both}
+& .la{transform:rotate(-50deg);animation:vfrr_1-1 0.53s ease-in-out 3 alternate both}
+& .fig{animation:vfrr_1-2 1.6s ease-out both}
+& .tr{transform:rotate(14deg)}
+& .bd{animation:vfrr_1-3 1.6s linear both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M66 30h-12M62 40h-12"/><rig x="96" y="44"/><g class="bd"><circle class="q" cx="24" cy="51" r="10"/></g></svg>

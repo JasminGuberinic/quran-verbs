@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vdwm_1-0{from{transform:scaleY(.8)}}
+@keyframes vdwm_1-1{from{transform:translate(-80px,6px)}50%{transform:translate(-40px,-4px)}}
+& .fm{transform-origin:60px 43px;animation:vdwm_1-0 0.3s ease-in-out 11 alternate both}
+& .su{animation:vdwm_1-1 3s linear both}
+</style><path class="p" d="M6 61H114"/><rect class="q" x="56" y="44" width="8" height="17" rx="1"/><path class="q fm" d="M60 34q4 5 0 9q-4-4 0-9z"/><g class="su"><circle class="q" cx="100" cy="12" r="5"/></g></svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vtms_1-0{from{opacity:1}}
+@keyframes vtms_1-1{from{transform:none}}
+& .m0{opacity:0;animation:vtms_1-0 0.2s ease-out 0.4s both}
+& .m1{opacity:0;animation:vtms_1-0 0.2s ease-out 0.8500000000000001s both}
+& .m2{opacity:0;animation:vtms_1-0 0.2s ease-out 1.3s both}
+& .cl{transform:translateX(72px);animation:vtms_1-1 1.6s linear both}
+</style><rect class="p" x="22" y="12" width="76" height="44" rx="2"/><path class="p m0" d="M30 26l12 16M42 26l-12 16"/><path class="p m1" d="M50 26l12 16M62 26l-12 16"/><path class="p m2" d="M70 26l12 16M82 26l-12 16"/><rect class="q cl" x="18" y="26" width="12" height="16" rx="2"/></svg>

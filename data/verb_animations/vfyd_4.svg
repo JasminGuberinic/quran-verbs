@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vfyd_4-0{from{transform:scaleY(.05)}}
+@keyframes vfyd_4-1{from{stroke-dashoffset:100}}
+& .lv{transform-origin:0 58px;animation:vfyd_4-0 1.6s ease-in-out both}
+& .ov{stroke-dasharray:100;animation:vfyd_4-1 0.9s linear 1.6s both}
+</style><path class="p" d="M6 61H114"/><path class="q lv" d="M46 18h28v40H46z"/><path class="p" d="M42 18v40q0 3 4 3h28q4 0 4-3V18"/><path class="p ov" pathLength="100" d="M42 17q-4 2-4 10V60M78 17q4 2 4 10V60"/></svg>

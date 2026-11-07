@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vghyr_2-0{from{transform:none}}
+@keyframes vghyr_2-1{from{transform:scale(0)}}
+& .sq,& .ci{transform-origin:60px 38px}
+& .sq{transform:rotate(180deg) scale(0);animation:vghyr_2-0 1s ease-in-out 0.3s both}
+& .ci{animation:vghyr_2-1 0.6s ease-in-out 1s both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M48 61V46h24v15"/><rect class="q sq" x="52" y="30" width="16" height="16" rx="1"/><circle class="q ci" cx="60" cy="38" r="8"/></svg>

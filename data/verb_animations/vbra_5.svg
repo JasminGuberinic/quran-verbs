@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vbra_5-0{from{transform:rotate(0deg)}}
+@keyframes vbra_5-1{from{transform:translateX(24px)}30%{transform:translateX(24px)}}
+@keyframes vbra_5-2{from{transform:none}70%{transform:none}}
+& .a .ra{transform:rotate(-100deg);animation:vbra_5-0 0.5s ease-in-out both}
+& .a .la{transform:rotate(-95deg);animation:vbra_5-0 0.5s ease-in-out both}
+& .mv{animation:vbra_5-1 2s ease-in-out both}
+& .tn{transform-origin:30px 0;transform:scaleX(-1);animation:vbra_5-2 2s ease-in-out both}
+</style><path class="p" d="M6 61H114"/><g class="b"><g transform="matrix(-1 0 0 1 168 0)"><rig x="84" y="44"/></g></g><g class="a"><g class="mv"><g class="tn"><rig x="30" y="44"/></g></g></g></svg>

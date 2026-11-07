@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes velw_1-0{from{transform:scaleY(.05)}}
+@keyframes velw_1-1{from{transform:translateY(11px)}}
+@keyframes velw_1-2{from{transform:rotate(0deg)}}
+& .bk{transform-origin:0 61px;animation:velw_1-0 1.5s ease-in-out both}
+& .fig{animation:velw_1-1 1.5s ease-in-out both}
+& .tr{transform:rotate(-10deg);animation:velw_1-2 0.6s ease-in-out 1.5s both}
+& .ra{transform:rotate(30deg)}
+& .la{transform:rotate(-30deg)}
+</style><path class="p" d="M6 61H114"/><rect class="q bk" x="48" y="50" width="24" height="11" rx="1"/><rig x="60" y="33"/></svg>

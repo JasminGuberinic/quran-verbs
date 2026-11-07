@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vthr_2-0{from{opacity:1}}
+@keyframes vthr_2-1{from{transform:none}}
+@keyframes vthr_2-2{from{opacity:0}}
+& .d0{opacity:0;animation:vthr_2-0 0.15s ease-out 0.34s both}
+& .d1{opacity:0;animation:vthr_2-0 0.15s ease-out 0.8s both}
+& .d2{opacity:0;animation:vthr_2-0 0.15s ease-out 1.26s both}
+& .cl{transform:translateX(56px);animation:vthr_2-1 1.6s linear both}
+& .gl{animation:vthr_2-2 0.4s ease-out 1.6s both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M24 44H96M28 44V61M92 44V61"/><circle class="q d0" cx="44" cy="41.4" r="2.4"/><circle class="q d1" cx="60" cy="41.4" r="2.4"/><circle class="q d2" cx="76" cy="41.4" r="2.4"/><rect class="q cl" x="26" y="36" width="12" height="7" rx="2"/><path class="p gl" d="M52 30v6M49 33h6M68 28v4M66 30h4"/></svg>

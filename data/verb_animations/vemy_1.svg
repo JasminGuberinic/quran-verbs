@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vemy_1-0{from{transform:rotate(-14deg)}}
+@keyframes vemy_1-1{from{transform:rotate(14deg)}}
+@keyframes vemy_1-2{from{transform:translateX(-30px)}}
+@keyframes vemy_1-3{from{transform:rotate(-45deg)}}
+& .ll{transform:rotate(14deg);animation:vemy_1-0 0.46s ease-in-out 7 alternate both}
+& .rl{transform:rotate(-14deg);animation:vemy_1-1 0.46s ease-in-out 7 alternate both}
+& .fig{animation:vemy_1-2 3.2s linear both}
+& .ra{transform:rotate(-30deg);animation:vemy_1-3 0.4s ease-in-out 9 alternate both}
+</style><path class="p" d="M6 61H114"/><rig x="64" y="44"><in at="ra"><path class="p" d="M0 12l2 20"/></in></rig></svg>

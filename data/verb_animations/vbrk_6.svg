@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vbrk_6-0{from{transform:scale(.3)}}
+@keyframes vbrk_6-1{from{opacity:0}}
+& .cr{transform-origin:60px 40px;animation:vbrk_6-0 1.4s ease-in-out both}
+& .f0{animation:vbrk_6-1 0.4s ease-out 1.3s both}
+& .f1{animation:vbrk_6-1 0.4s ease-out 1.6s both}
+& .f2{animation:vbrk_6-1 0.4s ease-out 1.9s both}
+& .sk{animation:vbrk_6-1 0.4s ease-out 2s 3 both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M60 61V40"/><circle class="q cr" cx="60" cy="33" r="10"/><circle class="p f0" cx="54" cy="30" r="2"/><circle class="p f1" cx="66" cy="34" r="2"/><circle class="p f2" cx="60" cy="26" r="2"/><path class="p sk" d="M80 16v6M77 19h6M40 22v6M37 25h6"/></svg>

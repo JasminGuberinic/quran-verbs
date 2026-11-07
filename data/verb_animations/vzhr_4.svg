@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes vzhr_4-0{from{transform:none}}
+@keyframes vzhr_4-1{from{transform:translateY(16px)}}
+@keyframes vzhr_4-2{from{opacity:0}}
+& .ld{transform-origin:44px 44px;transform:rotate(-110deg);animation:vzhr_4-0 0.6s ease-in-out both}
+& .bl{animation:vzhr_4-1 0.8s ease-in-out 0.5s both}
+& .ry{animation:vzhr_4-2 0.4s ease-out 1.3s both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M46 61V44h28v17"/><path class="q ld" d="M44 42h32v3H44z"/><circle class="q bl" cx="60" cy="30" r="5"/><path class="p ry" d="M60 20v-4M50 24l-3-3M70 24l3-3"/></svg>

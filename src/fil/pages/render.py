@@ -43,7 +43,7 @@ _FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
           '&amp;family=Inter:wght@400;500;600&amp;display=swap">\n')
 
 # One shared player (site/player.js): a tap on any [data-audio] plays it, or stops it if it is playing.
-_ABOUT_LINKS = "<!--about-links-->"    # where _footer leaves the About and Privacy links for _document to fill
+_ABOUT_LINKS = "<!--about-links-->"    # where _footer leaves the About, Privacy and gallery links for _document to fill
 _PLAYER_SCRIPT = "player.js"
 # Marks what the scripts draw later the way fil.pages.untranslated marks the page, and shows the hint once.
 _TRANSLATION_SCRIPT = "translation.js"
@@ -614,10 +614,12 @@ def _footer(text: dict, picture_credit: str = "") -> str:
 
 
 def footer_links(language_code: str, root: str, labels: dict[str, str]) -> str:
-    """The two links every page's footer carries: About, and Privacy (the section of it)."""
+    """The links every page's footer carries: About, Privacy (the section of it), and the two galleries."""
     about = f"{root}{seo.about_path(language_code)}"
     return (f'<a href="{about}">{escape(labels["about"])}</a> · '
-            f'<a href="{about}#{seo.PRIVACY_ANCHOR}">{escape(labels["privacy"])}</a>')
+            f'<a href="{about}#{seo.PRIVACY_ANCHOR}">{escape(labels["privacy"])}</a> · '
+            f'<a href="{root}{seo.animations_path(language_code)}">{escape(labels["animations"])}</a> · '
+            f'<a href="{root}{seo.pictures_path(language_code)}">{escape(labels["pictures"])}</a>')
 
 
 def _play(reference: str | None, root: str, label: str) -> str:

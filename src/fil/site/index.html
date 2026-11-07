@@ -621,7 +621,8 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     $("lang-label").textContent = ui.language;
     $("notice").innerHTML = ui.notice;
     $("footer").innerHTML = ui.footer.map((line) => `<p>${line}</p>`).join("")
-      + `<p><a href="${language}/about/">${ui.aboutNav.about}</a> · <a href="${language}/about/#privacy">${ui.aboutNav.privacy}</a></p>`;
+      + `<p><a href="${language}/about/">${ui.aboutNav.about}</a> · <a href="${language}/about/#privacy">${ui.aboutNav.privacy}</a>`
+      + ` · <a href="${language}/animations/">${ui.aboutNav.animations}</a> · <a href="${language}/noun-pictures/">${ui.aboutNav.pictures}</a></p>`;
     renderSections(ui);
     renderTranslateHint(ui);
     $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");

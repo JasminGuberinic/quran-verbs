@@ -22,6 +22,7 @@
       bs/sura/, en/surah/            the 114 surahs' vocabulary and coverage (fil.stages.surah_pages), their ayat in ayat/sura-*.json
       pictures/<slug>.svg            the noun pictures the noun pages show
       bs/about/, en/about/           About and Privacy (fil.stages.about_pages), every site language
+      <language>/animations/, <language>/noun-pictures/   the two galleries (fil.stages.gallery_pages), every site language
       manifest.webmanifest, sw.js, sw-routing.js, pwa.js, icons/    the installable, offline-capable app (fil.pages.pwa)
       sitemap.xml, robots.txt, llms.txt, 404.html, pages.css, share.png, .nojekyll
       <IndexNow key>.txt             proves our IndexNow pings are ours (fil.pages.indexnow)
@@ -57,14 +58,14 @@ from fil import clip_gate, noun_store, page_version_store, service, surah_store
 from fil.corpus.parse import iter_segments
 from fil.languages import LANGUAGES
 from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
-from fil.pages import (adjective_render, deploy, exercise_render, freshness, indexing, indexnow, interface_text,
+from fil.pages import (adjective_render, deploy, exercise_render, freshness, gallery_render, indexing, indexnow, interface_text,
                        nuance_render, particle_render, pwa, pwa_icons, render, seo, share_image, web)
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
 from fil.resources import AUDIO_QA_CACHE, PAGES_DIR, QAC_MORPHOLOGY, REPOSITORY_DIR
 from fil.site_audio import AUDIO_FOLDER, PublishedAudio
-from fil.stages import (about_pages, adjective_pages, exercise_pages, exercises, noun_pages, nuance_pages, nuance_site, particle_pages,
+from fil.stages import (about_pages, adjective_pages, exercise_pages, exercises, gallery_pages, noun_pages, nuance_pages, nuance_site, particle_pages,
                         particle_site, root_pages, site, surah_pages, surah_site)
 from fil.stages import roots as root_stage
 from fil.stages import particles as word_lists
@@ -217,6 +218,8 @@ def build(pages: Path) -> BuiltSite | None:
     written += surah_pages.write(pages, surahs, texts, published, practice.words(),
                                   root_path=_root_page(root_slugs))
     written += about_pages.write(pages, texts)
+    galleries = _galleries(verbs, nouns)
+    written += gallery_pages.write(pages, galleries, texts)
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
                              *surahs.pages, {"exercises": exercises.sounds(practice)}])
@@ -225,13 +228,22 @@ def build(pages: Path) -> BuiltSite | None:
     built = _date_pages(pages, _sitemap_paths(verbs, nouns.cards, adjectives.cards, nuances, particles, pronouns,
                                               [*exercise_pages.page_paths(practice, texts),
                                                *root_pages.page_paths(roots), *surah_pages.page_paths(surahs),
-                                               *about_pages.page_paths()]))
+                                               *about_pages.page_paths(), *gallery_pages.page_paths(galleries)]))
     _write_site_files(pages, verbs, texts, built.entries)
     site.report(pages, content)
     _report_size(pages, len(written))
     _report_indexing(verbs)
     print(f"Sitemap: {len(built.entries)} pages, {len(built.changed_urls)} changed in this build")
     return built
+
+
+def _galleries(verbs: list[PublishedVerb], nouns: NounContent) -> tuple[gallery_pages.GalleryContent, ...]:
+    """The verb animations and the noun pictures, each gallery crediting what it shows."""
+    pictured = gallery_render.noun_items(nouns.cards)
+    credit = noun_pages.credits(nouns.pictures)([card for card in nouns.cards if card.get("picture")])
+    return (gallery_pages.GalleryContent(gallery_render.ANIMATION_GALLERY,
+                                         tuple(gallery_render.verb_items(verbs, animation_of))),
+            gallery_pages.GalleryContent(gallery_render.picture_gallery(credit), tuple(pictured)))
 
 
 def published_verbs(cards: Iterable[dict], catalogue_lemmas: list[str]) -> list[PublishedVerb]:

@@ -338,3 +338,23 @@ a.root { text-decoration: underline; text-underline-offset: 3px; }
 .word-chips small { color: var(--muted); font-family: var(--font-body); font-size: 0.8rem; }
 .verb-list.surah-list a { grid-template-columns: 3em 7em 1fr auto; }
 @media (max-width: 520px) { .verb-list.surah-list a { grid-template-columns: 2.5em 5em 1fr; } }
+
+/* ---------- the galleries: verb animations, noun pictures (fil.pages.gallery_render) ---------- */
+.gallery { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr)); }
+.gallery-pictures { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+.gallery-card { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.gallery-figure { display: block; width: 100%; padding: 0; border: 0; border-radius: 12px; background: var(--accent-soft); color: inherit; cursor: pointer; line-height: 0; -webkit-tap-highlight-color: transparent; }
+.gallery-figure:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.gallery-figure.playing { box-shadow: inset 0 0 0 2px var(--accent); }
+.gallery-drawing { display: block; }
+.gallery-drawing svg { width: 100%; height: auto; }
+.gallery-drawing img { display: block; width: 72%; height: auto; margin: 14% auto; }
+.gallery-drawing img.pop { animation: gallery-pop .35s ease-out; }
+@keyframes gallery-pop { 40% { transform: scale(1.12); } }
+.gallery-caption { margin: 0; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.gallery-caption .ar { font-size: 1.5rem; line-height: 1.5; }
+.gallery-caption .meaning { color: var(--ink); font-size: .9rem; overflow-wrap: anywhere; }
+.gallery-link { margin-top: auto; font-size: .82rem; }
+.gallery-other { margin: 8px 0 0; }
+@media (max-width: 380px) { .gallery { grid-template-columns: 1fr 1fr; gap: 8px; } .gallery-card { padding: 8px; } }
+@media (prefers-reduced-motion: reduce) { .gallery-drawing img.pop { animation: none; } }

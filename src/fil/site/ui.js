@@ -838,19 +838,40 @@
       },
     },
   };
-  // The footer's two links to the About page (fil.pages.about_render writes the page itself).
+  // The footer's links: the About page and its Privacy section (fil.pages.about_render writes the page
+  // itself), and the two galleries, of the verb animations and of the noun pictures (fil.pages.gallery_render).
   const ABOUT_NAV = {
-    bs: { about: "O stranici", privacy: "Privatnost" },
-    en: { about: "About", privacy: "Privacy" },
-    tr: { about: "Hakkında", privacy: "Gizlilik" },
-    fr: { about: "À propos", privacy: "Confidentialité" },
-    id: { about: "Tentang", privacy: "Privasi" },
-    ur: { about: "تعارف", privacy: "رازداری" },
-    bn: { about: "সম্পর্কে", privacy: "গোপনীয়তা" },
-    fa: { about: "درباره", privacy: "حریم خصوصی" },
+    bs: { about: "O stranici", privacy: "Privatnost", animations: "Animacije", pictures: "Slike imenica" },
+    en: { about: "About", privacy: "Privacy", animations: "Animations", pictures: "Noun pictures" },
+    tr: { about: "Hakkında", privacy: "Gizlilik", animations: "Animasyonlar", pictures: "İsim resimleri" },
+    fr: { about: "À propos", privacy: "Confidentialité", animations: "Animations", pictures: "Images des noms" },
+    id: { about: "Tentang", privacy: "Privasi", animations: "Animasi", pictures: "Gambar kata benda" },
+    ur: { about: "تعارف", privacy: "رازداری", animations: "اینیمیشن", pictures: "اسماء کی تصویریں" },
+    bn: { about: "সম্পর্কে", privacy: "গোপনীয়তা", animations: "অ্যানিমেশন", pictures: "বিশেষ্যের ছবি" },
+    fa: { about: "درباره", privacy: "حریم خصوصی", animations: "پویانمایی‌ها", pictures: "تصاویر اسم‌ها" },
+  };
+  // The two gallery pages' own words (fil.pages.gallery_render).
+  const GALLERY_PAGE = {
+    bs: { animationsTitle: "Animacije glagola", animationsIntro: "Svi glagoli koje smo nacrtali, u pokretu. Dodirni crtež da čuješ glagol i vidiš ga ponovo.",
+          picturesTitle: "Slike imenica", picturesIntro: "Sve imenice koje imaju sliku. Dodirni sliku da čuješ imenicu.", openPage: "Otvori stranicu" },
+    en: { animationsTitle: "Verb animations", animationsIntro: "Every verb we have drawn, in motion. Tap a drawing to hear the verb and see it again.",
+          picturesTitle: "Noun pictures", picturesIntro: "Every noun that has a picture. Tap a picture to hear the noun.", openPage: "Open the page" },
+    tr: { animationsTitle: "Fiil animasyonları", animationsIntro: "Çizdiğimiz bütün fiiller, hareket hâlinde. Fiili duymak ve yeniden görmek için çizime dokunun.",
+          picturesTitle: "İsim resimleri", picturesIntro: "Resmi olan bütün isimler. İsmi duymak için resme dokunun.", openPage: "Sayfayı aç" },
+    fr: { animationsTitle: "Animations des verbes", animationsIntro: "Tous les verbes que nous avons dessinés, en mouvement. Touchez un dessin pour entendre le verbe et le revoir.",
+          picturesTitle: "Images des noms", picturesIntro: "Tous les noms qui ont une image. Touchez une image pour entendre le nom.", openPage: "Ouvrir la page" },
+    id: { animationsTitle: "Animasi kata kerja", animationsIntro: "Semua kata kerja yang kami gambar, dalam gerakan. Sentuh gambar untuk mendengar kata kerjanya dan melihatnya lagi.",
+          picturesTitle: "Gambar kata benda", picturesIntro: "Semua kata benda yang memiliki gambar. Sentuh gambar untuk mendengar kata bendanya.", openPage: "Buka halaman" },
+    ur: { animationsTitle: "افعال کی اینیمیشن", animationsIntro: "ہمارے بنائے ہوئے تمام افعال، حرکت میں۔ فعل سننے اور دوبارہ دیکھنے کے لیے تصویر کو چھوئیں۔",
+          picturesTitle: "اسماء کی تصویریں", picturesIntro: "وہ تمام اسماء جن کی تصویر ہے۔ اسم سننے کے لیے تصویر کو چھوئیں۔", openPage: "صفحہ کھولیں" },
+    bn: { animationsTitle: "ক্রিয়ার অ্যানিমেশন", animationsIntro: "আমাদের আঁকা সব ক্রিয়া, চলমান অবস্থায়। ক্রিয়াটি শুনতে ও আবার দেখতে ছবিতে স্পর্শ করুন।",
+          picturesTitle: "বিশেষ্যের ছবি", picturesIntro: "যেসব বিশেষ্যের ছবি আছে, তার সবগুলো। বিশেষ্যটি শুনতে ছবিতে স্পর্শ করুন।", openPage: "পাতা খুলুন" },
+    fa: { animationsTitle: "پویانمایی فعل‌ها", animationsIntro: "همهٔ فعل‌هایی که کشیده‌ایم، در حرکت. برای شنیدن فعل و دیدن دوبارهٔ آن، روی تصویر بزنید.",
+          picturesTitle: "تصاویر اسم‌ها", picturesIntro: "همهٔ اسم‌هایی که تصویر دارند. برای شنیدن اسم، روی تصویر بزنید.", openPage: "باز کردن صفحه" },
   };
   for (const code of Object.keys(UI)) {
     UI[code].aboutNav = ABOUT_NAV[code] || ABOUT_NAV.en;
+    UI[code].galleryPage = GALLERY_PAGE[code] || GALLERY_PAGE.en;
     UI[code].exercisePage =EXERCISE_PAGE[code] || EXERCISE_PAGE.en;
     UI[code].particlePage = PARTICLE_PAGE[code] || PARTICLE_PAGE.en;
     UI[code].pronounPage = PRONOUN_PAGE[code] || PRONOUN_PAGE.en;

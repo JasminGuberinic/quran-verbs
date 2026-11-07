@@ -218,6 +218,11 @@ def index_alternates(languages: Sequence[str]) -> list[Alternate]:
     return _alternates(language_index_path, languages)
 
 
+def alternates_of(path_in, languages: Sequence[str]) -> list[Alternate]:
+    """The indexed versions of any page addressed by `path_in` a language."""
+    return _alternates(path_in, languages)
+
+
 def _alternates(path_in, languages: Sequence[str]) -> list[Alternate]:
     """The indexed versions of one page; x-default only when the English one is among them."""
     unknown = set(languages) - set(CODES)
@@ -351,6 +356,29 @@ def about_structured_data(*, title: str, description: str, language: str) -> str
         "@context": "https://schema.org", "@type": "AboutPage",
         "name": title, "description": description, "inLanguage": language,
         "url": absolute(about_path(language)),
+        "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL},
+    })
+
+
+# The two galleries — every verb animation, every noun picture — are written in every site language,
+# one folder name for all; each language is indexed only where its captions are translated (fil.pages.gallery_render).
+ANIMATIONS_FOLDER = "animations"
+PICTURES_FOLDER = "noun-pictures"
+
+
+def animations_path(language: str) -> str:
+    return f"{language}/{ANIMATIONS_FOLDER}/"
+
+
+def pictures_path(language: str) -> str:
+    return f"{language}/{PICTURES_FOLDER}/"
+
+
+def gallery_structured_data(*, title: str, description: str, language: str, path: str) -> str:
+    return _json_ld({
+        "@context": "https://schema.org", "@type": "CollectionPage",
+        "name": title, "description": description, "inLanguage": language,
+        "url": absolute(path),
         "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL},
     })
 

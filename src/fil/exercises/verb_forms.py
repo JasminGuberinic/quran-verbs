@@ -278,11 +278,11 @@ def meaning_form_problems(answer: TableForm, distractors: Sequence[Offered]) -> 
 def quran_form_exercises(verbs: Sequence[QuranicVerb], per_verb: int = QURAN_FORMS_PER_VERB) -> list[Exercise]:
     """For each glossed form in an ayah: the ayah, the form marked; its gloss among three of the same verb.
     At most `per_verb` forms of a verb, the commonest first (`forms` come in the order of their counts)."""
-    return [exercise for verb in map(_standing_alone, verbs)
+    return [exercise for verb in map(standing_alone, verbs)
             for exercise in [found for found in (_quran_form(verb, answer) for answer in verb.forms) if found][:per_verb]]
 
 
-def _standing_alone(verb: QuranicVerb) -> QuranicVerb:
+def standing_alone(verb: QuranicVerb) -> QuranicVerb:
     """Only glosses that read as Bosnian on their own: one opening with an enclitic ("smo je prostrli") was
     written to follow a word of its ayah, and is neither asked nor offered."""
     return QuranicVerb(verb.table, tuple(form for form in verb.forms if not starts_with_enclitic(form.gloss.bs)))

@@ -130,7 +130,9 @@ test("a verb form's explanation names every reading of it and its verb", () => {
     ["Oblik: sadašnje · ti (m.) / sadašnje · ona.", "Glagol: قَالَ – reći"]);
   const quranic = { facts: { verb: "قَالَ" }, gloss: { bs: "reći", en: "to say" } };
   assert.deepEqual(E.explanationLines("quran-form", quranic, WORDS, "en"), ["Glagol: قَالَ – to say"]);
-  assert.deepEqual(E.VERB_FORM_KINDS, ["form-meaning", "meaning-form", "quran-form"]);
+  const heard = E.explanationLines("hear-reciter", { ...form, facts: { readings: "present:anta", verb: "قَالَ" } }, WORDS, "bs");
+  assert.deepEqual(heard, ["Oblik: sadašnje · ti (m.).", "Glagol: قَالَ – reći"]);
+  assert.deepEqual(E.VERB_FORM_KINDS, ["form-meaning", "meaning-form", "quran-form", "hear-reciter"]);
 });
 
 // ---------- one shard that fails must not cost the session ----------

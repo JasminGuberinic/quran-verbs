@@ -192,7 +192,7 @@
   // ---------- what the learner reads after answering ----------
 
   // The kinds about a verb's forms: their facts name the verb and the cells (tense:person) a form is.
-  const VERB_FORM_KINDS = ["form-meaning", "meaning-form", "quran-form"];
+  const VERB_FORM_KINDS = ["form-meaning", "meaning-form", "quran-form", "hear-reciter"];
 
   /** "present:anta,present:hiya" → "sadašnje · ti (m.) / sadašnje · ona": every reading of the form. */
   function cellNames(readings, words) {

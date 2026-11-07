@@ -314,3 +314,27 @@ def test_a_word_glossed_two_ways_in_one_ayah_has_no_place_gloss():
     glosses = {"2:34:1": {"en": "we said", "bs": "rekli smo"}, "2:34:3": {"en": "we told", "bs": "kazali smo"},
                "2:35:1": {"en": "we told", "bs": "kazali smo"}}
     assert stage.place_glosses(glosses, ayat) == {("2:35", "قُلْنَا"): B("kazali smo", "we told")}
+
+
+# ---------------------------------------------------------------- Čuj učača / Hear the reciter
+
+def test_a_recited_form_is_asked_by_its_clip_alone_among_meanings_that_cannot_be_it():
+    from fil.exercises.recited import hear_reciter_exercises
+    kana = QuranicVerb(_KANA, (_form("كَانَ", "past", "huwa", B("bio je", "he was"), reference="2:10"),))
+    exercises = hear_reciter_exercises([QuranicVerb(_table(), _QURANIC), kana])
+    asked = _by_key(exercises, "qala-20-19-1")
+    assert asked.kind == "hear-reciter" and asked.sound == "قَالَ.mp3" and not asked.passage
+    assert asked.correct[0].meaning.en == "he said" and asked.reference == "20:19"
+    assert asked.facts["readings"] == "past:huwa"
+    offered = _meanings(asked)
+    assert len(offered) == 4 and len(set(offered)) == 4
+    assert "so he said" not in offered and "it was said" not in offered      # never a reading of the word heard
+    assert not any(exercise.answer_word in ("تَقُولُ", "قَالَهَا") for exercise in exercises)
+    gate.check(exercises)
+
+
+def test_a_recited_form_without_a_clip_or_enough_distractors_is_not_asked():
+    from fil.exercises.recited import hear_reciter_exercises
+    silent = AttestedForm("قَالَ", Grammar("past", "huwa"), B("rekao je", "he said"), _ayah("x", "قَالَ", hit="قَالَ"))
+    assert hear_reciter_exercises([QuranicVerb(_table(), (silent, *_QURANIC[2:5]))])[0].answer_word != "قَالَ"
+    assert hear_reciter_exercises([QuranicVerb(_table(), _QURANIC[:2])]) == []

@@ -36,10 +36,11 @@ from fil.exercises import gate
 from fil.exercises.agreement import AdjectiveForm, AdjectiveSentence, agreement_exercises
 from fil.exercises.ayat import AyahWord, CitedAyah, NuanceGroup, NuanceMember, ParticleUse, nuance_exercises, particle_exercises
 from fil.exercises.cases import NounSentence, SentenceWord, case_exercises
-from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, FORM_MEANING, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
+from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, FORM_MEANING, HEAR_RECITER, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
                                  NUANCE_WORD, PARTICLE, PARTICLE_WORD, PICTURE, PREPOSITION, QURAN_FORM, VERB_WORD, Bilingual,
                                  Exercise, QuranTranslation, word_id)
 from fil.exercises.prepositions import NounForms, QuranicForm, TableRow, preposition_exercises
+from fil.exercises.recited import hear_reciter_exercises
 from fil.exercises.shards import shards
 from fil.exercises.verb_forms import (AttestedForm, Grammar, QuranicVerb, TableForm, VerbTable, form_meaning_exercises,
                                       meaning_form_exercises, quran_form_exercises)
@@ -133,12 +134,14 @@ def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjective
     noun_words = [_noun_word(card, sources) for card in nouns]
     verb_words = [_verb_word(slug, card) for slug, card in verbs]
     tables = [_verb_table(word, card, sources) for word, (_slug, card) in zip(verb_words, verbs)]
+    quranic = [_quranic_verb(table, card, sources) for table, (_slug, card) in zip(tables, verbs)]
     built = {
         PICTURE: picture_exercises(noun_words, synonyms),
         LISTEN: listen_exercises([*noun_words, *verb_words], synonyms),
         FORM_MEANING: form_meaning_exercises(tables),
         MEANING_FORM: meaning_form_exercises(tables, synonyms),
-        QURAN_FORM: quran_form_exercises([_quranic_verb(table, card, sources) for table, (_slug, card) in zip(tables, verbs)]),
+        QURAN_FORM: quran_form_exercises(quranic),
+        HEAR_RECITER: hear_reciter_exercises(quranic, synonyms),
         CASE: case_exercises([sentence for card in nouns for sentence in _noun_sentences(card)]),
         PREPOSITION: preposition_exercises([_noun_forms(card, sources.bosnian) for card in nouns]),
         AGREEMENT: agreement_exercises([sentence for card in adjectives for sentence in _adjective_sentences(card)],

@@ -141,6 +141,13 @@ def test_picture_exercises_have_one_right_word_and_distractors_no_picture_could_
     assert not grapes & {"طَعَام", "شَجَرَة", "شَجَر"}
 
 
+def test_a_noun_pictured_by_a_symbol_is_never_asked_nor_offered_in_a_picture_question():
+    justice = _word("adl", "عَدْل", "عدل", "pravda", "justice", 15, emoji="2696", category="abstract")
+    built = picture_exercises([*WORDS, justice], SYNONYMS)
+    assert built and all(exercise.key != "adl" for exercise in built)
+    assert not any(option.arabic == "عَدْل" for exercise in built for option in exercise.options)
+
+
 def test_listen_exercises_ask_a_meaning_among_meanings_of_the_same_family():
     verbs = [_word(f"v{rank}", arabic, root, bs, en, rank, family="verb") for rank, (arabic, root, bs, en) in enumerate(
         [("قَالَ", "قول", "reći", "to say"), ("كَانَ", "كون", "biti", "to be"), ("جَاءَ", "جيأ", "doći", "to come"),

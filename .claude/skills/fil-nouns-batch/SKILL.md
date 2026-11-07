@@ -376,6 +376,16 @@ the house"); nouns that can only speak of God or gods (إِلٰه) are held back
   caterpillar or log), siblings/aunts/uncles/friends (indistinguishable from "children"/"people"), groups (فَوْج، فِئَة …
   — the grouping, not the people; ناس/قَوْم already show people), بَصَر/سَمْع (faculties; would repeat eye/ear),
   جَسَد (in the Quran the calf idol's or prophets' bodies), مَلِك/مالِك/سَيِّد/مَوْلَى (also Divine Names).
+- Round 4 (2026-11-07, symbols for abstract nouns; owner): 130 studied nouns pictured — 112 emoji (99 Twemoji,
+  13 OpenMoji, same sets and recolouring, `fil nouns pictures OM TW`) and 18 own drawings (prayer, worshippers, the
+  unseen as a curtain, patience as a seated figure + hourglass, trade, alms as a charity box, degree as stairs,
+  burden/load x4, weight x2, provision, mercy as rain on dry ground, creation as seed → tree, guidance as a lit path
+  to a star, earthquake). A symbol is never a picture question (`is_symbolic`); a page showing emoji and own
+  drawings says so in the credit (`pictures_credit`). Dropped at the contact sheet: daytime (read as a city),
+  anger (💢 unreadable), evening (a city at night), amusement (carousel), blindness (cane too thin at 64 px).
+  No clear symbol: sign/verse, thing, matter, religion, faith, praise, forgiveness (a wiped slate reads as nothing),
+  sin/evil deed, proof, error, trial, most people nouns, fate; Divine-name nouns (Lord, king, master, guardian)
+  and soul/death/killing/war never (`NEVER_PICTURED_LEMMAS`).
 
 ## Pilot lessons (2026-11-05, 50 nouns)
 - 198 sentences drafted, 6 refused by the blind reviewer (3%), all repaired and approved.

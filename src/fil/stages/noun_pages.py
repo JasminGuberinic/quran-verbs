@@ -17,10 +17,10 @@ from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
 from fil.noun_pictures import load_categories
-from fil.nouns.pictures import NounPicture, sources_used
+from fil.nouns.pictures import NounPicture
 from fil.pages import adjective_render, noun_render, nuance_render, seo
 from fil.pages.exercise_render import PracticeLink, no_practice
-from fil.pages.picture_credits import picture_credit
+from fil.pages.picture_credits import pictures_credit
 from fil.resources import NOUN_PICTURES_DIR
 from fil.stages.noun_site import NounContent
 from fil.stages.nuance_site import groups_of_lemma
@@ -102,7 +102,7 @@ def credits(pictures: Sequence[NounPicture]):
 
     def credit(cards: Sequence[dict]) -> str:
         shown = [by_key[card["key"]] for card in cards if card.get("picture") and card["key"] in by_key]
-        return picture_credit(sources_used(shown))
+        return pictures_credit(shown)
     return credit
 
 

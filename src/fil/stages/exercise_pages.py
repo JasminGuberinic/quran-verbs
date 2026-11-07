@@ -14,9 +14,9 @@ from pathlib import Path, PurePosixPath
 
 from fil.exercises.model import PICTURE
 from fil.languages import LANGUAGES, Language
-from fil.nouns.pictures import NounPicture, sources_used
+from fil.nouns.pictures import NounPicture
 from fil.pages import exercise_render, seo
-from fil.pages.picture_credits import picture_credit
+from fil.pages.picture_credits import pictures_credit as credit_for_pictures
 from fil.stages import exercises
 
 
@@ -52,7 +52,7 @@ def pictures_credit(sets: exercises.ExerciseSets, pictures: Sequence[NounPicture
     unknown = sorted({picture for picture in shown if PurePosixPath(picture).name not in by_file})
     if unknown:
         raise UncreditedPicture(f"{len(unknown)} picture questions show a picture of no known source, e.g. {unknown[:3]}")
-    return picture_credit(sources_used(by_file[PurePosixPath(picture).name] for picture in shown))
+    return credit_for_pictures(by_file[PurePosixPath(picture).name] for picture in shown)
 
 
 def app_paths() -> dict[str, str]:

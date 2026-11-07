@@ -20,6 +20,7 @@ from dataclasses import dataclass
 
 from fil.exercises.model import LISTEN, PICTURE, WORD_MEANING, Bilingual, Exercise, Option
 from fil.exercises.text import first_distinct, in_one_style, meanings_overlap, same_spelling, stable_order
+from fil.nouns.categories import is_symbolic
 
 OPTION_COUNT = 4
 # Categories (data/noun_categories.json) whose pictures can pass for each other: sky, weather, water and time
@@ -47,8 +48,11 @@ class Word:
 
 
 def picture_exercises(words: Sequence[Word], synonyms: Collection[frozenset[str]] = ()) -> list[Exercise]:
-    """For each pictured word: its picture, and its Arabic word among three others pictured too."""
-    pictured = [word for word in words if word.picture]
+    """For each word pictured as itself: its picture, and its Arabic word among three others pictured too.
+
+    A symbol (scales for justice) is left out: it would ask the reader to guess the symbol, and a book
+    drawn for knowledge would pass for the book."""
+    pictured = [word for word in words if word.picture and not is_symbolic(word.category)]
     return [exercise for exercise in (_picture_exercise(word, pictured, synonyms) for word in pictured) if exercise]
 
 

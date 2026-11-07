@@ -1,10 +1,11 @@
 """Which category each noun lemma belongs to, and whether a picture can show it.
 
 Every lemma gets one category from a fixed list (docs/NOUNS-PLAN.md, "Categories and
-pictures"); a learner browses nouns by it. `is_picturable` marks the concrete things a
-small flat icon can show — fruit, animals, body parts, sky, objects, and people as plain
-faceless silhouettes — and never God, a prophet, or the unseen: the content policy is decided
-here, once, so no picture can be attached to a lemma that is not marked picturable.
+pictures"); a learner browses nouns by it. `is_picturable` marks what a small flat icon can
+show — fruit, animals, body parts, sky, objects, people as plain faceless silhouettes, and an
+abstract noun through a symbol a reader connects with it (scales for justice) — and never God,
+a prophet, death or killing: the content policy is decided here, once, so no picture can be
+attached to a lemma that is not marked picturable.
 
 Pure: parsing and validation only; the file is read at the edge.
 """
@@ -39,18 +40,33 @@ LemmaKey = tuple[str, str]   # (lemma, root): three lemmas share their spelling 
 # (owner, 2026-11-05: "narod", "ljudi", "dan", "rob" are not abstract). Owner, 2026-11-06:
 # people, heads and faces only as plain silhouettes without facial features (no eyes, mouth or
 # expression); a body part that is the noun itself (eye, ear, tongue) is drawn as that part.
-NEVER_PICTURED = frozenset({"faith_hereafter", "qualities_feelings", "abstract", "numbers_quantities"})
+NEVER_PICTURED = frozenset({"faith_hereafter"})
 
-# The few sacred things the owner allows (2026-11-06) as plain silhouettes in our greens despite
-# their category: an angel only as wings and light, never a figure or a face. (A mosque, a
-# miḥrāb and statues are places and objects, so their categories already allow them; the Quran as
-# a closed book and the Kaaba as a plain cube are allowed too, but neither is a catalogued noun.)
-SILHOUETTES_OF_THE_SACRED: frozenset[LemmaKey] = frozenset({("مَلَك", "ملك")})
+# Owner, 2026-11-07: abstract nouns, feelings and quantities may be pictured by a symbol a reader
+# connects with the meaning (scales for justice, a broken heart for grief, a figure carrying a load
+# for a burden); a noun no symbol shows clearly gets none. A symbol is not a drawing of the thing,
+# so a picture question never asks it (fil.exercises.vocabulary).
+SYMBOLIC = frozenset({"qualities_feelings", "abstract", "numbers_quantities"})
 
-# Never pictured, whatever their category or an entry says: God, His Throne, and the prophets.
+# The few sacred things the owner allows as plain symbols in our greens despite their category:
+# an angel only as wings and light, never a figure or a face (2026-11-06); and (2026-11-07) worship,
+# Paradise, the unseen and God's acts only through objects, places and their effects, never a figure
+# standing for a person beyond a faceless worshipper — a garden for Paradise, a prostrating
+# silhouette for prayer, open palms for supplication, a curtain for the unseen, a compass for the
+# qiblah, a charity box for alms, a lit path to a star for guidance. (A mosque, a miḥrāb and statues
+# are places and objects, so their categories already allow them; the Kaaba itself is never drawn.)
+SYMBOLS_OF_THE_SACRED: frozenset[LemmaKey] = frozenset({
+    ("مَلَك", "ملك"), ("جَنَّة", "جنن"), ("صَلاة", "صلو"), ("دُعاء", "دعو"),
+    ("غَيْب", "غيب"), ("قِبْلَة", "قبل"), ("صَدَقَة", "صدق"), ("هُدًى", "هدي"),
+})
+
+# Never pictured, whatever their category or an entry says: God, His Throne, and the prophets;
+# and (owner, 2026-11-07) the soul, death, killing and war, which no symbol may show either.
 NEVER_PICTURED_LEMMAS: frozenset[LemmaKey] = frozenset({
     ("رَبّ", "ربب"), ("إِلٰه", "أله"), ("عَرْش", "عرش"), ("كُرْسِيّ", "كرس"),
     ("نَبِيّ", "نبأ"), ("نُبُوَّة", "نبأ"), ("رَسُول", "رسل"), ("مُرْسَل", "رسل"),
+    ("نَفْس", "نفس"), ("رُوح", "روح"), ("مَوْت", "موت"), ("قَتْل", "قتل"), ("قِتال", "قتل"),
+    ("حَرْب", "حرب"), ("قِصاص", "قصص"),
 })
 
 
@@ -58,7 +74,12 @@ def is_never_pictured(category: str, key: LemmaKey) -> bool:
     """The content policy: whether no picture may ever show this lemma."""
     if key in NEVER_PICTURED_LEMMAS:
         return True
-    return category in NEVER_PICTURED and key not in SILHOUETTES_OF_THE_SACRED
+    return category in NEVER_PICTURED and key not in SYMBOLS_OF_THE_SACRED
+
+
+def is_symbolic(category: str | None) -> bool:
+    """Whether a picture of a noun of this category can only be a symbol of it, not the thing itself."""
+    return category in SYMBOLIC or category in NEVER_PICTURED
 
 
 @dataclass(frozen=True)

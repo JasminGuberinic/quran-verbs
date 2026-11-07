@@ -1,7 +1,7 @@
 """Which emoji pictures which noun: the manifest of noun pictures.
 
 A picturable noun (fil.nouns.categories) is shown by one open-licence emoji, recoloured
-into our greens (fil.nouns.palette). For each noun a reviewer compared the same emoji from
+into our greens (fil.nouns.palette), or by our own drawing where no emoji fits. For each noun a reviewer compared the same emoji from
 two sets and chose the more recognisable — or neither, when neither shows the noun
 clearly; such a noun gets no picture rather than a misleading one. The manifest records
 the choice, the set it came from and the original codepoint, so every shipped file can be
@@ -34,8 +34,9 @@ OPENMOJI = PictureSource(name="openmoji", title="OpenMoji", url="https://openmoj
                          licence="CC BY-SA 4.0", licence_url="https://creativecommons.org/licenses/by-sa/4.0/")
 TWEMOJI = PictureSource(name="twemoji", title="Twemoji", url="https://github.com/jdecked/twemoji",
                         licence="CC BY 4.0", licence_url="https://creativecommons.org/licenses/by/4.0/")
-# Drawn by hand in our palette for the few picturable nouns no emoji set shows correctly
-# (fig, river, staff, sky). Ours, so they owe no credit and are never regenerated.
+# Drawn by hand in our palette where no emoji shows the noun correctly (fig, river, sky, faceless
+# people, and symbols such as a figure carrying a load for a burden). Ours, so they owe no licence and
+# are never regenerated; the credit only says which pictures are ours (fil.pages.picture_credits).
 OWN_DRAWING = PictureSource(name="fil", title="Fiʿl", url="https://jasminguberinic.github.io/quran-verbs/",
                             licence="own drawing", licence_url="")
 CREDITED: tuple[PictureSource, ...] = (OPENMOJI, TWEMOJI)

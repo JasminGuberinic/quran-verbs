@@ -202,7 +202,9 @@ as the site joins them (`fil.study.words_of`):
   separate files, only collected alongside it).
 - How we comply: every page that shows a picture carries the credit line of
   `fil.pages.picture_credits` — set, author, licence link, "recoloured" — naming only the
-  sets that page uses. Pages without pictures do not carry it.
+  sets that page uses. Pages without pictures do not carry it. The other noun pictures
+  (`"source": "fil"` in the manifest) are the site's own drawings: a page that shows them
+  beside emoji says so in the same line; a page showing only own drawings owes no credit.
 
 ## Synthetic voice: tts_arabic
 

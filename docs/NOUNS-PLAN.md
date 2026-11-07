@@ -55,7 +55,14 @@ other candidate is held back or refused with a recorded reason (fil.adjectives.s
   životinje · dijelovi tijela · priroda i nebo · voda i more · kuća i predmeti ·
   odjeća · ljudi i porodica · vrijeme · mjesta · brojevi i količine · vjera i ahiret ·
   osobine i osjećanja · apstraktno. Browse by category in the app.
-- **Pictures only for concrete things** (fruit, animals, body parts, nature, objects).
+- **Pictures for concrete things** (fruit, animals, body parts, nature, objects), and since
+  2026-11-07 (owner) **symbols for abstract nouns** a reader connects with the meaning: scales
+  for justice, a broken heart for grief, a figure carrying a load for a burden, a seed growing
+  into a tree for creation, rain on dry ground for mercy (God's acts only by their effect, never
+  God or His names). A symbol is never asked in a picture question (`is_symbolic`). Never the
+  soul, death, killing or war, which `NEVER_PICTURED_LEMMAS` bans outright; worship, Paradise and
+  the unseen only through objects and places (`SYMBOLS_OF_THE_SACRED`: prayer mat and a faceless
+  prostrating silhouette, a garden, open palms, a curtain, a compass for the qiblah).
   Content policy (owner, 2026-11-06): people, heads and faces only as plain faceless
   silhouettes (no eyes, mouth or expression; a chin as a profile); a body part that is the noun
   itself (eye, ear, tongue) as that part; nothing immodest. The sacred only as plain silhouettes:

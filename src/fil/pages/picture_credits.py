@@ -2,31 +2,37 @@
 
 The pictures are emoji recoloured from OpenMoji (CC BY-SA 4.0) and Twemoji (CC BY 4.0);
 both licences ask for the author, the licence and a note that the work was changed. The
-credit goes only on pages that show a picture, naming only the sets that page uses.
-Like the other credits it stays in English, word for word, in every language.
-
-Usage when a noun page is rendered (the noun pages are not built yet):
-    credit = picture_credit(sources_used(pictures_on_the_page))
-    footer_lines = [*text["footer"], credit] if credit else text["footer"]
+credit goes only on pages that show a licensed picture, naming only the sets that page uses.
+The rest of the pictures are the site's own drawings, which owe nothing; when a page shows
+both, the line says so, so it never claims an own drawing for a set. Like the other credits it
+stays in English, word for word, in every language.
 """
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Iterable, Sequence
 from html import escape
 
-from fil.nouns.pictures import OPENMOJI, TWEMOJI, PictureSource
+from fil.nouns.pictures import OPENMOJI, OWN_DRAWING, TWEMOJI, NounPicture, PictureSource, sources_used
 
 _AUTHORS = {OPENMOJI.name: "the open-source emoji and icon project",
             TWEMOJI.name: "© Twitter and the jdecked/twemoji contributors"}
+OWN_DRAWINGS_NOTE = "The other pictures are the site's own drawings."
 
 
-def picture_credit(sources: Sequence[PictureSource]) -> str:
-    """One footer line crediting `sources`, or "" when the page shows no picture."""
+def pictures_credit(pictures: Iterable[NounPicture]) -> str:
+    """The footer line owed for the pictures a page shows, or "" when none of them is licensed."""
+    shown = list(pictures)
+    return picture_credit(sources_used(shown), with_own_drawings=any(picture.source == OWN_DRAWING for picture in shown))
+
+
+def picture_credit(sources: Sequence[PictureSource], *, with_own_drawings: bool = False) -> str:
+    """One footer line crediting `sources`, or "" when the page shows no licensed picture."""
     if not sources:
         return ""
     credited = "; ".join(_credit(source) for source in sources)
-    return f"<b>Pictures.</b> {credited} — recoloured."
+    own = f" {OWN_DRAWINGS_NOTE}" if with_own_drawings else ""
+    return f"<b>Pictures.</b> Emoji from {credited} — recoloured.{own}"
 
 
 def _credit(source: PictureSource) -> str:

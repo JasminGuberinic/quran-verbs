@@ -6,15 +6,17 @@ inert SVG in our palette only, and is small — no picture reaches a learner oth
 
 from __future__ import annotations
 
+from dataclasses import replace
+
 import pytest
 
 from fil.noun_pictures import load_categories, load_pictures
-from fil.nouns.categories import (CATEGORIES, NEVER_PICTURED_LEMMAS, NounCategoryFormatError, is_never_pictured,
-                                  parse_categories, picturable)
+from fil.nouns.categories import (CATEGORIES, NEVER_PICTURED_LEMMAS, SYMBOLS_OF_THE_SACRED, NounCategoryFormatError,
+                                  is_never_pictured, is_symbolic, parse_categories, picturable)
 from fil.nouns.palette import SITE_PALETTE, Palette, fill_colours, lightness, normalised, recolour, tone_map
 from fil.nouns.picture_gate import MAX_BYTES, minified, picture_problems
-from fil.nouns.pictures import OPENMOJI, TWEMOJI, PictureManifestError, parse_manifest, shown, sources_used
-from fil.pages.picture_credits import picture_credit
+from fil.nouns.pictures import OPENMOJI, OWN_DRAWING, TWEMOJI, PictureManifestError, parse_manifest, shown, sources_used
+from fil.pages.picture_credits import picture_credit, pictures_credit
 from fil.resources import NOUN_PICTURES_DIR
 
 PALETTE = Palette(light="#cccccc", mid="#888888", dark="#111111")
@@ -109,7 +111,7 @@ def test_categories_parse_and_index_by_lemma_and_root():
 
 
 @pytest.mark.parametrize("change", [{"category": "fruit"}, {"picturable": "yes"}, {"gloss_en": " "},
-                                    {"category": "abstract"}])
+                                    {"category": "faith_hereafter"}])
 def test_a_bad_category_entry_fails_fast(change):
     with pytest.raises(NounCategoryFormatError):
         parse_categories([{**CATEGORY, **change}])
@@ -126,11 +128,11 @@ def test_a_prophet_is_never_pictured_even_as_a_silhouette_of_a_person():
         parse_categories([prophet])
 
 
-def test_an_angel_may_be_pictured_as_a_silhouette_though_the_rest_of_faith_may_not():
+def test_an_angel_may_be_pictured_as_a_symbol_though_the_rest_of_faith_may_not():
     angel = {"lemma": "مَلَك", "root": "ملك", "gloss_en": "angel", "category": "faith_hereafter", "picturable": True}
     assert parse_categories([angel])[("مَلَك", "ملك")].is_picturable
     with pytest.raises(NounCategoryFormatError):
-        parse_categories([{**angel, "lemma": "جَنَّة", "root": "جنن", "gloss_en": "garden"}])
+        parse_categories([{**angel, "lemma": "عَذاب", "root": "عذب", "gloss_en": "punishment"}])
 
 
 def test_every_catalogued_lemma_has_a_known_category_and_the_policy_holds():
@@ -139,6 +141,26 @@ def test_every_catalogued_lemma_has_a_known_category_and_the_policy_holds():
     assert {entry.category for entry in entries.values()} == set(CATEGORIES)
     assert not any(is_never_pictured(entry.category, entry.key) for entry in picturable(entries.values()))
     assert NEVER_PICTURED_LEMMAS <= set(entries)   # a typo would silently lift the ban
+    assert SYMBOLS_OF_THE_SACRED <= set(entries)   # ... or silently refuse a symbol the owner allowed
+
+
+def test_an_abstract_noun_may_be_pictured_by_a_symbol():
+    justice = {**CATEGORY, "gloss_en": "justice", "category": "abstract"}
+    assert parse_categories([justice])[(CATEGORY["lemma"], CATEGORY["root"])].is_picturable
+    assert is_symbolic("abstract") and is_symbolic("qualities_feelings") and is_symbolic("faith_hereafter")
+    assert not is_symbolic("animals") and not is_symbolic(None)
+
+
+@pytest.mark.parametrize("gloss", ["soul", "spirit", "death", "killing", "fighting", "war", "retaliation"])
+def test_no_symbol_ever_shows_the_soul_death_killing_or_war(gloss):
+    found = [entry for entry in load_categories().values() if entry.gloss_en == gloss]
+    assert found and not any(entry.is_picturable for entry in found), gloss
+
+
+@pytest.mark.parametrize("gloss", ["justice", "patience", "trade", "prayer"])
+def test_golden_symbolic_pictures(gloss):
+    keys = {entry.key for entry in load_categories().values() if entry.gloss_en == gloss}
+    assert keys and keys <= {picture.key for picture in shown(load_pictures())}, gloss
 
 
 @pytest.mark.parametrize("lemma, is_picturable", [("عِنَب", True), ("جَبَل", True), ("يَد", True), ("وَجْه", True),
@@ -176,6 +198,15 @@ def test_the_credit_names_only_the_sets_shown_with_licence_links():
     credit = picture_credit(sources_used([picture]))
     assert 'href="https://openmoji.org"' in credit and 'href="https://creativecommons.org/licenses/by-sa/4.0/"' in credit
     assert "recoloured" in credit and "Twemoji" not in credit
+
+
+def test_a_page_showing_emoji_and_own_drawings_says_which_are_ours_and_own_drawings_alone_owe_nothing():
+    [emoji] = parse_manifest([PICTURE], parse_categories([CATEGORY]))
+    drawn = replace(emoji, source=OWN_DRAWING)
+    mixed = pictures_credit([emoji, drawn])
+    assert "OpenMoji" in mixed and mixed.endswith("The other pictures are the site's own drawings.")
+    assert "own drawings" not in pictures_credit([emoji])
+    assert pictures_credit([drawn]) == ""
 
 
 def test_both_sets_are_credited_with_their_own_licence_and_no_pictures_need_no_credit():

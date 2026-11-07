@@ -1,7 +1,7 @@
 """Verb animations: the gate every drawing passes, the rig, and how a page shows one.
 
 The last tests are the shipping gate over the real data: every animation is of a studied verb
-whose card is a plain action, is inert, uses only the two site colours and is small.
+whose card may be drawn, is inert, uses only the two site colours and is small.
 """
 
 from __future__ import annotations
@@ -52,13 +52,16 @@ def test_a_rig_the_expander_does_not_understand_is_refused():
 
 # ---------------------------------------------------------------- the gate
 
-@pytest.mark.parametrize("meaning", ["to create", "to send down, to reveal", "to forgive", "to pray", "to prostrate oneself",
-                                     "to worship", "to reward", "to take the soul", "to bow (in prayer)", "to recite"])
-def test_what_the_card_says_about_god_or_worship_is_never_drawn(meaning):
+@pytest.mark.parametrize("meaning", ["to make God's partners", "to be Lord", "to kill", "to die", "to slaughter",
+                                     "to believe", "to deny", "to destroy", "to stone", "to perish"])
+def test_what_the_card_says_about_god_death_or_belief_is_never_drawn(meaning):
     assert gate.undrawable_word(meaning)
 
 
-@pytest.mark.parametrize("meaning", ["to go out, to leave", "to sit", "to eat", "to give", "to push, to repel, to pay"])
+@pytest.mark.parametrize("meaning", ["to go out, to leave", "to sit", "to eat", "to give", "to push, to repel, to pay",
+                                     "to know", "to fear", "to love", "to think", "to fight", "to pray",
+                                     "to prostrate oneself", "to bow (in prayer)", "to fast", "to recite",
+                                     "to create", "to send down, to reveal", "to forgive", "to guide", "to bless"])
 def test_a_plain_action_may_be_drawn(meaning):
     assert gate.undrawable_word(meaning) is None
 
@@ -84,7 +87,7 @@ def test_a_drawing_over_the_size_limit_is_refused():
 
 
 def test_the_list_is_checked_against_the_studied_verbs_and_the_files():
-    meanings = {"a_1": "to sit", "b_1": "to create"}
+    meanings = {"a_1": "to sit", "b_1": "to die"}
     manifest = {"a_1": {"file": "one", "why": "sits"}, "b_1": {"file": "two", "why": "makes"},
                 "c_1": {"file": "three", "why": "x"}, "a_2": {"file": "one", "why": ""}}
     problems = gate.manifest_problems(manifest, {**meanings, "a_2": "to sit"}, ["one", "orphan"])
@@ -112,7 +115,7 @@ def test_loading_lists_every_problem_at_once(tmp_path):
 
 def test_every_shipped_animation_passes_the_gate_and_is_small():
     animations = load_animations()
-    assert 100 <= len(animations) <= 160
+    assert 100 <= len(animations) <= 600
     for animation in animations.values():
         assert gate.svg_problems(animation.svg) == [], animation.key
         assert len(animation.svg.encode("utf-8")) <= gate.MAX_BYTES, animation.key

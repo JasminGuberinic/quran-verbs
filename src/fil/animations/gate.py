@@ -1,8 +1,8 @@
 """The gate every verb animation passes before it ships.
 
 An animation is a picture of what a verb means, so it must (1) belong to a studied verb whose
-meaning is a plain, drawable action — never God's acts, worship, the sacred or the unseen, which
-the site does not draw; (2) be inert (no script, text, image or link), (3) use only the two
+meaning may be drawn — never God Himself, killing or death; His acts only by their effect,
+worship and feelings only by a faceless figure's posture; (2) be inert (no script, text, image or link), (3) use only the two
 colour tokens of the site, and (4) stay small.
 
 Pure: text in, problems out.
@@ -29,13 +29,13 @@ _MARKUP_NEVER = {
 _PAINT = re.compile(r"\b(?:fill|stroke)\s*[:=]\s*[\"']?(?P<value>[^;}\"'\s>/]+(?:\([^)]*\))?)")
 _KEYFRAMES = re.compile(r"@keyframes\s+([\w-]+)")
 
-# What the studied card says, in English, that makes a verb undrawable: the Creator's acts and
-# attributes, worship, the sacred and unseen. Matched as word beginnings, so "prayer" is "pray".
-UNDRAWABLE_MEANINGS = ("god", "allah", "lord", "creat", "reveal", "send down", "forgiv", "pardon", "reward", "punish",
-                       "pray", "prostrat", "worship", "bow", "glorif", "praise", "throne", "prophet", "messenger",
-                       "angel", "soul", "spirit", "guide", "mercy", "bless", "remember", "recite", "fast", "pilgrim",
-                       "send", "kill", "fight", "slaughter", "massacre", "strike", "stone", "crucif", "destroy", "perish", "die", "death",
-                       "believ", "know", "fear", "want", "deny", "think", "doubt", "love", "hate", "disbelieve")
+# What the studied card says, in English, that makes a verb undrawable: God Himself (never
+# pictured in any form), killing and death, and belief itself, which has no honest picture.
+# Everything else may be drawn symbolically and faceless: worship by a figure on a prayer mat,
+# God's acts only by their effect (rain falling, a seed sprouting), feelings by posture.
+# Matched as word beginnings, so "lordship" is "lord".
+UNDRAWABLE_MEANINGS = ("god", "allah", "lord", "throne", "kill", "slaughter", "massacre", "stone", "crucif", "destroy",
+                       "perish", "die", "death", "believ", "deny", "disbelieve")
 _UNDRAWABLE = re.compile(r"\b(?:" + "|".join(map(re.escape, UNDRAWABLE_MEANINGS)) + ")", re.I)
 
 

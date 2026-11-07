@@ -33,7 +33,9 @@ _KEYFRAMES = re.compile(r"@keyframes\s+([\w-]+)")
 # attributes, worship, the sacred and unseen. Matched as word beginnings, so "prayer" is "pray".
 UNDRAWABLE_MEANINGS = ("god", "allah", "lord", "creat", "reveal", "send down", "forgiv", "pardon", "reward", "punish",
                        "pray", "prostrat", "worship", "bow", "glorif", "praise", "throne", "prophet", "messenger",
-                       "angel", "soul", "spirit", "guide", "mercy", "bless", "remember", "recite", "fast", "pilgrim")
+                       "angel", "soul", "spirit", "guide", "mercy", "bless", "remember", "recite", "fast", "pilgrim",
+                       "send", "kill", "fight", "slaughter", "massacre", "strike", "stone", "crucif", "destroy", "perish", "die", "death",
+                       "believ", "know", "fear", "want", "deny", "think", "doubt", "love", "hate", "disbelieve")
 _UNDRAWABLE = re.compile(r"\b(?:" + "|".join(map(re.escape, UNDRAWABLE_MEANINGS)) + ")", re.I)
 
 

@@ -112,7 +112,7 @@ def test_loading_lists_every_problem_at_once(tmp_path):
 
 def test_every_shipped_animation_passes_the_gate_and_is_small():
     animations = load_animations()
-    assert 15 <= len(animations) <= 20
+    assert 100 <= len(animations) <= 160
     for animation in animations.values():
         assert gate.svg_problems(animation.svg) == [], animation.key
         assert len(animation.svg.encode("utf-8")) <= gate.MAX_BYTES, animation.key

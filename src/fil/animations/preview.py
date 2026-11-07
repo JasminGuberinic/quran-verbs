@@ -32,7 +32,7 @@ s.classList.add("off");void s.getBoundingClientRect();s.classList.remove("off")}
 def gallery(animations: Iterable[VerbAnimation], meanings_en: dict[str, str]) -> str:
     cards = "".join(_card(animation, meanings_en[animation.key]) for animation in animations)
     return (f'<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f"<title>Verb animations</title><style>{_STYLE}</style><h1>Verb animations (pilot): tap one to replay</h1>"
+            f"<title>Verb animations</title><style>{_STYLE}</style><h1>Verb animations: tap one to replay</h1>"
             f'<div class="grid">{cards}</div><script>{_REPLAY}</script>')
 
 

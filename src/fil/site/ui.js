@@ -239,7 +239,7 @@
   // every offered language (fil.languages.ACTIVE); a language added later reads English until it is.
   const FORMS = {
     bs: {
-      allForms: (n) => `Svi oblici u Kur'anu (${n})`, formsNote: "Svaka riječ kako stoji u Kur'anu, najčešća prva. Dok oblik nema AI prijevod, prikazana je njegova gramatika.",
+      allForms: (n) => `Svi oblici u Kur'anu (${n})`, formsNote: "Svaka riječ kako stoji u Kur'anu, najčešća prva: njen AI prijevod i, ispod njega, gramatika (vrijeme, lice, broj, objekat).",
       firstAyah: "prvi put", passive: "pasiv", object: (p) => `objekat: ${p}`,
       moods: { indicative: "indikativ", subjunctive: "subjunktiv", jussive: "jusiv" },
       links: { islamBa: "Prijevod na islam.ba", wordByWord: "Riječ po riječ: quranwbw.com" },
@@ -247,7 +247,7 @@
       showAll: (n) => `Prikaži sve ajete (${n})`, hideAll: "Sakrij ajete", showMore: "Prikaži još", loading: "Učitavanje…", loadFailed: "Ajeti se nisu mogli učitati.",
     },
     en: {
-      allForms: (n) => `Every form in the Quran (${n})`, formsNote: "Each word as it stands in the Quran, the most frequent first. Until a form has its AI gloss, its grammar is shown.",
+      allForms: (n) => `Every form in the Quran (${n})`, formsNote: "Each word as it stands in the Quran, the most frequent first: its AI gloss and, beneath it, its grammar (tense, person, number, object).",
       firstAyah: "first in", passive: "passive", object: (p) => `object: ${p}`,
       moods: { indicative: "indicative", subjunctive: "subjunctive", jussive: "jussive" },
       links: { islamBa: "Bosnian translation on islam.ba", wordByWord: "Word by word: quranwbw.com" },
@@ -255,7 +255,7 @@
       showAll: (n) => `Show all ayat (${n})`, hideAll: "Hide the ayat", showMore: "Show more", loading: "Loading…", loadFailed: "The ayat could not be loaded.",
     },
     tr: {
-      allForms: (n) => `Kur'an'daki bütün biçimler (${n})`, formsNote: "Her kelime Kur'an'da geçtiği gibi, en sık geçen önce. Bir biçimin yapay zekâ anlamı henüz yoksa dil bilgisi gösterilir.",
+      allForms: (n) => `Kur'an'daki bütün biçimler (${n})`, formsNote: "Her kelime Kur'an'da geçtiği gibi, en sık geçen önce: yapay zekâ anlamı ve altında dil bilgisi (zaman, şahıs, sayı, nesne).",
       firstAyah: "ilk geçtiği yer", passive: "edilgen", object: (p) => `nesne: ${p}`,
       moods: { indicative: "merfû", subjunctive: "mansûb", jussive: "meczûm" },
       links: { islamBa: "islam.ba'da Boşnakça meal", wordByWord: "Kelime kelime: quranwbw.com" },
@@ -263,7 +263,7 @@
       showAll: (n) => `Bütün ayetleri göster (${n})`, hideAll: "Ayetleri gizle", showMore: "Daha fazla", loading: "Yükleniyor…", loadFailed: "Ayetler yüklenemedi.",
     },
     fr: {
-      allForms: (n) => `Toutes les formes dans le Coran (${n})`, formsNote: "Chaque mot tel qu'il figure dans le Coran, le plus fréquent d'abord. Tant qu'une forme n'a pas sa glose IA, sa grammaire est affichée.",
+      allForms: (n) => `Toutes les formes dans le Coran (${n})`, formsNote: "Chaque mot tel qu'il figure dans le Coran, le plus fréquent d'abord : sa glose IA et, en dessous, sa grammaire (temps, personne, nombre, complément).",
       firstAyah: "première fois", passive: "passif", object: (p) => `objet : ${p}`,
       moods: { indicative: "indicatif", subjunctive: "subjonctif", jussive: "apocopé" },
       links: { islamBa: "Traduction bosniaque sur islam.ba", wordByWord: "Mot à mot : quranwbw.com" },
@@ -271,7 +271,7 @@
       showAll: (n) => `Afficher tous les versets (${n})`, hideAll: "Masquer les versets", showMore: "Afficher plus", loading: "Chargement…", loadFailed: "Les versets n'ont pas pu être chargés.",
     },
     id: {
-      allForms: (n) => `Semua bentuk dalam Al-Qur'an (${n})`, formsNote: "Setiap kata sebagaimana tertulis dalam Al-Qur'an, yang paling sering lebih dulu. Selama bentuk belum punya glosa AI, tata bahasanya ditampilkan.",
+      allForms: (n) => `Semua bentuk dalam Al-Qur'an (${n})`, formsNote: "Setiap kata sebagaimana tertulis dalam Al-Qur'an, yang paling sering lebih dulu: glosa AI-nya dan, di bawahnya, tata bahasanya (kala, persona, jumlah, objek).",
       firstAyah: "pertama di", passive: "pasif", object: (p) => `objek: ${p}`,
       moods: { indicative: "marfū‘", subjunctive: "manṣūb", jussive: "majzūm" },
       links: { islamBa: "Terjemahan Bosnia di islam.ba", wordByWord: "Kata per kata: quranwbw.com" },
@@ -279,7 +279,7 @@
       showAll: (n) => `Tampilkan semua ayat (${n})`, hideAll: "Sembunyikan ayat", showMore: "Tampilkan lagi", loading: "Memuat…", loadFailed: "Ayat tidak dapat dimuat.",
     },
     ur: {
-      allForms: (n) => `قرآن میں تمام صیغے (${n})`, formsNote: "ہر لفظ جیسا قرآن میں ہے، سب سے زیادہ آنے والا پہلے۔ جب تک کسی صیغے کا AI معنی نہ ہو، اس کی گرامر دکھائی جاتی ہے۔",
+      allForms: (n) => `قرآن میں تمام صیغے (${n})`, formsNote: "ہر لفظ جیسا قرآن میں ہے، سب سے زیادہ آنے والا پہلے: اس کا AI معنی اور اس کے نیچے گرامر (زمانہ، صیغہ، عدد، مفعول)۔",
       firstAyah: "پہلی بار", passive: "مجہول", object: (p) => `مفعول: ${p}`,
       moods: { indicative: "مرفوع", subjunctive: "منصوب", jussive: "مجزوم" },
       links: { islamBa: "islam.ba پر بوسنیائی ترجمہ", wordByWord: "لفظ بہ لفظ: quranwbw.com" },
@@ -287,7 +287,7 @@
       showAll: (n) => `تمام آیات دکھائیں (${n})`, hideAll: "آیات چھپائیں", showMore: "مزید دکھائیں", loading: "لوڈ ہو رہا ہے…", loadFailed: "آیات لوڈ نہیں ہو سکیں۔",
     },
     bn: {
-      allForms: (n) => `কুরআনে সব রূপ (${n})`, formsNote: "প্রতিটি শব্দ যেভাবে কুরআনে আছে, সবচেয়ে বেশি ব্যবহৃতটি আগে। কোনো রূপের AI অর্থ না থাকা পর্যন্ত তার ব্যাকরণ দেখানো হয়।",
+      allForms: (n) => `কুরআনে সব রূপ (${n})`, formsNote: "প্রতিটি শব্দ যেভাবে কুরআনে আছে, সবচেয়ে বেশি ব্যবহৃতটি আগে: তার AI অর্থ এবং নিচে ব্যাকরণ (কাল, পুরুষ, বচন, কর্ম)।",
       firstAyah: "প্রথম", passive: "কর্মবাচ্য", object: (p) => `কর্ম: ${p}`,
       moods: { indicative: "মারফূ", subjunctive: "মানসূব", jussive: "মাজযূম" },
       links: { islamBa: "islam.ba-তে বসনীয় অনুবাদ", wordByWord: "শব্দে শব্দে: quranwbw.com" },
@@ -295,7 +295,7 @@
       showAll: (n) => `সব আয়াত দেখান (${n})`, hideAll: "আয়াত লুকান", showMore: "আরও দেখান", loading: "লোড হচ্ছে…", loadFailed: "আয়াতগুলো লোড করা যায়নি।",
     },
     fa: {
-      allForms: (n) => `همهٔ صیغه‌ها در قرآن (${n})`, formsNote: "هر واژه همان‌گونه که در قرآن آمده، پرکاربردترین نخست. تا وقتی صیغه‌ای معنای هوش مصنوعی ندارد، دستور آن نشان داده می‌شود.",
+      allForms: (n) => `همهٔ صیغه‌ها در قرآن (${n})`, formsNote: "هر واژه همان‌گونه که در قرآن آمده، پرکاربردترین نخست: معنای هوش مصنوعی آن و زیر آن دستورش (زمان، شخص، شمار، مفعول).",
       firstAyah: "نخستین بار", passive: "مجهول", object: (p) => `مفعول: ${p}`,
       moods: { indicative: "مرفوع", subjunctive: "منصوب", jussive: "مجزوم" },
       links: { islamBa: "ترجمهٔ بوسنیایی در islam.ba", wordByWord: "واژه به واژه: quranwbw.com" },

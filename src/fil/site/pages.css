@@ -100,7 +100,9 @@ button.cell.playing { background: var(--accent); color: var(--surface); border-r
 .form-play.playing::after { content: "■"; font-size: 0.45em; margin-inline-start: 4px; vertical-align: middle; }
 .attested small, .attested a { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
 .attested .grammar, .attested .form-translation { color: var(--muted); font-size: 0.9rem; }
-@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .form-translation, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+.attested .form-meaning { display: flex; flex-direction: column; gap: 1px; }
+.attested .form-meaning .grammar { font-size: 0.82rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-meaning { grid-column: 1 / -1; grid-row: 2; } }
 .all-ayat { margin-top: 18px; display: grid; gap: 12px; justify-items: start; }
 .all-ayat-list { width: 100%; }
 button.button { border: 0; font: inherit; cursor: pointer; }

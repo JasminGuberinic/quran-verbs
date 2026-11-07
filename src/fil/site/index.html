@@ -146,7 +146,9 @@ button.quran-tag.playing { background: var(--gold); color: var(--surface); }
 .form-play.playing::after { content: "■"; font-size: 0.45em; margin-inline-start: 4px; vertical-align: middle; }
 .attested small, .attested a { color: var(--muted); font-family: var(--font-data); font-size: 0.78rem; }
 .attested .grammar, .attested .form-translation { color: var(--muted); font-size: 0.88rem; }
-@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-gloss, .attested .form-translation, .attested .grammar { grid-column: 1 / -1; grid-row: 2; } }
+.attested .form-meaning { display: flex; flex-direction: column; gap: 1px; }
+.attested .form-meaning .grammar { font-size: 0.8rem; }
+@media (max-width: 520px) { .attested li { grid-template-columns: 1fr auto auto; } .attested .form-meaning { grid-column: 1 / -1; grid-row: 2; } }
 /* Contrast themes keep the pattern but paint a backplate behind every text run; drop the pattern. */
 @media (forced-colors: active) { body { background: Canvas; } }
 .all-ayat { margin-top: 16px; display: grid; gap: 12px; }
@@ -775,13 +777,18 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     return `<h4 class="forms-head">${escapeHtml(words.allForms(verb.forms.length))}</h4><p class="note">${escapeHtml(words.formsNote)}</p><ol class="attested">${rows}</ol>`;
   }
 
-  // Our own gloss first, else a word-by-word translation, else the grammar (as pages/render.py chooses).
+  // The meaning (our own gloss, else a word-by-word translation) beside the grammar, always (as pages/render.py).
   function formMeaningHtml(form) {
+    const grammar = `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
+    return `<span class="form-meaning">${formTranslationHtml(form)}${grammar}</span>`;
+  }
+
+  function formTranslationHtml(form) {
     const gloss = form.gloss?.[language] || form.gloss?.en;
     if (gloss) return `<span class="form-gloss">${escapeHtml(gloss)} <span class="ai-tag">AI</span></span>`;
     const translation = form.wordTranslation?.[language] || form.wordTranslation?.en;
     if (translation) return `<span class="form-translation">${escapeHtml(translation)}</span>`;
-    return `<span class="grammar">${escapeHtml(FilAyat.grammarLabel(form.grammar, t()))}</span>`;
+    return "";
   }
 
   // The button that fetches every ayah of the verb (ayat.js), in the reader's language or English.

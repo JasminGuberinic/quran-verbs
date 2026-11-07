@@ -247,10 +247,16 @@ def _form_word(form: dict, root: str) -> str:
 
 
 def _form_meaning(form: dict, language: Language, text: dict) -> str:
-    """Our own gloss first, else a word-by-word translation, else the grammar — which is never wrong.
+    """The form's meaning beside its grammar: a reader sees what it says and what it is.
 
-    site/index.html (attestedFormsBlock) chooses the same way.
+    The meaning is our own gloss first, else a word-by-word translation, else none — the
+    grammar, which is never wrong, is always shown. site/index.html (formMeaningHtml) does the same.
     """
+    grammar = f'<span class="grammar">{escape(grammar_label(form["grammar"], text))}</span>'
+    return f'<span class="form-meaning">{_form_translation(form, language)}{grammar}</span>'
+
+
+def _form_translation(form: dict, language: Language) -> str:
     gloss = _in_language_or_english(form.get("gloss") or {}, language.code)
     if gloss:
         shown_language, meaning = gloss
@@ -259,7 +265,7 @@ def _form_meaning(form: dict, language: Language, text: dict) -> str:
     if translation:
         shown_language, meaning = translation
         return f'<span class="form-translation"{_lang_if_other(shown_language, language)}>{escape(meaning)}</span>'
-    return f'<span class="grammar">{escape(grammar_label(form["grammar"], text))}</span>'
+    return ""
 
 
 def _in_language_or_english(meanings: dict[str, str], language: str) -> tuple[str, str] | None:

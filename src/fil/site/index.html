@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="bs">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -536,10 +536,19 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   const PLAY = '<span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></span>';
 
   let DATA = null, VERBS = [];
-  let language = new URLSearchParams(location.search).get("lang") || readStore(STORE.language, "bs");
+  let language = new URLSearchParams(location.search).get("lang") || readStore(STORE.language, "") || browserLanguage();
   let boxes = readJson(STORE.boxes);
 
   // ---------- small helpers ----------
+  // A first visit opens in the browser's language; the site shows English where it has none.
+  // Croatian, Serbian and Montenegrin readers read the Bosnian text.
+  function browserLanguage() {
+    const BOSNIAN_READERS = ["bs", "hr", "sr", "sh", "cnr"];
+    const preferred = (navigator.languages || [navigator.language || "en"]).map((tag) => tag.toLowerCase().split("-")[0]);
+    const first = preferred.find(Boolean) || "en";
+    return BOSNIAN_READERS.includes(first) ? "bs" : first;
+  }
+
   function readStore(key, fallback) { try { return localStorage.getItem(key) || fallback; } catch { return fallback; } }
   function readJson(key) { try { return JSON.parse(localStorage.getItem(key) || "{}") || {}; } catch { return {}; } }
   function writeStore(key, value) { try { localStorage.setItem(key, value); } catch {} }
@@ -1095,7 +1104,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   fetch("data.json").then((response) => response.json()).then((data) => {
     DATA = data;
     VERBS = data.verbs;
-    if (!data.languages.some((entry) => entry.code === language)) language = "bs";
+    if (!data.languages.some((entry) => entry.code === language)) language = "en";
     current = verbFromHash();
     $("loading").hidden = true;
     renderLanguagePicker();

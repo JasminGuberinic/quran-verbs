@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes taala_6-w{from{transform:rotate(-150deg)}}
+& .a .ra{transform:rotate(-95deg);animation:taala_6-w .4s ease-in-out 7 alternate both}
+@keyframes taala_6-ws{from{transform:rotate(-24deg)}}@keyframes taala_6-wt{from{transform:rotate(24deg)}}
+& .b .ll,& .b .ra{transform:rotate(24deg);animation:taala_6-ws 0.5s ease-in-out 5 alternate both}
+& .b .rl,& .b .la{transform:rotate(-24deg);animation:taala_6-wt 0.5s ease-in-out 5 alternate both}
+@keyframes taala_6-m{from{transform:translateX(-40px)}}
+& .b .fig{animation:taala_6-m 2.5s linear both}
+</style><path class="p" d="M6 61H114"/><g class="a"><rig x="34" y="44"></rig></g><g class="b" transform="matrix(-1 0 0 1 120 0)"><rig x="56" y="44"></rig></g></svg>

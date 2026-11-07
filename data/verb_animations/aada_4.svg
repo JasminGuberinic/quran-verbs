@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes aada_4-ws{from{transform:rotate(-24deg)}}@keyframes aada_4-wt{from{transform:rotate(24deg)}}
+& .ll{transform:rotate(24deg);animation:aada_4-ws 0.5s ease-in-out 5 alternate both}
+& .rl{transform:rotate(-24deg);animation:aada_4-wt 0.5s ease-in-out 5 alternate both}
+@keyframes aada_4-m{from{transform:translateX(-60px)}}
+& .fig{animation:aada_4-m 2.5s linear both}
+@keyframes aada_4-h{from,84%{transform:rotate(-80deg)}}@keyframes aada_4-o{from,88%{opacity:1}}@keyframes aada_4-i{from,88%{opacity:0}}
+& .la,& .ra{transform:rotate(0);animation:aada_4-h 3s ease-in-out both}& .hb{opacity:0;animation:aada_4-o 3s step-end both}& .tb{animation:aada_4-i 3s step-end both}& .ds{stroke-width:1.2;stroke-dasharray:2 2}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M8 41.5h28M12 42v19M32 42v19"/><path class="p ds" d="M20 28h12v12H20z"/><rect class="q tb" x="20" y="28" width="12" height="12" rx="1.5"/><g transform="matrix(-1 0 0 1 120 0)"><rig x="78" y="44"><in at="tr"><rect class="q hb" x="10" y="-16" width="12" height="12" rx="1.5"/></in></rig></g></svg>

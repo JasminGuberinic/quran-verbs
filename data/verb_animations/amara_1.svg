@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes amara_1-a{from{transform:rotate(0)}}
+& .a .ra{transform:rotate(-92deg);animation:amara_1-a .4s ease-out both}
+@keyframes amara_1-ws{from{transform:rotate(-24deg)}}@keyframes amara_1-wt{from{transform:rotate(24deg)}}
+& .c .ll,& .c .ra{transform:rotate(24deg);animation:amara_1-ws 0.5s ease-in-out 0.6s 5 alternate both}
+& .c .rl,& .c .la{transform:rotate(-24deg);animation:amara_1-wt 0.5s ease-in-out 0.6s 5 alternate both}
+@keyframes amara_1-m{from{transform:translateX(-40px)}}
+& .c .fig{animation:amara_1-m 2.5s linear 0.6s both}
+</style><path class="p" d="M6 61H114"/><g class="a"><rig x="26" y="44"/></g><g class="c"><rig x="96" y="44"/></g></svg>

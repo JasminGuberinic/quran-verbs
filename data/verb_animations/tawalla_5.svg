@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes tawalla_5-m{from{transform:translateX(0) scaleX(1)}20%{transform:translateX(0) scaleX(-1)}}@keyframes tawalla_5-v{from{opacity:0}}
+@keyframes tawalla_5-ws{from{transform:rotate(-24deg)}}@keyframes tawalla_5-wt{from{transform:rotate(24deg)}}
+& .a .ll,& .a .ra{transform:rotate(24deg);animation:tawalla_5-ws 0.5s ease-in-out 0.7s 5 alternate both}
+& .a .rl,& .a .la{transform:rotate(-24deg);animation:tawalla_5-wt 0.5s ease-in-out 0.7s 5 alternate both}
+& .a .fig{transform:translateX(-36px) scaleX(-1);animation:tawalla_5-m 3.2s linear both}
+& .v{animation:tawalla_5-v .4s ease-out 2 both}& .v2{animation-delay:.2s}
+</style><path class="p" d="M6 61H114"/><path class="p v" d="M80 14q-3 4 0 8"/><path class="p v v2" d="M74 11q-5 7 0 14"/><g class="a"><rig x="52" y="44"/></g><g transform="matrix(-1 0 0 1 120 0)"><rig x="28" y="44"/></g></svg>

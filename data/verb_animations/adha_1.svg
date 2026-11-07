@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes adha_1-w{from{transform:translateX(-30px);opacity:0}}
+& .wd{animation:adha_1-w .8s linear 4 both}& .w2{animation-delay:.3s}& .tr{transform:rotate(16deg)}
+@keyframes adha_1-ws{from{transform:rotate(-40deg)}}@keyframes adha_1-wt{from{transform:rotate(40deg)}}
+& .ll,& .ra{transform:rotate(40deg);animation:adha_1-ws 0.3s ease-in-out 5 alternate both}
+& .rl,& .la{transform:rotate(-40deg);animation:adha_1-wt 0.3s ease-in-out 5 alternate both}
+@keyframes adha_1-m{from{transform:translateX(-40px)}}
+& .fig{animation:adha_1-m 1.5s linear both}
+</style><path class="p" d="M6 61H114"/><path class="p wd" d="M100 16h14M96 30h18"/><path class="p wd w2" d="M98 42h16"/><path class="q" d="M86 61V26h8v35z"/><rig x="74" y="44"/></svg>

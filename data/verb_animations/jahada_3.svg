@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes jahada_3-m{from{transform:translate(-40px,14.3px)}}
+@keyframes jahada_3-ws{from{transform:rotate(-16deg)}}@keyframes jahada_3-wt{from{transform:rotate(16deg)}}
+& .ll{transform:rotate(16deg);animation:jahada_3-ws 0.5s ease-in-out 7 alternate both}
+& .rl{transform:rotate(-16deg);animation:jahada_3-wt 0.5s ease-in-out 7 alternate both}
+& .tr{transform:rotate(30deg)}& .ra,& .la{transform:rotate(-55deg)}& .gp{animation:jahada_3-m 3.5s linear both}
+</style><path class="p" d="M4 66L116 26"/><g class="gp"><circle class="q" cx="77" cy="31" r="9"/><rig x="56" y="30"/></g></svg>

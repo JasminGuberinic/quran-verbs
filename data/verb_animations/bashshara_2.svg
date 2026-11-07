@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes bashshara_2-ws{from{transform:rotate(-40deg)}}@keyframes bashshara_2-wt{from{transform:rotate(40deg)}}
+& .a .ll,& .a .ra{transform:rotate(40deg);animation:bashshara_2-ws 0.3s ease-in-out 5 alternate both}
+& .a .rl,& .a .la{transform:rotate(-40deg);animation:bashshara_2-wt 0.3s ease-in-out 5 alternate both}
+@keyframes bashshara_2-m{from{transform:translateX(-36px)}}
+& .a .fig{animation:bashshara_2-m 1.5s linear both}
+@keyframes bashshara_2-j{from,60%{transform:rotate(0)}}@keyframes bashshara_2-u{from,60%{transform:translateY(0)}80%{transform:translateY(-5px)}}@keyframes bashshara_2-s{from,70%{opacity:0}}
+& .b .la,& .b .ra{transform:rotate(-160deg);animation:bashshara_2-j 2.4s ease-out both}& .b .ra{transform:rotate(160deg)}& .b .fig{animation:bashshara_2-u 2.4s ease-out both}& .st{animation:bashshara_2-s 2.4s step-end both}
+</style><path class="p" d="M6 61H114"/><path class="q st" d="M98 6l2 5 5 .5-4 3 1.5 5-4.5-3-4.5 3 1.5-5-4-3 5-.5z"/><g class="a"><rig x="52" y="44"></rig></g><g class="b" transform="matrix(-1 0 0 1 120 0)"><rig x="40" y="44"></rig></g></svg>

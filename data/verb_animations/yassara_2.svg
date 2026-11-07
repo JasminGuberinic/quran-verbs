@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes yassara_2-s{from{opacity:1}}@keyframes yassara_2-r{from,30%{opacity:0}}@keyframes yassara_2-m{from,30%{transform:translate(-36px,21px)}}
+& .sp{opacity:0;animation:yassara_2-s 1s ease-in both}& .rp{animation:yassara_2-r 1.2s ease-out both}& .gp{animation:yassara_2-m 3.2s linear both}
+@keyframes yassara_2-ws{from{transform:rotate(-24deg)}}@keyframes yassara_2-wt{from{transform:rotate(24deg)}}
+& .ll,& .ra{transform:rotate(24deg);animation:yassara_2-ws 0.5s ease-in-out 1s 5 alternate both}
+& .rl,& .la{transform:rotate(-24deg);animation:yassara_2-wt 0.5s ease-in-out 1s 5 alternate both}
+</style><path class="p" d="M6 61H30M90 26h24"/><path class="p sp" d="M30 61V52h12v-9h12v-9h12v-8h24"/><path class="p rp" d="M30 61L90 26"/><g class="gp"><rig x="66" y="23"/></g></svg>

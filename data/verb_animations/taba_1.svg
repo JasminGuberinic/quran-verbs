@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes taba_1-ws{from{transform:rotate(-24deg)}}@keyframes taba_1-wt{from{transform:rotate(24deg)}}
+& .ll{transform:rotate(24deg);animation:taba_1-ws 0.5s ease-in-out 3 alternate both}
+& .rl{transform:rotate(-24deg);animation:taba_1-wt 0.5s ease-in-out 3 alternate both}
+@keyframes taba_1-m{from{transform:translate(30px,0) scaleX(-1)}50%{transform:translate(0,0) scaleX(-1)}60%{transform:translate(0,0) scaleX(1)}}@keyframes taba_1-l{from,60%{transform:rotate(0)}}@keyframes taba_1-b{from,70%{transform:rotate(0)}}
+& .fig{transform:translate(0,10px) scaleX(1);animation:taba_1-m 3s ease-in-out both}& .ll,& .rl{transform:rotate(88deg);animation:taba_1-l 3s ease-in-out both}& .tr{transform:rotate(34deg);animation:taba_1-b 3s ease-in-out both}& .la,& .ra{transform:rotate(-20deg)}
+</style><path class="p" d="M6 61H114"/><rig x="60" y="44"/></svg>

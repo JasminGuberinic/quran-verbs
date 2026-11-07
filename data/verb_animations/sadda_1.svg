@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes sadda_1-ws{from{transform:rotate(-24deg)}}@keyframes sadda_1-wt{from{transform:rotate(24deg)}}
+& .a .ll,& .a .ra{transform:rotate(24deg);animation:sadda_1-ws 0.5s ease-in-out 5 alternate both}
+& .a .rl,& .a .la{transform:rotate(-24deg);animation:sadda_1-wt 0.5s ease-in-out 5 alternate both}
+@keyframes sadda_1-m{from{transform:translateX(-36px)}}
+& .a .fig{animation:sadda_1-m 2.5s linear both}
+@keyframes sadda_1-b{from{transform:translateX(-30px)}}@keyframes sadda_1-r{from{transform:rotate(0)}}
+& .b .fig{animation:sadda_1-b 1s ease-out .6s both}& .b .ra{transform:rotate(-100deg);animation:sadda_1-r .5s ease-out 1.4s both}& .b .la{transform:rotate(-80deg);animation:sadda_1-r .5s ease-out 1.4s both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M106 61V30M106 31h9l-3 4 3 4h-9"/><g class="a"><rig x="50" y="44"/></g><g class="b" transform="matrix(-1 0 0 1 120 0)"><rig x="40" y="44"/></g></svg>

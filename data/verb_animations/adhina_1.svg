@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes adhina_1-g{from{transform:scaleX(1)}}@keyframes adhina_1-w{from{transform:rotate(-150deg)}}
+& .gt{transform:scaleX(.15);transform-origin:84px 0;animation:adhina_1-g .8s ease-in-out both}& .a .ra{transform:rotate(-100deg);animation:adhina_1-w .4s ease-in-out .6s 5 alternate both}
+@keyframes adhina_1-ws{from{transform:rotate(-24deg)}}@keyframes adhina_1-wt{from{transform:rotate(24deg)}}
+& .b .ll,& .b .ra{transform:rotate(24deg);animation:adhina_1-ws 0.5s ease-in-out 1s 5 alternate both}
+& .b .rl,& .b .la{transform:rotate(-24deg);animation:adhina_1-wt 0.5s ease-in-out 1s 5 alternate both}
+@keyframes adhina_1-m{from{transform:translateX(-56px)}}
+& .b .fig{animation:adhina_1-m 2.5s linear 1s both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M56 61V30M84 61V30"/><g class="gt"><path class="p" d="M56 36h28M56 52h28M64 34v20M76 34v20"/></g><g class="a" transform="matrix(-1 0 0 1 120 0)"><rig x="24" y="44"/></g><g class="b"><rig x="70" y="44"/></g></svg>

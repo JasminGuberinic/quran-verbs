@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes tallaqa_2-l{from{transform:translateX(4px)}}@keyframes tallaqa_2-r{from{transform:translateX(-4px)}}@keyframes tallaqa_2-m{from,30%{transform:translateX(0) scaleX(1)}40%{transform:translateX(0) scaleX(-1)}}
+& .r1{transform:translateX(-10px);animation:tallaqa_2-l 1.2s ease-in both}& .r2{transform:translateX(10px);animation:tallaqa_2-r 1.2s ease-in both}& .rg{stroke-width:2.5}& .fig{transform:translateX(-26px) scaleX(-1);animation:tallaqa_2-m 3.4s linear both}
+@keyframes tallaqa_2-ws{from{transform:rotate(-24deg)}}@keyframes tallaqa_2-wt{from{transform:rotate(24deg)}}
+& .ll{transform:rotate(24deg);animation:tallaqa_2-ws 0.5s ease-in-out 1.4s 5 alternate both}
+& .rl{transform:rotate(-24deg);animation:tallaqa_2-wt 0.5s ease-in-out 1.4s 5 alternate both}
+</style><path class="p" d="M6 61H114"/><circle class="p rg r1" cx="56" cy="8" r="5"/><circle class="p rg r2" cx="64" cy="8" r="5"/><g class="a"><rig x="48" y="44"></rig></g><g class="b" transform="matrix(-1 0 0 1 120 0)"><rig x="48" y="44"></rig></g></svg>

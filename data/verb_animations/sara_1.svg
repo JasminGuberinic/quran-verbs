@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes sara_1-ws{from{transform:rotate(-24deg)}}@keyframes sara_1-wt{from{transform:rotate(24deg)}}
+& .ll,& .ra{transform:rotate(24deg);animation:sara_1-ws 0.45s ease-in-out 7 alternate both}
+& .rl,& .la{transform:rotate(-24deg);animation:sara_1-wt 0.45s ease-in-out 7 alternate both}
+@keyframes sara_1-h{from{transform:translateX(0)}}
+& .hl{transform:translateX(-60px);animation:sara_1-h 3.15s linear both}
+</style><path class="p" d="M6 61H114"/><path class="p hl" d="M0 61q15-24 30 0q15-14 30 0q15-24 30 0q15-14 30 0q15-24 30 0q15-14 30 0"/><rig x="56" y="44"><in at="tr"><rect class="q" x="-11" y="-17" width="7" height="11" rx="1.5"/></in></rig></svg>

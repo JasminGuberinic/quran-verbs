@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes inqalaba_7-ws{from{transform:rotate(-24deg)}}@keyframes inqalaba_7-wt{from{transform:rotate(24deg)}}
+& .ll,& .ra{transform:rotate(24deg);animation:inqalaba_7-ws 0.5s ease-in-out 9 alternate both}
+& .rl,& .la{transform:rotate(-24deg);animation:inqalaba_7-wt 0.5s ease-in-out 9 alternate both}
+@keyframes inqalaba_7-m{from{transform:translateX(0) scaleX(1)}42%{transform:translateX(46px) scaleX(1)}52%{transform:translateX(46px) scaleX(-1)}}
+& .fig{transform:translateX(10px) scaleX(-1);animation:inqalaba_7-m 4.5s linear both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M100 61V22M100 22h8v39"/><rig x="34" y="44"/></svg>

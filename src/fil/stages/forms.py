@@ -88,11 +88,14 @@ def studied_forms() -> list[tuple[VerbKey, AttestedForm]]:
 def read_glosses() -> tuple[dict[str, dict[str, str]], dict[str, dict[str, str]]]:
     """(form glosses, example ayah glosses): the two places a form's gloss comes from.
 
-    Form glosses are the authored ones over the composed ones (fil compose). A form is
-    composed only while it has neither an authored nor an in-context gloss, so a composed
-    gloss never stands in front of a written one.
+    Form glosses are the authored ones over the composed ones (fil compose), language by
+    language: a composed form keeps its English and Bosnian when only its translations into
+    other languages are authored. A form is composed only while it has no complete authored
+    or in-context gloss, so a composed gloss never stands in front of a written one.
     """
-    return {**read_store(COMPOSED_FORM_GLOSSES_JSON), **read_store(FORM_GLOSSES_JSON)}, read_store(AYAH_VERB_GLOSSES_JSON)
+    composed, authored = read_store(COMPOSED_FORM_GLOSSES_JSON), read_store(FORM_GLOSSES_JSON)
+    merged = {key: {**composed.get(key, {}), **authored.get(key, {})} for key in composed.keys() | authored.keys()}
+    return merged, read_store(AYAH_VERB_GLOSSES_JSON)
 
 
 def forms_to_gloss() -> list[FormToGloss]:

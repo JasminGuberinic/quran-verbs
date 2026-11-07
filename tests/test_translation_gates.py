@@ -102,9 +102,9 @@ def _problems(page: Path) -> list[str]:
 
 
 def _folder_language(page: Path) -> str:
-    """The language a page is written in: its first folder; the app's own page opens in Bosnian."""
+    """The language a page is written in: its first folder; the app's own page is declared English."""
     folder = page.relative_to(PAGES_DIR).parts[0]
-    return folder if folder in {language.code for language in LANGUAGES} else "bs"
+    return folder if folder in {language.code for language in LANGUAGES} else "en"
 
 
 def _pages() -> Iterator[Path]:

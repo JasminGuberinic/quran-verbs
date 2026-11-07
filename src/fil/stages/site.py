@@ -45,12 +45,13 @@ from fil.resources import (AYAH_VERB_GLOSSES_JSON, BUILD_DIR, COMPOSED_AYAH_GLOS
                            QURANHIVE_WORD_AUDIO, RECITATION_CACHE, SITE_DIR, SPEECH_CACHE)
 from fil.site_audio import AudioSink, EmbeddedAudio
 from fil.speech import SpeechLibrary, TtsArabicVoice
+from fil.animations.library import animation_of
 from fil.stages import forms
 from fil.study import AyahExample, QuranWord
 from fil.word_translations import NoWordTranslations, WordTranslations
 
 _TEMPLATE = Path(__file__).resolve().parents[1] / "site" / "index.html"
-APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js", "player.js", "exercises.js", "translation.js")
+APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js", "player.js", "exercises.js", "translation.js", "animation.js")
 _COMPRESSED = BUILD_DIR / "compressed-cache"
 _REVIEW = BUILD_DIR / "site-review.txt"
 
@@ -214,6 +215,7 @@ def _verb_view(meaning, summary, rank: int, total: int, corpus: Corpus, sound: S
         "share": round(summary.occurrence_count / total * 100, 2),
         "meaning": dict(meaning.glosses),
         "lemmaSpoken": sound.spoken(detail.lemma),
+        "animation": animation_of({"root": detail.root, "form": detail.form}),
         "principal": _principal(cells),
         "nouns": {kind: {"lemma": noun.lemma, "count": noun.count, "spoken": sound.spoken(noun.lemma)}
                   for kind, noun in corpus.nouns.get(verb, {}).items()},

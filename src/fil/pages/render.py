@@ -18,7 +18,7 @@ from html import escape
 
 from fil.ayah_links import ayah_links
 from fil.languages import LANGUAGES, Language
-from fil.pages import indexing, pwa, seo, untranslated
+from fil.pages import animation_render, indexing, pwa, seo, untranslated
 from fil.pages.pwa import PWA_SCRIPT
 from fil.pages.interface_text import fill
 from fil.recitation import AYAH_STREAM, is_streamed
@@ -72,14 +72,15 @@ class PublishedVerb:
 
 def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "", *,
               published: Collection[str] = frozenset(), picture_credit: str = "", adjectives_of_root: str = "", similar_words: str = "",
-              practice: str = "", root_slug: str | None = None) -> str:
+              practice: str = "", root_slug: str | None = None, animation: str = "") -> str:
     """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render);
     `adjectives_of_root`: the same for the studied adjectives (fil.pages.adjective_render);
     `similar_words`: the section linking the near-synonym groups the verb belongs to (fil.pages.nuance_render);
     `published`: the sections beyond the verbs whose pages are published (NOUNS, …), so the top bar leads to them;
     `picture_credit`: the footer line owed for the pictures the nouns' section shows;
     `practice`: the "Vježbaj ovaj glagol" link to the verb's exercises (fil.pages.exercise_render), or "";
-    `root_slug`: the page of the verb's root (fil.pages.root_render), which its root letters link to."""
+    `root_slug`: the page of the verb's root (fil.pages.root_render), which its root letters link to;
+    `animation`: the verb's shipped drawing (fil.animations), or "" — it sits in the hero and the footer says it is ours."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
     card = verb.card
@@ -92,7 +93,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
     body = "".join((
         top_bar(text, root, language, lambda code: seo.verb_path(code, verb.slug), section=VERBS, published=published),
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article>',
-        _hero(card, meaning, language, text, root, root_slug),
+        _hero(card, meaning, language, text, root, root_slug, animation),
         _main_forms(card, text, root),
         _conjugation(card, text, root),
         _ayat(card, language, text, root),
@@ -103,7 +104,8 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         practice,
         _app_link(card, language, text, root),
         "</article></main>",
-        _footer(text, picture_credit),
+        animation_render.replay_script(animation, root),
+        _footer(text, animation_render.credit_with(picture_credit, animation)),
     ))
     head = _head(title=title, description=description, path=path, root=root,
                  indexed_in=verb.indexed_languages, language=language.code,
@@ -133,7 +135,7 @@ def audio_link(reference: str | None, root: str) -> str | None:
     return root + reference
 
 
-def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, root_slug: str | None) -> str:
+def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, root_slug: str | None, animation: str = "") -> str:
     shown_in = meaning_language(card, language.code)
     english = (f'<span class="meaning-en" lang="en" dir="ltr">{escape(card["meaning"][_ENGLISH])}</span>'
                if shown_in != _ENGLISH else "")
@@ -145,7 +147,7 @@ def _hero(card: dict, meaning: str, language: Language, text: dict, root: str, r
             f'<h1><span class="ar lemma" lang="ar" dir="rtl">{card["lemma"]}</span>'
             f'{_play(card.get("lemmaSpoken"), root, text["listen"])}'
             f'<span class="meaning" lang="{shown_in}">{escape(meaning)}</span>{english}</h1>'
-            f'<p class="stats">{stats}</p></header>')
+            f'{animation_render.animation_block(animation)}<p class="stats">{stats}</p></header>')
 
 
 def _main_forms(card: dict, text: dict, root: str) -> str:

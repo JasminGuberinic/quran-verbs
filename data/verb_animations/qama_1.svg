@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes qm-f{from{transform:translateY(13px)}}
+@keyframes qm-l{from{transform:rotate(-88deg)}}
+@keyframes qm-a{from{transform:rotate(-30deg)}}
+& .fig{animation:qm-f 1.2s ease-in-out both}
+& .ll,& .rl{animation:qm-l 1.2s ease-in-out both}
+& .la,& .ra{animation:qm-a 1.2s ease-in-out both}
+</style><path class="p" d="M6 61H114M46 56h26"/><rig x="58" y="44"/></svg>

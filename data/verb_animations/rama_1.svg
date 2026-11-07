@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes rm-a{from{transform:rotate(60deg)}}
+@keyframes rm-x{from{transform:translateX(-70px)}}
+@keyframes rm-y{from{transform:translateY(-36px)}40%{transform:translateY(-46px);animation-timing-function:ease-in}}
+& .ra{transform:rotate(-135deg);animation:rm-a .6s ease-out both}
+& .sx{animation:rm-x 1.1s linear .4s both}
+& .sy{animation:rm-y 1.1s ease-out .4s both}
+</style><path class="p" d="M6 61H114"/><g class="sx"><g class="sy"><circle class="q" cx="104" cy="56" r="3.6"/></g></g><rig x="24" y="44"/></svg>

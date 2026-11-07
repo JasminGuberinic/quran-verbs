@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes sr-s{from{transform:rotate(-55deg)}}
+@keyframes sr-t{from{transform:rotate(55deg)}}
+@keyframes sr-m{from{transform:translateX(-60px)}}
+& .ll,& .ra{transform:rotate(55deg);animation:sr-s .25s ease-in-out 7 alternate both}
+& .rl,& .la{transform:rotate(-55deg);animation:sr-t .25s ease-in-out 7 alternate both}
+& .tr{transform:rotate(-12deg)}
+& .fig{animation:sr-m 1.75s ease-out both}
+</style><path class="p" d="M6 61H114M10 28h14M4 38h14"/><rig x="70" y="44"/></svg>

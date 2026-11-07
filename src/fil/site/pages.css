@@ -194,6 +194,10 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 }
 @media (forced-colors: active) { .form-play::before, .ayah mark[data-audio]::before, button.cell::before { background: ButtonText; } }
 
+/* ---------- verb animations ---------- */
+.verb-anim { background: var(--accent-soft); border-radius: 14px; width: 100%; max-width: 240px; cursor: pointer; line-height: 0; -webkit-tap-highlight-color: transparent; }
+.verb-anim svg { width: 100%; height: auto; }
+
 /* ---------- noun pages ---------- */
 .noun-hero { display: flex; gap: 16px; align-items: flex-start; }
 .noun-picture { flex: 0 0 auto; width: 96px; height: 96px; border-radius: 16px; background: var(--accent-soft); padding: 8px; }

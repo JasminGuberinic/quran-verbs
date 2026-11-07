@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes js-f{from{transform:translateY(-13px)}}
+@keyframes js-l{from{transform:rotate(0)}}
+& .fig{animation:js-f 1.2s ease-in-out both}
+& .ll{transform:rotate(-88deg)}
+& .rl{transform:rotate(-84deg)}
+& .la{transform:rotate(-30deg)}
+& .ra{transform:rotate(-20deg)}
+& .ll,& .rl,& .la,& .ra{animation:js-l 1.2s ease-in-out both}
+</style><path class="p" d="M6 61H114M46 56h26"/><rig x="58" y="56"/></svg>

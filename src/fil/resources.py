@@ -54,3 +54,5 @@ PARTICLES_JSON = DATA_DIR / "particles.json"  # the particles: what each does, i
 ROOT_CORE_IDEAS_JSON = DATA_DIR / "root_core_ideas.json"  # the core idea of a root, verified against ar-Rāġib (fil roots)
 PRONOUNS_JSON = DATA_DIR / "pronouns.json"  # the pronouns (Zamjenice): the particle pages' shape, by corpus tag (fil pronouns)
 SURAHS_JSON = DATA_DIR / "surahs.json"  # the 114 surahs: names, Meccan/Medinan, ayat (Tanzil metadata, CC BY 3.0; fil.surah_store)
+VERB_ANIMATIONS_JSON = DATA_DIR / "verb_animations.json"  # which studied verbs have a drawn animation, and what it shows
+VERB_ANIMATIONS_DIR = DATA_DIR / "verb_animations"        # their SVG sources, one file per verb, over the shared rig

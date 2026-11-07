@@ -68,6 +68,7 @@ from fil.stages import (about_pages, adjective_pages, exercise_pages, exercises,
                         particle_site, root_pages, site, surah_pages, surah_site)
 from fil.stages import roots as root_stage
 from fil.stages import particles as word_lists
+from fil.animations.library import animation_of
 from fil.stages.adjective_site import AdjectiveContent, assemble_adjectives
 from fil.stages.noun_site import NounContent, assemble_nouns, check_voiced
 from fil.stages.nuances import CatalogueConcordance
@@ -365,7 +366,8 @@ def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[s
                                                        picture_credit=credit, adjectives_of_root=adjectives_section,
                                                        similar_words=similar,
                                                        practice=practice(verb.slug, language, seo.to_root(path)),
-                                                       root_slug=(root_slugs or {}).get(verb.card["root"])))
+                                                       root_slug=(root_slugs or {}).get(verb.card["root"]),
+                                                       animation=animation_of(verb.card)))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes df-s{from{transform:rotate(-14deg)}}
+@keyframes df-t{from{transform:rotate(14deg)}}
+@keyframes df-m{from{transform:translateX(-30px)}}
+& .tr{transform:rotate(-14deg)}
+& .ra{transform:rotate(-76deg)}
+& .la{transform:rotate(-70deg)}
+& .ll{transform:rotate(14deg);animation:df-s 1.1s ease-in-out 2 alternate both}
+& .rl{transform:rotate(-14deg);animation:df-t 1.1s ease-in-out 2 alternate both}
+& .fig,& .bk{animation:df-m 2.2s ease-in-out both}
+</style><path class="p" d="M6 61H114"/><path class="q bk" d="M78 26h22v34H78z"/><rig x="56" y="44"/></svg>

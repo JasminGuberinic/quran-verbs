@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
+@keyframes kt-d{from{stroke-dashoffset:100}}
+@keyframes kt-p{from{transform:translateX(-62px)}}
+& .ln{stroke-dasharray:100;animation:kt-d 2.4s ease-in-out both}
+& .pn{animation:kt-p 2.4s ease-in-out both}
+</style><path class="p" d="M22 10h76v50H22z"/><path class="p ln" pathLength="100" d="M32 34c4-9 8 9 12 0s8 9 12 0 8 9 12 0 8 9 12 0"/><g class="pn"><path class="p" d="M92 34l8-16"/></g></svg>

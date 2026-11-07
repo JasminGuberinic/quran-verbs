@@ -259,6 +259,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 .hero-word { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap-reverse; }
 .hero-word .lemma { font-size: 3.4rem; line-height: 1.2; }
+.verb-hero .verb-anim { grid-column: 1 / -1; background: var(--accent-soft); border-radius: 14px; width: 100%; max-width: 240px; cursor: pointer; line-height: 0; -webkit-tap-highlight-color: transparent; }
+.verb-anim svg { width: 100%; height: auto; }
 .stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .stat { background: var(--paper); border-radius: 10px; padding: 8px 12px; display: grid; }
 .stat b { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
@@ -518,6 +520,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
 <script src="practice.js"></script>
 <script src="ayat.js"></script>
 <script src="player.js"></script>
+<script src="animation.js"></script>
 <script src="translation.js"></script>
 <script>
 (() => {
@@ -881,6 +884,9 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     return found < 0 ? current : found;
   }
 
+  // The verb's own drawing, when it has one: decorative, the meaning stands beside it (site/animation.js replays it on tap).
+  const animationHtml = (verb) => (verb.animation ? `<div class="verb-anim" aria-hidden="true">${verb.animation}</div>` : "");
+
   async function showVerb(index) {
     current = (index + VERBS.length) % VERBS.length;
     const shown = current;
@@ -893,6 +899,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
         <div class="eyebrow"><span>#${verb.rank} · ${escapeHtml(ui.root)} <span class="root-letters">${verb.root.split("").join(" ")}</span> · ${escapeHtml(ui.form)} ${FORM_NAMES[verb.form]}</span></div>
         <div class="hero-nav"><button class="icon-btn" data-step="-1" aria-label="${escapeHtml(ui.prev)}">‹</button><button class="icon-btn" data-step="1" aria-label="${escapeHtml(ui.next)}">›</button></div>
         <div class="hero-word"><p class="meaning">${escapeHtml(meaningOf(verb))}${english}</p><p class="ar lemma">${verb.lemma}</p></div>
+        ${animationHtml(verb)}
         <div class="stats">
           <div class="stat"><b>${verb.count}×</b><span>${escapeHtml(ui.inQuran)}</span></div>
           <div class="stat"><b>${verb.share.toFixed(1)}%</b><span>${escapeHtml(ui.statShare)}</span></div>

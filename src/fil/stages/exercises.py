@@ -36,7 +36,7 @@ from fil.exercises import gate
 from fil.exercises.agreement import AdjectiveForm, AdjectiveSentence, agreement_exercises
 from fil.exercises.ayat import AyahWord, CitedAyah, NuanceGroup, NuanceMember, ParticleUse, nuance_exercises, particle_exercises
 from fil.exercises.cases import NounSentence, SentenceWord, case_exercises
-from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, CASE, FORM_MEANING, FORM_VERB, HEAR_RECITER, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
+from fil.exercises.model import (ADJECTIVE_WORD, AGREEMENT, ANIMATION, CASE, FORM_MEANING, FORM_VERB, HEAR_RECITER, KINDS, LISTEN, MEANING_FORM, NOUN_WORD, NUANCE,
                                  NUANCE_WORD, PARTICLE, PARTICLE_WORD, PICTURE, PREPOSITION, QURAN_FORM, VERB_FORM, VERB_WORD, WORD_MEANING, Bilingual,
                                  Exercise, InvalidExercise, QuranTranslation, word_id)
 from fil.exercises.prepositions import NounForms, QuranicForm, TableRow, preposition_exercises
@@ -45,7 +45,7 @@ from fil.exercises.shards import shards
 from fil.exercises.verb_forms import (AttestedForm, Grammar, QuranicVerb, TableForm, VerbTable, form_meaning_exercises,
                                       meaning_form_exercises, quran_form_exercises)
 from fil.exercises.verb_patterns import FormVerb, form_verb_exercises, verb_form_exercises
-from fil.exercises.vocabulary import Word, listen_exercises, picture_exercises, word_meaning_exercises
+from fil.exercises.vocabulary import Word, animation_exercises, listen_exercises, picture_exercises, word_meaning_exercises
 from fil.noun_pictures import load_categories, load_pictures
 from fil.nouns import bosnian as bosnian_nouns
 from fil.nouns.model import Cell
@@ -129,8 +129,10 @@ def place_glosses(glosses: Mapping[str, Mapping[str, str]],
 
 
 def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjectives: Sequence[dict],
-             nuances: Sequence[dict], particles: Sequence[dict], sources: Sources) -> ExerciseSets:
-    """Every exercise of every kind, gated. `verbs`: (page slug, card) of each published verb."""
+             nuances: Sequence[dict], particles: Sequence[dict], sources: Sources,
+             animations: Mapping[str, str] | None = None) -> ExerciseSets:
+    """Every exercise of every kind, gated. `verbs`: (page slug, card) of each published verb;
+    `animations`: the shipped SVG of each verb that has one, by its key (root_form)."""
     synonyms = _synonym_groups(nuances, nouns, adjectives, verbs)
     noun_words = [_noun_word(card, sources) for card in nouns]
     adjective_words = [_adjective_word(card) for card in adjectives]
@@ -140,6 +142,7 @@ def assemble(verbs: Sequence[tuple[str, dict]], nouns: Sequence[dict], adjective
     quranic = [_quranic_verb(table, card, sources) for table, (_slug, card) in zip(tables, verbs)]
     built = {
         PICTURE: picture_exercises(noun_words, synonyms),
+        ANIMATION: animation_exercises(verb_words, _animations_by_word(verbs, animations or {}), synonyms),
         LISTEN: _every_voiced_word_listened_to(listen_exercises([*noun_words, *adjective_words, *verb_words], synonyms),
                                                [*noun_words, *adjective_words, *verb_words]),
         WORD_MEANING: word_meaning_exercises([*noun_words, *adjective_words], synonyms),
@@ -207,6 +210,12 @@ def _every_voiced_word_listened_to(listening: list[Exercise], words: Sequence[Wo
     if missing:
         raise InvalidExercise(f"{len(missing)} voiced words have no listening question, e.g. {missing[:5]}")
     return listening
+
+
+def _animations_by_word(verbs: Sequence[tuple[str, dict]], animations: Mapping[str, str]) -> dict[str, str]:
+    """Each animated verb's SVG by its word id ("verb:qala")."""
+    return {word_id(VERB_WORD, slug): animations[key] for slug, card in verbs
+            if (key := f"{card['root']}_{card['form']}") in animations}
 
 
 def _verb_word(slug: str, card: dict) -> Word:

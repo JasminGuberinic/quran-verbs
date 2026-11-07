@@ -12,10 +12,11 @@ from __future__ import annotations
 from collections.abc import Collection, Mapping, Sequence
 from pathlib import Path, PurePosixPath
 
-from fil.exercises.model import PICTURE
+from fil.exercises.model import ANIMATION, PICTURE
 from fil.languages import LANGUAGES, Language
 from fil.nouns.pictures import NounPicture
 from fil.pages import exercise_render, seo
+from fil.pages.animation_render import OWN_DRAWINGS_CREDIT
 from fil.pages.picture_credits import pictures_credit as credit_for_pictures
 from fil.stages import exercises
 
@@ -33,14 +34,17 @@ def write(pages: Path, sets: exercises.ExerciseSets, texts: Mapping[str, dict], 
     counts = sets.counts()
     shards = exercises.write(pages, sets)
     credit = pictures_credit(sets, pictures)
+    drawings = OWN_DRAWINGS_CREDIT if sets.by_kind.get(ANIMATION) else ""
+    credits = {PICTURE: credit, ANIMATION: drawings}
+    everything = " ".join(line for line in (credit, drawings) if line)
     written = []
     for language in _languages():
         written.append(_write(pages, seo.exercise_index_path(language.code),
                               exercise_render.hub_page(language, texts, counts, shards, published=published,
-                                                       picture_credit=credit)))
+                                                       picture_credit=everything)))
         written += [_write(pages, exercise_render.kind_path(language.code, kind, texts),
                            exercise_render.kind_page(kind, language, texts, counts, shards, published=published,
-                                                     picture_credit=credit if kind == PICTURE else ""))
+                                                     picture_credit=credits.get(kind, "")))
                     for kind in sets.kinds()]
     return written
 

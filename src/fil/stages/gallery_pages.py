@@ -9,19 +9,25 @@ The noun pictures themselves are published by fil.stages.noun_pages, beside the 
 
 from __future__ import annotations
 
-from collections.abc import Sequence
-from dataclasses import dataclass
+from collections.abc import Mapping, Sequence
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from fil.languages import LANGUAGES
 from fil.pages import gallery_render
 from fil.pages.gallery_render import Gallery, GalleryItem
+from fil.pages.indexing import SOURCE_LANGUAGE
 
 
 @dataclass(frozen=True)
 class GalleryContent:
     gallery: Gallery
     items: tuple[GalleryItem, ...]
+    practice: Mapping[str, str] = field(default_factory=dict)   # language → the page of the gallery's exercise
+
+    def practice_in(self, language: str) -> str | None:
+        """The exercise page for a reader of `language`: in it where the exercises are written in it, else in English."""
+        return self.practice.get(language) or self.practice.get(SOURCE_LANGUAGE)
 
 
 def write(pages: Path, galleries: Sequence[GalleryContent], texts: dict[str, dict]) -> list[Path]:
@@ -31,7 +37,8 @@ def write(pages: Path, galleries: Sequence[GalleryContent], texts: dict[str, dic
         for language in LANGUAGES:
             target = pages / content.gallery.path_in(language.code) / "index.html"
             target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_text(gallery_render.gallery_page(content.gallery, content.items, language, texts[language.code]),
+            target.write_text(gallery_render.gallery_page(content.gallery, content.items, language, texts[language.code],
+                                                          practice_path=content.practice_in(language.code)),
                               encoding="utf-8")
             written.append(target)
     return written

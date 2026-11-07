@@ -70,7 +70,13 @@ def test_every_shipped_noun_sentence_is_read_alike_by_both_readers():
 # ---------------------------------------------------------------- the top bar
 
 def _text(code: str = "bs") -> dict:
-    return {"page": {"nav": "Glagoli"}, "nounPage": {"nav": "Imenice"}, "language": "Jezik"}
+    return {"page": {"nav": "Glagoli"}, "nounPage": {"nav": "Imenice"}, "language": "Jezik",
+            "aboutNav": {"animations": "Animacije", "pictures": "Slike imenica"}}
+
+
+def _galleries(root: str, code: str) -> list[tuple[str, str]]:
+    """The two galleries every top bar ends with, in every language (fil.pages.gallery_render)."""
+    return [(f"{root}{code}/animations/", ""), (f"{root}{code}/noun-pictures/", "")]
 
 
 def _language(code: str):
@@ -84,24 +90,24 @@ def _sections(html: str) -> list[tuple[str, str]]:
 
 def test_a_verb_page_leads_to_the_verbs_as_its_section_and_to_the_nouns():
     bar = render.top_bar(_text(), "../../", _language("bs"), seo.language_index_path, section=render.VERBS, published={render.NOUNS})
-    assert _sections(bar) == [("../../bs/", ' aria-current="true"'), ("../../bs/imenica/", "")]
+    assert _sections(bar) == [("../../bs/", ' aria-current="true"'), ("../../bs/imenica/", ""), *_galleries("../../", "bs")]
 
 
 def test_a_list_page_is_the_current_page_of_its_section():
     bar = render.top_bar(_text(), "../../", _language("en"), seo.language_index_path, section=render.NOUNS, is_section_list=True,
                          published={render.NOUNS})
-    assert _sections(bar) == [("../../en/", ""), ("../../en/noun/", ' aria-current="page"')]
+    assert _sections(bar) == [("../../en/", ""), ("../../en/noun/", ' aria-current="page"'), *_galleries("../../", "en")]
 
 
 @pytest.mark.parametrize("code", [language.code for language in LANGUAGES if language.code not in seo.NOUN_FOLDERS])
 def test_a_language_without_noun_pages_has_no_nouns_link(code):
     bar = render.top_bar(_text(), "../", _language(code), seo.language_index_path, section=render.VERBS, published={render.NOUNS})
-    assert [path for path, _mark in _sections(bar)] == [f"../{code}/"]
+    assert [path for path, _mark in _sections(bar)] == [f"../{code}/", *(path for path, _ in _galleries("../", code))]
 
 
 def test_no_nouns_link_before_the_nouns_are_published():
     bar = render.top_bar(_text(), "../", _language("bs"), seo.language_index_path, section=render.VERBS, published=())
-    assert len(_sections(bar)) == 1
+    assert len(_sections(bar)) == 1 + len(_galleries("../", "bs"))
 
 
 def test_the_app_hides_the_nouns_link_in_a_language_without_noun_pages():
@@ -200,7 +206,7 @@ def test_every_page_has_the_same_top_bar_with_its_section_marked():
         sections = _parsed(page).sections
         expected = 1 + sum(code in folders for folders in (seo.NOUN_FOLDERS, seo.ADJECTIVE_FOLDERS, seo.NUANCE_FOLDERS,
                                                            seo.PARTICLE_FOLDERS, seo.PRONOUN_FOLDERS, seo.ROOT_FOLDERS, seo.SURAH_FOLDERS,
-                                                           seo.EXERCISE_FOLDERS))
+                                                           seo.EXERCISE_FOLDERS)) + len(_galleries("", code))
         assert len(sections) == expected, relative
         current = [index for index, (_href, mark) in enumerate(sections) if mark]
         assert current == [3 if is_nuance else 2 if is_adjective else 1 if is_noun else 0], relative

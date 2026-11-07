@@ -33,6 +33,7 @@ _CURRENT = ' aria-current="page"'
 # the sections of the site
 VERBS, NOUNS, ADJECTIVES, NUANCES, PARTICLES, PRONOUNS = "verbs", "nouns", "adjectives", "nuances", "particles", "pronouns"
 EXERCISES, ROOTS, SURAHS = "exercises", "roots", "surahs"
+ANIMATIONS, PICTURES = "animations", "pictures"   # the two galleries, last in the top bar, in every language
 _NOT_INDEXED = '<meta name="robots" content="noindex, follow">\n'   # built and linked, kept out of search
 # The site has no icon of its own; saying so stops every browser asking the host for /favicon.ico,
 # which is not ours on a project site and answers 404 into the console of every page.
@@ -546,13 +547,15 @@ def top_bar(text: dict, root: str, language: Language, path_in: Callable[[str], 
             languages: Sequence[Language] = LANGUAGES, is_section_list: bool = False,
             published: Collection[str] = frozenset()) -> str:
     """The one top bar of every static page: the brand, the site's sections (verbs, then the
-    `published` ones of nouns, adjectives, nuances, particles, pronouns, surahs, exercises) with the current one marked, and the
+    `published` ones of nouns, adjectives, nuances, particles, pronouns, surahs, exercises, then the two
+    galleries) with the current one marked, and the
     switcher to this page (`path_in` a language) in each of the `languages` it is written in. A section appears only
     in the languages it is written in, so no link leads to a missing page. Under it, the translation hint."""
     sections = [(VERBS, seo.language_index_path(language.code), text["page"]["nav"]),
                 *((name, index_path(language.code), text[words]["nav"])
                   for name, folders, index_path, words in _SECTIONS
-                  if (name in published or name == section) and language.code in folders)]
+                  if (name in published or name == section) and language.code in folders),
+                *((name, path_of(language.code), text["aboutNav"][name]) for name, path_of in _GALLERIES)]
     links = "".join(f'<a href="{root}{path}"{_section_mark(name == section, is_section_list)}>{escape(label)}</a>'
                     for name, path, label in sections)
     return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>'
@@ -560,6 +563,10 @@ def top_bar(text: dict, root: str, language: Language, path_in: Callable[[str], 
             f'<details class="languages"><summary>{escape(text["language"])}</summary>'
             f'{_language_links(root, path_in, language, languages)}</details></header>'
             f'{translation_hint(text, root, path_in, language)}')
+
+
+# The galleries (fil.pages.gallery_render), written in every language: name, address.
+_GALLERIES = ((ANIMATIONS, seo.animations_path), (PICTURES, seo.pictures_path))
 
 
 def translation_hint(text: dict, root: str, path_in: Callable[[str], str], language: Language) -> str:

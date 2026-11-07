@@ -367,3 +367,12 @@ a.root { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 480px) { .noun-figure { align-items: flex-start; } }
 .gallery-card { scroll-margin-top: 80px; }
 .gallery-card:target { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
+/* Animacija → glagol: the drawing, and verbs named by their Arabic with their meaning */
+.exercise-animation { max-width: 280px; }
+.exercise-animation[data-audio] { outline-offset: 3px; }
+.exercise-animation[data-audio]:focus-visible { outline: 3px solid var(--accent); }
+.word-option .ar { font-family: var(--font-arabic); font-size: 1.5rem; }
+.option-meaning { color: var(--muted); font-size: .9rem; margin-inline-start: auto; }
+/* the gallery's own exercise, first on its page */
+.gallery-other { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.gallery-practise { margin: 0; }

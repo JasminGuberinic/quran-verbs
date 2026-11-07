@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 
 # The kinds of exercise, in the order the hub shows them.
 PICTURE = "picture"           # a noun's picture → its Arabic word
+ANIMATION = "animation"       # a verb's animation → the verb, its Arabic with its meaning
 LISTEN = "listen"             # a word heard → its meaning
 CASE = "case"                 # a noun marked in a practice sentence → its case and why
 PREPOSITION = "preposition"   # a preposition from the Quran → the ending of the noun after it
@@ -29,7 +30,7 @@ HEAR_RECITER = "hear-reciter" # a verb form as a real reciter says it → its me
 WORD_MEANING = "word-meaning" # a noun or adjective written → its meaning
 VERB_FORM = "verb-form"       # a verb's lemma → which of the ten forms it is
 FORM_VERB = "form-verb"       # a form (number and pattern) → which of four verbs is in it
-KINDS = (PICTURE, LISTEN, WORD_MEANING, FORM_MEANING, MEANING_FORM, QURAN_FORM, HEAR_RECITER, VERB_FORM, FORM_VERB, CASE,
+KINDS = (PICTURE, ANIMATION, LISTEN, WORD_MEANING, FORM_MEANING, MEANING_FORM, QURAN_FORM, HEAR_RECITER, VERB_FORM, FORM_VERB, CASE,
          PREPOSITION, AGREEMENT, NUANCE, PARTICLE)
 # The kinds whose meaning options are forms of one verb: they differ by person and tense ("rekao je" /
 # "rekli su"), so they may share words; two of them that are the same meaning may not be offered.
@@ -69,7 +70,8 @@ class QuranTranslation:
 
 @dataclass(frozen=True)
 class Option:
-    """One answer to choose: an Arabic word, a meaning, or a grammatical answer named by `code`."""
+    """One answer to choose: an Arabic word (with its meaning beside it, where the kind names the word
+    by both), a meaning, or a grammatical answer named by `code`."""
 
     is_correct: bool
     arabic: str | None = None
@@ -86,6 +88,8 @@ class Option:
         return "code"
 
     def as_json(self) -> dict[str, str]:
+        if self.arabic is not None and self.meaning is not None:
+            return {"ar": self.arabic, **self.meaning.as_json()}
         if self.arabic is not None:
             # A verb form is offered as its pattern, with the form it is the pattern of.
             return {"ar": self.arabic, "code": self.code} if self.code else {"ar": self.arabic}
@@ -107,7 +111,7 @@ class Segment:
 class Exercise:
     """One question. `key` is unique within its kind; `words` are the word ids it practises.
 
-    Before answering the learner sees the picture, hears `sound`, reads the `passage` (with
+    Before answering the learner sees the picture (or watches the `animation`, an inline SVG), hears `sound`, reads the `passage` (with
     `lead`: the preposition said before the options, or the particle asked about) and its `translation`. After
     answering: the `explanation`, the `answer_word` (the form the Quran itself says) with its
     `answer_sound`, the word's `gloss`, and `facts` — grammatical codes the interface puts into
@@ -118,6 +122,7 @@ class Exercise:
     words: tuple[str, ...]
     options: tuple[Option, ...]
     picture: str | None = None
+    animation: str | None = None
     sound: str | None = None
     passage: tuple[Segment, ...] = ()
     reference: str | None = None
@@ -143,7 +148,7 @@ class Exercise:
         ordered = [*self.correct, *(option for option in self.options if not option.is_correct)]
         shown: dict[str, object] = {"id": self.key, "words": list(self.words),
                                     "options": [option.as_json() for option in ordered]}
-        optional = {"picture": self.picture, "sound": self.sound, "ref": self.reference, "lead": self.lead,
+        optional = {"picture": self.picture, "animation": self.animation, "sound": self.sound, "ref": self.reference, "lead": self.lead,
                     "answerWord": self.answer_word, "answerSound": self.answer_sound}
         shown.update({name: value for name, value in optional.items() if value})
         texts = {"translation": self.translation, "quranTranslation": self.quran_translation,

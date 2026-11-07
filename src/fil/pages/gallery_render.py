@@ -27,7 +27,7 @@ from fil.pages.gallery_links import noun_anchor, verb_anchor
 from fil.pages.indexing import SOURCE_LANGUAGE
 
 GALLERY_SCRIPT = "gallery.js"
-ANIMATIONS, PICTURES = "animations", "pictures"
+ANIMATIONS, PICTURES = render.ANIMATIONS, render.PICTURES
 
 
 @dataclass(frozen=True)
@@ -116,7 +116,9 @@ def page_paths(gallery: Gallery, items: Sequence[GalleryItem]) -> list[str]:
 
 # ---------- the page ----------
 
-def gallery_page(gallery: Gallery, items: Sequence[GalleryItem], language: Language, text: dict) -> str:
+def gallery_page(gallery: Gallery, items: Sequence[GalleryItem], language: Language, text: dict,
+                 practice_path: str | None = None) -> str:
+    """`practice_path`: the page of the gallery's own exercise (from the site root), which a button leads to."""
     words, nav = text["galleryPage"], text["aboutNav"]
     title, intro = words[f"{gallery.kind}Title"], words[f"{gallery.kind}Intro"]
     path = gallery.path_in(language.code)
@@ -124,9 +126,10 @@ def gallery_page(gallery: Gallery, items: Sequence[GalleryItem], language: Langu
     indexed_in = indexed_languages(items)
     other = nav[PICTURES if gallery.kind == ANIMATIONS else ANIMATIONS]
     body = "".join((
-        render.top_bar(text, root, language, gallery.path_in, section=gallery.kind),
+        render.top_bar(text, root, language, gallery.path_in, section=gallery.kind, is_section_list=True),
         f'<main class="wrap"><h1>{escape(title)}</h1><p class="lead">{escape(intro)}</p>',
-        f'<p class="gallery-other"><a href="{root}{gallery.other_path_in(language.code)}">{escape(other)} →</a></p>',
+        f'<p class="gallery-other">{_practise(practice_path, root, words)}'
+        f'<a href="{root}{gallery.other_path_in(language.code)}">{escape(other)} →</a></p>',
         f'<ul class="gallery gallery-{gallery.kind}">',
         "".join(_card(item, gallery.kind, language, text, root) for item in items),
         "</ul></main>",
@@ -140,6 +143,12 @@ def gallery_page(gallery: Gallery, items: Sequence[GalleryItem], language: Langu
                                                                language=language.code, path=path),
                         page_type="website")
     return render._document(language, head, body, root=root, text=text)
+
+
+def _practise(practice_path: str | None, root: str, words: dict) -> str:
+    if not practice_path:
+        return ""
+    return f'<a class="button gallery-practise" href="{root}{practice_path}">{escape(words["practise"])} →</a> '
 
 
 def _card(item: GalleryItem, kind: str, language: Language, text: dict, root: str) -> str:

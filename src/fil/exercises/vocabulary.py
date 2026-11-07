@@ -1,4 +1,4 @@
-"""Picture → word and listen → meaning: the exercises that ask what a word is.
+"""Picture → word, animation → verb and listen → meaning: the exercises that ask what a word is.
 
 A distractor is another studied word that no learner could fairly take for the right one: not of
 the same root (شَجَر beside شَجَرَة), not spelled the same, not sharing a content word of its meaning
@@ -8,17 +8,19 @@ near-synonym the Nuances section groups with it.
 A picture is vaguer than a word: an emoji of grapes is also "fruit", a glass of milk also "a drink",
 a calf's face also "a cow", a raincloud also "water", a sun also "a day". So a picture's distractors
 come from other kinds of things altogether — never its own category, nor one a picture of it could
-pass for (CONFUSABLE_CATEGORIES). A word heard is asked among words of about the same frequency.
+pass for (CONFUSABLE_CATEGORIES). A word heard is asked among words of about the same frequency, and so is
+a verb's animation: its options name each verb by its Arabic and its meaning, so no two of them may share
+a content word of their meanings, nor be near-synonyms.
 
 Pure: the words are passed in.
 """
 
 from __future__ import annotations
 
-from collections.abc import Collection, Sequence
+from collections.abc import Collection, Mapping, Sequence
 from dataclasses import dataclass
 
-from fil.exercises.model import LISTEN, PICTURE, WORD_MEANING, Bilingual, Exercise, Option
+from fil.exercises.model import ANIMATION, LISTEN, PICTURE, WORD_MEANING, Bilingual, Exercise, Option
 from fil.exercises.text import first_distinct, in_one_style, meanings_overlap, same_spelling, stable_order
 from fil.nouns.categories import is_symbolic
 
@@ -54,6 +56,25 @@ def picture_exercises(words: Sequence[Word], synonyms: Collection[frozenset[str]
     drawn for knowledge would pass for the book."""
     pictured = [word for word in words if word.picture and not is_symbolic(word.category)]
     return [exercise for exercise in (_picture_exercise(word, pictured, synonyms) for word in pictured) if exercise]
+
+
+def animation_exercises(verbs: Sequence[Word], animations: Mapping[str, str],
+                        synonyms: Collection[frozenset[str]] = ()) -> list[Exercise]:
+    """For each verb with an animation (`animations` by word id): the drawing, and the verb among three verbs
+    about as frequent, each named by its Arabic and its meaning. The verb is heard once answered."""
+    return [exercise for exercise in (_animation_exercise(verb, animations[verb.id], verbs, synonyms)
+                                      for verb in verbs if animations.get(verb.id)) if exercise]
+
+
+def _animation_exercise(answer: Word, animation: str, verbs: Sequence[Word],
+                        synonyms: Collection[frozenset[str]]) -> Exercise | None:
+    distractors = _distractors(answer, _about_as_frequent(answer, verbs), synonyms)
+    if len(distractors) < OPTION_COUNT - 1:
+        return None
+    options = tuple(Option(word is answer, arabic=in_one_style(word.arabic), meaning=word.meaning)
+                    for word in (answer, *distractors))
+    return Exercise(kind=ANIMATION, key=answer.id.split(":", 1)[1], words=(answer.id,), options=options,
+                    animation=animation, answer_word=answer.arabic, answer_sound=answer.sound, gloss=answer.meaning)
 
 
 def listen_exercises(words: Sequence[Word], synonyms: Collection[frozenset[str]] = ()) -> list[Exercise]:
@@ -92,13 +113,18 @@ def _picture_exercise(answer: Word, pictured: Sequence[Word], synonyms: Collecti
 
 def _meaning_options(answer: Word, words: Sequence[Word], synonyms: Collection[frozenset[str]]) -> tuple[Option, ...] | None:
     """The answer's meaning among meanings of words of its family about as frequent, or None when too few are fair."""
-    family = [word for word in words if word.family == answer.family]
-    candidates = stable_order(family, lambda word: word.id, salt=answer.id)
-    candidates.sort(key=lambda word: abs(word.rank - answer.rank) // 25)   # stable: words about as frequent first
-    distractors = _distractors(answer, candidates, synonyms)
+    distractors = _distractors(answer, _about_as_frequent(answer, words), synonyms)
     if len(distractors) < OPTION_COUNT - 1:
         return None
     return (Option(True, meaning=answer.meaning), *(Option(False, meaning=word.meaning) for word in distractors))
+
+
+def _about_as_frequent(answer: Word, words: Sequence[Word]) -> list[Word]:
+    """The words of the answer's family in a stable order, those about as frequent as it first."""
+    family = [word for word in words if word.family == answer.family]
+    candidates = stable_order(family, lambda word: word.id, salt=answer.id)
+    candidates.sort(key=lambda word: abs(word.rank - answer.rank) // 25)   # stable: words about as frequent first
+    return candidates
 
 
 def _listen_exercise(answer: Word, voiced: Sequence[Word], synonyms: Collection[frozenset[str]]) -> Exercise | None:

@@ -111,6 +111,15 @@ test("option labels: Arabic as it is, a meaning in the page's language, a code b
   assert.equal(WORDS.score(3, 4, 2, 5), "3 od 4 · niz 2 · najbolji 5");
 });
 
+test("a verb under its animation is labelled by its Arabic, with its meaning beside it", () => {
+  const verb = { ar: "أَكَلَ", bs: "jesti", en: "to eat" };
+  assert.equal(E.optionLabel("animation", verb, WORDS, "bs"), "أَكَلَ");
+  assert.equal(E.optionMeaning(verb, "bs"), "jesti");
+  assert.equal(E.optionMeaning({ ar: "أَكَلَ", en: "to eat" }, "bs"), "to eat");   // English until it is translated
+  assert.equal(E.optionMeaning({ ar: "أَرْض" }, "bs"), "");                          // a picture's word: Arabic alone
+  assert.equal(E.optionMeaning({ bs: "zemlja", en: "earth" }, "bs"), "");           // a meaning option is its own label
+});
+
 test("the explanation after answering says why, in the page's language", () => {
   const caseItem = { facts: { role: "subject", case: "NOM" }, gloss: { bs: "kuća", en: "house" } };
   assert.deepEqual(E.explanationLines("case", caseItem, WORDS, "bs"), ["Subjekat je u nominativu.", "Na bosanskom: „kuća“."]);

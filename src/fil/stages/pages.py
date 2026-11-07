@@ -69,7 +69,8 @@ from fil.stages import (about_pages, adjective_pages, exercise_pages, exercises,
                         particle_site, root_pages, site, surah_pages, surah_site)
 from fil.stages import roots as root_stage
 from fil.stages import particles as word_lists
-from fil.animations.library import animation_of
+from fil.animations.library import animation_of, load_animations
+from fil.exercises.model import ANIMATION, PICTURE
 from fil.stages.adjective_site import AdjectiveContent, assemble_adjectives
 from fil.stages.noun_site import NounContent, assemble_nouns, check_voiced
 from fil.stages.nuances import CatalogueConcordance
@@ -185,7 +186,8 @@ def build(pages: Path) -> BuiltSite | None:
     roots = _assemble_roots(verbs, nouns.cards, adjectives.cards, particles, nuances)
     root_slugs = root_pages.slugs_by_root(roots)
     practice = exercises.assemble([(verb.slug, verb.card) for verb in verbs], nouns.cards, adjectives.cards, nuances,
-                                  particles, exercises.read_sources())
+                                  particles, exercises.read_sources(),
+                                  {key: drawn.svg for key, drawn in load_animations().items()})
     surahs = _assemble_surahs(sink, verbs, nouns.cards, adjectives.cards, particles, pronouns, catalogue,
                               practice.words())
     published = frozenset(name for name, cards in ((render.NOUNS, nouns.cards), (render.ADJECTIVES, adjectives.cards),
@@ -203,7 +205,7 @@ def build(pages: Path) -> BuiltSite | None:
                                         "surahPages": surah_pages.app_paths() if surahs.pages else {},
                                         "exercisePages": exercise_pages.app_paths() if render.EXERCISES in published else {}})
     site.write_app(pages, content)
-    galleries = _galleries(verbs, nouns)
+    galleries = _galleries(verbs, nouns, _exercise_pages(practice, texts))
     _write_app_page(pages, texts, _app_tiles(galleries))
     written = [*_write_language_pages(pages, verbs, texts, nouns, adjectives.cards, nuances, published,
                                       practice_link(VERB_WORD), root_slugs)]
@@ -237,13 +239,23 @@ def build(pages: Path) -> BuiltSite | None:
     return built
 
 
-def _galleries(verbs: list[PublishedVerb], nouns: NounContent) -> tuple[gallery_pages.GalleryContent, ...]:
-    """The verb animations and the noun pictures, each gallery crediting what it shows."""
+def _galleries(verbs: list[PublishedVerb], nouns: NounContent,
+               exercise_pages_of: Callable[[str], dict[str, str]]) -> tuple[gallery_pages.GalleryContent, ...]:
+    """The verb animations and the noun pictures, each gallery crediting what it shows and leading to its exercise."""
     pictured = gallery_render.noun_items(nouns.cards)
     credit = noun_pages.credits(nouns.pictures)([card for card in nouns.cards if card.get("picture")])
     return (gallery_pages.GalleryContent(gallery_render.ANIMATION_GALLERY,
-                                         tuple(gallery_render.verb_items(verbs, animation_of))),
-            gallery_pages.GalleryContent(gallery_render.picture_gallery(credit), tuple(pictured)))
+                                         tuple(gallery_render.verb_items(verbs, animation_of)), exercise_pages_of(ANIMATION)),
+            gallery_pages.GalleryContent(gallery_render.picture_gallery(credit), tuple(pictured), exercise_pages_of(PICTURE)))
+
+
+def _exercise_pages(practice: exercises.ExerciseSets, texts: dict[str, dict]) -> Callable[[str], dict[str, str]]:
+    """A kind of exercise → its page in each language the exercises are written in; none when it has no questions."""
+    def pages_of(kind: str) -> dict[str, str]:
+        if kind not in practice.kinds():
+            return {}
+        return {code: exercise_render.kind_path(code, kind, texts) for code in exercise_render.EXERCISE_LANGUAGES}
+    return pages_of
 
 
 PREVIEW_PICTURES = 3

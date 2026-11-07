@@ -247,6 +247,12 @@
     return lines.filter(Boolean);
   }
 
+  /** The meaning written beside an Arabic option (a verb named by both, under its animation), or "". */
+  function optionMeaning(option, language) {
+    if (!option.ar) return "";
+    return option[language] || option.en || "";
+  }
+
   /** How an option is labelled: its Arabic, its meaning in the page's language, or the name of its code. */
   function optionLabel(kind, option, words, language) {
     if (option.ar) return option.ar;
@@ -340,12 +346,19 @@
         button.append(make("span", { class: "form-number" }, formNumber(option.code)), arabic("span", label));
         return button;
       }
+      const meaning = optionMeaning(option, language);
+      if (meaning) {
+        const button = make("button", { type: "button", class: "word-option" });
+        button.append(arabic("span", label), make("span", { class: "option-meaning" }, meaning));
+        return button;
+      }
       return option.ar ? arabic("button", label, { type: "button" }) : make("button", { type: "button" }, label);
     }
 
     function prompt(kind, item) {
       const box = make("div", { class: "exercise-prompt" });
       if (item.picture) box.append(make("img", { src: root + item.picture, alt: words.pictureAlt, width: "160", height: "160", class: "exercise-picture" }));
+      if (item.animation) box.append(drawing(item.animation));
       if (item.sound) box.append(soundButton(item.sound, words.listen), make("span", { class: "note" }, words.listen));
       if (item.passage) box.append(passage(item));
       if (item.lead) box.append(lead(kind, item.lead, item));
@@ -359,6 +372,23 @@
         box.append(make("p", { class: kind === "meaning-form" ? "lead exercise-meaning" : "note" }, item.translation[language] || item.translation.en));
       }
       return box;
+    }
+
+    /** The question's animation (our own gated SVG, from the build): a tap plays it again (site/animation.js). */
+    function drawing(svg) {
+      const figure = make("div", { class: "verb-anim exercise-animation", "aria-hidden": "true" });
+      figure.innerHTML = svg;
+      return figure;
+    }
+
+    /** Once answered, the drawing says the verb too: a tap plays its sound (site/player.js) and the drawing. */
+    function voiceDrawing(item) {
+      const figure = $(".exercise-animation");
+      if (!figure || !item.answerSound) return;
+      figure.removeAttribute("aria-hidden");
+      for (const [name, value] of Object.entries({ "data-audio": root + item.answerSound, role: "button", tabindex: "0", "aria-label": words.listen })) {
+        figure.setAttribute(name, value);
+      }
     }
 
     /** The preposition with the blank its noun fills, or the particle the question is about. */
@@ -400,6 +430,7 @@
       if (!writeProgress(storage, progress)) $(".exercise-storage").textContent = words.noStorage;
       if (isCorrect) sessionRight += 1;
       else queue = askAgain(queue, position, queue[position]);
+      voiceDrawing(item);
       feedback(kind, item, isCorrect);
       renderScore();
     }
@@ -413,6 +444,8 @@
         const label = optionLabel(kind, right, words, language);
         if (right.ar && right.code && kind === "verb-form") line.append(`${formNumber(right.code)} · `);
         line.append(right.ar ? arabic("span", label) : make("b", {}, label));
+        const meaning = optionMeaning(right, language);
+        if (meaning) line.append(` – ${meaning}`);
         box.append(line);
       }
       if (item.answerWord) {
@@ -506,6 +539,6 @@
   return {
     SESSION_SIZE, AGAIN_AFTER, BOX_DAYS, DAY, STORAGE_KEY,
     shardOf, shardFile, seeded, shuffle, shuffledOptions, aboutWord, askedWords, shardsFor, uniqueById, SHARD_ATTEMPTS, fetchWithRetry, loadShards, questionsOf, emptyProgress, record, sessionOrder, askAgain,
-    readProgress, writeProgress, explanationLines, optionLabel, withTemplates, cellNames, VERB_FORM_KINDS, FORM_KINDS, formNumber, formName,
+    readProgress, writeProgress, explanationLines, optionLabel, optionMeaning, withTemplates, cellNames, VERB_FORM_KINDS, FORM_KINDS, formNumber, formName,
   };
 });

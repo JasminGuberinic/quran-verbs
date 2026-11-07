@@ -17,9 +17,10 @@ from collections.abc import Callable, Collection, Mapping, Sequence
 from html import escape
 from urllib.parse import quote
 
-from fil.exercises.model import KINDS, VERB_WORD, word_id
+from fil.exercises.model import ANIMATION, KINDS, VERB_WORD, word_id
 from fil.languages import Language
 from fil.pages import render, seo
+from fil.pages.animation_render import REPLAY_SCRIPT
 from fil.pages.interface_text import fill
 
 EXERCISE_LANGUAGES = tuple(seo.EXERCISE_FOLDERS)
@@ -162,7 +163,12 @@ def _practice(kinds: Sequence[str], shards: Mapping[str, int], words: dict, lang
             f'<p class="note">{escape(words["keys"])} {escape(words["progressNote"])} '
             f'<button type="button" class="link-button exercise-reset">{escape(words["reset"])}</button></p></section>'
             f'<noscript><p class="notice">{escape(words["noscript"])}</p></noscript>'
-            f'<script src="{root}{_SCRIPT}" defer></script>')
+            f'{_replay_script(kinds, root)}<script src="{root}{_SCRIPT}" defer></script>')
+
+
+def _replay_script(kinds: Sequence[str], root: str) -> str:
+    """An animation question's drawing plays again when tapped (site/animation.js)."""
+    return f'<script src="{root}{REPLAY_SCRIPT}" defer></script>' if ANIMATION in kinds else ""
 
 
 def _top_bar(text: dict, root: str, language: Language, path_in, published: Collection[str],

@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72"><style>
-@keyframes vesm_8-0{25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
-& .ra{transform:rotate(-178deg)}
-& .la{transform:rotate(178deg)}
-& .ll{transform:rotate(-6deg)}
-& .rl{transform:rotate(6deg)}
-& .sw{transform-origin:40px 0;animation:vesm_8-0 1.4s ease-in-out 2 both}
-</style><g class="sw"><path class="p" d="M40 0V24"/><rig x="40" y="52"/></g></svg>
+@keyframes vesm_8-0{50%{transform:translateX(4px)}}
+& .tr{transform:rotate(-18deg)}
+& .ra{transform:rotate(-60deg)}
+& .la{transform:rotate(-56deg)}
+& .ll{transform:rotate(16deg)}
+& .rl{transform:rotate(-20deg)}
+& .fig,& .rp{animation:vesm_8-0 0.9s ease-in-out 3 both}
+</style><path class="p" d="M6 61H114"/><path class="p" d="M106 61V30"/><path class="p rp" d="M49 33L106 38"/><rig x="40" y="44"/></svg>

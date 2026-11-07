@@ -8,7 +8,8 @@ a learner declines. Skipped, each for a reason a learner would recognise:
   - quantifiers and pronoun-like words (كُلّ, بَعْض, أَيّ, غَيْر, كَيْفَ) — they decline,
     but what they mean is their construction, not a thing;
   - adjectives — they come in a phase of their own, with agreement (docs/NOUNS-PLAN.md);
-  - proper names — a list of their own, no case table.
+  - proper names — a list of their own, no case table; except the few a learner declines
+    like any noun (TAUGHT_PROPER_NOUNS), which are taught on a card with the common nouns.
 
 Pure.
 """
@@ -17,6 +18,7 @@ from __future__ import annotations
 
 import unicodedata
 from collections.abc import Iterable, Sequence
+from dataclasses import replace
 
 from fil.nouns.model import ADJECTIVE, ADVERB, PROPER_NOUN, NounLemma
 
@@ -110,10 +112,39 @@ NOT_TAUGHT_AS_NOUNS: dict[str, str] = {
 }
 _NOT_TAUGHT_KINDS = {ADVERB: "adverb", ADJECTIVE: "adjective", PROPER_NOUN: "proper name"}
 
+# Proper names taught on a noun card all the same ("lemma|root" → why). The Kaaba (owner, 2026-11-07)
+# is a building a learner names and declines like a common noun — الْكَعْبَةُ, الْكَعْبَةَ, الْكَعْبَةِ —
+# only ever definite, as a name is; a person's or a people's name has no such card.
+TAUGHT_PROPER_NOUNS: dict[str, str] = {
+    "كَعْبَة|كعب": "the Kaaba: a sacred building, declined like a common noun (5:95, 5:97)",
+}
+
 
 def skip_reason(lemma: NounLemma) -> str | None:
     """Why this lemma gets no noun card, or None when it does."""
+    if is_taught_proper_noun(lemma):
+        return None
     return _NOT_TAUGHT_KINDS.get(lemma.kind) or _NOT_TAUGHT_BY_CANONICAL_SPELLING.get(_canonical(lemma.lemma))
+
+
+def is_taught_proper_noun(lemma: NounLemma) -> bool:
+    return lemma.kind == PROPER_NOUN and _canonical(f"{lemma.lemma}|{lemma.root}") in _TAUGHT_PROPER_NOUN_KEYS
+
+
+def taught_catalogue(lemmas: Sequence[NounLemma]) -> list[NounLemma]:
+    """The lemmas a noun card may teach: every common one, then the taught proper names.
+
+    The names come last, so the page names decided in this order (fil.pages.slugs) never move
+    for a common noun; each name is ranked by its frequency among the common nouns, so its card
+    says where it really stands ("#…"), sharing that rank with the common noun it ties.
+    """
+    common = [lemma for lemma in lemmas if lemma.kind != PROPER_NOUN]
+    names = [replace(lemma, rank=_rank_among(common, lemma)) for lemma in lemmas if is_taught_proper_noun(lemma)]
+    return common + names
+
+
+def _rank_among(common: Sequence[NounLemma], name: NounLemma) -> int:
+    return 1 + sum(1 for lemma in common if (-lemma.count, lemma.lemma) < (-name.count, name.lemma))
 
 
 def _canonical(text: str) -> str:
@@ -123,6 +154,7 @@ def _canonical(text: str) -> str:
 
 
 _NOT_TAUGHT_BY_CANONICAL_SPELLING = {_canonical(lemma): reason for lemma, reason in NOT_TAUGHT_AS_NOUNS.items()}
+_TAUGHT_PROPER_NOUN_KEYS = frozenset(_canonical(key) for key in TAUGHT_PROPER_NOUNS)
 
 
 def next_nouns(lemmas: Sequence[NounLemma], count: int, studied: Iterable[str],

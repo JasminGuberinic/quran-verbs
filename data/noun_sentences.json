@@ -169772,5 +169772,230 @@
     }
    }
   }
+ ],
+ "كَعْبَة|كعب": [
+  {
+   "role": "subject",
+   "example": {
+    "arabic": "الْكَعْبَةُ فِي مَكَّةَ",
+    "words": [
+     {
+      "arabic": "الْكَعْبَةُ",
+      "en": "the Kaaba",
+      "bs": "Kaba",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "فِي",
+      "en": "in",
+      "bs": "je u",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "مَكَّةَ",
+      "en": "Mecca",
+      "bs": "Meki",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The Kaaba is in Mecca.",
+    "bs": "Kaba je u Meki.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "object",
+   "example": {
+    "arabic": "رَأَى الطِّفْلُ الْكَعْبَةَ",
+    "words": [
+     {
+      "arabic": "رَأَى",
+      "en": "saw",
+      "bs": "vidjelo je",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الطِّفْلُ",
+      "en": "the child",
+      "bs": "dijete",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْكَعْبَةَ",
+      "en": "the Kaaba",
+      "bs": "Kabu",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The child saw the Kaaba.",
+    "bs": "Dijete je vidjelo Kabu.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "preposition",
+   "example": {
+    "arabic": "مَشَى الْحُجَّاجُ إِلَى الْكَعْبَةِ",
+    "words": [
+     {
+      "arabic": "مَشَى",
+      "en": "walked",
+      "bs": "hodali su",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْحُجَّاجُ",
+      "en": "the pilgrims",
+      "bs": "hodočasnici",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "إِلَى",
+      "en": "to",
+      "bs": "prema",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْكَعْبَةِ",
+      "en": "the Kaaba",
+      "bs": "Kabi",
+      "is_target": true,
+      "translations": {}
+     }
+    ],
+    "en": "The pilgrims walked to the Kaaba.",
+    "bs": "Hodočasnici su hodali prema Kabi.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "",
+     "independent": true
+    }
+   }
+  },
+  {
+   "role": "possession",
+   "example": {
+    "arabic": "بَابُ الْكَعْبَةِ جَمِيلٌ",
+    "words": [
+     {
+      "arabic": "بَابُ",
+      "en": "the door",
+      "bs": "vrata",
+      "is_target": false,
+      "translations": {}
+     },
+     {
+      "arabic": "الْكَعْبَةِ",
+      "en": "of the Kaaba",
+      "bs": "Kabe",
+      "is_target": true,
+      "translations": {}
+     },
+     {
+      "arabic": "جَمِيلٌ",
+      "en": "beautiful",
+      "bs": "su lijepa",
+      "is_target": false,
+      "translations": {}
+     }
+    ],
+    "en": "The door of the Kaaba is beautiful.",
+    "bs": "Vrata Kabe su lijepa.",
+    "tense": null,
+    "pronoun": null,
+    "source": "generated",
+    "drafted_by": "claude, drafting pass",
+    "translations": {},
+    "checks": {
+     "verb_root": true,
+     "verb_form": true,
+     "all_words_valid": true,
+     "gloss_agreement": true,
+     "gloss_conflicts": [],
+     "verb_form_by": "noun table",
+     "glossed_by_exception": []
+    },
+    "critique": {
+     "approved": true,
+     "grammar_ok": true,
+     "translation_ok": true,
+     "verb_usage_ok": true,
+     "by": "claude subagent, blind reviewer (separate context)",
+     "note": "",
+     "independent": true
+    }
+   }
+  }
  ]
 }

@@ -220,6 +220,9 @@ h2::after { content: ""; display: block; height: 1px; margin-top: 8px; backgroun
 .noun-hero .eyebrow a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .noun-links a { display: inline-flex; align-items: center; gap: 8px; }
 .noun-links .thumb { width: 24px; height: 24px; border-radius: 6px; background: var(--accent-soft); padding: 2px; }
+.phrase-figure { float: inline-end; display: inline-flex; align-items: center; gap: 8px; margin: 0 0 8px 12px; text-decoration: none; }
+.phrase-figure .thumb { width: 48px; height: 48px; border-radius: 10px; background: var(--accent-soft); padding: 4px; }
+.phrases .form-word { flex-wrap: wrap; }
 /* Nijanse / Nuances: groups of near-synonyms (fil.pages.nuance_render) */
 .nuance-words { font-size: 1.6rem; line-height: 1.9; margin: 4px 0 0; }
 .nuance-words a { text-decoration: none; }

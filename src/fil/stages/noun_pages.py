@@ -101,9 +101,15 @@ def credits(pictures: Sequence[NounPicture]):
     by_key = {f"{picture.lemma}|{picture.root}": picture for picture in pictures}
 
     def credit(cards: Sequence[dict]) -> str:
-        shown = [by_key[card["key"]] for card in cards if card.get("picture") and card["key"] in by_key]
-        return pictures_credit(shown)
+        keys = [key for card in cards for key in _shown_picture_keys(card)]
+        return pictures_credit([by_key[key] for key in dict.fromkeys(keys) if key in by_key])
     return credit
+
+
+def _shown_picture_keys(card: dict) -> list[str]:
+    """The nouns whose pictures a card shows: its own, and those beside its set phrases (the Kaaba on مَسْجِد)."""
+    own = [card["key"]] if card.get("picture") else []
+    return own + [phrase["pictureKey"] for phrase in card.get("phrases", ()) if phrase.get("pictureKey")]
 
 
 def write_ayat(pages: Path, lists: Sequence[tuple[str, dict]]) -> None:

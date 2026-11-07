@@ -180,6 +180,23 @@ synthetic voice, gated like every noun text) and a link when it is a studied nou
 collectives, only ever plural with no pattern of their own, or have a same-root sibling with or
 without -ة — and `fil nouns batch status` lists each as lacking `relation` until it has an entry.
 
+## The Kaaba and the Sacred Mosque (2026-11-07, owner)
+
+- **كَعْبَة, a taught proper name.** Proper names stay out of the noun cards, except the few in
+  `TAUGHT_PROPER_NOUNS` (fil.nouns.selection): the Kaaba is a building a learner declines like a
+  common noun. `taught_catalogue` puts such names after the common nouns (page names never move)
+  and ranks them by frequency among them; their table keeps only the definite cells
+  (`as_proper_name` — كَعْبَةٌ "a cube" is another word), and `fil pages` refuses one that shows more.
+  Same batch steps and gates as any noun (meaning Kaaba/Kaba, Bosnian declension Kaba/Kabe/Kabi…,
+  four blind-reviewed sentences, the reciter for ٱلْكَعْبَةَ/ٱلْكَعْبَةِ), category faith, the Twemoji
+  Kaaba in `SYMBOLS_OF_THE_SACRED` (symbolic: never a picture question). Page: /bs/imenica/kaba/.
+- **الْمَسْجِدُ الْحَرَامُ, a set phrase on مَسْجِد's card.** It is a noun and an adjective, not a lemma:
+  a card of its own would repeat مَسْجِد's table and sentences. `data/noun_phrases.json`
+  (fil.nouns.phrases, reviewed, each with `why`) names the head noun, the adjective's corpus lemma,
+  en/bs (Korkut: Časni hram) and a studied noun whose picture stands beside it (the Kaaba). The
+  places are found in the corpus — the adjective as the very next word (15×) — grouped by how the
+  Quran writes the pair, each word played from the reciter; the citation form has the checked voice.
+
 ## Nuances (2026-11-06)
 
 Near-synonym groups (Nijanse / Nuances: why this word and not another) build on the noun, adjective and

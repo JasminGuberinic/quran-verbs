@@ -13,7 +13,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import replace
 
 from fil.nouns import gate
-from fil.nouns.model import (ATTESTED, DUAL, MISSING, NUMBERS, PLURAL, SINGULAR, NounLemma, NounOccurrence, ParadigmCell,
+from fil.nouns.model import (ATTESTED, DEFINITE, DUAL, MISSING, NUMBERS, PLURAL, SINGULAR, NounLemma, NounOccurrence, ParadigmCell,
                              table_cells)
 from fil.nouns.spelling import spelling_key
 from fil.nouns.paradigm import NounGenerator, build_paradigm
@@ -42,6 +42,14 @@ def as_collective(table: NounTable) -> NounTable:
     own, *others = table.rows
     kept = [row for row in others if row.number != DUAL and any(found.source == ATTESTED for found in row.cells)]
     return replace(table, rows=(own, *kept))
+
+
+def as_proper_name(table: NounTable) -> NounTable:
+    """A taught proper name's table (fil.nouns.selection.TAUGHT_PROPER_NOUNS): a name is definite
+    by itself, so only its definite cells are shown — كَعْبَةٌ "a cube" is another word than
+    الْكَعْبَةُ "the Kaaba". A row left with no cell is dropped."""
+    rows = (replace(row, cells=tuple(found for found in row.cells if found.cell.state == DEFINITE)) for row in table.rows)
+    return replace(table, rows=tuple(row for row in rows if _has_text(row)))
 
 
 def with_documented(table: NounTable, documented: Mapping[str, Mapping[str, str]], lemma: str) -> NounTable:

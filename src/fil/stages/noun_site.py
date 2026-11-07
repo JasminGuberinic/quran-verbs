@@ -25,9 +25,11 @@ from fil.nouns import explanation as explaining
 from fil.nouns.compose import Composed, NounGlossing, compose, preposition_name, separate_preposition
 from fil.nouns.english import EnglishNoun
 from fil.nouns.model import NUMBERS, PROPER_NOUN, NounLemma, NounOccurrence
+from fil.nouns.selection import taught_catalogue
+from fil.nouns.phrases import NounPhrase, PhrasePlace, grouped_by_writing, phrase_places
 from fil.nouns.pictures import NounPicture
 from fil.nouns.relations import NounRelation, RelatedNoun
-from fil.nouns.table import as_collective
+from fil.nouns.table import as_collective, as_proper_name
 from fil.nouns.sentence_gate import ROLES
 from fil.nouns.spelling import spelling_key
 from fil.nouns.studied import SECOND_PLURAL, InvalidNounData, NounMeaning, NounSentence, NounTable, bosnian_numbers, noun_key
@@ -57,7 +59,7 @@ def assemble_nouns(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord,
     if not meanings:
         return NounContent((), (), ())
     occurrences = noun_stage.load_occurrences()
-    lemmas = [lemma for lemma in noun_stage.catalogue(occurrences) if lemma.kind != PROPER_NOUN]
+    lemmas = taught_catalogue(noun_stage.catalogue(occurrences))
     slugs = dict(zip(((lemma.lemma, lemma.root) for lemma in lemmas), assign_slugs(lemma.lemma for lemma in lemmas)))
     by_key = {noun_key(lemma.lemma, lemma.root): lemma for lemma in lemmas}
     by_lemma = noun_stage.occurrences_by_lemma(occurrences)
@@ -68,15 +70,21 @@ def assemble_nouns(sound: Sound, ayat: Mapping[tuple[int, int], tuple[QuranWord,
     pages_of = {key: slugs[(lemma.lemma, lemma.root)] for key, lemma in by_key.items()
                 if key in {meaning.key for meaning in meanings}}
     pictures = {picture.key: picture for picture in _shown_pictures()}
+    phrases = _checked_phrases(noun_store.load_phrases(), pages_of, by_lemma, pictures)
+    beside = PhraseSurroundings(pages_of, {meaning.key: meaning for meaning in meanings}, pictures)
     cards, lists = [], []
     for meaning in meanings:
         lemma = by_key[meaning.key]
+        if lemma.kind == PROPER_NOUN and as_proper_name(tables[meaning.key]) != tables[meaning.key]:
+            raise InvalidNounData(f"{meaning.key}: a proper name's table shows an indefinite cell — "
+                                  "run `fil nouns batch tables`")
         builder = NounCardBuilder(lemma, meaning, tables[meaning.key], bosnian[meaning.key],
                                by_lemma[(lemma.lemma, lemma.root)], sound, ayat)
         card = {**builder.card(slugs[(lemma.lemma, lemma.root)], verb_pages,
                                [sentence for sentence in sentences if sentence.key == meaning.key],
                                pictures.get((lemma.lemma, lemma.root))),
-                "relation": builder.relation(relations.get(meaning.key), by_lemma, pages_of)}
+                "relation": builder.relation(relations.get(meaning.key), by_lemma, pages_of),
+                "phrases": [builder.phrase(phrase, by_lemma, beside) for phrase in phrases.get(meaning.key, ())]}
         cards.append(card)
         lists.extend(builder.ayat_lists(card))
         unvoiced = f" (not voiced, the two readers disagree: {' | '.join(builder.unvoiced)})" if builder.unvoiced else ""
@@ -99,6 +107,34 @@ def _checked_relations(relations: Mapping[str, NounRelation], studied: set[str],
     if unknown:
         raise InvalidNounData(f"data/noun_relations.json names what is not studied or not in the corpus: {unknown}")
     return relations
+
+
+@dataclass(frozen=True)
+class PhraseSurroundings:
+    """What a phrase links to beside it: the studied nouns' pages, meanings and pictures."""
+
+    pages_of: Mapping[str, str]
+    meanings: Mapping[str, NounMeaning]
+    pictures: Mapping[tuple[str, str], NounPicture]
+
+
+def _checked_phrases(phrases: Mapping[str, tuple[NounPhrase, ...]], studied_pages: Mapping[str, str],
+                     occurrences_of: Mapping[tuple[str, str], Sequence[NounOccurrence]],
+                     pictures: Mapping[tuple[str, str], NounPicture]) -> Mapping[str, tuple[NounPhrase, ...]]:
+    """The phrases, refused when one hangs on a noun nobody studies, names an adjective the corpus
+    does not have, is never said in the Quran, or borrows a picture no studied noun shows."""
+    problems = [f"{head}: not studied" for head in phrases if head not in studied_pages]
+    for head, listed in phrases.items():
+        for phrase in listed:
+            if not occurrences_of.get(tuple(phrase.adjective.split("|"))):
+                problems.append(f"{phrase.arabic}: no corpus lemma {phrase.adjective}")
+            elif not phrase_places(occurrences_of.get(tuple(head.split("|")), ()), occurrences_of[tuple(phrase.adjective.split("|"))]):
+                problems.append(f"{phrase.arabic}: never said in the Quran")
+            if phrase.picture and (phrase.picture not in studied_pages or tuple(phrase.picture.split("|")) not in pictures):
+                problems.append(f"{phrase.arabic}: {phrase.picture} is not a studied noun with a picture")
+    if problems:
+        raise InvalidNounData(f"data/noun_phrases.json: {problems}")
+    return phrases
 
 
 def _shown_pictures() -> list[NounPicture]:
@@ -198,6 +234,30 @@ class NounCardBuilder:
         return {"role": word.role, "arabic": word.arabic, "gender": word.gender, "meaning": {"en": word.en, "bs": word.bs},
                 "audio": recited or self._spoken(word.arabic), "recited": bool(recited), "quranCount": len(found),
                 "slug": pages_of.get(word.lemma) if word.lemma else None}
+
+    # ---------------------------------------------------------------- set phrases
+
+    def phrase(self, phrase: NounPhrase, occurrences_of: Mapping[tuple[str, str], Sequence[NounOccurrence]],
+               beside: PhraseSurroundings) -> dict:
+        """A set phrase on its noun's card (fil.nouns.phrases): its meaning, its checked voice, and
+        every way the Quran writes it, each word heard from the reciter, with every place."""
+        places = phrase_places(self.occurrences, occurrences_of[tuple(phrase.adjective.split("|"))])
+        picture = beside.pictures.get(tuple(phrase.picture.split("|"))) if phrase.picture else None
+        return {"arabic": phrase.arabic, "spoken": self._spoken(phrase.arabic), "meaning": {"en": phrase.en, "bs": phrase.bs},
+                "count": len(places), "ayahCount": len({place.ref for place in places}),
+                "picture": f"pictures/{picture.file_name}" if picture else None,
+                "pictureKey": phrase.picture if picture else None,
+                "pictureOf": {"slug": beside.pages_of[phrase.picture], "lemma": phrase.picture.split("|")[0],
+                              "meaning": {"en": beside.meanings[phrase.picture].en, "bs": beside.meanings[phrase.picture].bs}}
+                if picture else None,
+                "forms": [self._phrase_form(found) for _written, found in grouped_by_writing(places)]}
+
+    def _phrase_form(self, places: Sequence[PhrasePlace]) -> dict:
+        """One way the Quran writes the phrase: both words as said at its first place, and every place."""
+        first = places[0]
+        return {"words": [{"arabic": found.word_text, "audio": self.sound.word(found.surah, found.ayah, found.word)}
+                          for found in (first.noun, first.adjective)],
+                "count": len(places), "case": first.noun.case, "refs": [place.ref for place in places]}
 
     # ---------------------------------------------------------------- the case table
 
@@ -318,13 +378,14 @@ class UnvoicedNounText(Exception):
 def unvoiced_texts(card: dict) -> list[str]:
     """Every text of a card the synthetic voice should say but does not: the headword,
     each case-table cell the Quran does not recite, each case example, each sentence, each
-    related word (a collective's one, a male or female)."""
+    related word (a collective's one, a male or female), each set phrase."""
     cells = [cell for row in card["table"] for cell in row["cells"] if cell["text"]]
     said = [(card["lemma"], card["lemmaSpoken"]),
             *((cell["text"], cell["audio"]) for cell in cells),
             *((example["arabic"], example["audio"]) for example in card["explanation"]),
             *((sentence["arabic"], sentence["spoken"]) for sentence in card["sentences"]),
-            *((word["arabic"], word["audio"]) for word in (card.get("relation") or {}).get("related", ()))]
+            *((word["arabic"], word["audio"]) for word in (card.get("relation") or {}).get("related", ())),
+            *((phrase["arabic"], phrase["spoken"]) for phrase in card.get("phrases", ()))]
     return [text for text, sound in said if not sound]
 
 

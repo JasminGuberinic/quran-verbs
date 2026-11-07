@@ -54,13 +54,14 @@ SYMBOLIC = frozenset({"qualities_feelings", "abstract", "numbers_quantities"})
 # standing for a person beyond a faceless worshipper — a garden for Paradise, a prostrating
 # silhouette for prayer, open palms for supplication, a curtain for the unseen, a compass for the
 # qiblah, a charity box for alms, a lit path to a star for guidance; and the Kaaba, which the owner
-# allows plainly, for the pilgrimage, the Umrah and their rites. (A mosque, a miḥrāb and statues are
+# allows plainly — itself (a taught proper name, fil.nouns.selection.TAUGHT_PROPER_NOUNS) and for the
+# pilgrimage, the Umrah and their rites. (A mosque, a miḥrāb and statues are
 # places and objects, so their categories already allow them.) God, His names and the prophets as
 # persons stay banned below.
 SYMBOLS_OF_THE_SACRED: frozenset[LemmaKey] = frozenset({
     ("مَلَك", "ملك"), ("جَنَّة", "جنن"), ("صَلاة", "صلو"), ("دُعاء", "دعو"),
     ("غَيْب", "غيب"), ("قِبْلَة", "قبل"), ("صَدَقَة", "صدق"), ("هُدًى", "هدي"),
-    ("حَجّ", "حجج"), ("عُمْرَة", "عمر"), ("مَنسَك", "نسك"),
+    ("حَجّ", "حجج"), ("عُمْرَة", "عمر"), ("مَنسَك", "نسك"), ("كَعْبَة", "كعب"),
 })
 
 # Never pictured, whatever their category or an entry says: God, His Throne, and the prophets;

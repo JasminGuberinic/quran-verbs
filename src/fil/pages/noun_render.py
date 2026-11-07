@@ -16,6 +16,7 @@ from collections.abc import Collection, Sequence
 from html import escape
 
 from fil.languages import Language
+from fil.nouns.model import PROPER_NOUN
 from fil.nouns.relations import COLLECTIVE
 from fil.pages import gallery_links, render, seo
 from fil.pages.interface_text import fill
@@ -49,6 +50,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
         f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun">',
         _hero(card, meaning, language, text, root, category, root_slug=root_slug),
         _related(card, language, text, root),
+        _phrases(card, language, text, root),
         _table(card, text, root),
         _explanation(card, language, text, root),
         _sentences(card, language, text, root),
@@ -138,6 +140,58 @@ def _related_word(word: dict, language: Language, words: dict, text: dict, root:
             f'<p>{named} · <span class="note">{escape(words["genders"][word["gender"]])} · {escape(found)}</span></p></li>')
 
 
+# ---------- set phrases ----------
+
+def _phrases(card: dict, language: Language, text: dict, root: str) -> str:
+    """The Quran's set phrases on this noun (الْمَسْجِدُ الْحَرَامُ on مَسْجِد), each way it is written
+    heard word by word from the reciter, with every place."""
+    if not card.get("phrases"):
+        return ""
+    words = text["nounPage"]
+    items = "".join(_phrase(phrase, language, words, text, root) for phrase in card["phrases"])
+    return (f'<section id="phrases"><h2>{escape(words["phrasesTitle"])}</h2><p class="note">{escape(words["phrasesIntro"])}</p>'
+            f'<ul class="sentences phrases">{items}</ul></section>')
+
+
+def _phrase(phrase: dict, language: Language, words: dict, text: dict, root: str) -> str:
+    meaning = phrase["meaning"].get(language.code) or phrase["meaning"]["en"]
+    english = "" if language.code == "en" else f' <span class="note" lang="en">({escape(phrase["meaning"]["en"])})</span>'
+    stats = " · ".join((fill(text["times"], phrase["count"]), fill(text["inAyat"], phrase["ayahCount"])))
+    forms = "".join(_phrase_form(form, language, words, text, root) for form in phrase["forms"])
+    return (f'<li>{_phrase_picture(phrase, language, words, root)}'
+            f'<p class="sentence">{render._play(phrase.get("spoken"), root, text["listen"])}'
+            f'<span class="ar" lang="ar" dir="rtl">{phrase["arabic"]}</span></p>'
+            f'<p>{escape(meaning)}{english} · <span class="note">{escape(stats)}</span></p>'
+            f'<ol class="attested">{forms}</ol></li>')
+
+
+def _phrase_picture(phrase: dict, language: Language, words: dict, root: str) -> str:
+    """The picture of the studied noun the phrase names a place around (the Kaaba), linked to its page."""
+    shown = phrase.get("pictureOf")
+    if not phrase.get("picture") or not shown:
+        return ""
+    meaning = shown["meaning"].get(language.code) or shown["meaning"]["en"]
+    return (f'<a class="phrase-figure" href="{root}{seo.noun_path(language.code, shown["slug"])}">'
+            f'<img class="thumb" src="{root}{phrase["picture"]}" width="48" height="48" '
+            f'alt="{escape(fill(words["phrasePicture"], meaning))}" loading="lazy"> '
+            f'<span class="ar" lang="ar" dir="rtl">{shown["lemma"]}</span> {escape(meaning)}</a>')
+
+
+def _phrase_form(form: dict, language: Language, words: dict, text: dict, root: str) -> str:
+    said = " ".join(_recited_word(word, root) for word in form["words"])
+    places = " ".join(f'<a href="https://quran.com/{ref.replace(":", "/")}" rel="noopener">{ref}</a>' for ref in form["refs"])
+    return (f'<li><span class="form-word" dir="rtl">{said}</span><small>{form["count"]}×</small>'
+            f'<span class="grammar">{escape(words["shortCases"].get(form["case"] or "", ""))}</span>'
+            f'<span class="first">{places}</span></li>')
+
+
+def _recited_word(word: dict, root: str) -> str:
+    link = audio_link(word.get("audio"), root)
+    if not link:
+        return f'<b lang="ar" dir="rtl">{word["arabic"]}</b>'
+    return f'<button class="form-play" type="button" lang="ar" dir="rtl" data-audio="{link}">{word["arabic"]}</button>'
+
+
 # ---------- the case table ----------
 
 def _table(card: dict, text: dict, root: str) -> str:
@@ -146,7 +200,8 @@ def _table(card: dict, text: dict, root: str) -> str:
     is_collective = (card.get("relation") or {}).get("kind") == COLLECTIVE
     rows = "".join(_table_rows(row, words, root, text, label="C" if is_collective and index == 0 else row["row"])
                    for index, row in enumerate(card["table"]))
-    return (f'<section><h2>{escape(words["table"])}</h2><p class="note">{escape(words["tableIntro"])}</p>'
+    name = f'<p class="note">{escape(words["properNameNote"])}</p>' if card["kind"] == PROPER_NOUN else ""
+    return (f'<section><h2>{escape(words["table"])}</h2><p class="note">{escape(words["tableIntro"])}</p>{name}'
             f'<div class="table-scroll"><table class="conj cases"><thead><tr><th></th>{header}</tr></thead>'
             f'<tbody>{rows}</tbody></table></div><p class="note">{escape(words["tableNote"])}</p></section>')
 
@@ -155,11 +210,12 @@ def _table_rows(row: dict, words: dict, root: str, text: dict, label: str) -> st
     """`label` names the row: its number, or "C" for a collective's own row ("zbirno")."""
     by_cell = {(cell["state"], cell["case"]): cell for cell in row["cells"]}
     plural = f' <span class="ar" lang="ar" dir="rtl">{row["plural"]}</span>' if row["row"] == "P2" and row.get("plural") else ""
+    states = [state for state in _STATE_ORDER if any(by_cell.get((state, case), {}).get("text") for case in _CASE_ORDER)]
     return "".join(
-        f'<tr><th scope="row">{escape(words["numbers"][label])}{plural if state == _STATE_ORDER[0] else ""}'
+        f'<tr><th scope="row">{escape(words["numbers"][label])}{plural if state == states[0] else ""}'
         f'<small>{escape(words["states"][state])}</small></th>'
         + "".join(_table_cell(by_cell.get((state, case)), words, root, text) for case in _CASE_ORDER) + "</tr>"
-        for state in _STATE_ORDER
+        for state in states
     )
 
 

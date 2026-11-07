@@ -41,10 +41,10 @@ from fil.nouns import bosnian as bosnian_nouns
 from fil.nouns import sentence_gate
 from fil.nouns.model import PROPER_NOUN, NounLemma
 from fil.nouns.relations import likely_collective
-from fil.nouns.selection import next_nouns
+from fil.nouns.selection import next_nouns, taught_catalogue
 from fil.nouns.spelling import spelling_key
 from fil.nouns.studied import NounMeaning, NounSentence, bosnian_numbers, noun_key, parse_meaning
-from fil.nouns.table import as_collective, build_table, with_documented
+from fil.nouns.table import as_collective, as_proper_name, build_table, with_documented
 from fil.resources import BUILD_DIR
 from fil.stages import nouns as noun_stage
 
@@ -79,7 +79,7 @@ class DraftLineError(ValueError):
 
 def plan(arguments: Sequence[str]) -> None:
     occurrences = noun_stage.load_occurrences()
-    lemmas = [lemma for lemma in noun_stage.catalogue(occurrences) if lemma.kind != PROPER_NOUN]
+    lemmas = taught_catalogue(noun_stage.catalogue(occurrences))
     studied = [meaning.key for meaning in noun_store.load_meanings()]
     if arguments[:1] == ["next"]:
         chosen, skipped = next_nouns(lemmas, int(arguments[1]), studied, HELD_BACK)
@@ -190,6 +190,7 @@ def write_tables() -> None:
     for lemma in lemmas:
         table = build_table(lemma, by_lemma[(lemma.lemma, lemma.root)], generator)
         table = with_documented(table, documented.get(_key(lemma), {}), lemma.lemma)
+        table = as_proper_name(table) if lemma.kind == PROPER_NOUN else table
         tables[_key(lemma)] = as_collective(table) if _key(lemma) in collectives else table
     noun_store.save_tables(tables)
     sources = Counter(found.source for key in keys if key in tables for row in tables[key].rows for found in row.cells)

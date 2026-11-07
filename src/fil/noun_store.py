@@ -19,11 +19,12 @@ from pathlib import Path
 from fil.example_store import from_dict, to_dict
 from fil.nouns import bosnian
 from fil.nouns.bosnian import BosnianNoun
+from fil.nouns.phrases import NounPhrase, parse_phrases
 from fil.nouns.relations import NounRelation, parse_relations
 from fil.nouns.studied import (NounMeaning, NounSentence, NounTable, meaning_entry, parse_meaning, parse_table,
                                table_entry)
-from fil.resources import (NOUN_BS_PARADIGMS_JSON, NOUN_MEANINGS_JSON, NOUN_OVERRIDES_JSON, NOUN_RELATIONS_JSON,
-                           NOUN_SENTENCES_JSON, NOUN_TABLES_JSON, NOUN_UNVOICED_JSON)
+from fil.resources import (NOUN_BS_PARADIGMS_JSON, NOUN_MEANINGS_JSON, NOUN_OVERRIDES_JSON, NOUN_PHRASES_JSON,
+                           NOUN_RELATIONS_JSON, NOUN_SENTENCES_JSON, NOUN_TABLES_JSON, NOUN_UNVOICED_JSON)
 
 _ABOUT = "_about"
 _ABOUTS = {
@@ -94,6 +95,11 @@ def save_sentences(sentences: list[NounSentence], path: Path = NOUN_SENTENCES_JS
 def load_relations(path: Path = NOUN_RELATIONS_JSON) -> dict[str, NounRelation]:
     """The reviewed collectives, singulatives and pairs (fil.nouns.relations), validated."""
     return parse_relations(_entries(path))
+
+
+def load_phrases(path: Path = NOUN_PHRASES_JSON) -> dict[str, tuple[NounPhrase, ...]]:
+    """The reviewed set phrases (fil.nouns.phrases), by the studied noun whose card shows them."""
+    return parse_phrases(_entries(path))
 
 
 def load_unvoiced(path: Path = NOUN_UNVOICED_JSON) -> dict[str, str]:

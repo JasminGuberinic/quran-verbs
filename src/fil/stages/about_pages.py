@@ -5,19 +5,20 @@
 
 from __future__ import annotations
 
+from collections.abc import Collection
 from pathlib import Path
 
 from fil.languages import LANGUAGES
 from fil.pages import about_render, seo
 
 
-def write(pages: Path, texts: dict[str, dict]) -> list[Path]:
-    """One About page per language; the pages written."""
+def write(pages: Path, texts: dict[str, dict], published: Collection[str] = frozenset()) -> list[Path]:
+    """One About page per language; the pages written. `published` names the sections the menus lead to."""
     written = []
     for language in LANGUAGES:
         target = pages / seo.about_path(language.code) / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(about_render.about_page(language, texts), encoding="utf-8")
+        target.write_text(about_render.about_page(language, texts, published), encoding="utf-8")
         written.append(target)
     return written
 

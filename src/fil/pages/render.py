@@ -18,7 +18,7 @@ from html import escape
 
 from fil.ayah_links import ayah_links
 from fil.languages import LANGUAGES, Language
-from fil.pages import animation_render, gallery_links, indexing, pwa, seo, untranslated
+from fil.pages import animation_render, gallery_links, indexing, navigation, pwa, seo, untranslated
 from fil.pages.pwa import PWA_SCRIPT
 from fil.pages.interface_text import fill
 from fil.recitation import AYAH_STREAM, is_streamed
@@ -27,6 +27,7 @@ FORM_NAMES = ("", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
 PRONOUN_ORDER = ("huwa", "hiya", "huma", "hum", "hunna", "anta", "anti", "antuma", "antum", "antunna", "ana", "nahnu")
 TENSE_ORDER = ("past", "present", "imperative")
 STYLESHEET = "pages.css"
+NAV_STYLESHEET = "nav.css"   # the phone's tab bar and the pager, shared with the app (site/nav.css)
 _ENGLISH = "en"
 _ENGLISH_STOP = "Stop"   # the label of a playing button in a language that has no word for it yet
 _CURRENT = ' aria-current="page"'
@@ -48,6 +49,8 @@ _ABOUT_LINKS = "<!--about-links-->"    # where _footer leaves the About, Privacy
 _PLAYER_SCRIPT = "player.js"
 # Marks what the scripts draw later the way fil.pages.untranslated marks the page, and shows the hint once.
 _TRANSLATION_SCRIPT = "translation.js"
+# Tucks the phone's top bar away while reading and closes the "More" sheet (site/nav.js).
+NAV_SCRIPT = "nav.js"
 # A play symbol is not a word: browser translation must leave it as it is.
 _PLAY_SYMBOL = f'<span {untranslated.NO_TRANSLATE}>▶</span>'
 # Languages are named in their own words; a browser must not translate "Bosanski" into "Bosnian".
@@ -73,7 +76,8 @@ class PublishedVerb:
 
 def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root: str = "", *,
               published: Collection[str] = frozenset(), picture_credit: str = "", adjectives_of_root: str = "", similar_words: str = "",
-              practice: str = "", root_slug: str | None = None, animation: str = "") -> str:
+              practice: str = "", root_slug: str | None = None, animation: str = "",
+              neighbours: navigation.Neighbours | None = None) -> str:
     """`nouns_of_root`: the section linking the studied nouns of the verb's root (fil.pages.noun_render);
     `adjectives_of_root`: the same for the studied adjectives (fil.pages.adjective_render);
     `similar_words`: the section linking the near-synonym groups the verb belongs to (fil.pages.nuance_render);
@@ -81,7 +85,8 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
     `picture_credit`: the footer line owed for the pictures the nouns' section shows;
     `practice`: the "Vježbaj ovaj glagol" link to the verb's exercises (fil.pages.exercise_render), or "";
     `root_slug`: the page of the verb's root (fil.pages.root_render), which its root letters link to;
-    `animation`: the verb's shipped drawing (fil.animations), or "" — it sits in the hero and the footer says it is ours."""
+    `animation`: the verb's shipped drawing (fil.animations), or "" — it sits in the hero and the footer says it is ours;
+    `neighbours`: where the verb stands in the list by rank, for the pager to the verbs on either side."""
     path = seo.verb_path(language.code, verb.slug)
     root = seo.to_root(path)
     card = verb.card
@@ -91,9 +96,11 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
     structured = seo.verb_structured_data(
         title=title, description=description, language=language.code, path=path,
         lemma=card["lemma"], meaning=meaning, index_title=text["page"]["indexTitle"])
+    top_pager, foot_pager = navigation.pagers(neighbours, f"{root}{seo.language_index_path(language.code)}",
+                                              pager_words(text, text["page"]["allVerbs"])) if neighbours else ("", "")
     body = "".join((
         top_bar(text, root, language, lambda code: seo.verb_path(code, verb.slug), section=VERBS, published=published),
-        f'<main class="wrap"><p class="notice">{text["notice"]}</p><article>',
+        f'<main class="wrap">{top_pager}<p class="notice">{text["notice"]}</p><article>',
         _hero(card, meaning, language, text, root, root_slug, animation),
         _main_forms(card, text, root),
         _conjugation(card, text, root),
@@ -104,7 +111,7 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
         similar_words,
         practice,
         _app_link(card, language, text, root),
-        "</article></main>",
+        f"</article>{foot_pager}</main>",
         animation_render.replay_script(animation, root),
         _footer(text, animation_render.credit_with(picture_credit, animation)),
     ))
@@ -113,6 +120,28 @@ def verb_page(verb: PublishedVerb, language: Language, text: dict, nouns_of_root
                  alternates=lambda languages: seo.verb_alternates(verb.slug, languages),
                  structured=structured, page_type="article")
     return _document(language, head, body, root=root, text=text)
+
+
+def pager_words(text: dict, list_label: str) -> navigation.PagerWords:
+    """The pager's words in the page's language: the app's own "← Previous" and "Next →", and the list's name."""
+    return navigation.PagerWords(previous=text["prev"], next=text["next"], list_label=list_label)
+
+
+def section_pagers(neighbours: navigation.Neighbours | None, list_href: str, text: dict, section: str) -> tuple[str, str]:
+    """The two pagers of a word's page in a section after the verbs (NOUNS, …): back to its list, "Sve imenice"."""
+    if neighbours is None:
+        return "", ""
+    return navigation.pagers(neighbours, list_href, pager_words(text, text["menu"]["lists"][section]))
+
+
+def card_neighbours(cards: Sequence[dict]) -> list[navigation.Neighbour]:
+    """A section's cards in the order their list shows them, as the pager pages through them."""
+    return [navigation.Neighbour(card["slug"], card["lemma"]) for card in cards]
+
+
+def verb_neighbours(verbs: Sequence[PublishedVerb]) -> list[navigation.Neighbour]:
+    """The verbs in the order their list shows them (by rank), as the pager pages through them."""
+    return [navigation.Neighbour(verb.slug, verb.card["lemma"]) for verb in verbs]
 
 
 def meaning_in(card: dict, language: str) -> str:
@@ -508,6 +537,7 @@ def _document(language: Language, head: str, body: str, *, root: str, text: dict
     return (f'<!doctype html>\n<html lang="{language.code}" dir="{direction}">\n<head>\n{head}</head>\n'
             f'<body>\n{untranslated.protect(body, language.code)}\n{_player(root, text)}\n'
             f'<script src="{root}{_TRANSLATION_SCRIPT}" defer></script>\n'
+            f'<script src="{root}{NAV_SCRIPT}" defer></script>\n'
             f'<script src="{root}{PWA_SCRIPT}" defer></script>\n</body>\n</html>\n')
 
 
@@ -527,7 +557,8 @@ def _head(*, title: str, description: str, path: str, root: str, indexed_in: Seq
             f'<title>{escape(title)}</title>\n{NO_ICON}\n{"" if is_indexed else _NOT_INDEXED}'
             + _meta(title=title, description=description, url=url, page_type=page_type)
             + f'<link rel="canonical" href="{url}">\n{links}'
-            f'{_FONTS}<link rel="stylesheet" href="{root}{STYLESHEET}">\n{pwa.head_links(root)}'
+            f'{_FONTS}<link rel="stylesheet" href="{root}{STYLESHEET}">\n<link rel="stylesheet" href="{root}{NAV_STYLESHEET}">\n'
+            f'{pwa.head_links(root)}'
             f'<script type="application/ld+json">{structured}</script>\n')
 
 
@@ -550,19 +581,46 @@ def top_bar(text: dict, root: str, language: Language, path_in: Callable[[str], 
     `published` ones of nouns, adjectives, nuances, particles, pronouns, surahs, exercises, then the two
     galleries) with the current one marked, and the
     switcher to this page (`path_in` a language) in each of the `languages` it is written in. A section appears only
-    in the languages it is written in, so no link leads to a missing page. Under it, the translation hint."""
-    sections = [(VERBS, seo.language_index_path(language.code), text["page"]["nav"]),
-                *((name, index_path(language.code), text[words]["nav"])
-                  for name, folders, index_path, words in _SECTIONS
-                  if (name in published or name == section) and language.code in folders),
-                *((name, path_of(language.code), text["aboutNav"][name]) for name, path_of in _GALLERIES)]
-    links = "".join(f'<a href="{root}{path}"{_section_mark(name == section, is_section_list)}>{escape(label)}</a>'
-                    for name, path, label in sections)
-    return (f'<header class="top"><a class="brand" href="{root}">{seo.SITE_NAME}</a>'
+    in the languages it is written in, so no link leads to a missing page. Under it, the translation hint;
+    on a phone the bar is one line naming the section, the sections behind its ☰ menu (fil.pages.navigation)."""
+    sections = _sections_of(text, root, language, section, published)
+    links = "".join(f'<a href="{destination.href}"{_section_mark(destination.name == section, is_section_list)}>'
+                    f'{escape(destination.label)}</a>'
+                    for destination in sections)
+    return (f'<header class="top site-top" data-autohide><a class="brand" href="{root}">{seo.SITE_NAME}</a>'
+            f'<span class="top-title" aria-hidden="true">{escape(_section_title(text, sections, section))}</span>'
             f'<nav class="sections">{links}</nav>'
             f'<details class="languages"><summary>{escape(text["language"])}</summary>'
-            f'{_language_links(root, path_in, language, languages)}</details></header>'
-            f'{translation_hint(text, root, path_in, language)}')
+            f'{_language_links(root, path_in, language, languages)}</details>'
+            + navigation.phone_menu([*sections, _about_destination(text, root, language)], section,
+                                    _language_choices(root, path_in, language, languages), navigation.MenuWords.of(text),
+                                    is_section_list=is_section_list)
+            + f'</header>{translation_hint(text, root, path_in, language)}')
+
+
+def _sections_of(text: dict, root: str, language: Language, section: str,
+                 published: Collection[str]) -> list[navigation.Destination]:
+    return [navigation.Destination(VERBS, f"{root}{seo.language_index_path(language.code)}", text["page"]["nav"]),
+            *(navigation.Destination(name, f"{root}{index_path(language.code)}", text[words]["nav"])
+              for name, folders, index_path, words in _SECTIONS
+              if (name in published or name == section) and language.code in folders),
+            *(navigation.Destination(name, f"{root}{path_of(language.code)}", text["aboutNav"][name])
+              for name, path_of in _GALLERIES)]
+
+
+def _about_destination(text: dict, root: str, language: Language) -> navigation.Destination:
+    return navigation.Destination(seo.ABOUT_FOLDER, f"{root}{seo.about_path(language.code)}", text["aboutNav"]["about"])
+
+
+def _section_title(text: dict, sections: Sequence[navigation.Destination], section: str) -> str:
+    """What the phone's one-line bar says the reader is in: the section's name (About is not a section)."""
+    return next((destination.label for destination in sections if destination.name == section), text["aboutNav"]["about"])
+
+
+def _language_choices(root: str, path_in: Callable[[str], str], current: Language,
+                      languages: Sequence[Language]) -> list[navigation.LanguageChoice]:
+    return [navigation.LanguageChoice(language.code, language.name, f"{root}{path_in(language.code)}", language == current)
+            for language in languages]
 
 
 # The galleries (fil.pages.gallery_render), written in every language: name, address.
@@ -578,7 +636,9 @@ def translation_hint(text: dict, root: str, path_in: Callable[[str], str], langu
         return ""
     english = (f' <a href="{root}{path_in(_ENGLISH)}" hreflang="{_ENGLISH}" lang="{_ENGLISH}">{escape(text["translateHintLink"])}</a>'
                if language.code != _ENGLISH else "")
-    return (f'<aside class="translate-hint" data-translate-hint hidden><p>{escape(hint)}{english}</p>'
+    short = text.get("translateHintShort", hint)   # a phone gets one short line
+    return (f'<aside class="translate-hint" data-translate-hint hidden><p><span class="hint-long">{escape(hint)}</span>'
+            f'<span class="hint-short">{escape(short)}</span>{english}</p>'
             f'<button type="button" class="translate-hint-close" data-translate-hint-close '
             f'aria-label="{escape(text["close"])}"><span aria-hidden="true">×</span></button></aside>')
 

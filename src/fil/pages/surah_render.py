@@ -21,7 +21,7 @@ from collections.abc import Callable, Collection, Sequence
 from html import escape
 
 from fil.languages import Language
-from fil.pages import render, seo
+from fil.pages import navigation, render, seo
 from fil.pages.interface_text import fill
 from fil.recitation import AYAH_STREAM
 
@@ -46,18 +46,20 @@ def no_root_pages(_language: str, _root: str) -> None:
 # ---------- a surah's page ----------
 
 def surah_page(view: dict, language: Language, text: dict, *, published: Collection[str],
-               root_path: RootPath = no_root_pages, practice: str = "") -> str:
+               root_path: RootPath = no_root_pages, practice: str = "",
+               neighbours: navigation.Neighbours | None = None) -> str:
     """One surah's page. `published` names the sections whose pages exist, so a word links its card only
     where the card's page is published; `root_path` gives a root's page where one is; `practice` is the
-    link into the exercises on the surah's words, or ""."""
+    link into the exercises on the surah's words, or ""; `neighbours` the surahs on either side, for the pager."""
     words = text["surahPage"]
     path = seo.surah_path(language.code, view["slug"])
     root = seo.to_root(path)
     title = fill(words["title"], view["transliteration"], view["arabic"])
     description = fill(words["description"], view["transliteration"], view["coverage"], view["tokens"])
+    top_pager, foot_pager = render.section_pagers(neighbours, f"{root}{seo.surah_index_path(language.code)}", text, render.SURAHS)
     body = "".join((
         _top_bar(text, root, language, lambda code: seo.surah_path(code, view["slug"]), published),
-        f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="surah" data-tokens="{view["tokens"]}">',
+        f'<main class="wrap">{top_pager}<p class="notice">{text["notice"]}</p><article class="surah" data-tokens="{view["tokens"]}">',
         _hero(view, language, words, root),
         _coverage(view, words),
         practice,
@@ -66,7 +68,7 @@ def surah_page(view: dict, language: Language, text: dict, *, published: Collect
         _untaught(view, words),
         _ayat(view, language, text),
         f'<p class="note">{escape(words["source"])}</p>',
-        "</article></main>",
+        f"</article>{foot_pager}</main>",
         render._footer(text),
         f'<script src="{root}{_SCRIPT}" defer></script>',
     ))

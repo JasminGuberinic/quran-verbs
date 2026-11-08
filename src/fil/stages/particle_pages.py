@@ -14,7 +14,7 @@ from collections.abc import Collection, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
-from fil.pages import particle_render, seo
+from fil.pages import navigation, particle_render, seo
 from fil.pages.exercise_render import PracticeLink, no_practice
 from fil.pages.particle_render import PARTICLES, WordSection
 
@@ -24,6 +24,7 @@ def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published:
     """Every page of the section and its list; the pages written."""
     if not cards:
         return []
+    in_order = [navigation.Neighbour(card["slug"], card["arabic"]) for card in cards]
     written = []
     for language in _languages(section):
         text = texts[language.code]
@@ -32,7 +33,8 @@ def write(pages: Path, cards: Sequence[dict], texts: dict[str, dict], published:
                                                              section=section)))
         written += [_write(pages, path, particle_render.particle_page(
                                card, language, text, published=published, section=section,
-                               practice=practice(card["slug"], language, seo.to_root(path))))
+                               practice=practice(card["slug"], language, seo.to_root(path)),
+                               neighbours=navigation.neighbours_in(in_order, card["slug"])))
                     for card in cards for path in [section.path(language.code, card["slug"])]]
     return written
 

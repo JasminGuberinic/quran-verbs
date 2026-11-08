@@ -51,7 +51,8 @@ from fil.study import AyahExample, QuranWord
 from fil.word_translations import NoWordTranslations, WordTranslations
 
 _TEMPLATE = Path(__file__).resolve().parents[1] / "site" / "index.html"
-APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js", "player.js", "exercises.js", "translation.js", "animation.js", "gallery.js")
+APP_FILES = ("index.html", "ui.js", "practice.js", "ayat.js", "player.js", "exercises.js", "translation.js", "animation.js", "gallery.js",
+             "nav.js", "nav.css")
 _COMPRESSED = BUILD_DIR / "compressed-cache"
 _REVIEW = BUILD_DIR / "site-review.txt"
 

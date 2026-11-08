@@ -16,7 +16,7 @@ the same rule for a verb page).
 
 from __future__ import annotations
 
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Collection, Sequence
 from dataclasses import dataclass
 from html import escape
 
@@ -117,8 +117,9 @@ def page_paths(gallery: Gallery, items: Sequence[GalleryItem]) -> list[str]:
 # ---------- the page ----------
 
 def gallery_page(gallery: Gallery, items: Sequence[GalleryItem], language: Language, text: dict,
-                 practice_path: str | None = None) -> str:
-    """`practice_path`: the page of the gallery's own exercise (from the site root), which a button leads to."""
+                 practice_path: str | None = None, published: Collection[str] = frozenset()) -> str:
+    """`practice_path`: the page of the gallery's own exercise (from the site root), which a button leads to;
+    `published`: the sections beyond the verbs the menus lead to (fil.pages.render.top_bar)."""
     words, nav = text["galleryPage"], text["aboutNav"]
     title, intro = words[f"{gallery.kind}Title"], words[f"{gallery.kind}Intro"]
     path = gallery.path_in(language.code)
@@ -126,7 +127,7 @@ def gallery_page(gallery: Gallery, items: Sequence[GalleryItem], language: Langu
     indexed_in = indexed_languages(items)
     other = nav[PICTURES if gallery.kind == ANIMATIONS else ANIMATIONS]
     body = "".join((
-        render.top_bar(text, root, language, gallery.path_in, section=gallery.kind, is_section_list=True),
+        render.top_bar(text, root, language, gallery.path_in, section=gallery.kind, is_section_list=True, published=published),
         f'<main class="wrap"><h1>{escape(title)}</h1><p class="lead">{escape(intro)}</p>',
         f'<p class="gallery-other">{_practise(practice_path, root, words)}'
         f'<a href="{root}{gallery.other_path_in(language.code)}">{escape(other)} →</a></p>',

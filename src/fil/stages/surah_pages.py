@@ -16,7 +16,7 @@ from collections.abc import Collection, Mapping, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES
-from fil.pages import seo, surah_render
+from fil.pages import navigation, seo, surah_render
 from fil.pages.exercise_render import words_practice_link
 from fil.pages.surah_render import RootPath, no_root_pages
 from fil.stages.surah_site import SurahContent
@@ -29,6 +29,7 @@ def write(pages: Path, content: SurahContent, texts: dict[str, dict], published:
     """Every surah page, the list, the surahs' ayat files and the script; the pages written."""
     if not content.pages:
         return []
+    in_order = [navigation.Neighbour(view["slug"], view["arabic"]) for view in content.pages]
     written = []
     for language in (language for language in LANGUAGES if language.code in surah_render.SURAH_LANGUAGES):
         text = texts[language.code]
@@ -39,7 +40,8 @@ def write(pages: Path, content: SurahContent, texts: dict[str, dict], published:
             practice = words_practice_link(view["practice"], practised, language, text, seo.to_root(path),
                                            for_surah=True)
             written.append(_write(pages, path, surah_render.surah_page(view, language, text, published=published,
-                                                                      root_path=root_path, practice=practice)))
+                                                                      root_path=root_path, practice=practice,
+                                                                      neighbours=navigation.neighbours_in(in_order, view["slug"]))))
     for path, listed in content.ayat_lists:
         (pages / path).write_text(json.dumps(listed, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     shutil.copyfile(SCRIPT, pages / SCRIPT.name)

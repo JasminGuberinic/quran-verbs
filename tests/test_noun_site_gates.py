@@ -70,8 +70,9 @@ def test_every_shipped_noun_sentence_is_read_alike_by_both_readers():
 # ---------------------------------------------------------------- the top bar
 
 def _text(code: str = "bs") -> dict:
-    return {"page": {"nav": "Glagoli"}, "nounPage": {"nav": "Imenice"}, "language": "Jezik",
-            "aboutNav": {"animations": "Animacije", "pictures": "Slike imenica"}}
+    return {"page": {"nav": "Glagoli"}, "nounPage": {"nav": "Imenice"}, "language": "Jezik", "close": "Zatvori",
+            "aboutNav": {"about": "O stranici", "animations": "Animacije", "pictures": "Slike imenica"},
+            "menu": {"button": "Meni", "label": "Glavni meni", "sections": "Sve sekcije"}}
 
 
 def _galleries(root: str, code: str) -> list[tuple[str, str]]:

@@ -9,7 +9,7 @@ The noun pictures themselves are published by fil.stages.noun_pages, beside the 
 
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
+from collections.abc import Collection, Mapping, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -30,7 +30,8 @@ class GalleryContent:
         return self.practice.get(language) or self.practice.get(SOURCE_LANGUAGE)
 
 
-def write(pages: Path, galleries: Sequence[GalleryContent], texts: dict[str, dict]) -> list[Path]:
+def write(pages: Path, galleries: Sequence[GalleryContent], texts: dict[str, dict],
+          published: Collection[str] = frozenset()) -> list[Path]:
     """Every gallery in every language; the pages written. A gallery with nothing to show is a page that still says so."""
     written = []
     for content in galleries:
@@ -38,7 +39,7 @@ def write(pages: Path, galleries: Sequence[GalleryContent], texts: dict[str, dic
             target = pages / content.gallery.path_in(language.code) / "index.html"
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(gallery_render.gallery_page(content.gallery, content.items, language, texts[language.code],
-                                                          practice_path=content.practice_in(language.code)),
+                                                          practice_path=content.practice_in(language.code), published=published),
                               encoding="utf-8")
             written.append(target)
     return written

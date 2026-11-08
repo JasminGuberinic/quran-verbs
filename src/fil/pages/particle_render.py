@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from html import escape
 
 from fil.languages import Language
-from fil.pages import render, seo
+from fil.pages import navigation, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.nuance_render import marked_text
 
@@ -53,25 +53,27 @@ _SEPARATOR = " · "
 # ---------- a particle's page ----------
 
 def particle_page(card: dict, language: Language, text: dict, *, published: Collection[str],
-                  section: WordSection = PARTICLES, practice: str = "") -> str:
+                  section: WordSection = PARTICLES, practice: str = "",
+                  neighbours: navigation.Neighbours | None = None) -> str:
     """One particle's (or, in PRONOUNS, one pronoun's) page. `published` names the sections whose pages
     are published (render.NOUNS, …), so the top bar and the links to verb and noun cards lead only to
-    pages that exist; `practice` is the link to the particle's exercises."""
+    pages that exist; `practice` is the link to the particle's exercises; `neighbours` its place in the list, for the pager."""
     words = text[section.words]
     path = section.path(language.code, card["slug"])
     root = seo.to_root(path)
     meaning = card["meaning"][language.code]
     page_title = fill(words["title"], card["arabic"], meaning)
     description = fill(words["description"], card["arabic"], meaning)
+    top_pager, foot_pager = render.section_pagers(neighbours, f"{root}{section.index_path(language.code)}", text, section.name)
     body = "".join((
         _top_bar(text, root, language, lambda code: section.path(code, card["slug"]), published, section),
-        f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="particle">',
+        f'<main class="wrap">{top_pager}<p class="notice">{text["notice"]}</p><article class="particle">',
         _hero(card, meaning, language, text, root, section),
         _what_it_does(card, language, text, root, published, words),
         _uses(card, language, text, root, published, words),
         _sources(card, words),
         practice,
-        "</article></main>",
+        f"</article>{foot_pager}</main>",
         render._footer(text),
     ))
     structured = seo.grammar_structured_data(title=page_title, description=description, language=language.code,

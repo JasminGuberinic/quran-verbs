@@ -13,7 +13,7 @@ from collections.abc import Callable, Collection, Mapping, Sequence
 from pathlib import Path
 
 from fil.languages import LANGUAGES, Language
-from fil.pages import adjective_render, nuance_render, seo
+from fil.pages import adjective_render, navigation, nuance_render, render, seo
 from fil.pages.exercise_render import PracticeLink, no_practice
 from fil.stages.adjective_site import AdjectiveContent
 from fil.stages.noun_pages import write_ayat
@@ -30,6 +30,7 @@ def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], text
     if not adjectives.cards:
         return []
     write_ayat(pages, adjectives.ayat_lists)
+    in_order = render.card_neighbours(adjectives.cards)
     written = []
     for language in _languages():
         text = texts[language.code]
@@ -44,7 +45,8 @@ def write(pages: Path, adjectives: AdjectiveContent, nouns: Sequence[dict], text
                                                    nouns_of_root=nouns_of_root, picture_credit=credit_for(nouns_of_root),
                                                    published=published, similar_words=similar,
                                                    practice=practice(card["slug"], language, seo.to_root(path)),
-                                                   root_slug=(root_slugs or {}).get(card["root"]))
+                                                   root_slug=(root_slugs or {}).get(card["root"]),
+                                                   neighbours=navigation.neighbours_in(in_order, card["slug"]))
             written.append(_write(pages, path, html))
     return written
 

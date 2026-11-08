@@ -496,20 +496,44 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   .tile-pictures img { width: 26%; height: auto; }
 }
 @media (prefers-reduced-motion: reduce) { .gallery-tile, .gallery-tile:hover { transition: none; transform: none; } }
+/* the verb's place in the list, between the hero's ‹ › */
+.hero-nav { align-items: center; }
+.hero-count { font-family: var(--font-data); font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: center; }
+/* On a phone the practice modes sit under the one-line top bar, in the page (site/nav.css shrinks the bar). */
+#phone-modes { min-width: 0; }   /* a grid item: the strip scrolls inside it, never widens the page */
+#phone-modes:empty { display: none; }
+@media (max-width: 720px) {
+  /* the app keeps its own safe-area handling (html padding, the strip under the notch) */
+  .topbar.site-top { top: env(safe-area-inset-top, 0px); height: var(--bar-height); padding-top: 0; }
+  .topbar.site-top.is-tucked { transform: translateY(calc(-100% - env(safe-area-inset-top, 0px))); }
+  .topbar.site-top .topbar-inner { height: 100%; padding-block: 0; flex-wrap: nowrap; }
+  .topbar.site-top .brand h1 { font-size: 1.2rem; }
+  .topbar.site-top .top-title { top: 50%; }
+}
 </style>
+<link rel="stylesheet" href="nav.css">
 </head>
 <body>
-<header class="topbar">
+<header class="topbar site-top" data-autohide>
   <div class="topbar-inner">
     <div class="brand"><h1><span lang="ar-Latn" translate="no" class="notranslate">Fiʿl</span> <span class="ar notranslate" lang="ar" dir="rtl" translate="no">فِعْل</span></h1></div>
     <nav class="tabs" role="tablist" id="tabs"></nav>
     <nav class="sections"><a id="verbs-link" href="./" aria-current="page"></a><a id="nouns-link" hidden></a><a id="adjectives-link" hidden></a><a id="nuances-link" hidden></a><a id="particles-link" hidden></a><a id="pronouns-link" hidden></a><a id="roots-link" hidden></a><a id="surahs-link" hidden></a><a id="exercises-link" hidden></a><a id="animations-link"></a><a id="pictures-link"></a></nav>
     <label class="lang"><span class="note" id="lang-label"></span> <select id="language" translate="no" class="notranslate"></select></label>
+    <!-- A phone's one-line bar: the section's name and the ☰ menu (site/nav.css, site/nav.js; the static pages' fil.pages.navigation). -->
+    <span class="top-title" id="top-title" aria-hidden="true"></span>
+    <details class="menu" data-menu><summary class="menu-button" id="menu-button"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="bar bar-top" d="M4 7h16"/><path class="bar bar-middle" d="M4 12h16"/><path class="bar bar-bottom" d="M4 17h16"/></svg><span class="menu-word" aria-hidden="true"><span class="menu-word-open" id="menu-word-open"></span><span class="menu-word-close" id="menu-word-close"></span></span></summary>
+      <div class="menu-backdrop" aria-hidden="true"></div>
+      <nav class="menu-panel" data-menu-panel id="menu-panel"><p class="menu-subtitle" id="menu-title"></p>
+        <div class="menu-group menu-sections" id="menu-sections"></div>
+        <p class="menu-subtitle" id="menu-language-label"></p><div class="menu-group menu-languages" id="menu-languages"></div></nav>
+    </details>
   </div>
 </header>
 <!-- Shown once, in the languages that have the words for it (renderTranslateHint, site/translation.js). -->
-<aside class="translate-hint" id="translate-hint" hidden><p><span id="translate-hint-text"></span> <a id="translate-hint-link" href="?lang=en" hreflang="en" lang="en"></a></p><button type="button" class="translate-hint-close" data-translate-hint-close id="translate-hint-close"><span aria-hidden="true">×</span></button></aside>
+<aside class="translate-hint" id="translate-hint" hidden><p><span class="hint-long" id="translate-hint-text"></span><span class="hint-short" id="translate-hint-short"></span> <a id="translate-hint-link" href="?lang=en" hreflang="en" lang="en"></a></p><button type="button" class="translate-hint-close" data-translate-hint-close id="translate-hint-close"><span aria-hidden="true">×</span></button></aside>
 <div class="wrap">
+  <div id="phone-modes"></div>
   <div class="status">
     <p class="brand-sub" id="subtitle"></p>
     <div class="progress" style="min-width: min(360px, 100%)">
@@ -544,6 +568,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
 <script src="animation.js"></script>
 <script src="gallery.js"></script>
 <script src="translation.js"></script>
+<script src="nav.js"></script>
 <script>
 (() => {
   // Where "report a mistake" sends a learner. Empty until the site is public: the page then
@@ -647,6 +672,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
       + ` · <a href="${language}/animations/">${ui.aboutNav.animations}</a> · <a href="${language}/noun-pictures/">${ui.aboutNav.pictures}</a></p>`;
     renderSections(ui);
     renderGalleryLinks(ui);
+    renderMenu(ui);
     renderGalleryTiles(ui);
     renderTranslateHint(ui);
     $("tabs").innerHTML = TAB_IDS.map((id, i) => `<button role="tab" id="tab-${id}" data-tab="${id}" aria-selected="${id === activeTab}">${ui.tabs[i]}</button>`).join("");
@@ -677,6 +703,33 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     link.href = path;
     link.textContent = label;
   }
+  // The phone's ☰ menu: the very section links of the wide top bar, then the languages, in the reader's language.
+  function renderMenu(ui) {
+    $("top-title").textContent = ui.page.nav;
+    $("menu-word-open").textContent = ui.menu.button;
+    $("menu-word-close").textContent = ui.close;
+    $("menu-button").setAttribute("aria-label", ui.menu.label);
+    $("menu-panel").setAttribute("aria-label", ui.menu.label);
+    $("menu-title").textContent = ui.menu.sections;
+    $("menu-language-label").textContent = ui.language;
+    const links = [...document.querySelectorAll(".topbar nav.sections a:not([hidden])")];
+    const row = (href, section, label, isCurrent) => `<a href="${href}" data-section="${section}"${isCurrent ? ' aria-current="page"' : ""}><span class="menu-label">${escapeHtml(label)}</span></a>`;
+    $("menu-sections").innerHTML = links.map((link) => row(link.getAttribute("href"), link.id.replace(/-link$/, ""), link.textContent, link.hasAttribute("aria-current"))).join("")
+      + row(`${language}/about/`, "about", ui.aboutNav.about, false);
+    $("menu-languages").innerHTML = DATA.languages.map((entry) => `<button type="button" data-language="${entry.code}" lang="${entry.code}" translate="no" class="notranslate" aria-pressed="${entry.code === language}">${escapeHtml(entry.name)}</button>`).join("");
+  }
+  $("menu-languages").addEventListener("click", (event) => {
+    const choice = event.target.closest("[data-language]");
+    if (choice) chooseLanguage(choice.dataset.language);
+  });
+  // On a phone the practice modes leave the one-line top bar for the top of the page; on a wide screen they go back.
+  const phoneWidth = window.matchMedia("(max-width: 720px)");
+  function placeModes() {
+    if (phoneWidth.matches) $("phone-modes").append($("tabs"));
+    else document.querySelector(".topbar-inner .brand").after($("tabs"));
+  }
+  phoneWidth.addEventListener("change", placeModes);
+  placeModes();
   // "Not your language? …": only in a language with the words for it, and only once per visitor.
   let isHintOffered = false;
   // The two tiles into the galleries (written by `fil pages`, fil.pages.gallery_render.app_tiles): in the reader's language.
@@ -695,6 +748,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     const hint = $("translate-hint");
     if (!ui.translateHint) { hint.hidden = true; return; }
     $("translate-hint-text").textContent = ui.translateHint;
+    $("translate-hint-short").textContent = ui.translateHintShort || ui.translateHint;
     $("translate-hint-link").textContent = ui.translateHintLink;
     $("translate-hint-link").hidden = language === "en";
     $("translate-hint-close").setAttribute("aria-label", ui.close);
@@ -707,12 +761,14 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
   function renderLanguagePicker() {
     $("language").innerHTML = DATA.languages.map((entry) => `<option value="${entry.code}" ${entry.code === language ? "selected" : ""}>${escapeHtml(entry.name)}</option>`).join("");
   }
-  $("language").addEventListener("change", (event) => {
-    language = event.target.value;
+  function chooseLanguage(code) {
+    language = code;
+    $("language").value = code;
     writeStore(STORE.language, language);
     renderChrome();
     renderActive();
-  });
+  }
+  $("language").addEventListener("change", (event) => chooseLanguage(event.target.value));
 
   let activeTab = "learn";
   $("tabs").addEventListener("click", (event) => {
@@ -944,7 +1000,7 @@ button.conj-cell::before { inset-block-start: 4px; inset-inline-end: 4px; }   /*
     $("verb-card").innerHTML = `
       <header class="verb-hero">
         <div class="eyebrow"><span>#${verb.rank} · ${escapeHtml(ui.root)} <span class="root-letters">${verb.root.split("").join(" ")}</span> · ${escapeHtml(ui.form)} ${FORM_NAMES[verb.form]}</span></div>
-        <div class="hero-nav"><button class="icon-btn" data-step="-1" aria-label="${escapeHtml(ui.prev)}">‹</button><button class="icon-btn" data-step="1" aria-label="${escapeHtml(ui.next)}">›</button></div>
+        <div class="hero-nav"><button class="icon-btn" data-step="-1" aria-label="${escapeHtml(ui.prev)}">‹</button><span class="hero-count">${current + 1} / ${VERBS.length}</span><button class="icon-btn" data-step="1" aria-label="${escapeHtml(ui.next)}">›</button></div>
         <div class="hero-word"><p class="meaning">${escapeHtml(meaningOf(verb))}${english}</p><p class="ar lemma">${verb.lemma}</p></div>
         ${animationHtml(verb)}
         <div class="stats">

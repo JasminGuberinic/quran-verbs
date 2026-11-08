@@ -18,7 +18,7 @@ from pathlib import Path
 from fil.languages import LANGUAGES, Language
 from fil.noun_pictures import load_categories
 from fil.nouns.pictures import NounPicture
-from fil.pages import adjective_render, noun_render, nuance_render, seo
+from fil.pages import adjective_render, navigation, noun_render, nuance_render, render, seo
 from fil.pages.exercise_render import PracticeLink, no_practice
 from fil.pages.picture_credits import pictures_credit
 from fil.resources import NOUN_PICTURES_DIR
@@ -41,6 +41,7 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: S
     _copy_pictures(pages, nouns.pictures)
     categories = {f"{key[0]}|{key[1]}": entry.category for key, entry in _categories().items()}
     credit_for = credits(nouns.pictures)
+    in_order = render.card_neighbours(nouns.cards)
     written = []
     for language in _languages():
         text = texts[language.code]
@@ -58,7 +59,8 @@ def write(pages: Path, nouns: NounContent, texts: dict[str, dict], adjectives: S
                                          similar_words=nuance_render.similar_words_section(
                                              groups_of_lemma(card["key"], nuances), language, text, seo.to_root(path)),
                                          practice=practice(card["slug"], language, seo.to_root(path)),
-                                         root_slug=(root_slugs or {}).get(card["root"]))
+                                         root_slug=(root_slugs or {}).get(card["root"]),
+                                         neighbours=navigation.neighbours_in(in_order, card["slug"]))
             written.append(_write(pages, path, html))
     return written
 

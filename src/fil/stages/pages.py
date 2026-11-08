@@ -59,7 +59,7 @@ from fil.corpus.parse import iter_segments
 from fil.languages import LANGUAGES
 from fil.exercises.model import ADJECTIVE_WORD, NOUN_WORD, NUANCE_WORD, PARTICLE_WORD, VERB_WORD
 from fil.pages import (adjective_render, deploy, exercise_render, freshness, gallery_render, indexing, indexnow, interface_text,
-                       nuance_render, particle_render, pwa, pwa_icons, render, seo, share_image, web)
+                       navigation, nuance_render, particle_render, pwa, pwa_icons, render, seo, share_image, web)
 from fil.pages.render import PublishedVerb
 from fil.pages.slugs import assign_slugs
 from fil.recitation import is_streamed
@@ -220,8 +220,8 @@ def build(pages: Path) -> BuiltSite | None:
     written += root_pages.write(pages, roots, texts, published, nuances, practice.words())
     written += surah_pages.write(pages, surahs, texts, published, practice.words(),
                                   root_path=_root_page(root_slugs))
-    written += about_pages.write(pages, texts)
-    written += gallery_pages.write(pages, galleries, texts)
+    written += about_pages.write(pages, texts, published)
+    written += gallery_pages.write(pages, galleries, texts, published)
     check_audio_links(pages, written)
     check_card_audio(pages, [*content.cards, *nouns.cards, *adjectives.cards, *nuances, *particles, *pronouns,
                              *surahs.pages, {"exercises": exercises.sounds(practice)}])
@@ -387,6 +387,7 @@ def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[s
                           practice: exercise_render.PracticeLink = exercise_render.no_practice,
                           root_slugs: Mapping[str, str] | None = None) -> Iterable[Path]:
     credit_for = noun_pages.credits(nouns.pictures)
+    in_order = render.verb_neighbours(verbs)
     for language in LANGUAGES:
         text = texts[language.code]
         yield _write(pages, seo.language_index_path(language.code),
@@ -404,7 +405,8 @@ def _write_language_pages(pages: Path, verbs: list[PublishedVerb], texts: dict[s
                                                        similar_words=similar,
                                                        practice=practice(verb.slug, language, seo.to_root(path)),
                                                        root_slug=(root_slugs or {}).get(verb.card["root"]),
-                                                       animation=animation_of(verb.card)))
+                                                       animation=animation_of(verb.card),
+                                                       neighbours=navigation.neighbours_in(in_order, verb.slug)))
 
 
 def _write(pages: Path, path: str, html: str) -> Path:

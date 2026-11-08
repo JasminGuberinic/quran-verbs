@@ -14,7 +14,7 @@ from collections.abc import Collection, Sequence
 from html import escape
 
 from fil.languages import Language
-from fil.pages import noun_render, render, seo
+from fil.pages import navigation, noun_render, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import audio_link
 
@@ -27,10 +27,12 @@ _STATE_ORDER = ("definite", "indefinite")
 
 def adjective_page(card: dict, language: Language, text: dict, *, related: Sequence[dict] = (),
                    nouns_of_root: Sequence[dict] = (), picture_credit: str = "", published: Collection[str] = frozenset(),
-                   similar_words: str = "", practice: str = "", root_slug: str | None = None) -> str:
+                   similar_words: str = "", practice: str = "", root_slug: str | None = None,
+                   neighbours: navigation.Neighbours | None = None) -> str:
     """One adjective's page (`practice`: the link to its exercises, fil.pages.exercise_render). `related` are the other studied adjectives of its root, `nouns_of_root`
     the studied nouns of its root (cards); `picture_credit` the footer line owed for their pictures;
-    `similar_words` the section linking the near-synonym groups it belongs to (fil.pages.nuance_render)."""
+    `similar_words` the section linking the near-synonym groups it belongs to (fil.pages.nuance_render);
+    `neighbours` its place in the list, for the pager."""
     words = text["adjectivePage"]
     path = seo.adjective_path(language.code, card["slug"])
     root = seo.to_root(path)
@@ -39,9 +41,11 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
     description = fill(words["description"], card["lemma"], meaning, card["ayahCount"])
     structured = seo.verb_structured_data(title=title, description=description, language=language.code, path=path,
                                           lemma=card["lemma"], meaning=meaning, index_title=words["indexTitle"])
+    top_pager, foot_pager = render.section_pagers(neighbours, f"{root}{seo.adjective_index_path(language.code)}", text,
+                                                  render.ADJECTIVES)
     body = "".join((
         _top_bar(text, root, language, lambda code: seo.adjective_path(code, card["slug"]), published=published),
-        f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun adjective">',
+        f'<main class="wrap">{top_pager}<p class="notice">{text["notice"]}</p><article class="noun adjective">',
         _hero(card, meaning, language, text, root, root_slug=root_slug),
         _table(card, text, root),
         _agreement(card, language, text, root),
@@ -50,7 +54,7 @@ def adjective_page(card: dict, language: Language, text: dict, *, related: Seque
         _links(card, language, text, root, related, nouns_of_root),
         similar_words,
         practice,
-        "</article></main>",
+        f"</article>{foot_pager}</main>",
         render._footer(text, picture_credit),
     ))
     head = render._head(title=title, description=description, path=path, root=root, indexed_in=ADJECTIVE_LANGUAGES,

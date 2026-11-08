@@ -9,6 +9,7 @@ the footer only.
 
 from __future__ import annotations
 
+from collections.abc import Collection
 from xml.sax.saxutils import escape
 
 from fil.languages import Language
@@ -29,13 +30,14 @@ SOURCES = (("Tanzil", "https://tanzil.net"),
            ("Google Fonts", "https://fonts.google.com"))
 
 
-def about_page(language: Language, texts: dict[str, dict]) -> str:
+def about_page(language: Language, texts: dict[str, dict], published: Collection[str] = frozenset()) -> str:
+    """`published`: the sections beyond the verbs the menus lead to (fil.pages.render.top_bar)."""
     text, words = texts[language.code], ABOUT[language.code]
     title = text["aboutNav"]["about"]
     path = seo.about_path(language.code)
     root = seo.to_root(path)
     body = "".join((
-        render.top_bar(text, root, language, seo.about_path, section=seo.ABOUT_FOLDER),
+        render.top_bar(text, root, language, seo.about_path, section=seo.ABOUT_FOLDER, published=published),
         f'<main class="wrap"><h1>{escape(title)}</h1><p class="lead">{escape(words.description)}</p>',
         _section(words.made_title, f"<p>{escape(words.made)}</p>"),
         _section(words.honest_title, f"<p>{escape(words.honest)}</p>"),

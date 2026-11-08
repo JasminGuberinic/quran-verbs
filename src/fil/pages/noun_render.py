@@ -18,7 +18,7 @@ from html import escape
 from fil.languages import Language
 from fil.nouns.model import PROPER_NOUN
 from fil.nouns.relations import COLLECTIVE
-from fil.pages import gallery_links, render, seo
+from fil.pages import gallery_links, navigation, render, seo
 from fil.pages.interface_text import fill
 from fil.pages.render import audio_link
 
@@ -32,8 +32,9 @@ _ATTESTED, _QURAN_MARK, _STANDARD_MARK = "attested", "●", "◦"
 
 def noun_page(card: dict, language: Language, text: dict, *, category: str | None, picture_credit: str = "",
               related: Sequence[dict] = (), adjectives_of_root: str = "", published: Collection[str] = frozenset(),
-              similar_words: str = "", practice: str = "", root_slug: str | None = None) -> str:
-    """One noun's page. `related` are the other studied nouns of its root (cards);
+              similar_words: str = "", practice: str = "", root_slug: str | None = None,
+              neighbours: navigation.Neighbours | None = None) -> str:
+    """One noun's page (`neighbours`: its place in the list, for the pager). `related` are the other studied nouns of its root (cards);
     `adjectives_of_root` the section linking the studied adjectives of its root; `similar_words`
     the section linking the near-synonym groups it belongs to (fil.pages.nuance_render); `practice`
     the link to the exercises about the noun (fil.pages.exercise_render)."""
@@ -45,9 +46,10 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
     description = fill(words["description"], card["lemma"], meaning, card["ayahCount"])
     structured = seo.verb_structured_data(title=title, description=description, language=language.code, path=path,
                                           lemma=card["lemma"], meaning=meaning, index_title=words["indexTitle"])
+    top_pager, foot_pager = render.section_pagers(neighbours, f"{root}{seo.noun_index_path(language.code)}", text, render.NOUNS)
     body = "".join((
         _top_bar(text, root, language, lambda code: seo.noun_path(code, card["slug"]), published=published),
-        f'<main class="wrap"><p class="notice">{text["notice"]}</p><article class="noun">',
+        f'<main class="wrap">{top_pager}<p class="notice">{text["notice"]}</p><article class="noun">',
         _hero(card, meaning, language, text, root, category, root_slug=root_slug),
         _related(card, language, text, root),
         _phrases(card, language, text, root),
@@ -59,7 +61,7 @@ def noun_page(card: dict, language: Language, text: dict, *, category: str | Non
         adjectives_of_root,
         similar_words,
         practice,
-        "</article></main>",
+        f"</article>{foot_pager}</main>",
         _footer(text, picture_credit),
     ))
     head = render._head(title=title, description=description, path=path, root=root, indexed_in=NOUN_LANGUAGES,

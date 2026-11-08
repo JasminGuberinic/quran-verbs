@@ -143,7 +143,8 @@ def _text() -> dict:
     return {
         "notice": "<b>AI content</b>", "footer": ["<b>Sources.</b>"], "aboutNav": {"about": "About", "privacy": "Privacy", "animations": "Animations", "pictures": "Noun pictures"},
         "galleryPage": {"allAnimations": "All animations", "allPictures": "All pictures"},
-        "language": "Language", "listen": "Listen",
+        "language": "Language", "listen": "Listen", "close": "Close", "prev": "← Previous", "next": "Next →",
+        "menu": {"button": "Menu", "label": "Main menu", "sections": "All sections"},
         "root": "root", "form": "form", "times": "{0}× in the Quran", "inAyat": "in {0} ayat", "ofAll": "{0}% of all",
         "tenses": {"past": "past", "present": "present", "imperative": "command"},
         "pronouns": {pronoun: pronoun for pronoun in render.PRONOUN_ORDER},
